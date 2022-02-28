@@ -6,6 +6,5 @@
         xmlns:local="clr-namespace:New_World_Dedicated_Stat_Program"
         mc:Ignorable="d"
         Title="New World Dedicated Stat Program" Height="720" Width="1080">
-    <Grid>
-    </Grid>
+        <Button Name="openButton" Width="200" Height="50">Open Change Commands file</Button>
 </Window>
