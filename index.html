@@ -4,9 +4,10 @@
 
     </style>
     <script type="text/javascript" src="initiate.js"></script>
+    <script type="text/javascript" src="loadChangesFromFile.js"></script>
     <body>
         <form action="/action_page.php">
-            <input type="file" id="myFile" name="filename">
+            <input type="file" id="myFile" name="filename" onchange="loadChangesFromFile(event)">
           </form>
     </body>
 </html>
