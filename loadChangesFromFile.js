@@ -13,7 +13,7 @@ function loadChangesFromFile(event){
                 changedSheets[i][j] = changedSheet.split("\t");
             }
         }
-        const commandRegex = /(?<Operand>([a-z]+)( |\t)|(\+|\=|\-)( |\t)?)(?<Amount>(\d|\.)+)( |\t)(?<Stat_Name>.+)/gi;
+        const commandRegex = /(?<Operand>([a-z]+)( |\t)|(\+|\=|\-)( |\t)?)(?<Amount>(\d|\.)+%?)( |\t)(?<Stat_Name>.+)/gi;
 
         let currentNationID;
         for (let i = 0; i < changes.length; i++) {
@@ -77,10 +77,18 @@ function loadChangesFromFile(event){
                             } 
                             //changes
                             else{
+                                if(!commandParameters[1].includes("%") && changedSheet[currentNationID][k].includes("%")){
+                                    alert("You attempted to change a stat written in percentages with a number not specified in percentages. Reconsider.");
+                                    break;
+                                }else if(commandParameters[1].includes("%") && !changedSheet[currentNationID][k].includes("%")){
+                                    alert("You attempted to change a stat written without percentages with a number specified in percentages. Reconsider.");
+                                    break;
+                                }
+
                                 if(commandParameters[0] == '+' || commandParameters[0] == 'add'){
-                                    changedSheet[currentNationID][k] = +changedSheet[currentNationID][k] + +commandParameters[1];
+                                    changedSheet[currentNationID][k] = (+changedSheet[currentNationID][k] + +commandParameters[1].remove("%")) + (changedSheet[currentNationID][k].includes("%") ? "%" : "");
                                 }else if(commandParameters[0] == '-' || commandParameters[0] == 'sub'){
-                                    changedSheet[currentNationID][k] = +changedSheet[currentNationID][k] - +commandParameters[1];
+                                    changedSheet[currentNationID][k] = (+changedSheet[currentNationID][k] - +commandParameters[1].remove("%")) + (changedSheet[currentNationID][k].includes("%") ? "%" : "");
                                 }else if(commandParameters[0] == '=' || commandParameters[0] == 'set'){
                                     changedSheet[currentNationID][k] = commandParameters[1];
                                 }else{
