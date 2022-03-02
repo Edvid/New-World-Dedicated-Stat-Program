@@ -116,6 +116,7 @@ function loadChangesFromFile(event){
                     text += cells;
                 }
             }    
+
             let currentTextfield = document.createElement("textarea");
             currentTextfield.cols = 50;
             currentTextfield.rows = 4;
@@ -123,6 +124,7 @@ function loadChangesFromFile(event){
             currentTextfield.value = text;
             let currentTextfieldTitle = document.createElement("h1");
             currentTextfieldTitle.style.textTransform = "capitalize";
+            currentTextfieldTitle.style.color = sheets[i] == text ? "lightgrey" : "black";
             currentTextfieldTitle.innerHTML = sheetNames[i];
             document.body.appendChild(currentTextfieldTitle);
             document.body.appendChild(currentTextfield);
