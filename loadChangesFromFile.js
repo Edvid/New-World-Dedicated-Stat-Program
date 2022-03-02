@@ -25,13 +25,13 @@ function loadChangesFromFile(event){
             if(cc[0] == '#' || cc.length == 0){
                 continue;
             }
-            //update
-            else if(cc.includes("update")){
+            //sync
+            else if(cc.includes("sync")){
                 
                 if(cc.includes("<")){
-                    update(currentNationID);
+                    sync(currentNationID);
                 }else{
-                    update();
+                    sync();
                 }
                 
             }
@@ -135,6 +135,6 @@ function loadChangesFromFile(event){
     reader.readAsText(file);
 }
 
-function update(){
+function sync(){
     //not implemented yet
 }

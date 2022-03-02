@@ -17,6 +17,6 @@ This should make it easy for other stat updater to figure out if a treaty has al
 The file consist of several Entries, each seperated by a newline. There's a few different kinds of Entries.
 
 1. Comments - their lines start with #. 
-2. Update command - This command comes in two forms. Either it is just that word, and it will update every nation server wide. If you need a particular nation to be updated without updating the rest, you can use the word "Update" with a "<" tagged along. That is, both "Update<" and "<Update" are acceptable Syntaxes.
+2. Time Sync command - This command comes in two forms. Either it is just "sync", and it will time sync every nation server wide at once, or, if you need a particular nation to be time synced without syncing the rest, you can use the word "sync" with a "<" tagged along. That is, both "sync<" and "<sync" are acceptable Syntaxes.
 3. Nation Switch command - This command begins with > and then states the name of a nation
 4. Normal Commands - "the vast majority of commands are of this type. Their have 3 parts/parameters to them. The paremeters are seperated by either a space or a tabulation, except for the use of either +,- or = on which seperators are not required. First parameter of a command is eihter+,-,=,ADD,SUB, or SET. The Second parameter states a number. The third parameter states a name of a stat 
