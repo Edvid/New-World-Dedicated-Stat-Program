@@ -1,3 +1,0 @@
-Nation Name	Population	Area	Density
-Germany	80000000	25000	=B2/C2
-France	60000000	23000	=B3/C3

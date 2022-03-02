@@ -92,13 +92,39 @@ function loadChangesFromFile(event){
             /* alert("notice me baka"); */
         }
 
+        //print to console
         changedSheets.forEach(changedSheet => {
             console.table(changedSheet); 
         }); 
+        //paste to textfield
+        
+        for (let i = 0; i < changedSheets.length; i++) {
+            let text = "";
+            const changedSheet = changedSheets[i];
+            for (let j = 0; j < changedSheet.length; j++) {
+                const cols = changedSheet[j];
+                if(j != 0) text += "\r\n"
+                for (let k = 0; k < cols.length; k++) {
+                    const cells = cols[k];
+                    if(k != 0) text += "\t"
+                    text += cells;
+                }
+            }    
+            let currentTextfield = document.createElement("textarea");
+            currentTextfield.cols = 50;
+            currentTextfield.rows = 4;
+            currentTextfield.name = sheetNames[i];
+            currentTextfield.value = text;
+            let currentTextfieldTitle = document.createElement("h1");
+            currentTextfieldTitle.style.textTransform = "capitalize";
+            currentTextfieldTitle.innerHTML = sheetNames[i];
+            document.body.appendChild(currentTextfieldTitle);
+            document.body.appendChild(currentTextfield);
+        }
+
     };
 
     reader.readAsText(file);
-       
 }
 
 function update(){
