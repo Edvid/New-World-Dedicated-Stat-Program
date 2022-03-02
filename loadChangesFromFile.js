@@ -27,7 +27,13 @@ function loadChangesFromFile(event){
             }
             //update
             else if(cc.includes("update")){
-                update();
+                
+                if(cc.includes("<")){
+                    update(currentNationID);
+                }else{
+                    update();
+                }
+                
             }
             //nation Switch
             else if(cc[0] == '>'){
