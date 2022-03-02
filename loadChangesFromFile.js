@@ -13,7 +13,7 @@ function loadChangesFromFile(event){
                 changedSheets[i][j] = changedSheet.split("\t");
             }
         }
-        const commandRegex = /(?<Operand>([a-z]+)( |\t)|(\+|\=|\-)( |\t)?)(?<Amount>(\d|\.)+)( |\t)(?<Stat_Name>[a-z]+)/gi;
+        const commandRegex = /(?<Operand>([a-z]+)( |\t)|(\+|\=|\-)( |\t)?)(?<Amount>(\d|\.)+)( |\t)(?<Stat_Name>.+)/gi;
 
         let currentNationID;
         for (let i = 0; i < changes.length; i++) {
