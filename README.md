@@ -21,4 +21,16 @@ The file consist of several Entries, each seperated by a newline. There's a few 
 3. Nation Switch command - This command begins with > and then states the name of a nation
 4. Sheet Restriction Command - This command restricts all commands below to only ever be performed on stats on a particular sheet specified. `@sheet name` to enter search exclusively in that sheet,
 `@<` to exit.
-5. Normal Commands - "the vast majority of commands are of this type. Their have 3 parts/parameters to them. The paremeters are seperated by either a space or a tabulation, except for the use of either +,- or = on which seperators are not required. First parameter of a command is eihter+,-,=,ADD,SUB, or SET. The Second parameter states a number. The third parameter states a name of a stat 
+5. Normal Commands - "the vast majority of commands are of this type. Their have 3 parts/parameters to them. The paremeters are seperated by either a space or a tabulation, except for the use of either +,- or = on which seperators are not required. First parameter of a command is eihter+,-,=,ADD,SUB, or SET; known as an operator. The Second parameter states a number. The third parameter states a name of a stat. The setting of a particular stat allows for the stat to be set to any arbitrary string. Strings with spaces in them must have qoutes surrounding the string to set it to. F.x. `="20% Catholisism 80% Protestant" religion` would set the stat `religion` to `20% Catholisism 80% Protestant`. Moreover, for all stat specified in percentage, the number following the operator must also be in percentage form; if the stat is not in percent form, you may not use percentage form.
+
+### Summary
+
+Templates:
+`#Just a comment`
+`sync` or the not so global `sync<`
+`>Ireland`
+`@Trade Influence Americas And Africa` and to escape `@<`
+most commands will be like:
+`+0.5 adm. efficiency`
+`-5% clergy loyalty`
+`="20% Catholisism 80% Protestant" religion`
