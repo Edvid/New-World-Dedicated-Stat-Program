@@ -1,0 +1,2 @@
+//Recuitment sheet and TOP STAT sheet are omitted  
+sheetNames = ["Daily Stuff", "All Stats", "Important stuff", "Armies", "Navy", "Population", "Resources", "Resources prices", "Technology", "Cultural Advancements", "Economy", "Trade", "Agriculture", "War", "Trade Zone Wealth", "Trade Influence Americas And Africa", "Trade Influence Europe", "Trade Influence Asia", "Land"];

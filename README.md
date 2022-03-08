@@ -12,6 +12,19 @@ When doing treaties, you shall add a comment above with the name of the treaty. 
 
 This should make it easy for other stat updater to figure out if a treaty has already been accounted for by a simple search in the change commands. 
 
+## Updating the sheet state in this program
+
+As we still rely on Google Sheets for the stat keeping, and not all stat updaters are required to use this program for their updating. The state of the sheet this program can reach with the change commands, might get out of sync with the actual state of the game.
+
+For this reason, we must always copy the state of the sheets as they are currently, into this program before running our change commands. **It is highly imporant to make sure no other stat updaters are chaning stats in the time between having it copied, and putting it back into google sheets after the change commands have done their magic.**
+
+- When Copying stat sheets, it should be put in a file called **sheetState.txt**
+- The formulas must be visible during copying of the sheets. This can be done by opening the "more options" under the `ctrl+f` menu, and pressing "Also search within formulae". The copying can be easily done by selecting any cell in a sheet (while the advanced search menu is still open) and pressing `ctrl+a`
+- different sheets shall be seperated by exactly 3 newlines in this file you copy to
+
+Once this **sheetState.txt** is set up, you can run the SheetStateConverter.ps1 file in powershell.
+Go to explorer, and then under File, find Powershell. A cmd-like window, but blue is now open. You can type `.\sheetStateConverter.ps1` here or just start typing the name of the sheetStateConverter and press `TAB` to autocomplete. Does it select the wrong thing, you can keep pressing `TAB`. Press `ENTER` at the end to execute the file. A fresh **sheetState.js** should have been made.
+
 ## Syntax of the 'change commands' text file
 
 The file consist of several Entries, each seperated by a newline. There's a few different kinds of Entries.
