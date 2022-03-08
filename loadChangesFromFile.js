@@ -13,7 +13,7 @@ function loadChangesFromFile(event){
                 changedSheets[i][j] = changedSheet.split("\t");
             }
         }
-        const commandRegex = /(?<Operand>([a-z]+)( |\t)|(\+|\=|\-)( |\t)?)(?<Amount>(\d|\.)+%?)( |\t)(?<Stat_Name>.+)/gi;
+        const commandRegex = /(?<Operand>([a-z]+)( |\t)|(\+|\=|\-)( |\t)?)(?<Amount>(\".+\")|(.+?))( |\t)(?<Stat_Name>.+)/gi;
 
         let currentNationID;
         for (let i = 0; i < changes.length; i++) {
@@ -60,7 +60,7 @@ function loadChangesFromFile(event){
                 let match = commandRegex.exec(cc);
                 commandRegex.test(cc); // DO NOT ASK ME WHY IS IS NECESSARY. The match sometimes just turns out null if not tested first.
                 const commandParameters = [];
-                commandParameters[0] = match.groups.Operand;
+                commandParameters[0] = match.groups.Operand.trim();
                 commandParameters[1] = match.groups.Amount;
                 commandParameters[2] = match.groups.Stat_Name;
 
