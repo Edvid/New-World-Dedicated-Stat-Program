@@ -70,25 +70,29 @@ function loadChangesFromFile(event){
                     for (let k = 0; k < changedSheet[0].length; k++) {
                         const StatCell = changedSheet[0][k];
                         if(StatCell.toLowerCase().trim() == commandParameters[2]){
-                            //if the stat in question isn't even a number, throw an error too
+                            //if the stat in question is a formula, throw an error too
                             if(changedSheet[currentNationID][k].toString().startsWith("="))
                             {
                                 alert("A stat that is described as a formula has been attempted changed: " + commandParameters[2] + ".\r\n Action has been aborted.");
+                                found = true;
+                                break;
                             } 
                             //changes
                             else{
                                 if(!commandParameters[1].includes("%") && changedSheet[currentNationID][k].includes("%")){
-                                    alert("You attempted to change a stat written in percentages with a number not specified in percentages. Reconsider.");
+                                    alert("You attempted to change " + commandParameters[2] +  ", which is written in percentages. You wrote " + commandParameters[1] + ". Aborted.");
+                                    found = true;
                                     break;
                                 }else if(commandParameters[1].includes("%") && !changedSheet[currentNationID][k].includes("%")){
-                                    alert("You attempted to change a stat written without percentages with a number specified in percentages. Reconsider.");
+                                    alert("You attempted to change " + commandParameters[2] + ", which is written without percentages. Your wrote : " + commandParameters[1] + ". Aborted.");
+                                    found = true;
                                     break;
                                 }
 
                                 if(commandParameters[0] == '+' || commandParameters[0] == 'add'){
-                                    changedSheet[currentNationID][k] = (+changedSheet[currentNationID][k] + +commandParameters[1].remove("%")) + (changedSheet[currentNationID][k].includes("%") ? "%" : "");
+                                    changedSheet[currentNationID][k] = (+changedSheet[currentNationID][k] + +commandParameters[1].replace("%", "")) + (changedSheet[currentNationID][k].includes("%") ? "%" : "");
                                 }else if(commandParameters[0] == '-' || commandParameters[0] == 'sub'){
-                                    changedSheet[currentNationID][k] = (+changedSheet[currentNationID][k] - +commandParameters[1].remove("%")) + (changedSheet[currentNationID][k].includes("%") ? "%" : "");
+                                    changedSheet[currentNationID][k] = (+changedSheet[currentNationID][k] - +commandParameters[1].replace("%", "")) + (changedSheet[currentNationID][k].includes("%") ? "%" : "");
                                 }else if(commandParameters[0] == '=' || commandParameters[0] == 'set'){
                                     changedSheet[currentNationID][k] = commandParameters[1];
                                 }else{
