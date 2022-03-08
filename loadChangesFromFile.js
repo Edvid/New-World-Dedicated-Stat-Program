@@ -16,12 +16,13 @@ function loadChangesFromFile(event){
         const commandRegex = /(?<Operand>([a-z]+)( |\t)|(\+|\=|\-)( |\t)?)(?<Amount>(\".+\")|(.+?))( |\t)(?<Stat_Name>.+)/gi;
 
         let currentNationID;
+        let currentSheetRestrictionID;
         for (let i = 0; i < changes.length; i++) {
             const changeCommand = changes[i];
             
-            //comment
             const cc = changeCommand.toLowerCase();
             
+            //comment
             if(cc[0] == '#' || cc.length == 0){
                 continue;
             }
@@ -55,6 +56,28 @@ function loadChangesFromFile(event){
                 }
                 if(found == false) alert("A nation name was not written correctly in change commands file: " + currentNation);
             }
+            //sheet restriction command
+            else if(cc[0] == '@'){
+                //escape
+                if(cc[1] == '<'){
+                    currentSheetRestrictionID = null;
+                }
+                //find sheet
+                else{
+                    let currentSheet = cc.substring(1).trim();
+                    let found = false;
+
+                    for (let j = 0; j < sheetNames.length; j++) {
+                        if(sheetNames[j.toLowerCase()] == currentSheet.toLowerCase()){
+                            currentSheetRestrictionID = j;
+                            found = true;
+                        } 
+                        if(found == true) break;
+                    }
+                    if(found == false) alert("A sheet change restriction was attmpted to be set, but sheet was not found. No sheet with name: " + currentSheet);
+
+                }
+            }
             //normal commands
             else{
                 let match = commandRegex.exec(cc);
@@ -65,7 +88,9 @@ function loadChangesFromFile(event){
                 commandParameters[2] = match.groups.Stat_Name;
 
                 let found = false;
-                for (let j = 0; j < changedSheets.length; j++) {
+                const _START = currentSheetRestrictionID == null ? 0 : currentSheetRestrictionID;
+                const _END = currentSheetRestrictionID == null ? changedSheets.length : currentSheetRestrictionID;
+                for (let j = _START; j < _END; j++) {
                     const changedSheet = changedSheets[j];
                     for (let k = 0; k < changedSheet[0].length; k++) {
                         const StatCell = changedSheet[0][k];
