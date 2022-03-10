@@ -2,14 +2,14 @@
 $a = Get-Content .\sheetState.txt -Raw
 <# Replace all " with escaped versions #>
 $a = $a -replace "`"", "\`""
-<# Replace \r\n\r\n\r\n with seperation between sheets #>
-$a = $a -replace "`r`n`r`n`r`n", "`",`""
-<# Replace \r\n with seperation between rows #>
-$a = $a -replace "`r`n", "\r\n"
-<# Replace \t with seperation between columns/cells #>
-$a = $a -replace "`t", "\t"
+<# Replace tabulator with seperation between columns/cells #>
+$a = $a -replace "`t", "`",`""
+<# Replace every newline that isn't 3xnewlines with seperation between rows #>
+$a = $a -replace "(?<!`r`n)`r`n(?!`r`n)", "`"],`r`n`t`t[`""
+<# Replace every 3xnewlines with seperation between sheets #>
+$a = $a -replace "`r`n`r`n`r`n", "`"]`r`n`t],`r`n`r`n`r`n`t[`r`n`t`t[`""
 <# Add the `sheets =` bit #>
-$a = "sheets = [`"" + $a + "`"];"
+$a = "sheets = `r`n[`r`n`t[`r`n`t`t[`"" + $a + "`"]`r`n`t]`r`n];"
 <# Save to sheetState.js (that's a different file) #>
 "$a" | out-file -FilePath .\sheetState.js
 <# Clean up #>

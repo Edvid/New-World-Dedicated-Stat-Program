@@ -4,15 +4,8 @@ function loadChangesFromFile(event){
     let changes; 
     reader.onload = function(e){
         changes = e.target.result.split("\r\n");
-        let changedSheets = [];
-        for (let i = 0; i < sheets.length; i++) {
-            const sheet = sheets[i];
-            changedSheets[i] = sheet.split("\r\n");
-            for (let j = 0; j < changedSheets[i].length; j++) {
-                const changedSheet = changedSheets[i][j];
-                changedSheets[i][j] = changedSheet.split("\t");
-            }
-        }
+        let changedSheets = JSON.parse(JSON.stringify(sheets)); //but make sure it's copied not referenced
+        //console.log(changedSheets);
         const commandRegex = /(?<Operand>([a-z]+)( |\t)|(\+|\=|\-)( |\t)?)(?<Amount>(\".+\")|(.+?))( |\t)(?<Stat_Name>.+)/gi;
 
         let currentNationID;
@@ -161,7 +154,7 @@ function loadChangesFromFile(event){
             currentTextfield.value = text;
             let currentTextfieldTitle = document.createElement("h1");
             currentTextfieldTitle.style.textTransform = "capitalize";
-            currentTextfieldTitle.style.color = sheets[i] == text ? "lightgrey" : "black";
+            currentTextfieldTitle.style.color = JSON.stringify(sheets[i]) == JSON.stringify(changedSheets[i]) ? "lightgrey" : "black";
             currentTextfieldTitle.innerHTML = sheetNames[i];
             document.body.appendChild(currentTextfieldTitle);
             document.body.appendChild(currentTextfield);
