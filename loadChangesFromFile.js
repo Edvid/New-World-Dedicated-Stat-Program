@@ -66,8 +66,8 @@ function loadChangesFromFile(event){
                         if(sheetNames[j.toLowerCase()] == currentSheet.toLowerCase()){
                             currentSheetRestrictionID = j;
                             found = true;
-                        } 
-                        if(found == true) break;
+                            break;
+                        }
                     }
                     if(found == false) alert("A sheet change restriction was attmpted to be set, but sheet was not found. No sheet with name: " + currentSheet);
 
@@ -137,15 +137,23 @@ function normalCommandWithAlert(beginning, end){
 function normalCommand(beginning, end){
     for (let i = beginning; i < end; i++) {
         const changedSheet = changedSheets[i];
+        
+        
+
         for (let j = 0; j < changedSheet[0].length; j++) {
-            const StatCell = changedSheet[0][j];
-            if(StatCell.toLowerCase().trim() == commandParameters[2]){
+            let statNameCoord = {row: 0, column: j};
+            statNameCoord = checkUniqueSheetLayout(sheetNames[i], statNameCoord);
+            const StatNameCell = changedSheet[statNameCoord.row][statNameCoord.column];
+            if(StatNameCell.toLowerCase().trim() == commandParameters[2]){
                 found = true;
                 //if the stat in question is a formula, throw an error too
-                if(changedSheet[currentNationID][j].toString().startsWith("="))
+                let statChangeCoord = {row: currentNationID, column: j};
+                statChangeCoord = checkUniqueSheetLayout(sheetNames[i], statChangeCoord);
+                const StatCell = changedSheet[statChangeCoord.row][statChangeCoord.column];
+                if(StatCell.toString().startsWith("="))
                     alert("A stat that is described as a formula has been attempted changed: " + commandParameters[2] + ".\r\n Action has been aborted."); 
                 //changes
-                else changeStats(changedSheet, currentNationID, j);
+                else changeStats(changedSheet, statChangeCoord.row, statChangeCoord.column);
                 return true;
             }
         }
@@ -153,21 +161,22 @@ function normalCommand(beginning, end){
     return false;
 }
 
-function changeStats(sheet, nationRow, statColumn){
-    if(!commandParameters[1].includes("%") && sheet[nationRow][statColumn].includes("%")){
+function changeStats(sheet, row, column){
+    
+    if(!commandParameters[1].includes("%") && sheet[row][column].includes("%")){
         alert("You attempted to change " + commandParameters[2] +  ", which is written in percentages. You wrote " + commandParameters[1] + ". Aborted.");
         return;
-    }else if(commandParameters[1].includes("%") && !sheet[nationRow][statColumn].includes("%")){
+    }else if(commandParameters[1].includes("%") && !sheet[row][column].includes("%")){
         alert("You attempted to change " + commandParameters[2] + ", which is written without percentages. Your wrote : " + commandParameters[1] + ". Aborted.");
         return;
     }
 
     if(commandParameters[0] == '+' || commandParameters[0] == 'add'){
-        sheet[nationRow][statColumn] = (+sheet[nationRow][statColumn] + +commandParameters[1].replace("%", "")) + (sheet[nationRow][statColumn].includes("%") ? "%" : "");
+        sheet[row][column] = (+sheet[row][column] + +commandParameters[1].replace("%", "")) + (sheet[row][column].includes("%") ? "%" : "");
     }else if(commandParameters[0] == '-' || commandParameters[0] == 'sub'){
-        sheet[nationRow][statColumn] = (+sheet[nationRow][statColumn] - +commandParameters[1].replace("%", "")) + (sheet[nationRow][statColumn].includes("%") ? "%" : "");
+        sheet[row][column] = (+sheet[row][column] - +commandParameters[1].replace("%", "")) + (sheet[row][column].includes("%") ? "%" : "");
     }else if(commandParameters[0] == '=' || commandParameters[0] == 'set'){
-        sheet[nationRow][statColumn] = commandParameters[1];
+        sheet[row][column] = commandParameters[1];
     }else{
         alert("Function wasn't understood: " + commandParameters[0] + ".\r\n Aborting.");
     }
