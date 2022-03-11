@@ -2,6 +2,7 @@ let commandParameters = [];
 let changes;
 let changedSheets;
 let currentNationID;
+let changeCommandIndex;
 function loadChangesFromFile(event){
     var file = event.target.files[0];
     var reader = new FileReader();
@@ -14,8 +15,8 @@ function loadChangesFromFile(event){
 
         
         let currentSheetRestrictionID;
-        for (let i = 0; i < changes.length; i++) {
-            const changeCommand = changes[i];
+        for (changeCommandIndex = 0; changeCommandIndex < changes.length; changeCommandIndex++) {
+            const changeCommand = changes[changeCommandIndex];
             
             const cc = changeCommand.toLowerCase();
             
@@ -51,7 +52,7 @@ function loadChangesFromFile(event){
                     }
                     if(found == true) break;
                 }
-                if(found == false) alert("A nation name was not written correctly in change commands file: " + currentNation);
+                if(found == false) alert("At line " + (changeCommandIndex + 1) + "\r\n\r\nA nation name was not written correctly in change commands file: " + currentNation);
             }
             //sheet restriction command
             else if(cc[0] == '@'){
@@ -69,7 +70,7 @@ function loadChangesFromFile(event){
                             break;
                         }
                     }
-                    if(found == false) alert("A sheet change restriction was attmpted to be set, but sheet was not found. No sheet with name: " + currentSheet);
+                    if(found == false) alert("At line " + (changeCommandIndex + 1) + "\r\n\r\nA sheet change restriction was attmpted to be set, but sheet was not found. No sheet with name: " + currentSheet);
 
                 }
             }
@@ -86,7 +87,6 @@ function loadChangesFromFile(event){
                 const END = currentSheetRestrictionID == null ? changedSheets.length : currentSheetRestrictionID + 1;
                 normalCommandWithAlert(START, END);
             }
-            /* alert("notice me baka"); */
         }
 
         //print to console
@@ -131,7 +131,7 @@ function sync(){
 }
 
 function normalCommandWithAlert(beginning, end){
-    if(!normalCommand(beginning, end)) alert("A stat name was not written correctly in change commands file: " + commandParameters[2]);
+    if(!normalCommand(beginning, end)) alert("At line " + (changeCommandIndex + 1) + "\r\n\r\nA stat name was not written correctly in change commands file: " + commandParameters[2]);
 }
 
 function normalCommand(beginning, end){
@@ -139,8 +139,8 @@ function normalCommand(beginning, end){
         const changedSheet = changedSheets[i];
         
         
-
-        for (let j = 0; j < changedSheet[0].length; j++) {
+        const statCount = checkIfMoreStatsThanRowLength(sheetNames[i], changedSheet[0].length);
+        for (let j = 0; j < statCount; j++) {
             let statNameCoord = {row: 0, column: j};
             statNameCoord = checkUniqueSheetLayout(sheetNames[i], statNameCoord);
             const StatNameCell = changedSheet[statNameCoord.row][statNameCoord.column];
@@ -151,7 +151,7 @@ function normalCommand(beginning, end){
                 statChangeCoord = checkUniqueSheetLayout(sheetNames[i], statChangeCoord);
                 const StatCell = changedSheet[statChangeCoord.row][statChangeCoord.column];
                 if(StatCell.toString().startsWith("="))
-                    alert("A stat that is described as a formula has been attempted changed: " + commandParameters[2] + ".\r\n Action has been aborted."); 
+                    alert("At line " + (changeCommandIndex + 1) + "\r\n\r\nA stat that is described as a formula has been attempted changed: " + commandParameters[2] + ".\r\n Action has been aborted."); 
                 //changes
                 else changeStats(changedSheet, statChangeCoord.row, statChangeCoord.column);
                 return true;
@@ -164,10 +164,10 @@ function normalCommand(beginning, end){
 function changeStats(sheet, row, column){
     
     if(!commandParameters[1].includes("%") && sheet[row][column].includes("%")){
-        alert("You attempted to change " + commandParameters[2] +  ", which is written in percentages. You wrote " + commandParameters[1] + ". Aborted.");
+        alert("At line " + (changeCommandIndex + 1) + "\r\n\r\nYou attempted to change " + commandParameters[2] +  ", which is written in percentages. You wrote " + commandParameters[1] + ". Aborted.");
         return;
     }else if(commandParameters[1].includes("%") && !sheet[row][column].includes("%")){
-        alert("You attempted to change " + commandParameters[2] + ", which is written without percentages. Your wrote : " + commandParameters[1] + ". Aborted.");
+        alert("At line " + (changeCommandIndex + 1) + "\r\n\r\nYou attempted to change " + commandParameters[2] + ", which is written without percentages. Your wrote : " + commandParameters[1] + ". Aborted.");
         return;
     }
 
@@ -178,6 +178,6 @@ function changeStats(sheet, row, column){
     }else if(commandParameters[0] == '=' || commandParameters[0] == 'set'){
         sheet[row][column] = commandParameters[1];
     }else{
-        alert("Function wasn't understood: " + commandParameters[0] + ".\r\n Aborting.");
+        alert("At line " + (changeCommandIndex + 1) + "\r\n\r\nFunction wasn't understood: " + commandParameters[0] + ".\r\n Aborting.");
     }
 }
