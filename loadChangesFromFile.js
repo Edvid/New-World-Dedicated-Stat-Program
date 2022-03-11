@@ -63,7 +63,7 @@ function loadChangesFromFile(event){
                     let found = false;
 
                     for (let j = 0; j < sheetNames.length; j++) {
-                        if(sheetNames[j.toLowerCase()] == currentSheet.toLowerCase()){
+                        if(sheetNames[j].toLowerCase() == currentSheet.toLowerCase()){
                             currentSheetRestrictionID = j;
                             found = true;
                             break;
@@ -83,7 +83,7 @@ function loadChangesFromFile(event){
                 commandParameters[2] = match.groups.Stat_Name;
 
                 const START = currentSheetRestrictionID == null ? 0 : currentSheetRestrictionID;
-                const END = currentSheetRestrictionID == null ? changedSheets.length : currentSheetRestrictionID;
+                const END = currentSheetRestrictionID == null ? changedSheets.length : currentSheetRestrictionID + 1;
                 normalCommandWithAlert(START, END);
             }
             /* alert("notice me baka"); */

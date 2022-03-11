@@ -11,7 +11,7 @@ let UniqueLayouts = [
 function checkUniqueSheetLayout(name, coordinate){
     for (let i = 0; i < UniqueLayouts.length; i++) {
         const layout = UniqueLayouts[i];
-        if(name == layout.name) return layout.function(coordinate.row, coordinate.column);
+        if(name == layout.name) return layout.mapping(coordinate.row, coordinate.column);
     }
     return coordinate;
 }
