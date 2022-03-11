@@ -1,14 +1,18 @@
+let commandParameters = [];
+let changes;
+let changedSheets;
+let currentNationID;
 function loadChangesFromFile(event){
     var file = event.target.files[0];
     var reader = new FileReader();
-    let changes; 
+    changes; 
     reader.onload = function(e){
         changes = e.target.result.split("\r\n");
-        let changedSheets = JSON.parse(JSON.stringify(sheets)); //but make sure it's copied not referenced
+        changedSheets = JSON.parse(JSON.stringify(sheets)); //but make sure it's copied not referenced
         //console.log(changedSheets);
         const commandRegex = /(?<Operand>([a-z]+)( |\t)|(\+|\=|\-)( |\t)?)(?<Amount>(\".+\")|(.+?))( |\t)(?<Stat_Name>.+)/gi;
 
-        let currentNationID;
+        
         let currentSheetRestrictionID;
         for (let i = 0; i < changes.length; i++) {
             const changeCommand = changes[i];
@@ -52,9 +56,7 @@ function loadChangesFromFile(event){
             //sheet restriction command
             else if(cc[0] == '@'){
                 //escape
-                if(cc[1] == '<'){
-                    currentSheetRestrictionID = null;
-                }
+                if(cc[1] == '<') currentSheetRestrictionID = null;
                 //find sheet
                 else{
                     let currentSheet = cc.substring(1).trim();
@@ -75,55 +77,14 @@ function loadChangesFromFile(event){
             else{
                 let match = commandRegex.exec(cc);
                 commandRegex.test(cc); // DO NOT ASK ME WHY IS IS NECESSARY. The match sometimes just turns out null if not tested first.
-                const commandParameters = [];
+                commandParameters = [];
                 commandParameters[0] = match.groups.Operand.trim();
                 commandParameters[1] = match.groups.Amount;
                 commandParameters[2] = match.groups.Stat_Name;
 
-                let found = false;
-                const _START = currentSheetRestrictionID == null ? 0 : currentSheetRestrictionID;
-                const _END = currentSheetRestrictionID == null ? changedSheets.length : currentSheetRestrictionID;
-                for (let j = _START; j < _END; j++) {
-                    const changedSheet = changedSheets[j];
-                    for (let k = 0; k < changedSheet[0].length; k++) {
-                        const StatCell = changedSheet[0][k];
-                        if(StatCell.toLowerCase().trim() == commandParameters[2]){
-                            //if the stat in question is a formula, throw an error too
-                            if(changedSheet[currentNationID][k].toString().startsWith("="))
-                            {
-                                alert("A stat that is described as a formula has been attempted changed: " + commandParameters[2] + ".\r\n Action has been aborted.");
-                                found = true;
-                                break;
-                            } 
-                            //changes
-                            else{
-                                if(!commandParameters[1].includes("%") && changedSheet[currentNationID][k].includes("%")){
-                                    alert("You attempted to change " + commandParameters[2] +  ", which is written in percentages. You wrote " + commandParameters[1] + ". Aborted.");
-                                    found = true;
-                                    break;
-                                }else if(commandParameters[1].includes("%") && !changedSheet[currentNationID][k].includes("%")){
-                                    alert("You attempted to change " + commandParameters[2] + ", which is written without percentages. Your wrote : " + commandParameters[1] + ". Aborted.");
-                                    found = true;
-                                    break;
-                                }
-
-                                if(commandParameters[0] == '+' || commandParameters[0] == 'add'){
-                                    changedSheet[currentNationID][k] = (+changedSheet[currentNationID][k] + +commandParameters[1].replace("%", "")) + (changedSheet[currentNationID][k].includes("%") ? "%" : "");
-                                }else if(commandParameters[0] == '-' || commandParameters[0] == 'sub'){
-                                    changedSheet[currentNationID][k] = (+changedSheet[currentNationID][k] - +commandParameters[1].replace("%", "")) + (changedSheet[currentNationID][k].includes("%") ? "%" : "");
-                                }else if(commandParameters[0] == '=' || commandParameters[0] == 'set'){
-                                    changedSheet[currentNationID][k] = commandParameters[1];
-                                }else{
-                                    alert("Function wasn't understood: " + commandParameters[0] + ".\r\n Aborting.");
-                                }
-                            }
-                            found = true;
-                            break;
-                        }
-                    }
-                    if(found == true) break;
-                }
-                if(found == false) alert("A stat name was not written correctly in change commands file: " + commandParameters[2]);
+                const START = currentSheetRestrictionID == null ? 0 : currentSheetRestrictionID;
+                const END = currentSheetRestrictionID == null ? changedSheets.length : currentSheetRestrictionID;
+                normalCommandWithAlert(START, END);
             }
             /* alert("notice me baka"); */
         }
@@ -167,4 +128,47 @@ function loadChangesFromFile(event){
 
 function sync(){
     //not implemented yet
+}
+
+function normalCommandWithAlert(beginning, end){
+    if(!normalCommand(beginning, end)) alert("A stat name was not written correctly in change commands file: " + commandParameters[2]);
+}
+
+function normalCommand(beginning, end){
+    for (let i = beginning; i < end; i++) {
+        const changedSheet = changedSheets[i];
+        for (let j = 0; j < changedSheet[0].length; j++) {
+            const StatCell = changedSheet[0][j];
+            if(StatCell.toLowerCase().trim() == commandParameters[2]){
+                found = true;
+                //if the stat in question is a formula, throw an error too
+                if(changedSheet[currentNationID][j].toString().startsWith("="))
+                    alert("A stat that is described as a formula has been attempted changed: " + commandParameters[2] + ".\r\n Action has been aborted."); 
+                //changes
+                else changeStats(changedSheet, currentNationID, j);
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+function changeStats(sheet, nationRow, statColumn){
+    if(!commandParameters[1].includes("%") && sheet[nationRow][statColumn].includes("%")){
+        alert("You attempted to change " + commandParameters[2] +  ", which is written in percentages. You wrote " + commandParameters[1] + ". Aborted.");
+        return;
+    }else if(commandParameters[1].includes("%") && !sheet[nationRow][statColumn].includes("%")){
+        alert("You attempted to change " + commandParameters[2] + ", which is written without percentages. Your wrote : " + commandParameters[1] + ". Aborted.");
+        return;
+    }
+
+    if(commandParameters[0] == '+' || commandParameters[0] == 'add'){
+        sheet[nationRow][statColumn] = (+sheet[nationRow][statColumn] + +commandParameters[1].replace("%", "")) + (sheet[nationRow][statColumn].includes("%") ? "%" : "");
+    }else if(commandParameters[0] == '-' || commandParameters[0] == 'sub'){
+        sheet[nationRow][statColumn] = (+sheet[nationRow][statColumn] - +commandParameters[1].replace("%", "")) + (sheet[nationRow][statColumn].includes("%") ? "%" : "");
+    }else if(commandParameters[0] == '=' || commandParameters[0] == 'set'){
+        sheet[nationRow][statColumn] = commandParameters[1];
+    }else{
+        alert("Function wasn't understood: " + commandParameters[0] + ".\r\n Aborting.");
+    }
 }
