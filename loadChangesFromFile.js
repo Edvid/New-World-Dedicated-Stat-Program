@@ -81,13 +81,17 @@ function loadChangesFromFile(event){
                     commandParameters = cc.split("\t");
                 }else{
                     let match = commandRegex.exec(cc);
-                if (!commandRegex.test(cc)){
-                    alert("At line " + (changeCommandIndex + 1) + "\r\n\r\nA command wasn't understood:\r\n" + cc + "\r\n Aborting.");
-                    continue;
-                }
-                commandParameters[0] = match.groups.Operand.trim();
-                commandParameters[1] = match.groups.Amount;
-                commandParameters[2] = match.groups.Stat_Name;
+                    if (!commandRegex.test(cc)){
+                        alert("At line " + (changeCommandIndex + 1) + "\r\n\r\nA command wasn't understood:\r\n" + cc + "\r\n Aborting.");
+                        continue;
+                    }
+                    commandParameters[0] = match.groups.Operand.trim();
+                    
+                    commandParameters[1] = match.groups.Amount;
+                    if(/^\".+\"$/.test(commandParameters[1]))
+                        commandParameters[1] = commandParameters[1].substring(1, commandParameters[1].length - 1);
+                    
+                    commandParameters[2] = match.groups.Stat_Name;
                 }
 
                 const START = currentSheetRestrictionID == null ? 0 : currentSheetRestrictionID;
