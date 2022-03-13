@@ -11,7 +11,7 @@ function loadChangesFromFile(event){
         changes = e.target.result.split("\r\n");
         changedSheets = JSON.parse(JSON.stringify(sheets)); //but make sure it's copied not referenced
         //console.log(changedSheets);
-        const commandRegex = /(?<Operand>([a-z]+)( |\t)|(\+|\=|\-)( |\t)?)(?<Amount>(\".+\")|(.+?))( |\t)(?<Stat_Name>.+)/gi;
+        const commandRegex = /(?<Operand>([a-z]+)( |\t)|(\+|\=|\-)( |\t)?)(?<Amount>(\".+\")|(.+?))( |\t)(?<Stat_Name>.+)/i;
 
         
         let currentSheetRestrictionID;
@@ -52,7 +52,7 @@ function loadChangesFromFile(event){
                     }
                     if(found == true) break;
                 }
-                if(found == false) alert("At line " + (changeCommandIndex + 1) + "\r\n\r\nA nation name was not written correctly in change commands file: " + currentNation.length > 0 ? currentNation : "λ");
+                if(found == false) alert("At line " + (changeCommandIndex + 1) + "\r\n\r\nA nation name was not written correctly in change commands file: " + (currentNation.length > 0 ? currentNation : "λ"));
             }
             //sheet restriction command
             else if(cc[0] == '@'){
@@ -70,7 +70,7 @@ function loadChangesFromFile(event){
                             break;
                         }
                     }
-                    if(found == false) alert("At line " + (changeCommandIndex + 1) + "\r\n\r\nA sheet change restriction was attmpted to be set, but sheet was not found. No sheet with name: " + currentSheet.length > 0 ? currentSheet : "λ");
+                    if(found == false) alert("At line " + (changeCommandIndex + 1) + "\r\n\r\nA sheet change restriction was attmpted to be set, but sheet was not found. No sheet with name: " + (currentSheet.length > 0 ? currentSheet : "λ"));
 
                 }
             }
@@ -81,7 +81,10 @@ function loadChangesFromFile(event){
                     commandParameters = cc.split("\t");
                 }else{
                     let match = commandRegex.exec(cc);
-                commandRegex.test(cc); // DO NOT ASK ME WHY IS IS NECESSARY. The match sometimes just turns out null if not tested first.
+                if (!commandRegex.test(cc)){
+                    alert("At line " + (changeCommandIndex + 1) + "\r\n\r\nA command wasn't understood:\r\n" + cc + "\r\n Aborting.");
+                    continue;
+                }
                 commandParameters[0] = match.groups.Operand.trim();
                 commandParameters[1] = match.groups.Amount;
                 commandParameters[2] = match.groups.Stat_Name;
@@ -135,7 +138,7 @@ function sync(){
 }
 
 function normalCommandWithAlert(beginning, end){
-    if(!normalCommand(beginning, end)) alert("At line " + (changeCommandIndex + 1) + "\r\n\r\nA stat name was not written correctly in change commands file: " + commandParameters[2].length > 0 ? commandParameters[2] : "λ");
+    if(!normalCommand(beginning, end)) alert("At line " + (changeCommandIndex + 1) + "\r\n\r\nA stat name was not written correctly in change commands file: " + (commandParameters[2].length > 0 ? commandParameters[2] : "λ"));
 }
 
 function normalCommand(beginning, end){
@@ -167,10 +170,10 @@ function normalCommand(beginning, end){
 
 function changeStats(sheet, row, column){
     
-    if(!commandParameters[1].includes("%") && sheet[row][column].includes("%")){
+    if(!(/^[\d|\.].+%$/.test(commandParameters[1])) && (/^[\d|\.].+%$/.test(sheet[row][column]))){
         alert("At line " + (changeCommandIndex + 1) + "\r\n\r\nYou attempted to change " + commandParameters[2] +  ", which is written in percentages. You wrote " + commandParameters[1] + ". Aborted.");
         return;
-    }else if(commandParameters[1].includes("%") && !sheet[row][column].includes("%")){
+    }else if((/^[\d|\.].+%$/.test(commandParameters[1])) && !(/^[\d|\.].+%$/.test(sheet[row][column]))){
         alert("At line " + (changeCommandIndex + 1) + "\r\n\r\nYou attempted to change " + commandParameters[2] + ", which is written without percentages. Your wrote : " + commandParameters[1] + ". Aborted.");
         return;
     }
@@ -182,6 +185,6 @@ function changeStats(sheet, row, column){
     }else if(commandParameters[0] == '=' || commandParameters[0] == 'set'){
         sheet[row][column] = commandParameters[1];
     }else{
-        alert("At line " + (changeCommandIndex + 1) + "\r\n\r\nFunction wasn't understood: " + commandParameters[0] + ".\r\n Aborting.");
+        alert("At line " + (changeCommandIndex + 1) + "\r\n\r\nOperand wasn't understood: " + commandParameters[0] + ".\r\n Aborting.");
     }
 }
