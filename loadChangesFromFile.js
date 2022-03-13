@@ -76,12 +76,16 @@ function loadChangesFromFile(event){
             }
             //normal commands
             else{
-                let match = commandRegex.exec(cc);
-                commandRegex.test(cc); // DO NOT ASK ME WHY IS IS NECESSARY. The match sometimes just turns out null if not tested first.
                 commandParameters = [];
+                if(cc.replace(/[^\t]/g, "").length >= 2){
+                    commandParameters = cc.split("\t");
+                }else{
+                    let match = commandRegex.exec(cc);
+                commandRegex.test(cc); // DO NOT ASK ME WHY IS IS NECESSARY. The match sometimes just turns out null if not tested first.
                 commandParameters[0] = match.groups.Operand.trim();
                 commandParameters[1] = match.groups.Amount;
                 commandParameters[2] = match.groups.Stat_Name;
+                }
 
                 const START = currentSheetRestrictionID == null ? 0 : currentSheetRestrictionID;
                 const END = currentSheetRestrictionID == null ? changedSheets.length : currentSheetRestrictionID + 1;
