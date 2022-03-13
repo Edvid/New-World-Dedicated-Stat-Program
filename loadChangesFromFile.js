@@ -52,7 +52,7 @@ function loadChangesFromFile(event){
                     }
                     if(found == true) break;
                 }
-                if(found == false) alert("At line " + (changeCommandIndex + 1) + "\r\n\r\nA nation name was not written correctly in change commands file: " + currentNation);
+                if(found == false) alert("At line " + (changeCommandIndex + 1) + "\r\n\r\nA nation name was not written correctly in change commands file: " + currentNation.length > 0 ? currentNation : "λ");
             }
             //sheet restriction command
             else if(cc[0] == '@'){
@@ -70,7 +70,7 @@ function loadChangesFromFile(event){
                             break;
                         }
                     }
-                    if(found == false) alert("At line " + (changeCommandIndex + 1) + "\r\n\r\nA sheet change restriction was attmpted to be set, but sheet was not found. No sheet with name: " + currentSheet);
+                    if(found == false) alert("At line " + (changeCommandIndex + 1) + "\r\n\r\nA sheet change restriction was attmpted to be set, but sheet was not found. No sheet with name: " + currentSheet.length > 0 ? currentSheet : "λ");
 
                 }
             }
@@ -135,7 +135,7 @@ function sync(){
 }
 
 function normalCommandWithAlert(beginning, end){
-    if(!normalCommand(beginning, end)) alert("At line " + (changeCommandIndex + 1) + "\r\n\r\nA stat name was not written correctly in change commands file: " + commandParameters[2]);
+    if(!normalCommand(beginning, end)) alert("At line " + (changeCommandIndex + 1) + "\r\n\r\nA stat name was not written correctly in change commands file: " + commandParameters[2].length > 0 ? commandParameters[2] : "λ");
 }
 
 function normalCommand(beginning, end){
