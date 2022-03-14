@@ -1,20 +1,11 @@
 let changedSheetsEvaluated = [];
 
 function evaluateSheets(){
-  changedSheetsEvaluated = JSON.parse(JSON.stringify(changedSheets));
-  for(let s = 0; s < changedSheets.length; s++){
-    const changedSheetEvaluated = changedSheetsEvaluated[s];
-    for(let r = 0; r < changedSheetEvaluated.length; r++){
-      const changedNationRowEvaluated = changedSheetEvaluated[r];
-      for(let c = 0; c < changedNationRowEvaluated.length; c++){
-        const changedCellEvaluated = changedNationRowEvaluated[c];
-        if(/^[^=].+/.test(changedCellEvaluated)) continue;
-          evalutateCell(s, r, c);
-      }
-    }
-  }
-}
-
-function evalutateCell(sheet, row, cell){
-  //bunch of evaluation work        
+  const hfInstance = HyperFormula.buildEmpty(options);
+  for(let i = 0; i < sheetNames.length; i++){
+    let sheetI = hfInstance.getSheetId(hfInstance.addSheet(sheetNames[i]));
+    hfInstance.setSheetContent(sheetI, sheets[i]);
+  }  
+  changedSheetsEvaluated = hfInstance.getAllSheetsValues()
+  console.log(changedSheetsEvaluated);
 }
