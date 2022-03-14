@@ -95,10 +95,7 @@ function loadChangesFromFile(event){
                     
                     commandParameters[2] = match.groups.Stat_Name;
                 }
-
-                const START = currentSheetRestrictionID == null ? 0 : currentSheetRestrictionID;
-                const END = currentSheetRestrictionID == null ? changedSheets.length : currentSheetRestrictionID + 1;
-                normalCommandWithAlert(START, END);
+                normalCommandWithAlert(currentSheetRestrictionID);
             }
         }
 
@@ -165,16 +162,53 @@ function sync(nationRow){
     //clear recruit cost variable
     NewRecruitCostsUnitUpkeepUnit[nationRow] = 0;
     //deal with automatic debt taking
+    //not implemented yet
     //copy dailies
+    changedSheets[0][nationRow][1] = changedSheetsEvaluated[0][nationRow][2]; //population
+    changedSheets[0][nationRow][3] = changedSheetsEvaluated[0][nationRow][4]; //literacy
+    changedSheets[0][nationRow][5] = changedSheetsEvaluated[0][nationRow][6]; //high education
+    changedSheets[0][nationRow][7] = changedSheetsEvaluated[0][nationRow][8]; //budget
+    changedSheets[0][nationRow][9] = changedSheetsEvaluated[0][nationRow][10]; //food
+    changedSheets[0][nationRow][11] = changedSheetsEvaluated[0][nationRow][12]; //research points
+    changedSheets[0][nationRow][13] = changedSheetsEvaluated[0][nationRow][14]; //public debt length
+    changedSheets[0][nationRow][15] = changedSheetsEvaluated[0][nationRow][16]; //culture power
+    
+    changedSheets[0][nationRow][19] = changedSheetsEvaluated[0][nationRow][20]; //Date in this nation
 }
 
 function findCellCoordFromNames(nationID, statName){
-    //not implemented yet
+    for (let i = 0; i < sheets.length; i++) {
+        findCellCoordFromNamesSheetRestricted(sheetNames[i], nationID, statName);
+    }
 }
 
 function findCellCoordFromNamesSheetRestricted(sheetName, nationID, statName){
-    //not implemented yet
+    const sheetID = sheetNames.findIndex(element => element == sheetName);
+    const statCount = checkIfMoreStatsThanRowLength(sheetName, changedSheets[sheetID][0].length);
+    for (let j = 0; j < statCount; j++) {
+        let statNameCoord = {row: 0, column: j};
+        statNameCoord = checkUniqueSheetLayout(sheetName, statNameCoord);
+        const StatNameCell = changedSheets[sheetID][statNameCoord.row][statNameCoord.column];
+        if(StatNameCell.toLowerCase().trim() == statName){
+            let statChangeCoord = {row: nationID, column: j};
+            statChangeCoord = checkUniqueSheetLayout(sheetName, statChangeCoord);
+            const StatCell = changedSheets[sheetID][statChangeCoord.row][statChangeCoord.column];
+            //if the stat in question is a formula, throw an error too
+            if(StatCell.toString().startsWith("="))
+                alert("At line " + (changeCommandIndex + 1) + "\r\n\r\nA stat that is described as a formula has been attempted changed: " + statName + ".\r\n Action has been aborted.");                         
+            return {
+                sheet: sheetID,
+                row: statChangeCoord.row, 
+                column: statChangeCoord.column,
+                nameCoord: {
+                    row: statNameCoord.row,
+                    column: statNameCoord.column
+                }
+            };
+        }
+    }
 }
+
 function sync(){
     evaluateSheets();
     for (let j = 0; j < changedSheets.length; j++) {
@@ -189,40 +223,28 @@ function sync(){
     }
 }
 
-function normalCommandWithAlert(beginning, end){
-    if(!normalCommand(beginning, end)) alert("At line " + (changeCommandIndex + 1) + "\r\n\r\nA stat name was not written correctly in change commands file: " + (commandParameters[2].length > 0 ? commandParameters[2] : "λ"));
+function normalCommandWithAlert(currentSheetRestrictionID){
+    if(!normalCommand(currentSheetRestrictionID)) alert("At line " + (changeCommandIndex + 1) + "\r\n\r\nA stat name was not written correctly in change commands file: " + (commandParameters[2].length > 0 ? commandParameters[2] : "λ"));
 }
 
-function normalCommand(beginning, end){
-    for (let i = beginning; i < end; i++) {
-        const changedSheet = changedSheets[i];
-        
-        
-        const statCount = checkIfMoreStatsThanRowLength(sheetNames[i], changedSheet[0].length);
-        for (let j = 0; j < statCount; j++) {
-            let statNameCoord = {row: 0, column: j};
-            statNameCoord = checkUniqueSheetLayout(sheetNames[i], statNameCoord);
-            const StatNameCell = changedSheet[statNameCoord.row][statNameCoord.column];
-            if(StatNameCell.toLowerCase().trim() == commandParameters[2]){
-                found = true;
-                //if the stat in question is a formula, throw an error too
-                let statChangeCoord = {row: currentNationID, column: j};
-                statChangeCoord = checkUniqueSheetLayout(sheetNames[i], statChangeCoord);
-                const StatCell = changedSheet[statChangeCoord.row][statChangeCoord.column];
-                if(StatCell.toString().startsWith("="))
-                    alert("At line " + (changeCommandIndex + 1) + "\r\n\r\nA stat that is described as a formula has been attempted changed: " + commandParameters[2] + ".\r\n Action has been aborted."); 
-                //changes
-                else changeStats(changedSheet, i, statNameCoord, statChangeCoord, currentNationID);
-                return true;
-            }
-        }
+function normalCommand(currentSheetRestrictionID){
+    let coordFound;
+    if(currentSheetRestrictionID != null){
+        coordFound = findCellCoordFromNamesSheetRestricted(sheetNames[currentSheetRestrictionID], currentNationID, commandParameters[2]);
+    }else{
+        coordFound = findCellCoordFromNames(currentNationID, commandParameters[2]);
+    }
+
+    if(coordFound != null){
+        changeStats(changedSheet, coordFound.nameCoord, coordFound, currentNationID);
+        return true;
     }
     return false;
 }
 
-function changeStats(sheet, sheetIndex, name, cell, nationRow){
-    const row = cell.row;
-    const column = cell.column;
+function changeStats(sheet, name, cellinfo, nationRow){
+    const row = cellinfo.row;
+    const column = cellinfo.column;
     
     if(!(/^[\d|\.].+%$/.test(commandParameters[1])) && (/^[\d|\.].+%$/.test(sheet[row][column]))){
         alert("At line " + (changeCommandIndex + 1) + "\r\n\r\nYou attempted to change " + commandParameters[2] +  ", which is written in percentages. You wrote " + commandParameters[1] + ". Aborted.");
@@ -234,14 +256,14 @@ function changeStats(sheet, sheetIndex, name, cell, nationRow){
 
     if(commandParameters[0] == '+' || commandParameters[0] == 'add'){
         sheet[row][column] = (+sheet[row][column] + +commandParameters[1].replace("%", "")) + (sheet[row][column].includes("%") ? "%" : "");
-        specialOperation(name, sheetIndex, commandParameters[1], nationRow);
+        specialOperation(cellinfo, commandParameters[1], nationRow);
     }else if(commandParameters[0] == '-' || commandParameters[0] == 'sub'){
         sheet[row][column] = (+sheet[row][column] - +commandParameters[1].replace("%", "")) + (sheet[row][column].includes("%") ? "%" : "");
-        specialOperation(name, sheetIndex, -commandParameters[1], nationRow);
+        specialOperation(cellinfo, -commandParameters[1], nationRow);
     }else if(commandParameters[0] == '=' || commandParameters[0] == 'set'){
         const previous = JSON.parse(JSON.stringify(sheet[row][column]));
         sheet[row][column] = commandParameters[1];
-        specialOperation(name, sheetIndex, commandParameters[1] - previous, nationRow);
+        specialOperation(cellinfo, commandParameters[1] - previous, nationRow);
     }else{
         alert("At line " + (changeCommandIndex + 1) + "\r\n\r\nOperand wasn't understood: " + commandParameters[0] + ".\r\n Aborting.");
     }

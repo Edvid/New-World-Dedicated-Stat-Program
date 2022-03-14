@@ -1,7 +1,7 @@
 let NewRecruitCostsUnitUpkeepUnit = [];
 
 function specialOperation(name, sheetIndex, change, nationRow){
-    if(sheetIndex == sheetNames.find(element > element == "Armies")){
+    if(sheetIndex == sheetNames.findIndex(element => element == "Armies")){
         if(name == "Levies") {
             NewRecruitCostsUnitUpkeepUnit[nationRow] += change * 0.75 / 1000;
         }else if(name == "Light Infantry"){
