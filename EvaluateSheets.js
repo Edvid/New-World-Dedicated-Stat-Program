@@ -1,3 +1,9 @@
+// define the options
+const options = {
+  licenseKey: 'gpl-v3',
+  precisionRounding: 5
+};
+
 let changedSheetsEvaluated = [];
 
 function evaluateSheets(){
@@ -6,6 +12,5 @@ function evaluateSheets(){
     let sheetI = hfInstance.getSheetId(hfInstance.addSheet(sheetNames[i]));
     hfInstance.setSheetContent(sheetI, sheets[i]);
   }  
-  changedSheetsEvaluated = hfInstance.getAllSheetsValues()
-  console.log(changedSheetsEvaluated);
+  changedSheetsEvaluated = hfInstance.getAllSheetsValues();
 }

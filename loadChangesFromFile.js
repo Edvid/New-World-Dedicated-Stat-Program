@@ -101,8 +101,16 @@ function loadChangesFromFile(event){
         }
 
         evaluateSheets();
-
+        
         //print to console
+        console.log("evaluated");
+        
+        for (const [key, value] of Object.entries(changedSheetsEvaluated)){
+            console.log(key);
+            console.table(value)
+        }
+
+        console.log("unevaluated");
         changedSheets.forEach(changedSheet => {
             console.table(changedSheet); 
         }); 
