@@ -177,7 +177,7 @@ function normalCommand(beginning, end){
                 if(StatCell.toString().startsWith("="))
                     alert("At line " + (changeCommandIndex + 1) + "\r\n\r\nA stat that is described as a formula has been attempted changed: " + commandParameters[2] + ".\r\n Action has been aborted."); 
                 //changes
-                else changeStats(changedSheet, statChangeCoord.row, statChangeCoord.column);
+                else changeStats(changedSheet, i, statNameCoord, statChangeCoord);
                 return true;
             }
         }
@@ -185,7 +185,9 @@ function normalCommand(beginning, end){
     return false;
 }
 
-function changeStats(sheet, row, column){
+function changeStats(sheet, sheetIndex, name, cell){
+    const row = cell.row;
+    const column = cell.column;
     
     if(!(/^[\d|\.].+%$/.test(commandParameters[1])) && (/^[\d|\.].+%$/.test(sheet[row][column]))){
         alert("At line " + (changeCommandIndex + 1) + "\r\n\r\nYou attempted to change " + commandParameters[2] +  ", which is written in percentages. You wrote " + commandParameters[1] + ". Aborted.");
@@ -197,10 +199,14 @@ function changeStats(sheet, row, column){
 
     if(commandParameters[0] == '+' || commandParameters[0] == 'add'){
         sheet[row][column] = (+sheet[row][column] + +commandParameters[1].replace("%", "")) + (sheet[row][column].includes("%") ? "%" : "");
+        specialOperation(name, sheetIndex, commandParameters[1]);
     }else if(commandParameters[0] == '-' || commandParameters[0] == 'sub'){
         sheet[row][column] = (+sheet[row][column] - +commandParameters[1].replace("%", "")) + (sheet[row][column].includes("%") ? "%" : "");
+        specialOperation(name, sheetIndex, -commandParameters[1]);
     }else if(commandParameters[0] == '=' || commandParameters[0] == 'set'){
+        const previous = JSON.parse(JSON.stringify(sheet[row][column]));
         sheet[row][column] = commandParameters[1];
+        specialOperation(name, sheetIndex, commandParameters[1] - previous);
     }else{
         alert("At line " + (changeCommandIndex + 1) + "\r\n\r\nOperand wasn't understood: " + commandParameters[0] + ".\r\n Aborting.");
     }
