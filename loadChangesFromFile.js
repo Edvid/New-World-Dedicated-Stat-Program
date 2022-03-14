@@ -28,8 +28,10 @@ function loadChangesFromFile(event){
             else if(cc.includes("sync")){
                 
                 if(cc.includes("<")){
+                    evaluateSheets();
                     sync(currentNationID);
                 }else{
+                    evaluateSheets();
                     sync();
                 }
                 
@@ -147,11 +149,44 @@ function loadChangesFromFile(event){
     reader.readAsText(file);
 }
 
-function sync(){
-    evaluateSheets();
+function sync(nationRow){
     //deal with new recruit costs
+    const budgetCoord = findCellCoordFromNamesSheetRestricted("Daily Stuff", nationRow, "Budget");
+    const ArmyQualityCoord = findCellCoordFromNames(nationRow, "Army Quality");
+    const ArmyQualityValue = changedSheetsEvaluated[ArmyQualityCoord.row][ArmyQualityCoord.column];
+    const CorruptionCoord = findCellCoordFromNames(nationRow, "Corruption");
+    const CorrutionValue = changedSheetsEvaluated[CorruptionCoord.row][CorruptionCoord.column];
+    const ArmyWagesCoord = findCellCoordFromNames(nationRow, "Army Wages");
+    const ArmyWagesValue = changedSheetsEvaluated[ArmyWagesCoord.row][ArmyWagesCoord.column];
+    const TimeDivideCoord = findCellCoordFromNames(nationRow, "Time Divide");
+    const TimeDivideValue = changedSheetsEvaluated[TimeDivideCoord.row][TimeDivideCoord.column];
+
+    changedSheets[budgetCoord.row][budgetCoord.column] -= (NewRecruitCostsUnitUpkeepUnit*((ArmyQualityValue+CorrutionValue / 5 ) + ArmyWagesValue -1) / TimeDivideValue) / 2.0; 
+    //clear recruit cost variable
+    NewRecruitCostsUnitUpkeepUnit[nationRow] = 0;
     //deal with automatic debt taking
     //copy dailies
+}
+
+function findCellCoordFromNames(nationID, statName){
+    //not implemented yet
+}
+
+function findCellCoordFromNamesSheetRestricted(sheetName, nationID, statName){
+    //not implemented yet
+}
+function sync(){
+    evaluateSheets();
+    for (let j = 0; j < changedSheets.length; j++) {
+        const changedSheet = changedSheets[j];
+        //if Column A, row 2 starts with a '=', look for nation names in another sheet
+        if(changedSheet[1][0].startsWith("=")) continue;
+        for (let k = 0; k < changedSheet.length; k++) {
+            const NationCell = changedSheet[k][0];
+            if(NationCell.trim().length < 1) continue;
+            sync(NationCell);
+        }
+    }
 }
 
 function normalCommandWithAlert(beginning, end){
@@ -177,7 +212,7 @@ function normalCommand(beginning, end){
                 if(StatCell.toString().startsWith("="))
                     alert("At line " + (changeCommandIndex + 1) + "\r\n\r\nA stat that is described as a formula has been attempted changed: " + commandParameters[2] + ".\r\n Action has been aborted."); 
                 //changes
-                else changeStats(changedSheet, i, statNameCoord, statChangeCoord);
+                else changeStats(changedSheet, i, statNameCoord, statChangeCoord, currentNationID);
                 return true;
             }
         }
@@ -185,7 +220,7 @@ function normalCommand(beginning, end){
     return false;
 }
 
-function changeStats(sheet, sheetIndex, name, cell){
+function changeStats(sheet, sheetIndex, name, cell, nationRow){
     const row = cell.row;
     const column = cell.column;
     
@@ -199,14 +234,14 @@ function changeStats(sheet, sheetIndex, name, cell){
 
     if(commandParameters[0] == '+' || commandParameters[0] == 'add'){
         sheet[row][column] = (+sheet[row][column] + +commandParameters[1].replace("%", "")) + (sheet[row][column].includes("%") ? "%" : "");
-        specialOperation(name, sheetIndex, commandParameters[1]);
+        specialOperation(name, sheetIndex, commandParameters[1], nationRow);
     }else if(commandParameters[0] == '-' || commandParameters[0] == 'sub'){
         sheet[row][column] = (+sheet[row][column] - +commandParameters[1].replace("%", "")) + (sheet[row][column].includes("%") ? "%" : "");
-        specialOperation(name, sheetIndex, -commandParameters[1]);
+        specialOperation(name, sheetIndex, -commandParameters[1], nationRow);
     }else if(commandParameters[0] == '=' || commandParameters[0] == 'set'){
         const previous = JSON.parse(JSON.stringify(sheet[row][column]));
         sheet[row][column] = commandParameters[1];
-        specialOperation(name, sheetIndex, commandParameters[1] - previous);
+        specialOperation(name, sheetIndex, commandParameters[1] - previous, nationRow);
     }else{
         alert("At line " + (changeCommandIndex + 1) + "\r\n\r\nOperand wasn't understood: " + commandParameters[0] + ".\r\n Aborting.");
     }
