@@ -138,7 +138,10 @@ function loadChangesFromFile(event){
 }
 
 function sync(){
-    //not implemented yet
+    evaluateSheets();
+    //deal with new recruit costs
+    //deal with automatic debt taking
+    //copy dailies
 }
 
 function normalCommandWithAlert(beginning, end){
