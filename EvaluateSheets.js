@@ -1,7 +1,5 @@
 let changedSheetsEvaluated = [];
 
-//at sync and at last line of change commands regardless of sync: call evaluateSheets();
-
 function evaluateSheets(){
   changedSheetsEvaluated = JSON.parse(JSON.stringify(changedSheets));
   for(let s = 0; s < changedSheets.length; s++){
@@ -11,8 +9,12 @@ function evaluateSheets(){
       for(let c = 0; c < changedNationRowEvaluated.length; c++){
         const changedCellEvaluated = changedNationRowEvaluated[c];
         if(/^[^=].+/.test(changedCellEvaluated)) continue;
-        //bunch of evaluation work
+          evalutateCell(s, r, c);
       }
     }
   }
+}
+
+function evalutateCell(sheet, row, cell){
+  //bunch of evaluation work        
 }

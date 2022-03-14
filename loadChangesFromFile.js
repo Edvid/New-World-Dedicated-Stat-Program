@@ -100,6 +100,8 @@ function loadChangesFromFile(event){
             }
         }
 
+        evaluateSheets();
+
         //print to console
         changedSheets.forEach(changedSheet => {
             console.table(changedSheet); 
