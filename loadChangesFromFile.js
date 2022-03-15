@@ -29,10 +29,10 @@ function loadChangesFromFile(event){
                 
                 if(cc.includes("<")){
                     evaluateSheets();
-                    sync(currentNationID);
+                    syncNation(currentNationID);
                 }else{
                     evaluateSheets();
-                    sync();
+                    syncNations();
                 }
                 
             }
@@ -146,8 +146,10 @@ function loadChangesFromFile(event){
     reader.readAsText(file);
 }
 
-function sync(nationRow){
+function syncNation(nationRow){
     //deal with new recruit costs
+    
+    console.log("hey høy");
     const budgetCoord = findCellCoordFromNamesSheetRestricted("Daily Stuff", nationRow, "Budget");
     const ArmyQualityCoord = findCellCoordFromNames(nationRow, "Army Quality");
     const ArmyQualityValue = changedSheetsEvaluated[ArmyQualityCoord.row][ArmyQualityCoord.column];
@@ -161,6 +163,8 @@ function sync(nationRow){
     changedSheets[budgetCoord.row][budgetCoord.column] -= (NewRecruitCostsUnitUpkeepUnit*((ArmyQualityValue+CorrutionValue / 5 ) + ArmyWagesValue -1) / TimeDivideValue) / 2.0; 
     //clear recruit cost variable
     NewRecruitCostsUnitUpkeepUnit[nationRow] = 0;
+
+    
     //deal with automatic debt taking
     //not implemented yet
     //copy dailies
@@ -178,13 +182,15 @@ function sync(nationRow){
 
 function findCellCoordFromNames(nationID, statName){
     for (let i = 0; i < sheets.length; i++) {
-        findCellCoordFromNamesSheetRestricted(sheetNames[i], nationID, statName);
+        let coord = findCellCoordFromNamesSheetRestricted(sheetNames[i], nationID, statName);
+        if(coord != null) return coord;
     }
 }
 
 function findCellCoordFromNamesSheetRestricted(sheetName, nationID, statName){
     const sheetID = sheetNames.findIndex(element => element == sheetName);
     const statCount = checkIfMoreStatsThanRowLength(sheetName, changedSheets[sheetID][0].length);
+    console.log("hey høy: " + statName);
     for (let j = 0; j < statCount; j++) {
         let statNameCoord = {row: 0, column: j};
         statNameCoord = checkUniqueSheetLayout(sheetName, statNameCoord);
@@ -209,7 +215,8 @@ function findCellCoordFromNamesSheetRestricted(sheetName, nationID, statName){
     }
 }
 
-function sync(){
+function syncNations(){
+    console.log("who the fuck called me!");
     evaluateSheets();
     for (let j = 0; j < changedSheets.length; j++) {
         const changedSheet = changedSheets[j];
@@ -218,7 +225,7 @@ function sync(){
         for (let k = 0; k < changedSheet.length; k++) {
             const NationCell = changedSheet[k][0];
             if(NationCell.trim().length < 1) continue;
-            sync(NationCell);
+            syncNation(k);
         }
     }
 }
@@ -236,13 +243,14 @@ function normalCommand(currentSheetRestrictionID){
     }
 
     if(coordFound != null){
-        changeStats(changedSheet, coordFound.nameCoord, coordFound, currentNationID);
+        changeStats(coordFound, currentNationID);
         return true;
     }
     return false;
 }
 
-function changeStats(sheet, name, cellinfo, nationRow){
+function changeStats(cellinfo, nationRow){
+    const sheet = changedSheets[cellinfo.sheet];
     const row = cellinfo.row;
     const column = cellinfo.column;
     
