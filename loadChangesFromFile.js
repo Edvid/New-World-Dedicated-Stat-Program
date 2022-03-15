@@ -29,9 +29,11 @@ function loadChangesFromFile(event){
                 
                 if(cc.includes("<")){
                     evaluateSheets();
+                    console.log(changedSheetsEvaluated);
                     syncNation(currentNationID);
                 }else{
                     evaluateSheets();
+                    console.log(changedSheetsEvaluated);
                     syncNations();
                 }
                 
@@ -99,20 +101,12 @@ function loadChangesFromFile(event){
             }
         }
 
-        evaluateSheets();
-        
-        //print to console
-        console.log("evaluated");
-        
+        /* evaluateSheets();        
         for (const [key, value] of Object.entries(changedSheetsEvaluated)){
             console.log(key);
             console.table(value)
         }
-
-        console.log("unevaluated");
-        changedSheets.forEach(changedSheet => {
-            console.table(changedSheet); 
-        }); 
+ */
         //paste to textfield
         
         for (let i = 0; i < changedSheets.length; i++) {
@@ -129,16 +123,63 @@ function loadChangesFromFile(event){
             }    
 
             let currentTextfield = document.createElement("textarea");
-            currentTextfield.cols = 50;
-            currentTextfield.rows = 4;
+            currentTextfield.cols = 20;
+            currentTextfield.rows = 2;
             currentTextfield.name = sheetNames[i];
             currentTextfield.value = text;
-            let currentTextfieldTitle = document.createElement("h1");
+            let currentTextfieldTitle = document.createElement("h3");
             currentTextfieldTitle.style.textTransform = "capitalize";
             currentTextfieldTitle.style.color = JSON.stringify(sheets[i]) == JSON.stringify(changedSheets[i]) ? "lightgrey" : "black";
             currentTextfieldTitle.innerHTML = sheetNames[i];
             document.body.appendChild(currentTextfieldTitle);
             document.body.appendChild(currentTextfield);
+        }
+
+        // Parse to evaluated sheets
+
+        primaryColor = ["red", "green", "blue", "purple", "Dark Orange"];
+        secondaryColor = ["pink", "light green", "baby blue", "magenta", "Orange"];
+        
+        let fewestRowsinSheets = 10000;
+        for (const [key, value] of Object.entries(changedSheetsEvaluated)){
+            if(fewestRowsinSheets > value.length && key != "Trade Zone Wealth") fewestRowsinSheets = value.length;
+        }
+
+        console.log(fewestRowsinSheets);
+        
+        for (let row = 1; row < fewestRowsinSheets; row++) {
+            let nationName = document.createElement("h1");
+            nationName.innerHTML = changedSheetsEvaluated["Daily Stuff"][row][0]; 
+            document.body.appendChild(nationName);
+            for (let sheetIndex = 0; sheetIndex < sheets.length; sheetIndex++) {
+                if(sheetNames[sheetIndex] == "Trade Zone Wealth") continue;
+                const sheetRows = changedSheetsEvaluated[sheetNames[sheetIndex]];
+                let nationTable = document.createElement("table");
+                nationTable.style.borderCollapse = "collapse";
+                let nationTableTitle = document.createElement("h2");
+                nationTableTitle.innerHTML = sheetNames[sheetIndex];
+                let StatNames = document.createElement("tr");
+                let StatCells = document.createElement("tr");
+                for (let column = 0; column < sheetRows[0].length; column++) {
+                    const StatNameText = sheetRows[0][column];
+                    console.log(row);
+                    const StatCellText = sheetRows[row][column];
+                    StatName = document.createElement("th");
+                    StatName.style.border = "2px solid #444"
+                    StatName.style.backgroundColor = primaryColor[row % primaryColor.length];
+                    StatName.innerHTML = StatNameText;
+                    StatNames.appendChild(StatName);
+                    StatCell = document.createElement("td");
+                    StatCell.style.border = "2px solid #444"
+                    StatCell.innerHTML = StatCellText;
+                    StatCells.appendChild(StatCell);
+                }
+                nationTable.appendChild(StatNames);
+                nationTable.appendChild(StatCells);
+                document.body.appendChild(nationTableTitle);
+                document.body.appendChild(nationTable);
+            }
+            
         }
 
     };
@@ -149,16 +190,15 @@ function loadChangesFromFile(event){
 function syncNation(nationRow){
     //deal with new recruit costs
     
-    console.log("hey høy");
     const budgetCoord = findCellCoordFromNamesSheetRestricted("Daily Stuff", nationRow, "Budget");
     const ArmyQualityCoord = findCellCoordFromNames(nationRow, "Army Quality");
-    const ArmyQualityValue = changedSheetsEvaluated[ArmyQualityCoord.row][ArmyQualityCoord.column];
+    const ArmyQualityValue = changedSheetsEvaluated.Armies[ArmyQualityCoord.row][ArmyQualityCoord.column];
     const CorruptionCoord = findCellCoordFromNames(nationRow, "Corruption");
-    const CorrutionValue = changedSheetsEvaluated[CorruptionCoord.row][CorruptionCoord.column];
+    const CorrutionValue = changedSheetsEvaluated["Daily Stuff"][CorruptionCoord.row][CorruptionCoord.column];
     const ArmyWagesCoord = findCellCoordFromNames(nationRow, "Army Wages");
-    const ArmyWagesValue = changedSheetsEvaluated[ArmyWagesCoord.row][ArmyWagesCoord.column];
+    const ArmyWagesValue = changedSheetsEvaluated.Armies[ArmyWagesCoord.row][ArmyWagesCoord.column];
     const TimeDivideCoord = findCellCoordFromNames(nationRow, "Time Divide");
-    const TimeDivideValue = changedSheetsEvaluated[TimeDivideCoord.row][TimeDivideCoord.column];
+    const TimeDivideValue = changedSheetsEvaluated["Daily Stuff"][TimeDivideCoord.row][TimeDivideCoord.column];
 
     changedSheets[budgetCoord.row][budgetCoord.column] -= (NewRecruitCostsUnitUpkeepUnit*((ArmyQualityValue+CorrutionValue / 5 ) + ArmyWagesValue -1) / TimeDivideValue) / 2.0; 
     //clear recruit cost variable
@@ -168,16 +208,16 @@ function syncNation(nationRow){
     //deal with automatic debt taking
     //not implemented yet
     //copy dailies
-    changedSheets[0][nationRow][1] = changedSheetsEvaluated[0][nationRow][2]; //population
-    changedSheets[0][nationRow][3] = changedSheetsEvaluated[0][nationRow][4]; //literacy
-    changedSheets[0][nationRow][5] = changedSheetsEvaluated[0][nationRow][6]; //high education
-    changedSheets[0][nationRow][7] = changedSheetsEvaluated[0][nationRow][8]; //budget
-    changedSheets[0][nationRow][9] = changedSheetsEvaluated[0][nationRow][10]; //food
-    changedSheets[0][nationRow][11] = changedSheetsEvaluated[0][nationRow][12]; //research points
-    changedSheets[0][nationRow][13] = changedSheetsEvaluated[0][nationRow][14]; //public debt length
-    changedSheets[0][nationRow][15] = changedSheetsEvaluated[0][nationRow][16]; //culture power
+    changedSheets[0][nationRow][1] = changedSheetsEvaluated["Daily Stuff"][nationRow][2]; //population
+    changedSheets[0][nationRow][3] = changedSheetsEvaluated["Daily Stuff"][nationRow][4]; //literacy
+    changedSheets[0][nationRow][5] = changedSheetsEvaluated["Daily Stuff"][nationRow][6]; //high education
+    changedSheets[0][nationRow][7] = changedSheetsEvaluated["Daily Stuff"][nationRow][8]; //budget
+    changedSheets[0][nationRow][9] = changedSheetsEvaluated["Daily Stuff"][nationRow][10]; //food
+    changedSheets[0][nationRow][11] = changedSheetsEvaluated["Daily Stuff"][nationRow][12]; //research points
+    changedSheets[0][nationRow][13] = changedSheetsEvaluated["Daily Stuff"][nationRow][14]; //public debt length
+    changedSheets[0][nationRow][15] = changedSheetsEvaluated["Daily Stuff"][nationRow][16]; //culture power
     
-    changedSheets[0][nationRow][19] = changedSheetsEvaluated[0][nationRow][20]; //Date in this nation
+    changedSheets[0][nationRow][19] = changedSheetsEvaluated["Daily Stuff"][nationRow][20]; //Date in this nation
 }
 
 function findCellCoordFromNames(nationID, statName){
@@ -190,18 +230,14 @@ function findCellCoordFromNames(nationID, statName){
 function findCellCoordFromNamesSheetRestricted(sheetName, nationID, statName){
     const sheetID = sheetNames.findIndex(element => element == sheetName);
     const statCount = checkIfMoreStatsThanRowLength(sheetName, changedSheets[sheetID][0].length);
-    console.log("hey høy: " + statName);
     for (let j = 0; j < statCount; j++) {
         let statNameCoord = {row: 0, column: j};
         statNameCoord = checkUniqueSheetLayout(sheetName, statNameCoord);
         const StatNameCell = changedSheets[sheetID][statNameCoord.row][statNameCoord.column];
-        if(StatNameCell.toLowerCase().trim() == statName){
+        if(StatNameCell.toLowerCase().trim() == statName.toLowerCase().trim()){
             let statChangeCoord = {row: nationID, column: j};
             statChangeCoord = checkUniqueSheetLayout(sheetName, statChangeCoord);
             const StatCell = changedSheets[sheetID][statChangeCoord.row][statChangeCoord.column];
-            //if the stat in question is a formula, throw an error too
-            if(StatCell.toString().startsWith("="))
-                alert("At line " + (changeCommandIndex + 1) + "\r\n\r\nA stat that is described as a formula has been attempted changed: " + statName + ".\r\n Action has been aborted.");                         
             return {
                 sheet: sheetID,
                 row: statChangeCoord.row, 
@@ -217,7 +253,6 @@ function findCellCoordFromNamesSheetRestricted(sheetName, nationID, statName){
 
 function syncNations(){
     console.log("who the fuck called me!");
-    evaluateSheets();
     for (let j = 0; j < changedSheets.length; j++) {
         const changedSheet = changedSheets[j];
         //if Column A, row 2 starts with a '=', look for nation names in another sheet
@@ -242,7 +277,12 @@ function normalCommand(currentSheetRestrictionID){
         coordFound = findCellCoordFromNames(currentNationID, commandParameters[2]);
     }
 
+
     if(coordFound != null){
+        //if the stat in question is a formula, throw an error too
+        if(sheets[coordFound.sheet][coordFound.row][coordFound.column].toString().startsWith("="))
+        alert("At line " + (changeCommandIndex + 1) + "\r\n\r\nA stat that is described as a formula has been attempted changed: " + statName + ".\r\n Action has been aborted.");                         
+    
         changeStats(coordFound, currentNationID);
         return true;
     }
