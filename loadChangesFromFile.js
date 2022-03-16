@@ -29,11 +29,9 @@ function loadChangesFromFile(event){
                 
                 if(cc.includes("<")){
                     evaluateSheets();
-                    console.log(changedSheetsEvaluated);
                     syncNation(currentNationID);
                 }else{
                     evaluateSheets();
-                    console.log(changedSheetsEvaluated);
                     syncNations();
                 }
                 
@@ -101,12 +99,12 @@ function loadChangesFromFile(event){
             }
         }
 
-        /* evaluateSheets();        
-        for (const [key, value] of Object.entries(changedSheetsEvaluated)){
+        evaluateSheets();        
+        /* for (const [key, value] of Object.entries(changedSheetsEvaluated)){
             console.log(key);
             console.table(value)
-        }
- */
+        } */
+ 
         //paste to textfield
         
         for (let i = 0; i < changedSheets.length; i++) {
@@ -162,8 +160,8 @@ function loadChangesFromFile(event){
                 let StatCells = document.createElement("tr");
                 for (let column = 0; column < sheetRows[0].length; column++) {
                     const StatNameText = sheetRows[0][column];
-                    console.log(row);
                     const StatCellText = sheetRows[row][column];
+                    
                     StatName = document.createElement("th");
                     StatName.style.border = "2px solid #444"
                     StatName.style.backgroundColor = primaryColor[row % primaryColor.length];
@@ -172,7 +170,16 @@ function loadChangesFromFile(event){
                     StatCell = document.createElement("td");
                     StatCell.style.border = "2px solid #444"
                     StatCell.innerHTML = StatCellText;
+                    if(sheetRows[row][column].address !== undefined){
+                        let StatErrorAddress = document.createElement("span");
+                        StatErrorAddress.innerHTML = sheetRows[row][column].address;
+                        StatCell.style.color = "red";
+                        let br = document.createElement("br");
+                        StatCell.appendChild(br);
+                        StatCell.appendChild(StatErrorAddress);
+                    }
                     StatCells.appendChild(StatCell);
+                    
                 }
                 nationTable.appendChild(StatNames);
                 nationTable.appendChild(StatCells);
