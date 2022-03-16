@@ -4,13 +4,13 @@ let changedSheets;
 let currentNationID;
 let changeCommandIndex;
 function loadChangesFromFile(event){
+    readySheets();
     var file = event.target.files[0];
     var reader = new FileReader();
     changes; 
     reader.onload = function(e){
         changes = e.target.result.split("\r\n");
         changedSheets = JSON.parse(JSON.stringify(sheets)); //but make sure it's copied not referenced
-        //console.log(changedSheets);
         const commandRegex = /(?<Operand>([a-z]+)( |\t)|(\+|\=|\-)( |\t)?)(?<Amount>(\".+\")|(.+?))( |\t)(?<Stat_Name>.+)/i;
 
         
@@ -38,8 +38,8 @@ function loadChangesFromFile(event){
             else if(cc[0] == '>'){
                 let currentNation = cc.substring(1).trim();
                 let found = false;
-                for (let j = 0; j < changedSheets.length; j++) {
-                    const changedSheet = changedSheets[j];
+                for (let j = 0; j < Object.keys(changedSheets).length; j++) {
+                    const changedSheet = changedSheets[sheetNames[j]];
                     //if Column A, row 2 starts with a '=', look for nation names in another sheet
                     if(changedSheet[1][0].startsWith("=")) continue;
                     for (let k = 0; k < changedSheet.length; k++) {
@@ -95,11 +95,13 @@ function loadChangesFromFile(event){
                 }
 
                 const START = currentSheetRestrictionID == null ? 0 : currentSheetRestrictionID;
-                const END = currentSheetRestrictionID == null ? changedSheets.length : currentSheetRestrictionID + 1;
+                const END = currentSheetRestrictionID == null ? Object.keys(changedSheets).length : currentSheetRestrictionID + 1;
                 normalCommandWithAlert(START, END);
             }
         }
 
+        
+        console.log(sheets);
         evaluateSheets();
         
         //print to console
@@ -111,14 +113,15 @@ function loadChangesFromFile(event){
         }
 
         console.log("unevaluated");
-        changedSheets.forEach(changedSheet => {
-            console.table(changedSheet); 
-        }); 
+        for (const [key, value] of Object.entries(changedSheets)){
+            console.log(key);
+            console.table(value)
+        }
         //paste to textfield
         
-        for (let i = 0; i < changedSheets.length; i++) {
+        for (let i = 0; i < Object.keys(changedSheets).length; i++) {
             let text = "";
-            const changedSheet = changedSheets[i];
+            const changedSheet = changedSheets[sheetNames[i]];
             for (let j = 0; j < changedSheet.length; j++) {
                 const cols = changedSheet[j];
                 if(j != 0) text += "\r\n"
@@ -136,7 +139,7 @@ function loadChangesFromFile(event){
             currentTextfield.value = text;
             let currentTextfieldTitle = document.createElement("h1");
             currentTextfieldTitle.style.textTransform = "capitalize";
-            currentTextfieldTitle.style.color = JSON.stringify(sheets[i]) == JSON.stringify(changedSheets[i]) ? "lightgrey" : "black";
+            currentTextfieldTitle.style.color = JSON.stringify(sheets[sheetNames[i]]) == JSON.stringify(changedSheets[sheetNames[i]]) ? "lightgrey" : "black";
             currentTextfieldTitle.innerHTML = sheetNames[i];
             document.body.appendChild(currentTextfieldTitle);
             document.body.appendChild(currentTextfield);
@@ -160,8 +163,7 @@ function normalCommandWithAlert(beginning, end){
 
 function normalCommand(beginning, end){
     for (let i = beginning; i < end; i++) {
-        const changedSheet = changedSheets[i];
-        
+        const changedSheet = changedSheets[sheetNames[i]];
         
         const statCount = checkIfMoreStatsThanRowLength(sheetNames[i], changedSheet[0].length);
         for (let j = 0; j < statCount; j++) {
