@@ -4,13 +4,13 @@ let changedSheets;
 let currentNationID;
 let changeCommandIndex;
 function loadChangesFromFile(event){
+    readySheets();
     var file = event.target.files[0];
     var reader = new FileReader();
     changes; 
     reader.onload = function(e){
         changes = e.target.result.split("\r\n");
         changedSheets = JSON.parse(JSON.stringify(sheets)); //but make sure it's copied not referenced
-        //console.log(changedSheets);
         const commandRegex = /(?<Operand>([a-z]+)( |\t)|(\+|\=|\-)( |\t)?)(?<Amount>(\".+\")|(.+?))( |\t)(?<Stat_Name>.+)/i;
 
         
@@ -40,8 +40,8 @@ function loadChangesFromFile(event){
             else if(cc[0] == '>'){
                 let currentNation = cc.substring(1).trim();
                 let found = false;
-                for (let j = 0; j < changedSheets.length; j++) {
-                    const changedSheet = changedSheets[j];
+                for (let j = 0; j < Object.keys(changedSheets).length; j++) {
+                    const changedSheet = changedSheets[sheetNames[j]];
                     //if Column A, row 2 starts with a '=', look for nation names in another sheet
                     if(changedSheet[1][0].startsWith("=")) continue;
                     for (let k = 0; k < changedSheet.length; k++) {
@@ -99,17 +99,14 @@ function loadChangesFromFile(event){
             }
         }
 
-        evaluateSheets();        
-        /* for (const [key, value] of Object.entries(changedSheetsEvaluated)){
-            console.log(key);
-            console.table(value)
-        } */
+        evaluateSheets();
  
+
         //paste to textfield
         
-        for (let i = 0; i < changedSheets.length; i++) {
+        for (let i = 0; i < Object.keys(changedSheets).length; i++) {
             let text = "";
-            const changedSheet = changedSheets[i];
+            const changedSheet = changedSheets[sheetNames[i]];
             for (let j = 0; j < changedSheet.length; j++) {
                 const cols = changedSheet[j];
                 if(j != 0) text += "\r\n"
@@ -127,7 +124,7 @@ function loadChangesFromFile(event){
             currentTextfield.value = text;
             let currentTextfieldTitle = document.createElement("h3");
             currentTextfieldTitle.style.textTransform = "capitalize";
-            currentTextfieldTitle.style.color = JSON.stringify(sheets[i]) == JSON.stringify(changedSheets[i]) ? "lightgrey" : "black";
+            currentTextfieldTitle.style.color = JSON.stringify(sheets[sheetNames[i]]) == JSON.stringify(changedSheets[sheetNames[i]]) ? "lightgrey" : "black";
             currentTextfieldTitle.innerHTML = sheetNames[i];
             document.body.appendChild(currentTextfieldTitle);
             document.body.appendChild(currentTextfield);
@@ -135,7 +132,7 @@ function loadChangesFromFile(event){
 
         // Parse to evaluated sheets
         createNationSheet(2);
-        console.table(changedSheets[0]);
+        console.table(changedSheets['Daily Stuff']);
 
     };
 
@@ -154,8 +151,8 @@ function syncNation(nationRow){
     const ArmyWagesValue = changedSheetsEvaluated.Armies[ArmyWagesCoord.row][ArmyWagesCoord.column];
     const TimeDivideCoord = findCellCoordFromNames(nationRow, "Time Divide");
     const TimeDivideValue = changedSheetsEvaluated["Daily Stuff"][TimeDivideCoord.row][TimeDivideCoord.column];
-
-    changedSheets[budgetCoord.row][budgetCoord.column] -= (NewRecruitCostsUnitUpkeepUnit*((ArmyQualityValue+CorrutionValue / 5 ) + ArmyWagesValue -1) / TimeDivideValue) / 2.0; 
+    
+    changedSheets[budgetCoord.sheet][budgetCoord.row][budgetCoord.column] -= (NewRecruitCostsUnitUpkeepUnit*((ArmyQualityValue+CorrutionValue / 5 ) + ArmyWagesValue -1) / TimeDivideValue) / 2.0; 
     //clear recruit cost variable
     NewRecruitCostsUnitUpkeepUnit[nationRow] = 0;
 
@@ -163,16 +160,16 @@ function syncNation(nationRow){
     //deal with automatic debt taking
     //not implemented yet
     //copy dailies
-    changedSheets[0][nationRow][1] = changedSheetsEvaluated["Daily Stuff"][nationRow][2]; //population
-    changedSheets[0][nationRow][3] = changedSheetsEvaluated["Daily Stuff"][nationRow][4]; //literacy
-    changedSheets[0][nationRow][5] = changedSheetsEvaluated["Daily Stuff"][nationRow][6]; //high education
-    changedSheets[0][nationRow][7] = changedSheetsEvaluated["Daily Stuff"][nationRow][8]; //budget
-    changedSheets[0][nationRow][9] = changedSheetsEvaluated["Daily Stuff"][nationRow][10]; //food
-    changedSheets[0][nationRow][11] = changedSheetsEvaluated["Daily Stuff"][nationRow][12]; //research points
-    changedSheets[0][nationRow][13] = changedSheetsEvaluated["Daily Stuff"][nationRow][14]; //public debt length
-    changedSheets[0][nationRow][15] = changedSheetsEvaluated["Daily Stuff"][nationRow][16]; //culture power
+    changedSheets["Daily Stuff"][nationRow][1] = changedSheetsEvaluated["Daily Stuff"][nationRow][2]; //population
+    changedSheets["Daily Stuff"][nationRow][3] = changedSheetsEvaluated["Daily Stuff"][nationRow][4]; //literacy
+    changedSheets["Daily Stuff"][nationRow][5] = changedSheetsEvaluated["Daily Stuff"][nationRow][6]; //high education
+    changedSheets["Daily Stuff"][nationRow][7] = changedSheetsEvaluated["Daily Stuff"][nationRow][8]; //budget
+    changedSheets["Daily Stuff"][nationRow][9] = changedSheetsEvaluated["Daily Stuff"][nationRow][10]; //food
+    changedSheets["Daily Stuff"][nationRow][11] = changedSheetsEvaluated["Daily Stuff"][nationRow][12]; //research points
+    changedSheets["Daily Stuff"][nationRow][13] = changedSheetsEvaluated["Daily Stuff"][nationRow][14]; //public debt length
+    changedSheets["Daily Stuff"][nationRow][15] = changedSheetsEvaluated["Daily Stuff"][nationRow][16]; //culture power
     
-    changedSheets[0][nationRow][19] = changedSheetsEvaluated["Daily Stuff"][nationRow][20]; //Date in this nation
+    changedSheets["Daily Stuff"][nationRow][19] = changedSheetsEvaluated["Daily Stuff"][nationRow][20]; //Date in this nation
 }
 
 function findCellCoordFromNames(nationID, statName){
@@ -184,17 +181,17 @@ function findCellCoordFromNames(nationID, statName){
 
 function findCellCoordFromNamesSheetRestricted(sheetName, nationID, statName){
     const sheetID = sheetNames.findIndex(element => element == sheetName);
-    const statCount = checkIfMoreStatsThanRowLength(sheetName, changedSheets[sheetID][0].length);
+    const statCount = checkIfMoreStatsThanRowLength(sheetName, changedSheets[sheetName][0].length);
     for (let j = 0; j < statCount; j++) {
         let statNameCoord = {row: 0, column: j};
         statNameCoord = checkUniqueSheetLayout(sheetName, statNameCoord);
-        const StatNameCell = changedSheets[sheetID][statNameCoord.row][statNameCoord.column];
+        const StatNameCell = changedSheets[sheetName][statNameCoord.row][statNameCoord.column];
         if(StatNameCell.toLowerCase().trim() == statName.toLowerCase().trim()){
             let statChangeCoord = {row: nationID, column: j};
             statChangeCoord = checkUniqueSheetLayout(sheetName, statChangeCoord);
-            const StatCell = changedSheets[sheetID][statChangeCoord.row][statChangeCoord.column];
+            const StatCell = changedSheets[sheetName][statChangeCoord.row][statChangeCoord.column];
             return {
-                sheet: sheetID,
+                sheet: sheetName,
                 row: statChangeCoord.row, 
                 column: statChangeCoord.column,
                 nameCoord: {
@@ -209,7 +206,7 @@ function findCellCoordFromNamesSheetRestricted(sheetName, nationID, statName){
 function syncNations(){
     console.log("who the fuck called me!");
     for (let j = 0; j < changedSheets.length; j++) {
-        const changedSheet = changedSheets[j];
+        const changedSheet = changedSheets[sheetNames[j]];
         //if Column A, row 2 starts with a '=', look for nation names in another sheet
         if(changedSheet[1][0].startsWith("=")) continue;
         for (let k = 0; k < changedSheet.length; k++) {

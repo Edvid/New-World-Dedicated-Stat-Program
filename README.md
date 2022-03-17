@@ -19,7 +19,11 @@ As we still rely on Google Sheets for the stat keeping, and not all stat updater
 For this reason, we must always copy the state of the sheets as they are currently, into this program before running our change commands. **It is highly imporant to make sure no other stat updaters are chaning stats in the time between having it copied, and putting it back into google sheets after the change commands have done their magic.**
 
 - When Copying stat sheets, it should be put in a file called **sheetState.txt**
-- The formulas must be visible during copying of the sheets. This can be done by opening the "more options" under the `ctrl+f` menu, and pressing "Also search within formulae". The copying can be easily done by selecting any cell in a sheet (while the advanced search menu is still open) and pressing `ctrl+a`
+- The formulas must be visible during copying of the sheets. This can be done by either:
+  - `ctrl + ~` or
+  - opening the "more options" under the `ctrl+f` menu, and pressing "Also search within formulae".
+
+  The copying can be easily done by selecting the first row of the sheet (if the advanced search menu is still open, keep it so) and pressing `ctrl+a`
 - different sheets shall be seperated by exactly 3 newlines in this file you copy to
 
 Once this **sheetState.txt** is set up, you can run the SheetStateConverter.ps1 file in powershell.

@@ -8,7 +8,7 @@ function createNationSheet(row){
     let nationName = document.createElement("h1");
     nationName.innerHTML = changedSheetsEvaluated["Daily Stuff"][row][0]; 
     NationSheetDiv.appendChild(nationName);
-    for (let sheetIndex = 0; sheetIndex < sheets.length; sheetIndex++) {
+    for (let sheetIndex = 0; sheetIndex < Object.keys(sheets).length; sheetIndex++) {
         if(sheetNames[sheetIndex] == "Trade Zone Wealth") continue;
         const sheetRows = changedSheetsEvaluated[sheetNames[sheetIndex]];
         let nationTable = document.createElement("table");
