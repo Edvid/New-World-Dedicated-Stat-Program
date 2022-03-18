@@ -28,10 +28,10 @@ function loadChangesFromFile(event){
             else if(cc.includes("sync")){
                 
                 if(cc.includes("<")){
-                    evaluateSheets();
+                    evaluateNations();
                     syncNation(currentNationID);
                 }else{
-                    evaluateSheets();
+                    evaluateNations();
                     syncNations();
                 }
                 
@@ -99,7 +99,7 @@ function loadChangesFromFile(event){
             }
         }
 
-        evaluateSheets();
+        evaluateNations();
  
 
         //paste to textfield
