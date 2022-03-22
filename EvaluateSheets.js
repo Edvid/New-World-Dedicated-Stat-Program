@@ -526,6 +526,7 @@ class NationSheet {
 
 
   //Trade
+
   FoodIncoming;
   FoodOutgoing;
 
@@ -624,90 +625,8 @@ class NationSheet {
 
 
   //Trade Influence
-  Alaska;
-  Cascadia;
-  WestCoast;
-  HudsonBay;
-  GreatLakes;
-  Mississipi;
-  GulfOfMexico;
-  LawrenceGulf;
-  EastCoast;
-  Carribean;
-  CentralAmerica;
-
-  GuyanaAndSuriname;
-  Amazon;
-  Peru;
-  RioGrande;
-  LaPlata;
-  Chile;
-  Patagonia;
-
-
-
-
-  NorthAnatolia;
-  NorthSea;
-  BritishIsles;
-  EnglishChannel;
-  France;
-  BayOfBiscay;
-  WestIberia;
-  Gibraltar;
-  WestMediterreanian;
-  Rhine;
-  CentralMed;
-  Adriatic;
-  Germany;
-  SouthGermany;
-  Denmark;
-  Baltic;
-  NorthNordics;
-  BarentsSea;
-  Novgorod;
-  Poland;
-  Dniepr;
-  Crimea;
-  Balkans;
-  Greece;
-  EastMed;
-  Egypt;
-  RedSea;
-  WestAfrica;
-  CoteDIvoire;
-  Nigeria;
-  SouthNile;
-  Somalia;
-  Kongo;
-  EastAfrica;
-  Mozambique;
-  SouthAfrica;
-
-  Mesopotamia;
-  PersianGulf;
-  Caucasus;
-  DonRiver;
-  Volga;
-  CentralAsia;
-  WestSiberia;
-  EastSiberia;
-  Iran;
-  Pakistan;
-  Tibet;
-  Mongolia;
-  Manchuria;
-  SeaOfJapan;
-  NorthChina;
-  YangtzeeRiver;
-  SouthChina;
-  NorthIndia;
-  WestIndia;
-  EastIndia;
-  Burma;
-  SouthEastAsia;
-  NorthAustralia;
-  SouthAustralia;
+  speudoTradePower;
+  TradeInfluences;
 
 
   //Land
@@ -765,7 +684,6 @@ class NationSheet {
     this.CulturalPower = 6.00;
     this.DateInThisNation = 1600;
     /* #endregion */
-
 
     /* #region  Most Stats */
     this.ReligiousDisunity = 0.00;
@@ -969,7 +887,92 @@ class NationSheet {
     /* #endregion */
 
     /* #region  Trade Influence */
-    this.TradeInfluences = [];
+    this.TradeInfluences = {
+      Alaska: 0,
+      Cascadia: 0,
+      WestCoast: 0,
+      HudsonBay: 0,
+      GreatLakes: 0,
+      Mississipi: 0,
+      GulfOfMexico: 0,
+      LawrenceGulf: 0,
+      EastCoast: 0,
+      Carribean: 0,
+      CentralAmerica: 0,
+
+      GuyanaAndSuriname: 0,
+      Amazon: 0,
+      Peru: 0,
+      RioGrande: 0,
+      LaPlata: 0,
+      Chile: 0,
+      Patagonia: 0,
+
+
+
+
+      NorthAnatolia: 0,
+      NorthSea: 0,
+      BritishIsles: 0,
+      EnglishChannel: 0,
+      France: 0,
+      BayOfBiscay: 0,
+      WestIberia: 0,
+      Gibraltar: 0,
+      WestMediterreanian: 0,
+      Rhine: 0,
+      CentralMed: 0,
+      Adriatic: 0,
+      Germany: 0,
+      SouthGermany: 0,
+      Denmark: 0,
+      Baltic: 0,
+      NorthNordics: 0,
+      BarentsSea: 0,
+      Novgorod: 0,
+      Poland: 0,
+      Dniepr: 0,
+      Crimea: 0,
+      Balkans: 0,
+      Greece: 0,
+      EastMed: 0,
+      Egypt: 0,
+      RedSea: 0,
+      WestAfrica: 0,
+      CoteDIvoire: 0,
+      Nigeria: 0,
+      SouthNile: 0,
+      Somalia: 0,
+      Kongo: 0,
+      EastAfrica: 0,
+      Mozambique: 0,
+      SouthAfrica: 0,
+
+      Mesopotamia: 0,
+      PersianGulf: 0,
+      Caucasus: 0,
+      DonRiver: 0,
+      Volga: 0,
+      CentralAsia: 0,
+      WestSiberia: 0,
+      EastSiberia: 0,
+      Iran: 0,
+      Pakistan: 0,
+      Tibet: 0,
+      Mongolia: 0,
+      Manchuria: 0,
+      SeaOfJapan: 0,
+      NorthChina: 0,
+      YangtzeeRiver: 0,
+      SouthChina: 0,
+      NorthIndia: 0,
+      WestIndia: 0,
+      EastIndia: 0,
+      Burma: 0,
+      SouthEastAsia: 0,
+      NorthAustralia: 0,
+      SouthAustralia: 0
+    };
     /* #endregion */
 
     /* #region  Land */
@@ -1043,19 +1046,48 @@ class NationSheet {
     this.ConscriptionPercent= this.OverallNumbers/this.Population;
     this.PopulaitonInMilitary = this.ConscriptionPercent;
     this.PopulationInResourceHarvest = (this.Coal+this.Sulphur+this.Cotton+this.Gold+this.Iron+this.Tea+this.Silk+this.Spices+this.Wool+this.Coffee+this.Fur+this.Diamonds+this.Silver+this.Copper)*20000/ this.Population;
-    //missing artisans, clergy, burghers, nobility 
     this.PopulationInAgriculture = 1 - this.PopulaitonInMilitary - this.Artisans - this.Clergy - this.Burghers - this.Nobility - this.PopulationInResourceHarvest;
-    //missing AgricultureInfrastructure
-    this.AgricultureSpending = (this.PopulationInAgriculture * this.Population / 1000 * this.AgricultureInfrastructure / 100 * (1 + this.AgricultureSubsidies / 10) * this.StockingCapabilities)/2;
-    //Daily Food = Pop. in Agriculture*Population/1000*Farming Efficiency*(1-Pillaging)+Food Incoming-Food Outgoing;
-    //Food Consumption = Population/1000;
-    //Food Gain = Daily Food-Food Consumption;
-    //Max Stock = MAX(100,1000*Population/10000000)*Stocking Capabilities;
-    //Stock = Food;
-    //Future Food = MIN(Max Stock,Stock+Food Gain);
-    //Food Pop. Boost = IF(Stock>500,Stock/50000,0);
-    //Surplus Food = IF(Food Gain+Stock>Max Stock,Food Gain+Stock-Max Stock,0);
-    //Selling Capability = (Local Trade/2+(Trade Power Americas + Africa+Trade Power Europe+Trade Power Asia)/5)*Mercantilism*200;
+    this.AgricultureSpending = (this.PopulationInAgriculture * this.Population / 1000 * this.AgricultureInfrastructure / 100 * (1 + this.AgricultureSubsidies / 10) * this.StockingCapabilities) / 2;
+    this.DailyFood = this.PopulationInAgriculture * this.Population / 1000 * this.FarmingEfficiency * (1 - this.Pillaging) + this.FoodIncoming - this.FoodOutgoing;
+    this.FoodConsumption = this.Population / 1000;
+    this.FoodGain = this.DailyFood - this.FoodConsumption;
+
+    this.MaxStock = (function(){
+      return Math.max(100, 1000 * this.Population / 10000000) * this.StockingCapabilities;
+    })(); 
+    this.Stock = this.Food;
+    this.FutureFood = (function(){
+      return Math.min(this.MaxStock, Stock + this.FoodGain);
+    })();
+    this.FoodPopulationBoost = (function(){
+      return this.Stock > 500 ? this.Stock / 50000 : 0;
+    })();
+    this.SurplusFood = (function(){
+      return this.FoodGain + this.Stock > this.MaxStock ? this.FoodGain + this.Stock - this.MaxStock : 0;
+    })();
+
+    //trade powers
+    //Trade Power SA Influence = *'Trade Zone Wealth'!$M$2+*'Trade Zone Wealth'!$N$2+*'Trade Zone Wealth'!$O$2+*'Trade Zone Wealth'!$P$2+*'Trade Zone Wealth'!$Q$2+*'Trade 
+    //Zone Wealth'!$R$2+*'Trade Zone Wealth'!$S$2;
+    //Trade Power Africa Influence = *'Trade Zone Wealth'!$AW$2+*'Trade Zone Wealth'!$AX$2+*'Trade Zone Wealth'!$AY$2+*'Trade Zone Wealth'!$AZ$2+*'Trade Zone Wealth'!$BA$2
+    //+*'Trade Zone Wealth'!$BB$2+*'Trade Zone Wealth'!$BC$2+*'Trade Zone Wealth'!$BD$2+*'Trade Zone Wealth'!$BE$2+*'Trade Zone Wealth'!$BF$2+*'Trade Zone Wealth'!$BG$2;
+    
+    //Trade Power Americas + Africa = SUM(Trade Power SA Influence:Trade Power Africa Influence);
+    //Trade Power Europe = *North Sea+*British Isles+*English Channel+*France+*Bay of Biscay+*West Iberia+*Gibraltar+*West Mediterreanian+*Rhine+*Central Med+*Adriatic
+    //+*Germany+*South Germany+*Denmark+*Baltic+*North Nordics+*Barents Sea+*Novgorod+*Poland+*Dniepr+*Crimea+*Balkans+*Greece+*North Anatolia+*East Med;
+    //Trade Power Asia = *Mesopotamia+*Persian Gulf+*Caucasus+*Don (River)+*Volga+*Central Asia+*West Siberia+*East Siberia+*Iran+*Pakistan+*Tibet+*Mongolia+*Manchuria+*Sea //of Japan+*North China+*Yangtzee River+*South China+*North India+*West India+*East India+*Burma+*South-East Asia+*North Australia+*South Australia;
+    this.speudoTradePower = (function(){
+      let stp;
+      for(const region in TradeZones){
+        let allNationPoints = 0;
+        for(const nation in Nations){
+          allNationPoints += Nations[nation].TradeInfluences[region];
+        }
+        let percent = this.TradeInfluences[region] / allNationPoints;
+        stp += TradeZones[region] * percent; 
+      }
+    })();
+    this.SellingCapability = (this.LocalTrade / 2 + this.speudoTradePower / 5) * this.Mercantilism * 200; 
     //Food Sold = MIN(Selling Capability,Surplus Food);
     //Food lost = Surplus Food-Food Sold;
     //Trade profit = Food Sold/50;
@@ -1406,9 +1438,8 @@ class NationSheet {
     //South Africa Influence = ;
     //= South Africa Influence/(SUM(BF:BF)+0.000001);
     //Trade Power NA Influence = *'Trade Zone Wealth'!$A$2+*'Trade Zone Wealth'!$B$2+*'Trade Zone Wealth'!$C$2+*'Trade Zone Wealth'!$D$2+*'Trade Zone Wealth'!$E$2+*'Trade //Zone Wealth'!$F$2+*'Trade Zone Wealth'!$G$2+*'Trade Zone Wealth'!$H$2+*'Trade Zone Wealth'!$I$2+*'Trade Zone Wealth'!$J$2+*'Trade Zone Wealth'!$K$2;
-    //Trade Power SA Influence = *'Trade Zone Wealth'!$M$2+*'Trade Zone Wealth'!$N$2+*'Trade Zone Wealth'!$O$2+*'Trade Zone Wealth'!$P$2+*'Trade Zone Wealth'!$Q$2+*'Trade //Zone Wealth'!$R$2+*'Trade Zone Wealth'!$S$2;
-    //Trade Power Africa Influence = *'Trade Zone Wealth'!$AW$2+*'Trade Zone Wealth'!$AX$2+*'Trade Zone Wealth'!$AY$2+*'Trade Zone Wealth'!$AZ$2+*'Trade Zone Wealth'!$BA$2//+*'Trade Zone Wealth'!$BB$2+*'Trade Zone Wealth'!$BC$2+*'Trade Zone Wealth'!$BD$2+*'Trade Zone Wealth'!$BE$2+*'Trade Zone Wealth'!$BF$2+*'Trade Zone Wealth'!$BG$2;
-    //Trade Power Americas + Africa = SUM(Trade Power SA Influence:Trade Power Africa Influence);
+    
+    
   //
   //
   //
@@ -1461,7 +1492,7 @@ class NationSheet {
     //= North Australia Influence/(SUM(AT:AT)+0.000001);
     //South Australia Influence = ;
     //= South Australia Influence/(SUM(AV:AV)+0.000001);
-    //Trade Power Asia = *Mesopotamia+*Persian Gulf+*Caucasus+*Don (River)+*Volga+*Central Asia+*West Siberia+*East Siberia+*Iran+*Pakistan+*Tibet+*Mongolia+*Manchuria+*Sea //of Japan+*North China+*Yangtzee River+*South China+*North India+*West India+*East India+*Burma+*South-East Asia+*North Australia+*South Australia;
+    
   //
   //
   //
@@ -1516,7 +1547,7 @@ class NationSheet {
     //= North Anatolia Influence/(SUM(AV:AV)+0.000001);
     //East Med Influence = ;
     //= East Med Influence/(SUM(AX:AX)+0.000001);
-    //Trade Power Europe = *North Sea+*British Isles+*English Channel+*France+*Bay of Biscay+*West Iberia+*Gibraltar+*West Mediterreanian+*Rhine+*Central Med+*Adriatic//+*Germany+*South Germany+*Denmark+*Baltic+*North Nordics+*Barents Sea+*Novgorod+*Poland+*Dniepr+*Crimea+*Balkans+*Greece+*North Anatolia+*East Med;
+    
   //
   //
   //
