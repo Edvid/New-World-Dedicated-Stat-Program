@@ -10,7 +10,11 @@ The user will download the program and will be able to open a text file via the 
 
 When doing treaties, you shall add a comment above with the name of the treaty. If the nation's stats change due to the treaty, you shall do those first, then if the other nations involved in the treaty has their stats changed because of the nation, you shall switch to those nations and do their stats real quick. You finish by switching back to the nation you were otherwise currently updating. 
 
-This should make it easy for other stat updater to figure out if a treaty has already been accounted for by a simple search in the change commands. 
+This should make it easy for other stat updater to figure out if a treaty has already been accounted for by a simple search in the change commands.
+
+### Reminders for stat updaters for special situations
+
+If a nation is split or renamed, check with trades if updates should happen there too
 
 ## Updating the sheet state in this program
 

@@ -3,7 +3,13 @@ function TimeDivide() {
   return 20 / TimeSpeed;
 }
 let Nations = [];
-let Cultures;
+let Religions = { //For opinions not mentioned, they are Undesired
+  Pagan: {
+    definingFeatures = "Anything not classified",
+    opinions = []
+  }
+}; 
+let Cultures; //For opinions not mentioned, they are neutral towards them.
 let Trades;
 let TradeZones = {
   Alaska: 1,
@@ -93,15 +99,29 @@ let TradeZones = {
 }
 
 class Culture {
-  name;
-  opinion;
+  definingFeatures;
+  opinions;
+}
+
+class Culture {
+  definingFeatures;
+  opinions;
+}
+
+class opinion {
+  static Undesired = -100;
+  static Skeptical = -50;
+  static Neutral = 0;
+  static Fond = 50;
+  static Obsessed = 100; //Like Frankophiles or they see them as brothers 
 }
 
 class Trade {
   name;
-  //Each element having a nationName property and a statChanges list property
-  statChanges = [];
-
+  giver; //nation name
+  reciever; //nation name
+  resource; //can include food or budget
+  amount;
 }
 class NationSheet {
 
@@ -318,7 +338,7 @@ class NationSheet {
 
   Wool;
   EffectiveWool;
-  WoolInflaiton;
+  Woolinflation;
 
   Coffee;
   EffectiveCoffee;
@@ -630,7 +650,7 @@ class NationSheet {
 
 
   //Land
-  Size();
+  Size;
   KmSquared;
   PopDensityPerKmSquared;
   Disease;
@@ -795,6 +815,7 @@ class NationSheet {
 
     /* #region  Resources */
     this.MiningEfficiency = 1.20;
+
     this.Coal = 0.00;
     this.Sulphur = 0.00;
     this.Cotton = 0.00;
@@ -1056,9 +1077,7 @@ class NationSheet {
       return Math.max(100, 1000 * this.Population / 10000000) * this.StockingCapabilities;
     })(); 
     this.Stock = this.Food;
-    this.FutureFood = (function(){
-      return Math.min(this.MaxStock, Stock + this.FoodGain);
-    })();
+    this.FutureFood = Math.min(this.MaxStock, Stock + this.FoodGain);
     this.FoodPopulationBoost = (function(){
       return this.Stock > 500 ? this.Stock / 50000 : 0;
     })();
@@ -1066,16 +1085,6 @@ class NationSheet {
       return this.FoodGain + this.Stock > this.MaxStock ? this.FoodGain + this.Stock - this.MaxStock : 0;
     })();
 
-    //trade powers
-    //Trade Power SA Influence = *'Trade Zone Wealth'!$M$2+*'Trade Zone Wealth'!$N$2+*'Trade Zone Wealth'!$O$2+*'Trade Zone Wealth'!$P$2+*'Trade Zone Wealth'!$Q$2+*'Trade 
-    //Zone Wealth'!$R$2+*'Trade Zone Wealth'!$S$2;
-    //Trade Power Africa Influence = *'Trade Zone Wealth'!$AW$2+*'Trade Zone Wealth'!$AX$2+*'Trade Zone Wealth'!$AY$2+*'Trade Zone Wealth'!$AZ$2+*'Trade Zone Wealth'!$BA$2
-    //+*'Trade Zone Wealth'!$BB$2+*'Trade Zone Wealth'!$BC$2+*'Trade Zone Wealth'!$BD$2+*'Trade Zone Wealth'!$BE$2+*'Trade Zone Wealth'!$BF$2+*'Trade Zone Wealth'!$BG$2;
-    
-    //Trade Power Americas + Africa = SUM(Trade Power SA Influence:Trade Power Africa Influence);
-    //Trade Power Europe = *North Sea+*British Isles+*English Channel+*France+*Bay of Biscay+*West Iberia+*Gibraltar+*West Mediterreanian+*Rhine+*Central Med+*Adriatic
-    //+*Germany+*South Germany+*Denmark+*Baltic+*North Nordics+*Barents Sea+*Novgorod+*Poland+*Dniepr+*Crimea+*Balkans+*Greece+*North Anatolia+*East Med;
-    //Trade Power Asia = *Mesopotamia+*Persian Gulf+*Caucasus+*Don (River)+*Volga+*Central Asia+*West Siberia+*East Siberia+*Iran+*Pakistan+*Tibet+*Mongolia+*Manchuria+*Sea //of Japan+*North China+*Yangtzee River+*South China+*North India+*West India+*East India+*Burma+*South-East Asia+*North Australia+*South Australia;
     this.speudoTradePower = (function(){
       let stp;
       for(const region in TradeZones){
@@ -1086,19 +1095,144 @@ class NationSheet {
         let percent = this.TradeInfluences[region] / allNationPoints;
         stp += TradeZones[region] * percent; 
       }
+      return stp;
     })();
     this.SellingCapability = (this.LocalTrade / 2 + this.speudoTradePower / 5) * this.Mercantilism * 200; 
-    //Food Sold = MIN(Selling Capability,Surplus Food);
-    //Food lost = Surplus Food-Food Sold;
-    //Trade profit = Food Sold/50;
-  //
-  //
-    //Religion = ;
-    //Cultural Disunity = Cultural Disunity;
-    //Population = Population;
-    //Future Pop. = Population+IF(Future Food<0,Future Food*1000,Population*Pop. Growth/Time Divide);
-    //Pop. Growth = MAX(-0.3, (0.1+Pop. Growth mod.+Resource Pop. Growth Boost)*(1-Disease)-Birth Control/20);
-    //Pop. Growth mod. = IF(Fertility>0.5,(Fertility-0.5)/10)+Food Pop. Boost+(Prosperity (QL)-1)/10+IF(Population>2000000,-0.01)+IF(Population>5000000,-0.01)+IF//(Population>10000000,-0.02)+IF(Population>15000000,-0.01)+IF(Population<250000,+0.01)+IF(Population<500000,+0.01)+IF(Population>20000000,-0.01)+IF(Population>25000000,//-0.01)+IF(Population>40000000,-0.01)+IF(Population>50000000,-0.01)+Under Population;
+    this.FoodSold = Math.min(this.SellingCapability, this.SurplusFood);
+    this.Foodlost = this.SurplusFood - this.FoodSold;
+    this.Tradeprofit = this.FoodSold / 50;
+    
+    
+    Religion = Religions.Pagan;
+
+    this.Prosperity = 1 + this.SocialSpending / 2.5 + (this.Stock == 0 && this.FutureFood < 0 ? this.FutureFood / 2000 : 0) + (Budget < 0.00001 ? Budget / 100 : 0) * (1 - this.Pillaging);
+    this.Size = (function(){
+      let s = 0;
+      for (const climate in this.Climates) {
+        s += this.Climates[climate].pixels;
+      }
+      return s;
+    })();
+    this.HabitableLand = (function(){
+      let hl = 0;
+
+      for (const climate in this.Climates) {
+        hl += (this.Climates[climate].pixels / this.Size) * this.Climates[climate].climateScore;        
+      }
+
+      return hl;
+    })();    
+    this.PopDensityPerKmSquared = this.Population / (this.Size * this.HabitableLand);
+    
+    this.Disease = this.PopDensityPerKmSquared / 25 - this.Health / 20 - (this.HumanAnatomy ? 0.15 : 0);
+    this.UnderPopulation = this.Disease < 0.5 ? (1 - this.Disease) / 10 : 0;
+    
+    this.PopulationGrowthModifier = (function(){
+      
+      let mod = this.FoodPopulationBoost + (this.Prosperity - 1) / 10 + this.UnderPopulation;
+      
+      if(this.Fertility > 0.5) mod += (this.Fertility - 0.5) / 10
+      if(this.Population > 2000000) mod += -0.01;
+      if(this.Population > 5000000) mod += -0.01;
+      if(this.Population > 10000000) mod += -0.01;
+      if(this.Population > 15000000) mod += -0.01;
+      if(this.Population > 250000) mod += -0.01;
+      if(this.Population > 500000) mod += -0.01;
+      if(this.Population > 20000000) mod += -0.01;
+      if(this.Population > 25000000) mod += -0.01;
+      if(this.Population > 40000000) mod += -0.01;
+      if(this.Population > 50000000) mod += -0.01;
+        
+      return mod;
+    })(); 
+    //missing effective resource, resource inflation
+    
+    let GatheringEffectiveness = function(name){
+      switch(name){
+        case "Food":
+          return "Farming"
+        case "Cotton":
+          return "Farming"
+        case "Tea":
+          return "Farming"
+        case "Silk":
+          return "Farming"
+        case "Spice":
+          return "Farming"
+        case "Coffee":
+          return "Farming"
+        default:
+          return "Mining"
+      }
+    };
+
+    for (const resource in resources) {
+      this["incoming" + resource] = 0;
+      this["outgoing" + resource] = 0;
+
+      for (const tradename in Trades) {
+        const trade = Trades[tradename];
+        if(trade.resource == resource){
+          if(this.NationName == trade.reciever){
+            this["incoming" + resource] += trade.amount;
+          }else if(this.NationName == trade.giver){
+            this["outgoing" + resource] += trade.amount;
+          }
+        }
+      }
+
+      
+      this["Effective" + resource] = (function(){
+        
+        return this.points * (GatheringEffectiveness(resource) == "Farming" ? this.FarmingEfficiency : this.MiningEfficiency) + incomingPoints - outgoingPoints;
+      })();
+
+      this[resource + "Inflation"] = (function(){
+        
+        let inflationMod = function (){
+          switch(resource){
+            case "Cotton":
+              return 3;
+            case "Gold":
+              return 3;
+            case "Tea":
+              return 3;
+            case "Silk":
+              return 3;
+            case "Spice":
+              return 5;
+            case "Wool":
+              return 5;
+            case "Coffee":
+              return 3;
+            case "Fur":
+              return 3.5;
+            case "Diamond":
+              return 3;
+            case "Silver":
+              return 3;
+            case "Ivory":
+              return 2.5;
+            case "Cocoa":
+              return 3;
+            case "Tobacco":
+              return 3;
+            case "Sugar":
+              return 3;
+            case "ExoticFruit":
+              return 3;
+          }  
+        }
+
+        return Math.max(0, this["Effective" + resource] - inflationMod());
+      })();
+    }
+    
+    this.ResourcePopulationGrowthBoost = (this.EffectiveCotton - this.CottonInflation + this.EffectiveSpice - this.SpiceInflation + this.EffectiveWool - thhis.Woolinflation + this.EffectiveFur - this.FurInflation + (this.EffectiveSugar - this.SugarInflation + this.EffectiveExoticFruit - this.ExoticFruitInflation)/ 2)/ 100;
+    this.PopulationGrowth = Math.max(-0.3, (0.1 + this.PopulationGrowthModifier + this.ResourcePopulationGrowthBoost) * (1 - this.Disease) - this.BirthControl / 20);
+    this.FuturePopulation = (function(){
+      return this.Population + (this.FutureFood < 0 ? this.FutureFood * 1000 : this.Population * this.PopulationGrowth / TimeDivide);
+    })(); 
     //
     //Literacy (%) = Literacy (%);
     //Future Literacy = IF(Literacy (%)>Edu. Efficiency*3,Edu. Efficiency*3,Literacy (%)+Edu. Efficiency/10/Time Divide);
@@ -1108,7 +1242,6 @@ class NationSheet {
     //Corruption = MAX(0,Social Spending-Adm. Efficiency/20)+IF(Stability<1, 0.5)+IF(Stability<-1, 0.5)+MAX(0, ((High Class Tax+Medium Class Tax+Lower Class Tax)/3*100)-Adm. //Efficiency/2)/10;
     //Overextension = Overextension;
     //
-    //Prosperity (QL) = 1+Social Spending/2.5+IF(AND(Stock0, Future Food<0),Future Food/2000)+IF(Budget<0.00001,Budget/100)*(1-Pillaging);
     //Pop. Happiness = (50+Resource happiness boost)*Prosperity (QL)/10-(Lower Class Tax*Lower Class+Medium Class Tax*Medium Class+High Class*High Class Tax)*100///4-Absolutism/2-Population Control+IF(Mercantilism>1,(-Mercantilism+1)*2.5)+IF(AND(Public Debt>0,Budget<0),-(Public Debt/Possible Public Debt)*10)-War Exhaustion/2-Debt //Happiness Effect+IF(Land!E83>10%,-Land!E83/4);
     //Stability = Pop. Happiness+Adm. Efficiency/10-Overextension-Cultural Disunity-Religious Disunity+(Propaganda/1.75*(1+Newspapers/2))+Population Control+(Noble Loyalty-0.//5)*10+(Clergy Loyalty-0.5)*7.5+(Burghers Loyalty-0.5)*7.5+Population Stability Impact+War Stability Mod*100+(Military Loyalty-1)*7.5;
    //
@@ -1209,17 +1342,13 @@ class NationSheet {
   //
   //
     //Nation Name = Nation name ;
-    //Size = ++++++++++++;
     //Km2 = Size*20;
-    //Pop Density (per km2) = Population/(Km2*Habitable Land);
-    //Disease = Pop Density (per km2)/25-Health/20-IF(Human Anatomy1, 0.15);
     //Max Pop. = Population/Disease;
-    //Under Population = IF(Disease<0.5,(1-Disease)/10);
     //Land Administration  = ((Size-Detached Land)/25000+Detached Land/10000)*(1-Adm. Efficiency/1000);
     //Overextension = Under Population/4+Land Administration /1.5;
     //=
     //= ;
-    //Habitable Land = Polar Desert*0+Taiga/Tundra*0.25+Montane Forest*0.6+Medditereanian*0.85+Arid*0.65+Steppe*0.75+Moderate*1+Sub-Tropical*0.75+Tropical*0.6+Savanna*0.65//+Mountainous*0.35+Desert*0.05+Coastal Desert*0.35;
+    
   //
   //
   //
@@ -1253,41 +1382,8 @@ class NationSheet {
   //
   //
     //=Agriculture!I1 = Farming Efficiency;
-    //Effective Coal = Coal*Mining Efficiency+Coal Incoming-Coal Outgoing;
-    //Effective Sulphur = Sulphur*Mining Efficiency+Sulphur Incoming-Sulphur Outgoing;
-    //Effective Cotton = Cotton*Agriculture!I1+Cotton incoming-Cotton Outgoing;
-    //Cotton Inf. = IF(Effective Cotton>3,Effective Cotton-3,0);
-    //Effective Gold = Gold*Mining Efficiency+Gold Incoming-Gold Outgoing;
-    //Gold Inf. = IF(Effective Gold>3,Effective Gold-3,0);
-    //Effective Iron = Iron*Mining Efficiency+Iron incoming-Iron Outgoing;
-    //Effective Tea = Tea*Agriculture!I1+Tea Incoming-Tea Outgoing;
-    //Tea Inf. = IF(Effective Tea>3,Effective Tea-3,0);
-    //Effective Silk = Silk*Agriculture!I1+Silk Incoming-Silk Outgoing;
-    //Silk Inf. = IF(Effective Silk>3,Effective Silk-3,0);
-    //Effective Spice = Spices*Agriculture!I1+Spice Incoming-Spice Outgoing;
-    //Spice Inf. = IF(Effective Spice>5,Effective Spice-5,0);
-    //Effective Wool = Wool+Wool incoming-Wool Outgoing;
-    //Wool Inf. = IF(Effective Wool>3.5,Effective Wool-3.5,0);
-    //Effective Coffee = Coffee*Agriculture!I1+Coffee incoming-Coffee Outgoing;
-    //Coffee Inf. = IF(Effective Coffee>3,Effective Coffee-3,0);
-    //Effective Fur = Fur+Fur Incoming-Fur Outgoing;
-    //Fur Inf. = IF(Effective Fur>3.5,Effective Fur-3.5,0);
-    //Effective Diamonds = Diamonds*Mining Efficiency+Diamonds incoming-Diamonds Outgoing;
-    //Diamond Inf. = IF(Effective Diamonds>3,Effective Diamonds-3,0);
-    //Effective Silver = Silver*Mining Efficiency+Silver Incoming-Silver Outgoing;
-    //Silver Inf. = IF(Effective Silver>3,Effective Silver-3,0);
-    //Effective Copper = Copper*Mining Efficiency+Copper Incoming-Copper Outgoing;
-    //Effective Ivory = Ivory+Ivory Incoming-Ivory Outgoing;
-    //Ivory Inf. = IF(Effective Ivory>2.5,Effective Ivory-2.5,0);
-    //Effective Cocoa = Cocoa+Cocoa Incoming-Cocoa Outgoing;
-    //Cocoa Inf. = IF(Effective Cocoa>3,Effective Cocoa-3,0);
-    //Effective Tobaco = Tobaco+Tobaco Incoming-Tobaco Outgoing;
-    //Tobacco Inf. = IF(Effective Tobaco>3,Effective Tobaco-3,0);
-    //Effective Sugar = Sugar+Sugar Incoming-Sugar Outgoing;
-    //Sugar Inf. = IF(Effective Sugar>3,Effective Sugar-3,0);
-    //Effective Ex. Fruit = Exotic Fruit+Ex. Fruit Incoming-Ex. Fruit Outgoing;
-    //Ex. Fruit Inf. = IF(Effective Ex. Fruit>3,Effective Ex. Fruit-3,0);
-    //Resource Pop. Growth Boost = (Effective Cotton-Cotton Inf.+Effective Spice-Spice Inf.+Effective Wool-Wool Inf.+Effective Fur-Fur Inf.+(Effective Sugar-Sugar Inf.//+Effective Ex. Fruit-Ex. Fruit Inf.)/2)/100;
+    
+    
     //Resource happiness boost = Effective Cotton-Cotton Inf.+Effective Gold-Gold Inf.+Effective Tea-Tea Inf.+Effective Silk-Silk Inf.+Effective Spice-Spice Inf.+Effective //Wool-Wool Inf.+Effective Coffee-Coffee Inf.+Effective Fur-Fur Inf.+Effective Diamonds-Diamond Inf.+Effective Silver-Silver Inf.+Effective Ivory-Ivory Inf.+Effective //Cocoa-Cocoa Inf.+Effective Tobaco-Tobacco Inf.+Effective Sugar-Sugar Inf.+Effective Ex. Fruit-Ex. Fruit Inf.;
     //Resource Budget Boost = (Effective Coal*Coal Value+Effective Sulphur*Sulphur Value+(Effective Gold-Gold Inf.)*Gold Value+Effective Iron*Iron Value+(Effective //Silver-Silver Inf.)*Silver Value+Effective Copper*Copper Value)/Time Divide;
   //
@@ -1555,7 +1651,6 @@ class NationSheet {
   //
   //
   //
-    //Nation Name = Nation name ;
     //War Exhaustion = (Casualties/Population*500)+(Pillaging*20)+(Occupation*5);
     //Fervor = MIN(1, MAX(-1, 0+Minor Battles/20+Major Battles/10+Pillaging-(Casualties/(Overall Numbers+Casualties+0.0000001))));
   
