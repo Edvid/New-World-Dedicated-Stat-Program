@@ -5,8 +5,8 @@ function TimeDivide() {
 let Nations = [];
 let Religions = { //For opinions not mentioned, they are Undesired
   Pagan: {
-    definingFeatures = "Anything not classified",
-    opinions = []
+    definingFeatures: "Anything not classified",
+    opinions: []
   }
 }; 
 let Cultures; //For opinions not mentioned, they are neutral towards them.
