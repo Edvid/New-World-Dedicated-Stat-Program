@@ -1262,7 +1262,7 @@ class NationSheet {
       const points = this.CultureGroups[culturename].points;
       for (const opinionIndex in culture.opinions) {
         const opinion = culture.opinions[opinionIndex];
-        let culturalDisunityFactor = opinion.score * (points / pointSum);
+        let culturalDisunityFactor = (opinion.score - 100) * (points / pointSum);
         if(culturename == this.PrimaryCulture){
           this.PrimaryCulturePercent = (points / pointSum);
           culturalDisunityFactor *= 1.5;
