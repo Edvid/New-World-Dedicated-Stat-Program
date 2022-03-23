@@ -1233,13 +1233,10 @@ class NationSheet {
     this.FuturePopulation = (function(){
       return this.Population + (this.FutureFood < 0 ? this.FutureFood * 1000 : this.Population * this.PopulationGrowth / TimeDivide);
     })(); 
-    //
-    //Literacy (%) = Literacy (%);
-    //Future Literacy = IF(Literacy (%)>Edu. Efficiency*3,Edu. Efficiency*3,Literacy (%)+Edu. Efficiency/10/Time Divide);
-    //Higher Education = Higher Education;
-    //Future Higher Education = Higher Education+IF(OR(Edu. Efficiency3,Edu. Efficiency>3),Edu. Efficiency/30)+IF(Higher Education>Edu. Efficiency/3,-0.25);
-    //
-    //Corruption = MAX(0,Social Spending-Adm. Efficiency/20)+IF(Stability<1, 0.5)+IF(Stability<-1, 0.5)+MAX(0, ((High Class Tax+Medium Class Tax+Lower Class Tax)/3*100)-Adm. //Efficiency/2)/10;
+    this.FutureLiteracy = this.LiteracyPercent > this.EducationEfficiency * 3 ? this.EducationEfficiency * 3 : this.LiteracyPercent + this.EducationEfficiency / 10 / TimeDivide;
+    this.FutureHigherEducation = this.HigherEducation + IF(this.EducationEfficiency >= 3 ? this.EducationEfficiency / 30 : 0) + (this.HigherEducation > this.EducationEfficiency / 3 ? -0.25 : 0);
+    this.Corruption = Math.max(0, this.SocialSpending - this.AdministrativeEfficiency / 20) + (this.Stability < 1 ? 0.5 : 0) + (this.Stability<-1? 0.5 : 0) + 
+    math.max(0, ((this.HighClassTax+this.MediumClassTax+this.LowerClassTax)/ 3 * 100)- this.AdministrativeEfficiency / 2)/ 10;
     //Overextension = Overextension;
     //
     //Pop. Happiness = (50+Resource happiness boost)*Prosperity (QL)/10-(Lower Class Tax*Lower Class+Medium Class Tax*Medium Class+High Class*High Class Tax)*100///4-Absolutism/2-Population Control+IF(Mercantilism>1,(-Mercantilism+1)*2.5)+IF(AND(Public Debt>0,Budget<0),-(Public Debt/Possible Public Debt)*10)-War Exhaustion/2-Debt //Happiness Effect+IF(Land!E83>10%,-Land!E83/4);
@@ -1305,7 +1302,6 @@ class NationSheet {
   //
     //Future pop. = Future Pop.;
     //Future Literacy = Future Literacy;
-    //Future Higher Education = Future Higher Education;
     //Future Budget = Budget+Daily Budget;
     //Future Food = Future Food;
     //Future Research points = Future Research Points;
