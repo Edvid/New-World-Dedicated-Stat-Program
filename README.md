@@ -16,6 +16,8 @@ This should make it easy for other stat updater to figure out if a treaty has al
 
 If a nation is split or renamed, check with trades if updates should happen there too
 
+When Creating a new nation, Remember to specify its culture and primary culture accordingly.
+
 ## Updating the sheet state in this program
 
 As we still rely on Google Sheets for the stat keeping, and not all stat updaters are required to use this program for their updating. The state of the sheet this program can reach with the change commands, might get out of sync with the actual state of the game.

@@ -103,12 +103,14 @@ class Culture {
   opinions;
 }
 
-class Culture {
+class Religion {
   definingFeatures;
   opinions;
 }
 
-class opinion {
+class Opinion {
+  name;
+  score;
   static Undesired = -100;
   static Skeptical = -50;
   static Neutral = 0;
@@ -290,15 +292,9 @@ class NationSheet {
   HighClass;
   MediumClass;
   LowerClass;
+  CultureGroups; //object of {name: {points: num}, name: {points: num}}
   PrimaryCulture;
-  CultureGroup;
-  AcceptedCulture;
-  UndesiredCulture;
   PrimaryCulturePercent;
-  CultureGroupPercent;
-  AcceptedCulturePercent;
-  UndesiredCulturePercent;
-  CulturalDisunity;
   PopulationStabilityImpact;
   PopulationTechImpact;
 
@@ -1236,11 +1232,50 @@ class NationSheet {
     this.FutureLiteracy = this.LiteracyPercent > this.EducationEfficiency * 3 ? this.EducationEfficiency * 3 : this.LiteracyPercent + this.EducationEfficiency / 10 / TimeDivide;
     this.FutureHigherEducation = this.HigherEducation + IF(this.EducationEfficiency >= 3 ? this.EducationEfficiency / 30 : 0) + (this.HigherEducation > this.EducationEfficiency / 3 ? -0.25 : 0);
     this.Corruption = Math.max(0, this.SocialSpending - this.AdministrativeEfficiency / 20) + (this.Stability < 1 ? 0.5 : 0) + (this.Stability<-1? 0.5 : 0) + 
-    math.max(0, ((this.HighClassTax+this.MediumClassTax+this.LowerClassTax)/ 3 * 100)- this.AdministrativeEfficiency / 2)/ 10;
-    //Overextension = Overextension;
-    //
-    //Pop. Happiness = (50+Resource happiness boost)*Prosperity (QL)/10-(Lower Class Tax*Lower Class+Medium Class Tax*Medium Class+High Class*High Class Tax)*100///4-Absolutism/2-Population Control+IF(Mercantilism>1,(-Mercantilism+1)*2.5)+IF(AND(Public Debt>0,Budget<0),-(Public Debt/Possible Public Debt)*10)-War Exhaustion/2-Debt //Happiness Effect+IF(Land!E83>10%,-Land!E83/4);
-    //Stability = Pop. Happiness+Adm. Efficiency/10-Overextension-Cultural Disunity-Religious Disunity+(Propaganda/1.75*(1+Newspapers/2))+Population Control+(Noble Loyalty-0.//5)*10+(Clergy Loyalty-0.5)*7.5+(Burghers Loyalty-0.5)*7.5+Population Stability Impact+War Stability Mod*100+(Military Loyalty-1)*7.5;
+    Math.max(0, ((this.HighClassTax+this.MediumClassTax+this.LowerClassTax)/ 3 * 100)- this.AdministrativeEfficiency / 2)/ 10;
+    this.HighClass = this.Nobility;
+    this.MediumClass = this. Artisans+this.Clergy+this.Burghers;
+    this.LowerClass = this.PopulationInAgriculture +this.PopulaitonInMilitary;
+    this.InterestRate = 0.05 + this.PublicDebtLength * 0.02/ TimeDivide;
+    this.EffectiveDebt = this.PublicDebtTaken * (1 + this.InterestRate);
+    this.PublicDebt = this.EffectiveDebt;
+    this.PossiblePublicDebt = Math.max(0, this.Population / 10000 * (1 - (this.HighClassTax + this.MediumClassTax + this.LowerClassTax)/ 3)- this.PublicDebt);
+    this.DebtHappinessEffect = (this.PublicDebtLength > 1 ? this.EffectiveDebt / (this.PossiblePublicDebt + this.PublicDebtTaken) * (2 + this.PublicDebtLength) : 0);
+    this.WarExhaustion = (this.Casualties / this.Population * 500)+(this.Pillaging * 20) + (this.Occupation * 5);    
+    this.PopulationHappiness = (50 + this.ResourceHappinessBoost)* this.Prosperity / 10 - (this.LowerClassTax * this.LowerClass + this.MediumClassTax * this.MediumClass + this.HighClass * this.HighClassTax) * 100/4 - this.Absolutism / 2 - this.PopulationControl+
+    (this.Mercantilism > 1?(-this.Mercantilism + 1) * 2.5 : 0) + (this.PublicDebt > 0 && this.Budget < 0 ? - (this.PublicDebt / this.PossiblePublicDebt) * 10 : 0) - this.WarExhaustion/2 - this.DebtHappinessEffect+ (this.Disease > 0.10? - this.Disease / 4 : 0);
+    this.LandAdministration = ((this.Size - this.DetachedLand) / 25000 + this.DetachedLand / 10000) * (1 - this.AdministrativeEfficiency / 1000);
+    this.Overextension = this.UnderPopulation/4 + this.LandAdministration / 1.5;
+  
+    let pointSum = 0;
+    let culturalDisunity = 0;
+    this.AcceptedCultures = [];
+    this.UndesiredCultures = [];
+    
+    for (const culturename in this.CultureGroups) {
+      const points = this.CultureGroups[culturename].points;
+      pointSum += points;
+    }
+
+    for (const culturename in this.CultureGroups) {
+      const culture = Cultures[culturename];
+      const points = this.CultureGroups[culturename].points;
+      for (const opinionIndex in culture.opinions) {
+        const opinion = culture.opinions[opinionIndex];
+        let culturalDisunityFactor = opinion.score * (points / pointSum);
+        if(culturename == this.PrimaryCulture){
+          this.PrimaryCulturePercent = (points / pointSum);
+          culturalDisunityFactor *= 1.5;
+        } 
+        culturalDisunity += culturalDisunityFactor;
+      }
+    }
+    this.culturalDisunity = culturalDisunity / 1000;
+
+
+    //missing ReligiousDisunity, ClergyLoyalty, BurghersLoyalty, PopulationStabilityImpact, WarStabilityMod, this.MilitaryLoyalty 
+    
+    this.Stability = this.PopHappiness+this.AdministrativeEfficiencyf / 10 - this.Overextension - this.CulturalDisunity - this.ReligiousDisunity + (this.Propaganda / 1.75 * (1 + this.Newspapers / 2))+this.PopulationControl + (this.NobleLoyalty - 0.5) * 10 + (this.ClergyLoyalty - 0.5) * 7.5 + (this.BurghersLoyalty - 0.5) * 7.5 + this.PopulationStabilityImpact+this.WarStabilityMod*100+(this.MilitaryLoyalty - 1) * 7.5;
    //
     //War Support = MIN(1, MAX(0,Pop. Happiness/10*2.5+Propaganda/10+Fervor));
     //War Stability Mod = IF(AND(At Offensive War1,War Support<75%),(War Support-0.75)/10,0)+MAX(-0.075, IF(AND(At Defensive War1,War Support<40%,Fervor<0),(Fervor)/10,0));
@@ -1251,13 +1286,10 @@ class NationSheet {
     //
     //Trade power = Trade Power Resource Trade+Local Trade/2+(Trade Power Americas + Africa+Trade Power Europe+Trade Power Asia);
     //
-    //Possible Public Debt = MAX(0, Population/10000*(1-(High Class Tax+Medium Class Tax+Lower Class Tax)/3)-Public Debt);
-    //Public Debt = Effective Debt;
     //Daily Budget = (Budget/(10-Adm. Efficiency/10+1)/Time Divide)/(1+Inflation)+Resource Budget Boost-Army Upkeep+Trade Revenue+Effective Tax-Eduation Upkeep-Hygiene //Upkeep-Navy Upkeep-Agriculture Spending-Social Spending Upkeep-Spy Upkeep-Pop. Control Upkeep-Propaganda Upkeep+Production Revenue-Fort Upkeep-ADM Upkeep-Research //Upkeep+Balance-Recruitment!Propaganda-Recruitment!War Stability Mod;
     //Budget = Budget;
     //Future Budget = Budget+Daily Budget;
     //Inflation = MAX(0, (Budget/1000)/(Adm. Efficiency/10));
-    //
     //Army Upkeep = Unit Upkeep*((Army Quality+Corruption/5)+Army Wages-1)/Time Divide;
     //Spy Upkeep = Spies/200*Spy Quality/Time Divide;
     //Social Spending Upkeep = Social Spending*Population/1000000/Time Divide*3;
@@ -1317,11 +1349,8 @@ class NationSheet {
     //
     //Effective Tax = ((Lower Class*Population*Lower Class Tax/10000+Population*Medium Class*Medium Class Tax/7500*(100%-Clergy Influence-Burghers Influence)+Population*High //Class*High Class Tax/5000*(100%-Noble Influence))*Adm. Efficiency/10*(100%-Noble Influence/4-Clergy Influence/4)*(1-Occupation))/Time Divide*(1-Corruption/10);
     //='All Stats'!AL1 = Possible Public Debt+0.01;
-    //Effective Debt = Public Debt Taken*(1+Interest Rate);
     //Public Debt Length = Public Debt Length;
     //Future Debt Length = Future Public Length;
-    //Interest Rate = 0.05+Public Debt Length*0.02/Time Divide;
-    //Debt Happiness Effect = IF(Public Debt Length>1,Effective Debt/('All Stats'!AL1+Public Debt Taken)*(2+Public Debt Length),0);
     //= ;
     //Balance = Budget Incoming-Budget Outgoing;
   //
@@ -1340,8 +1369,6 @@ class NationSheet {
     //Nation Name = Nation name ;
     //Km2 = Size*20;
     //Max Pop. = Population/Disease;
-    //Land Administration  = ((Size-Detached Land)/25000+Detached Land/10000)*(1-Adm. Efficiency/1000);
-    //Overextension = Under Population/4+Land Administration /1.5;
     //=
     //= ;
     
@@ -1362,14 +1389,7 @@ class NationSheet {
   //
   //
   //
-    //Nation Name = Nation name ;
-    //High Class = Nobility;
-    //Medium Class = Artisans+Clergy+Burghers;
-    //Lower Class = Pop. In Agriculture+Pop. In Military;
-    //Primary Culture = ;
-    //Culture Group = ;
-    //Accepted Culture = ;
-    //Undesirable Culture = ;
+    
     //Primary Culture % = 100%-Culture Group %-Accepted Culture %-Undesirable Culture%;
     //Cultural Disunity = (Culture Group %*0.1+Accepted Culture %*0.35+Undesirable Culture%*0.8)*(10+National Sovereignity*2);
     //= ;
@@ -1647,7 +1667,6 @@ class NationSheet {
   //
   //
   //
-    //War Exhaustion = (Casualties/Population*500)+(Pillaging*20)+(Occupation*5);
     //Fervor = MIN(1, MAX(-1, 0+Minor Battles/20+Major Battles/10+Pillaging-(Casualties/(Overall Numbers+Casualties+0.0000001))));
   
    
