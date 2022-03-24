@@ -1257,20 +1257,23 @@ class NationSheet {
       pointSum += points;
     }
 
-    for (const culturename in this.CultureGroups) {
-      const culture = Cultures[culturename];
-      const points = this.CultureGroups[culturename].points;
-      for (const opinionIndex in culture.opinions) {
-        const opinion = culture.opinions[opinionIndex];
-        let culturalDisunityFactor = (opinion.score - 100) * (points / pointSum);
-        if(culturename == this.PrimaryCulture){
+    for (const OpinionatedCultureName in this.CultureGroups) {
+      const OpinionatedCulture = Cultures[OpinionatedCultureName];
+      const points = this.CultureGroups[OpinionatedCultureName].points;
+      for (const nameOfCultureToBeHadAnOpinionAbout in OpinionnatedCulture.opinions) {
+        if(nameOfCultureToBeHadAnOpinionAbout == OpinionatedCultureName) continue; //we don't account for cultures having opinions on themselves
+        let opinionScore = OpinionatedCulture.opinions.find(cul => cul.name == nameOfCultureToBeHadAnOpinionAbout);  
+        if(opinionScore !== undefined) //If the culture to be had an opinion about, isn't recorded by the culture we are currently checking opinions for. Treat the opinion as neutral
+          opinionScore = Opinion.Neutral;
+        let culturalDisunityFactor = (opinionScore - 100) * (points / pointSum);
+        if(OpinionatedCultureName == this.PrimaryCulture) {
           this.PrimaryCulturePercent = (points / pointSum);
           culturalDisunityFactor *= 1.5;
-        } 
+        }
         culturalDisunity += culturalDisunityFactor;
       }
     }
-    this.culturalDisunity = culturalDisunity / 1000;
+    this.culturalDisunity = culturalDisunity / 100;
 
 
     //missing ReligiousDisunity, ClergyLoyalty, BurghersLoyalty, PopulationStabilityImpact, WarStabilityMod, this.MilitaryLoyalty 
