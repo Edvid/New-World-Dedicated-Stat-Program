@@ -1,7 +1,7 @@
 let TimeSpeed = 50;
-function TimeDivide() {
+TimeDivide = (function() {
   return 20 / TimeSpeed;
-}
+})();
 let Nations = [];
 let Religions = { //For opinions not mentioned, they are Undesired
   Pagan: {
@@ -173,7 +173,7 @@ class NationSheet {
   AtOffensiveWar;
   AtDefensiveWar;
   WarSupport;
-  WarStabilityMod;
+  WarStabilityModifier;
   Absolutism;
   PopulationControl;
   BirthControl;
@@ -700,6 +700,7 @@ class NationSheet {
     /* #region  Stats to Set Immedietly */
     /* #region  Main */
     this.NationName = "Nation name";
+    this.GovernmentName = "Government of " + this.NationName;
     this.Population = 5000000;
     this.LiteracyPercent = 7.50;
     this.HigherEducation = 0.25;
@@ -725,7 +726,7 @@ class NationSheet {
     this.NobleInfluence = 0.55; //Show in percent
     this.NobleLoyalty = [
       {
-        to: "Government of " + this.NationName,
+        to: this.GovernmentName,
         points: 55
       },
       {
@@ -736,7 +737,7 @@ class NationSheet {
     this.ClergyInfluence = 0.25; //Show in percent
     this.ClergyLoyalty = [
       {
-        to: "Government of " + this.NationName,
+        to: this.GovernmentName,
         points: 50
       },
       {
@@ -747,7 +748,7 @@ class NationSheet {
     this.BurghersInfluence = 0.10; //Show in percent
     this.BurghersLoyalty = [
       {
-        to: "Government of " + this.NationName,
+        to: this.GovernmentName,
         points: 50
       },
       {
@@ -1211,8 +1212,8 @@ class NationSheet {
               return 5;
             case "Coffee":
               return 3;
-            case "Fur":
-              return 3.5;
+              case "Fur":
+                return 3.5;
             case "Diamond":
               return 3;
             case "Silver":
@@ -1308,13 +1309,59 @@ class NationSheet {
       }
     }
     this.culturalDisunity = culturalDisunity / 100;
-    //missing ClergyLoyalty, BurghersLoyalty, PopulationStabilityImpact, WarStabilityMod, this.MilitaryLoyalty 
-
-    this.Stability = this.PopHappiness + this.AdministrativeEfficiencyf / 10 - this.Overextension - this.CulturalDisunity - this.ReligiousDisunity + (this.Propaganda / 1.75 * (1 + this.Newspapers / 2)) + this.PopulationControl + (this.NobleLoyalty - 0.5) * 10 + (this.ClergyLoyalty - 0.5) * 7.5 + (this.BurghersLoyalty - 0.5) * 7.5 + this.PopulationStabilityImpact + this.WarStabilityMod * 100 + (this.MilitaryLoyalty - 1) * 7.5;
-    //
-    //War Support = MIN(1, MAX(0,Pop. Happiness/10*2.5+Propaganda/10+Fervor));
-    //War Stability Mod = IF(AND(At Offensive War1,War Support<75%),(War Support-0.75)/10,0)+MAX(-0.075, IF(AND(At Defensive War1,War Support<40%,Fervor<0),(Fervor)/10,0));
-    //
+    this.NobleLoyalty = (function(){
+      let pointSum = 0;
+      let alliedPoints = 0;
+      for (const loyaltyName in this.NobleLoyalty) {
+        const loyalty = this.NobleLoyalty[loyaltyName];
+        pointSum + loyalty.points;
+        if(loyalty.to == this.GovernmentName) alliedPoints = loyalty.points;
+      }
+      return alliedPoints / pointSum;
+    })();
+    this.ClergyLoyalty = (function(){
+      let pointSum = 0;
+      let alliedPoints = 0;
+      for (const loyaltyName in this.ClergyLoyalty) {
+        const loyalty = this.ClergyLoyalty[loyaltyName];
+        pointSum + loyalty.points;
+        if(loyalty.to == this.GovernmentName) alliedPoints = loyalty.points;
+      }
+      return alliedPoints / pointSum;
+    })();
+    this.BurghersLoyalty = (function(){
+      let pointSum = 0;
+      let alliedPoints = 0;
+      for (const loyaltyName in this.BurghersLoyalty) {
+        const loyalty = this.BurghersLoyalty[loyaltyName];
+        pointSum + loyalty.points;
+        if(loyalty.to == this.GovernmentName) alliedPoints = loyalty.points;
+      }
+      return alliedPoints / pointSum;
+    })();
+    this.Fervor = Math.min(1, Math.max(-1, 0 + this.MinorBattles / 20 + this.MajorBattles / 10 + this.Pillaging - (this.Casualties / (this.OverallNumbers + this.Casualties + 0.0000001))));
+    this.WarSupport = Math.min(1, Math.max(0, this.PopulationHappiness / 10 * 2.5 + this.Propaganda/10 + this.Fervor));
+    this.WarStabilityModifier = ((this.AtOffensiveWar == true && this.WarSupport < 0.75) ? (this.WarSupport - 0.75) / 10 : 0) + Math.max(-0.075, ((this.AtDefensiveWar == true && this.WarSupport < 0.4 && this.Fervor < 0) ? (this.Fervor) / 10 : 0));
+    this.ArmyUpkeep = this.UnitUpkeep * ((this.ArmyQuality + this.Corruption / 5) + this.ArmyWages - 1) / TimeDivide;
+    
+    //Math min and max? nested ternary operations, with "0" if either fail? This can be optimized
+    this.MilitaryLoyalty = Math.min(1, Math.max(0,  1* this.ArmyWages + 
+    (this.EarlyModernAdministration == false ?
+      (this.NobleLoyalty < 0.50 ?
+        (this.NobleLoyalty - 0.50) * 2 :
+        0)
+      :
+      0)+ 
+    (this.MilitaryMorale < 0.70?
+      -(1 - this.MilitaryMorale) / 2 :
+      0) + 
+    (this.Budget < 0? this.Budget / this.ArmyUpkeep :
+    0)
+    - this.CommanderFreedom / 10));
+    
+    this.Stability = this.PopulationHappiness + this.AdministrativeEfficiency / 10 - this.Overextension - this.CulturalDisunity - this.ReligiousDisunity + (this.Propaganda / 1.75 * (1 + this.Newspapers / 2)) + this.PopulationControl + (this.NobleLoyalty - 0.5) * 10 + (this.ClergyLoyalty - 0.5) * 7.5 + (this.BurghersLoyalty - 0.5) * 7.5 + this.PopulationStabilityImpact + this.WarStabilityModifier * 100 + (this.MilitaryLoyalty - 1) * 7.5;
+    
+    
     //Production = (Local Trade+Trade power)*Artisans*Production Efficiency*10;
     //Production Efficiency = Mercantilism+Vertical Loom/5+Workshops+Cranes/5+Textile Manfucatories/2;
     //Trade Efficiency = 1*Mercantilism+Cranes/10+Promissory Notes/20+Trade Protection/200;
@@ -1325,7 +1372,6 @@ class NationSheet {
     //Budget = Budget;
     //Future Budget = Budget+Daily Budget;
     //Inflation = MAX(0, (Budget/1000)/(Adm. Efficiency/10));
-    //Army Upkeep = Unit Upkeep*((Army Quality+Corruption/5)+Army Wages-1)/Time Divide;
     //Spy Upkeep = Spies/200*Spy Quality/Time Divide;
     //Social Spending Upkeep = Social Spending*Population/1000000/Time Divide*3;
     //Hygiene Upkeep = Health*Population/2000000/Time Divide;
@@ -1353,7 +1399,6 @@ class NationSheet {
     //
     //Army Tech = 1+Army Tech boost;
     //Army Quality = MAX(0.1, 1+Training Quality+Army Tech+Military Tactics+Commander Freedom/10-Iron Shortage-Sulphur Shortage-Corruption/5);
-    //Military Loyalty = MIN(1, MAX(0, 1*Army Wages+IF(Early Modern Administration0,IF(Noble Loyalty<50%,(Noble Loyalty-50%)*2))+IF(Military Morale<70%,-(1-Military Morale)///2)+IF(Budget<0, Budget/Army Upkeep)-Commander Freedom/10));
     //Military Morale = MAX(0,MIN(1.5, 1+Fervor+IF(Mil. Discipline>1,-Mil. Discipline+1)*2+IF(War Support<0.5,War Support-0.5)+IF(War Support>0.75, War Support-0.75)+Army //Wages-1));
     //
     //
@@ -1702,7 +1747,6 @@ class NationSheet {
     //
     //
     //
-    //Fervor = MIN(1, MAX(-1, 0+Minor Battles/20+Major Battles/10+Pillaging-(Casualties/(Overall Numbers+Casualties+0.0000001))));
 
 
 
