@@ -1,3 +1,5 @@
+const { numberCmp } = require("hyperformula/typings/interpreter/ArithmeticHelper");
+
 let TimeSpeed = 50;
 TimeDivide = (function() {
   return 20 / TimeSpeed;
@@ -10,6 +12,27 @@ let Religions = { //For opinions not mentioned, they are Undesired
   }
 };
 let Cultures; //For opinions not mentioned, they are neutral towards them.
+let resourceTypes = [
+  "Sulphur",
+  "Cotton",
+  "Gold",
+  "Iron",
+  "Tea",
+  "Silk",
+  "Spices",
+  "Wool",
+  "Coffee",
+  "Fur",
+  "Diamonds",
+  "Silver",
+  "Copper",
+  "Coal",
+  "Ivory",
+  "Cocoa",
+  "Tobaco",
+  "Sugar",
+  "ExoticFruit"
+];
 let Trades;
 let TradeZones = {
   Alaska: 1,
@@ -206,7 +229,7 @@ class NationSheet {
   PropagandaUpkeep;
   PopulationControlUpkeep;
   TradeRevenue;
-  ADMUpkeep;
+  AdministrativeUpkeep;
   ProductionRevenue;
   ResearchUpkeep;
   OverallIncome;
@@ -255,7 +278,7 @@ class NationSheet {
   NavyTech;
   NavyQuality;
   LightShips;
-  UpkeepForOneLightShips;
+  UpkeepForOneLightShip;
   MediumShips;
   UpkeepForOneMediumShip;
   HeavyShips;
@@ -288,6 +311,7 @@ class NationSheet {
   New_MediumShips;
   New_HeavyShips;
 
+  NewTroopRecruitmentPenalty;
   /* #endregion */
 
   /* #region  Population */
@@ -390,79 +414,60 @@ class NationSheet {
   /* #endregion */
 
   /* #region  Resource Prices */
-  CoalSupply;
   CoalDemand;
   CoalValue;
 
-  GoldSupply;
   GoldDemand;
   GoldValue;
 
-  IronSupply;
   IronDemand;
   IronValue;
 
-  SulphurSupply;
   SulphurDemand;
   SulphurValue;
 
-  CottonSupply;
   CottonDemand;
   CottonValue;
 
-  TeaSupply;
   TeaDemand;
   TeaValue;
 
-  SpiceSupply;
   SpiceDemand;
   SpiceValue;
 
-  CopperSupply;
   CopperDemand;
   CopperValue;
 
-  SilkSupply;
   SilkDemand;
   SilkValue;
 
-  WoolSupply;
   WoolDemand;
   WoolValue;
 
-  CoffeeSupply;
   CoffeeDemand;
   CoffeeValue;
 
-  SilverSupply;
   SilverDemand;
   SilverValue;
 
-  DiamondSupply;
   DiamondDemand;
   DiamondValue;
 
-  FurSupply;
   FurDemand;
   FurValue;
 
-  IvorySupply;
   IvoryDemand;
   IvoryValue;
 
-  CocoaSupply;
   CocoaDemand;
   CocoaValue;
 
-  TobacoSupply;
   TobacoDemand;
   TobacoValue;
 
-  SugarSupply;
   SugarDemand;
   SugarValue;
 
-  ExoticFruitSupply;
   ExoticFruitDemand;
   ExocticFruitValue;
   /* #endregion */
@@ -498,7 +503,7 @@ class NationSheet {
   Gunports;
   Matchlock;
   StarForts;
-  TextileManfucatories;
+  TextileManufactories;
   Reiters;
   MiningCarts;
   HumanAnatomy;
@@ -813,6 +818,30 @@ class NationSheet {
     this.AgricultureAdvancements = 1.30;
     /* #endregion */
 
+    /* #region  Recruitments / New Troops */
+    this.New_Levies = 0;
+    this.New_LightInfantry = 0;
+    this.New_HeavyInfantry = 0;
+    this.New_Archers = 0;
+    this.New_Crossbowmen = 0;
+    this.New_LightCavalry = 0;
+    this.New_HeavyCavalry = 0;
+    this.New_EliteInfantry = 0;
+    this.New_EliteCavalry = 0;
+    this.New_HandCannon = 0;
+    this.New_Musketeers = 0;
+    this.New_Militia = 0;
+    this.New_SiegeEquipment = 0;
+    this.New_LargeSiegeEquipment = 0;
+    this.New_Cannons = 0;
+
+    this.New_LightShips = 0;
+    this.New_MediumShips = 0;
+    this.New_HeavyShips = 0;
+
+    
+    /* #endregion */
+
     /* #region  Population */
     this.Artisans = 0.01; //Show In Percent
     this.Clergy = 0.0075; //Show In Percent
@@ -871,7 +900,7 @@ class NationSheet {
     this.Gunports = false;
     this.Matchlock = false;
     this.StarForts = false;
-    this.TextileManfucatories = false;
+    this.TextileManufactories = false;
     this.Reiters = false;
     this.MiningCarts = false;
     this.HumanAnatomy = false;
@@ -1120,6 +1149,7 @@ class NationSheet {
       }
       return s;
     })();
+    this.Km2 = this.Size*20;
     this.HabitableLand = (function () {
       let hl = 0;
 
@@ -1129,7 +1159,7 @@ class NationSheet {
 
       return hl;
     })();
-    this.PopDensityPerKmSquared = this.Population / (this.Size * this.HabitableLand);
+    this.PopDensityPerKmSquared = this.Population / (this.Km2 * this.HabitableLand);
 
     this.Disease = this.PopDensityPerKmSquared / 25 - this.Health / 20 - (this.HumanAnatomy ? 0.15 : 0);
     this.UnderPopulation = this.Disease < 0.5 ? (1 - this.Disease) / 10 : 0;
@@ -1152,7 +1182,6 @@ class NationSheet {
 
       return mod;
     })();
-    //missing effective resource, resource inflation
 
     let GatheringEffectiveness = function (name) {
       switch (name) {
@@ -1170,10 +1199,75 @@ class NationSheet {
           return "Farming"
         default:
           return "Mining"
-      }
-    };
+        }
+      };
 
-    for (const resource in resources) {
+    let UnitUpkeepCosts = {
+      Levies: 0.75 / 1000,
+      LightInfantry: 2 / 1000, 
+      HeavyInfantry: 4 / 1000, 
+      Archers: 3 / 1000, 
+      Crossbowmen: 2 / 1000, 
+      LightCavalry: 4 / 1000, 
+      HeavyCavalry: 6.5 / 1000,
+      EliteInfantry: 7 / 1000, 
+      EliteCavalry: 8.5 / 1000,
+      HandCannon: 5 / 1000,
+      Musketeers: 3.5 / 1000, 
+      Militia: 1.25 / 1000,
+
+      SiegeEquipment: 1 / 10,
+      LargeSiegeEquipment: 1 / 5,
+      Cannons: 1 / 10
+    }
+    
+    this.UnitUpkeep = (function(){
+      let uu = 0;
+      for (const unitName in UnitUpkeepCosts) {
+        const cost = UnitUpkeepCosts[unitName];
+        uu += this[unitName] * cost;
+      }
+      return uu;
+    })();  
+    
+    this.ArmyTechBoost = (
+        this.SaddleAndStirrup + 
+        this.Matchlock + 
+        this.SocketBayonet + 
+        this.Flintlock)
+       / 5 + 
+      (
+        this.Gunpowder + 
+        this.PlateArmour + 
+        this.StandardizedPikes + 
+        this.Muskets + 
+        this.Limber + 
+        this.Mortars + 
+        this.Reiters + 
+        this.Metallurgy + 
+        this.Bayonet)
+      /10 + 
+      (
+        this.Firelance + 
+        this.Bombards + 
+        this.HandCannons + 
+        this.SappersAndEngineers)
+      / 20;
+    this.ArmyTech =  1 + this.ArmyTechBoost;
+    this.IronShortage = Math.max(0, this.UnitUpkeep / 200 - this.EffectiveIron);
+    this.SulphurShortage = Math.max(0, (this.Cannons * 100 + this.Musketeers + this.HandCannon + 
+    (this.Reiters == true ? this.LightCavalry + tihs.HeavyCavalry : 0)) / 15000 - this.EffectiveSulphur);
+    //missing Corruption
+    this.ArmyQuality = Math.max(0.1, 1+ this.TrainingQuality + this.ArmyTech + this.MilitaryTactics + this.CommanderFreedom / 10 - this.IronShortage - this.SulphurShortage -this.Corruption/5);
+    this.FortUpkeep = (
+      this.SmallForts * 2 + 
+      this.MediumForts * 4 + 
+      this.BigForts * 8 + 
+      this.HugeForts *16 + 
+      
+      this.ExtraCityFortifications * 5
+      ) * this.ArmyQuality/TimeDivide;
+    for (const resource in resourceTypes) {
       this["incoming" + resource] = 0;
       this["outgoing" + resource] = 0;
 
@@ -1187,16 +1281,17 @@ class NationSheet {
           }
         }
       }
-
-
+      
+      
       this["Effective" + resource] = (function () {
 
         return this.points * (GatheringEffectiveness(resource) == "Farming" ? this.FarmingEfficiency : this.MiningEfficiency) + incomingPoints - outgoingPoints;
       })();
 
+
       this[resource + "Inflation"] = (function () {
 
-        let inflationMod = function () {
+        let inflationMod = (function () {
           switch (resource) {
             case "Cotton":
               return 3;
@@ -1229,12 +1324,73 @@ class NationSheet {
             case "ExoticFruit":
               return 3;
           }
-        }
+        })();
 
-        return Math.max(0, this["Effective" + resource] - inflationMod());
+        return Math.max(0, this["Effective" + resource] - inflationMod);
       })();
+
+      let PopulationDemand = (function () {
+        switch (resource) {
+          case "Coal":
+						return 500000;
+          case "Sulphur":
+						return 2000000;
+          case "Cotton":
+						return 500000;
+          case "Gold":
+						return 200000;
+          case "Iron":
+						return 500000;
+          case "Tea":
+						return 500000;
+          case "Silk":
+						return 400000;
+          case "Spices":
+						return 400000;
+          case "Wool":
+						return 700000;
+          case "Coffee":
+						return 500000;
+          case "Fur":
+						return 450000;
+          case "Diamonds":
+						return 250000;
+          case "Silver":
+						return 300000;
+          case "Copper":
+						return 750000;
+          case "Ivory":
+						return 250000;
+          case "Cocoa":
+						return 500000;
+          case "Tobaco":
+						return 500000;
+          case "Sugar":
+						return 350000;
+          case "ExoticFruit":
+            return 350000;
+        }
+      })();
+
+      let extraDemands = (function(){
+        switch (resource){
+          case "Coal":
+            return (this.EffectiveIron + this.EffectiveGold + this.EffectiveCopper + this.EffectiveSilver) * 0.5 + (this.Population*this.Health/500000);
+          case "Iron":
+            return (this.UnitUpkeep+this.FortUpkeep)/50;
+          case "Copper":
+            return (this.UnitUpkeep+this.FortUpkeep)/100;
+        }
+      })();
+
+      this[resource + "Demand"] = (this.Population / PopulationDemand) + extraDemands;
+
+      if(resource == "Iron" && this.Metallurgy) this[resource + "Demand"] *= 1.1;
+
+      this[resource + "Value"] = this[resource + "Demand"] / (Math.sqrt(this["Effective" + resource]) + 0.1)
     }
 
+    
     this.ResourcePopulationGrowthBoost = (this.EffectiveCotton - this.CottonInflation + this.EffectiveSpice - this.SpiceInflation + this.EffectiveWool - thhis.Woolinflation + this.EffectiveFur - this.FurInflation + (this.EffectiveSugar - this.SugarInflation + this.EffectiveExoticFruit - this.ExoticFruitInflation) / 2) / 100;
     this.PopulationGrowth = Math.max(-0.3, (0.1 + this.PopulationGrowthModifier + this.ResourcePopulationGrowthBoost) * (1 - this.Disease) - this.BirthControl / 20);
     this.FuturePopulation = (function () {
@@ -1342,6 +1498,35 @@ class NationSheet {
     this.Fervor = Math.min(1, Math.max(-1, 0 + this.MinorBattles / 20 + this.MajorBattles / 10 + this.Pillaging - (this.Casualties / (this.OverallNumbers + this.Casualties + 0.0000001))));
     this.WarSupport = Math.min(1, Math.max(0, this.PopulationHappiness / 10 * 2.5 + this.Propaganda/10 + this.Fervor));
     this.WarStabilityModifier = ((this.AtOffensiveWar == true && this.WarSupport < 0.75) ? (this.WarSupport - 0.75) / 10 : 0) + Math.max(-0.075, ((this.AtDefensiveWar == true && this.WarSupport < 0.4 && this.Fervor < 0) ? (this.Fervor) / 10 : 0));
+    
+
+    this.NavyTech = 0 + tis.Galleons / 4 + this.Docks / 2 + this.Gunports / 2;
+    this.NavyQuality = 1 + this.NavyImprovements + this.NavyTech;
+    
+    this.UpkeepForOneLightShip = ((1/8)*this.NavyQuality) / TimeDivide * (1 + this.Gunports);
+    this.UpkeepForOneMediumShip = ((1/4)*this.NavyQuality) / TimeDivide * (1 + this.Gunports);
+    this.UpkeepForOneHeavyShip = ((1/2)*this.NavyQuality) / TimeDivide * (1 + this.Gunports + this.Galleons/2);
+    
+    this.NavyUpkeep = (
+      this.LightShips * this.UpkeepForOneLightShip + 
+      this.MediumShips * this.UpkeepForOneMediumShip + 
+      this.HeavyShips * this.UpkeepForOneHeavyShip
+    );
+
+    this.NewTroopRecruitmentPenalty = (function(){
+      let uu = 0;
+      for (const unitName in UnitUpkeepCosts) {
+        const cost = UnitUpkeepCosts[unitName];
+        uu += this["New_" + unitName] * cost;
+      }
+      uu += this.New_LightShips * this.UpkeepForOneLightShip;
+      uu += this.New_MediumShips * this.UpkeepForOneMediumShip;
+      uu += this.New_HeavyShips * this.UpkeepForOneHeavyShip;
+      
+      u /= 2;
+      return uu;
+    })();
+
     this.ArmyUpkeep = this.UnitUpkeep * ((this.ArmyQuality + this.Corruption / 5) + this.ArmyWages - 1) / TimeDivide;
     
     //Math min and max? nested ternary operations, with "0" if either fail? This can be optimized
@@ -1360,18 +1545,66 @@ class NationSheet {
     - this.CommanderFreedom / 10));
     
     this.Stability = this.PopulationHappiness + this.AdministrativeEfficiency / 10 - this.Overextension - this.CulturalDisunity - this.ReligiousDisunity + (this.Propaganda / 1.75 * (1 + this.Newspapers / 2)) + this.PopulationControl + (this.NobleLoyalty - 0.5) * 10 + (this.ClergyLoyalty - 0.5) * 7.5 + (this.BurghersLoyalty - 0.5) * 7.5 + this.PopulationStabilityImpact + this.WarStabilityModifier * 100 + (this.MilitaryLoyalty - 1) * 7.5;
+  
     
+    this.TradePowerResourceTrade = (function(){
+      let num = 0;
+      TradePowerResources = [
+        "Sulphur",
+        "Coal",
+        "Cotton",
+        "Gold",
+        "Iron",
+        "Tea",
+        "Silk",
+        "Spice",
+        "Wool",
+        "Coffee",
+        "Fur",
+        "Diamonds",
+        "Silver",
+        "Copper",
+        "Ivory",
+        "Cocoa",
+        "Tobaco",
+        "Sugar",
+        "ExoticFruit"
+      ];
+      for (const resourceName in TradePowerResources) {
+        const resource = TradePowerResources[resourceName];
+        num += this[resource + "Incoming"] * this[resource + "Value"]; 
+      }
+      return num;
+    })();
+    this.TradePower = this.TradePowerResourceTrade + this.LocalTrade / 2 + (this.speudoTradePower);
+    this.ProductionEfficiency = this.Mercantilism + this.VerticalLoom/5+this.Workshops+this.Cranes/5+this.TextileManufactories/2;
+    this.Production = (this.LocalTrade+this.TradePower)*this.Artisans*this.ProductionEfficiency*10;
+    this.TradeProtection = this.LightShips * 0.75 + this.MediumShips * 1 + this.HeavyShips * 0.75;
+    this.TradeEfficiency = 1 * this.Mercantilism + this.Cranes / 10 + this.PromissoryNotes / 20 + this.TradeProtection/200;
     
-    //Production = (Local Trade+Trade power)*Artisans*Production Efficiency*10;
-    //Production Efficiency = Mercantilism+Vertical Loom/5+Workshops+Cranes/5+Textile Manfucatories/2;
-    //Trade Efficiency = 1*Mercantilism+Cranes/10+Promissory Notes/20+Trade Protection/200;
-    //
-    //Trade power = Trade Power Resource Trade+Local Trade/2+(Trade Power Americas + Africa+Trade Power Europe+Trade Power Asia);
-    //
-    //Daily Budget = (Budget/(10-Adm. Efficiency/10+1)/Time Divide)/(1+Inflation)+Resource Budget Boost-Army Upkeep+Trade Revenue+Effective Tax-Eduation Upkeep-Hygiene //Upkeep-Navy Upkeep-Agriculture Spending-Social Spending Upkeep-Spy Upkeep-Pop. Control Upkeep-Propaganda Upkeep+Production Revenue-Fort Upkeep-ADM Upkeep-Research //Upkeep+Balance-Recruitment!Propaganda-Recruitment!War Stability Mod;
-    //Budget = Budget;
-    //Future Budget = Budget+Daily Budget;
-    //Inflation = MAX(0, (Budget/1000)/(Adm. Efficiency/10));
+    this.Inflation = Math.max(0, (this.Budget / 1000) / (this.AdministrativeEfficiency / 10));
+    this.ResourceBudgetBoost = (function(){
+      let rbb = 0;
+      let budgetBoostingResources = [
+        "Coal",
+        "Sulphur",
+        "Gold",
+        "Iron",
+        "Silver",
+        "Copper"
+      ];
+      for (const resourceIndex in budgetBoostingResources) {
+        const resource = budgetBoostingResources[resourceIndex];
+        let inflation = 0;
+        if(typeof this[resource + "Inflation"] !== 'undefined') inflation = this[resource + "Inflation"];
+        rbb += this["Effective" + resource] * (this[resource + "value"] - inflation);
+      }
+      return rbb / TimeDivide;
+    })();
+    
+    //missing ResourceBudgetBoost, ArmyUpkeep, TradeRevenue, EffectiveTax, EduationUpkeep, HygieneUpkeep, NavyUpkeep, AgricultureSpending, SocialSpendingUpkeep, SpyUpkeep PopulationControlUpkeep, PropagandaUpkeep, ProductionRevenue, FortUpkeep, AdministrativeUpkeep, ResearchUpkeep, Balance, 
+    this.DailyBudget = (this.Budget / (10 - this.AdministrativeEfficiency / 10 + 1) / tis.TimeDivide) / (1 + this.Inflation)+this.ResourceBudgetBoost - this.ArmyUpkeep+this.TradeRevenue+ this.EffectiveTax - this.EduationUpkeep - this.HygieneUpkeep - this.NavyUpkeep - this.AgricultureSpending - this.SocialSpendingUpkeep-this.SpyUpkeep - this.PopulationControlUpkeep - this.PropagandaUpkeep + this.ProductionRevenue-this.FortUpkeep- this.AdministrativeUpkeep-this.ResearchUpkeep + this.Balance- this.NewTroopRecruitmentPenalty;
+    this.FutureBudget = this.Budget + this.DailyBudget;
     //Spy Upkeep = Spies/200*Spy Quality/Time Divide;
     //Social Spending Upkeep = Social Spending*Population/1000000/Time Divide*3;
     //Hygiene Upkeep = Health*Population/2000000/Time Divide;
@@ -1389,16 +1622,11 @@ class NationSheet {
     //
     //
     //free Elite Units cap = ((Overall Numbers-Militia-Levies)*2.5%)-(Elite Cavalry+Elite Infantry);
-    //Unit Upkeep = (Levies*0.75+Light Infantry*2+Heavy Infantry*4+Archers*3+Crossbowmen*2+Light Cavalry*4+Heavy Cavalry*6.5+Elite Infantry*7+Elite Cavalry*8.5+Hand Cannon*5//+Musketeers*3.5+Militia*1.25)/1000+Siege Equipment/10+Large Siege Equipment/5+Cannons/10;
 
     //
     //
-    //Fort Upkeep = (Small Forts*2+Medium Forts*4+Big Forts*8+Huge Forts*16+Extra City Fortifications*5)*Army Quality/Time Divide;
-    //Iron Shortage = MAX(0, Unit Upkeep/200-Iron Supply);
-    //Sulphur Shortage = MAX(0, (Cannons*100+Musketeers+Hand Cannon+IF(Reiters1, Light Cavalry+Heavy Cavalry))/15000-Sulphur Supply);
+    
     //
-    //Army Tech = 1+Army Tech boost;
-    //Army Quality = MAX(0.1, 1+Training Quality+Army Tech+Military Tactics+Commander Freedom/10-Iron Shortage-Sulphur Shortage-Corruption/5);
     //Military Morale = MAX(0,MIN(1.5, 1+Fervor+IF(Mil. Discipline>1,-Mil. Discipline+1)*2+IF(War Support<0.5,War Support-0.5)+IF(War Support>0.75, War Support-0.75)+Army //Wages-1));
     //
     //
@@ -1446,8 +1674,6 @@ class NationSheet {
     //
     //
     //
-    //Nation Name = Nation name ;
-    //Km2 = Size*20;
     //Max Pop. = Population/Disease;
     //=
     //= ;
@@ -1455,17 +1681,9 @@ class NationSheet {
     //
     //
     //
-    //Nation Name = Nation name ;
-    //Navy Tech = 0+Galleons/4+Docks/2+Gunports/2;
-    //Navy Quality = 1+Navy Improvements+Navy Tech;
-    //Upkeep for 1 L.S. = ((1/8)*Navy Quality)/Time Divide*(1+Gunports);
-    //Upkeep for 1 M.S. = ((1/4)*Navy Quality)/Time Divide*(1+Gunports);
-    //Upkeep for 1 H.S. = ((1/2)*Navy Quality)/Time Divide*(1+Gunports+Galleons/2);
     //Pride of the navy = IF(Naval Power>10000,'ACCESSIBLE');
     //Overall Ship Count = Light Ships+Medium Ships+Heavy Ships;
-    //Trade Protection = Light Ships*0.75+Medium Ships*1+Heavy Ships*0.75;
     //Naval Power = (Light Ships*0.5+Medium Ships+2*Heavy Ships)*Navy Quality;
-    //Navy Upkeep = (Light Ships*Upkeep for 1 L.S.+Medium Ships*Upkeep for 1 M.S.+Heavy Ships*Upkeep for 1 H.S.);
     //
     //
     //
@@ -1481,68 +1699,11 @@ class NationSheet {
 
 
     //Resource happiness boost = Effective Cotton-Cotton Inf.+Effective Gold-Gold Inf.+Effective Tea-Tea Inf.+Effective Silk-Silk Inf.+Effective Spice-Spice Inf.+Effective //Wool-Wool Inf.+Effective Coffee-Coffee Inf.+Effective Fur-Fur Inf.+Effective Diamonds-Diamond Inf.+Effective Silver-Silver Inf.+Effective Ivory-Ivory Inf.+Effective //Cocoa-Cocoa Inf.+Effective Tobaco-Tobacco Inf.+Effective Sugar-Sugar Inf.+Effective Ex. Fruit-Ex. Fruit Inf.;
-    //Resource Budget Boost = (Effective Coal*Coal Value+Effective Sulphur*Sulphur Value+(Effective Gold-Gold Inf.)*Gold Value+Effective Iron*Iron Value+(Effective //Silver-Silver Inf.)*Silver Value+Effective Copper*Copper Value)/Time Divide;
     //
     //
     //
-    //Nation = Nation name ;
-    //Coal Supply = Effective Coal;
-    //Coal Demand = (Iron Supply+Gold Supply+Copper Supply+Silver Supply)*0.5+(Population*Health/500000)+Population/500000;
-    //Coal Value = Coal Demand/(SQRT(Coal Supply)+0.1);
-    //Gold Supply = Effective Gold;
-    //Gold Demand = Population/200000;
-    //Gold Value = Gold Demand/(SQRT(Gold Supply)+0.1);
-    //Iron Supply = Effective Iron;
-    //Iron Demand = ((Unit Upkeep+Fort Upkeep)/50+Population/500000)*(1+Metallurgy/10);
-    //Iron Value = Iron Demand/(SQRT(Iron Supply)+0.1);
-    //Sulphur Supply = Effective Sulphur;
-    //Sulphur Demand = Population/2000000;
-    //Sulphur Value = Sulphur Demand/(SQRT(Sulphur Supply)+0.1);
-    //Cotton Supply = Effective Cotton;
-    //Cotton Demand = Population/500000;
-    //Cotton Value = Cotton Demand/(SQRT(Cotton Supply)+0.1);
-    //Tea Supply = Effective Tea;
-    //Tea Demand = Population/500000;
-    //Tea Value = Tea Demand/(SQRT(Tea Supply)+0.1);
-    //Spice Supply = Effective Spice;
-    //Spice Demand = Population/400000;
-    //Spice Value = Spice Demand/(SQRT(Spice Supply)+0.1);
-    //Copper Supply = Effective Copper;
-    //Copper Demand = (Unit Upkeep+Fort Upkeep)/100+Population/750000;
-    //Copper Value = Copper Demand/(SQRT(Copper Supply)+0.1);
-    //Silk Supply = Effective Silk;
-    //Silk Demand = Population/400000;
-    //Silk Value = Silk Demand/(SQRT(Silk Supply)+0.1);
-    //Wool Supply = Effective Wool;
-    //Wool Demand = Population/700000;
-    //Wool Value = Wool Demand/(SQRT(Wool Supply)+0.1);
-    //Coffee Supply = Effective Coffee;
-    //Coffee Demand = Population/500000;
-    //Coffee Value = Coffee Demand/(SQRT(Coffee Supply)+0.1);
-    //Silver Supply = Effective Silver;
-    //Silver Demand = Population/300000;
-    //Silver Value = Silver Demand/(SQRT(Silver Supply)+0.1);
-    //Diamond Supply = Effective Diamonds;
-    //Diamond Demand = Population/250000;
-    //Diamond Value = Diamond Demand/(SQRT(Diamond Supply)+0.1);
-    //Fur Supply = Effective Fur;
-    //Fur Demand = Population/450000;
-    //Fur Value = Fur Demand/(SQRT(Fur Supply)+0.1);
-    //Ivory Supply = Effective Ivory;
-    //Ivory Demand = Population/250000;
-    //Ivory Value = Ivory Demand/(SQRT(Ivory Supply)+0.1);
-    //Cocoa Supply = Effective Cocoa;
-    //Cocoa Demand = Population/500000;
-    //Cocoa Value = Cocoa Demand/(SQRT(Cocoa Supply)+0.1);
-    //Tobaco Supply = Effective Tobaco;
-    //Tobaco Demand = Population/500000;
-    //Tobaco Value = Tobaco Demand/(SQRT(Tobaco Supply)+0.1);
-    //Sugar Supply = Effective Sugar;
-    //Sugar Demand = Population/350000;
-    //Sugar Value = Sugar Demand/(SQRT(Sugar Supply)+0.1);
-    //Ex. Fruit Supply = Effective Ex. Fruit;
-    //Ex. Fruit Demand = Population/350000;
-    //Ex. Fruit Value = Ex. Fruit Demand/(SQRT(Ex. Fruit Supply)+0.1);
+    
+    
     //
     //Research boost from Tech = 1+Universities/10+Renaissance Thought/5+Experimentation/5;
     //Research Point Gain = MAX(1 , (Research Spending*Research Effectiveness*Research boost from Tech*Literacy (%)/Isolation/Time Divide*2/10+Research Spending*Research //Effectiveness*Higher Education/Isolation/Time Divide*5/10)*(1-IF(Noble Influence>0.5, Noble Influence-0.5)/1.5-IF(Clergy Influence>0.5, Clergy Influence-0.5)/1.5)*//(1-Population Tech Impact));
@@ -1564,9 +1725,7 @@ class NationSheet {
     //= ;
     //= ;
     //= ;
-    //Army Tech boost = (Saddle & Stirrup+Matchlock+Socket Bayonet+Flintlock)/5+(Gunpowder+Plate Armour+Standardized Pikes+Muskets+Limber+Mortars+Reiters+Metallurgy+Bayonet)///10+(Fire lance+Bombards+Hand Cannons+Sappers/Engineers)/20;
     //
-    //Trade Power Resource Trade = Sulphur Incoming*Sulphur Value+Coal Incoming*Coal Value+Cotton incoming*Cotton Value+Gold Incoming*Gold Value+Iron incoming*Iron Value+Tea //Incoming*Tea Value+Silk Incoming*Silk Value+Spice Incoming*Spice Value+Wool incoming*Wool Value+Coffee incoming*Coffee Value+Fur Incoming*Fur Value+Diamonds //incoming*Diamond Value+Silver Incoming*Silver Value+Copper Incoming*Copper Value+Ivory Incoming*Ivory Value+Cocoa Incoming*Cocoa Value+Tobaco Incoming*Tobaco Value//+Sugar Incoming*Sugar Value+Ex. Fruit Incoming*Ex. Fruit Value;
     //
     //
     //
