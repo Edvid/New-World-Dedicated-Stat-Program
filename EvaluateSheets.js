@@ -1228,7 +1228,7 @@ class NationSheet {
       let uu = 0;
       for (const unitName in UnitUpkeepCosts) {
         const cost = UnitUpkeepCosts[unitName];
-        uu += self[unitName] * cost;
+        uu += n[unitName] * cost;
       }
       return uu;
     })();  
@@ -1270,28 +1270,29 @@ class NationSheet {
       
       n.ExtraCityFortifications * 5
       ) * n.ArmyQuality/TimeDivide;
-    for (const resource in resourceTypes) {
-      self[resource + "Incoming"] = 0;
-      self[resource + "Outgoing"] = 0;
+    for (const resourceIndex in resourceTypes) {
+      const resource = resourceTypes[resourceIndex];
+      n[resource + "Incoming"] = 0;
+      n[resource + "Outgoing"] = 0;
 
       for (const tradename in Trades) {
         const trade = Trades[tradename];
         if (trade.resource == resource) {
           if (n.NationName == trade.reciever) {
-            self[resource + "Incoming"] += trade.amount;
+            n[resource + "Incoming"] += trade.amount;
           } else if (n.NationName == trade.giver) {
-            self[resource + "Outgoing"] += trade.amount;
+            n[resource + "Outgoing"] += trade.amount;
           }
         }
       }
       
-      self["Effective" + resource] = (function () {
+      n["Effective" + resource] = (function () {
 
-        return self[resource] * (GatheringEffectiveness(resource) == "Farming" ? n.FarmingEfficiency : n.MiningEfficiency) + self[resource + "Incoming"] - self[resource + "Outgoing"];
+        return n[resource] * (GatheringEffectiveness(resource) == "Farming" ? n.FarmingEfficiency : n.MiningEfficiency) + n[resource + "Incoming"] - n[resource + "Outgoing"];
       })();
 
 
-      self[resource + "Inflation"] = (function () {
+      n[resource + "Inflation"] = (function () {
 
         let inflationMod = (function () {
           switch (resource) {
@@ -1328,31 +1329,31 @@ class NationSheet {
           }
         })();
 
-        return Math.max(0, self["Effective" + resource] - inflationMod);
+        return Math.max(0, n["Effective" + resource] - inflationMod);
       })();
 
       let PopulationDemand = (function () {
         switch (resource) {
-          case "Coal":
-						return 500000;
+          /*case "Coal":
+						return 500000;*/
           case "Sulphur":
 						return 2000000;
-          case "Cotton":
-						return 500000;
+          /*case "Cotton":
+						return 500000;*/
           case "Gold":
 						return 200000;
-          case "Iron":
+          /*case "Iron":
 						return 500000;
           case "Tea":
-						return 500000;
+						return 500000;*/
           case "Silk":
 						return 400000;
           case "Spices":
 						return 400000;
           case "Wool":
 						return 700000;
-          case "Coffee":
-						return 500000;
+          /*case "Coffee":
+						return 500000;*/
           case "Fur":
 						return 450000;
           case "Diamonds":
@@ -1363,14 +1364,16 @@ class NationSheet {
 						return 750000;
           case "Ivory":
 						return 250000;
-          case "Cocoa":
+          /*case "Cocoa":
 						return 500000;
           case "Tobaco":
-						return 500000;
+						return 500000;*/
           case "Sugar":
 						return 350000;
           case "ExoticFruit":
             return 350000;
+          default:
+            return 500000;
         }
       })();
 
@@ -1382,14 +1385,17 @@ class NationSheet {
             return (n.UnitUpkeep+n.FortUpkeep)/50;
           case "Copper":
             return (n.UnitUpkeep+n.FortUpkeep)/100;
+          default:
+            return 0;
         }
       })();
 
-      self[resource + "Demand"] = (n.Population / PopulationDemand) + extraDemands;
+      n[resource + "Demand"] = (n.Population / PopulationDemand) + extraDemands;
+      console.log(resource + ": " + n[resource + "Demand"]);
 
-      if(resource == "Iron" && n.Metallurgy) self[resource + "Demand"] *= 1.1;
+      if(resource == "Iron" && n.Metallurgy) n[resource + "Demand"] *= 1.1;
 
-      self[resource + "Value"] = self[resource + "Demand"] / (Math.sqrt(self["Effective" + resource]) + 0.1)
+      n[resource + "Value"] = n[resource + "Demand"] / (Math.sqrt(n["Effective" + resource]) + 0.1)
     }
 
     
@@ -1518,7 +1524,7 @@ class NationSheet {
       let ntrp = 0;
       for (const unitName in UnitUpkeepCosts) {
         const cost = UnitUpkeepCosts[unitName];
-        ntrp += self["New_" + unitName] * cost;
+        ntrp += n["New_" + unitName] * cost;
       }
       ntrp += n.New_LightShips * n.UpkeepForOneLightShip;
       ntrp += n.New_MediumShips * n.UpkeepForOneMediumShip;
@@ -1573,7 +1579,7 @@ class NationSheet {
       ];
       for (const resourceName in TradePowerResources) {
         const resource = TradePowerResources[resourceName];
-        num += self[resource + "Incoming"] * self[resource + "Value"]; 
+        num += n[resource + "Incoming"] * n[resource + "Value"]; 
       }
       return num;
     })();
@@ -1598,8 +1604,8 @@ class NationSheet {
       for (const resourceIndex in budgetBoostingResources) {
         const resource = budgetBoostingResources[resourceIndex];
         let inflation = 0;
-        if(typeof self[resource + "Inflation"] !== 'undefined') inflation = self[resource + "Inflation"];
-        rbb += self["Effective" + resource] * (self[resource + "value"] - inflation);
+        if(typeof n[resource + "Inflation"] !== 'undefined') inflation = n[resource + "Inflation"];
+        rbb += n["Effective" + resource] * (n[resource + "value"] - inflation);
       }
       return rbb / TimeDivide;
     })();
