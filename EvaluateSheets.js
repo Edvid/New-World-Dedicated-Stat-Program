@@ -1496,8 +1496,6 @@ class NationSheet {
         }
       })();
 
-      console.log(resource + ": " + extraDemands);
-
       n[resource + "Demand"] = (n.Population / PopulationDemand) + extraDemands;
 
       if(resource == "Iron" && n.Metallurgy) n[resource + "Demand"] *= 1.1;
@@ -1512,7 +1510,8 @@ class NationSheet {
     n.FuturePopulation = (function () {
       return n.Population + (n.FutureFood < 0 ? n.FutureFood * 1000 : n.Population * n.PopulationGrowth / TimeDivide);
     })();
-    n.FutureLiteracy = n.LiteracyPercent > n.EducationEfficiency * 3 ? n.EducationEfficiency * 3 : n.LiteracyPercent + n.EducationEfficiency / 10 / TimeDivide;
+    console.log(n.LiteracyPercent + n.EducationEfficiency / 10 / TimeDivide);
+    n.FutureLiteracyPercent = ((n.LiteracyPercent > n.EducationEfficiency * 3) ? n.EducationEfficiency * 3 : n.LiteracyPercent) + n.EducationEfficiency / 10 / TimeDivide;
     n.FutureHigherEducation = n.HigherEducation + (n.EducationEfficiency >= 3 ? n.EducationEfficiency / 30 : 0) + (n.HigherEducation > n.EducationEfficiency / 3 ? -0.25 : 0);
     
     n.HighClass = n.Nobility;
@@ -1621,7 +1620,7 @@ class NationSheet {
       return rbb / TimeDivide;
     })();
     
-    n.TradeRevenue = ((n.LocalTrade + n.Tradepower) * (1 - n.BurghersInfluence)) / TimeDivide * n.TradeEfficiency + n.Tradeprofit;
+    n.TradeRevenue = ((n.LocalTrade + n.TradePower) * (1 - n.BurghersInfluence)) / TimeDivide * n.TradeEfficiency + n.Tradeprofit;
     n.EffectiveTax = (
       (
         n.LowerClass * n.Population * n.LowerClassTax / 10000 + 
@@ -1642,6 +1641,7 @@ class NationSheet {
     
     n.DailyBudget = (n.Budget / (10 - n.AdministrativeEfficiency / 10 + 1) / TimeDivide) / (1 + n.Inflation)+n.ResourceBudgetBoost - n.ArmyUpkeep+n.TradeRevenue+ n.EffectiveTax - n.EducationUpkeep - n.HygieneUpkeep - n.NavyUpkeep - n.AgricultureSpending - n.SocialSpendingUpkeep-n.SpyUpkeep - n.PopulationControlUpkeep - n.PropagandaUpkeep + n.ProductionRevenue-n.FortUpkeep- n.AdministrativeUpkeep-n.ResearchUpkeep + n.Balance- n.NewTroopRecruitmentPenalty;
     n.FutureBudget = n.Budget + n.DailyBudget;
+    console.log("daily budget:" + n.DailyBudget);
     
     //Overall Income = (Budget/(10-Adm. Efficiency/10+1)/Time Divide)/(1+Inflation)+Resource Budget Boost+Trade Revenue+Effective Tax+Production Revenue+Balance;
     //= ;
