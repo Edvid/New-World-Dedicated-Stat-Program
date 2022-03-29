@@ -1644,28 +1644,16 @@ class NationSheet {
     n.FutureBudget = n.Budget + n.DailyBudget;
     
     //Overall Income = (Budget/(10-Adm. Efficiency/10+1)/Time Divide)/(1+Inflation)+Resource Budget Boost+Trade Revenue+Effective Tax+Production Revenue+Balance;
-    //= ;
-    //
-    //
     //
     //free Elite Units cap = ((Overall Numbers-Militia-Levies)*2.5%)-(Elite Cavalry+Elite Infantry);
-
-    //
-    //
     
     //
     //Military Morale = MAX(0,MIN(1.5, 1+Fervor+IF(Mil. Discipline>1,-Mil. Discipline+1)*2+IF(War Support<0.5,War Support-0.5)+IF(War Support>0.75, War Support-0.75)+Army //Wages-1));
     //
-    //
-    //
-    //Nation Name = Nation name ;
     //Cultural Advance = SUM(Divine Right to Rule:Newspapers);
     //Cultural Power Gain = (Literacy (%)/3+Pop. Happiness/8)*(Cultural Prosperity+Renaissance Thought/10)/Time Divide;
     //Cultural Power = Cultural Power;
     //Future Cultural Power = MIN(6, (Cultural Power+Cultural Power Gain));
-    //
-    //
-    //
     //
     //Future pop. = Future Pop.;
     //Future Literacy = Future Literacy;
@@ -1675,19 +1663,11 @@ class NationSheet {
     //Future Public Length = MAX(0, Public Debt Length+IF(Effective Debt>0,1,0)+IF(Effective Debt0,-100,0));
     //Future Cultural Power = Future Cultural Power;
     //
-    //
     //Future Date = Date in this nation+Time Speed;
-    //
-    //
-    //
-    //Nation Name = Nation name ;
     //
     //='All Stats'!AL1 = Possible Public Debt+0.01;
     //Public Debt Length = Public Debt Length;
     //Future Debt Length = Future Public Length;
-    //= ;
-    //
-    //
     //
     //Nations = Nation name ;
     //Stability = Stability;
@@ -1697,243 +1677,25 @@ class NationSheet {
     //MIlitary Expendures = Army Upkeep+Navy Upkeep;
     //D.B + M.E = 'All Stats'!AN1+MIlitary Expendures;
     //
-    //
-    //
     //Max Pop. = Population/Disease;
-    //=
-    //= ;
-
-    //
-    //
     //
     //Pride of the navy = IF(Naval Power>10000,'ACCESSIBLE');
     //Overall Ship Count = Light Ships+Medium Ships+Heavy Ships;
     //Naval Power = (Light Ships*0.5+Medium Ships+2*Heavy Ships)*Navy Quality;
     //
-    //
-    //
-
+    
     //Primary Culture % = 100%-Culture Group %-Accepted Culture %-Undesirable Culture%;
     //Cultural Disunity = (Culture Group %*0.1+Accepted Culture %*0.35+Undesirable Culture%*0.8)*(10+National Sovereignity*2);
     //= ;
     
     //Population Tech Impact = IF(Population>20000000, (Population-20000000)/250000000);
     //
-    //
-    //=Agriculture!I1 = Farming Efficiency;
-
-
-    
-    //
-    //
-    //
-    
     
     //
     //Research boost from Tech = 1+Universities/10+Renaissance Thought/5+Experimentation/5;
     //Research Point Gain = MAX(1 , (Research Spending*Research Effectiveness*Research boost from Tech*Literacy (%)/Isolation/Time Divide*2/10+Research Spending*Research //Effectiveness*Higher Education/Isolation/Time Divide*5/10)*(1-IF(Noble Influence>0.5, Noble Influence-0.5)/1.5-IF(Clergy Influence>0.5, Clergy Influence-0.5)/1.5)*//(1-Population Tech Impact));
     //Research Points = Research Points;
     //Future Research Points = MIN(7.5 ,Research Points+Research Point Gain);
-    //= ;
-    //= ;
-    //= ;
-    //= ;
-    //= ;
-    //= ;
-    //= ;
-    //= ;
-    //= ;
-    //= ;
-    //= ;
-    //= ;
-    //= ;
-    //= ;
-    //= ;
-    //= ;
-    //
-    //
-    //
-    //
-    //Nation Name Influence = Nation name ;
-    //Alaska Influence = ;
-    //= Alaska Influence/(SUM(B:B)+0.000001);
-    //Cascadia Influence = ;
-    //= Cascadia Influence/(SUM(D:D)+0.000001);
-    //West Coast Influence = ;
-    //= West Coast Influence/(SUM(F:F)+0.000001);
-    //Hudson Bay Influence = ;
-    //= Hudson Bay Influence/(SUM(H:H)+0.000001);
-    //Great Lakes Influence = ;
-    //= Great Lakes Influence/(SUM(J:J)+0.000001);
-    //Mississipi Influence = ;
-    //= Mississipi Influence/(SUM(L:L)+0.000001);
-    //Gulf of Mexico Influence = ;
-    //= Gulf of Mexico Influence/(SUM(N:N)+0.000001);
-    //Lawrence Gulf Influence = ;
-    //= Lawrence Gulf Influence/(SUM(P:P)+0.000001);
-    //East Coast Influence = ;
-    //= East Coast Influence/(SUM(R:R)+0.000001);
-    //Carribean Influence = ;
-    //= Carribean Influence/(SUM(T:T)+0.000001);
-    //Central America Influence = ;
-    //= Central America Influence/(SUM(V:V)+0.000001);
-    //Guyana/Suriname Influence = ;
-    //= Guyana/Suriname Influence/(SUM(X:X)+0.000001);
-    //Amazon Influence = ;
-    //= Amazon Influence/(SUM(Z:Z)+0.000001);
-    //Peru Influence = ;
-    //= Peru Influence/(SUM(AB:AB)+0.000001);
-    //Rio Grande Influence = ;
-    //= Rio Grande Influence/(SUM(AD:AD)+0.000001);
-    //La Plata Influence = ;
-    //= La Plata Influence/(SUM(AF:AF)+0.000001);
-    //Chile Influence = ;
-    //= Chile Influence/(SUM(AH:AH)+0.000001);
-    //Patagonia Influence = ;
-    //= Patagonia Influence/(SUM(AJ:AJ)+0.000001);
-    //Egypt Influence = ;
-    //= Egypt Influence/(SUM(AL:AL)+0.000001);
-    //Red Sea Influence = ;
-    //= Red Sea Influence/(SUM(AN:AN)+0.000001);
-    //West Africa Influence = ;
-    //= West Africa Influence/(SUM(AP:AP)+0.000001);
-    //Cote d'ivoire Influence = ;
-    //= Cote d'ivoire Influence/(SUM(AR:AR)+0.000001);
-    //Nigeria Influence = ;
-    //= Nigeria Influence/(SUM(AT:AT)+0.000001);
-    //South Nile Influence = ;
-    //= South Nile Influence/(SUM(AV:AV)+0.000001);
-    //Somalia Influence = ;
-    //= Somalia Influence/(SUM(AX:AX)+0.000001);
-    //Kongo Influence = ;
-    //= Kongo Influence/(SUM(AZ:AZ)+0.000001);
-    //East Africa Influence = ;
-    //= East Africa Influence/(SUM(BB:BB)+0.000001);
-    //Mozambique Influence = ;
-    //= Mozambique Influence/(SUM(BD:BD)+0.000001);
-    //South Africa Influence = ;
-    //= South Africa Influence/(SUM(BF:BF)+0.000001);
-    //Trade Power NA Influence = *'Trade Zone Wealth'!$A$2+*'Trade Zone Wealth'!$B$2+*'Trade Zone Wealth'!$C$2+*'Trade Zone Wealth'!$D$2+*'Trade Zone Wealth'!$E$2+*'Trade //Zone Wealth'!$F$2+*'Trade Zone Wealth'!$G$2+*'Trade Zone Wealth'!$H$2+*'Trade Zone Wealth'!$I$2+*'Trade Zone Wealth'!$J$2+*'Trade Zone Wealth'!$K$2;
-
-
-    //
-    //
-    //
-    //Nation Name Influence = Nation name ;
-    //Mesopotamia Influence = ;
-    //= Mesopotamia Influence/(SUM(B:B)+0.000001);
-    //Persian Gulf Influence = ;
-    //= Persian Gulf Influence/(SUM(D:D)+0.000001);
-    //Caucasus Influence = ;
-    //= Caucasus Influence/(SUM(F:F)+0.000001);
-    //Don (River) Influence = ;
-    //= Don (River) Influence/(SUM(H:H)+0.000001);
-    //Volga Influence = ;
-    //= Volga Influence/(SUM(J:J)+0.000001);
-    //Central Asia Influence = ;
-    //= Central Asia Influence/(SUM(L:L)+0.000001);
-    //West Siberia Influence = ;
-    //= West Siberia Influence/(SUM(N:N)+0.000001);
-    //East Siberia Influence = ;
-    //= East Siberia Influence/(SUM(P:P)+0.000001);
-    //Iran Influence = ;
-    //= Iran Influence/(SUM(R:R)+0.000001);
-    //Pakistan Influence = ;
-    //= Pakistan Influence/(SUM(T:T)+0.000001);
-    //Tibet Influence = ;
-    //= Tibet Influence/(SUM(V:V)+0.000001);
-    //Mongolia Influence = ;
-    //= Mongolia Influence/(SUM(X:X)+0.000001);
-    //Manchuria Influence = ;
-    //= Manchuria Influence/(SUM(Z:Z)+0.000001);
-    //Japan Influence = ;
-    //= Japan Influence/(SUM(AB:AB)+0.000001);
-    //North China Influence = ;
-    //= North China Influence/(SUM(AD:AD)+0.000001);
-    //Yangtzee River Influence = ;
-    //= Yangtzee River Influence/(SUM(AF:AF)+0.000001);
-    //South China Influence = ;
-    //= South China Influence/(SUM(AH:AH)+0.000001);
-    //North India Influence = ;
-    //= North India Influence/(SUM(AJ:AJ)+0.000001);
-    //West India Influence = ;
-    //= West India Influence/(SUM(AL:AL)+0.000001);
-    //East India Influence = ;
-    //= East India Influence/(SUM(AN:AN)+0.000001);
-    //Burma Influence = ;
-    //= Burma Influence/(SUM(AP:AP)+0.000001);
-    //South-East Asia Influence = ;
-    //= South-East Asia Influence/(SUM(AR:AR)+0.000001);
-    //North Australia Influence = ;
-    //= North Australia Influence/(SUM(AT:AT)+0.000001);
-    //South Australia Influence = ;
-    //= South Australia Influence/(SUM(AV:AV)+0.000001);
-
-    //
-    //
-    //
-    //Nation Name Influence = Nation name ;
-    //North Sea Influence = ;
-    //= North Sea Influence/(SUM(B:B)+0.000001);
-    //British Isles Influence = ;
-    //= British Isles Influence/(SUM(D:D)+0.000001);
-    //English Channel Influence = ;
-    //= English Channel Influence/(SUM(F:F)+0.000001);
-    //France Influence = ;
-    //= France Influence/(SUM(H:H)+0.000001);
-    //Bay of Biscay Influence = ;
-    //= Bay of Biscay Influence/(SUM(J:J)+0.000001);
-    //West Iberia Influence = ;
-    //= West Iberia Influence/(SUM(L:L)+0.000001);
-    //Gibraltar Influence = ;
-    //= Gibraltar Influence/(SUM(N:N)+0.000001);
-    //West Mediterreanian Influence = ;
-    //= West Mediterreanian Influence/(SUM(P:P)+0.000001);
-    //Rhine Influence = ;
-    //= Rhine Influence/(SUM(R:R)+0.000001);
-    //Central Med Influence = ;
-    //= Central Med Influence/(SUM(T:T)+0.000001);
-    //Adriatic Influence = ;
-    //= Adriatic Influence/(SUM(V:V)+0.000001);
-    //Germany Influence = ;
-    //= Germany Influence/(SUM(X:X)+0.000001);
-    //South Germany Influence = ;
-    //= South Germany Influence/(SUM(Z:Z)+0.000001);
-    //Denmark Influence = ;
-    //= Denmark Influence/(SUM(AB:AB)+0.000001);
-    //Baltic Influence = ;
-    //= Baltic Influence/(SUM(AD:AD)+0.000001);
-    //North Nordics Influence = ;
-    //= North Nordics Influence/(SUM(AF:AF)+0.000001);
-    //Barents Sea Influence = ;
-    //= Barents Sea Influence/(SUM(AH:AH)+0.000001);
-    //Novgrod Influence = ;
-    //= Novgrod Influence/(SUM(AJ:AJ)+0.000001);
-    //Poland Influence = ;
-    //= Poland Influence/(SUM(AL:AL)+0.000001);
-    //Dniepr Influence = ;
-    //= Dniepr Influence/(SUM(AN:AN)+0.000001);
-    //Crimea Influence = ;
-    //= Crimea Influence/(SUM(AP:AP)+0.000001);
-    //Balkans Influence = ;
-    //= Balkans Influence/(SUM(AR:AR)+0.000001);
-    //Greece Influence = ;
-    //= Greece Influence/(SUM(AT:AT)+0.000001);
-    //North Anatolia Influence = ;
-    //= North Anatolia Influence/(SUM(AV:AV)+0.000001);
-    //East Med Influence = ;
-    //= East Med Influence/(SUM(AX:AX)+0.000001);
-
-    //
-    //
-    //
-    //
-    //
-    //
-    //
-
-
-
   }
 
   clearNewTroops() {
