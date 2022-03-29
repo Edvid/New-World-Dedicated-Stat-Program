@@ -17,17 +17,17 @@ let resourceTypes = [
   "Iron",
   "Tea",
   "Silk",
-  "Spices",
+  "Spice",
   "Wool",
   "Coffee",
   "Fur",
-  "Diamonds",
+  "Diamond",
   "Silver",
   "Copper",
   "Coal",
   "Ivory",
   "Cocoa",
-  "Tobaco",
+  "Tobacco",
   "Sugar",
   "ExoticFruit"
 ];
@@ -359,13 +359,13 @@ class NationSheet {
   EffectiveSilk;
   SilkInflation;
 
-  Spices;
+  Spice;
   EffectiveSpice;
   SpiceInflation;
 
   Wool;
   EffectiveWool;
-  Woolinflation;
+  WoolInflation;
 
   Coffee;
   EffectiveCoffee;
@@ -375,8 +375,8 @@ class NationSheet {
   EffectiveFur;
   FurInflation;
 
-  Diamonds;
-  EffectiveDiamonds;
+  Diamond;
+  EffectiveDiamond;
   DiamondInflation;
 
   Silver;
@@ -394,8 +394,8 @@ class NationSheet {
   EffectiveCocoa;
   CocoaInflation;
 
-  Tobaco;
-  EffectiveTobaco;
+  Tobacco;
+  EffectiveTobacco;
   TobaccoInflation;
 
   Sugar;
@@ -460,8 +460,8 @@ class NationSheet {
   CocoaDemand;
   CocoaValue;
 
-  TobacoDemand;
-  TobacoValue;
+  TobaccoDemand;
+  TobaccoValue;
 
   SugarDemand;
   SugarValue;
@@ -514,7 +514,6 @@ class NationSheet {
   /* #endregion */
   ArmyTechBoost
   /* #endregion */
-
 
   /* #region  Economy */
   HighClassTax;
@@ -591,8 +590,8 @@ class NationSheet {
   FurIncoming;
   FurOutgoing;
 
-  Diamondsincoming;
-  DiamondsOutgoing;
+  Diamondincoming;
+  DiamondOutgoing;
 
   SilverIncoming;
   SilverOutgoing;
@@ -606,8 +605,8 @@ class NationSheet {
   CocoaIncoming;
   CocoaOutgoing;
 
-  TobacoIncoming;
-  TobacoOutgoing;
+  TobaccoIncoming;
+  TobaccoOutgoing;
 
   SugarIncoming;
   SugarOutgoing;
@@ -668,41 +667,17 @@ class NationSheet {
   LandAdministration;
   Overextension;
 
-  PolarDesert;
-
-  TaigaAndTundra;
-
-  MontaneForest;
-
-  Medditereanian;
-
-  Arid;
-
-  Steppe;
-
-  Moderate;
-
-  SubTropical;
-
-  Tropical;
-
-  Savanna;
-
-  Mountainous;
-
-  Desert;
-
-  CoastalDesert;
+  Climates;
 
   HabitableLand;
   /* #endregion */
   /* #endregion */
 
-  constructor(nationToCopy) {
+  constructor(nationName, nationToCopy) {
     let n = this;
     /* #region  Stats to Set Immedietly */
     /* #region  Main */
-    n.NationName = "Nation name";
+    n.NationName = nationName != null ? nationName : "Nation name";
     n.GovernmentName = "Government of " + n.NationName;
     n.Population = 5000000;
     n.LiteracyPercent = 7.50;
@@ -857,16 +832,16 @@ class NationSheet {
     n.Iron = 0;
     n.Tea = 0.00;
     n.Silk = 0;
-    n.Spices = 0;
+    n.Spice = 0;
     n.Wool = 0;
     n.Coffee = 0;
     n.Fur = 0;
-    n.Diamonds = 0;
+    n.Diamond = 0;
     n.Silver = 0;
     n.Copper = 0;
     n.Ivory = 0;
     n.Cocoa = 0;
-    n.Tobaco = 0;
+    n.Tobacco = 0;
     n.Sugar = 0;
     n.ExoticFruit = 0;
     /* #endregion */
@@ -1101,7 +1076,7 @@ class NationSheet {
     n.OverallNumbers = n.Levies + n.LightInfantry + n.HeavyInfantry + n.Archers + n.Crossbowmen + n.LightCavalry + n.HeavyCavalry + n.EliteInfantry + n.Militia + n.EliteCavalry + n.HandCannon + (n.SiegeEquipment + n.LargeSiegeEquipment) * 10;
     n.ConscriptionPercent = n.OverallNumbers / n.Population;
     n.PopulaitonInMilitary = n.ConscriptionPercent;
-    n.PopulationInResourceHarvest = (n.Coal + n.Sulphur + n.Cotton + n.Gold + n.Iron + n.Tea + n.Silk + n.Spices + n.Wool + n.Coffee + n.Fur + n.Diamonds + n.Silver + n.Copper) * 20000 / n.Population;
+    n.PopulationInResourceHarvest = (n.Coal + n.Sulphur + n.Cotton + n.Gold + n.Iron + n.Tea + n.Silk + n.Spice + n.Wool + n.Coffee + n.Fur + n.Diamond + n.Silver + n.Copper) * 20000 / n.Population;
     n.PopulationInAgriculture = 1 - n.PopulaitonInMilitary - n.Artisans - n.Clergy - n.Burghers - n.Nobility - n.PopulationInResourceHarvest;
     n.AgricultureSpending = (n.PopulationInAgriculture * n.Population / 1000 * n.AgricultureInfrastructure / 100 * (1 + n.AgricultureSubsidies / 10) * n.StockingCapabilities) / 2;
     n.DailyFood = n.PopulationInAgriculture * n.Population / 1000 * n.FarmingEfficiency * (1 - n.Pillaging) + n.FoodIncoming - n.FoodOutgoing;
@@ -1121,13 +1096,13 @@ class NationSheet {
     })();
 
     n.speudoTradePower = (function () {
-      let stp;
+      let stp = 0;
       for (const region in TradeZones) {
         let allNationPoints = 0;
         for (const nation in Nations) {
           allNationPoints += Nations[nation].TradeInfluences[region] !== 'undefined' ? Nations[nation].TradeInfluences[region] : 0;
         }
-        let percent = (n.TradeInfluences[region] !== 'undefined' ? n.TradeInfluences[region] : 0) / allNationPoints;
+        let percent = allNationPoints != 0 ? ((n.TradeInfluences[region] !== 'undefined' ? n.TradeInfluences[region] : 0) / allNationPoints) : 0;
         stp += TradeZones[region] * percent;
       }
       return stp;
@@ -1154,6 +1129,7 @@ class NationSheet {
     })();
     n.Km2 = n.Size*20;
     n.HabitableLand = (function () {
+      if(n.Size == 0) return 0;
       let hl = 0;
 
       for (const climate in n.Climates) {
@@ -1257,20 +1233,7 @@ class NationSheet {
         n.SappersAndEngineers)
       / 20;
     n.ArmyTech =  1 + n.ArmyTechBoost;
-    n.IronShortage = Math.max(0, n.UnitUpkeep / 200 - n.EffectiveIron);
-    n.SulphurShortage = Math.max(0, (n.Cannons * 100 + n.Musketeers + n.HandCannon + 
-    (n.Reiters == true ? n.LightCavalry + tihs.HeavyCavalry : 0)) / 15000 - n.EffectiveSulphur);
-    n.Corruption = Math.max(0, n.SocialSpending - n.AdministrativeEfficiency / 20) + (n.Stability < 1 ? 0.5 : 0) + (n.Stability < -1 ? 0.5 : 0) + Math.max(0, ((n.HighClassTax + n.MediumClassTax + n.LowerClassTax) / 3 * 100) - n.AdministrativeEfficiency / 2) / 10;
-    n.ArmyQuality = Math.max(0.1, 1+ n.TrainingQuality + n.ArmyTech + n.MilitaryTactics + n.CommanderFreedom / 10 - n.IronShortage - n.SulphurShortage -n.Corruption/5);
-    n.FortUpkeep = (
-      n.SmallForts * 2 + 
-      n.MediumForts * 4 + 
-      n.BigForts * 8 + 
-      n.HugeForts *16 + 
-      
-      n.ExtraCityFortifications * 5
-      ) * n.ArmyQuality/TimeDivide;
-    for (const resourceIndex in resourceTypes) {
+    for (const resourceIndex in resourceTypes) { //in, out, effective resources and potential inflation adjustments
       const resource = resourceTypes[resourceIndex];
       n[resource + "Incoming"] = 0;
       n[resource + "Outgoing"] = 0;
@@ -1291,136 +1254,76 @@ class NationSheet {
         return n[resource] * (GatheringEffectiveness(resource) == "Farming" ? n.FarmingEfficiency : n.MiningEfficiency) + n[resource + "Incoming"] - n[resource + "Outgoing"];
       })();
 
-
-      n[resource + "Inflation"] = (function () {
-
-        let inflationMod = (function () {
-          switch (resource) {
-            case "Cotton":
-              return 3;
-            case "Gold":
-              return 3;
-            case "Tea":
-              return 3;
-            case "Silk":
-              return 3;
-            case "Spice":
-              return 5;
-            case "Wool":
-              return 5;
-            case "Coffee":
-              return 3;
-              case "Fur":
-                return 3.5;
-            case "Diamond":
-              return 3;
-            case "Silver":
-              return 3;
-            case "Ivory":
-              return 2.5;
-            case "Cocoa":
-              return 3;
-            case "Tobacco":
-              return 3;
-            case "Sugar":
-              return 3;
-            case "ExoticFruit":
-              return 3;
-          }
-        })();
-
-        return Math.max(0, n["Effective" + resource] - inflationMod);
-      })();
-
-      let PopulationDemand = (function () {
+      let inflationMod = (function () {
         switch (resource) {
-          /*case "Coal":
-						return 500000;*/
-          case "Sulphur":
-						return 2000000;
-          /*case "Cotton":
-						return 500000;*/
+          case "Cotton":
+            return 3;
           case "Gold":
-						return 200000;
-          /*case "Iron":
-						return 500000;
+            return 3;
           case "Tea":
-						return 500000;*/
+            return 3;
           case "Silk":
-						return 400000;
-          case "Spices":
-						return 400000;
+            return 3;
+          case "Spice":
+            return 5;
           case "Wool":
-						return 700000;
-          /*case "Coffee":
-						return 500000;*/
-          case "Fur":
-						return 450000;
-          case "Diamonds":
-						return 250000;
+            return 5;
+          case "Coffee":
+            return 3;
+            case "Fur":
+              return 3.5;
+          case "Diamond":
+            return 3;
           case "Silver":
-						return 300000;
-          case "Copper":
-						return 750000;
+            return 3;
           case "Ivory":
-						return 250000;
-          /*case "Cocoa":
-						return 500000;
-          case "Tobaco":
-						return 500000;*/
+            return 2.5;
+          case "Cocoa":
+            return 3;
+          case "Tobacco":
+            return 3;
           case "Sugar":
-						return 350000;
+            return 3;
           case "ExoticFruit":
-            return 350000;
+            return 3;
           default:
-            return 500000;
+            return NaN;
         }
       })();
+      if(!isNaN(inflationMod)){
+        n[resource + "Inflation"] = Math.max(0, n["Effective" + resource] - inflationMod);
+      }
+      
 
-      let extraDemands = (function(){
-        switch (resource){
-          case "Coal":
-            return (n.EffectiveIron + n.EffectiveGold + n.EffectiveCopper + n.EffectiveSilver) * 0.5 + (n.Population*n.Health/500000);
-          case "Iron":
-            return (n.UnitUpkeep+n.FortUpkeep)/50;
-          case "Copper":
-            return (n.UnitUpkeep+n.FortUpkeep)/100;
-          default:
-            return 0;
-        }
-      })();
-
-      n[resource + "Demand"] = (n.Population / PopulationDemand) + extraDemands;
-      console.log(resource + ": " + n[resource + "Demand"]);
-
-      if(resource == "Iron" && n.Metallurgy) n[resource + "Demand"] *= 1.1;
-
-      n[resource + "Value"] = n[resource + "Demand"] / (Math.sqrt(n["Effective" + resource]) + 0.1)
+      
     }
-
+    n.IronShortage = Math.max(0, n.UnitUpkeep / 200 - n.EffectiveIron);
+    n.SulphurShortage = Math.max(0, (n.Cannons * 100 + n.Musketeers + n.HandCannon + 
+    (n.Reiters == true ? n.LightCavalry + n.HeavyCavalry : 0)) / 15000 - n.EffectiveSulphur);
     
-    n.ResourcePopulationGrowthBoost = (n.EffectiveCotton - n.CottonInflation + n.EffectiveSpice - n.SpiceInflation + n.EffectiveWool - n.Woolinflation + n.EffectiveFur - n.FurInflation + (n.EffectiveSugar - n.SugarInflation + n.EffectiveExoticFruit - n.ExoticFruitInflation) / 2) / 100;
-    n.PopulationGrowth = Math.max(-0.3, (0.1 + n.PopulationGrowthModifier + n.ResourcePopulationGrowthBoost) * (1 - n.Disease) - n.BirthControl / 20);
-    n.FuturePopulation = (function () {
-      return n.Population + (n.FutureFood < 0 ? n.FutureFood * 1000 : n.Population * n.PopulationGrowth / TimeDivide);
-    })();
-    n.FutureLiteracy = n.LiteracyPercent > n.EducationEfficiency * 3 ? n.EducationEfficiency * 3 : n.LiteracyPercent + n.EducationEfficiency / 10 / TimeDivide;
-    n.FutureHigherEducation = n.HigherEducation + (n.EducationEfficiency >= 3 ? n.EducationEfficiency / 30 : 0) + (n.HigherEducation > n.EducationEfficiency / 3 ? -0.25 : 0);
     
-    n.HighClass = n.Nobility;
-    n.MediumClass = n.Artisans + n.Clergy + n.Burghers;
-    n.LowerClass = n.PopulationInAgriculture + n.PopulaitonInMilitary;
-    n.InterestRate = 0.05 + n.PublicDebtLength * 0.02 / TimeDivide;
-    n.EffectiveDebt = n.PublicDebtTaken * (1 + n.InterestRate);
-    n.PublicDebt = n.EffectiveDebt;
-    n.PossiblePublicDebt = Math.max(0, n.Population / 10000 * (1 - (n.HighClassTax + n.MediumClassTax + n.LowerClassTax) / 3) - n.PublicDebt);
-    n.DebtHappinessEffect = (n.PublicDebtLength > 1 ? n.EffectiveDebt / (n.PossiblePublicDebt + n.PublicDebtTaken) * (2 + n.PublicDebtLength) : 0);
-    n.WarExhaustion = (n.Casualties / n.Population * 500) + (n.Pillaging * 20) + (n.Occupation * 5);
+    
+    
+    //loop optimization pls
+    n.ResourceHappinessBoost = 
+    n.EffectiveCotton - n.CottonInflation + 
+    n.EffectiveGold - n.GoldInflation + 
+    n.EffectiveTea - n.TeaInflation + 
+    n.EffectiveSilk - n.SilkInflation + 
+    n.EffectiveSpice - n.SpiceInflation + 
+    n.EffectiveWool - n.WoolInflation + 
+    n.EffectiveCoffee - n.CoffeeInflation + 
+    n.EffectiveFur - n.FurInflation + 
+    n.EffectiveDiamond - n.DiamondInflation + 
+    n.EffectiveSilver - n.SilverInflation + 
+    n.EffectiveIvory - n.IvoryInflation + 
+    n.EffectiveCocoa - n.CocoaInflation + 
+    n.EffectiveTobacco - n.TobaccoInflation + 
+    n.EffectiveSugar - n.SugarInflation + 
+    n.EffectiveExoticFruit - n.ExoticFruitInflation;
     n.PopulationHappiness = (50 + n.ResourceHappinessBoost) * n.Prosperity / 10 - (n.LowerClassTax * n.LowerClass + n.MediumClassTax * n.MediumClass + n.HighClass * n.HighClassTax) * 100 / 4 - n.Absolutism / 2 - n.PopulationControl +
       (n.Mercantilism > 1 ? (-n.Mercantilism + 1) * 2.5 : 0) + (n.PublicDebt > 0 && n.Budget < 0 ? - (n.PublicDebt / n.PossiblePublicDebt) * 10 : 0) - n.WarExhaustion / 2 - n.DebtHappinessEffect + (n.Disease > 0.10 ? - n.Disease / 4 : 0);
-    n.LandAdministration = ((n.Size - n.DetachedLand) / 25000 + n.DetachedLand / 10000) * (1 - n.AdministrativeEfficiency / 1000);
     n.Overextension = n.UnderPopulation / 4 + n.LandAdministration / 1.5;
-
     let pointSum = 0;
     let culturalDisunity = 0;
 
@@ -1472,6 +1375,7 @@ class NationSheet {
       }
     }
     n.culturalDisunity = culturalDisunity / 100;
+
     n.NobleLoyalty = (function(){
       let pointSum = 0;
       let alliedPoints = 0;
@@ -1502,9 +1406,130 @@ class NationSheet {
       }
       return alliedPoints / pointSum;
     })();
+    n.PopulationStabilityImpact = (n.Population > n.AdministrativeEfficiency * 500000 ? (n.AdministrativeEfficiency * 500000 - n.Population) / 50000000 : 0) * 10;
     n.Fervor = Math.min(1, Math.max(-1, 0 + n.MinorBattles / 20 + n.MajorBattles / 10 + n.Pillaging - (n.Casualties / (n.OverallNumbers + n.Casualties + 0.0000001))));
     n.WarSupport = Math.min(1, Math.max(0, n.PopulationHappiness / 10 * 2.5 + n.Propaganda/10 + n.Fervor));
     n.WarStabilityModifier = ((n.AtOffensiveWar == true && n.WarSupport < 0.75) ? (n.WarSupport - 0.75) / 10 : 0) + Math.max(-0.075, ((n.AtDefensiveWar == true && n.WarSupport < 0.4 && n.Fervor < 0) ? (n.Fervor) / 10 : 0));
+    //Math min and max? nested ternary operations, with "0" if either fail? This can be optimized
+    n.MilitaryLoyalty = Math.min(1, Math.max(0,  1* n.ArmyWages + 
+      (n.EarlyModernAdministration == false ?
+        (n.NobleLoyalty < 0.50 ?
+          (n.NobleLoyalty - 0.50) * 2 :
+          0)
+        :
+        0)+ 
+      (n.MilitaryMorale < 0.70?
+        -(1 - n.MilitaryMorale) / 2 :
+        0) + 
+      (n.Budget < 0? n.Budget / n.ArmyUpkeep :
+      0)
+      - n.CommanderFreedom / 10));
+      
+    n.Stability = n.PopulationHappiness + n.AdministrativeEfficiency / 10 - n.Overextension - n.CulturalDisunity - n.ReligiousDisunity + (n.Propaganda / 1.75 * (1 + n.Newspapers / 2)) + n.PopulationControl + (n.NobleLoyalty - 0.5) * 10 + (n.ClergyLoyalty - 0.5) * 7.5 + (n.BurghersLoyalty - 0.5) * 7.5 + n.PopulationStabilityImpact + n.WarStabilityModifier * 100 + (n.MilitaryLoyalty - 1) * 7.5;
+    n.Corruption = Math.max(0, n.SocialSpending - n.AdministrativeEfficiency / 20) + (n.Stability < 1 ? 0.5 : 0) + (n.Stability < -1 ? 0.5 : 0) + Math.max(0, ((n.HighClassTax + n.MediumClassTax + n.LowerClassTax) / 3 * 100) - n.AdministrativeEfficiency / 2) / 10;
+    n.ArmyQuality = Math.max(0.1, 1+ n.TrainingQuality + n.ArmyTech + n.MilitaryTactics + n.CommanderFreedom / 10 - n.IronShortage - n.SulphurShortage - n.Corruption/5);
+    n.FortUpkeep = (
+      n.SmallForts * 2 + 
+      n.MediumForts * 4 + 
+      n.BigForts * 8 + 
+      n.HugeForts *16 + 
+      
+      n.ExtraCityFortifications * 5
+    ) * n.ArmyQuality/TimeDivide;
+    for (const resourceIndex in resourceTypes) { // demands and values
+      const resource = resourceTypes[resourceIndex];
+      let PopulationDemand = (function () {
+        switch (resource) {
+          /*case "Coal":
+						return 500000;*/
+          case "Sulphur":
+						return 2000000;
+          /*case "Cotton":
+						return 500000;*/
+          case "Gold":
+						return 200000;
+          /*case "Iron":
+						return 500000;
+          case "Tea":
+						return 500000;*/
+          case "Silk":
+						return 400000;
+          case "Spice":
+						return 400000;
+          case "Wool":
+						return 700000;
+          /*case "Coffee":
+						return 500000;*/
+          case "Fur":
+						return 450000;
+          case "Diamond":
+						return 250000;
+          case "Silver":
+						return 300000;
+          case "Copper":
+						return 750000;
+          case "Ivory":
+						return 250000;
+          /*case "Cocoa":
+						return 500000;
+          case "Tobacco":
+						return 500000;*/
+          case "Sugar":
+						return 350000;
+          case "ExoticFruit":
+            return 350000;
+          default:
+            return 500000;
+        }
+      })();
+
+      let extraDemands = (function(){
+        switch (resource){
+          case "Coal":
+            return (n.EffectiveIron + n.EffectiveGold + n.EffectiveCopper + n.EffectiveSilver) * 0.5 + (n.Population*n.Health/500000);
+          case "Iron":
+            return (n.UnitUpkeep+n.FortUpkeep)/50;
+          case "Copper":
+            return (n.UnitUpkeep+n.FortUpkeep)/100;
+          default:
+            return 0;
+        }
+      })();
+
+      console.log(resource + ": " + extraDemands);
+
+      n[resource + "Demand"] = (n.Population / PopulationDemand) + extraDemands;
+
+      if(resource == "Iron" && n.Metallurgy) n[resource + "Demand"] *= 1.1;
+
+      n[resource + "Value"] = n[resource + "Demand"] / (Math.sqrt(n["Effective" + resource]) + 0.1);
+    }
+    
+
+    
+    n.ResourcePopulationGrowthBoost = (n.EffectiveCotton - n.CottonInflation + n.EffectiveSpice - n.SpiceInflation + n.EffectiveWool - n.WoolInflation + n.EffectiveFur - n.FurInflation + (n.EffectiveSugar - n.SugarInflation + n.EffectiveExoticFruit - n.ExoticFruitInflation) / 2) / 100;
+    n.PopulationGrowth = Math.max(-0.3, (0.1 + n.PopulationGrowthModifier + n.ResourcePopulationGrowthBoost) * (1 - n.Disease) - n.BirthControl / 20);
+    n.FuturePopulation = (function () {
+      return n.Population + (n.FutureFood < 0 ? n.FutureFood * 1000 : n.Population * n.PopulationGrowth / TimeDivide);
+    })();
+    n.FutureLiteracy = n.LiteracyPercent > n.EducationEfficiency * 3 ? n.EducationEfficiency * 3 : n.LiteracyPercent + n.EducationEfficiency / 10 / TimeDivide;
+    n.FutureHigherEducation = n.HigherEducation + (n.EducationEfficiency >= 3 ? n.EducationEfficiency / 30 : 0) + (n.HigherEducation > n.EducationEfficiency / 3 ? -0.25 : 0);
+    
+    n.HighClass = n.Nobility;
+    n.MediumClass = n.Artisans + n.Clergy + n.Burghers;
+    n.LowerClass = n.PopulationInAgriculture + n.PopulaitonInMilitary;
+    n.InterestRate = 0.05 + n.PublicDebtLength * 0.02 / TimeDivide;
+    n.EffectiveDebt = n.PublicDebtTaken * (1 + n.InterestRate);
+    n.PublicDebt = n.EffectiveDebt;
+    n.PossiblePublicDebt = Math.max(0, n.Population / 10000 * (1 - (n.HighClassTax + n.MediumClassTax + n.LowerClassTax) / 3) - n.PublicDebt);
+    n.DebtHappinessEffect = (n.PublicDebtLength > 1 ? n.EffectiveDebt / (n.PossiblePublicDebt + n.PublicDebtTaken) * (2 + n.PublicDebtLength) : 0);
+    n.WarExhaustion = (n.Casualties / n.Population * 500) + (n.Pillaging * 20) + (n.Occupation * 5);
+    
+    n.LandAdministration = ((n.Size - n.DetachedLand) / 25000 + n.DetachedLand / 10000) * (1 - n.AdministrativeEfficiency / 1000);
+    
+    
+    
+    
     
 
     n.NavyTech = 0 + n.Galleons / 4 + n.Docks / 2 + n.Gunports / 2;
@@ -1536,22 +1561,8 @@ class NationSheet {
 
     n.ArmyUpkeep = n.UnitUpkeep * ((n.ArmyQuality + n.Corruption / 5) + n.ArmyWages - 1) / TimeDivide;
     
-    //Math min and max? nested ternary operations, with "0" if either fail? This can be optimized
-    n.MilitaryLoyalty = Math.min(1, Math.max(0,  1* n.ArmyWages + 
-    (n.EarlyModernAdministration == false ?
-      (n.NobleLoyalty < 0.50 ?
-        (n.NobleLoyalty - 0.50) * 2 :
-        0)
-      :
-      0)+ 
-    (n.MilitaryMorale < 0.70?
-      -(1 - n.MilitaryMorale) / 2 :
-      0) + 
-    (n.Budget < 0? n.Budget / n.ArmyUpkeep :
-    0)
-    - n.CommanderFreedom / 10));
     
-    n.Stability = n.PopulationHappiness + n.AdministrativeEfficiency / 10 - n.Overextension - n.CulturalDisunity - n.ReligiousDisunity + (n.Propaganda / 1.75 * (1 + n.Newspapers / 2)) + n.PopulationControl + (n.NobleLoyalty - 0.5) * 10 + (n.ClergyLoyalty - 0.5) * 7.5 + (n.BurghersLoyalty - 0.5) * 7.5 + n.PopulationStabilityImpact + n.WarStabilityModifier * 100 + (n.MilitaryLoyalty - 1) * 7.5;
+    
   
     
     n.TradePowerResourceTrade = (function(){
@@ -1568,12 +1579,12 @@ class NationSheet {
         "Wool",
         "Coffee",
         "Fur",
-        "Diamonds",
+        "Diamond",
         "Silver",
         "Copper",
         "Ivory",
         "Cocoa",
-        "Tobaco",
+        "Tobacco",
         "Sugar",
         "ExoticFruit"
       ];
@@ -1583,7 +1594,6 @@ class NationSheet {
       }
       return num;
     })();
-    console.log(n.TradePowerResourceTrade);
     n.TradePower = n.TradePowerResourceTrade + n.LocalTrade / 2 + (n.speudoTradePower);
     n.ProductionEfficiency = n.Mercantilism + n.VerticalLoom/5+n.Workshops+n.Cranes/5+n.TextileManufactories/2;
     n.Production = (n.LocalTrade+n.TradePower)*n.Artisans*n.ProductionEfficiency*10;
@@ -1603,9 +1613,10 @@ class NationSheet {
       ];
       for (const resourceIndex in budgetBoostingResources) {
         const resource = budgetBoostingResources[resourceIndex];
+        
         let inflation = 0;
         if(typeof n[resource + "Inflation"] !== 'undefined') inflation = n[resource + "Inflation"];
-        rbb += n["Effective" + resource] * (n[resource + "value"] - inflation);
+        rbb += n["Effective" + resource] * (n[resource + "Value"] - inflation);
       }
       return rbb / TimeDivide;
     })();
@@ -1629,7 +1640,7 @@ class NationSheet {
     n.ResearchUpkeep = n.ResearchSpending * n.Population / 500000 / TimeDivide * n.LiteracyPercent / 10;
     n.Balance = n.BudgetIncoming - n.BudgetOutgoing;
     
-    n.DailyBudget = (n.Budget / (10 - n.AdministrativeEfficiency / 10 + 1) / n.TimeDivide) / (1 + n.Inflation)+n.ResourceBudgetBoost - n.ArmyUpkeep+n.TradeRevenue+ n.EffectiveTax - n.EducationUpkeep - n.HygieneUpkeep - n.NavyUpkeep - n.AgricultureSpending - n.SocialSpendingUpkeep-n.SpyUpkeep - n.PopulationControlUpkeep - n.PropagandaUpkeep + n.ProductionRevenue-n.FortUpkeep- n.AdministrativeUpkeep-n.ResearchUpkeep + n.Balance- n.NewTroopRecruitmentPenalty;
+    n.DailyBudget = (n.Budget / (10 - n.AdministrativeEfficiency / 10 + 1) / TimeDivide) / (1 + n.Inflation)+n.ResourceBudgetBoost - n.ArmyUpkeep+n.TradeRevenue+ n.EffectiveTax - n.EducationUpkeep - n.HygieneUpkeep - n.NavyUpkeep - n.AgricultureSpending - n.SocialSpendingUpkeep-n.SpyUpkeep - n.PopulationControlUpkeep - n.PropagandaUpkeep + n.ProductionRevenue-n.FortUpkeep- n.AdministrativeUpkeep-n.ResearchUpkeep + n.Balance- n.NewTroopRecruitmentPenalty;
     n.FutureBudget = n.Budget + n.DailyBudget;
     
     //Overall Income = (Budget/(10-Adm. Efficiency/10+1)/Time Divide)/(1+Inflation)+Resource Budget Boost+Trade Revenue+Effective Tax+Production Revenue+Balance;
@@ -1705,14 +1716,14 @@ class NationSheet {
     //Primary Culture % = 100%-Culture Group %-Accepted Culture %-Undesirable Culture%;
     //Cultural Disunity = (Culture Group %*0.1+Accepted Culture %*0.35+Undesirable Culture%*0.8)*(10+National Sovereignity*2);
     //= ;
-    //Population Stability Impact = IF(Population>Adm. Efficiency*500000, (Adm. Efficiency*500000-Population)/50000000)*10;
+    
     //Population Tech Impact = IF(Population>20000000, (Population-20000000)/250000000);
     //
     //
     //=Agriculture!I1 = Farming Efficiency;
 
 
-    //Resource happiness boost = Effective Cotton-Cotton Inf.+Effective Gold-Gold Inf.+Effective Tea-Tea Inf.+Effective Silk-Silk Inf.+Effective Spice-Spice Inf.+Effective //Wool-Wool Inf.+Effective Coffee-Coffee Inf.+Effective Fur-Fur Inf.+Effective Diamonds-Diamond Inf.+Effective Silver-Silver Inf.+Effective Ivory-Ivory Inf.+Effective //Cocoa-Cocoa Inf.+Effective Tobaco-Tobacco Inf.+Effective Sugar-Sugar Inf.+Effective Ex. Fruit-Ex. Fruit Inf.;
+    
     //
     //
     //
