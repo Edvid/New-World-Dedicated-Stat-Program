@@ -206,7 +206,7 @@ class NationSheet {
   TradePower;
   Mercantilism;
   PossiblePublicDebt;
-  PublicDebt;
+  EffectiveDebt;
   DailyBudget;
   Budget;
   Inflation;
@@ -659,7 +659,7 @@ class NationSheet {
   /* #region  Land */
   Size;
   KmSquared;
-  PopDensityPerKmSquared;
+  PopulationDensityPerKmSquared;
   Disease;
   MaxPopulation;
   UnderPopulation;
@@ -1127,9 +1127,9 @@ class NationSheet {
       }
       return s;
     })();
-    n.Km2 = n.Size*20;
+    n.KmSquared = n.Size != 0? n.Size*20 : 78870; //But Please specify Size as soon as possible in game
     n.HabitableLand = (function () {
-      if(n.Size == 0) return 0;
+      if(n.Size == 0) return 0.8;
       let hl = 0;
 
       for (const climate in n.Climates) {
@@ -1138,9 +1138,9 @@ class NationSheet {
 
       return hl;
     })();
-    n.PopDensityPerKmSquared = n.Population / (n.Km2 * n.HabitableLand);
+    n.PopulationDensityPerKmSquared = n.Population / (n.KmSquared * n.HabitableLand);
 
-    n.Disease = n.PopDensityPerKmSquared / 25 - n.Health / 20 - (n.HumanAnatomy ? 0.15 : 0);
+    n.Disease = n.PopulationDensityPerKmSquared / 25 - n.Health / 20 - (n.HumanAnatomy ? 0.15 : 0);
     n.UnderPopulation = n.Disease < 0.5 ? (1 - n.Disease) / 10 : 0;
 
     n.PopulationGrowthModifier = (function () {
@@ -1321,8 +1321,19 @@ class NationSheet {
     n.EffectiveTobacco - n.TobaccoInflation + 
     n.EffectiveSugar - n.SugarInflation + 
     n.EffectiveExoticFruit - n.ExoticFruitInflation;
-    n.PopulationHappiness = (50 + n.ResourceHappinessBoost) * n.Prosperity / 10 - (n.LowerClassTax * n.LowerClass + n.MediumClassTax * n.MediumClass + n.HighClass * n.HighClassTax) * 100 / 4 - n.Absolutism / 2 - n.PopulationControl +
-      (n.Mercantilism > 1 ? (-n.Mercantilism + 1) * 2.5 : 0) + (n.PublicDebt > 0 && n.Budget < 0 ? - (n.PublicDebt / n.PossiblePublicDebt) * 10 : 0) - n.WarExhaustion / 2 - n.DebtHappinessEffect + (n.Disease > 0.10 ? - n.Disease / 4 : 0);
+
+    n.HighClass = n.Nobility;
+    n.MediumClass = n.Artisans + n.Clergy + n.Burghers;
+    n.LowerClass = n.PopulationInAgriculture + n.PopulaitonInMilitary;
+    n.InterestRate = 0.05 + n.PublicDebtLength * 0.02 / TimeDivide;
+    n.EffectiveDebt = n.PublicDebtTaken * (1 + n.InterestRate);
+    n.PossiblePublicDebt = Math.max(0, n.Population / 10000 * (1 - (n.HighClassTax + n.MediumClassTax + n.LowerClassTax) / 3) - n.EffectiveDebt);
+    n.DebtHappinessEffect = (n.PublicDebtLength > 1 ? n.EffectiveDebt / (n.PossiblePublicDebt + n.PublicDebtTaken) * (2 + n.PublicDebtLength) : 0);
+    n.WarExhaustion = (n.Casualties / n.Population * 500) + (n.Pillaging * 20) + (n.Occupation * 5);
+    
+    n.PopulationHappiness = (50 + n.ResourceHappinessBoost) * n.Prosperity / 10 - (n.LowerClassTax * n.LowerClass + n.MediumClassTax * n.MediumClass + n.HighClass * n.HighClassTax) * 100 / 4 - n.Absolutism / 2 - n.PopulationControl + 
+      (n.Mercantilism > 1 ? (-n.Mercantilism + 1) * 2.5 : 0) + (n.EffectiveDebt > 0 && n.Budget < 0 ? - (n.EffectiveDebt / n.PossiblePublicDebt) * 10 : 0) - n.WarExhaustion / 2 - n.DebtHappinessEffect + (n.Disease > 0.10 ? - n.Disease / 4 : 0);
+      n.LandAdministration = ((n.Size - n.DetachedLand) / 25000 + n.DetachedLand / 10000) * (1 - n.AdministrativeEfficiency / 1000);
     n.Overextension = n.UnderPopulation / 4 + n.LandAdministration / 1.5;
     let pointSum = 0;
     let culturalDisunity = 0;
@@ -1348,8 +1359,8 @@ class NationSheet {
         culturalDisunity += culturalDisunityFactor;
       }
     }
-    n.culturalDisunity = culturalDisunity / 100;
-
+    n.CulturalDisunity = culturalDisunity / 100;
+    
     pointSum = 0;
     let religiousDisunity = 0;
 
@@ -1374,14 +1385,15 @@ class NationSheet {
         religiousDisunity += religiousDisunityFactor;
       }
     }
-    n.culturalDisunity = culturalDisunity / 100;
+    n.religiousDisunity = religiousDisunity / 100;
+
 
     n.NobleLoyalty = (function(){
       let pointSum = 0;
       let alliedPoints = 0;
       for (const loyaltyName in n.NobleLoyalty) {
         const loyalty = n.NobleLoyalty[loyaltyName];
-        pointSum + loyalty.points;
+        pointSum += loyalty.points;
         if(loyalty.to == n.GovernmentName) alliedPoints = loyalty.points;
       }
       return alliedPoints / pointSum;
@@ -1391,7 +1403,7 @@ class NationSheet {
       let alliedPoints = 0;
       for (const loyaltyName in n.ClergyLoyalty) {
         const loyalty = n.ClergyLoyalty[loyaltyName];
-        pointSum + loyalty.points;
+        pointSum += loyalty.points;
         if(loyalty.to == n.GovernmentName) alliedPoints = loyalty.points;
       }
       return alliedPoints / pointSum;
@@ -1401,7 +1413,7 @@ class NationSheet {
       let alliedPoints = 0;
       for (const loyaltyName in n.BurghersLoyalty) {
         const loyalty = n.BurghersLoyalty[loyaltyName];
-        pointSum + loyalty.points;
+        pointSum += loyalty.points;
         if(loyalty.to == n.GovernmentName) alliedPoints = loyalty.points;
       }
       return alliedPoints / pointSum;
@@ -1424,7 +1436,6 @@ class NationSheet {
       (n.Budget < 0? n.Budget / n.ArmyUpkeep :
       0)
       - n.CommanderFreedom / 10));
-      
     n.Stability = n.PopulationHappiness + n.AdministrativeEfficiency / 10 - n.Overextension - n.CulturalDisunity - n.ReligiousDisunity + (n.Propaganda / 1.75 * (1 + n.Newspapers / 2)) + n.PopulationControl + (n.NobleLoyalty - 0.5) * 10 + (n.ClergyLoyalty - 0.5) * 7.5 + (n.BurghersLoyalty - 0.5) * 7.5 + n.PopulationStabilityImpact + n.WarStabilityModifier * 100 + (n.MilitaryLoyalty - 1) * 7.5;
     n.Corruption = Math.max(0, n.SocialSpending - n.AdministrativeEfficiency / 20) + (n.Stability < 1 ? 0.5 : 0) + (n.Stability < -1 ? 0.5 : 0) + Math.max(0, ((n.HighClassTax + n.MediumClassTax + n.LowerClassTax) / 3 * 100) - n.AdministrativeEfficiency / 2) / 10;
     n.ArmyQuality = Math.max(0.1, 1+ n.TrainingQuality + n.ArmyTech + n.MilitaryTactics + n.CommanderFreedom / 10 - n.IronShortage - n.SulphurShortage - n.Corruption/5);
@@ -1510,21 +1521,11 @@ class NationSheet {
     n.FuturePopulation = (function () {
       return n.Population + (n.FutureFood < 0 ? n.FutureFood * 1000 : n.Population * n.PopulationGrowth / TimeDivide);
     })();
-    console.log(n.LiteracyPercent + n.EducationEfficiency / 10 / TimeDivide);
     n.FutureLiteracyPercent = ((n.LiteracyPercent > n.EducationEfficiency * 3) ? n.EducationEfficiency * 3 : n.LiteracyPercent) + n.EducationEfficiency / 10 / TimeDivide;
     n.FutureHigherEducation = n.HigherEducation + (n.EducationEfficiency >= 3 ? n.EducationEfficiency / 30 : 0) + (n.HigherEducation > n.EducationEfficiency / 3 ? -0.25 : 0);
     
-    n.HighClass = n.Nobility;
-    n.MediumClass = n.Artisans + n.Clergy + n.Burghers;
-    n.LowerClass = n.PopulationInAgriculture + n.PopulaitonInMilitary;
-    n.InterestRate = 0.05 + n.PublicDebtLength * 0.02 / TimeDivide;
-    n.EffectiveDebt = n.PublicDebtTaken * (1 + n.InterestRate);
-    n.PublicDebt = n.EffectiveDebt;
-    n.PossiblePublicDebt = Math.max(0, n.Population / 10000 * (1 - (n.HighClassTax + n.MediumClassTax + n.LowerClassTax) / 3) - n.PublicDebt);
-    n.DebtHappinessEffect = (n.PublicDebtLength > 1 ? n.EffectiveDebt / (n.PossiblePublicDebt + n.PublicDebtTaken) * (2 + n.PublicDebtLength) : 0);
-    n.WarExhaustion = (n.Casualties / n.Population * 500) + (n.Pillaging * 20) + (n.Occupation * 5);
     
-    n.LandAdministration = ((n.Size - n.DetachedLand) / 25000 + n.DetachedLand / 10000) * (1 - n.AdministrativeEfficiency / 1000);
+    
     
     
     
@@ -1641,7 +1642,6 @@ class NationSheet {
     
     n.DailyBudget = (n.Budget / (10 - n.AdministrativeEfficiency / 10 + 1) / TimeDivide) / (1 + n.Inflation)+n.ResourceBudgetBoost - n.ArmyUpkeep+n.TradeRevenue+ n.EffectiveTax - n.EducationUpkeep - n.HygieneUpkeep - n.NavyUpkeep - n.AgricultureSpending - n.SocialSpendingUpkeep-n.SpyUpkeep - n.PopulationControlUpkeep - n.PropagandaUpkeep + n.ProductionRevenue-n.FortUpkeep- n.AdministrativeUpkeep-n.ResearchUpkeep + n.Balance- n.NewTroopRecruitmentPenalty;
     n.FutureBudget = n.Budget + n.DailyBudget;
-    console.log("daily budget:" + n.DailyBudget);
     
     //Overall Income = (Budget/(10-Adm. Efficiency/10+1)/Time Divide)/(1+Inflation)+Resource Budget Boost+Trade Revenue+Effective Tax+Production Revenue+Balance;
     //= ;
