@@ -1416,9 +1416,9 @@ class NationSheet {
     
     
     for (const resourceIndex in resourceTypes) { // demands and values... Does not apply to Budget or Food
+      const resource = resourceTypes[resourceIndex];
       if(resource == "Budget" || resource == "Food") continue;
 
-      const resource = resourceTypes[resourceIndex];
       let PopulationDemand = (function () {
         switch (resource) {
           case "Sulphur":
