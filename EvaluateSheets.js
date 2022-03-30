@@ -2,14 +2,14 @@ let TimeSpeed = 50;
 TimeDivide = (function () {
   return 20 / TimeSpeed;
 })();
-let Nations = [];
-let Religions = { //For opinions not mentioned, they are Undesired
+let Nations;
+let Religions = { //For Opinions not mentioned, they are Undesired
   Pagan: {
     definingFeatures: "Anything not classified",
-    opinions: []
+    Opinions: []
   }
 };
-let Cultures; //For opinions not mentioned, they are neutral towards them.
+let Cultures; //For Opinions not mentioned, they are neutral towards them.
 let resourceTypes = [
   "Budget",
   "Food",
@@ -124,16 +124,15 @@ let TradeZones = {
 
 class Culture {
   definingFeatures;
-  opinions;
+  Opinions;
 }
 
 class Religion {
   definingFeatures;
-  opinions;
+  Opinions;
 }
 
 class Opinion {
-  name;
   score;
   static Undesired = -100;
   static Skeptical = -50;
@@ -149,13 +148,12 @@ class Opinion {
 }
 
 class Trade {
-  name;
   giver; //nation name
   reciever; //nation name
   resource; //can include food or budget
   amount;
 }
-class NationSheet {
+class Nation {
 
 
   /* #region  Properties */
@@ -173,9 +171,8 @@ class NationSheet {
   /* #endregion */
 
   /* #region Most Stats */
-  NationName;
   GovernmentName;
-  ReligionGroups;  //object of {name: {points: num}, name: {points: num}}
+  ReligionGroups;  //object of {name: {Points: num}, name: {Points: num}}
   CulturalDisunity;
   ReligiousDisunity;
   Population;
@@ -326,7 +323,7 @@ class NationSheet {
   HighClass;
   MediumClass;
   LowerClass;
-  CultureGroups; //object of {name: {points: num}, name: {points: num}}
+  CultureGroups; //object of {name: {Points: num}, name: {Points: num}}
   PrimaryCulture;
   PrimaryCulturePercent;
   PopulationStabilityImpact;
@@ -636,8 +633,7 @@ class NationSheet {
     let n = this;
     /* #region  Stats to Set Immedietly */
     /* #region  Main */
-    this.NationName = nationName != null ? nationName : "Nation name";
-    this.GovernmentName = "Government of " + this.NationName;
+    this.GovernmentName = "Government of " + nationName;
     this.Population = 5000000;
     this.LiteracyPercent = 7.50;
     this.HigherEducation = 0.25;
@@ -663,34 +659,34 @@ class NationSheet {
     this.NobleInfluence = 0.55; //Show in percent
     this.NobleLoyalty = [
       {
-        to: this.GovernmentName,
-        points: 55
+        to: n.GovernmentName,
+        Points: 55
       },
       {
         to: "Self Interests",
-        points: 45
+        Points: 45
       }
     ];
     this.ClergyInfluence = 0.25; //Show in percent
     this.ClergyLoyalty = [
       {
-        to: this.GovernmentName,
-        points: 50
+        to: n.GovernmentName,
+        Points: 50
       },
       {
         to: "Self Interests",
-        points: 50
+        Points: 50
       }
     ];
     this.BurghersInfluence = 0.10; //Show in percent
     this.BurghersLoyalty = [
       {
-        to: this.GovernmentName,
-        points: 50
+        to: n.GovernmentName,
+        Points: 50
       },
       {
         to: "Self Interests",
-        points: 50
+        Points: 50
       }
     ];
 
@@ -969,55 +965,55 @@ class NationSheet {
     /* #region  Land */
     this.Climates = {
       "Polar Desert": {
-        pixels: 0,
+        Pixels: 0,
         climateScore: 0,
       },
       "Taiga/Tundra": {
-        pixels: 0,
+        Pixels: 0,
         climateScore: 0.25,
       },
       "Montane Forest": {
-        pixels: 0,
+        Pixels: 0,
         climateScore: 0.6,
       },
       Medditereanian: {
-        pixels: 0,
+        Pixels: 0,
         climateScore: 0.85,
       },
       Arid: {
-        pixels: 0,
+        Pixels: 0,
         climateScore: 0.65,
       },
       Steppe: {
-        pixels: 0,
+        Pixels: 0,
         climateScore: 0.75,
       },
       Moderate: {
-        pixels: 0,
+        Pixels: 0,
         climateScore: 1,
       },
       "Sub-Tropical": {
-        pixels: 0,
+        Pixels: 0,
         climateScore: 0.75,
       },
       Tropical: {
-        pixels: 0,
+        Pixels: 0,
         climateScore: 0.6,
       },
       Savanna: {
-        pixels: 0,
+        Pixels: 0,
         climateScore: 0.65,
       },
       Mountainous: {
-        pixels: 0,
+        Pixels: 0,
         climateScore: 0.35,
       },
       Desert: {
-        pixels: 0,
+        Pixels: 0,
         climateScore: 0.05,
       },
       "Coastal Desert": {
-        pixels: 0,
+        Pixels: 0,
         climateScore: 0.35
       },
 
@@ -1068,9 +1064,9 @@ class NationSheet {
       for (const tradename in Trades) {
         const trade = Trades[tradename];
         if (trade.resource == resource) {
-          if (this.NationName == trade.reciever) {
+          if (nationName == trade.reciever) {
             n[resource + "Incoming"] += trade.amount;
-          } else if (this.NationName == trade.giver) {
+          } else if (nationName == trade.giver) {
             n[resource + "Outgoing"] += trade.amount;
           }
         }
@@ -1164,7 +1160,7 @@ class NationSheet {
 
     this.ReligionGroups = {
       "Pagan": {
-        points: 100
+        Points: 100
       }
     };
 
@@ -1172,7 +1168,7 @@ class NationSheet {
     this.Size = (function () {
       let s = 0;
       for (const climate in n.Climates) {
-        s += n.Climates[climate].pixels;
+        s += n.Climates[climate].Pixels;
       }
       return s;
     })();
@@ -1182,7 +1178,7 @@ class NationSheet {
       let hl = 0;
 
       for (const climate in n.Climates) {
-        hl += (n.Climates[climate].pixels / n.Size) * n.Climates[climate].climateScore;
+        hl += (n.Climates[climate].Pixels / n.Size) * n.Climates[climate].climateScore;
       }
 
       return hl;
@@ -1310,21 +1306,23 @@ class NationSheet {
     let culturalDisunity = 0;
 
     for (const culturename in this.CultureGroups) {
-      const points = this.CultureGroups[culturename].points;
-      pointSum += points;
+      const Points = this.CultureGroups[culturename].Points;
+      pointSum += Points;
     }
 
     for (const OpinionatedCultureName in this.CultureGroups) {
       const OpinionatedCulture = Cultures[OpinionatedCultureName];
-      const points = this.CultureGroups[OpinionatedCultureName].points;
-      for (const nameOfCultureToBeHadAnOpinionAbout in OpinionnatedCulture.opinions) {
-        if (nameOfCultureToBeHadAnOpinionAbout == OpinionatedCultureName) continue; //we don't account for cultures having opinions on themselves
-        let opinionScore = OpinionatedCulture.opinions.find(cul => cul.name == nameOfCultureToBeHadAnOpinionAbout);
-        if (opinionScore !== undefined) //If the culture to be had an opinion about, isn't recorded by the culture we are currently checking opinions for. Treat the opinion as neutral
+      const Points = this.CultureGroups[OpinionatedCultureName].Points;
+      for (const nameOfCultureToBeHadAnOpinionAbout in OpinionnatedCulture.Opinions) {
+        if (nameOfCultureToBeHadAnOpinionAbout == OpinionatedCultureName) continue; //we don't account for cultures having Opinions on themselves
+        let opinionScore = OpinionatedCulture.Opinions[nameOfCultureToBeHadAnOpinionAbout];
+        if (opinionScore !== undefined) //If the culture to be had an opinion about, isn't recorded by the culture we are currently checking Opinions for. Treat the opinion as neutral
           opinionScore = Opinion.Neutral;
-        let culturalDisunityFactor = (opinionScore - 100) * (points / pointSum);
+        if(isNaN(opinionScore))
+          opinionScore = Opinion[opinionScore];
+        let culturalDisunityFactor = (opinionScore - 100) * (Points / pointSum);
         if (OpinionatedCultureName == this.PrimaryCulture) {
-          this.PrimaryCulturePercent = (points / pointSum);
+          this.PrimaryCulturePercent = (Points / pointSum);
           culturalDisunityFactor *= 1.5;
         }
         culturalDisunity += culturalDisunityFactor;
@@ -1336,21 +1334,21 @@ class NationSheet {
     let religiousDisunity = 0;
 
     for (const religionname in this.ReligionGroups) {
-      const points = this.ReligionGroups[religionname].points;
-      pointSum += points;
+      const Points = this.ReligionGroups[religionname].Points;
+      pointSum += Points;
     }
 
     for (const OpinionatedReligionName in this.ReligionGroups) {
       const OpinionatedReligion = this.ReligionGroups[OpinionatedReligionName];
-      const points = this.ReligionGroups[OpinionatedReligionName].points;
-      for (const nameOfReligionToBeHadAnOpinionAbout in OpinionatedReligion.opinions) {
-        if (nameOfReligionToBeHadAnOpinionAbout == OpinionatedReligionName) continue; //we don't account for religions having opinions on themselves
-        let opinionScore = OpinionatedReligion.opinions.find(rel => rel.name == nameOfReligionToBeHadAnOpinionAbout);
-        if (opinionScore !== undefined) //If the religion to be had an opinion about, isn't recorded by the religion we are currently checking opinions for. Treat the opinion as neutral
+      const Points = this.ReligionGroups[OpinionatedReligionName].Points;
+      for (const nameOfReligionToBeHadAnOpinionAbout in OpinionatedReligion.Opinions) {
+        if (nameOfReligionToBeHadAnOpinionAbout == OpinionatedReligionName) continue; //we don't account for religions having Opinions on themselves
+        let opinionScore = OpinionatedReligion.Opinions[nameOfReligionToBeHadAnOpinionAbout];
+        if (opinionScore !== undefined) //If the religion to be had an opinion about, isn't recorded by the religion we are currently checking Opinions for. Treat the opinion as neutral
           opinionScore = Opinion.Neutral;
-        let religiousDisunityFactor = (opinionScore - 100) * (points / pointSum);
+        let religiousDisunityFactor = (opinionScore - 100) * (Points / pointSum);
         if (OpinionatedReligionName == this.PrimaryReligion) {
-          this.PrimaryReligionPercent = (points / pointSum);
+          this.PrimaryReligionPercent = (Points / pointSum);
           religiousDisunityFactor *= 1.5;
         }
         religiousDisunity += religiousDisunityFactor;
@@ -1364,8 +1362,8 @@ class NationSheet {
       let alliedPoints = 0;
       for (const loyaltyName in n.NobleLoyalty) {
         const loyalty = n.NobleLoyalty[loyaltyName];
-        pointSum += loyalty.points;
-        if (loyalty.to == n.GovernmentName) alliedPoints = loyalty.points;
+        pointSum += loyalty.Points;
+        if (loyalty.to == n.GovernmentName) alliedPoints = loyalty.Points;
       }
       return alliedPoints / pointSum;
     })();
@@ -1374,8 +1372,8 @@ class NationSheet {
       let alliedPoints = 0;
       for (const loyaltyName in n.ClergyLoyalty) {
         const loyalty = n.ClergyLoyalty[loyaltyName];
-        pointSum += loyalty.points;
-        if (loyalty.to == n.GovernmentName) alliedPoints = loyalty.points;
+        pointSum += loyalty.Points;
+        if (loyalty.to == n.GovernmentName) alliedPoints = loyalty.Points;
       }
       return alliedPoints / pointSum;
     })();
@@ -1384,8 +1382,8 @@ class NationSheet {
       let alliedPoints = 0;
       for (const loyaltyName in n.BurghersLoyalty) {
         const loyalty = n.BurghersLoyalty[loyaltyName];
-        pointSum += loyalty.points;
-        if (loyalty.to == n.GovernmentName) alliedPoints = loyalty.points;
+        pointSum += loyalty.Points;
+        if (loyalty.to == n.GovernmentName) alliedPoints = loyalty.Points;
       }
       return alliedPoints / pointSum;
     })();
@@ -1664,9 +1662,10 @@ class NationSheet {
 
 
 function evaluateNations() {
-  for (let i = 0; i < Nations.length; i++) {
-    const nation = Nations[i].nationName;
+  for (const nationName in Nations) {
+    const nation = Nations[nationName];
     nation.evaluateNation();
+    
   }
 }
 

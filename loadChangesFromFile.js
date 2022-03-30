@@ -4,7 +4,6 @@ let changedSheets;
 let currentNationID;
 let changeCommandIndex;
 function loadChangesFromFile(event){
-    readySheets();
     var file = event.target.files[0];
     var reader = new FileReader();
     changes; 
