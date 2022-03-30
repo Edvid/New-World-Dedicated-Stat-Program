@@ -1040,6 +1040,94 @@ class NationSheet {
     this.PopulationInResourceHarvest = (this.Coal + this.Sulphur + this.Cotton + this.Gold + this.Iron + this.Tea + this.Silk + this.Spice + this.Wool + this.Coffee + this.Fur + this.Diamond + this.Silver + this.Copper) * 20000 / this.Population;
     this.PopulationInAgriculture = 1 - this.PopulaitonInMilitary - this.Artisans - this.Clergy - this.Burghers - this.Nobility - this.PopulationInResourceHarvest;
     this.AgricultureSpending = (this.PopulationInAgriculture * this.Population / 1000 * this.AgricultureInfrastructure / 100 * (1 + this.AgricultureSubsidies / 10) * this.StockingCapabilities) / 2;
+
+    let GatheringEffectiveness = function (name) {
+      switch (name) {
+        case "Food":
+          return "Farming"
+        case "Cotton":
+          return "Farming"
+        case "Tea":
+          return "Farming"
+        case "Silk":
+          return "Farming"
+        case "Spice":
+          return "Farming"
+        case "Coffee":
+          return "Farming"
+        default:
+          return "Mining"
+      }
+    };
+
+    for (const resourceIndex in resourceTypes) { //in, out, effective resources and potential inflation adjustments
+      const resource = resourceTypes[resourceIndex];
+      n[resource + "Incoming"] = 0;
+      n[resource + "Outgoing"] = 0;
+
+      for (const tradename in Trades) {
+        const trade = Trades[tradename];
+        if (trade.resource == resource) {
+          if (this.NationName == trade.reciever) {
+            n[resource + "Incoming"] += trade.amount;
+          } else if (this.NationName == trade.giver) {
+            n[resource + "Outgoing"] += trade.amount;
+          }
+        }
+      }
+
+      if(resource == "Budget" || resource == "Food") continue;
+      //the things below do not apply to Budget or Food
+
+      n["Effective" + resource] = (function () {
+
+        return n[resource] * (GatheringEffectiveness(resource) == "Farming" ? n.FarmingEfficiency : n.MiningEfficiency) + n[resource + "Incoming"] - n[resource + "Outgoing"];
+      })();
+
+      let inflationMod = (function () {
+        switch (resource) {
+          case "Cotton":
+            return 3;
+          case "Gold":
+            return 3;
+          case "Tea":
+            return 3;
+          case "Silk":
+            return 3;
+          case "Spice":
+            return 5;
+          case "Wool":
+            return 5;
+          case "Coffee":
+            return 3;
+          case "Fur":
+            return 3.5;
+          case "Diamond":
+            return 3;
+          case "Silver":
+            return 3;
+          case "Ivory":
+            return 2.5;
+          case "Cocoa":
+            return 3;
+          case "Tobacco":
+            return 3;
+          case "Sugar":
+            return 3;
+          case "ExoticFruit":
+            return 3;
+          default:
+            return NaN;
+        }
+      })();
+      if (!isNaN(inflationMod)) {
+        n[resource + "Inflation"] = Math.max(0, n["Effective" + resource] - inflationMod);
+      }
+
+
+
+    }
+
     this.DailyFood = this.PopulationInAgriculture * this.Population / 1000 * this.FarmingEfficiency * (1 - this.Pillaging) + this.FoodIncoming - this.FoodOutgoing;
     this.FoodConsumption = this.Population / 1000;
     this.FoodGain = this.DailyFood - this.FoodConsumption;
@@ -1123,24 +1211,7 @@ class NationSheet {
       return mod;
     })();
 
-    let GatheringEffectiveness = function (name) {
-      switch (name) {
-        case "Food":
-          return "Farming"
-        case "Cotton":
-          return "Farming"
-        case "Tea":
-          return "Farming"
-        case "Silk":
-          return "Farming"
-        case "Spice":
-          return "Farming"
-        case "Coffee":
-          return "Farming"
-        default:
-          return "Mining"
-      }
-    };
+    
 
     let UnitUpkeepCosts = {
       Levies: 0.75 / 1000,
@@ -1196,73 +1267,7 @@ class NationSheet {
     this.ArmyTech = 1 + this.ArmyTechBoost;
 
 
-    for (const resourceIndex in resourceTypes) { //in, out, effective resources and potential inflation adjustments
-      const resource = resourceTypes[resourceIndex];
-      n[resource + "Incoming"] = 0;
-      n[resource + "Outgoing"] = 0;
-
-      for (const tradename in Trades) {
-        const trade = Trades[tradename];
-        if (trade.resource == resource) {
-          if (this.NationName == trade.reciever) {
-            n[resource + "Incoming"] += trade.amount;
-          } else if (this.NationName == trade.giver) {
-            n[resource + "Outgoing"] += trade.amount;
-          }
-        }
-      }
-
-      if(resource == "Budget" || resource == "Food") continue;
-      //the things below do not apply to Budget or Food
-
-      n["Effective" + resource] = (function () {
-
-        return n[resource] * (GatheringEffectiveness(resource) == "Farming" ? n.FarmingEfficiency : n.MiningEfficiency) + n[resource + "Incoming"] - n[resource + "Outgoing"];
-      })();
-
-      let inflationMod = (function () {
-        switch (resource) {
-          case "Cotton":
-            return 3;
-          case "Gold":
-            return 3;
-          case "Tea":
-            return 3;
-          case "Silk":
-            return 3;
-          case "Spice":
-            return 5;
-          case "Wool":
-            return 5;
-          case "Coffee":
-            return 3;
-          case "Fur":
-            return 3.5;
-          case "Diamond":
-            return 3;
-          case "Silver":
-            return 3;
-          case "Ivory":
-            return 2.5;
-          case "Cocoa":
-            return 3;
-          case "Tobacco":
-            return 3;
-          case "Sugar":
-            return 3;
-          case "ExoticFruit":
-            return 3;
-          default:
-            return NaN;
-        }
-      })();
-      if (!isNaN(inflationMod)) {
-        n[resource + "Inflation"] = Math.max(0, n["Effective" + resource] - inflationMod);
-      }
-
-
-
-    }
+    
     this.IronShortage = Math.max(0, this.UnitUpkeep / 200 - this.EffectiveIron);
     this.SulphurShortage = Math.max(0, (this.Cannons * 100 + this.Musketeers + this.HandCannon +
       (this.Technologies.Reiters == true ? this.LightCavalry + this.HeavyCavalry : 0)) / 15000 - this.EffectiveSulphur);
@@ -1621,7 +1626,7 @@ class NationSheet {
     this.CulturalPower = this.CulturalPower;
     this.FutureCulturalPower = Math.min(6, (this.CulturalPower + this.CulturalPowerGain));
     this.FuturePublicDebtLength = Math.max(0, this.PublicDebtLength + (this.EffectiveDebt > 0 ? 1 : 0) + (this.EffectiveDebt == 0 ? -100 : 0));
-    this.FutureDate = this.DateInThisNation + this.TimeSpeed;
+    this.FutureDate = this.DateInThisNation + TimeSpeed;
 
 
 
@@ -1642,7 +1647,12 @@ class NationSheet {
 
     this.PopulationTechImpact = (this.Population > 20000000? (this.Population - 20000000) / 250000000 : 0);
     
-    this.ResearchBoostFromTech = 1 + this.CulturalAdvancements.Universities / 10 + this.RenaissanceThought / 5 + this.Technologies.Experimentation / 5;
+
+    this.ResearchBoostFromTech = 
+    1 + 
+    this.CulturalAdvancements.Universities / 10 + 
+    this.CulturalAdvancements.RenaissanceThought / 5 /*+ 
+    this.Technologies.Experimentation / 5*/;
     this.ResearchPointGain = Math.max(1, (this.ResearchSpending * this.ResearchEffectiveness * this.ResearchBoostFromTech * this.LiteracyPercent / this.Isolation / TimeDivide * 2 / 10 + this.ResearchSpending * this.ResearchEffectiveness * this.HigherEducation / this.Isolation / TimeDivide * 5 / 10) * (1 - (this.NobleInfluence > 0.5 ? this.NobleInfluence - 0.5 : 0) / 1.5 - (this.ClergyInfluence > 0.5? this.ClergyInfluence - 0.5 : 0) / 1.5) * (1 - this.PopulationTechImpact));
     this.FutureResearchPoints = Math.min(7.5, this.ResearchPoints + this.ResearchPointGain);
   }
