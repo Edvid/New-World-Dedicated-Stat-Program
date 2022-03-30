@@ -42,6 +42,10 @@
             let td2 = document.createElement("td");
             td1.innerHTML = nationStatName;
             td2.innerHTML = JSON.stringify(nationStat);
+            if(td2.innerHTML == "null"){
+                td2.style.background = "red";
+                td2.style.color = "white";
+            }
             tr.appendChild(td1);
             tr.appendChild(td2);
             table.append(tr);

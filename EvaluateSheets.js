@@ -11,6 +11,9 @@ let Religions = { //For opinions not mentioned, they are Undesired
 };
 let Cultures; //For opinions not mentioned, they are neutral towards them.
 let resourceTypes = [
+  "Budget",
+  "Food",
+
   "Sulphur",
   "Cotton",
   "Gold",
@@ -519,13 +522,13 @@ class NationSheet {
   SulphurIncoming;
   SulphurOutgoing;
 
-  Cottonincoming;
+  CottonIncoming;
   CottonOutgoing;
 
   GoldIncoming;
   GoldOutgoing;
 
-  Ironincoming;
+  IronIncoming;
   IronOutgoing;
 
   TeaIncoming;
@@ -537,16 +540,16 @@ class NationSheet {
   SpiceIncoming;
   SpiceOutgoing;
 
-  Woolincoming;
+  WoolIncoming;
   WoolOutgoing;
 
-  Coffeeincoming;
+  CoffeeIncoming;
   CoffeeOutgoing;
 
   FurIncoming;
   FurOutgoing;
 
-  Diamondincoming;
+  DiamondIncoming;
   DiamondOutgoing;
 
   SilverIncoming;
@@ -1191,6 +1194,8 @@ class NationSheet {
         this.Technologies.SappersAndEngineers)
       / 20;
     this.ArmyTech = 1 + this.ArmyTechBoost;
+
+
     for (const resourceIndex in resourceTypes) { //in, out, effective resources and potential inflation adjustments
       const resource = resourceTypes[resourceIndex];
       n[resource + "Incoming"] = 0;
@@ -1206,6 +1211,9 @@ class NationSheet {
           }
         }
       }
+
+      if(resource == "Budget" || resource == "Food") continue;
+      //the things below do not apply to Budget or Food
 
       n["Effective" + resource] = (function () {
 
@@ -1405,30 +1413,24 @@ class NationSheet {
 
       this.ExtraCityFortifications * 5
     ) * this.ArmyQuality / TimeDivide;
-    for (const resourceIndex in resourceTypes) { // demands and values
+    
+    
+    for (const resourceIndex in resourceTypes) { // demands and values... Does not apply to Budget or Food
+      if(resource == "Budget" || resource == "Food") continue;
+
       const resource = resourceTypes[resourceIndex];
       let PopulationDemand = (function () {
         switch (resource) {
-          /*case "Coal":
-            return 500000;*/
           case "Sulphur":
             return 2000000;
-          /*case "Cotton":
-            return 500000;*/
           case "Gold":
             return 200000;
-          /*case "Iron":
-            return 500000;
-          case "Tea":
-            return 500000;*/
           case "Silk":
             return 400000;
           case "Spice":
             return 400000;
           case "Wool":
             return 700000;
-          /*case "Coffee":
-            return 500000;*/
           case "Fur":
             return 450000;
           case "Diamond":
@@ -1439,10 +1441,6 @@ class NationSheet {
             return 750000;
           case "Ivory":
             return 250000;
-          /*case "Cocoa":
-            return 500000;
-          case "Tobacco":
-            return 500000;*/
           case "Sugar":
             return 350000;
           case "ExoticFruit":
