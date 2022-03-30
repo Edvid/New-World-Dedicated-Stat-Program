@@ -1,137 +1,98 @@
 let commandParameters = [];
 let changes;
 let changedSheets;
-let currentNationID;
+let currentNationName;
 let changeCommandIndex;
 function loadChangesFromFile(event){
     var file = event.target.files[0];
     var reader = new FileReader();
     changes; 
     reader.onload = function(e){
-        changes = e.target.result.split("\r\n");
-        changedSheets = JSON.parse(JSON.stringify(sheets)); //but make sure it's copied not referenced
+        changes = e.target.result.split("\r?\n|\r");
         const commandRegex = /(?<Operand>([a-z]+)( |\t)|(\+|\=|\-)( |\t)?)(?<Amount>(\".+\")|(.+?))( |\t)(?<Stat_Name>.+)/i;
-
         
-        let currentSheetRestrictionID;
+        let currentSelection = "";
         for (changeCommandIndex = 0; changeCommandIndex < changes.length; changeCommandIndex++) {
-            const changeCommand = changes[changeCommandIndex];
-            
-            const cc = changeCommand.toLowerCase();
+            const changeCommand = changes[changeCommandIndex].trim();
             
             //comment
-            if(cc[0] == '#' || cc.length == 0){
+            if(changeCommand[0] == '#' || changeCommand.length == 0){
                 continue;
             }
             //sync
-            else if(cc.includes("sync")){
+            else if(changeCommand.includes("sync")){
                 
-                if(cc.includes("<")){
+                if(changeCommand.includes("<")){
+                    //If first part of current Selection is not the name of some nation
+                    if(Nations[currentSelection.split(/\./gi)[0]] === 'undefined') {
+                        alert("You tried to run sync on a specific nation, but no nation is selected. This Operations was aborted");
+                        continue;
+                    }
                     evaluateNations();
-                    syncNation(currentNationID);
+                    syncNation(currentSelection.split(/\./gi)[0]);
                 }else{
                     evaluateNations();
                     syncNations();
                 }
                 
             }
-            //nation Switch
-            else if(cc[0] == '>'){
-                let currentNation = cc.substring(1).trim();
-                let found = false;
-                for (let j = 0; j < Object.keys(changedSheets).length; j++) {
-                    const changedSheet = changedSheets[sheetNames[j]];
-                    //if Column A, row 2 starts with a '=', look for nation names in another sheet
-                    if(changedSheet[1][0].startsWith("=")) continue;
-                    for (let k = 0; k < changedSheet.length; k++) {
-                        const NationCell = changedSheet[k][0];
-                        if(NationCell.toLowerCase().trim() == currentNation){
-                            currentNationID = k;
-                            found = true;
-                            break;
-                        }
-                    }
-                    if(found == true) break;
+            //Selection and deselections
+            else if(changeCommand[0] == '>' || changeCommand[0] == '<'){
+                let cc = changeCommand;
+                let cutback = function(str){
+                    let index = str.slice(1).search(/\<|\>/) + 1;
+                    if(index == 0) return ""
+                    return str.slice(index)
                 }
-                if(found == false) alert("At line " + (changeCommandIndex + 1) + "\r\n\r\nA nation name was not written correctly in change commands file: " + (currentNation.length > 0 ? currentNation : "λ"));
-            }
-            //sheet restriction command
-            else if(cc[0] == '@'){
-                //escape
-                if(cc[1] == '<') currentSheetRestrictionID = null;
-                //find sheet
-                else{
-                    let currentSheet = cc.substring(1).trim();
-                    let found = false;
-
-                    for (let j = 0; j < sheetNames.length; j++) {
-                        if(sheetNames[j].toLowerCase() == currentSheet.toLowerCase()){
-                            currentSheetRestrictionID = j;
-                            found = true;
-                            break;
+                while(cc.length > 0){
+                    cc.trim();
+                    //selection
+                    if(cc[0] == '>'){
+                        let selection = cc.slice(1, cc.slice(1).search(/\<|\>/)).trim();
+                        currentSelection += selection;
+                    }
+                    //deselection
+                    else if(cc[0] == '<'){
+                        if(cc.slice(1, 4) == "..."){
+                            currentSelection = "";
+                        }else{
+                            if(currentSelection.includes("."))
+                                currentSelection = currentSelection.slice(0, currentSelection.lastIndexOf("."));
+                            else
+                                currentSelection = "";
                         }
                     }
-                    if(found == false) alert("At line " + (changeCommandIndex + 1) + "\r\n\r\nA sheet change restriction was attmpted to be set, but sheet was not found. No sheet with name: " + (currentSheet.length > 0 ? currentSheet : "λ"));
-
+                    cc = cutback(cc);
                 }
             }
             //normal commands
             else{
                 commandParameters = [];
-                if(cc.replace(/[^\t]/g, "").length >= 2){
-                    commandParameters = cc.split("\t");
-                }else{
-                    let match = commandRegex.exec(cc);
-                    if (!commandRegex.test(cc)){
-                        alert("At line " + (changeCommandIndex + 1) + "\r\n\r\nA command wasn't understood:\r\n" + cc + "\r\n Aborting.");
+                //If 2 or more instances of tabulator in the string
+                if(changeCommand.replace(/[^\t]/g, "").length >= 2){
+                    commandParameters = changeCommand.split("\t");
+                }
+                else{
+                    let match = commandRegex.exec(changeCommand);
+                    if (!commandRegex.test(changeCommand)){
+                        alert("At line " + (changeCommandIndex + 1) + "\r\n\r\nA command wasn't understood:\r\n" + changeCommand + "\r\n Aborting.");
                         continue;
                     }
                     commandParameters[0] = match.groups.Operand.trim();
-                    
                     commandParameters[1] = match.groups.Amount;
                     if(/^\".+\"$/.test(commandParameters[1]))
-                        commandParameters[1] = commandParameters[1].substring(1, commandParameters[1].length - 1);
+                        commandParameters[1] = commandParameters[1].slice(1, commandParameters[1].length - 1);
                     
                     commandParameters[2] = match.groups.Stat_Name;
                 }
-                normalCommandWithAlert(currentSheetRestrictionID);
+                normalCommandWithAlert(commandParameters);
             }
         }
 
         evaluateNations();
  
-
-        //paste to textfield
-        
-        for (let i = 0; i < Object.keys(changedSheets).length; i++) {
-            let text = "";
-            const changedSheet = changedSheets[sheetNames[i]];
-            for (let j = 0; j < changedSheet.length; j++) {
-                const cols = changedSheet[j];
-                if(j != 0) text += "\r\n"
-                for (let k = 0; k < cols.length; k++) {
-                    const cells = cols[k];
-                    if(k != 0) text += "\t"
-                    text += cells;
-                }
-            }    
-
-            let currentTextfield = document.createElement("textarea");
-            currentTextfield.cols = 20;
-            currentTextfield.rows = 2;
-            currentTextfield.name = sheetNames[i];
-            currentTextfield.value = text;
-            let currentTextfieldTitle = document.createElement("h3");
-            currentTextfieldTitle.style.textTransform = "capitalize";
-            currentTextfieldTitle.style.color = JSON.stringify(sheets[sheetNames[i]]) == JSON.stringify(changedSheets[sheetNames[i]]) ? "lightgrey" : "black";
-            currentTextfieldTitle.innerHTML = sheetNames[i];
-            document.body.appendChild(currentTextfieldTitle);
-            document.body.appendChild(currentTextfield);
-        }
-
         // Parse to evaluated sheets
         createNationSheet(2);
-        console.table(changedSheets['Daily Stuff']);
 
     };
 
@@ -185,7 +146,7 @@ function findCellCoordFromNamesSheetRestricted(sheetName, nationID, statName){
         let statNameCoord = {row: 0, column: j};
         statNameCoord = checkUniqueSheetLayout(sheetName, statNameCoord);
         const StatNameCell = changedSheets[sheetName][statNameCoord.row][statNameCoord.column];
-        if(StatNameCell.toLowerCase().trim() == statName.toLowerCase().trim()){
+        if(StatNameCell.trim() == statName.trim()){
             let statChangeCoord = {row: nationID, column: j};
             statChangeCoord = checkUniqueSheetLayout(sheetName, statChangeCoord);
             const StatCell = changedSheets[sheetName][statChangeCoord.row][statChangeCoord.column];
@@ -223,9 +184,9 @@ function normalCommandWithAlert(currentSheetRestrictionID){
 function normalCommand(currentSheetRestrictionID){
     let coordFound;
     if(currentSheetRestrictionID != null){
-        coordFound = findCellCoordFromNamesSheetRestricted(sheetNames[currentSheetRestrictionID], currentNationID, commandParameters[2]);
+        coordFound = findCellCoordFromNamesSheetRestricted(sheetNames[currentSheetRestrictionID], currentNationName, commandParameters[2]);
     }else{
-        coordFound = findCellCoordFromNames(currentNationID, commandParameters[2]);
+        coordFound = findCellCoordFromNames(currentNationName, commandParameters[2]);
     }
 
 
@@ -234,7 +195,7 @@ function normalCommand(currentSheetRestrictionID){
         if(sheets[coordFound.sheet][coordFound.row][coordFound.column].toString().startsWith("="))
         alert("At line " + (changeCommandIndex + 1) + "\r\n\r\nA stat that is described as a formula has been attempted changed: " + statName + ".\r\n Action has been aborted.");                         
     
-        changeStats(coordFound, currentNationID);
+        changeStats(coordFound, currentNationName);
         return true;
     }
     return false;
