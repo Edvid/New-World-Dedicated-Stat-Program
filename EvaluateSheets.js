@@ -1,5 +1,5 @@
 let TimeSpeed = 50;
-TimeDivide = (function() {
+TimeDivide = (function () {
   return 20 / TimeSpeed;
 })();
 let Nations = [];
@@ -163,7 +163,7 @@ class NationSheet {
   FutureBudget;
   FutureFood;
   FutureResearchPoints;
-  FuturePublicLength;
+  FuturePublicDebtLength;
   FutureCulturalpower;
   DateInThisNation;
   FutureDateInThisNation;
@@ -249,7 +249,7 @@ class NationSheet {
   SiegeEquipment;
   LargeSiegeEquipment;
   Cannons;
-  freeEliteUnitsCap;
+  FreeEliteUnitsCap;
   UnitUpkeep;
   OverallNumbers;
   SmallForts;
@@ -478,40 +478,7 @@ class NationSheet {
   ResearchPointGain;
   ResearchPoints;
   FutureResearchPoints;
-  /* #region  Technologies */
-  Gunpowder;
-  VerticalLoom;
-  SaddleAndStirrup;
-  HorseCollar;
-  Explosives;
-  Firelance;
-  Cranes;
-  PromissoryNotes;
-  Bombards;
-  HandCannons;
-  PlateArmour;
-  SappersAndEngineers;
-  Workshops;
-  StandardizedPikes;
-  Galleons;
-  PrintingPress;
-  Muskets;
-  Limber;
-  Docks;
-  Gunports;
-  Matchlock;
-  StarForts;
-  TextileManufactories;
-  Reiters;
-  MiningCarts;
-  HumanAnatomy;
-  Mortars;
-  Metallurgy;
-  Experimentation;
-  Bayonet;
-  SocketBayonet;
-  Flintlock;
-  /* #endregion */
+  Technologies;
   ArmyTechBoost
   /* #endregion */
 
@@ -539,18 +506,7 @@ class NationSheet {
   CulturalPowerGain;
   CulturalPower;
   FutureCulturalPower;
-  /* #region  Advancements */
-  DivineRightToRule;
-  Serfdom;
-  Feudalism;
-  Universities;
-  NobleDuty;
-  Courthouses;
-  RenaissanceThought;
-  EarlyModernAdministration;
-  NationalSovereignity;
-  Newspapers;
-  /* #endregion */
+  CulturalAdvancements;
   /* #endregion */
 
   /* #region  Trade */
@@ -812,7 +768,7 @@ class NationSheet {
     this.New_MediumShips = 0;
     this.New_HeavyShips = 0;
 
-    
+
     /* #endregion */
 
     /* #region  Population */
@@ -851,38 +807,40 @@ class NationSheet {
     this.ResearchSpending = 1.00;
     this.ResearchEffectiveness = 1.00;
 
-    this.Gunpowder = true;
-    this.VerticalLoom = true;
-    this.SaddleAndStirrup = true;
-    this.HorseCollar = true;
-    this.Explosives = true;
-    this.Firelance = true;
-    this.Cranes = true;
-    this.PromissoryNotes = true;
-    this.Bombards = true;
-    this.HandCannons = true;
-    this.PlateArmour = true;
-    this.SappersAndEngineers = true;
-    this.Workshops = true;
-    this.StandardizedPikes = true;
-    this.Galleons = false;
-    this.PrintingPress = false;
-    this.Muskets = false;
-    this.Limber = false;
-    this.Docks = false;
-    this.Gunports = false;
-    this.Matchlock = false;
-    this.StarForts = false;
-    this.TextileManufactories = false;
-    this.Reiters = false;
-    this.MiningCarts = false;
-    this.HumanAnatomy = false;
-    this.Mortars = false;
-    this.Metallurgy = false;
-    this.Experimentation = false;
-    this.Bayonet = false;
-    this.SocketBayonet = false;
-    this.Flintlock = false;
+    this.Technologies = {
+      Gunpowder: true,
+      VerticalLoom: true,
+      SaddleAndStirrup: true,
+      HorseCollar: true,
+      Explosives: true,
+      Firelance: true,
+      Cranes: true,
+      PromissoryNotes: true,
+      Bombards: true,
+      HandCannons: true,
+      PlateArmour: true,
+      SappersAndEngineers: true,
+      Workshops: true,
+      StandardizedPikes: true,
+      Galleons: false,
+      PrintingPress: false,
+      Muskets: false,
+      Limber: false,
+      Docks: false,
+      Gunports: false,
+      Matchlock: false,
+      StarForts: false,
+      TextileManufactories: false,
+      Reiters: false,
+      MiningCarts: false,
+      HumanAnatomy: false,
+      Mortars: false,
+      Metallurgy: false,
+      Experimentation: false,
+      Bayonet: false,
+      SocketBayonet: false,
+      Flintlock: false
+    }
     /* #endregion */
 
     /* #region  Economy */
@@ -894,19 +852,19 @@ class NationSheet {
     this.BudgetOutgoing = 0;
     /* #endregion */
 
-    /* #region  Cultural Advance */
     this.CulturalProsperity = 1.00;
-    this.DivineRighttoRule = true;
-    this.Serfdom = true;
-    this.Feudalism = true;
-    this.Universities = true;
-    this.NobleDuty = true;
-    this.Courthouses = true;
-    this.RenaissanceThought = false;
-    this.EarlyModernAdministration = false;
-    this.NationalSovereignity = false;
-    this.Newspapers = false;
-    /* #endregion */
+    this.CulturalAdvancements = {
+      DivineRightToRule: true,
+      Serfdom: true,
+      Feudalism: true,
+      Universities: true,
+      NobleDuty: true,
+      Courthouses: true,
+      RenaissanceThought: false,
+      EarlyModernAdministration: false,
+      NationalSovereignity: false,
+      Newspapers: false
+    }
 
     /* #region  War */
     this.Casualties = 0;
@@ -1071,7 +1029,7 @@ class NationSheet {
   evaluateNation() {
     let n = this;
 
-    this.AgricultureTechnology = 0 + this.HorseCollar / 2;
+    this.AgricultureTechnology = 0 + this.Technologies.HorseCollar / 2;
     this.FarmingEfficiency = 1 + this.AgricultureSubsidies / 5 + this.Fertility - 0.5 + (this.AgricultureInfrastructure - 1) / 10 + (this.AgricultureAdvancements - 1) / 10 + this.AgricultureTechnology / 10;
     this.OverallNumbers = this.Levies + this.LightInfantry + this.HeavyInfantry + this.Archers + this.Crossbowmen + this.LightCavalry + this.HeavyCavalry + this.EliteInfantry + this.Militia + this.EliteCavalry + this.HandCannon + (this.SiegeEquipment + this.LargeSiegeEquipment) * 10;
     this.ConscriptionPercent = this.OverallNumbers / this.Population;
@@ -1127,9 +1085,9 @@ class NationSheet {
       }
       return s;
     })();
-    this.KmSquared = this.Size != 0? this.Size*20 : 78870; //But Please specify Size as soon as possible in game
+    this.KmSquared = this.Size != 0 ? this.Size * 20 : 78870; //But Please specify Size as soon as possible in game
     this.HabitableLand = (function () {
-      if(n.Size == 0) return 0.8;
+      if (n.Size == 0) return 0.8;
       let hl = 0;
 
       for (const climate in n.Climates) {
@@ -1140,7 +1098,7 @@ class NationSheet {
     })();
     this.PopulationDensityPerKmSquared = this.Population / (this.KmSquared * this.HabitableLand);
 
-    this.Disease = this.PopulationDensityPerKmSquared / 25 - this.Health / 20 - (this.HumanAnatomy ? 0.15 : 0);
+    this.Disease = this.PopulationDensityPerKmSquared / 25 - this.Health / 20 - (this.Technologies.HumanAnatomy ? 0.15 : 0);
     this.UnderPopulation = this.Disease < 0.5 ? (1 - this.Disease) / 10 : 0;
 
     this.PopulationGrowthModifier = (function () {
@@ -1178,61 +1136,61 @@ class NationSheet {
           return "Farming"
         default:
           return "Mining"
-        }
-      };
+      }
+    };
 
     let UnitUpkeepCosts = {
       Levies: 0.75 / 1000,
-      LightInfantry: 2 / 1000, 
-      HeavyInfantry: 4 / 1000, 
-      Archers: 3 / 1000, 
-      Crossbowmen: 2 / 1000, 
-      LightCavalry: 4 / 1000, 
+      LightInfantry: 2 / 1000,
+      HeavyInfantry: 4 / 1000,
+      Archers: 3 / 1000,
+      Crossbowmen: 2 / 1000,
+      LightCavalry: 4 / 1000,
       HeavyCavalry: 6.5 / 1000,
-      EliteInfantry: 7 / 1000, 
+      EliteInfantry: 7 / 1000,
       EliteCavalry: 8.5 / 1000,
       HandCannon: 5 / 1000,
-      Musketeers: 3.5 / 1000, 
+      Musketeers: 3.5 / 1000,
       Militia: 1.25 / 1000,
 
       SiegeEquipment: 1 / 10,
       LargeSiegeEquipment: 1 / 5,
       Cannons: 1 / 10
     }
-    
-    this.UnitUpkeep = (function(){
+
+    this.UnitUpkeep = (function () {
       let uu = 0;
       for (const unitName in UnitUpkeepCosts) {
         const cost = UnitUpkeepCosts[unitName];
         uu += n[unitName] * cost;
       }
       return uu;
-    })();  
-    
+    })();
+
     this.ArmyTechBoost = (
-        this.SaddleAndStirrup + 
-        this.Matchlock + 
-        this.SocketBayonet + 
-        this.Flintlock)
-       / 5 + 
+      this.Technologies.SaddleAndStirrup +
+      this.Technologies.Matchlock +
+      this.Technologies.SocketBayonet +
+      this.Technologies.Flintlock)
+      / 5 +
       (
-        this.Gunpowder + 
-        this.PlateArmour + 
-        this.StandardizedPikes + 
-        this.Muskets + 
-        this.Limber + 
-        this.Mortars + 
-        this.Reiters + 
-        this.Metallurgy + 
-        this.Bayonet)
-      /10 + 
+        this.Technologies.Gunpowder +
+        this.Technologies.PlateArmour +
+        this.Technologies.StandardizedPikes +
+        this.Technologies.Muskets +
+        this.Technologies.Limber +
+        this.Technologies.Mortars +
+        this.Technologies.Reiters +
+        this.Technologies.Metallurgy +
+        this.Technologies.Bayonet)
+      / 10 +
       (
-        this.Firelance + 
-        this.Bombards + 
-        this.HandCannons + 
-        this.SappersAndEngineers)
+        this.Technologies.Firelance +
+        this.Technologies.Bombards +
+        this.Technologies.HandCannons +
+        this.Technologies.SappersAndEngineers)
       / 20;
-    this.ArmyTech =  1 + this.ArmyTechBoost;
+    this.ArmyTech = 1 + this.ArmyTechBoost;
     for (const resourceIndex in resourceTypes) { //in, out, effective resources and potential inflation adjustments
       const resource = resourceTypes[resourceIndex];
       n[resource + "Incoming"] = 0;
@@ -1248,7 +1206,7 @@ class NationSheet {
           }
         }
       }
-      
+
       n["Effective" + resource] = (function () {
 
         return n[resource] * (GatheringEffectiveness(resource) == "Farming" ? n.FarmingEfficiency : n.MiningEfficiency) + n[resource + "Incoming"] - n[resource + "Outgoing"];
@@ -1270,8 +1228,8 @@ class NationSheet {
             return 5;
           case "Coffee":
             return 3;
-            case "Fur":
-              return 3.5;
+          case "Fur":
+            return 3.5;
           case "Diamond":
             return 3;
           case "Silver":
@@ -1290,37 +1248,37 @@ class NationSheet {
             return NaN;
         }
       })();
-      if(!isNaN(inflationMod)){
+      if (!isNaN(inflationMod)) {
         n[resource + "Inflation"] = Math.max(0, n["Effective" + resource] - inflationMod);
       }
-      
 
-      
+
+
     }
     this.IronShortage = Math.max(0, this.UnitUpkeep / 200 - this.EffectiveIron);
-    this.SulphurShortage = Math.max(0, (this.Cannons * 100 + this.Musketeers + this.HandCannon + 
-    (this.Reiters == true ? this.LightCavalry + this.HeavyCavalry : 0)) / 15000 - this.EffectiveSulphur);
-    
-    
-    
-    
+    this.SulphurShortage = Math.max(0, (this.Cannons * 100 + this.Musketeers + this.HandCannon +
+      (this.Technologies.Reiters == true ? this.LightCavalry + this.HeavyCavalry : 0)) / 15000 - this.EffectiveSulphur);
+
+
+
+
     //loop optimization pls
-    this.ResourceHappinessBoost = 
-    this.EffectiveCotton - this.CottonInflation + 
-    this.EffectiveGold - this.GoldInflation + 
-    this.EffectiveTea - this.TeaInflation + 
-    this.EffectiveSilk - this.SilkInflation + 
-    this.EffectiveSpice - this.SpiceInflation + 
-    this.EffectiveWool - this.WoolInflation + 
-    this.EffectiveCoffee - this.CoffeeInflation + 
-    this.EffectiveFur - this.FurInflation + 
-    this.EffectiveDiamond - this.DiamondInflation + 
-    this.EffectiveSilver - this.SilverInflation + 
-    this.EffectiveIvory - this.IvoryInflation + 
-    this.EffectiveCocoa - this.CocoaInflation + 
-    this.EffectiveTobacco - this.TobaccoInflation + 
-    this.EffectiveSugar - this.SugarInflation + 
-    this.EffectiveExoticFruit - this.ExoticFruitInflation;
+    this.ResourceHappinessBoost =
+      this.EffectiveCotton - this.CottonInflation +
+      this.EffectiveGold - this.GoldInflation +
+      this.EffectiveTea - this.TeaInflation +
+      this.EffectiveSilk - this.SilkInflation +
+      this.EffectiveSpice - this.SpiceInflation +
+      this.EffectiveWool - this.WoolInflation +
+      this.EffectiveCoffee - this.CoffeeInflation +
+      this.EffectiveFur - this.FurInflation +
+      this.EffectiveDiamond - this.DiamondInflation +
+      this.EffectiveSilver - this.SilverInflation +
+      this.EffectiveIvory - this.IvoryInflation +
+      this.EffectiveCocoa - this.CocoaInflation +
+      this.EffectiveTobacco - this.TobaccoInflation +
+      this.EffectiveSugar - this.SugarInflation +
+      this.EffectiveExoticFruit - this.ExoticFruitInflation;
 
     this.HighClass = this.Nobility;
     this.MediumClass = this.Artisans + this.Clergy + this.Burghers;
@@ -1330,10 +1288,10 @@ class NationSheet {
     this.PossiblePublicDebt = Math.max(0, this.Population / 10000 * (1 - (this.HighClassTax + this.MediumClassTax + this.LowerClassTax) / 3) - this.EffectiveDebt);
     this.DebtHappinessEffect = (this.PublicDebtLength > 1 ? this.EffectiveDebt / (this.PossiblePublicDebt + this.PublicDebtTaken) * (2 + this.PublicDebtLength) : 0);
     this.WarExhaustion = (this.Casualties / this.Population * 500) + (this.Pillaging * 20) + (this.Occupation * 5);
-    
-    this.PopulationHappiness = (50 + this.ResourceHappinessBoost) * this.Prosperity / 10 - (this.LowerClassTax * this.LowerClass + this.MediumClassTax * this.MediumClass + this.HighClass * this.HighClassTax) * 100 / 4 - this.Absolutism / 2 - this.PopulationControl + 
+
+    this.PopulationHappiness = (50 + this.ResourceHappinessBoost) * this.Prosperity / 10 - (this.LowerClassTax * this.LowerClass + this.MediumClassTax * this.MediumClass + this.HighClass * this.HighClassTax) * 100 / 4 - this.Absolutism / 2 - this.PopulationControl +
       (this.Mercantilism > 1 ? (-this.Mercantilism + 1) * 2.5 : 0) + (this.EffectiveDebt > 0 && this.Budget < 0 ? - (this.EffectiveDebt / this.PossiblePublicDebt) * 10 : 0) - this.WarExhaustion / 2 - this.DebtHappinessEffect + (this.Disease > 0.10 ? - this.Disease / 4 : 0);
-      this.LandAdministration = ((this.Size - this.DetachedLand) / 25000 + this.DetachedLand / 10000) * (1 - this.AdministrativeEfficiency / 1000);
+    this.LandAdministration = ((this.Size - this.DetachedLand) / 25000 + this.DetachedLand / 10000) * (1 - this.AdministrativeEfficiency / 1000);
     this.Overextension = this.UnderPopulation / 4 + this.LandAdministration / 1.5;
     let pointSum = 0;
     let culturalDisunity = 0;
@@ -1360,7 +1318,7 @@ class NationSheet {
       }
     }
     this.CulturalDisunity = culturalDisunity / 100;
-    
+
     pointSum = 0;
     let religiousDisunity = 0;
 
@@ -1388,105 +1346,105 @@ class NationSheet {
     this.religiousDisunity = religiousDisunity / 100;
 
 
-    this.NobleLoyalty = (function(){
+    this.NobleLoyalty = (function () {
       let pointSum = 0;
       let alliedPoints = 0;
       for (const loyaltyName in n.NobleLoyalty) {
         const loyalty = n.NobleLoyalty[loyaltyName];
         pointSum += loyalty.points;
-        if(loyalty.to == n.GovernmentName) alliedPoints = loyalty.points;
+        if (loyalty.to == n.GovernmentName) alliedPoints = loyalty.points;
       }
       return alliedPoints / pointSum;
     })();
-    this.ClergyLoyalty = (function(){
+    this.ClergyLoyalty = (function () {
       let pointSum = 0;
       let alliedPoints = 0;
       for (const loyaltyName in n.ClergyLoyalty) {
         const loyalty = n.ClergyLoyalty[loyaltyName];
         pointSum += loyalty.points;
-        if(loyalty.to == n.GovernmentName) alliedPoints = loyalty.points;
+        if (loyalty.to == n.GovernmentName) alliedPoints = loyalty.points;
       }
       return alliedPoints / pointSum;
     })();
-    this.BurghersLoyalty = (function(){
+    this.BurghersLoyalty = (function () {
       let pointSum = 0;
       let alliedPoints = 0;
       for (const loyaltyName in n.BurghersLoyalty) {
         const loyalty = n.BurghersLoyalty[loyaltyName];
         pointSum += loyalty.points;
-        if(loyalty.to == n.GovernmentName) alliedPoints = loyalty.points;
+        if (loyalty.to == n.GovernmentName) alliedPoints = loyalty.points;
       }
       return alliedPoints / pointSum;
     })();
     this.PopulationStabilityImpact = (this.Population > this.AdministrativeEfficiency * 500000 ? (this.AdministrativeEfficiency * 500000 - this.Population) / 50000000 : 0) * 10;
     this.Fervor = Math.min(1, Math.max(-1, 0 + this.MinorBattles / 20 + this.MajorBattles / 10 + this.Pillaging - (this.Casualties / (this.OverallNumbers + this.Casualties + 0.0000001))));
-    this.WarSupport = Math.min(1, Math.max(0, this.PopulationHappiness / 10 * 2.5 + this.Propaganda/10 + this.Fervor));
+    this.WarSupport = Math.min(1, Math.max(0, this.PopulationHappiness / 10 * 2.5 + this.Propaganda / 10 + this.Fervor));
     this.WarStabilityModifier = ((this.AtOffensiveWar == true && this.WarSupport < 0.75) ? (this.WarSupport - 0.75) / 10 : 0) + Math.max(-0.075, ((this.AtDefensiveWar == true && this.WarSupport < 0.4 && this.Fervor < 0) ? (this.Fervor) / 10 : 0));
     //Math min and max? nested ternary operations, with "0" if either fail? This can be optimized
-    this.MilitaryLoyalty = Math.min(1, Math.max(0,  1* this.ArmyWages + 
-      (this.EarlyModernAdministration == false ?
+    this.MilitaryLoyalty = Math.min(1, Math.max(0, 1 * this.ArmyWages +
+      (this.CulturalAdvancements.EarlyModernAdministration == false ?
         (this.NobleLoyalty < 0.50 ?
           (this.NobleLoyalty - 0.50) * 2 :
           0)
         :
-        0)+ 
-      (this.MilitaryMorale < 0.70?
+        0) +
+      (this.MilitaryMorale < 0.70 ?
         -(1 - this.MilitaryMorale) / 2 :
-        0) + 
-      (this.Budget < 0? this.Budget / this.ArmyUpkeep :
-      0)
+        0) +
+      (this.Budget < 0 ? this.Budget / this.ArmyUpkeep :
+        0)
       - this.CommanderFreedom / 10));
-    this.Stability = this.PopulationHappiness + this.AdministrativeEfficiency / 10 - this.Overextension - this.CulturalDisunity - this.ReligiousDisunity + (this.Propaganda / 1.75 * (1 + this.Newspapers / 2)) + this.PopulationControl + (this.NobleLoyalty - 0.5) * 10 + (this.ClergyLoyalty - 0.5) * 7.5 + (this.BurghersLoyalty - 0.5) * 7.5 + this.PopulationStabilityImpact + this.WarStabilityModifier * 100 + (this.MilitaryLoyalty - 1) * 7.5;
+    this.Stability = this.PopulationHappiness + this.AdministrativeEfficiency / 10 - this.Overextension - this.CulturalDisunity - this.ReligiousDisunity + (this.Propaganda / 1.75 * (1 + this.CulturalAdvancements.Newspapers / 2)) + this.PopulationControl + (this.NobleLoyalty - 0.5) * 10 + (this.ClergyLoyalty - 0.5) * 7.5 + (this.BurghersLoyalty - 0.5) * 7.5 + this.PopulationStabilityImpact + this.WarStabilityModifier * 100 + (this.MilitaryLoyalty - 1) * 7.5;
     this.Corruption = Math.max(0, this.SocialSpending - this.AdministrativeEfficiency / 20) + (this.Stability < 1 ? 0.5 : 0) + (this.Stability < -1 ? 0.5 : 0) + Math.max(0, ((this.HighClassTax + this.MediumClassTax + this.LowerClassTax) / 3 * 100) - this.AdministrativeEfficiency / 2) / 10;
-    this.ArmyQuality = Math.max(0.1, 1+ this.TrainingQuality + this.ArmyTech + this.MilitaryTactics + this.CommanderFreedom / 10 - this.IronShortage - this.SulphurShortage - this.Corruption/5);
+    this.ArmyQuality = Math.max(0.1, 1 + this.TrainingQuality + this.ArmyTech + this.MilitaryTactics + this.CommanderFreedom / 10 - this.IronShortage - this.SulphurShortage - this.Corruption / 5);
     this.FortUpkeep = (
-      this.SmallForts * 2 + 
-      this.MediumForts * 4 + 
-      this.BigForts * 8 + 
-      this.HugeForts *16 + 
-      
+      this.SmallForts * 2 +
+      this.MediumForts * 4 +
+      this.BigForts * 8 +
+      this.HugeForts * 16 +
+
       this.ExtraCityFortifications * 5
-    ) * this.ArmyQuality/TimeDivide;
+    ) * this.ArmyQuality / TimeDivide;
     for (const resourceIndex in resourceTypes) { // demands and values
       const resource = resourceTypes[resourceIndex];
       let PopulationDemand = (function () {
         switch (resource) {
           /*case "Coal":
-						return 500000;*/
+            return 500000;*/
           case "Sulphur":
-						return 2000000;
+            return 2000000;
           /*case "Cotton":
-						return 500000;*/
+            return 500000;*/
           case "Gold":
-						return 200000;
+            return 200000;
           /*case "Iron":
-						return 500000;
+            return 500000;
           case "Tea":
-						return 500000;*/
+            return 500000;*/
           case "Silk":
-						return 400000;
+            return 400000;
           case "Spice":
-						return 400000;
+            return 400000;
           case "Wool":
-						return 700000;
+            return 700000;
           /*case "Coffee":
-						return 500000;*/
+            return 500000;*/
           case "Fur":
-						return 450000;
+            return 450000;
           case "Diamond":
-						return 250000;
+            return 250000;
           case "Silver":
-						return 300000;
+            return 300000;
           case "Copper":
-						return 750000;
+            return 750000;
           case "Ivory":
-						return 250000;
+            return 250000;
           /*case "Cocoa":
-						return 500000;
+            return 500000;
           case "Tobacco":
-						return 500000;*/
+            return 500000;*/
           case "Sugar":
-						return 350000;
+            return 350000;
           case "ExoticFruit":
             return 350000;
           default:
@@ -1494,14 +1452,14 @@ class NationSheet {
         }
       })();
 
-      let extraDemands = (function(){
-        switch (resource){
+      let extraDemands = (function () {
+        switch (resource) {
           case "Coal":
-            return (n.EffectiveIron + n.EffectiveGold + n.EffectiveCopper + n.EffectiveSilver) * 0.5 + (n.Population*n.Health/500000);
+            return (n.EffectiveIron + n.EffectiveGold + n.EffectiveCopper + n.EffectiveSilver) * 0.5 + (n.Population * n.Health / 500000);
           case "Iron":
-            return (n.UnitUpkeep+n.FortUpkeep)/50;
+            return (n.UnitUpkeep + n.FortUpkeep) / 50;
           case "Copper":
-            return (n.UnitUpkeep+n.FortUpkeep)/100;
+            return (n.UnitUpkeep + n.FortUpkeep) / 100;
           default:
             return 0;
         }
@@ -1509,13 +1467,13 @@ class NationSheet {
 
       n[resource + "Demand"] = (this.Population / PopulationDemand) + extraDemands;
 
-      if(resource == "Iron" && this.Metallurgy) n[resource + "Demand"] *= 1.1;
+      if (resource == "Iron" && this.Technologies.Metallurgy) n[resource + "Demand"] *= 1.1;
 
       n[resource + "Value"] = n[resource + "Demand"] / (Math.sqrt(n["Effective" + resource]) + 0.1);
     }
-    
 
-    
+
+
     this.ResourcePopulationGrowthBoost = (this.EffectiveCotton - this.CottonInflation + this.EffectiveSpice - this.SpiceInflation + this.EffectiveWool - this.WoolInflation + this.EffectiveFur - this.FurInflation + (this.EffectiveSugar - this.SugarInflation + this.EffectiveExoticFruit - this.ExoticFruitInflation) / 2) / 100;
     this.PopulationGrowth = Math.max(-0.3, (0.1 + this.PopulationGrowthModifier + this.ResourcePopulationGrowthBoost) * (1 - this.Disease) - this.BirthControl / 20);
     this.FuturePopulation = (function () {
@@ -1523,29 +1481,29 @@ class NationSheet {
     })();
     this.FutureLiteracyPercent = ((this.LiteracyPercent > this.EducationEfficiency * 3) ? this.EducationEfficiency * 3 : this.LiteracyPercent) + this.EducationEfficiency / 10 / TimeDivide;
     this.FutureHigherEducation = this.HigherEducation + (this.EducationEfficiency >= 3 ? this.EducationEfficiency / 30 : 0) + (this.HigherEducation > this.EducationEfficiency / 3 ? -0.25 : 0);
-    
-    
-    
-    
-    
-    
-    
-    
 
-    this.NavyTech = 0 + this.Galleons / 4 + this.Docks / 2 + this.Gunports / 2;
+
+
+
+
+
+
+
+
+    this.NavyTech = 0 + this.Technologies.Galleons / 4 + this.Technologies.Docks / 2 + this.Technologies.Gunports / 2;
     this.NavyQuality = 1 + this.NavyImprovements + this.NavyTech;
-    
-    this.UpkeepForOneLightShip = ((1/8)*this.NavyQuality) / TimeDivide * (1 + this.Gunports);
-    this.UpkeepForOneMediumShip = ((1/4)*this.NavyQuality) / TimeDivide * (1 + this.Gunports);
-    this.UpkeepForOneHeavyShip = ((1/2)*this.NavyQuality) / TimeDivide * (1 + this.Gunports + this.Galleons/2);
-    
+
+    this.UpkeepForOneLightShip = ((1 / 8) * this.NavyQuality) / TimeDivide * (1 + this.Technologies.Gunports);
+    this.UpkeepForOneMediumShip = ((1 / 4) * this.NavyQuality) / TimeDivide * (1 + this.Technologies.Gunports);
+    this.UpkeepForOneHeavyShip = ((1 / 2) * this.NavyQuality) / TimeDivide * (1 + this.Technologies.Gunports + this.Technologies.Galleons / 2);
+
     this.NavyUpkeep = (
-      this.LightShips * this.UpkeepForOneLightShip + 
-      this.MediumShips * this.UpkeepForOneMediumShip + 
+      this.LightShips * this.UpkeepForOneLightShip +
+      this.MediumShips * this.UpkeepForOneMediumShip +
       this.HeavyShips * this.UpkeepForOneHeavyShip
     );
 
-    this.NewTroopRecruitmentPenalty = (function(){
+    this.NewTroopRecruitmentPenalty = (function () {
       let ntrp = 0;
       for (const unitName in UnitUpkeepCosts) {
         const cost = UnitUpkeepCosts[unitName];
@@ -1554,18 +1512,18 @@ class NationSheet {
       ntrp += n.New_LightShips * n.UpkeepForOneLightShip;
       ntrp += n.New_MediumShips * n.UpkeepForOneMediumShip;
       ntrp += n.New_HeavyShips * n.UpkeepForOneHeavyShip;
-      
+
       ntrp /= 2;
       return ntrp;
     })();
 
     this.ArmyUpkeep = this.UnitUpkeep * ((this.ArmyQuality + this.Corruption / 5) + this.ArmyWages - 1) / TimeDivide;
-    
-    
-    
-  
-    
-    this.TradePowerResourceTrade = (function(){
+
+
+
+
+
+    this.TradePowerResourceTrade = (function () {
       let num = 0;
       let TradePowerResources = [
         "Sulphur",
@@ -1590,18 +1548,18 @@ class NationSheet {
       ];
       for (const resourceName in TradePowerResources) {
         const resource = TradePowerResources[resourceName];
-        num += n[resource + "Incoming"] * n[resource + "Value"]; 
+        num += n[resource + "Incoming"] * n[resource + "Value"];
       }
       return num;
     })();
     this.TradePower = this.TradePowerResourceTrade + this.LocalTrade / 2 + (this.speudoTradePower);
-    this.ProductionEfficiency = this.Mercantilism + this.VerticalLoom/5+this.Workshops+this.Cranes/5+this.TextileManufactories/2;
-    this.Production = (this.LocalTrade+this.TradePower)*this.Artisans*this.ProductionEfficiency*10;
+    this.ProductionEfficiency = this.Mercantilism + this.Technologies.VerticalLoom / 5 + this.Technologies.Workshops + this.Technologies.Cranes / 5 + this.Technologies.TextileManufactories / 2;
+    this.Production = (this.LocalTrade + this.TradePower) * this.Artisans * this.ProductionEfficiency * 10;
     this.TradeProtection = this.LightShips * 0.75 + this.MediumShips * 1 + this.HeavyShips * 0.75;
-    this.TradeEfficiency = 1 * this.Mercantilism + this.Cranes / 10 + this.PromissoryNotes / 20 + this.TradeProtection/200;
-    
+    this.TradeEfficiency = 1 * this.Mercantilism + this.Technologies.Cranes / 10 + this.Technologies.PromissoryNotes / 20 + this.TradeProtection / 200;
+
     this.Inflation = Math.max(0, (this.Budget / 1000) / (this.AdministrativeEfficiency / 10));
-    this.ResourceBudgetBoost = (function(){
+    this.ResourceBudgetBoost = (function () {
       let rbb = 0;
       let budgetBoostingResources = [
         "Coal",
@@ -1613,22 +1571,22 @@ class NationSheet {
       ];
       for (const resourceIndex in budgetBoostingResources) {
         const resource = budgetBoostingResources[resourceIndex];
-        
+
         let inflation = 0;
-        if(typeof n[resource + "Inflation"] !== 'undefined') inflation = n[resource + "Inflation"];
+        if (typeof n[resource + "Inflation"] !== 'undefined') inflation = n[resource + "Inflation"];
         rbb += n["Effective" + resource] * (n[resource + "Value"] - inflation);
       }
       return rbb / TimeDivide;
     })();
-    
+
     this.TradeRevenue = ((this.LocalTrade + this.TradePower) * (1 - this.BurghersInfluence)) / TimeDivide * this.TradeEfficiency + this.Tradeprofit;
     this.EffectiveTax = (
       (
-        this.LowerClass * this.Population * this.LowerClassTax / 10000 + 
-        this. Population * this.MediumClass * this.MediumClassTax / 7500 * (1 - this.ClergyInfluence - this.BurghersInfluence) + this.Population * this.HighClass * this.HighClassTax / 5000 * (1 - this.NobleInfluence)
+        this.LowerClass * this.Population * this.LowerClassTax / 10000 +
+        this.Population * this.MediumClass * this.MediumClassTax / 7500 * (1 - this.ClergyInfluence - this.BurghersInfluence) + this.Population * this.HighClass * this.HighClassTax / 5000 * (1 - this.NobleInfluence)
       ) * this.AdministrativeEfficiency / 10 * (1 - this.NobleInfluence / 4 - this.ClergyInfluence / 4
-    ) * (1 - this.Occupation)) / TimeDivide * (1 - this.Corruption / 10);
-    
+      ) * (1 - this.Occupation)) / TimeDivide * (1 - this.Corruption / 10);
+
     this.SpyUpkeep = this.Spies / 200 * this.SpyQuality / TimeDivide;
     this.SocialSpendingUpkeep = this.SocialSpending * this.Population / 1000000 / TimeDivide * 3;
     this.HygieneUpkeep = this.Health * this.Population / 2000000 / TimeDivide;
@@ -1639,63 +1597,56 @@ class NationSheet {
     this.ProductionRevenue = this.Production / TimeDivide;
     this.ResearchUpkeep = this.ResearchSpending * this.Population / 500000 / TimeDivide * this.LiteracyPercent / 10;
     this.Balance = this.BudgetIncoming - this.BudgetOutgoing;
-    
-    this.DailyBudget = (this.Budget / (10 - this.AdministrativeEfficiency / 10 + 1) / TimeDivide) / (1 + this.Inflation)+this.ResourceBudgetBoost - this.ArmyUpkeep+this.TradeRevenue+ this.EffectiveTax - this.EducationUpkeep - this.HygieneUpkeep - this.NavyUpkeep - this.AgricultureSpending - this.SocialSpendingUpkeep-this.SpyUpkeep - this.PopulationControlUpkeep - this.PropagandaUpkeep + this.ProductionRevenue-this.FortUpkeep- this.AdministrativeUpkeep-this.ResearchUpkeep + this.Balance- this.NewTroopRecruitmentPenalty;
+
+    this.DailyBudget = (this.Budget / (10 - this.AdministrativeEfficiency / 10 + 1) / TimeDivide) / (1 + this.Inflation) + this.ResourceBudgetBoost - this.ArmyUpkeep + this.TradeRevenue + this.EffectiveTax - this.EducationUpkeep - this.HygieneUpkeep - this.NavyUpkeep - this.AgricultureSpending - this.SocialSpendingUpkeep - this.SpyUpkeep - this.PopulationControlUpkeep - this.PropagandaUpkeep + this.ProductionRevenue - this.FortUpkeep - this.AdministrativeUpkeep - this.ResearchUpkeep + this.Balance - this.NewTroopRecruitmentPenalty;
     this.FutureBudget = this.Budget + this.DailyBudget;
+
+    this.OverallIncome = (this.Budget / (10 - this.AdministrativeEfficiency / 10 + 1) / TimeDivide) / (1 + this.Inflation) + this.ResourceBudgetBoost + this.TradeRevenue + this.EffectiveTax + this.ProductionRevenue + this.Balance;
+
+    this.FreeEliteUnitsCap = ((this.OverallNumbers - this.Militia - this.Levies) * 0.025) - (this.EliteCavalry + this.EliteInfantry);
+
+
+    this.MilitaryMorale = Math.max(0, Math.min(1.5, 1 + this.Fervor + (this.MililtaryDiscipline > 1 ? - this.MililtaryDiscipline + 1 : 0) * 2 +
+      (this.WarSupport < 0.5 ? this.WarSupport - 0.5 : 0) +
+      (this.WarSupport > 0.75 ? this.WarSupport - 0.75 : 0) +
+      this.ArmyWages - 1));
+
+    this.CulturalAdvance = (function () {
+      let ca = 0;
+      for (const cultureadvance in n.CulturalAdvancements) {
+        if (n.CulturalAdvancements[cultureadvance]) ca++;
+
+      }
+      return ca;
+    })();
+    this.CulturalPowerGain = (this.LiteracyPercent / 3 + this.PopulationHappiness / 8) * (this.CulturalProsperity + this.CulturalAdvancements.RenaissanceThought / 10) / TimeDivide;
+    this.CulturalPower = this.CulturalPower;
+    this.FutureCulturalPower = Math.min(6, (this.CulturalPower + this.CulturalPowerGain));
+    this.FuturePublicDebtLength = Math.max(0, this.PublicDebtLength + (this.EffectiveDebt > 0 ? 1 : 0) + (this.EffectiveDebt == 0 ? -100 : 0));
+    this.FutureDate = this.DateInThisNation + this.TimeSpeed;
+
+
+
+    /* #region  Important stats.. Maybe just make these in sheet generation */
+    this.MIlitaryExpendures = this.ArmyUpkeep + this.NavyUpkeep;
+    this.DailyBudgetAndMilitaryExpendures  =  this.DailyBudget + this.MIlitaryExpendures;
+
+    /* #endregion *///
     
-    //Overall Income = (Budget/(10-Adm. Efficiency/10+1)/Time Divide)/(1+Inflation)+Resource Budget Boost+Trade Revenue+Effective Tax+Production Revenue+Balance;
-    //
-    //free Elite Units cap = ((Overall Numbers-Militia-Levies)*2.5%)-(Elite Cavalry+Elite Infantry);
+
     
-    //
-    //Military Morale = MAX(0,MIN(1.5, 1+Fervor+IF(Mil. Discipline>1,-Mil. Discipline+1)*2+IF(War Support<0.5,War Support-0.5)+IF(War Support>0.75, War Support-0.75)+Army //Wages-1));
-    //
-    //Cultural Advance = SUM(Divine Right to Rule:Newspapers);
-    //Cultural Power Gain = (Literacy (%)/3+Pop. Happiness/8)*(Cultural Prosperity+Renaissance Thought/10)/Time Divide;
-    //Cultural Power = Cultural Power;
-    //Future Cultural Power = MIN(6, (Cultural Power+Cultural Power Gain));
-    //
-    //Future pop. = Future Pop.;
-    //Future Literacy = Future Literacy;
-    //Future Budget = Budget+Daily Budget;
-    //Future Food = Future Food;
-    //Future Research points = Future Research Points;
-    //Future Public Length = MAX(0, Public Debt Length+IF(Effective Debt>0,1,0)+IF(Effective Debt0,-100,0));
-    //Future Cultural Power = Future Cultural Power;
-    //
-    //Future Date = Date in this nation+Time Speed;
-    //
-    //='All Stats'!AL1 = Possible Public Debt+0.01;
-    //Public Debt Length = Public Debt Length;
-    //Future Debt Length = Future Public Length;
-    //
-    //Nations = Nation name ;
-    //Stability = Stability;
-    //='All Stats'!AN1 = Daily Budget;
-    //='All Stats'!P1 = Adm. Efficiency;
-    //='All Stats'!Z1 = War Support;
-    //MIlitary Expendures = Army Upkeep+Navy Upkeep;
-    //D.B + M.E = 'All Stats'!AN1+MIlitary Expendures;
-    //
-    //Max Pop. = Population/Disease;
-    //
-    //Pride of the navy = IF(Naval Power>10000,'ACCESSIBLE');
-    //Overall Ship Count = Light Ships+Medium Ships+Heavy Ships;
-    //Naval Power = (Light Ships*0.5+Medium Ships+2*Heavy Ships)*Navy Quality;
-    //
+    this.MaxPopulation = this.Population / this.Disease;
     
-    //Primary Culture % = 100%-Culture Group %-Accepted Culture %-Undesirable Culture%;
-    //Cultural Disunity = (Culture Group %*0.1+Accepted Culture %*0.35+Undesirable Culture%*0.8)*(10+National Sovereignity*2);
-    //= ;
+    this.PrideOfTheNavy = (this.NavalPower > 10000? 'ACCESSIBLE' : 'INACCESSIBLE');
+    this.OverallShipCount = this.LightShips + this.MediumShips + this.HeavyShips;
+    this.NavalPower = (this.LightShips*0.5 + this.MediumShips + 2*this.HeavyShips) * this.NavyQuality;
     
-    //Population Tech Impact = IF(Population>20000000, (Population-20000000)/250000000);
-    //
+
+    this.PopulationTechImpact = (this.Population > 20000000? (this.Population - 20000000) / 250000000 : 0);
     
-    //
-    //Research boost from Tech = 1+Universities/10+Renaissance Thought/5+Experimentation/5;
-    //Research Point Gain = MAX(1 , (Research Spending*Research Effectiveness*Research boost from Tech*Literacy (%)/Isolation/Time Divide*2/10+Research Spending*Research //Effectiveness*Higher Education/Isolation/Time Divide*5/10)*(1-IF(Noble Influence>0.5, Noble Influence-0.5)/1.5-IF(Clergy Influence>0.5, Clergy Influence-0.5)/1.5)*//(1-Population Tech Impact));
-    //Research Points = Research Points;
-    //Future Research Points = MIN(7.5 ,Research Points+Research Point Gain);
+    this.ResearchBoostFromTech = 1 + this.CulturalAdvancements.Universities / 10 + this.RenaissanceThought / 5 + this.Technologies.Experimentation / 5;
+    this.ResearchPointGain = Math.max(1, (this.ResearchSpending * this.ResearchEffectiveness * this.ResearchBoostFromTech * this.LiteracyPercent / this.Isolation / TimeDivide * 2 / 10 + this.ResearchSpending * this.ResearchEffectiveness * this.HigherEducation / this.Isolation / TimeDivide * 5 / 10) * (1 - (this.NobleInfluence > 0.5 ? this.NobleInfluence - 0.5 : 0) / 1.5 - (this.ClergyInfluence > 0.5? this.ClergyInfluence - 0.5 : 0) / 1.5) * (1 - this.PopulationTechImpact));
+    this.FutureResearchPoints = Math.min(7.5, this.ResearchPoints + this.ResearchPointGain);
   }
 
   clearNewTroops() {
