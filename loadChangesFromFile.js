@@ -28,7 +28,9 @@ function loadChangesFromFile(event){
                         alert("You tried to run sync on a specific nation, but no nation is selected. This Operations was aborted");
                         continue;
                     }
-                    evaluateNations();
+                    currentSelection = correct(currentSelection);
+
+                    evaluateNations(currentSelection);
                     syncNation(currentSelection.split(/\./gi)[0]);
                 }else{
                     evaluateNations();
@@ -177,16 +179,52 @@ function syncNations(){
     }
 }
 
-function normalCommandWithSynonymCheck(){
-    //check same stats but correct casing
+//synonym searching and case correcting alg
+function correct(selection){
+    let correctSelection = selection.split(".");
+    let step = gameStats;
+    for(let i = 0; i < correctSelection.length; i++){
+        for (const propertyName in step) {
+            (function() {
+                const property = step[propertyName];
+                //check same stats but correct casing
+                if(propertyName.toLowerCase == selection[i].toLowerCase){
+                    selection[i] = propertyName;
+                    return;
+                }
+                else{
+                    //check synonyms of stats
+                    for (const realName in Synonyms) {
+                        const synonymArray = Synonyms[realName];
+                        synonymArray.forEach(synonym => {
+                            //if what was written in change file exists in the synonym dictionary
+                            if(synonym.toLowerCase == selection[i].toLowerCase){
+                                //Then, if the real name for the stat exists in this object
+                                if(propertyName.toLowerCase == realName.toLowerCase){
+                                    selection[i] = realName;
+                                    return;
+                                }
+                            }
+                        });
+                    }
+                    let instat = "";
+                    for(let j = i-1; j >= 0; j--){
+                        instat += "." + selection[j];
+                    }
+                    alert("The Specified Stat" + selection[i] + " in gameStats" + instat + " was not found!");
+                }
+            })();
+            
+        }
+    }
     
-    //check synonyms of stats
-
-    //normal command
-    normalCommand();
 }
 
-function normalCommand(){
+function normalCommandWithSynonymCheck(selection){
+    normalCommand(selection);
+}
+
+function normalCommand(selection){
     let coordFound;
     if(currentSheetRestrictionID != null){
         coordFound = findCellCoordFromNamesSheetRestricted(sheetNames[currentSheetRestrictionID], currentNationName, commandParameters[2]);
