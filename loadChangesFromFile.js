@@ -85,7 +85,7 @@ function loadChangesFromFile(event){
                     
                     commandParameters[2] = match.groups.Stat_Name;
                 }
-                normalCommandWithAlert(commandParameters);
+                normalCommandWithSynonymCheck();
             }
         }
 
@@ -177,11 +177,16 @@ function syncNations(){
     }
 }
 
-function normalCommandWithAlert(currentSheetRestrictionID){
-    if(!normalCommand(currentSheetRestrictionID)) alert("At line " + (changeCommandIndex + 1) + "\r\n\r\nA stat name was not written correctly in change commands file: " + (commandParameters[2].length > 0 ? commandParameters[2] : "λ"));
+function normalCommandWithSynonymCheck(){
+    //check same stats but correct casing
+    
+    //check synonyms of stats
+
+    //normal command
+    normalCommand();
 }
 
-function normalCommand(currentSheetRestrictionID){
+function normalCommand(){
     let coordFound;
     if(currentSheetRestrictionID != null){
         coordFound = findCellCoordFromNamesSheetRestricted(sheetNames[currentSheetRestrictionID], currentNationName, commandParameters[2]);
