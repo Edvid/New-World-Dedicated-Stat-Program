@@ -217,7 +217,7 @@ function correct(selection){
             
         }
     }
-    
+    return correctSelection.join(".");
 }
 
 function normalCommandWithSynonymCheck(selection){
