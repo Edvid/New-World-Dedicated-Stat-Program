@@ -2,12 +2,12 @@
 
 class Culture {
   definingFeatures;
-  Opinions;
+  Opinions = {};
 }
 
 class Religion {
   definingFeatures;
-  Opinions;
+  Opinions = {};
 }
 
 class Opinion {
@@ -33,8 +33,8 @@ class Trade {
 }
 class Nation {
 
-
   /* #region  Properties */
+
   /* #region  Daily */
   FuturePopulation;
   FutureLiteracyPercent;
@@ -505,13 +505,15 @@ class Nation {
 
   HabitableLand;
   /* #endregion */
+  
   /* #endregion */
 
-  constructor(nationName, nationToCopy) {
+  constructor(nationName) {
     let n = this;
     /* #region  Stats to Set Immedietly */
     /* #region  Main */
     this.GovernmentName = "Government of " + nationName;
+    this.ReligionGroups = {}
     this.Population = 5000000;
     this.LiteracyPercent = 7.50;
     this.HigherEducation = 0.25;
@@ -653,6 +655,7 @@ class Nation {
     this.Clergy = 0.0075; //Show In Percent
     this.Nobility = 0.01; //Show In Percent
     this.Burghers = 0.050; //Show In Percent
+    this.CultureGroups = {}
     /* #endregion */
 
     /* #region  Resources */
@@ -934,8 +937,8 @@ class Nation {
       }
     };
 
-    for (const resourceIndex in gameStats.resourceTypes) { //in, out, effective resources and potential inflation adjustments
-      const resource = gameStats.resourceTypes[resourceIndex];
+    for (const resourceIndex in gameStats.ResourceTypes) { //in, out, effective resources and potential inflation adjustments
+      const resource = gameStats.ResourceTypes[resourceIndex];
       n[resource + "Incoming"] = 0;
       n[resource + "Outgoing"] = 0;
 
@@ -1189,9 +1192,9 @@ class Nation {
     }
 
     for (const OpinionatedCultureName in this.CultureGroups) {
-      const OpinionatedCulture = Cultures[OpinionatedCultureName];
+      const OpinionatedCulture = gameStats.Cultures[OpinionatedCultureName];
       const Points = this.CultureGroups[OpinionatedCultureName].Points;
-      for (const nameOfCultureToBeHadAnOpinionAbout in OpinionnatedCulture.Opinions) {
+      for (const nameOfCultureToBeHadAnOpinionAbout in OpinionatedCulture.Opinions) {
         if (nameOfCultureToBeHadAnOpinionAbout == OpinionatedCultureName) continue; //we don't account for cultures having Opinions on themselves
         let opinionScore = OpinionatedCulture.Opinions[nameOfCultureToBeHadAnOpinionAbout];
         if (opinionScore !== undefined) //If the culture to be had an opinion about, isn't recorded by the culture we are currently checking Opinions for. Treat the opinion as neutral
@@ -1296,8 +1299,8 @@ class Nation {
     ) * this.ArmyQuality / gameStats.TimeDivide;
     
     
-    for (const resourceIndex in gameStats.resourceTypes) { // demands and values... Does not apply to Budget or Food
-      const resource = gameStats.resourceTypes[resourceIndex];
+    for (const resourceIndex in gameStats.ResourceTypes) { // demands and values... Does not apply to Budget or Food
+      const resource = gameStats.ResourceTypes[resourceIndex];
       if(resource == "Budget" || resource == "Food") continue;
 
       let PopulationDemand = (function () {
@@ -1387,17 +1390,10 @@ class Nation {
       for (const unitName in UnitUpkeepCosts) {
         const cost = UnitUpkeepCosts[unitName];
         ntrp += n["New_" + unitName] * cost;
-        //won't be needed anymore, so it's reset here
-        n["New_" + unitName] = 0;
       }
       ntrp += n.New_LightShips * n.UpkeepForOneLightShip;
       ntrp += n.New_MediumShips * n.UpkeepForOneMediumShip;
       ntrp += n.New_HeavyShips * n.UpkeepForOneHeavyShip;
-
-      //reset
-      n.New_LightShips = 0;
-      n.New_MediumShips = 0;
-      n.New_HeavyShips = 0;
 
       ntrp /= 2;
       return ntrp;
@@ -1540,8 +1536,14 @@ class Nation {
     this.FutureResearchPoints = Math.min(7.5, this.ResearchPoints + this.ResearchPointGain);
   }
 
-  clearNewTroops() {
-
+  clearNewTroops(){
+    for (const unitName in UnitUpkeepCosts) {
+      this["New_" + unitName] = 0;
+    }
+    //reset
+    this.New_LightShips = 0;
+    this.New_MediumShips = 0;
+    this.New_HeavyShips = 0;
   }
 }
 
@@ -1551,8 +1553,8 @@ class Stats{
   Nations;
   Religions;
   Cultures;
-  resourceTypes;
-  trades;
+  ResourceTypes;
+  Trades;
   TradeZones;
   constructor(){
     let s = this;
@@ -1561,14 +1563,16 @@ class Stats{
     this.TimeDivide = (function () {
       return 20 / s.TimeSpeed;
     })();
+    this.Nations = {};
     this.Religions = { //For Opinions not mentioned, they are Undesired
       Pagan: {
         definingFeatures: "Anything not classified",
         Opinions: []
       }
     };
-    this.Cultures; //For Opinions not mentioned, they are neutral towards them.
-    this.resourceTypes = [
+    this.Cultures = { //For Opinions not mentioned, they are neutral towards them.
+    }; 
+    this.ResourceTypes = [
       "Budget",
       "Food",
 
@@ -1592,6 +1596,7 @@ class Stats{
       "Sugar",
       "ExoticFruit"
     ];
+    this.Trades = {};
     this.TradeZones = {
       Alaska: 1,
       Cascadia: 1,
@@ -1681,10 +1686,9 @@ class Stats{
   }
 
   evaluateNations() {
-    for (const nationName in Nations) {
-      const nation = Nations[nationName];
+    for (const nationName in this.Nations) {
+      const nation = this.Nations[nationName];
       nation.evaluateNation();
-      
     }
   }
 }

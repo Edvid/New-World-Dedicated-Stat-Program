@@ -1,20 +1,18 @@
 let commandParameters = [];
 let changes;
-let changedSheets;
-let currentNationName;
 let changeCommandIndex;
 function loadChangesFromFile(event){
     var file = event.target.files[0];
-    var reader = new FileReader();
-    changes; 
+    var reader = new FileReader(); 
     reader.onload = function(e){
-        changes = e.target.result.split("\r?\n|\r");
+        changes = e.target.result.split(/\r?\n|\r/);
         const commandRegex = /(?<Operand>([a-z]+)( |\t)|(\+|\=|\-)( |\t)?)(?<Amount>(\".+\")|(.+?))( |\t)(?<Stat_Name>.+)/i;
         
         let currentSelection = "";
         for (changeCommandIndex = 0; changeCommandIndex < changes.length; changeCommandIndex++) {
             const changeCommand = changes[changeCommandIndex].trim();
             
+            console.log("line: " + changeCommandIndex);
             //comment
             if(changeCommand[0] == '#' || changeCommand.length == 0){
                 continue;
@@ -28,10 +26,10 @@ function loadChangesFromFile(event){
                         alert("You tried to run sync on a specific nation, but no nation is selected. This Operations was aborted");
                         continue;
                     }
-                    evaluateNations();
+                    gameStats.evaluateNations();
                     syncNation(correctAndSynonymCheck(currentSelection).split(/\./gi)[0]);
                 }else{
-                    evaluateNations();
+                    gameStats.evaluateNations();
                     syncNations();
                 }
                 
@@ -48,11 +46,18 @@ function loadChangesFromFile(event){
                     cc.trim();
                     //selection
                     if(cc[0] == '>'){
-                        let selection = cc.slice(1, cc.slice(1).search(/\<|\>/)).trim();
-                        currentSelection += selection;
+                        let arg = cc.slice(1);
+                        let index = arg.search(/\<|\>/);
+                        let selection;
+                        if(index == -1) 
+                            selection = arg.trim();
+                        else 
+                            selection = arg.slice(0, index).trim();
+                        currentSelection += "." + selection;
                     }
                     //deselection
                     else if(cc[0] == '<'){
+                        
                         if(cc.slice(1, 4) == "..."){
                             currentSelection = "";
                         }else{
@@ -61,8 +66,30 @@ function loadChangesFromFile(event){
                             else
                                 currentSelection = "";
                         }
+                        console.log(currentSelection);
                     }
                     cc = cutback(cc);
+                    
+                }
+            }
+            //Creation
+            else if(changeCommand.slice(0, 2) == "+>"){
+                let arg = changeCommand.slice(2).trim();
+                let objectClass = "Object";
+                if(/^\.Nations$/.test(currentSelection)) objectClass = "Nation";
+                if(/^\.Cultures$/.test(currentSelection)) objectClass = "Culture";
+                if(/^\.Religions$/.test(currentSelection)) objectClass = "Religion";
+                if(/^\.(Cultures|Religions).Opinions$/.test(currentSelection)) objectClass = "Opinion";
+                if(/^\.Trades$/.test(currentSelection)) objectClass = "Trade";
+
+                console.log("A " + currentSelection + "? I know what to create! " + objectClass + " of course!");
+
+                if(arg.includes('=')){
+                    let newName = arg.slice(0, arg.indexOf('=')).trim();
+                    let OldName = arg.slice(arg.indexOf('=') + 1).trim();
+                    (new Function(`gameStats${currentSelection}.${newName} = JSON.parse(JSON.stringify(gameStats${currentSelection}.${OldName}))`))();
+                }else{
+                    (new Function(`gameStats${currentSelection}.${arg} = new ${objectClass}("${arg}");`))(); 
                 }
             }
             //normal commands
@@ -89,10 +116,10 @@ function loadChangesFromFile(event){
             }
         }
 
-        evaluateNations();
+        gameStats.evaluateNations();
  
         // Parse to evaluated sheets
-        createNationSheet(2);
+        createNationSheet(gameStats.Nations[0]);
 
     };
 
@@ -167,6 +194,7 @@ function normalCommand(selection){
     //
     //
     
+
     let num;
     let change;
     //If number to change by is written in percent. Divide that number by 100
@@ -177,21 +205,24 @@ function normalCommand(selection){
     //add
     if(commandParameters[0] == '+' || commandParameters[0] == 'add'){
         change = num;
-        (new Function(`gameStats.${selection} += ${commandParameters[1]}`))();
+        (new Function(`gameStats${selection} += ${commandParameters[1]}`))();
     }
     //subtract
     else if(commandParameters[0] == '-' || commandParameters[0] == 'sub'){
         change = -num;
-        (new Function(`gameStats.${selection} -= ${commandParameters[1]}`))();
+        (new Function(`gameStats${selection} -= ${commandParameters[1]}`))();
     }
     //set
     else if(commandParameters[0] == '=' || commandParameters[0] == 'set'){
-        const previous = (new Function(`return JSON.parse(JSON.stringify(\
-            gameStats.${selection}\
-        ))`))();
+        const previous = (new Function(`\
+            if(typeof gameStats${selection} === 'undefined') return 'undefined';\
+            return JSON.parse(JSON.stringify(\
+                gameStats${selection}\
+            ));`
+        ))();
         change = isNaN(previous) ? true : num - previous;
         
-        (new Function(`gameStats.${selection} = ${commandParameters[1]}`))();
+        (new Function(`gameStats${selection} = ${commandParameters[1]}`))();
         
     }else{
         alert("At line " + (changeCommandIndex + 1) + "\r\n\r\nOperand wasn't understood: " + commandParameters[0] + ".\r\n Aborting.");
