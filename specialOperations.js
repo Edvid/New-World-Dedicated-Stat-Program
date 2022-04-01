@@ -1,37 +1,26 @@
-let NewRecruitCostsUnitUpkeepUnit = [];
-
-function specialOperation(name, sheetIndex, change, nationRow){
-    if(sheetIndex == sheetNames.findIndex(element => element == "Armies")){
-        if(name == "Levies") {
-            NewRecruitCostsUnitUpkeepUnit[nationRow] += change * 0.75 / 1000;
-        }else if(name == "Light Infantry"){
-            NewRecruitCostsUnitUpkeepUnit[nationRow] += change * 2 / 1000;
-        }else if(name == "Heavy Infantry"){
-            NewRecruitCostsUnitUpkeepUnit[nationRow] += change * 4 / 1000;
-        }else if(name == "Archers"){
-            NewRecruitCostsUnitUpkeepUnit[nationRow] += change * 3 / 1000;
-        }else if(name == "Crossbowmen"){
-            NewRecruitCostsUnitUpkeepUnit[nationRow] += change * 2 / 1000;
-        }else if(name == "Light Cavalry"){
-            NewRecruitCostsUnitUpkeepUnit[nationRow] += change * 4 / 1000;
-        }else if(name == "Heavy Cavalry"){
-            NewRecruitCostsUnitUpkeepUnit[nationRow] += change * 6.5 / 1000;
-        }else if(name == "Elite Infantry"){
-            NewRecruitCostsUnitUpkeepUnit[nationRow] += change * 7 / 1000;
-        }else if(name == "Elite Cavalry"){
-            NewRecruitCostsUnitUpkeepUnit[nationRow] += change * 8.5 / 1000;
-        }else if(name == "Hand Cannon"){
-            NewRecruitCostsUnitUpkeepUnit[nationRow] += change * 5 / 1000;
-        }else if(name == "Musketeers"){
-            NewRecruitCostsUnitUpkeepUnit[nationRow] += change * 3.5 / 1000;
-        }else if(name == "Militia"){
-            NewRecruitCostsUnitUpkeepUnit[nationRow] += change * 1.25 / 1000;
-        }else if(name == "Siege Equipment"){
-            NewRecruitCostsUnitUpkeepUnit[nationRow] += change / 10;
-        }else if(name == "Large Siege Equipment"){
-            NewRecruitCostsUnitUpkeepUnit[nationRow] += change / 5;
-        }else if(name == "Cannons"){
-            NewRecruitCostsUnitUpkeepUnit[nationRow] += change / 10;
-        }
+function specialOperation(selection, change){
+    
+    //New Recruitment handling
+    if(
+        /gameStats\.Nations\..+\.Levies/.test(selection) ||
+        /gameStats\.Nations\..+\.Light Infantry/.test(selection) ||
+        /gameStats\.Nations\..+\.Heavy Infantry/.test(selection) ||
+        /gameStats\.Nations\..+\.Archers/.test(selection) ||
+        /gameStats\.Nations\..+\.Crossbowmen/.test(selection) ||
+        /gameStats\.Nations\..+\.Light Cavalry/.test(selection) ||
+        /gameStats\.Nations\..+\.Heavy Cavalry/.test(selection) ||
+        /gameStats\.Nations\..+\.Elite Infantry/.test(selection) ||
+        /gameStats\.Nations\..+\.Elite Cavalry/.test(selection) ||
+        /gameStats\.Nations\..+\.Hand Cannon/.test(selection) ||
+        /gameStats\.Nations\..+\.Musketeers/.test(selection) ||
+        /gameStats\.Nations\..+\.Militia/.test(selection) ||
+        /gameStats\.Nations\..+\.Siege Equipment/.test(selection) ||
+        /gameStats\.Nations\..+\.Large Siege Equipment/.test(selection) ||
+        /gameStats\.Nations\..+\.Cannons/.test(selection)
+    ){
+        //only record positive changes
+        if(change <= 0) return;
+        let newTroopSelection = selection.split(".").pop().push("New_" + selection[selection.split(".").length - 1].join("."));
+        (new Function(`${newTroopSelection} = ${change}`))();
     }   
 }
