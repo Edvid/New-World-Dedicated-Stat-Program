@@ -21,6 +21,6 @@ function specialOperation(selection, change){
         //only record positive changes
         if(change <= 0) return;
         let newTroopSelection = selection.split(".").pop().push("New_" + selection[selection.split(".").length - 1].join("."));
-        (new Function(`${newTroopSelection} = ${change}`))();
+        (new Function(`${newTroopSelection} += ${change}`))();
     }   
 }
