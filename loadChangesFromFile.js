@@ -99,37 +99,19 @@ function loadChangesFromFile(event){
     reader.readAsText(file);
 }
 
-function syncNation(nationRow){
-    //deal with new recruit costs
-    
-    const budgetCoord = findCellCoordFromNamesSheetRestricted("Daily Stuff", nationRow, "Budget");
-    const ArmyQualityCoord = findCellCoordFromNames(nationRow, "Army Quality");
-    const ArmyQualityValue = changedSheetsEvaluated.Armies[ArmyQualityCoord.row][ArmyQualityCoord.column];
-    const CorruptionCoord = findCellCoordFromNames(nationRow, "Corruption");
-    const CorrutionValue = changedSheetsEvaluated["Daily Stuff"][CorruptionCoord.row][CorruptionCoord.column];
-    const ArmyWagesCoord = findCellCoordFromNames(nationRow, "Army Wages");
-    const ArmyWagesValue = changedSheetsEvaluated.Armies[ArmyWagesCoord.row][ArmyWagesCoord.column];
-    const TimeDivideCoord = findCellCoordFromNames(nationRow, "Time Divide");
-    const TimeDivideValue = changedSheetsEvaluated["Daily Stuff"][TimeDivideCoord.row][TimeDivideCoord.column];
-    
-    changedSheets[budgetCoord.sheet][budgetCoord.row][budgetCoord.column] -= (NewRecruitCostsUnitUpkeepUnit*((ArmyQualityValue+CorrutionValue / 5 ) + ArmyWagesValue -1) / TimeDivideValue) / 2.0; 
-    //clear recruit cost variable
-    NewRecruitCostsUnitUpkeepUnit[nationRow] = 0;
-
+function syncNation(nationName){
     
     //deal with automatic debt taking
     //not implemented yet
     //copy dailies
-    changedSheets["Daily Stuff"][nationRow][1] = changedSheetsEvaluated["Daily Stuff"][nationRow][2]; //population
-    changedSheets["Daily Stuff"][nationRow][3] = changedSheetsEvaluated["Daily Stuff"][nationRow][4]; //literacy
-    changedSheets["Daily Stuff"][nationRow][5] = changedSheetsEvaluated["Daily Stuff"][nationRow][6]; //high education
-    changedSheets["Daily Stuff"][nationRow][7] = changedSheetsEvaluated["Daily Stuff"][nationRow][8]; //budget
-    changedSheets["Daily Stuff"][nationRow][9] = changedSheetsEvaluated["Daily Stuff"][nationRow][10]; //food
-    changedSheets["Daily Stuff"][nationRow][11] = changedSheetsEvaluated["Daily Stuff"][nationRow][12]; //research points
-    changedSheets["Daily Stuff"][nationRow][13] = changedSheetsEvaluated["Daily Stuff"][nationRow][14]; //public debt length
-    changedSheets["Daily Stuff"][nationRow][15] = changedSheetsEvaluated["Daily Stuff"][nationRow][16]; //culture power
     
-    changedSheets["Daily Stuff"][nationRow][19] = changedSheetsEvaluated["Daily Stuff"][nationRow][20]; //Date in this nation
+    for (const propertyName in gameStats.Nations[nationName]) {
+        const property = gameStats.Nations[nationName][propertyName];
+        let regex = new RegExp(`gameStats\.Nations\.${nationName}\.Future.+`)
+        if(regex.test(propertyName)){
+            gameStats.Nations[nationName][propertyName.replace("Future", "")] = property;
+        }
+    }
 }
 
 function syncNations(){

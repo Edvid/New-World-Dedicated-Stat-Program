@@ -1387,10 +1387,17 @@ class Nation {
       for (const unitName in UnitUpkeepCosts) {
         const cost = UnitUpkeepCosts[unitName];
         ntrp += n["New_" + unitName] * cost;
+        //won't be needed anymore, so it's reset here
+        n["New_" + unitName] = 0;
       }
       ntrp += n.New_LightShips * n.UpkeepForOneLightShip;
       ntrp += n.New_MediumShips * n.UpkeepForOneMediumShip;
       ntrp += n.New_HeavyShips * n.UpkeepForOneHeavyShip;
+
+      //reset
+      n.New_LightShips = 0;
+      n.New_MediumShips = 0;
+      n.New_HeavyShips = 0;
 
       ntrp /= 2;
       return ntrp;
