@@ -28,10 +28,8 @@ function loadChangesFromFile(event){
                         alert("You tried to run sync on a specific nation, but no nation is selected. This Operations was aborted");
                         continue;
                     }
-                    currentSelection = correct(currentSelection);
-
-                    evaluateNations(currentSelection);
-                    syncNation(currentSelection.split(/\./gi)[0]);
+                    evaluateNations();
+                    syncNation(correctAndSynonymCheck(currentSelection).split(/\./gi)[0]);
                 }else{
                     evaluateNations();
                     syncNations();
@@ -87,7 +85,7 @@ function loadChangesFromFile(event){
                     
                     commandParameters[2] = match.groups.Stat_Name;
                 }
-                normalCommandWithSynonymCheck();
+                normalCommand(correctAndSynonymCheck(currentSelection + "." + commandParameters[2]));
             }
         }
 
@@ -134,62 +132,23 @@ function syncNation(nationRow){
     changedSheets["Daily Stuff"][nationRow][19] = changedSheetsEvaluated["Daily Stuff"][nationRow][20]; //Date in this nation
 }
 
-function findCellCoordFromNames(nationID, statName){
-    for (let i = 0; i < sheets.length; i++) {
-        let coord = findCellCoordFromNamesSheetRestricted(sheetNames[i], nationID, statName);
-        if(coord != null) return coord;
-    }
-}
-
-function findCellCoordFromNamesSheetRestricted(sheetName, nationID, statName){
-    const sheetID = sheetNames.findIndex(element => element == sheetName);
-    const statCount = checkIfMoreStatsThanRowLength(sheetName, changedSheets[sheetName][0].length);
-    for (let j = 0; j < statCount; j++) {
-        let statNameCoord = {row: 0, column: j};
-        statNameCoord = checkUniqueSheetLayout(sheetName, statNameCoord);
-        const StatNameCell = changedSheets[sheetName][statNameCoord.row][statNameCoord.column];
-        if(StatNameCell.trim() == statName.trim()){
-            let statChangeCoord = {row: nationID, column: j};
-            statChangeCoord = checkUniqueSheetLayout(sheetName, statChangeCoord);
-            const StatCell = changedSheets[sheetName][statChangeCoord.row][statChangeCoord.column];
-            return {
-                sheet: sheetName,
-                row: statChangeCoord.row, 
-                column: statChangeCoord.column,
-                nameCoord: {
-                    row: statNameCoord.row,
-                    column: statNameCoord.column
-                }
-            };
-        }
-    }
-}
-
 function syncNations(){
-    console.log("who the fuck called me!");
-    for (let j = 0; j < changedSheets.length; j++) {
-        const changedSheet = changedSheets[sheetNames[j]];
-        //if Column A, row 2 starts with a '=', look for nation names in another sheet
-        if(changedSheet[1][0].startsWith("=")) continue;
-        for (let k = 0; k < changedSheet.length; k++) {
-            const NationCell = changedSheet[k][0];
-            if(NationCell.trim().length < 1) continue;
-            syncNation(k);
-        }
+    for (const nationName in gameStats.Nations) {
+        syncNation(nationName)
     }
 }
 
 //synonym searching and case correcting alg
-function correct(selection){
+function correctAndSynonymCheck(selection){
     let correctSelection = selection.split(".");
     let step = gameStats;
     for(let i = 0; i < correctSelection.length; i++){
-        for (const propertyName in step) {
-            (function() {
-                const property = step[propertyName];
+        (function() {
+            for (const propertyName in step) {
                 //check same stats but correct casing
                 if(propertyName.toLowerCase == selection[i].toLowerCase){
                     selection[i] = propertyName;
+                    step = step[propertyName];
                     return;
                 }
                 else{
@@ -202,72 +161,59 @@ function correct(selection){
                                 //Then, if the real name for the stat exists in this object
                                 if(propertyName.toLowerCase == realName.toLowerCase){
                                     selection[i] = realName;
+                                    step = step[realName];
                                     return;
                                 }
                             }
                         });
                     }
-                    let instat = "";
-                    for(let j = i-1; j >= 0; j--){
-                        instat += "." + selection[j];
-                    }
-                    alert("The Specified Stat" + selection[i] + " in gameStats" + instat + " was not found!");
+                }   
+                let instat = "";
+                for(let j = i-1; j >= 0; j--){
+                    instat += "." + selection[j];
                 }
-            })();
-            
-        }
+                alert("The Specified Stat" + selection[i] + " in gameStats" + instat + " was not found!"); 
+            }
+        })();
     }
     return correctSelection.join(".");
 }
 
-function normalCommandWithSynonymCheck(selection){
-    normalCommand(selection);
-}
-
 function normalCommand(selection){
-    let coordFound;
-    if(currentSheetRestrictionID != null){
-        coordFound = findCellCoordFromNamesSheetRestricted(sheetNames[currentSheetRestrictionID], currentNationName, commandParameters[2]);
-    }else{
-        coordFound = findCellCoordFromNames(currentNationName, commandParameters[2]);
-    }
-
-
-    if(coordFound != null){
-        //if the stat in question is a formula, throw an error too
-        if(sheets[coordFound.sheet][coordFound.row][coordFound.column].toString().startsWith("="))
-        alert("At line " + (changeCommandIndex + 1) + "\r\n\r\nA stat that is described as a formula has been attempted changed: " + statName + ".\r\n Action has been aborted.");                         
+    //implement check for stats that are forumulas, and disallow their change
+    //
+    //
+    //
     
-        changeStats(coordFound, currentNationName);
-        return true;
-    }
-    return false;
-}
-
-function changeStats(cellinfo, nationRow){
-    const sheet = changedSheets[cellinfo.sheet];
-    const row = cellinfo.row;
-    const column = cellinfo.column;
-    
-    if(!(/^[\d|\.].+%$/.test(commandParameters[1])) && (/^[\d|\.].+%$/.test(sheet[row][column]))){
-        alert("At line " + (changeCommandIndex + 1) + "\r\n\r\nYou attempted to change " + commandParameters[2] +  ", which is written in percentages. You wrote " + commandParameters[1] + ". Aborted.");
-        return;
-    }else if((/^[\d|\.].+%$/.test(commandParameters[1])) && !(/^[\d|\.].+%$/.test(sheet[row][column]))){
-        alert("At line " + (changeCommandIndex + 1) + "\r\n\r\nYou attempted to change " + commandParameters[2] + ", which is written without percentages. Your wrote : " + commandParameters[1] + ". Aborted.");
-        return;
+    let num;
+    let change;
+    //If number to change by is written in percent. Divide that number by 100
+    if(!(/^[\d|\.].+%$/.test(commandParameters[1]))){
+        num = commandParameters[1].replace("%", "") / 100;
     }
 
+    //add
     if(commandParameters[0] == '+' || commandParameters[0] == 'add'){
-        sheet[row][column] = (+sheet[row][column] + +commandParameters[1].replace("%", "")) + (sheet[row][column].includes("%") ? "%" : "");
-        specialOperation(cellinfo, commandParameters[1], nationRow);
-    }else if(commandParameters[0] == '-' || commandParameters[0] == 'sub'){
-        sheet[row][column] = (+sheet[row][column] - +commandParameters[1].replace("%", "")) + (sheet[row][column].includes("%") ? "%" : "");
-        specialOperation(cellinfo, -commandParameters[1], nationRow);
-    }else if(commandParameters[0] == '=' || commandParameters[0] == 'set'){
-        const previous = JSON.parse(JSON.stringify(sheet[row][column]));
-        sheet[row][column] = commandParameters[1];
-        specialOperation(cellinfo, commandParameters[1] - previous, nationRow);
+        change = num;
+        (new Function(`gameStats.${selection} += ${commandParameters[1]}`))();
+    }
+    //subtract
+    else if(commandParameters[0] == '-' || commandParameters[0] == 'sub'){
+        change = -num;
+        (new Function(`gameStats.${selection} -= ${commandParameters[1]}`))();
+    }
+    //set
+    else if(commandParameters[0] == '=' || commandParameters[0] == 'set'){
+        const previous = (new Function(`return JSON.parse(JSON.stringify(\
+            gameStats.${selection}\
+        ))`))();
+        change = isNaN(previous) ? true : num - previous;
+        
+        (new Function(`gameStats.${selection} = ${commandParameters[1]}`))();
+        
     }else{
         alert("At line " + (changeCommandIndex + 1) + "\r\n\r\nOperand wasn't understood: " + commandParameters[0] + ".\r\n Aborting.");
+        return;
     }
+    specialOperation(selection, change);
 }
