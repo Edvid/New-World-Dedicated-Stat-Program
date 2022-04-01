@@ -11,8 +11,6 @@ function loadChangesFromFile(event){
         let currentSelection = "";
         for (changeCommandIndex = 0; changeCommandIndex < changes.length; changeCommandIndex++) {
             const changeCommand = changes[changeCommandIndex].trim();
-            
-            console.log("line: " + changeCommandIndex);
             //comment
             if(changeCommand[0] == '#' || changeCommand.length == 0){
                 continue;
@@ -66,7 +64,6 @@ function loadChangesFromFile(event){
                             else
                                 currentSelection = "";
                         }
-                        console.log(currentSelection);
                     }
                     cc = cutback(cc);
                     
@@ -82,12 +79,17 @@ function loadChangesFromFile(event){
                 if(/^\.(Cultures|Religions).Opinions$/.test(currentSelection)) objectClass = "Opinion";
                 if(/^\.Trades$/.test(currentSelection)) objectClass = "Trade";
 
-                console.log("A " + currentSelection + "? I know what to create! " + objectClass + " of course!");
-
                 if(arg.includes('=')){
                     let newName = arg.slice(0, arg.indexOf('=')).trim();
-                    let OldName = arg.slice(arg.indexOf('=') + 1).trim();
-                    (new Function(`gameStats${currentSelection}.${newName} = JSON.parse(JSON.stringify(gameStats${currentSelection}.${OldName}))`))();
+                    let oldName = arg.slice(arg.indexOf('=') + 1).trim();
+                    (new Function(`\
+                    gameStats${currentSelection}.${newName} = new ${objectClass}("${newName}");\
+                    /* Copy all property values from old to new */\
+                    for (const propertyName in gameStats${currentSelection}.${oldName}) {\
+                        const propertyToCopy = gameStats${currentSelection}.${oldName}[propertyName];\
+                        gameStats${currentSelection}.${newName}[propertyName] = propertyToCopy\
+                    }`))();
+                    
                 }else{
                     (new Function(`gameStats${currentSelection}.${arg} = new ${objectClass}("${arg}");`))(); 
                 }
@@ -119,7 +121,9 @@ function loadChangesFromFile(event){
         gameStats.evaluateNations();
  
         // Parse to evaluated sheets
-        createNationSheet(gameStats.Nations[0]);
+        for (const nationName in gameStats.Nations) {
+            createNationSheet(nationName);            
+        }
 
     };
 
