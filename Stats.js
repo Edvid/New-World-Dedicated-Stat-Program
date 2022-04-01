@@ -91,10 +91,13 @@ class Nation {
   Spies;
   SpyQuality;
   NobleInfluence;
+  NobleLoyaltyGroups;
   NobleLoyalty;
   ClergyInfluence;
+  ClergyLoyaltyGroups;
   ClergyLoyalty;
   BurghersInfluence;
+  BurghersLoyaltyGroups;
   BurghersLoyalty;
   ArmyUpkeep;
   SpyUpkeep;
@@ -537,7 +540,7 @@ class Nation {
     this.AtDefensiveWar = false;
 
     this.NobleInfluence = 0.55; //Show in percent
-    this.NobleLoyalty = [
+    this.NobleLoyaltyGroups = [
       {
         to: n.GovernmentName,
         Points: 55
@@ -548,7 +551,7 @@ class Nation {
       }
     ];
     this.ClergyInfluence = 0.25; //Show in percent
-    this.ClergyLoyalty = [
+    this.ClergyLoyaltyGroups = [
       {
         to: n.GovernmentName,
         Points: 50
@@ -559,7 +562,7 @@ class Nation {
       }
     ];
     this.BurghersInfluence = 0.10; //Show in percent
-    this.BurghersLoyalty = [
+    this.BurghersLoyaltyGroups = [
       {
         to: n.GovernmentName,
         Points: 50
@@ -847,55 +850,55 @@ class Nation {
     this.Climates = {
       "Polar Desert": {
         Pixels: 0,
-        climateScore: 0,
+        ClimateScore: 0,
       },
       "Taiga/Tundra": {
         Pixels: 0,
-        climateScore: 0.25,
+        ClimateScore: 0.25,
       },
       "Montane Forest": {
         Pixels: 0,
-        climateScore: 0.6,
+        ClimateScore: 0.6,
       },
       Medditereanian: {
         Pixels: 0,
-        climateScore: 0.85,
+        ClimateScore: 0.85,
       },
       Arid: {
         Pixels: 0,
-        climateScore: 0.65,
+        ClimateScore: 0.65,
       },
       Steppe: {
         Pixels: 0,
-        climateScore: 0.75,
+        ClimateScore: 0.75,
       },
       Moderate: {
         Pixels: 0,
-        climateScore: 1,
+        ClimateScore: 1,
       },
       "Sub-Tropical": {
         Pixels: 0,
-        climateScore: 0.75,
+        ClimateScore: 0.75,
       },
       Tropical: {
         Pixels: 0,
-        climateScore: 0.6,
+        ClimateScore: 0.6,
       },
       Savanna: {
         Pixels: 0,
-        climateScore: 0.65,
+        ClimateScore: 0.65,
       },
       Mountainous: {
         Pixels: 0,
-        climateScore: 0.35,
+        ClimateScore: 0.35,
       },
       Desert: {
         Pixels: 0,
-        climateScore: 0.05,
+        ClimateScore: 0.05,
       },
       "Coastal Desert": {
         Pixels: 0,
-        climateScore: 0.35
+        ClimateScore: 0.35
       },
 
     };
@@ -1059,7 +1062,8 @@ class Nation {
       let hl = 0;
 
       for (const climate in n.Climates) {
-        hl += (n.Climates[climate].Pixels / n.Size) * n.Climates[climate].climateScore;
+        hl += (n.Climates[climate].Pixels / n.Size) * n.Climates[climate].ClimateScore;
+        console.log(hl);
       }
 
       return hl;
@@ -1237,36 +1241,32 @@ class Nation {
     }
     this.religiousDisunity = religiousDisunity / 100;
 
-
     this.NobleLoyalty = (function () {
       let pointSum = 0;
-      let alliedPoints = 0;
-      for (const loyaltyName in n.NobleLoyalty) {
-        const loyalty = n.NobleLoyalty[loyaltyName];
+      for (const loyaltyName in n.NobleLoyaltyGroups) {
+        const loyalty = n.NobleLoyaltyGroups[loyaltyName];
         pointSum += loyalty.Points;
-        if (loyalty.to == n.GovernmentName) alliedPoints = loyalty.Points;
+        if (loyalty.to == n.GovernmentName) n.NobleLoyalty = loyalty.Points;
       }
-      return alliedPoints / pointSum;
+      return n.NobleLoyalty / pointSum;
     })();
     this.ClergyLoyalty = (function () {
       let pointSum = 0;
-      let alliedPoints = 0;
-      for (const loyaltyName in n.ClergyLoyalty) {
-        const loyalty = n.ClergyLoyalty[loyaltyName];
+      for (const loyaltyName in n.ClergyLoyaltyGroups) {
+        const loyalty = n.ClergyLoyaltyGroups[loyaltyName];
         pointSum += loyalty.Points;
-        if (loyalty.to == n.GovernmentName) alliedPoints = loyalty.Points;
+        if (loyalty.to == n.GovernmentName) n.ClergyLoyalty = loyalty.Points;
       }
-      return alliedPoints / pointSum;
+      return n.ClergyLoyalty / pointSum;
     })();
     this.BurghersLoyalty = (function () {
       let pointSum = 0;
-      let alliedPoints = 0;
-      for (const loyaltyName in n.BurghersLoyalty) {
-        const loyalty = n.BurghersLoyalty[loyaltyName];
+      for (const loyaltyName in n.BurghersLoyaltyGroups) {
+        const loyalty = n.BurghersLoyaltyGroups[loyaltyName];
         pointSum += loyalty.Points;
-        if (loyalty.to == n.GovernmentName) alliedPoints = loyalty.Points;
+        if (loyalty.to == n.GovernmentName) n.BurghersLoyalty = loyalty.Points;
       }
-      return alliedPoints / pointSum;
+      return n.BurghersLoyalty / pointSum;
     })();
     this.PopulationStabilityImpact = (this.Population > this.AdministrativeEfficiency * 500000 ? (this.AdministrativeEfficiency * 500000 - this.Population) / 50000000 : 0) * 10;
     this.Fervor = Math.min(1, Math.max(-1, 0 + this.MinorBattles / 20 + this.MajorBattles / 10 + this.Pillaging - (this.Casualties / (this.OverallNumbers + this.Casualties + 0.0000001))));
