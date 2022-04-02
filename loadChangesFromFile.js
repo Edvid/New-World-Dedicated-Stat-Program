@@ -159,7 +159,7 @@ function correctAndSynonymCheck(selection){
         (function() {
             for (const propertyName in step) {
                 //check same stats but correct casing
-                if(propertyName.toLowerCase == correctSelection[i].toLowerCase.replace(" ", "")){
+                if(propertyName.toLowerCase() == correctSelection[i].toLowerCase().replace(" ", "")){
                     correctSelection[i] = propertyName;
                     step = step[propertyName];
                     return;
@@ -170,9 +170,9 @@ function correctAndSynonymCheck(selection){
                         const synonymArray = Synonyms[realName];
                         synonymArray.forEach(synonym => {
                             //if what was written in change file exists in the synonym dictionary
-                            if(synonym.toLowerCase == correctSelection[i].toLowerCase.replace(" ", "")){
+                            if(synonym.toLowerCase() == correctSelection[i].toLowerCase().replace(" ", "")){
                                 //Then, if the real name for the stat exists in this object
-                                if(propertyName.toLowerCase == realName.toLowerCase){
+                                if(propertyName.toLowerCase() == realName.toLowerCase()){
                                     correctSelection[i] = realName;
                                     step = step[realName];
                                     return;
