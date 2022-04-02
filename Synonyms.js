@@ -1,15 +1,27 @@
 let Synonyms = {
     AdministrativeEfficiency: [
         "adm",
-        "admEff",
-        "adminEff"
+        "admeff",
+        "admineff"
     ],
     Prosperity: [
         "pros",
         "prosp",
-        "quality of life",
-        "qual of life",
-        "qual of l",
+        "qualityoflife",
+        "qualoflife",
+        "qualofl",
         "qual"
-    ]
+    ],
+    ReligionRepresentedAtGovernmentLevel: [
+        "primaryreligion",
+        "primrel",
+        "relrep"
+    ],
+    CultureRepresentedAtGovernmentLevel: [
+        "primaryculture",
+        "primcul",
+        "primcult",
+        "culrep",
+        "cultrep"
+    ],
 }

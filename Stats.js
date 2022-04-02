@@ -51,6 +51,8 @@ class Nation {
   /* #region Most Stats */
   GovernmentName;
   ReligionGroups;  //object of {name: {Points: num}, name: {Points: num}}
+  ReligionRepresentedAtGovernmentLevel;
+  ReligionRepresentedAtGovernmentLevelPercent;
   CulturalDisunity;
   ReligiousDisunity;
   Population;
@@ -205,8 +207,8 @@ class Nation {
   MediumClass;
   LowerClass;
   CultureGroups; //object of {name: {Points: num}, name: {Points: num}}
-  PrimaryCulture;
-  PrimaryCulturePercent;
+  CultureRepresentedAtGovernmentLevel;
+  CultureRepresentedAtGovernmentLevelPercent;
   PopulationStabilityImpact;
   PopulationTechImpact;
   /* #endregion */
@@ -1206,8 +1208,8 @@ class Nation {
         if(isNaN(opinionScore))
           opinionScore = Opinion[opinionScore];
         let culturalDisunityFactor = (opinionScore - 100) * (Points / pointSum);
-        if (OpinionatedCultureName == this.PrimaryCulture) {
-          this.PrimaryCulturePercent = (Points / pointSum);
+        if (OpinionatedCultureName == this.CultureRepresentedAtGovernmentLevel) {
+          this.CultureRepresentedAtGovernmentLevel = (Points / pointSum);
           culturalDisunityFactor *= 1.5;
         }
         culturalDisunity += culturalDisunityFactor;
@@ -1232,8 +1234,8 @@ class Nation {
         if (opinionScore !== undefined) //If the religion to be had an opinion about, isn't recorded by the religion we are currently checking Opinions for. Treat the opinion as neutral
           opinionScore = Opinion.Neutral;
         let religiousDisunityFactor = (opinionScore - 100) * (Points / pointSum);
-        if (OpinionatedReligionName == this.PrimaryReligion) {
-          this.PrimaryReligionPercent = (Points / pointSum);
+        if (OpinionatedReligionName == this.ReligionRepresentedAtGovernmentLevel) {
+          this.ReligionRepresentedAtGovernmentLevelPercent = (Points / pointSum);
           religiousDisunityFactor *= 1.5;
         }
         religiousDisunity += religiousDisunityFactor;
