@@ -1,17 +1,26 @@
 
 
-class Culture {
+class Ehh {
   definingFeatures;
   Opinions = {};
+
+  constructor(){
+    this.definingFeatures = "";
+  }
 }
 
-class Religion {
-  definingFeatures;
-  Opinions = {};
+
+class EhhGroup {
+  Points;
+}
+
+class Climate{
+  Pixels;
+  ClimateScore;
 }
 
 class Opinion {
-  score;
+  Score;
   static Undesired = -100;
   static Skeptical = -50;
   static Neutral = 0;

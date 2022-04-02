@@ -74,11 +74,11 @@ function loadChangesFromFile(event){
                 let arg = changeCommand.slice(2).trim();
                 let objectClass = "Object";
                 if(/^\.Nations$/.test(currentSelection)) objectClass = "Nation";
-                if(/^\.Cultures$/.test(currentSelection)) objectClass = "Culture";
-                if(/^\.Religions$/.test(currentSelection)) objectClass = "Religion";
-                if(/^\.(Cultures|Religions).Opinions$/.test(currentSelection)) objectClass = "Opinion";
+                if(/^\.(Cultures|Religions)$/.test(currentSelection)) objectClass = "Ehh";
+                if(/^\.Nations\..+\.(Culture|Religion)Groups$/.test(currentSelection)) objectClass = "EhhGroup";
+                if(/^\.Nations\..+\.Climates$/.test(currentSelection)) objectClass = "Climate";
+                if(/^\.(Cultures|Religions)\..+\.Opinions$/.test(currentSelection)) objectClass = "Opinion";
                 if(/^\.Trades$/.test(currentSelection)) objectClass = "Trade";
-
                 if(arg.includes('=')){
                     let newName = arg.slice(0, arg.indexOf('=')).trim();
                     let oldName = arg.slice(arg.indexOf('=') + 1).trim();
@@ -153,7 +153,7 @@ function syncNations(){
 
 //synonym searching and case correcting alg
 function correctAndSynonymCheck(selection){
-    let correctSelection = selection.split(".");
+    let correctSelection = selection.slice(1).split(".");
     let step = gameStats;
     for(let i = 0; i < correctSelection.length; i++){
         (function() {
@@ -181,15 +181,11 @@ function correctAndSynonymCheck(selection){
                         });
                     }
                 }   
-                let instat = "";
-                for(let j = i-1; j >= 0; j--){
-                    instat += "." + selection[j];
-                }
-                alert("The Specified Stat" + selection[i] + " in gameStats" + instat + " was not found!"); 
             }
+            alert("The Specified Stat " + correctSelection[i] + " in " + correctSelection.slice(0,i).join(".") + " was not found!"); 
         })();
     }
-    return correctSelection.join(".");
+    return "." + correctSelection.join(".");
 }
 
 function normalCommand(selection){
