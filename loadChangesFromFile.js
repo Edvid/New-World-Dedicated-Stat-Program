@@ -6,7 +6,7 @@ function loadChangesFromFile(event){
     var reader = new FileReader(); 
     reader.onload = function(e){
         changes = e.target.result.split(/\r?\n|\r/);
-        const commandRegex = /(?<Operand>([a-z]+)( |\t)|(\+|\=|\-)( |\t)?)(?<Amount>(\".+\")|(.+?))( |\t)(?<Stat_Name>.+)/i;
+        const commandRegex = /(?<Operand>([a-z]+)( |\t)|(\+|\=|\-)( |\t)?)(?<Amount>(\".+\")|(\{.+\})|(.+?))( |\t)(?<Stat_Name>.+)/i;
         
         let currentSelection = "";
         for (changeCommandIndex = 0; changeCommandIndex < changes.length; changeCommandIndex++) {
@@ -66,7 +66,6 @@ function loadChangesFromFile(event){
                         }
                     }
                     cc = cutback(cc);
-                    
                 }
             }
             //Creation
@@ -74,8 +73,8 @@ function loadChangesFromFile(event){
                 let arg = changeCommand.slice(2).trim();
                 let objectClass = "Object";
                 if(/^\.Nations$/.test(currentSelection)) objectClass = "Nation";
-                if(/^\.(Cultures|Religions)$/.test(currentSelection)) objectClass = "Ehh";
-                if(/^\.Nations\..+\.(Culture|Religion)Groups$/.test(currentSelection)) objectClass = "EhhGroup";
+                if(/^\.(Cultures|Religions)$/.test(currentSelection)) objectClass = "SocialBehaviour";
+                if(/^\.Nations\..+\.(Culture|Religion)Groups$/.test(currentSelection)) objectClass = "SocialBehaviourGroup";
                 if(/^\.Nations\..+\.Climates$/.test(currentSelection)) objectClass = "Climate";
                 if(/^\.(Cultures|Religions)\..+\.Opinions$/.test(currentSelection)) objectClass = "Opinion";
                 if(/^\.Trades$/.test(currentSelection)) objectClass = "Trade";
@@ -109,8 +108,6 @@ function loadChangesFromFile(event){
                     }
                     commandParameters[0] = match.groups.Operand.trim();
                     commandParameters[1] = match.groups.Amount;
-                    if(/^\".+\"$/.test(commandParameters[1]))
-                        commandParameters[1] = commandParameters[1].slice(1, commandParameters[1].length - 1);
                     
                     commandParameters[2] = match.groups.Stat_Name;
                 }
@@ -156,34 +153,37 @@ function correctAndSynonymCheck(selection){
     let correctSelection = selection.slice(1).split(".");
     let step = gameStats;
     for(let i = 0; i < correctSelection.length; i++){
-        (function() {
-            for (const propertyName in step) {
-                //check same stats but correct casing
-                if(propertyName.toLowerCase() == correctSelection[i].toLowerCase().replace(" ", "")){
-                    correctSelection[i] = propertyName;
-                    step = step[propertyName];
-                    return;
-                }
-                else{
-                    //check synonyms of stats
-                    for (const realName in Synonyms) {
-                        const synonymArray = Synonyms[realName];
-                        synonymArray.forEach(synonym => {
-                            //if what was written in change file exists in the synonym dictionary
-                            if(synonym.toLowerCase() == correctSelection[i].toLowerCase().replace(" ", "")){
-                                //Then, if the real name for the stat exists in this object
-                                if(propertyName.toLowerCase() == realName.toLowerCase()){
-                                    correctSelection[i] = realName;
-                                    step = step[realName];
-                                    return;
-                                }
-                            }
-                        });
-                    }
-                }   
+        let found = false;
+        for (const propertyName in step) {
+            //check same stats but correct casing
+            if(propertyName.toLowerCase() == correctSelection[i].toLowerCase().replace(" ", "")){
+                correctSelection[i] = propertyName;
+                step = step[propertyName];
+                found = true;
             }
-            alert("The Specified Stat " + correctSelection[i] + " in " + correctSelection.slice(0,i).join(".") + " was not found!"); 
-        })();
+            else{
+                //check synonyms of stats
+                for (const realName in Synonyms) {
+                    const synonymArray = Synonyms[realName];
+                    for (let j = 0; j < synonymArray.length; j++) {
+                        const synonym = synonymArray[j];
+                         //if what was written in change file exists in the synonym dictionary
+                        if(synonym.toLowerCase() == correctSelection[i].toLowerCase().replace(" ", "")){
+                            //Then, if the real name for the stat exists in this object
+                            if(propertyName.toLowerCase() == realName.toLowerCase()){
+                                correctSelection[i] = realName;
+                                step = step[realName];
+                                found = true;
+                            }
+                        }
+                        if(found) continue;
+                    }
+                    if(found) continue;
+                }
+            } 
+            if(found) continue;  
+        }
+        if(!found) alert("The Specified Stat " + correctSelection[i] + " in " + correctSelection.slice(0,i).join(".") + " was not found!");
     }
     return "." + correctSelection.join(".");
 }

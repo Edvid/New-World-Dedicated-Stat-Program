@@ -24,4 +24,7 @@ let Synonyms = {
         "culrep",
         "cultrep"
     ],
+    Pixels: [
+        "points"
+    ]
 }

@@ -1,6 +1,6 @@
 
 
-class Ehh {
+class SocialBehaviour {
   definingFeatures;
   Opinions = {};
 
@@ -10,7 +10,7 @@ class Ehh {
 }
 
 
-class EhhGroup {
+class SocialBehaviourGroup {
   Points;
 }
 
@@ -1074,7 +1074,6 @@ class Nation {
 
       for (const climate in n.Climates) {
         hl += (n.Climates[climate].Pixels / n.Size) * n.Climates[climate].ClimateScore;
-        console.log(hl);
       }
 
       return hl;
