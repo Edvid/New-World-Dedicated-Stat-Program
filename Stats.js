@@ -1209,11 +1209,15 @@ class Nation {
       const Points = this.CultureGroups[OpinionatedCultureName].Points;
       for (const nameOfCultureToBeHadAnOpinionAbout in OpinionatedCulture.Opinions) {
         if (nameOfCultureToBeHadAnOpinionAbout == OpinionatedCultureName) continue; //we don't account for cultures having Opinions on themselves
-        let opinionScore = OpinionatedCulture.Opinions[nameOfCultureToBeHadAnOpinionAbout];
-        if (opinionScore !== undefined) //If the culture to be had an opinion about, isn't recorded by the culture we are currently checking Opinions for. Treat the opinion as neutral
+        let opinionobj = OpinionatedCulture.Opinions[nameOfCultureToBeHadAnOpinionAbout];
+        let opinionScore;
+        //If the culture to be had an opinion about, isn't recorded by the culture we are currently checking Opinions for. Treat the opinion as neutral
+        if (opinionobj !== undefined) 
           opinionScore = Opinion.Neutral;
-        if(isNaN(opinionScore))
-          opinionScore = Opinion[opinionScore];
+        else if(isNaN(opinionobj.Score))
+          opinionScore = Opinion[opinionobj.Score];
+        else 
+          opinionScore = opinionScore.Score;
         let culturalDisunityFactor = (opinionScore - 100) * (Points / pointSum);
         if (OpinionatedCultureName == this.CultureRepresentedAtGovernmentLevel) {
           this.CultureRepresentedAtGovernmentLevel = (Points / pointSum);
@@ -1237,9 +1241,16 @@ class Nation {
       const Points = this.ReligionGroups[OpinionatedReligionName].Points;
       for (const nameOfReligionToBeHadAnOpinionAbout in OpinionatedReligion.Opinions) {
         if (nameOfReligionToBeHadAnOpinionAbout == OpinionatedReligionName) continue; //we don't account for religions having Opinions on themselves
-        let opinionScore = OpinionatedReligion.Opinions[nameOfReligionToBeHadAnOpinionAbout];
-        if (opinionScore !== undefined) //If the religion to be had an opinion about, isn't recorded by the religion we are currently checking Opinions for. Treat the opinion as neutral
+        let opinionobj = OpinionatedReligion.Opinions[nameOfReligionToBeHadAnOpinionAbout];
+        let opinionScore;
+        //If the religion to be had an opinion about, isn't recorded by the religion we are currently checking Opinions for. Treat the opinion as neutral 
+        if (opinionobj !== undefined) 
           opinionScore = Opinion.Neutral;
+        else if(isNaN(opinionobj.Score))
+          opinionScore = Opinion[opinionobj.Score];
+        else 
+          opinionScore = opinionScore.Score;
+
         let religiousDisunityFactor = (opinionScore - 100) * (Points / pointSum);
         if (OpinionatedReligionName == this.ReligionRepresentedAtGovernmentLevel) {
           this.ReligionRepresentedAtGovernmentLevelPercent = (Points / pointSum);
