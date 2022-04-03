@@ -81,12 +81,14 @@ function loadChangesFromFile(event){
                 if(arg.includes('=')){
                     let newName = arg.slice(0, arg.indexOf('=')).trim();
                     let oldName = arg.slice(arg.indexOf('=') + 1).trim();
+                    gameStats.Nations[oldName].evaluateNation();
                     (new Function(`\
                     gameStats${currentSelection}.${newName} = new ${objectClass}("${newName}");\
                     /* Copy all property values from old to new */\
                     for (const propertyName in gameStats${currentSelection}.${oldName}) {\
+                        if(propertyName == "GovernmentName") continue;\
                         const propertyToCopy = gameStats${currentSelection}.${oldName}[propertyName];\
-                        gameStats${currentSelection}.${newName}[propertyName] = propertyToCopy\
+                        gameStats${currentSelection}.${newName}[propertyName] = JSON.parse(JSON.stringify(propertyToCopy));\
                     }`))();
                     
                 }else{

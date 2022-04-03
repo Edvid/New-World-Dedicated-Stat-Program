@@ -28,7 +28,7 @@ function createNationSheet(nationName){
         td1.innerHTML = nationStatName;
         td2.innerHTML = JSON.stringify(nationStat);
         td1.style.background = secondaryColor[n % secondaryColor.length];
-        if(td2.innerHTML == "null"){
+        if(td2.innerHTML == "null" || td2.innerHTML == "undefined"){
             td2.style.background = "red";
             td2.style.color = "white";
         }

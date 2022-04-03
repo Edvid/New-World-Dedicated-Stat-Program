@@ -11,7 +11,7 @@ class SocialBehaviour {
 
 
 class SocialBehaviourGroup {
-  Points;
+  Points = 0;
 }
 
 class Climate{
@@ -52,7 +52,7 @@ class Nation {
   FutureFood;
   FutureResearchPoints;
   FuturePublicDebtLength;
-  FutureCulturalpower;
+  FutureCulturalPower;
   DateInThisNation;
   FutureDateInThisNation;
   /* #endregion */
@@ -359,7 +359,7 @@ class Nation {
   SugarValue;
 
   ExoticFruitDemand;
-  ExocticFruitValue;
+  ExoticFruitValue;
   /* #endregion */
 
   /* #region  Technology Stats */
@@ -383,7 +383,7 @@ class Nation {
   PublicDebtTaken;
   EffectiveDebt;
   PublicDebtLength;
-  FutureDebtLength;
+  FuturePublicDebtLength;
   InterestRate;
   DebtHappinessEffect;
 
@@ -479,7 +479,6 @@ class Nation {
   FoodConsumption;
   FoodGain;
   MaxStock;
-  Stock;
   FutureFood;
   FoodPopulationBoost;
   SurplusFood;
@@ -527,7 +526,11 @@ class Nation {
     /* #region  Stats to Set Immedietly */
     /* #region  Main */
     this.GovernmentName = "Government of " + nationName;
-    this.ReligionGroups = {}
+    this.ReligionGroups = {
+      "Pagan": {
+        Points: 100
+      }
+    };
     this.Population = 5000000;
     this.LiteracyPercent = 7.50;
     this.HigherEducation = 0.25;
@@ -1051,13 +1054,6 @@ class Nation {
     this.Foodlost = this.SurplusFood - this.FoodSold;
     this.Tradeprofit = this.FoodSold / 50;
 
-
-    this.ReligionGroups = {
-      "Pagan": {
-        Points: 100
-      }
-    };
-
     this.Prosperity = 1 + this.SocialSpending / 2.5 + (this.Food == 0 && this.FutureFood < 0 ? this.FutureFood / 2000 : 0) + (this.Budget < 0.00001 ? this.Budget / 100 : 0) * (1 - this.Pillaging);
     this.Size = (function () {
       let s = 0;
@@ -1207,20 +1203,23 @@ class Nation {
     for (const OpinionatedCultureName in this.CultureGroups) {
       const OpinionatedCulture = gameStats.Cultures[OpinionatedCultureName];
       const Points = this.CultureGroups[OpinionatedCultureName].Points;
-      for (const nameOfCultureToBeHadAnOpinionAbout in OpinionatedCulture.Opinions) {
+      for (const nameOfCultureToBeHadAnOpinionAbout in this.CultureGroups) {
         if (nameOfCultureToBeHadAnOpinionAbout == OpinionatedCultureName) continue; //we don't account for cultures having Opinions on themselves
-        let opinionobj = OpinionatedCulture.Opinions[nameOfCultureToBeHadAnOpinionAbout];
         let opinionScore;
         //If the culture to be had an opinion about, isn't recorded by the culture we are currently checking Opinions for. Treat the opinion as neutral
-        if (opinionobj !== undefined) 
+        let opinionobj;
+        if (OpinionatedCulture.Opinions === undefined || OpinionatedCulture.Opinions[nameOfCultureToBeHadAnOpinionAbout] === undefined) 
           opinionScore = Opinion.Neutral;
-        else if(isNaN(opinionobj.Score))
-          opinionScore = Opinion[opinionobj.Score];
-        else 
-          opinionScore = opinionScore.Score;
+        else {
+          opinionobj = OpinionatedCulture.Opinions[nameOfCultureToBeHadAnOpinionAbout];
+          if(isNaN(opinionobj.Score))
+            opinionScore = Opinion[opinionobj.Score];
+          else 
+            opinionScore = opinionScore.Score;
+        }
         let culturalDisunityFactor = (opinionScore - 100) * (Points / pointSum);
         if (OpinionatedCultureName == this.CultureRepresentedAtGovernmentLevel) {
-          this.CultureRepresentedAtGovernmentLevel = (Points / pointSum);
+          this.CultureRepresentedAtGovernmentLevelPercent = (Points / pointSum);
           culturalDisunityFactor *= 1.5;
         }
         culturalDisunity += culturalDisunityFactor;
@@ -1239,17 +1238,21 @@ class Nation {
     for (const OpinionatedReligionName in this.ReligionGroups) {
       const OpinionatedReligion = this.ReligionGroups[OpinionatedReligionName];
       const Points = this.ReligionGroups[OpinionatedReligionName].Points;
-      for (const nameOfReligionToBeHadAnOpinionAbout in OpinionatedReligion.Opinions) {
+      for (const nameOfReligionToBeHadAnOpinionAbout in this.ReligionGroups) {
         if (nameOfReligionToBeHadAnOpinionAbout == OpinionatedReligionName) continue; //we don't account for religions having Opinions on themselves
-        let opinionobj = OpinionatedReligion.Opinions[nameOfReligionToBeHadAnOpinionAbout];
         let opinionScore;
         //If the religion to be had an opinion about, isn't recorded by the religion we are currently checking Opinions for. Treat the opinion as neutral 
-        if (opinionobj !== undefined) 
+        let opinionobj;
+        if(OpinionatedReligion.Opinions === undefined || OpinionatedReligion.Opinions[nameOfReligionToBeHadAnOpinionAbout] === undefined){
           opinionScore = Opinion.Neutral;
-        else if(isNaN(opinionobj.Score))
-          opinionScore = Opinion[opinionobj.Score];
-        else 
-          opinionScore = opinionScore.Score;
+        } else {
+          opinionobj = OpinionatedReligion.Opinions[nameOfReligionToBeHadAnOpinionAbout];
+          if(isNaN(opinionobj.Score))
+            opinionScore = Opinion[opinionobj.Score];
+          else 
+            opinionScore = opinionScore.Score;
+        }
+        
 
         let religiousDisunityFactor = (opinionScore - 100) * (Points / pointSum);
         if (OpinionatedReligionName == this.ReligionRepresentedAtGovernmentLevel) {
@@ -1550,10 +1553,11 @@ class Nation {
     this.ResearchBoostFromTech = 
     1 + 
     this.CulturalAdvancements.Universities / 10 + 
-    this.CulturalAdvancements.RenaissanceThought / 5 /*+ 
-    this.Technologies.Experimentation / 5*/;
+    this.CulturalAdvancements.RenaissanceThought / 5 + 
+    this.Technologies.Experimentation / 5;
     this.ResearchPointGain = Math.max(1, (this.ResearchSpending * this.ResearchEffectiveness * this.ResearchBoostFromTech * this.LiteracyPercent / this.Isolation / gameStats.TimeDivide * 2 / 10 + this.ResearchSpending * this.ResearchEffectiveness * this.HigherEducation / this.Isolation / gameStats.TimeDivide * 5 / 10) * (1 - (this.NobleInfluence > 0.5 ? this.NobleInfluence - 0.5 : 0) / 1.5 - (this.ClergyInfluence > 0.5? this.ClergyInfluence - 0.5 : 0) / 1.5) * (1 - this.PopulationTechImpact));
     this.FutureResearchPoints = Math.min(7.5, this.ResearchPoints + this.ResearchPointGain);
+    this.FutureDateInThisNation = this.DateInThisNation + gameStats.TimeSpeed;
   }
 
   clearNewTroops(){
