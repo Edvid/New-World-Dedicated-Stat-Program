@@ -1026,13 +1026,12 @@ class Nation {
     this.MaxStock = (function () {
       return Math.max(100, 1000 * n.Population / 10000000) * n.StockingCapabilities;
     })();
-    this.Stock = this.Food;
-    this.FutureFood = Math.min(this.MaxStock, this.Stock + this.FoodGain);
+    this.FutureFood = Math.min(this.MaxStock, this.Food + this.FoodGain);
     this.FoodPopulationBoost = (function () {
-      return n.Stock > 500 ? n.Stock / 50000 : 0;
+      return n.Food > 500 ? n.Food / 50000 : 0;
     })();
     this.SurplusFood = (function () {
-      return n.FoodGain + n.Stock > n.MaxStock ? n.FoodGain + n.Stock - n.MaxStock : 0;
+      return n.FoodGain + n.Food > n.MaxStock ? n.FoodGain + n.Food - n.MaxStock : 0;
     })();
 
     this.speudoTradePower = (function () {
@@ -1059,7 +1058,7 @@ class Nation {
       }
     };
 
-    this.Prosperity = 1 + this.SocialSpending / 2.5 + (this.Stock == 0 && this.FutureFood < 0 ? this.FutureFood / 2000 : 0) + (this.Budget < 0.00001 ? this.Budget / 100 : 0) * (1 - this.Pillaging);
+    this.Prosperity = 1 + this.SocialSpending / 2.5 + (this.Food == 0 && this.FutureFood < 0 ? this.FutureFood / 2000 : 0) + (this.Budget < 0.00001 ? this.Budget / 100 : 0) * (1 - this.Pillaging);
     this.Size = (function () {
       let s = 0;
       for (const climate in n.Climates) {
