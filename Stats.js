@@ -1201,10 +1201,17 @@ class Nation {
     }
 
     for (const OpinionatedCultureName in this.CultureGroups) {
+      
       const OpinionatedCulture = gameStats.Cultures[OpinionatedCultureName];
       const Points = this.CultureGroups[OpinionatedCultureName].Points;
+      //if the culture is listed, but no one is actually here. Skip
+      if(Points == 0) continue;
       for (const nameOfCultureToBeHadAnOpinionAbout in this.CultureGroups) {
-        if (nameOfCultureToBeHadAnOpinionAbout == OpinionatedCultureName) continue; //we don't account for cultures having Opinions on themselves
+        //we don't account for cultures having Opinions on themselves
+        if (nameOfCultureToBeHadAnOpinionAbout == OpinionatedCultureName) continue; 
+        //If the culture to be had an opinion about is also not present in the nation either, this also doesn't add to the disunity
+        if (this.CultureGroups[nameOfCultureToBeHadAnOpinionAbout].Points == 0) continue; 
+        
         let opinionScore;
         //If the culture to be had an opinion about, isn't recorded by the culture we are currently checking Opinions for. Treat the opinion as neutral
         let opinionobj;
@@ -1217,7 +1224,7 @@ class Nation {
           else 
             opinionScore = opinionScore.Score;
         }
-        let culturalDisunityFactor = (opinionScore - 100) * (Points / pointSum);
+        let culturalDisunityFactor = (-opinionScore + 100) * (Points / pointSum);
         if (OpinionatedCultureName == this.CultureRepresentedAtGovernmentLevel) {
           this.CultureRepresentedAtGovernmentLevelPercent = (Points / pointSum);
           culturalDisunityFactor *= 1.5;
@@ -1254,7 +1261,7 @@ class Nation {
         }
         
 
-        let religiousDisunityFactor = (opinionScore - 100) * (Points / pointSum);
+        let religiousDisunityFactor = (-opinionScore + 100) * (Points / pointSum);
         if (OpinionatedReligionName == this.ReligionRepresentedAtGovernmentLevel) {
           this.ReligionRepresentedAtGovernmentLevelPercent = (Points / pointSum);
           religiousDisunityFactor *= 1.5;
