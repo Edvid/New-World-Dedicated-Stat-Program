@@ -1,3 +1,6 @@
+const min = (_min, _num) => Math.min(_min, _num);
+const max = (_max, _num) => Math.max(_max, _num);
+const clamp = (_clamper1, _clamper2, _num) => _clamper1 < _clamper2 ? min(max(_num, _clamper1), _clamper2) : min(max(_num, _clamper2), _clamper1);
 
 
 class SocialBehaviour {
@@ -1015,7 +1018,7 @@ class Nation {
         }
       })();
       if (!isNaN(inflationMod)) {
-        n[resource + "Inflation"] = Math.max(0, n["Effective" + resource] - inflationMod);
+        n[resource + "Inflation"] = max(0, n["Effective" + resource] - inflationMod);
       }
 
 
@@ -1027,9 +1030,9 @@ class Nation {
     this.FoodGain = this.DailyFood - this.FoodConsumption;
 
     this.MaxStock = (function () {
-      return Math.max(100, 1000 * n.Population / 10000000) * n.StockingCapabilities;
+      return max(100, 1000 * n.Population / 10000000) * n.StockingCapabilities;
     })();
-    this.FutureFood = Math.min(this.MaxStock, this.Food + this.FoodGain);
+    this.FutureFood = min(this.MaxStock, this.Food + this.FoodGain);
     this.FoodPopulationBoost = (function () {
       return n.Food > 500 ? n.Food / 50000 : 0;
     })();
@@ -1050,7 +1053,7 @@ class Nation {
       return stp;
     })();
     this.SellingCapability = (this.LocalTrade / 2 + this.speudoTradePower / 5) * this.Mercantilism * 200;
-    this.FoodSold = Math.min(this.SellingCapability, this.SurplusFood);
+    this.FoodSold = min(this.SellingCapability, this.SurplusFood);
     this.Foodlost = this.SurplusFood - this.FoodSold;
     this.Tradeprofit = this.FoodSold / 50;
 
@@ -1154,14 +1157,10 @@ class Nation {
 
 
     
-    this.IronShortage = Math.max(0, this.UnitUpkeep / 200 - this.EffectiveIron);
-    this.SulphurShortage = Math.max(0, (this.Cannons * 100 + this.Musketeers + this.HandCannon +
+    this.IronShortage = max(0, this.UnitUpkeep / 200 - this.EffectiveIron);
+    this.SulphurShortage = max(0, (this.Cannons * 100 + this.Musketeers + this.HandCannon +
       (this.Technologies.Reiters == true ? this.LightCavalry + this.HeavyCavalry : 0)) / 15000 - this.EffectiveSulphur);
 
-
-
-
-    //loop optimization pls
     this.ResourceHappinessBoost =
       this.EffectiveCotton - this.CottonInflation +
       this.EffectiveGold - this.GoldInflation +
@@ -1184,7 +1183,7 @@ class Nation {
     this.LowerClass = this.PopulationInAgriculture + this.PopulaitonInMilitary;
     this.InterestRate = 0.05 + this.PublicDebtLength * 0.02 / gameStats.TimeDivide;
     this.EffectiveDebt = this.PublicDebtTaken * (1 + this.InterestRate);
-    this.PossiblePublicDebt = Math.max(0, this.Population / 10000 * (1 - (this.HighClassTax + this.MediumClassTax + this.LowerClassTax) / 3) - this.EffectiveDebt);
+    this.PossiblePublicDebt = max(0, this.Population / 10000 * (1 - (this.HighClassTax + this.MediumClassTax + this.LowerClassTax) / 3) - this.EffectiveDebt);
     this.DebtHappinessEffect = (this.PublicDebtLength > 1 ? this.EffectiveDebt / (this.PossiblePublicDebt + this.PublicDebtTaken) * (2 + this.PublicDebtLength) : 0);
     this.WarExhaustion = (this.Casualties / this.Population * 500) + (this.Pillaging * 20) + (this.Occupation * 5);
 
@@ -1192,84 +1191,69 @@ class Nation {
       (this.Mercantilism > 1 ? (-this.Mercantilism + 1) * 2.5 : 0) + (this.EffectiveDebt > 0 && this.Budget < 0 ? - (this.EffectiveDebt / this.PossiblePublicDebt) * 10 : 0) - this.WarExhaustion / 2 - this.DebtHappinessEffect + (this.Disease > 0.10 ? - this.Disease / 4 : 0);
     this.LandAdministration = ((this.Size - this.DetachedLand) / 25000 + this.DetachedLand / 10000) * (1 - this.AdministrativeEfficiency / 1000);
     this.Overextension = this.UnderPopulation / 4 + this.LandAdministration / 1.5;
-    let pointSum = 0;
-    let culturalDisunity = 0;
+    
+    let SocialBehaviourCalc = function(socialBehaviourGroup, socialBehaviourWorldwideGroups, socialGroupRepresentedAtGovernmentLevel){
+      let pointSum = 0;
+      let SocialBehaviourDisunity = 0;
 
-    for (const culturename in this.CultureGroups) {
-      const Points = this.CultureGroups[culturename].Points;
-      pointSum += Points;
-    }
+      for (const socialbehaviourname in socialBehaviourGroup) {
+        const Points = socialBehaviourGroup[socialbehaviourname].Points;
+        pointSum += Points;
+      }
 
-    for (const OpinionatedCultureName in this.CultureGroups) {
+      for (const OpinionatedSocialBehaviourGroupName in socialBehaviourGroup) {
       
-      const OpinionatedCulture = gameStats.Cultures[OpinionatedCultureName];
-      const Points = this.CultureGroups[OpinionatedCultureName].Points;
-      //if the culture is listed, but no one is actually here. Skip
-      if(Points == 0) continue;
-      for (const nameOfCultureToBeHadAnOpinionAbout in this.CultureGroups) {
-        //we don't account for cultures having Opinions on themselves
-        if (nameOfCultureToBeHadAnOpinionAbout == OpinionatedCultureName) continue; 
-        //If the culture to be had an opinion about is also not present in the nation either, this also doesn't add to the disunity
-        if (this.CultureGroups[nameOfCultureToBeHadAnOpinionAbout].Points == 0) continue; 
-        
-        let opinionScore;
-        //If the culture to be had an opinion about, isn't recorded by the culture we are currently checking Opinions for. Treat the opinion as neutral
-        let opinionobj;
-        if (OpinionatedCulture.Opinions === undefined || OpinionatedCulture.Opinions[nameOfCultureToBeHadAnOpinionAbout] === undefined) 
-          opinionScore = Opinion.Neutral;
-        else {
-          opinionobj = OpinionatedCulture.Opinions[nameOfCultureToBeHadAnOpinionAbout];
-          if(isNaN(opinionobj.Score))
-            opinionScore = Opinion[opinionobj.Score];
-          else 
-            opinionScore = opinionScore.Score;
+        const OpinionatedSocialBehaviourGroup = socialBehaviourWorldwideGroups[OpinionatedSocialBehaviourGroupName];
+        const Points = socialBehaviourGroup[OpinionatedSocialBehaviourGroupName].Points;
+        //if the social behaviour is listed, but no one is actually here. Skip
+        if(Points == 0) continue;
+        for (const nameOfSocialBehaviourGroupToBeHadAnOpinionAbout in socialBehaviourGroup) {
+          //we don't account for social behaviour groups having Opinions on themselves
+          if (nameOfSocialBehaviourGroupToBeHadAnOpinionAbout == OpinionatedSocialBehaviourGroupName) continue; 
+          //If the social behaviour group to be had an opinion about is also not present in the nation either, this also doesn't add to the disunity
+          if (socialBehaviourGroup[nameOfSocialBehaviourGroupToBeHadAnOpinionAbout].Points == 0) continue; 
+          
+          let opinionScore;
+          //If the social behaviour group to be had an opinion about, isn't recorded by the social behaviour group we are currently checking Opinions for. Treat the opinion as neutral
+          let opinionobj;
+          if (OpinionatedSocialBehaviourGroup.Opinions === undefined || OpinionatedSocialBehaviourGroup.Opinions[nameOfSocialBehaviourGroupToBeHadAnOpinionAbout] === undefined) 
+            opinionScore = Opinion.Neutral;
+          else {
+            opinionobj = OpinionatedSocialBehaviourGroup.Opinions[nameOfSocialBehaviourGroupToBeHadAnOpinionAbout];
+            if(isNaN(opinionobj.Score))
+              opinionScore = Opinion[opinionobj.Score];
+            else 
+              opinionScore = opinionScore.Score;
+          }
+          let socialBehaviourGroupDisunityFactor = (-opinionScore + 100) * (Points / pointSum);
+          if (OpinionatedSocialBehaviourGroupName == socialGroupRepresentedAtGovernmentLevel) {
+            let socialGroupRepresentedAtGovernmentLevelPercent = (Points / pointSum);
+            socialBehaviourGroupDisunityFactor *= 1.5;
+          }
+          SocialBehaviourDisunity += socialBehaviourGroupDisunityFactor;
         }
-        let culturalDisunityFactor = (-opinionScore + 100) * (Points / pointSum);
-        if (OpinionatedCultureName == this.CultureRepresentedAtGovernmentLevel) {
-          this.CultureRepresentedAtGovernmentLevelPercent = (Points / pointSum);
-          culturalDisunityFactor *= 1.5;
-        }
-        culturalDisunity += culturalDisunityFactor;
+      }
+      return {
+        GovernmentRepresentationPercent: typeof socialGroupRepresentedAtGovernmentLevelPercent !== 'undefined' ? socialGroupRepresentedAtGovernmentLevelPercent : 0, 
+        disunity: SocialBehaviourDisunity / 100
       }
     }
-    this.CulturalDisunity = culturalDisunity / 100;
 
-    pointSum = 0;
-    let religiousDisunity = 0;
+    let cultureCalc = SocialBehaviourCalc(
+      this.CultureGroups, 
+      gameStats.Cultures, 
+      typeof this.CultureRepresentedAtGovernmentLevel !== 'undefined' ? this.CultureRepresentedAtGovernmentLevel : null
+      );
+    let religionCalc = SocialBehaviourCalc(
+      this.ReligionGroups, 
+      gameStats.Religions, 
+      typeof this.ReligionRepresentedAtGovernmentLevel !== 'undefined' ? this.ReligionRepresentedAtGovernmentLevel : null
+      );
 
-    for (const religionname in this.ReligionGroups) {
-      const Points = this.ReligionGroups[religionname].Points;
-      pointSum += Points;
-    }
-
-    for (const OpinionatedReligionName in this.ReligionGroups) {
-      const OpinionatedReligion = this.ReligionGroups[OpinionatedReligionName];
-      const Points = this.ReligionGroups[OpinionatedReligionName].Points;
-      for (const nameOfReligionToBeHadAnOpinionAbout in this.ReligionGroups) {
-        if (nameOfReligionToBeHadAnOpinionAbout == OpinionatedReligionName) continue; //we don't account for religions having Opinions on themselves
-        let opinionScore;
-        //If the religion to be had an opinion about, isn't recorded by the religion we are currently checking Opinions for. Treat the opinion as neutral 
-        let opinionobj;
-        if(OpinionatedReligion.Opinions === undefined || OpinionatedReligion.Opinions[nameOfReligionToBeHadAnOpinionAbout] === undefined){
-          opinionScore = Opinion.Neutral;
-        } else {
-          opinionobj = OpinionatedReligion.Opinions[nameOfReligionToBeHadAnOpinionAbout];
-          if(isNaN(opinionobj.Score))
-            opinionScore = Opinion[opinionobj.Score];
-          else 
-            opinionScore = opinionScore.Score;
-        }
-        
-
-        let religiousDisunityFactor = (-opinionScore + 100) * (Points / pointSum);
-        if (OpinionatedReligionName == this.ReligionRepresentedAtGovernmentLevel) {
-          this.ReligionRepresentedAtGovernmentLevelPercent = (Points / pointSum);
-          religiousDisunityFactor *= 1.5;
-        }
-        religiousDisunity += religiousDisunityFactor;
-      }
-    }
-    this.religiousDisunity = religiousDisunity / 100;
+    this.CultureRepresentedAtGovernmentLevelPercent =  cultureCalc.GovernmentRepresentationPercent;
+    this.CulturalDisunity = cultureCalc.disunity;
+    this.ReligionRepresentedAtGovernmentLevelPercent = religionCalc.GovernmentRepresentationPercent;
+    this.ReligiousDisunity = religionCalc.GovernmentRepresentationPercent;
 
     this.NobleLoyalty = (function () {
       let pointSum = 0;
@@ -1299,26 +1283,23 @@ class Nation {
       return n.BurghersLoyalty / pointSum;
     })();
     this.PopulationStabilityImpact = (this.Population > this.AdministrativeEfficiency * 500000 ? (this.AdministrativeEfficiency * 500000 - this.Population) / 50000000 : 0) * 10;
-    this.Fervor = Math.min(1, Math.max(-1, 0 + this.MinorBattles / 20 + this.MajorBattles / 10 + this.Pillaging - (this.Casualties / (this.OverallNumbers + this.Casualties + 0.0000001))));
-    this.WarSupport = Math.min(1, Math.max(0, this.PopulationHappiness / 10 * 2.5 + this.Propaganda / 10 + this.Fervor));
-    this.WarStabilityModifier = ((this.AtOffensiveWar == true && this.WarSupport < 0.75) ? (this.WarSupport - 0.75) / 10 : 0) + Math.max(-0.075, ((this.AtDefensiveWar == true && this.WarSupport < 0.4 && this.Fervor < 0) ? (this.Fervor) / 10 : 0));
-    //Math min and max? nested ternary operations, with "0" if either fail? This can be optimized
-    this.MilitaryLoyalty = Math.min(1, Math.max(0, 1 * this.ArmyWages +
-      (this.CulturalAdvancements.EarlyModernAdministration == false ?
-        (this.NobleLoyalty < 0.50 ?
-          (this.NobleLoyalty - 0.50) * 2 :
-          0)
-        :
-        0) +
+    this.Fervor = clamp(1, -1, 0 + this.MinorBattles / 20 + this.MajorBattles / 10 + this.Pillaging - (this.Casualties / (this.OverallNumbers + this.Casualties + 0.0000001)));
+    this.WarSupport = clamp(1, 0, this.PopulationHappiness / 10 * 2.5 + this.Propaganda / 10 + this.Fervor);
+    this.WarStabilityModifier = ((this.AtOffensiveWar == true && this.WarSupport < 0.75) ? (this.WarSupport - 0.75) / 10 : 0) + max(-0.075, ((this.AtDefensiveWar == true && this.WarSupport < 0.4 && this.Fervor < 0) ? (this.Fervor) / 10 : 0));
+    //min and max? nested ternary operations, with "0" if either fail? This can be optimized
+    this.MilitaryLoyalty = clamp(1, 0, 
+      1 * this.ArmyWages +
+      (this.CulturalAdvancements.EarlyModernAdministration == false && this.NobleLoyalty < 0.50 ?
+        ( this.NobleLoyalty - 0.50) * 2 : 0) +
       (this.MilitaryMorale < 0.70 ?
         -(1 - this.MilitaryMorale) / 2 :
         0) +
       (this.Budget < 0 ? this.Budget / this.ArmyUpkeep :
         0)
-      - this.CommanderFreedom / 10));
+      - this.CommanderFreedom / 10);
     this.Stability = this.PopulationHappiness + this.AdministrativeEfficiency / 10 - this.Overextension - this.CulturalDisunity - this.ReligiousDisunity + (this.Propaganda / 1.75 * (1 + this.CulturalAdvancements.Newspapers / 2)) + this.PopulationControl + (this.NobleLoyalty - 0.5) * 10 + (this.ClergyLoyalty - 0.5) * 7.5 + (this.BurghersLoyalty - 0.5) * 7.5 + this.PopulationStabilityImpact + this.WarStabilityModifier * 100 + (this.MilitaryLoyalty - 1) * 7.5;
-    this.Corruption = Math.max(0, this.SocialSpending - this.AdministrativeEfficiency / 20) + (this.Stability < 1 ? 0.5 : 0) + (this.Stability < -1 ? 0.5 : 0) + Math.max(0, ((this.HighClassTax + this.MediumClassTax + this.LowerClassTax) / 3 * 100) - this.AdministrativeEfficiency / 2) / 10;
-    this.ArmyQuality = Math.max(0.1, 1 + this.TrainingQuality + this.ArmyTech + this.MilitaryTactics + this.CommanderFreedom / 10 - this.IronShortage - this.SulphurShortage - this.Corruption / 5);
+    this.Corruption = max(0, this.SocialSpending - this.AdministrativeEfficiency / 20) + (this.Stability < 1 ? 0.5 : 0) + (this.Stability < -1 ? 0.5 : 0) + max(0, ((this.HighClassTax + this.MediumClassTax + this.LowerClassTax) / 3 * 100) - this.AdministrativeEfficiency / 2) / 10;
+    this.ArmyQuality = max(0.1, 1 + this.TrainingQuality + this.ArmyTech + this.MilitaryTactics + this.CommanderFreedom / 10 - this.IronShortage - this.SulphurShortage - this.Corruption / 5);
     this.FortUpkeep = (
       this.SmallForts * 2 +
       this.MediumForts * 4 +
@@ -1387,7 +1368,7 @@ class Nation {
 
 
     this.ResourcePopulationGrowthBoost = (this.EffectiveCotton - this.CottonInflation + this.EffectiveSpice - this.SpiceInflation + this.EffectiveWool - this.WoolInflation + this.EffectiveFur - this.FurInflation + (this.EffectiveSugar - this.SugarInflation + this.EffectiveExoticFruit - this.ExoticFruitInflation) / 2) / 100;
-    this.PopulationGrowth = Math.max(-0.3, (0.1 + this.PopulationGrowthModifier + this.ResourcePopulationGrowthBoost) * (1 - this.Disease) - this.BirthControl / 20);
+    this.PopulationGrowth = max(-0.3, (0.1 + this.PopulationGrowthModifier + this.ResourcePopulationGrowthBoost) * (1 - this.Disease) - this.BirthControl / 20);
     this.FuturePopulation = (function () {
       return n.Population + (n.FutureFood < 0 ? n.FutureFood * 1000 : n.Population * n.PopulationGrowth / gameStats.TimeDivide);
     })();
@@ -1470,7 +1451,7 @@ class Nation {
     this.TradeProtection = this.LightShips * 0.75 + this.MediumShips * 1 + this.HeavyShips * 0.75;
     this.TradeEfficiency = 1 * this.Mercantilism + this.Technologies.Cranes / 10 + this.Technologies.PromissoryNotes / 20 + this.TradeProtection / 200;
 
-    this.Inflation = Math.max(0, (this.Budget / 1000) / (this.AdministrativeEfficiency / 10));
+    this.Inflation = max(0, (this.Budget / 1000) / (this.AdministrativeEfficiency / 10));
     this.ResourceBudgetBoost = (function () {
       let rbb = 0;
       let budgetBoostingResources = [
@@ -1517,11 +1498,11 @@ class Nation {
 
     this.FreeEliteUnitsCap = ((this.OverallNumbers - this.Militia - this.Levies) * 0.025) - (this.EliteCavalry + this.EliteInfantry);
 
-
-    this.MilitaryMorale = Math.max(0, Math.min(1.5, 1 + this.Fervor + (this.MililtaryDiscipline > 1 ? - this.MililtaryDiscipline + 1 : 0) * 2 +
-      (this.WarSupport < 0.5 ? this.WarSupport - 0.5 : 0) +
-      (this.WarSupport > 0.75 ? this.WarSupport - 0.75 : 0) +
-      this.ArmyWages - 1));
+    this.MilitaryMorale = clamp(0, 1.5, 
+      1 + this.Fervor + (this.MililtaryDiscipline > 1 ? - this.MililtaryDiscipline + 1 : 0) * 2 +
+    (this.WarSupport < 0.5 ? this.WarSupport - 0.5 : 0) +
+    (this.WarSupport > 0.75 ? this.WarSupport - 0.75 : 0) +
+    this.ArmyWages - 1);
 
     this.CulturalAdvance = (function () {
       let ca = 0;
@@ -1533,8 +1514,8 @@ class Nation {
     })();
     this.CulturalPowerGain = (this.LiteracyPercent / 3 + this.PopulationHappiness / 8) * (this.CulturalProsperity + this.CulturalAdvancements.RenaissanceThought / 10) / gameStats.TimeDivide;
     this.CulturalPower = this.CulturalPower;
-    this.FutureCulturalPower = Math.min(6, (this.CulturalPower + this.CulturalPowerGain));
-    this.FuturePublicDebtLength = Math.max(0, this.PublicDebtLength + (this.EffectiveDebt > 0 ? 1 : 0) + (this.EffectiveDebt == 0 ? -100 : 0));
+    this.FutureCulturalPower = min(6, (this.CulturalPower + this.CulturalPowerGain));
+    this.FuturePublicDebtLength = max(0, this.PublicDebtLength + (this.EffectiveDebt > 0 ? 1 : 0) + (this.EffectiveDebt == 0 ? -100 : 0));
     this.FutureDate = this.DateInThisNation + gameStats.TimeSpeed;
 
 
@@ -1562,8 +1543,8 @@ class Nation {
     this.CulturalAdvancements.Universities / 10 + 
     this.CulturalAdvancements.RenaissanceThought / 5 + 
     this.Technologies.Experimentation / 5;
-    this.ResearchPointGain = Math.max(1, (this.ResearchSpending * this.ResearchEffectiveness * this.ResearchBoostFromTech * this.LiteracyPercent / this.Isolation / gameStats.TimeDivide * 2 / 10 + this.ResearchSpending * this.ResearchEffectiveness * this.HigherEducation / this.Isolation / gameStats.TimeDivide * 5 / 10) * (1 - (this.NobleInfluence > 0.5 ? this.NobleInfluence - 0.5 : 0) / 1.5 - (this.ClergyInfluence > 0.5? this.ClergyInfluence - 0.5 : 0) / 1.5) * (1 - this.PopulationTechImpact));
-    this.FutureResearchPoints = Math.min(7.5, this.ResearchPoints + this.ResearchPointGain);
+    this.ResearchPointGain = max(1, (this.ResearchSpending * this.ResearchEffectiveness * this.ResearchBoostFromTech * this.LiteracyPercent / this.Isolation / gameStats.TimeDivide * 2 / 10 + this.ResearchSpending * this.ResearchEffectiveness * this.HigherEducation / this.Isolation / gameStats.TimeDivide * 5 / 10) * (1 - (this.NobleInfluence > 0.5 ? this.NobleInfluence - 0.5 : 0) / 1.5 - (this.ClergyInfluence > 0.5? this.ClergyInfluence - 0.5 : 0) / 1.5) * (1 - this.PopulationTechImpact));
+    this.FutureResearchPoints = min(7.5, this.ResearchPoints + this.ResearchPointGain);
     this.FutureDateInThisNation = this.DateInThisNation + gameStats.TimeSpeed;
   }
 
