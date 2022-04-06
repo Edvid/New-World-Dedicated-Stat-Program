@@ -1211,7 +1211,8 @@ class Nation {
           //we don't account for social behaviour groups having Opinions on themselves
           if (nameOfSocialBehaviourGroupToBeHadAnOpinionAbout == OpinionatedSocialBehaviourGroupName) continue; 
           //If the social behaviour group to be had an opinion about is also not present in the nation either, this also doesn't add to the disunity
-          if (socialBehaviourGroup[nameOfSocialBehaviourGroupToBeHadAnOpinionAbout].Points == 0) continue; 
+          const PointsOfOther = socialBehaviourGroup[nameOfSocialBehaviourGroupToBeHadAnOpinionAbout].Points;
+          if (PointsOfOther == 0) continue; 
           
           let opinionScore;
           //If the social behaviour group to be had an opinion about, isn't recorded by the social behaviour group we are currently checking Opinions for. Treat the opinion as neutral
@@ -1225,17 +1226,19 @@ class Nation {
             else 
               opinionScore = opinionScore.Score;
           }
-          let socialBehaviourGroupDisunityFactor = (-opinionScore + 100) * (Points / pointSum);
+          let socialBehaviourGroupDisunityFactor = (-opinionScore + 100) * (Points / pointSum) * (PointsOfOther / pointSum);
           if (OpinionatedSocialBehaviourGroupName == socialGroupRepresentedAtGovernmentLevel) {
             let socialGroupRepresentedAtGovernmentLevelPercent = (Points / pointSum);
-            socialBehaviourGroupDisunityFactor *= 1.5;
+            socialBehaviourGroupDisunityFactor *= 1.5 / 53;
+          }else {
+            socialBehaviourGroupDisunityFactor *= 1 / 53;
           }
           SocialBehaviourDisunity += socialBehaviourGroupDisunityFactor;
         }
       }
       return {
         GovernmentRepresentationPercent: typeof socialGroupRepresentedAtGovernmentLevelPercent !== 'undefined' ? socialGroupRepresentedAtGovernmentLevelPercent : 0, 
-        disunity: SocialBehaviourDisunity / 100
+        disunity: SocialBehaviourDisunity
       }
     }
 
