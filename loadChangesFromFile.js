@@ -148,7 +148,8 @@ function syncNation(nationName){
 
 function syncNations(){
     for (const nationName in gameStats.Nations) {
-        syncNation(nationName)
+        gameStats.Nations[nationName].clearNewTroops();
+        syncNation(nationName);
     }
 }
 
