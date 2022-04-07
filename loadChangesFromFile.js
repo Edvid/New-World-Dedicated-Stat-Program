@@ -6,7 +6,7 @@ function loadChangesFromFile(event){
     var reader = new FileReader(); 
     reader.onload = function(e){
         changes = e.target.result.split(/\r?\n|\r/);
-        const commandRegex = /(?<Operand>([a-z]+)( |\t)|(\+|\=|\-)( |\t)?)(?<Amount>(\".+\")|(\{.+\})|(.+?))( |\t)(?<Stat_Name>.+)/i;
+        const commandRegex = /(?<Operand>([a-z]+)( |\t)|(\+|\=|\-)( |\t)?)(?<Value>(\".+\")|(\{.+\})|(.+?))( |\t)(?<Stat_Name>.+)/i;
         
         let currentSelection = "";
         for (changeCommandIndex = 0; changeCommandIndex < changes.length; changeCommandIndex++) {
@@ -109,7 +109,7 @@ function loadChangesFromFile(event){
                         continue;
                     }
                     commandParameters[0] = match.groups.Operand.trim();
-                    commandParameters[1] = match.groups.Amount;
+                    commandParameters[1] = match.groups.Value;
                     
                     commandParameters[2] = match.groups.Stat_Name;
                 }
