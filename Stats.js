@@ -1100,31 +1100,10 @@ class Nation {
       return mod;
     })();
 
-    
-
-    let UnitUpkeepCosts = {
-      Levies: 0.75 / 1000,
-      LightInfantry: 2 / 1000,
-      HeavyInfantry: 4 / 1000,
-      Archers: 3 / 1000,
-      Crossbowmen: 2 / 1000,
-      LightCavalry: 4 / 1000,
-      HeavyCavalry: 6.5 / 1000,
-      EliteInfantry: 7 / 1000,
-      EliteCavalry: 8.5 / 1000,
-      HandCannon: 5 / 1000,
-      Musketeers: 3.5 / 1000,
-      Militia: 1.25 / 1000,
-
-      SiegeEquipment: 1 / 10,
-      LargeSiegeEquipment: 1 / 5,
-      Cannons: 1 / 10
-    }
-
     this.UnitUpkeep = (function () {
       let uu = 0;
-      for (const unitName in UnitUpkeepCosts) {
-        const cost = UnitUpkeepCosts[unitName];
+      for (const unitName in gameStats.UnitUpkeepCosts) {
+        const cost = gameStats.UnitUpkeepCosts[unitName];
         uu += n[unitName] * cost;
       }
       return uu;
@@ -1207,6 +1186,9 @@ class Nation {
         const Points = socialBehaviourGroup[OpinionatedSocialBehaviourGroupName].Points;
         //if the social behaviour is listed, but no one is actually here. Skip
         if(Points == 0) continue;
+        if(OpinionatedSocialBehaviourGroupName == socialGroupRepresentedAtGovernmentLevel){
+          let socialGroupRepresentedAtGovernmentLevelPercent = (Points / pointSum);
+        }
         for (const nameOfSocialBehaviourGroupToBeHadAnOpinionAbout in socialBehaviourGroup) {
           //we don't account for social behaviour groups having Opinions on themselves
           if (nameOfSocialBehaviourGroupToBeHadAnOpinionAbout == OpinionatedSocialBehaviourGroupName) continue; 
@@ -1227,8 +1209,7 @@ class Nation {
               opinionScore = opinionScore.Score;
           }
           let socialBehaviourGroupDisunityFactor = (-opinionScore + 100) * (Points / pointSum) * (PointsOfOther / pointSum);
-          if (OpinionatedSocialBehaviourGroupName == socialGroupRepresentedAtGovernmentLevel) {
-            let socialGroupRepresentedAtGovernmentLevelPercent = (Points / pointSum);
+          if (nameOfSocialBehaviourGroupToBeHadAnOpinionAbout == socialGroupRepresentedAtGovernmentLevel) {
             socialBehaviourGroupDisunityFactor *= 1.5 / 53;
           }else {
             socialBehaviourGroupDisunityFactor *= 1 / 53;
@@ -1401,8 +1382,8 @@ class Nation {
 
     this.NewTroopRecruitmentPenalty = (function () {
       let ntrp = 0;
-      for (const unitName in UnitUpkeepCosts) {
-        const cost = UnitUpkeepCosts[unitName];
+      for (const unitName in gameStats.UnitUpkeepCosts) {
+        const cost = gameStats.UnitUpkeepCosts[unitName];
         ntrp += n["New_" + unitName] * cost;
       }
       ntrp += n.New_LightShips * n.UpkeepForOneLightShip;
@@ -1552,7 +1533,7 @@ class Nation {
   }
 
   clearNewTroops(){
-    for (const unitName in UnitUpkeepCosts) {
+    for (const unitName in gameStats.UnitUpkeepCosts) {
       this["New_" + unitName] = 0;
     }
     //reset
@@ -1571,6 +1552,7 @@ class Stats{
   ResourceTypes;
   Trades;
   TradeZones;
+  UnitUpkeepCosts;
   constructor(){
     let s = this;
 
@@ -1697,6 +1679,25 @@ class Stats{
       SouthEastAsia: 0,
       NorthAustralia: 0,
       SouthAustralia: 0
+    }
+
+    this.UnitUpkeepCosts = {
+      Levies: 0.75 / 1000,
+      LightInfantry: 2 / 1000,
+      HeavyInfantry: 4 / 1000,
+      Archers: 3 / 1000,
+      Crossbowmen: 2 / 1000,
+      LightCavalry: 4 / 1000,
+      HeavyCavalry: 6.5 / 1000,
+      EliteInfantry: 7 / 1000,
+      EliteCavalry: 8.5 / 1000,
+      HandCannon: 5 / 1000,
+      Musketeers: 3.5 / 1000,
+      Militia: 1.25 / 1000,
+
+      SiegeEquipment: 1 / 10,
+      LargeSiegeEquipment: 1 / 5,
+      Cannons: 1 / 10
     }
   }
 
