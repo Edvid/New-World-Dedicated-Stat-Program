@@ -153,8 +153,6 @@ function syncNation(nationName){
     //deal with automatic debt taking
     //not implemented yet
     //copy dailies
-
-    console.log("I*M HERE PLS!");
     
     for (const propertyName in gameStats.Nations[nationName]) {
         const property = gameStats.Nations[nationName][propertyName];
