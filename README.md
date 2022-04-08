@@ -85,4 +85,113 @@ Templates:
 
 Below is an example of the commands used in praxis. Here we create two nations, Denmark and Sweden, and change some of their stats. We will be changing stats that are objects and navigate all over the place, not just to nations. We will be showing how to add a whole new instance of an object in an array if needed (the bog for the Danish Climate), and we will be creating Sweden as a copy of Denmark. Comments will be accompanying most stat change lines.
 
-<pre style="background: rgb(68, 68, 68) none repeat scroll 0% 0%; padding-top: 1em; padding-bottom: 1em; width: 70vw; overflow: scroll; display: block;" class="content"><code style="color: white;"><span style="color: grey; margin-right: 1ch;"># Select The Nations Array</span><br><span style="color: dodgerblue; margin-right: 1ch;">&gt; Nations</span><br><span style="color: grey; margin-right: 1ch;"># Create syntax. In this case Create Nation</span><br><span style="color: magenta; margin-right: 1ch;">+&gt; Denmark</span><br><span style="color: grey; margin-right: 1ch;"># Deselect all</span><br><span style="color: dodgerblue; margin-right: 1ch;">&lt;...</span><br><span style="color: grey; margin-right: 1ch;"># Select Cultures Array</span><br><span style="color: dodgerblue; margin-right: 1ch;">&gt; Cultures</span><br><span style="color: grey; margin-right: 1ch;"># Create syntax again. In this case Create new Culture</span><br><span style="color: magenta; margin-right: 1ch;">+&gt; Danish</span><br><span style="color: grey; margin-right: 1ch;"># Create German culture too</span><br><span style="color: magenta; margin-right: 1ch;">+&gt; German</span><br><span style="color: grey; margin-right: 1ch;"># Deselect Cultures</span><br><span style="color: dodgerblue; margin-right: 1ch;">&lt;</span><br><span style="color: grey; margin-right: 1ch;"># Also Select Religions and make the religions in the game and how they relate to eachother</span><br><span style="color: dodgerblue; margin-right: 1ch;">&lt;... &gt; Religions</span><br><span style="color: magenta; margin-right: 1ch;">+&gt; Catholic</span><br><span style="color: magenta; margin-right: 1ch;">+&gt; Protestantism</span><br><span style="color: dodgerblue; margin-right: 1ch;">&gt; Protestantism &gt; Opinions</span><br><span style="color: magenta; margin-right: 1ch;">+&gt; Catholic</span><br><span style="color: gold; margin-right: 1ch;">=</span><span style="color: gold; margin-right: 1ch;">"Skeptical"</span><span style="color: limegreen; margin-right: 1ch;">Catholic.Score</span><br><span style="color: grey; margin-right: 1ch;"># Select Nations And then Denmark and then CultureGroups in Denmark</span><br><span style="color: dodgerblue; margin-right: 1ch;">&lt;... &gt; Nations &gt; Denmark &gt; CultureGroups</span><br><span style="color: grey; margin-right: 1ch;"># Create syntax once again. Stats within aren't as strictly enforced in format</span><br><span style="color: grey; margin-right: 1ch;"># programmatically. This is done only via convention between updaters.</span><br><span style="color: grey; margin-right: 1ch;"># Make sure you spell everything corectly.</span><br><span style="color: magenta; margin-right: 1ch;">+&gt; Danish</span><br><span style="color: grey; margin-right: 1ch;"># Set "Points" (percentage) of People in Denmark being Danish</span><br><span style="color: dodgerblue; margin-right: 1ch;">&gt; Danish</span><br><span style="color: gold; margin-right: 1ch;">=</span><span style="color: gold; margin-right: 1ch;">95</span><span style="color: limegreen; margin-right: 1ch;">Points</span><br><span style="color: grey; margin-right: 1ch;"># Same for German. Though using dot syntax. This way you can temporarily select</span><br><span style="color: grey; margin-right: 1ch;"># and change a stat within an object or sub-object without it having selected that</span><br><span style="color: grey; margin-right: 1ch;"># for the next stat change line</span><br><span style="color: dodgerblue; margin-right: 1ch;">&lt;</span><br><span style="color: magenta; margin-right: 1ch;">+&gt; German</span><br><span style="color: gold; margin-right: 1ch;">=</span><span style="color: gold; margin-right: 1ch;">3</span><span style="color: limegreen; margin-right: 1ch;">German.Points</span><br><span style="color: grey; margin-right: 1ch;"># For the sake of demonstration, I will select German anyways</span><br><span style="color: dodgerblue; margin-right: 1ch;">&gt; German</span><br><span style="color: lawngreen; margin-right: 1ch;">+</span><span style="color: lawngreen; margin-right: 1ch;">2</span><span style="color: limegreen; margin-right: 1ch;">Points</span><br><span style="color: dodgerblue; margin-right: 1ch;">&lt; &lt;</span><br><span style="color: gold; margin-right: 1ch;">=</span><span style="color: gold; margin-right: 1ch;">"Danish"</span><span style="color: limegreen; margin-right: 1ch;">CulRep</span><br><span style="color: gold; margin-right: 1ch;">=</span><span style="color: gold; margin-right: 1ch;">"Protestantism"</span><span style="color: limegreen; margin-right: 1ch;">RelRep</span><br><span style="color: grey; margin-right: 1ch;"></span><br><span style="color: dodgerblue; margin-right: 1ch;">&gt; ReligionGroups</span><br><span style="color: tomato; margin-right: 1ch;">-</span><span style="color: tomato; margin-right: 1ch;">100</span><span style="color: limegreen; margin-right: 1ch;">Pagan.Points</span><br><span style="color: magenta; margin-right: 1ch;">+&gt; Protestantism</span><br><span style="color: lawngreen; margin-right: 1ch;">+</span><span style="color: lawngreen; margin-right: 1ch;">100</span><span style="color: limegreen; margin-right: 1ch;">Protestantism.Points</span><br><span style="color: dodgerblue; margin-right: 1ch;">&lt; &gt; Climates</span><br><span style="color: rgb(94, 94, 94); margin-right: 1ch; font-style: italic;">###</span><br><span style="color: rgb(94, 94, 94); margin-right: 1ch; font-style: italic;">Set pixel counts within Climates of Denmark. The following Climates are</span><br><span style="color: rgb(94, 94, 94); margin-right: 1ch; font-style: italic;">precreated at nation creation, but the game allows for more specific</span><br><span style="color: rgb(94, 94, 94); margin-right: 1ch; font-style: italic;">climates to be created during the game:</span><br><span style="color: rgb(94, 94, 94); margin-right: 1ch; font-style: italic;"></span><br><span style="color: rgb(94, 94, 94); margin-right: 1ch; font-style: italic;">Polar Desert. ClimateScore = 0</span><br><span style="color: rgb(94, 94, 94); margin-right: 1ch; font-style: italic;">Taiga/Tundra. ClimateScore = 0.25</span><br><span style="color: rgb(94, 94, 94); margin-right: 1ch; font-style: italic;">Montane Forest. ClimateScore = 0.6</span><br><span style="color: rgb(94, 94, 94); margin-right: 1ch; font-style: italic;">Medditereanian. ClimateScore = 0.85</span><br><span style="color: rgb(94, 94, 94); margin-right: 1ch; font-style: italic;">Arid. ClimateScore = 0.65</span><br><span style="color: rgb(94, 94, 94); margin-right: 1ch; font-style: italic;">Steppe. ClimateScore = 0.75</span><br><span style="color: rgb(94, 94, 94); margin-right: 1ch; font-style: italic;">Moderate. ClimateScore = 1</span><br><span style="color: rgb(94, 94, 94); margin-right: 1ch; font-style: italic;">Sub-Tropical. ClimateScore = 0.75</span><br><span style="color: rgb(94, 94, 94); margin-right: 1ch; font-style: italic;">Tropical. ClimateScore = 0.6</span><br><span style="color: rgb(94, 94, 94); margin-right: 1ch; font-style: italic;">Savanna. ClimateScore = 0.65</span><br><span style="color: rgb(94, 94, 94); margin-right: 1ch; font-style: italic;">Desert. ClimateScore = 0.05</span><br><span style="color: rgb(94, 94, 94); margin-right: 1ch; font-style: italic;">Coastal Desert ClimateScore = 0.35</span><br><span style="color: rgb(94, 94, 94); margin-right: 1ch; font-style: italic;"></span><br><span style="color: rgb(94, 94, 94); margin-right: 1ch; font-style: italic;"># END</span><br><span style="color: grey; margin-right: 1ch;"></span><br><span style="color: gold; margin-right: 1ch;">=</span><span style="color: gold; margin-right: 1ch;">1950</span><span style="color: limegreen; margin-right: 1ch;">Moderate.Pixels</span><br><span style="color: grey; margin-right: 1ch;"># Example of specific climate. It is local to only the Nation of Denmark and</span><br><span style="color: grey; margin-right: 1ch;"># its ClimateScore is not shared across other nations</span><br><span style="color: magenta; margin-right: 1ch;">+&gt; Bog</span><br><span style="color: gold; margin-right: 1ch;">=</span><span style="color: gold; margin-right: 1ch;">0.6</span><span style="color: limegreen; margin-right: 1ch;">Bog.ClimateScore</span><br><span style="color: gold; margin-right: 1ch;">=</span><span style="color: gold; margin-right: 1ch;">50</span><span style="color: limegreen; margin-right: 1ch;">Bog.Pixels</span><br><span style="color: grey; margin-right: 1ch;"></span><br><span style="color: grey; margin-right: 1ch;"></span><br><span style="color: grey; margin-right: 1ch;">#Feel free to abuse the Deselect all as much as you want to make your life easier</span><br><span style="color: dodgerblue; margin-right: 1ch;">&lt;...</span><br><span style="color: dodgerblue; margin-right: 1ch;">&gt; Nations</span><br><span style="color: grey; margin-right: 1ch;"># Create Syntax but it copies all stats from Denmark.</span><br><span style="color: grey; margin-right: 1ch;"># This is purely for demonstration purposes.</span><br><span style="color: grey; margin-right: 1ch;"># It might be a much more useful feature if nations with similar</span><br><span style="color: grey; margin-right: 1ch;"># stats, religions and cultures; or if the game has a template nation to build</span><br><span style="color: grey; margin-right: 1ch;"># new nations from</span><br><span style="color: magenta; margin-right: 1ch;">+&gt; Sweden = Denmark</span><br><span style="color: dodgerblue; margin-right: 1ch;">&gt; Sweden</span><br><span style="color: grey; margin-right: 1ch;"># Sweden has Majority Swedish Culture, not Danish</span><br><span style="color: gold; margin-right: 1ch;">=</span><span style="color: gold; margin-right: 1ch;">5</span><span style="color: limegreen; margin-right: 1ch;">CultureGroups.Danish.Points</span><br><span style="color: gold; margin-right: 1ch;">=</span><span style="color: gold; margin-right: 1ch;">0</span><span style="color: limegreen; margin-right: 1ch;">CultureGroups.German.Points</span><br><span style="color: dodgerblue; margin-right: 1ch;">&lt;... &gt; Cultures</span><br><span style="color: magenta; margin-right: 1ch;">+&gt; Swedish</span><br><span style="color: grey; margin-right: 1ch;"># Witness the construction of a culture having an opinion on another!</span><br><span style="color: dodgerblue; margin-right: 1ch;">&gt; Swedish &gt; Opinions</span><br><span style="color: magenta; margin-right: 1ch;">+&gt; Danish</span><br><span style="color: dodgerblue; margin-right: 1ch;">&gt; Danish</span><br><span style="color: gold; margin-right: 1ch;">=</span><span style="color: gold; margin-right: 1ch;">"Skeptical"</span><span style="color: limegreen; margin-right: 1ch;">Score</span><br><span style="color: dodgerblue; margin-right: 1ch;">&lt;... &gt; Nations &gt; Sweden &gt; CultureGroups</span><br><span style="color: magenta; margin-right: 1ch;">+&gt; Swedish</span><br><span style="color: gold; margin-right: 1ch;">=</span><span style="color: gold; margin-right: 1ch;">95</span><span style="color: limegreen; margin-right: 1ch;">Swedish.Points</span><br><span style="color: dodgerblue; margin-right: 1ch;">&lt;</span><br><span style="color: gold; margin-right: 1ch;">=</span><span style="color: gold; margin-right: 1ch;">"Swedish"</span><span style="color: limegreen; margin-right: 1ch;">CulRep</span><br><span style="color: grey; margin-right: 1ch;"># Sweden has Mountains, and is also generally bigger</span><br><span style="color: dodgerblue; margin-right: 1ch;">&gt; Climates</span><br><span style="color: lawngreen; margin-right: 1ch;">+</span><span style="color: lawngreen; margin-right: 1ch;">1400</span><span style="color: limegreen; margin-right: 1ch;">Moderate.Pixels</span><br><span style="color: lawngreen; margin-right: 1ch;">+</span><span style="color: lawngreen; margin-right: 1ch;">600</span><span style="color: limegreen; margin-right: 1ch;">Mountainous.Pixels</span><br><span style="color: grey; margin-right: 1ch;"></span><br><span style="color: grey; margin-right: 1ch;">#   Time sync everything</span><br><span style="color: mediumspringgreen; margin-right: 1ch; font-weight: bold;">sync</span><br></code></pre>
+<pre># Select The Nations Array
+> Nations
+# Create syntax. In this case Create Nation
++> Denmark
+# Deselect all
+<...
+# Select Cultures Array
+> Cultures
+# Create syntax again. In this case Create new Culture
++> Danish
+# Create German culture too
++> German
+# Deselect Cultures
+<
+# Also Select Religions and make the religions in the game and how they relate to eachother
+<... > Religions
++> Catholic
++> Protestantism
+> Protestantism > Opinions
++> Catholic
+="Skeptical"Catholic.Score
+# Select Nations And then Denmark and then CultureGroups in Denmark
+<... > Nations > Denmark > CultureGroups
+# Create syntax once again. Stats within aren't as strictly enforced in format
+# programmatically. This is done only via convention between updaters.
+# Make sure you spell everything corectly.
++> Danish
+# Set "Points" (percentage) of People in Denmark being Danish
+> Danish
+=95Points
+# Same for German. Though using dot syntax. This way you can temporarily select
+# and change a stat within an object or sub-object without it having selected that
+# for the next stat change line
+<
++> German
+=3German.Points
+# For the sake of demonstration, I will select German anyways
+> German
++2Points
+< <
+="Danish"CulRep
+="Protestantism"RelRep
+
+> ReligionGroups
+-100Pagan.Points
++> Protestantism
++100Protestantism.Points
+< > Climates
+###
+Set pixel counts within Climates of Denmark. The following Climates are
+precreated at nation creation, but the game allows for more specific
+climates to be created during the game:
+
+Polar Desert. ClimateScore = 0
+Taiga/Tundra. ClimateScore = 0.25
+Montane Forest. ClimateScore = 0.6
+Medditereanian. ClimateScore = 0.85
+Arid. ClimateScore = 0.65
+Steppe. ClimateScore = 0.75
+Moderate. ClimateScore = 1
+Sub-Tropical. ClimateScore = 0.75
+Tropical. ClimateScore = 0.6
+Savanna. ClimateScore = 0.65
+Desert. ClimateScore = 0.05
+Coastal Desert ClimateScore = 0.35
+
+# END
+
+=1950Moderate.Pixels
+# Example of specific climate. It is local to only the Nation of Denmark and
+# its ClimateScore is not shared across other nations
++> Bog
+=0.6Bog.ClimateScore
+=50Bog.Pixels
+
+
+#Feel free to abuse the Deselect all as much as you want to make your life easier
+<...
+> Nations
+# Create Syntax but it copies all stats from Denmark.
+# This is purely for demonstration purposes.
+# It might be a much more useful feature if nations with similar
+# stats, religions and cultures; or if the game has a template nation to build
+# new nations from
++> Sweden = Denmark
+> Sweden
+# Sweden has Majority Swedish Culture, not Danish
+=5CultureGroups.Danish.Points
+=0CultureGroups.German.Points
+<... > Cultures
++> Swedish
+# Witness the construction of a culture having an opinion on another!
+> Swedish > Opinions
++> Danish
+> Danish
+="Skeptical"Score
+<... > Nations > Sweden > CultureGroups
++> Swedish
+=95Swedish.Points
+<
+="Swedish"CulRep
+# Sweden has Mountains, and is also generally bigger
+> Climates
++1400Moderate.Pixels
++600Mountainous.Pixels
+
+# Time sync everything
+sync</pre>
+
+Better color coding is possible inside the program itself, if you upload this string as a file and open `Open change command list debug terminal`.
