@@ -84,7 +84,7 @@ function loadChangesFromFile(event){
                     }
                     cc = cutback(cc);
                 }
-                addChangeCommandWithColors([changeCommand], ["blue"]);
+                addChangeCommandWithColors([changeCommand], ["dodgerBlue"]);
             }
             //Creation
             else if(changeCommand.slice(0, 2) == "+>"){
@@ -234,7 +234,7 @@ function normalCommand(selection){
     else if(commandParameters[0] == '-' || commandParameters[0] == 'sub'){
         change = -num;
         (new Function(`gameStats${selection} -= ${commandParameters[1]}`))();
-        addChangeCommandWithColors(commandParameters, ["red", "red", "limeGreen"]);
+        addChangeCommandWithColors(commandParameters, ["tomato", "tomato", "limeGreen"]);
     }
     //set
     else if(commandParameters[0] == '=' || commandParameters[0] == 'set'){

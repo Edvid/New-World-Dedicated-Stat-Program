@@ -15,11 +15,12 @@ th, td{
     background-color: #eee;
     color: #444;
     cursor: pointer;
+    margin: 10px 10px 10px 10px; 
     padding: 18px;
-    width: 100%;
+    width: auto;
     border: none;
     text-align: left;
-    outline: none;
+    border-radius: 10px;
     font-size: 15px;
 }
 
