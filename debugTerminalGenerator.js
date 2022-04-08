@@ -13,6 +13,7 @@ changeCommandsWithColoursParent.className = "content";
 changeCommandsWithColoursParent.style.paddingTop = "1em";
 changeCommandsWithColoursParent.style.paddingBottom = "1em";
 changeCommandsWithColoursParent.style.width = "70vw";
+changeCommandsWithColoursParent.style.overflow = "scroll";
 
 changeCommandsWithColoursParent.appendChild(changeCommandsWithColours);
 
