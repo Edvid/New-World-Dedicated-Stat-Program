@@ -14,7 +14,7 @@ function createNationSheet(nationName){
     let th1 = document.createElement("th");
     th1.style.background = primaryColor[n % primaryColor.length];
     let th2 = document.createElement("th");
-    th2.style.background = "lightGrey" 
+    th2.style.background = "lightGrey"; 
     th1.innerHTML = "Stat Name";
     th2.innerHTML = "Stat Value";
     trh.appendChild(th1);

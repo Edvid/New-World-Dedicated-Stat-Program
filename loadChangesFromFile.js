@@ -7,13 +7,29 @@ function loadChangesFromFile(event){
     reader.onload = function(e){
         changes = e.target.result.split(/\r?\n|\r/);
         const commandRegex = /(?<Operand>([a-z]+)( |\t)|(\+|\=|\-)( |\t)?)(?<Value>(\".+\")|(\{.+\})|(.+?))( |\t)(?<Stat_Name>.+)/i;
-        
+        let ignore = false;
         let currentSelection = "";
         for (changeCommandIndex = 0; changeCommandIndex < changes.length; changeCommandIndex++) {
             const changeCommand = changes[changeCommandIndex].trim();
             //comment
-            if(changeCommand[0] == '#' || changeCommand.length == 0){
-                continue;
+            if(changeCommand[0] == '#' || changeCommand.length == 0 || ignore){
+                if(!ignore){
+                    if(changeCommand == "###"){
+                        let spn = addChangeCommandWithColors([changeCommand], ["#5E5E5E"]);
+                        spn[0].style.fontStyle = "italic";
+                        ignore = true;
+                    }else{
+                        addChangeCommandWithColors([changeCommand], ["grey"]);
+                    }
+                    continue;
+                }else{
+                    if(changeCommand.toLowerCase() == "# END".toLowerCase())
+                        ignore = false;
+                    let spn = addChangeCommandWithColors([changeCommand], ["#5E5E5E"]);
+                    spn[0].style.fontStyle = "italic";
+                    continue;
+                }
+                
             }
             //sync
             else if(changeCommand.includes("sync")){
@@ -30,7 +46,8 @@ function loadChangesFromFile(event){
                     gameStats.evaluateNations();
                     syncNations();
                 }
-                
+                let spn = addChangeCommandWithColors([changeCommand], ["MediumSpringGreen"]);
+                spn[0].style.fontWeight = "bold";
             }
             //Selection and deselections
             else if(changeCommand[0] == '>' || changeCommand[0] == '<'){
@@ -67,6 +84,7 @@ function loadChangesFromFile(event){
                     }
                     cc = cutback(cc);
                 }
+                addChangeCommandWithColors([changeCommand], ["blue"]);
             }
             //Creation
             else if(changeCommand.slice(0, 2) == "+>"){
@@ -94,6 +112,7 @@ function loadChangesFromFile(event){
                 }else{
                     (new Function(`gameStats${currentSelection}.${arg} = new ${objectClass}("${arg}");`))(); 
                 }
+                addChangeCommandWithColors([changeCommand], ["magenta"]);
             }
             //normal commands
             else{
@@ -211,11 +230,13 @@ function normalCommand(selection){
     if(commandParameters[0] == '+' || commandParameters[0] == 'add'){
         change = num;
         (new Function(`gameStats${selection} += ${commandParameters[1]}`))();
+        addChangeCommandWithColors(commandParameters, ["lawnGreen", "lawnGreen", "limeGreen"]);
     }
     //subtract
     else if(commandParameters[0] == '-' || commandParameters[0] == 'sub'){
         change = -num;
         (new Function(`gameStats${selection} -= ${commandParameters[1]}`))();
+        addChangeCommandWithColors(commandParameters, ["red", "red", "limeGreen"]);
     }
     //set
     else if(commandParameters[0] == '=' || commandParameters[0] == 'set'){
@@ -228,6 +249,7 @@ function normalCommand(selection){
         change = isNaN(previous) ? true : num - previous;
         
         (new Function(`gameStats${selection} = ${commandParameters[1]}`))();
+        addChangeCommandWithColors(commandParameters, ["Gold", "Gold", "limeGreen"]);
         
     }else{
         alert("At line " + (changeCommandIndex + 1) + "\r\n\r\nOperand wasn't understood: " + commandParameters[0] + ".\r\n Aborting.");
