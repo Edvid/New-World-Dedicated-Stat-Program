@@ -54,7 +54,7 @@ class Nation {
   FutureBudget;
   FutureFood;
   FutureResearchPoints;
-  FuturePublicDebtLength;
+  ength;
   FutureCulturalPower;
   DateInThisNation;
   FutureDateInThisNation;
@@ -386,7 +386,6 @@ class Nation {
   PublicDebtTaken;
   EffectiveDebt;
   PublicDebtLength;
-  FuturePublicDebtLength;
   InterestRate;
   DebtHappinessEffect;
 
@@ -1498,7 +1497,7 @@ class Nation {
     this.CulturalPowerGain = (this.LiteracyPercent / 3 + this.PopulationHappiness / 8) * (this.CulturalProsperity + this.CulturalAdvancements.RenaissanceThought / 10) / gameStats.TimeDivide;
     this.CulturalPower = this.CulturalPower;
     this.FutureCulturalPower = min(6, (this.CulturalPower + this.CulturalPowerGain));
-    this.FuturePublicDebtLength = max(0, this.PublicDebtLength + (this.EffectiveDebt > 0 ? 1 : 0) + (this.EffectiveDebt == 0 ? -100 : 0));
+    this.FuturePublicDebtLength = max(0, this.PublicDebtLength + (this.EffectiveDebt >= 0 ? 1 : 0));
     this.FutureDate = this.DateInThisNation + gameStats.TimeSpeed;
 
 
