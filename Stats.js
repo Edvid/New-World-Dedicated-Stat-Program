@@ -488,7 +488,7 @@ class Nation {
   SellingCapability;
   FoodSold;
   Foodlost;
-  Tradeprofit;
+  TradeProfit;
   /* #endregion */
 
   /* #region  War */
@@ -502,7 +502,6 @@ class Nation {
   /* #endregion */
 
   /* #region  Trade Influence */
-  speudoTradePower;
   TradeInfluences;
   /* #endregion */
 
@@ -1040,7 +1039,7 @@ class Nation {
       return n.FoodGain + n.Food > n.MaxStock ? n.FoodGain + n.Food - n.MaxStock : 0;
     })();
 
-    this.speudoTradePower = (function () {
+    let pseudoTradePower = (function () {
       let stp = 0;
       for (const region in gameStats.TradeZones) {
         let allNationPoints = 0;
@@ -1052,10 +1051,10 @@ class Nation {
       }
       return stp;
     })();
-    this.SellingCapability = (this.LocalTrade / 2 + this.speudoTradePower / 5) * this.Mercantilism * 200;
+    this.SellingCapability = (this.LocalTrade / 2 + pseudoTradePower / 5) * this.Mercantilism * 200;
     this.FoodSold = min(this.SellingCapability, this.SurplusFood);
     this.Foodlost = this.SurplusFood - this.FoodSold;
-    this.Tradeprofit = this.FoodSold / 50;
+    this.TradeProfit = this.FoodSold / 50;
 
     this.Prosperity = 1 + this.SocialSpending / 2.5 + (this.Food == 0 && this.FutureFood < 0 ? this.FutureFood / 2000 : 0) + (this.Budget < 0.00001 ? this.Budget / 100 : 0) * (1 - this.Pillaging);
     this.Size = (function () {
@@ -1429,7 +1428,7 @@ class Nation {
       }
       return num;
     })();
-    this.TradePower = this.TradePowerResourceTrade + this.LocalTrade / 2 + (this.speudoTradePower);
+    this.TradePower = this.TradePowerResourceTrade + this.LocalTrade / 2 + (pseudoTradePower);
     this.ProductionEfficiency = this.Mercantilism + this.Technologies.VerticalLoom / 5 + this.Technologies.Workshops + this.Technologies.Cranes / 5 + this.Technologies.TextileManufactories / 2;
     this.Production = (this.LocalTrade + this.TradePower) * this.Artisans * this.ProductionEfficiency * 10;
     this.TradeProtection = this.LightShips * 0.75 + this.MediumShips * 1 + this.HeavyShips * 0.75;
@@ -1456,7 +1455,7 @@ class Nation {
       return rbb / gameStats.TimeDivide;
     })();
 
-    this.TradeRevenue = ((this.LocalTrade + this.TradePower) * (1 - this.BurghersInfluence)) / gameStats.TimeDivide * this.TradeEfficiency + this.Tradeprofit;
+    this.TradeRevenue = ((this.LocalTrade + this.TradePower) * (1 - this.BurghersInfluence)) / gameStats.TimeDivide * this.TradeEfficiency + this.TradeProfit;
     this.EffectiveTax = (
       (
         this.LowerClass * this.Population * this.LowerClassTax / 10000 +
@@ -1505,8 +1504,8 @@ class Nation {
 
 
     /* #region  Important stats.. Maybe just make these in sheet generation */
-    this.MIlitaryExpendures = this.ArmyUpkeep + this.NavyUpkeep;
-    this.DailyBudgetAndMilitaryExpendures  =  this.DailyBudget + this.MIlitaryExpendures;
+    this.MilitaryExpendures = this.ArmyUpkeep + this.NavyUpkeep;
+    this.DailyBudgetAndMilitaryExpendures  =  this.DailyBudget + this.MilitaryExpendures;
 
     /* #endregion *///
     
