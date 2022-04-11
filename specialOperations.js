@@ -27,7 +27,18 @@ function specialOperation(selection, change){
         (new Function(`${newTroopSelection} += ${change}`))();
     }
     //Clearing War Penalty Stats If War Stat is false 
-    else if(/gameStats\.Nations\..+\./.test(selection)){
+    else if(/gameStats\.Nations\..+\.AtWar/.test(selection)){
+        if(change.toLowerCase() == 'offensive' || change.toLowerCase() == 'defensive') return;
+        let warStatsToReset = []
+        warStatsToReset.push(selection.split(".").pop().push("Casualities").join("."));
+        warStatsToReset.push(selection.split(".").pop().push("Pillaging").join("."));
+        warStatsToReset.push(selection.split(".").pop().push("Occupation").join("."));
+        warStatsToReset.push(selection.split(".").pop().push("MinorBattles").join("."));
+        warStatsToReset.push(selection.split(".").pop().push("MajorBattles").join("."));
         
+        for (let i = 0; i < warStatsToReset.length; i++) {
+            const warStatToReset = warStatsToReset[i];
+            (new Function(`${warStatToReset} += 0`))();
+        }
     }   
 }
