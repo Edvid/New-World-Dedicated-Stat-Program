@@ -54,11 +54,8 @@ function createNationSheet(nationNum){
 
     let nationStatSections = [{}];
     let i = 0;
-    for (const nationStatName in nation) {
-        const nationStat = nation[nationStatName];
-        nationStatSections[i][nationStatName] = nationStat;
-        if(~[
-            "FutureDateInThisNation",
+    let statBreakPoints = [
+        "FutureDateInThisNation",
             "ReligiousDisunity",
             "Health",
             "EducationCostModifier",
@@ -67,9 +64,9 @@ function createNationSheet(nationNum){
             "Stability",
             "Absolutism",
             "ConscriptionPercent",
-            "Production Efficiency",
+            "ProductionEfficiency",
             "Mercantilism",
-            "Effective Debt",
+            "EffectiveDebt",
             "Inflation",
             "SpyQuality",
             "BurghersLoyalty",
@@ -92,7 +89,6 @@ function createNationSheet(nationNum){
             "LowerClass",
             "PopulationTechImpact",
             "FarmingEfficiency",
-            "ExoticFruitInflation",
             "EffectiveCoal",
             "EffectiveSulphur",
             "CottonInflation",
@@ -171,8 +167,11 @@ function createNationSheet(nationNum){
             "HabitableLand",
             "Food",
             "MilitaryExpendures"
-
-        ].indexOf(nationStatName)){
+    ]
+    for (const nationStatName in nation) {
+        const nationStat = nation[nationStatName];
+        nationStatSections[i][nationStatName] = nationStat;
+        if(statBreakPoints[i] == nationStatName){
             nationStatSections[++i] = {};
         }
     }
@@ -187,7 +186,6 @@ function createNationSheet(nationNum){
     
     for (const nationStatSectionIndex in nationStatSections) {
         const nationStatSection = nationStatSections[nationStatSectionIndex];
-        console.log(nationStatSection);
         table = document.createElement("table");
         table.style.margin = "0% 5% 2% 5%";
         
