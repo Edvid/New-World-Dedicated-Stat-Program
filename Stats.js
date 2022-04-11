@@ -54,7 +54,6 @@ class Nation {
   FutureBudget;
   FutureFood;
   FutureResearchPoints;
-  ength;
   FutureCulturalPower;
   DateInThisNation;
   FutureDateInThisNation;
@@ -83,8 +82,7 @@ class Nation {
   Prosperity; //Quality of Life
   PopulationHappiness;
   Stability;
-  AtOffensiveWar;
-  AtDefensiveWar;
+  AtWar;
   WarSupport;
   WarStabilityModifier;
   Absolutism;
@@ -551,8 +549,7 @@ class Nation {
     this.AdministrativeEfficiency = 30.00;
     this.Propaganda = 0;
     this.SocialSpending = 0;
-    this.AtOffensiveWar = false;
-    this.AtDefensiveWar = false;
+    this.AtWar = "false";
 
     this.NobleInfluence = 0.55; //Show in percent
     this.NobleLoyaltyGroups = [
@@ -1267,7 +1264,7 @@ class Nation {
     this.PopulationStabilityImpact = (this.Population > this.AdministrativeEfficiency * 500000 ? (this.AdministrativeEfficiency * 500000 - this.Population) / 50000000 : 0) * 10;
     this.Fervor = clamp(1, -1, 0 + this.MinorBattles / 20 + this.MajorBattles / 10 + this.Pillaging - (this.Casualties / (this.OverallNumbers + this.Casualties + 0.0000001)));
     this.WarSupport = clamp(1, 0, this.PopulationHappiness / 10 * 2.5 + this.Propaganda / 10 + this.Fervor);
-    this.WarStabilityModifier = ((this.AtOffensiveWar == true && this.WarSupport < 0.75) ? (this.WarSupport - 0.75) / 10 : 0) + max(-0.075, ((this.AtDefensiveWar == true && this.WarSupport < 0.4 && this.Fervor < 0) ? (this.Fervor) / 10 : 0));
+    this.WarStabilityModifier = ((this.AtWar.toLowerCase() == 'offensive' && this.WarSupport < 0.75) ? (this.WarSupport - 0.75) / 10 : 0) + max(-0.075, ((this.AtWar.toLowerCase() == 'defensive' && this.WarSupport < 0.4 && this.Fervor < 0) ? (this.Fervor) / 10 : 0));
     //min and max? nested ternary operations, with "0" if either fail? This can be optimized
     this.MilitaryLoyalty = clamp(1, 0, 
       1 * this.ArmyWages +

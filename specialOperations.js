@@ -25,5 +25,9 @@ function specialOperation(selection, change){
         if(change <= 0) return;
         let newTroopSelection = selection.split(".").pop().push("New_" + selection[selection.split(".").length - 1].join("."));
         (new Function(`${newTroopSelection} += ${change}`))();
+    }
+    //Clearing War Penalty Stats If War Stat is false 
+    else if(/gameStats\.Nations\..+\./.test(selection)){
+        
     }   
 }

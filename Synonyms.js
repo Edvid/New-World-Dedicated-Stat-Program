@@ -76,16 +76,6 @@ let Synonyms = {
 		"educostmodifier"
 	],
 	
-	AtOffensiveWar: [
-		"offensivewar",
-		"offwar"
-	],
-	
-	AtDefensiveWar: [
-		"defensivewar",
-		"defwar"
-	],
-	
 	PopulationControl: [
 		"popcontrol",
 		"popctrl",
