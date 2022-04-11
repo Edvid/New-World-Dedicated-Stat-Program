@@ -49,52 +49,156 @@ function createNationSheet(nationNum){
     const nation = gameStats.Nations[nationName];
     let nationTitle = document.createElement("h1");
     nationTitle.innerHTML = nationName;
-    nationTitle.style.marginLeft = "5%"
-    let table = document.createElement("table");
-    table.style.margin = "0% 5% 2% 5%";
-    
-    let nationStatNameRow = document.createElement("tr");
-    nationStatNameRow.style.background = primaryColor[currentNationNumber % primaryColor.length];
-    let nationStatRow = document.createElement("tr");
-    nationStatRow.style.background = secondaryColor[currentNationNumber % secondaryColor.length];
-    
+    nationTitle.style.marginLeft = "5%";
+    let table;
+
+    let nationStatSections = [{}];
+    let i = 0;
     for (const nationStatName in nation) {
         const nationStat = nation[nationStatName];
-        let nationStatNameCell = document.createElement("td");
-        nationStatNameCell.innerText = nationStatName.split(/(?<=[a-zA-Z])(?=[A-Z])/gm).join(" ");
-        let nationStatCell = document.createElement("td");
-        if(!isNaN(nationStat)){
-            //integers
-            if(~[
-                "Population",
-                "FuturePopulation"
-            ].indexOf(nationStatName)){
-                nationStatCell.innerText = parseFloat(nationStat).toFixed(0);
-            }
-            //percentages
-            else if(~[
-                "LowerClassTax",
-                "MediumClassTax",
-                "HighClassTax",
-            ].indexOf(nationStatName)){
-                nationStatCell.innerText = parseFloat(nationStat * 100).toFixed(2) + "%";
-            }
-            //normal (2 digits)
-            else{
-                nationStatCell.innerText = parseFloat(nationStat).toFixed(2);
-            }
-            
-        }else
-            nationStatCell.innerText = nationStat;
+        nationStatSections[i][nationStatName] = nationStat;
+        if(~[
+            "FutureDateInThisNation",
+            "ReligiousDisunity",
+            "Health",
+            "EducationCostModifier",
+            "Propaganda",
+            "PopulationHappiness",
+            "Stability",
+            "Absolutism",
+            "ConscriptionPercent",
+            "Production Efficiency",
+            "Mercantilism",
+            "Effective Debt",
+            "Inflation",
+            "SpyQuality",
+            "BurghersLoyalty",
+            "PopulationControlUpkeep",
+            "OverallIncome",
+            "Militia",
+            "OverallNumbers",
+            "FortUpkeep",
+            "ArmyQuality",
+            "MililtaryDiscipline",
+            "NavyQuality",
+            "UpkeepForOneHeavyShip",
+            "OverallShipCount",
+            "NavyUpkeep",
+            "New_EliteCavalry",
+            "New_Cannons",
+            "New_HeavyShips",
+            "NewTroopRecruitmentPenalty",
+            "Burghers",
+            "LowerClass",
+            "PopulationTechImpact",
+            "FarmingEfficiency",
+            "ExoticFruitInflation",
+            "EffectiveCoal",
+            "EffectiveSulphur",
+            "CottonInflation",
+            "GoldInflation",
+            "EffectiveIron",
+            "TeaInflation",
+            "SilkInflation",
+            "SpiceInflation",
+            "WoolInflation",
+            "CoffeeInflation",
+            "FurInflation",
+            "DiamondInflation",
+            "SilverInflation",
+            "EffectiveCopper",
+            "IvoryInflation",
+            "CocoaInflation",
+            "TobaccoInflation",
+            "SugarInflation",
+            "ExoticFruitInflation",
+            "ResourceBudgetBoost",
+            "CoalValue",
+            "GoldValue",
+            "IronValue",
+            "SulphurValue",
+            "CottonValue",
+            "TeaValue",
+            "SpiceValue",
+            "CopperValue",
+            "SilkValue",
+            "WoolValue",
+            "CoffeeValue",
+            "SilverValue",
+            "DiamondValue",
+            "FurValue",
+            "IvoryValue",
+            "CocoaValue",
+            "TobaccoValue",
+            "SugarValue",
+            "ExoticFruitValue",
+            "ResearchPoints"
 
-        nationStatRow.appendChild(nationStatCell);
-        nationStatNameRow.appendChild(nationStatNameCell);
+        ].indexOf(nationStatName)){
+            nationStatSections[++i] = {};
+        }
     }
 
-    table.appendChild(nationStatNameRow);
-    table.appendChild(nationStatRow);
+    
+
+
 
     nationSheetContainer.innerHTML = "";
     nationSheetContainer.appendChild(nationTitle);
-    nationSheetContainer.appendChild(table);
+
+    
+    for (const nationStatSectionIndex in nationStatSections) {
+        const nationStatSection = nationStatSections[nationStatSectionIndex];
+        console.log(nationStatSection);
+        table = document.createElement("table");
+        table.style.margin = "0% 5% 2% 5%";
+        
+        let nationStatNameRow = document.createElement("tr");
+        nationStatNameRow.style.background = primaryColor[currentNationNumber % primaryColor.length];
+        let nationStatRow = document.createElement("tr");
+        nationStatRow.style.background = secondaryColor[currentNationNumber % secondaryColor.length];
+        
+        for (const nationStatName in nationStatSection) {
+            const nationStat = nation[nationStatName];
+            let nationStatNameCell = document.createElement("td");
+            nationStatNameCell.innerText = nationStatName.split(/(?<=[a-zA-Z])(?=[A-Z])/gm).join(" ");
+            nationStatNameCell.style.padding = "1em";
+            let nationStatCell = document.createElement("td");
+            nationStatCell.style.textAlign = "center";
+            if(!isNaN(nationStat)){
+                //integers
+                if(~[
+                    "Population",
+                    "FuturePopulation"
+                ].indexOf(nationStatName)){
+                    nationStatCell.innerText = parseFloat(nationStat).toFixed(0);
+                }
+                //percentages
+                else if(~[
+                    "LowerClassTax",
+                    "MediumClassTax",
+                    "HighClassTax",
+                ].indexOf(nationStatName)){
+                    nationStatCell.innerText = parseFloat(nationStat * 100).toFixed(2) + "%";
+                }
+                //normal (2 digits)
+                else{
+                    nationStatCell.innerText = parseFloat(nationStat).toFixed(2);
+                }
+                
+            }else
+                nationStatCell.innerText = nationStat;
+
+            nationStatRow.appendChild(nationStatCell);
+            nationStatNameRow.appendChild(nationStatNameCell);
+        }
+
+        table.appendChild(nationStatNameRow);
+        table.appendChild(nationStatRow);
+        nationSheetContainer.appendChild(table);
+    
+    }
+
+    
+    
 }
