@@ -138,10 +138,13 @@ function loadChangesFromFile(event){
 
         gameStats.evaluateNations();
  
-        // Parse to evaluated sheets
+        /*// Parse to evaluated sheets
         for (const nationName in gameStats.Nations) {
-            createNationSheet(nationName);            
-        }
+            createNationSheet(nationName);
+        }*/
+        
+        currentNationNumber = 0;
+        createNationSheet(currentNationNumber);
 
     };
 
