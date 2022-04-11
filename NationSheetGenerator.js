@@ -36,48 +36,64 @@ document.body.appendChild(nationSheetContainer);
 
 
 function createNationSheet(nationNum){
-    let i = 0;
+    let nationIndex = 0;
     let nationName;
     for (const natName in gameStats.Nations) {
-        if(i == nationNum){
+        if(nationIndex == nationNum){
             nationName = natName;
             break;
         }
-        i++;
+        nationIndex++;
     }
-    
+
     const nation = gameStats.Nations[nationName];
     let nationTitle = document.createElement("h1");
     nationTitle.innerHTML = nationName;
     nationTitle.style.marginLeft = "5%"
     let table = document.createElement("table");
     table.style.margin = "0% 5% 2% 5%";
-    let trh = document.createElement("tr");
-    let th1 = document.createElement("th");
-    th1.style.background = primaryColor[currentNationNumber % primaryColor.length];
-    let th2 = document.createElement("th");
-    th2.style.background = "lightGrey"; 
-    th1.innerHTML = "Stat Name";
-    th2.innerHTML = "Stat Value";
-    trh.appendChild(th1);
-    trh.appendChild(th2);
-    table.appendChild(trh);
+    
+    let nationStatNameRow = document.createElement("tr");
+    nationStatNameRow.style.background = primaryColor[currentNationNumber % primaryColor.length];
+    let nationStatRow = document.createElement("tr");
+    nationStatRow.style.background = secondaryColor[currentNationNumber % secondaryColor.length];
+    
     for (const nationStatName in nation) {
         const nationStat = nation[nationStatName];
-        let tr = document.createElement("tr");
-        let td1 = document.createElement("td");
-        let td2 = document.createElement("td");
-        td1.innerHTML = nationStatName;
-        td2.innerHTML = JSON.stringify(nationStat);
-        td1.style.background = secondaryColor[currentNationNumber % secondaryColor.length];
-        if(td2.innerHTML == "null" || td2.innerHTML == "undefined"){
-            td2.style.background = "red";
-            td2.style.color = "white";
-        }
-        tr.appendChild(td1);
-        tr.appendChild(td2);
-        table.append(tr);
+        let nationStatNameCell = document.createElement("td");
+        nationStatNameCell.innerText = nationStatName.split(/(?<=[a-zA-Z])(?=[A-Z])/gm).join(" ");
+        let nationStatCell = document.createElement("td");
+        if(!isNaN(nationStat)){
+            //integers
+            if(~[
+                "Population",
+                "FuturePopulation"
+            ].indexOf(nationStatName)){
+                nationStatCell.innerText = parseFloat(nationStat).toFixed(0);
+            }
+            //percentages
+            else if(~[
+                "LowerClassTax",
+                "MediumClassTax",
+                "HighClassTax",
+            ].indexOf(nationStatName)){
+                nationStatCell.innerText = parseFloat(nationStat * 100).toFixed(2) + "%";
+            }
+            //normal (2 digits)
+            else{
+                nationStatCell.innerText = parseFloat(nationStat).toFixed(2);
+            }
+            
+        }else
+            nationStatCell.innerText = nationStat;
+
+        nationStatRow.appendChild(nationStatCell);
+        nationStatNameRow.appendChild(nationStatNameCell);
     }
+
+    table.appendChild(nationStatNameRow);
+    table.appendChild(nationStatRow);
+
     nationSheetContainer.innerHTML = "";
     nationSheetContainer.appendChild(nationTitle);
     nationSheetContainer.appendChild(table);
