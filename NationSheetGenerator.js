@@ -2,17 +2,11 @@ let primaryColor = ["red", "green", "DodgerBlue", "purple", "Dark Orange"];
 let secondaryColor = ["pink", "lightgreen", "lightSkyBlue", "magenta", "Orange"];
 
 let nationSheetContainer = document.createElement("div");
-nationSheetContainer.style.border = "1px solid black";
-nationSheetContainer.style.width = "90%";
-nationSheetContainer.style.marginLeft = "5%";
+nationSheetContainer.classList.add("nationsheet");
 
 let arrowContainer = document.createElement("div");
-arrowContainer.style.border = "1px solid grey"
-arrowContainer.style.display = "flex";
-arrowContainer.style.justifyContent = "space-between";
-arrowContainer.style.margin = "auto";
-arrowContainer.style.width = "120px";
-arrowContainer.style.padding = "25px";
+arrowContainer.classList.add("arrowcontainer");
+
 
 let currentNationNumber = 0;
 let currentNationNumberDisplay = document.createElement("h2");
@@ -20,11 +14,17 @@ currentNationNumberDisplay.innerText = "0";
 
 let leftArrow = document.createElement("button");
 leftArrow.innerHTML = "&#11164";
-leftArrow.onclick = function (){currentNationNumberDisplay.innerText = --currentNationNumber; createNationSheet(currentNationNumber) }
+leftArrow.onclick = function (){
+    currentNationNumberDisplay.innerText = --currentNationNumber; 
+    createNationSheet(currentNationNumber) 
+}
 
 let rightArrow = document.createElement("button");
 rightArrow.innerHTML = "&#11166";
-rightArrow.onclick = function (){currentNationNumberDisplay.innerText = ++currentNationNumber; createNationSheet(currentNationNumber) }
+rightArrow.onclick = function (){
+    currentNationNumberDisplay.innerText = ++currentNationNumber; 
+    createNationSheet(currentNationNumber)
+}
 
 
 arrowContainer.appendChild(leftArrow);
@@ -49,7 +49,6 @@ function createNationSheet(nationNum){
     const nation = gameStats.Nations[nationName];
     let nationTitle = document.createElement("h1");
     nationTitle.innerHTML = nationName;
-    nationTitle.style.marginLeft = "5%";
     let table;
 
     let nationStatSections = [{}];
@@ -187,7 +186,6 @@ function createNationSheet(nationNum){
     for (const nationStatSectionIndex in nationStatSections) {
         const nationStatSection = nationStatSections[nationStatSectionIndex];
         table = document.createElement("table");
-        table.style.margin = "0% 5% 2% 5%";
         
         let nationStatNameRow = document.createElement("tr");
         nationStatNameRow.style.background = primaryColor[currentNationNumber % primaryColor.length];
@@ -196,9 +194,8 @@ function createNationSheet(nationNum){
         
         for (const nationStatName in nationStatSection) {
             const nationStat = nation[nationStatName];
-            let nationStatNameCell = document.createElement("td");
+            let nationStatNameCell = document.createElement("th");
             nationStatNameCell.innerText = nationStatName.split(/(?<=[a-zA-Z])(?=[A-Z])/gm).join(" ");
-            nationStatNameCell.style.padding = "1em";
             let nationStatCell = document.createElement("td");
             nationStatCell.style.textAlign = "center";
             if(!isNaN(nationStat)){

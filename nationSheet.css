@@ -3,10 +3,14 @@ table{
 }
 th {
     font-weight: bold;
-    text-align: left;
+    font-size: 12px;
+}
+td{
+    font-size: 10px;
 }
 th, td{
     border: 1px solid black;
+    padding: .5em .5em .5em .5em;
 }
 
 /* collapsible taken from https://www.w3schools.com/howto/howto_js_collapsible.asp */
@@ -36,3 +40,26 @@ th, td{
     overflow: hidden;
     background-color: #f1f1f1;
   }
+
+.nationsheet{
+    margin: 2em;
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    min-width: 800px;
+    max-width: 100%;
+}
+
+.arrowcontainer{
+    border: 1px solid grey;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    width: 120px;
+    padding: 25px;
+}
+
+.nationsheet table{
+    margin: 0em 1em 0.5em 1em;
+}

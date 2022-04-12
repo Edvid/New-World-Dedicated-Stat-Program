@@ -2,6 +2,8 @@ let changeCommandsContentButton = document.createElement("button");
 
 changeCommandsContentButton.className = "collapsible";
 changeCommandsContentButton.textContent = "Open change command list debug terminal";
+changeCommandsContentButton.style.fontSize = "12px";
+changeCommandsContentButton.style.maxWidth = "40%";
 
 let changeCommandsWithColours = document.createElement("code");
 changeCommandsWithColours.innerText = "# empty #";
