@@ -139,7 +139,7 @@ function loadChangesFromFile(event) {
         gameStats.evaluateNations();
 
         currentNationNumber = 0;
-        createNationSheet(currentNationNumber);
+        createNationSheet(Object.keys(gameStats.Nations)[0]);
 
     };
 

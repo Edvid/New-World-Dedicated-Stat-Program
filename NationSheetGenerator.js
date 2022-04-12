@@ -7,48 +7,45 @@ nationSheetContainer.classList.add("nationsheet");
 let arrowContainer = document.createElement("div");
 arrowContainer.classList.add("arrowcontainer");
 
-
-let currentNationNumber = 0;
-let currentNationNumberDisplay = document.createElement("h2");
-currentNationNumberDisplay.innerText = "0";
+let currentNationID = 0;
+let currentNationName = 'undefined';
+let currentNationNameDisplay = document.createElement("h2");
+currentNationNameDisplay.classList = "nationnamedisplay";
+currentNationNameDisplay.innerText = currentNationName;
 
 let leftArrow = document.createElement("button");
 leftArrow.innerHTML = "&#11164";
 leftArrow.onclick = function (){
-    currentNationNumberDisplay.innerText = --currentNationNumber; 
-    createNationSheet(currentNationNumber) 
+    let nationNames = Object.keys(gameStats.Nations);
+    if(currentNationID > 0) currentNationID--;
+    else currentNationID = nationNames.length - 1; 
+    currentNationName = Object.keys(gameStats.Nations)[currentNationID];
+    createNationSheet(currentNationName);
 }
 
 let rightArrow = document.createElement("button");
 rightArrow.innerHTML = "&#11166";
 rightArrow.onclick = function (){
-    currentNationNumberDisplay.innerText = ++currentNationNumber; 
-    createNationSheet(currentNationNumber)
+    let nationNames = Object.keys(gameStats.Nations);
+    if(currentNationID < nationNames.length - 1) currentNationID++;
+    else currentNationID = 0;
+    currentNationName = Object.keys(gameStats.Nations)[currentNationID];
+    createNationSheet(currentNationName);
 }
 
+document.body.appendChild(currentNationNameDisplay);
 
 arrowContainer.appendChild(leftArrow);
-arrowContainer.appendChild(currentNationNumberDisplay);
 arrowContainer.appendChild(rightArrow);
 
 document.body.appendChild(arrowContainer);
 document.body.appendChild(nationSheetContainer);
 
 
-function createNationSheet(nationNum){
-    let nationIndex = 0;
-    let nationName;
-    for (const natName in gameStats.Nations) {
-        if(nationIndex == nationNum){
-            nationName = natName;
-            break;
-        }
-        nationIndex++;
-    }
-
+function createNationSheet(nationName){
+    currentNationNameDisplay.innerText = nationName;
     const nation = gameStats.Nations[nationName];
-    let nationTitle = document.createElement("h1");
-    nationTitle.innerHTML = nationName;
+    console.log(nationName);
     let table;
 
     let nationStatSections = [{}];
@@ -180,7 +177,6 @@ function createNationSheet(nationNum){
 
 
     nationSheetContainer.innerHTML = "";
-    nationSheetContainer.appendChild(nationTitle);
 
     
     for (const nationStatSectionIndex in nationStatSections) {
@@ -188,9 +184,9 @@ function createNationSheet(nationNum){
         table = document.createElement("table");
         
         let nationStatNameRow = document.createElement("tr");
-        nationStatNameRow.style.background = primaryColor[currentNationNumber % primaryColor.length];
+        nationStatNameRow.style.background = primaryColor[currentNationID % primaryColor.length];
         let nationStatRow = document.createElement("tr");
-        nationStatRow.style.background = secondaryColor[currentNationNumber % secondaryColor.length];
+        nationStatRow.style.background = secondaryColor[currentNationID % secondaryColor.length];
         
         for (const nationStatName in nationStatSection) {
             const nationStat = nation[nationStatName];
