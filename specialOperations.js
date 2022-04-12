@@ -15,7 +15,7 @@ function specialOperation(selection, change){
         /gameStats\.Nations\..+\.Musketeers/.test(selection) ||
         /gameStats\.Nations\..+\.Militia/.test(selection) ||
         /gameStats\.Nations\..+\.SiegeEquipment/.test(selection) ||
-        /gameStats\.Nations\..+\.LargeSiege Equipment/.test(selection) ||
+        /gameStats\.Nations\..+\.LargeSiegeEquipment/.test(selection) ||
         /gameStats\.Nations\..+\.Cannons/.test(selection) ||
         /gameStats\.Nations\..+\.LightShips/.test(selection) ||
         /gameStats\.Nations\..+\.MediumShips/.test(selection) ||
