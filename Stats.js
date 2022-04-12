@@ -54,6 +54,7 @@ class Nation {
   FutureBudget;
   FutureFood;
   FutureResearchPoints;
+  FuturePublicDebtLength;
   FutureCulturalPower;
   DateInThisNation;
   FutureDateInThisNation;
@@ -478,7 +479,8 @@ class Nation {
   DailyFood;
   FoodConsumption;
   FoodGain;
-  MaxStock;
+  MaxFoodStock;
+  Food;
   FutureFood;
   FoodPopulationBoost;
   SurplusFood;
@@ -1024,15 +1026,15 @@ class Nation {
     this.FoodConsumption = this.Population / 1000;
     this.FoodGain = this.DailyFood - this.FoodConsumption;
 
-    this.MaxStock = (function () {
+    this.MaxFoodStock = (function () {
       return max(100, 1000 * n.Population / 10000000) * n.StockingCapabilities;
     })();
-    this.FutureFood = min(this.MaxStock, this.Food + this.FoodGain);
+    this.FutureFood = min(this.MaxFoodStock, this.Food + this.FoodGain);
     this.FoodPopulationBoost = (function () {
       return n.Food > 500 ? n.Food / 50000 : 0;
     })();
     this.SurplusFood = (function () {
-      return n.FoodGain + n.Food > n.MaxStock ? n.FoodGain + n.Food - n.MaxStock : 0;
+      return n.FoodGain + n.Food > n.MaxFoodStock ? n.FoodGain + n.Food - n.MaxFoodStock : 0;
     })();
 
     let pseudoTradePower = (function () {
@@ -1494,19 +1496,8 @@ class Nation {
     this.CulturalPowerGain = (this.LiteracyPercent / 3 + this.PopulationHappiness / 8) * (this.CulturalProsperity + this.CulturalAdvancements.RenaissanceThought / 10) / gameStats.TimeDivide;
     this.CulturalPower = this.CulturalPower;
     this.FutureCulturalPower = min(6, (this.CulturalPower + this.CulturalPowerGain));
-    this.FuturePublicDebtLength = max(0, this.PublicDebtLength + (this.EffectiveDebt >= 0 ? 1 : 0));
-    this.FutureDate = this.DateInThisNation + gameStats.TimeSpeed;
+    this.FuturePublicDebtLength = this.EffectiveDebt > 0 ? this.PublicDebtLength + 1 : 0;
 
-
-
-    /* #region  Important stats.. Maybe just make these in sheet generation */
-    this.MilitaryExpendures = this.ArmyUpkeep + this.NavyUpkeep;
-    this.DailyBudgetAndMilitaryExpendures  =  this.DailyBudget + this.MilitaryExpendures;
-
-    /* #endregion *///
-    
-
-    
     this.MaxPopulation = this.Population / this.Disease;
     
     this.PrideOfTheNavy = (this.NavalPower > 10000? 'ACCESSIBLE' : 'INACCESSIBLE');
