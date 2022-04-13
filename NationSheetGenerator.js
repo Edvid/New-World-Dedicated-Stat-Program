@@ -174,13 +174,50 @@ function createNationSheet(nationName) {
     nationSheetContainer.innerHTML = "";
 
     /* #region  New Display */
-    createStatTable([
-        "FuturePopulation",
-        "FutureLiteracyPercent",
-        "FutureHigherEducation",
-        "FutureBudget",	
-        "FutureFood"
-    ]);
+
+    createStatTable(
+        "Flag and Government",
+        [
+            [
+                "Flag"
+            ],
+            [
+                "GovernmentName"
+            ]
+        ]
+        );
+
+    createStatTable(
+        "Turn based stats",
+        [
+            [
+                "FuturePopulation",
+                "FutureLiteracyPercent",
+                "FutureHigherEducation",
+                "FutureBudget",	
+                "FutureFood"
+            ],
+            [
+                "Population",
+                "LiteracyPercent",
+                "HigherEducation",
+                "Budget",	
+                "Food"
+            ],
+            [
+                "FutureResearchPoints",
+                "FuturePublicDebtLength",
+                "FutureCulturalPower",
+                "FutureDateInThisNation"
+            ],
+            [
+                "ResearchPoints",
+                "PublicDebtLength",
+                "CulturalPower",
+                "DateInThisNation"
+            ]
+        ]
+    );
 
     /* #endregion */
 
@@ -251,40 +288,52 @@ function createStat(name, val){
     
 }
 
-function createStatTable(stats){
+function createStatTable(title, tables){
     let table = document.createElement("table");
-    let nationStatNameRow = document.createElement("tr");
-    nationStatNameRow.style.background = primaryColor[currentNationID % primaryColor.length];
-    let nationStatRow = document.createElement("tr");
-    nationStatRow.style.background = secondaryColor[currentNationID % secondaryColor.length];
+    let tableTitle = document.createElement("h2");
+    tableTitle.classList.add("tabletitle")
+    tableTitle.innerText = title;
+    for (let i = 0; i < tables.length; i++) {
+        const stats = tables[i];
+        let nationStatNameRow = document.createElement("tr");
+        nationStatNameRow.style.background = primaryColor[currentNationID % primaryColor.length];
+        let nationStatRow = document.createElement("tr");
+        nationStatRow.style.background = secondaryColor[currentNationID % secondaryColor.length];
+            
+        for (let i = 0; i < stats.length; i++) {
+            const statname = stats[i];
+            const nation = gameStats.Nations[currentNationName];
+            const statvalue = nation[statname]; 
+            let nationStatNameCell = document.createElement("th");
+            nationStatNameCell.innerText = statname.split(/(?<=[a-zA-Z])(?=[A-Z])/gm).join(" ");
+            let nationStatCell = document.createElement("td");
+            nationStatCell.style.textAlign = "center";
+            let displayValue = displayValueFix(statname, statvalue);
+            if(displayValue.appendable){
+                nationStatCell.appendChild(displayValue.value);    
+            }else{
+                nationStatCell.innerText = displayValue.value;
+            }
+            nationStatRow.appendChild(nationStatCell);
+            nationStatNameRow.appendChild(nationStatNameCell);
+        }
         
-    for (let i = 0; i < stats.length; i++) {
-        const statname = stats[i];
-        const nation = gameStats.Nations[currentNationName];
-        const statvalue = nation[statname]; 
-        let nationStatNameCell = document.createElement("th");
-        nationStatNameCell.innerText = statname.split(/(?<=[a-zA-Z])(?=[A-Z])/gm).join(" ");
-        let nationStatCell = document.createElement("td");
-        nationStatCell.style.textAlign = "center";
-        nationStatCell.innerText = displayValueFix(statname, statvalue);    
-        nationStatRow.appendChild(nationStatCell);
-        nationStatNameRow.appendChild(nationStatNameCell);
+        table.appendChild(nationStatNameRow);
+        table.appendChild(nationStatRow);
     }
-    
-    table.appendChild(nationStatNameRow);
-    table.appendChild(nationStatRow);
+    nationSheetContainer.appendChild(tableTitle);    
     nationSheetContainer.appendChild(table);
-    return table;
 }
 
 function displayValueFix(statName, statValue){
+    //numbers
     if (!isNaN(statValue)) {
         //integers
         if (~[
             "Population",
             "FuturePopulation"
         ].indexOf(statName)) {
-            return parseFloat(statValue).toFixed(0);
+            return {value: parseFloat(statValue).toFixed(0), appendable: false};
         }
         //percentages
         else if (~[
@@ -292,14 +341,24 @@ function displayValueFix(statName, statValue){
             "MediumClassTax",
             "HighClassTax",
         ].indexOf(statName)) {
-            return parseFloat(statValue * 100).toFixed(2) + "%";
+            return {value: parseFloat(statValue * 100).toFixed(2) + "%", appendable: false};
         }
         //normal (2 digits)
         else {
-            return parseFloat(statValue).toFixed(2);
+            return {value: parseFloat(statValue).toFixed(2), appendable: false};
         }
 
-    } else
-        return statValue;
+    } 
+    //images
+    else if(~[
+        "Flag",
+    ].indexOf(statName)){
+        let image = document.createElement("img");
+        image.src = statValue;
+        image.alt = statValue.split("/").pop();
+        return {value: image, appendable: true};
+    }
+    else
+        return {value: statValue, appendable: false};
 
 }

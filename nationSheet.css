@@ -81,6 +81,11 @@ td {
     padding: 25px;
 }
 
-.nationsheet table{
+.nationsheet table, .tabletitle{
     margin: 0em 1em 0.5em 1em;
+}
+
+.nationsheet img{
+    width: 30vw;
+    padding: 0px;
 }
