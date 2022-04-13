@@ -137,9 +137,8 @@ function loadChangesFromFile(event) {
         }
 
         gameStats.evaluateNations();
-
-        currentNationNumber = 0;
-        createNationSheet(Object.keys(gameStats.Nations)[0]);
+        currentNationName = Object.keys(gameStats.Nations)[0];
+        createNationSheet(currentNationName);
 
     };
 

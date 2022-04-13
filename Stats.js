@@ -62,6 +62,7 @@ class Nation {
 
   /* #region Most Stats */
   GovernmentName;
+  Flag;
   ReligionGroups;  //object of {name: {Points: num}, name: {Points: num}}
   ReligionRepresentedAtGovernmentLevel;
   ReligionRepresentedAtGovernmentLevelPercent;
@@ -527,6 +528,7 @@ class Nation {
     /* #region  Stats to Set Immedietly */
     /* #region  Main */
     this.GovernmentName = "Government of " + nationName;
+    this.Flag = "none";
     this.ReligionGroups = {
       "Pagan": {
         Points: 100

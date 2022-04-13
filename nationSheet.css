@@ -47,15 +47,19 @@ td {
 
 /* #endregion */
 
-.nationsheet {
+.nationsheet{
     margin: 0em 2em 0em 2em;
     padding-top: 0.5em;
     border: 1px solid black;
+    min-width: 800px;
+    max-width: 100%;
+}
+
+.nationsheet .raw{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    min-width: 800px;
-    max-width: 100%;
+    
 }
 
 .nationnamedisplay {
@@ -77,6 +81,6 @@ td {
     padding: 25px;
 }
 
-.nationsheet table {
+.nationsheet table{
     margin: 0em 1em 0.5em 1em;
 }
