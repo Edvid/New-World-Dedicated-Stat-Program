@@ -137,6 +137,7 @@ function loadChangesFromFile(event) {
         }
 
         gameStats.evaluateNations();
+        updateDropdownSelection();
         currentNationName = Object.keys(gameStats.Nations)[0];
         createNationSheet(currentNationName);
 

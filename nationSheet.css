@@ -64,7 +64,7 @@ td {
 
 .nationnamedisplay {
     margin: auto;
-    width: 15em;
+    width: 360px;
     text-align: center;
 }
 
@@ -88,4 +88,18 @@ td {
 .nationsheet img{
     width: 30vw;
     padding: 0px;
+}
+
+#dropdownselection{
+    display: grid;
+    align-items: center;
+    width: 360px;
+    margin: auto;
+    padding-bottom: 1em;
+}
+
+#dropdownselection label{
+    text-align: center;
+    font-size: 18px;
+    font-weight: bolder;
 }

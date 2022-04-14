@@ -9,7 +9,7 @@ arrowContainer.classList.add("arrowcontainer");
 
 let currentNationID = 0;
 let currentNationName = 'undefined';
-let currentNationNameDisplay = document.createElement("h2");
+let currentNationNameDisplay = document.createElement("h1");
 currentNationNameDisplay.classList = "nationnamedisplay";
 currentNationNameDisplay.innerText = currentNationName;
 
@@ -33,12 +33,36 @@ rightArrow.onclick = function () {
     createNationSheet(currentNationName);
 }
 
+let dropdown = document.createElement("form");
+dropdown.id = "dropdownselection";
+let dropdowntitle = document.createElement("label");
+dropdowntitle.innerText = "Choose Nation:";
+let dropdownselection = document.createElement("select");
+dropdownselection.onchange = function(){
+    currentNationID = this.selectedIndex;
+    currentNationName = Object.keys(gameStats.Nations)[currentNationID];
+    createNationSheet(currentNationName);
+};
+
+dropdown.appendChild(dropdowntitle);
+dropdown.appendChild(dropdownselection);
+
+function updateDropdownSelection(){
+    for (const key in gameStats.Nations) {
+        let option = document.createElement("option");
+        option.value = key;
+        option.innerText = key;
+        dropdownselection.appendChild(option);
+    }
+}
+
 document.body.appendChild(currentNationNameDisplay);
 
 arrowContainer.appendChild(leftArrow);
 arrowContainer.appendChild(rightArrow);
 
 document.body.appendChild(arrowContainer);
+document.body.appendChild(dropdown);
 document.body.appendChild(nationSheetContainer);
 
 
@@ -282,10 +306,6 @@ function createNationSheet(nationName) {
     /* #endregion */
 
 
-}
-
-function createStat(name, val){
-    
 }
 
 function createStatTable(title, tables){
