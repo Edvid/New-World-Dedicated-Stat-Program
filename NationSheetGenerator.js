@@ -245,6 +245,8 @@ function createNationSheet(nationName) {
         ]
     );
 
+    createPieDiagram("CultureGroups");
+
     /* #endregion */
 
     /* #region  Raw Stats */
@@ -345,6 +347,63 @@ function createStatTable(title, tables){
     }
     nationSheetContainer.appendChild(tableTitle);    
     nationSheetContainer.appendChild(table);
+}
+
+function createPieDiagram(SocialBehaviourGroups){
+
+    var chartdiv = document.createElement("div");
+    chartdiv.id = "chartdiv";
+    //styling on chart
+
+    chartdiv.style.margin = "-.5em auto";
+    chartdiv.style.textAlign = "center";
+    chartdiv.style.width = "90%";
+    chartdiv.style.height = "390px";
+    nationSheetContainer.appendChild(chartdiv);
+    
+    // Create chart instance
+    var chart = am4core.create("chartdiv", am4charts.PieChart);
+
+    // Add data
+    chart.data = [{
+        "country": "Lithuania",
+        "litres": 501.9
+    }, {
+        "country": "Czech Republic",
+        "litres": 301.9
+    }, {
+        "country": "Ireland",
+        "litres": 201.1
+    }, {
+        "country": "Germany",
+        "litres": 165.8
+    }, {
+        "country": "Australia",
+        "litres": 139.9
+    }, {
+        "country": "Austria",
+        "litres": 128.3
+    }, {
+        "country": "UK",
+        "litres": 99
+    }, {
+        "country": "Belgium",
+        "litres": 60
+    }, {
+        "country": "The Netherlands",
+        "litres": 50
+    }];
+
+    // Add and configure Series
+    var pieSeries = chart.series.push(new am4charts.PieSeries());
+    pieSeries.dataFields.value = "litres";
+    pieSeries.dataFields.category = "country";
+
+    
+   
+    
+
+    console.log("hi");
 }
 
 function displayValueFix(statName, statValue){
