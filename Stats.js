@@ -527,7 +527,7 @@ class Nation {
     let n = this;
     /* #region  Stats to Set Immedietly */
     /* #region  Main */
-    this.GovernmentName = "Government of " + nationName;
+    this.GovernmentName = "Government of " + nationName.split(/(?<=[a-zA-Z])(?=[A-Z])/gm).join(" ");;
     this.Flag = "none";
     this.ReligionGroups = {
       "Pagan": {

@@ -53,7 +53,7 @@ function updateDropdownSelection(){
     for (const key in gameStats.Nations) {
         let option = document.createElement("option");
         option.value = key;
-        option.innerText = key;
+        option.innerText = key.split(/(?<=[a-zA-Z])(?=[A-Z])/gm).join(" ");
         dropdownselection.appendChild(option);
     }
 }
@@ -69,7 +69,7 @@ document.body.appendChild(nationSheetContainer);
 
 
 function createNationSheet(nationName) {
-    currentNationNameDisplay.innerText = nationName;
+    currentNationNameDisplay.innerText = nationName.split(/(?<=[a-zA-Z])(?=[A-Z])/gm).join(" ");
     const nation = gameStats.Nations[nationName];
     let table;
 
