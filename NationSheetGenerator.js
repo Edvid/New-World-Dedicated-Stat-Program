@@ -350,6 +350,7 @@ function createStatTable(title, tables){
 function displayValueFix(statName, statValue){
     //numbers
     if (!isNaN(statValue)) {
+        let numString;
         //integers
         if (~[
             "Population",
@@ -390,7 +391,7 @@ function displayValueFix(statName, statValue){
             "Size",
             "MaxPopulation"
         ].indexOf(statName)) {
-            return {value: parseFloat(statValue).toFixed(0), appendable: false};
+            numString = parseFloat(statValue).toFixed(0);
         }
         //percentages
         else if (~[
@@ -427,13 +428,30 @@ function displayValueFix(statName, statValue){
             "Disease",
             "HabitableLand"
         ].indexOf(statName)) {
-            return {value: parseFloat(statValue * 100).toFixed(2) + "%", appendable: false};
+            numString = parseFloat(statValue * 100).toFixed(2) + "%";
         }
         //normal (2 digits)
         else {
-            return {value: parseFloat(statValue).toFixed(2), appendable: false};
+            numString = parseFloat(statValue).toFixed(2);
+        }
+        let numSize;
+        if(numString.indexOf(".") == -1){
+            numSize = numString.replace("%", "").length;
+        }else{
+            numSize = numString.indexOf(".");
         }
 
+        let newNumString = "";
+        if(numSize >= 5){
+            for (let i = 0; i < numString.length; i++) {
+                newNumString += numString[i];
+                //only modify in case we are on the left hand side of the decimal point (if we have one), and we are at an index going into 3 from decimal point.
+                if((numSize - i - 1) % 3 != 0 || i >= numSize) continue;
+                newNumString += " ";
+            }
+        }
+        else newNumString = numString;
+        return {value: newNumString, appendable: false};
     } 
     //images
     else if(~[
