@@ -20,7 +20,8 @@ leftArrow.onclick = function () {
     if (currentNationID > 0) currentNationID--;
     else currentNationID = nationNames.length - 1;
     currentNationName = Object.keys(gameStats.Nations)[currentNationID];
-    createNationSheet(currentNationName);
+    dropdownselection.value = currentNationName;
+    dropdownselection.onchange();
 }
 
 let rightArrow = document.createElement("button");
@@ -30,7 +31,8 @@ rightArrow.onclick = function () {
     if (currentNationID < nationNames.length - 1) currentNationID++;
     else currentNationID = 0;
     currentNationName = Object.keys(gameStats.Nations)[currentNationID];
-    createNationSheet(currentNationName);
+    dropdownselection.value = currentNationName;
+    dropdownselection.onchange();
 }
 
 let dropdown = document.createElement("form");
