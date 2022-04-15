@@ -214,7 +214,7 @@ function createNationSheet(nationName) {
         );
 
     createStatTable(
-        "Turn based stats",
+        "Turn Based Stats",
         [
             [
                 "FuturePopulation",
@@ -246,6 +246,16 @@ function createNationSheet(nationName) {
     );
 
     createPieDiagram("CultureGroups");
+    createPieDiagram("ReligionGroups");
+    
+    createPieDiagram("Climates", "Pixels");
+
+    
+    createPieDiagram("NobleLoyaltyGroups");
+    createPieDiagram("ClergyLoyaltyGroups");
+    createPieDiagram("BurghersLoyaltyGroups");
+    
+    createPieDiagram("TradeInfluences");
 
     /* #endregion */
 
@@ -349,17 +359,23 @@ function createStatTable(title, tables){
     nationSheetContainer.appendChild(table);
 }
 
-function createPieDiagram(SocialBehaviourGroups){
+function createPieDiagram(SocialBehaviourGroups, PointName){
+    if(typeof PointName == 'undefined') PointName = "Points"
+
+    let title = document.createElement("h2");
+    title.innerText = SocialBehaviourGroups.split(/(?<=[a-zA-Z])(?=[A-Z])/gm).join(" ");
+    title.classList.add("tabletitle");
+    nationSheetContainer.appendChild(title);
 
     let nationsSocialBehaviourGroups = gameStats.Nations[currentNationName][SocialBehaviourGroups];
 
     var chartdiv = document.createElement("div");
     //styling on chart
 
-    chartdiv.style.margin = "-.5em auto";
+    chartdiv.style.margin = ".5em";
     chartdiv.style.textAlign = "center";
-    chartdiv.style.width = "90%";
-    chartdiv.style.height = "390px";
+    chartdiv.style.width = "50%";
+    chartdiv.style.height = "250px";
     nationSheetContainer.appendChild(chartdiv);
     
     let root = am5.Root.new(chartdiv);
@@ -381,7 +397,7 @@ function createPieDiagram(SocialBehaviourGroups){
         sbgs.push(
             {
                 country: key,
-                Points: nationsSocialBehaviourGroup.Points
+                Points: nationsSocialBehaviourGroup[PointName]
             }
         );
     }
