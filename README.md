@@ -17,7 +17,7 @@ Most of the game's stats reside within an object class known as Nation. Most of 
 | Stat                             | Object Class           |
 | :------------------------------- | ---------------------: |
 | Religion Groups / Culture Groups | Social Behaviour Group Class |
-| Noble- / Clergy- / Burghers Loyalty Groups | Array of {to: "name", Points: num} objects |
+| Noble- / Clergy- / Burghers Loyalty Groups | Object with {Points: num} objects, for every loyalty group of appropriate name |
 | Technologies | Object with true/false properties, each for every technology |
 | Cultural Advancements | Object with true/false properties, each for every cultural advancement |
 | TradeInfluences | Object with number properties, each for every trade zone |

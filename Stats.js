@@ -556,38 +556,22 @@ class Nation {
     this.AtWar = "false";
 
     this.NobleInfluence = 0.55; //Show in percent
-    this.NobleLoyaltyGroups = [
-      {
-        to: n.GovernmentName,
-        Points: 55
-      },
-      {
-        to: "Self Interests",
-        Points: 45
-      }
-    ];
+    this.NobleLoyaltyGroups = JSON.parse(`{\
+    "${n.GovernmentName}": "55",\
+    "Self Interests": "45"\
+    }`);
+    
     this.ClergyInfluence = 0.25; //Show in percent
-    this.ClergyLoyaltyGroups = [
-      {
-        to: n.GovernmentName,
-        Points: 50
-      },
-      {
-        to: "Self Interests",
-        Points: 50
-      }
-    ];
+    this.ClergyLoyaltyGroups = JSON.parse(`{\
+    "${n.GovernmentName}": "50",\
+    "Self Interests": "50"\
+    }`);
+    
     this.BurghersInfluence = 0.10; //Show in percent
-    this.BurghersLoyaltyGroups = [
-      {
-        to: n.GovernmentName,
-        Points: 50
-      },
-      {
-        to: "Self Interests",
-        Points: 50
-      }
-    ];
+    this.BurghersLoyaltyGroups = JSON.parse(`{\
+    "${n.GovernmentName}": "50",\
+    "Self Interests": "50"\
+    }`);
 
     this.Absolutism = 0;
     this.PopulationControl = 0;
@@ -1242,8 +1226,8 @@ class Nation {
       let pointSum = 0;
       for (const loyaltyName in n.NobleLoyaltyGroups) {
         const loyalty = n.NobleLoyaltyGroups[loyaltyName];
-        pointSum += loyalty.Points;
-        if (loyalty.to == n.GovernmentName) n.NobleLoyalty = loyalty.Points;
+        pointSum += +loyalty;
+        if (loyaltyName == n.GovernmentName) n.NobleLoyalty = loyalty;
       }
       return n.NobleLoyalty / pointSum;
     })();
@@ -1251,8 +1235,8 @@ class Nation {
       let pointSum = 0;
       for (const loyaltyName in n.ClergyLoyaltyGroups) {
         const loyalty = n.ClergyLoyaltyGroups[loyaltyName];
-        pointSum += loyalty.Points;
-        if (loyalty.to == n.GovernmentName) n.ClergyLoyalty = loyalty.Points;
+        pointSum += +loyalty;
+        if (loyaltyName == n.GovernmentName) n.ClergyLoyalty = loyalty;
       }
       return n.ClergyLoyalty / pointSum;
     })();
@@ -1260,8 +1244,8 @@ class Nation {
       let pointSum = 0;
       for (const loyaltyName in n.BurghersLoyaltyGroups) {
         const loyalty = n.BurghersLoyaltyGroups[loyaltyName];
-        pointSum += loyalty.Points;
-        if (loyalty.to == n.GovernmentName) n.BurghersLoyalty = loyalty.Points;
+        pointSum += +loyalty;
+        if (loyaltyName == n.GovernmentName) n.BurghersLoyalty = loyalty;
       }
       return n.BurghersLoyalty / pointSum;
     })();
