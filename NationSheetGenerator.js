@@ -1,5 +1,5 @@
-let primaryColor = ["red", "green", "DodgerBlue", "purple", "Dark Orange"];
-let secondaryColor = ["pink", "lightgreen", "lightSkyBlue", "magenta", "Orange"];
+let primaryColor = "DodgerBlue";
+let secondaryColor = "lightSkyBlue";
 
 let nationSheetContainer = document.createElement("div");
 nationSheetContainer.classList.add("nationsheet");
@@ -262,9 +262,9 @@ function createNationSheet(nationName) {
         table = document.createElement("table");
 
         let nationStatNameRow = document.createElement("tr");
-        nationStatNameRow.style.background = primaryColor[currentNationID % primaryColor.length];
+        nationStatNameRow.style.background = primaryColor;
         let nationStatRow = document.createElement("tr");
-        nationStatRow.style.background = secondaryColor[currentNationID % secondaryColor.length];
+        nationStatRow.style.background = secondaryColor;
 
         for (const nationStatName in nationStatSection) {
             const nationStat = nation[nationStatName];
@@ -320,9 +320,9 @@ function createStatTable(title, tables){
     for (let i = 0; i < tables.length; i++) {
         const stats = tables[i];
         let nationStatNameRow = document.createElement("tr");
-        nationStatNameRow.style.background = primaryColor[currentNationID % primaryColor.length];
+        nationStatNameRow.style.background = primaryColor;
         let nationStatRow = document.createElement("tr");
-        nationStatRow.style.background = secondaryColor[currentNationID % secondaryColor.length];
+        nationStatRow.style.background = secondaryColor;
             
         for (let i = 0; i < stats.length; i++) {
             const statname = stats[i];
