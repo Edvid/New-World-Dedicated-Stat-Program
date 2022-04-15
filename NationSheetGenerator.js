@@ -394,10 +394,23 @@ function createPieDiagram(SocialBehaviourGroups, PointName){
     let sbgs = [];
     for (const key in nationsSocialBehaviourGroups) {
         const nationsSocialBehaviourGroup = nationsSocialBehaviourGroups[key];
+
+        let ps = nationsSocialBehaviourGroup;
+        while(isNaN(ps)){
+            if(ps === null) {
+                ps = 0;
+            }else if(typeof ps === 'object'){
+                console.log(ps);
+                ps = ps[PointName];
+            }
+        }
+        
+        if(ps === 0) continue;
+
         sbgs.push(
             {
                 country: key,
-                Points: nationsSocialBehaviourGroup[PointName]
+                Points: ps
             }
         );
     }
