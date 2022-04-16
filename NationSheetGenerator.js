@@ -411,8 +411,8 @@ function createPieDiagram(SocialBehaviourGroups, PointName){
 
     chartdiv.style.margin = ".5em";
     chartdiv.style.textAlign = "center";
-    chartdiv.style.width = "50%";
-    chartdiv.style.height = "250px";
+    chartdiv.style.width = "90%";
+    chartdiv.style.height = "360px";
     nationSheetContainer.appendChild(chartdiv);
     
     let root = am5.Root.new(chartdiv);
