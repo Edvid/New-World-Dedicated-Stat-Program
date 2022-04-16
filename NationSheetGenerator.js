@@ -257,6 +257,44 @@ function createNationSheet(nationName) {
     
     createPieDiagram("TradeInfluences");
 
+    let techarray = [[]]
+    i = 0;
+    let techBreakPoints = [
+        "HorseCollar",
+        "Firelance",
+        "SappersAndEngineers",
+        "StandardizedPikes",
+        "Gunports",
+        "Mortars",
+        "Experimentation",
+        "Flintlock"
+    ];
+
+    for (const techname in gameStats.Nations[currentNationName].Technologies) {
+        techarray[i].push("Technologies." + techname);
+        if (techBreakPoints[i] == techname) techarray[++i] = [];
+    }
+
+    let culturalarray = [[]]
+    i = 0;
+    let cultureBreakPoints = [
+        "Feudalism",
+        "NobleDuty",
+        "Courthouses",
+        "EarlyModernAdministration",
+        "Newspapers"
+    ];
+
+    for (const cultname in gameStats.Nations[currentNationName].CulturalAdvancements) {
+        culturalarray[i].push("CulturalAdvancements." + cultname);
+        if (cultureBreakPoints[i] == cultname) culturalarray[++i] = [];
+    }
+
+    createStatTable("Technologies", techarray);
+    createStatTable("Cultural Advancements", culturalarray);
+
+    
+
     /* #endregion */
 
     /* #region  Raw Stats */
@@ -336,10 +374,9 @@ function createStatTable(title, tables){
             
         for (let i = 0; i < stats.length; i++) {
             const statname = stats[i];
-            const nation = gameStats.Nations[currentNationName];
-            const statvalue = nation[statname]; 
+            const statvalue = (new Function(`return gameStats.Nations["${currentNationName}"].${statname}`))(); 
             let nationStatNameCell = document.createElement("th");
-            nationStatNameCell.innerText = statname.split(/(?<=[a-zA-Z])(?=[A-Z])/gm).join(" ");
+            nationStatNameCell.innerText = statname.split(".").pop().split(/(?<=[a-zA-Z])(?=[A-Z])/gm).join(" ");
             let nationStatCell = document.createElement("td");
             nationStatCell.style.textAlign = "center";
             let displayValue = displayValueFix(statname, statvalue);
@@ -400,7 +437,6 @@ function createPieDiagram(SocialBehaviourGroups, PointName){
             if(ps === null) {
                 ps = 0;
             }else if(typeof ps === 'object'){
-                console.log(ps);
                 ps = ps[PointName];
             }
         }
@@ -421,6 +457,12 @@ function createPieDiagram(SocialBehaviourGroups, PointName){
 function displayValueFix(statName, statValue){
     //numbers
     if (!isNaN(statValue)) {
+        if(typeof statValue === 'boolean'){
+            let ret = document.createElement("span");
+            ret.innerHTML = statValue ? '&#10003;' : '&#10008;'; 
+            return {value: ret, appendable: true};
+        }
+
         let numString;
         //integers
         if (~[
