@@ -1,27 +1,47 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="nationSheet.css">
-        <title>New World Dedicated Stat Program</title>
-    </head>
-    <body>
-        <form action="/action_page.php">
-            <input type="file" id="myFile" name="filename" onchange="loadChangesFromFile(event)">
-        </form>
-        <div id="NationSheet"></div>
-        <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
-        <script src="https://cdn.amcharts.com/lib/5/percent.js"></script>
 
-        <script type="text/javascript" src="specialOperations.js"></script>
-        <script type="text/javascript" src="debugTerminalGenerator.js"></script>
-        <script type="text/javascript" src="collapsible.js"></script>
-        <script type="text/javascript" src="Stats.js"></script>
-        <script type="text/javascript" src="displayValueFix.js"></script>
-        <script type="text/javascript" src="NationSheetGenerator.js"></script>
-        <script type="text/javascript" src="Synonyms.js"></script>
-        <script type="text/javascript" src="loadChangesFromFile.js"></script>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="nationSheet.css">
+    <title>New World Dedicated Stat Program</title>
+</head>
+
+<body>
+    <form action="/action_page.php">
+        <input type="file" id="myFile" name="filename" onchange="loadChangesFromFile(event)">
+    </form>
+    <div id="NationSheet"></div>
+    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/percent.js"></script>
+
+    <script type="text/javascript" src="specialOperations.js"></script>
+    <script type="text/javascript" src="debugTerminalGenerator.js"></script>
+    <script type="text/javascript" src="collapsible.js"></script>
+    <script type="text/javascript" src="Stats.js"></script>
+    <script type="text/javascript" src="displayValueFix.js"></script>
+    <script type="text/javascript" src="NationSheetGenerator.js"></script>
+    <script type="text/javascript" src="Synonyms.js"></script>
+    <script type="text/javascript" src="loadChangesFromFile.js"></script>
+    <script type="text/javascript">
+            
+            (async function(){
+                let preload;
+                //when downloaded for test. Replace the URL with a localhost URL
+                //local host by typing "http-server" in a terminal after installing it
+                //install by "npm install http-server -g"
+                //example of what the string below should be for local testing is "http://172.24.160.1:8080/NW7.ccf"
+                await fetch("https://edvid.github.io/New-World-Dedicated-Stat-Program/").then(response => response.text()).then(data => preload = data);
+                preload = preload.split(/\r?\n|\r/);
+                console.log(preload);
+                loadChangesFromContent(preload);
+            })();
+
+            
+    </script>
+
+</body>
+
 </html>
