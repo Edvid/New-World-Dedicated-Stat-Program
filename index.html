@@ -33,7 +33,7 @@
                 //local host by typing "http-server" in a terminal after installing it
                 //install by "npm install http-server -g"
                 //example of what the string below should be for local testing is "http://172.24.160.1:8080/NW7.ccf"
-                await fetch("https://edvid.github.io/New-World-Dedicated-Stat-Program/").then(response => response.text()).then(data => preload = data);
+                await fetch("https://edvid.github.io/New-World-Dedicated-Stat-Program/NW7.ccf").then(response => response.text()).then(data => preload = data);
                 preload = preload.split(/\r?\n|\r/);
                 console.log(preload);
                 loadChangesFromContent(preload);
