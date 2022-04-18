@@ -246,7 +246,9 @@ function createNationSheet(nationName) {
     );
 
     createPieDiagram("CultureGroups");
+    createOpinionMatrixTable("Culture Groups Opinions", "CultureGroups");
     createPieDiagram("ReligionGroups");
+    createOpinionMatrixTable("Religion Groups Opinions", "ReligionGroups");
     
     createPieDiagram("Climates", "Pixels");
 
@@ -391,6 +393,88 @@ function createStatTable(title, tables){
         
         table.appendChild(nationStatNameRow);
         table.appendChild(nationStatRow);
+    }
+    nationSheetContainer.appendChild(tableTitle);    
+    nationSheetContainer.appendChild(table);
+}
+
+function createOpinionMatrixTable(title, SocialBehaviourGroups){
+    let table = document.createElement("table");
+    table.classList.add("opiniontable");
+    let tableTitle = document.createElement("h2");
+    tableTitle.classList.add("tabletitle")
+    tableTitle.innerText = title;
+    let nationsSocialBehaviourGroups = gameStats.Nations[currentNationName][SocialBehaviourGroups];
+    let RelevantSocialBehaviours = gameStats[SocialBehaviourGroups.replace("Group", "")];
+    let opinioneeNameRow = document.createElement("tr");
+    let blankCornerCell = document.createElement("th");
+    blankCornerCell.style.background = primaryColor;
+    opinioneeNameRow.appendChild(blankCornerCell);
+
+    for (const opinioneeName in nationsSocialBehaviourGroups) {
+        let opinioneeNameCell = document.createElement("th");
+        opinioneeNameCell.style.background = primaryColor;
+        opinioneeNameCell.innerText = opinioneeName;
+        opinioneeNameRow.appendChild(opinioneeNameCell);
+    }
+    table.appendChild(opinioneeNameRow);
+    for (const opinionerName in nationsSocialBehaviourGroups) {
+        let opRow = document.createElement("tr");
+        let opinionerNameCell = document.createElement("th");
+        opinionerNameCell.style.background = primaryColor;
+        opinionerNameCell.innerHTML = opinionerName + " Opinion on ...";
+        opRow.appendChild(opinionerNameCell);
+        for (const opinioneeName in nationsSocialBehaviourGroups) {
+            let cell = document.createElement("td");
+            cell.style.background = secondaryColor;
+            let opinion;
+            if(opinionerName == opinioneeName){
+                
+                let cross = document.createElement("p");
+                cross.style.fontSize = "16px";
+                cross.innerText = "N/A";
+                
+                cell.appendChild(cross);
+            } 
+            else{
+                let op = RelevantSocialBehaviours[opinionerName].Opinions[opinioneeName];
+                let img = document.createElement("img");
+                let score;
+                if(typeof op != 'undefined'){
+                    score = op.Score;
+                    if (isNaN(score)){
+                        console.log(score);
+                        score = Opinion[score];
+                    }
+                    if(score <= -75){
+                        img.src = Opinion.UndesiredImage;
+                    }else if(score <= -25){
+                        img.src = Opinion.SkepticalImage;
+                    }else if(score > 25){
+                        img.src = Opinion.FondImage;
+                    }else if(score > 75){
+                        img.src = Opinion.ObsessedImage;
+                    }else{
+                        img.src = Opinion.NeutralImage;
+                    }
+
+                }else{
+                    img.src = Opinion.NeutralImage;
+                    score = 0;
+                }
+                
+                let scoreElement = document.createElement("p");
+                scoreElement.innerText = score;
+
+                let all = document.createElement("div");
+                all.appendChild(img);
+                all.appendChild(scoreElement);
+
+                cell.appendChild(all);
+            }
+            opRow.appendChild(cell);
+        }
+        table.appendChild(opRow);
     }
     nationSheetContainer.appendChild(tableTitle);    
     nationSheetContainer.appendChild(table);

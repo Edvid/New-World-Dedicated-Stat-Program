@@ -105,3 +105,11 @@ td {
     font-size: 18px;
     font-weight: bolder;
 }
+
+.opiniontable td *{
+    text-align: center;
+}
+
+.opiniontable td img{
+    width: 50px;
+}
