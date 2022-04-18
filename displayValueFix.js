@@ -15,6 +15,8 @@ function displayValueFix(statName, statValue){
         if (~[
             "Population",
             "FuturePopulation",
+            "PublicDebtLength",
+            "FuturePublicDebtLength",
             "DateInThisNation",
             "FutureDateInThisNation",
             "Spies",
