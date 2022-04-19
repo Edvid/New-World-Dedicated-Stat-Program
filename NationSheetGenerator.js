@@ -50,6 +50,7 @@ dropdown.appendChild(dropdowntitle);
 dropdown.appendChild(dropdownselection);
 
 function updateDropdownSelection(){
+    dropdownselection.innerHTML = "";
     for (const key in gameStats.Nations) {
         let option = document.createElement("option");
         option.value = key;
@@ -301,7 +302,6 @@ function createNationSheet(nationName) {
 
     //fix size of notapplicables
     let NAs = document.querySelectorAll(".notapplicable");
-    console.log(NAs);
     NAs.forEach(element => {
         element.style.width = element.parentElement.clientWidth + "px";
         element.style.height = element.parentElement.clientHeight + "px";
