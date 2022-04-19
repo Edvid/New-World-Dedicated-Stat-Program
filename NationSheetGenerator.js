@@ -299,6 +299,14 @@ function createNationSheet(nationName) {
 
     /* #endregion */
 
+    //fix size of notapplicables
+    let NAs = document.querySelectorAll(".notapplicable");
+    console.log(NAs);
+    NAs.forEach(element => {
+        element.style.width = element.parentElement.clientWidth + "px";
+        element.style.height = element.parentElement.clientHeight + "px";
+    });
+
     /* #region  Raw Stats */
 
     let rawcontainer = document.createElement("div");
@@ -427,18 +435,21 @@ function createOpinionMatrixTable(title, SocialBehaviourGroups){
         for (const opinioneeName in nationsSocialBehaviourGroups) {
             let cell = document.createElement("td");
             cell.style.background = secondaryColor;
-            let opinion;
             if(opinionerName == opinioneeName){
                 
-                let cross = document.createElement("p");
-                cross.style.fontSize = "16px";
-                cross.innerText = "N/A";
-                
+                let cross = document.createElement("img");
+                cross.src = "images/NotApplicable.gif";
+                cross.classList.add("notapplicable");
+                cross.style.display = "block";
+                cell.style.padding = "0px";
+                cell.style.margin = "0px";
                 cell.appendChild(cross);
             } 
             else{
                 let op = RelevantSocialBehaviours[opinionerName].Opinions[opinioneeName];
                 let img = document.createElement("img");
+                img.style.width = "40px";
+                img.style.height = "40px";
                 let score;
                 if(typeof op != 'undefined'){
                     score = op.Score;
