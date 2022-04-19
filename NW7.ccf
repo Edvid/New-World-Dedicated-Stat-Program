@@ -7,4 +7,5 @@
 = 100 template.Points
 < > Climates > Moderate
 = 5000 Pixels
-<... > Nations
+<...
+# --- End of template construction --- #
