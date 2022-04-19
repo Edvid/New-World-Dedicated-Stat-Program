@@ -443,7 +443,6 @@ function createOpinionMatrixTable(title, SocialBehaviourGroups){
                 if(typeof op != 'undefined'){
                     score = op.Score;
                     if (isNaN(score)){
-                        console.log(score);
                         score = Opinion[score];
                     }
                     if(score <= -75){
