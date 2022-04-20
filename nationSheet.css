@@ -1,6 +1,15 @@
+*{
+    font-family: Helvetica;
+}
+
+pre, pre *{
+    font-family: 'Consolas', 'Courier New', Courier, monospace;
+}
+
 body{
     margin: 40px;
 }
+
 table{
     border-collapse: collapse;
 }
