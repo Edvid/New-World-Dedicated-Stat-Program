@@ -251,9 +251,212 @@ function createNationSheet(nationName) {
     createPieDiagram("ReligionGroups");
     createOpinionMatrixTable("Religion Groups Opinions", "ReligionGroups");
     
+	createStatTable(
+		"Population Stuff",
+		[
+			[
+				"ReligionRepresentedAtGovernmentLevel",
+				"CultureRepresentedAtGovernmentLevel",
+				"PopulationStabilityImpact"
+			],
+			[
+				"ReligionRepresentedAtGovernmentLevelPercent",
+				"CultureRepresentedAtGovernmentLevelPercent",
+				"PopulationTechImpact"
+			],
+			[
+				"ReligiousDisunity",
+				"CulturalDisunity",
+				"PopulationGrowth"
+			]
+		]
+	);
+	
+	createStatTable(
+		"Basic Stats",
+		[
+			[
+				"Health",
+				"Corruption",
+				"SocialSpending",
+				"Stability",
+				"Absolutism"
+			],
+			[
+				"EducationEfficiency",
+				"Overextension",
+				"Prosperity",
+				"AtWar",
+				"PopulationControl"
+			],
+			[
+				"AdministrativeEfficiency",
+				"Propaganda",
+				"PopulationHappiness",
+				"WarSupport",
+				"BirthControl"
+			]
+		]
+	);
+	
+	createStatTable(
+		"Budget Stats",
+		[
+			[
+				"ProductionEfficiency",
+				"TradeEfficiency",
+				"PossiblePublicDebt",
+				"DailyBudget"
+			],
+			[
+				"Production",
+				"LocalTrade",
+				"EffectiveDebt",
+				"Budget"
+			],
+			[
+				"Mercantilism",
+				"TradePower",
+				"Inflation"
+			]
+		]
+	);
+	
+	createStatTable(
+		"Upkeeps and Income",
+		[
+			[
+				"ProductionRevenue",
+				"TradeRevenue",
+				"OverallIncome"
+			],
+			[
+				"ArmyUpkeep",
+				"NavyUpkeep",
+				"FortUpkeep"
+			],
+			[
+				"SpyUpkeep",
+				"EducationUpkeep",
+				"PopulationControlUpkeep"
+			],
+			[
+				"SocialSpendingUpkeep",
+				"AgricultureSpending",
+				"AdministrativeUpkeep"
+			],
+			[
+				"HygieneUpkeep",
+				"ResearchUpkeep",
+				"PropagandaUpkeep"
+			]
+		]
+	);
+	
+	createStatTable(
+		"Army Units",
+		[
+			[
+				"Levies",
+				"Militia",
+				"LightInfantry",
+				"HeavyInfantry",
+			],
+			[
+				"Archers",
+				"Crossbowmen",
+				"HandCannon",
+				"Musketeers"
+			],
+			[
+				"LightCavalry",
+				"HeavyCavalry",
+				"SiegeEquipment",
+				"LargeSiegeEquipment"
+			],
+			[
+				"Cannons",
+				"EliteInfantry",
+				"EliteCavalry",
+				"FreeEliteUnitsCap"
+			],
+			[
+				"OverallNumbers",
+				"Spies"
+			]
+		]
+	);
+	
+	createStatTable(
+		"Fortifications",
+		[
+			[
+				"SmallForts",
+				"MediumForts",
+				"BigForts",
+				"HugeForts",
+				"ExtraCityFortifications"
+			]
+		]
+	);
+	
+	createStatTable(
+		"Army Stats",
+		[
+			[
+				"IronShortage",
+				"SulphurShortage",
+				"ArmyWages"
+			],
+			[
+				"CommanderFreedom",
+				"TrainingQuality",
+				"MilitaryTactics"
+			],
+			[
+				"ArmyTech",
+				"ArmyQuality",
+				"SpyQuality"
+			],
+			[
+				"MilitaryLoyalty",
+				"MilitaryMorale",
+				"MililtaryDiscipline"
+			]
+		]
+	);
+	
+	createStatTable(
+		"Navy",
+		[
+			[
+				"UpkeepForOneLightShip",
+				"UpkeepForOneMediumShip",
+				"UpkeepForOneHeavyShip"
+			],
+			[
+				"LightShips",
+				"MediumShips",
+				"HeavyShips"
+			],
+			[
+				"NavyImprovements",
+				"NavyTech",
+				"NavyQuality"
+			],
+			[
+				"OverallShipCount",
+				"PrideOfTheNavy",
+			],
+			[
+				"TradeProtection",
+				"NavalPower"
+			]
+		]
+	);
+	
     createPieDiagram("Climates", "Pixels");
 
-    
     createPieDiagram("NobleLoyaltyGroups");
     createPieDiagram("ClergyLoyaltyGroups");
     createPieDiagram("BurghersLoyaltyGroups");
@@ -505,9 +708,8 @@ function createPieDiagram(SocialBehaviourGroups, PointName){
 
     chartdiv.style.margin = ".5em";
     chartdiv.style.textAlign = "center";
-    chartdiv.style.width = "720px";
+    chartdiv.style.width = "90%";
     chartdiv.style.height = "360px";
-    chartdiv.style.border = "1px dotted grey"
     nationSheetContainer.appendChild(chartdiv);
     
     let root = am5.Root.new(chartdiv);
