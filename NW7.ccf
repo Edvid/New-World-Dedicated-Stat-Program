@@ -5,7 +5,10 @@
 > CultureGroups
 +> template
 = 100 template.Points
-< > Climates > Moderate
+< 
+= "template" Cultrep
+= "pagan" Relrep
+> Climates > Moderate
 = 5000 Pixels
 <...
 # --- End of template construction --- #
