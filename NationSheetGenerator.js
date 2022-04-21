@@ -108,7 +108,6 @@ function createNationSheet(nationName) {
         "New_HeavyShips",
         "NewTroopRecruitmentPenalty",
         "Burghers",
-        "LowerClass",
         "PopulationTechImpact",
         "FarmingEfficiency",
         "EffectiveCoal",

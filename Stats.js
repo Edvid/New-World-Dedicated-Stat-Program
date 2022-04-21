@@ -210,14 +210,12 @@ class Nation {
   /* #region  Population */
   PopulationInAgriculture;
   PopulationInResourceHarvest;
-  PopulaitonInMilitary;
+  PopulationInMilitary;
   Artisans;
   Clergy;
   Nobility;
   Burghers;
-  HighClass;
-  MediumClass;
-  LowerClass;
+  SocietalClasses;
   CultureGroups; //object of {name: {Points: num}, name: {Points: num}}
   CultureRepresentedAtGovernmentLevel;
   CultureRepresentedAtGovernmentLevelPercent;
@@ -658,6 +656,8 @@ class Nation {
     this.Clergy = 0.0075; //Show In Percent
     this.Nobility = 0.01; //Show In Percent
     this.Burghers = 0.050; //Show In Percent
+    
+    this.SocietalClasses = {};
     this.CultureGroups = {}
     /* #endregion */
 
@@ -916,9 +916,9 @@ class Nation {
     this.FarmingEfficiency = 1 + this.AgricultureSubsidies / 5 + this.Fertility - 0.5 + (this.AgricultureInfrastructure - 1) / 10 + (this.AgricultureAdvancements - 1) / 10 + this.AgricultureTechnology / 10;
     this.OverallNumbers = this.Levies + this.LightInfantry + this.HeavyInfantry + this.Archers + this.Crossbowmen + this.LightCavalry + this.HeavyCavalry + this.EliteInfantry + this.Militia + this.EliteCavalry + this.HandCannon + (this.SiegeEquipment + this.LargeSiegeEquipment) * 10;
     this.ConscriptionPercent = this.OverallNumbers / this.Population;
-    this.PopulaitonInMilitary = this.ConscriptionPercent;
+    this.PopulationInMilitary = this.ConscriptionPercent;
     this.PopulationInResourceHarvest = (this.Coal + this.Sulphur + this.Cotton + this.Gold + this.Iron + this.Tea + this.Silk + this.Spice + this.Wool + this.Coffee + this.Fur + this.Diamond + this.Silver + this.Copper) * 20000 / this.Population;
-    this.PopulationInAgriculture = 1 - this.PopulaitonInMilitary - this.Artisans - this.Clergy - this.Burghers - this.Nobility - this.PopulationInResourceHarvest;
+    this.PopulationInAgriculture = 1 - this.PopulationInMilitary - this.Artisans - this.Clergy - this.Burghers - this.Nobility - this.PopulationInResourceHarvest;
     this.AgricultureSpending = (this.PopulationInAgriculture * this.Population / 1000 * this.AgricultureInfrastructure / 100 * (1 + this.AgricultureSubsidies / 10) * this.StockingCapabilities) / 2;
 
     let GatheringEffectiveness = function (name) {
@@ -1140,16 +1140,16 @@ class Nation {
       this.EffectiveSugar - this.SugarInflation +
       this.EffectiveExoticFruit - this.ExoticFruitInflation;
 
-    this.HighClass = this.Nobility;
-    this.MediumClass = this.Artisans + this.Clergy + this.Burghers;
-    this.LowerClass = this.PopulationInAgriculture + this.PopulaitonInMilitary;
+    this.SocietalClasses.High = this.Nobility;
+    this.SocietalClasses.Medium = this.Artisans + this.Clergy + this.Burghers;
+    this.SocietalClasses.Lower = this.PopulationInAgriculture + this.PopulationInMilitary;
     this.InterestRate = 0.05 + this.PublicDebtLength * 0.02 / gameStats.TimeDivide;
     this.EffectiveDebt = this.PublicDebtTaken * (1 + this.InterestRate);
     this.PossiblePublicDebt = max(0, this.Population / 10000 * (1 - (this.HighClassTax + this.MediumClassTax + this.LowerClassTax) / 3) - this.EffectiveDebt);
     this.DebtHappinessEffect = (this.PublicDebtLength > 1 ? this.EffectiveDebt / (this.PossiblePublicDebt + this.PublicDebtTaken) * (2 + this.PublicDebtLength) : 0);
     this.WarExhaustion = (this.Casualties / this.Population * 500) + (this.Pillaging * 20) + (this.Occupation * 5);
 
-    this.PopulationHappiness = (50 + this.ResourceHappinessBoost) * this.Prosperity / 10 - (this.LowerClassTax * this.LowerClass + this.MediumClassTax * this.MediumClass + this.HighClass * this.HighClassTax) * 100 / 4 - this.Absolutism / 2 - this.PopulationControl +
+    this.PopulationHappiness = (50 + this.ResourceHappinessBoost) * this.Prosperity / 10 - (this.LowerClassTax * this.SocietalClasses.Lower + this.MediumClassTax * this.SocietalClasses.Medium + this.SocietalClasses.High * this.HighClassTax) * 100 / 4 - this.Absolutism / 2 - this.PopulationControl +
       (this.Mercantilism > 1 ? (-this.Mercantilism + 1) * 2.5 : 0) + (this.EffectiveDebt > 0 && this.Budget < 0 ? - (this.EffectiveDebt / this.PossiblePublicDebt) * 10 : 0) - this.WarExhaustion / 2 - this.DebtHappinessEffect + (this.Disease > 0.10 ? - this.Disease / 4 : 0);
     this.LandAdministration = ((this.Size - this.DetachedLand) / 25000 + this.DetachedLand / 10000) * (1 - this.AdministrativeEfficiency / 1000);
     this.Overextension = this.UnderPopulation / 4 + this.LandAdministration / 1.5;
@@ -1442,8 +1442,8 @@ class Nation {
     this.TradeRevenue = ((this.LocalTrade + this.TradePower) * (1 - this.BurghersInfluence)) / gameStats.TimeDivide * this.TradeEfficiency + this.TradeProfit;
     this.EffectiveTax = (
       (
-        this.LowerClass * this.Population * this.LowerClassTax / 10000 +
-        this.Population * this.MediumClass * this.MediumClassTax / 7500 * (1 - this.ClergyInfluence - this.BurghersInfluence) + this.Population * this.HighClass * this.HighClassTax / 5000 * (1 - this.NobleInfluence)
+        this.SocietalClasses.Lower * this.Population * this.LowerClassTax / 10000 +
+        this.Population * this.SocietalClasses.Medium * this.MediumClassTax / 7500 * (1 - this.ClergyInfluence - this.BurghersInfluence) + this.Population * this.SocietalClasses.High * this.HighClassTax / 5000 * (1 - this.NobleInfluence)
       ) * this.AdministrativeEfficiency / 10 * (1 - this.NobleInfluence / 4 - this.ClergyInfluence / 4
       ) * (1 - this.Occupation)) / gameStats.TimeDivide * (1 - this.Corruption / 10);
 

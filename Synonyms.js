@@ -254,6 +254,25 @@ let Synonyms = {
 	Technologies: [
 		"techs"
 	],
+
+	SocietalClass: [
+		"socclass",
+		"classes"
+	],
+
+	Lower: [
+		"l",
+		"low"
+	],
+
+	Medium: [
+		"m",
+		"mid"
+	],
+
+	High: [
+		"h"
+	],
 	
 	HighClassTax: [
 		"hightax"
