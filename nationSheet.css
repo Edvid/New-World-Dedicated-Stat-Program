@@ -16,16 +16,34 @@ table{
 
 th{
     font-weight: bold;
-    font-size: 12px;
+    font-size: 16px;
 }
 
 td{
-    font-size: 10px;
+    font-size: 14px;
+}
+
+
+@keyframes cellhoveron{
+    from {color: black};
+    to {color: rgb(120, 49, 5)}
+}
+
+
+@keyframes cellhoveroff{
+    to {color: black};
 }
 
 th, td{
     border: 1px solid black;
     padding: .5em .5em .5em .5em;
+    color: black;
+    transition: color .5s ease-in;
+}
+
+th:hover, td:hover{
+    color: rgb(120, 49, 5);
+    transition: color .5s ease-in;
 }
 
 /* #region  collapsible taken from https://www.w3schools.com/howto/howto_js_collapsible.asp */
