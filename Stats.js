@@ -208,13 +208,7 @@ class Nation {
   /* #endregion */
 
   /* #region  Population */
-  PopulationInAgriculture;
-  PopulationInResourceHarvest;
-  PopulationInMilitary;
-  Artisans;
-  Clergy;
-  Nobility;
-  Burghers;
+  Workforces = { };
   SocietalClasses;
   CultureGroups; //object of {name: {Points: num}, name: {Points: num}}
   CultureRepresentedAtGovernmentLevel;
@@ -472,7 +466,6 @@ class Nation {
   StockingCapabilities;
   AgricultureAdvancements;
   AgricultureTechnology;
-  PopulationInAgriculture;
   FarmingEfficiency;
   AgricultureSpending;
   DailyFood;
@@ -652,10 +645,12 @@ class Nation {
     /* #endregion */
 
     /* #region  Population */
-    this.Artisans = 0.01; //Show In Percent
-    this.Clergy = 0.0075; //Show In Percent
-    this.Nobility = 0.01; //Show In Percent
-    this.Burghers = 0.050; //Show In Percent
+    this.Workforces = {
+      Artisans: 0.01,
+      Clergy: 0.0075,
+      Nobility: 0.01,
+      Burghers: 0.05
+    };
     
     this.SocietalClasses = {};
     this.CultureGroups = {}
@@ -916,10 +911,10 @@ class Nation {
     this.FarmingEfficiency = 1 + this.AgricultureSubsidies / 5 + this.Fertility - 0.5 + (this.AgricultureInfrastructure - 1) / 10 + (this.AgricultureAdvancements - 1) / 10 + this.AgricultureTechnology / 10;
     this.OverallNumbers = this.Levies + this.LightInfantry + this.HeavyInfantry + this.Archers + this.Crossbowmen + this.LightCavalry + this.HeavyCavalry + this.EliteInfantry + this.Militia + this.EliteCavalry + this.HandCannon + (this.SiegeEquipment + this.LargeSiegeEquipment) * 10;
     this.ConscriptionPercent = this.OverallNumbers / this.Population;
-    this.PopulationInMilitary = this.ConscriptionPercent;
-    this.PopulationInResourceHarvest = (this.Coal + this.Sulphur + this.Cotton + this.Gold + this.Iron + this.Tea + this.Silk + this.Spice + this.Wool + this.Coffee + this.Fur + this.Diamond + this.Silver + this.Copper) * 20000 / this.Population;
-    this.PopulationInAgriculture = 1 - this.PopulationInMilitary - this.Artisans - this.Clergy - this.Burghers - this.Nobility - this.PopulationInResourceHarvest;
-    this.AgricultureSpending = (this.PopulationInAgriculture * this.Population / 1000 * this.AgricultureInfrastructure / 100 * (1 + this.AgricultureSubsidies / 10) * this.StockingCapabilities) / 2;
+    this.Workforces.PopulationInMilitary = this.ConscriptionPercent;
+    this.Workforces.PopulationInResourceHarvest = (this.Coal + this.Sulphur + this.Cotton + this.Gold + this.Iron + this.Tea + this.Silk + this.Spice + this.Wool + this.Coffee + this.Fur + this.Diamond + this.Silver + this.Copper) * 20000 / this.Population;
+    this.Workforces.PopulationInAgriculture = 1 - this.Workforces.PopulationInMilitary - this.Workforces.Artisans - this.Workforces.Clergy - this.Workforces.Burghers - this.Workforces.Nobility - this.Workforces.PopulationInResourceHarvest;
+    this.AgricultureSpending = (this.Workforces.PopulationInAgriculture * this.Population / 1000 * this.AgricultureInfrastructure / 100 * (1 + this.AgricultureSubsidies / 10) * this.StockingCapabilities) / 2;
 
     let GatheringEffectiveness = function (name) {
       switch (name) {
@@ -1008,7 +1003,7 @@ class Nation {
 
     }
 
-    this.DailyFood = this.PopulationInAgriculture * this.Population / 1000 * this.FarmingEfficiency * (1 - this.Pillaging) + this.FoodIncoming - this.FoodOutgoing;
+    this.DailyFood = this.Workforces.PopulationInAgriculture * this.Population / 1000 * this.FarmingEfficiency * (1 - this.Pillaging) + this.FoodIncoming - this.FoodOutgoing;
     this.FoodConsumption = this.Population / 1000;
     this.FoodGain = this.DailyFood - this.FoodConsumption;
 
@@ -1140,9 +1135,9 @@ class Nation {
       this.EffectiveSugar - this.SugarInflation +
       this.EffectiveExoticFruit - this.ExoticFruitInflation;
 
-    this.SocietalClasses.High = this.Nobility;
-    this.SocietalClasses.Medium = this.Artisans + this.Clergy + this.Burghers;
-    this.SocietalClasses.Lower = this.PopulationInAgriculture + this.PopulationInMilitary;
+    this.SocietalClasses.High = this.Workforces.Nobility;
+    this.SocietalClasses.Medium = this.Workforces.Artisans + this.Workforces.Clergy + this.Workforces.Burghers;
+    this.SocietalClasses.Lower = this.Workforces.PopulationInAgriculture + this.Workforces.PopulationInMilitary;
     this.InterestRate = 0.05 + this.PublicDebtLength * 0.02 / gameStats.TimeDivide;
     this.EffectiveDebt = this.PublicDebtTaken * (1 + this.InterestRate);
     this.PossiblePublicDebt = max(0, this.Population / 10000 * (1 - (this.HighClassTax + this.MediumClassTax + this.LowerClassTax) / 3) - this.EffectiveDebt);
@@ -1414,7 +1409,7 @@ class Nation {
     })();
     this.TradePower = this.TradePowerResourceTrade + this.LocalTrade / 2 + (pseudoTradePower);
     this.ProductionEfficiency = this.Mercantilism + this.Technologies.VerticalLoom / 5 + this.Technologies.Workshops + this.Technologies.Cranes / 5 + this.Technologies.TextileManufactories / 2;
-    this.Production = (this.LocalTrade + this.TradePower) * this.Artisans * this.ProductionEfficiency * 10;
+    this.Production = (this.LocalTrade + this.TradePower) * this.Workforces.Artisans * this.ProductionEfficiency * 10;
     this.TradeProtection = this.LightShips * 0.75 + this.MediumShips * 1 + this.HeavyShips * 0.75;
     this.TradeEfficiency = 1 * this.Mercantilism + this.Technologies.Cranes / 10 + this.Technologies.PromissoryNotes / 20 + this.TradeProtection / 200;
 
