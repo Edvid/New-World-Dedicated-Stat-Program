@@ -696,9 +696,9 @@ function createOpinionMatrixTable(title, SocialBehaviourGroups){
     nationSheetContainer.appendChild(table);
 }
 
-function createPieDiagram(SocialBehaviourGroups, pn){
-    let PointName = pn;
-    if(typeof PointName == 'undefined') PointName = "Points"
+function createPieDiagram(SocialBehaviourGroups, ValName){
+    let ValueName = ValName;
+    if(typeof ValueName == 'undefined') ValueName = "Points"
 
     let title = document.createElement("h2");
     title.innerText = SocialBehaviourGroups.split(/(?<=[a-zA-Z])(?=[A-Z])/gm).join(" ");
@@ -722,10 +722,10 @@ function createPieDiagram(SocialBehaviourGroups, pn){
     let root = am5.Root.new(chartdiv);
     
     let chart = root.container.children.push(
-    am5percent.PieChart.new(root, {
-            layout: root.horizontalLayout
-        })
-    );
+        am5percent.PieChart.new(root, {
+          layout: root.horizontalLayout
+        }) 
+      );
     
     
 
@@ -738,7 +738,7 @@ function createPieDiagram(SocialBehaviourGroups, pn){
             if(ps === null) {
                 ps = 0;
             }else if(typeof ps === 'object'){
-                ps = ps[PointName];
+                ps = ps[ValueName];
             }
         }
         
@@ -758,7 +758,7 @@ function createPieDiagram(SocialBehaviourGroups, pn){
             categoryField: "country",
             valueField: "Points",
             legendLabelText: "[{fill}]{category}[/]",
-            legendValueText: "[bold {fill}]{value}[/]"
+            legendValueText: ValueName == "Points" ? "[bold {fill}][/]" : `[bold {fill}]{value} ${ValueName}[/]`
         })
     );
 
