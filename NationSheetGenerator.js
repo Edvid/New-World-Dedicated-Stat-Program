@@ -696,7 +696,8 @@ function createOpinionMatrixTable(title, SocialBehaviourGroups){
     nationSheetContainer.appendChild(table);
 }
 
-function createPieDiagram(SocialBehaviourGroups, PointName){
+function createPieDiagram(SocialBehaviourGroups, pn){
+    let PointName = pn;
     if(typeof PointName == 'undefined') PointName = "Points"
 
     let title = document.createElement("h2");
@@ -711,25 +712,24 @@ function createPieDiagram(SocialBehaviourGroups, PointName){
 
     chartdiv.style.margin = ".5em";
     chartdiv.style.textAlign = "center";
-    chartdiv.style.width = "720px";
+    chartdiv.style.width = "500px";
     chartdiv.style.height = "360px";
     chartdiv.style.border = "1px dotted grey";
     nationSheetContainer.appendChild(chartdiv);
     
+
+    
     let root = am5.Root.new(chartdiv);
+    
     let chart = root.container.children.push(
-    am5percent.PieChart.new(root, {})
+    am5percent.PieChart.new(root, {
+            layout: root.horizontalLayout
+        })
     );
     
-    var series = chart.series.push(
-        am5percent.PieSeries.new(root, {
-          name: "Series",
-          categoryField: "country",
-          valueField: "Points"
-        })
-      );
+    
 
-    let sbgs = [];
+    let socialBehaviourGroupsData = [];
     for (const key in nationsSocialBehaviourGroups) {
         const nationsSocialBehaviourGroup = nationsSocialBehaviourGroups[key];
 
@@ -744,7 +744,7 @@ function createPieDiagram(SocialBehaviourGroups, PointName){
         
         if(ps === 0) continue;
 
-        sbgs.push(
+        socialBehaviourGroupsData.push(
             {
                 country: key,
                 Points: ps
@@ -752,5 +752,28 @@ function createPieDiagram(SocialBehaviourGroups, PointName){
         );
     }
 
-    series.data.setAll(sbgs);
+    var series = chart.series.push(
+        am5percent.PieSeries.new(root, {
+            name: "Series",
+            categoryField: "country",
+            valueField: "Points",
+            legendLabelText: "[{fill}]{category}[/]",
+            legendValueText: "[bold {fill}]{value}[/]"
+        })
+    );
+
+    series.data.setAll(socialBehaviourGroupsData);
+    series.labels.template.set("visible", false);
+    series.ticks.template.set("visible", false);
+
+    // Add legend
+    var legend = chart.children.push( 
+        am5.Legend.new(root, {
+            centerY: am5.percent(50),
+            y: am5.percent(50),
+            layout: root.verticalLayout
+        })
+    );
+    
+    legend.data.setAll(series.dataItems);
 }
