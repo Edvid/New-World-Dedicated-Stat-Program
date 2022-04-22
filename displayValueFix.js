@@ -1,13 +1,18 @@
 
-function displayValueFix(statName, statValue){
+function displayValueFix(statName, statValue) {
+    
+    let statVal = statValue;
+    if (statVal == "false") statVal = false;
+    else if (statVal == "true") statVal = true;
+    
     //numbers
-    if (!isNaN(statValue)) {
-        if(typeof statValue === 'boolean'){
+    if (!isNaN(statVal)) {
+        if (typeof statVal === 'boolean') {
             let ret = document.createElement("span");
-            if(statValue) ret.innerHTML = '&#10003;';
-            ret.style.display = "inline-block" 
-            ret.style.height = "2.3ex" 
-            return {value: ret, appendable: true};
+            if (statVal) ret.innerHTML = '&#10003;';
+            ret.style.display = "inline-block"
+            ret.style.height = "2.3ex"
+            return { value: ret, appendable: true };
         }
 
         let numString;
@@ -53,7 +58,7 @@ function displayValueFix(statName, statValue){
             "Size",
             "MaxPopulation"
         ].indexOf(statName)) {
-            numString = parseFloat(statValue).toFixed(0);
+            numString = parseFloat(statVal).toFixed(0);
         }
         //percentages
         else if (~[
@@ -87,41 +92,41 @@ function displayValueFix(statName, statValue){
             "Disease",
             "HabitableLand"
         ].indexOf(statName)) {
-            numString = parseFloat(statValue * 100).toFixed(2) + "%";
+            numString = parseFloat(statVal * 100).toFixed(2) + "%";
         }
         //normal (2 digits)
         else {
-            numString = parseFloat(statValue).toFixed(2);
+            numString = parseFloat(statVal).toFixed(2);
         }
         let numSize;
-        if(numString.indexOf(".") == -1){
+        if (numString.indexOf(".") == -1) {
             numSize = numString.replace("%", "").length;
-        }else{
+        } else {
             numSize = numString.indexOf(".");
         }
 
         let newNumString = "";
-        if(numSize >= 5){
+        if (numSize >= 5) {
             for (let i = 0; i < numString.length; i++) {
                 newNumString += numString[i];
                 //only modify in case we are on the left hand side of the decimal point (if we have one), and we are at an index going into 3 from decimal point.
-                if((numSize - i - 1) % 3 != 0 || i >= numSize) continue;
+                if ((numSize - i - 1) % 3 != 0 || i >= numSize) continue;
                 newNumString += " ";
             }
         }
         else newNumString = numString;
-        return {value: newNumString, appendable: false};
-    } 
+        return { value: newNumString, appendable: false };
+    }
     //images
-    else if(~[
+    else if (~[
         "Flag",
-    ].indexOf(statName)){
+    ].indexOf(statName)) {
         let image = document.createElement("img");
-        image.src = statValue;
-        image.alt = statValue.split("/").pop();
-        return {value: image, appendable: true};
+        image.src = statVal;
+        image.alt = statVal.split("/").pop();
+        return { value: image, appendable: true };
     }
     else
-        return {value: statValue, appendable: false};
+        return { value: statVal, appendable: false };
 
 }
