@@ -590,7 +590,7 @@ function createStatTable(title, tables){
             
         for (let i = 0; i < stats.length; i++) {
             const statname = stats[i];
-            const statvalue = gameStats.Nations[currentNationName][statname]; 
+            const statvalue = (new Function(`return gameStats.Nations.${currentNationName}.${statname}`))(); 
             let nationStatNameCell = document.createElement("th");
             nationStatNameCell.innerText = statname.split(".").pop().split(/(?<=[a-zA-Z])(?=[A-Z])/gm).join(" ");
             let nationStatCell = document.createElement("td");
