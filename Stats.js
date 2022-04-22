@@ -911,10 +911,10 @@ class Nation {
     this.FarmingEfficiency = 1 + this.AgricultureSubsidies / 5 + this.Fertility - 0.5 + (this.AgricultureInfrastructure - 1) / 10 + (this.AgricultureAdvancements - 1) / 10 + this.AgricultureTechnology / 10;
     this.OverallNumbers = this.Levies + this.LightInfantry + this.HeavyInfantry + this.Archers + this.Crossbowmen + this.LightCavalry + this.HeavyCavalry + this.EliteInfantry + this.Militia + this.EliteCavalry + this.HandCannon + (this.SiegeEquipment + this.LargeSiegeEquipment) * 10;
     this.ConscriptionPercent = this.OverallNumbers / this.Population;
-    this.Workforces.PopulationInMilitary = this.ConscriptionPercent;
-    this.Workforces.PopulationInResourceHarvest = (this.Coal + this.Sulphur + this.Cotton + this.Gold + this.Iron + this.Tea + this.Silk + this.Spice + this.Wool + this.Coffee + this.Fur + this.Diamond + this.Silver + this.Copper) * 20000 / this.Population;
-    this.Workforces.PopulationInAgriculture = 1 - this.Workforces.PopulationInMilitary - this.Workforces.Artisans - this.Workforces.Clergy - this.Workforces.Burghers - this.Workforces.Nobility - this.Workforces.PopulationInResourceHarvest;
-    this.AgricultureSpending = (this.Workforces.PopulationInAgriculture * this.Population / 1000 * this.AgricultureInfrastructure / 100 * (1 + this.AgricultureSubsidies / 10) * this.StockingCapabilities) / 2;
+    this.Workforces["Population In Military"] = this.ConscriptionPercent;
+    this.Workforces["Population In Resource Harvest"] = (this.Coal + this.Sulphur + this.Cotton + this.Gold + this.Iron + this.Tea + this.Silk + this.Spice + this.Wool + this.Coffee + this.Fur + this.Diamond + this.Silver + this.Copper) * 20000 / this.Population;
+    this.Workforces["Population In Agriculture"] = 1 - this.Workforces["Population In Military"] - this.Workforces.Artisans - this.Workforces.Clergy - this.Workforces.Burghers - this.Workforces.Nobility - this.Workforces["Population In Resource Harvest"];
+    this.AgricultureSpending = (this.Workforces["Population In Agriculture"] * this.Population / 1000 * this.AgricultureInfrastructure / 100 * (1 + this.AgricultureSubsidies / 10) * this.StockingCapabilities) / 2;
 
     let GatheringEffectiveness = function (name) {
       switch (name) {
@@ -1003,7 +1003,7 @@ class Nation {
 
     }
 
-    this.DailyFood = this.Workforces.PopulationInAgriculture * this.Population / 1000 * this.FarmingEfficiency * (1 - this.Pillaging) + this.FoodIncoming - this.FoodOutgoing;
+    this.DailyFood = this.Workforces["Population In Agriculture"] * this.Population / 1000 * this.FarmingEfficiency * (1 - this.Pillaging) + this.FoodIncoming - this.FoodOutgoing;
     this.FoodConsumption = this.Population / 1000;
     this.FoodGain = this.DailyFood - this.FoodConsumption;
 
@@ -1137,7 +1137,7 @@ class Nation {
 
     this.SocietalClasses.High = this.Workforces.Nobility;
     this.SocietalClasses.Medium = this.Workforces.Artisans + this.Workforces.Clergy + this.Workforces.Burghers;
-    this.SocietalClasses.Lower = this.Workforces.PopulationInAgriculture + this.Workforces.PopulationInMilitary;
+    this.SocietalClasses.Lower = this.Workforces["Population In Agriculture"] + this.Workforces["Population In Military"];
     this.InterestRate = 0.05 + this.PublicDebtLength * 0.02 / gameStats.TimeDivide;
     this.EffectiveDebt = this.PublicDebtTaken * (1 + this.InterestRate);
     this.PossiblePublicDebt = max(0, this.Population / 10000 * (1 - (this.HighClassTax + this.MediumClassTax + this.LowerClassTax) / 3) - this.EffectiveDebt);

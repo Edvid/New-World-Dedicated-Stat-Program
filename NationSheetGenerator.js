@@ -460,6 +460,10 @@ function createNationSheet(nationName) {
     createPieDiagram("ClergyLoyaltyGroups");
     createPieDiagram("BurghersLoyaltyGroups");
     
+
+    createPieDiagram("Workforces");
+    createPieDiagram("SocietalClasses");
+
     createPieDiagram("TradeInfluences");
 
     let techarray = [[]]
