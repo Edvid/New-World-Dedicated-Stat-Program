@@ -15,6 +15,7 @@ table{
 }
 
 th{
+    position: relative;
     font-weight: bold;
     font-size: 16px;
 }
@@ -106,7 +107,7 @@ th, td{
     margin: 0em 1em 0.5em 1em;
 }
 
-.nationsheet img{
+.nationsheet td img{
     width: 30vw;
     padding: 0px;
 }
@@ -137,4 +138,13 @@ th, td{
 
 .opiniontable td img{
     width: 50px;
+}
+
+.stattypeicon{
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    height: 16px;
+    width: auto;
+    opacity: .5;
 }

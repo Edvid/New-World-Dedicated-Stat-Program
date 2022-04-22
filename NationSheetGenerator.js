@@ -590,7 +590,7 @@ function createStatTable(title, tables){
             
         for (let i = 0; i < stats.length; i++) {
             const statname = stats[i];
-            const statvalue = (new Function(`return gameStats.Nations["${currentNationName}"].${statname}`))(); 
+            const statvalue = gameStats.Nations[currentNationName][statname]; 
             let nationStatNameCell = document.createElement("th");
             nationStatNameCell.innerText = statname.split(".").pop().split(/(?<=[a-zA-Z])(?=[A-Z])/gm).join(" ");
             let nationStatCell = document.createElement("td");
@@ -601,7 +601,44 @@ function createStatTable(title, tables){
             }else{
                 nationStatCell.innerText = displayValue.value;
             }
+
+            let statTypeIcon = document.createElement("img");
+            switch(getStatType(statname)){
+                case "Base":
+                    statTypeIcon.src = "images/Base.png"; //red
+                    statTypeIcon.alt = "Base";
+                    statTypeIcon.title = "Base";
+                    statTypeIcon.style.opacity = "1";
+                    break;
+                case "Derived":
+                    statTypeIcon.src = "images/Derived.png";
+                    statTypeIcon.alt = "Derived";
+                    statTypeIcon.title = "Derived";
+                    break;
+                case "Constant":
+                    statTypeIcon.src = "images/Constant.png"; //orange
+                    statTypeIcon.alt = "Constant";
+                    statTypeIcon.title = "Constant";
+                    break;
+                case "Turn Based":
+                    statTypeIcon.src = "images/Turn Based.png"; //pink
+                    statTypeIcon.alt = "Turn Based";
+                    statTypeIcon.title = "Turn Based";
+                    break;
+                case "War":
+                    statTypeIcon.src = "images/War.png"; //red
+                    statTypeIcon.alt = "War";
+                    statTypeIcon.title = "War";
+                    break;
+                case "Unknown":
+                    statTypeIcon.src = "images/Unknown.png"; //black
+                    statTypeIcon.alt = "Unknown!";
+                    statTypeIcon.title = "Unknown!";
+                break;
+            }
+            statTypeIcon.classList.add("stattypeicon");
             nationStatRow.appendChild(nationStatCell);
+            nationStatNameCell.appendChild(statTypeIcon);
             nationStatNameRow.appendChild(nationStatNameCell);
         }
         
