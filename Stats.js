@@ -1158,6 +1158,7 @@ class Nation {
         pointSum += Points;
       }
 
+      let socialGroupRepresentedAtGovernmentLevelPercent;
       for (const OpinionatedSocialBehaviourGroupName in socialBehaviourGroup) {
       
         const OpinionatedSocialBehaviourGroup = socialBehaviourWorldwideGroups[OpinionatedSocialBehaviourGroupName];
@@ -1165,7 +1166,7 @@ class Nation {
         //if the social behaviour is listed, but no one is actually here. Skip
         if(Points == 0) continue;
         if(OpinionatedSocialBehaviourGroupName == socialGroupRepresentedAtGovernmentLevel){
-          let socialGroupRepresentedAtGovernmentLevelPercent = (Points / pointSum);
+          socialGroupRepresentedAtGovernmentLevelPercent = (Points / +pointSum);
         }
         for (const nameOfSocialBehaviourGroupToBeHadAnOpinionAbout in socialBehaviourGroup) {
           //we don't account for social behaviour groups having Opinions on themselves

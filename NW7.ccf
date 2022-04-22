@@ -3,11 +3,11 @@
 > TemplateNation
 = "https://i.redd.it/m29pe6eb3wv71.jpg" Flag
 > CultureGroups
-+> template
-= 100 template.Points
++> Template
+= 100 Template.Points
 < 
-= "template" Cultrep
-= "pagan" Relrep
+= "Template" Cultrep
+= "Pagan" Relrep
 > Climates > Moderate
 = 5000 Pixels
 <...
