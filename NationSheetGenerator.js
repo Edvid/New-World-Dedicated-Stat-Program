@@ -723,7 +723,7 @@ function createPieDiagram(SocialBehaviourGroups, ValName){
     
     let chart = root.container.children.push(
         am5percent.PieChart.new(root, {
-          layout: root.horizontalLayout
+          layout: root.verticalLayout
         }) 
       );
     
@@ -769,8 +769,8 @@ function createPieDiagram(SocialBehaviourGroups, ValName){
     // Add legend
     var legend = chart.children.push( 
         am5.Legend.new(root, {
-            centerY: am5.percent(50),
-            y: am5.percent(50),
+            centerX: am5.percent(50),
+            x: am5.percent(50),
             layout: root.verticalLayout
         })
     );
