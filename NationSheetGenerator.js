@@ -492,7 +492,7 @@ function createNationSheet(nationName) {
                 "AgricultureSpending"
             ],
             [
-                "PopulationInAgriculture",
+                ".Workforces[\"Population In Agriculture\"]",
                 "DailyFood",
                 "FoodConsumption",
                 "FoodGain",
@@ -895,13 +895,17 @@ function createStatTable(title, tables){
         nationStatRow.style.background = secondaryColor;
             
         for (let i = 0; i < stats.length; i++) {
-            const statname = stats[i];
-            const statvalue = (new Function(`return gameStats.Nations.${currentNationName}.${statname}`))(); 
+            const statSelection = stats[i];
+            //if first char of string is alphabetic (not symbol), add courtesy dot first, else, we expect the user of createStatTable to know what they're doing
+            const statvalue = /^[a-zA-Z]$/.test(statSelection[0]) ?
+            (new Function(`return gameStats.Nations["${currentNationName}"].${statSelection}`))() :
+            (new Function(`return gameStats.Nations["${currentNationName}"]${statSelection}`))(); 
             let nationStatNameCell = document.createElement("th");
-            nationStatNameCell.innerText = statname.split(".").pop().split(/(?<=[a-zA-Z])(?=[A-Z])/gm).join(" ");
+            let statName = statSelection.split(/(\.|(?<=\[))/gmi).pop().replace(/(\[|\"| |\])/gmi, "");
+            nationStatNameCell.innerText = statName.split(/(?<=[a-zA-Z])(?=[A-Z])/gm).join(" ");
             let nationStatCell = document.createElement("td");
             nationStatCell.style.textAlign = "center";
-            let displayValue = displayValueFix(statname, statvalue);
+            let displayValue = displayValueFix(statName, statvalue);
             if(displayValue.appendable){
                 nationStatCell.appendChild(displayValue.value);    
             }else{
@@ -909,7 +913,7 @@ function createStatTable(title, tables){
             }
 
             let statTypeIcon = document.createElement("img");
-            switch(getStatType(statname)){
+            switch(getStatType(statName)){
                 case "Base":
                     statTypeIcon.src = "images/Base.png"; //red
                     statTypeIcon.alt = "Base";
