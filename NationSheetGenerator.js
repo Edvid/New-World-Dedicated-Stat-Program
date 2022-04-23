@@ -302,24 +302,49 @@ function createNationSheet(nationName) {
 		"Budget Stats",
 		[
 			[
-				"ProductionEfficiency",
 				"TradeEfficiency",
-				"PossiblePublicDebt",
-				"DailyBudget"
-			],
-			[
-				"Production",
 				"LocalTrade",
-				"EffectiveDebt",
-				"Budget"
+				"TradePower"
 			],
 			[
 				"Mercantilism",
-				"TradePower",
-				"Inflation"
+				"ProductionEfficiency",
+				"Production"
+			],
+			[
+				"Inflation",
+				"DailyBudget",
+				"Budget"
+			],
+			[
+				"BudgetIncoming",
+				"BudgetOutgoing",
+				"Balance"
+			],
+			[
+				"HighClassTax",
+				"MediumClassTax",
+				"LowerClassTax",
+				"EffectiveTax"
 			]
 		]
 	);
+	
+	createStatTable(
+        "Debt Stats",
+        [
+            [
+                "PossiblePublicDebt",
+                "PublicDebtLength",
+                "InterestRate"
+            ],
+            [
+                "PublicDebtTaken",
+                "EffectiveDebt",
+                "DebtHappinessEffect"
+            ]
+        ]
+    );
 	
 	createStatTable(
 		"Upkeeps and Income",
@@ -454,7 +479,75 @@ function createNationSheet(nationName) {
 		]
 	);
 	
+	createStatTable(
+        "Agriculture",
+        [
+            [
+                "Fertility",
+                "AgricultureSubsidies",
+                "AgricultureInfrastructure",
+                "AgricultureAdvancements",
+                "AgricultureTechnology",
+                "FarmingEfficiency",
+                "AgricultureSpending"
+            ],
+            [
+                "PopulationInAgriculture",
+                "DailyFood",
+                "FoodConsumption",
+                "FoodGain",
+                "StockingCapabilities",
+                "MaxFoodStock",
+                "SellingCapability"
+            ],
+            [
+                "Food",
+                "FutureFood",
+                "SurplusFood",
+                "FoodSold",
+                "Foodlost",
+                "TradeProfit",
+                "FoodPopulationBoost"
+            ]
+        ]
+    );
+	
+	createStatTable(
+        "War Stats",
+        [
+            [
+                "Casualties",
+                "Pillaging",
+                "Occupation",
+                "MinorBattles",
+                "MajorBattles",
+                "WarExhaustion",
+                "Fervor"
+            ]
+        ]
+    );
+	
     createPieDiagram("Climates", "Pixels");
+	
+	createStatTable(
+        "Land Stats",
+        [
+            [
+                "Size",
+                "KmSquared",
+                "PopulationDensityPerKmSquared",
+                "Disease",
+                "UnderPopulation"
+            ],
+            [
+                "MaxPopulation",
+                "DetachedLand",
+                "LandAdministration",
+                "Overextension",
+                "HabitableLand"
+            ]
+        ]
+    );
 
     createPieDiagram("NobleLoyaltyGroups");
     createPieDiagram("ClergyLoyaltyGroups");
@@ -499,10 +592,223 @@ function createNationSheet(nationName) {
         if (cultureBreakPoints[i] == cultname) culturalarray[++i] = [];
     }
 
-    createStatTable("Technologies", techarray);
-    createStatTable("Cultural Advancements", culturalarray);
+	createStatTable(
+        "Tech Stats",
+        [
+            [
+                "Isolation",
+                "ResearchSpending",
+                "ResearchEffectiveness",
+                "ResearchBoostFromTech",
+                "ResearchPointGain",
+                "ResearchPoints",
+                "FutureResearchPoints"
+            ]
+        ]
+    );
 
-    
+    createStatTable("Technologies", techarray);
+	
+	createStatTable(
+        "Culture Stats",
+        [
+            [
+                "CulturalAdvance",
+                "CulturalProsperity",
+                "CulturalPowerGain",
+                "CulturalPower",
+                "FutureCulturalPower"
+            ]
+        ]
+    );
+	
+    createStatTable("Cultural Advancements", culturalarray);
+	
+	createStatTable(
+        "Resources",
+        [
+			[
+				"MiningEfficiency"
+			],
+            [
+                "Coal",
+                "Sulphur",
+                "Iron",
+                "Copper"
+            ],
+            [
+                "EffectiveCoal",
+                "EffectiveSulphur",
+                "EffectiveIron",
+                "EffectiveCopper"
+            ],
+            [
+                "Cotton",
+                "Gold",
+                "Tea",
+                "Silk",
+                "Spice",
+                "Wool",
+                "Coffee",
+                "Fur",
+				"Diamond",
+				"Silver",
+				"Ivory",
+				"Cocoa",
+				"Tobacco",
+				"Sugar",
+				"ExoticFruit"
+            ],
+            [
+                "EffectiveCotton",
+                "EffectiveGold",
+                "EffectiveTea",
+                "EffectiveSilk",
+                "EffectiveSpice",
+                "EffectiveWool",
+                "EffectiveCoffee",
+                "EffectiveFur",
+				"EffectiveDiamond",
+				"EffectiveSilver",
+				"EffectiveIvory",
+				"EffectiveCocoa",
+				"EffectiveTobacco",
+				"EffectiveSugar",
+				"EffectiveExoticFruit"
+            ],
+            [
+                "CottonInflation",
+                "GoldInflation",
+                "TeaInflation",
+                "SilkInflation",
+                "SpiceInflation",
+                "WoolInflation",
+                "CoffeeInflation",
+                "FurInflation",
+				"DiamondInflation",
+				"SilverInflation",
+				"IvoryInflation",
+				"CocoaInflation",
+				"TobaccoInflation",
+				"SugarInflation",
+				"ExoticFruitInflation"
+            ],
+			[
+				"ResourcePopulationGrowthBoost",
+				"ResourceHappinessBoost",
+				"ResourceBudgetBoost"
+			]
+        ]
+    );
+
+    createStatTable(
+        "Resource Prices",
+        [
+            [
+                "CoalDemand",
+                "GoldDemand",
+                "IronDemand",
+                "SulphurDemand",
+                "CottonDemand",
+                "TeaDemand",
+                "SpiceDemand",
+                "CopperDemand",
+                "SilkDemand",
+				"WoolDemand"
+            ],
+            [
+                "CoalValue",
+                "GoldValue",
+                "IronValue",
+                "SulphurValue",
+                "CottonValue",
+                "TeaValue",
+                "SpiceValue",
+                "CopperValue",
+                "SilkValue",
+				"WoolValue"
+            ],
+            [
+                "CoffeeDemand",
+                "SilverDemand",
+                "DiamondDemand",
+                "FurDemand",
+                "IvoryDemand",
+                "CocoaDemand",
+                "TobaccoDemand",
+                "SugarDemand",
+                "ExoticFruitDemand"
+            ],
+            [
+                "CoffeeValue",
+                "SilverValue",
+                "DiamondValue",
+                "FurValue",
+                "IvoryValue",
+                "CocoaValue",
+                "TobaccoValue",
+                "SugarValue",
+                "ExoticFruitValue"
+            ]
+        ]
+    );
+
+    createStatTable(
+        "Resource Trade",
+        [
+            [
+                "FoodIncoming",
+                "CoalIncoming",
+                "SulphurIncoming",
+                "CottonIncoming",
+                "GoldIncoming",
+                "IronIncoming",
+                "TeaIncoming",
+                "SilkIncoming",
+                "SpiceIncoming",
+				"WoolIncoming"
+            ],
+            [
+                "FoodOutgoing",
+                "CoalOutgoing",
+                "SulphurOutgoing",
+                "CottonOutgoing",
+                "GoldOutgoing",
+                "IronOutgoing",
+                "TeaOutgoing",
+                "SilkOutgoing",
+                "SpiceOutgoing",
+				"WoolOutgoing"
+            ],
+            [
+                "CoffeeIncoming",
+                "FurIncoming",
+                "DiamondIncoming",
+                "SilverIncoming",
+                "CopperIncoming",
+                "IvoryIncoming",
+                "CocoaIncoming",
+                "TobaccoIncoming",
+                "SugarIncoming",
+				"ExoticFruitIncoming"
+            ],
+            [
+                "CoffeeOutgoing",
+                "FurOutgoing",
+                "DiamondOutgoing",
+                "SilverOutgoing",
+                "CopperOutgoing",
+                "IvoryOutgoing",
+                "CocoaOutgoing",
+                "TobaccoOutgoing",
+                "SugarOutgoing",
+				"ExoticFruitOutgoing"
+            ],
+			[
+				"TradePowerResourceTrade"
+			]
+        ]
+    );
 
     /* #endregion */
 
