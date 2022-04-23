@@ -918,7 +918,6 @@ function createStatTable(title, tables){
                     statTypeIcon.src = "images/Base.png"; //red
                     statTypeIcon.alt = "Base";
                     statTypeIcon.title = "Base Stat: This is RPable";
-                    statTypeIcon.style.opacity = "1";
                     break;
                 case "Derived":
                     statTypeIcon.src = "images/Derived.png";

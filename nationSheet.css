@@ -146,5 +146,5 @@ th, td{
     right: 4px;
     height: 16px;
     width: auto;
-    opacity: .5;
+    image-rendering: pixelated;
 }
