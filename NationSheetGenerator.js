@@ -558,6 +558,126 @@ function createNationSheet(nationName) {
     createPieDiagram("SocietalClasses");
 
     createPieDiagram("TradeInfluences");
+	
+	createStatTable(
+        "Trade Influence - Americas",
+        [
+            [
+                ".TradeInfluences[\"Alaska\"]",
+                ".TradeInfluences[\"Cascadia\"]",
+                ".TradeInfluences[\"WestCoast\"]",
+                ".TradeInfluences[\"HudsonBay\"]",
+                ".TradeInfluences[\"GreatLakes\"]",
+                ".TradeInfluences[\"Mississipi\"]",
+                ".TradeInfluences[\"GulfOfMexico\"]",
+                ".TradeInfluences[\"LawrenceGulf\"]",
+                ".TradeInfluences[\"EastCoast\"]",
+                ".TradeInfluences[\"Carribean\"]",
+                ".TradeInfluences[\"CentralAmerica\"]"
+            ],
+			[
+				".TradeInfluences[\"GuyanaAndSuriname\"]",
+                ".TradeInfluences[\"Amazon\"]",
+                ".TradeInfluences[\"Peru\"]",
+                ".TradeInfluences[\"RioGrande\"]",
+                ".TradeInfluences[\"LaPlata\"]",
+                ".TradeInfluences[\"Chile\"]",
+                ".TradeInfluences[\"Patagonia\"]"
+			]
+        ]
+    );
+	
+	createStatTable(
+        "Trade Influence - Europe",
+        [
+            [
+                ".TradeInfluences[\"NorthSea\"]",
+                ".TradeInfluences[\"BritishIsles\"]",
+                ".TradeInfluences[\"EnglishChannel\"]",
+                ".TradeInfluences[\"France\"]",
+                ".TradeInfluences[\"BayOfBiscay\"]",
+                ".TradeInfluences[\"WestIberia\"]",
+                ".TradeInfluences[\"Gibraltar\"]",
+                ".TradeInfluences[\"WestMediterreanian\"]",
+                ".TradeInfluences[\"Rhine\"]"
+            ],
+			[
+				".TradeInfluences[\"CentralMed\"]",
+                ".TradeInfluences[\"Adriatic\"]",
+                ".TradeInfluences[\"Germany\"]",
+                ".TradeInfluences[\"SouthGermany\"]",
+                ".TradeInfluences[\"Denmark\"]",
+                ".TradeInfluences[\"Baltic\"]",
+                ".TradeInfluences[\"NorthNordics\"]",
+                ".TradeInfluences[\"BarentsSea\"]"
+			],
+			[
+				".TradeInfluences[\"Novgorod\"]",
+                ".TradeInfluences[\"Poland\"]",
+                ".TradeInfluences[\"Dniepr\"]",
+                ".TradeInfluences[\"Crimea\"]",
+                ".TradeInfluences[\"Balkans\"]",
+                ".TradeInfluences[\"Greece\"]",
+                ".TradeInfluences[\"NorthAnatolia\"]",
+                ".TradeInfluences[\"EastMed\"]"
+			]
+        ]
+    );
+	
+	createStatTable(
+        "Trade Influence - Africa",
+        [
+            [
+                ".TradeInfluences[\"Egypt\"]",
+                ".TradeInfluences[\"RedSea\"]",
+                ".TradeInfluences[\"WestAfrica\"]",
+                ".TradeInfluences[\"CoteDIvoire\"]",
+                ".TradeInfluences[\"Nigeria\"]",
+                ".TradeInfluences[\"SouthNile\"]",
+                ".TradeInfluences[\"Somalia\"]",
+                ".TradeInfluences[\"Kongo\"]",
+                ".TradeInfluences[\"EastAfrica\"]",
+                ".TradeInfluences[\"Mozambique\"]",
+                ".TradeInfluences[\"SouthAfrica\"]"
+            ]
+        ]
+    );
+
+	createStatTable(
+        "Trade Influence - Asia",
+        [
+            [
+                ".TradeInfluences[\"Mesopotamia\"]",
+                ".TradeInfluences[\"PersianGulf\"]",
+                ".TradeInfluences[\"Caucasus\"]",
+                ".TradeInfluences[\"DonRiver\"]",
+                ".TradeInfluences[\"Volga\"]",
+                ".TradeInfluences[\"CentralAsia\"]",
+                ".TradeInfluences[\"WestSiberia\"]",
+                ".TradeInfluences[\"EastSiberia\"]"
+            ],
+			[
+				".TradeInfluences[\"Iran\"]",
+                ".TradeInfluences[\"Pakistan\"]",
+                ".TradeInfluences[\"Tibet\"]",
+                ".TradeInfluences[\"Mongolia\"]",
+                ".TradeInfluences[\"Manchuria\"]",
+                ".TradeInfluences[\"SeaOfJapan\"]",
+                ".TradeInfluences[\"NorthChina\"]",
+                ".TradeInfluences[\"YangtzeeRiver\"]"
+			],
+			[
+				".TradeInfluences[\"SouthChina\"]",
+                ".TradeInfluences[\"NorthIndia\"]",
+                ".TradeInfluences[\"WestIndia\"]",
+                ".TradeInfluences[\"EastIndia\"]",
+                ".TradeInfluences[\"Burma\"]",
+                ".TradeInfluences[\"SouthEastAsia\"]",
+                ".TradeInfluences[\"NorthAustralia\"]",
+                ".TradeInfluences[\"SouthAustralia\"]"
+			]
+        ]
+    );
 
     let techarray = [[]]
     i = 0;
