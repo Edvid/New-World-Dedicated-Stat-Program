@@ -1107,7 +1107,7 @@ function createOpinionMatrixTable(title, SocialBehaviourGroups){
     nationSheetContainer.appendChild(tablecontainer);
     
     let breaker = document.createElement("div");
-    breaker.style.width = "1200px";
+    breaker.style.width = "100%";
     breaker.style.height = "1px";
 
     nationSheetContainer.appendChild(breaker);

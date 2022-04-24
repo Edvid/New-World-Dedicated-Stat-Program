@@ -80,14 +80,7 @@ td{
     flex-wrap: wrap;
     padding-top: 0.5em;
     background-color:#fffff4;
-    min-width: 1200px;
-}
-
-.nationsheet .raw{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    
+    width: 1600px;
 }
 
 .nationnamedisplay {
