@@ -123,7 +123,6 @@ let BaseStats = [
     "HeavyShips"
 ];
 let ConstantStats = [
-    "EducationCostModifier",
     "PrideOfTheNavy"
 ];
 let TurnBasedStats = [

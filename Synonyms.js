@@ -71,11 +71,6 @@ let Synonyms = {
 		"education"
 	],
 	
-	EducationCostModifier: [
-		"educostmod",
-		"educostmodifier"
-	],
-	
 	PopulationControl: [
 		"popcontrol",
 		"popctrl",

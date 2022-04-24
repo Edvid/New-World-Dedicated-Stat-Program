@@ -80,7 +80,6 @@ function createNationSheet(nationName) {
         "FutureDateInThisNation",
         "ReligiousDisunity",
         "Health",
-        "EducationCostModifier",
         "Propaganda",
         "PopulationHappiness",
         "Stability",
