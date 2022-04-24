@@ -337,22 +337,6 @@ function createNationSheet(nationName) {
 	);
 	
 	createStatTable(
-        "Debt Stats",
-        [
-            [
-                "PossiblePublicDebt",
-                "PublicDebtLength",
-                "InterestRate"
-            ],
-            [
-                "PublicDebtTaken",
-                "EffectiveDebt",
-                "DebtHappinessEffect"
-            ]
-        ]
-    );
-	
-	createStatTable(
 		"Upkeeps and Income",
 		[
 			[
@@ -417,6 +401,22 @@ function createNationSheet(nationName) {
 		]
 	);
 	
+    createStatTable(
+        "Debt Stats",
+        [
+            [
+                "PossiblePublicDebt",
+                "PublicDebtLength",
+                "InterestRate"
+            ],
+            [
+                "PublicDebtTaken",
+                "EffectiveDebt",
+                "DebtHappinessEffect"
+            ]
+        ]
+    );
+
 	createStatTable(
 		"Fortifications",
 		[
@@ -574,7 +574,7 @@ function createNationSheet(nationName) {
     createPieDiagram("TradeInfluences");
 	
     createBreaker();
-    
+
 	createStatTable(
         "Trade Influence - Americas",
         [
