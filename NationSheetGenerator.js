@@ -938,68 +938,6 @@ function createNationSheet(nationName) {
         element.style.width = element.parentElement.clientWidth + "px";
         element.style.height = element.parentElement.clientHeight + "px";
     });
-
-    /* #region  Raw Stats */
-
-    let rawcontainer = document.createElement("div");
-    rawcontainer.classList.add("raw");
-    let rawstats = document.createElement("h2");
-    rawstats.innerText = "Raw Stats"
-    rawcontainer.appendChild(rawstats);
-
-    for (const nationStatSectionIndex in nationStatSections) {
-        const nationStatSection = nationStatSections[nationStatSectionIndex];
-        table = document.createElement("table");
-
-        let nationStatNameRow = document.createElement("tr");
-        nationStatNameRow.style.background = primaryColor;
-        let nationStatRow = document.createElement("tr");
-        nationStatRow.style.background = secondaryColor;
-
-        for (const nationStatName in nationStatSection) {
-            const nationStat = nation[nationStatName];
-            let nationStatNameCell = document.createElement("th");
-            nationStatNameCell.innerText = nationStatName.split(/(?<=[a-zA-Z])(?=[A-Z])/gm).join(" ");
-            let nationStatCell = document.createElement("td");
-            nationStatCell.style.textAlign = "center";
-            if (!isNaN(nationStat)) {
-                //integers
-                if (~[
-                    "Population",
-                    "FuturePopulation"
-                ].indexOf(nationStatName)) {
-                    nationStatCell.innerText = parseFloat(nationStat).toFixed(0);
-                }
-                //percentages
-                else if (~[
-                    "LowerClassTax",
-                    "MediumClassTax",
-                    "HighClassTax",
-                ].indexOf(nationStatName)) {
-                    nationStatCell.innerText = parseFloat(nationStat * 100).toFixed(2) + "%";
-                }
-                //normal (2 digits)
-                else {
-                    nationStatCell.innerText = parseFloat(nationStat).toFixed(2);
-                }
-
-            } else
-                nationStatCell.innerText = nationStat;
-
-            nationStatRow.appendChild(nationStatCell);
-            nationStatNameRow.appendChild(nationStatNameCell);
-        }
-
-        table.appendChild(nationStatNameRow);
-        table.appendChild(nationStatRow);
-        rawcontainer.appendChild(table);
-
-    }
-    nationSheetContainer.appendChild(rawcontainer);
-
-    /* #endregion */
-
-
 }
 
 function createStatTable(title, tables){
