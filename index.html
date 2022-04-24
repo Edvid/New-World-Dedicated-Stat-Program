@@ -14,6 +14,14 @@
         <input type="file" id="myFile" name="filename" onchange="loadChangesFromFile(event)">
     </form>
     <div id="NationSheet"></div>
+    <script>
+        //when downloaded for test. Replace the URL with a localhost URL
+        //local host by typing "http-server" in a terminal after installing it
+        //install by "npm install http-server -g"
+        //example of what the string below should be for local testing is "http://127.0.0.1:8080/"
+        const HOME_ADDRESS = "https://raw.githubusercontent.com/Edvid/New-World-Dedicated-Stat-Program/main/";
+    </script>
+
     <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
     <script src="https://cdn.amcharts.com/lib/5/percent.js"></script>
 
@@ -31,11 +39,7 @@
             
             (async function(){
                 let preload;
-                //when downloaded for test. Replace the URL with a localhost URL
-                //local host by typing "http-server" in a terminal after installing it
-                //install by "npm install http-server -g"
-                //example of what the string below should be for local testing is "http://127.0.0.1:8080/NW7.ccf"
-                await fetch("https://raw.githubusercontent.com/Edvid/New-World-Dedicated-Stat-Program/main/NW7.ccf").then(response => response.text()).then(data => preload = data);
+                await fetch(HOME_ADDRESS + "NW7.ccf").then(response => response.text()).then(data => preload = data);
                 preload = preload.split(/\r?\n|\r/);
                 loadChangesFromContent(preload);
             })();
