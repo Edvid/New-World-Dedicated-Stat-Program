@@ -70,12 +70,10 @@ class Nation {
   ReligiousDisunity;
   Population;
   PopulationGrowth;
-  PopulationGrowthModifier;
   Health;
   LiteracyPercent;
   HigherEducation;
   EducationEfficiency;
-  EducationCostModifier;
   AdministrativeEfficiency;
   Corruption;
   Overextension;
@@ -86,7 +84,6 @@ class Nation {
   Stability;
   AtWar;
   WarSupport;
-  WarStabilityModifier;
   Absolutism;
   PopulationControl;
   BirthControl;
@@ -540,7 +537,6 @@ class Nation {
     this.ReligiousDisunity = 0.00;
     this.Health = 2.00;
     this.EducationEfficiency = 3;
-    this.EducationCostModifier = 6;
     this.AdministrativeEfficiency = 30.00;
     this.Propaganda = 0;
     this.SocialSpending = 0;
@@ -1059,7 +1055,7 @@ class Nation {
     this.Disease = this.PopulationDensityPerKmSquared / 25 - this.Health / 20 - (this.Technologies.HumanAnatomy ? 0.15 : 0);
     this.UnderPopulation = this.Disease < 0.5 ? (1 - this.Disease) / 10 : 0;
 
-    this.PopulationGrowthModifier = (function () {
+    let PopulationGrowthModifier = (function () {
 
       let mod = n.FoodPopulationBoost + (n.Prosperity - 1) / 10 + n.UnderPopulation;
 
@@ -1248,7 +1244,7 @@ class Nation {
     this.PopulationStabilityImpact = (this.Population > this.AdministrativeEfficiency * 500000 ? (this.AdministrativeEfficiency * 500000 - this.Population) / 50000000 : 0) * 10;
     this.Fervor = clamp(1, -1, 0 + this.MinorBattles / 20 + this.MajorBattles / 10 + this.Pillaging - (this.Casualties / (this.OverallNumbers + this.Casualties + 0.0000001)));
     this.WarSupport = clamp(1, 0, this.PopulationHappiness / 10 * 2.5 + this.Propaganda / 10 + this.Fervor);
-    this.WarStabilityModifier = ((this.AtWar.toLowerCase() == 'offensive' && this.WarSupport < 0.75) ? (this.WarSupport - 0.75) / 10 : 0) + max(-0.075, ((this.AtWar.toLowerCase() == 'defensive' && this.WarSupport < 0.4 && this.Fervor < 0) ? (this.Fervor) / 10 : 0));
+    let WarStabilityModifier = ((this.AtWar.toLowerCase() == 'offensive' && this.WarSupport < 0.75) ? (this.WarSupport - 0.75) / 10 : 0) + max(-0.075, ((this.AtWar.toLowerCase() == 'defensive' && this.WarSupport < 0.4 && this.Fervor < 0) ? (this.Fervor) / 10 : 0));
     //min and max? nested ternary operations, with "0" if either fail? This can be optimized
     this.MilitaryLoyalty = clamp(1, 0, 
       1 * this.ArmyWages +
@@ -1260,7 +1256,7 @@ class Nation {
       (this.Budget < 0 ? this.Budget / this.ArmyUpkeep :
         0)
       - this.CommanderFreedom / 10);
-    this.Stability = this.PopulationHappiness + this.AdministrativeEfficiency / 10 - this.Overextension - this.CulturalDisunity - this.ReligiousDisunity + (this.Propaganda / 1.75 * (1 + this.CulturalAdvancements.Newspapers / 2)) + this.PopulationControl + (this.NobleLoyalty - 0.5) * 10 + (this.ClergyLoyalty - 0.5) * 7.5 + (this.BurghersLoyalty - 0.5) * 7.5 + this.PopulationStabilityImpact + this.WarStabilityModifier * 100 + (this.MilitaryLoyalty - 1) * 7.5;
+    this.Stability = this.PopulationHappiness + this.AdministrativeEfficiency / 10 - this.Overextension - this.CulturalDisunity - this.ReligiousDisunity + (this.Propaganda / 1.75 * (1 + this.CulturalAdvancements.Newspapers / 2)) + this.PopulationControl + (this.NobleLoyalty - 0.5) * 10 + (this.ClergyLoyalty - 0.5) * 7.5 + (this.BurghersLoyalty - 0.5) * 7.5 + this.PopulationStabilityImpact + WarStabilityModifier * 100 + (this.MilitaryLoyalty - 1) * 7.5;
     this.Corruption = max(0, this.SocialSpending - this.AdministrativeEfficiency / 20) + (this.Stability < 1 ? 0.5 : 0) + (this.Stability < -1 ? 0.5 : 0) + max(0, ((this.HighClassTax + this.MediumClassTax + this.LowerClassTax) / 3 * 100) - this.AdministrativeEfficiency / 2) / 10;
     this.ArmyQuality = max(0.1, 1 + this.TrainingQuality + this.ArmyTech + this.MilitaryTactics + this.CommanderFreedom / 10 - this.IronShortage - this.SulphurShortage - this.Corruption / 5);
     this.FortUpkeep = (
@@ -1331,7 +1327,7 @@ class Nation {
 
 
     this.ResourcePopulationGrowthBoost = (this.EffectiveCotton - this.CottonInflation + this.EffectiveSpice - this.SpiceInflation + this.EffectiveWool - this.WoolInflation + this.EffectiveFur - this.FurInflation + (this.EffectiveSugar - this.SugarInflation + this.EffectiveExoticFruit - this.ExoticFruitInflation) / 2) / 100;
-    this.PopulationGrowth = max(-0.3, (0.1 + this.PopulationGrowthModifier + this.ResourcePopulationGrowthBoost) * (1 - this.Disease) - this.BirthControl / 20);
+    this.PopulationGrowth = max(-0.3, (0.1 + PopulationGrowthModifier + this.ResourcePopulationGrowthBoost) * (1 - this.Disease) - this.BirthControl / 20);
     this.FuturePopulation = (function () {
       return n.Population + (n.FutureFood < 0 ? n.FutureFood * 1000 : n.Population * n.PopulationGrowth / gameStats.TimeDivide);
     })();
@@ -1446,7 +1442,7 @@ class Nation {
     this.SpyUpkeep = this.Spies / 200 * this.SpyQuality / gameStats.TimeDivide;
     this.SocialSpendingUpkeep = this.SocialSpending * this.Population / 1000000 / gameStats.TimeDivide * 3;
     this.HygieneUpkeep = this.Health * this.Population / 2000000 / gameStats.TimeDivide;
-    this.EducationUpkeep = this.EducationEfficiency * this.Population / 500000 * (1.1 - this.AdministrativeEfficiency / 100) * this.EducationCostModifier / gameStats.TimeDivide;
+    this.EducationUpkeep = this.EducationEfficiency * this.Population / 500000 * (1.1 - this.AdministrativeEfficiency / 100) * 6 / gameStats.TimeDivide;
     this.PropagandaUpkeep = this.Propaganda * (100 - this.AdministrativeEfficiency) / 100 * this.Population / 1000000 / gameStats.TimeDivide;
     this.PopulationControlUpkeep = this.PopulationControl * this.Population / 800000 / gameStats.TimeDivide;
     this.AdministrativeUpkeep = this.LandAdministration / gameStats.TimeDivide * 2;

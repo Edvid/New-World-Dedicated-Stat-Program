@@ -71,134 +71,8 @@ document.body.appendChild(nationSheetContainer);
 
 function createNationSheet(nationName) {
     currentNationNameDisplay.innerText = nationName.split(/(?<=[a-zA-Z])(?=[A-Z])/gm).join(" ");
-    const nation = gameStats.Nations[nationName];
-    let table;
-
-    let nationStatSections = [{}];
-    let i = 0;
-    let statBreakPoints = [
-        "FutureDateInThisNation",
-        "ReligiousDisunity",
-        "Health",
-        "EducationCostModifier",
-        "Propaganda",
-        "PopulationHappiness",
-        "Stability",
-        "Absolutism",
-        "ConscriptionPercent",
-        "ProductionEfficiency",
-        "Mercantilism",
-        "EffectiveDebt",
-        "Inflation",
-        "SpyQuality",
-        "BurghersLoyalty",
-        "PopulationControlUpkeep",
-        "OverallIncome",
-        "Militia",
-        "OverallNumbers",
-        "FortUpkeep",
-        "ArmyQuality",
-        "MililtaryDiscipline",
-        "NavyQuality",
-        "UpkeepForOneHeavyShip",
-        "OverallShipCount",
-        "NavyUpkeep",
-        "New_EliteCavalry",
-        "New_Cannons",
-        "New_HeavyShips",
-        "NewTroopRecruitmentPenalty",
-        "Burghers",
-        "PopulationTechImpact",
-        "FarmingEfficiency",
-        "EffectiveCoal",
-        "EffectiveSulphur",
-        "CottonInflation",
-        "GoldInflation",
-        "EffectiveIron",
-        "TeaInflation",
-        "SilkInflation",
-        "SpiceInflation",
-        "WoolInflation",
-        "CoffeeInflation",
-        "FurInflation",
-        "DiamondInflation",
-        "SilverInflation",
-        "EffectiveCopper",
-        "IvoryInflation",
-        "CocoaInflation",
-        "TobaccoInflation",
-        "SugarInflation",
-        "ExoticFruitInflation",
-        "ResourceBudgetBoost",
-        "CoalValue",
-        "GoldValue",
-        "IronValue",
-        "SulphurValue",
-        "CottonValue",
-        "TeaValue",
-        "SpiceValue",
-        "CopperValue",
-        "SilkValue",
-        "WoolValue",
-        "CoffeeValue",
-        "SilverValue",
-        "DiamondValue",
-        "FurValue",
-        "IvoryValue",
-        "CocoaValue",
-        "TobaccoValue",
-        "SugarValue",
-        "ExoticFruitValue",
-        "ResearchPoints",
-        "Technologies",
-        "ArmyTechBoost",
-        "EffectiveTax",
-        "DebtHappinessEffect",
-        "Balance",
-        "CulturalPower",
-        "CulturalAdvancements",
-        "FoodOutgoing",
-        "CoalOutgoing",
-        "SulphurOutgoing",
-        "CottonOutgoing",
-        "GoldOutgoing",
-        "IronOutgoing",
-        "TeaOutgoing",
-        "SilkOutgoing",
-        "SpiceOutgoing",
-        "WoolOutgoing",
-        "CoffeeOutgoing",
-        "FurOutgoing",
-        "DiamondOutgoing",
-        "SilverOutgoing",
-        "CopperOutgoing",
-        "IvoryOutgoing",
-        "CocoaOutgoing",
-        "TobaccoOutgoing",
-        "SugarOutgoing",
-        "ExoticFruitOutgoing",
-        "TradePowerResourceTrade",
-        "AgricultureTechnology",
-        "FoodPopulationBoost",
-        "TradeProfit",
-        "Fervor",
-        "TradeInfluences",
-        "LandAdministration",
-        "Climates",
-        "HabitableLand",
-        "Food",
-        "MilitaryExpendures"
-    ]
-    for (const nationStatName in nation) {
-        const nationStat = nation[nationStatName];
-        nationStatSections[i][nationStatName] = nationStat;
-        if (statBreakPoints[i] == nationStatName) {
-            nationStatSections[++i] = {};
-        }
-    }
-
+    
     nationSheetContainer.innerHTML = "";
-
     /* #region  New Display */
 
     createStatTable(
@@ -245,8 +119,13 @@ function createNationSheet(nationName) {
         ]
     );
 
+    createBreaker();
+    
     createPieDiagram("CultureGroups");
     createOpinionMatrixTable("Culture Groups Opinions", "CultureGroups");
+    
+    createBreaker();
+    
     createPieDiagram("ReligionGroups");
     createOpinionMatrixTable("Religion Groups Opinions", "ReligionGroups");
     
@@ -331,22 +210,6 @@ function createNationSheet(nationName) {
 	);
 	
 	createStatTable(
-        "Debt Stats",
-        [
-            [
-                "PossiblePublicDebt",
-                "PublicDebtLength",
-                "InterestRate"
-            ],
-            [
-                "PublicDebtTaken",
-                "EffectiveDebt",
-                "DebtHappinessEffect"
-            ]
-        ]
-    );
-	
-	createStatTable(
 		"Upkeeps and Income",
 		[
 			[
@@ -411,6 +274,22 @@ function createNationSheet(nationName) {
 		]
 	);
 	
+    createStatTable(
+        "Debt Stats",
+        [
+            [
+                "PossiblePublicDebt",
+                "PublicDebtLength",
+                "InterestRate"
+            ],
+            [
+                "PublicDebtTaken",
+                "EffectiveDebt",
+                "DebtHappinessEffect"
+            ]
+        ]
+    );
+
 	createStatTable(
 		"Fortifications",
 		[
@@ -527,6 +406,8 @@ function createNationSheet(nationName) {
         ]
     );
 	
+    createBreaker();
+
     createPieDiagram("Climates", "Pixels");
 	
 	createStatTable(
@@ -549,18 +430,146 @@ function createNationSheet(nationName) {
         ]
     );
 
+
+    createBreaker();
+    
     createPieDiagram("NobleLoyaltyGroups");
     createPieDiagram("ClergyLoyaltyGroups");
     createPieDiagram("BurghersLoyaltyGroups");
     
-
+    createBreaker();
+    
     createPieDiagram("Workforces");
     createPieDiagram("SocietalClasses");
-
+    
+    createBreaker();
+    
     createPieDiagram("TradeInfluences");
+	
+    createBreaker();
+
+	createStatTable(
+        "Trade Influence - Americas",
+        [
+            [
+                ".TradeInfluences[\"Alaska\"]",
+                ".TradeInfluences[\"Cascadia\"]",
+                ".TradeInfluences[\"WestCoast\"]",
+                ".TradeInfluences[\"HudsonBay\"]",
+                ".TradeInfluences[\"GreatLakes\"]",
+                ".TradeInfluences[\"Mississipi\"]",
+                ".TradeInfluences[\"GulfOfMexico\"]",
+                ".TradeInfluences[\"LawrenceGulf\"]",
+                ".TradeInfluences[\"EastCoast\"]",
+                ".TradeInfluences[\"Carribean\"]",
+                ".TradeInfluences[\"CentralAmerica\"]"
+            ],
+			[
+				".TradeInfluences[\"GuyanaAndSuriname\"]",
+                ".TradeInfluences[\"Amazon\"]",
+                ".TradeInfluences[\"Peru\"]",
+                ".TradeInfluences[\"RioGrande\"]",
+                ".TradeInfluences[\"LaPlata\"]",
+                ".TradeInfluences[\"Chile\"]",
+                ".TradeInfluences[\"Patagonia\"]"
+			]
+        ]
+    );
+	
+	createStatTable(
+        "Trade Influence - Europe",
+        [
+            [
+                ".TradeInfluences[\"NorthSea\"]",
+                ".TradeInfluences[\"BritishIsles\"]",
+                ".TradeInfluences[\"EnglishChannel\"]",
+                ".TradeInfluences[\"France\"]",
+                ".TradeInfluences[\"BayOfBiscay\"]",
+                ".TradeInfluences[\"WestIberia\"]",
+                ".TradeInfluences[\"Gibraltar\"]",
+                ".TradeInfluences[\"WestMediterreanian\"]",
+                ".TradeInfluences[\"Rhine\"]"
+            ],
+			[
+				".TradeInfluences[\"CentralMed\"]",
+                ".TradeInfluences[\"Adriatic\"]",
+                ".TradeInfluences[\"Germany\"]",
+                ".TradeInfluences[\"SouthGermany\"]",
+                ".TradeInfluences[\"Denmark\"]",
+                ".TradeInfluences[\"Baltic\"]",
+                ".TradeInfluences[\"NorthNordics\"]",
+                ".TradeInfluences[\"BarentsSea\"]"
+			],
+			[
+				".TradeInfluences[\"Novgorod\"]",
+                ".TradeInfluences[\"Poland\"]",
+                ".TradeInfluences[\"Dniepr\"]",
+                ".TradeInfluences[\"Crimea\"]",
+                ".TradeInfluences[\"Balkans\"]",
+                ".TradeInfluences[\"Greece\"]",
+                ".TradeInfluences[\"NorthAnatolia\"]",
+                ".TradeInfluences[\"EastMed\"]"
+			]
+        ]
+    );
+	
+	createStatTable(
+        "Trade Influence - Africa",
+        [
+            [
+                ".TradeInfluences[\"Egypt\"]",
+                ".TradeInfluences[\"RedSea\"]",
+                ".TradeInfluences[\"WestAfrica\"]",
+                ".TradeInfluences[\"CoteDIvoire\"]",
+                ".TradeInfluences[\"Nigeria\"]",
+                ".TradeInfluences[\"SouthNile\"]",
+                ".TradeInfluences[\"Somalia\"]",
+                ".TradeInfluences[\"Kongo\"]",
+                ".TradeInfluences[\"EastAfrica\"]",
+                ".TradeInfluences[\"Mozambique\"]",
+                ".TradeInfluences[\"SouthAfrica\"]"
+            ]
+        ]
+    );
+
+	createStatTable(
+        "Trade Influence - Asia",
+        [
+            [
+                ".TradeInfluences[\"Mesopotamia\"]",
+                ".TradeInfluences[\"PersianGulf\"]",
+                ".TradeInfluences[\"Caucasus\"]",
+                ".TradeInfluences[\"DonRiver\"]",
+                ".TradeInfluences[\"Volga\"]",
+                ".TradeInfluences[\"CentralAsia\"]",
+                ".TradeInfluences[\"WestSiberia\"]",
+                ".TradeInfluences[\"EastSiberia\"]"
+            ],
+			[
+				".TradeInfluences[\"Iran\"]",
+                ".TradeInfluences[\"Pakistan\"]",
+                ".TradeInfluences[\"Tibet\"]",
+                ".TradeInfluences[\"Mongolia\"]",
+                ".TradeInfluences[\"Manchuria\"]",
+                ".TradeInfluences[\"SeaOfJapan\"]",
+                ".TradeInfluences[\"NorthChina\"]",
+                ".TradeInfluences[\"YangtzeeRiver\"]"
+			],
+			[
+				".TradeInfluences[\"SouthChina\"]",
+                ".TradeInfluences[\"NorthIndia\"]",
+                ".TradeInfluences[\"WestIndia\"]",
+                ".TradeInfluences[\"EastIndia\"]",
+                ".TradeInfluences[\"Burma\"]",
+                ".TradeInfluences[\"SouthEastAsia\"]",
+                ".TradeInfluences[\"NorthAustralia\"]",
+                ".TradeInfluences[\"SouthAustralia\"]"
+			]
+        ]
+    );
 
     let techarray = [[]]
-    i = 0;
+    let i = 0;
     let techBreakPoints = [
         "HorseCollar",
         "Firelance",
@@ -818,71 +827,10 @@ function createNationSheet(nationName) {
         element.style.width = element.parentElement.clientWidth + "px";
         element.style.height = element.parentElement.clientHeight + "px";
     });
-
-    /* #region  Raw Stats */
-
-    let rawcontainer = document.createElement("div");
-    rawcontainer.classList.add("raw");
-    let rawstats = document.createElement("h2");
-    rawstats.innerText = "Raw Stats"
-    rawcontainer.appendChild(rawstats);
-
-    for (const nationStatSectionIndex in nationStatSections) {
-        const nationStatSection = nationStatSections[nationStatSectionIndex];
-        table = document.createElement("table");
-
-        let nationStatNameRow = document.createElement("tr");
-        nationStatNameRow.style.background = primaryColor;
-        let nationStatRow = document.createElement("tr");
-        nationStatRow.style.background = secondaryColor;
-
-        for (const nationStatName in nationStatSection) {
-            const nationStat = nation[nationStatName];
-            let nationStatNameCell = document.createElement("th");
-            nationStatNameCell.innerText = nationStatName.split(/(?<=[a-zA-Z])(?=[A-Z])/gm).join(" ");
-            let nationStatCell = document.createElement("td");
-            nationStatCell.style.textAlign = "center";
-            if (!isNaN(nationStat)) {
-                //integers
-                if (~[
-                    "Population",
-                    "FuturePopulation"
-                ].indexOf(nationStatName)) {
-                    nationStatCell.innerText = parseFloat(nationStat).toFixed(0);
-                }
-                //percentages
-                else if (~[
-                    "LowerClassTax",
-                    "MediumClassTax",
-                    "HighClassTax",
-                ].indexOf(nationStatName)) {
-                    nationStatCell.innerText = parseFloat(nationStat * 100).toFixed(2) + "%";
-                }
-                //normal (2 digits)
-                else {
-                    nationStatCell.innerText = parseFloat(nationStat).toFixed(2);
-                }
-
-            } else
-                nationStatCell.innerText = nationStat;
-
-            nationStatRow.appendChild(nationStatCell);
-            nationStatNameRow.appendChild(nationStatNameCell);
-        }
-
-        table.appendChild(nationStatNameRow);
-        table.appendChild(nationStatRow);
-        rawcontainer.appendChild(table);
-
-    }
-    nationSheetContainer.appendChild(rawcontainer);
-
-    /* #endregion */
-
-
 }
 
 function createStatTable(title, tables){
+    let tablecontainer = document.createElement("div");
     let table = document.createElement("table");
     let tableTitle = document.createElement("h2");
     tableTitle.classList.add("tabletitle")
@@ -954,11 +902,15 @@ function createStatTable(title, tables){
         table.appendChild(nationStatNameRow);
         table.appendChild(nationStatRow);
     }
-    nationSheetContainer.appendChild(tableTitle);    
-    nationSheetContainer.appendChild(table);
+
+    tablecontainer.appendChild(tableTitle);    
+    tablecontainer.appendChild(table);
+
+    nationSheetContainer.appendChild(tablecontainer);
 }
 
 function createOpinionMatrixTable(title, SocialBehaviourGroups){
+    let tablecontainer = document.createElement("div");
     let table = document.createElement("table");
     table.classList.add("opiniontable");
     let tableTitle = document.createElement("h2");
@@ -1038,18 +990,21 @@ function createOpinionMatrixTable(title, SocialBehaviourGroups){
         }
         table.appendChild(opRow);
     }
-    nationSheetContainer.appendChild(tableTitle);    
-    nationSheetContainer.appendChild(table);
+
+    tablecontainer.appendChild(tableTitle);    
+    tablecontainer.appendChild(table);
+
+    nationSheetContainer.appendChild(tablecontainer);
 }
 
 function createPieDiagram(SocialBehaviourGroups, ValName){
     let ValueName = ValName;
     if(typeof ValueName == 'undefined') ValueName = "Points"
-
+    
+    let tablecontainer = document.createElement("div");
     let title = document.createElement("h2");
     title.innerText = SocialBehaviourGroups.split(/(?<=[a-zA-Z])(?=[A-Z])/gm).join(" ");
     title.classList.add("tabletitle");
-    nationSheetContainer.appendChild(title);
 
     let nationsSocialBehaviourGroups = gameStats.Nations[currentNationName][SocialBehaviourGroups];
 
@@ -1061,8 +1016,12 @@ function createPieDiagram(SocialBehaviourGroups, ValName){
     chartdiv.style.width = "500px";
     chartdiv.style.height = "360px";
     chartdiv.style.border = "1px dotted grey";
-    nationSheetContainer.appendChild(chartdiv);
-    
+
+    tablecontainer.appendChild(title);    
+    tablecontainer.appendChild(chartdiv);
+
+    nationSheetContainer.appendChild(tablecontainer);
+
 
     
     let root = am5.Root.new(chartdiv);
@@ -1122,4 +1081,13 @@ function createPieDiagram(SocialBehaviourGroups, ValName){
     );
     
     legend.data.setAll(series.dataItems);
+}
+
+function createBreaker(){
+    let breaker = document.createElement("div");
+    breaker.style.width = "100%";
+    breaker.style.height = "0px";
+
+    nationSheetContainer.appendChild(breaker);
+    
 }

@@ -79,6 +79,7 @@ function displayValueFix(statName, statValue) {
             "MilitaryMorale",
             "MililtaryDiscipline",
             "CultureRepresentedAtGovernmentLevelPercent",
+            "PopulationInAgriculture",
             "Pillaging",
             "Occupation",
             "Fervor",
