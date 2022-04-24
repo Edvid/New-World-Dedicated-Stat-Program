@@ -11,9 +11,9 @@ function sleep(ms) {
 async function onLoad(){
     const symbolToColor = new Map(
         [
-            ['.', "White"],
             [' ', "DarkSlateBlue"],
-            ['-', "Black"]
+            ['.', "Black"],
+            ['-', "White"]
         ]
     );
     
@@ -56,7 +56,7 @@ async function onLoad(){
         for (let i = 0; i < pixelRows.length; i+= 2) {
             const number = pixelRows[i];
             const symbol = pixelRows[i + 1];
-
+            if(i/2 < 8) console.log("number: " + number + ",symbol: " + symbol);
             if(symbol == '$'){
                 for(let j = 0; j < number; j++){
                     currentPixel = (Math.floor(currentPixel / canvas.width) + +number) * canvas.width;  
@@ -67,16 +67,17 @@ async function onLoad(){
                 const x = currentPixel % canvas.width;
                 const y = Math.floor(currentPixel / canvas.width);
                 
+                
                 currentPixel += +number;
-
-                let overflow = Math.max(0, x + number - canvas.width);
+                
+                let overflow = Math.max(0, (x + +number) - canvas.width);
 
                 context.fillStyle = symbolToColor.get(symbol);
                 context.fillRect(x, y, number - overflow, 1);
                 if(overflow > 0) context.rect(0, y+1, overflow, 1);
             }
 
-            if (awaitCounter*canvasZoomScale*canvas.width < currentPixel) {
+            if (awaitCounter * canvasZoomScale * canvas.width < currentPixel) {
                 await sleep(50);
                 console.log("currentPixel: " + currentPixel)
                 awaitCounter += 20;
