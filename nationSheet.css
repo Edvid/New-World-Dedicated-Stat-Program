@@ -72,10 +72,11 @@ td{
 /* #endregion */
 
 .nationsheet{
+    display: flex;
+    flex-wrap: wrap;
     padding-top: 0.5em;
     background-color:#fffff4;
-    min-width: 800px;
-    max-width: 100%;
+    min-width: 1200px;
 }
 
 .nationsheet .raw{

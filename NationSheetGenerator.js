@@ -941,6 +941,7 @@ function createNationSheet(nationName) {
 }
 
 function createStatTable(title, tables){
+    let tablecontainer = document.createElement("div");
     let table = document.createElement("table");
     let tableTitle = document.createElement("h2");
     tableTitle.classList.add("tabletitle")
@@ -1012,11 +1013,15 @@ function createStatTable(title, tables){
         table.appendChild(nationStatNameRow);
         table.appendChild(nationStatRow);
     }
-    nationSheetContainer.appendChild(tableTitle);    
-    nationSheetContainer.appendChild(table);
+
+    tablecontainer.appendChild(tableTitle);    
+    tablecontainer.appendChild(table);
+
+    nationSheetContainer.appendChild(tablecontainer);
 }
 
 function createOpinionMatrixTable(title, SocialBehaviourGroups){
+    let tablecontainer = document.createElement("div");
     let table = document.createElement("table");
     table.classList.add("opiniontable");
     let tableTitle = document.createElement("h2");
@@ -1096,18 +1101,27 @@ function createOpinionMatrixTable(title, SocialBehaviourGroups){
         }
         table.appendChild(opRow);
     }
-    nationSheetContainer.appendChild(tableTitle);    
-    nationSheetContainer.appendChild(table);
+
+    tablecontainer.appendChild(tableTitle);    
+    tablecontainer.appendChild(table);
+
+    nationSheetContainer.appendChild(tablecontainer);
+    
+    let breaker = document.createElement("div");
+    breaker.style.width = "1200px";
+    breaker.style.height = "1px";
+
+    nationSheetContainer.appendChild(breaker);
 }
 
 function createPieDiagram(SocialBehaviourGroups, ValName){
     let ValueName = ValName;
     if(typeof ValueName == 'undefined') ValueName = "Points"
-
+    
+    let tablecontainer = document.createElement("div");
     let title = document.createElement("h2");
     title.innerText = SocialBehaviourGroups.split(/(?<=[a-zA-Z])(?=[A-Z])/gm).join(" ");
     title.classList.add("tabletitle");
-    nationSheetContainer.appendChild(title);
 
     let nationsSocialBehaviourGroups = gameStats.Nations[currentNationName][SocialBehaviourGroups];
 
@@ -1119,8 +1133,12 @@ function createPieDiagram(SocialBehaviourGroups, ValName){
     chartdiv.style.width = "500px";
     chartdiv.style.height = "360px";
     chartdiv.style.border = "1px dotted grey";
-    nationSheetContainer.appendChild(chartdiv);
-    
+
+    tablecontainer.appendChild(title);    
+    tablecontainer.appendChild(chartdiv);
+
+    nationSheetContainer.appendChild(tablecontainer);
+
 
     
     let root = am5.Root.new(chartdiv);
