@@ -198,6 +198,8 @@ function createNationSheet(nationName) {
 
     nationSheetContainer.innerHTML = "";
 
+
+
     /* #region  New Display */
 
     createStatTable(
@@ -244,8 +246,13 @@ function createNationSheet(nationName) {
         ]
     );
 
+    createBreaker();
+    
     createPieDiagram("CultureGroups");
     createOpinionMatrixTable("Culture Groups Opinions", "CultureGroups");
+    
+    createBreaker();
+    
     createPieDiagram("ReligionGroups");
     createOpinionMatrixTable("Religion Groups Opinions", "ReligionGroups");
     
@@ -526,6 +533,8 @@ function createNationSheet(nationName) {
         ]
     );
 	
+    createBreaker();
+
     createPieDiagram("Climates", "Pixels");
 	
 	createStatTable(
@@ -548,16 +557,24 @@ function createNationSheet(nationName) {
         ]
     );
 
+
+    createBreaker();
+    
     createPieDiagram("NobleLoyaltyGroups");
     createPieDiagram("ClergyLoyaltyGroups");
     createPieDiagram("BurghersLoyaltyGroups");
     
-
+    createBreaker();
+    
     createPieDiagram("Workforces");
     createPieDiagram("SocietalClasses");
-
+    
+    createBreaker();
+    
     createPieDiagram("TradeInfluences");
 	
+    createBreaker();
+    
 	createStatTable(
         "Trade Influence - Americas",
         [
@@ -1105,12 +1122,6 @@ function createOpinionMatrixTable(title, SocialBehaviourGroups){
     tablecontainer.appendChild(table);
 
     nationSheetContainer.appendChild(tablecontainer);
-    
-    let breaker = document.createElement("div");
-    breaker.style.width = "100%";
-    breaker.style.height = "1px";
-
-    nationSheetContainer.appendChild(breaker);
 }
 
 function createPieDiagram(SocialBehaviourGroups, ValName){
@@ -1197,4 +1208,13 @@ function createPieDiagram(SocialBehaviourGroups, ValName){
     );
     
     legend.data.setAll(series.dataItems);
+}
+
+function createBreaker(){
+    let breaker = document.createElement("div");
+    breaker.style.width = "100%";
+    breaker.style.height = "0px";
+
+    nationSheetContainer.appendChild(breaker);
+    
 }
