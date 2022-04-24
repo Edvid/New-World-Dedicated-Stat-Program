@@ -71,135 +71,8 @@ document.body.appendChild(nationSheetContainer);
 
 function createNationSheet(nationName) {
     currentNationNameDisplay.innerText = nationName.split(/(?<=[a-zA-Z])(?=[A-Z])/gm).join(" ");
-    const nation = gameStats.Nations[nationName];
-    let table;
-
-    let nationStatSections = [{}];
-    let i = 0;
-    let statBreakPoints = [
-        "FutureDateInThisNation",
-        "ReligiousDisunity",
-        "Health",
-        "Propaganda",
-        "PopulationHappiness",
-        "Stability",
-        "Absolutism",
-        "ConscriptionPercent",
-        "ProductionEfficiency",
-        "Mercantilism",
-        "EffectiveDebt",
-        "Inflation",
-        "SpyQuality",
-        "BurghersLoyalty",
-        "PopulationControlUpkeep",
-        "OverallIncome",
-        "Militia",
-        "OverallNumbers",
-        "FortUpkeep",
-        "ArmyQuality",
-        "MililtaryDiscipline",
-        "NavyQuality",
-        "UpkeepForOneHeavyShip",
-        "OverallShipCount",
-        "NavyUpkeep",
-        "New_EliteCavalry",
-        "New_Cannons",
-        "New_HeavyShips",
-        "NewTroopRecruitmentPenalty",
-        "Burghers",
-        "PopulationTechImpact",
-        "FarmingEfficiency",
-        "EffectiveCoal",
-        "EffectiveSulphur",
-        "CottonInflation",
-        "GoldInflation",
-        "EffectiveIron",
-        "TeaInflation",
-        "SilkInflation",
-        "SpiceInflation",
-        "WoolInflation",
-        "CoffeeInflation",
-        "FurInflation",
-        "DiamondInflation",
-        "SilverInflation",
-        "EffectiveCopper",
-        "IvoryInflation",
-        "CocoaInflation",
-        "TobaccoInflation",
-        "SugarInflation",
-        "ExoticFruitInflation",
-        "ResourceBudgetBoost",
-        "CoalValue",
-        "GoldValue",
-        "IronValue",
-        "SulphurValue",
-        "CottonValue",
-        "TeaValue",
-        "SpiceValue",
-        "CopperValue",
-        "SilkValue",
-        "WoolValue",
-        "CoffeeValue",
-        "SilverValue",
-        "DiamondValue",
-        "FurValue",
-        "IvoryValue",
-        "CocoaValue",
-        "TobaccoValue",
-        "SugarValue",
-        "ExoticFruitValue",
-        "ResearchPoints",
-        "Technologies",
-        "ArmyTechBoost",
-        "EffectiveTax",
-        "DebtHappinessEffect",
-        "Balance",
-        "CulturalPower",
-        "CulturalAdvancements",
-        "FoodOutgoing",
-        "CoalOutgoing",
-        "SulphurOutgoing",
-        "CottonOutgoing",
-        "GoldOutgoing",
-        "IronOutgoing",
-        "TeaOutgoing",
-        "SilkOutgoing",
-        "SpiceOutgoing",
-        "WoolOutgoing",
-        "CoffeeOutgoing",
-        "FurOutgoing",
-        "DiamondOutgoing",
-        "SilverOutgoing",
-        "CopperOutgoing",
-        "IvoryOutgoing",
-        "CocoaOutgoing",
-        "TobaccoOutgoing",
-        "SugarOutgoing",
-        "ExoticFruitOutgoing",
-        "TradePowerResourceTrade",
-        "AgricultureTechnology",
-        "FoodPopulationBoost",
-        "TradeProfit",
-        "Fervor",
-        "TradeInfluences",
-        "LandAdministration",
-        "Climates",
-        "HabitableLand",
-        "Food",
-        "MilitaryExpendures"
-    ]
-    for (const nationStatName in nation) {
-        const nationStat = nation[nationStatName];
-        nationStatSections[i][nationStatName] = nationStat;
-        if (statBreakPoints[i] == nationStatName) {
-            nationStatSections[++i] = {};
-        }
-    }
-
+    
     nationSheetContainer.innerHTML = "";
-
-
-
     /* #region  New Display */
 
     createStatTable(
@@ -696,7 +569,7 @@ function createNationSheet(nationName) {
     );
 
     let techarray = [[]]
-    i = 0;
+    let i = 0;
     let techBreakPoints = [
         "HorseCollar",
         "Firelance",
