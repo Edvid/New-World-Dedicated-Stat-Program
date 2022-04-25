@@ -14,7 +14,6 @@ function sleep(ms) {
 
 
 async function onLoad(){  
-    
     canvasContainer = document.getElementById("canvascontainer");
     zonename = document.getElementById("zone name");
     zonewealth = document.getElementById("zone wealth");
@@ -44,6 +43,7 @@ async function onLoad(){
         let zonesPixelRows = add1infrontOfUnarySymbols(zones);
 
         let runner = (async function(pixelRows, ctxs, colorlist){
+            let startTime = new Date();
             let currentPixel = 0;
 
             let ctx = ctxs;
@@ -54,20 +54,18 @@ async function onLoad(){
                 const number = pixelRows[i];
                 const symbol = pixelRows[i + 1];
                 
-                if(Array.isArray(ctxs)) {
-                    ctx = ctxs[symbols.indexOf(symbol)]
-                } 
-                if(typeof ctx === "undefined") {
-                    console.log(symbol);
-                    console.log(symbols.indexOf(symbol));
-                }
                 
                 const x = currentPixel % WIDTH;
                 const y = Math.floor(currentPixel / WIDTH);
                 
-                
                 currentPixel += +number;
                 
+                if(Array.isArray(ctxs)) {
+                    let index = symbols.indexOf(symbol); 
+                    if(index < 0) continue; 
+                    ctx = ctxs[index - 1];
+                }
+
                 let overflow = Math.max(0, (x + +number) - WIDTH);
                 
                 let col = colorlist[symbols.indexOf(symbol) % colorlist.length];
@@ -81,10 +79,10 @@ async function onLoad(){
                 let now = new Date();
                 if ((now - then) > 500) {
                     then = new Date();
-                    console.log("wow, a nap?! Sweet!")
-                    await sleep(50);
+                    await sleep(25);
                 }
             }
+            console.log("completed! Time Took (ms): " + ((new Date()) - startTime));
         });
         
         await runner(landPixelRows, worldContext, ["None", "Black", "White"]);
@@ -178,7 +176,6 @@ async function onLoad(){
             "NorthAustralia",
             "SouthAustralia"
         ];
-        console.log("zoneContexts.length is: " + zoneContexts.length)
         for(let i = 0; i < zoneContexts.length; i++){
             let zoneCanvas = document.createElement("canvas");
             zoneCanvas.id = zoneContexts[i];
@@ -195,7 +192,6 @@ async function onLoad(){
         await runner(zonesPixelRows, zoneContexts, zoneColors);
     
     })();
-
 
 }
 
