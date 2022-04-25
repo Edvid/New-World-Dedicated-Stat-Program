@@ -40,7 +40,7 @@ dropdown.id = "dropdownselection";
 let dropdowntitle = document.createElement("label");
 dropdowntitle.innerText = "Choose Nation:";
 let dropdownselection = document.createElement("select");
-dropdownselection.onchange = function(){
+dropdownselection.onchange = function () {
     currentNationID = this.selectedIndex;
     currentNationName = Object.keys(gameStats.Nations)[currentNationID];
     createNationSheet(currentNationName);
@@ -49,7 +49,7 @@ dropdownselection.onchange = function(){
 dropdown.appendChild(dropdowntitle);
 dropdown.appendChild(dropdownselection);
 
-function updateDropdownSelection(){
+function updateDropdownSelection() {
     dropdownselection.innerHTML = "";
     for (const key in gameStats.Nations) {
         let option = document.createElement("option");
@@ -71,7 +71,7 @@ document.body.appendChild(nationSheetContainer);
 
 function createNationSheet(nationName) {
     currentNationNameDisplay.innerText = nationName.split(/(?<=[a-zA-Z])(?=[A-Z])/gm).join(" ");
-    
+
     nationSheetContainer.innerHTML = "";
     /* #region  New Display */
 
@@ -85,7 +85,7 @@ function createNationSheet(nationName) {
                 "GovernmentName"
             ]
         ]
-        );
+    );
 
     createStatTable(
         "Turn Based Stats",
@@ -94,14 +94,14 @@ function createNationSheet(nationName) {
                 "FuturePopulation",
                 "FutureLiteracyPercent",
                 "FutureHigherEducation",
-                "FutureBudget",	
+                "FutureBudget",
                 "FutureFood"
             ],
             [
                 "Population",
                 "LiteracyPercent",
                 "HigherEducation",
-                "Budget",	
+                "Budget",
                 "Food"
             ],
             [
@@ -120,160 +120,160 @@ function createNationSheet(nationName) {
     );
 
     createBreaker();
-    
+
     createPieDiagram("CultureGroups");
     createOpinionMatrixTable("Culture Groups Opinions", "CultureGroups");
-    
+
     createBreaker();
-    
+
     createPieDiagram("ReligionGroups");
     createOpinionMatrixTable("Religion Groups Opinions", "ReligionGroups");
-    
-	createStatTable(
-		"Population Stuff",
-		[
-			[
-				"ReligionRepresentedAtGovernmentLevel",
-				"CultureRepresentedAtGovernmentLevel",
-				"PopulationStabilityImpact"
-			],
-			[
-				"ReligionRepresentedAtGovernmentLevelPercent",
-				"CultureRepresentedAtGovernmentLevelPercent",
-				"PopulationTechImpact"
-			],
-			[
-				"ReligiousDisunity",
-				"CulturalDisunity",
-				"PopulationGrowth"
-			]
-		]
-	);
-	
-	createStatTable(
-		"Basic Stats",
-		[
-			[
-				"Health",
-				"Corruption",
-				"SocialSpending",
-				"Stability",
-				"Absolutism"
-			],
-			[
-				"EducationEfficiency",
-				"Overextension",
-				"Prosperity",
-				"AtWar",
-				"PopulationControl"
-			],
-			[
-				"AdministrativeEfficiency",
-				"Propaganda",
-				"PopulationHappiness",
-				"WarSupport",
-				"BirthControl"
-			]
-		]
-	);
-	
-	createStatTable(
-		"Budget Stats",
-		[
-			[
-				"TradeEfficiency",
-				"LocalTrade",
-				"TradePower"
-			],
-			[
-				"Mercantilism",
-				"ProductionEfficiency",
-				"Production"
-			],
-			[
-				"Inflation",
-				"DailyBudget",
-				"Budget"
-			],
-			[
-				"BudgetIncoming",
-				"BudgetOutgoing",
-				"Balance"
-			],
-			[
-				"HighClassTax",
-				"MediumClassTax",
-				"LowerClassTax",
-				"EffectiveTax"
-			]
-		]
-	);
-	
-	createStatTable(
-		"Upkeeps and Income",
-		[
-			[
-				"ProductionRevenue",
-				"TradeRevenue",
-				"OverallIncome"
-			],
-			[
-				"ArmyUpkeep",
-				"NavyUpkeep",
-				"FortUpkeep"
-			],
-			[
-				"SpyUpkeep",
-				"EducationUpkeep",
-				"PopulationControlUpkeep"
-			],
-			[
-				"SocialSpendingUpkeep",
-				"AgricultureSpending",
-				"AdministrativeUpkeep"
-			],
-			[
-				"HygieneUpkeep",
-				"ResearchUpkeep",
-				"PropagandaUpkeep"
-			]
-		]
-	);
-	
-	createStatTable(
-		"Army Units",
-		[
-			[
-				"Levies",
-				"Militia",
-				"LightInfantry",
-				"HeavyInfantry",
-			],
-			[
-				"Archers",
-				"Crossbowmen",
-				"HandCannon",
-				"Musketeers"
-			],
-			[
-				"LightCavalry",
-				"HeavyCavalry",
-				"SiegeEquipment",
-				"LargeSiegeEquipment"
-			],
-			[
-				"Cannons",
-				"EliteInfantry",
-				"EliteCavalry",
-				"FreeEliteUnitsCap"
-			],
-			[
-				"OverallNumbers",
-				"Spies"
-			]
-		]
-	);
-	
+
+    createStatTable(
+        "Population Stuff",
+        [
+            [
+                "ReligionRepresentedAtGovernmentLevel",
+                "CultureRepresentedAtGovernmentLevel",
+                "PopulationStabilityImpact"
+            ],
+            [
+                "ReligionRepresentedAtGovernmentLevelPercent",
+                "CultureRepresentedAtGovernmentLevelPercent",
+                "PopulationTechImpact"
+            ],
+            [
+                "ReligiousDisunity",
+                "CulturalDisunity",
+                "PopulationGrowth"
+            ]
+        ]
+    );
+
+    createStatTable(
+        "Basic Stats",
+        [
+            [
+                "Health",
+                "Corruption",
+                "SocialSpending",
+                "Stability",
+                "Absolutism"
+            ],
+            [
+                "EducationEfficiency",
+                "Overextension",
+                "Prosperity",
+                "AtWar",
+                "PopulationControl"
+            ],
+            [
+                "AdministrativeEfficiency",
+                "Propaganda",
+                "PopulationHappiness",
+                "WarSupport",
+                "BirthControl"
+            ]
+        ]
+    );
+
+    createStatTable(
+        "Budget Stats",
+        [
+            [
+                "TradeEfficiency",
+                "LocalTrade",
+                "TradePower"
+            ],
+            [
+                "Mercantilism",
+                "ProductionEfficiency",
+                "Production"
+            ],
+            [
+                "Inflation",
+                "DailyBudget",
+                "Budget"
+            ],
+            [
+                "BudgetIncoming",
+                "BudgetOutgoing",
+                "Balance"
+            ],
+            [
+                "HighClassTax",
+                "MediumClassTax",
+                "LowerClassTax",
+                "EffectiveTax"
+            ]
+        ]
+    );
+
+    createStatTable(
+        "Upkeeps and Income",
+        [
+            [
+                "ProductionRevenue",
+                "TradeRevenue",
+                "OverallIncome"
+            ],
+            [
+                "ArmyUpkeep",
+                "NavyUpkeep",
+                "FortUpkeep"
+            ],
+            [
+                "SpyUpkeep",
+                "EducationUpkeep",
+                "PopulationControlUpkeep"
+            ],
+            [
+                "SocialSpendingUpkeep",
+                "AgricultureSpending",
+                "AdministrativeUpkeep"
+            ],
+            [
+                "HygieneUpkeep",
+                "ResearchUpkeep",
+                "PropagandaUpkeep"
+            ]
+        ]
+    );
+
+    createStatTable(
+        "Army Units",
+        [
+            [
+                "Levies",
+                "Militia",
+                "LightInfantry",
+                "HeavyInfantry",
+            ],
+            [
+                "Archers",
+                "Crossbowmen",
+                "HandCannon",
+                "Musketeers"
+            ],
+            [
+                "LightCavalry",
+                "HeavyCavalry",
+                "SiegeEquipment",
+                "LargeSiegeEquipment"
+            ],
+            [
+                "Cannons",
+                "EliteInfantry",
+                "EliteCavalry",
+                "FreeEliteUnitsCap"
+            ],
+            [
+                "OverallNumbers",
+                "Spies"
+            ]
+        ]
+    );
+
     createStatTable(
         "Debt Stats",
         [
@@ -290,75 +290,75 @@ function createNationSheet(nationName) {
         ]
     );
 
-	createStatTable(
-		"Fortifications",
-		[
-			[
-				"SmallForts",
-				"MediumForts",
-				"BigForts",
-				"HugeForts",
-				"ExtraCityFortifications"
-			]
-		]
-	);
-	
-	createStatTable(
-		"Army Stats",
-		[
-			[
-				"IronShortage",
-				"SulphurShortage",
-				"ArmyWages"
-			],
-			[
-				"CommanderFreedom",
-				"TrainingQuality",
-				"MilitaryTactics"
-			],
-			[
-				"ArmyTech",
-				"ArmyQuality",
-				"SpyQuality"
-			],
-			[
-				"MilitaryLoyalty",
-				"MilitaryMorale",
-				"MililtaryDiscipline"
-			]
-		]
-	);
-	
-	createStatTable(
-		"Navy",
-		[
-			[
-				"UpkeepForOneLightShip",
-				"UpkeepForOneMediumShip",
-				"UpkeepForOneHeavyShip"
-			],
-			[
-				"LightShips",
-				"MediumShips",
-				"HeavyShips"
-			],
-			[
-				"NavyImprovements",
-				"NavyTech",
-				"NavyQuality"
-			],
-			[
-				"OverallShipCount",
-				"PrideOfTheNavy",
-			],
-			[
-				"TradeProtection",
-				"NavalPower"
-			]
-		]
-	);
-	
-	createStatTable(
+    createStatTable(
+        "Fortifications",
+        [
+            [
+                "SmallForts",
+                "MediumForts",
+                "BigForts",
+                "HugeForts",
+                "ExtraCityFortifications"
+            ]
+        ]
+    );
+
+    createStatTable(
+        "Army Stats",
+        [
+            [
+                "IronShortage",
+                "SulphurShortage",
+                "ArmyWages"
+            ],
+            [
+                "CommanderFreedom",
+                "TrainingQuality",
+                "MilitaryTactics"
+            ],
+            [
+                "ArmyTech",
+                "ArmyQuality",
+                "SpyQuality"
+            ],
+            [
+                "MilitaryLoyalty",
+                "MilitaryMorale",
+                "MililtaryDiscipline"
+            ]
+        ]
+    );
+
+    createStatTable(
+        "Navy",
+        [
+            [
+                "UpkeepForOneLightShip",
+                "UpkeepForOneMediumShip",
+                "UpkeepForOneHeavyShip"
+            ],
+            [
+                "LightShips",
+                "MediumShips",
+                "HeavyShips"
+            ],
+            [
+                "NavyImprovements",
+                "NavyTech",
+                "NavyQuality"
+            ],
+            [
+                "OverallShipCount",
+                "PrideOfTheNavy",
+            ],
+            [
+                "TradeProtection",
+                "NavalPower"
+            ]
+        ]
+    );
+
+    createStatTable(
         "Agriculture",
         [
             [
@@ -390,8 +390,8 @@ function createNationSheet(nationName) {
             ]
         ]
     );
-	
-	createStatTable(
+
+    createStatTable(
         "War Stats",
         [
             [
@@ -405,12 +405,12 @@ function createNationSheet(nationName) {
             ]
         ]
     );
-	
+
     createBreaker();
 
     createPieDiagram("Climates", "Pixels");
-	
-	createStatTable(
+
+    createStatTable(
         "Land Stats",
         [
             [
@@ -432,23 +432,23 @@ function createNationSheet(nationName) {
 
 
     createBreaker();
-    
+
     createPieDiagram("NobleLoyaltyGroups");
     createPieDiagram("ClergyLoyaltyGroups");
     createPieDiagram("BurghersLoyaltyGroups");
-    
-    createBreaker();
-    
-    createPieDiagram("Workforces");
-    createPieDiagram("SocietalClasses");
-    
-    createBreaker();
-    
-    createPieDiagram("TradeInfluences");
-	
+
     createBreaker();
 
-	createStatTable(
+    createPieDiagram("Workforces");
+    createPieDiagram("SocietalClasses");
+
+    createBreaker();
+
+    createPieDiagram("TradeInfluences");
+
+    createBreaker();
+
+    createStatTable(
         "Trade Influence - Americas",
         [
             [
@@ -464,19 +464,19 @@ function createNationSheet(nationName) {
                 ".TradeInfluences[\"Carribean\"]",
                 ".TradeInfluences[\"CentralAmerica\"]"
             ],
-			[
-				".TradeInfluences[\"GuyanaAndSuriname\"]",
+            [
+                ".TradeInfluences[\"GuyanaAndSuriname\"]",
                 ".TradeInfluences[\"Amazon\"]",
                 ".TradeInfluences[\"Peru\"]",
                 ".TradeInfluences[\"RioGrande\"]",
                 ".TradeInfluences[\"LaPlata\"]",
                 ".TradeInfluences[\"Chile\"]",
                 ".TradeInfluences[\"Patagonia\"]"
-			]
+            ]
         ]
-    );
-	
-	createStatTable(
+    ).classList.add("tradeinfluences");
+
+    createStatTable(
         "Trade Influence - Europe",
         [
             [
@@ -490,8 +490,8 @@ function createNationSheet(nationName) {
                 ".TradeInfluences[\"WestMediterreanian\"]",
                 ".TradeInfluences[\"Rhine\"]"
             ],
-			[
-				".TradeInfluences[\"CentralMed\"]",
+            [
+                ".TradeInfluences[\"CentralMed\"]",
                 ".TradeInfluences[\"Adriatic\"]",
                 ".TradeInfluences[\"Germany\"]",
                 ".TradeInfluences[\"SouthGermany\"]",
@@ -499,9 +499,9 @@ function createNationSheet(nationName) {
                 ".TradeInfluences[\"Baltic\"]",
                 ".TradeInfluences[\"NorthNordics\"]",
                 ".TradeInfluences[\"BarentsSea\"]"
-			],
-			[
-				".TradeInfluences[\"Novgorod\"]",
+            ],
+            [
+                ".TradeInfluences[\"Novgorod\"]",
                 ".TradeInfluences[\"Poland\"]",
                 ".TradeInfluences[\"Dniepr\"]",
                 ".TradeInfluences[\"Crimea\"]",
@@ -509,11 +509,11 @@ function createNationSheet(nationName) {
                 ".TradeInfluences[\"Greece\"]",
                 ".TradeInfluences[\"NorthAnatolia\"]",
                 ".TradeInfluences[\"EastMed\"]"
-			]
+            ]
         ]
-    );
-	
-	createStatTable(
+    ).classList.add("tradeinfluences");
+
+    createStatTable(
         "Trade Influence - Africa",
         [
             [
@@ -530,9 +530,9 @@ function createNationSheet(nationName) {
                 ".TradeInfluences[\"SouthAfrica\"]"
             ]
         ]
-    );
+    ).classList.add("tradeinfluences");
 
-	createStatTable(
+    createStatTable(
         "Trade Influence - Asia",
         [
             [
@@ -545,8 +545,8 @@ function createNationSheet(nationName) {
                 ".TradeInfluences[\"WestSiberia\"]",
                 ".TradeInfluences[\"EastSiberia\"]"
             ],
-			[
-				".TradeInfluences[\"Iran\"]",
+            [
+                ".TradeInfluences[\"Iran\"]",
                 ".TradeInfluences[\"Pakistan\"]",
                 ".TradeInfluences[\"Tibet\"]",
                 ".TradeInfluences[\"Mongolia\"]",
@@ -554,9 +554,9 @@ function createNationSheet(nationName) {
                 ".TradeInfluences[\"SeaOfJapan\"]",
                 ".TradeInfluences[\"NorthChina\"]",
                 ".TradeInfluences[\"YangtzeeRiver\"]"
-			],
-			[
-				".TradeInfluences[\"SouthChina\"]",
+            ],
+            [
+                ".TradeInfluences[\"SouthChina\"]",
                 ".TradeInfluences[\"NorthIndia\"]",
                 ".TradeInfluences[\"WestIndia\"]",
                 ".TradeInfluences[\"EastIndia\"]",
@@ -564,9 +564,9 @@ function createNationSheet(nationName) {
                 ".TradeInfluences[\"SouthEastAsia\"]",
                 ".TradeInfluences[\"NorthAustralia\"]",
                 ".TradeInfluences[\"SouthAustralia\"]"
-			]
+            ]
         ]
-    );
+    ).classList.add("tradeinfluences");
 
     let techarray = [[]]
     let i = 0;
@@ -601,7 +601,7 @@ function createNationSheet(nationName) {
         if (cultureBreakPoints[i] == cultname) culturalarray[++i] = [];
     }
 
-	createStatTable(
+    createStatTable(
         "Tech Stats",
         [
             [
@@ -617,8 +617,8 @@ function createNationSheet(nationName) {
     );
 
     createStatTable("Technologies", techarray);
-	
-	createStatTable(
+
+    createStatTable(
         "Culture Stats",
         [
             [
@@ -630,15 +630,15 @@ function createNationSheet(nationName) {
             ]
         ]
     );
-	
+
     createStatTable("Cultural Advancements", culturalarray);
-	
-	createStatTable(
+
+    createStatTable(
         "Resources",
         [
-			[
-				"MiningEfficiency"
-			],
+            [
+                "MiningEfficiency"
+            ],
             [
                 "Coal",
                 "Sulphur",
@@ -660,13 +660,13 @@ function createNationSheet(nationName) {
                 "Wool",
                 "Coffee",
                 "Fur",
-				"Diamond",
-				"Silver",
-				"Ivory",
-				"Cocoa",
-				"Tobacco",
-				"Sugar",
-				"ExoticFruit"
+                "Diamond",
+                "Silver",
+                "Ivory",
+                "Cocoa",
+                "Tobacco",
+                "Sugar",
+                "ExoticFruit"
             ],
             [
                 "EffectiveCotton",
@@ -677,13 +677,13 @@ function createNationSheet(nationName) {
                 "EffectiveWool",
                 "EffectiveCoffee",
                 "EffectiveFur",
-				"EffectiveDiamond",
-				"EffectiveSilver",
-				"EffectiveIvory",
-				"EffectiveCocoa",
-				"EffectiveTobacco",
-				"EffectiveSugar",
-				"EffectiveExoticFruit"
+                "EffectiveDiamond",
+                "EffectiveSilver",
+                "EffectiveIvory",
+                "EffectiveCocoa",
+                "EffectiveTobacco",
+                "EffectiveSugar",
+                "EffectiveExoticFruit"
             ],
             [
                 "CottonInflation",
@@ -694,19 +694,19 @@ function createNationSheet(nationName) {
                 "WoolInflation",
                 "CoffeeInflation",
                 "FurInflation",
-				"DiamondInflation",
-				"SilverInflation",
-				"IvoryInflation",
-				"CocoaInflation",
-				"TobaccoInflation",
-				"SugarInflation",
-				"ExoticFruitInflation"
+                "DiamondInflation",
+                "SilverInflation",
+                "IvoryInflation",
+                "CocoaInflation",
+                "TobaccoInflation",
+                "SugarInflation",
+                "ExoticFruitInflation"
             ],
-			[
-				"ResourcePopulationGrowthBoost",
-				"ResourceHappinessBoost",
-				"ResourceBudgetBoost"
-			]
+            [
+                "ResourcePopulationGrowthBoost",
+                "ResourceHappinessBoost",
+                "ResourceBudgetBoost"
+            ]
         ]
     );
 
@@ -723,7 +723,7 @@ function createNationSheet(nationName) {
                 "SpiceDemand",
                 "CopperDemand",
                 "SilkDemand",
-				"WoolDemand"
+                "WoolDemand"
             ],
             [
                 "CoalValue",
@@ -735,7 +735,7 @@ function createNationSheet(nationName) {
                 "SpiceValue",
                 "CopperValue",
                 "SilkValue",
-				"WoolValue"
+                "WoolValue"
             ],
             [
                 "CoffeeDemand",
@@ -775,7 +775,7 @@ function createNationSheet(nationName) {
                 "TeaIncoming",
                 "SilkIncoming",
                 "SpiceIncoming",
-				"WoolIncoming"
+                "WoolIncoming"
             ],
             [
                 "FoodOutgoing",
@@ -787,7 +787,7 @@ function createNationSheet(nationName) {
                 "TeaOutgoing",
                 "SilkOutgoing",
                 "SpiceOutgoing",
-				"WoolOutgoing"
+                "WoolOutgoing"
             ],
             [
                 "CoffeeIncoming",
@@ -799,7 +799,7 @@ function createNationSheet(nationName) {
                 "CocoaIncoming",
                 "TobaccoIncoming",
                 "SugarIncoming",
-				"ExoticFruitIncoming"
+                "ExoticFruitIncoming"
             ],
             [
                 "CoffeeOutgoing",
@@ -811,11 +811,11 @@ function createNationSheet(nationName) {
                 "CocoaOutgoing",
                 "TobaccoOutgoing",
                 "SugarOutgoing",
-				"ExoticFruitOutgoing"
+                "ExoticFruitOutgoing"
             ],
-			[
-				"TradePowerResourceTrade"
-			]
+            [
+                "TradePowerResourceTrade"
+            ]
         ]
     );
 
@@ -827,9 +827,21 @@ function createNationSheet(nationName) {
         element.style.width = element.parentElement.clientWidth + "px";
         element.style.height = element.parentElement.clientHeight + "px";
     });
+
+    //make non 0.00 in tradeinfluence bold
+
+    let alltdsintradeinf = document.querySelectorAll(".tradeinfluences td");
+
+    alltdsintradeinf.forEach(element => {
+        if (element.innerText != "0.00") {
+            element.style.fontWeight = "bolder";
+        } else {
+            element.style = "";
+        }
+    });
 }
 
-function createStatTable(title, tables){
+function createStatTable(title, tables) {
     let tablecontainer = document.createElement("div");
     let table = document.createElement("table");
     let tableTitle = document.createElement("h2");
@@ -841,27 +853,26 @@ function createStatTable(title, tables){
         nationStatNameRow.style.background = primaryColor;
         let nationStatRow = document.createElement("tr");
         nationStatRow.style.background = secondaryColor;
-            
+
         for (let i = 0; i < stats.length; i++) {
             const statSelection = stats[i];
             //if first char of string is alphabetic (not symbol), add courtesy dot first, else, we expect the user of createStatTable to know what they're doing
             const statvalue = /^[a-zA-Z]$/.test(statSelection[0]) ?
-            (new Function(`return gameStats.Nations["${currentNationName}"].${statSelection}`))() :
-            (new Function(`return gameStats.Nations["${currentNationName}"]${statSelection}`))(); 
+                (new Function(`return gameStats.Nations["${currentNationName}"].${statSelection}`))() :
+                (new Function(`return gameStats.Nations["${currentNationName}"]${statSelection}`))();
             let nationStatNameCell = document.createElement("th");
             let statName = statSelection.split(/(\.|(?<=\[))/gmi).pop().replace(/(\[|\"| |\])/gmi, "");
             nationStatNameCell.innerText = statName.split(/(?<=[a-zA-Z])(?=[A-Z])/gm).join(" ");
             let nationStatCell = document.createElement("td");
-            nationStatCell.style.textAlign = "center";
             let displayValue = displayValueFix(statName, statvalue);
-            if(displayValue.appendable){
-                nationStatCell.appendChild(displayValue.value);    
-            }else{
+            if (displayValue.appendable) {
+                nationStatCell.appendChild(displayValue.value);
+            } else {
                 nationStatCell.innerText = displayValue.value;
             }
 
             let statTypeIcon = document.createElement("img");
-            switch(getStatType(statName)){
+            switch (getStatType(statName)) {
                 case "Base":
                     statTypeIcon.src = "images/Base.png"; //red
                     statTypeIcon.alt = "Base";
@@ -891,25 +902,27 @@ function createStatTable(title, tables){
                     statTypeIcon.src = "images/Unknown.png"; //black
                     statTypeIcon.alt = "Unknown!";
                     statTypeIcon.title = "Unknown!";
-                break;
+                    break;
             }
             statTypeIcon.classList.add("stattypeicon");
             nationStatRow.appendChild(nationStatCell);
             nationStatNameCell.appendChild(statTypeIcon);
             nationStatNameRow.appendChild(nationStatNameCell);
         }
-        
+
         table.appendChild(nationStatNameRow);
         table.appendChild(nationStatRow);
     }
 
-    tablecontainer.appendChild(tableTitle);    
+    tablecontainer.appendChild(tableTitle);
     tablecontainer.appendChild(table);
 
     nationSheetContainer.appendChild(tablecontainer);
+
+    return tablecontainer;
 }
 
-function createOpinionMatrixTable(title, SocialBehaviourGroups){
+function createOpinionMatrixTable(title, SocialBehaviourGroups) {
     let tablecontainer = document.createElement("div");
     let table = document.createElement("table");
     table.classList.add("opiniontable");
@@ -939,8 +952,8 @@ function createOpinionMatrixTable(title, SocialBehaviourGroups){
         for (const opinioneeName in nationsSocialBehaviourGroups) {
             let cell = document.createElement("td");
             cell.style.background = secondaryColor;
-            if(opinionerName == opinioneeName){
-                
+            if (opinionerName == opinioneeName) {
+
                 let cross = document.createElement("img");
                 cross.src = "images/NotApplicable.gif";
                 cross.classList.add("notapplicable");
@@ -948,35 +961,35 @@ function createOpinionMatrixTable(title, SocialBehaviourGroups){
                 cell.style.padding = "0px";
                 cell.style.margin = "0px";
                 cell.appendChild(cross);
-            } 
-            else{
+            }
+            else {
                 let op = RelevantSocialBehaviours[opinionerName].Opinions[opinioneeName];
                 let img = document.createElement("img");
                 img.style.width = "40px";
                 img.style.height = "40px";
                 let score;
-                if(typeof op != 'undefined'){
+                if (typeof op != 'undefined') {
                     score = op.Score;
-                    if (isNaN(score)){
+                    if (isNaN(score)) {
                         score = Opinion[score];
                     }
-                    if(score <= -75){
+                    if (score <= -75) {
                         img.src = Opinion.UndesiredImage;
-                    }else if(score <= -25){
+                    } else if (score <= -25) {
                         img.src = Opinion.SkepticalImage;
-                    }else if(score > 25){
+                    } else if (score > 25) {
                         img.src = Opinion.FondImage;
-                    }else if(score > 75){
+                    } else if (score > 75) {
                         img.src = Opinion.ObsessedImage;
-                    }else{
+                    } else {
                         img.src = Opinion.NeutralImage;
                     }
 
-                }else{
+                } else {
                     img.src = Opinion.NeutralImage;
                     score = 0;
                 }
-                
+
                 let scoreElement = document.createElement("p");
                 scoreElement.innerText = score;
 
@@ -991,16 +1004,18 @@ function createOpinionMatrixTable(title, SocialBehaviourGroups){
         table.appendChild(opRow);
     }
 
-    tablecontainer.appendChild(tableTitle);    
+    tablecontainer.appendChild(tableTitle);
     tablecontainer.appendChild(table);
 
     nationSheetContainer.appendChild(tablecontainer);
+
+    return tablecontainer;
 }
 
-function createPieDiagram(SocialBehaviourGroups, ValName){
+function createPieDiagram(SocialBehaviourGroups, ValName) {
     let ValueName = ValName;
-    if(typeof ValueName == 'undefined') ValueName = "Points"
-    
+    if (typeof ValueName == 'undefined') ValueName = "Points"
+
     let tablecontainer = document.createElement("div");
     let title = document.createElement("h2");
     title.innerText = SocialBehaviourGroups.split(/(?<=[a-zA-Z])(?=[A-Z])/gm).join(" ");
@@ -1017,37 +1032,37 @@ function createPieDiagram(SocialBehaviourGroups, ValName){
     chartdiv.style.height = "360px";
     chartdiv.style.border = "1px dotted grey";
 
-    tablecontainer.appendChild(title);    
+    tablecontainer.appendChild(title);
     tablecontainer.appendChild(chartdiv);
 
     nationSheetContainer.appendChild(tablecontainer);
 
 
-    
+
     let root = am5.Root.new(chartdiv);
-    
+
     let chart = root.container.children.push(
         am5percent.PieChart.new(root, {
-          layout: root.verticalLayout
-        }) 
-      );
-    
-    
+            layout: root.verticalLayout
+        })
+    );
+
+
 
     let socialBehaviourGroupsData = [];
     for (const key in nationsSocialBehaviourGroups) {
         const nationsSocialBehaviourGroup = nationsSocialBehaviourGroups[key];
 
         let ps = nationsSocialBehaviourGroup;
-        while(isNaN(ps)){
-            if(ps === null) {
+        while (isNaN(ps)) {
+            if (ps === null) {
                 ps = 0;
-            }else if(typeof ps === 'object'){
+            } else if (typeof ps === 'object') {
                 ps = ps[ValueName];
             }
         }
-        
-        if(ps === 0) continue;
+
+        if (ps === 0) continue;
 
         socialBehaviourGroupsData.push(
             {
@@ -1072,22 +1087,25 @@ function createPieDiagram(SocialBehaviourGroups, ValName){
     series.ticks.template.set("visible", false);
 
     // Add legend
-    var legend = chart.children.push( 
+    var legend = chart.children.push(
         am5.Legend.new(root, {
             centerX: am5.percent(50),
             x: am5.percent(50),
             layout: root.verticalLayout
         })
     );
-    
+
     legend.data.setAll(series.dataItems);
+
+    return tablecontainer;
 }
 
-function createBreaker(){
+function createBreaker() {
     let breaker = document.createElement("div");
     breaker.style.width = "100%";
     breaker.style.height = "0px";
 
     nationSheetContainer.appendChild(breaker);
-    
+
+    return breaker;
 }
