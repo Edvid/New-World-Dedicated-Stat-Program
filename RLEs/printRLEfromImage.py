@@ -17,10 +17,10 @@ for pixel_value in pix_vals:
         print(counter, end="")
         index = 0
         try:
-            index = uniqueColorsFound.index(pixel_value)
+            index = uniqueColorsFound.index(last_pixel_value)
         except ValueError:
             index = len(uniqueColorsFound)
-            uniqueColorsFound.append(pixel_value)
+            uniqueColorsFound.append(last_pixel_value)
 
         print(symbols[index], end="")
 

@@ -21,7 +21,7 @@ async function onLoad(){
     zonename = document.getElementById("zone name");
     zonewealth = document.getElementById("zone wealth");
     context = canvas.getContext("2d");
-    changeCanvasZoom(1);
+    changeCanvasZoom(4);
     context.fillStyle = symbolToColor.get(" ");
     context.fillRect(0, 0, canvasZoomScale * canvas.clientWidth, canvasZoomScale * canvas.clientHeight);
             
@@ -31,6 +31,7 @@ async function onLoad(){
         await fetch(HOME_ADDRESS + "RLEs/world/land.cstr").then(response => response.text()).then(data => land = data);
         land = land.replace(/\t|\r|\n/gmi ,"").split(/(?<=\d)(?!\d)|(?<!\d)/gmi);
         let pixelRows = [];
+        console.log(land);
 
         for (let i = 0; i < land.length; i++) {
             const token = land[i];
@@ -79,7 +80,6 @@ async function onLoad(){
 
             if (awaitCounter * canvasZoomScale * canvas.width < currentPixel) {
                 await sleep(50);
-                console.log("currentPixel: " + currentPixel)
                 awaitCounter += 20;
             }
         }
