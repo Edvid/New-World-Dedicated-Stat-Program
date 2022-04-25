@@ -8,15 +8,22 @@
     <script type="text/javascript" src="homeadress.js"></script>
     <script type="text/javascript" src="TradeZoneWealth.js"></script>
     <style>
-        canvas{
-            border: 1px dotted grey;
+        #canvascontainer {
+            position: relative;
         }
+
+        canvas{
+            position: absolute;
+        }
+
+
+
     </style>
 </head>
 <body onload="onLoad()">
-    <canvas width="8192" height="3363">
+    <div id="canvascontainer">
 
-    </canvas>
+    </div>
     <table>
         <tr>
             <th id="zone name">

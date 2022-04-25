@@ -1,13 +1,15 @@
 from PIL import Image
-img = Image.open('../../cleanblankmap.png', 'r')
+from numpy import unicode_
+img = Image.open('../../tradezones.png', 'r')
 
 pix_vals = list(img.getdata())
 
 counter = 0
 last_pixel_value = pix_vals[0]
-symbols = [' ', '.', '-', '@']
-uniqueColorsFound = [];
+""" Must Match the const symbols in printRLEFromImage.py """
+symbols = " !\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
+uniqueColorsFound = [];
 
 
 for pixel_value in pix_vals:
