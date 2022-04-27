@@ -31,18 +31,31 @@ async function onLoad(){
 
     (async function(){
 
-        let startTime = new Date();
-
-
+        
+        
         let renderer = (async function(ctx, path, tint){
             let imagePath = HOME_ADDRESS + path;
             
             //render image
-            let image = new Image(WIDTH, HEIGHT);   
+            let image = new Image(WIDTH, HEIGHT);
             image.src = imagePath;
-            ctx.drawImage(image, 0, 0, WIDTH, HEIGHT);
-            
-            
+            image.onload = function (){
+                let startTime = new Date();
+                ctx.drawImage(image, 0, 0, WIDTH, HEIGHT);
+
+                if(typeof tint !== 'undefined'){    
+                    ctx.fillStyle = tint;
+                    ctx.globalCompositeOperation = "multiply";
+                    ctx.fillRect(0, 0, WIDTH, HEIGHT);
+                    
+                    ctx.globalCompositeOperation = "destination-in";
+                    ctx.drawImage(image, 0, 0, WIDTH, HEIGHT);
+                    
+                    console.log("tint: " + tint);
+                }
+                console.log("completed! Time Took (ms): " + ((new Date()) - startTime));
+            }
+
         });
         
         await renderer(worldContext, "worldImages/world/cleanblankmap.png");        
@@ -134,7 +147,7 @@ async function onLoad(){
             "NorthAustralia",
             "SouthAustralia"
         ];
-        for(let i = 0; i < 5/* zoneContexts.length */; i++){
+        for(let i = 0; i < 12/*zoneContexts.length*/; i++){
             let zoneCanvas = document.createElement("canvas");
             zoneCanvas.id = zoneContexts[i];
             zoneCanvas.title = zoneCanvas.id.split(/(?<!\b)(?=[A-Z])/g, " ");
@@ -144,11 +157,10 @@ async function onLoad(){
 
             zoneContexts[i] = zoneCanvas.getContext("2d");
 
-            await renderer(zoneContexts[i], "worldImages/tradeZones/Split_" + i + ".png", zoneColors[i]);
+             await renderer(zoneContexts[i], "worldImages/tradeZones/Split_" + i + ".png", zoneColors[i]);
         }
         /* changeCanvasZoom(8); */
 
-        console.log("completed! Time Took (ms): " + ((new Date()) - startTime));
     })();
 
 }
