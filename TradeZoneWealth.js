@@ -6,8 +6,6 @@ let canvasZoomScale = 1;
 const WIDTH = 8192;
 const HEIGHT = 3363;
 
-const symbols = " !\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -30,64 +28,24 @@ async function onLoad(){
 
     worldContext.fillStyle = "DarkSlateBlue";
     worldContext.fillRect(0, 0, worldCanvas.width, worldCanvas.height);
-            
-    let land;
-    let zones;
 
     (async function(){
-        await fetch(HOME_ADDRESS + "RLEs/world/land.cstr").then(response => response.text()).then(data => land = data);
-        await fetch(HOME_ADDRESS + "RLEs/world/zones.cstr").then(response => response.text()).then(data => zones = data);
-        land = land.replace(/\t|\r|\n/gmi ,"").split(/(?<=\d)(?!\d)|(?<!\d)/gmi);
-        zones = zones.replace(/\t|\r|\n/gmi ,"").split(/(?<=\d)(?!\d)|(?<!\d)/gmi);
-        let landPixelRows = add1infrontOfUnarySymbols(land);
-        let zonesPixelRows = add1infrontOfUnarySymbols(zones);
 
-        let runner = (async function(pixelRows, ctxs, colorlist){
-            let startTime = new Date();
-            let currentPixel = 0;
+        let startTime = new Date();
 
-            let ctx = ctxs;
+
+        let renderer = (async function(ctx, path, tint){
+            let imagePath = HOME_ADDRESS + path;
             
-            let then = new Date();
-
-            for (let i = 0; i < pixelRows.length; i+= 2) {
-                const number = pixelRows[i];
-                const symbol = pixelRows[i + 1];
-                
-                
-                const x = currentPixel % WIDTH;
-                const y = Math.floor(currentPixel / WIDTH);
-                
-                currentPixel += +number;
-                
-                if(Array.isArray(ctxs)) {
-                    let index = symbols.indexOf(symbol); 
-                    if(index < 0) continue; 
-                    ctx = ctxs[index - 1];
-                }
-
-                let overflow = Math.max(0, (x + +number) - WIDTH);
-                
-                let col = colorlist[symbols.indexOf(symbol) % colorlist.length];
-                if(col != "None"){
-                    ctx.fillStyle = col;
-                    ctx.fillRect(x, y, number - overflow, 1);
-                    if(overflow > 0) ctx.rect(0, y+1, overflow, 1);    
-                }
-                
-    
-                let now = new Date();
-                if ((now - then) > 500) {
-                    then = new Date();
-                    await sleep(25);
-                }
-            }
-            console.log("completed! Time Took (ms): " + ((new Date()) - startTime));
+            //render image
+            let image = new Image(WIDTH, HEIGHT);   
+            image.src = imagePath;
+            ctx.drawImage(image, 0, 0, WIDTH, HEIGHT);
+            
+            
         });
         
-        await runner(landPixelRows, worldContext, ["None", "Black", "White"]);
-
-        
+        await renderer(worldContext, "worldImages/world/cleanblankmap.png");        
         
         let zoneColors = ["None", "Pink", "MediumVioletRed", "Beige", "Yellow", "Cyan", "LightGreen", "Bisque", "Orange", "Red", "Purple", "Grey", "YellowGreen", "DarkGreen", "FireBrick", "Green", "CornflowerBlue", "Coral", "DarkOliveGreen", "Magenta"];
         let zoneContexts = [
@@ -176,7 +134,7 @@ async function onLoad(){
             "NorthAustralia",
             "SouthAustralia"
         ];
-        for(let i = 0; i < zoneContexts.length; i++){
+        for(let i = 0; i < 5/* zoneContexts.length */; i++){
             let zoneCanvas = document.createElement("canvas");
             zoneCanvas.id = zoneContexts[i];
             zoneCanvas.title = zoneCanvas.id.split(/(?<!\b)(?=[A-Z])/g, " ");
@@ -185,17 +143,17 @@ async function onLoad(){
             canvasContainer.appendChild(zoneCanvas);
 
             zoneContexts[i] = zoneCanvas.getContext("2d");
-            
-        }
-        changeCanvasZoom(8);
 
-        await runner(zonesPixelRows, zoneContexts, zoneColors);
-    
+            await renderer(zoneContexts[i], "worldImages/tradeZones/Split_" + i + ".png", zoneColors[i]);
+        }
+        /* changeCanvasZoom(8); */
+
+        console.log("completed! Time Took (ms): " + ((new Date()) - startTime));
     })();
 
 }
 
-function changeCanvasZoom(zoom){
+function outZoomChange(zoom){
     canvasZoomScale *= zoom;
 
     let canvaslist = document.querySelectorAll("#canvascontainer canvas");

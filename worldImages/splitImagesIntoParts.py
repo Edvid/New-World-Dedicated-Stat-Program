@@ -6,7 +6,7 @@ from numpy import unicode_
 
 name = "tradeZones"
 img = Image.open(name + "/" + name + '.png', 'r').convert("RGBA")
-WIDTH = 8392
+WIDTH = 8192
 HEIGHT = 3363
 
 
