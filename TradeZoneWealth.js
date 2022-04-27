@@ -4,7 +4,7 @@ let zonewealth;
 let canvasZoomScale = 1;
 
 const WIDTH = 8192;
-const HEIGHT = 3363;
+const HEIGHT = 3365;
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -50,8 +50,6 @@ async function onLoad(){
                     
                     ctx.globalCompositeOperation = "destination-in";
                     ctx.drawImage(image, 0, 0, WIDTH, HEIGHT);
-                    
-                    console.log("tint: " + tint);
                 }
                 console.log("completed! Time Took (ms): " + ((new Date()) - startTime));
             }
@@ -60,7 +58,7 @@ async function onLoad(){
         
         await renderer(worldContext, "worldImages/world/cleanblankmap.png");        
         
-        let zoneColors = ["None", "Pink", "MediumVioletRed", "Beige", "Yellow", "Cyan", "LightGreen", "Bisque", "Orange", "Red", "Purple", "Grey", "YellowGreen", "DarkGreen", "FireBrick", "Green", "CornflowerBlue", "Coral", "DarkOliveGreen", "Magenta"];
+        let zoneColors = ["Pink", "MediumVioletRed", "Beige", "Yellow", "Cyan", "LightGreen", "Bisque", "Orange", "Red", "Purple", "Grey", "YellowGreen", "DarkGreen", "FireBrick", "Green", "CornflowerBlue", "Coral", "DarkOliveGreen", "Magenta"];
         let zoneContexts = [
             "Alaska",
             "Cascadia",
@@ -147,7 +145,7 @@ async function onLoad(){
             "NorthAustralia",
             "SouthAustralia"
         ];
-        for(let i = 0; i < 12/*zoneContexts.length*/; i++){
+        for(let i = 0; i < zoneContexts.length; i++){
             let zoneCanvas = document.createElement("canvas");
             zoneCanvas.id = zoneContexts[i];
             zoneCanvas.title = zoneCanvas.id.split(/(?<!\b)(?=[A-Z])/g, " ");
@@ -159,7 +157,7 @@ async function onLoad(){
 
              await renderer(zoneContexts[i], "worldImages/tradeZones/Split_" + i + ".png", zoneColors[i]);
         }
-        /* changeCanvasZoom(8); */
+        outZoomChange(2);
 
     })();
 
