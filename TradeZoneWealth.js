@@ -3,15 +3,15 @@ let zonename;
 let zonewealth;
 let canvasZoomScale = 1;
 
-const WIDTH = 8192;
-const HEIGHT = 3365;
+const WIDTH = 1200;
+const HEIGHT = 493;
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 
-async function onLoad(){  
+async function onLoad() {
     canvasContainer = document.getElementById("canvascontainer");
     zonename = document.getElementById("zone name");
     zonewealth = document.getElementById("zone wealth");
@@ -26,173 +26,171 @@ async function onLoad(){
 
     let worldContext = worldCanvas.getContext("2d");
 
-    worldContext.fillStyle = "DarkSlateBlue";
-    worldContext.fillRect(0, 0, worldCanvas.width, worldCanvas.height);
+    let imagePath = HOME_ADDRESS + "worldImages/zones.png";
+    //render image
+    let image = new Image(WIDTH, HEIGHT);
+    image.src = imagePath;
+    image.onload = function () {
+        let startTime = new Date();
+        worldContext.drawImage(image, 0, 0, WIDTH, HEIGHT);
 
-    (async function(){
+        if (typeof tint !== 'undefined') {
+            worldContext.fillStyle = tint;
+            worldContext.globalCompositeOperation = "multiply";
+            worldContext.fillRect(0, 0, WIDTH, HEIGHT);
 
-        
-        
-        let renderer = (async function(ctx, path, tint){
-            let imagePath = HOME_ADDRESS + path;
-            
-            //render image
-            let image = new Image(WIDTH, HEIGHT);
-            image.src = imagePath;
-            image.onload = function (){
-                let startTime = new Date();
-                ctx.drawImage(image, 0, 0, WIDTH, HEIGHT);
-
-                if(typeof tint !== 'undefined'){    
-                    ctx.fillStyle = tint;
-                    ctx.globalCompositeOperation = "multiply";
-                    ctx.fillRect(0, 0, WIDTH, HEIGHT);
-                    
-                    ctx.globalCompositeOperation = "destination-in";
-                    ctx.drawImage(image, 0, 0, WIDTH, HEIGHT);
-                }
-                console.log("completed! Time Took (ms): " + ((new Date()) - startTime));
-            }
-
-        });
-        
-        await renderer(worldContext, "worldImages/world/cleanblankmap.png");        
-        
-        let zoneColors = ["Pink", "MediumVioletRed", "Beige", "Yellow", "Cyan", "LightGreen", "Bisque", "Orange", "Red", "Purple", "Grey", "YellowGreen", "DarkGreen", "FireBrick", "Green", "CornflowerBlue", "Coral", "DarkOliveGreen", "Magenta"];
-        let zoneContexts = [
-            "Alaska",
-            "Cascadia",
-            "WestCoast",
-            "HudsonBay",
-            "GreatLakes",
-            "Mississipi",
-            "GulfOfMexico",
-            "LawrenceGulf",
-            "EastCoast",
-            "Carribean",
-            "CentralAmerica",
-
-            "GuyanaAndSuriname",
-            "Amazon",
-            "Peru",
-            "RioGrande",
-            "LaPlata",
-            "Chile",
-            "Patagonia",
-
-
-
-
-            "NorthAnatolia",
-            "NorthSea",
-            "BritishIsles",
-            "EnglishChannel",
-            "France",
-            "BayOfBiscay",
-            "WestIberia",
-            "Gibraltar",
-            "WestMediterreanian",
-            "Rhine",
-            "CentralMed",
-            "Adriatic",
-            "Germany",
-            "SouthGermany",
-            "Denmark",
-            "Baltic",
-            "NorthNordics",
-            "BarentsSea",
-            "Novgorod",
-            "Poland",
-            "Dniepr",
-            "Crimea",
-            "Balkans",
-            "Greece",
-            "EastMed",
-            "Egypt",
-            "RedSea",
-            "WestAfrica",
-            "CoteDIvoire",
-            "Nigeria",
-            "SouthNile",
-            "Somalia",
-            "Kongo",
-            "EastAfrica",
-            "Mozambique",
-            "SouthAfrica",
-
-            "Mesopotamia",
-            "PersianGulf",
-            "Caucasus",
-            "DonRiver",
-            "Volga",
-            "CentralAsia",
-            "WestSiberia",
-            "EastSiberia",
-            "Iran",
-            "Pakistan",
-            "Tibet",
-            "Mongolia",
-            "Manchuria",
-            "SeaOfJapan",
-            "NorthChina",
-            "YangtzeeRiver",
-            "SouthChina",
-            "NorthIndia",
-            "WestIndia",
-            "EastIndia",
-            "Burma",
-            "SouthEastAsia",
-            "NorthAustralia",
-            "SouthAustralia"
-        ];
-        for(let i = 0; i < zoneContexts.length; i++){
-            let zoneCanvas = document.createElement("canvas");
-            zoneCanvas.id = zoneContexts[i];
-            zoneCanvas.title = zoneCanvas.id.split(/(?<!\b)(?=[A-Z])/g, " ");
-            zoneCanvas.width = WIDTH;
-            zoneCanvas.height = HEIGHT;
-            canvasContainer.appendChild(zoneCanvas);
-
-            zoneContexts[i] = zoneCanvas.getContext("2d");
-
-             await renderer(zoneContexts[i], "worldImages/tradeZones/Split_" + i + ".png", zoneColors[i]);
+            worldContext.globalCompositeOperation = "destination-in";
+            worldContext.drawImage(image, 0, 0, WIDTH, HEIGHT);
         }
-        outZoomChange(2);
+        console.log("completed! Time Took (ms): " + ((new Date()) - startTime));
+    }
+    let ColorToZoneName = [
+        ["ff7e70", "Alaska"],
+        ["ff006e", "Cascadia"],
+        ["3dffff", "WestCoast"],
+        ["fbee91", "HudsonBay"],
+        ["3dffff", "GreatLakes"]/*,
+        ["Mississipi"],
+        ["GulfOfMexico"],
+        ["LawrenceGulf"],
+        ["EastCoast"],
+        ["Carribean"],
+        ["CentralAmerica"],
 
-    })();
+        ["GuyanaAndSuriname"],
+        ["Amazon"],
+        ["Peru"],
+        ["RioGrande"],
+        ["LaPlata"],
+        ["Chile"],
+        ["Patagonia"],
 
+
+
+
+        ["NorthAnatolia"],
+        ["NorthSea"],
+        ["BritishIsles"],
+        ["EnglishChannel"],
+        ["France"],
+        ["BayOfBiscay"],
+        ["WestIberia"],
+        ["Gibraltar"],
+        ["WestMediterreanian"],
+        ["Rhine"],
+        ["CentralMed"],
+        ["Adriatic"],
+        ["Germany"],
+        ["SouthGermany"],
+        ["Denmark"],
+        ["Baltic"],
+        ["NorthNordics"],
+        ["BarentsSea"],
+        ["Novgorod"],
+        ["Poland"],
+        ["Dniepr"],
+        ["Crimea"],
+        ["Balkans"],
+        ["Greece"],
+        ["EastMed"],
+        ["Egypt"],
+        ["RedSea"],
+        ["WestAfrica"],
+        ["CoteDIvoire"],
+        ["Nigeria"],
+        ["SouthNile"],
+        ["Somalia"],
+        ["Kongo"],
+        ["EastAfrica"],
+        ["Mozambique"],
+        ["SouthAfrica"],
+
+        ["Mesopotamia"],
+        ["PersianGulf"],
+        ["Caucasus"],
+        ["DonRiver"],
+        ["Volga"],
+        ["CentralAsia"],
+        ["WestSiberia"],
+        ["EastSiberia"],
+        ["Iran"],
+        ["Pakistan"],
+        ["Tibet"],
+        ["Mongolia"],
+        ["Manchuria"],
+        ["SeaOfJapan"],
+        ["NorthChina"],
+        ["YangtzeeRiver"],
+        ["SouthChina"],
+        ["NorthIndia"],
+        ["WestIndia"],
+        ["EastIndia"],
+        ["Burma"],
+        ["SouthEastAsia"],
+        ["NorthAustralia"],
+        ["SouthAustralia"] */
+    ];
+
+    worldCanvas.onclick = function (e) {
+        
+        let context = worldCanvas.getContext("2d");
+        
+        let canvasPos = findPos(this);
+        let realPos = {
+            x: e.pageX - canvasPos.x,
+            y: e.pageY - canvasPos.y
+        }
+        let data = context.getImageData(realPos.x, realPos.y, 1, 1).data;
+        let col = `rgba(${data[0]}, ${data[1]}, ${data[2]}, ${data[3]})`
+        let weakcol = `rgba(${(data[0] + 255) / 2}, ${(data[1] + 255) / 2}, ${(data[2] + 255) / 2}, ${data[3]})`
+
+
+        
+        for (let i = 0; i < ColorToZoneName.length; i++) {
+            const ColorToZoneNamePair = ColorToZoneName[i];
+            if(rgbToHex(data).toLowerCase() == ColorToZoneNamePair[0]){
+                zonename.innerText = ColorToZoneNamePair[1];
+                zonewealth.innerText = gameStats.TradeZones[ColorToZoneNamePair[1]];
+
+                zonename.style.background = col;
+                zonewealth.style.background = weakcol;
+            }
+        }
+    }
 }
 
-function outZoomChange(zoom){
+/* #region  taken from https://stackoverflow.com/questions/6735470/get-pixel-color-from-canvas-on-mousemove, answer by Wayne and Woold */
+function findPos(obj) {
+    var curleft = 0, curtop = 0;
+    if (obj.offsetParent) {
+        do {
+            curleft += obj.offsetLeft;
+            curtop += obj.offsetTop;
+        } while (obj = obj.offsetParent);
+        return { x: curleft, y: curtop };
+    }
+    return undefined;
+}
+
+function rgbToHex(color) {
+    let r = color[0];
+    let g = color[1];
+    let b = color[2];
+    if (r > 255 || g > 255 || b > 255)
+        throw "Invalid color component";
+    return ((r << 16) | (g << 8) | b).toString(16);
+}
+/* #endregion */
+
+function outZoomChange(zoom) {
     canvasZoomScale *= zoom;
 
     let canvaslist = document.querySelectorAll("#canvascontainer canvas");
 
     canvaslist.forEach(element => {
         element.style.width = (WIDTH / canvasZoomScale) + "px";
-        element.style.height = (HEIGHT / canvasZoomScale) + "px";    
+        element.style.height = (HEIGHT / canvasZoomScale) + "px";
     });
 
-    
-}
 
-function add1infrontOfUnarySymbols(RLE){
-    let pixelRows = [];
-    for (let i = 0; i < RLE.length; i++) {
-        const token = RLE[i];
-        
-        //if this token is a number
-        if(/^\d+$/.test(token)) {
-            const futureToken = i + 1 < RLE.length ? RLE[i + 1] : "";
-            
-            pixelRows.push(token);
-            pixelRows.push(futureToken);
-            i++;
-        }else{
-            pixelRows.push("1");
-            pixelRows.push(token);
-        }
-            
-    }
-    return pixelRows;
 }
