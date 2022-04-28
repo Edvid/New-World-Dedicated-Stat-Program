@@ -47,7 +47,7 @@ async function onLoad() {
     let ColorToZoneName = [
         ["ff7f7f", "Alaska"],
         ["ff006e", "Cascadia"],
-        ["ffdb7b", "BajaCalifornia"],
+        ["ffdb7b", "CaliforniaAndWestMexico"],
         ["fbee91", "HudsonBay"],
         ["3dffff", "GreatLakes"],
         ["00ba21", "Louisiana"],

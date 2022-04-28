@@ -752,7 +752,7 @@ class Nation {
     this.TradeInfluences = {
       Alaska: 0,
       Cascadia: 0,
-      BajaCalifornia: 0,
+      CaliforniaAndWestMexico: 0,
       HudsonBay: 0,
       GreatLakes: 0,
       Louisiana: 0,
@@ -1561,7 +1561,7 @@ class Stats{
     this.TradeZones = {
       Alaska: 0,
       Cascadia: 0,
-      BajaCalifornia: 0,
+      CaliforniaAndWestMexico: 0,
       HudsonBay: 0,
       GreatLakes: 0,
       Louisiana: 0,
