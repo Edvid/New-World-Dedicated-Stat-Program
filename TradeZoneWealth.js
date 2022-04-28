@@ -45,17 +45,17 @@ async function onLoad() {
         console.log("completed! Time Took (ms): " + ((new Date()) - startTime));
     }
     let ColorToZoneName = [
-        ["ff7e70", "Alaska"],
+        ["ff7f7f", "Alaska"],
         ["ff006e", "Cascadia"],
-        ["3dffff", "WestCoast"],
+        ["ffdb7b", "BajaCalifornia"],
         ["fbee91", "HudsonBay"],
-        ["3dffff", "GreatLakes"]/*,
-        ["Mississipi"],
-        ["GulfOfMexico"],
-        ["LawrenceGulf"],
-        ["EastCoast"],
-        ["Carribean"],
-        ["CentralAmerica"],
+        ["3dffff", "GreatLakes"],
+        ["00ba21", "Louisiana"],
+        ["ffbf30", "GulfOfMexico"],
+        ["ff7d49", "LawrenceGulf"],
+        ["c50000", "EastCoast"],
+        ["3c02ff", "Carribean"],
+        ["a0a0a0", "CentralAmerica"]/*,
 
         ["GuyanaAndSuriname"],
         ["Amazon"],

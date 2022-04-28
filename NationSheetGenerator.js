@@ -454,10 +454,10 @@ function createNationSheet(nationName) {
             [
                 ".TradeInfluences[\"Alaska\"]",
                 ".TradeInfluences[\"Cascadia\"]",
-                ".TradeInfluences[\"WestCoast\"]",
+                ".TradeInfluences[\"BajaCalifornia\"]",
                 ".TradeInfluences[\"HudsonBay\"]",
                 ".TradeInfluences[\"GreatLakes\"]",
-                ".TradeInfluences[\"Mississipi\"]",
+                ".TradeInfluences[\"Louisiana\"]",
                 ".TradeInfluences[\"GulfOfMexico\"]",
                 ".TradeInfluences[\"LawrenceGulf\"]",
                 ".TradeInfluences[\"EastCoast\"]",
