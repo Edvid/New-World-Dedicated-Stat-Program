@@ -148,6 +148,7 @@ async function onLoad() {
         
         for (let i = 0; i < ColorToZoneName.length; i++) {
             const ColorToZoneNamePair = ColorToZoneName[i];
+            console.log(rgbToHex(data).toLowerCase() + " == " + ColorToZoneNamePair[0])
             if(rgbToHex(data).toLowerCase() == ColorToZoneNamePair[0]){
                 zonename.innerText = ColorToZoneNamePair[1];
                 zonewealth.innerText = gameStats.TradeZones[ColorToZoneNamePair[1]];
@@ -178,7 +179,9 @@ function rgbToHex(color) {
     let b = color[2];
     if (r > 255 || g > 255 || b > 255)
         throw "Invalid color component";
-    return ((r << 16) | (g << 8) | b).toString(16);
+    let str = ((r << 16) | (g << 8) | b).toString(16);
+    while(str.length < 6) str = "0" + str;
+    return str;
 }
 /* #endregion */
 
