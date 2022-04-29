@@ -867,9 +867,7 @@ function createStatTable(title, tables, upmigrations) {
                 (new Function(`return gameStats.Nations["${currentNationName}"]${statSelection}`))();
             let nationStatNameCell = document.createElement("th");
             //split selection whereever dot appears
-            if(upmigrations == 1) console.log(statSelection)
             let statName = statSelection.split(/(?<=[a-zA-Z])(?=\[)|\./gmi);
-            if(upmigrations == 1) console.log(statName)
             //get last phrase in split list, unless there's upmigrations, then do those too
             statName = statName[statName.length - 1 - upmigrations];
             //clear out any weird spaces or quotationmarks or brackets there may be in the string 
