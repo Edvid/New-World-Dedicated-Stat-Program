@@ -5,4 +5,4 @@
 
 
 //const HOME_ADDRESS = "http://127.0.0.1:8080/";
-const HOME_ADDRESS = "https://raw.githubusercontent.com/Edvid/New-World-Dedicated-Stat-Program/main/";
+const HOME_ADDRESS = "/docs/assets/";

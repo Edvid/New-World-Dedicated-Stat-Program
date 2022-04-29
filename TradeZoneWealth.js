@@ -26,7 +26,7 @@ async function onLoad() {
 
     let worldContext = worldCanvas.getContext("2d");
 
-    let imagePath = HOME_ADDRESS + "worldImages/zones.png";
+    let imagePath = HOME_ADDRESS + "images/world/zones.png";
     //render image
     let image = new Image(WIDTH, HEIGHT);
     image.src = imagePath;
