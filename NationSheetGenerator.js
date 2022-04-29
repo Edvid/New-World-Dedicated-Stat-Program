@@ -866,13 +866,8 @@ function createStatTable(title, tables, upmigrations) {
                 (new Function(`return gameStats.Nations["${currentNationName}"].${statSelection}`))() :
                 (new Function(`return gameStats.Nations["${currentNationName}"]${statSelection}`))();
             let nationStatNameCell = document.createElement("th");
-            //split selection whereever dot appears
-            let statName = statSelection.split(/(?<=[a-zA-Z])(?=\[)|\./gmi);
-            //get last phrase in split list, unless there's upmigrations, then do those too
-            statName = statName[statName.length - 1 - upmigrations];
-            //clear out any weird spaces or quotationmarks or brackets there may be in the string 
-            statName = statName.replace(/(\[|\"| |\])/gmi, "");
-            //add spaces back in, but only if an uppercase letter follows any other letter
+            let statName = statSelection.split(/\.|(?<=\[)/gmi);
+            statName = statName[statName.length - 1 - upmigrations].replace(/(\[|\"| |\])/gmi, "");
             nationStatNameCell.innerText = statName.split(/(?<=[a-zA-Z])(?=[A-Z])/gm).join(" ");
             let nationStatCell = document.createElement("td");
             let displayValue = displayValueFix(statName, statvalue);
