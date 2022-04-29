@@ -371,7 +371,7 @@ function createNationSheet(nationName) {
                 "AgricultureSpending"
             ],
             [
-                ".Workforces[\"Population In Agriculture\"]",
+                ".Workforces[\"Population In Agriculture\"].TradingPoints",
                 "DailyFood",
                 "FoodConsumption",
                 "FoodGain",
@@ -444,7 +444,7 @@ function createNationSheet(nationName) {
 
     createBreaker();
 
-    createPieDiagram("TradeInfluences");
+    createPieDiagram("TradeInfluences", "TradingPoints");
 
     createBreaker();
 
@@ -452,120 +452,124 @@ function createNationSheet(nationName) {
         "Trade Influence - Americas",
         [
             [
-                ".TradeInfluences[\"Alaska\"]",
-                ".TradeInfluences[\"Cascadia\"]",
-                ".TradeInfluences[\"CaliforniaAndWestMexico\"]",
-                ".TradeInfluences[\"HudsonBay\"]",
-                ".TradeInfluences[\"GreatLakes\"]",
-                ".TradeInfluences[\"Louisiana\"]",
-                ".TradeInfluences[\"GulfOfMexico\"]",
-                ".TradeInfluences[\"LawrenceGulf\"]",
-                ".TradeInfluences[\"EastCoast\"]",
-                ".TradeInfluences[\"Carribean\"]",
-                ".TradeInfluences[\"CentralAmerica\"]"
+                ".TradeInfluences[\"Alaska\"].TradingPoints",
+                ".TradeInfluences[\"Cascadia\"].TradingPoints",
+                ".TradeInfluences[\"CaliforniaAndWestMexico\"].TradingPoints",
+                ".TradeInfluences[\"HudsonBay\"].TradingPoints",
+                ".TradeInfluences[\"GreatLakes\"].TradingPoints",
+                ".TradeInfluences[\"Louisiana\"].TradingPoints",
+                ".TradeInfluences[\"GulfOfMexico\"].TradingPoints",
+                ".TradeInfluences[\"LawrenceGulf\"].TradingPoints",
+                ".TradeInfluences[\"EastCoast\"].TradingPoints",
+                ".TradeInfluences[\"Carribean\"].TradingPoints",
+                ".TradeInfluences[\"CentralAmerica\"].TradingPoints"
             ],
             [
-                ".TradeInfluences[\"GuyanaAndSuriname\"]",
-                ".TradeInfluences[\"Amazon\"]",
-                ".TradeInfluences[\"Peru\"]",
-                ".TradeInfluences[\"RioGrande\"]",
-                ".TradeInfluences[\"LaPlata\"]",
-                ".TradeInfluences[\"Chile\"]",
-                ".TradeInfluences[\"Patagonia\"]"
+                ".TradeInfluences[\"GuyanaAndSuriname\"].TradingPoints",
+                ".TradeInfluences[\"Amazon\"].TradingPoints",
+                ".TradeInfluences[\"Peru\"].TradingPoints",
+                ".TradeInfluences[\"RioGrande\"].TradingPoints",
+                ".TradeInfluences[\"LaPlata\"].TradingPoints",
+                ".TradeInfluences[\"Chile\"].TradingPoints",
+                ".TradeInfluences[\"Patagonia\"].TradingPoints"
             ]
-        ]
+        ],
+        /*upmigrations: */1
     ).classList.add("tradeinfluences");
 
     createStatTable(
         "Trade Influence - Europe",
         [
             [
-                ".TradeInfluences[\"NorthSea\"]",
-                ".TradeInfluences[\"BritishIsles\"]",
-                ".TradeInfluences[\"EnglishChannel\"]",
-                ".TradeInfluences[\"France\"]",
-                ".TradeInfluences[\"BayOfBiscay\"]",
-                ".TradeInfluences[\"WestIberia\"]",
-                ".TradeInfluences[\"Gibraltar\"]",
-                ".TradeInfluences[\"WestMediterreanian\"]",
-                ".TradeInfluences[\"Rhine\"]"
+                ".TradeInfluences[\"NorthSea\"].TradingPoints",
+                ".TradeInfluences[\"BritishIsles\"].TradingPoints",
+                ".TradeInfluences[\"EnglishChannel\"].TradingPoints",
+                ".TradeInfluences[\"France\"].TradingPoints",
+                ".TradeInfluences[\"BayOfBiscay\"].TradingPoints",
+                ".TradeInfluences[\"WestIberia\"].TradingPoints",
+                ".TradeInfluences[\"Gibraltar\"].TradingPoints",
+                ".TradeInfluences[\"WestMediterreanian\"].TradingPoints",
+                ".TradeInfluences[\"Rhine\"].TradingPoints"
             ],
             [
-                ".TradeInfluences[\"CentralMed\"]",
-                ".TradeInfluences[\"Adriatic\"]",
-                ".TradeInfluences[\"Germany\"]",
-                ".TradeInfluences[\"SouthGermany\"]",
-                ".TradeInfluences[\"Denmark\"]",
-                ".TradeInfluences[\"Baltic\"]",
-                ".TradeInfluences[\"NorthNordics\"]",
-                ".TradeInfluences[\"BarentsSea\"]"
+                ".TradeInfluences[\"CentralMed\"].TradingPoints",
+                ".TradeInfluences[\"Adriatic\"].TradingPoints",
+                ".TradeInfluences[\"Germany\"].TradingPoints",
+                ".TradeInfluences[\"SouthGermany\"].TradingPoints",
+                ".TradeInfluences[\"Denmark\"].TradingPoints",
+                ".TradeInfluences[\"Baltic\"].TradingPoints",
+                ".TradeInfluences[\"NorthNordics\"].TradingPoints",
+                ".TradeInfluences[\"BarentsSea\"].TradingPoints"
             ],
             [
-                ".TradeInfluences[\"Novgorod\"]",
-                ".TradeInfluences[\"Poland\"]",
-                ".TradeInfluences[\"Dniepr\"]",
-                ".TradeInfluences[\"Crimea\"]",
-                ".TradeInfluences[\"Balkans\"]",
-                ".TradeInfluences[\"Greece\"]",
-                ".TradeInfluences[\"NorthAnatolia\"]",
-                ".TradeInfluences[\"EastMed\"]"
+                ".TradeInfluences[\"Novgorod\"].TradingPoints",
+                ".TradeInfluences[\"Poland\"].TradingPoints",
+                ".TradeInfluences[\"Dniepr\"].TradingPoints",
+                ".TradeInfluences[\"Crimea\"].TradingPoints",
+                ".TradeInfluences[\"Balkans\"].TradingPoints",
+                ".TradeInfluences[\"Greece\"].TradingPoints",
+                ".TradeInfluences[\"NorthAnatolia\"].TradingPoints",
+                ".TradeInfluences[\"EastMed\"].TradingPoints"
             ]
-        ]
+        ],
+        /*upmigrations: */1
     ).classList.add("tradeinfluences");
 
     createStatTable(
         "Trade Influence - Africa",
         [
             [
-                ".TradeInfluences[\"Egypt\"]",
-                ".TradeInfluences[\"RedSea\"]",
-                ".TradeInfluences[\"WestAfrica\"]",
-                ".TradeInfluences[\"CoteDIvoire\"]",
-                ".TradeInfluences[\"Nigeria\"]",
-                ".TradeInfluences[\"SouthNile\"]",
-                ".TradeInfluences[\"Somalia\"]",
-                ".TradeInfluences[\"Kongo\"]",
-                ".TradeInfluences[\"EastAfrica\"]",
-                ".TradeInfluences[\"Mozambique\"]",
-                ".TradeInfluences[\"SouthAfrica\"]"
+                ".TradeInfluences[\"Egypt\"].TradingPoints",
+                ".TradeInfluences[\"RedSea\"].TradingPoints",
+                ".TradeInfluences[\"WestAfrica\"].TradingPoints",
+                ".TradeInfluences[\"CoteDIvoire\"].TradingPoints",
+                ".TradeInfluences[\"Nigeria\"].TradingPoints",
+                ".TradeInfluences[\"SouthNile\"].TradingPoints",
+                ".TradeInfluences[\"Somalia\"].TradingPoints",
+                ".TradeInfluences[\"Kongo\"].TradingPoints",
+                ".TradeInfluences[\"EastAfrica\"].TradingPoints",
+                ".TradeInfluences[\"Mozambique\"].TradingPoints",
+                ".TradeInfluences[\"SouthAfrica\"].TradingPoints"
             ]
-        ]
+        ],
+        /*upmigrations: */1
     ).classList.add("tradeinfluences");
 
     createStatTable(
         "Trade Influence - Asia",
         [
             [
-                ".TradeInfluences[\"Mesopotamia\"]",
-                ".TradeInfluences[\"PersianGulf\"]",
-                ".TradeInfluences[\"Caucasus\"]",
-                ".TradeInfluences[\"DonRiver\"]",
-                ".TradeInfluences[\"Volga\"]",
-                ".TradeInfluences[\"CentralAsia\"]",
-                ".TradeInfluences[\"WestSiberia\"]",
-                ".TradeInfluences[\"EastSiberia\"]"
+                ".TradeInfluences[\"Mesopotamia\"].TradingPoints",
+                ".TradeInfluences[\"PersianGulf\"].TradingPoints",
+                ".TradeInfluences[\"Caucasus\"].TradingPoints",
+                ".TradeInfluences[\"DonRiver\"].TradingPoints",
+                ".TradeInfluences[\"Volga\"].TradingPoints",
+                ".TradeInfluences[\"CentralAsia\"].TradingPoints",
+                ".TradeInfluences[\"WestSiberia\"].TradingPoints",
+                ".TradeInfluences[\"EastSiberia\"].TradingPoints"
             ],
             [
-                ".TradeInfluences[\"Iran\"]",
-                ".TradeInfluences[\"Pakistan\"]",
-                ".TradeInfluences[\"Tibet\"]",
-                ".TradeInfluences[\"Mongolia\"]",
-                ".TradeInfluences[\"Manchuria\"]",
-                ".TradeInfluences[\"SeaOfJapan\"]",
-                ".TradeInfluences[\"NorthChina\"]",
-                ".TradeInfluences[\"YangtzeeRiver\"]"
+                ".TradeInfluences[\"Iran\"].TradingPoints",
+                ".TradeInfluences[\"Pakistan\"].TradingPoints",
+                ".TradeInfluences[\"Tibet\"].TradingPoints",
+                ".TradeInfluences[\"Mongolia\"].TradingPoints",
+                ".TradeInfluences[\"Manchuria\"].TradingPoints",
+                ".TradeInfluences[\"SeaOfJapan\"].TradingPoints",
+                ".TradeInfluences[\"NorthChina\"].TradingPoints",
+                ".TradeInfluences[\"YangtzeeRiver\"].TradingPoints"
             ],
             [
-                ".TradeInfluences[\"SouthChina\"]",
-                ".TradeInfluences[\"NorthIndia\"]",
-                ".TradeInfluences[\"WestIndia\"]",
-                ".TradeInfluences[\"EastIndia\"]",
-                ".TradeInfluences[\"Burma\"]",
-                ".TradeInfluences[\"SouthEastAsia\"]",
-                ".TradeInfluences[\"NorthAustralia\"]",
-                ".TradeInfluences[\"SouthAustralia\"]"
+                ".TradeInfluences[\"SouthChina\"].TradingPoints",
+                ".TradeInfluences[\"NorthIndia\"].TradingPoints",
+                ".TradeInfluences[\"WestIndia\"].TradingPoints",
+                ".TradeInfluences[\"EastIndia\"].TradingPoints",
+                ".TradeInfluences[\"Burma\"].TradingPoints",
+                ".TradeInfluences[\"SouthEastAsia\"].TradingPoints",
+                ".TradeInfluences[\"NorthAustralia\"].TradingPoints",
+                ".TradeInfluences[\"SouthAustralia\"].TradingPoints"
             ]
-        ]
+        ],
+        /*upmigrations: */1
     ).classList.add("tradeinfluences");
 
     let techarray = [[]]
@@ -841,7 +845,8 @@ function createNationSheet(nationName) {
     });
 }
 
-function createStatTable(title, tables) {
+function createStatTable(title, tables, upmigrations) {
+    if(typeof upmigrations === 'undefined') upmigrations = 0;
     let tablecontainer = document.createElement("div");
     let table = document.createElement("table");
     let tableTitle = document.createElement("h2");
@@ -861,7 +866,15 @@ function createStatTable(title, tables) {
                 (new Function(`return gameStats.Nations["${currentNationName}"].${statSelection}`))() :
                 (new Function(`return gameStats.Nations["${currentNationName}"]${statSelection}`))();
             let nationStatNameCell = document.createElement("th");
-            let statName = statSelection.split(/(\.|(?<=\[))/gmi).pop().replace(/(\[|\"| |\])/gmi, "");
+            //split selection whereever dot appears
+            if(upmigrations == 1) console.log(statSelection)
+            let statName = statSelection.split(/(?<=[a-zA-Z])(?=\[)|\./gmi);
+            if(upmigrations == 1) console.log(statName)
+            //get last phrase in split list, unless there's upmigrations, then do those too
+            statName = statName[statName.length - 1 - upmigrations];
+            //clear out any weird spaces or quotationmarks or brackets there may be in the string 
+            statName = statName.replace(/(\[|\"| |\])/gmi, "");
+            //add spaces back in, but only if an uppercase letter follows any other letter
             nationStatNameCell.innerText = statName.split(/(?<=[a-zA-Z])(?=[A-Z])/gm).join(" ");
             let nationStatCell = document.createElement("td");
             let displayValue = displayValueFix(statName, statvalue);
@@ -1078,7 +1091,7 @@ function createPieDiagram(SocialBehaviourGroups, ValName) {
             categoryField: "country",
             valueField: "Points",
             legendLabelText: "[{fill}]{category}[/]",
-            legendValueText: ValueName == "Points" ? "[bold {fill}][/]" : `[bold {fill}]{value} ${ValueName}[/]`
+            legendValueText: ValueName == "Points" ? "[bold {fill}][/]" : `[bold {fill}]{value} ${ValueName.split(/(?<=[a-zA-Z])(?=[A-Z])/gm).join(" ")}[/]`
         })
     );
 
