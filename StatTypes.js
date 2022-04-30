@@ -2,6 +2,8 @@ let BaseStats = [
 	"ResearchSpending",
 	"ReligionRepresentedAtGovernmentLevel",
 	"ReligionRepresentedAtGovernmentLevelPercent",
+	"CultureRepresentedAtGovernmentLevel",
+	"CultureRepresentedAtGovernmentLevelPercent",
 	"Mercantilism",
 	"LowerClassTax",
 	"MilitaryDiscipline",
