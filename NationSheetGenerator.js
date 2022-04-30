@@ -371,7 +371,7 @@ function createNationSheet(nationName) {
                 "AgricultureSpending"
             ],
             [
-                ".Workforces[\"Population In Agriculture\"].TradingPoints",
+                ".Workforces[\"Population In Agriculture\"]",
                 "DailyFood",
                 "FoodConsumption",
                 "FoodGain",
