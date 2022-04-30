@@ -14,7 +14,7 @@ currentNationNameDisplay.classList = "nationnamedisplay";
 currentNationNameDisplay.innerText = currentNationName;
 
 let leftArrow = document.createElement("button");
-leftArrow.innerHTML = "&#11164";
+leftArrow.innerHTML = "<img src='docs/assets/images/leftarrow.png' alt='left arrow' height='40'>";
 leftArrow.onclick = function () {
     let nationNames = Object.keys(gameStats.Nations);
     if (currentNationID > 0) currentNationID--;
@@ -25,7 +25,7 @@ leftArrow.onclick = function () {
 }
 
 let rightArrow = document.createElement("button");
-rightArrow.innerHTML = "&#11166";
+rightArrow.innerHTML = "<img src='docs/assets/images/rightarrow.png' alt='right arrow' height='40'>";
 rightArrow.onclick = function () {
     let nationNames = Object.keys(gameStats.Nations);
     if (currentNationID < nationNames.length - 1) currentNationID++;
