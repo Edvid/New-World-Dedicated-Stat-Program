@@ -77,7 +77,7 @@ function displayValueFix(statName, statValue) {
             "BurghersLoyalty",
             "MilitaryLoyalty",
             "MilitaryMorale",
-            "MililtaryDiscipline",
+            "MilitaryDiscipline",
             "CultureRepresentedAtGovernmentLevelPercent",
             "PopulationInAgriculture",
             "Pillaging",
