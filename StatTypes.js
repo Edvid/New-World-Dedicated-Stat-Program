@@ -189,7 +189,15 @@ let DerivedStats = [
     "ArmyTech",
     "ArmyQuality",
     "MilitaryLoyalty",
-    "MilitaryMorale"
+    "MilitaryMorale",
+    "UpkeepForOneLightShip",
+    "UpkeepForOneMediumShip",
+    "UpkeepForOneHeavyShip",
+    "NavyTech",
+    "NavyQuality",
+    "OverallShipCount",
+    "TradeProtection",
+    "NavalPower"
     
 
 ];
