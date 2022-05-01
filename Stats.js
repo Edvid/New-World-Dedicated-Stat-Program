@@ -453,7 +453,7 @@ class Nation {
   ExoticFruitIncoming;
   ExoticFruitOutgoing;
 
-  TradePowerResourceTrade;
+  TradePowerFromResourceTrade;
   /* #endregion */
 
   /* #region  Agriculture */
@@ -1381,7 +1381,7 @@ class Nation {
 
 
 
-    this.TradePowerResourceTrade = (function () {
+    this.TradePowerFromResourceTrade = (function () {
       let num = 0;
       let TradePowerResources = [
         "Sulphur",
@@ -1410,7 +1410,7 @@ class Nation {
       }
       return num;
     })();
-    this.TradePower = this.TradePowerResourceTrade + this.LocalTrade / 2 + (pseudoTradePower);
+    this.TradePower = this.TradePowerFromResourceTrade + this.LocalTrade / 2 + (pseudoTradePower);
     this.ProductionEfficiency = this.Mercantilism + this.Technologies.VerticalLoom / 5 + this.Technologies.Workshops + this.Technologies.Cranes / 5 + this.Technologies.TextileManufactories / 2;
     this.Production = (this.LocalTrade + this.TradePower) * this.Workforces.Artisans * this.ProductionEfficiency * 10;
     this.TradeProtection = this.LightShips * 0.75 + this.MediumShips * 1 + this.HeavyShips * 0.75;

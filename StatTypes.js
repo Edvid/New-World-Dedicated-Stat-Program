@@ -424,7 +424,7 @@ let DerivedStats = [
     "SugarOutgoing",
     "ExoticFruitIncoming",
     "ExoticFruitOutgoing",
-    "TradePowerResourceTrade"
+    "TradePowerFromResourceTrade"
 ];
 let ConstantStats = [
     "PrideOfTheNavy",

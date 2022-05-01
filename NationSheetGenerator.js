@@ -818,7 +818,7 @@ function createNationSheet(nationName) {
                 "ExoticFruitOutgoing"
             ],
             [
-                "TradePowerResourceTrade"
+                "TradePowerFromResourceTrade"
             ]
         ]
     );
