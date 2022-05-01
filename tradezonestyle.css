@@ -9,6 +9,6 @@ td, th{
     border: 1px solid black;
 }
 
-#canvascontainer{
-    margin: 5px;
+#canvascontainer, table{
+    margin: 15px;
 }
