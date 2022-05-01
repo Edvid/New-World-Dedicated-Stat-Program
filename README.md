@@ -4,52 +4,118 @@ A dedicated program to changing and potentially viewing stats in a nation role p
 
 ## How to use the program
 
-The user will download the program and will be able to open a text file via the program which contains all the changes to the stats that has happened. Admins of a game being run will release the canon stats having changed, and the stats the program derives from that file will be the canon state of the game, however players shall feel free to test how the state of their nation may be given a different set of changes.
+The user visit a website that hosts the program and the stats for the game will be hosted on there. These are the cannon current stats of the game. Admins of the game will be updating the current canon state of the game periodically. However, if anyone wish to see the consequences of some stat changes they have in mind, they are welcome to upload a .txt or .ccf file. This will update the state of the game just for the user, and it will reset after a reload of the page.
 
-The program itself will display the stats natively. If a syntax error has been made in the text file, the program will display warnings above the natively displayed stats.
+## Updater's Guide to CCF files (Command Change format)
 
-## Structure of the stats
+### Basics
 
-### The Nation
+When updating nations' stats, this will be done by reading through their posts and judging which stat changes will happen to them this turn. The Basic Updater will write down the changes in a speical format.
 
-Most of the game's stats reside within an object class known as Nation. Most of these stats within Nations will be single numbers or texts, but some are themselves objects. Those will be:
 
-| Stat                             | Object Class           |
-| :------------------------------- | ---------------------: |
-| Religion Groups / Culture Groups | Social Behaviour Group Class |
-| Noble- / Clergy- / Burghers Loyalty Groups | Object with {Points: num} objects, for every loyalty group of appropriate name |
-| Technologies | Object with true/false properties, each for every technology |
-| Cultural Advancements | Object with true/false properties, each for every cultural advancement |
-| TradeInfluences | Object with number properties, each for every trade zone |
-| Climates | Object of Climate class properties, each for every bas eclimate |
+***Examples:***
 
-### Religions and Cultures
+**I: selecting**
 
-As seen before, nations have groups of some cultures or religions within their borders. But Cultures and Religions (collectively known as Social Behaviours) are a global phenonenon, and unlike the stat of "how many percent of some culture live in _this_ nation", there _are_ actually some properties of the Social Behaviours that are stored globally; The Opinion of other Cultures or Religions. A culture will have a `definingFeatures` stat, and an `Opinions` stat. `Opinions` is am object of `Opinion` objects, each named after the other Culture or Religion they have an opinion on. Religions cannot have opinions on cultures, or vice versa. `Opinion` objects contain a score between -100 and 100. 
+When beginning to update a nation, you must state which nation the following stats will affect. Stating which nation (or other object) will be known as "selecting". To Select a nation, the `>` symbol should be used.
 
-### Resource Types
+Selecting a Nation called Poland would be 
+`> Poland`
 
-Propably not a stat accessed very often, but it is here the game contains which resource types exist in the game
+or if something else is already selected, you may want to deselect everything first. Deselecting can be done with `<` or everything can be deselected at once with `<...`. To make absolutely sure Basic Updaters select a nation right when they begin their document, we ask of them to do as following:
+`<... > Poland`.
 
-### trades
 
-This is also a stat that is stored globally, and not within a specific nation. These Objects have `giver`, `reciever`, `resource`, and `amount`. Resource may be budget or food too, and all these trade objects together will be how the reource incoming and outgoings will be calculated for each nation.
+**I: adding**
 
-### Trade Zones
+adding 2 to administrative efficiency can be done with the line:
+`+2 administrativeefficiency`
 
-An object called Trade Zones is also stored at a global level. A number is stored per Trade Zone, and you can think of this as the Trade Zone Wealth
+or with synonyms implemented in the program:
 
-### Global stats
+`+ 2 adm`
 
-`TimeSpeed` and `TimeDivide` are both stats that aren't objects, and are just in the very top level of the program's stat keeping
+**II: moving (and subtracting)**
 
-Stats
+moving 10 noble loyalty points from the governments' name to self interests could look like the following
+`-10 noble loyalty.ajuran sultanate`
+`+10 noble loyalty.self interests`
 
-## Update Conventions
+**III: setting a stat to something specific**
 
-When doing trade treaties, you add the name of the treaty as an object in treaties (only the single word names are allowed). Then the resource in question and its amount, as well as the nations invovled. If the treaty involved many trade parts, you can suffix the parts with `<#treatyName>_paragaph<#partNum>` or just `<#treatyName>_<#partNum>`.
+setting the value of a stat is also possible. This is most useful for hiring of troops and players not listing how many more they recruit, just how many they will have now.
 
-### Reminders for stat updaters for special situations
+setting light cavalry to 500 would be done like the following.
+
+`=500`
+
+***IV: Treaties***
+
+Doing treaties is a little complex, but Basic updaters are still betrusted with this task.
+
+This will require something to happen to several nations, and such will require a bit of selecting and Deselecting.
+
+For treaties that involve trading resources, food or budget continuously, we can create a trade object to be stored in the program.
+
+Let's consider a treaty called "Treaty of Llivia". It involved spain selling .5 iron to France, and France paying 35 budget to Spain every turn in exchange.
+
+first select the list that stores trade objects.
+
+`<... > Trades`
+
+We then create a trade object. A trade object keeps "giver", "receiver", "resource", and "amount". That means that if a treaty mention the exchange of several resources, several trade objects will need to be made. We will name the trade object by the name of the treaty itself. If it is in parts, we can add a number to it. The name of the treaty we can write in one world, but make every letter following a space capitalised. Creating use the symbol `+>`, which look like a mix of adding a selecting. 
+
+`+> TreatyOfLliva1`
+
+We must state the giver and receiver, but remember to select the newly selected object first
+`> TreatyOfLliva1`
+`= Spain giver`
+`= France receiver`
+
+Then we state the resource in question and the amount
+
+`= Iron resource`
+`= 0.5 amount`
+
+We then consider the second part of the treaty, but remember to deselect the current object first
+
+`<`
+`+> TreatyOfLliva2`
+`> TreatyOfLliva2`
+
+Then the other stats are set. Notice that the giver and receiver is reversed here.
+
+`= France giver`
+`= Spain receiver`
+`= budget resource`
+`= 35 amount`
+
+Then we remember to deselect everything, and select the nation we were currently updating again if there is more to do.
+
+`<... > France`
+
+that makes for an entire template for treaties like:
+
+`+> TreatyOfLliva1`
+`> TreatyOfLliva1`
+`= Spain giver`
+`= France receiver`
+`= Iron resource`
+`= 0.5 amount`
+`<`
+`+> TreatyOfLliva2`
+`> TreatyOfLliva2`
+`= France giver`
+`= Spain receiver`
+`= budget resource`
+`= 35 amount`
+`<... > France`
+
+### Advanced
+
+Advances Updaters will be responsible for much more complex updating tasks. This includes creation of Nations, creating of new culutres and religions, stat synchronizing. The exact syntax and use will be explained in the syntax section. It covers everything possible with the command change format files.
+
+## Reminders for stat updaters for special situations
 
 If a nation is split or renamed, check with trades if updates should happen there too.
 
