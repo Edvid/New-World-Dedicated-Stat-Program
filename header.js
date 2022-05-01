@@ -13,6 +13,6 @@ homelink.onclick = function(){
 };
 
 tradezonelink.onclick = function(){
-    document.location.href = REPO_NAME + "tradezones";
+    document.location.href = REPO_NAME + "TradeZones";
 };
 
