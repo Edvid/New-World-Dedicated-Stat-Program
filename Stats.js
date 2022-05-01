@@ -1020,12 +1020,12 @@ class Nation {
         let allNationPoints = 0;
         for (const nation in gameStats.Nations) {
           let point = gameStats.Nations[nation].TradeInfluences[region].TradingPoints;
-          allNationPoints += point !== 'undefined' ? point[region] : 0;
+          allNationPoints += (typeof point !== 'undefined') ? point : 0;
         }
         let thispoint = n.TradeInfluences[region].TradingPoints;
         let percent = allNationPoints != 0 ? 
           (
-            (thispoint !== 'undefined' ? thispoint : 0
+            ((typeof thispoint !== 'undefined') ? thispoint : 0
           ) / allNationPoints) 
           : 0;
         stp += gameStats.TradeZones[region] * percent;
