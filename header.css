@@ -1,0 +1,28 @@
+*{
+    font-family: Helvetica;
+}
+
+header, #headerstartspace{
+    height: .75in;
+}
+
+header{
+    position: fixed;
+    width: 100%;
+    background-color: purple;
+    z-index: 2;
+}
+
+header button{
+    margin: .125in;
+    height: .5in;
+    padding: .15in;
+    font-weight: bold;
+    background-color: hotpink;
+    border-radius: 20px;
+    border: 0px;
+}
+
+body{
+    margin: 0px;
+}

@@ -5,12 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="nationSheet.css">
     <title>New World Dedicated Stat Program</title>
     <link rel="shortcut icon" type="/image/x-icon" href="docs/assets/images/favicon.ico">
 </head>
 
 <body>
+    <header></header>
+    <div id="headerstartspace"></div>
     <form action="/action_page.php">
         <input type="file" id="myFile" name="filename" onchange="loadChangesFromFile(event)">
     </form>
@@ -18,7 +21,8 @@
     
     <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
     <script src="https://cdn.amcharts.com/lib/5/percent.js"></script>
-
+    
+    <script type="text/javascript" src="header.js"></script>
     <script type="text/javascript" src="homeaddress.js"></script>
     <script type="text/javascript" src="specialOperations.js"></script>
     <script type="text/javascript" src="debugTerminalGenerator.js"></script>

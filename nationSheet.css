@@ -1,13 +1,13 @@
-*{
-    font-family: Helvetica;
-}
-
 pre, pre *{
     font-family: 'Consolas', 'Courier New', Courier, monospace;
 }
 
-body{
+form, .collapsible ,.nationsheet{
     margin: 40px;
+}
+
+form{
+    margin-bottom: 0px;
 }
 
 table{
@@ -35,23 +35,12 @@ td{
     font-size: 14px;
 }
 
-
-@keyframes cellhoveron{
-    from {color: black};
-    to {color: rgb(120, 49, 5)}
-}
-
-
-@keyframes cellhoveroff{
-    to {color: black};
-}
-
 /* #region  collapsible taken from https://www.w3schools.com/howto/howto_js_collapsible.asp */
 .collapsible {
     background-color: #eee;
     color: #444;
     cursor: pointer;
-    margin: 10px 0px 10px 0px;
+    margin-top: 10px;
     padding: 18px;
     width: auto;
     border: none;
