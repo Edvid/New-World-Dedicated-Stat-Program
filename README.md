@@ -35,6 +35,8 @@ or with synonyms implemented in the program:
 
 `+ 2 adm`
 
+_(notice here that a space after +, - or = is optional. A space is mandatory if the words ADD, SUB, or SET are used)_
+
 **II: moving (and subtracting)**
 
 moving 10 noble loyalty points from the governments' name to self interests could look like the following
@@ -45,9 +47,9 @@ moving 10 noble loyalty points from the governments' name to self interests coul
 
 setting the value of a stat is also possible. This is most useful for hiring of troops and players not listing how many more they recruit, just how many they will have now.
 
-setting light cavalry to 500 would be done like the following.
+setting light cavalry to 500 using synonyms would be done like the following.
 
-`=500`
+`=500 l cav`
 
 ***IV: Treaties***
 

@@ -109,11 +109,13 @@ let Synonyms = {
 	],
 	
 	LightInfantry: [
-		"lightinf"
+		"lightinf",
+		"linf"
 	],
 	
 	HeavyInfantry: [
-		"heavyinf"
+		"heavyinf",
+		"hinf"
 	],
 	
 	Crossbowmen: [
@@ -121,19 +123,23 @@ let Synonyms = {
 	],
 	
 	LightCavalry: [
-		"lightcav"
+		"lightcav",
+		"lcav"
 	],
 	
 	HeavyCavalry: [
-		"heavycav"
+		"heavycav",
+		"hcav"
 	],
 	
 	EliteInfantry: [
-		"eliteinf"
+		"eliteinf",
+		"einf"
 	],
 	
 	EliteCavalry: [
-		"elitecav"
+		"elitecav",
+		"ecav"
 	],
 	
 	Musketeers: [
