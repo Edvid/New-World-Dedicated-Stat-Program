@@ -147,7 +147,7 @@ async function onLoad() {
         for (let i = 0; i < ColorToZoneName.length; i++) {
             const ColorToZoneNamePair = ColorToZoneName[i];
             if(rgbToHex(data).toLowerCase() == ColorToZoneNamePair[0].toLowerCase()){
-                zonename.innerText = ColorToZoneNamePair[1];
+                zonename.innerText = ColorToZoneNamePair[1].split(/(?<=[a-zA-Z])(?=[A-Z])/gm).join(" ");
                 zonewealth.innerText = gameStats.TradeZones[ColorToZoneNamePair[1]];
 
                 zonename.style.background = col;
