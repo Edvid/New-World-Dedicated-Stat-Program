@@ -145,3 +145,7 @@ function createStat(currentSelection, arg){
         (new Function(`gameStats${currentSelection}.${arg} = new ${objectClass}("${arg}");`))();
     }
 }
+
+function deleteStat(currentSelection, arg){
+    
+}

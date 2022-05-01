@@ -56,6 +56,17 @@ function loadChangesFromContent(changes){
             let spn = addChangeCommandWithColors([changeCommand], ["MediumSpringGreen"]);
             spn[0].style.fontWeight = "bold";
         }
+        //Creation
+        else if (changeCommand.slice(0, 2) == "+>") {
+            let arg = changeCommand.slice(2).trim();
+            createStat(currentSelection, arg);
+            addChangeCommandWithColors([changeCommand], ["magenta"]);
+        }
+        else if (changeCommand.slice(0, 2) == "<-"){
+            let arg = changeCommand.slice(2).trim();
+            deleteStat(currentSelection, arg);
+            addChangeCommandWithColors([changeCommand], ["#ff00a0"]);
+        }
         //Selection and deselections
         else if (changeCommand[0] == '>' || changeCommand[0] == '<') {
             let cc = changeCommand;
@@ -93,12 +104,7 @@ function loadChangesFromContent(changes){
             }
             addChangeCommandWithColors([changeCommand], ["dodgerBlue"]);
         }
-        //Creation
-        else if (changeCommand.slice(0, 2) == "+>") {
-            let arg = changeCommand.slice(2).trim();
-            createStat(currentSelection, arg);
-            addChangeCommandWithColors([changeCommand], ["magenta"]);
-        }
+        
         //normal commands
         else {
             commandParameters = [];
