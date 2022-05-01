@@ -349,9 +349,6 @@ function createNationSheet(nationName) {
             ],
             [
                 "OverallShipCount",
-                "PrideOfTheNavy",
-            ],
-            [
                 "TradeProtection",
                 "NavalPower"
             ]

@@ -428,7 +428,7 @@ let DerivedStats = [
     "TradePowerFromResourceTrade"
 ];
 let ConstantStats = [
-    "PrideOfTheNavy"
+    
 ];
 let TurnBasedStats = [
     "Population",

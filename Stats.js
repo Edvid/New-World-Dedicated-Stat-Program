@@ -173,7 +173,6 @@ class Nation {
   UpkeepForOneMediumShip;
   HeavyShips;
   UpkeepForOneHeavyShip;
-  PrideOfTheNavy;
   OverallShipCount;
   TradeProtection;
   NavalPower;
@@ -1484,7 +1483,6 @@ class Nation {
 
     this.MaxPopulation = this.Population / this.Disease;
     
-    this.PrideOfTheNavy = (this.NavalPower > 10000? 'ACCESSIBLE' : 'INACCESSIBLE');
     this.OverallShipCount = this.LightShips + this.MediumShips + this.HeavyShips;
     this.NavalPower = (this.LightShips*0.5 + this.MediumShips + 2*this.HeavyShips) * this.NavyQuality;
     
