@@ -1,4 +1,5 @@
 let BaseStats = [
+    "Isolation",
 	"ResearchSpending",
 	"ReligionRepresentedAtGovernmentLevel",
 	"CultureRepresentedAtGovernmentLevel",
@@ -427,8 +428,7 @@ let DerivedStats = [
     "TradePowerFromResourceTrade"
 ];
 let ConstantStats = [
-    "PrideOfTheNavy",
-    "Isolation"
+    "PrideOfTheNavy"
 ];
 let TurnBasedStats = [
     "Population",
