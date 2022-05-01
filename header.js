@@ -9,10 +9,10 @@ homelink.innerText = "home";
 tradezonelink.innerText = "trade zone map";
 
 homelink.onclick = function(){
-    document.location.href = "/";
+    document.location.href = REPO_NAME + "/";
 };
 
 tradezonelink.onclick = function(){
-    document.location.href = "/tradezones";
+    document.location.href = REPO_NAME + "/tradezones";
 };
 
