@@ -131,7 +131,7 @@ let BaseStats = [
     "HeavyShips"
 ];
 let DerivedStats = [
-
+    "FuturePopulation"
 ];
 let ConstantStats = [
     "PrideOfTheNavy"
