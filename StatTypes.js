@@ -131,7 +131,15 @@ let BaseStats = [
     "HeavyShips"
 ];
 let DerivedStats = [
-    "FuturePopulation"
+    "FuturePopulation",
+    "FutureLiteracyPercent",
+    "FutureHigherEducation",
+    "FutureBudget",
+    "FutureFood",
+    "FutureResearchPoints",
+    "FuturePublicDebtLength",
+    "FutureCulturalPower",
+    "FutureDateInThisNation"
 ];
 let ConstantStats = [
     "PrideOfTheNavy"
