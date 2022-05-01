@@ -907,7 +907,7 @@ function createStatTable(title, tables, upmigrations) {
                 case "Unknown":
                     statTypeIcon.src = HOME_ADDRESS + "images/Unknown.png"; //black
                     statTypeIcon.alt = "Unknown!";
-                    statTypeIcon.title = "Unknown!";
+                    statTypeIcon.title = "Unknown! This is a mistake on our part. Please inform us if you see it.";
                     break;
             }
             statTypeIcon.classList.add("stattypeicon");

@@ -130,6 +130,9 @@ let BaseStats = [
     "MediumShips",
     "HeavyShips"
 ];
+let DerivedStats = [
+
+];
 let ConstantStats = [
     "PrideOfTheNavy"
 ];
@@ -161,6 +164,12 @@ function getStatType(statName){
             return "Base";
         }
     }
+    for (let i = 0; i < DerivedStats.length; i++) {
+        const curStatName = DerivedStats[i];
+        if(curStatName == statName){
+            return "Derived";
+        }
+    }
     for (let i = 0; i < ConstantStats.length; i++) {
         const curStatName = ConstantStats[i];
         if(curStatName == statName){
@@ -179,5 +188,5 @@ function getStatType(statName){
             return "War";
         }
     }
-    return "Derived";
+    return "Unknown";
 }
