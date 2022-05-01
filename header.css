@@ -9,7 +9,7 @@ header, #headerstartspace{
 header{
     position: fixed;
     width: 100%;
-    background-color: purple;
+    background-color: dodgerblue;
     z-index: 2;
 }
 
@@ -18,7 +18,7 @@ header button{
     height: .5in;
     padding: .15in;
     font-weight: bold;
-    background-color: hotpink;
+    background-color: lightskyblue;
     border-radius: 20px;
     border: 0px;
 }
