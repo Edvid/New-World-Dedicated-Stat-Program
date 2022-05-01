@@ -202,7 +202,7 @@ let Synonyms = {
 		"armytactics"
 	],
 	
-	MililtaryDiscipline: [
+	MilitaryDiscipline: [
 		"discipline",
 		"discipline"
 	],

@@ -160,7 +160,7 @@ class Nation {
   ArmyQuality;
   MilitaryLoyalty;
   MilitaryMorale;
-  MililtaryDiscipline;
+  MilitaryDiscipline;
   /* #endregion */
 
   /* #region  Navy */
@@ -597,7 +597,7 @@ class Nation {
     this.ArmyWages = 1;
     this.TrainingQuality = 0.15;
     this.MilitaryTactics = 0.15;
-    this.MililtaryDiscipline = 1; //Show In Percent
+    this.MilitaryDiscipline = 1; //Show In Percent
     /* #endregion */
 
     /* #region  Navy */
@@ -1464,7 +1464,7 @@ class Nation {
     this.FreeEliteUnitsCap = ((this.OverallNumbers - this.Militia - this.Levies) * 0.025) - (this.EliteCavalry + this.EliteInfantry);
 
     this.MilitaryMorale = clamp(0, 1.5, 
-      1 + this.Fervor + (this.MililtaryDiscipline > 1 ? - this.MililtaryDiscipline + 1 : 0) * 2 +
+      1 + this.Fervor + (this.MilitaryDiscipline > 1 ? - this.MilitaryDiscipline + 1 : 0) * 2 +
     (this.WarSupport < 0.5 ? this.WarSupport - 0.5 : 0) +
     (this.WarSupport > 0.75 ? this.WarSupport - 0.75 : 0) +
     this.ArmyWages - 1);
