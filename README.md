@@ -67,10 +67,10 @@ first select the list that stores trade objects.
 
 We then create a trade object. A trade object keeps "giver", "receiver", "resource", and "amount". That means that if a treaty mention the exchange of several resources, several trade objects will need to be made. We will name the trade object by the name of the treaty itself. If it is in parts, we can add a number to it. The name of the treaty we can write in one world, but make every letter following a space capitalised. Creating use the symbol `+>`, which look like a mix of adding a selecting. 
 
-`+> TreatyOfLliva1`
+`+> TreatyOfLlivia1`
 
 We must state the giver and receiver, but remember to select the newly selected object first
-`> TreatyOfLliva1`
+`> TreatyOfLlivia1`
 `= Spain giver`
 `= France receiver`
 
@@ -82,8 +82,8 @@ Then we state the resource in question and the amount
 We then consider the second part of the treaty, but remember to deselect the current object first
 
 `<`
-`+> TreatyOfLliva2`
-`> TreatyOfLliva2`
+`+> TreatyOfLlivia2`
+`> TreatyOfLlivia2`
 
 Then the other stats are set. Notice that the giver and receiver is reversed here.
 
@@ -98,21 +98,33 @@ Then we remember to deselect everything, and select the nation we were currently
 
 that makes for an entire template for treaties like:
 
-`+> TreatyOfLliva1`
-`> TreatyOfLliva1`
+`+> TreatyOfLlivia1`
+`> TreatyOfLlivia1`
 `= Spain giver`
 `= France receiver`
 `= Iron resource`
 `= 0.5 amount`
 `<`
-`+> TreatyOfLliva2`
-`> TreatyOfLliva2`
+`+> TreatyOfLlivia2`
+`> TreatyOfLlivia2`
 `= France giver`
 `= Spain receiver`
 `= budget resource`
 `= 35 amount`
 `<... > France`
 
+***V: Deletion***
+
+Deletion happens in the game when a treaty is terminated, or a nation falls. Basic Updaters are trusted with the ability ot delete treaties, but entire nations will be the job of the Advanced Updaters.
+
+Deletion has a very opposite syntax to that of creation; `<-`. It looks like a mix of deselect and subtract. The name following this one will be deleted from the object that is currently selected.
+
+E.g. If the treaty of Llivia is terminated, one could remove the trade instances from the list of trades in the game's stats. The following selects the trades object and deletes the two instances of the treaty of Llivia and then reselects France once again (assuming this was learned while updating France)
+
+`<... > trades`
+`<- TreatyOfLlivia1`
+`<- TreatyOfLlivia2`
+`< > France`
 ### Advanced
 
 Advances Updaters will be responsible for much more complex updating tasks. This includes creation of Nations, creating of new culutres and religions, stat synchronizing. The exact syntax and use will be explained in the syntax section. It covers everything possible with the command change format files.
