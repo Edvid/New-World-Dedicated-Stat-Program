@@ -1,1 +1,0 @@
-const HOME_ADDRESS = "docs/assets/";

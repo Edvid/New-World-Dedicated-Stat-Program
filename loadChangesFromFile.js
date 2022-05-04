@@ -4,7 +4,7 @@ let changeCommandIndex;
 
 (async function(){
     let preload;
-    await fetch(HOME_ADDRESS + "commandChangeFormat/NW7.ccf").then(response => response.text()).then(data => preload = data);
+    await fetch("./docs/assets/commandChangeFormat/NW7.ccf").then(response => response.text()).then(data => preload = data);
     preload = preload.split(/\r?\n|\r/);
     loadChangesFromContent(preload);
 })();

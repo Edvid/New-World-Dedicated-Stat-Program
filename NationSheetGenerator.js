@@ -879,32 +879,32 @@ function createStatTable(title, tables, upmigrations) {
             let statTypeIcon = document.createElement("img");
             switch (getStatType(statName)) {
                 case "Base":
-                    statTypeIcon.src = HOME_ADDRESS + "images/Base.png"; //red
+                    statTypeIcon.src = "./docs/assets/images/Base.png"; //red
                     statTypeIcon.alt = "Base";
                     statTypeIcon.title = "Base Stat: This is RPable";
                     break;
                 case "Derived":
-                    statTypeIcon.src = HOME_ADDRESS + "images/Derived.png";
+                    statTypeIcon.src = "./docs/assets/images/Derived.png";
                     statTypeIcon.alt = "Derived";
                     statTypeIcon.title = "Derived Stat: This is calculated through a formula of other stats. You can not change this stat";
                     break;
                 case "Constant":
-                    statTypeIcon.src = HOME_ADDRESS + "images/Constant.png"; //orange
+                    statTypeIcon.src = "./docs/assets/images/Constant.png"; //orange
                     statTypeIcon.alt = "Constant";
                     statTypeIcon.title = "Constant: This stat will not change throughout the game, and it is the same for all players";
                     break;
                 case "Turn Based":
-                    statTypeIcon.src = HOME_ADDRESS + "images/Turn Based.png"; //pink
+                    statTypeIcon.src = "./docs/assets/images/Turn Based.png"; //pink
                     statTypeIcon.alt = "Turn Based";
                     statTypeIcon.title = "Turn Based Stat: This takes its future form the next turn. You can not change this stat";
                     break;
                 case "War":
-                    statTypeIcon.src = HOME_ADDRESS + "images/War.png"; //red
+                    statTypeIcon.src = "./docs/assets/images/War.png"; //red
                     statTypeIcon.alt = "War";
                     statTypeIcon.title = "War: This stat can change through Role play in war, and may be changed by War GMs as well as Stat Updaters";
                     break;
                 case "Unknown":
-                    statTypeIcon.src = HOME_ADDRESS + "images/Unknown.png"; //black
+                    statTypeIcon.src = "./docs/assets/images/Unknown.png"; //black
                     statTypeIcon.alt = "Unknown!";
                     statTypeIcon.title = "Unknown! This is a mistake on our part. Please inform us if you see it.";
                     break;
@@ -960,7 +960,7 @@ function createOpinionMatrixTable(title, SocialBehaviourGroups) {
             if (opinionerName == opinioneeName) {
 
                 let cross = document.createElement("img");
-                cross.src = HOME_ADDRESS + "images/NotApplicable.gif";
+                cross.src = "./docs/assets/images/NotApplicable.gif";
                 cross.classList.add("notapplicable");
                 cross.style.display = "block";
                 cell.style.padding = "0px";
