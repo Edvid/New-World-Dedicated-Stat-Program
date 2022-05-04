@@ -1,0 +1,23 @@
+*{
+    font-family: Helvetica;
+}
+
+table{
+    margin: 10px;
+}
+
+th, td{
+    position:initial;
+}
+
+th{
+    background-color:dodgerblue;
+}
+
+td{
+    background-color:lightskyblue
+}
+
+th:nth-child(1), th:nth-child(3), td:nth-child(1), td:nth-child(3){
+    border-right: 3px solid black;
+} 
