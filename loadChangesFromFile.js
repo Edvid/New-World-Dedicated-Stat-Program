@@ -77,6 +77,16 @@ function loadChangesFromContent(changes){
             gameStats.Trades[tradename].reciever = reciever;
             gameStats.Trades[tradename].resource = resourceType;
             gameStats.Trades[tradename].amount = amount;
+            
+            let spanGroup = addChangeCommandWithColors(["trade", tradename, ",", giver, ">", reciever, ",", amount, resourceType], ["MediumSpringGreen"]);
+            spanGroup[0].style.fontWeight = "bold";
+            spanGroup[1].style.fontStyle = "italic";
+            spanGroup[3].style.color = "rgb(0, 250, 203)";
+            spanGroup[4].style.color = "rgb(0, 250, 203)";
+            spanGroup[5].style.color = "rgb(0, 250, 203)";
+            
+            spanGroup[7].style.color = "#efc5cb";
+            spanGroup[8].style.color = "#efc5cb";
 
         }
         //Creation
