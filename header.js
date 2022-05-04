@@ -12,14 +12,14 @@ tradezonelink.innerText = "trade zone map";
 alltradeslink.innerText = "all trades";
 
 homelink.onclick = function(){
-    document.location.href = "./" + REPO_NAME + "";
+    document.location.href = "./";
 };
 
 tradezonelink.onclick = function(){
-    document.location.href = "./" + REPO_NAME + "TradeZones";
+    document.location.href = "./TradeZones";
 };
 
 alltradeslink.onclick = function(){
-    document.location.href = "./" + REPO_NAME + "alltrades";
+    document.location.href = "./alltrades";
 };
 
