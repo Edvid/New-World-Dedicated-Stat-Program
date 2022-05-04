@@ -1,2 +1,5 @@
-let alltrades = gameStats.Trades;
-console.log(alltrades);
+function loadAllTrades(){
+    let alltrades = gameStats.Trades;
+    console.log(alltrades);
+}
+

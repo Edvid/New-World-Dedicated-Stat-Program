@@ -179,4 +179,5 @@ function loadChangesFromContent(changes){
         currentNationName = Object.keys(gameStats.Nations)[0];
         createNationSheet(currentNationName);
     }
+    if(typeof loadAllTrades !== 'undefined') loadAllTrades();
 }
