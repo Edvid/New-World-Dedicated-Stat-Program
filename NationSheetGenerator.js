@@ -44,10 +44,12 @@ dropdownselection.onchange = function () {
     currentNationID = this.selectedIndex;
     currentNationName = Object.keys(gameStats.Nations)[currentNationID];
     createNationSheet(currentNationName);
-};
+}
 
 dropdown.appendChild(dropdowntitle);
 dropdown.appendChild(dropdownselection);
+
+
 
 function updateDropdownSelection() {
     dropdownselection.innerHTML = "";

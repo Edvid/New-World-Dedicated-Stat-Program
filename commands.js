@@ -91,13 +91,13 @@ function normalCommand(selection) {
     if (commandParameters[0] == '+' || commandParameters[0] == 'add') {
         change = num;
         (new Function(`gameStats${selection} += ${commandParameters[1]}`))();
-        addChangeCommandWithColors(commandParameters, ["lawnGreen", "lawnGreen", "limeGreen"]);
+        addChangeCommandWithColorsProxy(commandParameters, ["lawnGreen", "lawnGreen", "limeGreen"]);
     }
     //subtract
     else if (commandParameters[0] == '-' || commandParameters[0] == 'sub') {
         change = -num;
         (new Function(`gameStats${selection} -= ${commandParameters[1]}`))();
-        addChangeCommandWithColors(commandParameters, ["tomato", "tomato", "limeGreen"]);
+        addChangeCommandWithColorsProxy(commandParameters, ["tomato", "tomato", "limeGreen"]);
     }
     //set
     else if (commandParameters[0] == '=' || commandParameters[0] == 'set') {
@@ -110,7 +110,7 @@ function normalCommand(selection) {
         change = isNaN(previous) ? true : num - previous;
 
         (new Function(`gameStats${selection} = ${commandParameters[1]}`))();
-        addChangeCommandWithColors(commandParameters, ["Gold", "Gold", "limeGreen"]);
+        addChangeCommandWithColorsProxy(commandParameters, ["Gold", "Gold", "limeGreen"]);
 
     } else {
         alert("At line " + (changeCommandIndex + 1) + "\r\n\r\nOperand wasn't understood: " + commandParameters[0] + ".\r\n Aborting.");
@@ -150,4 +150,10 @@ function deleteStat(currentSelection, arg){
     let dottedStatName = arg;
     if(/\.|\[/gm.test(dottedStatName[0])) dottedStatName = "." + dottedStatName;
     (new Function(`delete gameStats${currentSelection}${dottedStatName}`))();
+}
+
+
+function addChangeCommandWithColorsProxy(txtArr, colArr){
+    if(typeof addChangeCommandWithColors === 'undefined') return;
+    return addChangeCommandWithColors(txtArr, colArr);
 }

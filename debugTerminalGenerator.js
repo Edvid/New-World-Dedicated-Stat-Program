@@ -23,6 +23,7 @@ document.body.appendChild(changeCommandsContentButton);
 document.body.appendChild(changeCommandsWithColoursParent);
 
 function addChangeCommandWithColors(spanlist, colorlist){
+    if(typeof changeCommandsWithColours === 'undefined') return;
     if(changeCommandsWithColours.innerText == "# empty #") changeCommandsWithColours.innerText = ""; 
     let spans = []
     for(let i = 0; i < spanlist.length; i++){

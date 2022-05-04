@@ -1,6 +1,14 @@
 let commandParameters = [];
 let changes;
 let changeCommandIndex;
+
+(async function(){
+    let preload;
+    await fetch(HOME_ADDRESS + "commandChangeFormat/NW7.ccf").then(response => response.text()).then(data => preload = data);
+    preload = preload.split(/\r?\n|\r/);
+    loadChangesFromContent(preload);
+})();
+
 function loadChangesFromFile(event) {
     var file = event.target.files[0];
     var reader = new FileReader();
@@ -22,17 +30,19 @@ function loadChangesFromContent(changes){
         if (changeCommand[0] == '#' || changeCommand.length == 0 || ignore) {
             if (!ignore) {
                 if (changeCommand == "###") {
-                    let spn = addChangeCommandWithColors([changeCommand], ["#5E5E5E"]);
+                    let spn = addChangeCommandWithColorsProxy([changeCommand], ["#5E5E5E"]);
+                    if(typeof spn === 'undefined') continue;
                     spn[0].style.fontStyle = "italic";
                     ignore = true;
                 } else {
-                    addChangeCommandWithColors([changeCommand], ["grey"]);
+                    addChangeCommandWithColorsProxy([changeCommand], ["grey"]);
                 }
                 continue;
             } else {
                 if (changeCommand.toLowerCase() == "# END".toLowerCase())
                     ignore = false;
-                let spn = addChangeCommandWithColors([changeCommand], ["#5E5E5E"]);
+                let spn = addChangeCommandWithColorsProxy([changeCommand], ["#5E5E5E"]);
+                if(typeof spn === 'undefined') continue;
                 spn[0].style.fontStyle = "italic";
                 continue;
             }
@@ -53,7 +63,8 @@ function loadChangesFromContent(changes){
                 gameStats.evaluateNations();
                 syncNations();
             }
-            let spn = addChangeCommandWithColors([changeCommand], ["MediumSpringGreen"]);
+            let spn = addChangeCommandWithColorsProxy([changeCommand], ["MediumSpringGreen"]);
+            if(typeof spn === 'undefined') continue;
             spn[0].style.fontWeight = "bold";
         }
         //trade
@@ -78,7 +89,8 @@ function loadChangesFromContent(changes){
             gameStats.Trades[tradename].resource = resourceType;
             gameStats.Trades[tradename].amount = amount;
             
-            let spanGroup = addChangeCommandWithColors(["trade", tradename, ",", giver, ">", reciever, ",", amount, resourceType], ["MediumSpringGreen"]);
+            let spanGroup = addChangeCommandWithColorsProxy(["trade", tradename, ",", giver, ">", reciever, ",", amount, resourceType], ["MediumSpringGreen"]);
+            if(typeof spanGroup === 'undefined') continue;
             spanGroup[0].style.fontWeight = "bold";
             spanGroup[1].style.fontStyle = "italic";
             spanGroup[3].style.color = "rgb(0, 250, 203)";
@@ -93,12 +105,12 @@ function loadChangesFromContent(changes){
         else if (changeCommand.slice(0, 2) == "+>") {
             let arg = changeCommand.slice(2).trim();
             createStat(currentSelection, arg);
-            addChangeCommandWithColors([changeCommand], ["magenta"]);
+            addChangeCommandWithColorsProxy([changeCommand], ["magenta"]);
         }
         else if (changeCommand.slice(0, 2) == "<-"){
             let arg = changeCommand.slice(2).trim();
             deleteStat(currentSelection, arg);
-            addChangeCommandWithColors([changeCommand], ["#ff00a0"]);
+            addChangeCommandWithColorsProxy([changeCommand], ["#ff00a0"]);
         }
         //Selection and deselections
         else if (changeCommand[0] == '>' || changeCommand[0] == '<') {
@@ -135,7 +147,7 @@ function loadChangesFromContent(changes){
                 }
                 cc = cutback(cc);
             }
-            addChangeCommandWithColors([changeCommand], ["dodgerBlue"]);
+            addChangeCommandWithColorsProxy([changeCommand], ["dodgerBlue"]);
         }
         
         //normal commands
@@ -161,7 +173,10 @@ function loadChangesFromContent(changes){
     }
 
     gameStats.evaluateNations();
-    updateDropdownSelection();
-    currentNationName = Object.keys(gameStats.Nations)[0];
-    createNationSheet(currentNationName);
+
+    if(typeof updateDropdownSelection !== 'undefined') updateDropdownSelection();
+    if(typeof createNationSheet !== 'undefined') {
+        currentNationName = Object.keys(gameStats.Nations)[0];
+        createNationSheet(currentNationName);
+    }
 }
