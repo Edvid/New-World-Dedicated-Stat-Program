@@ -1336,6 +1336,7 @@ class Nation {
     this.FuturePopulation = (function () {
       return n.Population + (n.FutureFood < 0 ? n.FutureFood * 1000 : n.Population * n.PopulationGrowth / gameStats.TimeDivide);
     })();
+    this.FutureFood = max(0, this.FutureFood);
     this.FutureLiteracyPercent = ((this.LiteracyPercent > this.EducationEfficiency * 3) ? this.EducationEfficiency * 3 : this.LiteracyPercent) + this.EducationEfficiency / 10 / gameStats.TimeDivide;
     this.FutureHigherEducation = this.HigherEducation + (this.EducationEfficiency >= 3 ? this.EducationEfficiency / 30 : 0) + (this.HigherEducation > this.EducationEfficiency / 3 ? -0.25 : 0);
 
