@@ -39,22 +39,26 @@ function loadChangesFromContent(changes){
 
         }
         //sync
-        else if (changeCommand.includes("sync")) {
+        else if (changeCommand.toLowerCase().startsWith("sync")) {
 
             if (changeCommand.includes("<")) {
-                //If first part of current Selection is not the name of some nation
-                if (Nations[currentSelection.split(/\./gi)[0]] === 'undefined') {
-                    alert("You tried to run sync on a specific nation, but no nation is selected. This Operations was aborted");
-                    continue;
-                }
                 gameStats.evaluateNations();
-                syncNation(correctAndSynonymCheck(currentSelection).split(/\./gi)[0]);
+
+                let lastselection = correctAndSynonymCheck(currentSelection).split(/\./gi);
+                if(lastselection[lastselection.length - 2] !== 'Nations') alert("The current selection is not a nation. Cannot sync single nation.");
+                lastselection = lastselection[lastselection.length - 1];
+
+                syncNation(lastselection);
             } else {
                 gameStats.evaluateNations();
                 syncNations();
             }
             let spn = addChangeCommandWithColors([changeCommand], ["MediumSpringGreen"]);
             spn[0].style.fontWeight = "bold";
+        }
+        //trade
+        else if(changeCommand.startsWith("trade")){
+            
         }
         //Creation
         else if (changeCommand.slice(0, 2) == "+>") {
