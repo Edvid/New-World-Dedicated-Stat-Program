@@ -2,24 +2,24 @@ function specialOperation(selection, change){
 
     //New Recruitment handling
     if(
-        /gameStats\.Nations\..+\.Levies/.test(selection) ||
-        /gameStats\.Nations\..+\.LightInfantry/.test(selection) ||
-        /gameStats\.Nations\..+\.HeavyInfantry/.test(selection) ||
-        /gameStats\.Nations\..+\.Archers/.test(selection) ||
-        /gameStats\.Nations\..+\.Crossbowmen/.test(selection) ||
-        /gameStats\.Nations\..+\.LightCavalry/.test(selection) ||
-        /gameStats\.Nations\..+\.HeavyCavalry/.test(selection) ||
-        /gameStats\.Nations\..+\.EliteInfantry/.test(selection) ||
-        /gameStats\.Nations\..+\.EliteCavalry/.test(selection) ||
-        /gameStats\.Nations\..+\.HandCannon/.test(selection) ||
-        /gameStats\.Nations\..+\.Musketeers/.test(selection) ||
-        /gameStats\.Nations\..+\.Militia/.test(selection) ||
-        /gameStats\.Nations\..+\.SiegeEquipment/.test(selection) ||
-        /gameStats\.Nations\..+\.LargeSiegeEquipment/.test(selection) ||
-        /gameStats\.Nations\..+\.Cannons/.test(selection) ||
-        /gameStats\.Nations\..+\.LightShips/.test(selection) ||
-        /gameStats\.Nations\..+\.MediumShips/.test(selection) ||
-        /gameStats\.Nations\..+\.HeavyShips/.test(selection)
+        /\.Nations\..+\.Levies/.test(selection) ||
+        /\.Nations\..+\.LightInfantry/.test(selection) ||
+        /\.Nations\..+\.HeavyInfantry/.test(selection) ||
+        /\.Nations\..+\.Archers/.test(selection) ||
+        /\.Nations\..+\.Crossbowmen/.test(selection) ||
+        /\.Nations\..+\.LightCavalry/.test(selection) ||
+        /\.Nations\..+\.HeavyCavalry/.test(selection) ||
+        /\.Nations\..+\.EliteInfantry/.test(selection) ||
+        /\.Nations\..+\.EliteCavalry/.test(selection) ||
+        /\.Nations\..+\.HandCannon/.test(selection) ||
+        /\.Nations\..+\.Musketeers/.test(selection) ||
+        /\.Nations\..+\.Militia/.test(selection) ||
+        /\.Nations\..+\.SiegeEquipment/.test(selection) ||
+        /\.Nations\..+\.LargeSiegeEquipment/.test(selection) ||
+        /\.Nations\..+\.Cannons/.test(selection) ||
+        /\.Nations\..+\.LightShips/.test(selection) ||
+        /\.Nations\..+\.MediumShips/.test(selection) ||
+        /\.Nations\..+\.HeavyShips/.test(selection)
     ){
         //only record positive changes
         if(change <= 0) return;
@@ -27,18 +27,26 @@ function specialOperation(selection, change){
         (new Function(`${newTroopSelection} += ${change}`))();
     }
     //Clearing War Penalty Stats If War Stat is false 
-    else if(/gameStats\.Nations\..+\.AtWar/.test(selection)){
-        if(change.toLowerCase() == 'offensive' || change.toLowerCase() == 'defensive') return;
-        let warStatsToReset = []
-        warStatsToReset.push(selection.split(".").pop().push("Casualities").join("."));
-        warStatsToReset.push(selection.split(".").pop().push("Pillaging").join("."));
-        warStatsToReset.push(selection.split(".").pop().push("Occupation").join("."));
-        warStatsToReset.push(selection.split(".").pop().push("MinorBattles").join("."));
-        warStatsToReset.push(selection.split(".").pop().push("MajorBattles").join("."));
+    else if(/\.Nations\..+\.AtWar/.test(selection)){
         
+        //if the value of atWar after it's been changed just now, isn't false, then skip
+        //aka if actually false, the war is over and you should do the following code
+        //which clears war penalty stats
+        if(new Function(`return gameStats${selection}`)() != "false") return;
+
+        let selectedNation = selection.split(".");
+        selectedNation.pop();
+        selectedNation = selectedNation.join(".");
+        let warStatsToReset = [
+            "Casualities",
+            "Pillaging",
+            "Occupation",
+            "MinorBattles",
+            "MajorBattles"
+        ];
         for (let i = 0; i < warStatsToReset.length; i++) {
             const warStatToReset = warStatsToReset[i];
-            (new Function(`${warStatToReset} += 0`))();
+            (new Function(`gameStats${selectedNation}.${warStatToReset} = 0`))();
         }
     }   
 }
