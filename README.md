@@ -40,7 +40,7 @@ _(notice here that a space after +, - or = is optional. A space is mandatory if 
 **II: moving (and subtracting)**
 
 moving 10 noble loyalty points from the governments' name to self interests could look like the following
-`-10 noble loyalty.ajuran sultanate`
+`-10 noble loyalty.ajuran sultanate`\
 `+10 noble loyalty.self interests`
 
 **III: setting a stat to something specific**
@@ -51,67 +51,35 @@ setting light cavalry to 500 using synonyms would be done like the following.
 
 `=500 l cav`
 
-***IV: Treaties***
+Another great example for when the setting of a stat is necessary would be for the `atWar` stat. It can only have the following values. "false", "defensive" and "offensive". Does a nation wage war on another, a stat updater may:
 
-Doing treaties is a little complex, but Basic updaters are still betrusted with this task.
+`="offensive" atWar`
 
-This will require something to happen to several nations, and such will require a bit of selecting and Deselecting.
+***IV: Trade Deals***
 
-For treaties that involve trading resources, food or budget continuously, we can create a trade object to be stored in the program.
+Doing Trade Deals is something we also betrust the Basic Updater to do.
+
+A neat shorthand for creating trades goes as follows:
+
+`trade tradename, from > to, num resourceType`\
+which is equivalent to:\
+`<... > Trades`\
+`+> tradename`\
+`> tradename`\
+`= from giver`\
+`= to receiver`\
+`= resourceType resource`\
+`= num amount`\
+`<... `\
+Except you get to keep the selection you had initially.
+
+But don't mind that complicated mess. I'll be giving examples:
 
 Let's consider a treaty called "Treaty of Llivia". It involved spain selling .5 iron to France, and France paying 35 budget to Spain every turn in exchange.
+That means that this treaty mentions the exchange of 2 things. Those will be stored as 2 trades in the game stats.
 
-first select the list that stores trade objects.
-
-`<... > Trades`
-
-We then create a trade object. A trade object keeps "giver", "receiver", "resource", and "amount". That means that if a treaty mention the exchange of several resources, several trade objects will need to be made. We will name the trade object by the name of the treaty itself. If it is in parts, we can add a number to it. The name of the treaty we can write in one world, but make every letter following a space capitalised. Creating use the symbol `+>`, which look like a mix of adding a selecting. 
-
-`+> TreatyOfLlivia1`
-
-We must state the giver and receiver, but remember to select the newly selected object first
-`> TreatyOfLlivia1`
-`= Spain giver`
-`= France receiver`
-
-Then we state the resource in question and the amount
-
-`= Iron resource`
-`= 0.5 amount`
-
-We then consider the second part of the treaty, but remember to deselect the current object first
-
-`<`
-`+> TreatyOfLlivia2`
-`> TreatyOfLlivia2`
-
-Then the other stats are set. Notice that the giver and receiver is reversed here.
-
-`= France giver`
-`= Spain receiver`
-`= budget resource`
-`= 35 amount`
-
-Then we remember to deselect everything, and select the nation we were currently updating again if there is more to do.
-
-`<... > France`
-
-that makes for an entire template for treaties like:
-
-`+> TreatyOfLlivia1`
-`> TreatyOfLlivia1`
-`= Spain giver`
-`= France receiver`
-`= Iron resource`
-`= 0.5 amount`
-`<`
-`+> TreatyOfLlivia2`
-`> TreatyOfLlivia2`
-`= France giver`
-`= Spain receiver`
-`= budget resource`
-`= 35 amount`
-`<... > France`
+`trade TreatyOfLlivia1, Spain > France, 0.5 Iron`\
+`trade TreatyOfLlivia2, France > Spain, 35 Budget`
 
 ***V: Deletion***
 
