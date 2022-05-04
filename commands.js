@@ -80,23 +80,24 @@ function normalCommand(selection) {
     //
 
 
-    let num;
+    let value = commandParameters[1];
     let change;
     //If number to change by is written in percent. Divide that number by 100
-    if (!(/^[\d|\.].+%$/.test(commandParameters[1]))) {
-        num = commandParameters[1].replace("%", "") / 100;
+    if (/[\d|\.].+%$/.test(value)) {
+        value = value.replace("%", "") / 100;
     }
+    console.log(value);
 
     //add
     if (commandParameters[0] == '+' || commandParameters[0] == 'add') {
-        change = num;
-        (new Function(`gameStats${selection} += ${commandParameters[1]}`))();
+        change = value;
+        (new Function(`gameStats${selection} += ${value}`))();
         addChangeCommandWithColorsProxy(commandParameters, ["lawnGreen", "lawnGreen", "limeGreen"]);
     }
     //subtract
     else if (commandParameters[0] == '-' || commandParameters[0] == 'sub') {
-        change = -num;
-        (new Function(`gameStats${selection} -= ${commandParameters[1]}`))();
+        change = -value;
+        (new Function(`gameStats${selection} -= ${value}`))();
         addChangeCommandWithColorsProxy(commandParameters, ["tomato", "tomato", "limeGreen"]);
     }
     //set
@@ -107,9 +108,9 @@ function normalCommand(selection) {
                 gameStats${selection}\
             ));`
         ))();
-        change = isNaN(previous) ? true : num - previous;
+        change = isNaN(previous) ? true : value - previous;
 
-        (new Function(`gameStats${selection} = ${commandParameters[1]}`))();
+        (new Function(`gameStats${selection} = ${value}`))();
         addChangeCommandWithColorsProxy(commandParameters, ["Gold", "Gold", "limeGreen"]);
 
     } else {
