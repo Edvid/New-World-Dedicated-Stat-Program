@@ -40,8 +40,8 @@ class Opinion {
 class Trade {
   giver; //nation name
   reciever; //nation name
-  resource; //can include food or budget
   amount;
+  resource; //can include food or budget
 }
 class Nation {
 
