@@ -131,7 +131,7 @@ function createStat(currentSelection, arg){
     if (arg.includes('=')) {
         let newName = arg.slice(0, arg.indexOf('=')).trim();
         let oldName = arg.slice(arg.indexOf('=') + 1).trim();
-        gameStats.Nations[oldName].evaluateNation();
+        gameStats.Nations[oldName].evaluateNation(oldName);
         (new Function(`\
         gameStats${currentSelection}.${newName} = new ${objectClass}("${newName}");\
         /* Copy all property values from old to new */\

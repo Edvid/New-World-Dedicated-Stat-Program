@@ -896,10 +896,10 @@ class Nation {
     /* #endregion */
     /* #endregion */
 
-    this.evaluateNation();
+    this.evaluateNation(nationName);
   }
 
-  evaluateNation() {
+  evaluateNation(nationName) {
     let n = this;
 
     this.AgricultureTechnology = 0 + this.Technologies.HorseCollar / 2;
@@ -1672,7 +1672,7 @@ class Stats{
   evaluateNations() {
     for (const nationName in this.Nations) {
       const nation = this.Nations[nationName];
-      nation.evaluateNation();
+      nation.evaluateNation(nationName);
     }
   }
 }

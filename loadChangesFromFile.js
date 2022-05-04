@@ -58,7 +58,26 @@ function loadChangesFromContent(changes){
         }
         //trade
         else if(changeCommand.startsWith("trade")){
-            
+            let parameters = changeCommand.split(/(?<=trade)/gm).pop();
+            parameters = parameters.split(/,|>/gm);
+            let tradename = parameters[0].trim();
+            let giver = parameters[1].trim();
+            let reciever = parameters[2].trim();
+            let stake = parameters[3].trim().split(/(?<![a-zA-Z])(?=[a-zA-Z])/gm);
+            let amount = stake[0].trim();
+            let resourceType = stake[1].trim();
+
+            if(typeof gameStats.Trades[tradename] !== 'undefined') {
+                alert(`The name ${tradename} is already used in Trades.`);
+                continue;    
+            }
+
+            gameStats.Trades[tradename] = new Trade();
+            gameStats.Trades[tradename].giver = giver;
+            gameStats.Trades[tradename].reciever = reciever;
+            gameStats.Trades[tradename].resource = resourceType;
+            gameStats.Trades[tradename].amount = amount;
+
         }
         //Creation
         else if (changeCommand.slice(0, 2) == "+>") {
