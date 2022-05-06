@@ -107,6 +107,7 @@ function loadChangesFromContent(changes){
             createStat(currentSelection, arg);
             addChangeCommandWithColorsProxy([changeCommand], ["magenta"]);
         }
+        //deletion
         else if (changeCommand.slice(0, 2) == "<-"){
             let arg = changeCommand.slice(2).trim();
             deleteStat(currentSelection, arg);
