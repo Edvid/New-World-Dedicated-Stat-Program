@@ -1039,6 +1039,7 @@ class Nation {
     // old formula: this.Prosperity = 1 + this.SocialSpending / 2.5 + (this.Food == 0 && this.FutureFood < 0 ? this.FutureFood / 2000 : 0) + (this.Budget < 0.00001 ? this.Budget / 100 : 0) * (1 - this.Pillaging);
     this.Prosperity = 1 + this.SocialSpending / 2.5 + (this.FutureFood < 0 ? this.FutureFood / (this.Population / 10000) : 0) + (this.Budget < 0 ? this.Budget / this.OverallIncome : 0) - (this.Pillaging) * 3;
     this.Food = max(0, this.Food);
+    this.FutureFood = min(this.MaxFoodStock, this.Food + this.FoodGain);
     this.Size = (function () {
       let s = 0;
       for (const climate in n.Climates) {
