@@ -1036,7 +1036,8 @@ class Nation {
     this.Foodlost = this.SurplusFood - this.FoodSold;
     this.TradeProfit = this.FoodSold / 50;
 
-    this.Prosperity = 1 + this.SocialSpending / 2.5 + (this.Food == 0 && this.FutureFood < 0 ? this.FutureFood / 2000 : 0) + (this.Budget < 0.00001 ? this.Budget / 100 : 0) * (1 - this.Pillaging);
+    // old formula: this.Prosperity = 1 + this.SocialSpending / 2.5 + (this.Food == 0 && this.FutureFood < 0 ? this.FutureFood / 2000 : 0) + (this.Budget < 0.00001 ? this.Budget / 100 : 0) * (1 - this.Pillaging);
+    this.Prosperity = 1 + this.SocialSpending / 2.5 + (this.FutureFood < 0 ? this.FutureFood / (this.Population / 10000) : 0) + (this.Budget < 0 ? this.Budget / this.OverallIncome : 0) - (this.Pillaging) * 3;
     this.Food = max(0, this.Food);
     this.Size = (function () {
       let s = 0;
@@ -1061,7 +1062,8 @@ class Nation {
     this.Disease = this.PopulationDensityPerKmSquared / 25 - this.Health / 20 - (this.Technologies.HumanAnatomy ? 0.15 : 0);
     this.UnderPopulation = this.Disease < 0.5 ? (1 - this.Disease) / 10 : 0;
 
-    let PopulationGrowthModifier = (function () {
+	let PopulationGrowthModifier = (this.Fertility > 0.5 ? (this.Fertility - 0.5) / 10 : 0) + this.FoodPopulationBoost + (this.Prosperity - 1) / 10 + this.UnderPopulation;
+/*  let PopulationGrowthModifier = (function () {
 
       let mod = n.FoodPopulationBoost + (n.Prosperity - 1) / 10 + n.UnderPopulation;
 
@@ -1078,7 +1080,7 @@ class Nation {
       if (n.Population > 50000000) mod += -0.01;
 
       return mod;
-    })();
+    })(); */
 
     this.UnitUpkeep = (function () {
       let uu = 0;
@@ -1333,9 +1335,10 @@ class Nation {
 
 
     this.ResourcePopulationGrowthBoost = (this.EffectiveCotton - this.CottonInflation + this.EffectiveSpice - this.SpiceInflation + this.EffectiveWool - this.WoolInflation + this.EffectiveFur - this.FurInflation + (this.EffectiveSugar - this.SugarInflation + this.EffectiveExoticFruit - this.ExoticFruitInflation) / 2) / 100;
-    this.PopulationGrowth = max(-0.3, (0.1 + PopulationGrowthModifier + this.ResourcePopulationGrowthBoost) * (1 - this.Disease) - this.BirthControl / 20);
+    // old formula: this.PopulationGrowth = max(-0.3, (0.1 + PopulationGrowthModifier + this.ResourcePopulationGrowthBoost) * (1 - this.Disease) - this.BirthControl / 20);
+	this.PopulationGrowth = (this.FutureFood < 0 ? this.FutureFood * 1000 / this.Population - (this.Disease > 1 ? this.Disease - 1 : 0) / 10 : max(-0.3, (0.1 + PopulationGrowthModifier + this.ResourcePopulationGrowthBoost) * (1 - this.Disease) - this.BirthControl / 20));
     this.FuturePopulation = (function () {
-      return n.Population + (n.FutureFood < 0 ? n.FutureFood * 1000 : n.Population * n.PopulationGrowth / gameStats.TimeDivide);
+      return n.Population + n.Population * n.PopulationGrowth / gameStats.TimeDivide;
     })();
     this.FutureLiteracyPercent = ((this.LiteracyPercent > this.EducationEfficiency * 3) ? this.EducationEfficiency * 3 : this.LiteracyPercent) + this.EducationEfficiency / 10 / gameStats.TimeDivide;
     this.FutureHigherEducation = this.HigherEducation + (this.EducationEfficiency >= 3 ? this.EducationEfficiency / 30 : 0) + (this.HigherEducation > this.EducationEfficiency / 3 ? -0.25 : 0);
