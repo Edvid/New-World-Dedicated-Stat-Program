@@ -103,8 +103,8 @@ function loadChangesFromContent(changes){
         }
         //pay debt
         else if(changeCommand.toLowerCase().startsWith("pay debt")){
-            let parameters = changeCommand.split(/(?<=pay debt)/gm).pop().trim();
-            if(isNaN(parameters)) {
+            let parameter = changeCommand.split(/(?<=pay debt)/gm).pop().trim();
+            if(isNaN(parameter)) {
                 alert("The debt paid wasn't a number. Operation Aborted.");
                 continue;
             }
@@ -122,8 +122,9 @@ function loadChangesFromContent(changes){
             //PublicDebtTaken = EffectiveDebt / (1 + InterestRate);
             let interestRate = (new Function(`return gameStats.${currentSelection}.InterestRate`))();
 
-            (new Function(`gameStats.${currentSelection}.PublicDebtTaken -= ${parameters} / (1 + ${interestRate})`))();
-                
+            (new Function(`gameStats.${currentSelection}.PublicDebtTaken -= ${parameter} / (1 + ${interestRate})`))();
+            
+            let spanGroup = addChangeCommandWithColorsProxy(["pay debt", parameter], ["MediumSpringGreen", "rgb(0, 250, 203)"]); 
 
         }
         //Creation
