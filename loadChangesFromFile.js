@@ -116,7 +116,13 @@ function loadChangesFromContent(changes){
                 continue;
             }
 
-            new Function(`gameStats.${currentSelection}.PublicDebtTaken -= ${parameters}`)
+            //EffectiveDebt formula isolated for Public Debt Taken 
+            //EffectiveDebt = PublicDebtTaken * (1 + InterestRate);
+            //EffectiveDebt / (1 + InterestRate)= PublicDebtTaken * (1 + InterestRate) / (1 + InterestRate);
+            //PublicDebtTaken = EffectiveDebt / (1 + InterestRate);
+            let interestRate = (new Function(`return gameStats.${currentSelection}.InterestRate`))();
+
+            (new Function(`gameStats.${currentSelection}.PublicDebtTaken -= ${parameters} / (1 + ${interestRate})`))();
                 
 
         }
