@@ -118,16 +118,16 @@ function loadChangesFromContent(changes){
 
             let natName = splitSelections[splitSelections.length - 1];
 
-            (new Function(`gameStats.${currentSelection}.evaluateNation(${natName})`))();
+            (new Function(`gameStats${currentSelection}.evaluateNation(${natName})`))();
 
 
             //EffectiveDebt formula isolated for Public Debt Taken 
             //EffectiveDebt = PublicDebtTaken * (1 + InterestRate);
             //EffectiveDebt / (1 + InterestRate)= PublicDebtTaken * (1 + InterestRate) / (1 + InterestRate);
             //PublicDebtTaken = EffectiveDebt / (1 + InterestRate);
-            let interestRate = (new Function(`return gameStats.${currentSelection}.InterestRate`))();
+            let interestRate = (new Function(`return gameStats${currentSelection}.InterestRate`))();
 
-            (new Function(`gameStats.${currentSelection}.PublicDebtTaken -= ${parameter} / (1 + ${interestRate})`))();
+            (new Function(`gameStats${currentSelection}.PublicDebtTaken -= ${parameter} / (1 + ${interestRate})`))();
             
             let spanGroup = addChangeCommandWithColorsProxy(["pay debt", parameter], ["MediumSpringGreen", "rgb(0, 250, 203)"]); 
 
