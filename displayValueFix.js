@@ -60,6 +60,13 @@ function displayValueFix(statName, statValue) {
         ].indexOf(statName)) {
             numString = parseFloat(statVal).toFixed(0);
         }
+        //round up
+        else if(~[
+            /* "PublicDebtTaken", */
+            "EffectiveDebt"
+        ].indexOf(statName)){
+            numString = "" + (Math.ceil(statVal * 100) / 100);
+        }
         //percentages
         else if (~[
             "LowerClassTax",
