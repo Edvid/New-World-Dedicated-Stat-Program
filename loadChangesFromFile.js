@@ -68,7 +68,7 @@ function loadChangesFromContent(changes){
             spn[0].style.fontWeight = "bold";
         }
         //trade
-        else if(changeCommand.startsWith("trade")){
+        else if(changeCommand.toLowerCase().startsWith("trade")){
             let parameters = changeCommand.split(/(?<=trade)/gm).pop();
             parameters = parameters.split(/,|>/gm);
             let tradename = parameters[0].trim();
@@ -101,12 +101,44 @@ function loadChangesFromContent(changes){
             spanGroup[8].style.color = "#efc5cb";
 
         }
+        //pay debt
+        else if(changeCommand.toLowerCase().startsWith("pay debt")){
+            let parameter = changeCommand.split(/(?<=pay debt)/gm).pop().trim();
+            if(isNaN(parameter)) {
+                alert("The debt paid wasn't a number. Operation Aborted.");
+                continue;
+            }
+
+            let splitSelections = correctAndSynonymCheck(currentSelection).split(/\./gi);
+            
+            if(splitSelections[splitSelections.length - 2] !== 'Nations') {
+                alert("The current selection is not a nation. Cannot sync single nation.");
+                continue;
+            }
+
+            let natName = splitSelections[splitSelections.length - 1];
+
+            (new Function(`gameStats${currentSelection}.evaluateNation("${natName}")`))();
+
+
+            //EffectiveDebt formula isolated for Public Debt Taken 
+            //EffectiveDebt = PublicDebtTaken * (1 + InterestRate);
+            //EffectiveDebt / (1 + InterestRate)= PublicDebtTaken * (1 + InterestRate) / (1 + InterestRate);
+            //PublicDebtTaken = EffectiveDebt / (1 + InterestRate);
+            let interestRate = (new Function(`return gameStats${currentSelection}.InterestRate`))();
+
+            (new Function(`gameStats${currentSelection}.PublicDebtTaken -= ${parameter} / (1 + ${interestRate})`))();
+            
+            let spanGroup = addChangeCommandWithColorsProxy(["pay debt", parameter], ["MediumSpringGreen", "rgb(0, 250, 203)"]); 
+
+        }
         //Creation
         else if (changeCommand.slice(0, 2) == "+>") {
             let arg = changeCommand.slice(2).trim();
             createStat(currentSelection, arg);
             addChangeCommandWithColorsProxy([changeCommand], ["magenta"]);
         }
+        //deletion
         else if (changeCommand.slice(0, 2) == "<-"){
             let arg = changeCommand.slice(2).trim();
             deleteStat(currentSelection, arg);

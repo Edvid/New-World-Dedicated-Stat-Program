@@ -10,8 +10,6 @@ function loadAllTrades(){
     thName.innerHTML = "Name";
     headerRow.appendChild(thName);
 
-    console.log(alltrades);
-
     for (const tradeName in alltrades) {
         const trade = alltrades[tradeName];
         let tradeRow = document.createElement("tr");
