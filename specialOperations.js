@@ -38,7 +38,7 @@ function specialOperation(selection, change){
         selectedNation.pop();
         selectedNation = selectedNation.join(".");
         let warStatsToReset = [
-            "Casualities",
+            "Casualties",
             "Pillaging",
             "Occupation",
             "MinorBattles",
