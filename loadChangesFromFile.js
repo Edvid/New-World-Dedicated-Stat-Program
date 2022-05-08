@@ -68,7 +68,7 @@ function loadChangesFromContent(changes){
             spn[0].style.fontWeight = "bold";
         }
         //trade
-        else if(changeCommand.startsWith("trade")){
+        else if(changeCommand.toLowerCase().startsWith("trade")){
             let parameters = changeCommand.split(/(?<=trade)/gm).pop();
             parameters = parameters.split(/,|>/gm);
             let tradename = parameters[0].trim();
@@ -99,6 +99,25 @@ function loadChangesFromContent(changes){
             
             spanGroup[7].style.color = "#efc5cb";
             spanGroup[8].style.color = "#efc5cb";
+
+        }
+        //pay debt
+        else if(changeCommand.toLowerCase().startsWith("pay debt")){
+            let parameters = changeCommand.split(/(?<=pay debt)/gm).pop().trim();
+            if(isNaN(parameters)) {
+                alert("The debt paid wasn't a number. Operation Aborted.");
+                continue;
+            }
+
+            let splitSelections = correctAndSynonymCheck(currentSelection).split(/\./gi);
+            
+            if(splitSelections[splitSelections.length - 2] !== 'Nations') {
+                alert("The current selection is not a nation. Cannot sync single nation.");
+                continue;
+            }
+
+            new Function(`gameStats.${currentSelection}.PublicDebtTaken -= ${parameters}`)
+                
 
         }
         //Creation
