@@ -118,7 +118,7 @@ function loadChangesFromContent(changes){
 
             let natName = splitSelections[splitSelections.length - 1];
 
-            (new Function(`gameStats${currentSelection}.evaluateNation(${natName})`))();
+            (new Function(`gameStats${currentSelection}.evaluateNation("${natName}")`))();
 
 
             //EffectiveDebt formula isolated for Public Debt Taken 
