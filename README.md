@@ -55,7 +55,13 @@ Another great example for when the setting of a stat is necessary would be for t
 
 `="offensive" atWar`
 
-***IV: Trade Deals***
+***IV: Paying back Debt***
+
+In order to make paying back debt easier, there is a special command that automatically accounts for interest. You only need to give the amount the nation actually paid and the program will do the rest by itself. The command is the following:
+
+`pay debt [amount]`
+
+***V: Trade Deals***
 
 Doing Trade Deals is something we also betrust the Basic Updater to do.
 
@@ -81,7 +87,7 @@ That means that this treaty mentions the exchange of 2 things. Those will be sto
 `trade TreatyOfLlivia1, Spain > France, 0.5 Iron`\
 `trade TreatyOfLlivia2, France > Spain, 35 Budget`
 
-***V: Deletion***
+***VI: Deletion***
 
 Deletion happens in the game when a treaty is terminated, or a nation falls. Basic Updaters are trusted with the ability ot delete treaties, but entire nations will be the job of the Advanced Updaters.
 
