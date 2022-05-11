@@ -128,7 +128,7 @@ function loadChangesFromContent(changes){
             let interestRate = (new Function(`return gameStats${currentSelection}.InterestRate`))();
 
             (new Function(`gameStats${currentSelection}.PublicDebtTaken -= ${parameter} / (1 + ${interestRate})`))();
-            (new Function(`gameStats${currentSelection}.Budget -= ${parameter})`))();
+            (new Function(`gameStats${currentSelection}.Budget -= ${parameter}`))();
             
             //excess paid back
             let publicDebtTakenValue = new Function(`return gameStats${currentSelection}.PublicDebtTaken`); 
