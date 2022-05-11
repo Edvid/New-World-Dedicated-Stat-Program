@@ -78,6 +78,11 @@ function loadChangesFromContent(changes){
             let amount = stake[0].trim();
             let resourceType = stake[1].trim();
 
+            giver = correctAndSynonymCheck(`.Nations.${giver}`).split(".").pop();
+            reciever = correctAndSynonymCheck(`.Nations.${reciever}`).split(".").pop();
+            resourceType = correctAndSynonymCheck(`.Nations.${giver}.${resourceType}`).split(".").pop();
+
+
             if(typeof gameStats.Trades[tradename] !== 'undefined') {
                 alert(`The name ${tradename} is already used in Trades.`);
                 continue;    
