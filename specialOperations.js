@@ -23,8 +23,8 @@ function specialOperation(selection, change){
     ){
         //only record positive changes
         if(change <= 0) return;
-        let newTroopSelection = selection.split(".").pop().push("New_" + selection[selection.split(".").length - 1].join("."));
-        (new Function(`${newTroopSelection} += ${change}`))();
+        let newTroopSelection = selection.replace(/\.(?=[^.]*$)/gm, ".New_");
+        (new Function(`gameStats${newTroopSelection} += ${change}`))();
     }
     //Clearing War Penalty Stats If War Stat is false 
     else if(/\.Nations\..+\.AtWar/.test(selection)){
