@@ -58,7 +58,7 @@ function syncNation(nationName) {
         //take -budget in debt, but no more than possible public debt
         let newDebt = min(gameStats.Nations[nationName].PossiblePublicDebt, -gameStats.Nations[nationName].Budget);
         //add it to effective debt
-        gameStats.Nations[nationName].PublicDebtTaken = newDebt;
+        gameStats.Nations[nationName].PublicDebtTaken += newDebt;
         //the debt taken added into budget
         gameStats.Nations[nationName].Budget += newDebt;
     }

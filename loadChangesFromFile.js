@@ -128,7 +128,17 @@ function loadChangesFromContent(changes){
             let interestRate = (new Function(`return gameStats${currentSelection}.InterestRate`))();
 
             (new Function(`gameStats${currentSelection}.PublicDebtTaken -= ${parameter} / (1 + ${interestRate})`))();
+            (new Function(`gameStats${currentSelection}.Budget -= ${parameter}`))();
             
+            //excess paid back
+            let publicDebtTakenValue = new Function(`return gameStats${currentSelection}.PublicDebtTaken`); 
+            if(publicDebtTakenValue < 0){
+                //reset public debt taken to 0
+                (new Function(`gameStats${currentSelection}.PublicDebtTaken -= 0`))();
+                //give back to budget
+                (new Function(`gameStats${currentSelection}.Budget += ${-publicDebtTakenValue})`))();
+            }
+
             let spanGroup = addChangeCommandWithColorsProxy(["pay debt", parameter], ["MediumSpringGreen", "rgb(0, 250, 203)"]); 
 
         }
