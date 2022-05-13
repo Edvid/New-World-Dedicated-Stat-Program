@@ -33,7 +33,7 @@ function correctAndSynonymCheck(selection) {
             }
             if (found) continue;
         }
-        if (!found) alert("The Specified Stat " + correctSelection[i] + " in " + correctSelection.slice(0, i).join(".") + " was not found!");
+        if (!found) alert("Line " + changeCommandIndex + ": The Specified Stat " + correctSelection[i] + " in " + correctSelection.slice(0, i).join(".") + " was not found!");
     }
     return "." + correctSelection.join(".");
 }
