@@ -1,14 +1,241 @@
-> Nations
-+> TemplateNation
-> TemplateNation
-= "https://i.redd.it/m29pe6eb3wv71.jpg" Flag
-> CultureGroups
-+> Template
-= 100 Template.Points
-< 
-= "Template" Cultrep
-= "Pagan" Relrep
+# Religions setup
+<... > Religions
++> Catholic
++> Protestant
++> Orthodox
++> Pagan
++> Muslim
++> Jewish
++> Buddhism
++> Hindu
++> Shinto
+
+# Catholic Opinions
+> Catholic > Opinions
++> Protestant
+= -50 Protestant.Score
++> Orthodox
+= -50 Orthodox.Score
++> Pagan
+= -75 Pagan.Score
++> Muslim
+= -100 Muslim.Score
++> Jewish
+= -75 Jewish.Score
++> Buddhism
+= 0 Buddhism.Score
++> Hindu
+= -25 Hindu.Score
++> Shinto
+= 0 Shinto.Score
+
+# Protestant Opinions
+< < > Protestant > Opinions
++> Catholic
+= -50 Catholic.Score
++> Orthodox
+= -50 Orthodox.Score
++> Pagan
+= -75 Pagan.Score
++> Muslim
+= -25 Muslim.Score
++> Jewish
+= -75 Jewish.Score
++> Buddhism
+= 0 Buddhism.Score
++> Hindu
+= -25 Hindu.Score
++> Shinto
+= 0 Shinto.Score
+
+# Orthodox Opinions
+< < > Orthodox > Opinions
++> Protestant
+= -50 Protestant.Score
++> Catholic
+= -50 Catholic.Score
++> Pagan
+= -75 Pagan.Score
++> Muslim
+= -100 Muslim.Score
++> Jewish
+= -75 Jewish.Score
++> Buddhism
+= 0 Buddhism.Score
++> Hindu
+= -25 Hindu.Score
++> Shinto
+= 0 Shinto.Score
+
+# Pagan Opinions
+< < > Pagan > Opinions
++> Protestant
+= -75 Protestant.Score
++> Orthodox
+= -75 Orthodox.Score
++> Catholic
+= -75 Catholic.Score
++> Muslim
+= -75 Muslim.Score
++> Jewish
+= -75 Jewish.Score
++> Buddhism
+= -50 Buddhism.Score
++> Hindu
+= -75 Hindu.Score
++> Shinto
+= -50 Shinto.Score
+
+# Muslim Opinions
+< < > Muslim > Opinions
++> Protestant
+= -25 Protestant.Score
++> Orthodox
+= -100 Orthodox.Score
++> Pagan
+= -75 Pagan.Score
++> Catholic
+= -100 Catholic.Score
++> Jewish
+= -100 Jewish.Score
++> Buddhism
+= -25 Buddhism.Score
++> Hindu
+= -75 Hindu.Score
++> Shinto
+= 0 Shinto.Score
+
+# Jewish Opinions
+< < > Jewish > Opinions
++> Protestant
+= -75 Protestant.Score
++> Orthodox
+= -75 Orthodox.Score
++> Pagan
+= -75 Pagan.Score
++> Muslim
+= -100 Muslim.Score
++> Catholic
+= -75 Catholic.Score
++> Buddhism
+= 0 Buddhism.Score
++> Hindu
+= 0 Hindu.Score
++> Shinto
+= 0 Shinto.Score
+
+# Buddhism Opinions
+< < > Buddhism > Opinions
++> Protestant
+= 0 Protestant.Score
++> Orthodox
+= 0 Orthodox.Score
++> Pagan
+= -50 Pagan.Score
++> Muslim
+= -25 Muslim.Score
++> Jewish
+= 0 Jewish.Score
++> Catholic
+= 0 Catholic.Score
++> Hindu
+= -50 Hindu.Score
++> Shinto
+= -25 Shinto.Score
+
+# Hindu Opinions
+< < > Hindu > Opinions
++> Protestant
+= -25 Protestant.Score
++> Orthodox
+= -25 Orthodox.Score
++> Pagan
+= -75 Pagan.Score
++> Muslim
+= -75 Muslim.Score
++> Jewish
+= 0 Jewish.Score
++> Buddhism
+= -50 Buddhism.Score
++> Catholic
+= -25 Catholic.Score
++> Shinto
+= 0 Shinto.Score
+
+# Shinto Opinions
+< < > Shinto > Opinions
++> Protestant
+= 0 Protestant.Score
++> Orthodox
+= 0 Orthodox.Score
++> Pagan
+= -75 Pagan.Score
++> Muslim
+= 0 Muslim.Score
++> Jewish
+= 0 Jewish.Score
++> Buddhism
+= -25 Buddhism.Score
++> Hindu
+= 0 Hindu.Score
++> Catholic
+= 0 Catholic.Score
+
+<... > Cultures
++> Vespucian
+<... > Nations
++> VespucianTribes
+> VespucianTribes > CultureGroups
++> Vespucian
+= 100 Vespucian.Points
+# < > ReligionGroups
+# = 100 Pagan.Points
+<... > Nations > VespucianTribes
+# = "image link" Flag
+= "Vespucian" cultrep
+= "Pagan" relrep 
 > Climates > Moderate
-= 5000 Pixels
+= 7500 Pixels
 <...
+
+> Cultures
++> Yamato
+<... > Nations
++> YamatoKingdom
+> YamatoKingdom > CultureGroups
++> Yamato
+=100 Yamato.Points
+ < > ReligionGroups
++> Shinto
+= 100 Shinto.Points
+= 0 Pagan.Points
+<... > Nations > YamatoKingdom
+# = "image link" Flag
+= "Yamato" cultrep
+= "Shinto" relrep 
+> Climates > Moderate
+= 7500 Pixels
+<...
+
+> Cultures
++> KingdomofKhmbodj
+<... > Nations
++> KingdomofKhmbodj
+> KingdomofKhmbodj > CultureGroups
++> Khmer
+= 100 Khmer.Points
+< > ReligionGroups
++> Buddhism  
+= 100 Buddhism.Points
+= 0 Pagan.Points
+<... > Nations > KingdomofKhmbodj
+# = "image link" Flag
+= "Khmer" cultrep
+= "Buddhism" relrep 
+> Climates > Moderate
+= 7500 Pixels
+<...
+
+
+
 # --- End of template construction --- #
