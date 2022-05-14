@@ -1221,7 +1221,7 @@ class Nation {
     this.CultureRepresentedAtGovernmentLevelPercent =  cultureCalc.GovernmentRepresentationPercent;
     this.CulturalDisunity = cultureCalc.disunity;
     this.ReligionRepresentedAtGovernmentLevelPercent = religionCalc.GovernmentRepresentationPercent;
-    this.ReligiousDisunity = religionCalc.GovernmentRepresentationPercent;
+    this.ReligiousDisunity = religionCalc.disunity;
 
     this.NobleLoyalty = (function () {
       let pointSum = 0;
