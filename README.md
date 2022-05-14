@@ -155,6 +155,24 @@ Advances Updaters will be responsible for much more complex updating tasks. This
 
 ## Reminders for stat updaters for special situations
 
+### Nation creation
+
+When creating a new nation you must remember the following
+
++ Create an appropriately named culture in Cultures
++ Set said culture to be 100 of the points in Nations>"nationname">CultureGroups
++ IF religion(s) specified
+  + Make sure the religion(s) is creaeted in Religion first
+    + If not so, create it
+  + Set the pagan religion value of the nation to whichever percentage is the right one (propably 0 if not specified otherwise)
+  + Create the religion(s) in Nations>"nationname">ReligionGroups
+  + Set the points value of the religion(s)
+  + Set the culture represented at government level to the culture created earlier
+  + Set the religion represented at government to the _one_ religion that best represents the entire nation (majority or only one)
+  + Set flag if any are specified
+
+### Nation splitting
+
 If a nation is split or renamed, check with trades if updates should happen there too.
 
 When creating a new nation, remember to specify its culture and primary culture accordingly. Religion will be pagan by default and can therefore be ignored.
