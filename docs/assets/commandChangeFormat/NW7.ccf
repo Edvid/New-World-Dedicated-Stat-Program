@@ -11,7 +11,7 @@
 +> Shinto
 
 # Catholic Opinions
-> Catholic > Opinions
+<... > Religions > Catholic > Opinions
 +> Protestant
 = -50 Protestant.Score
 +> Orthodox
@@ -30,7 +30,7 @@
 = 0 Shinto.Score
 
 # Protestant Opinions
-< < > Protestant > Opinions
+<... > Religions > Protestant > Opinions
 +> Catholic
 = -50 Catholic.Score
 +> Orthodox
@@ -49,7 +49,7 @@
 = 0 Shinto.Score
 
 # Orthodox Opinions
-< < > Orthodox > Opinions
+<... > Religions > Orthodox > Opinions
 +> Protestant
 = -50 Protestant.Score
 +> Catholic
@@ -68,7 +68,7 @@
 = 0 Shinto.Score
 
 # Pagan Opinions
-< < > Pagan > Opinions
+<... > Religions > Pagan > Opinions
 +> Protestant
 = -75 Protestant.Score
 +> Orthodox
@@ -87,7 +87,7 @@
 = -50 Shinto.Score
 
 # Muslim Opinions
-< < > Muslim > Opinions
+<... > Religions > Muslim > Opinions
 +> Protestant
 = -25 Protestant.Score
 +> Orthodox
@@ -106,7 +106,7 @@
 = 0 Shinto.Score
 
 # Jewish Opinions
-< < > Jewish > Opinions
+<... > Religions > Jewish > Opinions
 +> Protestant
 = -75 Protestant.Score
 +> Orthodox
@@ -125,7 +125,7 @@
 = 0 Shinto.Score
 
 # Buddhism Opinions
-< < > Buddhism > Opinions
+<... > Religions > Buddhism > Opinions
 +> Protestant
 = 0 Protestant.Score
 +> Orthodox
@@ -144,7 +144,7 @@
 = -25 Shinto.Score
 
 # Hindu Opinions
-< < > Hindu > Opinions
+<... > Religions > Hindu > Opinions
 +> Protestant
 = -25 Protestant.Score
 +> Orthodox
@@ -163,7 +163,7 @@
 = 0 Shinto.Score
 
 # Shinto Opinions
-< < > Shinto > Opinions
+<... > Religions > Shinto > Opinions
 +> Protestant
 = 0 Protestant.Score
 +> Orthodox
