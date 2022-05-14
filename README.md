@@ -76,7 +76,7 @@ which is equivalent to:\
 `= to receiver`\
 `= resourceType resource`\
 `= num amount`\
-`<... `\
+`<...`\
 Except you get to keep the selection you had initially.
 
 But don't mind that complicated mess. I'll be giving examples:
@@ -87,7 +87,55 @@ That means that this treaty mentions the exchange of 2 things. Those will be sto
 `trade TreatyOfLlivia1, Spain > France, 0.5 Iron`\
 `trade TreatyOfLlivia2, France > Spain, 35 Budget`
 
-***VI: Deletion***
+***VII: SocialBehaviour and SocialBehaviourGroups***
+
+Cultures and Religions have been dubbed Social Behaviours collectively. Creating a Religion works the same way as creating a Culture, just that you have to select the correct object to create said social behaviour under.
+
+Social Behaviours exists globally, and can have opinions on one another. The Catholics have an opinion on Muslims generally/averagely, and that opinion cross national borders. To create e.g. a Religion, you'd need to select Religions within the game stats.
+
+`<... > Religions`
+
+Then you add the name of said religion
+
+`+> Catholic`
+
+If there are any opinions you know the Catholics should have of other religions. That is done by creating an object within the Religion's Opinions object, and setting a score. Let's first select the Catholic opinion
+
+`> Catholic > Opinions`
+
+Then onto creating Protestant and Muslim object within this, and set their scores
+
+`+> Protestant`
+`= -75 Protestant.Score`
+`+> Muslim`
+`= -50 Muslim.Score`
+
+SocialBehaviourGroups exists too, and one of these would be the ReligionGroups. They store the information of how many of reach religion reside within each nation, so this stat exists on the nation object. 
+
+Let's first select a random nation
+
+`<... > Nations > Italy`
+
+Then its ReligionGroups
+
+`> ReligionGroups`
+
+In here we may set the Religions this nation has. By default, all nations are 100% pagan to begin with, so we must first clear that update
+
+`= 0 Pagan.Points`
+
+Now we can begin creating the religions within this nation and set their points too
+
+`+> Catholic`
+`= 95 Catholic.Points`
+
+
+`+> Protestant`
+`= 95 Protestant.Points`
+
+If everything is done correctly, you should be able to see a pie chart with only a sliver for protestants, and a table showing the opinion of the catholics towards the protestants in their nation having a displeased smiley.
+
+***VII: Deletion***
 
 Deletion happens in the game when a treaty is terminated, or a nation falls. Basic Updaters are trusted with the ability ot delete treaties, but entire nations will be the job of the Advanced Updaters.
 
@@ -99,6 +147,8 @@ E.g. If the treaty of Llivia is terminated, one could remove the trade instances
 `<- TreatyOfLlivia1`
 `<- TreatyOfLlivia2`
 `< > France`
+
+Any object can be deleted from the game. Be in trades, nations, cultures, culturegroups within nations etc.
 ### Advanced
 
 Advances Updaters will be responsible for much more complex updating tasks. This includes creation of Nations, creating of new culutres and religions, stat synchronizing. The exact syntax and use will be explained in the syntax section. It covers everything possible with the command change format files.
