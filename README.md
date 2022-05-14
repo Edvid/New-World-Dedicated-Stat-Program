@@ -317,3 +317,16 @@ Coastal Desert ClimateScore = 0.35
 sync</pre>
 
 Better color coding is possible inside the program itself, if you upload this string as a file and open `Open change command list debug terminal`.
+
+## How to debug
+
+If you wanna make absolutely sure you ahve written stat changes correctly before sharing with staff, you can test if the stuff runs by saving your text as a file that you can upload to the website. The uploading would add what you wrote onto what is already canon in the game, but only for you, and only until you reload the page. Here you can test if the program changes the stats the right way, if it crashes or if it brings up pop up alerts in the middle of your screen.
+
+### Keep an eye out for subtle errors
+
+Some errors are easy to spot. Sometimes the nation sheet for a nation doesn't even load, or sometimes an alert is right in your face. But to double check you may also consider
+
++ Scrolling down and double checking if the values you've written in changes, show up with the expected value in the right cells.
++ Opening your browsers debuggin tool via f12 or ctrl+shift+I and navigating to the console tab, to look out for any red messages that relate to your written changes.
+
+Does everything seem to be fine, you can savely share your changes with whoever has the github rights to put them in and let it be canon.
