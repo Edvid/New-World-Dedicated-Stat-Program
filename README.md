@@ -171,11 +171,11 @@ When creating a new nation you must remember the following
   + Set the religion represented at government to the _one_ religion that best represents the entire nation (majority or only one)
   + Set flag if any are specified
 
-### Nation splitting
+### Nation splitting / Renaming / Deletion
 
-If a nation is split or renamed, check with trades if updates should happen there too.
+When a nation's name changes, or is removed from the game for whatever reason, rememeber the following
 
-When creating a new nation, remember to specify its culture and primary culture accordingly. Religion will be pagan by default and can therefore be ignored.
++ check with all trades the old nation was involved in, if changes should happen there too. Deletion or change in the involved nations is an option.
 
 ## Syntax of the 'change commands' text file
 
