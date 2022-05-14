@@ -1190,7 +1190,7 @@ class Nation {
             if(isNaN(opinionobj.Score))
               opinionScore = Opinion[opinionobj.Score];
             else 
-              opinionScore = opinionScore.Score;
+              opinionScore = opinionobj.Score;
           }
           let socialBehaviourGroupDisunityFactor = (-opinionScore + 100) * (Points / pointSum) * (PointsOfOther / pointSum);
           if (nameOfSocialBehaviourGroupToBeHadAnOpinionAbout == socialGroupRepresentedAtGovernmentLevel) {
