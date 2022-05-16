@@ -697,7 +697,7 @@
 =100 Catholic.Points
 =0 Pagan.Points
 <... > Nations > KingdomOfToledoCatalonia
-# = "" Flag
+= "https://media.discordapp.net/attachments/969287009879359578/975453678767063142/unknown.png" Flag
 = "Catalonian" cultrep
 = "Catholic" relrep
 
