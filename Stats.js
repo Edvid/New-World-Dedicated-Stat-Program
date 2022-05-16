@@ -644,7 +644,7 @@ class Nation {
       Artisans: 0.01,
       Clergy: 0.0075,
       Nobility: 0.01,
-      Burghers: 0.05
+      Burghers: 0.005
     };
     
     this.SocietalClasses = {};
