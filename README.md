@@ -8,10 +8,9 @@ The user visit a website that hosts the program and the stats for the game will 
 
 ## Updater's Guide to CCF files (Command Change format)
 
-### Basics
+When updating nations' stats, this will be done by reading through their posts and judging which stat changes will happen to them this turn. The follwing is a guide to the most important stat changes. How to do the rest you should be able to extrapolate.
 
-When updating nations' stats, this will be done by reading through their posts and judging which stat changes will happen to them this turn. The Basic Updater will write down the changes in a speical format.
-
+It all works with a special format dubbed 'Command change format' or ccf for the file name. It allows adding, subtracting, setting values of stats, and navigating around the gameStats many objects that keep the stats (it's not all just stats in nation).
 
 ***Examples:***
 
@@ -135,6 +134,10 @@ Now we can begin creating the religions within this nation and set their points 
 
 If everything is done correctly, you should be able to see a pie chart with only a sliver for protestants, and a table showing the opinion of the catholics towards the protestants in their nation having a displeased smiley.
 
+***Note:***
+
+The guide above is the first to make real use of selections around the gameStats. Religions, Cultures, ReligionGroups, CultureGroups are not the only objects within the gameStats. You can read more about the entire structure of the gameStats down at Structure.
+
 ***VII: Deletion***
 
 Deletion happens in the game when a treaty is terminated, or a nation falls. Basic Updaters are trusted with the ability ot delete treaties, but entire nations will be the job of the Advanced Updaters.
@@ -149,9 +152,6 @@ E.g. If the treaty of Llivia is terminated, one could remove the trade instances
 `< > France`
 
 Any object can be deleted from the game. Be in trades, nations, cultures, culturegroups within nations etc.
-### Advanced
-
-Advances Updaters will be responsible for much more complex updating tasks. This includes creation of Nations, creating of new culutres and religions, stat synchronizing. The exact syntax and use will be explained in the syntax section. It covers everything possible with the command change format files.
 
 ## Reminders for stat updaters for special situations
 
@@ -176,6 +176,45 @@ When creating a new nation you must remember the following
 When a nation's name changes, or is removed from the game for whatever reason, rememeber the following
 
 + check with all trades the old nation was involved in, if changes should happen there too. Deletion or change in the involved nations is an option.
+
+
+## Structure
+
+The gameStats is structured as follows:
+
++ Nations
+  + . . . All number nation stats . . .
+  + ReligionGroups
+  + CultureGroups
+  + Technologies
+  + CulturalAdvancements
+  + NobleLoyaltyGroups
+    + . . . All loyalty group names . . . (the value stored here is the percentage of nobility that devote their loyalty to this group name)
+  + ClergyLoyaltyGroups
+    + . . . All loyalty group names . . . (the value stored here is the percentage of clergy that devote their loyalty to this group name)
+  + BurghersLoyaltyGroups
+    + . . . All loyalty group names . . . (the value stored here is the percentage of burghers that devote their loyalty to this group name)
+  + SocietalClasses
+    + High
+    + Medium
+    + Lower
+  + Workforces
+    + Artisan
+    + clergy
+    + Nobility
+    + Burghers
+  + TradeInfluences
+    + . . . All zone names . . .
+      + TradingPoints
+  + Climates
+    + . . . All climate names . . .
+      + Pixels (the Nation's pixels in this climate)
+      + ClimateScore (change only if you absolutely know what you're doing)
++ Religions
++ Cultures
++ Trades
++ TradeZones
+  + . . . All zone names . . . (the value stored here is the Wealth)
 
 ## Syntax of the 'change commands' text file
 
