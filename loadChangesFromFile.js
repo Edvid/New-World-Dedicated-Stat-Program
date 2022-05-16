@@ -255,7 +255,7 @@ async function displayProgress(){
         barctx.lineWidth = 3;
         barctx.strokeRect(0,0,100,20);
         barctx.fillStyle = 'black'
-        barctx.fillRect(0,0, +(line / lines) * 100, 20);
+        barctx.fillRect(0,0, (line / lines) * 100, 20);
 
         let loadingText = document.createElement("p");
         loadingText.style.fontStyle = "Italic";

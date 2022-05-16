@@ -111,8 +111,8 @@ function displayValueFix(statName, statValue) {
             for (let i = 0; i < numString.length; i++) {
                 newNumString += numString[i];
                 //only modify in case we are on the left hand side of the decimal point (if we have one), and we are at an index going into 3 from decimal point.
-                if ((numSize - i - 1) % 3 != 0 || i >= numSize) continue;
-                newNumString += " ";
+                if ((numSize - i - 1) % 3 == 0 && i + 1 < numSize)
+                    newNumString += " ";
             }
         }
         else newNumString = numString;
