@@ -1,4 +1,3 @@
-
 let commandParameters = [];
 let changes;
 let changeCommandIndex;
@@ -241,7 +240,34 @@ async function evaluteChangeCommand(changeCommand){
 async function displayProgress(){
     let lines = changeCommandFileLength;
     let line = changeCommandIndex;
-    loadingText.innerText = lines > line ? `line ${line} / ${lines} lines loaded` : "";
+    
+    
+    loadingField.innerHTML = "";
+    if(lines > line){
+        let loadingFieldTitle = document.createElement("p");
+        loadingFieldTitle.innerText = "Generating All nation Stats...";
+        
+        let bar = document.createElement("canvas");
+        bar.width = 100;
+        bar.height = 20;
+        let barctx = bar.getContext("2d");
+        
+        barctx.lineWidth = 3;
+        barctx.strokeRect(0,0,100,20);
+        barctx.fillStyle = 'black'
+        barctx.fillRect(0,0, +(line / lines) * 100, 20);
+
+        let loadingText = document.createElement("p");
+        loadingText.style.fontStyle = "Italic";
+        loadingText.style.fontSize = "12px";
+        loadingText.style.color = "grey";
+        loadingText.innerText = `line ${line} / ${lines} lines loaded`;
+        loadingField.appendChild(loadingFieldTitle);
+        loadingField.appendChild(bar);
+        loadingField.appendChild(loadingText);
+    }
+
+    
 }
 
 setInterval(displayProgress, 30);

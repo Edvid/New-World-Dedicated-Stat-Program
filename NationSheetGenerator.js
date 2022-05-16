@@ -5,10 +5,6 @@ let loadingField = document.createElement("div");
 
 loadingField.style.marginLeft = "40px";
 
-let loadingText = document.createElement("p");
-
-loadingField.appendChild(loadingText);
-
 let nationSheetContainer = document.createElement("div");
 nationSheetContainer.classList.add("nationsheet");
 
