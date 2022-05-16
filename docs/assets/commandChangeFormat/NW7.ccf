@@ -835,3 +835,50 @@
 # = "https://media.discordapp.net/attachments/969287009879359578/975360126645043221/hqddwfk3tam41.jpg?width=1009&height=673" Flag
 = "Chinese" cultrep
 = "Pagan" relrep
+
+#trade zones wealth 1350
+<... > TradeZones
+=1.5 GreatLakes 
+=1 Louisiana 
+=0.5 EastCoast 
+=1 Carribean 
+
+=1 NorthAnatolia 
+=1 NorthSea 
+=3 BritishIsles
+=2 EnglishChannel 
+=1 France 
+=1 BayOfBiscay 
+=2 WestIberia 
+=2.5 Gibraltar 
+=1 WestMediterreanian 
+=1 Rhine 
+=2 CentralMed 
+=3 Adriatic 
+=3 Germany 
+=1 SouthGermany 
+=1 Denmark 
+=1 Baltic 
+=1 Novgorod 
+=2 Poland 
+=1.5 Dniepr 
+=1.5 Crimea 
+=1.5 Balkans 
+=1 Greece 
+=2.5 EastMed 
+	  
+=1.5 Egypt 
+=1 RedSea 
+=2 Nigeria
+	  
+=1.5 Mesopotamia 
+=1 PersianGulf 
+=1 DonRiver 
+=1 Pakistan 
+=1 SeaOfJapan 
+=1 NorthChina 
+=1 SouthChina 
+=1 NorthIndia 
+=1 WestIndia 
+=0.5 Burma 
+=1.5 SouthEastAsia
