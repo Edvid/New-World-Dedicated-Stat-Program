@@ -181,61 +181,657 @@
 +> Catholic
 = 0 Catholic.Score
 
+# Vespucia add
 <... > Cultures
 +> Vespucian
 <... > Nations
 +> VespucianTribes
-> VespucianTribes > CultureGroups
+<... > Nations > VespucianTribes > CultureGroups
 +> Vespucian
-= 100 Vespucian.Points
-# < > ReligionGroups
-# = 100 Pagan.Points
+=100 Vespucian.Points
+<... > Nations > VespucianTribes > ReligionGroups
++> Pagan
+=100 Pagan.Points
 <... > Nations > VespucianTribes
-# = "image link" Flag
+# = "link" Flag
 = "Vespucian" cultrep
-= "Pagan" relrep 
-> Climates > Moderate
-= 7500 Pixels
-<...
+= "Pagan" relrep
 
-> Cultures
-+> Yamato
+# Yamato add
+<... > Cultures
++> Japanese
 <... > Nations
 +> YamatoKingdom
-> YamatoKingdom > CultureGroups
-+> Yamato
-=100 Yamato.Points
- < > ReligionGroups
+<... > Nations > YamatoKingdom > CultureGroups
++> Japanese
+=100 Japanese.Points
+<... > Nations > YamatoKingdom > ReligionGroups
 +> Shinto
-= 100 Shinto.Points
-= 0 Pagan.Points
+=100 Shinto.Points
+# (if not pagan)
+=0 Pagan.Points
 <... > Nations > YamatoKingdom
-# = "image link" Flag
-= "Yamato" cultrep
-= "Shinto" relrep 
-> Climates > Moderate
-= 7500 Pixels
-<...
+# = "[Image Link]" Flag
+= "Japanese" cultrep
+= "Shinto" relrep
 
-> Cultures
-+> KingdomofKhmbodj
+# Prussia add
+<... > Cultures
++> Prussian
 <... > Nations
-+> KingdomofKhmbodj
-> KingdomofKhmbodj > CultureGroups
++> KingdomOfPrussia
+<... > Nations > KingdomOfPrussia > CultureGroups
++> Prussian
+=100 Prussian.Points
+<... > Nations > KingdomOfPrussia > ReligionGroups
++> Catholic
+=100 Catholic.Points
+# (if not pagan)
+=0 Pagan.Points
+<... > Nations > KingdomOfPrussia
+= "https://cdn.discordapp.com/attachments/969287009879359578/974657308225306654/unknown.jpeg" Flag
+= "Prussian" cultrep
+= "Catholic" relrep
+
+# Khmbodj add
+<... > Cultures
 +> Khmer
-= 100 Khmer.Points
-< > ReligionGroups
-+> Buddhism  
-= 100 Buddhism.Points
-= 0 Pagan.Points
-<... > Nations > KingdomofKhmbodj
-# = "image link" Flag
+<... > Nations
++> KingdomOfKhmbodj
+<... > Nations > KingdomOfKhmbodj > CultureGroups
++> Khmer
+=100 Khmer.Points
+<... > Nations > KingdomOfKhmbodj > ReligionGroups
++> Buddhism 
+=100 Buddhism.Points
+# (if not pagan)
+=0 Pagan.Points
+<... > Nations > KingdomOfKhmbodj
+# = "[Image Link]" Flag
 = "Khmer" cultrep
-= "Buddhism" relrep 
-> Climates > Moderate
-= 7500 Pixels
-<...
+= "Buddhism" relrep
+
+# Potskig add
+<... > Cultures
++> Potskig
+<... > Nations
++> KingdomOfPotskig
+<... > Nations > KingdomOfPotskig > CultureGroups
++> Potskig
+=100 Potskig.Points
+<... > Nations > KingdomOfPotskig > ReligionGroups
++> Pagan
+=100 Pagan.Points
+<... > Nations > KingdomOfPotskig
+# = "[Image Link]" Flag
+= "Potskig" cultrep
+= "Pagan" relrep
+
+# Muscovy add
+<... > Cultures
++> Muscovite
+<... > Nations
++> TsardomOfMuscovy
+<... > Nations > TsardomOfMuscovy > CultureGroups
++> Muscovite
+=100 Muscovite.Points
+<... > Nations > TsardomOfMuscovy > ReligionGroups
++> Orthodox
+=100 Orthodox.Points
+=0 Pagan.Points
+<... > Nations > TsardomOfMuscovy
+= "https://cdn.discordapp.com/attachments/969287009879359578/974658632350310460/330px-Muscovy.png" Flag
+= "Muscovite" cultrep
+= "Orthodox" relrep 
+
+# Sindh add
+<... > Cultures
++> Sindh
+<... > Nations
++> SindhEmpire
+<... > Nations > SindhEmpire > CultureGroups
++> Sindh
+=100 Sindh.Points
+<... > Nations > SindhEmpire > ReligionGroups
++> Hindu
+=100 Hindu.Points
+# (if not pagan)
+=0 Pagan.Points
+<... > Nations > SindhEmpire
+# = "[Image Link]" Flag
+= "Sindh" cultrep
+= "Hindu" relrep
+
+# Sioux add
+<... > Cultures
++> Sioux 
+<... > Nations
++> SiouxTribes
+<... > Nations > SiouxTribes > CultureGroups
++> Sioux
+=100 Sioux.Points
+<... > Nations > SiouxTribes > ReligionGroups
+=100 Pagan.Points
+<... > Nations > SiouxTribes
+= "https://cdn.discordapp.com/attachments/974679262143610910/975034474658168922/unknown.png" Flag
+= "Sioux" cultrep
+= "Pagan" relrep
+
+# Byzantium add
+<... > Cultures
++> Byzantine
+<... > Nations
++> Byzantium
+<... > Nations > Byzantium > CultureGroups
++> Byzantine
+=100 Byzantine.Points
+<... > Nations > Byzantium > ReligionGroups
++> Orthodox
+=100 Orthodox.Points
+=0 Pagan.Points
+<... > Nations > Byzantium
+= "https://cdn.discordapp.com/attachments/663909343208538156/974661588902629396/unknown.png" Flag
+= "Byzantine" cultrep
+= "Orthodox" relrep
+
+# Order of St. Mary add
+<... > Cultures
++> Outremer
+<... > Nations
++> OrderOfStMary
+<... > Nations > OrderOfStMary > CultureGroups
++> Outremer
+=100 Outremer.Points
+<... > Nations > OrderOfStMary > ReligionGroups
++> Catholic
+=100 Catholic.Points
+# (if not pagan)
+=0 Pagan.Points
+<... > Nations > OrderOfStMary
+= "https://media.discordapp.net/attachments/676497834077323301/974652267200413726/unknown.png" Flag
+= "Outremer" cultrep
+= "Catholic" relrep
+
+# Austria add
+<... > Cultures
++> Austrian
+<... > Nations
++> ArchduchyOfAustria
+<... > Nations > ArchduchyOfAustria > CultureGroups
++> Austrian
+=100 Austrian.Points
+<... > Nations > ArchduchyOfAustria > ReligionGroups
++> Catholic
+=100 Catholic.Points
+# (if not pagan)
+=0 Pagan.Points
+<... > Nations > ArchduchyOfAustria
+= "https://cdn.discordapp.com/attachments/969287009879359578/974662588019404830/unknown.png" Flag
+= "Austrian" cultrep
+= "Catholic" relrep
+
+# Hittite add
+<... > Cultures
++> Hittite
+<... > Nations
++> HittiteEmpire
+<... > Nations > HittiteEmpire > CultureGroups
++> Hittite
+=100 Hittite.Points
+<... > Nations > HittiteEmpire > ReligionGroups
++> Muslim
+=100 Muslim.Points
+# (if not pagan)
+=0 Pagan.Points
+<... > Nations > HittiteEmpire
+= "https://cdn.discordapp.com/attachments/969287009879359578/974663436208308284/IMG_6462.jpg" Flag
+= "Hittite" cultrep
+= "Muslim" relrep
+
+# Taino add
+<... > Cultures
++> Taino
+<... > Nations
++> TainoTribalConfederacy
+<... > Nations > TainoTribalConfederacy > CultureGroups
++> Taino
+=100 Taino.Points
+<... > Nations > TainoTribalConfederacy > ReligionGroups
+=100 Pagan.Points
+<... > Nations > TainoTribalConfederacy
+#= "[Image Link]" Flag
+= "Taino" cultrep
+= "Pagan" relrep
+
+# Mitiva add
+<... > Cultures
++> Egyptian
+<... > Nations
++> Mitiva
+<... > Nations > Mitiva > CultureGroups
++> Egyptian
+=100 Egyptian.Points
+<... > Nations > Mitiva > ReligionGroups
++> Muslim
+=100 Muslim.Points
+# (if not pagan)
+=0 Pagan.Points
+<... > Nations > Mitiva
+= "https://cdn.discordapp.com/attachments/969287009879359578/974685811796754533/21DD478A-6243-4653-9855-B37360F1E72B.jpg" Flag
+= "Egyptian" cultrep
+= "Muslim" relrep
+
+# Arberber add
+<... > Cultures
++> Arberber
+<... > Nations
++> ArberberSultanate
+<... > Nations > ArberberSultanate > CultureGroups
++> Arberber
+=100 Arberber.Points
+<... > Nations > ArberberSultanate > ReligionGroups
++> Jewish
+=100 Jewish.Points
+# (if not pagan)
+=0 Pagan.Points
+<... > Nations > ArberberSultanate
+#= "[Image Link]" Flag
+= "Arberber" cultrep
+= "Jewish" relrep
+
+# Andalusia add
+<... > Cultures
++> Andalusian
+<... > Nations
++> KingdomOfAndalusia
+<... > Nations > KingdomOfAndalusia > CultureGroups
++> Andalusian
+=100 Andalusian.Points
+<... > Nations > KingdomOfAndalusia > ReligionGroups
++> Catholic
+=100 Catholic.Points
+# (if not pagan)
+=0 Pagan.Points
+<... > Nations > KingdomOfAndalusia
+= "https://cdn.discordapp.com/attachments/969287009879359578/974737096986210364/image318.png" Flag
+= "Andalusian" cultrep
+= "Catholic" relrep
+
+# Zi add
+<... > Cultures
++> Zi
+<... > Nations
++> ZiEmpire
+<... > Nations > ZiEmpire > CultureGroups
++> Zi
+=100 Zi.Points
+<... > Nations > ZiEmpire > ReligionGroups
+=100 Pagan.Points
+<... > Nations > ZiEmpire
+#= "[Image Link]" Flag
+= "Zi" cultrep
+= "Pagan" relrep
+
+# The Faithful Kingdom add
+<... > Cultures
++> Italian
+<... > Nations
++> TheFaithfulKingdom
+<... > Nations > TheFaithfulKingdom > CultureGroups
++> Italian
+=100 Italian.Points
+<... > Nations > TheFaithfulKingdom > ReligionGroups
++> Catholic
+=100 Catholic.Points
+# (if not pagan)
+=0 Pagan.Points
+<... > Nations > TheFaithfulKingdom
+= "https://cdn.discordapp.com/attachments/969287009879359578/974757248398135507/unknown.png" Flag
+= "Italian" cultrep
+= "Catholic" relrep
+
+# Eulacia add
+<... > Cultures
++> Eulacian
+<... > Nations
++> EulacianTradeCouncil
+<... > Nations > EulacianTradeCouncil > CultureGroups
++> Eulacian
+=100 Eulacian.Points
+<... > Nations > EulacianTradeCouncil > ReligionGroups
++> Buddhism
+=100 Buddhism.Points
+# (if not pagan)
+=0 Pagan.Points
+<... > Nations > EulacianTradeCouncil
+= "https://cdn.discordapp.com/attachments/969287009879359578/974761609614471239/Eulacian_Flag.PNG" Flag
+= "Eulacian" cultrep
+= "Buddhism" relrep
+
+# Longuo add
+<... > Cultures
++> Longuo
+<... > Nations
++> EmpireOfLonguo
+<... > Nations > EmpireOfLonguo > CultureGroups
++> Longuo
+=100 Longuo.Points
+<... > Nations > EmpireOfLonguo > ReligionGroups
++> Pagan
+=100 Pagan.Points
+# (if not pagan)
+=0 Pagan.Points
+<... > Nations > EmpireOfLonguo
+= "https://cdn.discordapp.com/attachments/969287009879359578/974845856182304798/flag.png" Flag
+= "Longuo" cultrep
+= "Pagan" relrep
+
+# Galicia add
+<... > Cultures
++> Galician
+<... > Nations
++>  KingdomOfGalicia
+<... > Nations > KingdomOfGalicia > CultureGroups
++> Galician
+=100 Galician.Points
+<... > Nations > KingdomOfGalicia > ReligionGroups
++> Catholic
+=100 Catholic.Points
+# (if not pagan)
+=0 Pagan.Points
+<... > Nations > KingdomOfGalicia
+= "https://cdn.discordapp.com/attachments/969287009879359578/974871955180245042/fictional__flag_of_portugalicia_ii_by_vexilografia_da6gtnf-fullview.png" Flag
+= "Galician" cultrep
+= "Catholic" relrep
+
+# Kyrat  add
+<... > Cultures
++> Kyratese
+<... > Nations
++> KingdomOfKyrat 
+<... > Nations > KingdomOfKyrat > CultureGroups
++> Kyratese
+=100 Kyratese.Points
+<... > Nations > KingdomOfKyrat > ReligionGroups
++> Buddhism
+=95 Buddhism.Points
++> Hindu
+=5 Hindu.Points
+# (if not pagan)
+=0 Pagan.Points
+<... > Nations > KingdomOfKyrat
+= "https://media.discordapp.net/attachments/950037530642898986/973664764649689088/unknown.png" Flag
+= "Kyratese" cultrep
+= "Buddhism" relrep
+
+# England add
+<... > Cultures
++> English
+<... > Nations
++> KingdomOfEngland 
+<... > Nations > KingdomOfEngland > CultureGroups
++> English
+=100 English.Points
+<... > Nations > KingdomOfEngland > ReligionGroups
++> Catholic
+=100 Catholic.Points
+=0 Pagan.Points
+<... > Nations > KingdomOfEngland 
+# = "link" Flag
+= "English" cultrep
+= "Catholic" relrep
+
+# Alvheim add
+<... > Cultures
++> Alvheimish
+<... > Nations
++> KingdomofAlvheim 
+<... > Nations > KingdomofAlvheim > CultureGroups
++> Alvheimish
+=100 Alvheimish.Points
+<... > Nations > KingdomofAlvheim > ReligionGroups
++> Pagan
+=100 Pagan.Points
+<... > Nations > KingdomOfAlvheim
+= "https://media.discordapp.net/attachments/969287009879359578/975169049870876742/Raven_Banner.svg.png" Flag
+= "Alvheimish" cultrep
+= "Pagan" relrep
+
+# Westphalia add
+<... > Cultures
++> Westphalian
+<... > Nations
++> KingdomOfWestphalia
+<... > Nations > KingdomOfWestphalia > CultureGroups
++> Westphalian
+=100 Westphalian.Points
+<... > Nations > KingdomOfWestphalia > ReligionGroups
++> Catholic
+=100 Catholic.Points
+=0 Pagan.Points
+<... > Nations > KingdomOfWestphalia 
+= "https://media.discordapp.net/attachments/969287009879359578/975219338451755038/Westphalia.png?width=1009&height=673" Flag
+= "Westphalian" cultrep
+= "Catholic" relrep
 
 
+# Belarus add
+<... > Cultures
++> Bellarussian
+<... > Nations
++> DuchyOfBelarus
+<... > Nations > DuchyOfBelarus > CultureGroups
++> Bellarussian
+=100 Bellarussian.Points
+<... > Nations > DuchyOfBelarus > ReligionGroups
++> Orthodox
+=100 Orthodox.Points
+=0 Pagan.Points
+<... > Nations > DuchyOfBelarus 
+= "https://media.discordapp.net/attachments/969287009879359578/975389127249915984/20220515_135245.jpg" Flag
+= "Bellarussian" cultrep
+= "Orthodox" relrep
 
-# --- End of template construction --- #
+# Burgundy add
+<... > Cultures
++> Burgundian 
+<... > Nations
++> KingdomOfBurgundy
+<... > Nations > KingdomOfBurgundy > CultureGroups
++> Burgundian
+=100 Burgundian.Points
+<... > Nations > KingdomOfBurgundy > ReligionGroups
++> Catholic
+=100 Catholic.Points
+=0 Pagan.Points
+<... > Nations > KingdomOfBurgundy 
+= "https://media.discordapp.net/attachments/969287009879359578/975399289180258314/unknown.png" Flag
+= "Burgundian" cultrep
+= "Catholic" relrep
+
+# Serbia add
+<... > Cultures
++> Serbian 
+<... > Nations
++> KingdomOfSerbia
+<... > Nations > KingdomOfSerbia > CultureGroups
++> Serbian
+=100 Serbian.Points
+<... > Nations > KingdomOfSerbia > ReligionGroups
++> Orthodox
+=100 Orthodox.Points
+=0 Pagan.Points
+<... > Nations > KingdomOfSerbia
+# = "link" Flag
+= "Serbian" cultrep
+= "Orthodox" relrep
+
+# Cumania add
+<... > Cultures
++> Cuman
+<... > Nations
++> CumanKipchakKhanate
+<... > Nations > CumanKipchakKhanate > CultureGroups
++> Cuman
+=100 Cuman.Points
+<... > Nations > CumanKipchakKhanate > ReligionGroups
++> Orthodox
+=100 Orthodox.Points
+=0 Pagan.Points
+<... > Nations > CumanKipchakKhanate
+= "https://media.discordapp.net/attachments/969287009879359578/975431116372738130/unknown.png" Flag
+= "Cuman" cultrep
+= "Orthodox" relrep
+
+
+# Catalonia add
+<... > Cultures
++> Catalonian
+<... > Nations
++> KingdomOfToledoCatalonia
+<... > Nations > KingdomOfToledoCatalonia > CultureGroups
++> Catalonian
+=100 Catalonian.Points
+<... > Nations > KingdomOfToledoCatalonia > ReligionGroups
++> Catholic
+=100 Catholic.Points
+=0 Pagan.Points
+<... > Nations > KingdomOfToledoCatalonia
+# = "" Flag
+= "Catalonian" cultrep
+= "Catholic" relrep
+
+# Ireland add
+<... > Cultures
++> Irish
+<... > Nations
++> KingdomOfIreland
+<... > Nations > KingdomOfIreland > CultureGroups
++> Irish
+=100 Irish.Points
+<... > Nations > KingdomOfIreland > ReligionGroups
++> Catholic
+=100 Catholic.Points
+=0 Pagan.Points
+<... > Nations > KingdomOfIreland 
+= "https://media.discordapp.net/attachments/969287009879359578/975484384801071144/IMG_0022.png" Flag
+= "Irish" cultrep
+= "Catholic" relrep
+
+# Scotland add
+<... > Cultures
++> Scottish
+<... > Nations
++> KingdomOfScotland 
+<... > Nations > KingdomOfScotland  > CultureGroups
++> Scottish
+=100 Scottish.Points
+<... > Nations > KingdomOfScotland  > ReligionGroups
++> Catholic
+=100 Catholic.Points
+=0 Pagan.Points
+<... > Nations > KingdomOfScotland  
+= "https://media.discordapp.net/attachments/969287009879359578/975496188398809168/unknown.png?width=1009&height=673" Flag
+= "Scottish" cultrep
+= "Catholic" relrep
+
+# Valublid add
+<... > Cultures
++> Valublidan
+<... > Nations
++> ValublidSultanate
+<... > Nations > ValublidSultanate > CultureGroups
++> Valublidan
+=100 Valublidan.Points
+<... > Nations > ValublidSultanate > ReligionGroups
++> Muslim
+=100 Muslim.Points
+=0 Pagan.Points
+<... > Nations > ValublidSultanate 
+= "https://media.discordapp.net/attachments/969287009879359578/975011913622777856/flag_2.png" Flag
+= "Valublidan" cultrep
+= "Muslim" relrep
+
+# Bornu add
+<... > Cultures
++> Bornish
+<... > Nations
++> Bornu
+<... > Nations > Bornu > CultureGroups
++> Bornish
+=100 Bornish.Points
+<... > Nations > Bornu > ReligionGroups
++> Muslim
+=100 Muslim.Points
+=0 Pagan.Points
+<... > Nations > Bornu 
+= "https://media.discordapp.net/attachments/969287009879359578/975434490417647636/Kanem_flag_from_dulcerta_1339-pt.svg.png" Flag
+= "Bornish" cultrep
+= "Muslim" relrep
+
+
+# Magajiya add
+<... > Cultures
++>Magajiyanish
+<... > Nations
++> MagajiyaTribe 
+<... > Nations > MagajiyaTribe > CultureGroups
++> Magajiyanish
+=100 Magajiyanish.Points
+<... > Nations > MagajiyaTribe > ReligionGroups
++> Pagan
+=100 Pagan.Points
+<... > Nations > MagajiyaTribe 
+= "https://media.discordapp.net/attachments/969287009879359578/975473812785213480/image1.jpg?width=959&height=672" Flag
+= "Magajiyanish" cultrep
+= "Pagan" relrep
+
+# Aden add
+<... > Cultures
++> Adenish
+<... > Nations
++> AdenCaliphate 
+<... > Nations > AdenCaliphate > CultureGroups
++> Adenish
+=100 Adenish.Points
+<... > Nations > AdenCaliphate > ReligionGroups
++> Muslim
+=100 Muslim.Points
+=0 Pagan.Points
+<... > Nations > AdenCaliphate 
+= "https://media.discordapp.net/attachments/969287009879359578/975076435683336232/unknown.png" Flag
+= "Adenish" cultrep
+= "Muslim" relrep
+
+# Quasimid add
+<... > Cultures
++> Quasimidian
+<... > Nations
++> QuasimidEmirate 
+<... > Nations > QuasimidEmirate > CultureGroups
++> Quasimidian
+=100 Quasimidian.Points
+<... > Nations > QuasimidEmirate > ReligionGroups
++> Muslim
+=100 Muslim.Points
+=0 Pagan.Points
+<... > Nations > QuasimidEmirate 
+# = "link" Flag
+= "Quasimidian" cultrep
+= "Muslim" relrep
+
+# Roecao add
+<... > Cultures
++> Chinese 
+<... > Nations
++> RoecaoNtepaEmpire 
+<... > Nations > RoecaoNtepaEmpire > CultureGroups
++> Chinese
+=100 Chinese.Points
+<... > Nations > RoecaoNtepaEmpire > ReligionGroups
++> Pagan
+=100 Pagan.Points
+<... > Nations > RoecaoNtepaEmpire 
+# = "https://media.discordapp.net/attachments/969287009879359578/975360126645043221/hqddwfk3tam41.jpg?width=1009&height=673" Flag
+= "Chinese" cultrep
+= "Pagan" relrep
