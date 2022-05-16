@@ -241,7 +241,7 @@ async function evaluteChangeCommand(changeCommand){
 async function displayProgress(){
     let lines = changeCommandFileLength;
     let line = changeCommandIndex;
-    loadingText.innerText = lines >= (line + 1) ? `line ${line} / ${lines} lines loaded` : "";
+    loadingText.innerText = lines > line ? `line ${line} / ${lines} lines loaded` : "";
 }
 
 setInterval(displayProgress, 30);
