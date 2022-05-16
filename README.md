@@ -76,7 +76,7 @@ which is equivalent to:\
 `= to receiver`\
 `= resourceType resource`\
 `= num amount`\
-`<... `\
+`<...`\
 Except you get to keep the selection you had initially.
 
 But don't mind that complicated mess. I'll be giving examples:
@@ -87,7 +87,55 @@ That means that this treaty mentions the exchange of 2 things. Those will be sto
 `trade TreatyOfLlivia1, Spain > France, 0.5 Iron`\
 `trade TreatyOfLlivia2, France > Spain, 35 Budget`
 
-***VI: Deletion***
+***VII: SocialBehaviour and SocialBehaviourGroups***
+
+Cultures and Religions have been dubbed Social Behaviours collectively. Creating a Religion works the same way as creating a Culture, just that you have to select the correct object to create said social behaviour under.
+
+Social Behaviours exists globally, and can have opinions on one another. The Catholics have an opinion on Muslims generally/averagely, and that opinion cross national borders. To create e.g. a Religion, you'd need to select Religions within the game stats.
+
+`<... > Religions`
+
+Then you add the name of said religion
+
+`+> Catholic`
+
+If there are any opinions you know the Catholics should have of other religions. That is done by creating an object within the Religion's Opinions object, and setting a score. Let's first select the Catholic opinion
+
+`> Catholic > Opinions`
+
+Then onto creating Protestant and Muslim object within this, and set their scores
+
+`+> Protestant`
+`= -75 Protestant.Score`
+`+> Muslim`
+`= -50 Muslim.Score`
+
+SocialBehaviourGroups exists too, and one of these would be the ReligionGroups. They store the information of how many of reach religion reside within each nation, so this stat exists on the nation object. 
+
+Let's first select a random nation
+
+`<... > Nations > Italy`
+
+Then its ReligionGroups
+
+`> ReligionGroups`
+
+In here we may set the Religions this nation has. By default, all nations are 100% pagan to begin with, so we must first clear that update
+
+`= 0 Pagan.Points`
+
+Now we can begin creating the religions within this nation and set their points too
+
+`+> Catholic`
+`= 95 Catholic.Points`
+
+
+`+> Protestant`
+`= 95 Protestant.Points`
+
+If everything is done correctly, you should be able to see a pie chart with only a sliver for protestants, and a table showing the opinion of the catholics towards the protestants in their nation having a displeased smiley.
+
+***VII: Deletion***
 
 Deletion happens in the game when a treaty is terminated, or a nation falls. Basic Updaters are trusted with the ability ot delete treaties, but entire nations will be the job of the Advanced Updaters.
 
@@ -99,15 +147,35 @@ E.g. If the treaty of Llivia is terminated, one could remove the trade instances
 `<- TreatyOfLlivia1`
 `<- TreatyOfLlivia2`
 `< > France`
+
+Any object can be deleted from the game. Be in trades, nations, cultures, culturegroups within nations etc.
 ### Advanced
 
 Advances Updaters will be responsible for much more complex updating tasks. This includes creation of Nations, creating of new culutres and religions, stat synchronizing. The exact syntax and use will be explained in the syntax section. It covers everything possible with the command change format files.
 
 ## Reminders for stat updaters for special situations
 
-If a nation is split or renamed, check with trades if updates should happen there too.
+### Nation creation
 
-When creating a new nation, remember to specify its culture and primary culture accordingly. Religion will be pagan by default and can therefore be ignored.
+When creating a new nation you must remember the following
+
++ Create an appropriately named culture in Cultures
++ Set said culture to be 100 of the points in Nations>"nationname">CultureGroups
++ IF religion(s) specified
+  + Make sure the religion(s) is creaeted in Religion first
+    + If not so, create it
+  + Set the pagan religion value of the nation to whichever percentage is the right one (propably 0 if not specified otherwise)
+  + Create the religion(s) in Nations>"nationname">ReligionGroups
+  + Set the points value of the religion(s)
+  + Set the culture represented at government level to the culture created earlier
+  + Set the religion represented at government to the _one_ religion that best represents the entire nation (majority or only one)
+  + Set flag if any are specified
+
+### Nation splitting / Renaming / Deletion
+
+When a nation's name changes, or is removed from the game for whatever reason, rememeber the following
+
++ check with all trades the old nation was involved in, if changes should happen there too. Deletion or change in the involved nations is an option.
 
 ## Syntax of the 'change commands' text file
 
@@ -249,3 +317,16 @@ Coastal Desert ClimateScore = 0.35
 sync</pre>
 
 Better color coding is possible inside the program itself, if you upload this string as a file and open `Open change command list debug terminal`.
+
+## How to debug
+
+If you wanna make absolutely sure you ahve written stat changes correctly before sharing with staff, you can test if the stuff runs by saving your text as a file that you can upload to the website. The uploading would add what you wrote onto what is already canon in the game, but only for you, and only until you reload the page. Here you can test if the program changes the stats the right way, if it crashes or if it brings up pop up alerts in the middle of your screen.
+
+### Keep an eye out for subtle errors
+
+Some errors are easy to spot. Sometimes the nation sheet for a nation doesn't even load, or sometimes an alert is right in your face. But to double check you may also consider
+
++ Scrolling down and double checking if the values you've written in changes, show up with the expected value in the right cells.
++ Opening your browsers debuggin tool via f12 or ctrl+shift+I and navigating to the console tab, to look out for any red messages that relate to your written changes.
+
+Does everything seem to be fine, you can savely share your changes with whoever has the github rights to put them in and let it be canon.
