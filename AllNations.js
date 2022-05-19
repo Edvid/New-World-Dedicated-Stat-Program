@@ -19,7 +19,16 @@ async function onLoad() {
     let layers = [
         "blank",
         "Nations",
+        "Resources/Fertility",
+        "Resources/Coal",
+        "Resources/Sulphur",
+        "Resources/Gold",
         "Resources/Iron",
+        "Resources/Fur",
+        "Resources/Diamonds",
+        "Resources/Silver",
+        "Resources/Copper",
+        "Resources/Ivory",
         "bump",
         "FoW"
 
