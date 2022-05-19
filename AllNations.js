@@ -58,7 +58,7 @@ async function onLoad() {
                     ctx.globalAlpha = 75/255;
                     ctx.drawImage(image, 0, 0, WIDTH, HEIGHT);
                 }else if(layername.startsWith("Resources/")){
-                    ctx.globalAlpha = 60/255;
+                    ctx.globalAlpha = 180/255;
                     ctx.drawImage(image, 0, 0, WIDTH, HEIGHT);
                 }
                 else{
