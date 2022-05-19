@@ -31,18 +31,7 @@ async function onLoad() {
     let image = new Image(WIDTH, HEIGHT);
     image.src = imagePath;
     image.onload = function () {
-        let startTime = new Date();
         worldContext.drawImage(image, 0, 0, WIDTH, HEIGHT);
-
-        if (typeof tint !== 'undefined') {
-            worldContext.fillStyle = tint;
-            worldContext.globalCompositeOperation = "multiply";
-            worldContext.fillRect(0, 0, WIDTH, HEIGHT);
-
-            worldContext.globalCompositeOperation = "destination-in";
-            worldContext.drawImage(image, 0, 0, WIDTH, HEIGHT);
-        }
-        console.log("completed! Time Took (ms): " + ((new Date()) - startTime));
     }
     let ColorToZoneName = [
         ["FF6C7A", "Alaska"],
