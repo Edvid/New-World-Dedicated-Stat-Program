@@ -40,6 +40,7 @@ async function onLoad() {
     for (const resource in resources) {
         const resourceName = resources[resource];
         resourceMaps[resourceName] = document.createElement("canvas");
+        resourceMaps[resourceName].hidden = "true";
         resourceMaps[resourceName].id = "resourcecanvas" + resourceName.toLowerCase();
         resourceMaps[resourceName].width = WIDTH;
         resourceMaps[resourceName].height = HEIGHT;
@@ -64,6 +65,10 @@ async function onLoad() {
 
         let checkbox = document.createElement("input");
         checkbox.type = "checkbox";
+        checkbox.onchange = () => {
+            let c = document.querySelector("#resourcecanvas" + resourceName.toLowerCase());
+            c.hidden = !c.hidden;
+        };
         let resourceTitle = document.createElement("lable");
         resourceTitle.innerText = resourceName;
 
