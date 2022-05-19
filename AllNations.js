@@ -16,29 +16,56 @@ async function onLoad() {
     canvasContainer.width = WIDTH;
     canvasContainer.height = HEIGHT;
 
-    let layers = [
-        "blank",
-        "Nations",
-        "Resources/Fertility",
-        "Resources/Coal",
-        "Resources/Sulphur",
-        "Resources/Gold",
-        "Resources/Iron",
-        "Resources/Fur",
-        "Resources/Diamonds",
-        "Resources/Silver",
-        "Resources/Copper",
-        "Resources/Ivory",
-        "bump",
-        "FoW"
 
-    ];
-
+    
     let canvasMap = document.createElement("canvas");
     canvasMap.id = "worldcanvas";
     canvasMap.width = WIDTH;
     canvasMap.height = HEIGHT;
     canvasContainer.appendChild(canvasMap);
+
+    let resources = [
+        "Fertility",
+        "Coal",
+        "Sulphur",
+        "Gold",
+        "Iron",
+        "Fur",
+        "Diamonds",
+        "Silver",
+        "Copper",
+        "Ivory"
+    ];
+
+    let resourceMaps = [];
+    for (const resource in resources) {
+        const resourceName = resources[resource];
+        resourceMaps[resourceName] = document.createElement("canvas");
+        resourceMaps[resourceName].id = "resourcecanvas" + resourceName.toLowerCase();
+        resourceMaps[resourceName].width = WIDTH;
+        resourceMaps[resourceName].height = HEIGHT;
+        canvasContainer.appendChild(resourceMaps[resourceName]);
+        let resourceCtx = resourceMaps[resourceName].getContext("2d");
+        
+        let imagePath = "./docs/assets/images/world/Resources/" + resourceName + ".png";
+        let image = new Image(WIDTH, HEIGHT);
+        image.src = imagePath;
+
+        resourceCtx.globalAlpha = 180/255;
+        image.onload = function () {
+            resourceCtx.drawImage(image, 0, 0, WIDTH, HEIGHT);
+        }
+    }
+
+
+    let layers = [
+        "blank",
+        "Nations",
+        "bump",
+        "FoW"
+
+    ];
+
     let ctx = canvasMap.getContext("2d");
     for (const layer in layers) {
         let layername = layers[layer];
@@ -56,9 +83,6 @@ async function onLoad() {
                     ctx.drawImage(image, 0, 0, WIDTH, HEIGHT);
                 }else if(layername == 'bump'){
                     ctx.globalAlpha = 75/255;
-                    ctx.drawImage(image, 0, 0, WIDTH, HEIGHT);
-                }else if(layername.startsWith("Resources/")){
-                    ctx.globalAlpha = 180/255;
                     ctx.drawImage(image, 0, 0, WIDTH, HEIGHT);
                 }
                 else{
