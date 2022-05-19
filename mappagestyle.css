@@ -9,14 +9,14 @@ td, th{
     border: 1px solid black;
 }
 
+th{
+    background:dodgerblue;
+}
+td{
+    background:lightskyblue;
+}
+
 #canvascontainer, table{
     margin: 15px;
 }
 
-#canvascontainer {
-    position: relative;
-}
-
-#canvascontainer > * {
-    position: absolute;
-}

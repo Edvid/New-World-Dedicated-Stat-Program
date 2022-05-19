@@ -1,0 +1,21 @@
+#canvascontainer {
+    position: relative;
+}
+
+#canvascontainer > * {
+    position: absolute;
+}
+
+thead th {
+    font-size: 14px;
+}
+
+
+tbody td{
+    padding: 0.1em;
+}
+
+tbody td *{
+    font-size: 12px;
+    font-weight: bold;
+}

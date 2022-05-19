@@ -1,5 +1,3 @@
-//const { resolve } = require("core-js/fn/promise");
-
 let canvasContainer;
 let canvasZoomScale = 1;
 
@@ -38,6 +36,7 @@ async function onLoad() {
     ];
 
     let resourceMaps = [];
+    let table = document.querySelector("tbody");
     for (const resource in resources) {
         const resourceName = resources[resource];
         resourceMaps[resourceName] = document.createElement("canvas");
@@ -55,6 +54,23 @@ async function onLoad() {
         image.onload = function () {
             resourceCtx.drawImage(image, 0, 0, WIDTH, HEIGHT);
         }
+
+        let resourceRow = document.createElement("tr");
+        let col1 = document.createElement("td");
+        let col2 = document.createElement("td");
+        resourceRow.appendChild(col1);
+        resourceRow.appendChild(col2);
+
+
+        let checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        let resourceTitle = document.createElement("lable");
+        resourceTitle.innerText = resourceName;
+
+        col1.appendChild(checkbox);
+        col2.appendChild(resourceTitle);
+        
+        table.appendChild(resourceRow);
     }
 
 
