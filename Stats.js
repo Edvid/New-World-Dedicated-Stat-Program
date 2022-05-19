@@ -529,7 +529,7 @@ class Nation {
     this.ResearchPoints = 6.00;
     this.PublicDebtLength = 0;
     this.CulturalPower = 6.00;
-    this.DateInThisNation = 1600;
+    this.DateInThisNation = 1350;
     /* #endregion */
 
     /* #region  Most Stats */
