@@ -20,6 +20,7 @@ async function onLoad() {
         "blank",
         "Nations",
         "Resources/Iron",
+        "bump",
         "FoW"
 
     ];
@@ -38,14 +39,20 @@ async function onLoad() {
             image.src = imagePath;
             
             image.onload = function () {
+                ctx.globalCompositeOperation = "source-over";
+                ctx.globalAlpha = 1.0;
                 
                 if (layername == 'Nations') {
                     ctx.globalCompositeOperation = "multiply";
-                    ctx.globalAlpha = 200/255;
                     ctx.drawImage(image, 0, 0, WIDTH, HEIGHT);
-                    ctx.globalAlpha = 1.0;
-                }else{
-                    ctx.globalCompositeOperation = "source-over";
+                }else if(layername == 'bump'){
+                    ctx.globalAlpha = 75/255;
+                    ctx.drawImage(image, 0, 0, WIDTH, HEIGHT);
+                }else if(layername.startsWith("Resources/")){
+                    ctx.globalAlpha = 60/255;
+                    ctx.drawImage(image, 0, 0, WIDTH, HEIGHT);
+                }
+                else{
                     ctx.drawImage(image, 0, 0, WIDTH, HEIGHT);
                 }
                 resolve(image);
