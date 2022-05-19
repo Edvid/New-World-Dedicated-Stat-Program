@@ -238,6 +238,8 @@ async function evaluteChangeCommand(changeCommand){
 }
 
 async function displayProgress(){
+    if(typeof loadingField === 'undefined') return;
+
     let lines = changeCommandFileLength;
     let line = changeCommandIndex;
     
