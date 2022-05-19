@@ -18,9 +18,9 @@ async function onLoad() {
 
     let layers = [
         "blank",
+        "Nations",
         "Resources/Iron",
-        "FoW",
-        "Nations"
+        "FoW"
 
     ];
 
@@ -39,10 +39,11 @@ async function onLoad() {
             
             image.onload = function () {
                 
-                if (/* layername !== 'Nations' */false) {                
+                if (layername == 'Nations') {
                     ctx.globalCompositeOperation = "multiply";
-                    ctx.globalCompositeOperation = "destination-in";
+                    ctx.globalAlpha = 200/255;
                     ctx.drawImage(image, 0, 0, WIDTH, HEIGHT);
+                    ctx.globalAlpha = 1.0;
                 }else{
                     ctx.globalCompositeOperation = "source-over";
                     ctx.drawImage(image, 0, 0, WIDTH, HEIGHT);
