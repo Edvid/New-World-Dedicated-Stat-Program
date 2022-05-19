@@ -17,6 +17,7 @@ async function onLoad() {
     let layers = [
         "blank",
         "Resources/Iron",
+        "FoW",
         "Nations"
 
     ];
