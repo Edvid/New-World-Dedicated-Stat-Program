@@ -1,3 +1,5 @@
+//const { resolve } = require("core-js/fn/promise");
+
 let canvasContainer;
 let canvasZoomScale = 1;
 
@@ -22,22 +24,33 @@ async function onLoad() {
 
     ];
 
-    let allLayers = [];
-    let allContexts = []
-    layers.forEach(layer => {
-        allLayers[layer] = document.createElement("canvas");
-        allLayers[layer].id = "worldcanvas";
-        allLayers[layer].width = WIDTH;
-        allLayers[layer].height = HEIGHT;
-        canvasContainer.appendChild(allLayers[layer]);
-        allContexts[layer] = allLayers[layer].getContext("2d");
-        let imagePath = "./docs/assets/images/world/" + layer + ".png";
-        let image = new Image(WIDTH, HEIGHT);
-        image.src = imagePath;
-        image.onload = function () {
-            allContexts[layer].drawImage(image, 0, 0, WIDTH, HEIGHT);
-        }
-    }); 
+    let canvasMap = document.createElement("canvas");
+    canvasMap.id = "worldcanvas";
+    canvasMap.width = WIDTH;
+    canvasMap.height = HEIGHT;
+    canvasContainer.appendChild(canvasMap);
+    let ctx = canvasMap.getContext("2d");
+    for (const layer in layers) {
+        let layername = layers[layer];
+        await new Promise((resolve) => {
+            let imagePath = "./docs/assets/images/world/" + layername + ".png";
+            let image = new Image(WIDTH, HEIGHT);
+            image.src = imagePath;
+            
+            image.onload = function () {
+                
+                if (/* layername !== 'Nations' */false) {                
+                    ctx.globalCompositeOperation = "multiply";
+                    ctx.globalCompositeOperation = "destination-in";
+                    ctx.drawImage(image, 0, 0, WIDTH, HEIGHT);
+                }else{
+                    ctx.globalCompositeOperation = "source-over";
+                    ctx.drawImage(image, 0, 0, WIDTH, HEIGHT);
+                }
+                resolve(image);
+            }
+        })   
+    }; 
 }
 
 function outZoomChange(zoom) {
