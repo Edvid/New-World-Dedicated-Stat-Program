@@ -494,14 +494,14 @@ function createNationSheet(nationName) {
                 ".TradeInfluences[\"BayOfBiscay\"].TradingPoints",
                 ".TradeInfluences[\"WestIberia\"].TradingPoints",
                 ".TradeInfluences[\"Gibraltar\"].TradingPoints",
-                ".TradeInfluences[\"WestMediterreanian\"].TradingPoints",
+                ".TradeInfluences[\"WesternMediterranean\"].TradingPoints",
                 ".TradeInfluences[\"Rhine\"].TradingPoints"
             ],
             [
-                ".TradeInfluences[\"CentralMed\"].TradingPoints",
+                ".TradeInfluences[\"CentralMediterranean\"].TradingPoints",
                 ".TradeInfluences[\"Adriatic\"].TradingPoints",
                 ".TradeInfluences[\"Germany\"].TradingPoints",
-                ".TradeInfluences[\"SouthGermany\"].TradingPoints",
+                ".TradeInfluences[\"WesternDanube\"].TradingPoints",
                 ".TradeInfluences[\"Denmark\"].TradingPoints",
                 ".TradeInfluences[\"Baltic\"].TradingPoints",
                 ".TradeInfluences[\"NorthNordics\"].TradingPoints",
@@ -512,10 +512,10 @@ function createNationSheet(nationName) {
                 ".TradeInfluences[\"Poland\"].TradingPoints",
                 ".TradeInfluences[\"Dniepr\"].TradingPoints",
                 ".TradeInfluences[\"Crimea\"].TradingPoints",
-                ".TradeInfluences[\"Balkans\"].TradingPoints",
+                ".TradeInfluences[\"EasternDanube\"].TradingPoints",
                 ".TradeInfluences[\"Greece\"].TradingPoints",
                 ".TradeInfluences[\"NorthAnatolia\"].TradingPoints",
-                ".TradeInfluences[\"EastMed\"].TradingPoints"
+                ".TradeInfluences[\"EasternMediterranean\"].TradingPoints"
             ]
         ],
         /*upmigrations: */1
@@ -527,7 +527,7 @@ function createNationSheet(nationName) {
             [
                 ".TradeInfluences[\"Egypt\"].TradingPoints",
                 ".TradeInfluences[\"RedSea\"].TradingPoints",
-                ".TradeInfluences[\"WestAfrica\"].TradingPoints",
+                ".TradeInfluences[\"WesternSahara\"].TradingPoints",
                 ".TradeInfluences[\"CoteDIvoire\"].TradingPoints",
                 ".TradeInfluences[\"Nigeria\"].TradingPoints",
                 ".TradeInfluences[\"SouthNile\"].TradingPoints",
