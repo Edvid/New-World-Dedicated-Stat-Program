@@ -300,7 +300,7 @@ precreated at nation creation, but the game allows for more specific
 climates to be created during the game:
 
 Polar Desert.ClimateScore = 0
-TaigaAndTundra.ClimateScore = 0.25
+Taiga And Tundra.ClimateScore = 0.25
 Montane Forest.ClimateScore = 0.6
 Medditereanian.ClimateScore = 0.85
 Arid.ClimateScore = 0.65
