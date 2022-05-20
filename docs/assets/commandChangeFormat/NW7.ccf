@@ -242,7 +242,7 @@
 +> Khmer
 =100 Khmer.Points
 <... > Nations > KingdomOfKhmbodj > ReligionGroups
-+> Buddhism 
++> Buddhism
 =100 Buddhism.Points
 # (if not pagan)
 =0 Pagan.Points
@@ -425,16 +425,16 @@
 <... > Cultures
 +> Arberber
 <... > Nations
-+> ArberberSultanate
-<... > Nations > ArberberSultanate > CultureGroups
++> ArberberKingdom
+<... > Nations > ArberberKingdom > CultureGroups
 +> Arberber
 =100 Arberber.Points
-<... > Nations > ArberberSultanate > ReligionGroups
+<... > Nations > ArberberKingdom > ReligionGroups
 +> Jewish
 =100 Jewish.Points
 # (if not pagan)
 =0 Pagan.Points
-<... > Nations > ArberberSultanate
+<... > Nations > ArberberKingdom
 #= "[Image Link]" Flag
 = "Arberber" cultrep
 = "Jewish" relrep
@@ -697,7 +697,7 @@
 =100 Catholic.Points
 =0 Pagan.Points
 <... > Nations > KingdomOfToledoCatalonia
-= "https://media.discordapp.net/attachments/969287009879359578/975453678767063142/unknown.png" Flag
+# = "" Flag
 = "Catalonian" cultrep
 = "Catholic" relrep
 
@@ -836,6 +836,114 @@
 = "Chinese" cultrep
 = "Pagan" relrep
 
+# Igorot add
+<... > Cultures
++> Igorot
+<... > Nations
++> IgorotConfederacy
+<... > Nations > IgorotConfederacy > CultureGroups
++> Igorot
+=100 Igorot.Points
+<... > Nations > IgorotConfederacy > ReligionGroups
++> Pagan
+=100 Pagan.Points
+# (if not pagan)
+#=0 Pagan.Points
+<... > Nations > IgorotConfederacy
+= "https://cdn.discordapp.com/attachments/969287009879359578/975404904589955112/unknown.png" Flag
+= "Igorot" cultrep
+= "Pagan" relrep
+
+# Cheonje add
+<... > Cultures
++> Cheonje
+<... > Nations
++> Cheonje
+<... > Nations > Cheonje > CultureGroups
++> Cheonje
+=100 Cheonje.Points
+<... > Nations > Cheonje > ReligionGroups
++> Pagan
+=100 Pagan.Points
+# (if not pagan)
+#=0 Pagan.Points
+<... > Nations > Cheonje
+#= "[Image Link]" Flag
+= "Cheonje" cultrep
+= "Pagan" relrep
+
+# Poland add
+<... > Cultures
++> Polish
+<... > Nations
++> KingdomOfPoland
+<... > Nations > KingdomOfPoland > CultureGroups
++> Polish
+=100 Polish.Points
+<... > Nations > KingdomOfPoland > ReligionGroups
++> Orthodox
+=100 Orthodox.Points
+# (if not pagan)
+=0 Pagan.Points
+<... > Nations > KingdomOfPoland
+= "https://cdn.discordapp.com/attachments/969287009879359578/975668498984489011/1024px-Kingdom_of_Poland-flag.svg.png" Flag
+= "Polish" cultrep
+= "Orthodox" relrep
+
+# Wallachia add
+<... > Cultures
++> Wallachian
+<... > Nations
++> KingdomOfWallachia
+<... > Nations > KingdomOfWallachia > CultureGroups
++> Wallachian
+=100 Wallachian.Points
+<... > Nations > KingdomOfWallachia > ReligionGroups
++> Orthodox
+=100 Orthodox.Points
+# (if not pagan)
+=0 Pagan.Points
+<... > Nations > KingdomOfWallachia
+= "https://cdn.discordapp.com/attachments/969287009879359578/976906070125609010/unknown.png" Flag
+= "Wallachian" cultrep
+= "Orthodox" relrep
+
+# Mongolia add
+<... > Cultures
++> Mongolian
+<... > Nations
++> MongolianKhanate
+<... > Nations > MongolianKhanate > CultureGroups
++> Mongolian
+=100 Mongolian.Points
+<... > Nations > MongolianKhanate > ReligionGroups
++> Pagan
+=100 Pagan.Points
+# (if not pagan)
+#=0 Pagan.Points
+<... > Nations > MongolianKhanate
+= "https://cdn.discordapp.com/attachments/969287009879359578/976959313300045885/1652995645353.jpg" Flag
+= "Mongolian" cultrep
+= "Pagan" relrep
+
+# Sakhalin add
+<... > Cultures
++> Ainu
+<... > Nations
++> SakhalinTribe
+<... > Nations > SakhalinTribe > CultureGroups
++> Ainu
+=100 Ainu.Points
+<... > Nations > SakhalinTribe > ReligionGroups
++> Pagan
+=100 Pagan.Points
+# (if not pagan)
+=0 Pagan.Points
+<... > Nations > SakhalinTribe
+= "https://cdn.discordapp.com/attachments/969287009879359578/977076337682567178/unknown.png" Flag
+= "Ainu" cultrep
+= "Pagan" relrep
+
 #trade zones wealth 1350
 <... > TradeZones
 =1.5 GreatLakes 
@@ -882,3 +990,294 @@
 =1 WestIndia 
 =0.5 Burma 
 =1.5 SouthEastAsia
+
+# Igorot add
+<... > Cultures
++> Igorot
+<... > Nations
++> IgorotConfederacy
+<... > Nations > IgorotConfederacy > CultureGroups
++> Igorot
+=100 Igorot.Points
+<... > Nations > IgorotConfederacy > ReligionGroups
++> Pagan
+=100 Pagan.Points
+# (if not pagan)
+#=0 Pagan.Points
+<... > Nations > IgorotConfederacy
+= "https://cdn.discordapp.com/attachments/969287009879359578/975404904589955112/unknown.png" Flag
+= "Igorot" cultrep
+= "Pagan" relrep
+
+# Cheonje add
+<... > Cultures
++> Cheonje
+<... > Nations
++> Cheonje
+<... > Nations > Cheonje > CultureGroups
++> Cheonje
+=100 Cheonje.Points
+<... > Nations > Cheonje > ReligionGroups
++> Pagan
+=100 Pagan.Points
+# (if not pagan)
+#=0 Pagan.Points
+<... > Nations > Cheonje
+#= "[Image Link]" Flag
+= "Cheonje" cultrep
+= "Pagan" relrep
+
+# Poland add
+<... > Cultures
++> Polish
+<... > Nations
++> KingdomOfPoland
+<... > Nations > KingdomOfPoland > CultureGroups
++> Polish
+=100 Polish.Points
+<... > Nations > KingdomOfPoland > ReligionGroups
++> Orthodox
+=100 Orthodox.Points
+# (if not pagan)
+=0 Pagan.Points
+<... > Nations > KingdomOfPoland
+= "https://cdn.discordapp.com/attachments/969287009879359578/975668498984489011/1024px-Kingdom_of_Poland-flag.svg.png" Flag
+= "Polish" cultrep
+= "Orthodox" relrep
+
+# Wallachia add
+<... > Cultures
++> Wallachian
+<... > Nations
++> KingdomOfWallachia
+<... > Nations > KingdomOfWallachia > CultureGroups
++> Wallachian
+=100 Wallachian.Points
+<... > Nations > KingdomOfWallachia > ReligionGroups
++> Orthodox
+=100 Orthodox.Points
+# (if not pagan)
+=0 Pagan.Points
+<... > Nations > KingdomOfWallachia
+= "https://cdn.discordapp.com/attachments/969287009879359578/976906070125609010/unknown.png" Flag
+= "Wallachian" cultrep
+= "Orthodox" relrep
+
+# Mongolia add
+<... > Cultures
++> Mongolian
+<... > Nations
++> MongolianKhanate
+<... > Nations > MongolianKhanate > CultureGroups
++> Mongolian
+=100 Mongolian.Points
+<... > Nations > MongolianKhanate > ReligionGroups
++> Pagan
+=100 Pagan.Points
+# (if not pagan)
+#=0 Pagan.Points
+<... > Nations > MongolianKhanate
+= "https://cdn.discordapp.com/attachments/969287009879359578/976959313300045885/1652995645353.jpg" Flag
+= "Mongolian" cultrep
+= "Pagan" relrep
+
+# Sakhalin add
+<... > Cultures
++> Ainu
+<... > Nations
++> SakhalinTribe
+<... > Nations > SakhalinTribe > CultureGroups
++> Ainu
+=100 Ainu.Points
+<... > Nations > SakhalinTribe > ReligionGroups
++> Pagan
+=100 Pagan.Points
+# (if not pagan)
+=0 Pagan.Points
+<... > Nations > SakhalinTribe
+= "https://cdn.discordapp.com/attachments/969287009879359578/977076337682567178/unknown.png" Flag
+= "Ainu" cultrep
+= "Pagan" relrep
+
+# 1350 LAND STATS
+
+<... > Nations > SiouxTribes > Climates
+=6888 Moderate.Pixels
+
+<... > Nations > VespucianTribes > Climates
+=13092 Moderate.Pixels
+
+<... > Nations > TainoTribalConfederacy > Climates
+=2882 SubTropical.Pixels
+=742 Tropical.Pixels
+
+<... > Nations > MagajiyaTribe > Climates
+=4727 SubTropical.Pixels
+=2700 Tropical.Pixels
+
+<... > Nations > Bornu > Climates
+=4191 SubTropical.Pixels
+=6731 Savanna.Pixels
+=79 Desert.Pixels
+
+<... > Nations > ValublidSultanate > Climates
+=4652 Medditereanian.Pixels
+=5471 Arid.Pixels
+=407 Desert.Pixels
+=183 CoastalDesert.Pixels
+
+<... > Nations > ArberberKingdom > Climates
+=4828 Medditereanian.Pixels
+=1944 Arid.Pixels
+=1108 Desert.Pixels
+=1197 CoastalDesert.Pixels
+
+<... > Nations > Mitiva > Climates
+=4597 Medditereanian.Pixels
+=1372 Desert.Pixels
+=1505 CoastalDesert.Pixels
+
+<... > Nations > AdenCaliphate > Climates
+=1779 Desert.Pixels
+=8689 CoastalDesert.Pixels
+
+<... > Nations > OrderOfStMary > Climates
+=2627 Medditereanian.Pixels
+=570 Arid.Pixels
+=4881 Desert.Pixels
+=1626 CoastalDesert.Pixels
+
+<... > Nations > HittiteEmpire > Climates
+=3218 Medditereanian.Pixels
+=7540 Arid.Pixels
+
+<... > Nations > Byzantium > Climates
+=10609 Medditereanian.Pixels
+=252 Arid.Pixels
+=257 Steppe.Pixels
+
+<... > Nations > KingdomOfSerbia > Climates
+=2754 Medditereanian.Pixels
+=549 Steppe.Pixels
+=5928 Moderate.Pixels
+
+<... > Nations > KingdomOfWallachia > Climates
+=4491 Steppe.Pixels
+=631 Mountainous.Pixels
+
+<... > Nations > ArchduchyOfAustria > Climates
+=8490 Moderate.Pixels
+=3395 Mountainous.Pixels
+
+<... > Nations > TheFaithfulKingdom > Climates
+=7889 Medditereanian.Pixels
+=2603 Moderate.Pixels
+=685 Mountainous.Pixels
+
+<... > Nations > KingdomOfToledoCatalonia > Climates
+=9563 Medditereanian.Pixels
+=155 Moderate.Pixels
+=856 Mountainous.Pixels
+
+<... > Nations > KingdomOfAndalusia> Climates
+=10424 Medditereanian.Pixels
+
+<... > Nations > KingdomOfGalicia > Climates
+=9024 Medditereanian.Pixels
+
+<... > Nations > KingdomOfBurgundy > Climates
+=11274 Moderate.Pixels
+
+<... > Nations > KingdomOfEngland > Climates
+=9416 Moderate.Pixels
+
+<... > Nations > KingdomOfScotland > Climates
+=5778 Moderate.Pixels
+
+<... > Nations > KingdomOfIreland> Climates
+=6340 Moderate.Pixels
+
+<... > Nations > KingdomOfWestphalia > Climates
+=7730 Moderate.Pixels
+
+<... > Nations > KingdomOfAlvheim > Climates
+=7564 Moderate.Pixels
+
+<... > Nations > KingdomOfPrussia > Climates
+=9119 Moderate.Pixels
+=246 Mountainous.Pixels
+
+<... > Nations > KingdomOfPoland > Climates
+=11010 Moderate.Pixels
+=974 Mountainous.Pixels
+
+<... > Nations > DuchyOfBelarus > Climates
+=9163 Moderate.Pixels
+
+<... > Nations > CumanKipchakKhanate > Climates
+=10568 Steppe.Pixels
+=448 Moderate.Pixels
+
+<... > Nations > TsardomOfMuscovy > Climates
+=527 TaigaAndTundra.Pixels
+=11183 Moderate.Pixels
+
+<... > Nations > ZiEmpire > Climates
+=11297 Arid.Pixels
+
+<... > Nations > QuasimidEmirate > Climates
+=10047 Arid.Pixels
+=430 CoastalDesert.Pixels
+=635 Mountainous.Pixels
+
+<... > Nations > SindhEmpire > Climates
+=567 SubTropical.Pixels
+=2299 Savanna.Pixels
+=138 CoastalDesert.Pixels
+=364 Mountainous.Pixels
+=9934 Arid.Pixels
+
+<... > Nations > KingdomOfPotskig > Climates
+=6553 SubTropical.Pixels
+=2906 Tropical.Pixels
+=470 Savanna.Pixels
+
+<... > Nations > KingdomOfKyrat > Climates
+=9837 SubTropical.Pixels
+=420 Tropical.Pixels
+=261 Mountainous.Pixels
+
+<... > Nations > EulacianTradeCouncil > Climates
+=9702 Tropical.Pixels
+=647 Mountainous.Pixels
+
+<... > Nations > KingdomOfKhmbodj > Climates
+=9460 SubTropical.Pixels
+=2691 Tropical.Pixels
+
+<... > Nations > RoecaoNtepaEmpire > Climates
+=7334 Moderate.Pixels
+=3683 SubTropical.Pixels
+=337 Tropical.Pixels
+
+<... > Nations > IgorotConfederacy > Climates
+=3554 Tropical.Pixels
+
+<... > Nations > MongolianKhanate > Climates
+=7338 Steppe.Pixels
+=377 Desert.Pixels
+
+<... > Nations > EmpireOfLonguo > Climates
+=10623 Moderate.Pixels
+
+<... > Nations > Cheonje > Climates
+=7556 Moderate.Pixels
+
+<... > Nations > YamatoKingdom > Climates
+=12258 Moderate.Pixels
+=2934 Mountainous.Pixels
+
+<... > Nations > SakhalinTribe > Climates
+=5115 TaigaAndTundra.Pixels
+=2415 Moderate.Pixels
+=38 Mountainous.Pixels
