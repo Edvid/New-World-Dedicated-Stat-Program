@@ -838,15 +838,15 @@ class Nation {
 
     /* #region  Land */
     this.Climates = {
-      "Polar Desert": {
+      PolarDesert: {
         Pixels: 0,
         ClimateScore: 0,
       },
-      "Taiga/Tundra": {
+      TaigaAndTundra: {
         Pixels: 0,
         ClimateScore: 0.25,
       },
-      "Montane Forest": {
+      MontaneForest: {
         Pixels: 0,
         ClimateScore: 0.6,
       },
@@ -866,7 +866,7 @@ class Nation {
         Pixels: 0,
         ClimateScore: 1,
       },
-      "Sub-Tropical": {
+      SubTropical: {
         Pixels: 0,
         ClimateScore: 0.75,
       },
@@ -886,7 +886,7 @@ class Nation {
         Pixels: 0,
         ClimateScore: 0.05,
       },
-      "Coastal Desert": {
+      CoastalDesert: {
         Pixels: 0,
         ClimateScore: 0.35
       },
