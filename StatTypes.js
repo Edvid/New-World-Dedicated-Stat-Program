@@ -150,7 +150,7 @@ let BaseStats = [
     "Chile",
     "Patagonia",
 
-    "NorthAnatolia",
+    "NorthernAnatolia",
     "NorthSea",
     "BritishIsles",
     "EnglishChannel",

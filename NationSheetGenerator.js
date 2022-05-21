@@ -514,7 +514,7 @@ function createNationSheet(nationName) {
                 ".TradeInfluences[\"Crimea\"].TradingPoints",
                 ".TradeInfluences[\"Balkans\"].TradingPoints",
                 ".TradeInfluences[\"Greece\"].TradingPoints",
-                ".TradeInfluences[\"NorthAnatolia\"].TradingPoints",
+                ".TradeInfluences[\"NorthernAnatolia\"].TradingPoints",
                 ".TradeInfluences[\"EastMed\"].TradingPoints"
             ]
         ],

@@ -65,7 +65,7 @@ async function onLoad() {
         ["FFE846", "Chile"],
         ["68D7FF", "Patagonia"],
 
-        ["5B8F00", "NorthAnatolia"],
+        ["5B8F00", "NorthernAnatolia"],
         ["7382FF", "NorthSea"],
         ["808080", "BritishIsles"],
         ["FF4A00", "EnglishChannel"],

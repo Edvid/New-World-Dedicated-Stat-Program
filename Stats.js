@@ -772,7 +772,7 @@ class Nation {
 
 
 
-      NorthAnatolia: { TradingPoints: 0 },
+      NorthernAnatolia: { TradingPoints: 0 },
       NorthSea: { TradingPoints: 0 },
       BritishIsles: { TradingPoints: 0 },
       EnglishChannel: { TradingPoints: 0 },
@@ -1591,7 +1591,7 @@ class Stats{
 
 
 
-      NorthAnatolia: 0,
+      NorthernAnatolia: 0,
       NorthSea: 0,
       BritishIsles: 0,
       EnglishChannel: 0,
