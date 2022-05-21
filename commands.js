@@ -83,7 +83,7 @@ function normalCommand(selection) {
     let value = commandParameters[1];
     let change;
     //If number to change by is written in percent. Divide that number by 100
-    if (/[\d|\.].+%$/.test(value)) {
+    if (/[\d|\.]+%$/.test(value)) {
         value = value.replace("%", "") / 100;
     }
 
