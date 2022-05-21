@@ -222,6 +222,10 @@ let Synonyms = {
 		"aristocracy"
 	],
 	
+	FarmingEfficiency: [
+		"farming eff"
+	],
+	
 	MiningEfficiency: [
 		"miningeff"
 	],
