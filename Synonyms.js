@@ -223,7 +223,7 @@ let Synonyms = {
 	],
 	
 	FarmingEfficiency: [
-		"farming eff"
+		"farmingeff"
 	],
 	
 	MiningEfficiency: [
