@@ -340,13 +340,17 @@ let Synonyms = {
 	AgricultureSubsidies: [
 		"agrsubsidies",
 		"agriculturesubs",
-		"agrsubs"
+		"agrsubs",
+		"agrsub",
+		"agrisubs",
+		"agrisub",
 	],
 	
 	AgricultureInfrastructure: [
 		"agricultureinf",
 		"agricultureinfra",
 		"agrinf",
+		"agriinf",
 		"agrinfra"
 	],
 	
