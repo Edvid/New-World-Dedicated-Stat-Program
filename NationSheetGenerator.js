@@ -1024,16 +1024,16 @@ function createOpinionMatrixTable(title, SocialBehaviourGroups) {
     return tablecontainer;
 }
 
-function createPieDiagram(SocialBehaviourGroups, ValName) {
+function createPieDiagram(ObjectToChart, ValName) {
     let ValueName = ValName;
     if (typeof ValueName == 'undefined') ValueName = "Points"
 
     let tablecontainer = document.createElement("div");
     let title = document.createElement("h2");
-    title.innerText = SocialBehaviourGroups.split(/(?<=[a-zA-Z])(?=[A-Z])/gm).join(" ");
+    title.innerText = ObjectToChart.split(/(?<=[a-zA-Z])(?=[A-Z])/gm).join(" ");
     title.classList.add("tabletitle");
 
-    let nationsSocialBehaviourGroups = gameStats.Nations[currentNationName][SocialBehaviourGroups];
+    let ObjectToChartNationRef = gameStats.Nations[currentNationName][ObjectToChart];
 
     var chartdiv = document.createElement("div");
     //styling on chart
@@ -1062,24 +1062,24 @@ function createPieDiagram(SocialBehaviourGroups, ValName) {
 
 
     let socialBehaviourGroupsData = [];
-    for (const key in nationsSocialBehaviourGroups) {
-        const nationsSocialBehaviourGroup = nationsSocialBehaviourGroups[key];
+    for (const keyName in ObjectToChartNationRef) {
+        const keyValue = ObjectToChartNationRef[keyName];
 
-        let ps = nationsSocialBehaviourGroup;
-        while (isNaN(ps)) {
-            if (ps === null) {
-                ps = 0;
-            } else if (typeof ps === 'object') {
-                ps = ps[ValueName];
+        let objectPoints = keyValue;
+        while (isNaN(objectPoints)) {
+            if (objectPoints === null) {
+                objectPoints = 0;
+            } else if (typeof objectPoints === 'object') {
+                objectPoints = objectPoints[ValueName];
             }
         }
 
-        if (ps === 0) continue;
+        if (objectPoints === 0) continue;
 
         socialBehaviourGroupsData.push(
             {
-                country: key,
-                Points: ps
+                key: keyName.split(/(?<=[a-zA-Z])(?=[A-Z])/gm).join(" "),
+                Points: objectPoints
             }
         );
     }
@@ -1087,7 +1087,7 @@ function createPieDiagram(SocialBehaviourGroups, ValName) {
     var series = chart.series.push(
         am5percent.PieSeries.new(root, {
             name: "Series",
-            categoryField: "country",
+            categoryField: "key",
             valueField: "Points",
             legendLabelText: "[{fill}]{category}[/]",
             legendValueText: ValueName == "Points" ? "[bold {fill}][/]" : `[bold {fill}]{value} ${ValueName.split(/(?<=[a-zA-Z])(?=[A-Z])/gm).join(" ")}[/]`
