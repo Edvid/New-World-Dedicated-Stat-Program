@@ -284,7 +284,8 @@ let Synonyms = {
 	],
 	
 	LowerClassTax: [
-		"lowertax"
+		"lowertax",
+		"lowtax"
 	],
 	
 	PublicDebtTaken: [
@@ -358,6 +359,7 @@ let Synonyms = {
 		"agricultureadv",
 		"agradvancements",
 		"agradv",
+		"agriadv",
 		"agricultureimprovements",
 		"agricultureimprov",
 		"agrimprovements",
