@@ -6,7 +6,7 @@ function correctAndSynonymCheck(selection) {
         let found = false;
         for (const propertyName in step) {
             //check same stats but correct casing
-            if (propertyName.toLowerCase() == correctSelection[i].toLowerCase().replace(" ", "")) {
+            if (propertyName.toLowerCase() == correctSelection[i].toLowerCase().replaceAll(" ", "")) {
                 correctSelection[i] = propertyName;
                 step = step[propertyName];
                 found = true;
@@ -18,7 +18,7 @@ function correctAndSynonymCheck(selection) {
                     for (let j = 0; j < synonymArray.length; j++) {
                         const synonym = synonymArray[j];
                         //if what was written in change file exists in the synonym dictionary
-                        if (synonym.toLowerCase() == correctSelection[i].toLowerCase().replace(" ", "")) {
+                        if (synonym.toLowerCase() == correctSelection[i].toLowerCase().replaceAll(" ", "")) {
                             //Then, if the real name for the stat exists in this object
                             if (propertyName.toLowerCase() == realName.toLowerCase()) {
                                 correctSelection[i] = realName;
@@ -83,7 +83,7 @@ function normalCommand(selection) {
     let value = commandParameters[1];
     let change;
     //If number to change by is written in percent. Divide that number by 100
-    if (/[\d|\.].+%$/.test(value)) {
+    if (/[\d|\.]+%$/.test(value)) {
         value = value.replace("%", "") / 100;
     }
 

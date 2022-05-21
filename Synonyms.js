@@ -222,6 +222,10 @@ let Synonyms = {
 		"aristocracy"
 	],
 	
+	FarmingEfficiency: [
+		"farmingeff"
+	],
+	
 	MiningEfficiency: [
 		"miningeff"
 	],
@@ -284,7 +288,8 @@ let Synonyms = {
 	],
 	
 	LowerClassTax: [
-		"lowertax"
+		"lowertax",
+		"lowtax"
 	],
 	
 	PublicDebtTaken: [
@@ -339,13 +344,17 @@ let Synonyms = {
 	AgricultureSubsidies: [
 		"agrsubsidies",
 		"agriculturesubs",
-		"agrsubs"
+		"agrsubs",
+		"agrsub",
+		"agrisubs",
+		"agrisub",
 	],
 	
 	AgricultureInfrastructure: [
 		"agricultureinf",
 		"agricultureinfra",
 		"agrinf",
+		"agriinf",
 		"agrinfra"
 	],
 	
@@ -358,6 +367,7 @@ let Synonyms = {
 		"agricultureadv",
 		"agradvancements",
 		"agradv",
+		"agriadv",
 		"agricultureimprovements",
 		"agricultureimprov",
 		"agrimprovements",

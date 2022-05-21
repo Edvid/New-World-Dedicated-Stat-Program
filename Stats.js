@@ -514,7 +514,7 @@ class Nation {
     let n = this;
     /* #region  Stats to Set Immedietly */
     /* #region  Main */
-    this.GovernmentName = "Government of " + nationName.split(/(?<=[a-zA-Z])(?=[A-Z])/gm).join(" ");;
+    this.GovernmentName = "GovernmentOf" + nationName;
     this.Flag = "none";
     this.ReligionGroups = {
       "Pagan": {
@@ -544,19 +544,19 @@ class Nation {
     this.NobleInfluence = 0.55; //Show in percent
     this.NobleLoyaltyGroups = JSON.parse(`{\
     "${n.GovernmentName}": "55",\
-    "Self Interests": "45"\
+    "SelfInterests": "45"\
     }`);
     
     this.ClergyInfluence = 0.25; //Show in percent
     this.ClergyLoyaltyGroups = JSON.parse(`{\
     "${n.GovernmentName}": "50",\
-    "Self Interests": "50"\
+    "SelfInterests": "50"\
     }`);
     
     this.BurghersInfluence = 0.10; //Show in percent
     this.BurghersLoyaltyGroups = JSON.parse(`{\
     "${n.GovernmentName}": "50",\
-    "Self Interests": "50"\
+    "SelfInterests": "50"\
     }`);
 
     this.Absolutism = 0;
@@ -772,7 +772,7 @@ class Nation {
 
 
 
-      NorthAnatolia: { TradingPoints: 0 },
+      NorthernAnatolia: { TradingPoints: 0 },
       NorthSea: { TradingPoints: 0 },
       BritishIsles: { TradingPoints: 0 },
       EnglishChannel: { TradingPoints: 0 },
@@ -838,15 +838,15 @@ class Nation {
 
     /* #region  Land */
     this.Climates = {
-      "Polar Desert": {
+      PolarDesert: {
         Pixels: 0,
         ClimateScore: 0,
       },
-      "Taiga/Tundra": {
+      TaigaAndTundra: {
         Pixels: 0,
         ClimateScore: 0.25,
       },
-      "Montane Forest": {
+      MontaneForest: {
         Pixels: 0,
         ClimateScore: 0.6,
       },
@@ -866,7 +866,7 @@ class Nation {
         Pixels: 0,
         ClimateScore: 1,
       },
-      "Sub-Tropical": {
+      SubTropical: {
         Pixels: 0,
         ClimateScore: 0.75,
       },
@@ -886,7 +886,7 @@ class Nation {
         Pixels: 0,
         ClimateScore: 0.05,
       },
-      "Coastal Desert": {
+      CoastalDesert: {
         Pixels: 0,
         ClimateScore: 0.35
       },
@@ -1591,7 +1591,7 @@ class Stats{
 
 
 
-      NorthAnatolia: 0,
+      NorthernAnatolia: 0,
       NorthSea: 0,
       BritishIsles: 0,
       EnglishChannel: 0,
