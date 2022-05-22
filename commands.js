@@ -90,13 +90,13 @@ function normalCommand(selection) {
     //add
     if (commandParameters[0] == '+' || commandParameters[0] == 'add') {
         change = value;
-        (new Function(`gameStats${selection} += ${value}`))();
+        (new Function(`gameStats${selection} = parseFloat(gameStats${selection}) + ${value}`))();
         addChangeCommandWithColorsProxy(commandParameters, ["lawnGreen", "lawnGreen", "limeGreen"]);
     }
     //subtract
     else if (commandParameters[0] == '-' || commandParameters[0] == 'sub') {
         change = -value;
-        (new Function(`gameStats${selection} -= ${value}`))();
+        (new Function(`gameStats${selection} = parseFloat(gameStats${selection}) - ${value}`))();
         addChangeCommandWithColorsProxy(commandParameters, ["tomato", "tomato", "limeGreen"]);
     }
     //set
