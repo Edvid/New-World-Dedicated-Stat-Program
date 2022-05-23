@@ -435,6 +435,17 @@ function createNationSheet(nationName) {
             ]
         ]
     );
+    
+    createStatTable(
+        "Loyalties",
+        [
+            [
+                "NobleStateLoyalty",
+                "ClergyStateLoyalty",
+                "BurghersStateLoyalty",
+            ]
+        ]
+    );
 
 
     createBreaker();

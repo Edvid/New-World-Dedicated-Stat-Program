@@ -105,7 +105,21 @@ let Synonyms = {
 	
 	NobleLoyaltyGroups: [
 		"nobilityloyaltygroups",
-		"nobleloyaltygroups",
+		"nobleloyalty",
+		"noblelg"
+	],
+	
+	ClergyLoyaltyGroups: [
+		"clergyloyalty",
+		"clergylg"
+	],
+	
+	BurghersLoyaltyGroups: [
+		"burgherloyaltygroups",
+		"burghersloyalty",
+		"burgherloyalty",
+		"burgherslg",
+		"burgherlg",
 	],
 	
 	LightInfantry: [
@@ -416,7 +430,7 @@ let Synonyms = {
 		"don"
 	],
 
-	
+
 
 	WesternSahara: [
 		"westsahara",

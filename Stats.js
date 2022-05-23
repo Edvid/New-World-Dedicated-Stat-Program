@@ -103,13 +103,13 @@ class Nation {
   SpyQuality;
   NobleInfluence;
   NobleLoyaltyGroups;
-  NobleLoyalty;
+  NobleStateLoyalty;
   ClergyInfluence;
   ClergyLoyaltyGroups;
-  ClergyLoyalty;
+  ClergyStateLoyalty;
   BurghersInfluence;
   BurghersLoyaltyGroups;
-  BurghersLoyalty;
+  BurghersStateLoyalty;
   ArmyUpkeep;
   SpyUpkeep;
   SocialSpendingUpkeep;
@@ -1223,32 +1223,32 @@ class Nation {
     this.ReligionRepresentedAtGovernmentLevelPercent = religionCalc.GovernmentRepresentationPercent;
     this.ReligiousDisunity = religionCalc.disunity;
 
-    this.NobleLoyalty = (function () {
+    this.NobleStateLoyalty = (function () {
       let pointSum = 0;
       for (const loyaltyName in n.NobleLoyaltyGroups) {
         const loyalty = n.NobleLoyaltyGroups[loyaltyName];
         pointSum += +loyalty;
-        if (loyaltyName == n.GovernmentName) n.NobleLoyalty = loyalty;
+        if (loyaltyName == n.GovernmentName) n.NobleStateLoyalty = loyalty;
       }
-      return n.NobleLoyalty / pointSum;
+      return n.NobleStateLoyalty / pointSum;
     })();
-    this.ClergyLoyalty = (function () {
+    this.ClergyStateLoyalty = (function () {
       let pointSum = 0;
       for (const loyaltyName in n.ClergyLoyaltyGroups) {
         const loyalty = n.ClergyLoyaltyGroups[loyaltyName];
         pointSum += +loyalty;
-        if (loyaltyName == n.GovernmentName) n.ClergyLoyalty = loyalty;
+        if (loyaltyName == n.GovernmentName) n.ClergyStateLoyalty = loyalty;
       }
-      return n.ClergyLoyalty / pointSum;
+      return n.ClergyStateLoyalty / pointSum;
     })();
-    this.BurghersLoyalty = (function () {
+    this.BurghersStateLoyalty = (function () {
       let pointSum = 0;
       for (const loyaltyName in n.BurghersLoyaltyGroups) {
         const loyalty = n.BurghersLoyaltyGroups[loyaltyName];
         pointSum += +loyalty;
-        if (loyaltyName == n.GovernmentName) n.BurghersLoyalty = loyalty;
+        if (loyaltyName == n.GovernmentName) n.BurghersStateLoyalty = loyalty;
       }
-      return n.BurghersLoyalty / pointSum;
+      return n.BurghersStateLoyalty / pointSum;
     })();
     this.PopulationStabilityImpact = (this.Population > this.AdministrativeEfficiency * 500000 ? (this.AdministrativeEfficiency * 500000 - this.Population) / 50000000 : 0) * 10;
     this.Fervor = clamp(1, -1, 0 + this.MinorBattles / 20 + this.MajorBattles / 10 + this.Pillaging - (this.Casualties / (this.OverallNumbers + this.Casualties + 0.0000001)));
@@ -1257,15 +1257,15 @@ class Nation {
     //min and max? nested ternary operations, with "0" if either fail? This can be optimized
     this.MilitaryLoyalty = clamp(1, 0, 
       1 * this.ArmyWages +
-      (this.CulturalAdvancements.EarlyModernAdministration == false && this.NobleLoyalty < 0.50 ?
-        ( this.NobleLoyalty - 0.50) * 2 : 0) +
+      (this.CulturalAdvancements.EarlyModernAdministration == false && this.NobleStateLoyalty < 0.50 ?
+        ( this.NobleStateLoyalty - 0.50) * 2 : 0) +
       (this.MilitaryMorale < 0.70 ?
         -(1 - this.MilitaryMorale) / 2 :
         0) +
       (this.Budget < 0 ? this.Budget / this.ArmyUpkeep :
         0)
       - this.CommanderFreedom / 10);
-    this.Stability = this.PopulationHappiness + this.AdministrativeEfficiency / 10 - this.Overextension - this.CulturalDisunity - this.ReligiousDisunity + (this.Propaganda / 1.75 * (1 + this.CulturalAdvancements.Newspapers / 2)) + this.PopulationControl + (this.NobleLoyalty - 0.5) * 10 + (this.ClergyLoyalty - 0.5) * 7.5 + (this.BurghersLoyalty - 0.5) * 7.5 + this.PopulationStabilityImpact + WarStabilityModifier * 100 + (this.MilitaryLoyalty - 1) * 7.5;
+    this.Stability = this.PopulationHappiness + this.AdministrativeEfficiency / 10 - this.Overextension - this.CulturalDisunity - this.ReligiousDisunity + (this.Propaganda / 1.75 * (1 + this.CulturalAdvancements.Newspapers / 2)) + this.PopulationControl + (this.NobleStateLoyalty - 0.5) * 10 + (this.ClergyStateLoyalty - 0.5) * 7.5 + (this.BurghersStateLoyalty - 0.5) * 7.5 + this.PopulationStabilityImpact + WarStabilityModifier * 100 + (this.MilitaryLoyalty - 1) * 7.5;
     this.Corruption = max(0, this.SocialSpending - this.AdministrativeEfficiency / 20) + (this.Stability < 1 ? 0.5 : 0) + (this.Stability < -1 ? 0.5 : 0) + max(0, ((this.HighClassTax + this.MediumClassTax + this.LowerClassTax) / 3 * 100) - this.AdministrativeEfficiency / 2) / 10;
     this.ArmyQuality = max(0.1, 1 + this.TrainingQuality + this.ArmyTech + this.MilitaryTactics + this.CommanderFreedom / 10 - this.IronShortage - this.SulphurShortage - this.Corruption / 5);
     this.FortUpkeep = (
