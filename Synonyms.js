@@ -398,6 +398,11 @@ let Synonyms = {
 		"loses"
 	],
 	
+	TradingPoints: [
+		"tradep",
+		"tp"
+	],
+
 	WesternMediterranean: [
 		"westernmed",
 		"westmed"
