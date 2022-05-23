@@ -430,7 +430,11 @@ let Synonyms = {
 		"don"
 	],
 
-
+	Yangtze: [
+		"Yangtzi",
+		"centralchina",
+		"midchina"
+	],
 
 	WesternSahara: [
 		"westsahara",

@@ -203,7 +203,7 @@ let BaseStats = [
     "Manchuria",
     "SeaOfJapan",
     "NorthChina",
-    "YangtzeeRiver",
+    "YangtzeRiver",
     "SouthChina",
     "NorthIndia",
     "WestIndia",

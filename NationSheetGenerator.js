@@ -573,7 +573,7 @@ function createNationSheet(nationName) {
                 ".TradeInfluences[\"Manchuria\"].TradingPoints",
                 ".TradeInfluences[\"SeaOfJapan\"].TradingPoints",
                 ".TradeInfluences[\"NorthChina\"].TradingPoints",
-                ".TradeInfluences[\"YangtzeeRiver\"].TradingPoints"
+                ".TradeInfluences[\"YangtzeRiver\"].TradingPoints"
             ],
             [
                 ".TradeInfluences[\"SouthChina\"].TradingPoints",
