@@ -437,12 +437,12 @@ function createNationSheet(nationName) {
     );
     
     createStatTable(
-        "Loyalties",
+        "Estate Influences",
         [
             [
-                "NobleStateLoyalty",
-                "ClergyStateLoyalty",
-                "BurghersStateLoyalty",
+                "NobleInfluence",
+                "ClergyInfluence",
+                "BurghersInfluence",
             ]
         ]
     );
