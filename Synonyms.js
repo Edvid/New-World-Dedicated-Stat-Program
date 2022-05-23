@@ -384,4 +384,44 @@ let Synonyms = {
 		"loses"
 	],
 	
+	WesternMediterranean: [
+		"westernmed",
+		"westmed"
+	],
+
+	CentralMediterranean: [
+		"centralmed",
+		"middlemed",
+		"midmed"
+	],
+
+	EasternMediterranean: [
+		"easternmed",
+		"eastmed"
+	],
+
+	EasternDanube: [
+		"eastdanube",
+		"eastdan"
+	],
+
+	CaliforniaAndWestMexico:[
+		"california",
+		"westernmexico",
+		"mexico",
+		"calimex",
+	],
+
+	DonRiver:[
+		"don"
+	],
+
+	
+
+	WesternSahara: [
+		"westsahara",
+		"westernafrica",
+		"westafrica"
+	]
+
 }
