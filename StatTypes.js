@@ -19,7 +19,6 @@ let BaseStats = [
     "PopulationControl",
     "BirthControl",
     "LocalTrade",
-    "Merchantilism",
     "Spies",
     "SpyQuality",
     "NobleInfluence",
