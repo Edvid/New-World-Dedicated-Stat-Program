@@ -412,7 +412,7 @@ let Synonyms = {
 	TradeInfluences: [
 		"TradeInfluence",
 		"TradeInf"
-	]
+	],
 
 	WesternMediterranean: [
 		"westernmed",
