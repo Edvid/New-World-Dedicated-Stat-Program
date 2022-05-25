@@ -1717,7 +1717,8 @@
 + 5 budget
 > ReligionGroups
 +> Hindu
-+6.5% Hindu 
++6.5% Hindu.points
+-6.5% Pagan.points
 <
 -5 ClergyLoyaltyGroups.GovernmentOfKingdomOfPotskig
 +5 ClergyLoyaltyGroups.SelfInterests
@@ -2023,7 +2024,7 @@
 +0.5 social spending
 +0.25 local trade
 > TradeInfluences
-+0.25 BritishIsles
++0.25 BritishIsles.tp
 
 # Valublid 1350
 <... > Nations > ValublidSultanate
