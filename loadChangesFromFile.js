@@ -16,21 +16,27 @@ String.prototype.hashCode = function () {
 };
 /* #endregion */
 
+let HashMatched = false;
+
+let preloadGameState;
+let preloadStatChanges;
 (async function () {
-    let preloadGameState;
+    preloadGameState;
     await fetch("./docs/assets/commandChangeFormat/NW7.JSON").then(response => response.json()).then(data => preloadGameState = data);
-    let preloadStatChanges;
+    preloadStatChanges;
     await fetch("./docs/assets/commandChangeFormat/NW7.ccf").then(response => response.text()).then(data => preloadStatChanges = data);
     //If hash maves in JSON is the same as the hashcode of the entire
     //ccf file. Then the JSON _is_ the state the changes will 
     //genereate, and we can use the State for the gameStats
-    if (preloadGameState.Hash == preloadStatChanges.hashCode()) {
+    HashMatched = preloadGameState.Hash == preloadStatChanges.hashCode()
+    if (HashMatched) {
+        console.log("hello there");
         gameStats = preloadGameState.State;
         
-    }else{
-        console.log("hello there");
-        preloadStatChanges = preloadStatChanges.split(/\r?\n|\r/);
-        loadChangesFromContent(preloadStatChanges);
+        refreshNationPageItems();
+    }
+    else {
+        loadChangesFromContent(preloadStatChanges.split(/\r?\n|\r/));
     }
 })();
 
@@ -57,19 +63,19 @@ async function loadChangesFromContent(changes) {
         evaluteChangeCommand(changeCommand);
         if (changeCommandIndex % 50 == 0) await new Promise(resolve => setTimeout(resolve));
     }
-    
+
     refreshNationPageItems();
 }
 
 function refreshNationPageItems() {
     gameStats.evaluateNations();
 
-    if(typeof updateDropdownSelection !== 'undefined') updateDropdownSelection();
-    if(typeof createNationSheet !== 'undefined') {
+    if (typeof updateDropdownSelection !== 'undefined') updateDropdownSelection();
+    if (typeof createNationSheet !== 'undefined') {
         currentNationName = Object.keys(gameStats.Nations)[0];
         createNationSheet(currentNationName);
     }
-    if(typeof loadAllTrades !== 'undefined') loadAllTrades();
+    if (typeof loadAllTrades !== 'undefined') loadAllTrades();
 }
 
 async function evaluteChangeCommand(changeCommand) {
@@ -78,7 +84,7 @@ async function evaluteChangeCommand(changeCommand) {
         if (!ignore) {
             if (changeCommand == "###") {
                 let spn = addChangeCommandWithColorsProxy([changeCommand], ["#5E5E5E"]);
-                if(typeof spn === 'undefined') return;
+                if (typeof spn === 'undefined') return;
                 spn[0].style.fontStyle = "italic";
                 ignore = true;
             } else {
@@ -89,7 +95,7 @@ async function evaluteChangeCommand(changeCommand) {
             if (changeCommand.toLowerCase() == "# END".toLowerCase())
                 ignore = false;
             let spn = addChangeCommandWithColorsProxy([changeCommand], ["#5E5E5E"]);
-            if(typeof spn === 'undefined') return;
+            if (typeof spn === 'undefined') return;
             spn[0].style.fontStyle = "italic";
             return;
         }
@@ -102,7 +108,7 @@ async function evaluteChangeCommand(changeCommand) {
             gameStats.evaluateNations();
 
             let lastselection = correctAndSynonymCheck(currentSelection).split(/\./gi);
-            if(lastselection[lastselection.length - 2] !== 'Nations') alert("The current selection is not a nation. Cannot sync single nation.");
+            if (lastselection[lastselection.length - 2] !== 'Nations') alert("The current selection is not a nation. Cannot sync single nation.");
             lastselection = lastselection[lastselection.length - 1];
 
             syncNation(lastselection);
@@ -111,11 +117,11 @@ async function evaluteChangeCommand(changeCommand) {
             syncNations();
         }
         let spn = addChangeCommandWithColorsProxy([changeCommand], ["MediumSpringGreen"]);
-        if(typeof spn === 'undefined') return;
+        if (typeof spn === 'undefined') return;
         spn[0].style.fontWeight = "bold";
     }
     //trade
-    else if(changeCommand.toLowerCase().startsWith("trade")){
+    else if (changeCommand.toLowerCase().startsWith("trade")) {
         let parameters = changeCommand.split(/(?<=trade)/gm).pop();
         parameters = parameters.split(/,|>/gm);
         let tradename = parameters[0].trim();
@@ -130,7 +136,7 @@ async function evaluteChangeCommand(changeCommand) {
         resourceType = correctAndSynonymCheck(`.Nations.${giver}.${resourceType}`).split(".").pop();
 
 
-        if(typeof gameStats.Trades[tradename] !== 'undefined') {
+        if (typeof gameStats.Trades[tradename] !== 'undefined') {
             alert(`The name ${tradename} is already used in Trades.`);
             return;
         }
@@ -142,7 +148,7 @@ async function evaluteChangeCommand(changeCommand) {
         gameStats.Trades[tradename].amount = amount;
 
         let spanGroup = addChangeCommandWithColorsProxy(["trade", tradename, ",", giver, ">", reciever, ",", amount, resourceType], ["MediumSpringGreen"]);
-        if(typeof spanGroup === 'undefined') return;
+        if (typeof spanGroup === 'undefined') return;
         spanGroup[0].style.fontWeight = "bold";
         spanGroup[1].style.fontStyle = "italic";
         spanGroup[3].style.color = "rgb(0, 250, 203)";
@@ -154,16 +160,16 @@ async function evaluteChangeCommand(changeCommand) {
 
     }
     //pay debt
-    else if(changeCommand.toLowerCase().startsWith("pay debt")) {
+    else if (changeCommand.toLowerCase().startsWith("pay debt")) {
         let parameter = changeCommand.split(/(?<=pay debt)/gm).pop().trim();
-        if(isNaN(parameter)) {
+        if (isNaN(parameter)) {
             alert("The debt paid wasn't a number. Operation Aborted.");
             return;
         }
 
         let splitSelections = correctAndSynonymCheck(currentSelection).split(/\./gi);
 
-        if(splitSelections[splitSelections.length - 2] !== 'Nations') {
+        if (splitSelections[splitSelections.length - 2] !== 'Nations') {
             alert("The current selection is not a nation. Cannot sync single nation.");
             return;
         }
@@ -184,7 +190,7 @@ async function evaluteChangeCommand(changeCommand) {
 
         //excess paid back
         let publicDebtTakenValue = new Function(`return gameStats${currentSelection}.PublicDebtTaken`);
-        if(publicDebtTakenValue < 0) {
+        if (publicDebtTakenValue < 0) {
             //reset public debt taken to 0
             (new Function(`gameStats${currentSelection}.PublicDebtTaken -= 0`))();
             //give back to budget
@@ -201,7 +207,7 @@ async function evaluteChangeCommand(changeCommand) {
         addChangeCommandWithColorsProxy([changeCommand], ["magenta"]);
     }
     //deletion
-    else if (changeCommand.slice(0, 2) == "<-"){
+    else if (changeCommand.slice(0, 2) == "<-") {
         let arg = changeCommand.slice(2).trim();
         deleteStat(currentSelection, arg);
         addChangeCommandWithColorsProxy([changeCommand], ["#ff00a0"]);
@@ -265,15 +271,20 @@ async function evaluteChangeCommand(changeCommand) {
     }
 }
 
+let donegenerating = false;
+let showingdownloadoption = false;
+
 async function displayProgress() {
-    if(typeof loadingField === 'undefined') return;
+    if (showingdownloadoption) return;
+    if (typeof loadingField === 'undefined') return;
 
     let lines = changeCommandFileLength;
     let line = changeCommandIndex;
 
 
+
     loadingField.innerHTML = "";
-    if(lines > line){
+    if (lines > line) {
         let loadingFieldTitle = document.createElement("p");
         loadingFieldTitle.innerText = "Generating All nation Stats...";
 
@@ -293,11 +304,41 @@ async function displayProgress() {
         loadingText.style.color = "grey";
         loadingText.innerText = `line ${line} / ${lines} lines loaded`;
         loadingField.appendChild(loadingFieldTitle);
+        loadingField.appendChild(loadingFieldTitle);
         loadingField.appendChild(bar);
         loadingField.appendChild(loadingText);
+        if(lines == lines && line > 0) donegenerating = true;
+    } else if (!HashMatched && donegenerating) {
+        let loadingFieldTitle = document.createElement("p");
+        loadingFieldTitle.innerText = "Download the new JSON file";
+        let downloadbuttom = document.createElement("button");
+        downloadbuttom.innerText = "Download JSON";
+        downloadbuttom.addEventListener('click', () => {
+            let jsonobj = {
+                Hash: preloadStatChanges.hashCode(),
+                State: gameStats
+            }
+            let downloadString = JSON.stringify(jsonobj);
+
+            downloadToFile(downloadString, 'my-new-file.txt', 'text/plain');
+        });
+        loadingField.appendChild(loadingFieldTitle);
+        loadingField.appendChild(downloadbuttom);
+        showingdownloadoption = true;
     }
-
-
 }
+
+/* #region  taken from blog https://robkendal.co.uk/blog/2020-04-17-saving-text-to-client-side-file-using-vanilla-js */
+const downloadToFile = (content, filename, contentType) => {
+    const a = document.createElement('a');
+    const file = new Blob([content], { type: contentType });
+
+    a.href = URL.createObjectURL(file);
+    a.download = filename;
+    a.click();
+
+    URL.revokeObjectURL(a.href);
+};
+/* #endregion */
 
 setInterval(displayProgress, 30);
