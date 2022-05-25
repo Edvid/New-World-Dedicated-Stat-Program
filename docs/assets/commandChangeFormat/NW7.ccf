@@ -1770,7 +1770,8 @@
 =14% mediumtax 
 =17.5% hightax 
 +10% Clergy Influence 
-+5 Clergy Loyalty 
++5 Clergyloyaltygroups.GovernmentOfSindhEmpire 
+-5 Clergyloyaltygroups.SelfInterests 
 +0.50 Propaganda 
 +10% BurghersInfluence 
 +1.25 LocalTrade 
