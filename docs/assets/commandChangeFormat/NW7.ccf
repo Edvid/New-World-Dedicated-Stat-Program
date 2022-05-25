@@ -1587,7 +1587,7 @@
 
 
 # Kingdom of England
-<... > Nations > KingdomofEngland
+<... > Nations > KingdomOfEngland
 =0.15 lowertax
 =0.15 mediumtax
 =0.15 hightax
@@ -1764,7 +1764,8 @@
 +1.50 AdministrativeEfficiency 
 +0.50 Absolutism 
 +10% Noble Influence
-+5 Noble Loyalty 
++5 Nobleloyaltygroups.GovernmentOfSindhEmpire 
+-5 Nobleloyaltygroups.SelfInterests 
 =13% lowertax
 =14% mediumtax 
 =17.5% hightax 
