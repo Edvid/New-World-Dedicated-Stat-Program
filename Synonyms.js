@@ -435,6 +435,11 @@ let Synonyms = {
 		"eastdan"
 	],
 
+	WesternDanube: [
+		"westdanube",
+		"westdan"
+	],
+
 	CaliforniaAndWestMexico:[
 		"california",
 		"westernmexico",
