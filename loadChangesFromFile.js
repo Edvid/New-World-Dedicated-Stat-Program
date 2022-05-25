@@ -3,11 +3,35 @@ let changes;
 let changeCommandIndex;
 let changeCommandFileLength;
 
-(async function(){
-    let preload;
-    await fetch("./docs/assets/commandChangeFormat/NW7.ccf").then(response => response.text()).then(data => preload = data);
-    preload = preload.split(/\r?\n|\r/);
-    loadChangesFromContent(preload);
+/* #region  Taken from https://stackoverflow.com/questions/7616461/generate-a-hash-from-string-in-javascript user esmiralha */
+String.prototype.hashCode = function () {
+    var hash = 0, i, chr;
+    if (this.length === 0) return hash;
+    for (i = 0; i < this.length; i++) {
+        chr = this.charCodeAt(i);
+        hash = ((hash << 5) - hash) + chr;
+        hash |= 0; // Convert to 32bit integer
+    }
+    return hash;
+};
+/* #endregion */
+
+(async function () {
+    let preloadGameState;
+    await fetch("./docs/assets/commandChangeFormat/NW7.JSON").then(response => response.json()).then(data => preloadGameState = data);
+    let preloadStatChanges;
+    await fetch("./docs/assets/commandChangeFormat/NW7.ccf").then(response => response.text()).then(data => preloadStatChanges = data);
+    //If hash maves in JSON is the same as the hashcode of the entire
+    //ccf file. Then the JSON _is_ the state the changes will 
+    //genereate, and we can use the State for the gameStats
+    if (preloadGameState.Hash == preloadStatChanges.hashCode()) {
+        gameStats = preloadGameState.State;
+        
+    }else{
+        console.log("hello there");
+        preloadStatChanges = preloadStatChanges.split(/\r?\n|\r/);
+        loadChangesFromContent(preloadStatChanges);
+    }
 })();
 
 async function loadChangesFromFile(event) {
@@ -24,7 +48,7 @@ async function loadChangesFromFile(event) {
 const commandRegex = /(?<Operand>([a-z]+)( |\t)|(\+|\=|\-)( |\t)?)(?<Value>(\".+\")|(\{.+\})|(.+?))( |\t)(?<Stat_Name>.+)/i;
 let ignore;
 let currentSelection;
-async function loadChangesFromContent(changes){
+async function loadChangesFromContent(changes) {
     ignore = false;
     currentSelection = "";
     changeCommandFileLength = changes.length;
@@ -33,7 +57,11 @@ async function loadChangesFromContent(changes){
         evaluteChangeCommand(changeCommand);
         if (changeCommandIndex % 50 == 0) await new Promise(resolve => setTimeout(resolve));
     }
+    
+    refreshNationPageItems();
+}
 
+function refreshNationPageItems() {
     gameStats.evaluateNations();
 
     if(typeof updateDropdownSelection !== 'undefined') updateDropdownSelection();
@@ -44,7 +72,7 @@ async function loadChangesFromContent(changes){
     if(typeof loadAllTrades !== 'undefined') loadAllTrades();
 }
 
-async function evaluteChangeCommand(changeCommand){
+async function evaluteChangeCommand(changeCommand) {
     //comment
     if (changeCommand[0] == '#' || changeCommand.length == 0 || ignore) {
         if (!ignore) {
@@ -104,7 +132,7 @@ async function evaluteChangeCommand(changeCommand){
 
         if(typeof gameStats.Trades[tradename] !== 'undefined') {
             alert(`The name ${tradename} is already used in Trades.`);
-            return;    
+            return;
         }
 
         gameStats.Trades[tradename] = new Trade();
@@ -112,7 +140,7 @@ async function evaluteChangeCommand(changeCommand){
         gameStats.Trades[tradename].reciever = reciever;
         gameStats.Trades[tradename].resource = resourceType;
         gameStats.Trades[tradename].amount = amount;
-        
+
         let spanGroup = addChangeCommandWithColorsProxy(["trade", tradename, ",", giver, ">", reciever, ",", amount, resourceType], ["MediumSpringGreen"]);
         if(typeof spanGroup === 'undefined') return;
         spanGroup[0].style.fontWeight = "bold";
@@ -120,13 +148,13 @@ async function evaluteChangeCommand(changeCommand){
         spanGroup[3].style.color = "rgb(0, 250, 203)";
         spanGroup[4].style.color = "rgb(0, 250, 203)";
         spanGroup[5].style.color = "rgb(0, 250, 203)";
-        
+
         spanGroup[7].style.color = "#efc5cb";
         spanGroup[8].style.color = "#efc5cb";
 
     }
     //pay debt
-    else if(changeCommand.toLowerCase().startsWith("pay debt")){
+    else if(changeCommand.toLowerCase().startsWith("pay debt")) {
         let parameter = changeCommand.split(/(?<=pay debt)/gm).pop().trim();
         if(isNaN(parameter)) {
             alert("The debt paid wasn't a number. Operation Aborted.");
@@ -134,7 +162,7 @@ async function evaluteChangeCommand(changeCommand){
         }
 
         let splitSelections = correctAndSynonymCheck(currentSelection).split(/\./gi);
-        
+
         if(splitSelections[splitSelections.length - 2] !== 'Nations') {
             alert("The current selection is not a nation. Cannot sync single nation.");
             return;
@@ -153,17 +181,17 @@ async function evaluteChangeCommand(changeCommand){
 
         (new Function(`gameStats${currentSelection}.PublicDebtTaken -= ${parameter} / (1 + ${interestRate})`))();
         (new Function(`gameStats${currentSelection}.Budget -= ${parameter}`))();
-        
+
         //excess paid back
-        let publicDebtTakenValue = new Function(`return gameStats${currentSelection}.PublicDebtTaken`); 
-        if(publicDebtTakenValue < 0){
+        let publicDebtTakenValue = new Function(`return gameStats${currentSelection}.PublicDebtTaken`);
+        if(publicDebtTakenValue < 0) {
             //reset public debt taken to 0
             (new Function(`gameStats${currentSelection}.PublicDebtTaken -= 0`))();
             //give back to budget
             (new Function(`gameStats${currentSelection}.Budget += ${-publicDebtTakenValue})`))();
         }
 
-        let spanGroup = addChangeCommandWithColorsProxy(["pay debt", parameter], ["MediumSpringGreen", "rgb(0, 250, 203)"]); 
+        let spanGroup = addChangeCommandWithColorsProxy(["pay debt", parameter], ["MediumSpringGreen", "rgb(0, 250, 203)"]);
 
     }
     //Creation
@@ -214,7 +242,7 @@ async function evaluteChangeCommand(changeCommand){
             cc = cutback(cc);
         }
         addChangeCommandWithColorsProxy([changeCommand], ["dodgerBlue"]);
-    } 
+    }
     //normal commands
     else {
         commandParameters = [];
@@ -237,27 +265,27 @@ async function evaluteChangeCommand(changeCommand){
     }
 }
 
-async function displayProgress(){
+async function displayProgress() {
     if(typeof loadingField === 'undefined') return;
 
     let lines = changeCommandFileLength;
     let line = changeCommandIndex;
-    
-    
+
+
     loadingField.innerHTML = "";
     if(lines > line){
         let loadingFieldTitle = document.createElement("p");
         loadingFieldTitle.innerText = "Generating All nation Stats...";
-        
+
         let bar = document.createElement("canvas");
         bar.width = 100;
         bar.height = 20;
         let barctx = bar.getContext("2d");
-        
+
         barctx.lineWidth = 3;
-        barctx.strokeRect(0,0,100,20);
+        barctx.strokeRect(0, 0, 100, 20);
         barctx.fillStyle = 'black'
-        barctx.fillRect(0,0, (line / lines) * 100, 20);
+        barctx.fillRect(0, 0, (line / lines) * 100, 20);
 
         let loadingText = document.createElement("p");
         loadingText.style.fontStyle = "Italic";
@@ -269,7 +297,7 @@ async function displayProgress(){
         loadingField.appendChild(loadingText);
     }
 
-    
+
 }
 
 setInterval(displayProgress, 30);
