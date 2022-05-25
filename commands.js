@@ -67,7 +67,7 @@ function syncNation(nationName) {
 
 function syncNations() {
     for (const nationName in gameStats.Nations) {
-        gameStats.Nations[nationName].clearNewTroops();
+        clearNewTroops(nationName);
         syncNation(nationName);
     }
 }
@@ -131,7 +131,7 @@ function createStat(currentSelection, arg){
     if (arg.includes('=')) {
         let newName = arg.slice(0, arg.indexOf('=')).trim();
         let oldName = arg.slice(arg.indexOf('=') + 1).trim();
-        gameStats.Nations[oldName].evaluateNation(oldName);
+        evaluateNation(oldName);
         (new Function(`\
         gameStats${currentSelection}.${newName} = new ${objectClass}("${newName}");\
         /* Copy all property values from old to new */\
@@ -140,9 +140,10 @@ function createStat(currentSelection, arg){
             const propertyToCopy = gameStats${currentSelection}.${oldName}[propertyName];\
             gameStats${currentSelection}.${newName}[propertyName] = JSON.parse(JSON.stringify(propertyToCopy));\
         }`))();
-
     } else {
         (new Function(`gameStats${currentSelection}.${arg} = new ${objectClass}("${arg}");`))();
+
+        if(objectClass == "Nation") evaluateNation(arg);
     }
 }
 

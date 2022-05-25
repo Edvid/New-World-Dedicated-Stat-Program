@@ -30,7 +30,6 @@ let preloadStatChanges;
     //genereate, and we can use the State for the gameStats
     HashMatched = preloadGameState.Hash == preloadStatChanges.hashCode()
     if (HashMatched) {
-        console.log("hello there");
         gameStats = preloadGameState.State;
         
         refreshNationPageItems();
@@ -68,7 +67,7 @@ async function loadChangesFromContent(changes) {
 }
 
 function refreshNationPageItems() {
-    gameStats.evaluateNations();
+    evaluateNations();
 
     if (typeof updateDropdownSelection !== 'undefined') updateDropdownSelection();
     if (typeof createNationSheet !== 'undefined') {
@@ -105,7 +104,7 @@ async function evaluteChangeCommand(changeCommand) {
     else if (changeCommand.toLowerCase().startsWith("sync")) {
 
         if (changeCommand.includes("<")) {
-            gameStats.evaluateNations();
+            evaluateNations();
 
             let lastselection = correctAndSynonymCheck(currentSelection).split(/\./gi);
             if (lastselection[lastselection.length - 2] !== 'Nations') alert("The current selection is not a nation. Cannot sync single nation.");
@@ -113,7 +112,7 @@ async function evaluteChangeCommand(changeCommand) {
 
             syncNation(lastselection);
         } else {
-            gameStats.evaluateNations();
+            evaluateNations();
             syncNations();
         }
         let spn = addChangeCommandWithColorsProxy([changeCommand], ["MediumSpringGreen"]);
@@ -176,7 +175,7 @@ async function evaluteChangeCommand(changeCommand) {
 
         let natName = splitSelections[splitSelections.length - 1];
 
-        (new Function(`gameStats${currentSelection}.evaluateNation("${natName}")`))();
+        (new Function(`evaluateNation("${natName}")`))();
 
 
         //EffectiveDebt formula isolated for Public Debt Taken 
