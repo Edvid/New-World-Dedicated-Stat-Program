@@ -228,7 +228,9 @@ let Synonyms = {
 	],
 	
 	NavyImprovements: [
-		"navyimprov"
+		"navyimprov",
+		"navalimprovements",
+		"navalimprov"
 	],
 	
 	Nobility: [
@@ -294,11 +296,13 @@ let Synonyms = {
 	],
 	
 	HighClassTax: [
-		"hightax"
+		"hightax",
+		"highertax"
 	],
 	
 	MediumClassTax: [
-		"mediumtax"
+		"mediumtax",
+		"middletax"
 	],
 	
 	LowerClassTax: [
