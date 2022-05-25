@@ -302,7 +302,9 @@ let Synonyms = {
 	
 	MediumClassTax: [
 		"mediumtax",
-		"middletax"
+		"middletax",
+		"medtax",
+		"midtax"
 	],
 	
 	LowerClassTax: [
@@ -406,6 +408,11 @@ let Synonyms = {
 		"tradep",
 		"tp"
 	],
+	
+	TradeInfluences: [
+		"TradeInfluence",
+		"TradeInf"
+	]
 
 	WesternMediterranean: [
 		"westernmed",
