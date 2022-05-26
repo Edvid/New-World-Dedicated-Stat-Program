@@ -33,7 +33,7 @@ function correctAndSynonymCheck(selection) {
             }
             if (found) continue;
         }
-        if (!found) alert("Line " + changeCommandIndex + ": The Specified Stat " + correctSelection[i] + " in " + correctSelection.slice(0, i).join(".") + " was not found!");
+        if (!found) alert(`Line ${changeCommandIndex}: The Specified Stat '${correctSelection[i]}' in '${correctSelection.slice(0, i).join(".")}' was not found!`);
     }
     return "." + correctSelection.join(".");
 }
@@ -91,7 +91,7 @@ function normalCommand(selection) {
         }
         
         alert(
-`Line: ${changeCommandIndex}: The currently selected thing is an object not a value, and cannot be set
+`Line: ${changeCommandIndex}: The currently selected thing, ${selection}, is an object not a value, and cannot be set
 Did you mean to select any of the following within this?:
 
 ${allProperties}`)
