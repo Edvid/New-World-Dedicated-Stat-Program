@@ -28,7 +28,7 @@ let preloadStatChanges;
     //If hash maves in JSON is the same as the hashcode of the entire
     //ccf file. Then the JSON _is_ the state the changes will 
     //genereate, and we can use the State for the gameStats
-    HashMatched = preloadGameState.Hash == preloadStatChanges.hashCode()
+    HashMatched = preloadGameState.Hash == preloadStatChanges.replace(/\n|\r/gmi, "").hashCode();
     if (HashMatched) {
         gameStats = preloadGameState.State;
         
@@ -315,9 +315,9 @@ async function displayProgress() {
         downloadbuttom.innerText = "Download JSON";
         downloadbuttom.addEventListener('click', () => {
             let jsonobj = {
-                Hash: preloadStatChanges.hashCode(),
+                Hash: preloadStatChanges.replace(/\n|\r/gmi, "").hashCode(),
                 State: gameStats
-            }
+            };
             let downloadString = JSON.stringify(jsonobj);
 
             downloadToFile(downloadString, 'my-new-file.txt', 'text/plain');
