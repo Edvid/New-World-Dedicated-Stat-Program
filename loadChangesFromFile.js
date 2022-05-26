@@ -3,11 +3,40 @@ let changes;
 let changeCommandIndex;
 let changeCommandFileLength;
 
-(async function(){
-    let preload;
-    await fetch("./docs/assets/commandChangeFormat/NW7.ccf").then(response => response.text()).then(data => preload = data);
-    preload = preload.split(/\r?\n|\r/);
-    loadChangesFromContent(preload);
+/* #region  Taken from https://stackoverflow.com/questions/7616461/generate-a-hash-from-string-in-javascript user esmiralha */
+String.prototype.hashCode = function () {
+    var hash = 0, i, chr;
+    if (this.length === 0) return hash;
+    for (i = 0; i < this.length; i++) {
+        chr = this.charCodeAt(i);
+        hash = ((hash << 5) - hash) + chr;
+        hash |= 0; // Convert to 32bit integer
+    }
+    return hash;
+};
+/* #endregion */
+
+let HashMatched = false;
+
+let preloadGameState;
+let preloadStatChanges;
+(async function () {
+    preloadGameState;
+    await fetch("./docs/assets/commandChangeFormat/NW7.JSON").then(response => response.json()).then(data => preloadGameState = data);
+    preloadStatChanges;
+    await fetch("./docs/assets/commandChangeFormat/NW7.ccf").then(response => response.text()).then(data => preloadStatChanges = data);
+    //If hash maves in JSON is the same as the hashcode of the entire
+    //ccf file. Then the JSON _is_ the state the changes will 
+    //genereate, and we can use the State for the gameStats
+    HashMatched = preloadGameState.Hash == preloadStatChanges.replace(/\n|\r/gmi, "").hashCode();
+    if (HashMatched) {
+        gameStats = preloadGameState.State;
+        
+        refreshNationPageItems();
+    }
+    else {
+        loadChangesFromContent(preloadStatChanges.split(/\r?\n|\r/));
+    }
 })();
 
 async function loadChangesFromFile(event) {
@@ -24,7 +53,7 @@ async function loadChangesFromFile(event) {
 const commandRegex = /(?<Operand>([a-z]+)( |\t)|(\+|\=|\-)( |\t)?)(?<Value>(\".+\")|(\{.+\})|(.+?))( |\t)(?<Stat_Name>.+)/i;
 let ignore;
 let currentSelection;
-async function loadChangesFromContent(changes){
+async function loadChangesFromContent(changes) {
     ignore = false;
     currentSelection = "";
     changeCommandFileLength = changes.length;
@@ -34,23 +63,27 @@ async function loadChangesFromContent(changes){
         if (changeCommandIndex % 50 == 0) await new Promise(resolve => setTimeout(resolve));
     }
 
-    gameStats.evaluateNations();
+    refreshNationPageItems();
+}
 
-    if(typeof updateDropdownSelection !== 'undefined') updateDropdownSelection();
-    if(typeof createNationSheet !== 'undefined') {
+function refreshNationPageItems() {
+    evaluateNations();
+
+    if (typeof updateDropdownSelection !== 'undefined') updateDropdownSelection();
+    if (typeof createNationSheet !== 'undefined') {
         currentNationName = Object.keys(gameStats.Nations)[0];
         createNationSheet(currentNationName);
     }
-    if(typeof loadAllTrades !== 'undefined') loadAllTrades();
+    if (typeof loadAllTrades !== 'undefined') loadAllTrades();
 }
 
-async function evaluteChangeCommand(changeCommand){
+async function evaluteChangeCommand(changeCommand) {
     //comment
     if (changeCommand[0] == '#' || changeCommand.length == 0 || ignore) {
         if (!ignore) {
             if (changeCommand == "###") {
                 let spn = addChangeCommandWithColorsProxy([changeCommand], ["#5E5E5E"]);
-                if(typeof spn === 'undefined') return;
+                if (typeof spn === 'undefined') return;
                 spn[0].style.fontStyle = "italic";
                 ignore = true;
             } else {
@@ -61,7 +94,7 @@ async function evaluteChangeCommand(changeCommand){
             if (changeCommand.toLowerCase() == "# END".toLowerCase())
                 ignore = false;
             let spn = addChangeCommandWithColorsProxy([changeCommand], ["#5E5E5E"]);
-            if(typeof spn === 'undefined') return;
+            if (typeof spn === 'undefined') return;
             spn[0].style.fontStyle = "italic";
             return;
         }
@@ -71,23 +104,23 @@ async function evaluteChangeCommand(changeCommand){
     else if (changeCommand.toLowerCase().startsWith("sync")) {
 
         if (changeCommand.includes("<")) {
-            gameStats.evaluateNations();
+            evaluateNations();
 
             let lastselection = correctAndSynonymCheck(currentSelection).split(/\./gi);
-            if(lastselection[lastselection.length - 2] !== 'Nations') alert("The current selection is not a nation. Cannot sync single nation.");
+            if (lastselection[lastselection.length - 2] !== 'Nations') alert("The current selection is not a nation. Cannot sync single nation.");
             lastselection = lastselection[lastselection.length - 1];
 
             syncNation(lastselection);
         } else {
-            gameStats.evaluateNations();
+            evaluateNations();
             syncNations();
         }
         let spn = addChangeCommandWithColorsProxy([changeCommand], ["MediumSpringGreen"]);
-        if(typeof spn === 'undefined') return;
+        if (typeof spn === 'undefined') return;
         spn[0].style.fontWeight = "bold";
     }
     //trade
-    else if(changeCommand.toLowerCase().startsWith("trade")){
+    else if (changeCommand.toLowerCase().startsWith("trade")) {
         let parameters = changeCommand.split(/(?<=trade)/gm).pop();
         parameters = parameters.split(/,|>/gm);
         let tradename = parameters[0].trim();
@@ -102,9 +135,9 @@ async function evaluteChangeCommand(changeCommand){
         resourceType = correctAndSynonymCheck(`.Nations.${giver}.${resourceType}`).split(".").pop();
 
 
-        if(typeof gameStats.Trades[tradename] !== 'undefined') {
+        if (typeof gameStats.Trades[tradename] !== 'undefined') {
             alert(`The name ${tradename} is already used in Trades.`);
-            return;    
+            return;
         }
 
         gameStats.Trades[tradename] = new Trade();
@@ -112,70 +145,71 @@ async function evaluteChangeCommand(changeCommand){
         gameStats.Trades[tradename].reciever = reciever;
         gameStats.Trades[tradename].resource = resourceType;
         gameStats.Trades[tradename].amount = amount;
-        
+
         let spanGroup = addChangeCommandWithColorsProxy(["trade", tradename, ",", giver, ">", reciever, ",", amount, resourceType], ["MediumSpringGreen"]);
-        if(typeof spanGroup === 'undefined') return;
+        if (typeof spanGroup === 'undefined') return;
         spanGroup[0].style.fontWeight = "bold";
         spanGroup[1].style.fontStyle = "italic";
         spanGroup[3].style.color = "rgb(0, 250, 203)";
         spanGroup[4].style.color = "rgb(0, 250, 203)";
         spanGroup[5].style.color = "rgb(0, 250, 203)";
-        
+
         spanGroup[7].style.color = "#efc5cb";
         spanGroup[8].style.color = "#efc5cb";
 
     }
     //pay debt
-    else if(changeCommand.toLowerCase().startsWith("pay debt")){
+    else if (changeCommand.toLowerCase().startsWith("pay debt")) {
         let parameter = changeCommand.split(/(?<=pay debt)/gm).pop().trim();
-        if(isNaN(parameter)) {
+        if (isNaN(parameter)) {
             alert("The debt paid wasn't a number. Operation Aborted.");
             return;
         }
 
         let splitSelections = correctAndSynonymCheck(currentSelection).split(/\./gi);
-        
-        if(splitSelections[splitSelections.length - 2] !== 'Nations') {
+        let correctedSelection = "." + splitSelections.join(".");
+
+        if (splitSelections[splitSelections.length - 2] !== 'Nations') {
             alert("The current selection is not a nation. Cannot sync single nation.");
             return;
         }
 
         let natName = splitSelections[splitSelections.length - 1];
 
-        (new Function(`gameStats${currentSelection}.evaluateNation("${natName}")`))();
+        (new Function(`evaluateNation("${natName}")`))();
 
 
         //EffectiveDebt formula isolated for Public Debt Taken 
         //EffectiveDebt = PublicDebtTaken * (1 + InterestRate);
         //EffectiveDebt / (1 + InterestRate)= PublicDebtTaken * (1 + InterestRate) / (1 + InterestRate);
         //PublicDebtTaken = EffectiveDebt / (1 + InterestRate);
-        let interestRate = (new Function(`return gameStats${currentSelection}.InterestRate`))();
+        let interestRate = (new Function(`return gameStats${correctedSelection}.InterestRate`))();
 
-        (new Function(`gameStats${currentSelection}.PublicDebtTaken -= ${parameter} / (1 + ${interestRate})`))();
-        (new Function(`gameStats${currentSelection}.Budget -= ${parameter}`))();
-        
+        (new Function(`gameStats${correctedSelection}.PublicDebtTaken -= ${parameter} / (1 + ${interestRate})`))();
+        (new Function(`gameStats${correctedSelection}.Budget -= ${parameter}`))();
+
         //excess paid back
-        let publicDebtTakenValue = new Function(`return gameStats${currentSelection}.PublicDebtTaken`); 
-        if(publicDebtTakenValue < 0){
+        let publicDebtTakenValue = new Function(`return gameStats${correctedSelection}.PublicDebtTaken`);
+        if (publicDebtTakenValue < 0) {
             //reset public debt taken to 0
-            (new Function(`gameStats${currentSelection}.PublicDebtTaken -= 0`))();
+            (new Function(`gameStats${correctedSelection}.PublicDebtTaken -= 0`))();
             //give back to budget
-            (new Function(`gameStats${currentSelection}.Budget += ${-publicDebtTakenValue})`))();
+            (new Function(`gameStats${correctedSelection}.Budget += ${-publicDebtTakenValue})`))();
         }
 
-        let spanGroup = addChangeCommandWithColorsProxy(["pay debt", parameter], ["MediumSpringGreen", "rgb(0, 250, 203)"]); 
+        let spanGroup = addChangeCommandWithColorsProxy(["pay debt", parameter], ["MediumSpringGreen", "rgb(0, 250, 203)"]);
 
     }
     //Creation
     else if (changeCommand.slice(0, 2) == "+>") {
         let arg = changeCommand.slice(2).trim();
-        createStat(currentSelection, arg);
+        createStat(correctAndSynonymCheck(currentSelection), arg);
         addChangeCommandWithColorsProxy([changeCommand], ["magenta"]);
     }
     //deletion
-    else if (changeCommand.slice(0, 2) == "<-"){
+    else if (changeCommand.slice(0, 2) == "<-") {
         let arg = changeCommand.slice(2).trim();
-        deleteStat(currentSelection, arg);
+        deleteStat(correctAndSynonymCheck(currentSelection), arg);
         addChangeCommandWithColorsProxy([changeCommand], ["#ff00a0"]);
     }
     //Selection and deselections
@@ -214,7 +248,7 @@ async function evaluteChangeCommand(changeCommand){
             cc = cutback(cc);
         }
         addChangeCommandWithColorsProxy([changeCommand], ["dodgerBlue"]);
-    } 
+    }
     //normal commands
     else {
         commandParameters = [];
@@ -237,27 +271,32 @@ async function evaluteChangeCommand(changeCommand){
     }
 }
 
-async function displayProgress(){
-    if(typeof loadingField === 'undefined') return;
+let donegenerating = false;
+let showingdownloadoption = false;
+
+async function displayProgress() {
+    if (showingdownloadoption) return;
+    if (typeof loadingField === 'undefined') return;
 
     let lines = changeCommandFileLength;
     let line = changeCommandIndex;
-    
-    
+
+
+
     loadingField.innerHTML = "";
-    if(lines > line){
+    if (lines > line) {
         let loadingFieldTitle = document.createElement("p");
         loadingFieldTitle.innerText = "Generating All nation Stats...";
-        
+
         let bar = document.createElement("canvas");
         bar.width = 100;
         bar.height = 20;
         let barctx = bar.getContext("2d");
-        
+
         barctx.lineWidth = 3;
-        barctx.strokeRect(0,0,100,20);
+        barctx.strokeRect(0, 0, 100, 20);
         barctx.fillStyle = 'black'
-        barctx.fillRect(0,0, (line / lines) * 100, 20);
+        barctx.fillRect(0, 0, (line / lines) * 100, 20);
 
         let loadingText = document.createElement("p");
         loadingText.style.fontStyle = "Italic";
@@ -265,11 +304,41 @@ async function displayProgress(){
         loadingText.style.color = "grey";
         loadingText.innerText = `line ${line} / ${lines} lines loaded`;
         loadingField.appendChild(loadingFieldTitle);
+        loadingField.appendChild(loadingFieldTitle);
         loadingField.appendChild(bar);
         loadingField.appendChild(loadingText);
-    }
+        if(lines == lines && line > 0) donegenerating = true;
+    } else if (!HashMatched && donegenerating) {
+        let loadingFieldTitle = document.createElement("p");
+        loadingFieldTitle.innerText = "Download the new JSON file";
+        let downloadbuttom = document.createElement("button");
+        downloadbuttom.innerText = "Download JSON";
+        downloadbuttom.addEventListener('click', () => {
+            let jsonobj = {
+                Hash: preloadStatChanges.replace(/\n|\r/gmi, "").hashCode(),
+                State: gameStats
+            };
+            let downloadString = JSON.stringify(jsonobj);
 
-    
+            downloadToFile(downloadString, 'my-new-file.txt', 'text/plain');
+        });
+        loadingField.appendChild(loadingFieldTitle);
+        loadingField.appendChild(downloadbuttom);
+        showingdownloadoption = true;
+    }
 }
+
+/* #region  taken from blog https://robkendal.co.uk/blog/2020-04-17-saving-text-to-client-side-file-using-vanilla-js */
+const downloadToFile = (content, filename, contentType) => {
+    const a = document.createElement('a');
+    const file = new Blob([content], { type: contentType });
+
+    a.href = URL.createObjectURL(file);
+    a.download = filename;
+    a.click();
+
+    URL.revokeObjectURL(a.href);
+};
+/* #endregion */
 
 setInterval(displayProgress, 30);

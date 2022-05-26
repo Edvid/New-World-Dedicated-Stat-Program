@@ -675,8 +675,8 @@
 +> Cuman
 =100 Cuman.Points
 <... > Nations > CumanKipchakKhanate > ReligionGroups
-+> Orthodox
-=100 Orthodox.Points
++> Muslim
+=100 Muslim.Points
 =0 Pagan.Points
 <... > Nations > CumanKipchakKhanate
 = "https://media.discordapp.net/attachments/969287009879359578/975431116372738130/unknown.png" Flag
@@ -697,7 +697,7 @@
 =100 Catholic.Points
 =0 Pagan.Points
 <... > Nations > KingdomOfToledoCatalonia
-# = "" Flag
+= "https://media.discordapp.net/attachments/969287009879359578/975453678767063142/unknown.png?width=839&height=678" Flag
 = "Catalonian" cultrep
 = "Catholic" relrep
 
@@ -991,114 +991,6 @@
 =0.5 Burma 
 =1.5 SouthEastAsia
 
-# Igorot add
-<... > Cultures
-+> Igorot
-<... > Nations
-+> IgorotConfederacy
-<... > Nations > IgorotConfederacy > CultureGroups
-+> Igorot
-=100 Igorot.Points
-<... > Nations > IgorotConfederacy > ReligionGroups
-+> Pagan
-=100 Pagan.Points
-# (if not pagan)
-#=0 Pagan.Points
-<... > Nations > IgorotConfederacy
-= "https://cdn.discordapp.com/attachments/969287009879359578/975404904589955112/unknown.png" Flag
-= "Igorot" cultrep
-= "Pagan" relrep
-
-# Cheonje add
-<... > Cultures
-+> Cheonje
-<... > Nations
-+> Cheonje
-<... > Nations > Cheonje > CultureGroups
-+> Cheonje
-=100 Cheonje.Points
-<... > Nations > Cheonje > ReligionGroups
-+> Pagan
-=100 Pagan.Points
-# (if not pagan)
-#=0 Pagan.Points
-<... > Nations > Cheonje
-#= "[Image Link]" Flag
-= "Cheonje" cultrep
-= "Pagan" relrep
-
-# Poland add
-<... > Cultures
-+> Polish
-<... > Nations
-+> KingdomOfPoland
-<... > Nations > KingdomOfPoland > CultureGroups
-+> Polish
-=100 Polish.Points
-<... > Nations > KingdomOfPoland > ReligionGroups
-+> Orthodox
-=100 Orthodox.Points
-# (if not pagan)
-=0 Pagan.Points
-<... > Nations > KingdomOfPoland
-= "https://cdn.discordapp.com/attachments/969287009879359578/975668498984489011/1024px-Kingdom_of_Poland-flag.svg.png" Flag
-= "Polish" cultrep
-= "Orthodox" relrep
-
-# Wallachia add
-<... > Cultures
-+> Wallachian
-<... > Nations
-+> KingdomOfWallachia
-<... > Nations > KingdomOfWallachia > CultureGroups
-+> Wallachian
-=100 Wallachian.Points
-<... > Nations > KingdomOfWallachia > ReligionGroups
-+> Orthodox
-=100 Orthodox.Points
-# (if not pagan)
-=0 Pagan.Points
-<... > Nations > KingdomOfWallachia
-= "https://cdn.discordapp.com/attachments/969287009879359578/976906070125609010/unknown.png" Flag
-= "Wallachian" cultrep
-= "Orthodox" relrep
-
-# Mongolia add
-<... > Cultures
-+> Mongolian
-<... > Nations
-+> MongolianKhanate
-<... > Nations > MongolianKhanate > CultureGroups
-+> Mongolian
-=100 Mongolian.Points
-<... > Nations > MongolianKhanate > ReligionGroups
-+> Pagan
-=100 Pagan.Points
-# (if not pagan)
-#=0 Pagan.Points
-<... > Nations > MongolianKhanate
-= "https://cdn.discordapp.com/attachments/969287009879359578/976959313300045885/1652995645353.jpg" Flag
-= "Mongolian" cultrep
-= "Pagan" relrep
-
-# Sakhalin add
-<... > Cultures
-+> Ainu
-<... > Nations
-+> SakhalinTribe
-<... > Nations > SakhalinTribe > CultureGroups
-+> Ainu
-=100 Ainu.Points
-<... > Nations > SakhalinTribe > ReligionGroups
-+> Pagan
-=100 Pagan.Points
-# (if not pagan)
-=0 Pagan.Points
-<... > Nations > SakhalinTribe
-= "https://cdn.discordapp.com/attachments/969287009879359578/977076337682567178/unknown.png" Flag
-= "Ainu" cultrep
-= "Pagan" relrep
-
 # 1350 LAND STATS
 
 <... > Nations > SiouxTribes > Climates
@@ -1281,3 +1173,964 @@
 =5115 TaigaAndTundra.Pixels
 =2415 Moderate.Pixels
 =38 Mountainous.Pixels
+
+<... > Nations > SiouxTribes
+=3 isolation
+
+<... > Nations > VespucianTribes
+=3 isolation
+
+<... > Nations > TainoTribalConfederacy
+=3 isolation
+
+<... > Nations > Bornu
+=3 isolation
+
+<... > Nations > MagajiyaTribe
+=3 isolation
+
+# Taino NPC update
+<... > Nations > TainoTribalConfederacy
++2 adm
++0.1 mercantilism
++0.5 socialspending
+=0.14 lowertax
+=0.14 mediumtax
+=0.14 hightax
++0.1 NavyImprovements
++0.1 training
++0.1 tactics
++0.005 discipline
++1 localtrade
++1 sulphur
++0.5 spices
++0.5 sugar
++0.5 exoticfruit
+> TradeInfluences
++0.5 Carribean.TradingPoints
+
+# Galicia NPC update
+<... > Nations > KingdomOfGalicia
++2 adm
++0.1 mercantilism
++0.5 socialspending
+=0.14 lowertax
+=0.14 mediumtax
+=0.14 hightax
++0.1 NavyImprovements
++0.1 training
++0.1 tactics
++0.005 discipline
++1 localtrade
++1 iron
++1 coal
+> TradeInfluences
++0.5 WestIberia.TradingPoints
++0.5 BayOfBiscay.TradingPoints
+
+# Faithful NPC update
+<... > Nations > TheFaithfulKingdom
++2 adm
++0.1 mercantilism
++0.5 socialspending
+=0.14 lowertax
+=0.14 mediumtax
+=0.14 hightax
++0.1 NavyImprovements
++0.1 training
++0.1 tactics
++0.005 discipline
++1 localtrade
++1 sulphur
++0.5 iron
+> TradeInfluences
++0.5 Adriatic.TradingPoints
++0.5 CentralMediterranean.TradingPoints
+
+# Poland NPC update
+<... > Nations > KingdomOfPoland
++2 adm
++0.1 mercantilism
++0.5 socialspending
+=0.14 lowertax
+=0.14 mediumtax
+=0.14 hightax
++0.1 NavyImprovements
++0.1 training
++0.1 tactics
++0.005 discipline
++1 localtrade
++1 iron
++1 sulphur
+> TradeInfluences
++0.5 Poland.TradingPoints
+
+# Bornu NPC update
+<... > Nations > Bornu
++2 adm
++0.1 mercantilism
++0.5 socialspending
+=0.14 lowertax
+=0.14 mediumtax
+=0.14 hightax
++0.1 NavyImprovements
++0.1 training
++0.1 tactics
++0.005 discipline
++1 localtrade
+> TradeInfluences
++0.5 Nigeria.TradingPoints
+
+# Longuo NPC update
+<... > Nations > EmpireOfLonguo
++2 adm
++0.1 mercantilism
++0.5 socialspending
+=0.14 lowertax
+=0.14 mediumtax
+=0.14 hightax
++0.1 NavyImprovements
++0.1 training
++0.1 tactics
++0.005 discipline
++1 localtrade
++1 iron
++0.5 tea
+> TradeInfluences
++0.5 NorthChina.TradingPoints
++0.5 YangtzeRiver.TradingPoints
+
+# Aden NPC
+<... > Nations > AdenCaliphate
++2 adm
++0.1 mercantilism
++0.5 socialspending
+=0.14 lowertax
+=0.14 mediumtax
+=0.14 hightax
++0.1 NavyImprovements
++0.1 training
++0.1 tactics
++0.005 discipline
++1 localtrade
+> TradeInfluences
++0.5 Somalia.TradingPoints
++0.5 RedSea.TradingPoints
+
+# Quasimid NPC update
+<... > Nations > QuasimidEmirate
++2 adm
++0.1 mercantilism
++0.5 socialspending
+=0.14 lowertax
+=0.14 mediumtax
+=0.14 hightax
++0.1 NavyImprovements
++0.1 training
++0.1 tactics
++0.005 discipline
++1 localtrade
++0.5 iron
+> TradeInfluences
++0.5 PersianGulf.TradingPoints
++0.5 Iran.TradingPoints
+
+# Ntepa NPC update
+<... > Nations > RoecaoNtepaEmpire
++2 adm
++0.1 mercantilism
++0.5 socialspending
+=0.14 lowertax
+=0.14 mediumtax
+=0.14 hightax
++0.1 NavyImprovements
++0.1 training
++0.1 tactics
++0.005 discipline
++1 localtrade
++1 iron
+> TradeInfluences
++0.5 SouthChina.TradingPoints
+
+# Kyrat NPC update
+<... > Nations > KingdomOfKyrat
++2 adm
++0.1 mercantilism
++0.5 socialspending
+=0.14 lowertax
+=0.14 mediumtax
+=0.14 hightax
++0.1 NavyImprovements
++0.1 training
++0.1 tactics
++0.005 discipline
++1 localtrade
+> TradeInfluences
++0.5 NorthIndia.TradingPoints
+
+# Scotland NPC update
+<... > Nations > KingdomOfScotland
++2 adm
++0.1 mercantilism
++0.5 social spending
+=0.14 lowertax
+=0.14 mediumtax
+=0.14 hightax
++0.1 NavyImprovements
++0.1 training
++0.1 tactics
++0.005 discipline
++1 localtrade
++1 coal
+> TradeInfluences
++0.5 BritishIsles.TradingPoints
++0.5 NorthSea.TradingPoints
+
+# Mitiva NPC update
+<... > Nations > Mitiva
++2 adm
++0.1 mercantilism
++0.5 social spending
+=0.14 lowertax
+=0.14 mediumtax
+=0.14 hightax
++0.1 NavyImprovements
++0.1 training
++0.1 tactics
++0.005 discipline
++1 localtrade
++1 cotton
+> TradeInfluences
++0.5 Egypt.TradingPoints
++0.5 EasternMediterranean.TradingPoints
+
+<... > Nations > VespucianTribes
++.75 Coal
++.75 Sulphur 
+# +.5 edueff
++.5 adm
++.5 local trade
+> Trade Influences 
++1 great lakes.TradingPoints
++1 louisiana.TradingPoints
++1 East coast.TradingPoints
+<
++.5 adm
++.25 adm
++.5 adm
++.5 local trade 
++.05 mercantilism 
++.05 navy improvements 
++ .5 adm
++ .5 adm
++.05 mercantilism
++ .5 local trade
++ .5% workforces.artisans
++ .5 adm
++ .25 adm
+= 10% high tax
+= 8% medium tax
+= 5% low tax
++ 100 public debt taken
+
+
+< > Sioux Tribes
++ .5 local trade
++ .5 local trade
++ .05 agri adv
++ .75 copper
+= 10% high tax
+= 8% medium tax
+= 5% low tax
++ .5 adm
++200 archers
++500 l inf
++300 h inf
+< > Taino Tribes
+
+< > TsardomOfMuscovy
++ .5 adm
+= 10% high tax
+= 10% medium tax
+= 20% low tax
++.5 adm
++.5 health
++.05 Agr Adv
++.5 adm
++.25 social spending
++ .5% workforces.burghers
++ .5% workforces.artisans
+
++.25 social spending
++.75 Coal
++.05 mining eff
+# All non government owned fascilities will now be privatized?
+#+.5 adm eff
++.5 edu eff
++.75 Wool
+
+# Not all 18 yo for 2 years pls
+# +.05 Training
++500 h inf
++300 crossbowmen
++100 l cav
++ .05 tactics
++ .05 training
++.5 local trade
++.05 mercantilism
+> Trade Influences
++1 DonRiver.TradingPoints
++1 Crimea.TradingPoints
++1 Poland.TradingPoints
++1 Dniepr.TradingPoints
+<
++ .05 navy improvements
++.5 social spending
++.25 adm
++.25 propaganda
+# Manure as fertilizer new and genius in 1350 russia? Nope
+# +.05 agr adv
++ .05 Stockcap
++ .05 agri inf
+- 5 Noble loyalty groups.GovernmentOfTsardomOfMuscovy
++ 5 Noble loyalty groups.SelfInterests
+- 5% NobilityInfluence
+
+
+< > Byzantium
++ .75 Copper
++ .75 Gold
++ .25 mining eff
++ .5 local trade
++ .5% workforces.artisans
+- 5 budget
+
+
+< > ArberberKingdom
++ 5 budget
+< > Byzantium
++.5 cultural prosperity
++.05 Agri adv
++ .05 Agri inf
++.75 wool
++ .05 Agri subs
++ .05 Stockcap
++ .5 local trade
++ .5% workforces.artisans
++ .05 agri inf
++ .05 agri adv
++ .05 agri sub
++ .05 agri inf
++ .05 agri inf
++ .05 agri sub
++ .25 adm
++ .25 local trade
++.1 mercantilism 
++.15 navy improvements 
++ .5% workforces.artisans
+> Trade Influences 
++1 greece.TradingPoints
++1 northern anatolia.TradingPoints
++1 eastern mediterranean.TradingPoints
++1 central mediterranean.TradingPoints
++1 crimea.TradingPoints
+<
++3 heavy ships
++12 medium ships
++24 light ships
++.5 adm
++.5 local trade
++.25 adm
++.5 local trade
++.5% workforces.burghers
++ 5 burghers loyalty groups.GovernmentOfByzantium
+- 5 burghers loyalty groups.self interests
++.5 mercantilism
+> Trade Influences 
++1 greece.TradingPoints
++1 eastern mediterranean.TradingPoints
++1 central mediterranean.TradingPoints
++1 adriatic.TradingPoints
++1 eastern Danube.TradingPoints
+<
++ .05 agri inf
++ .25 wool
++ .05 agri inf
+> Trade Influences
++ 1 Greece.TradingPoints
++ 1 Eastern Danube.TradingPoints
++ 1 Northern Anatolia.TradingPoints
++ 1 Eastern mediterranean.TradingPoints
++ 1 Central mediterranean.TradingPoints
+<
++ .5% military discipline
++ .05 training quality
++ .05 army tactics 
++.05 navy improvements
++1750 h inf
++240 archers
++576 crossbowmen
++336 l cav
++384 h cav
+= 15% high tax
+= 20% medium tax
+= 20% low tax
+< > Kingdom Of Galicia
++ .25 farming eff
++ .25 mining eff
+
+# Kingdomof Alvheim update 
+<... > Nations > KingdomofAlvheim
++20 light ships
++10 medium ships
++10 heavy ships
+
+
+# Kingdom of England
+<... > Nations > KingdomofEngland
+=0.15 lowertax
+=0.15 mediumtax
+=0.15 hightax
++2 adm
++1 localtrade
++0.05 NavyImprovements 
++0.15 mercantilism
++0.75 coal
++0.5 wool
++0.25 socialspending
++0.25 propaganda
++0.25 health
+> Tradeinfluences
++0.5 EnglishChannel.TradingPoints
++0.5 BritishIsles.TradingPoints
+<
++1 extra city fortifications
++0.05 clergy influence
++0.05 stocking capabilities
++0.05 agrinfra
++0.05 nobleinfluence
+> ReligionGroups
++> Jewish
+=0.5 Jewish.Points
+=99.5 Catholic.Points
+<
+>Workforces
++0.005 Artisans
++0.5% burghers 
+<
++1 Smallforts
++700 archers
++300 light cav
++300 heavy cav
++300 light inf
++10 light ships
++10 medium ships
++10 heavy ships
+="https://media.discordapp.net/attachments/974974128006242324/975783233289597019/unknown.png" flag
+
+# Yamato Clan update 
+<... > Nations > YamatoKingdom
++0.05 NavyImprovements
++7 light ships
++0.05 AgricultureSubsidies
++0.05 AgricultureInfrastructure
++0.05 AgricultureAdvancements
++1 Cotton
++0.25 silk
++0.25 Exotic Fruits
++0.5 Sugar
++0.5 Spices
++0.75 gold
++0.05 CulturalProsperity
++0.5 Absolutism
++1.5 Adm
++0.5 LocalTrade
++0.75 BirthControl
++0.5 Propaganda
++0.5 PopulationControl
++0.05 TrainingQuality
++0.05 MilitaryTactics
++0.5% MilitaryDiscipline
++0.25 CommanderFreedom
++0.15 ArmyWages 
++100 h inf
+> Trade influences
++0.5 SeaofJapan.TradingPoints
++0.5 NorthChina.TradingPoints
++0.5 YangtzeRiver.TradingPoints
++0.5 SouthChina.Trading Points
+
+# Igorot Confederacy update 
+<... > Nations > IgorotConfederacy
++0.5 Adm
+
+# Kingdom Of Kyrat update 
+<... > Nations > KingdomOfKyrat
++0.5 Adm
+
+# Sakhalin Tribe update 
+<... > Nations > SakhalinTribe
++0.5 Adm
++0.05 MilitaryTactics
++0.05 TrainingQuality
++0.05 AgricultureSubsidies
++0.5 Coal
++0.25 SocialSpending
+> Trade influences
++0.5 SeaofJapan.TradingPoints
+
+# Kingdom Of Khmbodj update 
+<... > Nations > KingdomOfKhmbodj 
+=0.09 lowertax 
+=0.13 mediumtax 
+=0.15 hightax 
++0.05 AgricultureSubsidies 
++0.1 AgricultureInfrastructure 
++0.1 AgricultureAdvancements 
++2.00 LocalTrade 
++2 Adm 
++0.1 Mercantilism 
++0.75 EducationEfficiency 
++0.05 StockingCapabilities 
++0.5 Spices 
++0.25 silk 
++0.05 CulturalProsperity 
+> Workforces
++0.25% Artisans
++0.25% Burghers 
+<
++0.5 SocialSpending 
++5% clergyinfluence 
++5 ClergyLoyaltyGroups.GovernmentOfKingdomOfKhmbodj 
+-5 ClergyLoyaltyGroups.SelfInterests
+> Trade influences
++0.25 SouthEastAsia.TradingPoints 
++0.25 Burma.TradingPoints 
+
+# Kingdom Of Potskig update 
+<... > Nations > KingdomOfPotskig 
++0.5 EducationEfficiency 
+=0.11 lowertax 
+=0.12 mediumtax 
+=0.13 hightax 
++0.25 Propaganda 
++ 5 budget
+> ReligionGroups
++> Hindu
++6.5% Hindu.points
+-6.5% Pagan.points
+<
+-5 ClergyLoyaltyGroups.GovernmentOfKingdomOfPotskig
++5 ClergyLoyaltyGroups.SelfInterests
+
+# Order of St Mary update 
+<... > Nations > OrderOfStMary
++0.05 AgricultureInfrastructure
++0.05 AgrAdv
++2.25 Adm
++0.5 EducationEfficiency 
++0.5 Spice
++0.2 Mercantilism
++1.5 LocalTrade
+> Workforces
++1.5% Artisans
++0.5% Burghers
+-0.5% Nobility
++0.5% Clergy
+<
++10 ClergyLoyaltyGroups.GovernmentOfOrderOfStMary
+-10 ClergyLoyaltyGroups.SelfInterests
++15% ClergyInfluence
++500 HeavyCavalry
++1000 LightCavalry
++2000 HeavyInfantry
++700 Crossbowmen
++300 HandCannon
++0.2 TrainingQuality
++0.15 MilitaryTactics
++0.5% MilitaryDiscipline
+=0.15 lowertax
+=0.15 mediumtax
+=0.15 hightax
++0.5 Sulphur
++20 Spies
+> Trade influences
++1 EasternMed.TradingPoints
++0.5 RedSea.TradingPoints
++0.5 Egypt.TradingPoints
+
+# Sindh Empire update 
+<... > Nations > SindhEmpire 
++0.05 CulturalProsperity 
++1.50 AdministrativeEfficiency 
++0.50 Absolutism 
++10% Noble Influence
++5 Nobleloyaltygroups.GovernmentOfSindhEmpire 
+-5 Nobleloyaltygroups.SelfInterests 
+=13% lowertax
+=14% mediumtax 
+=17.5% hightax 
++10% Clergy Influence 
++5 Clergyloyaltygroups.GovernmentOfSindhEmpire 
+-5 Clergyloyaltygroups.SelfInterests 
++0.50 Propaganda 
++10% BurghersInfluence 
++1.25 LocalTrade 
++0.05 Mercantilism 
++0.10 NavyImprovements 
++6 heavy ships 
++200 levies 
++0.05 AgricultureInfrastructure 
++0.50 Spices 
++0.50 Tea 
++0.5 exotic fruits 
++220 Public debt taken 
++5 Nobleloyaltygroups.GovernmentOfSindhEmpire 
+-5 Nobleloyaltygroups.SelfInterests 
++5 Clergyloyaltygroups.GovernmentOfSindhEmpire 
+-5 Clergyloyaltygroups.SelfInterests 
++10 Burghersloyaltygroups.GovernmentOfSindhEmpire 
+-10 Burghersloyaltygroups.SelfInterests 
+-5 budget 
+> Trade influences
++1.0 Pakistan.TradingPoints 
++0.5 PersianGulf.TradingPoints 
++1.00 EastIndia.TradingPoints
+
+
+
+# Zi Empire update 
+<... > Nations > ZiEmpire
++0.05 AgrAdv
++0.05 AgrInf
++0.5 Wool
++1 AdministrativeEfficiency
++50 LightInfantry
++600 Levies
++1500 LightCavalry
+=0.15 lowertax
+=0.15 mediumtax
+=0.15 hightax 
+
+# Kingdom of Westphalia update
+# no rp
+
+# Duchy of Belarus update
+<... > Nations > DuchyOfBelarus
++0.25 wool 
+
+# Kingdom of Burgundy update
+<... > Nations > KingdomOfBurgundy
++0.25 iron
+> Workforces
++1% Artisans
+<
++0.5 AdministrativeEfficiency
+=0.20 lowertax
+=0.20 mediumtax
+=0.20 hightax
++1 SocialSpending
++0.2 mercantilism
++0.15 MilitaryTactics
++0.5 EducationEfficiency
++0.25 CulturalProsperity
++0.1 NavyImprovements
++6 HeavyShips
++18 MediumShips
++20 LightShips
++300 LightCavalry
++150 HeavyCavalry
++1 localtrade 
+> TradeInfluences
++1 NorthSea.tp
++1 EnglishChannel.tp
++0.5 Denmark.tp
++1 BritishIsles.tp
+
+# Kingdom of Serbia update
+<... > Nations > KingdomOfSerbia
++0.25 iron
++0.25 wool
++0.5 coal
++0.1 mercantilism
++450 Light Cavalry
++150 HeavyCavalry
++150 Archers
++50 Crossbowmen
++0.5 EducationEfficiency
++0.25 localtrade 
+
+# Cuman Kipchak Khanate update
+<... > Nations > CumanKipchakKhanate
++0.25 StockingCapabilities
++1000 HeavyCavalry
++2000 Militia
++3000 Levies
++100 EliteCavalry
++0.25 iron
+
+<... > Nations > ArchduchyOfAustria
++ .05 CulturalProsperity
++ .25 Adm
++ .25 edu eff
++ .5 Adm
++ .05 agri inf
++ .25% workforces.burghers
++ .1% workforces.burghers
+= 30% lowtax
+= 30% midtax
+= 30% hightax
++ .25 SocialSpending
++ .05 agri inf
++ .25 local Trade
++ .05 Mercantilism
++ .05 mercantilism
++ .5 local trade
++ .5 adm
++ 5% burghers inf
++ .05 mercantilism
++ .5 local trade
++ .5 adm
+# no + tactics
++ .5 adm
++ .5 adm
++ 5% clergy inf
++ .5 adm
++ .5 adm
++ .05 mercantilism
++ .5 local trade
+> Trade Influences
++ 1 adriatic.tp
++ 1 westerndanube.tp
++ 1 germany.tp
++ 1 east danube.tp
++ 1 central med.tp
+<
++ .5 adm
++ .05 mercantilism
++ .5 local trade
+> Trade Influences
++ 1 adriatic.tp
++ 1 westerndanube.tp
++ 1 germany.tp
++ 1 east danube.tp
++ 1 central med.tp
+<
++ .5 adm
+- 5% noble inf
++ 7.5 nobleloyalty.self interests
+- 7.5 nobleloyalty.GovernmentOfArchduchyOfAustria
++ .5 local trade
++ .05 mercantilism
++.5 local trade
++.05 mercantilism 
++ .25 adm
++0.5 iron
++0.5 coal
++0.5 gold
++0.5 copper
++0.5 sulphur
++ .05 mining efficiency
++ .5 Adm
++ 5% Burghersinf
++ 5 Burghers loyalty . Government Of Archduchy Of Austria 
+- 5 Burghers loyalty . Self Interests
++ .05 mercantilism 
++ .25 social spending
++ .5 edu eff
++ .5 wool
++ .5 adm
++ .5 adm
++ .5 edu
+- 1 clergy loyalty. Government Of Archduchy Of Austria 
++ 1 clergy loyalty . Self Interests
++ .5 edu
+
+<... > Nations > Hittite Empire
++.5 Commander Freedom
++.05 tactics
++.5% Discipline
+= 800 l inf
+= 400 h inf
+= 450 hand cannon
+= 400 h cav
+= 350 archers 
+= 250 crossbowmen
++1% Discipline 
++.1 tactics 
++.05 navy improvements
++.5 commander Freedom
++.05 tactics
++.5% Discipline
++.5 adm
++0.1 spyquality
++.5 edu
+> Trade influence 
++1 east danube.tp 
++1 northernanatolia.tp
++1 red sea.tp
++1 egypt.tp
+<
++.5% workforces.burghers 
++.5% workforces.artisans 
++ 5% Burghersinf
++.05 tactics
++0.5 iron 
++0.5 coal
++0.5 sulphur
++.05 cultural prosperity
++.025 agri adv
++0.5 spices
+=0.15 lowertax
+=0.15 mediumtax
+=0.15 hightax
++0.5 cotton
++0.5 wool
+
+<... > Nations > KingdomOfAndalusia
++.05 agri adv
++.05 agri adv
++.05 agri inf
++.05 agri adv
++ 5% noble inf
++ 5 noble loyalty. GovernmentOfKingdomOfAndalusia
+- 5 noble loyalty . Self Interests
++ .05 cultural advance
++ .5% workforces.artisans
++0.5 coal
++0.5 iron
++0.5 copper
+# from arberber
++ 30 budget
++ .5 adm
++ 1% noble inf
++ .5 edu
++ 0.25 adm
++ 5% noble inf
++ 2.5 noble loyalty . GovernmentOfKingdomOfAndalusia
+- 2.5 noble loyalty . Self Interests
++ 0.25 adm
++ 0.5 localtrade
++ .1% workforces.artisans
+
+# Ireland 1350
+<... > Nations > KingdomOfIreland
+=0.155 lowertax
+=0.127 mediumtax
+=0.134 hightax
++8 lightships
++15 mediumships
++4 heavyships
++0.5 social spending
++0.25 local trade
+> TradeInfluences
++0.25 BritishIsles.tp
+
+# Valublid 1350
+<... > Nations > ValublidSultanate
++0.5 adm
+-0.05 nobleinfluence
+-5 nobleloyaltygroups.GovernmentOfValublidSultanate
++5 nobleloyaltygroups.selfinterests
+
+# Arberber 1350
+<... > Nations > ArberberKingdom
++0.25 adm
++0.75 socialspending
++0.25 edueff
++1.5 wool
++1 sulphur
++0.5 spices
++0.15 agrsubsidies
++200 lightinf
++100 heavycav
++75 handcannon
++0.15 CulturalProsperity
++25 budget
+=0.2 lowertax
+=0.1 mediumtax
+=0.1 hightax
++5 burghersloyaltygroups.GovernmentOfArberberKingdom
+-5 burghersloyaltygroups.SelfInterests
++0.05 burghersinf
++0.2 mercantilism
++0.2 training
+> Workforces
++0.0025 Artisans
+< > TradeInfluences
++0.5 Adriatic.TradingPoints
++0.5 Greece.TradingPoints
++0.5 NorthernAnatolia.TradingPoints
+
+# Eulacia 1350
+<... > Nations > EulacianTradeCouncil
+=0.15 lowertax
+=0.225 mediumtax
+=0.3 hightax
++0.75 Diamonds
++0.5 Mercantilism
++0.05 CulturalProsperity
++3 Local Trade
++0.75 Gold
++0.75 Sulphur
++0.75 Coal
++0.1 MiningEfficiency
++1.25 Exotic Fruits
++1 Spices
++0.5 Sugar
++0.75 Tea
+=1 fertility
++0.1 AgricultureSubsidies
++0.2 AgricultureInfrastructure
++0.15 AgricultureAdvancements
++0.1 StockingCapabilities
++0.1 training
++0.05 tactics
++1.25 commanderfreedom
++1.25 edueff
++3.5 adm
++1.75 socialspending
++1 health
++0.15 NavyImprovements
++0.3 spyquality
++0.1 ResearchSpending
++0.1 culturalprosperity
++12 LightShips
++4 MediumShips
++1 HeavyShips
++5 ClergyLoyaltyGroups.GovernmentOfEulacianTradeCouncil
+-5 ClergyLoyaltyGroups.SelfInterests
++0.05 clergyinfluence
+> TradeInfluences
++1.5 SouthEastAsia.TradingPoints
++1.5 SouthChina.TradingPoints
++1 NorthAustralia.TradingPoints
++1.5 Burma.TradingPoints
+< > Workforces
++0.005 Artisans
+
+# Toledo 1350
+<... > Nations > KingdomOfToledoCatalonia
+=0.21 lowertax
+=0.21 medtax
+=0.18 hightax
++3.25 adm
++0.5 edueff
++0.10 clergyinf
++0.05 agradv
++0.125 nobleinf
++0.025 burghersinf
++0.15 training
++0.75 silver
++0.75 coal
++0.1 agrinf
++1.25 wool
++10 ClergyLoyaltyGroups.GovernmentOfKingdomOfToledoCatalonia
+-10 ClergyLoyaltyGroups.SelfInterests
++10 NobleLoyaltyGroups.GovernmentOfKingdomOfToledoCatalonia
+-10 NobleLoyaltyGroups.SelfInterests
++5 burghersLoyaltyGroups.GovernmentOfKingdomOfToledoCatalonia
+-5 burghersLoyaltyGroups.SelfInterests
++0.15 miningeff
+
+sync

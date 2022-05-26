@@ -107,7 +107,7 @@ async function onLoad() {
         ["FFD15E", "Manchuria"],
         ["00FFFF", "SeaOfJapan"],
         ["3AAA0E", "NorthChina"],
-        ["3DFD00", "YangtzeeRiver"],
+        ["3DFD00", "YangtzeRiver"],
         ["4D007F", "SouthChina"],
         ["DB6525", "NorthIndia"],
         ["D10097", "WestIndia"],

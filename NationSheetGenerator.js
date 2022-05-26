@@ -377,7 +377,7 @@ function createNationSheet(nationName) {
                 "AgricultureSpending"
             ],
             [
-                ".Workforces[\"Population In Agriculture\"]",
+                ".Workforces.PopulationInAgriculture",
                 "DailyFood",
                 "FoodConsumption",
                 "FoodGain",
@@ -432,6 +432,17 @@ function createNationSheet(nationName) {
                 "LandAdministration",
                 "Overextension",
                 "HabitableLand"
+            ]
+        ]
+    );
+    
+    createStatTable(
+        "Estate Influences",
+        [
+            [
+                "NobleInfluence",
+                "ClergyInfluence",
+                "BurghersInfluence",
             ]
         ]
     );
@@ -562,7 +573,7 @@ function createNationSheet(nationName) {
                 ".TradeInfluences[\"Manchuria\"].TradingPoints",
                 ".TradeInfluences[\"SeaOfJapan\"].TradingPoints",
                 ".TradeInfluences[\"NorthChina\"].TradingPoints",
-                ".TradeInfluences[\"YangtzeeRiver\"].TradingPoints"
+                ".TradeInfluences[\"YangtzeRiver\"].TradingPoints"
             ],
             [
                 ".TradeInfluences[\"SouthChina\"].TradingPoints",

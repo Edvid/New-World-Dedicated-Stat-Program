@@ -105,7 +105,21 @@ let Synonyms = {
 	
 	NobleLoyaltyGroups: [
 		"nobilityloyaltygroups",
-		"nobleloyaltygroups",
+		"nobleloyalty",
+		"noblelg"
+	],
+	
+	ClergyLoyaltyGroups: [
+		"clergyloyalty",
+		"clergylg"
+	],
+	
+	BurghersLoyaltyGroups: [
+		"burgherloyaltygroups",
+		"burghersloyalty",
+		"burgherloyalty",
+		"burgherslg",
+		"burgherlg",
 	],
 	
 	LightInfantry: [
@@ -214,7 +228,9 @@ let Synonyms = {
 	],
 	
 	NavyImprovements: [
-		"navyimprov"
+		"navyimprov",
+		"navalimprovements",
+		"navalimprov"
 	],
 	
 	Nobility: [
@@ -280,11 +296,15 @@ let Synonyms = {
 	],
 	
 	HighClassTax: [
-		"hightax"
+		"hightax",
+		"highertax"
 	],
 	
 	MediumClassTax: [
-		"mediumtax"
+		"mediumtax",
+		"middletax",
+		"medtax",
+		"midtax"
 	],
 	
 	LowerClassTax: [
@@ -384,4 +404,63 @@ let Synonyms = {
 		"loses"
 	],
 	
+	TradingPoints: [
+		"tradep",
+		"tp"
+	],
+	
+	TradeInfluences: [
+		"TradeInfluence",
+		"TradeInf"
+	],
+
+	WesternMediterranean: [
+		"westernmed",
+		"westmed"
+	],
+
+	CentralMediterranean: [
+		"centralmed",
+		"middlemed",
+		"midmed"
+	],
+
+	EasternMediterranean: [
+		"easternmed",
+		"eastmed"
+	],
+
+	EasternDanube: [
+		"eastdanube",
+		"eastdan"
+	],
+
+	WesternDanube: [
+		"westdanube",
+		"westdan"
+	],
+
+	CaliforniaAndWestMexico:[
+		"california",
+		"westernmexico",
+		"mexico",
+		"calimex",
+	],
+
+	DonRiver:[
+		"don"
+	],
+
+	Yangtze: [
+		"Yangtzi",
+		"centralchina",
+		"midchina"
+	],
+
+	WesternSahara: [
+		"westsahara",
+		"westernafrica",
+		"westafrica"
+	]
+
 }
