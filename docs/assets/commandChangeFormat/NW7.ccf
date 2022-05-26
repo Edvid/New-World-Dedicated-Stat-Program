@@ -420,6 +420,10 @@
 = "https://cdn.discordapp.com/attachments/969287009879359578/974685811796754533/21DD478A-6243-4653-9855-B37360F1E72B.jpg" Flag
 = "Egyptian" cultrep
 = "Muslim" relrep
++400 HeavyInfantry
++200 crossbowmen
++100 LightCavalry
++100 HeavyCavalry
 
 # Arberber add
 <... > Cultures
