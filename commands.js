@@ -74,14 +74,37 @@ function syncNations() {
 
 
 function normalCommand(selection) {
+    
+    let value = commandParameters[1];
+    let change;
+    
+    //implement check for stat that are objects, and disallow their change
+
+    let selectionValue = (new Function(`return gameStats${selection}`))();
+
+    if(typeof selectionValue == 'object'){
+        let allProperties = "";
+
+        for (const propertyName in selectionValue) {
+            allProperties += `${propertyName}\n`
+            
+        }
+        
+        alert(
+`Line: ${changeCommandIndex}: The currently selected thing is an object not a value, and cannot be set
+Did you mean to select any of the following within this?:
+
+${allProperties}`)
+
+
+    } 
+
     //implement check for stats that are forumulas, and disallow their change
     //
     //
     //
 
 
-    let value = commandParameters[1];
-    let change;
     //If number to change by is written in percent. Divide that number by 100
     if (/[\d|\.]+%$/.test(value)) {
         value = value.replace("%", "") / 100;
