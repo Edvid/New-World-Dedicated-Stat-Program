@@ -167,6 +167,7 @@ async function evaluteChangeCommand(changeCommand) {
         }
 
         let splitSelections = correctAndSynonymCheck(currentSelection).split(/\./gi);
+        let correctedSelection = "." + splitSelections.join(".");
 
         if (splitSelections[splitSelections.length - 2] !== 'Nations') {
             alert("The current selection is not a nation. Cannot sync single nation.");
@@ -182,18 +183,18 @@ async function evaluteChangeCommand(changeCommand) {
         //EffectiveDebt = PublicDebtTaken * (1 + InterestRate);
         //EffectiveDebt / (1 + InterestRate)= PublicDebtTaken * (1 + InterestRate) / (1 + InterestRate);
         //PublicDebtTaken = EffectiveDebt / (1 + InterestRate);
-        let interestRate = (new Function(`return gameStats${currentSelection}.InterestRate`))();
+        let interestRate = (new Function(`return gameStats${correctedSelection}.InterestRate`))();
 
-        (new Function(`gameStats${currentSelection}.PublicDebtTaken -= ${parameter} / (1 + ${interestRate})`))();
-        (new Function(`gameStats${currentSelection}.Budget -= ${parameter}`))();
+        (new Function(`gameStats${correctedSelection}.PublicDebtTaken -= ${parameter} / (1 + ${interestRate})`))();
+        (new Function(`gameStats${correctedSelection}.Budget -= ${parameter}`))();
 
         //excess paid back
-        let publicDebtTakenValue = new Function(`return gameStats${currentSelection}.PublicDebtTaken`);
+        let publicDebtTakenValue = new Function(`return gameStats${correctedSelection}.PublicDebtTaken`);
         if (publicDebtTakenValue < 0) {
             //reset public debt taken to 0
-            (new Function(`gameStats${currentSelection}.PublicDebtTaken -= 0`))();
+            (new Function(`gameStats${correctedSelection}.PublicDebtTaken -= 0`))();
             //give back to budget
-            (new Function(`gameStats${currentSelection}.Budget += ${-publicDebtTakenValue})`))();
+            (new Function(`gameStats${correctedSelection}.Budget += ${-publicDebtTakenValue})`))();
         }
 
         let spanGroup = addChangeCommandWithColorsProxy(["pay debt", parameter], ["MediumSpringGreen", "rgb(0, 250, 203)"]);
@@ -202,13 +203,13 @@ async function evaluteChangeCommand(changeCommand) {
     //Creation
     else if (changeCommand.slice(0, 2) == "+>") {
         let arg = changeCommand.slice(2).trim();
-        createStat(currentSelection, arg);
+        createStat(correctAndSynonymCheck(currentSelection), arg);
         addChangeCommandWithColorsProxy([changeCommand], ["magenta"]);
     }
     //deletion
     else if (changeCommand.slice(0, 2) == "<-") {
         let arg = changeCommand.slice(2).trim();
-        deleteStat(currentSelection, arg);
+        deleteStat(correctAndSynonymCheck(currentSelection), arg);
         addChangeCommandWithColorsProxy([changeCommand], ["#ff00a0"]);
     }
     //Selection and deselections
