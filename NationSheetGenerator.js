@@ -18,7 +18,11 @@ currentNationNameDisplay.classList = "nationnamedisplay";
 currentNationNameDisplay.innerText = currentNationName;
 
 let leftArrow = document.createElement("button");
-leftArrow.innerHTML = "<img src='docs/assets/images/leftarrow.png' alt='left arrow' height='40'>";
+let leftarrowimg = document.createElement("img");
+leftarrowimg.src = "docs/assets/images/leftarrow.png";
+leftarrowimg.alt = "left arrow";
+leftarrowimg.height = 40;
+leftArrow.appendChild(leftarrowimg);
 leftArrow.onclick = function () {
     let nationNames = Object.keys(gameStats.Nations);
     if (currentNationID > 0) currentNationID--;
@@ -29,7 +33,11 @@ leftArrow.onclick = function () {
 }
 
 let rightArrow = document.createElement("button");
-rightArrow.innerHTML = "<img src='docs/assets/images/rightarrow.png' alt='right arrow' height='40'>";
+let rightarrowimg = document.createElement("img");
+rightarrowimg.src = "docs/assets/images/rightarrow.png";
+rightarrowimg.alt = "right arrow";
+rightarrowimg.height = 40;
+rightArrow.appendChild(rightarrowimg);
 rightArrow.onclick = function () {
     let nationNames = Object.keys(gameStats.Nations);
     if (currentNationID < nationNames.length - 1) currentNationID++;
@@ -57,10 +65,11 @@ dropdown.appendChild(dropdownselection);
 
 function updateDropdownSelection() {
     dropdownselection.innerHTML = "";
+    let index = 1;
     for (const key in gameStats.Nations) {
         let option = document.createElement("option");
         option.value = key;
-        option.innerText = key.split(/(?<=[a-zA-Z])(?=[A-Z])/gm).join(" ");
+        option.innerText = `${index++} - ${key.split(/(?<=[a-zA-Z])(?=[A-Z])/gm).join(" ")}`;
         dropdownselection.appendChild(option);
     }
 }
