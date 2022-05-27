@@ -22,19 +22,18 @@ changeCommandsWithColoursParent.appendChild(changeCommandsWithColours);
 document.body.appendChild(changeCommandsContentButton);
 document.body.appendChild(changeCommandsWithColoursParent);
 
-function addChangeCommandWithColors(spanlist, colorlist){
+function addChangeCommandWithColors(txt){
     if(typeof changeCommandsWithColours === 'undefined') return;
     if(changeCommandsWithColours.innerText == "# empty #") changeCommandsWithColours.innerText = ""; 
-    let spans = []
-    for(let i = 0; i < spanlist.length; i++){
+    let line = document.createElement("span");
+    for(let i = 0; i < 1; i++){
         let span = document.createElement("span");
-        span.innerText = spanlist[i];
-        span.style.color = colorlist[i % colorlist.length];
+        span.innerText = txt;
         span.style.marginRight = "1ch";
-        changeCommandsWithColours.appendChild(span);
-        spans[i] = span;
+        line.appendChild(span);
     }
+    changeCommandsWithColours.appendChild(line);
     changeCommandsWithColours.appendChild(document.createElement("br"));
-    return spans;
+    return line;
     
 }

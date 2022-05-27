@@ -114,13 +114,11 @@ ${allProperties}`)
     if (commandParameters[0] == '+' || commandParameters[0] == 'add') {
         change = value;
         (new Function(`gameStats${selection} = parseFloat(gameStats${selection}) + ${value}`))();
-        addChangeCommandWithColorsProxy(commandParameters, ["lawnGreen", "lawnGreen", "limeGreen"]);
     }
     //subtract
     else if (commandParameters[0] == '-' || commandParameters[0] == 'sub') {
         change = -value;
         (new Function(`gameStats${selection} = parseFloat(gameStats${selection}) - ${value}`))();
-        addChangeCommandWithColorsProxy(commandParameters, ["tomato", "tomato", "limeGreen"]);
     }
     //set
     else if (commandParameters[0] == '=' || commandParameters[0] == 'set') {
@@ -133,7 +131,6 @@ ${allProperties}`)
         change = isNaN(previous) ? true : value - previous;
 
         (new Function(`gameStats${selection} = ${value}`))();
-        addChangeCommandWithColorsProxy(commandParameters, ["Gold", "Gold", "limeGreen"]);
 
     } else {
         alert("At line " + (changeCommandIndex + 1) + "\r\n\r\nOperand wasn't understood: " + commandParameters[0] + ".\r\n Aborting.");
@@ -177,7 +174,7 @@ function deleteStat(currentSelection, arg){
 }
 
 
-function addChangeCommandWithColorsProxy(txtArr, colArr){
+function addChangeCommandWithColorsProxy(txtArr){
     if(typeof addChangeCommandWithColors === 'undefined') return;
-    return addChangeCommandWithColors(txtArr, colArr);
+    return addChangeCommandWithColors(txtArr);
 }
