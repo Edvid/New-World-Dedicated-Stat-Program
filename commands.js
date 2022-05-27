@@ -169,7 +169,7 @@ function createStat(currentSelection, arg){
 
 function deleteStat(currentSelection, arg){
     let dottedStatName = arg;
-    if(/\.|\[/gm.test(dottedStatName[0])) dottedStatName = "." + dottedStatName;
+    if(!/\.|\[/gm.test(dottedStatName[0])) dottedStatName = "." + dottedStatName;
     (new Function(`delete gameStats${currentSelection}${dottedStatName}`))();
 }
 
