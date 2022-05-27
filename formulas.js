@@ -135,7 +135,6 @@ function evaluateNation(nationName) {
   n.Foodlost = n.SurplusFood - n.FoodSold;
   n.TradeProfit = n.FoodSold / 50;
 
-  // old formula: n.Prosperity = 1 + n.SocialSpending / 2.5 + (n.Food == 0 && n.FutureFood < 0 ? n.FutureFood / 2000 : 0) + (n.Budget < 0.00001 ? n.Budget / 100 : 0) * (1 - n.Pillaging);
   n.Prosperity = 1 + n.SocialSpending / 2.5 + (n.FutureFood < 0 ? n.FutureFood / (n.Population / 10000) : 0) + (n.Budget < 0 ? n.Budget / n.OverallIncome : 0) - (n.Pillaging) * 3;
   n.Food = max(0, n.Food);
   n.FutureFood = min(n.MaxFoodStock, n.Food + n.FoodGain);
@@ -163,24 +162,6 @@ function evaluateNation(nationName) {
   n.UnderPopulation = n.Disease < 0.5 ? (1 - n.Disease) / 10 : 0;
 
 let PopulationGrowthModifier = (n.Fertility > 0.5 ? (n.Fertility - 0.5) / 10 : 0) + n.FoodPopulationBoost + (n.Prosperity - 1) / 10 + n.UnderPopulation;
-/*  let PopulationGrowthModifier = (function () {
-
-    let mod = n.FoodPopulationBoost + (n.Prosperity - 1) / 10 + n.UnderPopulation;
-
-    if (n.Fertility > 0.5) mod += (n.Fertility - 0.5) / 10
-    if (n.Population > 2000000) mod += -0.01;
-    if (n.Population > 5000000) mod += -0.01;
-    if (n.Population > 10000000) mod += -0.01;
-    if (n.Population > 15000000) mod += -0.01;
-    if (n.Population > 250000) mod += -0.01;
-    if (n.Population > 500000) mod += -0.01;
-    if (n.Population > 20000000) mod += -0.01;
-    if (n.Population > 25000000) mod += -0.01;
-    if (n.Population > 40000000) mod += -0.01;
-    if (n.Population > 50000000) mod += -0.01;
-
-    return mod;
-  })(); */
 
   n.UnitUpkeep = (function () {
     let uu = 0;
@@ -435,7 +416,6 @@ let PopulationGrowthModifier = (n.Fertility > 0.5 ? (n.Fertility - 0.5) / 10 : 0
 
 
   n.ResourcePopulationGrowthBoost = (n.EffectiveCotton - n.CottonInflation + n.EffectiveSpice - n.SpiceInflation + n.EffectiveWool - n.WoolInflation + n.EffectiveFur - n.FurInflation + (n.EffectiveSugar - n.SugarInflation + n.EffectiveExoticFruit - n.ExoticFruitInflation) / 2) / 100;
-  // old formula: n.PopulationGrowth = max(-0.3, (0.1 + PopulationGrowthModifier + n.ResourcePopulationGrowthBoost) * (1 - n.Disease) - n.BirthControl / 20);
 n.PopulationGrowth = (n.FutureFood < 0 ? n.FutureFood * 1000 / n.Population - (n.Disease > 1 ? n.Disease - 1 : 0) / 10 : max(-0.3, (0.1 + PopulationGrowthModifier + n.ResourcePopulationGrowthBoost) * (1 - n.Disease) - n.BirthControl / 20));
   n.FuturePopulation = (function () {
     return n.Population + n.Population * n.PopulationGrowth / gameStats.TimeDivide;
