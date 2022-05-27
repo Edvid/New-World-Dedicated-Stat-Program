@@ -26,10 +26,19 @@ function addChangeCommandWithColors(txt){
     if(typeof changeCommandsWithColours === 'undefined') return;
     if(changeCommandsWithColours.innerText == "# empty #") changeCommandsWithColours.innerText = ""; 
     let line = document.createElement("span");
-    for(let i = 0; i < 1; i++){
+    if(/sync/.test(txt)){
+        let parts = txt.split(/(?<!\<|^)(?=\<)|(?<=\<)(?!\<|$)/);
+        for(let i = 0; i < parts.length; i++){
+            let part = parts[i];
+            let span = document.createElement("span");
+            span.innerText = part;
+            span.style.color = "MediumSpringGreen";
+            if(/\</.test(part)) span.style.color = "#99fdd6"
+            line.appendChild(span);
+        }
+    }else{
         let span = document.createElement("span");
         span.innerText = txt;
-        span.style.marginRight = "1ch";
         line.appendChild(span);
     }
     changeCommandsWithColours.appendChild(line);

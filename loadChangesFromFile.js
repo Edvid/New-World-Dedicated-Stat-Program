@@ -58,7 +58,7 @@ async function loadChangesFromContent(changes) {
     currentSelection = "";
     changeCommandFileLength = changes.length;
     for (changeCommandIndex = 0; changeCommandIndex < changes.length; changeCommandIndex++) {
-        const changeCommand = changes[changeCommandIndex].trim();
+        const changeCommand = changes[changeCommandIndex];
         evaluteChangeCommand(changeCommand);
         if (changeCommandIndex % 50 == 0) await new Promise(resolve => setTimeout(resolve));
     }
@@ -80,7 +80,7 @@ function refreshNationPageItems() {
 let commentblockregex = /(?<!\\)"""/i;
 async function evaluteChangeCommand(changeCommandRaw) {
     addChangeCommandWithColorsProxy(changeCommandRaw);
-    let changeCommand = changeCommandRaw.split(/(?<!\\)#/i)[0];
+    let changeCommand = changeCommandRaw.split(/(?<!\\)#/i)[0].trim();
     if(commentblockregex.test(changeCommandRaw)){
         ignore = !ignore;
     }
