@@ -65,11 +65,20 @@ dropdown.appendChild(dropdownselection);
 
 function updateDropdownSelection() {
     dropdownselection.innerHTML = "";
+    dropdownselection.classList.add("dropdown");
+    let maxlength = 0;
+    for (const key in gameStats.Nations) {
+        if(maxlength < key.replace(/(?<=[a-zA-Z])(?=[A-Z])/gm, " ").length) maxlength = key.replace(/(?<=[a-zA-Z])(?=[A-Z])/gm, " ").length;
+    }
+    console.log(maxlength);
     let index = 1;
     for (const key in gameStats.Nations) {
         let option = document.createElement("option");
         option.value = key;
-        option.innerText = `${index++} - ${key.split(/(?<=[a-zA-Z])(?=[A-Z])/gm).join(" ")}`;
+        let spacedkeywithmargin = key.replace(/(?<=[a-zA-Z])(?=[A-Z])/gm, " ");
+        spacedkeywithmargin += ".".repeat(maxlength - spacedkeywithmargin.length);
+        console.log(`${spacedkeywithmargin} - ${index++}`)
+        option.innerText = `${spacedkeywithmargin} - ${index++}`;
         dropdownselection.appendChild(option);
     }
 }
