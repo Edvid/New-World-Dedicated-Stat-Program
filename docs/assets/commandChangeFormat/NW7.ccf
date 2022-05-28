@@ -2117,3 +2117,283 @@
 +0.15 miningeff
 
 sync
+
+# Latvia add
+<... > Cultures
++> Latvian
+<... > Nations
++> LatvianEmpire
+<... > Nations > LatvianEmpire > CultureGroups
++> Latvian
+=100 Latvian.Points
+<... > Nations > LatvianEmpire > ReligionGroups
++> Pagan
+=100 Pagan.Points
+<... > Nations > LatvianEmpire
+= "https://cdn.discordapp.com/attachments/969287009879359578/978821533994729522/nvjoo-savienba.png" Flag
+= "Latvian" cultrep
+= "Pagan" relrep 
+
+# Sweden add
+<... > Cultures
++> Swedish
+<... > Nations
++> KingdomOfSweden
+<... > Nations > KingdomOfSweden > CultureGroups
++> Swedish
+=100 Swedish.Points
+<... > Nations > KingdomOfSweden > ReligionGroups
++> Catholic
+=100 Catholic.Points
+# (if not pagan)
+<- Pagan
+<... > Nations > KingdomOfSweden
+= "https://cdn.discordapp.com/attachments/969287009879359578/979256371759439872/unknown.png" Flag
+= "Swedish" cultrep
+= "Catholic" relrep 
+
+# Timurids add
+<... > Cultures
++> Timurid
+<... > Nations
++> TimuridEmirate
+<... > Nations > TimuridEmirate > CultureGroups
++> Timurid
+=100 Timurid.Points
+<... > Nations > TimuridEmirate > ReligionGroups
++> Muslim
+=100 Muslim.Points
+# (if not pagan)
+<- Pagan
+<... > Nations > TimuridEmirate
+= "https://cdn.discordapp.com/attachments/969287009879359578/979075172126580786/1920px-Timurid.svg.png" Flag
+= "Timurid" cultrep
+= "Muslim" relrep 
+
+
+# Sioux Climates
+<... > Nations > SiouxTribes > Climates
+=10118 Moderate.Pixels
+
+# Vespucia Climates
+<... > Nations > VespucianTribes > Climates
+=20971 Moderate.Pixels
+
+# Taino Climates
+<... > Nations > TainoTribalConfederacy > Climates
+=2882 SubTropical.Pixels
+=742 Tropical.Pixels
+
+# Magajiya Climates
+<... > Nations > MagajiyaTribe > Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=0 Arid.Pixels
+=0 Steppe.Pixels
+=0 Moderate.Pixels
+=8553 SubTropical.Pixels
+=2924 Tropical.Pixels
+=0 Savanna.Pixels
+=0 Desert.Pixels
+=0 CoastalDesert.Pixels
+=0 Mountainous.Pixels
+
+# Bornu Climates
+<... > Nations > Bornu > Climates
+=8885 SubTropical.Pixels
+=7072 Savanna.Pixels
+=79 Desert.Pixels
+
+# Valublids Climates
+<... > Nations > ValublidSultanate > Climates
+=4805 Medditereanian.Pixels
+=6232 Arid.Pixels
+=3859 Desert.Pixels
+=616 CoastalDesert.Pixels
+
+# Arberber Climates
+<... > Nations > ArberberKingdom > Climates
+=6608 Medditereanian.Pixels
+=2539 Arid.Pixels
+=2503 Desert.Pixels
+=1836 CoastalDesert.Pixels
+
+# Mitiva Climates
+<... > Nations > Mitiva > Climates
+=5680 Medditereanian.Pixels
+=3096 Desert.Pixels
+=2537 CoastalDesert.Pixels
+
+# Aden Climates
+<... > Nations > AdenCaliphate > Climates
+=6592 Desert.Pixels
+=12087 CoastalDesert.Pixels
+
+# StMaryOrder Climates
+<... > Nations > OrderOfStMary > Climates
+=2627 Medditereanian.Pixels
+=570 Arid.Pixels
+=5929 Desert.Pixels
+=3092 CoastalDesert.Pixels
+
+# Hittites Climates
+<... > Nations > HittiteEmpire > Climates
+=3218 Medditereanian.Pixels
+=7540 Arid.Pixels
+
+# Zi Climates
+<... > Nations > ZiEmpire > Climates
+=14902 Arid.Pixels
+=403 Mountainous.Pixels
+
+# Byzantine Climates
+<... > Nations > Byzantium > Climates
+=15142 Medditereanian.Pixels
+=946 Arid.Pixels
+=1155 Steppe.Pixels
+
+# Cumans Climates
+<... > Nations > CumanKipchakKhanate > Climates
+=14096 Steppe.Pixels
+=934 Moderate.Pixels
+
+# Muscovy Climates
+<... > Nations > TsardomOfMuscovy > Climates
+=3261 TaigaAndTundra.Pixels
+=15276 Moderate.Pixels
+
+# Belarus Climates
+<... > Nations > DuchyOfBelarus > Climates
+=14852 Moderate.Pixels
+
+# Latvia Climates
+<... > Nations > LatvianEmpire > Climates
+=10370 Moderate.Pixels
+
+# Sweden Climates
+<... > Nations > KingdomOfSweden > Climates
+=3212 TaigaAndTundra.Pixels
+=5869 Moderate.Pixels
+
+# Alvheim Climates
+<... > Nations > KingdomOfAlvheim > Climates
+=8555 Moderate.Pixels
+
+# Poland Climates
+<... > Nations > KingdomOfPoland > Climates
+=17376 Moderate.Pixels
+=1310 Mountainous.Pixels
+
+# Prussia Climates
+<... > Nations > KingdomOfPrussia > Climates
+=9119 Moderate.Pixels
+=246 Mountainous.Pixels
+
+# Austria Climates
+<... > Nations > ArchduchyOfAustria > Climates
+=148 Medditereanian.Pixels
+=14343 Moderate.Pixels
+=3868 Mountainous.Pixels
+
+# Wallachia Climates
+<... > Nations > KingdomOfWallachia > Climates
+=6575 Steppe.Pixels
+=92 Moderate.Pixels
+=867 Mountainous.Pixels
+
+# Serbia Climates
+<... > Nations > KingdomOfSerbia > Climates
+=3858 Medditereanian.Pixels
+=549 Steppe.Pixels
+=7621 Moderate.Pixels
+
+# Westphalia Climates
+<... > Nations > KingdomOfWestphalia > Climates
+=11979 Moderate.Pixels
+
+# Burgundy Climates
+<... > Nations > KingdomOfBurgundy > Climates
+=14745 Moderate.Pixels
+
+# Faithful Climates
+<... > Nations > TheFaithfulKingdom > Climates
+=9787 Medditereanian.Pixels
+=2770 Moderate.Pixels
+=3642 Mountainous.Pixels
+
+# Galciia Climates
+<... > Nations > KingdomOfGalicia > Climates
+=10229 Medditereanian.Pixels
+
+# Toledo Climates
+<... > Nations > KingdomOfToledoCatalonia > Climates
+=11990 Medditereanian.Pixels
+=1766 Moderate.Pixels
+=1383 Mountainous.Pixels
+
+# Quasimids Climates
+<... > Nations > QuasimidEmirate > Climates
+=17554 Arid.Pixels
+=1809 CoastalDesert.Pixels
+=1247 Mountainous.Pixels
+
+# Timurids Climates
+<... > Nations > TimuridEmirate > Climates
+=13413 Arid.Pixels
+=544 Desert.Pixels
+=1104 Mountainous.Pixels
+
+# Sindh Climates
+<... > Nations > SindhEmpire > Climates
+=17413 Arid.Pixels
+=2442 SubTropical.Pixels
+=56 Tropical.Pixels
+=3949 Savanna.Pixels
+=943 CoastalDesert.Pixels
+=677 Mountainous.Pixels
+
+# Potskig Climates
+<... > Nations > KingdomOfPotskig > Climates
+=8924 SubTropical.Pixels
+=3086 Tropical.Pixels
+=1318 Savanna.Pixels
+
+# Kyrat Climates
+<... > Nations > KingdomOfKyrat > Climates
+=17353 SubTropical.Pixels
+=1446 Tropical.Pixels
+=288 Mountainous.Pixels
+
+# Eulacia Climates
+<... > Nations > EulacianTradeCouncil > Climates
+=121 SubTropical.Pixels
+=19718 Tropical.Pixels
+=1294 Mountainous.Pixels
+
+# Longuo Climates
+<... > Nations > EmpireOfLonguo > Climates
+=17709 Moderate.Pixels
+
+# Guangxi Climates
+<... > Nations > RoecaoNtepaEmpire > Climates
+=9802 Moderate.Pixels
+=4405 SubTropical.Pixels
+=337 Tropical.Pixels
+
+# Mongolia Climates
+<... > Nations > MongolianKhanate > Climates
+=12981 Steppe.Pixels
+=1141 Desert.Pixels
+
+# Japan Climates
+<... > Nations > YamatoKingdom > Climates
+=12219 Moderate.Pixels
+=3303 Mountainous.Pixels
+
+# Sakhalin Climates
+<... > Nations > SakhalinTribe > Climates
+=8212 TaigaAndTundra.Pixels
+=5420 Moderate.Pixels
+=540 Mountainous.Pixels
