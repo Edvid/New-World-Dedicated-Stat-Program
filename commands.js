@@ -130,7 +130,7 @@ ${allProperties}`)
         ))();
         change = isNaN(previous) ? true : value - previous;
 
-        (new Function(`gameStats${selection} = ${value}`))();
+        (new Function(`gameStats${selection} = '${value}'`))();
 
     } else {
         alert("At line " + (changeCommandIndex + 1) + "\r\n\r\nOperand wasn't understood: " + commandParameters[0] + ".\r\n Aborting.");

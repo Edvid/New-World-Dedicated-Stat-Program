@@ -241,7 +241,7 @@ async function evaluteChangeCommand(changeCommandRaw) {
                 return;
             }
             commandParameters[0] = match.groups.Operand.trim();
-            commandParameters[1] = match.groups.Value;
+            commandParameters[1] = match.groups.Value.replace(/^"|"$/, "");
 
             commandParameters[2] = match.groups.Stat_Name;
         }
