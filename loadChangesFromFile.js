@@ -79,7 +79,6 @@ function refreshNationPageItems() {
 
 let commentblockregex = /(?<!\\)"""/i;
 async function evaluteChangeCommand(changeCommandRaw) {
-    addChangeCommandWithColorsProxy(changeCommandRaw);
     let changeCommand = changeCommandRaw.split(/(?<!\\)#/i)[0].trim();
     if(commentblockregex.test(changeCommandRaw)){
         ignore = !ignore;

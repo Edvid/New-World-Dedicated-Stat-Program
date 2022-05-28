@@ -172,9 +172,3 @@ function deleteStat(currentSelection, arg){
     if(!/\.|\[/gm.test(dottedStatName[0])) dottedStatName = "." + dottedStatName;
     (new Function(`delete gameStats${currentSelection}${dottedStatName}`))();
 }
-
-
-function addChangeCommandWithColorsProxy(txtArr){
-    if(typeof addChangeCommandWithColors === 'undefined') return;
-    return addChangeCommandWithColors(txtArr);
-}
