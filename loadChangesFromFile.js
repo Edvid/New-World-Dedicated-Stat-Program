@@ -58,7 +58,7 @@ async function loadChangesFromContent(changes) {
     currentSelection = "";
     changeCommandFileLength = changes.length;
     for (changeCommandIndex = 0; changeCommandIndex < changes.length; changeCommandIndex++) {
-        const changeCommand = changes[changeCommandIndex].trim();
+        const changeCommand = changes[changeCommandIndex];
         evaluteChangeCommand(changeCommand);
         if (changeCommandIndex % 50 == 0) await new Promise(resolve => setTimeout(resolve));
     }
@@ -77,28 +77,16 @@ function refreshNationPageItems() {
     if (typeof loadAllTrades !== 'undefined') loadAllTrades();
 }
 
-async function evaluteChangeCommand(changeCommand) {
-    //comment
-    if (changeCommand[0] == '#' || changeCommand.length == 0 || ignore) {
-        if (!ignore) {
-            if (changeCommand == "###") {
-                let spn = addChangeCommandWithColorsProxy([changeCommand], ["#5E5E5E"]);
-                if (typeof spn === 'undefined') return;
-                spn[0].style.fontStyle = "italic";
-                ignore = true;
-            } else {
-                addChangeCommandWithColorsProxy([changeCommand], ["grey"]);
-            }
-            return;
-        } else {
-            if (changeCommand.toLowerCase() == "# END".toLowerCase())
-                ignore = false;
-            let spn = addChangeCommandWithColorsProxy([changeCommand], ["#5E5E5E"]);
-            if (typeof spn === 'undefined') return;
-            spn[0].style.fontStyle = "italic";
-            return;
-        }
-
+let commentblockregex = /(?<!\\)"""/i;
+async function evaluteChangeCommand(changeCommandRaw) {
+    let changeCommand = changeCommandRaw.split(/(?<!\\)#/i)[0].trim();
+    if(commentblockregex.test(changeCommandRaw)){
+        ignore = !ignore;
+    }
+    if(ignore) return;
+    //empty
+    if(changeCommand.toLowerCase().trim() == ""){
+        return;
     }
     //sync
     else if (changeCommand.toLowerCase().startsWith("sync")) {
@@ -115,9 +103,6 @@ async function evaluteChangeCommand(changeCommand) {
             evaluateNations();
             syncNations();
         }
-        let spn = addChangeCommandWithColorsProxy([changeCommand], ["MediumSpringGreen"]);
-        if (typeof spn === 'undefined') return;
-        spn[0].style.fontWeight = "bold";
     }
     //trade
     else if (changeCommand.toLowerCase().startsWith("trade")) {
@@ -146,7 +131,6 @@ async function evaluteChangeCommand(changeCommand) {
         gameStats.Trades[tradename].resource = resourceType;
         gameStats.Trades[tradename].amount = amount;
 
-        let spanGroup = addChangeCommandWithColorsProxy(["trade", tradename, ",", giver, ">", reciever, ",", amount, resourceType], ["MediumSpringGreen"]);
         if (typeof spanGroup === 'undefined') return;
         spanGroup[0].style.fontWeight = "bold";
         spanGroup[1].style.fontStyle = "italic";
@@ -196,21 +180,16 @@ async function evaluteChangeCommand(changeCommand) {
             //give back to budget
             (new Function(`gameStats${correctedSelection}.Budget += ${-publicDebtTakenValue})`))();
         }
-
-        let spanGroup = addChangeCommandWithColorsProxy(["pay debt", parameter], ["MediumSpringGreen", "rgb(0, 250, 203)"]);
-
     }
     //Creation
     else if (changeCommand.slice(0, 2) == "+>") {
         let arg = changeCommand.slice(2).trim();
         createStat(correctAndSynonymCheck(currentSelection), arg);
-        addChangeCommandWithColorsProxy([changeCommand], ["magenta"]);
     }
     //deletion
     else if (changeCommand.slice(0, 2) == "<-") {
         let arg = changeCommand.slice(2).trim();
         deleteStat(correctAndSynonymCheck(currentSelection), arg);
-        addChangeCommandWithColorsProxy([changeCommand], ["#ff00a0"]);
     }
     //Selection and deselections
     else if (changeCommand[0] == '>' || changeCommand[0] == '<') {
@@ -247,7 +226,6 @@ async function evaluteChangeCommand(changeCommand) {
             }
             cc = cutback(cc);
         }
-        addChangeCommandWithColorsProxy([changeCommand], ["dodgerBlue"]);
     }
     //normal commands
     else {

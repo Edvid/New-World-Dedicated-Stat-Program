@@ -33,7 +33,7 @@ function correctAndSynonymCheck(selection) {
             }
             if (found) continue;
         }
-        if (!found) alert("Line " + changeCommandIndex + ": The Specified Stat " + correctSelection[i] + " in " + correctSelection.slice(0, i).join(".") + " was not found!");
+        if (!found) alert(`Line ${changeCommandIndex}: The Specified Stat '${correctSelection[i]}' in '${correctSelection.slice(0, i).join(".")}' was not found!`);
     }
     return "." + correctSelection.join(".");
 }
@@ -74,14 +74,37 @@ function syncNations() {
 
 
 function normalCommand(selection) {
+    
+    let value = commandParameters[1];
+    let change;
+    
+    //implement check for stat that are objects, and disallow their change
+
+    let selectionValue = (new Function(`return gameStats${selection}`))();
+
+    if(typeof selectionValue == 'object'){
+        let allProperties = "";
+
+        for (const propertyName in selectionValue) {
+            allProperties += `${propertyName}\n`
+            
+        }
+        
+        alert(
+`Line: ${changeCommandIndex}: The currently selected thing, ${selection}, is an object not a value, and cannot be set
+Did you mean to select any of the following within this?:
+
+${allProperties}`)
+
+
+    } 
+
     //implement check for stats that are forumulas, and disallow their change
     //
     //
     //
 
 
-    let value = commandParameters[1];
-    let change;
     //If number to change by is written in percent. Divide that number by 100
     if (/[\d|\.]+%$/.test(value)) {
         value = value.replace("%", "") / 100;
@@ -91,13 +114,11 @@ function normalCommand(selection) {
     if (commandParameters[0] == '+' || commandParameters[0] == 'add') {
         change = value;
         (new Function(`gameStats${selection} = parseFloat(gameStats${selection}) + ${value}`))();
-        addChangeCommandWithColorsProxy(commandParameters, ["lawnGreen", "lawnGreen", "limeGreen"]);
     }
     //subtract
     else if (commandParameters[0] == '-' || commandParameters[0] == 'sub') {
         change = -value;
         (new Function(`gameStats${selection} = parseFloat(gameStats${selection}) - ${value}`))();
-        addChangeCommandWithColorsProxy(commandParameters, ["tomato", "tomato", "limeGreen"]);
     }
     //set
     else if (commandParameters[0] == '=' || commandParameters[0] == 'set') {
@@ -110,7 +131,6 @@ function normalCommand(selection) {
         change = isNaN(previous) ? true : value - previous;
 
         (new Function(`gameStats${selection} = ${value}`))();
-        addChangeCommandWithColorsProxy(commandParameters, ["Gold", "Gold", "limeGreen"]);
 
     } else {
         alert("At line " + (changeCommandIndex + 1) + "\r\n\r\nOperand wasn't understood: " + commandParameters[0] + ".\r\n Aborting.");
@@ -149,12 +169,6 @@ function createStat(currentSelection, arg){
 
 function deleteStat(currentSelection, arg){
     let dottedStatName = arg;
-    if(/\.|\[/gm.test(dottedStatName[0])) dottedStatName = "." + dottedStatName;
+    if(!/\.|\[/gm.test(dottedStatName[0])) dottedStatName = "." + dottedStatName;
     (new Function(`delete gameStats${currentSelection}${dottedStatName}`))();
-}
-
-
-function addChangeCommandWithColorsProxy(txtArr, colArr){
-    if(typeof addChangeCommandWithColors === 'undefined') return;
-    return addChangeCommandWithColors(txtArr, colArr);
 }
