@@ -194,8 +194,8 @@
 =100 Pagan.Points
 <... > Nations > VespucianTribes
 # = "link" Flag
-= "Vespucian" cultrep
-= "Pagan" relrep
+= Vespucian cultrep
+= Pagan relrep
 
 # Yamato add
 <... > Cultures
@@ -211,8 +211,8 @@
 <- Pagan # (if not pagan)
 <... > Nations > YamatoKingdom
 # = "[Image Link]" Flag
-= "Japanese" cultrep
-= "Shinto" relrep
+= Japanese cultrep
+= Shinto relrep
 
 # Prussia add
 <... > Cultures
@@ -228,8 +228,8 @@
 <- Pagan # (if not pagan)
 <... > Nations > KingdomOfPrussia
 = "https://cdn.discordapp.com/attachments/969287009879359578/974657308225306654/unknown.jpeg" Flag
-= "Prussian" cultrep
-= "Catholic" relrep
+= Prussian cultrep
+= Catholic relrep
 
 # Khmbodj add
 <... > Cultures
@@ -245,8 +245,8 @@
 <- Pagan # (if not pagan)
 <... > Nations > KingdomOfKhmbodj
 # = "[Image Link]" Flag
-= "Khmer" cultrep
-= "Buddhism" relrep
+= Khmer cultrep
+= Buddhism relrep
 
 # Potskig add
 <... > Cultures
@@ -261,8 +261,8 @@
 =100 Pagan.Points
 <... > Nations > KingdomOfPotskig
 # = "[Image Link]" Flag
-= "Potskig" cultrep
-= "Pagan" relrep
+= Potskig cultrep
+= Pagan relrep
 
 # Muscovy add
 <... > Cultures
@@ -278,8 +278,8 @@
 <- Pagan
 <... > Nations > TsardomOfMuscovy
 = "https://cdn.discordapp.com/attachments/969287009879359578/974658632350310460/330px-Muscovy.png" Flag
-= "Muscovite" cultrep
-= "Orthodox" relrep 
+= Muscovite cultrep
+= Orthodox relrep 
 
 # Sindh add
 <... > Cultures
@@ -295,8 +295,8 @@
 <- Pagan # (if not pagan)
 <... > Nations > SindhEmpire
 # = "[Image Link]" Flag
-= "Sindh" cultrep
-= "Hindu" relrep
+= Sindh cultrep
+= Hindu relrep
 
 # Sioux add
 <... > Cultures
@@ -310,8 +310,8 @@
 =100 Pagan.Points
 <... > Nations > SiouxTribes
 = "https://cdn.discordapp.com/attachments/974679262143610910/975034474658168922/unknown.png" Flag
-= "Sioux" cultrep
-= "Pagan" relrep
+= Sioux cultrep
+= Pagan relrep
 
 # Byzantium add
 <... > Cultures
@@ -327,8 +327,8 @@
 <- Pagan
 <... > Nations > Byzantium
 = "https://cdn.discordapp.com/attachments/663909343208538156/974661588902629396/unknown.png" Flag
-= "Byzantine" cultrep
-= "Orthodox" relrep
+= Byzantine cultrep
+= Orthodox relrep
 
 # Order of St. Mary add
 <... > Cultures
@@ -344,8 +344,8 @@
 <- Pagan # (if not pagan)
 <... > Nations > OrderOfStMary
 = "https://media.discordapp.net/attachments/676497834077323301/974652267200413726/unknown.png" Flag
-= "Outremer" cultrep
-= "Catholic" relrep
+= Outremer cultrep
+= Catholic relrep
 
 # Austria add
 <... > Cultures
@@ -361,8 +361,8 @@
 <- Pagan # (if not pagan)
 <... > Nations > ArchduchyOfAustria
 = "https://cdn.discordapp.com/attachments/969287009879359578/974662588019404830/unknown.png" Flag
-= "Austrian" cultrep
-= "Catholic" relrep
+= Austrian cultrep
+= Catholic relrep
 
 # Hittite add
 <... > Cultures
@@ -378,8 +378,8 @@
 <- Pagan # (if not pagan)
 <... > Nations > HittiteEmpire
 = "https://cdn.discordapp.com/attachments/969287009879359578/974663436208308284/IMG_6462.jpg" Flag
-= "Hittite" cultrep
-= "Muslim" relrep
+= Hittite cultrep
+= Muslim relrep
 
 # Taino add
 <... > Cultures
@@ -393,8 +393,8 @@
 =100 Pagan.Points
 <... > Nations > TainoTribalConfederacy
 #= "[Image Link]" Flag
-= "Taino" cultrep
-= "Pagan" relrep
+= Taino cultrep
+= Pagan relrep
 
 # Mitiva add
 <... > Cultures
@@ -410,8 +410,8 @@
 <- Pagan # (if not pagan)
 <... > Nations > Mitiva
 = "https://cdn.discordapp.com/attachments/969287009879359578/974685811796754533/21DD478A-6243-4653-9855-B37360F1E72B.jpg" Flag
-= "Egyptian" cultrep
-= "Muslim" relrep
+= Egyptian cultrep
+= Muslim relrep
 +400 HeavyInfantry
 +200 crossbowmen
 +100 LightCavalry
@@ -431,8 +431,8 @@
 <- Pagan # (if not pagan)
 <... > Nations > ArberberKingdom
 #= "[Image Link]" Flag
-= "Arberber" cultrep
-= "Jewish" relrep
+= Arberber cultrep
+= Jewish relrep
 
 # Andalusia add
 <... > Cultures
@@ -448,8 +448,8 @@
 <- Pagan # (if not pagan)
 <... > Nations > KingdomOfAndalusia
 = "https://cdn.discordapp.com/attachments/969287009879359578/974737096986210364/image318.png" Flag
-= "Andalusian" cultrep
-= "Catholic" relrep
+= Andalusian cultrep
+= Catholic relrep
 
 # Zi add
 <... > Cultures
@@ -463,8 +463,8 @@
 =100 Pagan.Points
 <... > Nations > ZiEmpire
 #= "[Image Link]" Flag
-= "Zi" cultrep
-= "Pagan" relrep
+= Zi cultrep
+= Pagan relrep
 
 # The Faithful Kingdom add
 <... > Cultures
@@ -480,8 +480,8 @@
 <- Pagan # (if not pagan)
 <... > Nations > TheFaithfulKingdom
 = "https://cdn.discordapp.com/attachments/969287009879359578/974757248398135507/unknown.png" Flag
-= "Italian" cultrep
-= "Catholic" relrep
+= Italian cultrep
+= Catholic relrep
 
 # Eulacia add
 <... > Cultures
@@ -497,8 +497,8 @@
 <- Pagan # (if not pagan)
 <... > Nations > EulacianTradeCouncil
 = "https://cdn.discordapp.com/attachments/969287009879359578/974761609614471239/Eulacian_Flag.PNG" Flag
-= "Eulacian" cultrep
-= "Buddhism" relrep
+= Eulacian cultrep
+= Buddhism relrep
 
 # Longuo add
 <... > Cultures
@@ -514,8 +514,8 @@
 <- Pagan # (if not pagan)
 <... > Nations > EmpireOfLonguo
 = "https://cdn.discordapp.com/attachments/969287009879359578/974845856182304798/flag.png" Flag
-= "Longuo" cultrep
-= "Pagan" relrep
+= Longuo cultrep
+= Pagan relrep
 
 # Galicia add
 <... > Cultures
@@ -531,8 +531,8 @@
 <- Pagan # (if not pagan)
 <... > Nations > KingdomOfGalicia
 = "https://cdn.discordapp.com/attachments/969287009879359578/974871955180245042/fictional__flag_of_portugalicia_ii_by_vexilografia_da6gtnf-fullview.png" Flag
-= "Galician" cultrep
-= "Catholic" relrep
+= Galician cultrep
+= Catholic relrep
 
 # Kyrat  add
 <... > Cultures
@@ -550,8 +550,8 @@
 <- Pagan # (if not pagan)
 <... > Nations > KingdomOfKyrat
 = "https://media.discordapp.net/attachments/950037530642898986/973664764649689088/unknown.png" Flag
-= "Kyratese" cultrep
-= "Buddhism" relrep
+= Kyratese cultrep
+= Buddhism relrep
 
 # England add
 <... > Cultures
@@ -567,8 +567,8 @@
 <- Pagan
 <... > Nations > KingdomOfEngland 
 # = "link" Flag
-= "English" cultrep
-= "Catholic" relrep
+= English cultrep
+= Catholic relrep
 
 # Alvheim add
 <... > Cultures
@@ -583,8 +583,8 @@
 =100 Pagan.Points
 <... > Nations > KingdomOfAlvheim
 = "https://media.discordapp.net/attachments/969287009879359578/975169049870876742/Raven_Banner.svg.png" Flag
-= "Alvheimish" cultrep
-= "Pagan" relrep
+= Alvheimish cultrep
+= Pagan relrep
 
 # Westphalia add
 <... > Cultures
@@ -600,8 +600,8 @@
 <- Pagan
 <... > Nations > KingdomOfWestphalia 
 = "https://media.discordapp.net/attachments/969287009879359578/975219338451755038/Westphalia.png?width=1009&height=673" Flag
-= "Westphalian" cultrep
-= "Catholic" relrep
+= Westphalian cultrep
+= Catholic relrep
 
 
 # Belarus add
@@ -618,8 +618,8 @@
 <- Pagan
 <... > Nations > DuchyOfBelarus 
 = "https://media.discordapp.net/attachments/969287009879359578/975389127249915984/20220515_135245.jpg" Flag
-= "Bellarussian" cultrep
-= "Orthodox" relrep
+= Bellarussian cultrep
+= Orthodox relrep
 
 # Burgundy add
 <... > Cultures
@@ -635,8 +635,8 @@
 <- Pagan
 <... > Nations > KingdomOfBurgundy 
 = "https://media.discordapp.net/attachments/969287009879359578/975399289180258314/unknown.png" Flag
-= "Burgundian" cultrep
-= "Catholic" relrep
+= Burgundian cultrep
+= Catholic relrep
 
 # Serbia add
 <... > Cultures
@@ -652,8 +652,8 @@
 <- Pagan
 <... > Nations > KingdomOfSerbia
 # = "link" Flag
-= "Serbian" cultrep
-= "Orthodox" relrep
+= Serbian cultrep
+= Orthodox relrep
 
 # Cumania add
 <... > Cultures
@@ -669,8 +669,8 @@
 <- Pagan
 <... > Nations > CumanKipchakKhanate
 = "https://media.discordapp.net/attachments/969287009879359578/975431116372738130/unknown.png" Flag
-= "Cuman" cultrep
-= "Orthodox" relrep
+= Cuman cultrep
+= Orthodox relrep
 
 
 # Catalonia add
@@ -687,8 +687,8 @@
 <- Pagan
 <... > Nations > KingdomOfToledoCatalonia
 = "https://media.discordapp.net/attachments/969287009879359578/975453678767063142/unknown.png?width=839&height=678" Flag
-= "Catalonian" cultrep
-= "Catholic" relrep
+= Catalonian cultrep
+= Catholic relrep
 
 # Ireland add
 <... > Cultures
@@ -704,8 +704,8 @@
 <- Pagan
 <... > Nations > KingdomOfIreland 
 = "https://media.discordapp.net/attachments/969287009879359578/975484384801071144/IMG_0022.png" Flag
-= "Irish" cultrep
-= "Catholic" relrep
+= Irish cultrep
+= Catholic relrep
 
 # Scotland add
 <... > Cultures
@@ -721,8 +721,8 @@
 <- Pagan
 <... > Nations > KingdomOfScotland  
 = "https://media.discordapp.net/attachments/969287009879359578/975496188398809168/unknown.png?width=1009&height=673" Flag
-= "Scottish" cultrep
-= "Catholic" relrep
+= Scottish cultrep
+= Catholic relrep
 
 # Valublid add
 <... > Cultures
@@ -738,8 +738,8 @@
 <- Pagan
 <... > Nations > ValublidSultanate 
 = "https://media.discordapp.net/attachments/969287009879359578/975011913622777856/flag_2.png" Flag
-= "Valublidan" cultrep
-= "Muslim" relrep
+= Valublidan cultrep
+= Muslim relrep
 
 # Bornu add
 <... > Cultures
@@ -755,8 +755,8 @@
 <- Pagan
 <... > Nations > Bornu 
 = "https://media.discordapp.net/attachments/969287009879359578/975434490417647636/Kanem_flag_from_dulcerta_1339-pt.svg.png" Flag
-= "Bornish" cultrep
-= "Muslim" relrep
+= Bornish cultrep
+= Muslim relrep
 
 
 # Magajiya add
@@ -772,8 +772,8 @@
 =100 Pagan.Points
 <... > Nations > MagajiyaTribe 
 = "https://media.discordapp.net/attachments/969287009879359578/975473812785213480/image1.jpg?width=959&height=672" Flag
-= "Magajiyanish" cultrep
-= "Pagan" relrep
+= Magajiyanish cultrep
+= Pagan relrep
 
 # Aden add
 <... > Cultures
@@ -789,8 +789,8 @@
 <- Pagan
 <... > Nations > AdenCaliphate 
 = "https://media.discordapp.net/attachments/969287009879359578/975076435683336232/unknown.png" Flag
-= "Adenish" cultrep
-= "Muslim" relrep
+= Adenish cultrep
+= Muslim relrep
 
 # Quasimid add
 <... > Cultures
@@ -806,8 +806,8 @@
 <- Pagan
 <... > Nations > QuasimidEmirate 
 # = "link" Flag
-= "Quasimidian" cultrep
-= "Muslim" relrep
+= Quasimidian cultrep
+= Muslim relrep
 
 # Roecao add
 <... > Cultures
@@ -822,8 +822,8 @@
 =100 Pagan.Points
 <... > Nations > RoecaoNtepaEmpire 
 # = "https://media.discordapp.net/attachments/969287009879359578/975360126645043221/hqddwfk3tam41.jpg?width=1009&height=673" Flag
-= "Chinese" cultrep
-= "Pagan" relrep
+= Chinese cultrep
+= Pagan relrep
 
 # Igorot add
 <... > Cultures
@@ -839,8 +839,8 @@
 #<- Pagan (if not pagan)
 <... > Nations > IgorotConfederacy
 = "https://cdn.discordapp.com/attachments/969287009879359578/975404904589955112/unknown.png" Flag
-= "Igorot" cultrep
-= "Pagan" relrep
+= Igorot cultrep
+= Pagan relrep
 
 # Cheonje add
 <... > Cultures
@@ -856,8 +856,8 @@
 #<- Pagan (if not pagan)
 <... > Nations > Cheonje
 #= "[Image Link]" Flag
-= "Cheonje" cultrep
-= "Pagan" relrep
+= Cheonje cultrep
+= Pagan relrep
 
 # Poland add
 <... > Cultures
@@ -873,8 +873,8 @@
 <- Pagan # (if not pagan)
 <... > Nations > KingdomOfPoland
 = "https://cdn.discordapp.com/attachments/969287009879359578/975668498984489011/1024px-Kingdom_of_Poland-flag.svg.png" Flag
-= "Polish" cultrep
-= "Orthodox" relrep
+= Polish cultrep
+= Orthodox relrep
 
 # Wallachia add
 <... > Cultures
@@ -890,8 +890,8 @@
 <- Pagan # (if not pagan)
 <... > Nations > KingdomOfWallachia
 = "https://cdn.discordapp.com/attachments/969287009879359578/976906070125609010/unknown.png" Flag
-= "Wallachian" cultrep
-= "Orthodox" relrep
+= Wallachian cultrep
+= Orthodox relrep
 
 # Mongolia add
 <... > Cultures
@@ -907,8 +907,8 @@
 #<- Pagan (if not pagan)
 <... > Nations > MongolianKhanate
 = "https://cdn.discordapp.com/attachments/969287009879359578/976959313300045885/1652995645353.jpg" Flag
-= "Mongolian" cultrep
-= "Pagan" relrep
+= Mongolian cultrep
+= Pagan relrep
 
 # Sakhalin add
 <... > Cultures
@@ -924,8 +924,8 @@
 <- Pagan # (if not pagan)
 <... > Nations > SakhalinTribe
 = "https://cdn.discordapp.com/attachments/969287009879359578/977076337682567178/unknown.png" Flag
-= "Ainu" cultrep
-= "Pagan" relrep
+= Ainu cultrep
+= Pagan relrep
 
 #trade zones wealth 1350
 <... > TradeZones
