@@ -892,15 +892,15 @@ function createStatTable(title, tables, upmigrations) {
                 (new Function(`return gameStats.Nations["${currentNationName}"].${statSelection}`))() :
                 (new Function(`return gameStats.Nations["${currentNationName}"]${statSelection}`))();
             let nationStatNameCell = document.createElement("th");
-            let statName = statSelection.split(/\.|(?<=\[)/gmi);
+            let statName = statSelection.split(/\.|(?<=\[)/g);
             statName = statName[statName.length - 1 - upmigrations].replace(/(\[|\"| |\])/gmi, "");
-            nationStatNameCell.innerText = statName.split(/(?<=[a-zA-Z])(?=[A-Z])/gm).join(" ");
+            nationStatNameCell.innerText = statName.replace(/(?<=[a-zA-Z])(?=[A-Z])/g, " ");
             let nationStatCell = document.createElement("td");
             let displayValue = displayValueFix(statName, statvalue);
             if (displayValue.appendable) {
                 nationStatCell.appendChild(displayValue.value);
             } else {
-                nationStatCell.innerText = displayValue.value;
+                nationStatCell.innerText = displayValue.value.replace(/(?<=[a-zA-Z])(?=[A-Z])/g, " ");
             }
 
             let statTypeIcon = document.createElement("img");
