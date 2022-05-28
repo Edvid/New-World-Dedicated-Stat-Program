@@ -1475,7 +1475,7 @@
 # +.05 agr adv
 + .05 Stockcap
 + .05 agri inf
-- 5 Noble loyalty groups.GovernmentOfTsardomOfMuscovy
+- 5 Noble loyalty groups.TsardomOfMuscovy
 + 5 Noble loyalty groups.SelfInterests
 - 5% NobilityInfluence
 
@@ -1526,7 +1526,7 @@
 +.25 adm
 +.5 local trade
 +.5% workforces.burghers
-+ 5 burghers loyalty groups.GovernmentOfByzantium
++ 5 burghers loyalty groups.Byzantium
 - 5 burghers loyalty groups.self interests
 +.5 mercantilism
 > Trade Influences 
@@ -1684,7 +1684,7 @@
 <
 +0.5 SocialSpending 
 +5% clergyinfluence 
-+5 ClergyLoyaltyGroups.GovernmentOfKingdomOfKhmbodj 
++5 ClergyLoyaltyGroups.KingdomOfKhmbodj 
 -5 ClergyLoyaltyGroups.SelfInterests
 > Trade influences
 +0.25 SouthEastAsia.TradingPoints 
@@ -1703,7 +1703,7 @@
 +6.5% Hindu.points
 -6.5% Pagan.points
 <
--5 ClergyLoyaltyGroups.GovernmentOfKingdomOfPotskig
+-5 ClergyLoyaltyGroups.KingdomOfPotskig
 +5 ClergyLoyaltyGroups.SelfInterests
 
 # Order of St Mary update 
@@ -1721,7 +1721,7 @@
 -0.5% Nobility
 +0.5% Clergy
 <
-+10 ClergyLoyaltyGroups.GovernmentOfOrderOfStMary
++10 ClergyLoyaltyGroups.OrderOfStMary
 -10 ClergyLoyaltyGroups.SelfInterests
 +15% ClergyInfluence
 +500 HeavyCavalry
@@ -1748,13 +1748,13 @@
 +1.50 AdministrativeEfficiency 
 +0.50 Absolutism 
 +10% Noble Influence
-+5 Nobleloyaltygroups.GovernmentOfSindhEmpire 
++5 Nobleloyaltygroups.SindhEmpire 
 -5 Nobleloyaltygroups.SelfInterests 
 =13% lowertax
 =14% mediumtax 
 =17.5% hightax 
 +10% Clergy Influence 
-+5 Clergyloyaltygroups.GovernmentOfSindhEmpire 
++5 Clergyloyaltygroups.SindhEmpire 
 -5 Clergyloyaltygroups.SelfInterests 
 +0.50 Propaganda 
 +10% BurghersInfluence 
@@ -1768,11 +1768,11 @@
 +0.50 Tea 
 +0.5 exotic fruits 
 +220 Public debt taken 
-+5 Nobleloyaltygroups.GovernmentOfSindhEmpire 
++5 Nobleloyaltygroups.SindhEmpire 
 -5 Nobleloyaltygroups.SelfInterests 
-+5 Clergyloyaltygroups.GovernmentOfSindhEmpire 
++5 Clergyloyaltygroups.SindhEmpire 
 -5 Clergyloyaltygroups.SelfInterests 
-+10 Burghersloyaltygroups.GovernmentOfSindhEmpire 
++10 Burghersloyaltygroups.SindhEmpire 
 -10 Burghersloyaltygroups.SelfInterests 
 -5 budget 
 > Trade influences
@@ -1902,7 +1902,7 @@
 + .5 adm
 - 5% noble inf
 + 7.5 nobleloyalty.self interests
-- 7.5 nobleloyalty.GovernmentOfArchduchyOfAustria
+- 7.5 nobleloyalty.ArchduchyOfAustria
 + .5 local trade
 + .05 mercantilism
 +.5 local trade
@@ -1916,7 +1916,7 @@
 + .05 mining efficiency
 + .5 Adm
 + 5% Burghersinf
-+ 5 Burghers loyalty . Government Of Archduchy Of Austria 
++ 5 Burghers loyalty . Archduchy Of Austria 
 - 5 Burghers loyalty . Self Interests
 + .05 mercantilism 
 + .25 social spending
@@ -1925,7 +1925,7 @@
 + .5 adm
 + .5 adm
 + .5 edu
-- 1 clergy loyalty. Government Of Archduchy Of Austria 
+- 1 clergy loyalty. Archduchy Of Austria 
 + 1 clergy loyalty . Self Interests
 + .5 edu
 
@@ -1976,7 +1976,7 @@
 +.05 agri inf
 +.05 agri adv
 + 5% noble inf
-+ 5 noble loyalty. GovernmentOfKingdomOfAndalusia
++ 5 noble loyalty. KingdomOfAndalusia
 - 5 noble loyalty . Self Interests
 + .05 cultural advance
 + .5% workforces.artisans
@@ -1990,7 +1990,7 @@
 + .5 edu
 + 0.25 adm
 + 5% noble inf
-+ 2.5 noble loyalty . GovernmentOfKingdomOfAndalusia
++ 2.5 noble loyalty . KingdomOfAndalusia
 - 2.5 noble loyalty . Self Interests
 + 0.25 adm
 + 0.5 localtrade
@@ -2013,7 +2013,7 @@
 <... > Nations > ValublidSultanate
 +0.5 adm
 -0.05 nobleinfluence
--5 nobleloyaltygroups.GovernmentOfValublidSultanate
+-5 nobleloyaltygroups.ValublidSultanate
 +5 nobleloyaltygroups.selfinterests
 
 # Arberber 1350
@@ -2033,7 +2033,7 @@
 =0.2 lowertax
 =0.1 mediumtax
 =0.1 hightax
-+5 burghersloyaltygroups.GovernmentOfArberberKingdom
++5 burghersloyaltygroups.ArberberKingdom
 -5 burghersloyaltygroups.SelfInterests
 +0.05 burghersinf
 +0.2 mercantilism
@@ -2081,7 +2081,7 @@
 +12 LightShips
 +4 MediumShips
 +1 HeavyShips
-+5 ClergyLoyaltyGroups.GovernmentOfEulacianTradeCouncil
++5 ClergyLoyaltyGroups.EulacianTradeCouncil
 -5 ClergyLoyaltyGroups.SelfInterests
 +0.05 clergyinfluence
 > TradeInfluences
@@ -2108,11 +2108,11 @@
 +0.75 coal
 +0.1 agrinf
 +1.25 wool
-+10 ClergyLoyaltyGroups.GovernmentOfKingdomOfToledoCatalonia
++10 ClergyLoyaltyGroups.KingdomOfToledoCatalonia
 -10 ClergyLoyaltyGroups.SelfInterests
-+10 NobleLoyaltyGroups.GovernmentOfKingdomOfToledoCatalonia
++10 NobleLoyaltyGroups.KingdomOfToledoCatalonia
 -10 NobleLoyaltyGroups.SelfInterests
-+5 burghersLoyaltyGroups.GovernmentOfKingdomOfToledoCatalonia
++5 burghersLoyaltyGroups.KingdomOfToledoCatalonia
 -5 burghersLoyaltyGroups.SelfInterests
 +0.15 miningeff
 
