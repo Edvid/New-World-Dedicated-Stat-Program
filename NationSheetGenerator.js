@@ -70,7 +70,6 @@ function updateDropdownSelection() {
     for (const key in gameStats.Nations) {
         if(maxlength < key.replace(/(?<=[a-zA-Z])(?=[A-Z])/gm, " ").length) maxlength = key.replace(/(?<=[a-zA-Z])(?=[A-Z])/gm, " ").length;
     }
-    console.log(maxlength);
     let index = 1;
     for (const key in gameStats.Nations) {
         let option = document.createElement("option");

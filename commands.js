@@ -106,7 +106,7 @@ ${allProperties}`)
 
 
     //If value at all is a number, make sure the program understands this
-    if(/[\d|\.]+%?$/.test(value)){
+    if(/^[\d|\.]+%?$/.test(value)){
         //If number to change by is written in percent. Divide that number by 100 
         if(/%/.test(value)){
             value = value.replace("%", "") / 100;
