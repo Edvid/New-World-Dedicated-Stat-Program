@@ -77,7 +77,6 @@ function updateDropdownSelection() {
         option.value = key;
         let spacedkeywithmargin = key.replace(/(?<=[a-zA-Z])(?=[A-Z])/gm, " ");
         spacedkeywithmargin += ".".repeat(maxlength - spacedkeywithmargin.length);
-        console.log(`${spacedkeywithmargin} - ${index++}`)
         option.innerText = `${spacedkeywithmargin} - ${index++}`;
         dropdownselection.appendChild(option);
     }
