@@ -514,7 +514,7 @@ class Nation {
     let n = this;
     /* #region  Stats to Set Immedietly */
     /* #region  Main */
-    this.GovernmentName = "GovernmentOf" + nationName;
+    this.GovernmentName = nationName;
     this.Flag = "none";
     this.ReligionGroups = {
       "Pagan": {
