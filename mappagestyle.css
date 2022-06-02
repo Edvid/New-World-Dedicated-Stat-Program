@@ -16,7 +16,7 @@ td{
     background:lightskyblue;
 }
 
-#canvascontainer, table{
+#canvascontainer, #infotable{
     margin: 15px;
 }
 
