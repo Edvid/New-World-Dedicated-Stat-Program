@@ -224,8 +224,6 @@ function zoneinfluencerschart(zoneName){
         ObjectToChartNationRef[nationName] = {influence: nation.TradeInfluences[zoneName].TradingPoints};
         
     }
-
-    console.log(ObjectToChartNationRef);
     
     let root = am5.Root.new(chartdiv);
 
