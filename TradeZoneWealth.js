@@ -11,8 +11,11 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-
 async function onLoad() {
+    document.getElementById("isloading").innerText = "Loading..."
+}
+async function onLoadStatTradeZoneWealth() {
+    document.getElementById("isloading").innerText = ""
     tradezoneinfotable = document.getElementById("infotable");
 
     let table = document.createElement("table");
