@@ -1088,7 +1088,7 @@ function createPieDiagram(ObjectToChart, ValName) {
 
 
 
-    let socialBehaviourGroupsData = [];
+    let chartData = [];
     for (const keyName in ObjectToChartNationRef) {
         const keyValue = ObjectToChartNationRef[keyName];
 
@@ -1103,7 +1103,7 @@ function createPieDiagram(ObjectToChart, ValName) {
 
         if (objectPoints === 0) continue;
 
-        socialBehaviourGroupsData.push(
+        chartData.push(
             {
                 key: keyName.split(/(?<=[a-zA-Z])(?=[A-Z])/gm).join(" "),
                 Points: objectPoints
@@ -1121,7 +1121,7 @@ function createPieDiagram(ObjectToChart, ValName) {
         })
     );
 
-    series.data.setAll(socialBehaviourGroupsData);
+    series.data.setAll(chartData);
     series.labels.template.set("visible", false);
     series.ticks.template.set("visible", false);
 

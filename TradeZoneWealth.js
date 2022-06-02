@@ -164,15 +164,15 @@ async function onLoadStatTradeZoneWealth() {
         let data = context.getImageData(realPos.x, realPos.y, 1, 1).data;
         let col = `rgba(${data[0]}, ${data[1]}, ${data[2]}, ${data[3]})`
         let weakcol = `rgba(${(data[0] + 255) / 2}, ${(data[1] + 255) / 2}, ${(data[2] + 255) / 2}, ${data[3]})`
-
-
         
         for (let i = 0; i < ColorToZoneName.length; i++) {
             const ColorToZoneNamePair = ColorToZoneName[i];
             if(rgbToHex(data).toLowerCase() == ColorToZoneNamePair[0].toLowerCase()){
                 title.innerText = ColorToZoneNamePair[1].split(/(?<=[a-zA-Z])(?=[A-Z])/gm).join(" ");
                 zonewealth.innerText = gameStats.TradeZones[ColorToZoneNamePair[1]];
-                zoneinfluencers.innerHTML = 
+                let chartdiv = zoneinfluencerschart(ColorToZoneNamePair[1]);
+                zoneinfluencers.    innerHTML = "";
+                zoneinfluencers.appendChild(chartdiv);
 
                 zonewealthname.style.background = col;
                 zoneinfluencersname.style.background = col;
@@ -207,6 +207,92 @@ function rgbToHex(color) {
     return str;
 }
 /* #endregion */
+
+function zoneinfluencerschart(zoneName){
+    let chartdiv = document.createElement("div");
+    chartdiv.style.margin = ".5em";
+    chartdiv.style.textAlign = "center";
+    chartdiv.style.width = "500px";
+    chartdiv.style.height = "360px";
+    chartdiv.style.border = "3px solid black";
+    
+    let ObjectToChartNationRef = new Object();
+
+    for (const nationName in gameStats.Nations) {
+        const nation = gameStats.Nations[nationName];
+        if(nation.TradeInfluences[zoneName].TradingPoints == 0) continue;
+        ObjectToChartNationRef[nationName] = {influence: nation.TradeInfluences[zoneName].TradingPoints};
+        
+    }
+
+    console.log(ObjectToChartNationRef);
+    
+    let root = am5.Root.new(chartdiv);
+
+    let chart = root.container.children.push(
+        am5percent.PieChart.new(root, {
+            background: am5.Rectangle.new(root, {
+                fill: am5.color(0xfffff4),
+                fillOpacity: 1.0
+              }),
+            layout: root.verticalLayout
+        })
+    );
+    let chartData = [];
+    for (const keyName in ObjectToChartNationRef) {
+        const keyValue = ObjectToChartNationRef[keyName];
+
+        let objectPoints = keyValue;
+        while (isNaN(objectPoints)) {
+            if (objectPoints === null) {
+                objectPoints = 0;
+            } else if (typeof objectPoints === 'object') {
+                objectPoints = objectPoints.influence;
+            }
+        }
+
+        if (objectPoints === 0) continue;
+
+        chartData.push(
+            {
+                key: keyName.split(/(?<=[a-zA-Z])(?=[A-Z])/gm).join(" "),
+                Points: objectPoints
+            }
+        );
+    }
+
+    var series = chart.series.push(
+        am5percent.PieSeries.new(root, {
+            name: "Series",
+            categoryField: "key",
+            valueField: "Points",
+            legendLabelText: "[{fill}]{category}[/]",
+            legendValueText: "[bold {fill}][/]"
+        })
+    );
+
+    series.data.setAll(chartData);
+    series.labels.template.set("visible", false);
+    series.ticks.template.set("visible", false);
+
+    // Add legend
+    var legend = chart.children.push(
+        am5.Legend.new(root, {
+            centerX: am5.percent(50),
+            x: am5.percent(50),
+            layout: root.verticalLayout
+        })
+    );
+
+    legend.data.setAll(series.dataItems);
+
+
+
+
+
+    return chartdiv;
+
+}
 
 function outZoomChange(zoom) {
     canvasZoomScale *= zoom;
