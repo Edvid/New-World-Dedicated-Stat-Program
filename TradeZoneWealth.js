@@ -1,6 +1,5 @@
 let tradezoneinfotable;
 let canvasContainer;
-let zonename;
 let zonewealth;
 let canvasZoomScale = 1;
 
@@ -18,17 +17,25 @@ async function onLoadStatTradeZoneWealth() {
     document.getElementById("isloading").innerText = ""
     tradezoneinfotable = document.getElementById("infotable");
 
+    let title = document.createElement("h1");
+    tradezoneinfotable.appendChild(title);
+    title.innerText = "Click on any zone to get value!"
     let table = document.createElement("table");
     tradezoneinfotable.appendChild(table);
     let tr = document.createElement("tr");
     table.appendChild(tr);
-    zonename = document.createElement("th");
-    tr.appendChild(zonename);
-    zonename.innerHTML = "Click on any zone to get value!";
+    let zonewealthname = document.createElement("th");
+    tr.appendChild(zonewealthname);
+    zonewealthname.innerHTML = "Zone Wealth";
+    let zoneinfluencersname = document.createElement("th");
+    tr.appendChild(zoneinfluencersname);
+    zoneinfluencersname.innerHTML = "Zone Influencers"
     let tr2 = document.createElement("tr");
     table.appendChild(tr2);
-    zonewealth = document.createElement("td");
+    let zonewealth = document.createElement("td");
     tr2.appendChild(zonewealth);
+    let zoneinfluencers = document.createElement("td");
+    tr2.appendChild(zoneinfluencers);
 
     canvasContainer = document.getElementById("canvascontainer");
     
@@ -163,11 +170,14 @@ async function onLoadStatTradeZoneWealth() {
         for (let i = 0; i < ColorToZoneName.length; i++) {
             const ColorToZoneNamePair = ColorToZoneName[i];
             if(rgbToHex(data).toLowerCase() == ColorToZoneNamePair[0].toLowerCase()){
-                zonename.innerText = ColorToZoneNamePair[1].split(/(?<=[a-zA-Z])(?=[A-Z])/gm).join(" ");
+                title.innerText = ColorToZoneNamePair[1].split(/(?<=[a-zA-Z])(?=[A-Z])/gm).join(" ");
                 zonewealth.innerText = gameStats.TradeZones[ColorToZoneNamePair[1]];
+                zoneinfluencers.innerHTML = 
 
-                zonename.style.background = col;
+                zonewealthname.style.background = col;
+                zoneinfluencersname.style.background = col;
                 zonewealth.style.background = weakcol;
+                zoneinfluencers.style.background = weakcol;
             }
         }
     }

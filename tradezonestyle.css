@@ -9,6 +9,6 @@ td, th{
     border: 1px solid black;
 }
 
-#canvascontainer, table{
+#canvascontainer, #infotable{
     margin: 15px;
 }
