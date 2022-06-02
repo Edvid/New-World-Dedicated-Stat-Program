@@ -1,3 +1,4 @@
+let tradezoneinfotable;
 let canvasContainer;
 let zonename;
 let zonewealth;
@@ -12,9 +13,21 @@ function sleep(ms) {
 
 
 async function onLoad() {
+    tradezoneinfotable = document.getElementById("infotable");
+
+    let table = document.createElement("table");
+    tradezoneinfotable.appendChild(table);
+    let tr = document.createElement("tr");
+    table.appendChild(tr);
+    zonename = document.createElement("th");
+    tr.appendChild(zonename);
+    zonename.innerHTML = "Click on any zone to get value!";
+    let tr2 = document.createElement("tr");
+    table.appendChild(tr2);
+    zonewealth = document.createElement("td");
+    tr2.appendChild(zonewealth);
+
     canvasContainer = document.getElementById("canvascontainer");
-    zonename = document.getElementById("zone name");
-    zonewealth = document.getElementById("zone wealth");
     
     let worldCanvas = document.createElement("canvas");
     worldCanvas.id = "worldcanvas";
