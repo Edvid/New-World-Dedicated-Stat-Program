@@ -1,0 +1,21 @@
+{
+    "name": "ccfcrystalline",
+    "displayName": "ccfcrystalline",
+    "description": "The main theme for the ccf language",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.67.0"
+    },
+    "categories": [
+        "Themes"
+    ],
+    "contributes": {
+        "themes": [
+            {
+                "label": "CCF Crystalline",
+                "uiTheme": "vs-dark",
+                "path": "./themes/CCF Crystalline-color-theme.json"
+            }
+        ]
+    }
+}

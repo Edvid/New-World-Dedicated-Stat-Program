@@ -1,0 +1,25 @@
+{
+    "name": "ccflang",
+    "displayName": "CommandChangeFormatLang",
+    "description": "",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.67.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "commandchangeformat",
+            "aliases": ["Command Change Format", "commandchangeformat"],
+            "extensions": [".ccf",".CCF"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "commandchangeformat",
+            "scopeName": "source.ccf",
+            "path": "./syntaxes/commandchangeformat.tmLanguage.json"
+        }]
+    }
+}
