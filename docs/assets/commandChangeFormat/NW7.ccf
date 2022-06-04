@@ -3791,6 +3791,7 @@ trade TreatyOfMoskva4, TsardomOfMuscovy > HittiteEmpire, 20 Budget
 -10 light Cavalry
 +50 casualties
 =0.075 occupation
+="defensive" atwar
 
 <... > Nations > OrderOfStMary
 -15 heavy inf
@@ -3807,6 +3808,7 @@ trade TreatyOfMoskva4, TsardomOfMuscovy > HittiteEmpire, 20 Budget
 -35 light Cavalry
 +35 casualties
 =0.2 occupation
+="offensive" atwar
 
 <... > Nations > ArberberKingdom
 -25 Light inf
@@ -3827,6 +3829,7 @@ trade TreatyOfMoskva4, TsardomOfMuscovy > HittiteEmpire, 20 Budget
 -5 Hand Cannon
 -5 heavy cav
 +90 casualties
+="offensive" atwar
 
 <... > Nations > YamatoKingdom
 -10 budget
@@ -3834,6 +3837,7 @@ trade TreatyOfMoskva4, TsardomOfMuscovy > HittiteEmpire, 20 Budget
 -3 Medium Ships
 -4700 population
 +1 minor battles
+="defensive" atwar
 
 <... > Nations > RoecaoNtepaEmpire
 -4 Light Ships
@@ -3851,6 +3855,7 @@ trade TreatyOfMoskva4, TsardomOfMuscovy > HittiteEmpire, 20 Budget
 -65 Heavy Cavalry
 +655 casualties
 =0.04 occupation
+="offensive" atwar
 
 <... > nations > EulacianTradeCouncil
 -2 Light Ships
@@ -3859,14 +3864,17 @@ trade TreatyOfMoskva4, TsardomOfMuscovy > HittiteEmpire, 20 Budget
 -20 Heavy Infantry
 -20 Archers
 +100 casualties
+="defensive" atwar
 
 <... > Nations > KingdomOfSweden
 -7 medium ships
 -3 heavy ships
+="offensive" atwar
 
 <... > Nations > KingdomofAlvheim
 -2 light ships
 -2 mediumships
 +1 major battles
+="defensive" atwar
 
 sync
