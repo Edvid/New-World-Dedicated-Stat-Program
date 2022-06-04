@@ -74,6 +74,7 @@ function refreshNationPageItems() {
         currentNationName = Object.keys(gameStats.Nations)[0];
         createNationSheet(currentNationName);
     }
+    if(typeof onLoadStatTradeZoneWealth !== 'undefined') onLoadStatTradeZoneWealth();
     if (typeof loadAllTrades !== 'undefined') loadAllTrades();
 }
 

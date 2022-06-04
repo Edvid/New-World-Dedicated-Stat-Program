@@ -1592,7 +1592,7 @@
 +0.05 stocking capabilities
 +0.05 agrinfra
 +0.05 nobleinfluence
-> ReligionGroups
+> rg
 +> Jewish
 =0.5 Jewish.Points
 =99.5 Catholic.Points
@@ -1698,10 +1698,10 @@
 =0.13 hightax 
 +0.25 Propaganda 
 + 5 budget
-> ReligionGroups
+> rg
 +> Hindu
-+6.5% Hindu.points
--6.5% Pagan.points
++6.5 Hindu.points
+-6.5 Pagan.points
 <
 -5 ClergyLoyaltyGroups.KingdomOfPotskig
 +5 ClergyLoyaltyGroups.SelfInterests

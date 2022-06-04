@@ -38,9 +38,9 @@ function evaluateNation(nationName) {
       const trade = gameStats.Trades[tradename];
       if (trade.resource == resource) {
         if (nationName == trade.reciever) {
-          n[resource + "Incoming"] += trade.amount;
+          n[resource + "Incoming"] += +trade.amount;
         } else if (nationName == trade.giver) {
-          n[resource + "Outgoing"] += trade.amount;
+          n[resource + "Outgoing"] += +trade.amount;
         }
       }
     }
@@ -50,7 +50,11 @@ function evaluateNation(nationName) {
 
     n["Effective" + resource] = (function () {
 
-      return n[resource] * (GatheringEffectiveness(resource) == "Farming" ? n.FarmingEfficiency : n.MiningEfficiency) + n[resource + "Incoming"] - n[resource + "Outgoing"];
+      let er = n[resource] * (GatheringEffectiveness(resource) == "Farming" ? n.FarmingEfficiency : n.MiningEfficiency) + n[resource + "Incoming"] - n[resource + "Outgoing"];
+      if(er < 0){
+        alert(`It seems the effective resource ${resource} in ${nationName} is negative. Is an impossible trade taking place?`);
+      }
+      return er;
     })();
 
     let inflationMod = (function () {
@@ -489,7 +493,11 @@ n.PopulationGrowth = (n.FutureFood < 0 ? n.FutureFood * 1000 / n.Population - (n
     ];
     for (const resourceName in TradePowerResources) {
       const resource = TradePowerResources[resourceName];
-      num += n[resource + "Incoming"] * n[resource + "Value"];
+      num += +n[resource + "Incoming"] * +n[resource + "Value"];
+      if(isNaN(num)){
+        console.log(`something went wrong. Tried to multiply ${n[resource + "Incoming"]} with ${n[resource + "Value"]}. The resource is ${resource} in nation ${n.nationName}`);
+        return 0;
+      }
     }
     return num;
   })();
