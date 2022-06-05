@@ -3858,14 +3858,68 @@ trade TreatyOfMoskva4, TsardomOfMuscovy > HittiteEmpire, 20 Budget
 =0.04 occupation
 ="offensive" atwar
 
-<... > nations > EulacianTradeCouncil
--2 Light Ships
--1 Medium Ships
--60 Light Infantry
--20 Heavy Infantry
--20 Archers
-+100 casualties
-="defensive" atwar
+<... > Nations > EulacianTradeCouncil
++7.25 AdmEff
++2.75% workforces.artisans
++0.35 ResearchEffectiveness
++2.5 EducationEfficiency
++0.85 MiningEfficiency
++0.5 AgricultureAdvancements
++0.35 StockingCapabilities
++0.35 AgricultureInfrastructure
+=30% LowerTax
+=32.5% MiddleTax
+=35% HighTax
++1 SocialSpending
++2.5 Health
++15% ClergyInfluence
++10 ClergyLoyalty.EulacianTradeCouncil
+-10 ClergyLoyalty.SelfInterests
++8.45 LocalTrade
++1.00 Mercantilism
++0.75 Coal
++1.25 Sulphur
++0.75 Gold
++0.50 Ivory
++0.75 Exotic Fruits
++0.20 CulturalProsperity
++1 NavalImprovements
++1.3 MilitaryTactics
++7% MilitaryDiscipline
++0.85 TrainingQuality
++0.1 ArmyWages
++2.25 CommanderFreedom
++0.2 SpyQuality
++5000 LightInf
++1000 HeavyInf
++2500 Archers
++20 spies
++60 lightShips
++40 mediumShips
++15 heavyShips
++90 budget
+
+> TradeInfluence 
++6.5 SouthChina.tp
++6.5 SouthEastAsia.tp 
++6.5 Burma.tp
++6.5 NorthAustralia.tp
++0.5 PersianGulf.tp
++0.5 Mesopotamia.tp
++0.5 Pakistan.tp
++0.5 WestIndia.tp
++0.5 EastIndia.tp
++0.5 NorthIndia.tp
++0.25 RedSea.tp
++0.25 Egypt.tp
++0.5 YangtzeRiver.tp
++0.5 SeaofJapan.tp
++0.5 NorthChina.tp
+
+<... > TradeZone
++1.25 SouthEastAsia
++1 NorthAustralia
++0.5 SouthChina
 
 <... > Nations > KingdomOfSweden
 -7 medium ships
@@ -3877,5 +3931,22 @@ trade TreatyOfMoskva4, TsardomOfMuscovy > HittiteEmpire, 20 Budget
 -2 mediumships
 +1 major battles
 ="defensive" atwar
+
+<... > Nations > VespucianTribes 
+
++0.25 adm
++0.15 MilitaryTactics
++0.1 TrainingQuality
++0.5 LocalTrade
++0.1 Mercantilism
++15 NobleLoyalty.SelfInterests
++15 NobleLoyalty.VespucianTribes
+-15% NobleInfluence
++10% BurgherInfluence
++0.1 Mercantilism
++0.25 LocalTrade
++0.5 coal
++0.5 iron
++0.5 sulphur
 
 sync
