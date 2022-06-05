@@ -495,7 +495,7 @@ n.PopulationGrowth = (n.FutureFood < 0 ? n.FutureFood * 1000 / n.Population - (n
       const resource = TradePowerResources[resourceName];
       num += +n[resource + "Incoming"] * +n[resource + "Value"];
       if(isNaN(num)){
-        console.log(`something went wrong. Tried to multiply ${n[resource + "Incoming"]} with ${n[resource + "Value"]}. The resource is ${resource} in nation ${n.nationName}`);
+        alert(`something went wrong. Tried to multiply ${n[resource + "Incoming"]} with ${n[resource + "Value"]}. The resource is ${resource} in nation ${nationName}`);
         return 0;
       }
     }
