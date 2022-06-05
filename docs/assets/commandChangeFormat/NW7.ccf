@@ -2729,7 +2729,7 @@ trade TreatyOfBelgrade4, KingdomOfSerbia > HittiteEmpire, 15 budget
 + .05 military tactics
 + .05 training quality
 + .25 adm
-+ .1.5 military tactics
++ .15 military tactics
 + .1 training quality
 + .25 iron
 + .5 sulphur
