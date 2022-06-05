@@ -2645,8 +2645,9 @@ sync
 +7.5% burghers loyalty . kingdom of serbia
 -7.5% burghers loyalty . self interests
 +10% burghers influence
-+ .5 workforces.burghers
-+ .25 workforces.artisans
++ .5% workforces.burghers
++ .5% workforces.artisans
+- .5% workforces.populationinagriculture
 + .05 cultural prosperity
 
 < > Cuman Kipchak Khanate
