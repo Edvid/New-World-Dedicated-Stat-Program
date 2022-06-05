@@ -3366,6 +3366,7 @@ trade TreatyOfWarsaw3, Byzantium > KingdomofPoland, 0.15 Gold
 =25 LightShips
 =15 MediumShips
 =5 HeavyShips
+=15 siegeeq
 
 > TradeInfluences
 +1.75 WesternMediterranean.tp
@@ -3659,6 +3660,7 @@ trade TreatyOfMoskva4, TsardomOfMuscovy > HittiteEmpire, 20 Budget
 +0.3 TrainingQuality
 +0.2 MilitaryTactics
 +0.5 Sulphur
++.75 Iron
 +1 lightShips
 +1 mediumShips
 +175 lightinf
@@ -3684,15 +3686,13 @@ trade TreatyOfMoskva4, TsardomOfMuscovy > HittiteEmpire, 20 Budget
 +0.5 EastMed.tp
 +0.5 Gibraltar.tp
 +0.25 NorthSea.tp
-<... > Nations > KingdomOfEngland
-> ReligionGroups
+< > ReligionGroups
 -3.5 Catholic.Points
 +3.5 Jewish.Points
 <... > Cultures
 +> Cornish
 +> JudeoEnglish
-<... > Nations > KingdomOfEngland
-> CultureGroups
+<... > Nations > KingdomOfEngland > CultureGroups
 -3.5 English.Points
 +> Cornish
 +1.5 Cornish.Points
