@@ -22,7 +22,7 @@ let preloadGameState;
 let preloadStatChanges;
 (async function () {
     preloadGameState;
-    await fetch("./docs/assets/commandChangeFormat/NW7.JSON").then(response => response.json()).then(data => preloadGameState = data);
+    await fetch("./docs/assets/commandChangeFormat/NW7.json").then(response => response.json()).then(data => preloadGameState = data);
     preloadStatChanges;
     await fetch("./docs/assets/commandChangeFormat/NW7.ccf").then(response => response.text()).then(data => preloadStatChanges = data);
     //If hash maves in JSON is the same as the hashcode of the entire
@@ -299,7 +299,7 @@ async function displayProgress() {
             };
             let downloadString = JSON.stringify(jsonobj);
 
-            downloadToFile(downloadString, 'NW7.JSON', 'application/json');
+            downloadToFile(downloadString, 'NW7.json', 'application/json');
         });
         loadingField.appendChild(loadingFieldTitle);
         loadingField.appendChild(downloadbutton);
