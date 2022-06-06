@@ -3793,6 +3793,7 @@ trade TreatyOfMoskva4, TsardomOfMuscovy > HittiteEmpire, 20 Budget
 +50 casualties
 =0.075 occupation
 ="defensive" atwar
+-1 light ships
 
 <... > Nations > OrderOfStMary
 -15 heavy inf
@@ -3899,7 +3900,7 @@ trade TreatyOfMoskva4, TsardomOfMuscovy > HittiteEmpire, 20 Budget
 +15 heavyShips
 +90 budget
 
-> TradeInfluence 
+> TradeInfluences
 +6.5 SouthChina.tp
 +6.5 SouthEastAsia.tp 
 +6.5 Burma.tp
@@ -3916,7 +3917,7 @@ trade TreatyOfMoskva4, TsardomOfMuscovy > HittiteEmpire, 20 Budget
 +0.5 SeaofJapan.tp
 +0.5 NorthChina.tp
 
-<... > TradeZone
+<... > TradeZones
 +1.25 SouthEastAsia
 +1 NorthAustralia
 +0.5 SouthChina
