@@ -50,7 +50,7 @@ async function loadChangesFromFile(event) {
     reader.readAsText(file);
 }
 
-const normalCommandRegex = /(?<Operand>([a-z]+)( |\t)|(\+|\=|\-)( |\t)?)(?<Value>(\".+\")|(\{.+\})|(.+?))( |\t)(?<StatName>.+)/i;
+const normalCommandRegex = /(?<Operand>add|\+|sub|-|set|=) *(?<Value>(\*?\d*\.?\d+%?)|(\".*\")|( .*? ))(?<StatName>.+)/i;
 let ignore;
 let currentSelection;
 async function loadChangesFromContent(changes) {
