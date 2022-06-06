@@ -3887,6 +3887,8 @@ trade TreatyOfMoskva4, TsardomOfMuscovy > HittiteEmpire, 20 Budget
 +0.5 iron
 +0.5 sulphur
 +0.5% workforces.artisans
+-110 budget
+=0 publicdebttaken
 
 <... > Nations > Mitiva
 +500 heavyInfantry 
