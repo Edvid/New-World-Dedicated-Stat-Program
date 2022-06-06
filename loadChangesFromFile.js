@@ -290,19 +290,19 @@ async function displayProgress() {
     } else if (!HashMatched && donegenerating) {
         let loadingFieldTitle = document.createElement("p");
         loadingFieldTitle.innerText = "Download the new JSON file";
-        let downloadbuttom = document.createElement("button");
-        downloadbuttom.innerText = "Download JSON";
-        downloadbuttom.addEventListener('click', () => {
+        let downloadbutton = document.createElement("button");
+        downloadbutton.innerText = "Download JSON";
+        downloadbutton.addEventListener('click', () => {
             let jsonobj = {
                 Hash: preloadStatChanges.replace(/\n|\r/gmi, "").hashCode(),
                 State: gameStats
             };
             let downloadString = JSON.stringify(jsonobj);
 
-            downloadToFile(downloadString, 'my-new-file.txt', 'text/plain');
+            downloadToFile(downloadString, 'NW7.JSON', 'application/json');
         });
         loadingField.appendChild(loadingFieldTitle);
-        loadingField.appendChild(downloadbuttom);
+        loadingField.appendChild(downloadbutton);
         showingdownloadoption = true;
     }
 }
