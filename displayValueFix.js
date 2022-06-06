@@ -120,10 +120,14 @@ function displayValueFix(statName, statValue) {
     else if (~[
         "Flag",
     ].indexOf(statName)) {
-        let image = document.createElement("img");
-        image.src = statVal;
-        image.alt = statVal.split("/").pop();
-        return { value: image, appendable: true };
+        if(/none/.test(statVal)){
+            return { value: "none", appendable: false };
+        }else{
+            let image = document.createElement("img");
+            image.src = statVal;
+            image.alt = statVal.split("/").pop();
+            return { value: image, appendable: true };
+        }
     }
     else
         return { value: statVal, appendable: false };
