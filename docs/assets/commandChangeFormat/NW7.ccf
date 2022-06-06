@@ -3935,15 +3935,12 @@ trade TreatyOfMoskva4, TsardomOfMuscovy > HittiteEmpire, 20 Budget
 
 <... > Nations > VespucianTribes 
 
-+0.25 adm
++0.5 adm
 +0.15 MilitaryTactics
 +0.1 TrainingQuality
 +0.5 LocalTrade
 +0.1 Mercantilism
-+15 NobleLoyalty.SelfInterests
-+15 NobleLoyalty.VespucianTribes
-+15 ClergyLoyalty.SelfInterests
-+15 ClergyLoyalty.VespucianTribes
+-10% clergyinfluence
 -15% NobleInfluence
 +10% BurghersInfluence
 +0.1 Mercantilism
@@ -3951,6 +3948,7 @@ trade TreatyOfMoskva4, TsardomOfMuscovy > HittiteEmpire, 20 Budget
 +0.5 coal
 +0.5 iron
 +0.5 sulphur
++0.5% workforces.artisans
 
 <... > Nations > Mitiva
 +500 heavyInfantry 
