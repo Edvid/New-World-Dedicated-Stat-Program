@@ -75,7 +75,7 @@ function syncNations() {
 
 function normalCommand(selection) {
     
-    let value = commandParameters[1];
+    let value = commandParameters.Value;
     let change;
     
     //implement check for stat that are objects, and disallow their change
@@ -116,17 +116,17 @@ ${allProperties}`)
     }
 
     //add
-    if (commandParameters[0] == '+' || commandParameters[0] == 'add') {
+    if (commandParameters.Operand == '+' || commandParameters.Operand == 'add') {
         change = value;
         (new Function(`gameStats${selection} = parseFloat(gameStats${selection}) + ${value}`))();
     }
     //subtract
-    else if (commandParameters[0] == '-' || commandParameters[0] == 'sub') {
+    else if (commandParameters.Operand == '-' || commandParameters.Operand == 'sub') {
         change = -value;
         (new Function(`gameStats${selection} = parseFloat(gameStats${selection}) - ${value}`))();
     }
     //set
-    else if (commandParameters[0] == '=' || commandParameters[0] == 'set') {
+    else if (commandParameters.Operand == '=' || commandParameters.Operand == 'set') {
         const previous = (new Function(`\
             if(typeof gameStats${selection} === 'undefined') return 'undefined';\
             return JSON.parse(JSON.stringify(\
@@ -138,7 +138,7 @@ ${allProperties}`)
         (new Function(`gameStats${selection} = isNaN('${value}') ? '${value}' : parseFloat('${value}')`))();
 
     } else {
-        alert("At line " + (changeCommandIndex + 1) + "\r\n\r\nOperand wasn't understood: " + commandParameters[0] + ".\r\n Aborting.");
+        alert("At line " + (changeCommandIndex + 1) + "\r\n\r\nOperand wasn't understood: " + commandParameters.Operand + ".\r\n Aborting.");
         return;
     }
     specialOperation(selection, change);

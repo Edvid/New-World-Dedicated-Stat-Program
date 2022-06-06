@@ -1,4 +1,4 @@
-let commandParameters = [];
+let commandParameters = {};
 let changes;
 let changeCommandIndex;
 let changeCommandFileLength;
@@ -50,7 +50,7 @@ async function loadChangesFromFile(event) {
     reader.readAsText(file);
 }
 
-const commandRegex = /(?<Operand>([a-z]+)( |\t)|(\+|\=|\-)( |\t)?)(?<Value>(\".+\")|(\{.+\})|(.+?))( |\t)(?<Stat_Name>.+)/i;
+const normalCommandRegex = /(?<Operand>([a-z]+)( |\t)|(\+|\=|\-)( |\t)?)(?<Value>(\".+\")|(\{.+\})|(.+?))( |\t)(?<StatName>.+)/i;
 let ignore;
 let currentSelection;
 async function loadChangesFromContent(changes) {
@@ -230,23 +230,23 @@ async function evaluteChangeCommand(changeCommandRaw) {
     }
     //normal commands
     else {
-        commandParameters = [];
+        commandParameters = {};
         //If 2 or more instances of tabulator in the string
         if (changeCommand.replace(/[^\t]/g, "").length >= 2) {
             commandParameters = changeCommand.split("\t");
         }
         else {
-            let match = commandRegex.exec(changeCommand);
-            if (!commandRegex.test(changeCommand)) {
+            let match = normalCommandRegex.exec(changeCommand);
+            if (!normalCommandRegex.test(changeCommand)) {
                 alert("At line " + (changeCommandIndex + 1) + "\r\n\r\nA command wasn't understood:\r\n" + changeCommand + "\r\n Aborting.");
                 return;
             }
-            commandParameters[0] = match.groups.Operand.trim();
-            commandParameters[1] = match.groups.Value.replace(/^"|"$/g, "");
+            commandParameters.Operand = match.groups.Operand.trim();
+            commandParameters.Value = match.groups.Value.replace(/^"|"$/g, "");
 
-            commandParameters[2] = match.groups.Stat_Name;
+            commandParameters.StatName = match.groups.StatName;
         }
-        normalCommand(correctAndSynonymCheck(currentSelection + "." + commandParameters[2]));
+        normalCommand(correctAndSynonymCheck(currentSelection + "." + commandParameters.StatName));
     }
 }
 
