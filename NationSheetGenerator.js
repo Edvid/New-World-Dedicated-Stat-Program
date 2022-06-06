@@ -133,13 +133,11 @@ function createNationSheet(nationName) {
                 "FutureResearchPoints",
                 "FuturePublicDebtLength",
                 "FutureCulturalPower",
-                "FutureDateInThisNation"
             ],
             [
                 "ResearchPoints",
                 "PublicDebtLength",
                 "CulturalPower",
-                "DateInThisNation"
             ]
         ]
     );

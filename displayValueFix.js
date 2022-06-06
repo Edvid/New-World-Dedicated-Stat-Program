@@ -22,8 +22,6 @@ function displayValueFix(statName, statValue) {
             "FuturePopulation",
             "PublicDebtLength",
             "FuturePublicDebtLength",
-            "DateInThisNation",
-            "FutureDateInThisNation",
             "Spies",
             "Levies",
             "LightInfantry",
