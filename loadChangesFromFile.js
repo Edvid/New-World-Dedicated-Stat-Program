@@ -297,7 +297,7 @@ async function displayProgress() {
                 Hash: preloadStatChanges.replace(/\n|\r/gmi, "").hashCode(),
                 State: gameStats
             };
-            let downloadString = JSON.stringify(jsonobj);
+            let downloadString = JSON.stringify(jsonobj, null, 4);
 
             downloadToFile(downloadString, 'NW7.json', 'application/json');
         });
