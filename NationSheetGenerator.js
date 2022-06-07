@@ -68,13 +68,13 @@ function updateDropdownSelection() {
     dropdownselection.classList.add("dropdown");
     let maxlength = 0;
     for (const key in gameStats.Nations) {
-        if(maxlength < key.replace(/(?<=[a-zA-Z])(?=[A-Z])/gm, " ").length) maxlength = key.replace(/(?<=[a-zA-Z])(?=[A-Z])/gm, " ").length;
+        if(maxlength < key.capitalSpacing().length) maxlength = key.capitalSpacing().length;
     }
     let index = 1;
     for (const key in gameStats.Nations) {
         let option = document.createElement("option");
         option.value = key;
-        let spacedkeywithmargin = key.replace(/(?<=[a-zA-Z])(?=[A-Z])/gm, " ");
+        let spacedkeywithmargin = key.capitalSpacing();
         spacedkeywithmargin += ".".repeat(maxlength - spacedkeywithmargin.length);
         option.innerText = `${spacedkeywithmargin} - ${index++}`;
         dropdownselection.appendChild(option);
@@ -95,7 +95,7 @@ document.body.appendChild(nationSheetContainer);
 
 
 function createNationSheet(nationName) {
-    currentNationNameDisplay.innerText = nationName.split(/(?<=[a-zA-Z])(?=[A-Z])/gm).join(" ");
+    currentNationNameDisplay.innerText = nationName.capitalSpacing();
 
     nationSheetContainer.innerHTML = "";
     /* #region  New Display */
@@ -1055,7 +1055,7 @@ function createPieDiagram(ObjectToChart, ValName) {
 
     let tablecontainer = document.createElement("div");
     let title = document.createElement("h2");
-    title.innerText = ObjectToChart.split(/(?<=[a-zA-Z])(?=[A-Z])/gm).join(" ");
+    title.innerText = ObjectToChart.capitalSpacing();
     title.classList.add("tabletitle");
 
     let ObjectToChartNationRef = gameStats.Nations[currentNationName][ObjectToChart];
@@ -1103,7 +1103,7 @@ function createPieDiagram(ObjectToChart, ValName) {
 
         chartData.push(
             {
-                key: keyName.split(/(?<=[a-zA-Z])(?=[A-Z])/gm).join(" "),
+                key: keyName.capitalSpacing(),
                 Points: objectPoints
             }
         );
@@ -1115,7 +1115,7 @@ function createPieDiagram(ObjectToChart, ValName) {
             categoryField: "key",
             valueField: "Points",
             legendLabelText: "[{fill}]{category}[/]",
-            legendValueText: ValueName == "Points" ? "[bold {fill}][/]" : `[bold {fill}]{value} ${ValueName.split(/(?<=[a-zA-Z])(?=[A-Z])/gm).join(" ")}[/]`
+            legendValueText: ValueName == "Points" ? "[bold {fill}][/]" : `[bold {fill}]{value} ${ValueName.capitalSpacing()}[/]`
         })
     );
 

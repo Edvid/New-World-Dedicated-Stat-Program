@@ -157,7 +157,7 @@ async function onLoadStatTradeZoneWealth() {
         for (let i = 0; i < ColorToZoneName.length; i++) {
             const ColorToZoneNamePair = ColorToZoneName[i];
             if(rgbToHex(data).toLowerCase() == ColorToZoneNamePair[0].toLowerCase()){
-                title.innerText = ColorToZoneNamePair[1].split(/(?<=[a-zA-Z])(?=[A-Z])/gm).join(" ");
+                title.innerText = ColorToZoneNamePair[1].capitalSpacing();
                 zonewealth.innerText = gameStats.TradeZones[ColorToZoneNamePair[1]];
                 let chartdiv = zoneinfluencerschart(ColorToZoneNamePair[1]);
                 zoneinfluencers.    innerHTML = "";
@@ -242,7 +242,7 @@ function zoneinfluencerschart(zoneName){
 
         chartData.push(
             {
-                key: keyName.split(/(?<=[a-zA-Z])(?=[A-Z])/gm).join(" "),
+                key: keyName.capitalSpacing(),
                 Points: objectPoints
             }
         );

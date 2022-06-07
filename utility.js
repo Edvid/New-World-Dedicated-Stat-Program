@@ -10,3 +10,8 @@ String.prototype.hashCode = function () {
     return hash;
 };
 /* #endregion */
+
+
+String.prototype.capitalSpacing = function (){
+    return this.replace(/(?<=[a-zA-Z])(?=[A-Z])/gm, " ");
+}
