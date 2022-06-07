@@ -98,13 +98,13 @@ async function evaluteChangeCommand(changeCommandRaw) {
         parameters = parameters.split(/,|>/gm);
         let tradename = parameters[0].trim();
         let giver = parameters[1].trim();
-        let reciever = parameters[2].trim();
+        let receiver = parameters[2].trim();
         let stake = parameters[3].trim().split(/(?<![a-zA-Z])(?=[a-zA-Z])/gm);
         let amount = stake[0].trim();
         let resourceType = stake[1].trim();
 
         giver = correctAndSynonymCheck(`.Nations.${giver}`).split(".").pop();
-        reciever = correctAndSynonymCheck(`.Nations.${reciever}`).split(".").pop();
+        receiver = correctAndSynonymCheck(`.Nations.${receiver}`).split(".").pop();
         resourceType = correctAndSynonymCheck(`.Nations.${giver}.${resourceType}`).split(".").pop();
 
 
@@ -115,7 +115,7 @@ async function evaluteChangeCommand(changeCommandRaw) {
 
         gameStats.Trades[tradename] = new Trade();
         gameStats.Trades[tradename].giver = giver;
-        gameStats.Trades[tradename].reciever = reciever;
+        gameStats.Trades[tradename].receiver = receiver;
         gameStats.Trades[tradename].resource = resourceType;
         gameStats.Trades[tradename].amount = amount;
 

@@ -33553,91 +33553,91 @@
         "Trades": {
             "TreatyOfAnkara1": {
                 "giver": "HittiteEmpire",
-                "reciever": "ZiEmpire",
+                "receiver": "ZiEmpire",
                 "amount": "0.03",
                 "resource": "Iron"
             },
             "TreatyOfAnkara2": {
                 "giver": "HittiteEmpire",
-                "reciever": "ZiEmpire",
+                "receiver": "ZiEmpire",
                 "amount": "0.02",
                 "resource": "Spice"
             },
             "TreatyOfAnkara3": {
                 "giver": "HittiteEmpire",
-                "reciever": "ZiEmpire",
+                "receiver": "ZiEmpire",
                 "amount": "0.03",
                 "resource": "Cotton"
             },
             "TreatyOfAnkara4": {
                 "giver": "ZiEmpire",
-                "reciever": "HittiteEmpire",
+                "receiver": "HittiteEmpire",
                 "amount": "18",
                 "resource": "Budget"
             },
             "TreatyOfBelgrade1": {
                 "giver": "HittiteEmpire",
-                "reciever": "KingdomOfSerbia",
+                "receiver": "KingdomOfSerbia",
                 "amount": "0.02",
                 "resource": "Sulphur"
             },
             "TreatyOfBelgrade2": {
                 "giver": "HittiteEmpire",
-                "reciever": "KingdomOfSerbia",
+                "receiver": "KingdomOfSerbia",
                 "amount": "0.02",
                 "resource": "Spice"
             },
             "TreatyOfBelgrade3": {
                 "giver": "HittiteEmpire",
-                "reciever": "KingdomOfSerbia",
+                "receiver": "KingdomOfSerbia",
                 "amount": "0.03",
                 "resource": "Cotton"
             },
             "TreatyOfBelgrade4": {
                 "giver": "KingdomOfSerbia",
-                "reciever": "HittiteEmpire",
+                "receiver": "HittiteEmpire",
                 "amount": "15",
                 "resource": "Budget"
             },
             "TreatyOfWarsaw1": {
                 "giver": "KingdomOfPoland",
-                "reciever": "Byzantium",
+                "receiver": "Byzantium",
                 "amount": "0.5",
                 "resource": "Iron"
             },
             "TreatyOfWarsaw2": {
                 "giver": "Byzantium",
-                "reciever": "KingdomOfPoland",
+                "receiver": "KingdomOfPoland",
                 "amount": "25",
                 "resource": "Budget"
             },
             "TreatyOfWarsaw3": {
                 "giver": "Byzantium",
-                "reciever": "KingdomOfPoland",
+                "receiver": "KingdomOfPoland",
                 "amount": "0.15",
                 "resource": "Gold"
             },
             "TreatyOfMoskva1": {
                 "giver": "HittiteEmpire",
-                "reciever": "TsardomOfMuscovy",
+                "receiver": "TsardomOfMuscovy",
                 "amount": "0.1",
                 "resource": "Iron"
             },
             "TreatyOfMoskva2": {
                 "giver": "HittiteEmpire",
-                "reciever": "TsardomOfMuscovy",
+                "receiver": "TsardomOfMuscovy",
                 "amount": "0.03",
                 "resource": "Cotton"
             },
             "TreatyOfMoskva3": {
                 "giver": "HittiteEmpire",
-                "reciever": "TsardomOfMuscovy",
+                "receiver": "TsardomOfMuscovy",
                 "amount": "0.02",
                 "resource": "Spice"
             },
             "TreatyOfMoskva4": {
                 "giver": "TsardomOfMuscovy",
-                "reciever": "HittiteEmpire",
+                "receiver": "HittiteEmpire",
                 "amount": "20",
                 "resource": "Budget"
             }

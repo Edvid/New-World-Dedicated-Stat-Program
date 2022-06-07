@@ -37,7 +37,7 @@ function evaluateNation(nationName) {
     for (const tradename in gameStats.Trades) {
       const trade = gameStats.Trades[tradename];
       if (trade.resource == resource) {
-        if (nationName == trade.reciever) {
+        if (nationName == trade.receiver) {
           n[resource + "Incoming"] += +trade.amount;
         } else if (nationName == trade.giver) {
           n[resource + "Outgoing"] += +trade.amount;
