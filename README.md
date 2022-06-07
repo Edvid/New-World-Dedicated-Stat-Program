@@ -28,7 +28,8 @@ or if something else is already selected, you may want to deselect everything fi
 
 **II: adding**
 
-adding 2 to administrative efficiency can be done with the line:
+adding or subtracting values from a stat can be done in two ways. The explicit and implicit way.
+You can explicidly state what value you wish to change a stat by, by the following line:
 `+2 administrativeefficiency`
 
 or with [synonyms](https://edvid.github.io/New-World-Dedicated-Stat-Program/Synonyms.js) implemented in the program:
@@ -37,9 +38,17 @@ or with [synonyms](https://edvid.github.io/New-World-Dedicated-Stat-Program/Syno
 
 _(notice here that a space after +, - or = is optional. A space is mandatory if the words ADD, SUB, or SET are used)_
 
-**II: moving (and subtracting)**
+The implicit way lets an updater forget the exact value a stat should change for each decent post. The Admins running the game can choose some values they deem to be default for each RPable stat, which updaters can change stats by using the `*` symbol. A game in which a decent post gives 0.5 administrative efficiency, the above `+ 2 adm` would be 4 decent posts. An updater seeing 4 decent posts could then do the equivalent as above by the following line:
 
-moving 10 noble loyalty points from the governments' name to self interests could look like the following
+`+ *4 adm`
+
+The same principles apply to subtracting.
+
+**II: moving values**
+
+
+moving 10 noble loyalty points from the governments' name to self interests, would be done by subtracting at one place, and adding another. This could look like the following:
+
 `-10 noble loyalty.ajuran sultanate`\
 `+10 noble loyalty.self interests`
 
