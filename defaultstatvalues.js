@@ -19,12 +19,12 @@ let defaultStatValues = {
     ClergyLoyalty: 0.05,
     BurghersLoyalty: 0.05,
     Workforces: 0.005,
-    MiningEfficiency: 0.2, //uncertain if correct number
-    Coal: 0.75, //uncertain if correct number
-    Sulphur: 0.75, // -||-
-    Cotton: 0.75, // -||-
-    Gold: 0.75, // -||-
-    Iron: 0.75, // ...
+    MiningEfficiency: 0.2,
+    Coal: 0.75,
+    Sulphur: 0.75,
+    Cotton: 0.75,
+    Gold: 0.75,
+    Iron: 0.75,
     Tea: 0.75,
     Silk: 0.75,
     Spice: 0.75,
@@ -37,15 +37,15 @@ let defaultStatValues = {
     Ivory: 0.75,
     Cocoa: 0.75,
     Tobacco: 0.75,
-    Sugar: 0.75, // ...
-    ExoticFruit: 0.75, // -||-
+    Sugar: 0.75,
+    ExoticFruit: 0.75,
     AgriculturalSubsidies: 0.05,
     AgricultureInfrastructure: 0.05,
     AgricultureAdvancements: 0.05,
     StockingCapabilities: 0.05,
     ResearchEffectiveness: 0.05,
     CulturalProsperity: 0.05,
-    CommanderFreedom: 0.25,
+    CommanderFreedom: 0.5,
     ArmyWages: 0.05,
     TrainingQuality: 0.05,
     MilitaryTactics: 0.05,
