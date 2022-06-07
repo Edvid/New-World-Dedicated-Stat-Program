@@ -56,8 +56,6 @@ class Nation {
   FutureResearchPoints;
   FuturePublicDebtLength;
   FutureCulturalPower;
-  DateInThisNation;
-  FutureDateInThisNation;
   /* #endregion */
 
   /* #region Most Stats */
@@ -529,7 +527,6 @@ class Nation {
     this.ResearchPoints = 6.00;
     this.PublicDebtLength = 0;
     this.CulturalPower = 6.00;
-    this.DateInThisNation = 1350;
     /* #endregion */
 
     /* #region  Most Stats */

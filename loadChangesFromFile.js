@@ -1,4 +1,4 @@
-let commandParameters = [];
+let commandParameters = {};
 let changes;
 let changeCommandIndex;
 let changeCommandFileLength;
@@ -22,7 +22,7 @@ let preloadGameState;
 let preloadStatChanges;
 (async function () {
     preloadGameState;
-    await fetch("./docs/assets/commandChangeFormat/NW7.JSON").then(response => response.json()).then(data => preloadGameState = data);
+    await fetch("./docs/assets/commandChangeFormat/NW7.json").then(response => response.json()).then(data => preloadGameState = data);
     preloadStatChanges;
     await fetch("./docs/assets/commandChangeFormat/NW7.ccf").then(response => response.text()).then(data => preloadStatChanges = data);
     //If hash maves in JSON is the same as the hashcode of the entire
@@ -50,7 +50,7 @@ async function loadChangesFromFile(event) {
     reader.readAsText(file);
 }
 
-const commandRegex = /(?<Operand>([a-z]+)( |\t)|(\+|\=|\-)( |\t)?)(?<Value>(\".+\")|(\{.+\})|(.+?))( |\t)(?<Stat_Name>.+)/i;
+const normalCommandRegex = /(?<Operand>add|\+|sub|-|set|=) *(?<Value>(\*?\d*\.?\d+%?)|(\".*\")|( .*? ))(?<StatName>.+)/i;
 let ignore;
 let currentSelection;
 async function loadChangesFromContent(changes) {
@@ -230,23 +230,23 @@ async function evaluteChangeCommand(changeCommandRaw) {
     }
     //normal commands
     else {
-        commandParameters = [];
+        commandParameters = {};
         //If 2 or more instances of tabulator in the string
         if (changeCommand.replace(/[^\t]/g, "").length >= 2) {
             commandParameters = changeCommand.split("\t");
         }
         else {
-            let match = commandRegex.exec(changeCommand);
-            if (!commandRegex.test(changeCommand)) {
+            let match = normalCommandRegex.exec(changeCommand);
+            if (!normalCommandRegex.test(changeCommand)) {
                 alert("At line " + (changeCommandIndex + 1) + "\r\n\r\nA command wasn't understood:\r\n" + changeCommand + "\r\n Aborting.");
                 return;
             }
-            commandParameters[0] = match.groups.Operand.trim();
-            commandParameters[1] = match.groups.Value.replace(/^"|"$/g, "");
+            commandParameters.Operand = match.groups.Operand.trim();
+            commandParameters.Value = match.groups.Value.replace(/^"|"$/g, "");
 
-            commandParameters[2] = match.groups.Stat_Name;
+            commandParameters.StatName = match.groups.StatName;
         }
-        normalCommand(correctAndSynonymCheck(currentSelection + "." + commandParameters[2]));
+        normalCommand(correctAndSynonymCheck(currentSelection + "." + commandParameters.StatName));
     }
 }
 
@@ -290,19 +290,19 @@ async function displayProgress() {
     } else if (!HashMatched && donegenerating) {
         let loadingFieldTitle = document.createElement("p");
         loadingFieldTitle.innerText = "Download the new JSON file";
-        let downloadbuttom = document.createElement("button");
-        downloadbuttom.innerText = "Download JSON";
-        downloadbuttom.addEventListener('click', () => {
+        let downloadbutton = document.createElement("button");
+        downloadbutton.innerText = "Download JSON";
+        downloadbutton.addEventListener('click', () => {
             let jsonobj = {
                 Hash: preloadStatChanges.replace(/\n|\r/gmi, "").hashCode(),
                 State: gameStats
             };
-            let downloadString = JSON.stringify(jsonobj);
+            let downloadString = JSON.stringify(jsonobj, null, 4);
 
-            downloadToFile(downloadString, 'my-new-file.txt', 'text/plain');
+            downloadToFile(downloadString, 'NW7.json', 'application/json');
         });
         loadingField.appendChild(loadingFieldTitle);
-        loadingField.appendChild(downloadbuttom);
+        loadingField.appendChild(downloadbutton);
         showingdownloadoption = true;
     }
 }

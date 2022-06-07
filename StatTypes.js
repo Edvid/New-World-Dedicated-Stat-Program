@@ -221,7 +221,6 @@ let DerivedStats = [
     "FutureResearchPoints",
     "FuturePublicDebtLength",
     "FutureCulturalPower",
-    "FutureDateInThisNation",
     "PopulationStabilityImpact",
     "ReligionRepresentedAtGovernmentLevelPercent",
     "CultureRepresentedAtGovernmentLevelPercent",
@@ -440,8 +439,7 @@ let TurnBasedStats = [
     "Food",
     "ResearchPoints",
     "PublicDebtLength",
-    "CulturalPower",
-    "DateInThisNation",
+    "CulturalPower"
 ];
 let WarStats = [
     "AtWar",

@@ -16,6 +16,17 @@ let Synonyms = {
 		"qf",
 		"hdi"
     ],
+
+	ReligionGroups : [
+		"relgr",
+		"rg"
+	],
+
+	CultureGroups: [
+		"cultgr",
+		"culgr",
+		"cg"
+	],
 	
     ReligionRepresentedAtGovernmentLevel: [
         "primaryreligion",

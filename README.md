@@ -28,7 +28,8 @@ or if something else is already selected, you may want to deselect everything fi
 
 **II: adding**
 
-adding 2 to administrative efficiency can be done with the line:
+adding or subtracting values from a stat can be done in two ways. The explicit and implicit way.
+You can explicidly state what value you wish to change a stat by, by the following line:
 `+2 administrativeefficiency`
 
 or with [synonyms](https://edvid.github.io/New-World-Dedicated-Stat-Program/Synonyms.js) implemented in the program:
@@ -37,9 +38,17 @@ or with [synonyms](https://edvid.github.io/New-World-Dedicated-Stat-Program/Syno
 
 _(notice here that a space after +, - or = is optional. A space is mandatory if the words ADD, SUB, or SET are used)_
 
-**II: moving (and subtracting)**
+The implicit way lets an updater forget the exact value a stat should change for each decent post. The Admins running the game can choose some values they deem to be default for each RPable stat, which updaters can change stats by using the `*` symbol. A game in which a decent post gives 0.5 administrative efficiency, the above `+ 2 adm` would be 4 decent posts. An updater seeing 4 decent posts could then do the equivalent as above by the following line:
 
-moving 10 noble loyalty points from the governments' name to self interests could look like the following
+`+ *4 adm`
+
+The same principles apply to subtracting.
+
+**II: moving values**
+
+
+moving 10 noble loyalty points from the governments' name to self interests, would be done by subtracting at one place, and adding another. This could look like the following:
+
 `-10 noble loyalty.ajuran sultanate`\
 `+10 noble loyalty.self interests`
 
@@ -229,7 +238,7 @@ The file consist of several `Entries`, each seperated by a `newline` aka `return
 is just as valid as<br>
 `+2 Nations.France.admEff` .<br> 
 It does however mean that the current selection after the dot syntax remains the same as before, and you are still at the top level of all game stats, without any nation selected.
-Values that can be read as numbers will always be interpreted as such. Values that have a percentage sign following the rest of the value which could be read as a number, will be read as a number 100 times smaller.
+Values that can be read as numbers will always be interpreted as such. Values that have a percentage sign following the rest of the value which could be read as a number, will be read as a number 100 times smaller
 
 ### Summary
 
@@ -238,6 +247,14 @@ Templates:
 `sync` or the not so global `sync<`
 `> Nations > Ireland` to select Ireland or `< > France` to select france if you within another nation just before. Use `<...` as freely as you wish.
 `+0.5 admEfficiency`, or for other objects, it might be slightly more 
+
+## Example of command change file
+
+Below is an example of the commands used in praxis. Here we create two nations, Denmark and Sweden, and change some of their stats. We will be changing stats that are objects and navigate all over the place, not just to nations. We will be showing how to add a whole new instance of an object in an array if needed (the bog for the Danish Climate), and we will be creating Sweden as a copy of Denmark. Comments will be accompanying most stat change lines.
+
+![Example Image](/docs/assets/images/exampleImage.png)
+
+The Color coding you see here are from a tmLanguage and tmTheme vscode extension that I have also uploaded to this repo. Move the two folders within the ccfextensions folder into your vscode extensions; `%USERPROFILE%/.vscode/extensions`, do not copy the cfffextensions folder itself into this. You can use `ctrl+K` then `ctrl+T` to change theme.
 
 ## How to debug
 

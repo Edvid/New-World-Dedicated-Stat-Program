@@ -1,0 +1,183 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Command Change Format",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#add"
+		},
+		{
+			"include": "#sub"
+		},
+		{
+			"include": "#set"
+		},
+		{
+			"include": "#switch"
+		},
+		{
+			"include": "#create"
+		},
+		{
+			"include": "#delete"
+		},
+		{
+			"include": "#shorthand"
+		},
+		{
+			"include": "#sync"
+		}
+	],
+	"repository": {
+		"comments": {
+			"patterns": [
+				{
+					"begin": "#",
+					"end": "\\n",
+					"name": "comment.line.number-sign.commandchangeformat"
+				},
+				{
+					"begin": "\"\"\"",
+					"end": "\"\"\"",
+					"name": "comment.block.commandchangeformat"
+
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.commandchangeformat",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.commandchangeformat",
+					"match": "\\\\."
+				}
+			]
+		},
+		"add": {
+			"name": "entity.name.function.add.commandchangeformat",
+			"begin": "\\+(?!\\>)|add",
+			"end": "\\n|(?=#)",
+			"patterns": [
+				{
+					"include": "#strings"
+				},
+				{
+					"name": "constant.numeric.add.commandchangeformat",
+					"match": "-?\\d*\\.?\\d+%?"
+				},
+				{
+					"name": "string.unquoted.add.commandchangeformat",
+					"begin": "[a-zA-Z]",
+					"end": "(?=\\n|#)"
+				}
+			]
+		},
+		"sub": {
+			"name": "entity.name.function.sub.commandchangeformat",
+			"begin": "(?<!\\<)\\-|sub",
+			"end": "\\n|(?=#)",
+			"patterns": [
+				{
+					"include": "#strings"
+				},
+				{
+					"name": "constant.numeric.sub.commandchangeformat",
+					"match": "-?\\d*\\.?\\d+%?"
+				},
+				{
+					"name": "string.unquoted.sub.commandchangeformat",
+					"begin": "[a-zA-Z]",
+					"end": "(?=\\n|#)"
+				}
+			]
+		},
+		"set": {
+			"name": "entity.name.function.set.commandchangeformat",
+			"begin": "=|set",
+			"end": "\\n|(?=#)",
+			"patterns": [
+				
+				{
+					"name": "string.unquoted.set.commandchangeformat",
+					"begin": " ?",
+					"end": "(?=\\n|#)",
+					"patterns": [		
+						{
+							"name": "constant.numeric.set.commandchangeformat",
+							"match": "-?\\d*\\.?\\d+%?"
+						},
+						{
+							"include": "#strings"
+						},
+						{
+							"name": "string.unquoted.set.value.commandchangeformat",
+							"begin": "((?<==)|(?<== )|(?<=set))[a-zA-Z]",
+							"end": " "
+						}		
+					]
+				}
+			]
+		},
+		"switch": {
+			"name": "entity.name.function.switch.commandchangeformat",
+			"begin": "(?=<[^-])|(?<!\\+)(?=>)",
+			"end": "\\n|(?=#)",
+			"patterns": [
+				{
+					"name": "entity.name.function.select.commandchangeformat",
+					"match": ">"
+				},
+				{
+					"name": "entity.name.function.deselect.all.commandchangeformat",
+					"match": "<\\.\\.\\."
+				},
+				{
+					"name": "entity.name.function.deselect.commandchangeformat",
+					"match": "<"
+				}
+			]
+		},
+		"create": {
+			"name": "entity.name.function.create.commandchangeformat",
+			"begin": "\\+>",
+			"end": "\\n|(?=#)",
+			"patterns": [
+				{
+					"name": "string.unquoted.create.commandchangeformat",
+					"begin": "[a-zA-Z]",
+					"end": "(?=\\n|#|=)"
+				}
+			]
+		},
+		"delete": {
+			"name": "entity.name.function.delete.commandchangeformat",
+			"begin": "<-",
+			"end": "\\n|(?=#)",
+			"patterns": [
+				{
+					"name": "string.unquoted.delete.commandchangeformat",
+					"begin": "[a-zA-Z]",
+					"end": "(?=\\n|#)"
+				}
+			]
+		},
+		"shorthand": {
+			"name": "entity.name.function.shorthand.commandchangeformat",
+			"begin": "(trade|pay debt)",
+			"end": "\\n|(?=#)"
+		},
+		"sync": {
+			"name": "entity.name.function.sync.commandchangeformat",
+			"begin": "<?sync<?",
+			"end": "\\n|(?=#)"
+		}
+	},
+	"scopeName": "source.ccf"
+}

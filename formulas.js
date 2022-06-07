@@ -38,9 +38,9 @@ function evaluateNation(nationName) {
       const trade = gameStats.Trades[tradename];
       if (trade.resource == resource) {
         if (nationName == trade.reciever) {
-          n[resource + "Incoming"] += trade.amount;
+          n[resource + "Incoming"] += +trade.amount;
         } else if (nationName == trade.giver) {
-          n[resource + "Outgoing"] += trade.amount;
+          n[resource + "Outgoing"] += +trade.amount;
         }
       }
     }
@@ -50,7 +50,11 @@ function evaluateNation(nationName) {
 
     n["Effective" + resource] = (function () {
 
-      return n[resource] * (GatheringEffectiveness(resource) == "Farming" ? n.FarmingEfficiency : n.MiningEfficiency) + n[resource + "Incoming"] - n[resource + "Outgoing"];
+      let er = n[resource] * (GatheringEffectiveness(resource) == "Farming" ? n.FarmingEfficiency : n.MiningEfficiency) + n[resource + "Incoming"] - n[resource + "Outgoing"];
+      if(er < 0){
+        alert(`It seems the effective resource ${resource} in ${nationName} is negative. Is an impossible trade taking place?`);
+      }
+      return er;
     })();
 
     let inflationMod = (function () {
@@ -489,7 +493,11 @@ n.PopulationGrowth = (n.FutureFood < 0 ? n.FutureFood * 1000 / n.Population - (n
     ];
     for (const resourceName in TradePowerResources) {
       const resource = TradePowerResources[resourceName];
-      num += n[resource + "Incoming"] * n[resource + "Value"];
+      num += +n[resource + "Incoming"] * +n[resource + "Value"];
+      if(isNaN(num)){
+        alert(`something went wrong. Tried to multiply ${n[resource + "Incoming"]} with ${n[resource + "Value"]}. The resource is ${resource} in nation ${nationName}`);
+        return 0;
+      }
     }
     return num;
   })();
@@ -581,5 +589,4 @@ n.PopulationGrowth = (n.FutureFood < 0 ? n.FutureFood * 1000 / n.Population - (n
   n.Technologies.Experimentation / 5;
   n.ResearchPointGain = max(1, (n.ResearchSpending * n.ResearchEffectiveness * n.ResearchBoostFromTech * n.LiteracyPercent / n.Isolation / gameStats.TimeDivide * 2 / 10 + n.ResearchSpending * n.ResearchEffectiveness * n.HigherEducation / n.Isolation / gameStats.TimeDivide * 5 / 10) * (1 - (n.NobleInfluence > 0.5 ? n.NobleInfluence - 0.5 : 0) / 1.5 - (n.ClergyInfluence > 0.5? n.ClergyInfluence - 0.5 : 0) / 1.5) * (1 - n.PopulationTechImpact));
   n.FutureResearchPoints = min(7.5, n.ResearchPoints + n.ResearchPointGain);
-  n.FutureDateInThisNation = n.DateInThisNation + gameStats.TimeSpeed;
 }
