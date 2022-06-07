@@ -3,7 +3,7 @@ let changes;
 let changeCommandIndex;
 let changeCommandFileLength;
 
-let HashMatched = false;
+let HashMatchedTill = 0;
 
 let preloadGameState;
 let preloadStatChanges;
@@ -12,18 +12,14 @@ let preloadStatChanges;
     await fetch("./docs/assets/commandChangeFormat/NW7.json").then(response => response.json()).then(data => preloadGameState = data);
     preloadStatChanges;
     await fetch("./docs/assets/commandChangeFormat/NW7.ccf").then(response => response.text()).then(data => preloadStatChanges = data);
-    //If hash maves in JSON is the same as the hashcode of the entire
+    //If hash in JSON is the same as the hashcode of the entire
     //ccf file. Then the JSON _is_ the state the changes will 
     //genereate, and we can use the State for the gameStats
-    HashMatched = preloadGameState.Hash == preloadStatChanges.replace(/\n|\r/gmi, "").hashCode();
-    if (HashMatched) {
-        gameStats = preloadGameState.State;
-        
-        refreshNationPageItems();
-    }
-    else {
-        loadChangesFromContent(preloadStatChanges.split(/\r?\n|\r/));
-    }
+    HashMatchedTill = preloadGameState.Hash == preloadStatChanges.split(/\r\n|\r/gmi).slice(0, preloadGameState.Lines).join("").hashCode() ? preloadGameState.Lines : 0;
+
+    gameStats = preloadGameState.State;
+    loadChangesFromContent(preloadStatChanges.split(/\r?\n|\r/), HashMatchedTill);
+    
 })();
 
 async function loadChangesFromFile(event) {
@@ -31,7 +27,7 @@ async function loadChangesFromFile(event) {
     var reader = new FileReader();
     reader.onload = function (e) {
         changes = e.target.result.split(/\r?\n|\r/);
-        loadChangesFromContent(changes);
+        loadChangesFromContent(changes, 0);
     };
 
     reader.readAsText(file);
@@ -40,11 +36,11 @@ async function loadChangesFromFile(event) {
 const normalCommandRegex = /(?<Operand>add|\+|sub|-|set|=) *(?<Value>(\*?\d*\.?\d+%?)|(\".*\")|( .*? ))(?<StatName>.+)/i;
 let ignore;
 let currentSelection;
-async function loadChangesFromContent(changes) {
+async function loadChangesFromContent(changes, skip) {
     ignore = false;
     currentSelection = "";
     changeCommandFileLength = changes.length;
-    for (changeCommandIndex = 0; changeCommandIndex < changes.length; changeCommandIndex++) {
+    for (changeCommandIndex = skip; changeCommandIndex < changes.length; changeCommandIndex++) {
         const changeCommand = changes[changeCommandIndex];
         evaluteChangeCommand(changeCommand);
         if (changeCommandIndex % 50 == 0) await new Promise(resolve => setTimeout(resolve));
@@ -59,6 +55,7 @@ function refreshNationPageItems() {
     if (typeof updateDropdownSelection !== 'undefined') updateDropdownSelection();
     if (typeof createNationSheet !== 'undefined') {
         currentNationName = Object.keys(gameStats.Nations)[0];
+        console.log(currentNationName);
         createNationSheet(currentNationName);
     }
     if(typeof onLoadStatTradeZoneWealth !== 'undefined') onLoadStatTradeZoneWealth();
@@ -274,13 +271,14 @@ async function displayProgress() {
         loadingField.appendChild(bar);
         loadingField.appendChild(loadingText);
         if(lines == lines && line > 0) donegenerating = true;
-    } else if (!HashMatched && donegenerating) {
+    } else if (HashMatchedTill != changeCommandFileLength && donegenerating) {
         let loadingFieldTitle = document.createElement("p");
         loadingFieldTitle.innerText = "Download the new JSON file";
         let downloadbutton = document.createElement("button");
         downloadbutton.innerText = "Download JSON";
         downloadbutton.addEventListener('click', () => {
             let jsonobj = {
+                Lines: changeCommandFileLength, 
                 Hash: preloadStatChanges.replace(/\n|\r/gmi, "").hashCode(),
                 State: gameStats
             };
