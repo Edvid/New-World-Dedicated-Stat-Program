@@ -52,7 +52,7 @@ function evaluateNation(nationName) {
 
       let er = n[resource] * (GatheringEffectiveness(resource) == "Farming" ? n.FarmingEfficiency : n.MiningEfficiency) + n[resource + "Incoming"] - n[resource + "Outgoing"];
       if(er < 0){
-        alert(`It seems the effective resource ${resource} in ${nationName} is negative. Is an impossible trade taking place?`);
+        alert(`It seems the effective resource ${resource} in ${nationName} is negative: ${er}. Is an impossible trade taking place?`);
       }
       return er;
     })();

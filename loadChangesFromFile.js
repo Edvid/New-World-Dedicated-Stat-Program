@@ -15,9 +15,13 @@ let preloadStatChanges;
     //If hash in JSON is the same as the hashcode of the entire
     //ccf file. Then the JSON _is_ the state the changes will 
     //genereate, and we can use the State for the gameStats
-    HashMatchedTill = preloadGameState.Hash == preloadStatChanges.split(/\r\n|\r/gmi).slice(0, preloadGameState.Lines).join("").hashCode() ? preloadGameState.Lines : 0;
+    let jsonhash = preloadGameState.Hash;
+    let ccfhash = preloadStatChanges.split(/\r\n|\r/gmi).slice(0, preloadGameState.Lines).join("").hashCode();
+    
+    HashMatchedTill = jsonhash == ccfhash ? preloadGameState.Lines : 0;
 
-    gameStats = preloadGameState.State;
+
+    if (HashMatchedTill > 0) gameStats = preloadGameState.State;
     loadChangesFromContent(preloadStatChanges.split(/\r?\n|\r/), HashMatchedTill);
     
 })();
@@ -257,9 +261,11 @@ async function displayProgress() {
         let barctx = bar.getContext("2d");
 
         barctx.lineWidth = 3;
-        barctx.strokeRect(0, 0, 100, 20);
+        barctx.fillStyle = 'green'
+        barctx.fillRect(0, 0, (HashMatchedTill / lines) * 100, 20);
         barctx.fillStyle = 'black'
-        barctx.fillRect(0, 0, (line / lines) * 100, 20);
+        barctx.fillRect((HashMatchedTill / lines) * 100, 0, ((line - HashMatchedTill) / lines) * 100, 20);
+        barctx.strokeRect(0, 0, 100, 20);
 
         let loadingText = document.createElement("p");
         loadingText.style.fontStyle = "Italic";
