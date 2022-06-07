@@ -75,7 +75,7 @@ function syncNations() {
 
 function normalCommand(selection) {
     
-    let value = commandParameters.Value;
+    let value = commandParameters.Value.trim();
     let change;
     
     //implement check for stat that are objects, and disallow their change
@@ -106,12 +106,28 @@ ${allProperties}`)
 
 
     //If value at all is a number, make sure the program understands this
-    if(/^[\d|\.]+%?$/.test(value)){
+    if(/^(\*?\d*\.?\d+%?)|(\*)$/.test(value)){
+        let useDefault = false;
+        if(/^\*/.test(value)){
+            useDefault = true;
+            value = value.replaceAll("*", "");
+        }
         //If number to change by is written in percent. Divide that number by 100 
         if(/%/.test(value)){
             value = value.replace("%", "") / 100;
         }else{
-            value = +value;
+            value = value.toString().length != 0 ? +value : 1;
+        }
+
+        if(useDefault){
+            let found = false;
+            
+            for (const StatName in defaultStatValues) {
+                if(!selection.includes(StatName)) continue;
+                value *= defaultStatValues[StatName];
+                found = true;
+            }
+            if(!found) alert(`a default value was not found for ${selection}`);
         }
     }
 

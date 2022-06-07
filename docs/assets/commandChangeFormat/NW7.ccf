@@ -1391,25 +1391,25 @@
 +.75 Coal
 +.75 Sulphur 
 # +.5 edueff
-+.5 adm
++ * adm
 +.5 local trade
 > Trade Influences 
 +1 great lakes.TradingPoints
 +1 louisiana.TradingPoints
 +1 East coast.TradingPoints
 <
-+.5 adm
-+.25 adm
-+.5 adm
++ * adm
++ *.5 adm
++ * adm
 +.5 local trade 
 +.05 mercantilism 
 +.05 navy improvements 
-+ .5 adm
-+ .5 adm
++ * adm
++ * adm
 +.05 mercantilism
 + .5 local trade
 + .5% workforces.artisans
-+ .5 adm
++ *1 adm
 + .25 adm
 = 14% high tax
 = 14% medium tax
