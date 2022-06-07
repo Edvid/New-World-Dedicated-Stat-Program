@@ -14,7 +14,7 @@ function loadAllTrades(){
         const trade = alltrades[tradeName];
         let tradeRow = document.createElement("tr");
         let tdTradeName = document.createElement("td");
-        tdTradeName.innerText = tradeName;
+        tdTradeName.innerText = tradeName.capitalSpacing();
         tradeRow.appendChild(tdTradeName);
         for (const key in trade) {
             const value = trade[key];
@@ -24,7 +24,7 @@ function loadAllTrades(){
                 headerRow.appendChild(th);
             }
             let td = document.createElement("td");
-            td.innerHTML = value;
+            td.innerHTML = value.capitalSpacing();
             tradeRow.appendChild(td);
         }
         headerIsEmpty = false;
