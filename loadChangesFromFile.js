@@ -16,7 +16,7 @@ let preloadStatChanges;
     //ccf file. Then the JSON _is_ the state the changes will 
     //genereate, and we can use the State for the gameStats
     let jsonhash = preloadGameState.Hash;
-    let ccfhash = preloadStatChanges.split(/\r\n|\r/gmi).slice(0, preloadGameState.Lines).join("").hashCode();
+    let ccfhash = preloadStatChanges.split(/\r?\n/gmi).slice(0, preloadGameState.Lines).join("").hashCode();
     
     HashMatchedTill = jsonhash == ccfhash ? preloadGameState.Lines : 0;
 
@@ -285,7 +285,7 @@ async function displayProgress() {
         downloadbutton.addEventListener('click', () => {
             let jsonobj = {
                 Lines: changeCommandFileLength, 
-                Hash: preloadStatChanges.replace(/\n|\r/gmi, "").hashCode(),
+                Hash: preloadStatChanges.replace(/\r?\n/gmi, "").hashCode(),
                 State: gameStats
             };
             let downloadString = JSON.stringify(jsonobj, null, 4);
