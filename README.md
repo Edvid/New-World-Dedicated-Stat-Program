@@ -145,7 +145,7 @@ If everything is done correctly, you should be able to see a pie chart with only
 
 The guide above is the first to make real use of selections around the gameStats. Religions, Cultures, ReligionGroups, CultureGroups are not the only objects within the gameStats. You can read more about the entire structure of the gameStats down at Structure.
 
-***VII: Deletion***
+***VII: Deletion and renaming of objects***
 
 Deletion happens in the game when a treaty is terminated, a social behaviour dies out within a nation, or a nation falls.
 
@@ -159,6 +159,19 @@ E.g. If the treaty of Llivia is terminated, one could remove the trade instances
 `< > France`
 
 Any object can be deleted from the game. Be in trades, nations, cultures, culturegroups within nations etc.
+
+When e.g. a nation needs to be renamed for whatever reason, where government name (dynasty) change wouldn't suffice, we have the option to create a nation from copied stats of another. This is conjunction with deletion can work as renaming of a nation, however it shall be noted that the newly renamed nation would move to the bottom of the list to select from, and all nations below the old posision of the nation in the list would move one number up in the list too.
+
+Making a new nation from copied stats may also be used when splitting nations (although you should then remember to deal with a split population, land size etc.). 
+
+Making a new nation (France) with copied stats from another (Gaul) would work like the following:
+
+`<... > Nations`
+`+> France = Gaul`
+
+Then we would delete the old Gaul nation from the game
+
+`<- Gaul`
 
 ## Reminders for stat updaters for special situations
 
