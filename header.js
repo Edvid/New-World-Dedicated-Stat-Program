@@ -22,16 +22,7 @@ tradezonelink.onclick = function(){
     document.location.href = "./TradeZones";
 };
 
-nationslink.style.background = "rgb(200, 163, 231)";
-
 nationslink.onclick = function(){
-    let password = prompt('this is an experimental page. Provide password', '');
-    
-    if(password.hashCode() != 272047786) {
-        alert("password incorrect");
-        return;
-    }
-    
     document.location.href = "./Nations";
 };
 
