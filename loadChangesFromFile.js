@@ -96,79 +96,12 @@ async function evaluteChangeCommand(changeCommandRaw) {
     //trade
     else if (changeCommand.toLowerCase().startsWith("trade")) {
         let parameters = changeCommand.split(/(?<=trade)/gm).pop();
-        parameters = parameters.split(/,|>/gm);
-        let tradename = parameters[0].trim();
-        let giver = parameters[1].trim();
-        let receiver = parameters[2].trim();
-        let stake = parameters[3].trim().split(/(?<![a-zA-Z])(?=[a-zA-Z])/gm);
-        let amount = stake[0].trim();
-        let resourceType = stake[1].trim();
-
-        giver = correctAndSynonymCheck(`.Nations.${giver}`).split(".").pop();
-        receiver = correctAndSynonymCheck(`.Nations.${receiver}`).split(".").pop();
-        resourceType = correctAndSynonymCheck(`.Nations.${giver}.${resourceType}`).split(".").pop();
-
-
-        if (typeof gameStats.Trades[tradename] !== 'undefined') {
-            alert(`The name ${tradename} is already used in Trades.`);
-            return;
-        }
-
-        gameStats.Trades[tradename] = new Trade();
-        gameStats.Trades[tradename].giver = giver;
-        gameStats.Trades[tradename].receiver = receiver;
-        gameStats.Trades[tradename].resource = resourceType;
-        gameStats.Trades[tradename].amount = amount;
-
-        if (typeof spanGroup === 'undefined') return;
-        spanGroup[0].style.fontWeight = "bold";
-        spanGroup[1].style.fontStyle = "italic";
-        spanGroup[3].style.color = "rgb(0, 250, 203)";
-        spanGroup[4].style.color = "rgb(0, 250, 203)";
-        spanGroup[5].style.color = "rgb(0, 250, 203)";
-
-        spanGroup[7].style.color = "#efc5cb";
-        spanGroup[8].style.color = "#efc5cb";
-
+        Shorthands.Trade(parameters);
     }
     //pay debt
     else if (changeCommand.toLowerCase().startsWith("pay debt")) {
         let parameter = changeCommand.split(/(?<=pay debt)/gm).pop().trim();
-        if (isNaN(parameter)) {
-            alert("The debt paid wasn't a number. Operation Aborted.");
-            return;
-        }
-
-        let splitSelections = correctAndSynonymCheck(currentSelection).split(/\./gi);
-        let correctedSelection = "." + splitSelections.join(".");
-
-        if (splitSelections[splitSelections.length - 2] !== 'Nations') {
-            alert("The current selection is not a nation. Cannot sync single nation.");
-            return;
-        }
-
-        let natName = splitSelections[splitSelections.length - 1];
-
-        (new Function(`evaluateNation("${natName}")`))();
-
-
-        //EffectiveDebt formula isolated for Public Debt Taken 
-        //EffectiveDebt = PublicDebtTaken * (1 + InterestRate);
-        //EffectiveDebt / (1 + InterestRate)= PublicDebtTaken * (1 + InterestRate) / (1 + InterestRate);
-        //PublicDebtTaken = EffectiveDebt / (1 + InterestRate);
-        let interestRate = (new Function(`return gameStats${correctedSelection}.InterestRate`))();
-
-        (new Function(`gameStats${correctedSelection}.PublicDebtTaken -= ${parameter} / (1 + ${interestRate})`))();
-        (new Function(`gameStats${correctedSelection}.Budget -= ${parameter}`))();
-
-        //excess paid back
-        let publicDebtTakenValue = new Function(`return gameStats${correctedSelection}.PublicDebtTaken`);
-        if (publicDebtTakenValue < 0) {
-            //reset public debt taken to 0
-            (new Function(`gameStats${correctedSelection}.PublicDebtTaken -= 0`))();
-            //give back to budget
-            (new Function(`gameStats${correctedSelection}.Budget += ${-publicDebtTakenValue})`))();
-        }
+        Shorthands.PayDebt(parameter);
     }
     //Creation
     else if (changeCommand.slice(0, 2) == "+>") {

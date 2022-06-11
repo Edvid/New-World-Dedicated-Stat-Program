@@ -1,44 +1,3 @@
-//synonym searching and case correcting alg
-function correctAndSynonymCheck(selection) {
-    let correctSelection = selection.slice(1).split(".");
-    let step = gameStats;
-    for (let i = 0; i < correctSelection.length; i++) {
-        let found = false;
-        for (const propertyName in step) {
-            //check same stats but correct casing
-            if (propertyName.toLowerCase() == correctSelection[i].toLowerCase().replaceAll(" ", "")) {
-                correctSelection[i] = propertyName;
-                step = step[propertyName];
-                found = true;
-            }
-            else {
-                //check synonyms of stats
-                for (const realName in Synonyms) {
-                    const synonymArray = Synonyms[realName];
-                    for (let j = 0; j < synonymArray.length; j++) {
-                        const synonym = synonymArray[j];
-                        //if what was written in change file exists in the synonym dictionary
-                        if (synonym.toLowerCase() == correctSelection[i].toLowerCase().replaceAll(" ", "")) {
-                            //Then, if the real name for the stat exists in this object
-                            if (propertyName.toLowerCase() == realName.toLowerCase()) {
-                                correctSelection[i] = realName;
-                                step = step[realName];
-                                found = true;
-                            }
-                        }
-                        if (found) continue;
-                    }
-                    if (found) continue;
-                }
-            }
-            if (found) continue;
-        }
-        if (!found) alert(`Line ${changeCommandIndex}: The Specified Stat '${correctSelection[i]}' in '${correctSelection.slice(0, i).join(".")}' was not found!`);
-    }
-    return "." + correctSelection.join(".");
-}
-
-
 function syncNation(nationName) {
 
     /* #region  copy dailies */
@@ -192,4 +151,70 @@ function deleteStat(currentSelection, arg){
     let dottedStatName = arg;
     if(!/\.|\[/gm.test(dottedStatName[0])) dottedStatName = "." + dottedStatName;
     (new Function(`delete gameStats${currentSelection}${dottedStatName}`))();
+}
+
+let Shorthands = {}
+
+Shorthands.Trade = function(parameters){
+    parameters = parameters.split(/,|>/gm);
+    let tradename = parameters[0].trim();
+    let giver = parameters[1].trim();
+    let receiver = parameters[2].trim();
+    let stake = parameters[3].trim().split(/(?<![a-zA-Z])(?=[a-zA-Z])/gm);
+    let amount = stake[0].trim();
+    let resourceType = stake[1].trim();
+
+    giver = correctAndSynonymCheck(`.Nations.${giver}`).split(".").pop();
+    receiver = correctAndSynonymCheck(`.Nations.${receiver}`).split(".").pop();
+    resourceType = correctAndSynonymCheck(`.Nations.${giver}.${resourceType}`).split(".").pop();
+
+
+    if (typeof gameStats.Trades[tradename] !== 'undefined') {
+        alert(`The name ${tradename} is already used in Trades.`);
+        return;
+    }
+
+    gameStats.Trades[tradename] = new Trade();
+    gameStats.Trades[tradename].giver = giver;
+    gameStats.Trades[tradename].receiver = receiver;
+    gameStats.Trades[tradename].resource = resourceType;
+    gameStats.Trades[tradename].amount = amount;
+}
+
+Shorthands.PayDebt = function(parameter){
+    if (isNaN(parameter)) {
+        alert("The debt paid wasn't a number. Operation Aborted.");
+        return;
+    }
+
+    let splitSelections = correctAndSynonymCheck(currentSelection).split(/\./gi);
+    let correctedSelection = "." + splitSelections.join(".");
+
+    if (splitSelections[splitSelections.length - 2] !== 'Nations') {
+        alert("The current selection is not a nation. Cannot sync single nation.");
+        return;
+    }
+
+    let natName = splitSelections[splitSelections.length - 1];
+
+    (new Function(`evaluateNation("${natName}")`))();
+
+
+    //EffectiveDebt formula isolated for Public Debt Taken 
+    //EffectiveDebt = PublicDebtTaken * (1 + InterestRate);
+    //EffectiveDebt / (1 + InterestRate)= PublicDebtTaken * (1 + InterestRate) / (1 + InterestRate);
+    //PublicDebtTaken = EffectiveDebt / (1 + InterestRate);
+    let interestRate = (new Function(`return gameStats${correctedSelection}.InterestRate`))();
+
+    (new Function(`gameStats${correctedSelection}.PublicDebtTaken -= ${parameter} / (1 + ${interestRate})`))();
+    (new Function(`gameStats${correctedSelection}.Budget -= ${parameter}`))();
+
+    //excess paid back
+    let publicDebtTakenValue = new Function(`return gameStats${correctedSelection}.PublicDebtTaken`);
+    if (publicDebtTakenValue < 0) {
+        //reset public debt taken to 0
+        (new Function(`gameStats${correctedSelection}.PublicDebtTaken -= 0`))();
+        //give back to budget
+        (new Function(`gameStats${correctedSelection}.Budget += ${-publicDebtTakenValue})`))();
+    }
 }
