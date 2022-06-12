@@ -2593,15 +2593,15 @@ sync
 +.5 Education Efficiency
 + .5% workforces.Artisans
 + .5% workforces.burghers
-+ 5% Clergy Loyalty . Kingdom of Burgundy 
--5% clergy loyalty. Self Interests 
-+ 5% Burghers Loyalty.  Kingdom of Burgundy 
--5% burghers loyalty . Self Interests 
++ 5 Clergy Loyalty . Kingdom of Burgundy 
+-5 clergy loyalty. Self Interests 
++ 5 Burghers Loyalty.  Kingdom of Burgundy 
+-5 burghers loyalty . Self Interests 
 + .5 adm
 +.5 adm
 -5% noble influence
--5% noble loyalty . Kingdom of Burgundy 
-+5% noble loyalty. Self Interests 
+-5 noble loyalty . Kingdom of Burgundy 
++5 noble loyalty. Self Interests 
 = 15% high class tax
 # estates general not hiding any power, gives adm?
 # + .5 adm
@@ -2609,10 +2609,10 @@ sync
 = 22% low tax
 = 22% mid tax
 + .05 Absolutism
--5% noble loyalty . Kingdom of Burgundy 
-+5% noble loyalty. Self Interests 
--5% clergy loyalty . Kingdom of Burgundy 
-+5% clergy loyalty. Self Interests 
+-5 noble loyalty . Kingdom of Burgundy 
++5 noble loyalty. Self Interests 
+-5 clergy loyalty . Kingdom of Burgundy 
++5 clergy loyalty. Self Interests 
 
 = 300 l cav
 = 588 h cav
@@ -2627,8 +2627,8 @@ sync
 + .25 coal
 
 
--5% burghers loyalty . Kingdom of Burgundy 
-+5% burghers loyalty. Self Interests 
+-5 burghers loyalty . Kingdom of Burgundy 
++5 burghers loyalty. Self Interests 
 + .05 mercantilism
 + .5 local trade
 + .25 health
@@ -2639,11 +2639,11 @@ sync
 + .25 propaganda
 
 < > kingdom of serbia
-+7.5% noble loyalty . kingdom of serbia
--7.5% noble loyalty . self interests
++7.5 noble loyalty . kingdom of serbia
+-7.5 noble loyalty . self interests
 +10% noble influence
-+7.5% burghers loyalty . kingdom of serbia
--7.5% burghers loyalty . self interests
++7.5 burghers loyalty . kingdom of serbia
+-7.5 burghers loyalty . self interests
 +10% burghers influence
 + .5% workforces.burghers
 + .5% workforces.artisans
