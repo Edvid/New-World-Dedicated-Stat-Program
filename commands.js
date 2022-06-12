@@ -218,3 +218,7 @@ Shorthands.PayDebt = function(parameter){
         (new Function(`gameStats${correctedSelection}.Budget += ${-publicDebtTakenValue})`))();
     }
 }
+
+Shorthands.Move = function(parameter){
+    //to be implemented
+}

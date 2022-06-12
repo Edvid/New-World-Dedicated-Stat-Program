@@ -102,6 +102,11 @@ async function evaluteChangeCommand(changeCommandRaw) {
         let parameter = changeCommand.split(/(?<=pay debt)/gm).pop().trim();
         Shorthands.PayDebt(parameter);
     }
+    //move
+    else if (changeCommand.toLowerCase().startsWith("move")) {
+        let parameter = changeCommand.split(/(?<=move)/gm).pop().trim();
+        Shorthands.Move(parameter);
+    }
     //Creation
     else if (changeCommand.slice(0, 2) == "+>") {
         let arg = changeCommand.slice(2).trim();
