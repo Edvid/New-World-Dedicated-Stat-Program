@@ -312,7 +312,7 @@ let PopulationGrowthModifier = (n.Fertility > 0.5 ? (n.Fertility - 0.5) / 10 : 0
     for (const loyaltyName in n.NobleLoyaltyGroups) {
       const loyalty = n.NobleLoyaltyGroups[loyaltyName];
       pointSum += +loyalty;
-      if (loyaltyName == n.GovernmentName) n.NobleStateLoyalty = loyalty;
+      if (loyaltyName == n.GovernmentName) return loyalty;
     }
     return n.NobleStateLoyalty / pointSum;
   })();
@@ -321,7 +321,7 @@ let PopulationGrowthModifier = (n.Fertility > 0.5 ? (n.Fertility - 0.5) / 10 : 0
     for (const loyaltyName in n.ClergyLoyaltyGroups) {
       const loyalty = n.ClergyLoyaltyGroups[loyaltyName];
       pointSum += +loyalty;
-      if (loyaltyName == n.GovernmentName) n.ClergyStateLoyalty = loyalty;
+      if (loyaltyName == n.GovernmentName) return loyalty;
     }
     return n.ClergyStateLoyalty / pointSum;
   })();
@@ -330,7 +330,7 @@ let PopulationGrowthModifier = (n.Fertility > 0.5 ? (n.Fertility - 0.5) / 10 : 0
     for (const loyaltyName in n.BurghersLoyaltyGroups) {
       const loyalty = n.BurghersLoyaltyGroups[loyaltyName];
       pointSum += +loyalty;
-      if (loyaltyName == n.GovernmentName) n.BurghersStateLoyalty = loyalty;
+      if (loyaltyName == n.GovernmentName) return loyalty;
     }
     return n.BurghersStateLoyalty / pointSum;
   })();
