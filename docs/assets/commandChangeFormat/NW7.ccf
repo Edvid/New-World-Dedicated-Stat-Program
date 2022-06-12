@@ -2607,15 +2607,17 @@ sync
 +.5 Education Efficiency
 + .5% workforces.Artisans
 + .5% workforces.burghers
-+ 5 Clergy Loyalty . Kingdom of Burgundy 
--5 clergy loyalty. Self Interests 
-+ 5 Burghers Loyalty.  Kingdom of Burgundy 
--5 burghers loyalty . Self Interests 
+> Clergy Loyalty
+move, Self Interests > Kingdom of Burgundy, 5
+< > Burghers Loyalty
+move, Self Interests > Kingdom of Burgundy, 5
+<
 + .5 adm
 +.5 adm
 -5% noble influence
--5 noble loyalty . Kingdom of Burgundy 
-+5 noble loyalty. Self Interests 
+> noble loyalty
+move, Kingdom of Burgundy > Self Interests, 5
+< 
 = 15% high class tax
 # estates general not hiding any power, gives adm?
 # + .5 adm
@@ -2623,10 +2625,10 @@ sync
 = 22% low tax
 = 22% mid tax
 + .05 Absolutism
--5 noble loyalty . Kingdom of Burgundy 
-+5 noble loyalty. Self Interests 
--5 clergy loyalty . Kingdom of Burgundy 
-+5 clergy loyalty. Self Interests 
+> noble loyalty
+move, Kingdom of Burgundy > Self Interests, 5 
+< > clergy loyalty
+move, Kingdom of Burgundy > Self Interests, 5
 
 = 300 l cav
 = 588 h cav
@@ -2640,9 +2642,9 @@ sync
 + .25 sulphur 
 + .25 coal
 
-
--5 burghers loyalty . Kingdom of Burgundy 
-+5 burghers loyalty. Self Interests 
+> burghers loyalty
+move, Kingdom of Burgundy > Self Interests, 5 
+<
 + .05 mercantilism
 + .5 local trade
 + .25 health
@@ -2653,11 +2655,12 @@ sync
 + .25 propaganda
 
 < > kingdom of serbia
-+7.5 noble loyalty . kingdom of serbia
--7.5 noble loyalty . self interests
+> noble loyalty
+move, self interests > kingdom of serbia ,7.5
+<
 +10% noble influence
-+7.5 burghers loyalty . kingdom of serbia
--7.5 burghers loyalty . self interests
+> burghers loyalty
+move, self interests > kingdom of serbia, 7.5
 +10% burghers influence
 + .5% workforces.burghers
 + .5% workforces.artisans
@@ -3439,11 +3442,13 @@ trade TreatyOfMoskva4, TsardomOfMuscovy > HittiteEmpire, 20 Budget
 +0.1 Agradv
 +0.1 Agrinf
 +10% NobleInfluence
-+10 NobleLoyalty.KingdomOfAndalusia
--10 NobleLoyalty.SelfInterests
+> NobleLoyalty
+move, SelfInterests > KingdomOfAndalusia, 10
+<
 -10% ClergyInfluence
-+10 ClergyLoyalty.KingdomOfAndalusia
--10 ClergyLoyalty.SelfInterests
+> ClergyLoyalty 
+move, SelfInterests > KingdomOfAndalusia, 10
+<
 +0.15 CulturalProsperity
 =16% lowertax
 +1.5 admeff
@@ -3456,15 +3461,18 @@ trade TreatyOfMoskva4, TsardomOfMuscovy > HittiteEmpire, 20 Budget
 +1600 Militia
 +2.75% workforces.burghers
 +2% workforces.artisans
-+20 BurgherLoyalty.ArchduchyOfAustria
--20 BurgherLoyalty.SelfInterests
+> BurgherLoyalty
+move, SelfInterests > ArchduchyOfAustria, 20
+<
 +15% BurghersInfluence
--5 NobleLoyalty.ArchduchyOfAustria
-+5 NobleLoyalty.SelfInterests
+> NobleLoyalty
+move, ArchduchyOfAustria > SelfInterests, 5
+<
 +1.25 Admeff
 +0.5 Edueff
-+10 ClergyLoyalty.ArchduchyOfAustria
--10 ClergyLoyalty.SelfInterests
+> ClergyLoyalty
+move, SelfInterests > ArchduchyOfAustria, 10
+<
 +0.2 NavalImprovements
 +3.5 LocalTrade
 +0.35 Mercantilism
@@ -3544,8 +3552,9 @@ trade TreatyOfMoskva4, TsardomOfMuscovy > HittiteEmpire, 20 Budget
 +0.05 CulturalProsperity
 +0.05 MilitaryTactics
 + 0.1 AgricultureInfrastructure
-+10 ClergyLoyalty.TainoTribalConfederacy
--10 ClergyLoyalty.SelfInterests
+> ClergyLoyalty
+move, SelfInterests > TainoTribalConfederacy, 10
+<
 +.25 SocialSpending
 > TradeInfluences
 +.75 Carribean.tp
@@ -3560,10 +3569,11 @@ trade TreatyOfMoskva4, TsardomOfMuscovy > HittiteEmpire, 20 Budget
 +0.75 Health
 +10% NobleInfluence
 +5% ClergyInfluence
-+20 NobleLoyalty.Byzantium
--20 NobleLoyalty.SelfInterests
-+15 ClergyLoyalty.Byzantium
--15 ClergyLoyalty.SelfInterests
+> NobleLoyalty
+move, SelfInterests > Byzantium, 20
+< > ClergyLoyalty
+move, SelfInterests > Byzantium, 15
+<
 +16 HeavyShips
 +32 MediumShips
 +73 LightShips
@@ -3573,8 +3583,9 @@ trade TreatyOfMoskva4, TsardomOfMuscovy > HittiteEmpire, 20 Budget
 +448 lightcav
 +512 heavycav
 +1 ExtraCityFortifications
-+10 BurgherLoyalty.Byzantium
--10 BurgherLoyalty.SelfInterests
+> BurgherLoyalty
+move, SelfInterests > Byzantium, 10
+<
 +0.35 TrainingQuality
 +0.6 MilitaryTactics
 +0.75 Propaganda
@@ -3826,8 +3837,9 @@ trade TreatyOfMoskva4, TsardomOfMuscovy > HittiteEmpire, 20 Budget
 +1 SocialSpending
 +2.5 Health
 +15% ClergyInfluence
-+10 ClergyLoyalty.EulacianTradeCouncil
--10 ClergyLoyalty.SelfInterests
+> ClergyLoyalty
+move, SelfInterests > EulacianTradeCouncil, 10
+<
 +8.45 LocalTrade
 +1.00 Mercantilism
 +0.75 Coal
