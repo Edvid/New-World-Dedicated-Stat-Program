@@ -312,7 +312,7 @@ let PopulationGrowthModifier = (n.Fertility > 0.5 ? (n.Fertility - 0.5) / 10 : 0
     for (const loyaltyName in n.NobleLoyaltyGroups) {
       const loyalty = n.NobleLoyaltyGroups[loyaltyName];
       pointSum += +loyalty;
-      if (loyaltyName == n.GovernmentName) n.NobleStateLoyalty = loyalty;
+      if (loyaltyName == n.GovernmentName) return loyalty;
     }
     return n.NobleStateLoyalty / pointSum;
   })();
@@ -321,7 +321,7 @@ let PopulationGrowthModifier = (n.Fertility > 0.5 ? (n.Fertility - 0.5) / 10 : 0
     for (const loyaltyName in n.ClergyLoyaltyGroups) {
       const loyalty = n.ClergyLoyaltyGroups[loyaltyName];
       pointSum += +loyalty;
-      if (loyaltyName == n.GovernmentName) n.ClergyStateLoyalty = loyalty;
+      if (loyaltyName == n.GovernmentName) return loyalty;
     }
     return n.ClergyStateLoyalty / pointSum;
   })();
@@ -330,7 +330,7 @@ let PopulationGrowthModifier = (n.Fertility > 0.5 ? (n.Fertility - 0.5) / 10 : 0
     for (const loyaltyName in n.BurghersLoyaltyGroups) {
       const loyalty = n.BurghersLoyaltyGroups[loyaltyName];
       pointSum += +loyalty;
-      if (loyaltyName == n.GovernmentName) n.BurghersStateLoyalty = loyalty;
+      if (loyaltyName == n.GovernmentName) return loyalty;
     }
     return n.BurghersStateLoyalty / pointSum;
   })();
@@ -338,7 +338,13 @@ let PopulationGrowthModifier = (n.Fertility > 0.5 ? (n.Fertility - 0.5) / 10 : 0
   n.Fervor = clamp(1, -1, 0 + n.MinorBattles / 20 + n.MajorBattles / 10 + n.Pillaging - (n.Casualties / (n.OverallNumbers + n.Casualties + 0.0000001)));
   n.WarSupport = clamp(1, 0, n.PopulationHappiness / 10 * 2.5 + n.Propaganda / 10 + n.Fervor);
   let WarStabilityModifier = ((n.AtWar.toLowerCase() == 'offensive' && n.WarSupport < 0.75) ? (n.WarSupport - 0.75) / 10 : 0) + max(-0.075, ((n.AtWar.toLowerCase() == 'defensive' && n.WarSupport < 0.4 && n.Fervor < 0) ? (n.Fervor) / 10 : 0));
-  //min and max? nested ternary operations, with "0" if either fail? n.can be optimized
+  
+  n.MilitaryMorale = clamp(0, 1.5, 
+    1 + n.Fervor + (n.MilitaryDiscipline > 1 ? - n.MilitaryDiscipline + 1 : 0) * 2 +
+  (n.WarSupport < 0.5 ? n.WarSupport - 0.5 : 0) +
+  (n.WarSupport > 0.75 ? n.WarSupport - 0.75 : 0) +
+  n.ArmyWages - 1);
+  
   n.MilitaryLoyalty = clamp(1, 0, 
     1 * n.ArmyWages +
     (n.CulturalAdvancements.EarlyModernAdministration == false && n.NobleStateLoyalty < 0.50 ?
@@ -554,11 +560,6 @@ n.PopulationGrowth = (n.FutureFood < 0 ? n.FutureFood * 1000 / n.Population - (n
 
   n.FreeEliteUnitsCap = ((n.OverallNumbers - n.Militia - n.Levies) * 0.025) - (n.EliteCavalry + n.EliteInfantry);
 
-  n.MilitaryMorale = clamp(0, 1.5, 
-    1 + n.Fervor + (n.MilitaryDiscipline > 1 ? - n.MilitaryDiscipline + 1 : 0) * 2 +
-  (n.WarSupport < 0.5 ? n.WarSupport - 0.5 : 0) +
-  (n.WarSupport > 0.75 ? n.WarSupport - 0.75 : 0) +
-  n.ArmyWages - 1);
 
   n.CulturalAdvance = (function () {
     let ca = 0;
