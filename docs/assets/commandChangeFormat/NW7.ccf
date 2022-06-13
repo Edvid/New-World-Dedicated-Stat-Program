@@ -1476,7 +1476,7 @@
 + .05 Stockcap
 + .05 agri inf
 > noble loyalty groups
-move, TsardomOfMuscovy > SelfInterests, 5
+move TsardomOfMuscovy > SelfInterests, 5
 <
 - 5% NobilityInfluence
 
@@ -1528,7 +1528,7 @@ move, TsardomOfMuscovy > SelfInterests, 5
 +.5 local trade
 +.5% workforces.burghers
 > burghers loyalty groups
-move, self interests > Byzantium, 5
+move self interests > Byzantium, 5
 <
 +.5 mercantilism
 > Trade Influences 
@@ -1687,7 +1687,7 @@ move, self interests > Byzantium, 5
 +0.5 SocialSpending 
 +5% clergyinfluence 
 > ClergyLoyaltyGroups
-move, SelfInterests > KingdomOfKhmbodj, 5
+move SelfInterests > KingdomOfKhmbodj, 5
 <
 > Trade influences
 +0.25 SouthEastAsia.TradingPoints 
@@ -1707,7 +1707,7 @@ move, SelfInterests > KingdomOfKhmbodj, 5
 -6.5 Pagan.points
 <
 > ClergyLoyaltyGroups
-move, KingdomOfPotskig > SelfInterests, 5
+move KingdomOfPotskig > SelfInterests, 5
 <
 
 # Order of St Mary update 
@@ -1726,7 +1726,7 @@ move, KingdomOfPotskig > SelfInterests, 5
 +0.5% Clergy
 <
 > ClergyLoyaltyGroups
-move, SelfInterests > OrderOfStMary, 10 
+move SelfInterests > OrderOfStMary, 10 
 <
 +15% ClergyInfluence
 +500 HeavyCavalry
@@ -1754,14 +1754,14 @@ move, SelfInterests > OrderOfStMary, 10
 +0.50 Absolutism 
 +10% Noble Influence
 > Nobleloyaltygroups
-move, SelfInterests > SindhEmpire, 5
+move SelfInterests > SindhEmpire, 5
 <
 =13% lowertax
 =14% mediumtax 
 =17.5% hightax 
 +10% Clergy Influence 
 > Clergyloyaltygroups
-move, SelfInterests > SindhEmpire, 5
+move SelfInterests > SindhEmpire, 5
 <
 +0.50 Propaganda 
 +10% BurghersInfluence 
@@ -1776,11 +1776,12 @@ move, SelfInterests > SindhEmpire, 5
 +0.5 exotic fruits 
 +220 Public debt taken 
 > Nobleloyaltygroups
-move, SelfInterests > SindhEmpire, 5 
+move SelfInterests > SindhEmpire, 5 
 < > Clergyloyaltygroups
-move, SelfInterests > SindhEmpire, 5 
+move SelfInterests > SindhEmpire, 5 
 < > Burghersloyaltygroups
-move, SelfInterests > SindhEmpire, 10 
+move SelfInterests > SindhEmpire, 10 
+<
 -5 budget 
 > Trade influences
 +1.0 Pakistan.TradingPoints 
@@ -1909,7 +1910,7 @@ move, SelfInterests > SindhEmpire, 10
 + .5 adm
 - 5% noble inf
 > nobleloyalty
-move, self interests > ArchduchyOfAustria, 7.5
+move self interests > ArchduchyOfAustria, 7.5
 < 
 + .5 local trade
 + .05 mercantilism
@@ -1925,7 +1926,7 @@ move, self interests > ArchduchyOfAustria, 7.5
 + .5 Adm
 + 5% Burghersinf
 > Burghers loyalty
-move, Self Interests > Archduchy Of Austria, 5
+move Self Interests > Archduchy Of Austria, 5
 <
 + .05 mercantilism 
 + .25 social spending
@@ -1935,7 +1936,7 @@ move, Self Interests > Archduchy Of Austria, 5
 + .5 adm
 + .5 edu
 > clergy loyalty
-move, Archduchy Of Austria > Self Interests, 1
+move Archduchy Of Austria > Self Interests, 1
 <
 + .5 edu
 
@@ -1987,7 +1988,7 @@ move, Archduchy Of Austria > Self Interests, 1
 +.05 agri adv
 + 5% noble inf
 > noble loyalty
-move, Self Interests > KingdomOfAndalusia, 5
+move Self Interests > KingdomOfAndalusia, 5
 <
 + .05 cultural advance
 + .5% workforces.artisans
@@ -2002,7 +2003,7 @@ move, Self Interests > KingdomOfAndalusia, 5
 + 0.25 adm
 + 5% noble inf
 > noble loyalty
-move, Self Interests > KingdomOfAndalusia, 2.5 
+move Self Interests > KingdomOfAndalusia, 2.5 
 <
 + 0.25 adm
 + 0.5 localtrade
@@ -2026,7 +2027,7 @@ move, Self Interests > KingdomOfAndalusia, 2.5
 +0.5 adm
 -0.05 nobleinfluence
 > nobleloyaltygroups
-move, ValublidSultanate > selfinterests, 5
+move ValublidSultanate > selfinterests, 5
 
 # Arberber 1350
 <... > Nations > ArberberKingdom
@@ -2046,7 +2047,7 @@ move, ValublidSultanate > selfinterests, 5
 =0.1 mediumtax
 =0.1 hightax
 > burghersloyaltygroups
-move, SelfInterests > ArberberKingdom, 5
+move SelfInterests > ArberberKingdom, 5
 <
 +0.05 burghersinf
 +0.2 mercantilism
@@ -2095,7 +2096,8 @@ move, SelfInterests > ArberberKingdom, 5
 +4 MediumShips
 +1 HeavyShips
 > ClergyLoyaltyGroups
-move, SelfInterests > EulacianTradeCouncil, 5
+move SelfInterests > EulacianTradeCouncil, 5
+<
 +0.05 clergyinfluence
 > TradeInfluences
 +1.5 SouthEastAsia.TradingPoints
@@ -2122,11 +2124,11 @@ move, SelfInterests > EulacianTradeCouncil, 5
 +0.1 agrinf
 +1.25 wool
 > ClergyLoyaltyGroups
-move, SelfInterests > KingdomOfToledoCatalonia, 10
+move SelfInterests > KingdomOfToledoCatalonia, 10
 < > NobleLoyaltyGroups
-move, SelfInterests > KingdomOfToledoCatalonia, 10
+move SelfInterests > KingdomOfToledoCatalonia, 10
 < > burghersLoyaltyGroups 
-move, SelfInterests > KingdomOfToledoCatalonia, 5
+move SelfInterests > KingdomOfToledoCatalonia, 5
 <
 +0.15 miningeff
 
@@ -2608,15 +2610,15 @@ sync
 + .5% workforces.Artisans
 + .5% workforces.burghers
 > Clergy Loyalty
-move, Self Interests > Kingdom of Burgundy, 5
+move Self Interests > Kingdom of Burgundy, 5
 < > Burghers Loyalty
-move, Self Interests > Kingdom of Burgundy, 5
+move Self Interests > Kingdom of Burgundy, 5
 <
 + .5 adm
 +.5 adm
 -5% noble influence
 > noble loyalty
-move, Kingdom of Burgundy > Self Interests, 5
+move Kingdom of Burgundy > Self Interests, 5
 < 
 = 15% high class tax
 # estates general not hiding any power, gives adm?
@@ -2626,10 +2628,10 @@ move, Kingdom of Burgundy > Self Interests, 5
 = 22% mid tax
 + .05 Absolutism
 > noble loyalty
-move, Kingdom of Burgundy > Self Interests, 5 
+move Kingdom of Burgundy > Self Interests, 5 
 < > clergy loyalty
-move, Kingdom of Burgundy > Self Interests, 5
-
+move Kingdom of Burgundy > Self Interests, 5
+<
 = 300 l cav
 = 588 h cav
 = 312 h inf
@@ -2643,7 +2645,7 @@ move, Kingdom of Burgundy > Self Interests, 5
 + .25 coal
 
 > burghers loyalty
-move, Kingdom of Burgundy > Self Interests, 5 
+move Kingdom of Burgundy > Self Interests, 5 
 <
 + .05 mercantilism
 + .5 local trade
@@ -2656,11 +2658,12 @@ move, Kingdom of Burgundy > Self Interests, 5
 
 < > kingdom of serbia
 > noble loyalty
-move, self interests > kingdom of serbia ,7.5
+move self interests > kingdom of serbia ,7.5
 <
 +10% noble influence
 > burghers loyalty
-move, self interests > kingdom of serbia, 7.5
+move self interests > kingdom of serbia, 7.5
+<
 +10% burghers influence
 + .5% workforces.burghers
 + .5% workforces.artisans
@@ -3443,11 +3446,11 @@ trade TreatyOfMoskva4, TsardomOfMuscovy > HittiteEmpire, 20 Budget
 +0.1 Agrinf
 +10% NobleInfluence
 > NobleLoyalty
-move, SelfInterests > KingdomOfAndalusia, 10
+move SelfInterests > KingdomOfAndalusia, 10
 <
 -10% ClergyInfluence
 > ClergyLoyalty 
-move, SelfInterests > KingdomOfAndalusia, 10
+move SelfInterests > KingdomOfAndalusia, 10
 <
 +0.15 CulturalProsperity
 =16% lowertax
@@ -3462,16 +3465,16 @@ move, SelfInterests > KingdomOfAndalusia, 10
 +2.75% workforces.burghers
 +2% workforces.artisans
 > BurgherLoyalty
-move, SelfInterests > ArchduchyOfAustria, 20
+move SelfInterests > ArchduchyOfAustria, 20
 <
 +15% BurghersInfluence
 > NobleLoyalty
-move, ArchduchyOfAustria > SelfInterests, 5
+move ArchduchyOfAustria > SelfInterests, 5
 <
 +1.25 Admeff
 +0.5 Edueff
 > ClergyLoyalty
-move, SelfInterests > ArchduchyOfAustria, 10
+move SelfInterests > ArchduchyOfAustria, 10
 <
 +0.2 NavalImprovements
 +3.5 LocalTrade
@@ -3553,7 +3556,7 @@ move, SelfInterests > ArchduchyOfAustria, 10
 +0.05 MilitaryTactics
 + 0.1 AgricultureInfrastructure
 > ClergyLoyalty
-move, SelfInterests > TainoTribalConfederacy, 10
+move SelfInterests > TainoTribalConfederacy, 10
 <
 +.25 SocialSpending
 > TradeInfluences
@@ -3570,9 +3573,9 @@ move, SelfInterests > TainoTribalConfederacy, 10
 +10% NobleInfluence
 +5% ClergyInfluence
 > NobleLoyalty
-move, SelfInterests > Byzantium, 20
+move SelfInterests > Byzantium, 20
 < > ClergyLoyalty
-move, SelfInterests > Byzantium, 15
+move SelfInterests > Byzantium, 15
 <
 +16 HeavyShips
 +32 MediumShips
@@ -3584,7 +3587,7 @@ move, SelfInterests > Byzantium, 15
 +512 heavycav
 +1 ExtraCityFortifications
 > BurgherLoyalty
-move, SelfInterests > Byzantium, 10
+move SelfInterests > Byzantium, 10
 <
 +0.35 TrainingQuality
 +0.6 MilitaryTactics
@@ -3838,7 +3841,7 @@ move, SelfInterests > Byzantium, 10
 +2.5 Health
 +15% ClergyInfluence
 > ClergyLoyalty
-move, SelfInterests > EulacianTradeCouncil, 10
+move SelfInterests > EulacianTradeCouncil, 10
 <
 +8.45 LocalTrade
 +1.00 Mercantilism

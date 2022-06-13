@@ -226,12 +226,12 @@ Shorthands.Move = function(parameters){
     let amount = parameters[2].trim();
 
     if (isNaN(amount)) {
-        alert(`Line: ${changeCommandIndex}: The debt paid wasn't a number. Operation Aborted.`);
+        alert(`Line: ${changeCommandIndex}: The points to be moved wasn't a number. Operation Aborted.`);
         return;
     }
 
-    from = correctAndSynonymCheck(`.Nations.${from}`).split(".").pop();
-    to = correctAndSynonymCheck(`.Nations.${to}`).split(".").pop();
+    from = correctAndSynonymCheck(`${currentSelection}.${from}`).split(".").pop();
+    to = correctAndSynonymCheck(`${currentSelection}.${to}`).split(".").pop();
     
     (new Function(
         `gameStats${from} -= ${amount};\
