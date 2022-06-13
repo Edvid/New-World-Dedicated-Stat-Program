@@ -183,7 +183,7 @@ Shorthands.Trade = function(parameters){
 
 Shorthands.PayDebt = function(parameter){
     if (isNaN(parameter)) {
-        alert("The debt paid wasn't a number. Operation Aborted.");
+        alert(`Line: ${changeCommandIndex}: The debt paid wasn't a number. Operation Aborted.`);
         return;
     }
 
@@ -219,6 +219,22 @@ Shorthands.PayDebt = function(parameter){
     }
 }
 
-Shorthands.Move = function(parameter){
-    //to be implemented
+Shorthands.Move = function(parameters){
+    parameters = parameters.split(/,|>/gm);
+    let from = parameters[0].trim();
+    let to = parameters[1].trim();
+    let amount = parameters[2].trim();
+
+    if (isNaN(amount)) {
+        alert(`Line: ${changeCommandIndex}: The debt paid wasn't a number. Operation Aborted.`);
+        return;
+    }
+
+    from = correctAndSynonymCheck(`.Nations.${from}`).split(".").pop();
+    to = correctAndSynonymCheck(`.Nations.${to}`).split(".").pop();
+    
+    (new Function(
+        `gameStats${from} -= ${amount};\
+         gameStats${to} += ${amount}`
+    ))();
 }
