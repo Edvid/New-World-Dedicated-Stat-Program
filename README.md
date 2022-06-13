@@ -52,6 +52,16 @@ moving 10 noble loyalty points from the governments' name to self interests, wou
 `-10 noble loyalty.ajuran sultanate`\
 `+10 noble loyalty.self interests`
 
+A convenient shorthand is also available for moving stats
+
+`move noble loyalty.ajuran sultanate > noble loyalty.self interests, 10`
+
+Or made shorter with selections
+
+`> noble loyalty`
+`move ajuran sultanate > self interests, 10`
+`<`
+
 **III: setting a stat to something specific**
 
 setting the value of a stat is also possible. This is most useful for hiring of troops and players not listing how many more they recruit, just how many they will have now.
