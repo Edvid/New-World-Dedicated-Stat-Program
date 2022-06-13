@@ -170,7 +170,7 @@
 		},
 		"shorthand": {
 			"name": "entity.name.function.shorthand.commandchangeformat",
-			"begin": "(trade|pay debt)",
+			"begin": "(trade|pay debt|move)",
 			"end": "\\n|(?=#)"
 		},
 		"sync": {
