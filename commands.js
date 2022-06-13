@@ -230,11 +230,11 @@ Shorthands.Move = function(parameters){
         return;
     }
 
-    from = correctAndSynonymCheck(`${currentSelection}.${from}`).split(".").pop();
-    to = correctAndSynonymCheck(`${currentSelection}.${to}`).split(".").pop();
+    from = correctAndSynonymCheck(`${currentSelection}.${from}`);
+    to = correctAndSynonymCheck(`${currentSelection}.${to}`);
     
     (new Function(
-        `gameStats${from} -= ${amount};\
-         gameStats${to} += ${amount}`
+        `gameStats${from} = +gameStats${from} - ${amount};\
+         gameStats${to} = +gameStats${to} + ${amount}`
     ))();
 }
