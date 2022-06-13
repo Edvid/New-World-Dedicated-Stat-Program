@@ -1,6 +1,6 @@
 {
     "Lines": 4173,
-    "Hash": 1635451255,
+    "Hash": 1054476573,
     "State": {
         "TimeSpeed": 50,
         "TimeDivide": 0.4,
@@ -18336,7 +18336,7 @@
                 "SocialSpending": 1,
                 "Prosperity": 1.4,
                 "PopulationHappiness": 0.7783942543670037,
-                "Stability": 1240.5003714156674,
+                "Stability": 1191.0003714156674,
                 "AtWar": "false",
                 "WarSupport": 0.21959856359175092,
                 "Absolutism": 0.05,
@@ -18358,10 +18358,10 @@
                 "SpyQuality": 1.2,
                 "NobleInfluence": 0.5,
                 "NobleLoyaltyGroups": {
-                    "KingdomOfBurgundy": 49.95,
-                    "SelfInterests": 50.05
+                    "KingdomOfBurgundy": 45,
+                    "SelfInterests": 55
                 },
-                "NobleStateLoyalty": 49.95,
+                "NobleStateLoyalty": 45,
                 "ClergyInfluence": 0.25,
                 "ClergyLoyaltyGroups": {
                     "KingdomOfBurgundy": 50,
