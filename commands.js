@@ -109,8 +109,19 @@ ${allProperties}`)
             ));`
         ))();
         change = isNaN(previous) ? true : value - previous;
-
-        (new Function(`gameStats${selection} = isNaN('${value}') ? '${value}' : parseFloat('${value}')`))();
+        let setval;
+        //direct
+        if(!isNaN(value) || typeof value == 'boolean' )
+            setval = value;
+        //boolean but as a word
+        else if(value.toLowerCase() == "false" || value.toLowerCase() == "true"){
+            setval = value.toLowerCase() == "true";
+        }
+        //qoutation needed
+        else
+            setval = `'${value}'`;
+        
+        (new Function(`gameStats${selection} = ${setval}`))();
 
     } else {
         alert("At line " + (changeCommandIndex + 1) + "\r\n\r\nOperand wasn't understood: " + commandParameters.Operand + ".\r\n Aborting.");
