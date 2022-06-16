@@ -198,7 +198,7 @@ Shorthands.PayDebt = function(parameter){
         return;
     }
 
-    let splitSelections = correctAndSynonymCheck(currentSelection).split(/\./gi);
+    let splitSelections = correctAndSynonymCheck(currentSelection).split(/\./gi).slice(1);
     let correctedSelection = "." + splitSelections.join(".");
 
     if (splitSelections[splitSelections.length - 2] !== 'Nations') {
