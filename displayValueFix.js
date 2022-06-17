@@ -38,7 +38,7 @@ function displayValueFix(statName, statValue) {
             "SiegeEquipment",
             "LargeSiegeEquipment",
             "Cannons",
-            "FreeEliteUnitsCap",
+            "EliteUnitsCap",
             "OverallNumbers",
             "SmallForts",
             "MediumForts",

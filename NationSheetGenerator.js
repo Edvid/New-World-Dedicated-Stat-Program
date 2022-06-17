@@ -288,7 +288,7 @@ function createNationSheet(nationName) {
                 "Cannons",
                 "EliteInfantry",
                 "EliteCavalry",
-                "FreeEliteUnitsCap"
+                "EliteUnitsCap"
             ],
             [
                 "OverallNumbers",

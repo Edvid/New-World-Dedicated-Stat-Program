@@ -139,7 +139,7 @@ class Nation {
   SiegeEquipment;
   LargeSiegeEquipment;
   Cannons;
-  FreeEliteUnitsCap;
+  EliteUnitsCap;
   UnitUpkeep;
   OverallNumbers;
   SmallForts;

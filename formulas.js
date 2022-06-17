@@ -558,7 +558,7 @@ n.PopulationGrowth = (n.FutureFood < 0 ? n.FutureFood * 1000 / n.Population - (n
 
   n.OverallIncome = (n.Budget / (10 - n.AdministrativeEfficiency / 10 + 1) / gameStats.TimeDivide) / (1 + n.Inflation) + n.ResourceBudgetBoost + n.TradeRevenue + n.EffectiveTax + n.ProductionRevenue + n.Balance;
 
-  n.FreeEliteUnitsCap = ((n.OverallNumbers - n.Militia - n.Levies) * 0.025) - (n.EliteCavalry + n.EliteInfantry);
+  n.EliteUnitsCap = ((n.OverallNumbers - n.Militia - n.Levies - n.EliteCavalry - n.EliteInfantry) * 0.025);
 
 
   n.CulturalAdvance = (function () {

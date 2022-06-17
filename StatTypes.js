@@ -262,7 +262,7 @@ let DerivedStats = [
     "HygieneUpkeep",
     "ResearchUpkeep",
     "PropagandaUpkeep",
-    "FreeEliteUnitsCap",
+    "EliteUnitsCap",
     "OverallNumbers",
     "PossiblePublicDebt",
     "InterestRate",
