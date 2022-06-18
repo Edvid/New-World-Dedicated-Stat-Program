@@ -21,6 +21,31 @@ function specialOperation(selection, change){
         /\.Nations\..+\.MediumShips/.test(selection) ||
         /\.Nations\..+\.HeavyShips/.test(selection)
     ){
+        //elite exceed check
+        if(/Elite/.test(selection)){
+            let nationSelection = "." + selection.split(/\./gm).slice(1, -1).join(".");
+
+            console.log(nationSelection);
+
+            let Einf = (new Function(`return gameStats${nationSelection}.EliteInfantry`))();
+            let Ecav = (new Function(`return gameStats${nationSelection}.EliteCavalry`))();
+            let cap = (new Function(`return gameStats${nationSelection}.EliteUnitsCap`))();
+            let compare = Einf + Ecav - cap;
+
+            //if(/CumanKipchakKhanate/.test(selection)) console.log(`Einf: ${Einf}, Ecav: ${Ecav}, compare; ${compare}`)
+            
+            //if the elite unit cap is too tiny
+            if(compare > 0) {
+                evaluateNations();
+                Einf = (new Function(`return gameStats${nationSelection}.EliteInfantry`))();
+                Ecav = (new Function(`return gameStats${nationSelection}.EliteCavalry`))();
+                cap = (new Function(`return gameStats${nationSelection}.EliteUnitsCap`))();
+                compare = Einf + Ecav - cap;
+    
+                //if the elite unit cap is still too tiny even after stats have been recalculated in case troops have just been hired and the elite unit cap should actually be higher
+                if(compare > 0) alert(`At line ${changeCommandIndex}: The EliteUnitsCap (${cap}) has been exceeded by ${compare}`);
+            }
+        }
         //only record positive changes
         if(change <= 0) return;
         let newTroopSelection = selection.replace(/\.(?=[^.]*$)/gm, ".New_");
