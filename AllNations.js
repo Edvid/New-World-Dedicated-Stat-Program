@@ -4,11 +4,6 @@ let canvasZoomScale = 1;
 const WIDTH = 8192;
 const HEIGHT = 3365;
 
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-
 async function onLoad() {
     canvasContainer = document.getElementById("canvascontainer");
     canvasContainer.width = WIDTH;
