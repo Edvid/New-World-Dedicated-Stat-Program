@@ -24,9 +24,7 @@ function specialOperation(selection, change){
         //elite exceed check
         if(/Elite/.test(selection)){
             let nationSelection = "." + selection.split(/\./gm).slice(1, -1).join(".");
-
-            console.log(nationSelection);
-
+    
             let Einf = (new Function(`return gameStats${nationSelection}.EliteInfantry`))();
             let Ecav = (new Function(`return gameStats${nationSelection}.EliteCavalry`))();
             let cap = (new Function(`return gameStats${nationSelection}.EliteUnitsCap`))();
@@ -50,6 +48,18 @@ function specialOperation(selection, change){
         if(change <= 0) return;
         let newTroopSelection = selection.replace(/\.(?=[^.]*$)/gm, ".New_");
         (new Function(`gameStats${newTroopSelection} += ${change}`))();
+    }
+    //public debt taken exceed check
+    else if(/PublicDebtTaken/.test(selection)){
+        //we're only interested in all below if the change is positive
+        if(change < 0) return;
+        let nationSelection = "." + selection.split(/\./gm).slice(1, -1).join(".");
+        let DebtTaken = (new Function(`return gameStats${nationSelection}.PublicDebtTaken`))();
+        let PossibleDebt = (new Function(`return gameStats${nationSelection}.PossiblePublicDebt`))();
+        
+        //if the possible debt is less than 0 after the debt taking change. Alert
+        if(PossibleDebt - change < 0) alert(`At line ${changeCommandIndex}: The PublicDebtTaken (${DebtTaken}) has been exceeded by ${change - PossibleDebt}`);
+
     }
     //Clearing War Penalty Stats If War Stat is false 
     else if(/\.Nations\..+\.AtWar/.test(selection)){
