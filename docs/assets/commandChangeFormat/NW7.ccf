@@ -2089,7 +2089,7 @@ move SelfInterests > ArberberKingdom, 5
 +1.75 socialspending
 +1 health
 +0.15 NavyImprovements
-+0.3 spyquality
++0.05 spyquality
 +0.1 ResearchSpending
 +0.1 culturalprosperity
 +12 LightShips
@@ -3857,7 +3857,7 @@ move SelfInterests > EulacianTradeCouncil, 10
 +0.2 TrainingQuality
 +0.1 ArmyWages
 +0.75 CommanderFreedom
-+0.2 SpyQuality
++0.1 SpyQuality
 +5000 LightInf
 +1000 HeavyInf
 +2500 Archers
