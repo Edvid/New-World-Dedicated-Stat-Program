@@ -24,6 +24,20 @@ function evaluateNation(nationName) {
         return "Farming"
       case "Coffee":
         return "Farming"
+      case "Cocoa":
+        return "Farming"
+      case "Tobacco":
+        return "Farming"
+      case "Sugar":
+        return "Farming"
+      case "ExoticFruit":
+        return "Farming"
+      case "Wool":
+        return "None"
+      case "Fur":
+        return "None"
+      case "Ivory":
+        return "None"
       default:
         return "Mining"
     }

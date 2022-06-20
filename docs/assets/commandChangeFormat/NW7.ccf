@@ -1857,7 +1857,7 @@ move SelfInterests > SindhEmpire, 10
 +1000 HeavyCavalry
 +2000 Militia
 +3000 Levies
-+100 EliteCavalry
++25 EliteCavalry
 +0.25 iron
 
 <... > Nations > ArchduchyOfAustria
