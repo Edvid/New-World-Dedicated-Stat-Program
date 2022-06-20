@@ -5763,9 +5763,9 @@ trade TreatyOfPula2, KingdomOfScotland > ArchduchyOfAustria, 18 Budget
 +0.25 YangtzeRiver.tp
 +0.25 SeaOfJapan.tp
 
-trade TreatyWithCaliphate1, ArberberKingdom > EulacianTradeCouncil , 0.25 Iron
-trade TreatyWithCaliphate2, EulacianTradeCouncil > ArberberKingdom, 0.2 ExoticFruits
-trade TreatyWithCaliphate3, EulacianTradeCouncil > ArberberKingdom, 0.3 Ivory
+trade TreatyWithCaliphate1, AdenCaliphate > EulacianTradeCouncil , 0.25 Iron
+trade TreatyWithCaliphate2, EulacianTradeCouncil > AdenCaliphate, 0.2 ExoticFruits
+trade TreatyWithCaliphate3, EulacianTradeCouncil > AdenCaliphate, 0.1 Ivory
 
 # TainoTribalConfederacy NPC update
 <... > Nations > TainoTribalConfederacy
