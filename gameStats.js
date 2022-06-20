@@ -536,7 +536,7 @@ class Nation {
     this.AdministrativeEfficiency = 30.00;
     this.Propaganda = 0;
     this.SocialSpending = 0;
-    this.AtWar = "false";
+    this.AtWar = false;
 
     this.NobleInfluence = 0.55; //Show in percent
     this.NobleLoyaltyGroups = JSON.parse(`{\
