@@ -2089,7 +2089,7 @@ move SelfInterests > ArberberKingdom, 5
 +1.75 socialspending
 +1 health
 +0.15 NavyImprovements
-+0.3 spyquality
++0.05 spyquality
 +0.1 ResearchSpending
 +0.1 culturalprosperity
 +12 LightShips
@@ -3826,19 +3826,19 @@ move SelfInterests > Byzantium, 10
 ="offensive" atwar
 
 <... > Nations > EulacianTradeCouncil
-+7.25 AdmEff
+=36.5 adm
 +2.75% workforces.artisans
-+0.35 ResearchEffectiveness
-+2.5 EducationEfficiency
++0.05 ResearchEffectiveness
++1 EducationEfficiency
 +0.85 MiningEfficiency
-+0.5 AgricultureAdvancements
++0.15 AgricultureAdvancements
 +0.35 StockingCapabilities
 +0.35 AgricultureInfrastructure
 =30% LowerTax
 =32.5% MiddleTax
 =35% HighTax
 +1 SocialSpending
-+2.5 Health
+=3.75 health
 +15% ClergyInfluence
 > ClergyLoyalty
 move SelfInterests > EulacianTradeCouncil, 10
@@ -3851,13 +3851,13 @@ move SelfInterests > EulacianTradeCouncil, 10
 +0.50 Ivory
 +0.75 Exotic Fruits
 +0.20 CulturalProsperity
-+1 NavalImprovements
-+1.3 MilitaryTactics
-+7% MilitaryDiscipline
-+0.85 TrainingQuality
++0.35 NavalImprovements
++0.2 MilitaryTactics
+=103% MilitaryDiscipline
++0.2 TrainingQuality
 +0.1 ArmyWages
-+2.25 CommanderFreedom
-+0.2 SpyQuality
++0.75 CommanderFreedom
++0.1 SpyQuality
 +5000 LightInf
 +1000 HeavyInf
 +2500 Archers
@@ -4071,22 +4071,6 @@ sync
 =150 Medditereanian.Pixels
 =19545 Moderate.Pixels
 =4000 Mountainous.Pixels
-
-# KingdomOfSerbia Climates
-<... > Nations > KingdomOfSerbia > Climates
-=0 PolarDesert.Pixels
-=0 TaigaAndTundra.Pixels
-=0 MontaneForest.Pixels
-=0 Medditereanian.Pixels
-=0 Arid.Pixels
-=0 Steppe.Pixels
-=0 Moderate.Pixels
-=0 SubTropical.Pixels
-=0 Tropical.Pixels
-=0 Savanna.Pixels
-=0 Desert.Pixels
-=0 CoastalDesert.Pixels
-=0 Mountainous.Pixels
 
 # KingdomOfWestphalia Climates
 <... > Nations > KingdomOfWestphalia > Climates
