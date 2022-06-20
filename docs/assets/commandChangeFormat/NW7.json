@@ -1,6 +1,6 @@
 {
-    "Lines": 6274,
-    "Hash": 1352250793,
+    "Lines": 6291,
+    "Hash": 1785090661,
     "State": {
         "TimeSpeed": 50,
         "TimeDivide": 0.4,
@@ -37982,6 +37982,709 @@
                     }
                 },
                 "HabitableLand": 0.6
+            },
+            "Urualslavia": {
+                "FuturePopulation": 2153653.5347169912,
+                "FutureLiteracyPercent": 9,
+                "FutureHigherEducation": 0.44999999999999996,
+                "FutureBudget": 369.3660968988984,
+                "FutureFood": 241.27836946874604,
+                "FutureResearchPoints": 7.5,
+                "FuturePublicDebtLength": 0,
+                "FutureCulturalPower": 6,
+                "GovernmentName": "Urualslavia",
+                "Flag": "none",
+                "ReligionGroups": {
+                    "Orthodox": {
+                        "Points": 100
+                    }
+                },
+                "ReligionRepresentedAtGovernmentLevel": "Orthodox",
+                "ReligionRepresentedAtGovernmentLevelPercent": 1,
+                "CulturalDisunity": 0,
+                "ReligiousDisunity": 0,
+                "Population": 2412783.6946874605,
+                "PopulationGrowth": -0.0429595343405262,
+                "Health": 2,
+                "LiteracyPercent": 8.25,
+                "HigherEducation": 0.35,
+                "EducationEfficiency": 3,
+                "AdministrativeEfficiency": 30,
+                "Corruption": 0,
+                "Overextension": 0,
+                "Propaganda": 0,
+                "SocialSpending": 0,
+                "Prosperity": 1,
+                "PopulationHappiness": 1.6426011641486844,
+                "Stability": 5.142601164148685,
+                "AtWar": false,
+                "WarSupport": 0.4106502910371711,
+                "Absolutism": 0,
+                "PopulationControl": 0,
+                "BirthControl": 0,
+                "ConscriptionPercent": 0,
+                "Production": 1.8000000000000003,
+                "ProductionEfficiency": 2.4000000000000004,
+                "TradeEfficiency": 1.1500000000000001,
+                "LocalTrade": 5,
+                "TradePower": 2.5,
+                "Mercantilism": 1,
+                "PossiblePublicDebt": 212.32496513249654,
+                "EffectiveDebt": 0,
+                "DailyBudget": 82.77374353351368,
+                "Budget": 286.59235336538467,
+                "Inflation": 0.09553078445512823,
+                "Spies": 0,
+                "SpyQuality": 1.2,
+                "NobleInfluence": 0.55,
+                "NobleLoyaltyGroups": {
+                    "Urualslavia": "55",
+                    "SelfInterests": "45"
+                },
+                "NobleStateLoyalty": 55,
+                "ClergyInfluence": 0.25,
+                "ClergyLoyaltyGroups": {
+                    "Urualslavia": "50",
+                    "SelfInterests": "50"
+                },
+                "ClergyStateLoyalty": 50,
+                "BurghersInfluence": 0.1,
+                "BurghersLoyaltyGroups": {
+                    "Urualslavia": "50",
+                    "SelfInterests": "50"
+                },
+                "BurghersStateLoyalty": 50,
+                "ArmyUpkeep": 0,
+                "SpyUpkeep": 0,
+                "SocialSpendingUpkeep": 0,
+                "HygieneUpkeep": 6.031959236718651,
+                "EducationUpkeep": 173.72042601749718,
+                "AgricultureSpending": 12.903220361532428,
+                "PropagandaUpkeep": 0,
+                "PopulationControlUpkeep": 0,
+                "TradeRevenue": 26.106109658298475,
+                "AdministrativeUpkeep": 0,
+                "ProductionRevenue": 4.5,
+                "ResearchUpkeep": 9.952732740585775,
+                "OverallIncome": 285.3820818898477,
+                "Levies": 0,
+                "LightInfantry": 0,
+                "HeavyInfantry": 0,
+                "Archers": 0,
+                "Crossbowmen": 0,
+                "LightCavalry": 0,
+                "HeavyCavalry": 0,
+                "EliteInfantry": 0,
+                "EliteCavalry": 0,
+                "HandCannon": 0,
+                "Musketeers": 0,
+                "Militia": 0,
+                "SiegeEquipment": 0,
+                "LargeSiegeEquipment": 0,
+                "Cannons": 0,
+                "EliteUnitsCap": 0,
+                "UnitUpkeep": 0,
+                "OverallNumbers": 0,
+                "SmallForts": 0,
+                "MediumForts": 0,
+                "BigForts": 0,
+                "HugeForts": 0,
+                "ExtraCityFortifications": 0,
+                "FortUpkeep": 0,
+                "IronShortage": 0,
+                "SulphurShortage": 0,
+                "CommanderFreedom": 0,
+                "ArmyWages": 1,
+                "TrainingQuality": 0.15,
+                "ArmyTech": 1.7,
+                "MilitaryTactics": 0.15,
+                "ArmyQuality": 2.9999999999999996,
+                "MilitaryLoyalty": 1,
+                "MilitaryMorale": 0.9106502910371712,
+                "MilitaryDiscipline": 1,
+                "NavyImprovements": 0.3,
+                "NavyTech": 0,
+                "NavyQuality": 1.3,
+                "LightShips": 0,
+                "UpkeepForOneLightShip": 0.40625,
+                "MediumShips": 0,
+                "UpkeepForOneMediumShip": 0.8125,
+                "HeavyShips": 0,
+                "UpkeepForOneHeavyShip": 1.625,
+                "OverallShipCount": 0,
+                "TradeProtection": 0,
+                "NavalPower": 0,
+                "NavyUpkeep": 0,
+                "New_Levies": 0,
+                "New_LightInfantry": 0,
+                "New_HeavyInfantry": 0,
+                "New_Archers": 0,
+                "New_Crossbowmen": 0,
+                "New_LightCavalry": 0,
+                "New_HeavyCavalry": 0,
+                "New_EliteInfantry": 0,
+                "New_EliteCavalry": 0,
+                "New_HandCannon": 0,
+                "New_Musketeers": 0,
+                "New_Militia": 0,
+                "New_SiegeEquipment": 0,
+                "New_LargeSiegeEquipment": 0,
+                "New_Cannons": 0,
+                "New_LightShips": 0,
+                "New_MediumShips": 0,
+                "New_HeavyShips": 0,
+                "NewTroopRecruitmentPenalty": 0,
+                "Workforces": {
+                    "Artisans": 0.01,
+                    "Clergy": 0.0075,
+                    "Nobility": 0.01,
+                    "Burghers": 0.005,
+                    "PopulationInMilitary": 0,
+                    "PopulationInResourceHarvest": 0,
+                    "PopulationInAgriculture": 0.9675
+                },
+                "SocietalClasses": {
+                    "High": 0.01,
+                    "Medium": 0.022500000000000003,
+                    "Lower": 0.9675
+                },
+                "CultureGroups": {
+                    "Urualslavian": {
+                        "Points": 100
+                    }
+                },
+                "CultureRepresentedAtGovernmentLevel": "Urualslavian",
+                "CultureRepresentedAtGovernmentLevelPercent": 1,
+                "PopulationStabilityImpact": 0,
+                "PopulationTechImpact": 0,
+                "MiningEfficiency": 1.2,
+                "FarmingEfficiency": 1.1,
+                "Coal": 0,
+                "EffectiveCoal": 0,
+                "Sulphur": 0,
+                "EffectiveSulphur": 0,
+                "Cotton": 0,
+                "EffectiveCotton": 0,
+                "CottonInflation": 0,
+                "Gold": 0,
+                "EffectiveGold": 0,
+                "GoldInflation": 0,
+                "Iron": 0,
+                "EffectiveIron": 0,
+                "Tea": 0,
+                "EffectiveTea": 0,
+                "TeaInflation": 0,
+                "Silk": 0,
+                "EffectiveSilk": 0,
+                "SilkInflation": 0,
+                "Spice": 0,
+                "EffectiveSpice": 0,
+                "SpiceInflation": 0,
+                "Wool": 0,
+                "EffectiveWool": 0,
+                "WoolInflation": 0,
+                "Coffee": 0,
+                "EffectiveCoffee": 0,
+                "CoffeeInflation": 0,
+                "Fur": 0,
+                "EffectiveFur": 0,
+                "FurInflation": 0,
+                "Diamond": 0,
+                "EffectiveDiamond": 0,
+                "DiamondInflation": 0,
+                "Silver": 0,
+                "EffectiveSilver": 0,
+                "SilverInflation": 0,
+                "Copper": 0,
+                "EffectiveCopper": 0,
+                "Ivory": 0,
+                "EffectiveIvory": 0,
+                "IvoryInflation": 0,
+                "Cocoa": 0,
+                "EffectiveCocoa": 0,
+                "CocoaInflation": 0,
+                "Tobacco": 0,
+                "EffectiveTobacco": 0,
+                "TobaccoInflation": 0,
+                "Sugar": 0,
+                "EffectiveSugar": 0,
+                "SugarInflation": 0,
+                "ExoticFruit": 0,
+                "EffectiveExoticFruit": 0,
+                "ExoticFruitInflation": 0,
+                "ResourcePopulationGrowthBoost": 0,
+                "ResourceHappinessBoost": 0,
+                "ResourceBudgetBoost": 0,
+                "CoalDemand": 14.476702168124763,
+                "CoalValue": 144.76702168124763,
+                "GoldDemand": 12.063918473437303,
+                "GoldValue": 120.63918473437302,
+                "IronDemand": 4.825567389374921,
+                "IronValue": 48.25567389374921,
+                "SulphurDemand": 1.2063918473437303,
+                "SulphurValue": 12.063918473437303,
+                "CottonDemand": 4.825567389374921,
+                "CottonValue": 48.25567389374921,
+                "TeaDemand": 4.825567389374921,
+                "TeaValue": 48.25567389374921,
+                "SpiceDemand": 6.031959236718651,
+                "SpiceValue": 60.31959236718651,
+                "CopperDemand": 3.2170449262499474,
+                "CopperValue": 32.170449262499474,
+                "SilkDemand": 6.031959236718651,
+                "SilkValue": 60.31959236718651,
+                "WoolDemand": 3.446833849553515,
+                "WoolValue": 34.46833849553515,
+                "CoffeeDemand": 4.825567389374921,
+                "CoffeeValue": 48.25567389374921,
+                "SilverDemand": 8.042612315624869,
+                "SilverValue": 80.42612315624868,
+                "DiamondDemand": 9.651134778749842,
+                "DiamondValue": 96.51134778749842,
+                "FurDemand": 5.361741543749912,
+                "FurValue": 53.61741543749912,
+                "IvoryDemand": 9.651134778749842,
+                "IvoryValue": 96.51134778749842,
+                "CocoaDemand": 4.825567389374921,
+                "CocoaValue": 48.25567389374921,
+                "TobaccoDemand": 4.825567389374921,
+                "TobaccoValue": 48.25567389374921,
+                "SugarDemand": 6.89366769910703,
+                "SugarValue": 68.9366769910703,
+                "ExoticFruitDemand": 6.89366769910703,
+                "ExoticFruitValue": 68.9366769910703,
+                "Isolation": 1,
+                "ResearchSpending": 1,
+                "ResearchEffectiveness": 1,
+                "ResearchBoostFromTech": 1.1,
+                "ResearchPointGain": 4.809166666666666,
+                "ResearchPoints": 7.5,
+                "Technologies": {
+                    "Gunpowder": true,
+                    "VerticalLoom": true,
+                    "SaddleAndStirrup": true,
+                    "HorseCollar": true,
+                    "Explosives": true,
+                    "Firelance": true,
+                    "Cranes": true,
+                    "PromissoryNotes": true,
+                    "Bombards": true,
+                    "HandCannons": true,
+                    "PlateArmour": true,
+                    "SappersAndEngineers": true,
+                    "Workshops": true,
+                    "StandardizedPikes": true,
+                    "Galleons": false,
+                    "PrintingPress": false,
+                    "Muskets": false,
+                    "Limber": false,
+                    "Docks": false,
+                    "Gunports": false,
+                    "Matchlock": false,
+                    "StarForts": false,
+                    "TextileManufactories": false,
+                    "Reiters": false,
+                    "MiningCarts": false,
+                    "HumanAnatomy": false,
+                    "Mortars": false,
+                    "Metallurgy": false,
+                    "Experimentation": false,
+                    "Bayonet": false,
+                    "SocketBayonet": false,
+                    "Flintlock": false
+                },
+                "ArmyTechBoost": 0.7,
+                "HighClassTax": 0.12,
+                "MediumClassTax": 0.12,
+                "LowerClassTax": 0.12,
+                "EffectiveTax": 173.02554431342716,
+                "PublicDebtTaken": 0,
+                "PublicDebtLength": 0,
+                "InterestRate": 0.05,
+                "DebtHappinessEffect": 0,
+                "BudgetIncoming": 0,
+                "BudgetOutgoing": 0,
+                "Balance": 0,
+                "CulturalAdvance": 6,
+                "CulturalProsperity": 1,
+                "CulturalPowerGain": 7.388312863796463,
+                "CulturalPower": 6,
+                "CulturalAdvancements": {
+                    "DivineRightToRule": true,
+                    "Serfdom": true,
+                    "Feudalism": true,
+                    "Universities": true,
+                    "NobleDuty": true,
+                    "Courthouses": true,
+                    "RenaissanceThought": false,
+                    "EarlyModernAdministration": false,
+                    "NationalSovereignity": false,
+                    "Newspapers": false
+                },
+                "FoodIncoming": 0,
+                "FoodOutgoing": 0,
+                "CoalIncoming": 0,
+                "CoalOutgoing": 0,
+                "SulphurIncoming": 0,
+                "SulphurOutgoing": 0,
+                "CottonIncoming": 0,
+                "CottonOutgoing": 0,
+                "GoldIncoming": 0,
+                "GoldOutgoing": 0,
+                "IronIncoming": 0,
+                "IronOutgoing": 0,
+                "TeaIncoming": 0,
+                "TeaOutgoing": 0,
+                "SilkIncoming": 0,
+                "SilkOutgoing": 0,
+                "SpiceIncoming": 0,
+                "SpiceOutgoing": 0,
+                "WoolIncoming": 0,
+                "WoolOutgoing": 0,
+                "CoffeeIncoming": 0,
+                "CoffeeOutgoing": 0,
+                "FurIncoming": 0,
+                "FurOutgoing": 0,
+                "DiamondIncoming": 0,
+                "DiamondOutgoing": 0,
+                "SilverIncoming": 0,
+                "SilverOutgoing": 0,
+                "CopperIncoming": 0,
+                "CopperOutgoing": 0,
+                "IvoryIncoming": 0,
+                "IvoryOutgoing": 0,
+                "CocoaIncoming": 0,
+                "CocoaOutgoing": 0,
+                "TobaccoIncoming": 0,
+                "TobaccoOutgoing": 0,
+                "SugarIncoming": 0,
+                "SugarOutgoing": 0,
+                "ExoticFruitIncoming": 0,
+                "ExoticFruitOutgoing": 0,
+                "TradePowerFromResourceTrade": 0,
+                "AgricultureSubsidies": 0.05,
+                "Fertility": 0.5,
+                "AgricultureInfrastructure": 1.1,
+                "StockingCapabilities": 1,
+                "AgricultureAdvancements": 1.3,
+                "AgricultureTechnology": 0.5,
+                "DailyFood": 2567.80504707113,
+                "FoodConsumption": 2412.7836946874604,
+                "FoodGain": 155.02135238366964,
+                "MaxFoodStock": 241.27836946874604,
+                "Food": 421.25,
+                "FoodPopulationBoost": 0,
+                "SurplusFood": 334.9929829149236,
+                "SellingCapability": 500,
+                "FoodSold": 334.9929829149236,
+                "Foodlost": 0,
+                "TradeProfit": 6.699859658298472,
+                "Casualties": 0,
+                "Pillaging": 0,
+                "Occupation": 0,
+                "WarExhaustion": 0,
+                "MinorBattles": 0,
+                "MajorBattles": 0,
+                "Fervor": 0,
+                "TradeInfluences": {
+                    "Alaska": {
+                        "TradingPoints": 0
+                    },
+                    "Cascadia": {
+                        "TradingPoints": 0
+                    },
+                    "CaliforniaAndWestMexico": {
+                        "TradingPoints": 0
+                    },
+                    "HudsonBay": {
+                        "TradingPoints": 0
+                    },
+                    "GreatLakes": {
+                        "TradingPoints": 0
+                    },
+                    "Louisiana": {
+                        "TradingPoints": 0
+                    },
+                    "GulfOfMexico": {
+                        "TradingPoints": 0
+                    },
+                    "LawrenceGulf": {
+                        "TradingPoints": 0
+                    },
+                    "EastCoast": {
+                        "TradingPoints": 0
+                    },
+                    "Carribean": {
+                        "TradingPoints": 0
+                    },
+                    "CentralAmerica": {
+                        "TradingPoints": 0
+                    },
+                    "GuyanaAndSuriname": {
+                        "TradingPoints": 0
+                    },
+                    "Amazon": {
+                        "TradingPoints": 0
+                    },
+                    "Peru": {
+                        "TradingPoints": 0
+                    },
+                    "RioGrande": {
+                        "TradingPoints": 0
+                    },
+                    "LaPlata": {
+                        "TradingPoints": 0
+                    },
+                    "Chile": {
+                        "TradingPoints": 0
+                    },
+                    "Patagonia": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernAnatolia": {
+                        "TradingPoints": 0
+                    },
+                    "NorthSea": {
+                        "TradingPoints": 0
+                    },
+                    "BritishIsles": {
+                        "TradingPoints": 0
+                    },
+                    "EnglishChannel": {
+                        "TradingPoints": 0
+                    },
+                    "France": {
+                        "TradingPoints": 0
+                    },
+                    "BayOfBiscay": {
+                        "TradingPoints": 0
+                    },
+                    "WestIberia": {
+                        "TradingPoints": 0
+                    },
+                    "Gibraltar": {
+                        "TradingPoints": 0
+                    },
+                    "WesternMediterranean": {
+                        "TradingPoints": 0
+                    },
+                    "Rhine": {
+                        "TradingPoints": 0
+                    },
+                    "CentralMediterranean": {
+                        "TradingPoints": 0
+                    },
+                    "Adriatic": {
+                        "TradingPoints": 0
+                    },
+                    "Germany": {
+                        "TradingPoints": 0
+                    },
+                    "WesternDanube": {
+                        "TradingPoints": 0
+                    },
+                    "Denmark": {
+                        "TradingPoints": 0
+                    },
+                    "Baltic": {
+                        "TradingPoints": 0
+                    },
+                    "NorthNordics": {
+                        "TradingPoints": 0
+                    },
+                    "BarentsSea": {
+                        "TradingPoints": 0
+                    },
+                    "Novgorod": {
+                        "TradingPoints": 0
+                    },
+                    "Poland": {
+                        "TradingPoints": 0
+                    },
+                    "Dniepr": {
+                        "TradingPoints": 0
+                    },
+                    "Crimea": {
+                        "TradingPoints": 0
+                    },
+                    "EasternDanube": {
+                        "TradingPoints": 0
+                    },
+                    "Greece": {
+                        "TradingPoints": 0
+                    },
+                    "EasternMediterranean": {
+                        "TradingPoints": 0
+                    },
+                    "Egypt": {
+                        "TradingPoints": 0
+                    },
+                    "RedSea": {
+                        "TradingPoints": 0
+                    },
+                    "WesternSahara": {
+                        "TradingPoints": 0
+                    },
+                    "CoteDIvoire": {
+                        "TradingPoints": 0
+                    },
+                    "Nigeria": {
+                        "TradingPoints": 0
+                    },
+                    "SouthNile": {
+                        "TradingPoints": 0
+                    },
+                    "Somalia": {
+                        "TradingPoints": 0
+                    },
+                    "Kongo": {
+                        "TradingPoints": 0
+                    },
+                    "EastAfrica": {
+                        "TradingPoints": 0
+                    },
+                    "Mozambique": {
+                        "TradingPoints": 0
+                    },
+                    "SouthAfrica": {
+                        "TradingPoints": 0
+                    },
+                    "Mesopotamia": {
+                        "TradingPoints": 0
+                    },
+                    "PersianGulf": {
+                        "TradingPoints": 0
+                    },
+                    "Caucasus": {
+                        "TradingPoints": 0
+                    },
+                    "DonRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Volga": {
+                        "TradingPoints": 0
+                    },
+                    "CentralAsia": {
+                        "TradingPoints": 0
+                    },
+                    "WestSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "EastSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "Iran": {
+                        "TradingPoints": 0
+                    },
+                    "Pakistan": {
+                        "TradingPoints": 0
+                    },
+                    "Tibet": {
+                        "TradingPoints": 0
+                    },
+                    "Mongolia": {
+                        "TradingPoints": 0
+                    },
+                    "Manchuria": {
+                        "TradingPoints": 0
+                    },
+                    "SeaOfJapan": {
+                        "TradingPoints": 0
+                    },
+                    "NorthChina": {
+                        "TradingPoints": 0
+                    },
+                    "YangtzeRiver": {
+                        "TradingPoints": 0
+                    },
+                    "SouthChina": {
+                        "TradingPoints": 0
+                    },
+                    "NorthIndia": {
+                        "TradingPoints": 0
+                    },
+                    "WestIndia": {
+                        "TradingPoints": 0
+                    },
+                    "EastIndia": {
+                        "TradingPoints": 0
+                    },
+                    "Burma": {
+                        "TradingPoints": 0
+                    },
+                    "SouthEastAsia": {
+                        "TradingPoints": 0
+                    },
+                    "NorthAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "SouthAustralia": {
+                        "TradingPoints": 0
+                    }
+                },
+                "Size": 0,
+                "KmSquared": 78870,
+                "PopulationDensityPerKmSquared": 38.23988358513155,
+                "Disease": 1.429595343405262,
+                "MaxPopulation": 1687738.9156432669,
+                "UnderPopulation": 0,
+                "DetachedLand": 0,
+                "LandAdministration": 0,
+                "Climates": {
+                    "PolarDesert": {
+                        "Pixels": 0,
+                        "ClimateScore": 0
+                    },
+                    "TaigaAndTundra": {
+                        "Pixels": 0,
+                        "ClimateScore": 0.25
+                    },
+                    "MontaneForest": {
+                        "Pixels": 0,
+                        "ClimateScore": 0.6
+                    },
+                    "Medditereanian": {
+                        "Pixels": 0,
+                        "ClimateScore": 0.85
+                    },
+                    "Arid": {
+                        "Pixels": 0,
+                        "ClimateScore": 0.65
+                    },
+                    "Steppe": {
+                        "Pixels": 0,
+                        "ClimateScore": 0.75
+                    },
+                    "Moderate": {
+                        "Pixels": 0,
+                        "ClimateScore": 1
+                    },
+                    "SubTropical": {
+                        "Pixels": 0,
+                        "ClimateScore": 0.75
+                    },
+                    "Tropical": {
+                        "Pixels": 0,
+                        "ClimateScore": 0.6
+                    },
+                    "Savanna": {
+                        "Pixels": 0,
+                        "ClimateScore": 0.65
+                    },
+                    "Mountainous": {
+                        "Pixels": 0,
+                        "ClimateScore": 0.35
+                    },
+                    "Desert": {
+                        "Pixels": 0,
+                        "ClimateScore": 0.05
+                    },
+                    "CoastalDesert": {
+                        "Pixels": 0,
+                        "ClimateScore": 0.35
+                    }
+                },
+                "HabitableLand": 0.8
             }
         },
         "Religions": {
@@ -38473,6 +39176,10 @@
                 "Opinions": {}
             },
             "Mayan": {
+                "definingFeatures": "",
+                "Opinions": {}
+            },
+            "Urualslavian": {
                 "definingFeatures": "",
                 "Opinions": {}
             }
