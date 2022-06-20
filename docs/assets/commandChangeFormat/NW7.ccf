@@ -6270,4 +6270,21 @@ trade TreatyWithCaliphate3, EulacianTradeCouncil > AdenCaliphate, 0.1 Ivory
 +70 Casualties
 ="false" atwar
 
+# Urualslavia add
+<... > Cultures
++> Urualslavian
+<... > Nations
++> Urualslavia
+<... > Nations > Urualslavia > CultureGroups
++> Urualslavian
+=100 Urualslavian.Points
+<... > Nations > Urualslavia > ReligionGroups
++> Orthodox
+=100 Orthodox.Points
+# (if not pagan)
+<- Pagan
+<... > Nations > Urualslavia
+= "Urualslavian" cultrep
+= "Orthodox" relrep
+
 sync
