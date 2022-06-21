@@ -4598,19 +4598,26 @@ trade CheonjeEulacianTradeDeal7, Cheonje > EulacianTradeCouncil, 82.5 Budget
 +0.5 EduEff
 +0.5 MilitaryTactics
 +0.35 TrainingQuality
--164.5 budget
++100 budget
+-104.5 budget
++10 budget
+-60 budget
 +0.25 Propaganda
 
-+2000 Militia
-+2000 Musketeers
-+2000 LightInf
-+688 HeavyInf
-+700 LightCav
-+12 HeavyCav
-+31 Cannons
-+500 Crossbows
-+4 SiegeEquipment
-+3 LargeSiegeEquipment
+= 3000 militia
+= 3000 light infantry
+= 1000 heavy infantry
+= 2000 musketeers
+= 1000 light cavalry
+= 600 heavy cavalry
+= 1000 crossbowmen
+= 500 archers
+= 33 cannons
+= 4 small siege equipment
+= 3 large siege equipment
+= 20 light ships
+= 18 medium ships
+= 6 heavy ships
 
 -6 ResearchPoints
 
@@ -4870,6 +4877,8 @@ trade CheonjeEulacianTradeDeal7, Cheonje > EulacianTradeCouncil, 82.5 Budget
 <
 
 <... > Nations > KingdomOfEngland
+-30 budget
++104.5 budget
 +.125 Mercantilism
 +4 LocalTrade
 +2.75 AdmEff
@@ -5528,6 +5537,7 @@ trade TreatyOfPula2, KingdomOfScotland > ArchduchyOfAustria, 18 Budget
 =8 LightShips
 =6 MediumShips
 =3 HeavyShips
+-100 budget
 
 <... > Nations > ZiEmpire
 +2 AdmEff
