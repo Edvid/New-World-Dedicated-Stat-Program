@@ -6296,5 +6296,9 @@ trade TreatyWithCaliphate3, EulacianTradeCouncil > AdenCaliphate, 0.1 Ivory
 <... > Nations > Urualslavia
 = "Urualslavian" cultrep
 = "Orthodox" relrep
+> Climates
+=4350 TaigaAndTundra.Pixels
+=4130 Moderate.Pixels
+=1030 Mountainous.Pixels
 
 sync
