@@ -6255,11 +6255,11 @@ trade TreatyWithCaliphate3, EulacianTradeCouncil > AdenCaliphate, 0.1 Ivory
 -30 HeavyInf
 -1 Crossbowmen
 +111 Casualties
-="defensive" atwar
+="false" atwar
 <... > Nations > KingdomOfPrussia
 -120 LightInf
 +120 Casualties
-="offensive" atwar
+="false" atwar
 
 <... > Nations > KingdomOfSfveadsland
 +2% Pillaging
