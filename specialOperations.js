@@ -67,7 +67,8 @@ function specialOperation(selection, change){
         //if the value of atWar after it's been changed just now, isn't false, then skip
         //aka if actually false, the war is over and you should do the following code
         //which clears war penalty stats
-        if(new Function(`return gameStats${selection}`)() != "false") return;
+        let warStatus = new Function(`return gameStats${selection}`)();
+        if(warStatus != "false" && warStatus != false) return;
 
         let selectedNation = selection.split(".");
         selectedNation.pop();
