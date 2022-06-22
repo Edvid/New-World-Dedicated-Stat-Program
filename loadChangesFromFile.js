@@ -44,10 +44,16 @@ async function loadChangesFromContent(changes, skip) {
     ignore = false;
     currentSelection = "";
     changeCommandFileLength = changes.length;
+    let then = Date.now();
     for (changeCommandIndex = skip; changeCommandIndex < changes.length; changeCommandIndex++) {
         const changeCommand = changes[changeCommandIndex];
         evaluteChangeCommand(changeCommand);
-        if (changeCommandIndex % 50 == 0) await new Promise(resolve => setTimeout(resolve));
+        let now = Date.now();
+        if (now - then > 1000) {
+            await new Promise(resolve => setTimeout(resolve));
+            then = now;
+        }
+            
     }
 
     refreshNationPageItems();

@@ -6,10 +6,6 @@ let canvasZoomScale = 1;
 const WIDTH = 1200;
 const HEIGHT = 493;
 
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
-
 async function onLoad() {
     document.getElementById("isloading").innerText = "Loading..."
 }

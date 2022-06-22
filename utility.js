@@ -1,3 +1,8 @@
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 /* #region  Taken from https://stackoverflow.com/questions/7616461/generate-a-hash-from-string-in-javascript user esmiralha */
 String.prototype.hashCode = function () {
     var hash = 0, i, chr;
