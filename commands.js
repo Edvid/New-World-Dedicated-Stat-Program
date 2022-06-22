@@ -142,6 +142,7 @@ function createStat(currentSelection, arg){
     if (arg.includes('=')) {
         let newName = arg.slice(0, arg.indexOf('=')).trim();
         let oldName = arg.slice(arg.indexOf('=') + 1).trim();
+        oldName = correctAndSynonymCheck(`${currentSelection}.${oldName}`).split(".").pop();
         evaluateNation(oldName);
         (new Function(`\
         gameStats${currentSelection}.${newName} = new ${objectClass}("${newName}");\
@@ -159,9 +160,8 @@ function createStat(currentSelection, arg){
 }
 
 function deleteStat(currentSelection, arg){
-    let dottedStatName = arg;
-    if(!/\.|\[/gm.test(dottedStatName[0])) dottedStatName = "." + dottedStatName;
-    (new Function(`delete gameStats${currentSelection}${dottedStatName}`))();
+    let dottedStatName = correctAndSynonymCheck(`${currentSelection}.${arg}`);
+    (new Function(`delete gameStats${dottedStatName}`))();
 }
 
 let Shorthands = {}
