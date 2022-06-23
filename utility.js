@@ -3,6 +3,32 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+let warnSuppress = 0;
+
+function suppressWarning(){
+    warnSuppress = changeCommandIndex + 2;
+}
+
+function warn(message){
+    if(warnSuppress == changeCommandIndex) return;
+    alert(`WARNING At line ${(changeCommandIndex + 1)}:
+
+${message}`)
+}
+
+function error(message){
+    alert(`ERROR At line ${(changeCommandIndex + 1)}:
+
+${message}`)
+}
+
+function lazyerror(){
+    alert(`ERROR At line ${(changeCommandIndex + 1)}
+but the source of the ERROR could have occured earlier:
+
+${message}`)
+}
+
 /* #region  Taken from https://stackoverflow.com/questions/7616461/generate-a-hash-from-string-in-javascript user esmiralha */
 String.prototype.hashCode = function () {
     var hash = 0, i, chr;

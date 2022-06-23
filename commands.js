@@ -48,13 +48,10 @@ function normalCommand(selection) {
             allProperties += `${propertyName}\n`
             
         }
-        
-        alert(
-`Line: ${changeCommandIndex}: The currently selected thing, ${selection}, is an object not a value, and cannot be set
+        error(`The currently selected thing, ${selection}, is an object not a value, and cannot be set
 Did you mean to select any of the following within this?:
 
-${allProperties}`)
-
+${allProperties}`);
 
     } 
 
@@ -86,7 +83,7 @@ ${allProperties}`)
                 value *= defaultStatValues[StatName];
                 found = true;
             }
-            if(!found) alert(`a default value was not found for ${selection}`);
+            if(!found) error(`a default value was not found for ${selection}`);
         }
     }
 
@@ -124,7 +121,8 @@ ${allProperties}`)
         (new Function(`gameStats${selection} = ${setval}`))();
 
     } else {
-        alert("At line " + (changeCommandIndex + 1) + "\r\n\r\nOperand wasn't understood: " + commandParameters.Operand + ".\r\n Aborting.");
+        error(`Operand wasn't understood: ${commandParameters.Operand}
+Aborting.`);
         return;
     }
     specialOperation(selection, change);
@@ -181,7 +179,7 @@ Shorthands.Trade = function(parameters){
 
 
     if (typeof gameStats.Trades[tradename] !== 'undefined') {
-        alert(`The name ${tradename} is already used in Trades.`);
+        error(`The name ${tradename} is already used in Trades.`);
         return;
     }
 
@@ -194,7 +192,7 @@ Shorthands.Trade = function(parameters){
 
 Shorthands.PayDebt = function(parameter){
     if (isNaN(parameter)) {
-        alert(`Line: ${changeCommandIndex}: The debt paid wasn't a number. Operation Aborted.`);
+        error(`The debt paid wasn't a number. Operation Aborted.`);
         return;
     }
 
@@ -202,7 +200,7 @@ Shorthands.PayDebt = function(parameter){
     let correctedSelection = "." + splitSelections.join(".");
 
     if (splitSelections[splitSelections.length - 2] !== 'Nations') {
-        alert("The current selection is not a nation. Cannot sync single nation.");
+        error(`The current selection, ${splitSelections[splitSelections.length - 1]}, is not a nation. Cannot sync single nation.`);
         return;
     }
 
@@ -237,7 +235,7 @@ Shorthands.Move = function(parameters){
     let amount = parameters[2].trim();
 
     if (isNaN(amount)) {
-        alert(`Line: ${changeCommandIndex}: The points to be moved wasn't a number. Operation Aborted.`);
+        error(`The points to be moved wasn't a number. Operation Aborted.`);
         return;
     }
 

@@ -41,7 +41,7 @@ function specialOperation(selection, change){
                 compare = Einf + Ecav - cap;
     
                 //if the elite unit cap is still too tiny even after stats have been recalculated in case troops have just been hired and the elite unit cap should actually be higher
-                if(compare > 0) alert(`At line ${changeCommandIndex}: The EliteUnitsCap (${cap}) has been exceeded by ${compare}`);
+                if(compare > 0) error(`The EliteUnitsCap (${cap}) has been exceeded by ${compare}`);
             }
         }
         //only record positive changes
@@ -58,7 +58,7 @@ function specialOperation(selection, change){
         let PossibleDebt = (new Function(`return gameStats${nationSelection}.PossiblePublicDebt`))();
         
         //if the possible debt is less than 0 after the debt taking change. Alert
-        if(PossibleDebt - change < 0) alert(`At line ${changeCommandIndex}: The PublicDebtTaken (${DebtTaken}) has been exceeded by ${change - PossibleDebt}`);
+        if(PossibleDebt - change < 0) error(`The PublicDebtTaken (${DebtTaken}) has been exceeded by ${change - PossibleDebt}`);
 
     }
     //Clearing War Penalty Stats If War Stat is false 

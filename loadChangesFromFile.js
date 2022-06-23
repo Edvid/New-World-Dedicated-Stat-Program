@@ -89,7 +89,7 @@ async function evaluteChangeCommand(changeCommandRaw) {
             evaluateNations();
 
             let lastselection = correctAndSynonymCheck(currentSelection).split(/\./gi);
-            if (lastselection[lastselection.length - 2] !== 'Nations') alert("The current selection is not a nation. Cannot sync single nation.");
+            if (lastselection[lastselection.length - 2] !== 'Nations') error("The current selection is not a nation. Cannot sync single nation.");
             lastselection = lastselection[lastselection.length - 1];
 
             syncNation(lastselection);
@@ -169,7 +169,9 @@ async function evaluteChangeCommand(changeCommandRaw) {
         else {
             let match = normalCommandRegex.exec(changeCommand);
             if (!normalCommandRegex.test(changeCommand)) {
-                alert("At line " + (changeCommandIndex + 1) + "\r\n\r\nA command wasn't understood:\r\n" + changeCommand + "\r\n Aborting.");
+                error(`A command wasn't understood:
+${changeCommand}
+Aborting.`);
                 return;
             }
             commandParameters.Operand = match.groups.Operand.trim();

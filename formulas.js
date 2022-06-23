@@ -66,7 +66,7 @@ function evaluateNation(nationName) {
 
       let er = n[resource] * (GatheringEffectiveness(resource) == "Farming" ? n.FarmingEfficiency : n.MiningEfficiency) + n[resource + "Incoming"] - n[resource + "Outgoing"];
       if(er < 0){
-        alert(`It seems the effective resource ${resource} in ${nationName} is negative: ${er}. Is an impossible trade taking place?`);
+        lazyerror(`It seems the effective resource ${resource} in ${nationName} is negative: ${er}. Is an impossible trade taking place?`);
       }
       return er;
     })();
@@ -518,7 +518,7 @@ n.PopulationGrowth = (n.FutureFood < 0 ? n.FutureFood * 1000 / n.Population - (n
       const resource = TradePowerResources[resourceName];
       num += +n[resource + "Incoming"] * +n[resource + "Value"];
       if(isNaN(num)){
-        alert(`something went wrong. Tried to multiply ${n[resource + "Incoming"]} with ${n[resource + "Value"]}. The resource is ${resource} in nation ${nationName}`);
+        lazyerror(`something went wrong. Tried to multiply ${n[resource + "Incoming"]} with ${n[resource + "Value"]}. The resource is ${resource} in nation ${nationName}`);
         return 0;
       }
     }
