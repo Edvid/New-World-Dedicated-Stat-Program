@@ -6596,19 +6596,10 @@ sync
 
 # Arberber Climates
 <... > Nations > ArberberKingdom > Climates
-=0 PolarDesert.Pixels
-=0 TaigaAndTundra.Pixels
-=0 MontaneForest.Pixels
-=0 Medditereanian.Pixels
-=0 Arid.Pixels
-=0 Steppe.Pixels
-=0 Moderate.Pixels
-=0 SubTropical.Pixels
-=0 Tropical.Pixels
-=0 Savanna.Pixels
-=0 Desert.Pixels
-=0 CoastalDesert.Pixels
-=0 Mountainous.Pixels
+=6928 Medditereanian.Pixels
+=2540 Arid.Pixels
+=3031 Desert.Pixels
+=2620 CoastalDesert.Pixels
 <
 -87691 pop
 
