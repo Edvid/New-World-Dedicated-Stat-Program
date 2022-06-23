@@ -6120,6 +6120,7 @@ trade TreatyWithCaliphate3, EulacianTradeCouncil > AdenCaliphate, 0.1 Ivory
 -4 MediumShips
 -12 LightShips
 ="offensive" atwar
+
 <... > Nations > HittiteEmpire
 -6 MediumShips
 -18 LightShips
@@ -6127,9 +6128,11 @@ trade TreatyWithCaliphate3, EulacianTradeCouncil > AdenCaliphate, 0.1 Ivory
 -25 HeavyInf
 -5 HeavyCav
 ="offensive" atwar
+
 <... > Nations > ArberberKingdom
 -1 LightShips
 -2 MediumShips
+
 <... > Nations > OrderOfStMary
 -10 LightCav
 -400 Militia
@@ -6139,6 +6142,7 @@ trade TreatyWithCaliphate3, EulacianTradeCouncil > AdenCaliphate, 0.1 Ivory
 -1050 HeavyInf
 +1550 Casualties
 ="false" atwar
+
 <... > Nations > Mitiva
 -400 Militia
 -325 LightCav
@@ -6173,7 +6177,7 @@ trade TreatyWithCaliphate3, EulacianTradeCouncil > AdenCaliphate, 0.1 Ivory
 -10 Archers
 -30 LightCav
 +190 Casualties
-="defensive" atwar
+="false" atwar
 
 <... > Nations > RoecaoNtepaEmpire
 -145 HeavyCav
@@ -6183,7 +6187,7 @@ trade TreatyWithCaliphate3, EulacianTradeCouncil > AdenCaliphate, 0.1 Ivory
 -5 HandCannon
 -20 Militia
 +220 Casualties
-="offensive" atwar
+="false" atwar
 
 <... > Nations > EulacianTradeCouncil
 -140 LightInf
@@ -6208,7 +6212,7 @@ trade TreatyWithCaliphate3, EulacianTradeCouncil > AdenCaliphate, 0.1 Ivory
 -1 MajorBattles
 -1 MinorBattles
 +2886 Casualties
-="offensive" atwar
+="false" atwar
 
 <... > Nations > KingdomOfEngland
 +30 Budget
@@ -6220,7 +6224,7 @@ trade TreatyWithCaliphate3, EulacianTradeCouncil > AdenCaliphate, 0.1 Ivory
 +1 MajorBattles
 +1 MinorBattles
 +502 Casualties
-="defensive" atwar
+="false" atwar
 
 <... > Nations > KingdomOfGalicia
 -50 Budget
@@ -6233,7 +6237,7 @@ trade TreatyWithCaliphate3, EulacianTradeCouncil > AdenCaliphate, 0.1 Ivory
 -40% MilitaryMorale
 -1 MajorBattles
 +3546 Casualties
-="defensive" atwar
+="false" atwar
 
 <... > Nations > KingdomOfToledoCatalonia
 +61 Budget
@@ -6245,10 +6249,11 @@ trade TreatyWithCaliphate3, EulacianTradeCouncil > AdenCaliphate, 0.1 Ivory
 +1 MajorBattles
 +1% Occupation
 +1439 Casualties
-="offensive" atwar
+="false" atwar
+
 <... > Nations > ArberberKingdom
 -11 Budget
-="offensive" atwar
+="false" atwar
 
 <... > Nations > KingdomOfWestphalia
 -80 Militia
@@ -6256,6 +6261,7 @@ trade TreatyWithCaliphate3, EulacianTradeCouncil > AdenCaliphate, 0.1 Ivory
 -1 Crossbowmen
 +111 Casualties
 ="false" atwar
+
 <... > Nations > KingdomOfPrussia
 -120 LightInf
 +120 Casualties
@@ -6271,6 +6277,7 @@ trade TreatyWithCaliphate3, EulacianTradeCouncil > AdenCaliphate, 0.1 Ivory
 -1100 Population
 +150 Casualties
 ="false" atwar
+
 <... > Nations > KingdomofAlvheim
 +24 Budget
 +2% Occupation
@@ -6302,3 +6309,548 @@ trade TreatyWithCaliphate3, EulacianTradeCouncil > AdenCaliphate, 0.1 Ivory
 =1030 Mountainous.Pixels
 
 sync
+
+# 1500 Climates
+
+# Sioux Climates
+<... > Nations > SiouxTribes > Climates
+=2182 TaigaAndTundra.Pixels
+=28246 Moderate.Pixels
+
+# Vespucia Climates
+<... > Nations > VespucianTribes > Climates
+=47434 Moderate.Pixels
+
+# Taino Climates
+<... > Nations > TainoTribalConfederacy > Climates
+=5070 SubTropical.Pixels
+=926 Tropical.Pixels
+
+<... > Nations
++> NewEngland = KingdomOfEngland
+<... > Nations > NewEngland
+=75000 pop
+="" flag
+="false" AtWar
+=15 Budget
+=0 Spies
+=0 Levies
+=0 LightInfantry
+=0 HeavyInfantry
+=0 Archers
+=0 Crossbowmen
+=0 LightCavalry
+=0 HeavyCavalry
+=0 EliteInfantry
+=0 EliteCavalry
+=0 HandCannon
+=0 Musketeers
+=0 Militia
+=0 SiegeEquipment
+=0 LargeSiegeEquipment
+=0 Cannons
+=0 SmallForts
+=0 MediumForts
+=0 BigForts
+=0 HugeForts
+=0 ExtraCityFortifications
+=0 LightShips
+=0 MediumShips
+=0 HeavyShips
+=0 Coal
+=0 Sulphur
+=0 Cotton
+=0 Gold
+=0 Iron
+=0 Tea
+=0 Silk
+=0 Spice
+=0 Wool
+=0 Coffee
+=0 Fur
+=0 Diamond
+=0 Silver
+=0 Ivory
+=0 Cocoa
+=0 Tobacco
+=0 Sugar
+=0 ExoticFruit
+=0 PublicDebtTaken
+=0 PublicDebtLength
+=0.5 Fertility
+=15 Food
+=0 Casualties
+=0 Pillaging
+=0 Occupation
+=0 MinorBattles
+=0 MajorBattles
+> Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=0 Arid.Pixels
+=0 Steppe.Pixels
+=0 Moderate.Pixels
+=0 SubTropical.Pixels
+=0 Tropical.Pixels
+=0 Savanna.Pixels
+=0 Desert.Pixels
+=0 CoastalDesert.Pixels
+=0 Mountainous.Pixels
+<
+> Trade Influences
+=0 Alaska.tp
+=0 Cascadia.tp
+=0 CaliforniaAndWestMexico.tp
+=0 HudsonBay.tp
+=0 GreatLakes.tp
+=0 Louisiana.tp
+=0 GulfOfMexico.tp
+=0 LawrenceGulf.tp
+=0 EastCoast.tp
+=0 Carribean.tp
+=0 CentralAmerica.tp
+
+=0 GuyanaAndSuriname.tp
+=0 Amazon.tp
+=0 Peru.tp
+=0 RioGrande.tp
+=0 LaPlata.tp
+=0 Chile.tp
+=0 Patagonia.tp
+
+=0 NorthernAnatolia.tp
+=0 NorthSea.tp
+=0 BritishIsles.tp
+=0 EnglishChannel.tp
+=0 France.tp
+=0 BayOfBiscay.tp
+=0 WestIberia.tp
+=0 Gibraltar.tp
+=0 WesternMediterranean.tp
+=0 Rhine.tp
+=0 CentralMediterranean.tp
+=0 Adriatic.tp
+=0 Germany.tp
+=0 WesternDanube.tp
+=0 Denmark.tp
+=0 Baltic.tp
+=0 NorthNordics.tp
+=0 BarentsSea.tp
+=0 Novgorod.tp
+=0 Poland.tp
+=0 Dniepr.tp
+=0 Crimea.tp
+=0 EasternDanube.tp
+=0 Greece.tp
+=0 EasternMediterranean.tp
+=0 Egypt.tp
+=0 RedSea.tp
+=0 WesternSahara.tp
+=0 CoteDIvoire.tp
+=0 Nigeria.tp
+=0 SouthNile.tp
+=0 Somalia.tp
+=0 Kongo.tp
+=0 EastAfrica.tp
+=0 Mozambique.tp
+=0 SouthAfrica.tp
+
+=0 Mesopotamia.tp
+=0 PersianGulf.tp
+=0 Caucasus.tp
+=0 DonRiver.tp
+=0 Volga.tp
+=0 CentralAsia.tp
+=0 WestSiberia.tp
+=0 EastSiberia.tp
+=0 Iran.tp
+=0 Pakistan.tp
+=0 Tibet.tp
+=0 Mongolia.tp
+=0 Manchuria.tp
+=0 SeaOfJapan.tp
+=0 NorthChina.tp
+=0 YangtzeRiver.tp
+=0 SouthChina.tp
+=0 NorthIndia.tp
+=0 WestIndia.tp
+=0 EastIndia.tp
+=0 Burma.tp
+=0 SouthEastAsia.tp
+=0 NorthAustralia.tp
+=0 SouthAustralia.tp
+<
+> CultureGroups
+<- Cornish
+<- JudeoEnglish
++> Irish
+=57 Irish.points
+=43 English.points
+< 
+> ReligionGroups
+=100 Catholic.Points
+<- Jewish
+
+# New England Climates
+<... > Nations > NewEngland > Climates
+=2226 TaigaAndTundra.Pixels
+=4219 Moderate.Pixels
+
+# England Climates
+<... > Nations > KingdomOfEngland > Climates
+=11641 Moderate.Pixels
+<
+> CultureGroups
++> Irish
+=18.6 Irish.points
+-18.6 English.points
+<
++1311261 population
+-291868 pop
+
+# Ireland Climates
+<... > Nations > KingdomOfIreland > Climates
+=4187 Moderate.Pixels
+<
+-1311261 population
+<... > Cultures > English > Opinions
++> Irish
+= -25 Irish.Score
+<... > Cultures > Irish > Opinions
++> English
+= -75 English.Score
++> Burgundian
+= 0 Burgundian.Score
+
+# Burgundy Climates
+<... > Nations > KingdomOfBurgundy > Climates
+=28423 Moderate.Pixels
+<
++291868 pop
++978130 pop
+> CultureGroups
++> English
++> Westphalian
+=1.9 English.points
+=8.4 Westphalian.points
+=89.7 Burgundian.points
+
+# Westphalia Climates
+<... > Nations > KingdomOfWestphalia > Climates
+=8281 Moderate.Pixels
+<
+-978130 pop
+-1323353 pop
+
+# Prussia Climates
+<... > Nations > KingdomOfPrussia > Climates
+=15916 Moderate.Pixels
+<
++1323353 pop
+> CultureGroups
++> Westphalian
+=21.4 Westphalian.points
+=78.6 Prussian.points
+
+<... > Cultures > Prussian > Opinions
++> Westphalian
+= -25 Westphalian.Score
+<... > Cultures > Westphalian > Opinions
++> Burgundian
++> Prussian
+= -75 Prussian.Score
+= -75 Burgundian.Score
+<... > Cultures > Burgundian > Opinions
++> English
++> Westphalian
+= -25 Westphalian.Score
+=0 English.Score
+
+# Alvheim Climates
+<... > Nations > KingdomOfAlvheim > Climates
+=5823 MontaneForest.Pixels
+=10945 Moderate.Pixels
+
+# ToledoCatalonia Climates
+<... > Nations > KingdomOfToledoCatalonia > Climates
+=24062 Medditereanian.Pixels
+=4047 Moderate.Pixels
+=181 SubTropical.Pixels
+=42 Savanna.Pixels
+=63 CoastalDesert.Pixels
+=1383 Mountainous.Pixels
+<
++4742125 pop
++87691 pop
+> CultureGroups
++> Galician
++> Arberber
+=42.8 Galician.points
+=56.4 Catalonian.points
+=0.8 Arberber.points
+
+<... > Nations
+<- KingdomOfGalicia
+
+# Arberber Climates
+<... > Nations > ArberberKingdom > Climates
+=6928 Medditereanian.Pixels
+=2540 Arid.Pixels
+=3031 Desert.Pixels
+=2620 CoastalDesert.Pixels
+<
+-87691 pop
+
+<... > Cultures > Galician > Opinions
++> Catalonian
+= -75 Catalonian.Score
+
+<... > Cultures > Catalonian > Opinions
++> Galician
+= -25 Galician.Score
++> Arberber
+= 0 Arberber.Score
+
+<... > Cultures > Arberber > Opinions
++> Catalonian
+= -25 Catalonian.Score
+
+# Austria Climates
+<... > Nations > ArchduchyOfAustria > Climates
+=148 Medditereanian.Pixels
+=22428 Moderate.Pixels
+=4007 Mountainous.Pixels
+
+# Valublid Climates
+<... > Nations > ValublidSultanate > Climates
+=4949 Medditereanian.Pixels
+=6400 Arid.Pixels
+=7409 Desert.Pixels
+=1316 CoastalDesert.Pixels
+
+# Byzantium Climates
+<... > Nations > Byzantium > Climates
+=19454 Medditereanian.Pixels
+=6636 Arid.Pixels
+=4092 Steppe.Pixels
+=48 Moderate.Pixels
+=106 Mountainous.Pixels
+
+# Wallachia Climates
+<... > Nations > KingdomOfWallachia > Climates
+=8293 Steppe.Pixels
+=568 Moderate.Pixels
+=1291 Mountainous.Pixels
+
+# Cumans Climates
+<... > Nations > CumanKipchakKhanate > Climates
+=22803 Steppe.Pixels
+=1942 Moderate.Pixels
+=525 Mountainous.Pixels
+
+# Poland Climates
+<... > Nations > KingdomOfPoland > Climates
+=179 Steppe.Pixels
+=21832 Moderate.Pixels
+=1646 Mountainous.Pixels
+
+# Belarus Climates
+<... > Nations > DuchyOfBelarus > Climates
+=1545 Steppe.Pixels
+=26222 Moderate.Pixels
+
+# Latvia Climates
+<... > Nations > LatvianEmpire > Climates
+=1204 TaigaAndTundra.Pixels
+=13882 Moderate.Pixels
+
+# Muscovy Climates
+<... > Nations > TsardomOfMuscovy > Climates
+=9062 TaigaAndTundra.Pixels
+=24341 Moderate.Pixels
+
+# Zi Climates
+<... > Nations > ZiEmpire > Climates
+=22952 Arid.Pixels
+=1277 Mountainous.Pixels
+
+# Mitiva Climates
+<... > Nations > Mitiva > Climates
+=6308 Medditereanian.Pixels
+=1085 Savanna.Pixels
+=5785 Desert.Pixels
+=3173 CoastalDesert.Pixels
+
+# Aden Climates
+<... > Nations > AdenCaliphate > Climates
+=1470 SubTropical.Pixels
+=4938 Savanna.Pixels
+=14000 Desert.Pixels
+=14379 CoastalDesert.Pixels
+
+# Bornu Climates
+<... > Nations > Bornu > Climates
+=19720 SubTropical.Pixels
+=8463 Savanna.Pixels
+=79 Desert.Pixels
+
+# Magajiya Climates
+<... > Nations > MagajiyaTribe > Climates
+=17160 SubTropical.Pixels
+=4775 Tropical.Pixels
+=347 Savanna.Pixels
+
+# Balanto add
+<... > Cultures
++> Balanto
+<... > Nations
++> KingdomOfBalanto
+<... > Nations > KingdomOfBalanto > CultureGroups
++> Balanto
+=100 Balanto.Points
+<... > Nations > KingdomOfBalanto > ReligionGroups
++> Muslim
+=100 Muslim.Points
+# (if not pagan)
+<- Pagan
+<... > Nations > KingdomOfBalanto
+= "Balanto" cultrep
+= "Muslim" relrep
+
+# Balanto Climates
+<... > Nations > KingdomOfBalanto > Climates
+=4531 SubTropical.Pixels
+=1637 Tropical.Pixels
+=3686 Savanna.Pixels
+
+# Quasimid Climates
+<... > Nations > QuasimidEmirate > Climates
+=27332 Arid.Pixels
+=3662 CoastalDesert.Pixels
+=1640 Mountainous.Pixels
+
+# Timurids Climates
+<... > Nations > TimuridEmirate > Climates
+=19950 Arid.Pixels
+=2517 Desert.Pixels
+=225 CoastalDesert.Pixels
+=2510 Mountainous.Pixels
+
+# Sindh Climates
+<... > Nations > SindhEmpire > Climates
+=28767 Arid.Pixels
+=6695 SubTropical.Pixels
+=159 Tropical.Pixels
+=6171 Savanna.Pixels
+=1545 CoastalDesert.Pixels
+=2052 Mountainous.Pixels
+
+# Kyrat Climates
+<... > Nations > KingdomOfKyrat > Climates
+=31155 SubTropical.Pixels
+=5818 Tropical.Pixels
+=2528 Savanna.Pixels
+=2917 Mountainous.Pixels
+
+# Eulacia Climates
+<... > Nations > EulacianTradeCouncil > Climates
+=2832 SubTropical.Pixels
+=48154 Tropical.Pixels
+=5694 Mountainous.Pixels
+<
++403751 pop
+> CultureGroups
++> Chinese
+=4.2 Chinese.points
+-4.2 Eulacian.points
+
+# Guangxi Climates
+<... > Nations > RoecaoNtepaEmpire > Climates
+=16507 Moderate.Pixels
+=3743 SubTropical.Pixels
+<
+-403751 pop
+-921898 pop
+
+<... > Nations 
++> GuangxiClique = RoecaoNtepaEmpire
+<- RoecaoNtepaEmpire
+
+# Japan Climates
+<... > Nations > EmpireOfJapan > Climates
+=20447 Moderate.Pixels
+=1589 SubTropical.Pixels
+=1016 Tropical.Pixels
+=3303 Mountainous.Pixels
+<
++921898 pop
+> CultureGroups
++> Chinese
+=14.5 Chinese.points
+-14.5 Japanese.points
+
+<... > Cultures > Chinese > Opinions
++> Eulacian
+= -75 Eulacian.Score
++> Japanese
+= -75 Japanese.Score
+
+<... > Cultures > Japanese > Opinions
++> Chinese
+= -25 Chinese.Score
+
+<... > Cultures > Eulacian > Opinions
++> Chinese
+= -25 Chinese.Score
+
+# Mongolia Climates
+<... > Nations > MongolianKhanate > Climates
+=4315 MontaneForest.Pixels
+=20020 Steppe.Pixels
+=2333 Desert.Pixels
+
+# Menzen Climates
+<... > Nations > MenzenConfederation > Climates
+=12245 Moderate.Pixels
+
+# Cheonje Climates
+<... > Nations > Cheonje > Climates
+=14595 Moderate.Pixels
+
+# Sakhalin Climates
+<... > Nations > SashimoKingdom > Climates
+=14171 TaigaAndTundra.Pixels
+=8183 Moderate.Pixels
+=540 Mountainous.Pixels
+
+# Avanorolsk add
+<... > Cultures
++> Yakush
+<... > Nations
++> Avanorolsk
+<... > Nations > Avanorolsk > CultureGroups
++> Yakush
+=100 Yakush.Points
+<... > Nations > Avanorolsk
+= "Yakush" cultrep
+= "Pagan" relrep
+
+# Avanorolsk Climates
+<... > Nations > Avanorolsk > Climates
+=1030 TaigaAndTundra.Pixels
+=10565 MontaneForest.Pixels
+=647 Moderate.Pixels
+
+# Zulu Climates
+<... > Nations > ZuluKingdom > Climates
+=10414 Medditereanian.Pixels
+=1117 Moderate.Pixels
+=1242 Tropical.Pixels
+=546 Desert.Pixels
+=42 CoastalDesert.Pixels
+
+# Aoteroea Climates
+<... > Nations > KingdomOfAotearoa > Climates
+=10328 Moderate.Pixels
