@@ -6120,6 +6120,7 @@ trade TreatyWithCaliphate3, EulacianTradeCouncil > AdenCaliphate, 0.1 Ivory
 -4 MediumShips
 -12 LightShips
 ="offensive" atwar
+
 <... > Nations > HittiteEmpire
 -6 MediumShips
 -18 LightShips
@@ -6127,9 +6128,11 @@ trade TreatyWithCaliphate3, EulacianTradeCouncil > AdenCaliphate, 0.1 Ivory
 -25 HeavyInf
 -5 HeavyCav
 ="offensive" atwar
+
 <... > Nations > ArberberKingdom
 -1 LightShips
 -2 MediumShips
+
 <... > Nations > OrderOfStMary
 -10 LightCav
 -400 Militia
@@ -6139,6 +6142,7 @@ trade TreatyWithCaliphate3, EulacianTradeCouncil > AdenCaliphate, 0.1 Ivory
 -1050 HeavyInf
 +1550 Casualties
 ="false" atwar
+
 <... > Nations > Mitiva
 -400 Militia
 -325 LightCav
@@ -6173,7 +6177,7 @@ trade TreatyWithCaliphate3, EulacianTradeCouncil > AdenCaliphate, 0.1 Ivory
 -10 Archers
 -30 LightCav
 +190 Casualties
-="defensive" atwar
+="false" atwar
 
 <... > Nations > RoecaoNtepaEmpire
 -145 HeavyCav
@@ -6183,7 +6187,7 @@ trade TreatyWithCaliphate3, EulacianTradeCouncil > AdenCaliphate, 0.1 Ivory
 -5 HandCannon
 -20 Militia
 +220 Casualties
-="offensive" atwar
+="false" atwar
 
 <... > Nations > EulacianTradeCouncil
 -140 LightInf
@@ -6208,7 +6212,7 @@ trade TreatyWithCaliphate3, EulacianTradeCouncil > AdenCaliphate, 0.1 Ivory
 -1 MajorBattles
 -1 MinorBattles
 +2886 Casualties
-="offensive" atwar
+="false" atwar
 
 <... > Nations > KingdomOfEngland
 +30 Budget
@@ -6220,7 +6224,7 @@ trade TreatyWithCaliphate3, EulacianTradeCouncil > AdenCaliphate, 0.1 Ivory
 +1 MajorBattles
 +1 MinorBattles
 +502 Casualties
-="defensive" atwar
+="false" atwar
 
 <... > Nations > KingdomOfGalicia
 -50 Budget
@@ -6233,7 +6237,7 @@ trade TreatyWithCaliphate3, EulacianTradeCouncil > AdenCaliphate, 0.1 Ivory
 -40% MilitaryMorale
 -1 MajorBattles
 +3546 Casualties
-="defensive" atwar
+="false" atwar
 
 <... > Nations > KingdomOfToledoCatalonia
 +61 Budget
@@ -6245,10 +6249,11 @@ trade TreatyWithCaliphate3, EulacianTradeCouncil > AdenCaliphate, 0.1 Ivory
 +1 MajorBattles
 +1% Occupation
 +1439 Casualties
-="offensive" atwar
+="false" atwar
+
 <... > Nations > ArberberKingdom
 -11 Budget
-="offensive" atwar
+="false" atwar
 
 <... > Nations > KingdomOfWestphalia
 -80 Militia
@@ -6256,6 +6261,7 @@ trade TreatyWithCaliphate3, EulacianTradeCouncil > AdenCaliphate, 0.1 Ivory
 -1 Crossbowmen
 +111 Casualties
 ="false" atwar
+
 <... > Nations > KingdomOfPrussia
 -120 LightInf
 +120 Casualties
@@ -6271,6 +6277,7 @@ trade TreatyWithCaliphate3, EulacianTradeCouncil > AdenCaliphate, 0.1 Ivory
 -1100 Population
 +150 Casualties
 ="false" atwar
+
 <... > Nations > KingdomofAlvheim
 +24 Budget
 +2% Occupation
