@@ -6854,3 +6854,6 @@ sync
 # Aoteroea Climates
 <... > Nations > KingdomOfAotearoa > Climates
 =10328 Moderate.Pixels
+
+<... > Nations > Byzantium
+="defensive" war
