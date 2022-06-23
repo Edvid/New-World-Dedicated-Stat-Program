@@ -551,7 +551,7 @@ n.PopulationGrowth = (n.FutureFood < 0 ? n.FutureFood * 1000 / n.Population - (n
     return rbb / gameStats.TimeDivide;
   })();
 
-  n.TradeRevenue = ((n.LocalTrade + n.TradePower) * (1 - n.BurghersInfluence)) / gameStats.TimeDivide * n.TradeEfficiency + n.TradeProfit;
+  n.TradeRevenue = (n.TradePower * (1 - n.BurghersInfluence)) / gameStats.TimeDivide * n.TradeEfficiency + n.TradeProfit;
   n.EffectiveTax = (
     (
       n.SocietalClasses.Lower * n.Population * n.LowerClassTax / 10000 +
