@@ -6858,3 +6858,27 @@ sync
 
 <... > Nations > Byzantium
 ="defensive" atwar
+
+<... > Nations > SiouxTribes
+=0.8 fertility
+
+<... > Nations > MagajiyaTribe
+=0.9 fertility
+
+<... > Nations > DuchyOfBelarus
+=0.65 fertility
+
+<... > Nations > CumanKipchakKhanate
+=0.7 fertility
+
+<... > Nations > KingdomOfKyrat	
+=0.9 fertility
+
+<... > Nations > EulacianTradeCouncil
+=0.75 fertility
+
+<... > Nations > EmpireOfLonguo
+=1 fertility
+
+<... > Nations > MenzenConfederation
+=1 fertility
