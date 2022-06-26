@@ -329,7 +329,7 @@ let PopulationGrowthModifier = (n.Fertility > 0.5 ? (n.Fertility - 0.5) / 10 : 0
       pointSum += +loyalty;
       if (loyaltyName == n.GovernmentName) StatePoints += +loyalty;
     }
-    return StatePoints / pointSum;
+    return 100 * StatePoints / pointSum;
   })();
   n.ClergyStateLoyalty = (function () {
     let pointSum = 0;
@@ -339,7 +339,7 @@ let PopulationGrowthModifier = (n.Fertility > 0.5 ? (n.Fertility - 0.5) / 10 : 0
       pointSum += +loyalty;
       if (loyaltyName == n.GovernmentName) StatePoints += +loyalty;
     }
-    return StatePoints / pointSum;
+    return 100 * StatePoints / pointSum;
   })();
   n.BurghersStateLoyalty = (function () {
     let pointSum = 0;
@@ -349,7 +349,7 @@ let PopulationGrowthModifier = (n.Fertility > 0.5 ? (n.Fertility - 0.5) / 10 : 0
       pointSum += +loyalty;
       if (loyaltyName == n.GovernmentName) StatePoints += +loyalty;
     }
-    return StatePoints / pointSum;
+    return 100 * StatePoints / pointSum;
   })();
   n.PopulationStabilityImpact = (n.Population > n.AdministrativeEfficiency * 500000 ? (n.AdministrativeEfficiency * 500000 - n.Population) / 50000000 : 0) * 10;
   n.Fervor = clamp(1, -1, 0 + n.MinorBattles / 20 + n.MajorBattles / 10 + n.Pillaging - (n.Casualties / (n.OverallNumbers + n.Casualties + 0.0000001)));
