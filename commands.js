@@ -154,10 +154,8 @@ function createStat(currentSelection, arg){
         }`))();
         //for nation copying specifically, override the copied stuff for government name and noble loyalties towards state
         
-        console.log("AAAAAAAAAAAAAAAAAAA");
         if (objectClass == "Nation"){
             
-            console.log("BBBBBBBBBBBBBBBBBBB");
             (new Function(`
             gameStats${currentSelection}.${newName}.GovernmentName = "${newName}"
             
@@ -165,7 +163,6 @@ function createStat(currentSelection, arg){
                 typeof 
                 gameStats${currentSelection}.${newName}.NobleLoyaltyGroups.${oldName} != "undefined"
             ){
-                console.log("CCCCCCCCCCCCCCCCCCC");
                 gameStats${currentSelection}.${newName}.NobleLoyaltyGroups.${newName} = 
                 gameStats${currentSelection}.${newName}.NobleLoyaltyGroups.${oldName}
                 delete gameStats${currentSelection}.${newName}.NobleLoyaltyGroups.${oldName}
