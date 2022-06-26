@@ -1,6 +1,6 @@
 {
     "Lines": 6860,
-    "Hash": -1987704216,
+    "Hash": -1788449260,
     "State": {
         "TimeSpeed": 50,
         "TimeDivide": 0.4,
@@ -33799,7 +33799,7 @@
                 "FutureResearchPoints": 7.5,
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
-                "GovernmentName": "YamatoKingdom",
+                "GovernmentName": "EmpireOfJapan",
                 "Flag": "https://cdn.discordapp.com/attachments/974675787959648327/977312475395534849/391.jpg",
                 "ReligionGroups": {
                     "Shinto": {
@@ -33845,20 +33845,20 @@
                 "SpyQuality": 1.2,
                 "NobleInfluence": 0.55,
                 "NobleLoyaltyGroups": {
-                    "YamatoKingdom": "55",
-                    "SelfInterests": "45"
+                    "SelfInterests": "45",
+                    "EmpireOfJapan": "55"
                 },
                 "NobleStateLoyalty": 55,
                 "ClergyInfluence": 0.25,
                 "ClergyLoyaltyGroups": {
-                    "YamatoKingdom": "50",
-                    "SelfInterests": "50"
+                    "SelfInterests": "50",
+                    "EmpireOfJapan": "50"
                 },
                 "ClergyStateLoyalty": 50,
                 "BurghersInfluence": 0.1,
                 "BurghersLoyaltyGroups": {
-                    "YamatoKingdom": "50",
-                    "SelfInterests": "50"
+                    "SelfInterests": "50",
+                    "EmpireOfJapan": "50"
                 },
                 "BurghersStateLoyalty": 50,
                 "ArmyUpkeep": 140.98875,
@@ -34505,7 +34505,7 @@
                 "FutureResearchPoints": 7.5,
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
-                "GovernmentName": "KingdomOfSweden",
+                "GovernmentName": "KingdomOfSfveadsland",
                 "Flag": "https://cdn.discordapp.com/attachments/969287009879359578/979256371759439872/unknown.png",
                 "ReligionGroups": {
                     "Catholic": {
@@ -34551,20 +34551,20 @@
                 "SpyQuality": 1.2,
                 "NobleInfluence": 0.45,
                 "NobleLoyaltyGroups": {
-                    "KingdomOfSweden": "55",
-                    "SelfInterests": "45"
+                    "SelfInterests": "45",
+                    "KingdomOfSfveadsland": "55"
                 },
                 "NobleStateLoyalty": 55,
                 "ClergyInfluence": 0.25,
                 "ClergyLoyaltyGroups": {
-                    "KingdomOfSweden": "50",
-                    "SelfInterests": "50"
+                    "SelfInterests": "50",
+                    "KingdomOfSfveadsland": "50"
                 },
                 "ClergyStateLoyalty": 50,
                 "BurghersInfluence": 0.15000000000000002,
                 "BurghersLoyaltyGroups": {
-                    "KingdomOfSweden": "50",
-                    "SelfInterests": "50"
+                    "SelfInterests": "50",
+                    "KingdomOfSfveadsland": "50"
                 },
                 "BurghersStateLoyalty": 50,
                 "ArmyUpkeep": 393.04604166666655,
@@ -35208,7 +35208,7 @@
                 "FutureResearchPoints": 7.5,
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
-                "GovernmentName": "SakhalinTribe",
+                "GovernmentName": "SashimoKingdom",
                 "Flag": "https://cdn.discordapp.com/attachments/977191300304601158/987381145614299136/sashimo_flag.png",
                 "ReligionGroups": {},
                 "ReligionRepresentedAtGovernmentLevel": "Pagan",
@@ -35250,20 +35250,20 @@
                 "SpyQuality": 1.2,
                 "NobleInfluence": 0.55,
                 "NobleLoyaltyGroups": {
-                    "SakhalinTribe": "55",
-                    "SelfInterests": "45"
+                    "SelfInterests": "45",
+                    "SashimoKingdom": "55"
                 },
                 "NobleStateLoyalty": 55,
                 "ClergyInfluence": 0.25,
                 "ClergyLoyaltyGroups": {
-                    "SakhalinTribe": "50",
-                    "SelfInterests": "50"
+                    "SelfInterests": "50",
+                    "SashimoKingdom": "50"
                 },
                 "ClergyStateLoyalty": 50,
                 "BurghersInfluence": 0.15000000000000002,
                 "BurghersLoyaltyGroups": {
-                    "SakhalinTribe": "50",
-                    "SelfInterests": "50"
+                    "SelfInterests": "50",
+                    "SashimoKingdom": "50"
                 },
                 "BurghersStateLoyalty": 50,
                 "ArmyUpkeep": 117.51030468749998,
@@ -35907,7 +35907,7 @@
                 "FutureResearchPoints": 7.5,
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
-                "GovernmentName": "IgorotConfederacy",
+                "GovernmentName": "LakanateOfTondo",
                 "Flag": "https://cdn.discordapp.com/attachments/969287009879359578/975404904589955112/unknown.png",
                 "ReligionGroups": {
                     "Pagan": {
@@ -35953,20 +35953,20 @@
                 "SpyQuality": 1.2,
                 "NobleInfluence": 0.55,
                 "NobleLoyaltyGroups": {
-                    "IgorotConfederacy": "55",
-                    "SelfInterests": "45"
+                    "SelfInterests": "45",
+                    "LakanateOfTondo": "55"
                 },
                 "NobleStateLoyalty": 55,
                 "ClergyInfluence": 0.25,
                 "ClergyLoyaltyGroups": {
-                    "IgorotConfederacy": "50",
-                    "SelfInterests": "50"
+                    "SelfInterests": "50",
+                    "LakanateOfTondo": "50"
                 },
                 "ClergyStateLoyalty": 50,
                 "BurghersInfluence": 0.1,
                 "BurghersLoyaltyGroups": {
-                    "IgorotConfederacy": "50",
-                    "SelfInterests": "50"
+                    "SelfInterests": "50",
+                    "LakanateOfTondo": "50"
                 },
                 "BurghersStateLoyalty": 50,
                 "ArmyUpkeep": 0,
@@ -37313,7 +37313,7 @@
                 "FutureResearchPoints": 7.5,
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
-                "GovernmentName": "KingdomOfEngland",
+                "GovernmentName": "NewEngland",
                 "Flag": "https://media.discordapp.net/attachments/974974128006242324/975783233289597019/unknown.png",
                 "ReligionGroups": {
                     "Catholic": {
@@ -37359,20 +37359,20 @@
                 "SpyQuality": 1.3,
                 "NobleInfluence": 0.6500000000000001,
                 "NobleLoyaltyGroups": {
-                    "KingdomOfEngland": "55",
-                    "SelfInterests": "45"
+                    "SelfInterests": "45",
+                    "NewEngland": "55"
                 },
                 "NobleStateLoyalty": 55,
                 "ClergyInfluence": 0.425,
                 "ClergyLoyaltyGroups": {
-                    "KingdomOfEngland": "50",
-                    "SelfInterests": "50"
+                    "SelfInterests": "50",
+                    "NewEngland": "50"
                 },
                 "ClergyStateLoyalty": 50,
                 "BurghersInfluence": 0.15000000000000002,
                 "BurghersLoyaltyGroups": {
-                    "KingdomOfEngland": "50",
-                    "SelfInterests": "50"
+                    "SelfInterests": "50",
+                    "NewEngland": "50"
                 },
                 "BurghersStateLoyalty": 50,
                 "ArmyUpkeep": 0,
@@ -38722,7 +38722,7 @@
                 "FutureResearchPoints": 7.5,
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
-                "GovernmentName": "RoecaoNtepaEmpire",
+                "GovernmentName": "GuangxiClique",
                 "Flag": "none",
                 "ReligionGroups": {
                     "Pagan": {
@@ -38768,20 +38768,20 @@
                 "SpyQuality": 1.2,
                 "NobleInfluence": 0.55,
                 "NobleLoyaltyGroups": {
-                    "RoecaoNtepaEmpire": "55",
-                    "SelfInterests": "45"
+                    "SelfInterests": "45",
+                    "GuangxiClique": "55"
                 },
                 "NobleStateLoyalty": 55,
                 "ClergyInfluence": 0.25,
                 "ClergyLoyaltyGroups": {
-                    "RoecaoNtepaEmpire": "50",
-                    "SelfInterests": "50"
+                    "SelfInterests": "50",
+                    "GuangxiClique": "50"
                 },
                 "ClergyStateLoyalty": 50,
                 "BurghersInfluence": 0.1,
                 "BurghersLoyaltyGroups": {
-                    "RoecaoNtepaEmpire": "50",
-                    "SelfInterests": "50"
+                    "SelfInterests": "50",
+                    "GuangxiClique": "50"
                 },
                 "BurghersStateLoyalty": 50,
                 "ArmyUpkeep": 25.814425,

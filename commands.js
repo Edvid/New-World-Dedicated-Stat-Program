@@ -153,15 +153,19 @@ function createStat(currentSelection, arg){
             gameStats${currentSelection}.${newName}[propertyName] = JSON.parse(JSON.stringify(propertyToCopy));
         }`))();
         //for nation copying specifically, override the copied stuff for government name and noble loyalties towards state
+        
+        console.log("AAAAAAAAAAAAAAAAAAA");
         if (objectClass == "Nation"){
-
+            
+            console.log("BBBBBBBBBBBBBBBBBBB");
             (new Function(`
-            gameStats${currentSelection}.${newName}.GovernmentName = ${newName}
+            gameStats${currentSelection}.${newName}.GovernmentName = "${newName}"
             
             if(
                 typeof 
                 gameStats${currentSelection}.${newName}.NobleLoyaltyGroups.${oldName} != "undefined"
             ){
+                console.log("CCCCCCCCCCCCCCCCCCC");
                 gameStats${currentSelection}.${newName}.NobleLoyaltyGroups.${newName} = 
                 gameStats${currentSelection}.${newName}.NobleLoyaltyGroups.${oldName}
                 delete gameStats${currentSelection}.${newName}.NobleLoyaltyGroups.${oldName}
@@ -186,7 +190,7 @@ function createStat(currentSelection, arg){
             }
             
             
-            `))
+            `))();
         }
     } else {
         (new Function(`gameStats${currentSelection}.${arg} = new ${objectClass}("${arg}");`))();
