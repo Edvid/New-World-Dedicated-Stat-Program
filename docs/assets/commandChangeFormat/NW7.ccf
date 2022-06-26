@@ -2793,7 +2793,8 @@ trade TreatyOfWarsaw3, Byzantium > KingdomofPoland, 0.15 Gold
 + 10 light ships
 + 5 medium ships
 + .05 naval improvements
-+ 5% Clergy Loyalty . Kingdom of Ireland
++ 5 Clergy Loyalty . Kingdom of Ireland
+- 5 Clergy Loyalty . SelfInterests
 + .05 agradv
 + .25 health
 + .05 agrinf
