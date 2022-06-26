@@ -1,6 +1,6 @@
 {
-    "Lines": 6860,
-    "Hash": -1788449260,
+    "Lines": 6861,
+    "Hash": 1181656336,
     "State": {
         "TimeSpeed": 50,
         "TimeDivide": 0.4,
@@ -19731,10 +19731,10 @@
                 "HabitableLand": 0.8452162670427831
             },
             "KingdomOfIreland": {
-                "FuturePopulation": 2417638.552515563,
+                "FuturePopulation": 2415102.076134436,
                 "FutureLiteracyPercent": 10.875,
                 "FutureHigherEducation": 0.7000000000000001,
-                "FutureBudget": -1038.8482571683792,
+                "FutureBudget": -990.0270467305661,
                 "FutureFood": 244.85953473500305,
                 "FutureResearchPoints": 7.5,
                 "FuturePublicDebtLength": 2,
@@ -19751,7 +19751,7 @@
                 "CulturalDisunity": 0,
                 "ReligiousDisunity": 0,
                 "Population": 2448595.34735003,
-                "PopulationGrowth": -0.005057069943054476,
+                "PopulationGrowth": -0.005471426097716366,
                 "Health": 2.25,
                 "LiteracyPercent": 10,
                 "HigherEducation": 0.5833333333333334,
@@ -19761,7 +19761,7 @@
                 "Overextension": 0.10799668666666666,
                 "Propaganda": 0.5,
                 "SocialSpending": 1,
-                "Prosperity": 0.8853719005562474,
+                "Prosperity": 0.9579157451720474,
                 "PopulationHappiness": null,
                 "Stability": null,
                 "AtWar": false,
@@ -19778,8 +19778,8 @@
                 "Mercantilism": 1.15,
                 "PossiblePublicDebt": 0,
                 "EffectiveDebt": 330,
-                "DailyBudget": -656.8088578296218,
-                "Budget": -382.0393993387574,
+                "DailyBudget": -644.8721315612079,
+                "Budget": -345.1549151693582,
                 "Inflation": 0,
                 "Spies": 50,
                 "SpyQuality": 1.2,
@@ -19791,10 +19791,10 @@
                 "NobleStateLoyalty": 55,
                 "ClergyInfluence": 0.25,
                 "ClergyLoyaltyGroups": {
-                    "KingdomOfIreland": 50.05,
-                    "SelfInterests": "50"
+                    "KingdomOfIreland": 55,
+                    "SelfInterests": 45
                 },
-                "ClergyStateLoyalty": 50.02498750624688,
+                "ClergyStateLoyalty": 55,
                 "BurghersInfluence": 0.1,
                 "BurghersLoyaltyGroups": {
                     "KingdomOfIreland": "50",
@@ -19813,7 +19813,7 @@
                 "AdministrativeUpkeep": 0.8099751499999999,
                 "ProductionRevenue": 14.860140458695437,
                 "ResearchUpkeep": 12.24297673675015,
-                "OverallIncome": 307.62493162434924,
+                "OverallIncome": 319.5616578927632,
                 "Levies": 5000,
                 "LightInfantry": 4790,
                 "HeavyInfantry": 1350,
