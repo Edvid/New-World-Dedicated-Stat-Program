@@ -50,6 +50,6 @@ let defaultStatValues = {
     TrainingQuality: 0.05,
     MilitaryTactics: 0.05,
     MilitaryDiscipline: 0.005,
-    NavalImprovements: 0.05,
+    NavyImprovements: 0.05,
     TradeInfluences: 0.5
 }
