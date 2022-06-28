@@ -17,6 +17,12 @@ let Synonyms = {
 		"hdi"
     ],
 
+	SocialSpending: [
+		"socspending",
+		"socspend",
+		"socialspend"
+	],
+
 	ReligionGroups : [
 		"relgr",
 		"rg"
@@ -132,6 +138,11 @@ let Synonyms = {
 		"burgherslg",
 		"burgherlg",
 	],
+
+	Levies: [
+		"levy",
+		"levie"
+	],
 	
 	LightInfantry: [
 		"lightinf",
@@ -144,7 +155,9 @@ let Synonyms = {
 	],
 	
 	Crossbowmen: [
-		"crossbows"
+		"crossbows",
+		"crossbow",
+		"crossbowman"
 	],
 	
 	LightCavalry: [
@@ -169,7 +182,9 @@ let Synonyms = {
 	
 	Musketeers: [
 		"muskets",
-		"musketmen"
+		"musketeer",
+		"musketmen",
+		"musketman"
 	],
 	
 	SiegeEquipment: [
@@ -202,6 +217,26 @@ let Synonyms = {
 		"largeforts",
 		"hugefort",
 		"largefort"
+	],
+
+	LightShips: [
+		"lship",
+		"lightship",
+		"lships",
+	],
+
+	MediumShips: [
+		"mship",
+		"mships",
+		"medship",
+		"mediumship",
+		"medships",
+	],
+
+	HeavyShips: [
+		"hship",
+		"heavyship",
+		"hships",
 	],
 	
 	ExtraCityFortifications: [
@@ -240,7 +275,9 @@ let Synonyms = {
 	
 	NavyImprovements: [
 		"navyimprov",
+		"navyimprovement",
 		"navalimprovements",
+		"navalimprovement",
 		"navalimprov"
 	],
 	
