@@ -110,16 +110,11 @@ ${allProperties}`)
         ))();
         change = isNaN(previous) ? true : value - previous;
         let setval;
-        //direct
-        if(!isNaN(value) || typeof value == 'boolean' )
+        //quotation
+        setval = `'${value}'`;
+        //but if just number or boolean, don't do quotation
+        if((!isNaN(value) && value !== '') || typeof value === 'boolean' || value.toLowerCase().trim() === "false" || value.toLowerCase().trim() === "true")
             setval = value;
-        //boolean but as a word
-        else if(value.toLowerCase() == "false" || value.toLowerCase() == "true"){
-            setval = value.toLowerCase() == "true";
-        }
-        //qoutation needed
-        else
-            setval = `'${value}'`;
         
         (new Function(`gameStats${selection} = ${setval}`))();
 

@@ -513,7 +513,7 @@ class Nation {
     /* #region  Stats to Set Immedietly */
     /* #region  Main */
     this.GovernmentName = nationName;
-    this.Flag = "none";
+    this.Flag = "";
     this.ReligionGroups = {
       "Pagan": {
         Points: 100
@@ -540,20 +540,20 @@ class Nation {
 
     this.NobleInfluence = 0.55; //Show in percent
     this.NobleLoyaltyGroups = JSON.parse(`{\
-    "${n.GovernmentName}": "55",\
-    "SelfInterests": "45"\
+    "${n.GovernmentName}": 55,\
+    "SelfInterests": 45\
     }`);
     
     this.ClergyInfluence = 0.25; //Show in percent
     this.ClergyLoyaltyGroups = JSON.parse(`{\
-    "${n.GovernmentName}": "50",\
-    "SelfInterests": "50"\
+    "${n.GovernmentName}": 50,\
+    "SelfInterests": 50\
     }`);
     
     this.BurghersInfluence = 0.10; //Show in percent
     this.BurghersLoyaltyGroups = JSON.parse(`{\
-    "${n.GovernmentName}": "50",\
-    "SelfInterests": "50"\
+    "${n.GovernmentName}": 50,\
+    "SelfInterests": 50\
     }`);
 
     this.Absolutism = 0;
