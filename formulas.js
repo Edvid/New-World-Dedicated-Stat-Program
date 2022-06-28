@@ -323,30 +323,33 @@ let PopulationGrowthModifier = (n.Fertility > 0.5 ? (n.Fertility - 0.5) / 10 : 0
 
   n.NobleStateLoyalty = (function () {
     let pointSum = 0;
+    let StatePoints = 0;
     for (const loyaltyName in n.NobleLoyaltyGroups) {
       const loyalty = n.NobleLoyaltyGroups[loyaltyName];
       pointSum += +loyalty;
-      if (loyaltyName == n.GovernmentName) return +loyalty;
+      if (loyaltyName == n.GovernmentName) StatePoints += +loyalty;
     }
-    return n.NobleStateLoyalty / pointSum;
+    return 100 * StatePoints / pointSum;
   })();
   n.ClergyStateLoyalty = (function () {
     let pointSum = 0;
+    let StatePoints = 0;
     for (const loyaltyName in n.ClergyLoyaltyGroups) {
       const loyalty = n.ClergyLoyaltyGroups[loyaltyName];
       pointSum += +loyalty;
-      if (loyaltyName == n.GovernmentName) return +loyalty;
+      if (loyaltyName == n.GovernmentName) StatePoints += +loyalty;
     }
-    return n.ClergyStateLoyalty / pointSum;
+    return 100 * StatePoints / pointSum;
   })();
   n.BurghersStateLoyalty = (function () {
     let pointSum = 0;
+    let StatePoints = 0;
     for (const loyaltyName in n.BurghersLoyaltyGroups) {
       const loyalty = n.BurghersLoyaltyGroups[loyaltyName];
       pointSum += +loyalty;
-      if (loyaltyName == n.GovernmentName) return +loyalty;
+      if (loyaltyName == n.GovernmentName) StatePoints += +loyalty;
     }
-    return n.BurghersStateLoyalty / pointSum;
+    return 100 * StatePoints / pointSum;
   })();
   n.PopulationStabilityImpact = (n.Population > n.AdministrativeEfficiency * 500000 ? (n.AdministrativeEfficiency * 500000 - n.Population) / 50000000 : 0) * 10;
   n.Fervor = clamp(1, -1, 0 + n.MinorBattles / 20 + n.MajorBattles / 10 + n.Pillaging - (n.Casualties / (n.OverallNumbers + n.Casualties + 0.0000001)));
@@ -551,7 +554,7 @@ n.PopulationGrowth = (n.FutureFood < 0 ? n.FutureFood * 1000 / n.Population - (n
     return rbb / gameStats.TimeDivide;
   })();
 
-  n.TradeRevenue = (n.TradePower * (1 - n.BurghersInfluence)) / gameStats.TimeDivide * n.TradeEfficiency + n.TradeProfit;
+  n.TradeRevenue = (n.TradePower * (1 - n.BurghersInfluence)) / gameStats.TimeDivide * n.TradeEfficiency + n.TradeProfit / gameStats.TimeDivide;
   n.EffectiveTax = (
     (
       n.SocietalClasses.Lower * n.Population * n.LowerClassTax / 10000 +

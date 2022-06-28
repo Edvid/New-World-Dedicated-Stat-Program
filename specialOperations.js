@@ -30,8 +30,6 @@ function specialOperation(selection, change){
             let cap = (new Function(`return gameStats${nationSelection}.EliteUnitsCap`))();
             let compare = Einf + Ecav - cap;
 
-            //if(/CumanKipchakKhanate/.test(selection)) console.log(`Einf: ${Einf}, Ecav: ${Ecav}, compare; ${compare}`)
-            
             //if the elite unit cap is too tiny
             if(compare > 0) {
                 evaluateNations();

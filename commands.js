@@ -142,14 +142,51 @@ function createStat(currentSelection, arg){
         let oldName = arg.slice(arg.indexOf('=') + 1).trim();
         oldName = correctAndSynonymCheck(`${currentSelection}.${oldName}`).split(".").pop();
         evaluateNation(oldName);
-        (new Function(`\
-        gameStats${currentSelection}.${newName} = new ${objectClass}("${newName}");\
-        /* Copy all property values from old to new */\
-        for (const propertyName in gameStats${currentSelection}.${oldName}) {\
-            if(propertyName == "GovernmentName") continue;\
-            const propertyToCopy = gameStats${currentSelection}.${oldName}[propertyName];\
-            gameStats${currentSelection}.${newName}[propertyName] = JSON.parse(JSON.stringify(propertyToCopy));\
+
+        /* Copy all property values from old to new */
+        (new Function(`
+        gameStats${currentSelection}.${newName} = new ${objectClass}("${newName}");
+        for (const propertyName in gameStats${currentSelection}.${oldName}) {
+            const propertyToCopy = gameStats${currentSelection}.${oldName}[propertyName];
+            gameStats${currentSelection}.${newName}[propertyName] = JSON.parse(JSON.stringify(propertyToCopy));
         }`))();
+        //for nation copying specifically, override the copied stuff for government name and noble loyalties towards state
+        
+        if (objectClass == "Nation"){
+            
+            (new Function(`
+            gameStats${currentSelection}.${newName}.GovernmentName = "${newName}"
+            
+            if(
+                typeof 
+                gameStats${currentSelection}.${newName}.NobleLoyaltyGroups.${oldName} != "undefined"
+            ){
+                gameStats${currentSelection}.${newName}.NobleLoyaltyGroups.${newName} = 
+                gameStats${currentSelection}.${newName}.NobleLoyaltyGroups.${oldName}
+                delete gameStats${currentSelection}.${newName}.NobleLoyaltyGroups.${oldName}
+            }
+            
+            if(
+                typeof 
+                gameStats${currentSelection}.${newName}.ClergyLoyaltyGroups.${oldName} != "undefined"
+            ){
+                gameStats${currentSelection}.${newName}.ClergyLoyaltyGroups.${newName} = 
+                gameStats${currentSelection}.${newName}.ClergyLoyaltyGroups.${oldName}
+                delete gameStats${currentSelection}.${newName}.ClergyLoyaltyGroups.${oldName}
+            }
+            
+            if(
+                typeof 
+                gameStats${currentSelection}.${newName}.BurghersLoyaltyGroups.${oldName} != "undefined"
+            ){
+                gameStats${currentSelection}.${newName}.BurghersLoyaltyGroups.${newName} = 
+                gameStats${currentSelection}.${newName}.BurghersLoyaltyGroups.${oldName}
+                delete gameStats${currentSelection}.${newName}.BurghersLoyaltyGroups.${oldName}
+            }
+            
+            
+            `))();
+        }
     } else {
         (new Function(`gameStats${currentSelection}.${arg} = new ${objectClass}("${arg}");`))();
 

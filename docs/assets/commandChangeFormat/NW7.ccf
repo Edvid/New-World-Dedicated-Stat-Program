@@ -2793,7 +2793,8 @@ trade TreatyOfWarsaw3, Byzantium > KingdomofPoland, 0.15 Gold
 + 10 light ships
 + 5 medium ships
 + .05 naval improvements
-+ 5% Clergy Loyalty . Kingdom of Ireland
++ 5 Clergy Loyalty . Kingdom of Ireland
+- 5 Clergy Loyalty . SelfInterests
 + .05 agradv
 + .25 health
 + .05 agrinf
@@ -6854,3 +6855,30 @@ sync
 # Aoteroea Climates
 <... > Nations > KingdomOfAotearoa > Climates
 =10328 Moderate.Pixels
+
+<... > Nations > Byzantium
+="defensive" atwar
+
+<... > Nations > SiouxTribes
+=0.8 fertility
+
+<... > Nations > MagajiyaTribe
+=0.9 fertility
+
+<... > Nations > DuchyOfBelarus
+=0.65 fertility
+
+<... > Nations > CumanKipchakKhanate
+=0.7 fertility
+
+<... > Nations > KingdomOfKyrat	
+=0.9 fertility
+
+<... > Nations > EulacianTradeCouncil
+=0.75 fertility
+
+<... > Nations > EmpireOfLonguo
+=1 fertility
+
+<... > Nations > MenzenConfederation
+=1 fertility
