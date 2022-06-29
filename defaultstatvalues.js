@@ -39,7 +39,7 @@ let defaultStatValues = {
     Tobacco: 0.75,
     Sugar: 0.75,
     ExoticFruit: 0.75,
-    AgriculturalSubsidies: 0.05,
+    AgricultureSubsidies: 0.05,
     AgricultureInfrastructure: 0.05,
     AgricultureAdvancements: 0.05,
     StockingCapabilities: 0.05,

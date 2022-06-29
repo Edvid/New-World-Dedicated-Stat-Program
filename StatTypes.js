@@ -52,7 +52,7 @@ let BaseStats = [
     "Tobacco",
     "Sugar",
     "ExoticFruit",
-    "AgriculturalSubsidies",
+    "AgricultureSubsidies",
     "AgricultureInfrastructure",
     "StockingCapabilities",
     "AgricultureAdvancements",
