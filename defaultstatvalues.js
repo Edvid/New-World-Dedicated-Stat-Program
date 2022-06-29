@@ -10,7 +10,7 @@ let defaultStatValues = {
     PopulationControl: 0.50,
     BirthControl: 0.50,
     LocalTrade: 0.50,
-    Merchantilism: 0.05,
+    Mercantilism: 0.05,
     SpyQuality: 0.05,
     NobleInfluence: 0.05,
     ClergyInfluence: 0.05,
