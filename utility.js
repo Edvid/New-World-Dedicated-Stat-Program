@@ -47,23 +47,27 @@ String.prototype.capitalSpacing = function (){
     return this.replace(/(?<=[a-zA-Z])(?=[A-Z1-9])/gm, " ");
 }
 
-let step;
 //synonym searching and case correcting alg
 function correctAndSynonymCheck(selection) {
     let correctSelection = selection.slice(1).split(".");
-    step = gameStats;
+    let step = gameStats;
     for (let i = 0; i < correctSelection.length; i++) {
-        correctSelection[i] = matchToken(correctSelection[i]);
+        let matched = matchToken(step, correctSelection[i]);
+        if(matched == null) {
+            alert(`Line ${changeCommandIndex}: The Specified Stat '${correctSelection[i]}' in '${correctSelection.slice(0, i).join('.')}' was not found!`);
+            return;
+        }
+        correctSelection[i] = matched;
         step = eval(`step.${correctSelection[i]}`);
     }
     return "." + correctSelection.join(".");
 }
 
-function matchToken(approxName){
+function matchToken(searchObject, approxName){
     let nameToCheck = approxName.toLowerCase().replaceAll(" ", "")
     
     //check same stats but correct casing
-    for (const propertyName in step) {
+    for (const propertyName in searchObject) {
         if (propertyName.toLowerCase() == nameToCheck)
             return propertyName;
     }
@@ -75,9 +79,21 @@ function matchToken(approxName){
             //if what was written in change file exists in the synonym dictionary
             if (synonym.toLowerCase() == nameToCheck) {
                 //Then, if the real name for the stat exists in this object
-                if(realName in step) return realName;
+                if(realName in searchObject) return realName;
             }
         }
-    }    
-    alert(`Line ${changeCommandIndex}: The Specified Stat '${approxName}' in '${currentSelection}' was not found!`);
+    }
+
+    let subObjects = [];
+    for (const objectName in searchObject){
+        if(typeof searchObject[objectName] == 'object') subObjects.push(objectName);
+    }
+    if(subObjects.length > 0){
+        subObjects.forEach(element => {
+            let subMatch = matchToken(searchObject[element], approxName)
+            if(subMatch != null) return `${element}.${subMatch}`
+        });
+    }else{
+        return null;
+    }
 }
