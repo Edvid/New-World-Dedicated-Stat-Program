@@ -51,7 +51,7 @@ function normalCommand(selection) {
             
             let allProperties = "";
             
-            for (const propertyName in propertySelection) {
+            for (const propertyName in selectionValue) {
                 allProperties += `${propertyName}\n`
             }
             error(
