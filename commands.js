@@ -34,26 +34,38 @@ function syncNations() {
 
 function normalCommand(selection) {
     
+    let propertySelection = selection;
+
     let value = commandParameters.Value.trim();
     let change;
     
     //implement check for stat that are objects, and disallow their change
 
-    let selectionValue = (new Function(`return gameStats${selection}`))();
-
-    if(typeof selectionValue == 'object'){
-        let allProperties = "";
-
-        for (const propertyName in selectionValue) {
-            allProperties += `${propertyName}\n`
+    let selectionValue = (new Function(`return gameStats${propertySelection}`))();
+    
+    while(typeof selectionValue == 'object'){
+        if(Object.keys(selectionValue).length == 1){
+            propertySelection = `${propertySelection}.${Object.keys(selectionValue)[0]}`;
+            selectionValue = (new Function(`return gameStats${propertySelection}`))();
+        }else{
             
-        }
-        error(`The currently selected thing, ${selection}, is an object not a value, and cannot be set
+            let allProperties = "";
+            
+            for (const propertyName in propertySelection) {
+                allProperties += `${propertyName}\n`
+            }
+            error(
+`The currently selected thing, ${propertySelection}, is an object not a value, and cannot be set
 Did you mean to select any of the following within this?:
 
 ${allProperties}`);
+        }  
+    
+    }
+    
 
-    } 
+
+
 
     //implement check for stats that are forumulas, and disallow their change
     //
@@ -79,30 +91,30 @@ ${allProperties}`);
             let found = false;
             
             for (const StatName in defaultStatValues) {
-                if(!selection.includes(StatName)) continue;
+                if(!propertySelection.includes(StatName)) continue;
                 value *= defaultStatValues[StatName];
                 found = true;
             }
-            if(!found) error(`a default value was not found for ${selection}`);
+            if(!found) error(`a default value was not found for ${propertySelection}`);
         }
     }
 
     //add
     if (commandParameters.Operand == '+' || commandParameters.Operand == 'add') {
         change = value;
-        (new Function(`gameStats${selection} = parseFloat(gameStats${selection}) + ${value}`))();
+        (new Function(`gameStats${propertySelection} = parseFloat(gameStats${propertySelection}) + ${value}`))();
     }
     //subtract
     else if (commandParameters.Operand == '-' || commandParameters.Operand == 'sub') {
         change = -value;
-        (new Function(`gameStats${selection} = parseFloat(gameStats${selection}) - ${value}`))();
+        (new Function(`gameStats${propertySelection} = parseFloat(gameStats${propertySelection}) - ${value}`))();
     }
     //set
     else if (commandParameters.Operand == '=' || commandParameters.Operand == 'set') {
         const previous = (new Function(`\
-            if(typeof gameStats${selection} === 'undefined') return 'undefined';\
+            if(typeof gameStats${propertySelection} === 'undefined') return 'undefined';\
             return JSON.parse(JSON.stringify(\
-                gameStats${selection}\
+                gameStats${propertySelection}\
             ));`
         ))();
         change = isNaN(previous) ? true : value - previous;
@@ -113,14 +125,14 @@ ${allProperties}`);
         if((!isNaN(value) && value !== '') || typeof value === 'boolean' || value.toLowerCase().trim() === "false" || value.toLowerCase().trim() === "true")
             setval = value;
         
-        (new Function(`gameStats${selection} = ${setval}`))();
+        (new Function(`gameStats${propertySelection} = ${setval}`))();
 
     } else {
         error(`Operand wasn't understood: ${commandParameters.Operand}
 Aborting.`);
         return;
     }
-    specialOperation(selection, change);
+    specialOperation(propertySelection, change);
 }
 
 
