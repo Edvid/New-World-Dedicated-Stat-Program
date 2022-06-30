@@ -75,10 +75,7 @@ function matchToken(approxName){
             //if what was written in change file exists in the synonym dictionary
             if (synonym.toLowerCase() == nameToCheck) {
                 //Then, if the real name for the stat exists in this object
-                for (const propertyName in step) {
-                    if (propertyName.toLowerCase() == realName.toLowerCase())
-                        return realName;
-                }
+                if(realName in step) return realName;
             }
         }
     }    
