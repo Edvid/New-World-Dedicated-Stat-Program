@@ -54,7 +54,7 @@ function correctAndSynonymCheck(selection) {
     step = gameStats;
     for (let i = 0; i < correctSelection.length; i++) {
         correctSelection[i] = matchToken(correctSelection[i]);
-        step = step[correctSelection[i]];
+        step = eval(`step.${correctSelection[i]}`);
     }
     return "." + correctSelection.join(".");
 }
