@@ -181,7 +181,6 @@ let Synonyms = {
 	],
 	
 	Musketeers: [
-		"muskets",
 		"musketeer",
 		"musketmen",
 		"musketman"
