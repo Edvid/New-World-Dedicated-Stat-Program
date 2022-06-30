@@ -89,7 +89,8 @@ function displayValueFix(statName, statValue) {
             "Occupation",
             "Fervor",
             "Disease",
-            "HabitableLand"
+            "HabitableLand",
+            "InterestRate"
         ].indexOf(statName)) {
             numString = parseFloat(statVal * 100).toFixed(2) + "%";
         }
