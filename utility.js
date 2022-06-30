@@ -52,11 +52,17 @@ function correctAndSynonymCheck(selection) {
     let correctSelection = selection.slice(1).split(".");
     let step = gameStats;
     for (let i = 0; i < correctSelection.length; i++) {
-        let found = false;
+        correctSelection[i] = matchToken(correctSelection[i]);
+    }
+    return "." + correctSelection.join(".");
+}
+
+function matchToken(approxName){
+    let found = false;
         for (const propertyName in step) {
             //check same stats but correct casing
-            if (propertyName.toLowerCase() == correctSelection[i].toLowerCase().replaceAll(" ", "")) {
-                correctSelection[i] = propertyName;
+            if (propertyName.toLowerCase() == approxName.toLowerCase().replaceAll(" ", "")) {
+                return propertyName;
                 step = step[propertyName];
                 found = true;
             }
@@ -67,10 +73,10 @@ function correctAndSynonymCheck(selection) {
                     for (let j = 0; j < synonymArray.length; j++) {
                         const synonym = synonymArray[j];
                         //if what was written in change file exists in the synonym dictionary
-                        if (synonym.toLowerCase() == correctSelection[i].toLowerCase().replaceAll(" ", "")) {
+                        if (synonym.toLowerCase() == approxName.toLowerCase().replaceAll(" ", "")) {
                             //Then, if the real name for the stat exists in this object
                             if (propertyName.toLowerCase() == realName.toLowerCase()) {
-                                correctSelection[i] = realName;
+                                return realName;
                                 step = step[realName];
                                 found = true;
                             }
@@ -82,7 +88,5 @@ function correctAndSynonymCheck(selection) {
             }
             if (found) continue;
         }
-        if (!found) alert(`Line ${changeCommandIndex}: The Specified Stat '${correctSelection[i]}' in '${correctSelection.slice(0, i).join(".")}' was not found!`);
-    }
-    return "." + correctSelection.join(".");
+        if (!found) alert(`Line ${changeCommandIndex}: The Specified Stat '${approxName}' in '${currentSelection}' was not found!`);
 }
