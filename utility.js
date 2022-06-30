@@ -89,10 +89,14 @@ function matchToken(searchObject, approxName){
         if(typeof searchObject[objectName] == 'object') subObjects.push(objectName);
     }
     if(subObjects.length > 0){
-        subObjects.forEach(element => {
+        for (let i = 0; i < subObjects.length; i++) {
+            const element = subObjects[i];
+            
+            within = true;
             let subMatch = matchToken(searchObject[element], approxName)
-            if(subMatch != null) return `${element}.${subMatch}`
-        });
+            if(subMatch != null)
+                return `${element}.${subMatch}`
+        }
     }else{
         return null;
     }
