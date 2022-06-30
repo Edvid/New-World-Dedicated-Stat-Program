@@ -47,46 +47,40 @@ String.prototype.capitalSpacing = function (){
     return this.replace(/(?<=[a-zA-Z])(?=[A-Z1-9])/gm, " ");
 }
 
+let step;
 //synonym searching and case correcting alg
 function correctAndSynonymCheck(selection) {
     let correctSelection = selection.slice(1).split(".");
-    let step = gameStats;
+    step = gameStats;
     for (let i = 0; i < correctSelection.length; i++) {
         correctSelection[i] = matchToken(correctSelection[i]);
+        step = step[correctSelection[i]];
     }
     return "." + correctSelection.join(".");
 }
 
 function matchToken(approxName){
-    let found = false;
-        for (const propertyName in step) {
-            //check same stats but correct casing
-            if (propertyName.toLowerCase() == approxName.toLowerCase().replaceAll(" ", "")) {
-                return propertyName;
-                step = step[propertyName];
-                found = true;
-            }
-            else {
-                //check synonyms of stats
-                for (const realName in Synonyms) {
-                    const synonymArray = Synonyms[realName];
-                    for (let j = 0; j < synonymArray.length; j++) {
-                        const synonym = synonymArray[j];
-                        //if what was written in change file exists in the synonym dictionary
-                        if (synonym.toLowerCase() == approxName.toLowerCase().replaceAll(" ", "")) {
-                            //Then, if the real name for the stat exists in this object
-                            if (propertyName.toLowerCase() == realName.toLowerCase()) {
-                                return realName;
-                                step = step[realName];
-                                found = true;
-                            }
-                        }
-                        if (found) continue;
-                    }
-                    if (found) continue;
+    let nameToCheck = approxName.toLowerCase().replaceAll(" ", "")
+    
+    //check same stats but correct casing
+    for (const propertyName in step) {
+        if (propertyName.toLowerCase() == nameToCheck)
+            return propertyName;
+    }
+    //check synonyms of stats
+    for (const realName in Synonyms) {
+        const synonymArray = Synonyms[realName];
+        for (let j = 0; j < synonymArray.length; j++) {
+            const synonym = synonymArray[j];
+            //if what was written in change file exists in the synonym dictionary
+            if (synonym.toLowerCase() == nameToCheck) {
+                //Then, if the real name for the stat exists in this object
+                for (const propertyName in step) {
+                    if (propertyName.toLowerCase() == realName.toLowerCase())
+                        return realName;
                 }
             }
-            if (found) continue;
         }
-        if (!found) alert(`Line ${changeCommandIndex}: The Specified Stat '${approxName}' in '${currentSelection}' was not found!`);
+    }    
+    alert(`Line ${changeCommandIndex}: The Specified Stat '${approxName}' in '${currentSelection}' was not found!`);
 }
