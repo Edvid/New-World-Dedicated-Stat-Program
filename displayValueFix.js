@@ -6,7 +6,7 @@ function displayValueFix(statName, statValue) {
     else if (statVal == "true") statVal = true;
     
     //numbers
-    if (!isNaN(statVal)) {
+    if (!isNaN(statVal) && statVal !== '') {
         if (typeof statVal === 'boolean') {
             let ret = document.createElement("span");
             if (statVal) ret.innerHTML = '&#10003;';
@@ -120,7 +120,7 @@ function displayValueFix(statName, statValue) {
     else if (~[
         "Flag",
     ].indexOf(statName)) {
-        if(/none/.test(statVal)){
+        if(/^$/.test(statVal)){
             return { value: "none", appendable: false };
         }else{
             let image = document.createElement("img");

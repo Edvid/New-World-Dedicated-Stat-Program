@@ -135,7 +135,7 @@ function evaluateNation(nationName) {
     for (const region in gameStats.TradeZones) {
       let allNationPoints = 0;
       for (const nation in gameStats.Nations) {
-        let point = gameStats.Nations[nation].TradeInfluences[region].TradingPoints;
+        let point = +gameStats.Nations[nation].TradeInfluences[region].TradingPoints;
         allNationPoints += (typeof point !== 'undefined') ? point : 0;
       }
       let Point = n.TradeInfluences[region].TradingPoints;

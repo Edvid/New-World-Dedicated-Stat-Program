@@ -60,20 +60,20 @@
                 "SpyQuality": 1.2,
                 "NobleInfluence": 0.4,
                 "NobleLoyaltyGroups": {
-                    "VespucianTribes": "55",
-                    "SelfInterests": "45"
+                    "VespucianTribes": 55,
+                    "SelfInterests": 45
                 },
                 "NobleStateLoyalty": 55,
                 "ClergyInfluence": 0.15,
                 "ClergyLoyaltyGroups": {
-                    "VespucianTribes": "50",
-                    "SelfInterests": "50"
+                    "VespucianTribes": 50,
+                    "SelfInterests": 50
                 },
                 "ClergyStateLoyalty": 50,
                 "BurghersInfluence": 0.2,
                 "BurghersLoyaltyGroups": {
-                    "VespucianTribes": "50",
-                    "SelfInterests": "50"
+                    "VespucianTribes": 50,
+                    "SelfInterests": 50
                 },
                 "BurghersStateLoyalty": 50,
                 "ArmyUpkeep": 0,
@@ -763,20 +763,20 @@
                 "SpyQuality": 1.2,
                 "NobleInfluence": 0.6000000000000001,
                 "NobleLoyaltyGroups": {
-                    "KingdomOfPrussia": "55",
-                    "SelfInterests": "45"
+                    "KingdomOfPrussia": 55,
+                    "SelfInterests": 45
                 },
                 "NobleStateLoyalty": 55,
                 "ClergyInfluence": 0.25,
                 "ClergyLoyaltyGroups": {
-                    "KingdomOfPrussia": "50",
-                    "SelfInterests": "50"
+                    "KingdomOfPrussia": 50,
+                    "SelfInterests": 50
                 },
                 "ClergyStateLoyalty": 50,
                 "BurghersInfluence": 0.1,
                 "BurghersLoyaltyGroups": {
-                    "KingdomOfPrussia": "50",
-                    "SelfInterests": "50"
+                    "KingdomOfPrussia": 50,
+                    "SelfInterests": 50
                 },
                 "BurghersStateLoyalty": 50,
                 "ArmyUpkeep": 623.79,
@@ -1424,7 +1424,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "KingdomOfKhmbodj",
-                "Flag": "none",
+                "Flag": "",
                 "ReligionGroups": {
                     "Buddhism": {
                         "Points": 100
@@ -1469,8 +1469,8 @@
                 "SpyQuality": 1.2,
                 "NobleInfluence": 0.5750000000000001,
                 "NobleLoyaltyGroups": {
-                    "KingdomOfKhmbodj": "55",
-                    "SelfInterests": "45"
+                    "KingdomOfKhmbodj": 55,
+                    "SelfInterests": 45
                 },
                 "NobleStateLoyalty": 55,
                 "ClergyInfluence": 0.325,
@@ -1481,8 +1481,8 @@
                 "ClergyStateLoyalty": 55,
                 "BurghersInfluence": 0.15000000000000002,
                 "BurghersLoyaltyGroups": {
-                    "KingdomOfKhmbodj": "50",
-                    "SelfInterests": "50"
+                    "KingdomOfKhmbodj": 50,
+                    "SelfInterests": 50
                 },
                 "BurghersStateLoyalty": 50,
                 "ArmyUpkeep": 7.6125,
@@ -2127,7 +2127,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "KingdomOfPotskig",
-                "Flag": "none",
+                "Flag": "",
                 "ReligionGroups": {
                     "Pagan": {
                         "Points": 93.5
@@ -2175,8 +2175,8 @@
                 "SpyQuality": 1.2,
                 "NobleInfluence": 0.55,
                 "NobleLoyaltyGroups": {
-                    "KingdomOfPotskig": "55",
-                    "SelfInterests": "45"
+                    "KingdomOfPotskig": 55,
+                    "SelfInterests": 45
                 },
                 "NobleStateLoyalty": 55,
                 "ClergyInfluence": 0.25,
@@ -2187,8 +2187,8 @@
                 "ClergyStateLoyalty": 45,
                 "BurghersInfluence": 0.1,
                 "BurghersLoyaltyGroups": {
-                    "KingdomOfPotskig": "50",
-                    "SelfInterests": "50"
+                    "KingdomOfPotskig": 50,
+                    "SelfInterests": 50
                 },
                 "BurghersStateLoyalty": 50,
                 "ArmyUpkeep": 0,
@@ -2884,14 +2884,14 @@
                 "NobleStateLoyalty": 50,
                 "ClergyInfluence": 0.25,
                 "ClergyLoyaltyGroups": {
-                    "TsardomOfMuscovy": "50",
-                    "SelfInterests": "50"
+                    "TsardomOfMuscovy": 50,
+                    "SelfInterests": 50
                 },
                 "ClergyStateLoyalty": 50,
                 "BurghersInfluence": 0.1,
                 "BurghersLoyaltyGroups": {
-                    "TsardomOfMuscovy": "50",
-                    "SelfInterests": "50"
+                    "TsardomOfMuscovy": 50,
+                    "SelfInterests": 50
                 },
                 "BurghersStateLoyalty": 50,
                 "ArmyUpkeep": 237.43749999999997,
@@ -4284,20 +4284,20 @@
                 "SpyQuality": 1.2,
                 "NobleInfluence": 0.55,
                 "NobleLoyaltyGroups": {
-                    "SiouxTribes": "55",
-                    "SelfInterests": "45"
+                    "SiouxTribes": 55,
+                    "SelfInterests": 45
                 },
                 "NobleStateLoyalty": 55,
                 "ClergyInfluence": 0.25,
                 "ClergyLoyaltyGroups": {
-                    "SiouxTribes": "50",
-                    "SelfInterests": "50"
+                    "SiouxTribes": 50,
+                    "SelfInterests": 50
                 },
                 "ClergyStateLoyalty": 50,
                 "BurghersInfluence": 0.1,
                 "BurghersLoyaltyGroups": {
-                    "SiouxTribes": "50",
-                    "SelfInterests": "50"
+                    "SiouxTribes": 50,
+                    "SelfInterests": 50
                 },
                 "BurghersStateLoyalty": 50,
                 "ArmyUpkeep": 70.12499999999999,
@@ -5696,8 +5696,8 @@
                 "SpyQuality": 1.3,
                 "NobleInfluence": 0.55,
                 "NobleLoyaltyGroups": {
-                    "OrderOfStMary": "55",
-                    "SelfInterests": "45"
+                    "OrderOfStMary": 55,
+                    "SelfInterests": 45
                 },
                 "NobleStateLoyalty": 55,
                 "ClergyInfluence": 0.4,
@@ -5708,8 +5708,8 @@
                 "ClergyStateLoyalty": 60,
                 "BurghersInfluence": 0.1,
                 "BurghersLoyaltyGroups": {
-                    "OrderOfStMary": "50",
-                    "SelfInterests": "50"
+                    "OrderOfStMary": 50,
+                    "SelfInterests": 50
                 },
                 "BurghersStateLoyalty": 50,
                 "ArmyUpkeep": 94.62872179687501,
@@ -7102,20 +7102,20 @@
                 "SpyQuality": 1.3,
                 "NobleInfluence": 0.55,
                 "NobleLoyaltyGroups": {
-                    "HittiteEmpire": "55",
-                    "SelfInterests": "45"
+                    "HittiteEmpire": 55,
+                    "SelfInterests": 45
                 },
                 "NobleStateLoyalty": 55,
                 "ClergyInfluence": 0.25,
                 "ClergyLoyaltyGroups": {
-                    "HittiteEmpire": "50",
-                    "SelfInterests": "50"
+                    "HittiteEmpire": 50,
+                    "SelfInterests": 50
                 },
                 "ClergyStateLoyalty": 50,
                 "BurghersInfluence": 0.15000000000000002,
                 "BurghersLoyaltyGroups": {
-                    "HittiteEmpire": "50",
-                    "SelfInterests": "50"
+                    "HittiteEmpire": 50,
+                    "SelfInterests": 50
                 },
                 "BurghersStateLoyalty": 50,
                 "ArmyUpkeep": 345.2651496874999,
@@ -7805,8 +7805,8 @@
                 "SpyQuality": 1.2,
                 "NobleInfluence": 0.55,
                 "NobleLoyaltyGroups": {
-                    "TainoTribalConfederacy": "55",
-                    "SelfInterests": "45"
+                    "TainoTribalConfederacy": 55,
+                    "SelfInterests": 45
                 },
                 "NobleStateLoyalty": 55,
                 "ClergyInfluence": 0.25,
@@ -7817,8 +7817,8 @@
                 "ClergyStateLoyalty": 60,
                 "BurghersInfluence": 0.1,
                 "BurghersLoyaltyGroups": {
-                    "TainoTribalConfederacy": "50",
-                    "SelfInterests": "50"
+                    "TainoTribalConfederacy": 50,
+                    "SelfInterests": 50
                 },
                 "BurghersStateLoyalty": 50,
                 "ArmyUpkeep": 28.167375000000007,
@@ -8508,20 +8508,20 @@
                 "SpyQuality": 1.2,
                 "NobleInfluence": 0.5,
                 "NobleLoyaltyGroups": {
-                    "Mitiva": "55",
-                    "SelfInterests": "45"
+                    "Mitiva": 55,
+                    "SelfInterests": 45
                 },
                 "NobleStateLoyalty": 55,
                 "ClergyInfluence": 0.25,
                 "ClergyLoyaltyGroups": {
-                    "Mitiva": "50",
-                    "SelfInterests": "50"
+                    "Mitiva": 50,
+                    "SelfInterests": 50
                 },
                 "ClergyStateLoyalty": 50,
                 "BurghersInfluence": 0.1,
                 "BurghersLoyaltyGroups": {
-                    "Mitiva": "50",
-                    "SelfInterests": "50"
+                    "Mitiva": 50,
+                    "SelfInterests": 50
                 },
                 "BurghersStateLoyalty": 50,
                 "ArmyUpkeep": 81.604155,
@@ -9211,14 +9211,14 @@
                 "SpyQuality": 1.2,
                 "NobleInfluence": 0.5,
                 "NobleLoyaltyGroups": {
-                    "ArberberKingdom": "55",
-                    "SelfInterests": "45"
+                    "ArberberKingdom": 55,
+                    "SelfInterests": 45
                 },
                 "NobleStateLoyalty": 55,
                 "ClergyInfluence": 0.25,
                 "ClergyLoyaltyGroups": {
-                    "ArberberKingdom": "50",
-                    "SelfInterests": "50"
+                    "ArberberKingdom": 50,
+                    "SelfInterests": 50
                 },
                 "ClergyStateLoyalty": 50,
                 "BurghersInfluence": 0.05000000000000002,
@@ -9926,8 +9926,8 @@
                 "ClergyStateLoyalty": 60,
                 "BurghersInfluence": 0.1,
                 "BurghersLoyaltyGroups": {
-                    "KingdomOfAndalusia": "50",
-                    "SelfInterests": "50"
+                    "KingdomOfAndalusia": 50,
+                    "SelfInterests": 50
                 },
                 "BurghersStateLoyalty": 50,
                 "ArmyUpkeep": 25.312499999999993,
@@ -10572,7 +10572,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "ZiEmpire",
-                "Flag": "none",
+                "Flag": "",
                 "ReligionGroups": {
                     "Pagan": {
                         "Points": 91.5
@@ -10620,20 +10620,20 @@
                 "SpyQuality": 1.2,
                 "NobleInfluence": 0.55,
                 "NobleLoyaltyGroups": {
-                    "ZiEmpire": "55",
-                    "SelfInterests": "45"
+                    "ZiEmpire": 55,
+                    "SelfInterests": 45
                 },
                 "NobleStateLoyalty": 55,
                 "ClergyInfluence": 0.25,
                 "ClergyLoyaltyGroups": {
-                    "ZiEmpire": "50",
-                    "SelfInterests": "50"
+                    "ZiEmpire": 50,
+                    "SelfInterests": 50
                 },
                 "ClergyStateLoyalty": 50,
                 "BurghersInfluence": 0.1,
                 "BurghersLoyaltyGroups": {
-                    "ZiEmpire": "50",
-                    "SelfInterests": "50"
+                    "ZiEmpire": 50,
+                    "SelfInterests": 50
                 },
                 "BurghersStateLoyalty": 50,
                 "ArmyUpkeep": 64.56461718749999,
@@ -11323,8 +11323,8 @@
                 "SpyQuality": 1.2,
                 "NobleInfluence": 0.5,
                 "NobleLoyaltyGroups": {
-                    "TheFaithfulKingdom": "55",
-                    "SelfInterests": "45"
+                    "TheFaithfulKingdom": 55,
+                    "SelfInterests": 45
                 },
                 "NobleStateLoyalty": 55,
                 "ClergyInfluence": 0.35,
@@ -11335,8 +11335,8 @@
                 "ClergyStateLoyalty": 60,
                 "BurghersInfluence": 0.1,
                 "BurghersLoyaltyGroups": {
-                    "TheFaithfulKingdom": "50",
-                    "SelfInterests": "50"
+                    "TheFaithfulKingdom": 50,
+                    "SelfInterests": 50
                 },
                 "BurghersStateLoyalty": 50,
                 "ArmyUpkeep": 84.14062500000001,
@@ -12026,8 +12026,8 @@
                 "SpyQuality": 1.4000000000000001,
                 "NobleInfluence": 0.55,
                 "NobleLoyaltyGroups": {
-                    "EulacianTradeCouncil": "55",
-                    "SelfInterests": "45"
+                    "EulacianTradeCouncil": 55,
+                    "SelfInterests": 45
                 },
                 "NobleStateLoyalty": 55,
                 "ClergyInfluence": 0.44999999999999996,
@@ -12038,8 +12038,8 @@
                 "ClergyStateLoyalty": 65,
                 "BurghersInfluence": 0.1,
                 "BurghersLoyaltyGroups": {
-                    "EulacianTradeCouncil": "50",
-                    "SelfInterests": "50"
+                    "EulacianTradeCouncil": 50,
+                    "SelfInterests": 50
                 },
                 "BurghersStateLoyalty": 50,
                 "ArmyUpkeep": 364.3499999999999,
@@ -12728,20 +12728,20 @@
                 "SpyQuality": 1.2,
                 "NobleInfluence": 0.55,
                 "NobleLoyaltyGroups": {
-                    "EmpireOfLonguo": "55",
-                    "SelfInterests": "45"
+                    "EmpireOfLonguo": 55,
+                    "SelfInterests": 45
                 },
                 "NobleStateLoyalty": 55,
                 "ClergyInfluence": 0.25,
                 "ClergyLoyaltyGroups": {
-                    "EmpireOfLonguo": "50",
-                    "SelfInterests": "50"
+                    "EmpireOfLonguo": 50,
+                    "SelfInterests": 50
                 },
                 "ClergyStateLoyalty": 50,
                 "BurghersInfluence": 0.1,
                 "BurghersLoyaltyGroups": {
-                    "EmpireOfLonguo": "50",
-                    "SelfInterests": "50"
+                    "EmpireOfLonguo": 50,
+                    "SelfInterests": 50
                 },
                 "BurghersStateLoyalty": 50,
                 "ArmyUpkeep": 159.36,
@@ -13434,14 +13434,14 @@
                 "SpyQuality": 1.2,
                 "NobleInfluence": 0.5,
                 "NobleLoyaltyGroups": {
-                    "KingdomOfKyrat": "55",
-                    "SelfInterests": "45"
+                    "KingdomOfKyrat": 55,
+                    "SelfInterests": 45
                 },
                 "NobleStateLoyalty": 55,
                 "ClergyInfluence": 0.25,
                 "ClergyLoyaltyGroups": {
-                    "KingdomOfKyrat": "50",
-                    "SelfInterests": "50"
+                    "KingdomOfKyrat": 50,
+                    "SelfInterests": 50
                 },
                 "ClergyStateLoyalty": 50,
                 "BurghersInfluence": 0.15000000000000002,
@@ -14140,20 +14140,20 @@
                 "SpyQuality": 1.3,
                 "NobleInfluence": 0.6500000000000001,
                 "NobleLoyaltyGroups": {
-                    "KingdomOfEngland": "55",
-                    "SelfInterests": "45"
+                    "KingdomOfEngland": 55,
+                    "SelfInterests": 45
                 },
                 "NobleStateLoyalty": 55,
                 "ClergyInfluence": 0.425,
                 "ClergyLoyaltyGroups": {
-                    "KingdomOfEngland": "50",
-                    "SelfInterests": "50"
+                    "KingdomOfEngland": 50,
+                    "SelfInterests": 50
                 },
                 "ClergyStateLoyalty": 50,
                 "BurghersInfluence": 0.15000000000000002,
                 "BurghersLoyaltyGroups": {
-                    "KingdomOfEngland": "50",
-                    "SelfInterests": "50"
+                    "KingdomOfEngland": 50,
+                    "SelfInterests": 50
                 },
                 "BurghersStateLoyalty": 50,
                 "ArmyUpkeep": 720.0107187499998,
@@ -14852,8 +14852,8 @@
                 "SpyQuality": 1.2,
                 "NobleInfluence": 0.5,
                 "NobleLoyaltyGroups": {
-                    "KingdomofAlvheim": "55",
-                    "SelfInterests": "45"
+                    "KingdomofAlvheim": 55,
+                    "SelfInterests": 45
                 },
                 "NobleStateLoyalty": 55,
                 "ClergyInfluence": 0.25,
@@ -15555,20 +15555,20 @@
                 "SpyQuality": 1.2,
                 "NobleInfluence": 0.5,
                 "NobleLoyaltyGroups": {
-                    "KingdomOfWestphalia": "55",
-                    "SelfInterests": "45"
+                    "KingdomOfWestphalia": 55,
+                    "SelfInterests": 45
                 },
                 "NobleStateLoyalty": 55,
                 "ClergyInfluence": 0.25,
                 "ClergyLoyaltyGroups": {
-                    "KingdomOfWestphalia": "50",
-                    "SelfInterests": "50"
+                    "KingdomOfWestphalia": 50,
+                    "SelfInterests": 50
                 },
                 "ClergyStateLoyalty": 50,
                 "BurghersInfluence": 0.1,
                 "BurghersLoyaltyGroups": {
-                    "KingdomOfWestphalia": "50",
-                    "SelfInterests": "50"
+                    "KingdomOfWestphalia": 50,
+                    "SelfInterests": 50
                 },
                 "BurghersStateLoyalty": 50,
                 "ArmyUpkeep": 144.8748198875,
@@ -16258,20 +16258,20 @@
                 "SpyQuality": 1.2,
                 "NobleInfluence": 0.5,
                 "NobleLoyaltyGroups": {
-                    "DuchyOfBelarus": "55",
-                    "SelfInterests": "45"
+                    "DuchyOfBelarus": 55,
+                    "SelfInterests": 45
                 },
                 "NobleStateLoyalty": 55,
                 "ClergyInfluence": 0.25,
                 "ClergyLoyaltyGroups": {
-                    "DuchyOfBelarus": "50",
-                    "SelfInterests": "50"
+                    "DuchyOfBelarus": 50,
+                    "SelfInterests": 50
                 },
                 "ClergyStateLoyalty": 50,
                 "BurghersInfluence": 0.1,
                 "BurghersLoyaltyGroups": {
-                    "DuchyOfBelarus": "50",
-                    "SelfInterests": "50"
+                    "DuchyOfBelarus": 50,
+                    "SelfInterests": 50
                 },
                 "BurghersStateLoyalty": 50,
                 "ArmyUpkeep": 24.28371875,
@@ -17625,7 +17625,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "KingdomOfSerbia",
-                "Flag": "none",
+                "Flag": "",
                 "ReligionGroups": {
                     "Orthodox": {
                         "Points": 100
@@ -17676,8 +17676,8 @@
                 "NobleStateLoyalty": 62.5,
                 "ClergyInfluence": 0.25,
                 "ClergyLoyaltyGroups": {
-                    "KingdomOfSerbia": "50",
-                    "SelfInterests": "50"
+                    "KingdomOfSerbia": 50,
+                    "SelfInterests": 50
                 },
                 "ClergyStateLoyalty": 50,
                 "BurghersInfluence": 0.2,
@@ -18373,20 +18373,20 @@
                 "SpyQuality": 1.2,
                 "NobleInfluence": 0.55,
                 "NobleLoyaltyGroups": {
-                    "CumanKipchakKhanate": "55",
-                    "SelfInterests": "45"
+                    "CumanKipchakKhanate": 55,
+                    "SelfInterests": 45
                 },
                 "NobleStateLoyalty": 55,
                 "ClergyInfluence": 0.3,
                 "ClergyLoyaltyGroups": {
-                    "CumanKipchakKhanate": "50",
-                    "SelfInterests": "50"
+                    "CumanKipchakKhanate": 50,
+                    "SelfInterests": 50
                 },
                 "ClergyStateLoyalty": 50,
                 "BurghersInfluence": 0.1,
                 "BurghersLoyaltyGroups": {
-                    "CumanKipchakKhanate": "50",
-                    "SelfInterests": "50"
+                    "CumanKipchakKhanate": 50,
+                    "SelfInterests": 50
                 },
                 "BurghersStateLoyalty": 50,
                 "ArmyUpkeep": 121.83333333333337,
@@ -19785,8 +19785,8 @@
                 "SpyQuality": 1.2,
                 "NobleInfluence": 0.55,
                 "NobleLoyaltyGroups": {
-                    "KingdomOfIreland": "55",
-                    "SelfInterests": "45"
+                    "KingdomOfIreland": 55,
+                    "SelfInterests": 45
                 },
                 "NobleStateLoyalty": 55,
                 "ClergyInfluence": 0.25,
@@ -19797,8 +19797,8 @@
                 "ClergyStateLoyalty": 55,
                 "BurghersInfluence": 0.1,
                 "BurghersLoyaltyGroups": {
-                    "KingdomOfIreland": "50",
-                    "SelfInterests": "50"
+                    "KingdomOfIreland": 50,
+                    "SelfInterests": 50
                 },
                 "BurghersStateLoyalty": 50,
                 "ArmyUpkeep": 286.37812499999995,
@@ -20488,20 +20488,20 @@
                 "SpyQuality": 1.2,
                 "NobleInfluence": 0.5,
                 "NobleLoyaltyGroups": {
-                    "KingdomOfScotland": "55",
-                    "SelfInterests": "45"
+                    "KingdomOfScotland": 55,
+                    "SelfInterests": 45
                 },
                 "NobleStateLoyalty": 55,
                 "ClergyInfluence": 0.3,
                 "ClergyLoyaltyGroups": {
-                    "KingdomOfScotland": "50",
-                    "SelfInterests": "50"
+                    "KingdomOfScotland": 50,
+                    "SelfInterests": 50
                 },
                 "ClergyStateLoyalty": 50,
                 "BurghersInfluence": 0.1,
                 "BurghersLoyaltyGroups": {
-                    "KingdomOfScotland": "50",
-                    "SelfInterests": "50"
+                    "KingdomOfScotland": 50,
+                    "SelfInterests": 50
                 },
                 "BurghersStateLoyalty": 50,
                 "ArmyUpkeep": 105.23879166666667,
@@ -21197,14 +21197,14 @@
                 "NobleStateLoyalty": 50,
                 "ClergyInfluence": 0.25,
                 "ClergyLoyaltyGroups": {
-                    "ValublidSultanate": "50",
-                    "SelfInterests": "50"
+                    "ValublidSultanate": 50,
+                    "SelfInterests": 50
                 },
                 "ClergyStateLoyalty": 50,
                 "BurghersInfluence": 0.1,
                 "BurghersLoyaltyGroups": {
-                    "ValublidSultanate": "50",
-                    "SelfInterests": "50"
+                    "ValublidSultanate": 50,
+                    "SelfInterests": 50
                 },
                 "BurghersStateLoyalty": 50,
                 "ArmyUpkeep": 61.975,
@@ -21894,20 +21894,20 @@
                 "SpyQuality": 1.2,
                 "NobleInfluence": 0.5,
                 "NobleLoyaltyGroups": {
-                    "Bornu": "55",
-                    "SelfInterests": "45"
+                    "Bornu": 55,
+                    "SelfInterests": 45
                 },
                 "NobleStateLoyalty": 55,
                 "ClergyInfluence": 0.25,
                 "ClergyLoyaltyGroups": {
-                    "Bornu": "50",
-                    "SelfInterests": "50"
+                    "Bornu": 50,
+                    "SelfInterests": 50
                 },
                 "ClergyStateLoyalty": 50,
                 "BurghersInfluence": 0.1,
                 "BurghersLoyaltyGroups": {
-                    "Bornu": "50",
-                    "SelfInterests": "50"
+                    "Bornu": 50,
+                    "SelfInterests": 50
                 },
                 "BurghersStateLoyalty": 50,
                 "ArmyUpkeep": 64.43166666666666,
@@ -22597,20 +22597,20 @@
                 "SpyQuality": 1.2,
                 "NobleInfluence": 0.5,
                 "NobleLoyaltyGroups": {
-                    "MagajiyaTribe": "55",
-                    "SelfInterests": "45"
+                    "MagajiyaTribe": 55,
+                    "SelfInterests": 45
                 },
                 "NobleStateLoyalty": 55,
                 "ClergyInfluence": 0.25,
                 "ClergyLoyaltyGroups": {
-                    "MagajiyaTribe": "50",
-                    "SelfInterests": "50"
+                    "MagajiyaTribe": 50,
+                    "SelfInterests": 50
                 },
                 "ClergyStateLoyalty": 50,
                 "BurghersInfluence": 0.1,
                 "BurghersLoyaltyGroups": {
-                    "MagajiyaTribe": "50",
-                    "SelfInterests": "50"
+                    "MagajiyaTribe": 50,
+                    "SelfInterests": 50
                 },
                 "BurghersStateLoyalty": 50,
                 "ArmyUpkeep": 60.52054166666666,
@@ -23300,20 +23300,20 @@
                 "SpyQuality": 1.2,
                 "NobleInfluence": 0.5,
                 "NobleLoyaltyGroups": {
-                    "AdenCaliphate": "55",
-                    "SelfInterests": "45"
+                    "AdenCaliphate": 55,
+                    "SelfInterests": 45
                 },
                 "NobleStateLoyalty": 55,
                 "ClergyInfluence": 0.25,
                 "ClergyLoyaltyGroups": {
-                    "AdenCaliphate": "50",
-                    "SelfInterests": "50"
+                    "AdenCaliphate": 50,
+                    "SelfInterests": 50
                 },
                 "ClergyStateLoyalty": 50,
                 "BurghersInfluence": 0.1,
                 "BurghersLoyaltyGroups": {
-                    "AdenCaliphate": "50",
-                    "SelfInterests": "50"
+                    "AdenCaliphate": 50,
+                    "SelfInterests": 50
                 },
                 "BurghersStateLoyalty": 50,
                 "ArmyUpkeep": 62.50833333333334,
@@ -23958,7 +23958,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "QuasimidEmirate",
-                "Flag": "none",
+                "Flag": "",
                 "ReligionGroups": {
                     "Muslim": {
                         "Points": 100
@@ -24003,20 +24003,20 @@
                 "SpyQuality": 1.2,
                 "NobleInfluence": 0.5,
                 "NobleLoyaltyGroups": {
-                    "QuasimidEmirate": "55",
-                    "SelfInterests": "45"
+                    "QuasimidEmirate": 55,
+                    "SelfInterests": 45
                 },
                 "NobleStateLoyalty": 55,
                 "ClergyInfluence": 0.25,
                 "ClergyLoyaltyGroups": {
-                    "QuasimidEmirate": "50",
-                    "SelfInterests": "50"
+                    "QuasimidEmirate": 50,
+                    "SelfInterests": 50
                 },
                 "ClergyStateLoyalty": 50,
                 "BurghersInfluence": 0.1,
                 "BurghersLoyaltyGroups": {
-                    "QuasimidEmirate": "50",
-                    "SelfInterests": "50"
+                    "QuasimidEmirate": 50,
+                    "SelfInterests": 50
                 },
                 "BurghersStateLoyalty": 50,
                 "ArmyUpkeep": 25.925,
@@ -24661,7 +24661,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "Cheonje",
-                "Flag": "none",
+                "Flag": "",
                 "ReligionGroups": {
                     "Pagan": {
                         "Points": 100
@@ -24706,20 +24706,20 @@
                 "SpyQuality": 1.25,
                 "NobleInfluence": 0.5,
                 "NobleLoyaltyGroups": {
-                    "Cheonje": "55",
-                    "SelfInterests": "45"
+                    "Cheonje": 55,
+                    "SelfInterests": 45
                 },
                 "NobleStateLoyalty": 55,
                 "ClergyInfluence": 0.25,
                 "ClergyLoyaltyGroups": {
-                    "Cheonje": "50",
-                    "SelfInterests": "50"
+                    "Cheonje": 50,
+                    "SelfInterests": 50
                 },
                 "ClergyStateLoyalty": 50,
                 "BurghersInfluence": 0.1,
                 "BurghersLoyaltyGroups": {
-                    "Cheonje": "50",
-                    "SelfInterests": "50"
+                    "Cheonje": 50,
+                    "SelfInterests": 50
                 },
                 "BurghersStateLoyalty": 50,
                 "ArmyUpkeep": 159.2213854166667,
@@ -25409,20 +25409,20 @@
                 "SpyQuality": 1.2,
                 "NobleInfluence": 0.55,
                 "NobleLoyaltyGroups": {
-                    "KingdomOfPoland": "55",
-                    "SelfInterests": "45"
+                    "KingdomOfPoland": 55,
+                    "SelfInterests": 45
                 },
                 "NobleStateLoyalty": 55,
                 "ClergyInfluence": 0.25,
                 "ClergyLoyaltyGroups": {
-                    "KingdomOfPoland": "50",
-                    "SelfInterests": "50"
+                    "KingdomOfPoland": 50,
+                    "SelfInterests": 50
                 },
                 "ClergyStateLoyalty": 50,
                 "BurghersInfluence": 0.1,
                 "BurghersLoyaltyGroups": {
-                    "KingdomOfPoland": "50",
-                    "SelfInterests": "50"
+                    "KingdomOfPoland": 50,
+                    "SelfInterests": 50
                 },
                 "BurghersStateLoyalty": 50,
                 "ArmyUpkeep": 45.825,
@@ -26112,20 +26112,20 @@
                 "SpyQuality": 1.2,
                 "NobleInfluence": 0.55,
                 "NobleLoyaltyGroups": {
-                    "KingdomOfWallachia": "55",
-                    "SelfInterests": "45"
+                    "KingdomOfWallachia": 55,
+                    "SelfInterests": 45
                 },
                 "NobleStateLoyalty": 55,
                 "ClergyInfluence": 0.25,
                 "ClergyLoyaltyGroups": {
-                    "KingdomOfWallachia": "50",
-                    "SelfInterests": "50"
+                    "KingdomOfWallachia": 50,
+                    "SelfInterests": 50
                 },
                 "ClergyStateLoyalty": 50,
                 "BurghersInfluence": 0.1,
                 "BurghersLoyaltyGroups": {
-                    "KingdomOfWallachia": "50",
-                    "SelfInterests": "50"
+                    "KingdomOfWallachia": 50,
+                    "SelfInterests": 50
                 },
                 "BurghersStateLoyalty": 50,
                 "ArmyUpkeep": 103.10689721354167,
@@ -26815,20 +26815,20 @@
                 "SpyQuality": 1.2,
                 "NobleInfluence": 0.55,
                 "NobleLoyaltyGroups": {
-                    "MongolianKhanate": "55",
-                    "SelfInterests": "45"
+                    "MongolianKhanate": 55,
+                    "SelfInterests": 45
                 },
                 "NobleStateLoyalty": 55,
                 "ClergyInfluence": 0.25,
                 "ClergyLoyaltyGroups": {
-                    "MongolianKhanate": "50",
-                    "SelfInterests": "50"
+                    "MongolianKhanate": 50,
+                    "SelfInterests": 50
                 },
                 "ClergyStateLoyalty": 50,
                 "BurghersInfluence": 0.1,
                 "BurghersLoyaltyGroups": {
-                    "MongolianKhanate": "50",
-                    "SelfInterests": "50"
+                    "MongolianKhanate": 50,
+                    "SelfInterests": 50
                 },
                 "BurghersStateLoyalty": 50,
                 "ArmyUpkeep": 50.79654166666666,
@@ -27518,20 +27518,20 @@
                 "SpyQuality": 1.2,
                 "NobleInfluence": 0.55,
                 "NobleLoyaltyGroups": {
-                    "LatvianEmpire": "55",
-                    "SelfInterests": "45"
+                    "LatvianEmpire": 55,
+                    "SelfInterests": 45
                 },
                 "NobleStateLoyalty": 55,
                 "ClergyInfluence": 0.25,
                 "ClergyLoyaltyGroups": {
-                    "LatvianEmpire": "50",
-                    "SelfInterests": "50"
+                    "LatvianEmpire": 50,
+                    "SelfInterests": 50
                 },
                 "ClergyStateLoyalty": 50,
                 "BurghersInfluence": 0.1,
                 "BurghersLoyaltyGroups": {
-                    "LatvianEmpire": "50",
-                    "SelfInterests": "50"
+                    "LatvianEmpire": 50,
+                    "SelfInterests": 50
                 },
                 "BurghersStateLoyalty": 50,
                 "ArmyUpkeep": 53.78887500000001,
@@ -28221,20 +28221,20 @@
                 "SpyQuality": 1.2,
                 "NobleInfluence": 0.5,
                 "NobleLoyaltyGroups": {
-                    "TimuridEmirate": "55",
-                    "SelfInterests": "45"
+                    "TimuridEmirate": 55,
+                    "SelfInterests": 45
                 },
                 "NobleStateLoyalty": 55,
                 "ClergyInfluence": 0.25,
                 "ClergyLoyaltyGroups": {
-                    "TimuridEmirate": "50",
-                    "SelfInterests": "50"
+                    "TimuridEmirate": 50,
+                    "SelfInterests": 50
                 },
                 "ClergyStateLoyalty": 50,
                 "BurghersInfluence": 0.1,
                 "BurghersLoyaltyGroups": {
-                    "TimuridEmirate": "50",
-                    "SelfInterests": "50"
+                    "TimuridEmirate": 50,
+                    "SelfInterests": 50
                 },
                 "BurghersStateLoyalty": 50,
                 "ArmyUpkeep": 140.32746874999995,
@@ -28879,7 +28879,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "AztecEmpire",
-                "Flag": "none",
+                "Flag": "",
                 "ReligionGroups": {
                     "Pagan": {
                         "Points": 100
@@ -28924,20 +28924,20 @@
                 "SpyQuality": 1.2,
                 "NobleInfluence": 0.55,
                 "NobleLoyaltyGroups": {
-                    "AztecEmpire": "55",
-                    "SelfInterests": "45"
+                    "AztecEmpire": 55,
+                    "SelfInterests": 45
                 },
                 "NobleStateLoyalty": 55,
                 "ClergyInfluence": 0.25,
                 "ClergyLoyaltyGroups": {
-                    "AztecEmpire": "50",
-                    "SelfInterests": "50"
+                    "AztecEmpire": 50,
+                    "SelfInterests": 50
                 },
                 "ClergyStateLoyalty": 50,
                 "BurghersInfluence": 0.1,
                 "BurghersLoyaltyGroups": {
-                    "AztecEmpire": "50",
-                    "SelfInterests": "50"
+                    "AztecEmpire": 50,
+                    "SelfInterests": 50
                 },
                 "BurghersStateLoyalty": 50,
                 "ArmyUpkeep": 0,
@@ -29627,20 +29627,20 @@
                 "SpyQuality": 1.2,
                 "NobleInfluence": 0.55,
                 "NobleLoyaltyGroups": {
-                    "MenzenConfederation": "55",
-                    "SelfInterests": "45"
+                    "MenzenConfederation": 55,
+                    "SelfInterests": 45
                 },
                 "NobleStateLoyalty": 55,
                 "ClergyInfluence": 0.25,
                 "ClergyLoyaltyGroups": {
-                    "MenzenConfederation": "50",
-                    "SelfInterests": "50"
+                    "MenzenConfederation": 50,
+                    "SelfInterests": 50
                 },
                 "ClergyStateLoyalty": 50,
                 "BurghersInfluence": 0.1,
                 "BurghersLoyaltyGroups": {
-                    "MenzenConfederation": "50",
-                    "SelfInterests": "50"
+                    "MenzenConfederation": 50,
+                    "SelfInterests": 50
                 },
                 "BurghersStateLoyalty": 50,
                 "ArmyUpkeep": 50.79654166666666,
@@ -30336,14 +30336,14 @@
                 "NobleStateLoyalty": 65,
                 "ClergyInfluence": 0.25,
                 "ClergyLoyaltyGroups": {
-                    "ZuluKingdom": "50",
-                    "SelfInterests": "50"
+                    "ZuluKingdom": 50,
+                    "SelfInterests": 50
                 },
                 "ClergyStateLoyalty": 50,
                 "BurghersInfluence": 0.1,
                 "BurghersLoyaltyGroups": {
-                    "ZuluKingdom": "50",
-                    "SelfInterests": "50"
+                    "ZuluKingdom": 50,
+                    "SelfInterests": 50
                 },
                 "BurghersStateLoyalty": 50,
                 "ArmyUpkeep": 0,
@@ -31033,20 +31033,20 @@
                 "SpyQuality": 1.2,
                 "NobleInfluence": 0.55,
                 "NobleLoyaltyGroups": {
-                    "KingdomOfAotearoa": "55",
-                    "SelfInterests": "45"
+                    "KingdomOfAotearoa": 55,
+                    "SelfInterests": 45
                 },
                 "NobleStateLoyalty": 55,
                 "ClergyInfluence": 0.25,
                 "ClergyLoyaltyGroups": {
-                    "KingdomOfAotearoa": "50",
-                    "SelfInterests": "50"
+                    "KingdomOfAotearoa": 50,
+                    "SelfInterests": 50
                 },
                 "ClergyStateLoyalty": 50,
                 "BurghersInfluence": 0.1,
                 "BurghersLoyaltyGroups": {
-                    "KingdomOfAotearoa": "50",
-                    "SelfInterests": "50"
+                    "KingdomOfAotearoa": 50,
+                    "SelfInterests": 50
                 },
                 "BurghersStateLoyalty": 50,
                 "ArmyUpkeep": 0,
@@ -31736,20 +31736,20 @@
                 "SpyQuality": 1.2,
                 "NobleInfluence": 0.55,
                 "NobleLoyaltyGroups": {
-                    "BlackfeetConfederation": "55",
-                    "SelfInterests": "45"
+                    "BlackfeetConfederation": 55,
+                    "SelfInterests": 45
                 },
                 "NobleStateLoyalty": 55,
                 "ClergyInfluence": 0.25,
                 "ClergyLoyaltyGroups": {
-                    "BlackfeetConfederation": "50",
-                    "SelfInterests": "50"
+                    "BlackfeetConfederation": 50,
+                    "SelfInterests": 50
                 },
                 "ClergyStateLoyalty": 50,
                 "BurghersInfluence": 0.1,
                 "BurghersLoyaltyGroups": {
-                    "BlackfeetConfederation": "50",
-                    "SelfInterests": "50"
+                    "BlackfeetConfederation": 50,
+                    "SelfInterests": 50
                 },
                 "BurghersStateLoyalty": 50,
                 "ArmyUpkeep": 0,
@@ -32394,7 +32394,7 @@
                 "FuturePublicDebtLength": 1,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "KingdomOfMaguidanao",
-                "Flag": "none",
+                "Flag": "",
                 "ReligionGroups": {
                     "Pagan": {
                         "Points": 100
@@ -32439,20 +32439,20 @@
                 "SpyQuality": 1.2,
                 "NobleInfluence": 0.55,
                 "NobleLoyaltyGroups": {
-                    "KingdomOfMaguidanao": "55",
-                    "SelfInterests": "45"
+                    "KingdomOfMaguidanao": 55,
+                    "SelfInterests": 45
                 },
                 "NobleStateLoyalty": 55,
                 "ClergyInfluence": 0.25,
                 "ClergyLoyaltyGroups": {
-                    "KingdomOfMaguidanao": "50",
-                    "SelfInterests": "50"
+                    "KingdomOfMaguidanao": 50,
+                    "SelfInterests": 50
                 },
                 "ClergyStateLoyalty": 50,
                 "BurghersInfluence": 0.1,
                 "BurghersLoyaltyGroups": {
-                    "KingdomOfMaguidanao": "50",
-                    "SelfInterests": "50"
+                    "KingdomOfMaguidanao": 50,
+                    "SelfInterests": 50
                 },
                 "BurghersStateLoyalty": 50,
                 "ArmyUpkeep": 318.2625,
@@ -33142,20 +33142,20 @@
                 "SpyQuality": 1.2,
                 "NobleInfluence": 0.55,
                 "NobleLoyaltyGroups": {
-                    "MayanEmpire": "55",
-                    "SelfInterests": "45"
+                    "MayanEmpire": 55,
+                    "SelfInterests": 45
                 },
                 "NobleStateLoyalty": 55,
                 "ClergyInfluence": 0.25,
                 "ClergyLoyaltyGroups": {
-                    "MayanEmpire": "50",
-                    "SelfInterests": "50"
+                    "MayanEmpire": 50,
+                    "SelfInterests": 50
                 },
                 "ClergyStateLoyalty": 50,
                 "BurghersInfluence": 0.1,
                 "BurghersLoyaltyGroups": {
-                    "MayanEmpire": "50",
-                    "SelfInterests": "50"
+                    "MayanEmpire": 50,
+                    "SelfInterests": 50
                 },
                 "BurghersStateLoyalty": 50,
                 "ArmyUpkeep": 0,
@@ -33845,20 +33845,20 @@
                 "SpyQuality": 1.2,
                 "NobleInfluence": 0.55,
                 "NobleLoyaltyGroups": {
-                    "SelfInterests": "45",
-                    "EmpireOfJapan": "55"
+                    "SelfInterests": 45,
+                    "EmpireOfJapan": 55
                 },
                 "NobleStateLoyalty": 55,
                 "ClergyInfluence": 0.25,
                 "ClergyLoyaltyGroups": {
-                    "SelfInterests": "50",
-                    "EmpireOfJapan": "50"
+                    "SelfInterests": 50,
+                    "EmpireOfJapan": 50
                 },
                 "ClergyStateLoyalty": 50,
                 "BurghersInfluence": 0.1,
                 "BurghersLoyaltyGroups": {
-                    "SelfInterests": "50",
-                    "EmpireOfJapan": "50"
+                    "SelfInterests": 50,
+                    "EmpireOfJapan": 50
                 },
                 "BurghersStateLoyalty": 50,
                 "ArmyUpkeep": 140.98875,
@@ -34551,20 +34551,20 @@
                 "SpyQuality": 1.2,
                 "NobleInfluence": 0.45,
                 "NobleLoyaltyGroups": {
-                    "SelfInterests": "45",
-                    "KingdomOfSfveadsland": "55"
+                    "SelfInterests": 45,
+                    "KingdomOfSfveadsland": 55
                 },
                 "NobleStateLoyalty": 55,
                 "ClergyInfluence": 0.25,
                 "ClergyLoyaltyGroups": {
-                    "SelfInterests": "50",
-                    "KingdomOfSfveadsland": "50"
+                    "SelfInterests": 50,
+                    "KingdomOfSfveadsland": 50
                 },
                 "ClergyStateLoyalty": 50,
                 "BurghersInfluence": 0.15000000000000002,
                 "BurghersLoyaltyGroups": {
-                    "SelfInterests": "50",
-                    "KingdomOfSfveadsland": "50"
+                    "SelfInterests": 50,
+                    "KingdomOfSfveadsland": 50
                 },
                 "BurghersStateLoyalty": 50,
                 "ArmyUpkeep": 393.04604166666655,
@@ -35250,20 +35250,20 @@
                 "SpyQuality": 1.2,
                 "NobleInfluence": 0.55,
                 "NobleLoyaltyGroups": {
-                    "SelfInterests": "45",
-                    "SashimoKingdom": "55"
+                    "SelfInterests": 45,
+                    "SashimoKingdom": 55
                 },
                 "NobleStateLoyalty": 55,
                 "ClergyInfluence": 0.25,
                 "ClergyLoyaltyGroups": {
-                    "SelfInterests": "50",
-                    "SashimoKingdom": "50"
+                    "SelfInterests": 50,
+                    "SashimoKingdom": 50
                 },
                 "ClergyStateLoyalty": 50,
                 "BurghersInfluence": 0.15000000000000002,
                 "BurghersLoyaltyGroups": {
-                    "SelfInterests": "50",
-                    "SashimoKingdom": "50"
+                    "SelfInterests": 50,
+                    "SashimoKingdom": 50
                 },
                 "BurghersStateLoyalty": 50,
                 "ArmyUpkeep": 117.51030468749998,
@@ -35953,20 +35953,20 @@
                 "SpyQuality": 1.2,
                 "NobleInfluence": 0.55,
                 "NobleLoyaltyGroups": {
-                    "SelfInterests": "45",
-                    "LakanateOfTondo": "55"
+                    "SelfInterests": 45,
+                    "LakanateOfTondo": 55
                 },
                 "NobleStateLoyalty": 55,
                 "ClergyInfluence": 0.25,
                 "ClergyLoyaltyGroups": {
-                    "SelfInterests": "50",
-                    "LakanateOfTondo": "50"
+                    "SelfInterests": 50,
+                    "LakanateOfTondo": 50
                 },
                 "ClergyStateLoyalty": 50,
                 "BurghersInfluence": 0.1,
                 "BurghersLoyaltyGroups": {
-                    "SelfInterests": "50",
-                    "LakanateOfTondo": "50"
+                    "SelfInterests": 50,
+                    "LakanateOfTondo": 50
                 },
                 "BurghersStateLoyalty": 50,
                 "ArmyUpkeep": 0,
@@ -36611,7 +36611,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "Urualslavia",
-                "Flag": "none",
+                "Flag": "",
                 "ReligionGroups": {
                     "Orthodox": {
                         "Points": 100
@@ -36656,20 +36656,20 @@
                 "SpyQuality": 1.2,
                 "NobleInfluence": 0.55,
                 "NobleLoyaltyGroups": {
-                    "Urualslavia": "55",
-                    "SelfInterests": "45"
+                    "Urualslavia": 55,
+                    "SelfInterests": 45
                 },
                 "NobleStateLoyalty": 55,
                 "ClergyInfluence": 0.25,
                 "ClergyLoyaltyGroups": {
-                    "Urualslavia": "50",
-                    "SelfInterests": "50"
+                    "Urualslavia": 50,
+                    "SelfInterests": 50
                 },
                 "ClergyStateLoyalty": 50,
                 "BurghersInfluence": 0.1,
                 "BurghersLoyaltyGroups": {
-                    "Urualslavia": "50",
-                    "SelfInterests": "50"
+                    "Urualslavia": 50,
+                    "SelfInterests": 50
                 },
                 "BurghersStateLoyalty": 50,
                 "ArmyUpkeep": 0,
@@ -37359,20 +37359,20 @@
                 "SpyQuality": 1.3,
                 "NobleInfluence": 0.6500000000000001,
                 "NobleLoyaltyGroups": {
-                    "SelfInterests": "45",
-                    "NewEngland": "55"
+                    "SelfInterests": 45,
+                    "NewEngland": 55
                 },
                 "NobleStateLoyalty": 55,
                 "ClergyInfluence": 0.425,
                 "ClergyLoyaltyGroups": {
-                    "SelfInterests": "50",
-                    "NewEngland": "50"
+                    "SelfInterests": 50,
+                    "NewEngland": 50
                 },
                 "ClergyStateLoyalty": 50,
                 "BurghersInfluence": 0.15000000000000002,
                 "BurghersLoyaltyGroups": {
-                    "SelfInterests": "50",
-                    "NewEngland": "50"
+                    "SelfInterests": 50,
+                    "NewEngland": 50
                 },
                 "BurghersStateLoyalty": 50,
                 "ArmyUpkeep": 0,
@@ -38020,7 +38020,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "KingdomOfBalanto",
-                "Flag": "none",
+                "Flag": "",
                 "ReligionGroups": {
                     "Muslim": {
                         "Points": 100
@@ -38065,20 +38065,20 @@
                 "SpyQuality": 1.2,
                 "NobleInfluence": 0.55,
                 "NobleLoyaltyGroups": {
-                    "KingdomOfBalanto": "55",
-                    "SelfInterests": "45"
+                    "KingdomOfBalanto": 55,
+                    "SelfInterests": 45
                 },
                 "NobleStateLoyalty": 55,
                 "ClergyInfluence": 0.25,
                 "ClergyLoyaltyGroups": {
-                    "KingdomOfBalanto": "50",
-                    "SelfInterests": "50"
+                    "KingdomOfBalanto": 50,
+                    "SelfInterests": 50
                 },
                 "ClergyStateLoyalty": 50,
                 "BurghersInfluence": 0.1,
                 "BurghersLoyaltyGroups": {
-                    "KingdomOfBalanto": "50",
-                    "SelfInterests": "50"
+                    "KingdomOfBalanto": 50,
+                    "SelfInterests": 50
                 },
                 "BurghersStateLoyalty": 50,
                 "ArmyUpkeep": 0,
@@ -38723,7 +38723,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "GuangxiClique",
-                "Flag": "none",
+                "Flag": "",
                 "ReligionGroups": {
                     "Pagan": {
                         "Points": 100
@@ -38768,20 +38768,20 @@
                 "SpyQuality": 1.2,
                 "NobleInfluence": 0.55,
                 "NobleLoyaltyGroups": {
-                    "SelfInterests": "45",
-                    "GuangxiClique": "55"
+                    "SelfInterests": 45,
+                    "GuangxiClique": 55
                 },
                 "NobleStateLoyalty": 55,
                 "ClergyInfluence": 0.25,
                 "ClergyLoyaltyGroups": {
-                    "SelfInterests": "50",
-                    "GuangxiClique": "50"
+                    "SelfInterests": 50,
+                    "GuangxiClique": 50
                 },
                 "ClergyStateLoyalty": 50,
                 "BurghersInfluence": 0.1,
                 "BurghersLoyaltyGroups": {
-                    "SelfInterests": "50",
-                    "GuangxiClique": "50"
+                    "SelfInterests": 50,
+                    "GuangxiClique": 50
                 },
                 "BurghersStateLoyalty": 50,
                 "ArmyUpkeep": 25.814425,
@@ -39426,7 +39426,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "Avanorolsk",
-                "Flag": "none",
+                "Flag": "",
                 "ReligionGroups": {
                     "Pagan": {
                         "Points": 100
@@ -39471,20 +39471,20 @@
                 "SpyQuality": 1.2,
                 "NobleInfluence": 0.55,
                 "NobleLoyaltyGroups": {
-                    "Avanorolsk": "55",
-                    "SelfInterests": "45"
+                    "Avanorolsk": 55,
+                    "SelfInterests": 45
                 },
                 "NobleStateLoyalty": 55,
                 "ClergyInfluence": 0.25,
                 "ClergyLoyaltyGroups": {
-                    "Avanorolsk": "50",
-                    "SelfInterests": "50"
+                    "Avanorolsk": 50,
+                    "SelfInterests": 50
                 },
                 "ClergyStateLoyalty": 50,
                 "BurghersInfluence": 0.1,
                 "BurghersLoyaltyGroups": {
-                    "Avanorolsk": "50",
-                    "SelfInterests": "50"
+                    "Avanorolsk": 50,
+                    "SelfInterests": 50
                 },
                 "BurghersStateLoyalty": 50,
                 "ArmyUpkeep": 0,
@@ -40711,175 +40711,175 @@
             "TreatyOfBelgrade1": {
                 "giver": "HittiteEmpire",
                 "receiver": "KingdomOfSerbia",
-                "amount": "0.02",
+                "amount": 0.02,
                 "resource": "Sulphur"
             },
             "TreatyOfBelgrade2": {
                 "giver": "HittiteEmpire",
                 "receiver": "KingdomOfSerbia",
-                "amount": "0.02",
+                "amount": 0.02,
                 "resource": "Spice"
             },
             "TreatyOfBelgrade3": {
                 "giver": "HittiteEmpire",
                 "receiver": "KingdomOfSerbia",
-                "amount": "0.03",
+                "amount": 0.03,
                 "resource": "Cotton"
             },
             "TreatyOfBelgrade4": {
                 "giver": "KingdomOfSerbia",
                 "receiver": "HittiteEmpire",
-                "amount": "15",
+                "amount": 15,
                 "resource": "Budget"
             },
             "TreatyOfWarsaw1": {
                 "giver": "KingdomOfPoland",
                 "receiver": "Byzantium",
-                "amount": "0.5",
+                "amount": 0.5,
                 "resource": "Iron"
             },
             "TreatyOfWarsaw2": {
                 "giver": "Byzantium",
                 "receiver": "KingdomOfPoland",
-                "amount": "25",
+                "amount": 25,
                 "resource": "Budget"
             },
             "TreatyOfWarsaw3": {
                 "giver": "Byzantium",
                 "receiver": "KingdomOfPoland",
-                "amount": "0.15",
+                "amount": 0.15,
                 "resource": "Gold"
             },
             "TreatyOfMoskva4": {
                 "giver": "TsardomOfMuscovy",
                 "receiver": "HittiteEmpire",
-                "amount": "20",
+                "amount": 20,
                 "resource": "Budget"
             },
             "CheonjeEulacianTradeDeal1": {
                 "giver": "EulacianTradeCouncil",
                 "receiver": "Cheonje",
-                "amount": "0.25",
+                "amount": 0.25,
                 "resource": "Tea"
             },
             "CheonjeEulacianTradeDeal2": {
                 "giver": "EulacianTradeCouncil",
                 "receiver": "Cheonje",
-                "amount": "0.15",
+                "amount": 0.15,
                 "resource": "Ivory"
             },
             "CheonjeEulacianTradeDeal3": {
                 "giver": "EulacianTradeCouncil",
                 "receiver": "Cheonje",
-                "amount": "0.1",
+                "amount": 0.1,
                 "resource": "Diamond"
             },
             "CheonjeEulacianTradeDeal4": {
                 "giver": "EulacianTradeCouncil",
                 "receiver": "Cheonje",
-                "amount": "0.4",
+                "amount": 0.4,
                 "resource": "ExoticFruit"
             },
             "CheonjeEulacianTradeDeal5": {
                 "giver": "EulacianTradeCouncil",
                 "receiver": "Cheonje",
-                "amount": "0.1",
+                "amount": 0.1,
                 "resource": "Sugar"
             },
             "CheonjeEulacianTradeDeal6": {
                 "giver": "EulacianTradeCouncil",
                 "receiver": "Cheonje",
-                "amount": "0.4",
+                "amount": 0.4,
                 "resource": "Gold"
             },
             "CheonjeEulacianTradeDeal7": {
                 "giver": "Cheonje",
                 "receiver": "EulacianTradeCouncil",
-                "amount": "82.5",
+                "amount": 82.5,
                 "resource": "Budget"
             },
             "TreatyOfApulia": {
                 "giver": "Byzantium",
                 "receiver": "TheFaithfulKingdom",
-                "amount": "0.2",
+                "amount": 0.2,
                 "resource": "Coal"
             },
             "TreatyOfHattusilan1": {
                 "giver": "HittiteEmpire",
                 "receiver": "TsardomOfMuscovy",
-                "amount": "0.03",
+                "amount": 0.03,
                 "resource": "Silk"
             },
             "TreatyOfHattusilan2": {
                 "giver": "HittiteEmpire",
                 "receiver": "TsardomOfMuscovy",
-                "amount": "0.04",
+                "amount": 0.04,
                 "resource": "ExoticFruit"
             },
             "TreatyOfHattusilan3": {
                 "giver": "TsardomOfMuscovy",
                 "receiver": "HittiteEmpire",
-                "amount": "25",
+                "amount": 25,
                 "resource": "Budget"
             },
             "TreatyOfAnkara1": {
                 "giver": "HittiteEmpire",
                 "receiver": "KingdomOfWallachia",
-                "amount": "0.02",
+                "amount": 0.02,
                 "resource": "Silk"
             },
             "TreatyOfAnkara2": {
                 "giver": "HittiteEmpire",
                 "receiver": "KingdomOfWallachia",
-                "amount": "0.03",
+                "amount": 0.03,
                 "resource": "ExoticFruit"
             },
             "TreatyOfAnkara3": {
                 "giver": "KingdomOfWallachia",
                 "receiver": "HittiteEmpire",
-                "amount": "29",
+                "amount": 29,
                 "resource": "Budget"
             },
             "TreatyOfBahria1": {
                 "giver": "SindhEmpire",
                 "receiver": "EulacianTradeCouncil",
-                "amount": "35",
+                "amount": 35,
                 "resource": "Budget"
             },
             "TreatyOfBahria2": {
                 "giver": "EulacianTradeCouncil",
                 "receiver": "SindhEmpire",
-                "amount": "0.5",
+                "amount": 0.5,
                 "resource": "Ivory"
             },
             "TreatyOfPula1": {
                 "giver": "ArchduchyOfAustria",
                 "receiver": "KingdomOfScotland",
-                "amount": "0.5",
+                "amount": 0.5,
                 "resource": "Iron"
             },
             "TreatyOfPula2": {
                 "giver": "KingdomOfScotland",
                 "receiver": "ArchduchyOfAustria",
-                "amount": "18",
+                "amount": 18,
                 "resource": "Budget"
             },
             "TreatyWithCaliphate1": {
                 "giver": "AdenCaliphate",
                 "receiver": "EulacianTradeCouncil",
-                "amount": "0.25",
+                "amount": 0.25,
                 "resource": "Iron"
             },
             "TreatyWithCaliphate2": {
                 "giver": "EulacianTradeCouncil",
                 "receiver": "AdenCaliphate",
-                "amount": "0.2",
+                "amount": 0.2,
                 "resource": "ExoticFruit"
             },
             "TreatyWithCaliphate3": {
                 "giver": "EulacianTradeCouncil",
                 "receiver": "AdenCaliphate",
-                "amount": "0.1",
+                "amount": 0.1,
                 "resource": "Ivory"
             }
         },

@@ -10,7 +10,7 @@ let defaultStatValues = {
     PopulationControl: 0.50,
     BirthControl: 0.50,
     LocalTrade: 0.50,
-    Merchantilism: 0.05,
+    Mercantilism: 0.05,
     SpyQuality: 0.05,
     NobleInfluence: 0.05,
     ClergyInfluence: 0.05,
@@ -39,7 +39,7 @@ let defaultStatValues = {
     Tobacco: 0.75,
     Sugar: 0.75,
     ExoticFruit: 0.75,
-    AgriculturalSubsidies: 0.05,
+    AgricultureSubsidies: 0.05,
     AgricultureInfrastructure: 0.05,
     AgricultureAdvancements: 0.05,
     StockingCapabilities: 0.05,
@@ -50,6 +50,6 @@ let defaultStatValues = {
     TrainingQuality: 0.05,
     MilitaryTactics: 0.05,
     MilitaryDiscipline: 0.005,
-    NavalImprovements: 0.05,
+    NavyImprovements: 0.05,
     TradeInfluences: 0.5
 }
