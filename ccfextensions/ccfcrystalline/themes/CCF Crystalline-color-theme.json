@@ -181,7 +181,8 @@
 				"support.type"
 			],
 			"settings": {
-				"foreground": "#B2CCD6"
+				"foreground": "#dbe04c",
+				"fontStyle": "bold"
 			}
 		},
 		{

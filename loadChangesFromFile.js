@@ -82,6 +82,10 @@ async function evaluteChangeCommand(changeCommandRaw) {
     if(changeCommand.toLowerCase().trim() == ""){
         return;
     }
+    //suppress
+    else if(/!suppress/.test(changeCommand)){
+        suppressWarning();
+    }
     //sync
     else if (changeCommand.toLowerCase().startsWith("sync")) {
 

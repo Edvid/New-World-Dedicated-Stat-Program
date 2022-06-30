@@ -9,6 +9,9 @@
 			"include": "#strings"
 		},
 		{
+			"include": "#metasyntax"
+		},
+		{
 			"include": "#add"
 		},
 		{
@@ -46,6 +49,15 @@
 					"end": "\"\"\"",
 					"name": "comment.block.commandchangeformat"
 
+				}
+			]
+		},
+		"metasyntax": {
+			"patterns": [
+				{
+					"begin": "!",
+					"end": "\\n",
+					"name": "support.type"
 				}
 			]
 		},

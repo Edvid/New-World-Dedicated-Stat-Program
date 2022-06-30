@@ -6,7 +6,7 @@ function sleep(ms) {
 let warnSuppress = 0;
 
 function suppressWarning(){
-    warnSuppress = changeCommandIndex + 2;
+    warnSuppress = changeCommandIndex + 1;
 }
 
 function warn(message){
