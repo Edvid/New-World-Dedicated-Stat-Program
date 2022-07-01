@@ -745,150 +745,24 @@ class Nation {
     /* #endregion */
 
     /* #region  Trade Influence */
-    this.TradeInfluences = {
-      Alaska: { TradingPoints: 0 },
-      Cascadia: { TradingPoints: 0 },
-      CaliforniaAndWestMexico: { TradingPoints: 0 },
-      HudsonBay: { TradingPoints: 0 },
-      GreatLakes: { TradingPoints: 0 },
-      Louisiana: { TradingPoints: 0 },
-      GulfOfMexico: { TradingPoints: 0 },
-      LawrenceGulf: { TradingPoints: 0 },
-      EastCoast: { TradingPoints: 0 },
-      Carribean: { TradingPoints: 0 },
-      CentralAmerica: { TradingPoints: 0 },
-
-      GuyanaAndSuriname: { TradingPoints: 0 },
-      Amazon: { TradingPoints: 0 },
-      Peru: { TradingPoints: 0 },
-      RioGrande: { TradingPoints: 0 },
-      LaPlata: { TradingPoints: 0 },
-      Chile: { TradingPoints: 0 },
-      Patagonia: { TradingPoints: 0 },
-
-
-
-
-      NorthernAnatolia: { TradingPoints: 0 },
-      NorthSea: { TradingPoints: 0 },
-      BritishIsles: { TradingPoints: 0 },
-      EnglishChannel: { TradingPoints: 0 },
-      France: { TradingPoints: 0 },
-      BayOfBiscay: { TradingPoints: 0 },
-      WestIberia: { TradingPoints: 0 },
-      Gibraltar: { TradingPoints: 0 },
-      WesternMediterranean: { TradingPoints: 0 },
-      Rhine: { TradingPoints: 0 },
-      CentralMediterranean: { TradingPoints: 0 },
-      Adriatic: { TradingPoints: 0 },
-      Germany: { TradingPoints: 0 },
-      WesternDanube: { TradingPoints: 0 },
-      Denmark: { TradingPoints: 0 },
-      Baltic: { TradingPoints: 0 },
-      NorthNordics: { TradingPoints: 0 },
-      BarentsSea: { TradingPoints: 0 },
-      Novgorod: { TradingPoints: 0 },
-      Poland: { TradingPoints: 0 },
-      Dniepr: { TradingPoints: 0 },
-      Crimea: { TradingPoints: 0 },
-      EasternDanube: { TradingPoints: 0 },
-      Greece: { TradingPoints: 0 },
-      EasternMediterranean: { TradingPoints: 0 },
-      Egypt: { TradingPoints: 0 },
-      RedSea: { TradingPoints: 0 },
-      WesternSahara: { TradingPoints: 0 },
-      CoteDIvoire: { TradingPoints: 0 },
-      Nigeria: { TradingPoints: 0 },
-      SouthNile: { TradingPoints: 0 },
-      Somalia: { TradingPoints: 0 },
-      Kongo: { TradingPoints: 0 },
-      EastAfrica: { TradingPoints: 0 },
-      Mozambique: { TradingPoints: 0 },
-      SouthAfrica: { TradingPoints: 0 },
-
-      Mesopotamia: { TradingPoints: 0 },
-      PersianGulf: { TradingPoints: 0 },
-      Caucasus: { TradingPoints: 0 },
-      DonRiver: { TradingPoints: 0 },
-      Volga: { TradingPoints: 0 },
-      CentralAsia: { TradingPoints: 0 },
-      WestSiberia: { TradingPoints: 0 },
-      EastSiberia: { TradingPoints: 0 },
-      Iran: { TradingPoints: 0 },
-      Pakistan: { TradingPoints: 0 },
-      Tibet: { TradingPoints: 0 },
-      Mongolia: { TradingPoints: 0 },
-      Manchuria: { TradingPoints: 0 },
-      SeaOfJapan: { TradingPoints: 0 },
-      NorthChina: { TradingPoints: 0 },
-      YangtzeRiver: { TradingPoints: 0 },
-      SouthChina: { TradingPoints: 0 },
-      NorthIndia: { TradingPoints: 0 },
-      WestIndia: { TradingPoints: 0 },
-      EastIndia: { TradingPoints: 0 },
-      Burma: { TradingPoints: 0 },
-      SouthEastAsia: { TradingPoints: 0 },
-      NorthAustralia: { TradingPoints: 0 },
-      SouthAustralia: { TradingPoints: 0 }
-    };
+    this.TradeInfluences = (function () {
+      let ti = {}; 
+      for (const element in gameStats.TradeZones) {
+        ti[element] = {TradingPoints: 0};
+      }
+      return ti;
+    })();
     /* #endregion */
 
     /* #region  Land */
-    this.Climates = {
-      PolarDesert: {
-        Pixels: 0,
-        ClimateScore: 0,
-      },
-      TaigaAndTundra: {
-        Pixels: 0,
-        ClimateScore: 0.25,
-      },
-      MontaneForest: {
-        Pixels: 0,
-        ClimateScore: 0.6,
-      },
-      Medditereanian: {
-        Pixels: 0,
-        ClimateScore: 0.85,
-      },
-      Arid: {
-        Pixels: 0,
-        ClimateScore: 0.65,
-      },
-      Steppe: {
-        Pixels: 0,
-        ClimateScore: 0.75,
-      },
-      Moderate: {
-        Pixels: 0,
-        ClimateScore: 1,
-      },
-      SubTropical: {
-        Pixels: 0,
-        ClimateScore: 0.75,
-      },
-      Tropical: {
-        Pixels: 0,
-        ClimateScore: 0.6,
-      },
-      Savanna: {
-        Pixels: 0,
-        ClimateScore: 0.65,
-      },
-      Mountainous: {
-        Pixels: 0,
-        ClimateScore: 0.35,
-      },
-      Desert: {
-        Pixels: 0,
-        ClimateScore: 0.05,
-      },
-      CoastalDesert: {
-        Pixels: 0,
-        ClimateScore: 0.35
-      },
-
-    };
+    this.Climates = (function () {
+      let c = {}
+      for (const element in gameStats.Climates) {
+        c[element] = {Pixels: 0};
+      }
+      return c;
+    })();
+    
     this.DetachedLand = 0.00;
     /* #endregion */
     /* #endregion */
@@ -904,6 +778,7 @@ class Stats{
   ResourceTypes;
   Trades;
   TradeZones;
+  Climates;
   UnitUpkeepCosts;
   constructor(){
     let s = this;
@@ -1032,6 +907,48 @@ class Stats{
       NorthAustralia: 0,
       SouthAustralia: 0
     }
+
+    this.Climates = {
+      PolarDesert: {
+        ClimateScore: 0,
+      },
+      TaigaAndTundra: {
+        ClimateScore: 0.25,
+      },
+      MontaneForest: {
+        ClimateScore: 0.6,
+      },
+      Medditereanian: {
+        ClimateScore: 0.85,
+      },
+      Arid: {
+        ClimateScore: 0.65,
+      },
+      Steppe: {
+        ClimateScore: 0.75,
+      },
+      Moderate: {
+        ClimateScore: 1,
+      },
+      SubTropical: {
+        ClimateScore: 0.75,
+      },
+      Tropical: {
+        ClimateScore: 0.6,
+      },
+      Savanna: {
+        ClimateScore: 0.65,
+      },
+      Mountainous: {
+        ClimateScore: 0.35,
+      },
+      Desert: {
+        ClimateScore: 0.05,
+      },
+      CoastalDesert: {
+        ClimateScore: 0.35
+      }
+    };
 
     this.UnitUpkeepCosts = {
       Levies: 0.75 / 1000,

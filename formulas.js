@@ -169,7 +169,7 @@ function evaluateNation(nationName) {
     let hl = 0;
 
     for (const climate in n.Climates) {
-      hl += (n.Climates[climate].Pixels / n.Size) * n.Climates[climate].ClimateScore;
+      hl += (n.Climates[climate].Pixels / n.Size) * gameStats.Climates[climate].ClimateScore;
     }
 
     return hl;

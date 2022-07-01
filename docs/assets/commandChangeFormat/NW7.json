@@ -654,56 +654,43 @@
                 "LandAdministration": 1.82526032,
                 "Climates": {
                     "PolarDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0
+                        "Pixels": 0
                     },
                     "TaigaAndTundra": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.25
+                        "Pixels": 0
                     },
                     "MontaneForest": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Medditereanian": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.85
+                        "Pixels": 0
                     },
                     "Arid": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Steppe": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Moderate": {
-                        "Pixels": 47434,
-                        "ClimateScore": 1
+                        "Pixels": 47434
                     },
                     "SubTropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Tropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Savanna": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Mountainous": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     },
                     "Desert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.05
+                        "Pixels": 0
                     },
                     "CoastalDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     }
                 },
                 "HabitableLand": 1
@@ -1360,56 +1347,43 @@
                 "LandAdministration": 0.62284494,
                 "Climates": {
                     "PolarDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0
+                        "Pixels": 0
                     },
                     "TaigaAndTundra": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.25
+                        "Pixels": 0
                     },
                     "MontaneForest": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Medditereanian": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.85
+                        "Pixels": 0
                     },
                     "Arid": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Steppe": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Moderate": {
-                        "Pixels": 15916,
-                        "ClimateScore": 1
+                        "Pixels": 15916
                     },
                     "SubTropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Tropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Savanna": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Mountainous": {
-                        "Pixels": 245,
-                        "ClimateScore": 0.35
+                        "Pixels": 245
                     },
                     "Desert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.05
+                        "Pixels": 0
                     },
                     "CoastalDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     }
                 },
                 "HabitableLand": 0.9901460305674153
@@ -2063,56 +2037,43 @@
                 "LandAdministration": 0.74150285,
                 "Climates": {
                     "PolarDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0
+                        "Pixels": 0
                     },
                     "TaigaAndTundra": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.25
+                        "Pixels": 0
                     },
                     "MontaneForest": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Medditereanian": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.85
+                        "Pixels": 0
                     },
                     "Arid": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Steppe": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Moderate": {
-                        "Pixels": 0,
-                        "ClimateScore": 1
+                        "Pixels": 0
                     },
                     "SubTropical": {
-                        "Pixels": 11750,
-                        "ClimateScore": 0.75
+                        "Pixels": 11750
                     },
                     "Tropical": {
-                        "Pixels": 7445,
-                        "ClimateScore": 0.6
+                        "Pixels": 7445
                     },
                     "Savanna": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Mountainous": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     },
                     "Desert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.05
+                        "Pixels": 0
                     },
                     "CoastalDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     }
                 },
                 "HabitableLand": 0.6918207866631935
@@ -2769,56 +2730,43 @@
                 "LandAdministration": 0.760868,
                 "Climates": {
                     "PolarDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0
+                        "Pixels": 0
                     },
                     "TaigaAndTundra": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.25
+                        "Pixels": 0
                     },
                     "MontaneForest": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Medditereanian": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.85
+                        "Pixels": 0
                     },
                     "Arid": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Steppe": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Moderate": {
-                        "Pixels": 0,
-                        "ClimateScore": 1
+                        "Pixels": 0
                     },
                     "SubTropical": {
-                        "Pixels": 11240,
-                        "ClimateScore": 0.75
+                        "Pixels": 11240
                     },
                     "Tropical": {
-                        "Pixels": 4740,
-                        "ClimateScore": 0.6
+                        "Pixels": 4740
                     },
                     "Savanna": {
-                        "Pixels": 3630,
-                        "ClimateScore": 0.65
+                        "Pixels": 3630
                     },
                     "Mountainous": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     },
                     "Desert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.05
+                        "Pixels": 0
                     },
                     "CoastalDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     }
                 },
                 "HabitableLand": 0.6952320244773076
@@ -3472,56 +3420,43 @@
                 "LandAdministration": 1.2893557999999998,
                 "Climates": {
                     "PolarDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0
+                        "Pixels": 0
                     },
                     "TaigaAndTundra": {
-                        "Pixels": 9062,
-                        "ClimateScore": 0.25
+                        "Pixels": 9062
                     },
                     "MontaneForest": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Medditereanian": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.85
+                        "Pixels": 0
                     },
                     "Arid": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Steppe": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Moderate": {
-                        "Pixels": 24341,
-                        "ClimateScore": 1
+                        "Pixels": 24341
                     },
                     "SubTropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Tropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Savanna": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Mountainous": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     },
                     "Desert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.05
+                        "Pixels": 0
                     },
                     "CoastalDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     }
                 },
                 "HabitableLand": 0.7965302517737928
@@ -4175,56 +4110,43 @@
                 "LandAdministration": 1.7511076200000002,
                 "Climates": {
                     "PolarDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0
+                        "Pixels": 0
                     },
                     "TaigaAndTundra": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.25
+                        "Pixels": 0
                     },
                     "MontaneForest": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Medditereanian": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.85
+                        "Pixels": 0
                     },
                     "Arid": {
-                        "Pixels": 28767,
-                        "ClimateScore": 0.65
+                        "Pixels": 28767
                     },
                     "Steppe": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Moderate": {
-                        "Pixels": 0,
-                        "ClimateScore": 1
+                        "Pixels": 0
                     },
                     "SubTropical": {
-                        "Pixels": 6695,
-                        "ClimateScore": 0.75
+                        "Pixels": 6695
                     },
                     "Tropical": {
-                        "Pixels": 159,
-                        "ClimateScore": 0.6
+                        "Pixels": 159
                     },
                     "Savanna": {
-                        "Pixels": 6171,
-                        "ClimateScore": 0.65
+                        "Pixels": 6171
                     },
                     "Mountainous": {
-                        "Pixels": 2052,
-                        "ClimateScore": 0.35
+                        "Pixels": 2052
                     },
                     "Desert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.05
+                        "Pixels": 0
                     },
                     "CoastalDesert": {
-                        "Pixels": 1545,
-                        "ClimateScore": 0.35
+                        "Pixels": 1545
                     }
                 },
                 "HabitableLand": 0.6408006345149707
@@ -4878,56 +4800,43 @@
                 "LandAdministration": 1.1775636,
                 "Climates": {
                     "PolarDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0
+                        "Pixels": 0
                     },
                     "TaigaAndTundra": {
-                        "Pixels": 2182,
-                        "ClimateScore": 0.25
+                        "Pixels": 2182
                     },
                     "MontaneForest": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Medditereanian": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.85
+                        "Pixels": 0
                     },
                     "Arid": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Steppe": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Moderate": {
-                        "Pixels": 28246,
-                        "ClimateScore": 1
+                        "Pixels": 28246
                     },
                     "SubTropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Tropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Savanna": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Mountainous": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     },
                     "Desert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.05
+                        "Pixels": 0
                     },
                     "CoastalDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     }
                 },
                 "HabitableLand": 0.9462172998553963
@@ -5587,56 +5496,43 @@
                 "LandAdministration": 1.16368896,
                 "Climates": {
                     "PolarDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0
+                        "Pixels": 0
                     },
                     "TaigaAndTundra": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.25
+                        "Pixels": 0
                     },
                     "MontaneForest": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Medditereanian": {
-                        "Pixels": 19454,
-                        "ClimateScore": 0.85
+                        "Pixels": 19454
                     },
                     "Arid": {
-                        "Pixels": 6636,
-                        "ClimateScore": 0.65
+                        "Pixels": 6636
                     },
                     "Steppe": {
-                        "Pixels": 4092,
-                        "ClimateScore": 0.75
+                        "Pixels": 4092
                     },
                     "Moderate": {
-                        "Pixels": 48,
-                        "ClimateScore": 1
+                        "Pixels": 48
                     },
                     "SubTropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Tropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Savanna": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Mountainous": {
-                        "Pixels": 106,
-                        "ClimateScore": 0.35
+                        "Pixels": 106
                     },
                     "Desert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.05
+                        "Pixels": 0
                     },
                     "CoastalDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     }
                 },
                 "HabitableLand": 0.7912513185654009
@@ -6290,56 +6186,43 @@
                 "LandAdministration": 0.47234788,
                 "Climates": {
                     "PolarDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0
+                        "Pixels": 0
                     },
                     "TaigaAndTundra": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.25
+                        "Pixels": 0
                     },
                     "MontaneForest": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Medditereanian": {
-                        "Pixels": 2627,
-                        "ClimateScore": 0.85
+                        "Pixels": 2627
                     },
                     "Arid": {
-                        "Pixels": 570,
-                        "ClimateScore": 0.65
+                        "Pixels": 570
                     },
                     "Steppe": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Moderate": {
-                        "Pixels": 0,
-                        "ClimateScore": 1
+                        "Pixels": 0
                     },
                     "SubTropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Tropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Savanna": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Mountainous": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     },
                     "Desert": {
-                        "Pixels": 5929,
-                        "ClimateScore": 0.05
+                        "Pixels": 5929
                     },
                     "CoastalDesert": {
-                        "Pixels": 3092,
-                        "ClimateScore": 0.35
+                        "Pixels": 3092
                     }
                 },
                 "HabitableLand": 0.3259207726305451
@@ -6993,56 +6876,43 @@
                 "LandAdministration": 1.02158469,
                 "Climates": {
                     "PolarDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0
+                        "Pixels": 0
                     },
                     "TaigaAndTundra": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.25
+                        "Pixels": 0
                     },
                     "MontaneForest": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Medditereanian": {
-                        "Pixels": 148,
-                        "ClimateScore": 0.85
+                        "Pixels": 148
                     },
                     "Arid": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Steppe": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Moderate": {
-                        "Pixels": 22428,
-                        "ClimateScore": 1
+                        "Pixels": 22428
                     },
                     "SubTropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Tropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Savanna": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Mountainous": {
-                        "Pixels": 4007,
-                        "ClimateScore": 0.35
+                        "Pixels": 4007
                     },
                     "Desert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.05
+                        "Pixels": 0
                     },
                     "CoastalDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     }
                 },
                 "HabitableLand": 0.9011868487379152
@@ -7696,56 +7566,43 @@
                 "LandAdministration": 0.5119298,
                 "Climates": {
                     "PolarDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0
+                        "Pixels": 0
                     },
                     "TaigaAndTundra": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.25
+                        "Pixels": 0
                     },
                     "MontaneForest": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Medditereanian": {
-                        "Pixels": 3335,
-                        "ClimateScore": 0.85
+                        "Pixels": 3335
                     },
                     "Arid": {
-                        "Pixels": 9900,
-                        "ClimateScore": 0.65
+                        "Pixels": 9900
                     },
                     "Steppe": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Moderate": {
-                        "Pixels": 0,
-                        "ClimateScore": 1
+                        "Pixels": 0
                     },
                     "SubTropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Tropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Savanna": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Mountainous": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     },
                     "Desert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.05
+                        "Pixels": 0
                     },
                     "CoastalDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     }
                 },
                 "HabitableLand": 0.7003966754816774
@@ -8399,56 +8256,43 @@
                 "LandAdministration": 0.23090596,
                 "Climates": {
                     "PolarDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0
+                        "Pixels": 0
                     },
                     "TaigaAndTundra": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.25
+                        "Pixels": 0
                     },
                     "MontaneForest": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Medditereanian": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.85
+                        "Pixels": 0
                     },
                     "Arid": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Steppe": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Moderate": {
-                        "Pixels": 0,
-                        "ClimateScore": 1
+                        "Pixels": 0
                     },
                     "SubTropical": {
-                        "Pixels": 5070,
-                        "ClimateScore": 0.75
+                        "Pixels": 5070
                     },
                     "Tropical": {
-                        "Pixels": 926,
-                        "ClimateScore": 0.6
+                        "Pixels": 926
                     },
                     "Savanna": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Mountainous": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     },
                     "Desert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.05
+                        "Pixels": 0
                     },
                     "CoastalDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     }
                 },
                 "HabitableLand": 0.726834556370914
@@ -9102,56 +8946,43 @@
                 "LandAdministration": 0.63180264,
                 "Climates": {
                     "PolarDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0
+                        "Pixels": 0
                     },
                     "TaigaAndTundra": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.25
+                        "Pixels": 0
                     },
                     "MontaneForest": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Medditereanian": {
-                        "Pixels": 6308,
-                        "ClimateScore": 0.85
+                        "Pixels": 6308
                     },
                     "Arid": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Steppe": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Moderate": {
-                        "Pixels": 0,
-                        "ClimateScore": 1
+                        "Pixels": 0
                     },
                     "SubTropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Tropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Savanna": {
-                        "Pixels": 1085,
-                        "ClimateScore": 0.65
+                        "Pixels": 1085
                     },
                     "Mountainous": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     },
                     "Desert": {
-                        "Pixels": 5785,
-                        "ClimateScore": 0.05
+                        "Pixels": 5785
                     },
                     "CoastalDesert": {
-                        "Pixels": 3173,
-                        "ClimateScore": 0.35
+                        "Pixels": 3173
                     }
                 },
                 "HabitableLand": 0.45666014311051306
@@ -9805,56 +9636,43 @@
                 "LandAdministration": 0.5840469699999999,
                 "Climates": {
                     "PolarDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0
+                        "Pixels": 0
                     },
                     "TaigaAndTundra": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.25
+                        "Pixels": 0
                     },
                     "MontaneForest": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Medditereanian": {
-                        "Pixels": 6928,
-                        "ClimateScore": 0.85
+                        "Pixels": 6928
                     },
                     "Arid": {
-                        "Pixels": 2540,
-                        "ClimateScore": 0.65
+                        "Pixels": 2540
                     },
                     "Steppe": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Moderate": {
-                        "Pixels": 0,
-                        "ClimateScore": 1
+                        "Pixels": 0
                     },
                     "SubTropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Tropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Savanna": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Mountainous": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     },
                     "Desert": {
-                        "Pixels": 3031,
-                        "ClimateScore": 0.05
+                        "Pixels": 3031
                     },
                     "CoastalDesert": {
-                        "Pixels": 2620,
-                        "ClimateScore": 0.35
+                        "Pixels": 2620
                     }
                 },
                 "HabitableLand": 0.569372974403069
@@ -10508,56 +10326,43 @@
                 "LandAdministration": 0.4034088,
                 "Climates": {
                     "PolarDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0
+                        "Pixels": 0
                     },
                     "TaigaAndTundra": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.25
+                        "Pixels": 0
                     },
                     "MontaneForest": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Medditereanian": {
-                        "Pixels": 10424,
-                        "ClimateScore": 0.85
+                        "Pixels": 10424
                     },
                     "Arid": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Steppe": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Moderate": {
-                        "Pixels": 0,
-                        "ClimateScore": 1
+                        "Pixels": 0
                     },
                     "SubTropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Tropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Savanna": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Mountainous": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     },
                     "Desert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.05
+                        "Pixels": 0
                     },
                     "CoastalDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     }
                 },
                 "HabitableLand": 0.85
@@ -11214,56 +11019,43 @@
                 "LandAdministration": 0.93717772,
                 "Climates": {
                     "PolarDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0
+                        "Pixels": 0
                     },
                     "TaigaAndTundra": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.25
+                        "Pixels": 0
                     },
                     "MontaneForest": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Medditereanian": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.85
+                        "Pixels": 0
                     },
                     "Arid": {
-                        "Pixels": 22952,
-                        "ClimateScore": 0.65
+                        "Pixels": 22952
                     },
                     "Steppe": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Moderate": {
-                        "Pixels": 0,
-                        "ClimateScore": 1
+                        "Pixels": 0
                     },
                     "SubTropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Tropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Savanna": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Mountainous": {
-                        "Pixels": 1277,
-                        "ClimateScore": 0.35
+                        "Pixels": 1277
                     },
                     "Desert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.05
+                        "Pixels": 0
                     },
                     "CoastalDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     }
                 },
                 "HabitableLand": 0.6341883693095052
@@ -11917,56 +11709,43 @@
                 "LandAdministration": 0.6823507000000001,
                 "Climates": {
                     "PolarDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0
+                        "Pixels": 0
                     },
                     "TaigaAndTundra": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.25
+                        "Pixels": 0
                     },
                     "MontaneForest": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Medditereanian": {
-                        "Pixels": 9780,
-                        "ClimateScore": 0.85
+                        "Pixels": 9780
                     },
                     "Arid": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Steppe": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Moderate": {
-                        "Pixels": 3775,
-                        "ClimateScore": 1
+                        "Pixels": 3775
                     },
                     "SubTropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Tropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Savanna": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Mountainous": {
-                        "Pixels": 4150,
-                        "ClimateScore": 0.35
+                        "Pixels": 4150
                     },
                     "Desert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.05
+                        "Pixels": 0
                     },
                     "CoastalDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     }
                 },
                 "HabitableLand": 0.7647839593335216
@@ -12623,56 +12402,43 @@
                 "LandAdministration": 2.1799128,
                 "Climates": {
                     "PolarDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0
+                        "Pixels": 0
                     },
                     "TaigaAndTundra": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.25
+                        "Pixels": 0
                     },
                     "MontaneForest": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Medditereanian": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.85
+                        "Pixels": 0
                     },
                     "Arid": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Steppe": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Moderate": {
-                        "Pixels": 0,
-                        "ClimateScore": 1
+                        "Pixels": 0
                     },
                     "SubTropical": {
-                        "Pixels": 2832,
-                        "ClimateScore": 0.75
+                        "Pixels": 2832
                     },
                     "Tropical": {
-                        "Pixels": 48154,
-                        "ClimateScore": 0.6
+                        "Pixels": 48154
                     },
                     "Savanna": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Mountainous": {
-                        "Pixels": 5694,
-                        "ClimateScore": 0.35
+                        "Pixels": 5694
                     },
                     "Desert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.05
+                        "Pixels": 0
                     },
                     "CoastalDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     }
                 },
                 "HabitableLand": 0.5823800282286521
@@ -13322,56 +13088,43 @@
                 "LandAdministration": 0.9459295999999999,
                 "Climates": {
                     "PolarDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0
+                        "Pixels": 0
                     },
                     "TaigaAndTundra": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.25
+                        "Pixels": 0
                     },
                     "MontaneForest": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Medditereanian": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.85
+                        "Pixels": 0
                     },
                     "Arid": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Steppe": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Moderate": {
-                        "Pixels": 24430,
-                        "ClimateScore": 1
+                        "Pixels": 24430
                     },
                     "SubTropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Tropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Savanna": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Mountainous": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     },
                     "Desert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.05
+                        "Pixels": 0
                     },
                     "CoastalDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     }
                 },
                 "HabitableLand": 1
@@ -14028,56 +13781,43 @@
                 "LandAdministration": 1.63818316,
                 "Climates": {
                     "PolarDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0
+                        "Pixels": 0
                     },
                     "TaigaAndTundra": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.25
+                        "Pixels": 0
                     },
                     "MontaneForest": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Medditereanian": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.85
+                        "Pixels": 0
                     },
                     "Arid": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Steppe": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Moderate": {
-                        "Pixels": 0,
-                        "ClimateScore": 1
+                        "Pixels": 0
                     },
                     "SubTropical": {
-                        "Pixels": 31155,
-                        "ClimateScore": 0.75
+                        "Pixels": 31155
                     },
                     "Tropical": {
-                        "Pixels": 5818,
-                        "ClimateScore": 0.6
+                        "Pixels": 5818
                     },
                     "Savanna": {
-                        "Pixels": 2528,
-                        "ClimateScore": 0.65
+                        "Pixels": 2528
                     },
                     "Mountainous": {
-                        "Pixels": 2917,
-                        "ClimateScore": 0.35
+                        "Pixels": 2917
                     },
                     "Desert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.05
+                        "Pixels": 0
                     },
                     "CoastalDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     }
                 },
                 "HabitableLand": 0.6959592625772077
@@ -14743,56 +14483,43 @@
                 "LandAdministration": 0.44759645000000003,
                 "Climates": {
                     "PolarDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0
+                        "Pixels": 0
                     },
                     "TaigaAndTundra": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.25
+                        "Pixels": 0
                     },
                     "MontaneForest": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Medditereanian": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.85
+                        "Pixels": 0
                     },
                     "Arid": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Steppe": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Moderate": {
-                        "Pixels": 11641,
-                        "ClimateScore": 1
+                        "Pixels": 11641
                     },
                     "SubTropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Tropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Savanna": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Mountainous": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     },
                     "Desert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.05
+                        "Pixels": 0
                     },
                     "CoastalDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     }
                 },
                 "HabitableLand": 1
@@ -15446,56 +15173,43 @@
                 "LandAdministration": 0.64925696,
                 "Climates": {
                     "PolarDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0
+                        "Pixels": 0
                     },
                     "TaigaAndTundra": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.25
+                        "Pixels": 0
                     },
                     "MontaneForest": {
-                        "Pixels": 5823,
-                        "ClimateScore": 0.6
+                        "Pixels": 5823
                     },
                     "Medditereanian": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.85
+                        "Pixels": 0
                     },
                     "Arid": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Steppe": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Moderate": {
-                        "Pixels": 10945,
-                        "ClimateScore": 1
+                        "Pixels": 10945
                     },
                     "SubTropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Tropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Savanna": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Mountainous": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     },
                     "Desert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.05
+                        "Pixels": 0
                     },
                     "CoastalDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     }
                 },
                 "HabitableLand": 0.8610925572519085
@@ -16149,56 +15863,43 @@
                 "LandAdministration": 0.4909482,
                 "Climates": {
                     "PolarDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0
+                        "Pixels": 0
                     },
                     "TaigaAndTundra": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.25
+                        "Pixels": 0
                     },
                     "MontaneForest": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Medditereanian": {
-                        "Pixels": 3855,
-                        "ClimateScore": 0.85
+                        "Pixels": 3855
                     },
                     "Arid": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Steppe": {
-                        "Pixels": 550,
-                        "ClimateScore": 0.75
+                        "Pixels": 550
                     },
                     "Moderate": {
-                        "Pixels": 8281,
-                        "ClimateScore": 1
+                        "Pixels": 8281
                     },
                     "SubTropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Tropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Savanna": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Mountainous": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     },
                     "Desert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.05
+                        "Pixels": 0
                     },
                     "CoastalDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     }
                 },
                 "HabitableLand": 0.9435795364969257
@@ -16852,56 +16553,43 @@
                 "LandAdministration": 1.0751382399999998,
                 "Climates": {
                     "PolarDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0
+                        "Pixels": 0
                     },
                     "TaigaAndTundra": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.25
+                        "Pixels": 0
                     },
                     "MontaneForest": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Medditereanian": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.85
+                        "Pixels": 0
                     },
                     "Arid": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Steppe": {
-                        "Pixels": 1545,
-                        "ClimateScore": 0.75
+                        "Pixels": 1545
                     },
                     "Moderate": {
-                        "Pixels": 26222,
-                        "ClimateScore": 1
+                        "Pixels": 26222
                     },
                     "SubTropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Tropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Savanna": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Mountainous": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     },
                     "Desert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.05
+                        "Pixels": 0
                     },
                     "CoastalDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     }
                 },
                 "HabitableLand": 0.9860896027658731
@@ -17561,56 +17249,43 @@
                 "LandAdministration": 1.09854895,
                 "Climates": {
                     "PolarDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0
+                        "Pixels": 0
                     },
                     "TaigaAndTundra": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.25
+                        "Pixels": 0
                     },
                     "MontaneForest": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Medditereanian": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.85
+                        "Pixels": 0
                     },
                     "Arid": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Steppe": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Moderate": {
-                        "Pixels": 28423,
-                        "ClimateScore": 1
+                        "Pixels": 28423
                     },
                     "SubTropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Tropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Savanna": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Mountainous": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     },
                     "Desert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.05
+                        "Pixels": 0
                     },
                     "CoastalDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     }
                 },
                 "HabitableLand": 1
@@ -18264,56 +17939,43 @@
                 "LandAdministration": 0.4666864,
                 "Climates": {
                     "PolarDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0
+                        "Pixels": 0
                     },
                     "TaigaAndTundra": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.25
+                        "Pixels": 0
                     },
                     "MontaneForest": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Medditereanian": {
-                        "Pixels": 3858,
-                        "ClimateScore": 0.85
+                        "Pixels": 3858
                     },
                     "Arid": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Steppe": {
-                        "Pixels": 549,
-                        "ClimateScore": 0.75
+                        "Pixels": 549
                     },
                     "Moderate": {
-                        "Pixels": 7621,
-                        "ClimateScore": 1
+                        "Pixels": 7621
                     },
                     "SubTropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Tropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Savanna": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Mountainous": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     },
                     "Desert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.05
+                        "Pixels": 0
                     },
                     "CoastalDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     }
                 },
                 "HabitableLand": 0.9404763884270037
@@ -18967,56 +18629,43 @@
                 "LandAdministration": 0.9794651999999999,
                 "Climates": {
                     "PolarDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0
+                        "Pixels": 0
                     },
                     "TaigaAndTundra": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.25
+                        "Pixels": 0
                     },
                     "MontaneForest": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Medditereanian": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.85
+                        "Pixels": 0
                     },
                     "Arid": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Steppe": {
-                        "Pixels": 22803,
-                        "ClimateScore": 0.75
+                        "Pixels": 22803
                     },
                     "Moderate": {
-                        "Pixels": 1942,
-                        "ClimateScore": 1
+                        "Pixels": 1942
                     },
                     "SubTropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Tropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Savanna": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Mountainous": {
-                        "Pixels": 525,
-                        "ClimateScore": 0.35
+                        "Pixels": 525
                     },
                     "Desert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.05
+                        "Pixels": 0
                     },
                     "CoastalDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     }
                 },
                 "HabitableLand": 0.7609022556390977
@@ -19676,56 +19325,43 @@
                 "LandAdministration": 1.14913302,
                 "Climates": {
                     "PolarDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0
+                        "Pixels": 0
                     },
                     "TaigaAndTundra": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.25
+                        "Pixels": 0
                     },
                     "MontaneForest": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Medditereanian": {
-                        "Pixels": 24062,
-                        "ClimateScore": 0.85
+                        "Pixels": 24062
                     },
                     "Arid": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Steppe": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Moderate": {
-                        "Pixels": 4047,
-                        "ClimateScore": 1
+                        "Pixels": 4047
                     },
                     "SubTropical": {
-                        "Pixels": 181,
-                        "ClimateScore": 0.75
+                        "Pixels": 181
                     },
                     "Tropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Savanna": {
-                        "Pixels": 42,
-                        "ClimateScore": 0.65
+                        "Pixels": 42
                     },
                     "Mountainous": {
-                        "Pixels": 1383,
-                        "ClimateScore": 0.35
+                        "Pixels": 1383
                     },
                     "Desert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.05
+                        "Pixels": 0
                     },
                     "CoastalDesert": {
-                        "Pixels": 63,
-                        "ClimateScore": 0.35
+                        "Pixels": 63
                     }
                 },
                 "HabitableLand": 0.8452162670427831
@@ -20379,56 +20015,43 @@
                 "LandAdministration": 0.16199502999999998,
                 "Climates": {
                     "PolarDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0
+                        "Pixels": 0
                     },
                     "TaigaAndTundra": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.25
+                        "Pixels": 0
                     },
                     "MontaneForest": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Medditereanian": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.85
+                        "Pixels": 0
                     },
                     "Arid": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Steppe": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Moderate": {
-                        "Pixels": 4187,
-                        "ClimateScore": 1
+                        "Pixels": 4187
                     },
                     "SubTropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Tropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Savanna": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Mountainous": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     },
                     "Desert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.05
+                        "Pixels": 0
                     },
                     "CoastalDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     }
                 },
                 "HabitableLand": 1
@@ -21082,56 +20705,43 @@
                 "LandAdministration": 0.22279967999999997,
                 "Climates": {
                     "PolarDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0
+                        "Pixels": 0
                     },
                     "TaigaAndTundra": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.25
+                        "Pixels": 0
                     },
                     "MontaneForest": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Medditereanian": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.85
+                        "Pixels": 0
                     },
                     "Arid": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Steppe": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Moderate": {
-                        "Pixels": 5778,
-                        "ClimateScore": 1
+                        "Pixels": 5778
                     },
                     "SubTropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Tropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Savanna": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Mountainous": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     },
                     "Desert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.05
+                        "Pixels": 0
                     },
                     "CoastalDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     }
                 },
                 "HabitableLand": 1
@@ -21785,56 +21395,43 @@
                 "LandAdministration": 0.96333728,
                 "Climates": {
                     "PolarDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0
+                        "Pixels": 0
                     },
                     "TaigaAndTundra": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.25
+                        "Pixels": 0
                     },
                     "MontaneForest": {
-                        "Pixels": 4870,
-                        "ClimateScore": 0.6
+                        "Pixels": 4870
                     },
                     "Medditereanian": {
-                        "Pixels": 4949,
-                        "ClimateScore": 0.85
+                        "Pixels": 4949
                     },
                     "Arid": {
-                        "Pixels": 6400,
-                        "ClimateScore": 0.65
+                        "Pixels": 6400
                     },
                     "Steppe": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Moderate": {
-                        "Pixels": 0,
-                        "ClimateScore": 1
+                        "Pixels": 0
                     },
                     "SubTropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Tropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Savanna": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Mountainous": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     },
                     "Desert": {
-                        "Pixels": 7409,
-                        "ClimateScore": 0.05
+                        "Pixels": 7409
                     },
                     "CoastalDesert": {
-                        "Pixels": 1316,
-                        "ClimateScore": 0.35
+                        "Pixels": 1316
                     }
                 },
                 "HabitableLand": 0.4858763630532392
@@ -22488,56 +22085,43 @@
                 "LandAdministration": 1.0886522399999998,
                 "Climates": {
                     "PolarDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0
+                        "Pixels": 0
                     },
                     "TaigaAndTundra": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.25
+                        "Pixels": 0
                     },
                     "MontaneForest": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Medditereanian": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.85
+                        "Pixels": 0
                     },
                     "Arid": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Steppe": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Moderate": {
-                        "Pixels": 0,
-                        "ClimateScore": 1
+                        "Pixels": 0
                     },
                     "SubTropical": {
-                        "Pixels": 19720,
-                        "ClimateScore": 0.75
+                        "Pixels": 19720
                     },
                     "Tropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Savanna": {
-                        "Pixels": 8463,
-                        "ClimateScore": 0.65
+                        "Pixels": 8463
                     },
                     "Mountainous": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     },
                     "Desert": {
-                        "Pixels": 79,
-                        "ClimateScore": 0.05
+                        "Pixels": 79
                     },
                     "CoastalDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     }
                 },
                 "HabitableLand": 0.7180985068289577
@@ -23191,56 +22775,43 @@
                 "LandAdministration": 0.8609764799999999,
                 "Climates": {
                     "PolarDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0
+                        "Pixels": 0
                     },
                     "TaigaAndTundra": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.25
+                        "Pixels": 0
                     },
                     "MontaneForest": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Medditereanian": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.85
+                        "Pixels": 0
                     },
                     "Arid": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Steppe": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Moderate": {
-                        "Pixels": 0,
-                        "ClimateScore": 1
+                        "Pixels": 0
                     },
                     "SubTropical": {
-                        "Pixels": 17160,
-                        "ClimateScore": 0.75
+                        "Pixels": 17160
                     },
                     "Tropical": {
-                        "Pixels": 4775,
-                        "ClimateScore": 0.6
+                        "Pixels": 4775
                     },
                     "Savanna": {
-                        "Pixels": 347,
-                        "ClimateScore": 0.65
+                        "Pixels": 347
                     },
                     "Mountainous": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     },
                     "Desert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.05
+                        "Pixels": 0
                     },
                     "CoastalDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     }
                 },
                 "HabitableLand": 0.7162979086257967
@@ -23894,56 +23465,43 @@
                 "LandAdministration": 1.34138672,
                 "Climates": {
                     "PolarDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0
+                        "Pixels": 0
                     },
                     "TaigaAndTundra": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.25
+                        "Pixels": 0
                     },
                     "MontaneForest": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Medditereanian": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.85
+                        "Pixels": 0
                     },
                     "Arid": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Steppe": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Moderate": {
-                        "Pixels": 0,
-                        "ClimateScore": 1
+                        "Pixels": 0
                     },
                     "SubTropical": {
-                        "Pixels": 1470,
-                        "ClimateScore": 0.75
+                        "Pixels": 1470
                     },
                     "Tropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Savanna": {
-                        "Pixels": 4938,
-                        "ClimateScore": 0.65
+                        "Pixels": 4938
                     },
                     "Mountainous": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     },
                     "Desert": {
-                        "Pixels": 14000,
-                        "ClimateScore": 0.05
+                        "Pixels": 14000
                     },
                     "CoastalDesert": {
-                        "Pixels": 14379,
-                        "ClimateScore": 0.35
+                        "Pixels": 14379
                     }
                 },
                 "HabitableLand": 0.2887529824359674
@@ -24597,56 +24155,43 @@
                 "LandAdministration": 1.26097776,
                 "Climates": {
                     "PolarDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0
+                        "Pixels": 0
                     },
                     "TaigaAndTundra": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.25
+                        "Pixels": 0
                     },
                     "MontaneForest": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Medditereanian": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.85
+                        "Pixels": 0
                     },
                     "Arid": {
-                        "Pixels": 27332,
-                        "ClimateScore": 0.65
+                        "Pixels": 27332
                     },
                     "Steppe": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Moderate": {
-                        "Pixels": 0,
-                        "ClimateScore": 1
+                        "Pixels": 0
                     },
                     "SubTropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Tropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Savanna": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Mountainous": {
-                        "Pixels": 1640,
-                        "ClimateScore": 0.35
+                        "Pixels": 1640
                     },
                     "Desert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.05
+                        "Pixels": 0
                     },
                     "CoastalDesert": {
-                        "Pixels": 3662,
-                        "ClimateScore": 0.35
+                        "Pixels": 3662
                     }
                 },
                 "HabitableLand": 0.601259422687994
@@ -25300,56 +24845,43 @@
                 "LandAdministration": 0.5630751,
                 "Climates": {
                     "PolarDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0
+                        "Pixels": 0
                     },
                     "TaigaAndTundra": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.25
+                        "Pixels": 0
                     },
                     "MontaneForest": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Medditereanian": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.85
+                        "Pixels": 0
                     },
                     "Arid": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Steppe": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Moderate": {
-                        "Pixels": 14595,
-                        "ClimateScore": 1
+                        "Pixels": 14595
                     },
                     "SubTropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Tropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Savanna": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Mountainous": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     },
                     "Desert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.05
+                        "Pixels": 0
                     },
                     "CoastalDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     }
                 },
                 "HabitableLand": 1
@@ -26003,56 +25535,43 @@
                 "LandAdministration": 0.9141064799999999,
                 "Climates": {
                     "PolarDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0
+                        "Pixels": 0
                     },
                     "TaigaAndTundra": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.25
+                        "Pixels": 0
                     },
                     "MontaneForest": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Medditereanian": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.85
+                        "Pixels": 0
                     },
                     "Arid": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Steppe": {
-                        "Pixels": 179,
-                        "ClimateScore": 0.75
+                        "Pixels": 179
                     },
                     "Moderate": {
-                        "Pixels": 21832,
-                        "ClimateScore": 1
+                        "Pixels": 21832
                     },
                     "SubTropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Tropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Savanna": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Mountainous": {
-                        "Pixels": 1646,
-                        "ClimateScore": 0.35
+                        "Pixels": 1646
                     },
                     "Desert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.05
+                        "Pixels": 0
                     },
                     "CoastalDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     }
                 },
                 "HabitableLand": 0.9528828676501669
@@ -26706,56 +26225,43 @@
                 "LandAdministration": 0.39267936,
                 "Climates": {
                     "PolarDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0
+                        "Pixels": 0
                     },
                     "TaigaAndTundra": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.25
+                        "Pixels": 0
                     },
                     "MontaneForest": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Medditereanian": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.85
+                        "Pixels": 0
                     },
                     "Arid": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Steppe": {
-                        "Pixels": 8293,
-                        "ClimateScore": 0.75
+                        "Pixels": 8293
                     },
                     "Moderate": {
-                        "Pixels": 568,
-                        "ClimateScore": 1
+                        "Pixels": 568
                     },
                     "SubTropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Tropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Savanna": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Mountainous": {
-                        "Pixels": 1291,
-                        "ClimateScore": 0.35
+                        "Pixels": 1291
                     },
                     "Desert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.05
+                        "Pixels": 0
                     },
                     "CoastalDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     }
                 },
                 "HabitableLand": 0.7131205673758865
@@ -27409,56 +26915,43 @@
                 "LandAdministration": 1.0325849599999999,
                 "Climates": {
                     "PolarDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0
+                        "Pixels": 0
                     },
                     "TaigaAndTundra": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.25
+                        "Pixels": 0
                     },
                     "MontaneForest": {
-                        "Pixels": 4315,
-                        "ClimateScore": 0.6
+                        "Pixels": 4315
                     },
                     "Medditereanian": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.85
+                        "Pixels": 0
                     },
                     "Arid": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Steppe": {
-                        "Pixels": 20020,
-                        "ClimateScore": 0.75
+                        "Pixels": 20020
                     },
                     "Moderate": {
-                        "Pixels": 0,
-                        "ClimateScore": 1
+                        "Pixels": 0
                     },
                     "SubTropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Tropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Savanna": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Mountainous": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     },
                     "Desert": {
-                        "Pixels": 2333,
-                        "ClimateScore": 0.05
+                        "Pixels": 2333
                     },
                     "CoastalDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     }
                 },
                 "HabitableLand": 0.664491150442478
@@ -28112,56 +27605,43 @@
                 "LandAdministration": 0.58412992,
                 "Climates": {
                     "PolarDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0
+                        "Pixels": 0
                     },
                     "TaigaAndTundra": {
-                        "Pixels": 1204,
-                        "ClimateScore": 0.25
+                        "Pixels": 1204
                     },
                     "MontaneForest": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Medditereanian": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.85
+                        "Pixels": 0
                     },
                     "Arid": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Steppe": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Moderate": {
-                        "Pixels": 13882,
-                        "ClimateScore": 1
+                        "Pixels": 13882
                     },
                     "SubTropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Tropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Savanna": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Mountainous": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     },
                     "Desert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.05
+                        "Pixels": 0
                     },
                     "CoastalDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     }
                 },
                 "HabitableLand": 0.9401431791064563
@@ -28815,56 +28295,43 @@
                 "LandAdministration": 0.97582144,
                 "Climates": {
                     "PolarDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0
+                        "Pixels": 0
                     },
                     "TaigaAndTundra": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.25
+                        "Pixels": 0
                     },
                     "MontaneForest": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Medditereanian": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.85
+                        "Pixels": 0
                     },
                     "Arid": {
-                        "Pixels": 19950,
-                        "ClimateScore": 0.65
+                        "Pixels": 19950
                     },
                     "Steppe": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Moderate": {
-                        "Pixels": 0,
-                        "ClimateScore": 1
+                        "Pixels": 0
                     },
                     "SubTropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Tropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Savanna": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Mountainous": {
-                        "Pixels": 2510,
-                        "ClimateScore": 0.35
+                        "Pixels": 2510
                     },
                     "Desert": {
-                        "Pixels": 2517,
-                        "ClimateScore": 0.05
+                        "Pixels": 2517
                     },
                     "CoastalDesert": {
-                        "Pixels": 225,
-                        "ClimateScore": 0.35
+                        "Pixels": 225
                     }
                 },
                 "HabitableLand": 0.5575192445044044
@@ -29518,56 +28985,43 @@
                 "LandAdministration": 0.3106278,
                 "Climates": {
                     "PolarDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0
+                        "Pixels": 0
                     },
                     "TaigaAndTundra": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.25
+                        "Pixels": 0
                     },
                     "MontaneForest": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Medditereanian": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.85
+                        "Pixels": 0
                     },
                     "Arid": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Steppe": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Moderate": {
-                        "Pixels": 0,
-                        "ClimateScore": 1
+                        "Pixels": 0
                     },
                     "SubTropical": {
-                        "Pixels": 4315,
-                        "ClimateScore": 0.75
+                        "Pixels": 4315
                     },
                     "Tropical": {
-                        "Pixels": 80,
-                        "ClimateScore": 0.6
+                        "Pixels": 80
                     },
                     "Savanna": {
-                        "Pixels": 2415,
-                        "ClimateScore": 0.65
+                        "Pixels": 2415
                     },
                     "Mountainous": {
-                        "Pixels": 1200,
-                        "ClimateScore": 0.35
+                        "Pixels": 1200
                     },
                     "Desert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.05
+                        "Pixels": 0
                     },
                     "CoastalDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     }
                 },
                 "HabitableLand": 0.6584269662921348
@@ -30221,56 +29675,43 @@
                 "LandAdministration": 0.4741264,
                 "Climates": {
                     "PolarDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0
+                        "Pixels": 0
                     },
                     "TaigaAndTundra": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.25
+                        "Pixels": 0
                     },
                     "MontaneForest": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Medditereanian": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.85
+                        "Pixels": 0
                     },
                     "Arid": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Steppe": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Moderate": {
-                        "Pixels": 12245,
-                        "ClimateScore": 1
+                        "Pixels": 12245
                     },
                     "SubTropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Tropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Savanna": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Mountainous": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     },
                     "Desert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.05
+                        "Pixels": 0
                     },
                     "CoastalDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     }
                 },
                 "HabitableLand": 1
@@ -30924,56 +30365,43 @@
                 "LandAdministration": 0.51813958,
                 "Climates": {
                     "PolarDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0
+                        "Pixels": 0
                     },
                     "TaigaAndTundra": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.25
+                        "Pixels": 0
                     },
                     "MontaneForest": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Medditereanian": {
-                        "Pixels": 10414,
-                        "ClimateScore": 0.85
+                        "Pixels": 10414
                     },
                     "Arid": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Steppe": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Moderate": {
-                        "Pixels": 1117,
-                        "ClimateScore": 1
+                        "Pixels": 1117
                     },
                     "SubTropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Tropical": {
-                        "Pixels": 1242,
-                        "ClimateScore": 0.6
+                        "Pixels": 1242
                     },
                     "Savanna": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Mountainous": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     },
                     "Desert": {
-                        "Pixels": 546,
-                        "ClimateScore": 0.05
+                        "Pixels": 546
                     },
                     "CoastalDesert": {
-                        "Pixels": 42,
-                        "ClimateScore": 0.35
+                        "Pixels": 42
                     }
                 },
                 "HabitableLand": 0.8050370481251403
@@ -31627,56 +31055,43 @@
                 "LandAdministration": 0.39990015999999995,
                 "Climates": {
                     "PolarDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0
+                        "Pixels": 0
                     },
                     "TaigaAndTundra": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.25
+                        "Pixels": 0
                     },
                     "MontaneForest": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Medditereanian": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.85
+                        "Pixels": 0
                     },
                     "Arid": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Steppe": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Moderate": {
-                        "Pixels": 10328,
-                        "ClimateScore": 1
+                        "Pixels": 10328
                     },
                     "SubTropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Tropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Savanna": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Mountainous": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     },
                     "Desert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.05
+                        "Pixels": 0
                     },
                     "CoastalDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     }
                 },
                 "HabitableLand": 1
@@ -32330,56 +31745,43 @@
                 "LandAdministration": 0.32878,
                 "Climates": {
                     "PolarDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0
+                        "Pixels": 0
                     },
                     "TaigaAndTundra": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.25
+                        "Pixels": 0
                     },
                     "MontaneForest": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Medditereanian": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.85
+                        "Pixels": 0
                     },
                     "Arid": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Steppe": {
-                        "Pixels": 8500,
-                        "ClimateScore": 0.75
+                        "Pixels": 8500
                     },
                     "Moderate": {
-                        "Pixels": 0,
-                        "ClimateScore": 1
+                        "Pixels": 0
                     },
                     "SubTropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Tropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Savanna": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Mountainous": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     },
                     "Desert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.05
+                        "Pixels": 0
                     },
                     "CoastalDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     }
                 },
                 "HabitableLand": 0.75
@@ -33033,56 +32435,43 @@
                 "LandAdministration": 0.2522,
                 "Climates": {
                     "PolarDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0
+                        "Pixels": 0
                     },
                     "TaigaAndTundra": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.25
+                        "Pixels": 0
                     },
                     "MontaneForest": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Medditereanian": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.85
+                        "Pixels": 0
                     },
                     "Arid": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Steppe": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Moderate": {
-                        "Pixels": 0,
-                        "ClimateScore": 1
+                        "Pixels": 0
                     },
                     "SubTropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Tropical": {
-                        "Pixels": 6500,
-                        "ClimateScore": 0.6
+                        "Pixels": 6500
                     },
                     "Savanna": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Mountainous": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     },
                     "Desert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.05
+                        "Pixels": 0
                     },
                     "CoastalDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     }
                 },
                 "HabitableLand": 0.6
@@ -33736,56 +33125,43 @@
                 "LandAdministration": 0.34108799999999995,
                 "Climates": {
                     "PolarDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0
+                        "Pixels": 0
                     },
                     "TaigaAndTundra": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.25
+                        "Pixels": 0
                     },
                     "MontaneForest": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Medditereanian": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.85
+                        "Pixels": 0
                     },
                     "Arid": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Steppe": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Moderate": {
-                        "Pixels": 0,
-                        "ClimateScore": 1
+                        "Pixels": 0
                     },
                     "SubTropical": {
-                        "Pixels": 7000,
-                        "ClimateScore": 0.75
+                        "Pixels": 7000
                     },
                     "Tropical": {
-                        "Pixels": 1800,
-                        "ClimateScore": 0.6
+                        "Pixels": 1800
                     },
                     "Savanna": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Mountainous": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     },
                     "Desert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.05
+                        "Pixels": 0
                     },
                     "CoastalDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     }
                 },
                 "HabitableLand": 0.7193181818181817
@@ -34442,56 +33818,43 @@
                 "LandAdministration": 1.0204656,
                 "Climates": {
                     "PolarDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0
+                        "Pixels": 0
                     },
                     "TaigaAndTundra": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.25
+                        "Pixels": 0
                     },
                     "MontaneForest": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Medditereanian": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.85
+                        "Pixels": 0
                     },
                     "Arid": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Steppe": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Moderate": {
-                        "Pixels": 20447,
-                        "ClimateScore": 1
+                        "Pixels": 20447
                     },
                     "SubTropical": {
-                        "Pixels": 1589,
-                        "ClimateScore": 0.75
+                        "Pixels": 1589
                     },
                     "Tropical": {
-                        "Pixels": 1016,
-                        "ClimateScore": 0.6
+                        "Pixels": 1016
                     },
                     "Savanna": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Mountainous": {
-                        "Pixels": 3303,
-                        "ClimateScore": 0.35
+                        "Pixels": 3303
                     },
                     "Desert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.05
+                        "Pixels": 0
                     },
                     "CoastalDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     }
                 },
                 "HabitableLand": 0.8880440144185164
@@ -35145,56 +34508,43 @@
                 "LandAdministration": 0.6029667000000001,
                 "Climates": {
                     "PolarDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0
+                        "Pixels": 0
                     },
                     "TaigaAndTundra": {
-                        "Pixels": 7175,
-                        "ClimateScore": 0.25
+                        "Pixels": 7175
                     },
                     "MontaneForest": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Medditereanian": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.85
+                        "Pixels": 0
                     },
                     "Arid": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Steppe": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Moderate": {
-                        "Pixels": 8515,
-                        "ClimateScore": 1
+                        "Pixels": 8515
                     },
                     "SubTropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Tropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Savanna": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Mountainous": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     },
                     "Desert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.05
+                        "Pixels": 0
                     },
                     "CoastalDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     }
                 },
                 "HabitableLand": 0.6570267686424474
@@ -35844,56 +35194,43 @@
                 "LandAdministration": 0.88462416,
                 "Climates": {
                     "PolarDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0
+                        "Pixels": 0
                     },
                     "TaigaAndTundra": {
-                        "Pixels": 14171,
-                        "ClimateScore": 0.25
+                        "Pixels": 14171
                     },
                     "MontaneForest": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Medditereanian": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.85
+                        "Pixels": 0
                     },
                     "Arid": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Steppe": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Moderate": {
-                        "Pixels": 8183,
-                        "ClimateScore": 1
+                        "Pixels": 8183
                     },
                     "SubTropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Tropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Savanna": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Mountainous": {
-                        "Pixels": 540,
-                        "ClimateScore": 0.35
+                        "Pixels": 540
                     },
                     "Desert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.05
+                        "Pixels": 0
                     },
                     "CoastalDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     }
                 },
                 "HabitableLand": 0.5204311173233162
@@ -36547,56 +35884,43 @@
                 "LandAdministration": 0.13761088,
                 "Climates": {
                     "PolarDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0
+                        "Pixels": 0
                     },
                     "TaigaAndTundra": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.25
+                        "Pixels": 0
                     },
                     "MontaneForest": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Medditereanian": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.85
+                        "Pixels": 0
                     },
                     "Arid": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Steppe": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Moderate": {
-                        "Pixels": 0,
-                        "ClimateScore": 1
+                        "Pixels": 0
                     },
                     "SubTropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Tropical": {
-                        "Pixels": 3554,
-                        "ClimateScore": 0.6
+                        "Pixels": 3554
                     },
                     "Savanna": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Mountainous": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     },
                     "Desert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.05
+                        "Pixels": 0
                     },
                     "CoastalDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     }
                 },
                 "HabitableLand": 0.6
@@ -37250,56 +36574,43 @@
                 "LandAdministration": 0.368988,
                 "Climates": {
                     "PolarDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0
+                        "Pixels": 0
                     },
                     "TaigaAndTundra": {
-                        "Pixels": 4350,
-                        "ClimateScore": 0.25
+                        "Pixels": 4350
                     },
                     "MontaneForest": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Medditereanian": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.85
+                        "Pixels": 0
                     },
                     "Arid": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Steppe": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Moderate": {
-                        "Pixels": 4130,
-                        "ClimateScore": 1
+                        "Pixels": 4130
                     },
                     "SubTropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Tropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Savanna": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Mountainous": {
-                        "Pixels": 1030,
-                        "ClimateScore": 0.35
+                        "Pixels": 1030
                     },
                     "Desert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.05
+                        "Pixels": 0
                     },
                     "CoastalDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     }
                 },
                 "HabitableLand": 0.586540483701367
@@ -37956,56 +37267,43 @@
                 "LandAdministration": 0.24781024999999998,
                 "Climates": {
                     "PolarDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0
+                        "Pixels": 0
                     },
                     "TaigaAndTundra": {
-                        "Pixels": 2226,
-                        "ClimateScore": 0.25
+                        "Pixels": 2226
                     },
                     "MontaneForest": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Medditereanian": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.85
+                        "Pixels": 0
                     },
                     "Arid": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Steppe": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Moderate": {
-                        "Pixels": 4219,
-                        "ClimateScore": 1
+                        "Pixels": 4219
                     },
                     "SubTropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Tropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Savanna": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Mountainous": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     },
                     "Desert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.05
+                        "Pixels": 0
                     },
                     "CoastalDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     }
                 },
                 "HabitableLand": 0.7409619860356866
@@ -38659,56 +37957,43 @@
                 "LandAdministration": 0.3823352,
                 "Climates": {
                     "PolarDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0
+                        "Pixels": 0
                     },
                     "TaigaAndTundra": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.25
+                        "Pixels": 0
                     },
                     "MontaneForest": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Medditereanian": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.85
+                        "Pixels": 0
                     },
                     "Arid": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Steppe": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Moderate": {
-                        "Pixels": 0,
-                        "ClimateScore": 1
+                        "Pixels": 0
                     },
                     "SubTropical": {
-                        "Pixels": 4531,
-                        "ClimateScore": 0.75
+                        "Pixels": 4531
                     },
                     "Tropical": {
-                        "Pixels": 1637,
-                        "ClimateScore": 0.6
+                        "Pixels": 1637
                     },
                     "Savanna": {
-                        "Pixels": 3686,
-                        "ClimateScore": 0.65
+                        "Pixels": 3686
                     },
                     "Mountainous": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     },
                     "Desert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.05
+                        "Pixels": 0
                     },
                     "CoastalDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     }
                 },
                 "HabitableLand": 0.6876750558148975
@@ -39362,56 +38647,43 @@
                 "LandAdministration": 0.8028592,
                 "Climates": {
                     "PolarDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0
+                        "Pixels": 0
                     },
                     "TaigaAndTundra": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.25
+                        "Pixels": 0
                     },
                     "MontaneForest": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Medditereanian": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.85
+                        "Pixels": 0
                     },
                     "Arid": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Steppe": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Moderate": {
-                        "Pixels": 16507,
-                        "ClimateScore": 1
+                        "Pixels": 16507
                     },
                     "SubTropical": {
-                        "Pixels": 3743,
-                        "ClimateScore": 0.75
+                        "Pixels": 3743
                     },
                     "Tropical": {
-                        "Pixels": 485,
-                        "ClimateScore": 0.6
+                        "Pixels": 485
                     },
                     "Savanna": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Mountainous": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     },
                     "Desert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.05
+                        "Pixels": 0
                     },
                     "CoastalDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     }
                 },
                 "HabitableLand": 0.9455148299975887
@@ -40065,56 +39337,43 @@
                 "LandAdministration": 0.4749896,
                 "Climates": {
                     "PolarDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0
+                        "Pixels": 0
                     },
                     "TaigaAndTundra": {
-                        "Pixels": 1030,
-                        "ClimateScore": 0.25
+                        "Pixels": 1030
                     },
                     "MontaneForest": {
-                        "Pixels": 10565,
-                        "ClimateScore": 0.6
+                        "Pixels": 10565
                     },
                     "Medditereanian": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.85
+                        "Pixels": 0
                     },
                     "Arid": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Steppe": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Moderate": {
-                        "Pixels": 647,
-                        "ClimateScore": 1
+                        "Pixels": 647
                     },
                     "SubTropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.75
+                        "Pixels": 0
                     },
                     "Tropical": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.6
+                        "Pixels": 0
                     },
                     "Savanna": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.65
+                        "Pixels": 0
                     },
                     "Mountainous": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     },
                     "Desert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.05
+                        "Pixels": 0
                     },
                     "CoastalDesert": {
-                        "Pixels": 0,
-                        "ClimateScore": 0.35
+                        "Pixels": 0
                     }
                 },
                 "HabitableLand": 0.5916925338996896
@@ -40962,6 +40221,47 @@
             "SouthEastAsia": 5.25,
             "NorthAustralia": 3,
             "SouthAustralia": 0
+        },
+        "Climates": {
+            "PolarDesert": {
+                "ClimateScore": 0
+            },
+            "TaigaAndTundra": {
+                "ClimateScore": 0.25
+            },
+            "MontaneForest": {
+                "ClimateScore": 0.6
+            },
+            "Medditereanian": {
+                "ClimateScore": 0.85
+            },
+            "Arid": {
+                "ClimateScore": 0.65
+            },
+            "Steppe": {
+                "ClimateScore": 0.75
+            },
+            "Moderate": {
+                "ClimateScore": 1
+            },
+            "SubTropical": {
+                "ClimateScore": 0.75
+            },
+            "Tropical": {
+                "ClimateScore": 0.6
+            },
+            "Savanna": {
+                "ClimateScore": 0.65
+            },
+            "Mountainous": {
+                "ClimateScore": 0.35
+            },
+            "Desert": {
+                "ClimateScore": 0.05
+            },
+            "CoastalDesert": {
+                "ClimateScore": 0.35
+            }
         },
         "UnitUpkeepCosts": {
             "Levies": 0.00075,
