@@ -17,7 +17,7 @@ function loadAllTrades(){
         tdTradeName.innerText = tradeName.capitalSpacing();
         tradeRow.appendChild(tdTradeName);
         for (const key in trade) {
-            const value = trade[key];
+            const value = trade[key].toString();
             if(headerIsEmpty) {
                 let th = document.createElement("th");
                 th.innerText = key;
