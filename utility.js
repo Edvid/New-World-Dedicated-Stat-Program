@@ -64,7 +64,6 @@ function correctAndSynonymCheck(selection) {
 }
 
 function matchToken(searchIn, approxName){
-    console.log(searchIn);
     let searchObject = (new Function(`return ${searchIn}`))();
     let nameToCheck = approxName.toLowerCase().replaceAll(" ", "")
     
