@@ -50,7 +50,7 @@ String.prototype.capitalSpacing = function (){
 //synonym searching and case correcting alg
 function correctAndSynonymCheck(selection) {
     let correctSelection = selection.slice(1).split(".");
-    let step = gameStats;
+    let step = 'gameStats';
     for (let i = 0; i < correctSelection.length; i++) {
         let matched = matchToken(step, correctSelection[i]);
         if(matched == null) {
@@ -58,12 +58,14 @@ function correctAndSynonymCheck(selection) {
             return;
         }
         correctSelection[i] = matched;
-        step = eval(`step.${correctSelection[i]}`);
+        step += `.${correctSelection[i]}`;
     }
     return "." + correctSelection.join(".");
 }
 
-function matchToken(searchObject, approxName){
+function matchToken(searchIn, approxName){
+    console.log(searchIn);
+    let searchObject = (new Function(`return ${searchIn}`))();
     let nameToCheck = approxName.toLowerCase().replaceAll(" ", "")
     
     //check same stats but correct casing
@@ -93,7 +95,7 @@ function matchToken(searchObject, approxName){
             const element = subObjects[i];
             
             within = true;
-            let subMatch = matchToken(searchObject[element], approxName)
+            let subMatch = matchToken(`${searchIn}.${element}`, approxName)
             if(subMatch != null)
                 return `${element}.${subMatch}`
         }
