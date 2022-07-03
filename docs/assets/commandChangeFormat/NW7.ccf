@@ -4593,46 +4593,6 @@ trade CheonjeEulacianTradeDeal7, Cheonje > EulacianTradeCouncil, 82.5 Budget
 ="true" EarlyModernAdministration
 <
 
-<... > Nations > KingdomOfBurgundy
-+1 AdmEff
-+0.5 EduEff
-+0.5 MilitaryTactics
-+0.35 TrainingQuality
-+100 budget
--104.5 budget
-+10 budget
--60 budget
-+0.25 Propaganda
-
-= 3000 militia
-= 3000 light infantry
-= 1000 heavy infantry
-= 2000 musketeers
-= 1000 light cavalry
-= 600 heavy cavalry
-= 1000 crossbowmen
-= 500 archers
-= 33 cannons
-= 4 siege equipment
-= 3 large siege equipment
-= 20 light ships
-= 18 medium ships
-= 6 heavy ships
-
--6 ResearchPoints
-
-> Technologies
-="true" PrintingPress
-="true" Muskets
-="true" Limber
-<
-
--4 CulturalPower
-
-> CulturalAdvancements
-="true" EarlyModernAdministration
-<
-
 <... > Nations > Byzantium
 +5.5 AdmEff
 +0.5 EduEff
