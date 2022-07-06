@@ -9137,5 +9137,12 @@ move Self Interests > TexasTribes, 5
 =0 lightcav
 =0 heavycav
 
+<... > nations > Kingdom Of Uralikslavia
+=1000 crossbowmen
+=500 archers
+=125 lightcav
+=500 lightinf
+=20 cannons
+
 <...
 sync
