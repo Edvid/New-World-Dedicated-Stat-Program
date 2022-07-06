@@ -9128,5 +9128,14 @@ move Self Interests > TexasTribes, 5
 +5 Protestant.points
 -5 Catholic.points
 
+<... > nations > EmpireOfJapan
+=0 militia
+=0 lightinf
+=0 archers
+=0 crossbowmen
+=0 handcannon
+=0 lightcav
+=0 heavycav
+
 <...
 sync
