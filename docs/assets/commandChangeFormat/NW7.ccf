@@ -9081,5 +9081,55 @@ move Self Interests > TexasTribes, 5
 +> Byzantine
 = -75 Byzantine.score
 
+<... > nations > KingdomOfEngland > ReligionGroups
++> Protestantism
++15 Protestantism.points
+-15 Catholic.points
+
+<... > nations > KingdomOfScotland > ReligionGroups
++> Protestantism
++10 Protestantism.points
+-10 Catholic.points
+
+<... > nations > KingdomOfIreland > ReligionGroups
++> Protestantism
++10 Protestantism.points
+-10 Catholic.points
+
+<... > nations > KingdomOfBurgundy > ReligionGroups
++> Protestantism
++10 Protestantism.points
+-10 Catholic.points
+
+<... > nations > KingdomOfToledoCatalonia > ReligionGroups
++> Protestantism
++10 Protestantism.points
+-10 Catholic.points
+
+<... > nations > KingdomOfWestphalia > ReligionGroups
++> Protestantism
++10 Protestantism.points
+-10 Catholic.points
+
+<... > nations > KingdomOfAlvheim > ReligionGroups
++> Protestantism
++10 Protestantism.points
+-10 Catholic.points
+
+<... > nations > KingdomOfAndalusia > ReligionGroups
++> Protestantism
++5 Protestantism.points
+-5 Catholic.points
+
+<... > nations > ArchduchyOfAustria > ReligionGroups
++> Protestantism
++5 Protestantism.points
+-5 Catholic.points
+
+<... > nations > KingdomOfPrussia > ReligionGroups
++> Protestantism
++5 Protestantism.points
+-5 Catholic.points
+
 <...
 sync
