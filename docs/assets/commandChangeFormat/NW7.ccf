@@ -9113,11 +9113,6 @@ move Self Interests > TexasTribes, 5
 +10 Protestantism.points
 -10 Catholic.points
 
-<... > nations > KingdomOfAlvheim > ReligionGroups
-+> Protestantism
-+10 Protestantism.points
--10 Catholic.points
-
 <... > nations > KingdomOfAndalusia > ReligionGroups
 +> Protestantism
 +5 Protestantism.points
