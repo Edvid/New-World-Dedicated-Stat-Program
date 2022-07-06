@@ -9085,6 +9085,8 @@ move Self Interests > TexasTribes, 5
 +> Protestantism
 +15 Protestantism.points
 -15 Catholic.points
+<
++0.25 workforces.artisans
 
 <... > nations > KingdomOfScotland > ReligionGroups
 +> Protestantism
