@@ -8266,10 +8266,10 @@ trade TreatyOfAustin, Sioux Tribes > TexasTribes, 50 Food
 +0.25 AdministrativeEfficiency
 +0.25 iron
 +0.5 EducationEfficiency
-=1500 crossbow men
-=750 archers
-=188 light cavalry
-=706 light infantry
+=1000 crossbow men
+=500 archers
+=125 light cavalry
+=500 light infantry
 = 20 cannons
 -39 budget
 -7890 population
