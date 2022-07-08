@@ -73,6 +73,7 @@ class Nation {
   HigherEducation;
   EducationEfficiency;
   AdministrativeEfficiency;
+  AdministrativeStrain;
   Corruption;
   Overextension;
   Propaganda;

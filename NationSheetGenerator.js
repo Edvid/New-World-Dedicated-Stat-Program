@@ -196,7 +196,10 @@ function createNationSheet(nationName) {
                 "PopulationHappiness",
                 "WarSupport",
                 "BirthControl"
-            ]
+            ],
+			[
+				"AdministrativeStrain"
+			]
         ]
     );
 
