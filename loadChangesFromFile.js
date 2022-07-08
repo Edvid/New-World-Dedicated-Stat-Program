@@ -187,7 +187,6 @@ Aborting.`);
     }
 }
 
-let donegenerating = false;
 let showingdownloadoption = false;
 
 async function displayProgress() {
@@ -225,8 +224,7 @@ async function displayProgress() {
         loadingField.appendChild(loadingFieldTitle);
         loadingField.appendChild(bar);
         loadingField.appendChild(loadingText);
-        if(lines == lines && line > 0) donegenerating = true;
-    } else if (HashMatchedTill != changeCommandFileLength && donegenerating) {
+    } else if (HashMatchedTill != changeCommandFileLength && typeof changeCommandFileLength !== 'undefined') {
         let loadingFieldTitle = document.createElement("p");
         loadingFieldTitle.innerText = "Download the new JSON file";
         let downloadbutton = document.createElement("button");
