@@ -32,7 +32,7 @@ function displayValueFix(statName, statValue) {
             "HeavyCavalry",
             "EliteInfantry",
             "EliteCavalry",
-            "HandCannon",
+            "HandCannoneers",
             "Musketeers",
             "Militia",
             "SiegeEquipment",

@@ -11,7 +11,7 @@ function specialOperation(selection, change){
         /\.Nations\..+\.HeavyCavalry/.test(selection) ||
         /\.Nations\..+\.EliteInfantry/.test(selection) ||
         /\.Nations\..+\.EliteCavalry/.test(selection) ||
-        /\.Nations\..+\.HandCannon/.test(selection) ||
+        /\.Nations\..+\.HandCannoneers/.test(selection) ||
         /\.Nations\..+\.Musketeers/.test(selection) ||
         /\.Nations\..+\.Militia/.test(selection) ||
         /\.Nations\..+\.SiegeEquipment/.test(selection) ||

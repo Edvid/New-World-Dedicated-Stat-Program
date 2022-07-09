@@ -185,6 +185,11 @@ let Synonyms = {
 		"musketmen",
 		"musketman"
 	],
+
+	HandCannoneers: [
+		"Handcannoneer",
+		"Handcannonmen",
+	],
 	
 	SiegeEquipment: [
 		"siegeeq"

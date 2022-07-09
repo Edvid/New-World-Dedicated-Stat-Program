@@ -109,7 +109,7 @@ let BaseStats = [
     "HeavyCavalry",
     "EliteInfantry",
     "EliteCavalry",
-    "HandCannon",
+    "HandCannoneers",
     "Musketeers",
     "Militia",
     "SiegeEquipment",

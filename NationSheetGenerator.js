@@ -278,7 +278,7 @@ function createNationSheet(nationName) {
             [
                 "Archers",
                 "Crossbowmen",
-                "HandCannon",
+                "HandCannoneers",
                 "Musketeers"
             ],
             [

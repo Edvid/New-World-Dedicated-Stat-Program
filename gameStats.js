@@ -134,7 +134,7 @@ class Nation {
   HeavyCavalry;
   EliteInfantry;
   EliteCavalry;
-  HandCannon;
+  HandCannoneers;
   Musketeers;
   Militia;
   SiegeEquipment;
@@ -188,7 +188,7 @@ class Nation {
   New_HeavyCavalry;
   New_EliteInfantry;
   New_EliteCavalry;
-  New_HandCannon;
+  New_HandCannoneers;
   New_Musketeers;
   New_Militia;
   New_SiegeEquipment;
@@ -576,7 +576,7 @@ class Nation {
     this.HeavyCavalry = 0;
     this.EliteInfantry = 0;
     this.EliteCavalry = 0;
-    this.HandCannon = 0;
+    this.HandCannoneers = 0;
     this.Musketeers = 0;
     this.Militia = 0;
     this.SiegeEquipment = 0;
@@ -623,7 +623,7 @@ class Nation {
     this.New_HeavyCavalry = 0;
     this.New_EliteInfantry = 0;
     this.New_EliteCavalry = 0;
-    this.New_HandCannon = 0;
+    this.New_HandCannoneers = 0;
     this.New_Musketeers = 0;
     this.New_Militia = 0;
     this.New_SiegeEquipment = 0;
@@ -961,7 +961,7 @@ class Stats{
       HeavyCavalry: 6.5 / 1000,
       EliteInfantry: 7 / 1000,
       EliteCavalry: 8.5 / 1000,
-      HandCannon: 5 / 1000,
+      HandCannoneers: 5 / 1000,
       Musketeers: 3.5 / 1000,
       Militia: 1.25 / 1000,
 

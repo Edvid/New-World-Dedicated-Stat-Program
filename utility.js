@@ -22,7 +22,7 @@ function error(message){
 ${message}`)
 }
 
-function lazyerror(){
+function lazyerror(message){
     alert(`ERROR At line ${(changeCommandIndex + 1)}
 but the source of the ERROR could have occured earlier:
 
