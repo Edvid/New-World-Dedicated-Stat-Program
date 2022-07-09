@@ -87,12 +87,27 @@ function PostStatChange(selection, change){
 
 function PostStatCreate(selection, name){
     if(/Nation$/.test(selection)){
-        
+        let n = gameStats.Nations[name];
+        for (const rel in gameStats.Religions) {
+            if(typeof n.ReligionGroups[rel] !== 'undefined') continue;
+            n.ReligionGroups[rel] = {Points: 0};
+        }
+        for (const cul in gameStats.Cultures) {
+            if(typeof n.ReligionGroups[cul] !== 'undefined') continue;
+            n.ReligionGroups[cul] = {Points: 0};
+        }
     }
     else if(/Religion$/.test(selection)){
 
+        for (const n in gameStats.Nations) {
+            if(typeof n.ReligionGroups[name] === 'undefined') continue;
+            n.ReligionGroups[name] = {Points: 0};
+        }
     }
     else if(/Culture$/.test(selection)){
-
+        for (const n in gameStats.Nations) {
+            if(typeof n.CultureGroups[name] === 'undefined') continue;
+            n.CultureGroups[name] = {Points: 0};
+        }
     }
 }
