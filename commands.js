@@ -199,6 +199,8 @@ function createStat(currentSelection, arg){
 
         if(objectClass == "Nation") evaluateNation(arg);
     }
+    
+    PostStatCreate(propertySelection, arg);
 }
 
 function deleteStat(currentSelection, arg){
