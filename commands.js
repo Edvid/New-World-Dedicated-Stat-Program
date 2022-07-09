@@ -132,7 +132,7 @@ ${allProperties}`);
 Aborting.`);
         return;
     }
-    specialOperation(propertySelection, change);
+    PostStatChange(propertySelection, change);
 }
 
 

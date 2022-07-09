@@ -1,25 +1,25 @@
-function specialOperation(selection, change){
+function PostStatChange(selection, change){
 
     //New Recruitment handling
     if(
-        /\.Nations\..+\.Levies/.test(selection) ||
-        /\.Nations\..+\.LightInfantry/.test(selection) ||
-        /\.Nations\..+\.HeavyInfantry/.test(selection) ||
-        /\.Nations\..+\.Archers/.test(selection) ||
-        /\.Nations\..+\.Crossbowmen/.test(selection) ||
-        /\.Nations\..+\.LightCavalry/.test(selection) ||
-        /\.Nations\..+\.HeavyCavalry/.test(selection) ||
-        /\.Nations\..+\.EliteInfantry/.test(selection) ||
-        /\.Nations\..+\.EliteCavalry/.test(selection) ||
-        /\.Nations\..+\.HandCannoneers/.test(selection) ||
-        /\.Nations\..+\.Musketeers/.test(selection) ||
-        /\.Nations\..+\.Militia/.test(selection) ||
-        /\.Nations\..+\.SiegeEquipment/.test(selection) ||
-        /\.Nations\..+\.LargeSiegeEquipment/.test(selection) ||
-        /\.Nations\..+\.Cannons/.test(selection) ||
-        /\.Nations\..+\.LightShips/.test(selection) ||
-        /\.Nations\..+\.MediumShips/.test(selection) ||
-        /\.Nations\..+\.HeavyShips/.test(selection)
+        /Levies$/.test(selection) ||
+        /LightInfantry$/.test(selection) ||
+        /HeavyInfantry$/.test(selection) ||
+        /Archers$/.test(selection) ||
+        /Crossbowmen$/.test(selection) ||
+        /LightCavalry$/.test(selection) ||
+        /HeavyCavalry$/.test(selection) ||
+        /EliteInfantry$/.test(selection) ||
+        /EliteCavalry$/.test(selection) ||
+        /HandCannoneers$/.test(selection) ||
+        /Musketeers$/.test(selection) ||
+        /Militia$/.test(selection) ||
+        /SiegeEquipment$/.test(selection) ||
+        /LargeSiegeEquipment$/.test(selection) ||
+        /Cannons$/.test(selection) ||
+        /LightShips$/.test(selection) ||
+        /MediumShips$/.test(selection) ||
+        /HeavyShips$/.test(selection)
     ){
         //elite exceed check
         if(/Elite/.test(selection)){
@@ -83,4 +83,16 @@ function specialOperation(selection, change){
             (new Function(`gameStats${selectedNation}.${warStatToReset} = 0`))();
         }
     }   
+}
+
+function PostStatCreate(selection, name){
+    if(/Nation$/.test(selection)){
+        
+    }
+    else if(/Religion$/.test(selection)){
+
+    }
+    else if(/Culture$/.test(selection)){
+
+    }
 }
