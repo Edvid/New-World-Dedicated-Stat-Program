@@ -478,10 +478,6 @@ function createNationSheet(nationName) {
 
     createBreaker();
 
-    createPieDiagram("TradeInfluences", "TradingPoints");
-
-    createBreaker();
-
     createStatTable(
         "Trade Influence - Americas",
         [
@@ -1068,8 +1064,6 @@ function createPieDiagram(ObjectToChart, ValName) {
 
     chartdiv.style.margin = ".5em";
     chartdiv.style.textAlign = "center";
-    chartdiv.style.width = "500px";
-    chartdiv.style.height = "360px";
     chartdiv.style.border = "1px dotted grey";
 
     tablecontainer.appendChild(title);
@@ -1111,6 +1105,10 @@ function createPieDiagram(ObjectToChart, ValName) {
             }
         );
     }
+
+    
+    chartdiv.style.width = "500px";
+    chartdiv.style.height = (360 + 29*Object.values(chartData).length) + "px";
 
     var series = chart.series.push(
         am5percent.PieSeries.new(root, {
