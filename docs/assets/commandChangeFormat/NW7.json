@@ -9,7 +9,7 @@
                 "FuturePopulation": 17863857.650257073,
                 "FutureLiteracyPercent": 12.375,
                 "FutureHigherEducation": 0.9,
-                "FutureBudget": 3556.476416556149,
+                "FutureBudget": 3541.854934991111,
                 "FutureFood": 1341.206972810871,
                 "FutureResearchPoints": 7.5,
                 "FuturePublicDebtLength": 0,
@@ -32,7 +32,7 @@
                 "HigherEducation": 0.75,
                 "EducationEfficiency": 4.5,
                 "AdministrativeEfficiency": 40,
-                "Corruption": 3.552713678800501e-16,
+                "Corruption": 0.06621045921630753,
                 "Overextension": 1.228297788025352,
                 "Propaganda": 0,
                 "SocialSpending": 1.25,
@@ -53,7 +53,7 @@
                 "Mercantilism": 1.5500000000000003,
                 "PossiblePublicDebt": 1072.9655782486968,
                 "EffectiveDebt": 0,
-                "DailyBudget": 1437.4325310003187,
+                "DailyBudget": 1422.8110494352804,
                 "Budget": 2119.0438855558305,
                 "Inflation": 0.5297609713889576,
                 "Spies": 0,
@@ -88,7 +88,7 @@
                 "AdministrativeUpkeep": 9.107327999999999,
                 "ProductionRevenue": 63.35502863093298,
                 "ResearchUpkeep": 75.4428922206115,
-                "OverallIncome": 3592.990467053961,
+                "OverallIncome": 3577.9055122744085,
                 "Levies": 0,
                 "LightInfantry": 0,
                 "HeavyInfantry": 0,
@@ -112,7 +112,7 @@
                 "BigForts": 0,
                 "HugeForts": 0,
                 "ExtraCityFortifications": 0,
-                "FortUpkeep": 183.75,
+                "FortUpkeep": 183.28652678548582,
                 "IronShortage": 0,
                 "SulphurShortage": 0,
                 "CommanderFreedom": 0,
@@ -120,7 +120,7 @@
                 "TrainingQuality": 1.05,
                 "ArmyTech": 1.9,
                 "MilitaryTactics": 1.3,
-                "ArmyQuality": 5.25,
+                "ArmyQuality": 5.236757908156738,
                 "MilitaryLoyalty": 1,
                 "MilitaryMorale": 0.8347986488410666,
                 "MilitaryDiscipline": 1.03,
@@ -163,7 +163,11 @@
                     "Burghers": 0.008,
                     "PopulationInMilitary": 0,
                     "PopulationInResourceHarvest": 0.014539143022148433,
-                    "PopulationInAgriculture": 0.9309608569778516
+                    "PopulationInAgriculture": 0.9309608569778516,
+                    "Sailors": 0.0025499420069614175,
+                    "Bureaucrats": 0.0030021348422070225,
+                    "Intellectuals": 0.0075,
+                    "Merchants": 0.001124311689744704
                 },
                 "SocietalClasses": {
                     "High": 0.01,
@@ -236,13 +240,13 @@
                 "ExoticFruitInflation": 0,
                 "ResourcePopulationGrowthBoost": 0.013000000000000001,
                 "ResourceHappinessBoost": 3.2775000000000003,
-                "ResourceBudgetBoost": 654.6190265393622,
+                "ResourceBudgetBoost": 654.5694370699059,
                 "CoalDemand": 95.99698809676097,
                 "CoalValue": 46.26713693472372,
                 "GoldDemand": 67.06034864054355,
                 "GoldValue": 670.6034864054354,
-                "IronDemand": 30.499139456217424,
-                "IronValue": 16.84790394386077,
+                "IronDemand": 30.48986999192714,
+                "IronValue": 16.842783437290482,
                 "SulphurDemand": 6.706034864054356,
                 "SulphurValue": 3.524343454411465,
                 "CottonDemand": 26.824139456217424,
@@ -251,8 +255,8 @@
                 "TeaValue": 268.2413945621742,
                 "SpiceDemand": 33.530174320271776,
                 "SpiceValue": 335.3017432027177,
-                "CopperDemand": 19.720259637478282,
-                "CopperValue": 15.901185621301815,
+                "CopperDemand": 19.715624905333144,
+                "CopperValue": 15.897448462790738,
                 "SilkDemand": 33.530174320271776,
                 "SilkValue": 335.3017432027177,
                 "WoolDemand": 19.160099611583874,
@@ -319,7 +323,7 @@
                 "HighClassTax": 0.2,
                 "MediumClassTax": 0.2,
                 "LowerClassTax": 0.2,
-                "EffectiveTax": 2270.8444387882305,
+                "EffectiveTax": 2255.809073478134,
                 "PublicDebtTaken": 0,
                 "PublicDebtLength": 0,
                 "InterestRate": 0.05,
@@ -693,13 +697,14 @@
                         "Pixels": 0
                     }
                 },
-                "HabitableLand": 1
+                "HabitableLand": 1,
+                "AdministrativeStrain": 40.26484183686523
             },
             "KingdomOfPrussia": {
                 "FuturePopulation": 8169825.666355058,
                 "FutureLiteracyPercent": 11.375,
                 "FutureHigherEducation": 0.8,
-                "FutureBudget": 743.3102505738457,
+                "FutureBudget": 808.5388651397136,
                 "FutureFood": 791.3713195488976,
                 "FutureResearchPoints": 7.5,
                 "FuturePublicDebtLength": 0,
@@ -725,7 +730,7 @@
                 "HigherEducation": 0.6833333333333333,
                 "EducationEfficiency": 3.5,
                 "AdministrativeEfficiency": 38,
-                "Corruption": 0.6,
+                "Corruption": 0.019692956498426284,
                 "Overextension": 0.41458352000000004,
                 "Propaganda": 1,
                 "SocialSpending": 0.75,
@@ -746,7 +751,7 @@
                 "Mercantilism": 1.1,
                 "PossiblePublicDebt": 565.2652282492126,
                 "EffectiveDebt": 0,
-                "DailyBudget": 364.0054661281548,
+                "DailyBudget": 429.23408069402274,
                 "Budget": 379.30478444569087,
                 "Inflation": 0.09981704853833971,
                 "Spies": 0,
@@ -781,7 +786,7 @@
                 "AdministrativeUpkeep": 3.1093764,
                 "ProductionRevenue": 12.541488819765513,
                 "ResearchUpkeep": 40.510674691193564,
-                "OverallIncome": 1454.216247840648,
+                "OverallIncome": 1519.4448624065158,
                 "Levies": 0,
                 "LightInfantry": 2000,
                 "HeavyInfantry": 800,
@@ -813,7 +818,7 @@
                 "TrainingQuality": 1.35,
                 "ArmyTech": 2.2,
                 "MilitaryTactics": 1.4500000000000002,
-                "ArmyQuality": 6.030000000000001,
+                "ArmyQuality": 6.146061408700316,
                 "MilitaryLoyalty": 0.6203034878769494,
                 "MilitaryMorale": 0.5406069757538989,
                 "MilitaryDiscipline": 1.065,
@@ -856,7 +861,11 @@
                     "Burghers": 0.005,
                     "PopulationInMilitary": 0.00047765188181885323,
                     "PopulationInResourceHarvest": 0.007960864696980888,
-                    "PopulationInAgriculture": 0.9490614834212003
+                    "PopulationInAgriculture": 0.9490614834212003,
+                    "Sailors": 0.001094618895834872,
+                    "Bureaucrats": 0.005052332505565729,
+                    "Intellectuals": 0.006833333333333334,
+                    "Merchants": 0.00044594011517216784
                 },
                 "SocietalClasses": {
                     "High": 0.01,
@@ -1015,7 +1024,7 @@
                 "HighClassTax": 0.3,
                 "MediumClassTax": 0.25,
                 "LowerClassTax": 0.2,
-                "EffectiveTax": 1056.594063066021,
+                "EffectiveTax": 1121.8226776318888,
                 "PublicDebtTaken": 0,
                 "PublicDebtLength": 0,
                 "InterestRate": 0.05,
@@ -1389,13 +1398,14 @@
                         "Pixels": 0
                     }
                 },
-                "HabitableLand": 0.9901460305674153
+                "HabitableLand": 0.9901460305674153,
+                "AdministrativeStrain": 38.078771825993705
             },
             "KingdomOfKhmbodj": {
                 "FuturePopulation": 6889599.844940215,
                 "FutureLiteracyPercent": 12.1875,
                 "FutureHigherEducation": 0.875,
-                "FutureBudget": 780.9172111179809,
+                "FutureBudget": 613.3139440774427,
                 "FutureFood": 796.0470214218202,
                 "FutureResearchPoints": 7.5,
                 "FuturePublicDebtLength": 0,
@@ -1421,7 +1431,7 @@
                 "HigherEducation": 0.75,
                 "EducationEfficiency": 3.75,
                 "AdministrativeEfficiency": 37,
-                "Corruption": 0.15000000000000036,
+                "Corruption": 2.019925234274911,
                 "Overextension": 0.4929276,
                 "Propaganda": 0,
                 "SocialSpending": 0.5,
@@ -1442,7 +1452,7 @@
                 "Mercantilism": 1.5000000000000002,
                 "PossiblePublicDebt": 509.4700937099649,
                 "EffectiveDebt": 0,
-                "DailyBudget": 200.70800712098082,
+                "DailyBudget": 33.10474008044259,
                 "Budget": 580.209203997,
                 "Inflation": 0.15681329837756758,
                 "Spies": 200,
@@ -1477,7 +1487,7 @@
                 "AdministrativeUpkeep": 3.696957,
                 "ProductionRevenue": 20.253735844066878,
                 "ResearchUpkeep": 35.82211596398191,
-                "OverallIncome": 1152.718913154808,
+                "OverallIncome": 985.1156461142699,
                 "Levies": 2000,
                 "LightInfantry": 2000,
                 "HeavyInfantry": 500,
@@ -1509,7 +1519,7 @@
                 "TrainingQuality": 0.3,
                 "ArmyTech": 1.7,
                 "MilitaryTactics": 0.15,
-                "ArmyQuality": 3.0513375,
+                "ArmyQuality": 2.677352453145018,
                 "MilitaryLoyalty": 0.75,
                 "MilitaryMorale": 0.5,
                 "MilitaryDiscipline": 1,
@@ -1552,7 +1562,11 @@
                     "Burghers": 0.008749999999999999,
                     "PopulationInMilitary": 0.0009586431196450957,
                     "PopulationInResourceHarvest": 0.007851295001188335,
-                    "PopulationInAgriculture": 0.9511900618791665
+                    "PopulationInAgriculture": 0.9511900618791665,
+                    "Sailors": 0.0034545698005228674,
+                    "Bureaucrats": 0.007078680612450311,
+                    "Intellectuals": 0.0075,
+                    "Merchants": 0.0013060200834848065
                 },
                 "SocietalClasses": {
                     "High": 0.01,
@@ -1708,7 +1722,7 @@
                 "HighClassTax": 0.2,
                 "MediumClassTax": 0.2,
                 "LowerClassTax": 0.2,
-                "EffectiveTax": 882.8653413993089,
+                "EffectiveTax": 715.2620743587707,
                 "PublicDebtTaken": 0,
                 "PublicDebtLength": 0,
                 "InterestRate": 0.05,
@@ -2082,13 +2096,14 @@
                         "Pixels": 0
                     }
                 },
-                "HabitableLand": 0.6918207866631935
+                "HabitableLand": 0.6918207866631935,
+                "AdministrativeStrain": 45.079700937099645
             },
             "KingdomOfPotskig": {
                 "FuturePopulation": 6066459.918023343,
                 "FutureLiteracyPercent": 11.375,
                 "FutureHigherEducation": 0.8333333333333335,
-                "FutureBudget": 437.63213014569305,
+                "FutureBudget": 415.7983452045853,
                 "FutureFood": 564.2413624379724,
                 "FutureResearchPoints": 7.5,
                 "FuturePublicDebtLength": 0,
@@ -2114,7 +2129,7 @@
                 "HigherEducation": 0.7166666666666668,
                 "EducationEfficiency": 3.5,
                 "AdministrativeEfficiency": 30,
-                "Corruption": 0.9000000000000004,
+                "Corruption": 1.2589827248759438,
                 "Overextension": 0.5072453333333333,
                 "Propaganda": 0.25,
                 "SocialSpending": 0,
@@ -2135,7 +2150,7 @@
                 "Mercantilism": 1,
                 "PossiblePublicDebt": 457.0355035747576,
                 "EffectiveDebt": 0,
-                "DailyBudget": 115.68706307963848,
+                "DailyBudget": 93.85327813853073,
                 "Budget": 321.9450670660546,
                 "Inflation": 0.10731502235535152,
                 "Spies": 0,
@@ -2170,7 +2185,7 @@
                 "AdministrativeUpkeep": 3.80434,
                 "ProductionRevenue": 4.5,
                 "ResearchUpkeep": 31.033274934088475,
-                "OverallIncome": 671.2368294494634,
+                "OverallIncome": 649.4030445083556,
                 "Levies": 0,
                 "LightInfantry": 0,
                 "HeavyInfantry": 0,
@@ -2202,7 +2217,7 @@
                 "TrainingQuality": 0.15,
                 "ArmyTech": 1.7,
                 "MilitaryTactics": 0.15,
-                "ArmyQuality": 2.8199999999999994,
+                "ArmyQuality": 2.748203455024811,
                 "MilitaryLoyalty": 0.8009303805911003,
                 "MilitaryMorale": 0.6018607611822007,
                 "MilitaryDiscipline": 1,
@@ -2245,7 +2260,11 @@
                     "Burghers": 0.005,
                     "PopulationInMilitary": 0,
                     "PopulationInResourceHarvest": 0,
-                    "PopulationInAgriculture": 0.9675
+                    "PopulationInAgriculture": 0.9675,
+                    "Sailors": 0,
+                    "Bureaucrats": 0.005854928953943083,
+                    "Intellectuals": 0.0071666666666666675,
+                    "Merchants": 0.00044307279941300436
                 },
                 "SocietalClasses": {
                     "High": 0.01,
@@ -2401,7 +2420,7 @@
                 "HighClassTax": 0.2,
                 "MediumClassTax": 0.19,
                 "LowerClassTax": 0.18,
-                "EffectiveTax": 553.4735495496147,
+                "EffectiveTax": 531.639764608507,
                 "PublicDebtTaken": 0,
                 "PublicDebtLength": 0,
                 "InterestRate": 0.05,
@@ -2775,13 +2794,14 @@
                         "Pixels": 0
                     }
                 },
-                "HabitableLand": 0.6952320244773076
+                "HabitableLand": 0.6952320244773076,
+                "AdministrativeStrain": 33.035930899503775
             },
             "TsardomOfMuscovy": {
                 "FuturePopulation": 13074644.85342749,
                 "FutureLiteracyPercent": 12.625,
                 "FutureHigherEducation": 0.9333333333333331,
-                "FutureBudget": 3063.69535694317,
+                "FutureBudget": 2974.545787311024,
                 "FutureFood": 937.1310789988088,
                 "FutureResearchPoints": 7.5,
                 "FuturePublicDebtLength": 0,
@@ -2804,7 +2824,7 @@
                 "HigherEducation": 0.7916666666666665,
                 "EducationEfficiency": 4.25,
                 "AdministrativeEfficiency": 36,
-                "Corruption": 0,
+                "Corruption": 0.47148089878087696,
                 "Overextension": 0.8586797866666666,
                 "Propaganda": 0.5,
                 "SocialSpending": 1.75,
@@ -2825,7 +2845,7 @@
                 "Mercantilism": 1.1500000000000001,
                 "PossiblePublicDebt": 957.2025093091637,
                 "EffectiveDebt": 0,
-                "DailyBudget": 1166.2031678252592,
+                "DailyBudget": 1077.0535981931132,
                 "Budget": 1897.4921891179108,
                 "Inflation": 0.5270811636438641,
                 "Spies": 20,
@@ -2860,7 +2880,7 @@
                 "AdministrativeUpkeep": 6.440098399999999,
                 "ProductionRevenue": 96.45437583659682,
                 "ResearchUpkeep": 65.10384714051295,
-                "OverallIncome": 2940.1043442979494,
+                "OverallIncome": 2849.776072418851,
                 "Levies": 5000,
                 "LightInfantry": 1000,
                 "HeavyInfantry": 1000,
@@ -2884,7 +2904,7 @@
                 "BigForts": 0,
                 "HugeForts": 0,
                 "ExtraCityFortifications": 1,
-                "FortUpkeep": 63.999999999999986,
+                "FortUpkeep": 62.821297753047794,
                 "IronShortage": 0,
                 "SulphurShortage": 0.2,
                 "CommanderFreedom": 0.2,
@@ -2892,7 +2912,7 @@
                 "TrainingQuality": 1.1,
                 "ArmyTech": 2,
                 "MilitaryTactics": 1.2000000000000002,
-                "ArmyQuality": 5.119999999999999,
+                "ArmyQuality": 5.025703820243824,
                 "MilitaryLoyalty": 0.98,
                 "MilitaryMorale": 0.98,
                 "MilitaryDiscipline": 1.01,
@@ -2935,7 +2955,11 @@
                     "Burghers": 0.01,
                     "PopulationInMilitary": 0.0007992039224302902,
                     "PopulationInResourceHarvest": 0.010656052299070537,
-                    "PopulationInAgriculture": 0.8960447437784993
+                    "PopulationInAgriculture": 0.8960447437784993,
+                    "Sailors": 0,
+                    "Bureaucrats": 0.003364286526901888,
+                    "Intellectuals": 0.007916666666666666,
+                    "Merchants": 0.001423211165833078
                 },
                 "SocietalClasses": {
                     "High": 0.01,
@@ -3008,13 +3032,13 @@
                 "ExoticFruitInflation": 0,
                 "ResourcePopulationGrowthBoost": 0.027325,
                 "ResourceHappinessBoost": 2.7824999999999998,
-                "ResourceBudgetBoost": 508.5502660390621,
+                "ResourceBudgetBoost": 508.43685779502493,
                 "CoalDemand": 91.83339793498013,
                 "CoalValue": 49.35470619061714,
                 "GoldDemand": 56.30602995936257,
                 "GoldValue": 563.0602995936257,
-                "IronDemand": 24.277411983745026,
-                "IronValue": 14.941830178420485,
+                "IronDemand": 24.253837938805983,
+                "IronValue": 14.927321244093651,
                 "SulphurDemand": 5.630602995936257,
                 "SulphurValue": 56.30602995936256,
                 "CottonDemand": 22.522411983745027,
@@ -3023,8 +3047,8 @@
                 "TeaValue": 225.22411983745025,
                 "SpiceDemand": 28.153014979681284,
                 "SpiceValue": 281.53014979681285,
-                "CopperDemand": 15.892441322496685,
-                "CopperValue": 13.488827578394925,
+                "CopperDemand": 15.880654300027164,
+                "CopperValue": 13.478823255551903,
                 "SilkDemand": 28.153014979681284,
                 "SilkValue": 103.04718675687191,
                 "WoolDemand": 16.08743713124645,
@@ -3091,7 +3115,7 @@
                 "HighClassTax": 0.1,
                 "MediumClassTax": 0.1,
                 "LowerClassTax": 0.25,
-                "EffectiveTax": 1913.4362360878813,
+                "EffectiveTax": 1823.22137245282,
                 "PublicDebtTaken": 0,
                 "PublicDebtLength": 0,
                 "InterestRate": 0.05,
@@ -3465,13 +3489,14 @@
                         "Pixels": 0
                     }
                 },
-                "HabitableLand": 0.7965302517737928
+                "HabitableLand": 0.7965302517737928,
+                "AdministrativeStrain": 37.88592359512351
             },
             "SindhEmpire": {
                 "FuturePopulation": 13030000.722880464,
                 "FutureLiteracyPercent": 9.75,
                 "FutureHigherEducation": 0.7499999999999999,
-                "FutureBudget": 586.4444780940679,
+                "FutureBudget": 469.12600822028287,
                 "FutureFood": 1169.625202034973,
                 "FutureResearchPoints": 7.5,
                 "FuturePublicDebtLength": 0,
@@ -3497,7 +3522,7 @@
                 "HigherEducation": 0.6499999999999999,
                 "EducationEfficiency": 3,
                 "AdministrativeEfficiency": 36.5,
-                "Corruption": 0.6000000000000001,
+                "Corruption": 1.3220309573204165,
                 "Overextension": 1.1661947066666667,
                 "Propaganda": 0.5,
                 "SocialSpending": 2.25,
@@ -3518,7 +3543,7 @@
                 "Mercantilism": 1.05,
                 "PossiblePublicDebt": 850.6365105708894,
                 "EffectiveDebt": -2.984279490192421e-14,
-                "DailyBudget": 395.3194171940428,
+                "DailyBudget": 278.0009473202578,
                 "Budget": 191.1250609000251,
                 "Inflation": 0.05236303038356852,
                 "Spies": 0,
@@ -3553,7 +3578,7 @@
                 "AdministrativeUpkeep": 8.7464603,
                 "ProductionRevenue": 23.525665985609628,
                 "ResearchUpkeep": 51.83566236291357,
-                "OverallIncome": 1756.1311734294204,
+                "OverallIncome": 1637.910164858985,
                 "Levies": 200,
                 "LightInfantry": 1000,
                 "HeavyInfantry": 250,
@@ -3577,7 +3602,7 @@
                 "BigForts": 0,
                 "HugeForts": 0,
                 "ExtraCityFortifications": 0.5,
-                "FortUpkeep": 18.416666666666668,
+                "FortUpkeep": 17.514127970016144,
                 "IronShortage": 0,
                 "SulphurShortage": 0.2833333333333333,
                 "CommanderFreedom": 0,
@@ -3585,7 +3610,7 @@
                 "TrainingQuality": 0.15,
                 "ArmyTech": 2,
                 "MilitaryTactics": 0.2,
-                "ArmyQuality": 2.9466666666666668,
+                "ArmyQuality": 2.8022604752025835,
                 "MilitaryLoyalty": 1,
                 "MilitaryMorale": 1.25,
                 "MilitaryDiscipline": 1,
@@ -3628,7 +3653,11 @@
                     "Burghers": 0.005,
                     "PopulationInMilitary": 0.0004420219392507081,
                     "PopulationInResourceHarvest": 0.008934486006131333,
-                    "PopulationInAgriculture": 0.958123492054618
+                    "PopulationInAgriculture": 0.958123492054618,
+                    "Sailors": 0.0010392217933447498,
+                    "Bureaucrats": 0.0038360097007270424,
+                    "Intellectuals": 0.006499999999999999,
+                    "Merchants": 0.0030009763458034586
                 },
                 "SocietalClasses": {
                     "High": 0.01,
@@ -3701,13 +3730,13 @@
                 "ExoticFruitInflation": 0,
                 "ResourcePopulationGrowthBoost": 0.0383,
                 "ResourceHappinessBoost": 5.786250000000001,
-                "ResourceBudgetBoost": 47.44824182106477,
+                "ResourceBudgetBoost": 47.40951302522643,
                 "CoalDemand": 64.2477382928167,
                 "CoalValue": 642.477382928167,
                 "GoldDemand": 53.16478191068059,
                 "GoldValue": 531.6478191068059,
-                "IronDemand": 22.11474609760557,
-                "IronValue": 21.08810747602879,
+                "IronDemand": 22.09669532367256,
+                "IronValue": 21.070894677878417,
                 "SulphurDemand": 5.316478191068059,
                 "SulphurValue": 53.16478191068059,
                 "CottonDemand": 21.265912764272237,
@@ -3716,8 +3745,8 @@
                 "TeaValue": 24.63565455273272,
                 "SpiceDemand": 26.582390955340294,
                 "SpiceValue": 17.39858311411441,
-                "CopperDemand": 14.601691842848156,
-                "CopperValue": 146.01691842848155,
+                "CopperDemand": 14.592666455881652,
+                "CopperValue": 145.9266645588165,
                 "SilkDemand": 26.582390955340294,
                 "SilkValue": 30.7945681909159,
                 "WoolDemand": 15.189937688765882,
@@ -3784,7 +3813,7 @@
                 "HighClassTax": 0.18,
                 "MediumClassTax": 0.185,
                 "LowerClassTax": 0.235,
-                "EffectiveTax": 1538.5952896036588,
+                "EffectiveTax": 1420.4130098290616,
                 "PublicDebtTaken": -2.842170943040401e-14,
                 "PublicDebtLength": 0,
                 "InterestRate": 0.05,
@@ -4158,13 +4187,14 @@
                         "Pixels": 1545
                     }
                 },
-                "HabitableLand": 0.6408006345149707
+                "HabitableLand": 0.6408006345149707,
+                "AdministrativeStrain": 40.788123829281666
             },
             "SiouxTribes": {
                 "FuturePopulation": 11186926.518547345,
                 "FutureLiteracyPercent": 11.875,
                 "FutureHigherEducation": 0.8333333333333333,
-                "FutureBudget": 913.4215896955517,
+                "FutureBudget": 662.6952756354275,
                 "FutureFood": 860.1137296664085,
                 "FutureResearchPoints": 5.021527777777777,
                 "FuturePublicDebtLength": 4,
@@ -4187,7 +4217,7 @@
                 "HigherEducation": 0.7083333333333333,
                 "EducationEfficiency": 3.75,
                 "AdministrativeEfficiency": 32.5,
-                "Corruption": 0.6416666666666664,
+                "Corruption": 2.8978774593328165,
                 "Overextension": 0.7979179614996369,
                 "Propaganda": 0,
                 "SocialSpending": 0.5,
@@ -4208,7 +4238,7 @@
                 "Mercantilism": 1,
                 "PossiblePublicDebt": 545.1546176086893,
                 "EffectiveDebt": 120,
-                "DailyBudget": 352.47965841340306,
+                "DailyBudget": 101.75334435327883,
                 "Budget": 560.9419312821486,
                 "Inflation": 0.1725975173175842,
                 "Spies": 0,
@@ -4243,7 +4273,7 @@
                 "AdministrativeUpkeep": 5.887818,
                 "ProductionRevenue": 6.600000000000001,
                 "ResearchUpkeep": 47.03746959113171,
-                "OverallIncome": 1339.628200928466,
+                "OverallIncome": 1088.9018868683418,
                 "Levies": 0,
                 "LightInfantry": 1000,
                 "HeavyInfantry": 300,
@@ -4275,7 +4305,7 @@
                 "TrainingQuality": 0.2,
                 "ArmyTech": 1.9,
                 "MilitaryTactics": 0.2,
-                "ArmyQuality": 3.1716666666666664,
+                "ArmyQuality": 2.7204245081334366,
                 "MilitaryLoyalty": 0.7691992574979369,
                 "MilitaryMorale": 0.5383985149958739,
                 "MilitaryDiscipline": 1.005,
@@ -4318,7 +4348,11 @@
                     "Burghers": 0.005,
                     "PopulationInMilitary": 0.00029065923653719773,
                     "PopulationInResourceHarvest": 0.007324612760737383,
-                    "PopulationInAgriculture": 0.9598847280027255
+                    "PopulationInAgriculture": 0.9598847280027255,
+                    "Sailors": 0.0002325273892297582,
+                    "Bureaucrats": 0.00512624183483642,
+                    "Intellectuals": 0.007083333333333333,
+                    "Merchants": 0.0004650547784595164
                 },
                 "SocietalClasses": {
                     "High": 0.01,
@@ -4474,7 +4508,7 @@
                 "HighClassTax": 0.25,
                 "MediumClassTax": 0.22999999999999998,
                 "LowerClassTax": 0.2,
-                "EffectiveTax": 1039.965073316558,
+                "EffectiveTax": 789.2387592564337,
                 "PublicDebtTaken": 100,
                 "PublicDebtLength": 3,
                 "InterestRate": 0.2,
@@ -4848,13 +4882,14 @@
                         "Pixels": 0
                     }
                 },
-                "HabitableLand": 0.9462172998553963
+                "HabitableLand": 0.9462172998553963,
+                "AdministrativeStrain": 44.091509837331266
             },
             "Byzantium": {
                 "FuturePopulation": 13740045.762234064,
                 "FutureLiteracyPercent": 13.125,
                 "FutureHigherEducation": 0.9999999999999999,
-                "FutureBudget": 2601.5478251999184,
+                "FutureBudget": 2016.3271326402148,
                 "FutureFood": 1515.1447945548357,
                 "FutureResearchPoints": 7.5,
                 "FuturePublicDebtLength": 0,
@@ -4883,7 +4918,7 @@
                 "HigherEducation": 0.8333333333333333,
                 "EducationEfficiency": 5,
                 "AdministrativeEfficiency": 44.25,
-                "Corruption": 0.3374999999999999,
+                "Corruption": 2.7509559931935446,
                 "Overextension": 0.7731635200000001,
                 "Propaganda": 2.5,
                 "SocialSpending": 2.55,
@@ -4896,15 +4931,15 @@
                 "PopulationControl": 0,
                 "BirthControl": 0,
                 "ConscriptionPercent": 0.0007973891368943186,
-                "Production": 317.90007144654066,
+                "Production": 317.54292273102214,
                 "ProductionEfficiency": 4.550000000000001,
                 "TradeEfficiency": 3.3575000000000004,
                 "LocalTrade": 16.75,
-                "TradePower": 49.79109292444596,
+                "TradePower": 49.71633652140703,
                 "Mercantilism": 2.6500000000000004,
                 "PossiblePublicDebt": 989.0553233413,
                 "EffectiveDebt": -0.0024713402268702112,
-                "DailyBudget": 1451.0787658103002,
+                "DailyBudget": 865.8580732505968,
                 "Budget": 1150.469059389618,
                 "Inflation": 0.2599930077716651,
                 "Spies": 52,
@@ -4935,11 +4970,11 @@
                 "AgricultureSpending": 127.28006369780788,
                 "PropagandaUpkeep": 43.994438696058374,
                 "PopulationControlUpkeep": 0,
-                "TradeRevenue": 408.7541527323507,
+                "TradeRevenue": 408.22078915804383,
                 "AdministrativeUpkeep": 5.7987264000000005,
-                "ProductionRevenue": 794.7501786163516,
+                "ProductionRevenue": 793.8573068275554,
                 "ResearchUpkeep": 78.71650690460669,
-                "OverallIncome": 4793.002245564698,
+                "OverallIncome": 4201.74791302201,
                 "Levies": 0,
                 "LightInfantry": 500,
                 "HeavyInfantry": 6400,
@@ -4963,7 +4998,7 @@
                 "BigForts": 0,
                 "HugeForts": 0,
                 "ExtraCityFortifications": 1,
-                "FortUpkeep": 67.34375,
+                "FortUpkeep": 61.310110017016136,
                 "IronShortage": 0,
                 "SulphurShortage": 0,
                 "CommanderFreedom": 0.55,
@@ -4971,7 +5006,7 @@
                 "TrainingQuality": 0.8500000000000001,
                 "ArmyTech": 2.1,
                 "MilitaryTactics": 1.4500000000000002,
-                "ArmyQuality": 5.3875,
+                "ArmyQuality": 4.904808801361291,
                 "MilitaryLoyalty": 0.995,
                 "MilitaryMorale": 1.211649212043981,
                 "MilitaryDiscipline": 1.0249999999999997,
@@ -5014,7 +5049,11 @@
                     "Burghers": 0.0425,
                     "PopulationInMilitary": 0.0007973891368943186,
                     "PopulationInResourceHarvest": 0.020196089581649906,
-                    "PopulationInAgriculture": 0.8090065212814559
+                    "PopulationInAgriculture": 0.8090065212814559,
+                    "Sailors": 0.003484815457225866,
+                    "Bureaucrats": 0.004376122269344558,
+                    "Intellectuals": 0.008333333333333333,
+                    "Merchants": 0.003943472051256335
                 },
                 "SocietalClasses": {
                     "High": 0.01,
@@ -5096,13 +5135,13 @@
                 "ExoticFruitInflation": 0,
                 "ResourcePopulationGrowthBoost": 0.0930875,
                 "ResourceHappinessBoost": 14.8775,
-                "ResourceBudgetBoost": 907.7866209051174,
+                "ResourceBudgetBoost": 907.3124137078543,
                 "CoalDemand": 111.24775628096751,
                 "CoalValue": 58.04462297564647,
                 "GoldDemand": 63.13103310645148,
                 "GoldValue": 32.7052872826701,
-                "IronDemand": 27.95960824258059,
-                "IronValue": 34.64177094569381,
+                "IronDemand": 27.838935442920913,
+                "IronValue": 34.492258139615934,
                 "SulphurDemand": 6.313103310645148,
                 "SulphurValue": 3.203273491921692,
                 "CottonDemand": 25.25241324258059,
@@ -5111,8 +5150,8 @@
                 "TeaValue": 252.5241324258059,
                 "SpiceDemand": 31.56551655322574,
                 "SpiceValue": 22.40873996684244,
-                "CopperDemand": 18.188539661720394,
-                "CopperValue": 8.661209362723998,
+                "CopperDemand": 18.128203261890555,
+                "CopperValue": 8.632477743757407,
                 "SilkDemand": 31.56551655322574,
                 "SilkValue": 28.344026692770957,
                 "WoolDemand": 18.03743803041471,
@@ -5179,7 +5218,7 @@
                 "HighClassTax": 0.2,
                 "MediumClassTax": 0.2,
                 "LowerClassTax": 0.25,
-                "EffectiveTax": 2359.5342024110823,
+                "EffectiveTax": 1770.180312428761,
                 "PublicDebtTaken": -0.0023536573589240106,
                 "PublicDebtLength": 0,
                 "InterestRate": 0.05,
@@ -5243,7 +5282,7 @@
                 "SugarOutgoing": 0,
                 "ExoticFruitIncoming": 0,
                 "ExoticFruitOutgoing": 0,
-                "TradePowerFromResourceTrade": 17.320885472846903,
+                "TradePowerFromResourceTrade": 17.246129069807967,
                 "AgricultureSubsidies": 0.6499999999999999,
                 "Fertility": 0.5,
                 "AgricultureInfrastructure": 1.9500000000000002,
@@ -5553,13 +5592,14 @@
                         "Pixels": 0
                     }
                 },
-                "HabitableLand": 0.7912513185654009
+                "HabitableLand": 0.7912513185654009,
+                "AdministrativeStrain": 55.25382397277418
             },
             "OrderOfStMary": {
                 "FuturePopulation": 2509039.5923139844,
                 "FutureLiteracyPercent": 12.125,
                 "FutureHigherEducation": 0.8666666666666667,
-                "FutureBudget": 522.0787036336166,
+                "FutureBudget": 519.6741333070783,
                 "FutureFood": 243.536810012638,
                 "FutureResearchPoints": 7.5,
                 "FuturePublicDebtLength": 0,
@@ -5582,7 +5622,7 @@
                 "HigherEducation": 0.7333333333333334,
                 "EducationEfficiency": 4,
                 "AdministrativeEfficiency": 35.5,
-                "Corruption": 0.025000000000000355,
+                "Corruption": 0.10797362002527677,
                 "Overextension": 0.31424696,
                 "Propaganda": 0.5,
                 "SocialSpending": 1,
@@ -5603,7 +5643,7 @@
                 "Mercantilism": 1.4,
                 "PossiblePublicDebt": 199.70018421036315,
                 "EffectiveDebt": 0,
-                "DailyBudget": 150.4435199005538,
+                "DailyBudget": 148.0389495740155,
                 "Budget": 371.6351837330628,
                 "Inflation": 0.10468596724875008,
                 "Spies": 20,
@@ -5638,7 +5678,7 @@
                 "AdministrativeUpkeep": 2.3568522,
                 "ProductionRevenue": 29.045689098513545,
                 "ResearchUpkeep": 13.546735056952988,
-                "OverallIncome": 488.12062507856433,
+                "OverallIncome": 485.716054752026,
                 "Levies": 0,
                 "LightInfantry": 0,
                 "HeavyInfantry": 600,
@@ -5670,7 +5710,7 @@
                 "TrainingQuality": 0.5499999999999999,
                 "ArmyTech": 1.9,
                 "MilitaryTactics": 0.44999999999999996,
-                "ArmyQuality": 3.8632499999999994,
+                "ArmyQuality": 3.846655275994944,
                 "MilitaryLoyalty": 1,
                 "MilitaryMorale": 0.9879949043467242,
                 "MilitaryDiscipline": 1.005,
@@ -5713,7 +5753,11 @@
                     "Burghers": 0.01,
                     "PopulationInMilitary": 0.000492738654143383,
                     "PopulationInResourceHarvest": 0.02135200834621326,
-                    "PopulationInAgriculture": 0.9206552529996433
+                    "PopulationInAgriculture": 0.9206552529996433,
+                    "Sailors": 0,
+                    "Bureaucrats": 0.01475419443912256,
+                    "Intellectuals": 0.007333333333333334,
+                    "Merchants": 0.0028050299758575255
                 },
                 "SocietalClasses": {
                     "High": 0.005,
@@ -5869,7 +5913,7 @@
                 "HighClassTax": 0.18,
                 "MediumClassTax": 0.18,
                 "LowerClassTax": 0.18,
-                "EffectiveTax": 289.0748770502395,
+                "EffectiveTax": 286.6703067237012,
                 "PublicDebtTaken": 0,
                 "PublicDebtLength": 0,
                 "InterestRate": 0.05,
@@ -6243,13 +6287,14 @@
                         "Pixels": 3092
                     }
                 },
-                "HabitableLand": 0.3259207726305451
+                "HabitableLand": 0.3259207726305451,
+                "AdministrativeStrain": 35.93189448010111
             },
             "ArchduchyOfAustria": {
                 "FuturePopulation": 10465854.140050841,
                 "FutureLiteracyPercent": 14.6875,
                 "FutureHigherEducation": 1.2083333333333333,
-                "FutureBudget": 1628.505883717397,
+                "FutureBudget": 1648.0466147446211,
                 "FutureFood": 43.97008010613081,
                 "FutureResearchPoints": 7.5,
                 "FuturePublicDebtLength": 0,
@@ -6275,7 +6320,7 @@
                 "HigherEducation": 1,
                 "EducationEfficiency": 6.25,
                 "AdministrativeEfficiency": 40.5,
-                "Corruption": 0.14166666666666677,
+                "Corruption": 0,
                 "Overextension": 0.68017036,
                 "Propaganda": 0,
                 "SocialSpending": 1.25,
@@ -6296,7 +6341,7 @@
                 "Mercantilism": 1.8500000000000005,
                 "PossiblePublicDebt": 720.8001353888395,
                 "EffectiveDebt": 0,
-                "DailyBudget": 128.15892132247404,
+                "DailyBudget": 147.69965234969823,
                 "Budget": 1500.346962394923,
                 "Inflation": 0.3704560400975118,
                 "Spies": 0,
@@ -6331,7 +6376,7 @@
                 "AdministrativeUpkeep": 5.1012777,
                 "ProductionRevenue": 117.14494016627742,
                 "ResearchUpkeep": 60.386181555182034,
-                "OverallIncome": 2282.170461900053,
+                "OverallIncome": 2301.7111929272774,
                 "Levies": 0,
                 "LightInfantry": 640,
                 "HeavyInfantry": 3600,
@@ -6363,7 +6408,7 @@
                 "TrainingQuality": 0.65,
                 "ArmyTech": 2.1,
                 "MilitaryTactics": 1.1,
-                "ArmyQuality": 4.821666666666666,
+                "ArmyQuality": 4.85,
                 "MilitaryLoyalty": 0.8106556180459241,
                 "MilitaryMorale": 0.6213112360918482,
                 "MilitaryDiscipline": 1.025,
@@ -6406,7 +6451,11 @@
                     "Burghers": 0.053500000000000006,
                     "PopulationInMilitary": 0.0009715591959790897,
                     "PopulationInResourceHarvest": 0.013584440659662888,
-                    "PopulationInAgriculture": 0.869444000144358
+                    "PopulationInAgriculture": 0.869444000144358,
+                    "Sailors": 0.0007444273481495262,
+                    "Bureaucrats": 0.004258800644616019,
+                    "Intellectuals": 0.01,
+                    "Merchants": 0.0016320552971347568
                 },
                 "SocietalClasses": {
                     "High": 0.01,
@@ -6565,7 +6614,7 @@
                 "HighClassTax": 0.25,
                 "MediumClassTax": 0.2,
                 "LowerClassTax": 0.2,
-                "EffectiveTax": 1359.804988541536,
+                "EffectiveTax": 1379.3457195687602,
                 "PublicDebtTaken": 0,
                 "PublicDebtLength": 0,
                 "InterestRate": 0.05,
@@ -6939,13 +6988,14 @@
                         "Pixels": 0
                     }
                 },
-                "HabitableLand": 0.9011868487379152
+                "HabitableLand": 0.9011868487379152,
+                "AdministrativeStrain": 39.18822231361664
             },
             "HittiteEmpire": {
                 "FuturePopulation": 4282777.618332601,
                 "FutureLiteracyPercent": 12.25,
                 "FutureHigherEducation": 0.8833333333333333,
-                "FutureBudget": 1.595378609910199,
+                "FutureBudget": -145.67380520244734,
                 "FutureFood": 404.1795284045326,
                 "FutureResearchPoints": 7.5,
                 "FuturePublicDebtLength": 0,
@@ -6968,7 +7018,7 @@
                 "HigherEducation": 0.75,
                 "EducationEfficiency": 4,
                 "AdministrativeEfficiency": 33,
-                "Corruption": 1.85,
+                "Corruption": 4.285615768389587,
                 "Overextension": 0.3412865333333333,
                 "Propaganda": 1,
                 "SocialSpending": 0,
@@ -6989,7 +7039,7 @@
                 "Mercantilism": 1.2000000000000002,
                 "PossiblePublicDebt": 288.69966314609474,
                 "EffectiveDebt": 0,
-                "DailyBudget": -49.09917343885104,
+                "DailyBudget": -196.36835725120858,
                 "Budget": 50.69455204876124,
                 "Inflation": 0.015361985469321587,
                 "Spies": 15,
@@ -7024,7 +7074,7 @@
                 "AdministrativeUpkeep": 2.559649,
                 "ProductionRevenue": 12.897317495787153,
                 "ResearchUpkeep": 21.652474735957107,
-                "OverallIncome": 747.0364072463356,
+                "OverallIncome": 597.3316076655883,
                 "Levies": 2000,
                 "LightInfantry": 715,
                 "HeavyInfantry": 355,
@@ -7048,7 +7098,7 @@
                 "BigForts": 0,
                 "HugeForts": 0,
                 "ExtraCityFortifications": 0,
-                "FortUpkeep": 18.020124999999993,
+                "FortUpkeep": 15.58450923161041,
                 "IronShortage": 0.175975,
                 "SulphurShortage": 0,
                 "CommanderFreedom": 1,
@@ -7056,7 +7106,7 @@
                 "TrainingQuality": 0.4,
                 "ArmyTech": 1.9,
                 "MilitaryTactics": 0.75,
-                "ArmyQuality": 3.604024999999999,
+                "ArmyQuality": 3.116901846322082,
                 "MilitaryLoyalty": 0.5328693181818284,
                 "MilitaryMorale": 0.3657386363636568,
                 "MilitaryDiscipline": 1.0399999999999998,
@@ -7099,7 +7149,11 @@
                     "Burghers": 0.01,
                     "PopulationInMilitary": 0.0054632900600297615,
                     "PopulationInResourceHarvest": 0.025199198089533376,
-                    "PopulationInAgriculture": 0.9268375118504368
+                    "PopulationInAgriculture": 0.9268375118504368,
+                    "Sailors": 0.00044163543043512104,
+                    "Bureaucrats": 0.011987145024016247,
+                    "Intellectuals": 0.0075,
+                    "Merchants": 0.0017478418240288362
                 },
                 "SocietalClasses": {
                     "High": 0.01,
@@ -7172,13 +7226,13 @@
                 "ExoticFruitInflation": 0,
                 "ResourcePopulationGrowthBoost": 0.021903124999999996,
                 "ResourceHappinessBoost": 3.3737499999999994,
-                "ResourceBudgetBoost": 103.65075335040761,
+                "ResourceBudgetBoost": 103.58305375196458,
                 "CoalDemand": 39.2182884194793,
                 "CoalValue": 37.97506435841484,
                 "GoldDemand": 19.24664420973965,
                 "GoldValue": 192.46644209739648,
-                "IronDemand": 8.76296018389586,
-                "IronValue": 87.62960183895859,
+                "IronDemand": 8.714247868528068,
+                "IronValue": 87.14247868528066,
                 "SulphurDemand": 1.924664420973965,
                 "SulphurValue": 1.4852798991551395,
                 "CottonDemand": 7.69865768389586,
@@ -7187,8 +7241,8 @@
                 "TeaValue": 76.9865768389586,
                 "SpiceDemand": 9.623322104869825,
                 "SpiceValue": 11.491987538953369,
-                "CopperDemand": 5.664589705930573,
-                "CopperValue": 4.343479374172615,
+                "CopperDemand": 5.640233548246677,
+                "CopperValue": 4.324803622877981,
                 "SilkDemand": 9.623322104869825,
                 "SilkValue": 9.701143330677924,
                 "WoolDemand": 5.499041202782757,
@@ -7255,7 +7309,7 @@
                 "HighClassTax": 0.25,
                 "MediumClassTax": 0.25,
                 "LowerClassTax": 0.25,
-                "EffectiveTax": 500.71213230079064,
+                "EffectiveTax": 351.07503231848654,
                 "PublicDebtTaken": 0,
                 "PublicDebtLength": 0,
                 "InterestRate": 0.05,
@@ -7629,7 +7683,8 @@
                         "Pixels": 0
                     }
                 },
-                "HabitableLand": 0.7003966754816774
+                "HabitableLand": 0.7003966754816774,
+                "AdministrativeStrain": 46.142463073558346
             },
             "TainoTribalConfederacy": {
                 "FuturePopulation": 2090314.3125213732,
@@ -7789,7 +7844,11 @@
                     "Burghers": 0.01,
                     "PopulationInMilitary": 0.0003290920527228399,
                     "PopulationInResourceHarvest": 0.06307597677187765,
-                    "PopulationInAgriculture": 0.8790949311753995
+                    "PopulationInAgriculture": 0.8790949311753995,
+                    "Sailors": 0.004168499334489305,
+                    "Bureaucrats": 0.014259047921274649,
+                    "Intellectuals": 0.006999999999999999,
+                    "Merchants": 0.0027214151196879614
                 },
                 "SocietalClasses": {
                     "High": 0.01,
@@ -8319,13 +8378,14 @@
                         "Pixels": 0
                     }
                 },
-                "HabitableLand": 0.726834556370914
+                "HabitableLand": 0.726834556370914,
+                "AdministrativeStrain": 25.997068850429336
             },
             "Mitiva": {
                 "FuturePopulation": 4542581.170084905,
                 "FutureLiteracyPercent": 12,
                 "FutureHigherEducation": 0.85,
-                "FutureBudget": 998.2254453227526,
+                "FutureBudget": 972.1974329203681,
                 "FutureFood": 410.85716530976964,
                 "FutureResearchPoints": 7.5,
                 "FuturePublicDebtLength": 0,
@@ -8348,7 +8408,7 @@
                 "HigherEducation": 0.7166666666666667,
                 "EducationEfficiency": 4,
                 "AdministrativeEfficiency": 36,
-                "Corruption": 3.552713678800501e-16,
+                "Corruption": 0.49426433061954,
                 "Overextension": 0.42032970666666664,
                 "Propaganda": 0,
                 "SocialSpending": 1,
@@ -8369,7 +8429,7 @@
                 "Mercantilism": 1.4000000000000001,
                 "PossiblePublicDebt": 336.9028755540111,
                 "EffectiveDebt": 0,
-                "DailyBudget": 283.41849361665186,
+                "DailyBudget": 257.3904812142673,
                 "Budget": 714.8069517061008,
                 "Inflation": 0.19855748658502798,
                 "Spies": 0,
@@ -8404,7 +8464,7 @@
                 "AdministrativeUpkeep": 3.1524727999999995,
                 "ProductionRevenue": 18.34694904354987,
                 "ResearchUpkeep": 22.59714409203733,
-                "OverallIncome": 806.3460612297662,
+                "OverallIncome": 780.3180488273816,
                 "Levies": 0,
                 "LightInfantry": 0,
                 "HeavyInfantry": 600,
@@ -8436,7 +8496,7 @@
                 "TrainingQuality": 0.44999999999999996,
                 "ArmyTech": 1.9,
                 "MilitaryTactics": 0.44999999999999996,
-                "ArmyQuality": 3.78,
+                "ArmyQuality": 3.6811471338760917,
                 "MilitaryLoyalty": 1,
                 "MilitaryMorale": 0.9800000000000004,
                 "MilitaryDiscipline": 1.0099999999999998,
@@ -8479,7 +8539,11 @@
                     "Burghers": 0.005,
                     "PopulationInMilitary": 0.00021905423003184976,
                     "PopulationInResourceHarvest": 0.021905423003184977,
-                    "PopulationInAgriculture": 0.9353755227667832
+                    "PopulationInAgriculture": 0.9353755227667832,
+                    "Sailors": 0.0016307370457926593,
+                    "Bureaucrats": 0.009243372278500974,
+                    "Intellectuals": 0.007166666666666667,
+                    "Merchants": 0.0013642122070110926
                 },
                 "SocietalClasses": {
                     "High": 0.01,
@@ -8635,7 +8699,7 @@
                 "HighClassTax": 0.18,
                 "MediumClassTax": 0.18,
                 "LowerClassTax": 0.18,
-                "EffectiveTax": 526.6010672823487,
+                "EffectiveTax": 500.57305487996416,
                 "PublicDebtTaken": 0,
                 "PublicDebtLength": 0,
                 "InterestRate": 0.05,
@@ -9009,13 +9073,14 @@
                         "Pixels": 3173
                     }
                 },
-                "HabitableLand": 0.45666014311051306
+                "HabitableLand": 0.45666014311051306,
+                "AdministrativeStrain": 37.97705732247816
             },
             "ArberberKingdom": {
                 "FuturePopulation": 5139223.108491462,
                 "FutureLiteracyPercent": 10.5625,
                 "FutureHigherEducation": 0.7916666666666667,
-                "FutureBudget": -114.46351388490586,
+                "FutureBudget": -115.57890367399256,
                 "FutureFood": 507.6238527639251,
                 "FutureResearchPoints": 7.5,
                 "FuturePublicDebtLength": 0,
@@ -9050,7 +9115,7 @@
                 "Absolutism": 0,
                 "PopulationControl": 0,
                 "BirthControl": 0,
-                "ConscriptionPercent": 0.0034688086275151825,
+                "ConscriptionPercent": 0.0031854295088690407,
                 "Production": 22.760248743051044,
                 "ProductionEfficiency": 3.9000000000000004,
                 "TradeEfficiency": 2.23,
@@ -9059,7 +9124,7 @@
                 "Mercantilism": 2,
                 "PossiblePublicDebt": 418.9911165670493,
                 "EffectiveDebt": 0,
-                "DailyBudget": -319.25129790761076,
+                "DailyBudget": -320.36668769669745,
                 "Budget": 204.7877840227049,
                 "Inflation": 0.05979205372925691,
                 "Spies": 0,
@@ -9082,37 +9147,37 @@
                     "SelfInterests": 35
                 },
                 "BurghersStateLoyalty": 65,
-                "ArmyUpkeep": 657.8359375,
+                "ArmyUpkeep": 642.99375,
                 "SpyUpkeep": 0,
                 "SocialSpendingUpkeep": 54.38826993899197,
                 "HygieneUpkeep": 12.086282208664882,
                 "EducationUpkeep": 357.0589921494823,
-                "AgricultureSpending": 29.004686309783143,
+                "AgricultureSpending": 29.01366254978315,
                 "PropagandaUpkeep": 5.96004791414787,
                 "PopulationControlUpkeep": 0,
-                "TradeRevenue": 68.93456206909227,
+                "TradeRevenue": 69.01607706909225,
                 "AdministrativeUpkeep": 2.9202348499999995,
                 "ProductionRevenue": 56.900621857627605,
                 "ResearchUpkeep": 28.08549828238502,
-                "OverallIncome": 902.3386512458444,
+                "OverallIncome": 902.3650501967577,
                 "Levies": 0,
-                "LightInfantry": 3075,
-                "HeavyInfantry": 2600,
+                "LightInfantry": 0,
+                "HeavyInfantry": 5200,
                 "Archers": 0,
-                "Crossbowmen": 2750,
-                "LightCavalry": 1700,
-                "HeavyCavalry": 2700,
+                "Crossbowmen": 0,
+                "LightCavalry": 3400,
+                "HeavyCavalry": 0,
                 "EliteInfantry": 0,
                 "EliteCavalry": 0,
-                "HandCannoneers": 545,
-                "Musketeers": 3000,
-                "Militia": 3400,
+                "HandCannoneers": 0,
+                "Musketeers": 6000,
+                "Militia": 6800,
                 "SiegeEquipment": 0,
                 "LargeSiegeEquipment": 0,
-                "Cannons": 15,
-                "EliteUnitsCap": 334.25,
-                "UnitUpkeep": 65.375,
-                "OverallNumbers": 16770,
+                "Cannons": 0,
+                "EliteUnitsCap": 215,
+                "UnitUpkeep": 63.9,
+                "OverallNumbers": 15400,
                 "SmallForts": 0,
                 "MediumForts": 0,
                 "BigForts": 0,
@@ -9145,31 +9210,35 @@
                 "NavyUpkeep": 74.24999999999999,
                 "New_Levies": 0,
                 "New_LightInfantry": 0,
-                "New_HeavyInfantry": 0,
+                "New_HeavyInfantry": 2600,
                 "New_Archers": 0,
                 "New_Crossbowmen": 0,
-                "New_LightCavalry": 0,
+                "New_LightCavalry": 1700,
                 "New_HeavyCavalry": 0,
                 "New_EliteInfantry": 0,
                 "New_EliteCavalry": 0,
                 "New_HandCannoneers": 0,
-                "New_Musketeers": 0,
-                "New_Militia": 0,
+                "New_Musketeers": 3000,
+                "New_Militia": 3400,
                 "New_SiegeEquipment": 0,
                 "New_LargeSiegeEquipment": 0,
                 "New_Cannons": 0,
                 "New_LightShips": 0,
                 "New_MediumShips": 0,
                 "New_HeavyShips": 0,
-                "NewTroopRecruitmentPenalty": 0,
+                "NewTroopRecruitmentPenalty": 15.975,
                 "Workforces": {
                     "Artisans": 0.0325,
                     "Clergy": 0.0075,
                     "Nobility": 0.01,
                     "Burghers": 0.005,
-                    "PopulationInMilitary": 0.0034688086275151825,
+                    "PopulationInMilitary": 0.0031854295088690407,
                     "PopulationInResourceHarvest": 0.025855759000560394,
-                    "PopulationInAgriculture": 0.9156754323719245
+                    "PopulationInAgriculture": 0.9159588114905707,
+                    "Sailors": 0.001509976325632727,
+                    "Bureaucrats": 0.0061939658558964415,
+                    "Intellectuals": 0.006833333333333334,
+                    "Merchants": 0.001956102707760775
                 },
                 "SocietalClasses": {
                     "High": 0.01,
@@ -9242,13 +9311,13 @@
                 "ExoticFruitInflation": 0,
                 "ResourcePopulationGrowthBoost": 0.03885,
                 "ResourceHappinessBoost": 5.18,
-                "ResourceBudgetBoost": 76.95296403676743,
+                "ResourceBudgetBoost": 76.8978479876807,
                 "CoalDemand": 29.707077300795717,
                 "CoalValue": 297.07077300795714,
                 "GoldDemand": 24.172564417329767,
                 "GoldValue": 25.80719122473449,
-                "IronDemand": 10.976525766931907,
-                "IronValue": 11.718793859014525,
+                "IronDemand": 10.947025766931906,
+                "IronValue": 11.687298973822125,
                 "SulphurDemand": 2.4172564417329765,
                 "SulphurValue": 1.172206767813678,
                 "CottonDemand": 9.669025766931906,
@@ -9257,8 +9326,8 @@
                 "TeaValue": 96.69025766931905,
                 "SpiceDemand": 12.086282208664883,
                 "SpiceValue": 10.149109401856256,
-                "CopperDemand": 7.099767177954604,
-                "CopperValue": 70.99767177954604,
+                "CopperDemand": 7.0850171779546045,
+                "CopperValue": 70.85017177954605,
                 "SilkDemand": 12.086282208664883,
                 "SilkValue": 120.86282208664883,
                 "WoolDemand": 6.906446976379933,
@@ -9396,17 +9465,17 @@
                 "StockingCapabilities": 1.05,
                 "AgricultureAdvancements": 1.4000000000000001,
                 "AgricultureTechnology": 0.5,
-                "DailyFood": 5267.94516310164,
+                "DailyFood": 5269.57546310164,
                 "FoodConsumption": 4834.512883465954,
-                "FoodGain": 433.4322796356864,
+                "FoodGain": 435.06257963568623,
                 "MaxFoodStock": 507.6238527639251,
                 "Food": 451.1708781332148,
                 "FoodPopulationBoost": 0,
-                "SurplusFood": 376.9793050049761,
+                "SurplusFood": 378.6096050049759,
                 "SellingCapability": 2116.544299364168,
-                "FoodSold": 376.9793050049761,
+                "FoodSold": 378.6096050049759,
                 "Foodlost": 0,
-                "TradeProfit": 7.5395861000995215,
+                "TradeProfit": 7.572192100099517,
                 "Casualties": 0,
                 "Pillaging": 0,
                 "Occupation": 0,
@@ -9699,7 +9768,8 @@
                         "Pixels": 2620
                     }
                 },
-                "HabitableLand": 0.569372974403069
+                "HabitableLand": 0.569372974403069,
+                "AdministrativeStrain": 29.944807730079567
             },
             "KingdomOfAndalusia": {
                 "FuturePopulation": 4891157.354630866,
@@ -9862,7 +9932,11 @@
                     "Burghers": 0.005,
                     "PopulationInMilitary": 0.00038774995780339265,
                     "PopulationInResourceHarvest": 0.00612236775479041,
-                    "PopulationInAgriculture": 0.9549898822874062
+                    "PopulationInAgriculture": 0.9549898822874062,
+                    "Sailors": 0,
+                    "Bureaucrats": 0.006088664529728083,
+                    "Intellectuals": 0.0071666666666666675,
+                    "Merchants": 0.000586726909834081
                 },
                 "SocietalClasses": {
                     "High": 0.01,
@@ -10392,7 +10466,8 @@
                         "Pixels": 0
                     }
                 },
-                "HabitableLand": 0.85
+                "HabitableLand": 0.85,
+                "AdministrativeStrain": 29.83485200622281
             },
             "ZiEmpire": {
                 "FuturePopulation": 6434076.102041988,
@@ -10555,7 +10630,11 @@
                     "Burghers": 0.005,
                     "PopulationInMilitary": 0.0006008982313735169,
                     "PopulationInResourceHarvest": 0.005121291744660656,
-                    "PopulationInAgriculture": 0.9617778100239658
+                    "PopulationInAgriculture": 0.9617778100239658,
+                    "Sailors": 0.0007255163304935929,
+                    "Bureaucrats": 0.004056846321187219,
+                    "Intellectuals": 0.006833333333333334,
+                    "Merchants": 0.00042677431205505464
                 },
                 "SocietalClasses": {
                     "High": 0.01,
@@ -11085,13 +11164,14 @@
                         "Pixels": 0
                     }
                 },
-                "HabitableLand": 0.6341883693095052
+                "HabitableLand": 0.6341883693095052,
+                "AdministrativeStrain": 23.76458825305235
             },
             "TheFaithfulKingdom": {
                 "FuturePopulation": 7141444.78461121,
                 "FutureLiteracyPercent": 12.125,
                 "FutureHigherEducation": 0.8666666666666666,
-                "FutureBudget": 1390.9712684619126,
+                "FutureBudget": 1362.1715388593861,
                 "FutureFood": 680.6180115026417,
                 "FutureResearchPoints": 7.5,
                 "FuturePublicDebtLength": 0,
@@ -11114,7 +11194,7 @@
                 "HigherEducation": 0.7333333333333333,
                 "EducationEfficiency": 4,
                 "AdministrativeEfficiency": 36.5,
-                "Corruption": 0,
+                "Corruption": 0.3777360230052835,
                 "Overextension": 0.4549004666666667,
                 "Propaganda": 0,
                 "SocialSpending": 1,
@@ -11135,7 +11215,7 @@
                 "Mercantilism": 1.3,
                 "PossiblePublicDebt": 571.719129662219,
                 "EffectiveDebt": 0,
-                "DailyBudget": 316.11619366381973,
+                "DailyBudget": 287.3164640612933,
                 "Budget": 1074.8550747980928,
                 "Inflation": 0.29448084241043637,
                 "Spies": 0,
@@ -11170,7 +11250,7 @@
                 "AdministrativeUpkeep": 3.4117535,
                 "ProductionRevenue": 29.863863856297215,
                 "ResearchUpkeep": 37.85937688983445,
-                "OverallIncome": 1345.4987287918595,
+                "OverallIncome": 1316.6989991893333,
                 "Levies": 0,
                 "LightInfantry": 400,
                 "HeavyInfantry": 800,
@@ -11202,7 +11282,7 @@
                 "TrainingQuality": 0.44999999999999996,
                 "ArmyTech": 2,
                 "MilitaryTactics": 0.6,
-                "ArmyQuality": 4.05,
+                "ArmyQuality": 3.974452795398943,
                 "MilitaryLoyalty": 1,
                 "MilitaryMorale": 0.9800000000000004,
                 "MilitaryDiscipline": 1.0099999999999998,
@@ -11245,7 +11325,11 @@
                     "Burghers": 0.005,
                     "PopulationInMilitary": 0.00038567889118958635,
                     "PopulationInResourceHarvest": 0.0183656614852184,
-                    "PopulationInAgriculture": 0.943748659623592
+                    "PopulationInAgriculture": 0.943748659623592,
+                    "Sailors": 0.0036731322970436795,
+                    "Bureaucrats": 0.005584769055420979,
+                    "Intellectuals": 0.007333333333333333,
+                    "Merchants": 0.0033051100321889824
                 },
                 "SocietalClasses": {
                     "High": 0.01,
@@ -11401,7 +11485,7 @@
                 "HighClassTax": 0.16,
                 "MediumClassTax": 0.16,
                 "LowerClassTax": 0.16,
-                "EffectiveTax": 762.4300529611778,
+                "EffectiveTax": 733.6303233586515,
                 "PublicDebtTaken": 0,
                 "PublicDebtLength": 0,
                 "InterestRate": 0.05,
@@ -11775,13 +11859,14 @@
                         "Pixels": 0
                     }
                 },
-                "HabitableLand": 0.7647839593335216
+                "HabitableLand": 0.7647839593335216,
+                "AdministrativeStrain": 38.010944092021134
             },
             "EulacianTradeCouncil": {
                 "FuturePopulation": 17310099.720532387,
                 "FutureLiteracyPercent": 13.5625,
                 "FutureHigherEducation": 1.0583333333333333,
-                "FutureBudget": 3565.9441359075176,
+                "FutureBudget": 3019.739810849015,
                 "FutureFood": 2049.691812931579,
                 "FutureResearchPoints": 7.5,
                 "FuturePublicDebtLength": 0,
@@ -11804,7 +11889,7 @@
                 "HigherEducation": 0.9083333333333333,
                 "EducationEfficiency": 4.5,
                 "AdministrativeEfficiency": 40,
-                "Corruption": 3.552713678800501e-16,
+                "Corruption": 2.6777458409637056,
                 "Overextension": 1.4510079999999999,
                 "Propaganda": 0.25,
                 "SocialSpending": 2,
@@ -11825,7 +11910,7 @@
                 "Mercantilism": 2.8,
                 "PossiblePublicDebt": 1130.8644485139744,
                 "EffectiveDebt": 0,
-                "DailyBudget": 2062.7717212691964,
+                "DailyBudget": 1516.5673962106941,
                 "Budget": 1503.1724146383212,
                 "Inflation": 0.3757931036595803,
                 "Spies": 20,
@@ -11860,7 +11945,7 @@
                 "AdministrativeUpkeep": 10.882559999999998,
                 "ProductionRevenue": 294.37306708115216,
                 "ResearchUpkeep": 101.09309728219652,
-                "OverallIncome": 4894.926424823834,
+                "OverallIncome": 4348.722099765332,
                 "Levies": 0,
                 "LightInfantry": 1000,
                 "HeavyInfantry": 1000,
@@ -11892,7 +11977,7 @@
                 "TrainingQuality": 0.6,
                 "ArmyTech": 1.9,
                 "MilitaryTactics": 0.7000000000000001,
-                "ArmyQuality": 4.4,
+                "ArmyQuality": 3.8644508318072592,
                 "MilitaryLoyalty": 0.9000000000000001,
                 "MilitaryMorale": 1.0300000000000002,
                 "MilitaryDiscipline": 1.035,
@@ -11935,7 +12020,11 @@
                     "Burghers": 0.005,
                     "PopulationInMilitary": 0.00021222702713430842,
                     "PopulationInResourceHarvest": 0.03077291893447472,
-                    "PopulationInAgriculture": 0.9015148540383909
+                    "PopulationInAgriculture": 0.9015148540383909,
+                    "Sailors": 0.005199562164790556,
+                    "Bureaucrats": 0.0035874137474560933,
+                    "Intellectuals": 0.009083333333333334,
+                    "Merchants": 0.002629732916283507
                 },
                 "SocietalClasses": {
                     "High": 0.01,
@@ -12094,7 +12183,7 @@
                 "HighClassTax": 0.2,
                 "MediumClassTax": 0.2,
                 "LowerClassTax": 0.2,
-                "EffectiveTax": 2039.7915168152288,
+                "EffectiveTax": 1493.587191756726,
                 "PublicDebtTaken": 0,
                 "PublicDebtLength": 0,
                 "InterestRate": 0.05,
@@ -12468,13 +12557,14 @@
                         "Pixels": 0
                     }
                 },
-                "HabitableLand": 0.5823800282286521
+                "HabitableLand": 0.5823800282286521,
+                "AdministrativeStrain": 50.71098336385482
             },
             "EmpireOfLonguo": {
                 "FuturePopulation": 12004672.888882551,
                 "FutureLiteracyPercent": 11.375,
                 "FutureHigherEducation": 0.7833333333333333,
-                "FutureBudget": 1393.095723738729,
+                "FutureBudget": 913.9914621665102,
                 "FutureFood": 1060.7762653740228,
                 "FutureResearchPoints": 7.5,
                 "FuturePublicDebtLength": 0,
@@ -12493,7 +12583,7 @@
                 "HigherEducation": 0.6666666666666666,
                 "EducationEfficiency": 3.5,
                 "AdministrativeEfficiency": 32,
-                "Corruption": 0.40000000000000036,
+                "Corruption": 4.027552530748048,
                 "Overextension": 0.6306197333333333,
                 "Propaganda": 0,
                 "SocialSpending": 1.5,
@@ -12514,7 +12604,7 @@
                 "Mercantilism": 1.1,
                 "PossiblePublicDebt": 848.6210122992183,
                 "EffectiveDebt": 0,
-                "DailyBudget": 432.05858684507194,
+                "DailyBudget": -47.04567472714693,
                 "Budget": 961.0371368936571,
                 "Inflation": 0.30032410527926784,
                 "Spies": 0,
@@ -12549,7 +12639,7 @@
                 "AdministrativeUpkeep": 4.729647999999999,
                 "ProductionRevenue": 5.963815596168538,
                 "ResearchUpkeep": 56.35373909799496,
-                "OverallIncome": 1793.180063163194,
+                "OverallIncome": 1305.0069202641048,
                 "Levies": 0,
                 "LightInfantry": 3100,
                 "HeavyInfantry": 0,
@@ -12573,7 +12663,7 @@
                 "BigForts": 0,
                 "HugeForts": 0,
                 "ExtraCityFortifications": 1,
-                "FortUpkeep": 39,
+                "FortUpkeep": 29.931118673129877,
                 "IronShortage": 0,
                 "SulphurShortage": 0,
                 "CommanderFreedom": 0,
@@ -12581,7 +12671,7 @@
                 "TrainingQuality": 0.25,
                 "ArmyTech": 1.7,
                 "MilitaryTactics": 0.25,
-                "ArmyQuality": 3.12,
+                "ArmyQuality": 2.3944894938503904,
                 "MilitaryLoyalty": 1,
                 "MilitaryMorale": 0.9900000000000002,
                 "MilitaryDiscipline": 1.005,
@@ -12624,7 +12714,11 @@
                     "Burghers": 0.005,
                     "PopulationInMilitary": 0.0005128319870620306,
                     "PopulationInResourceHarvest": 0.006127588080704409,
-                    "PopulationInAgriculture": 0.9608595799322336
+                    "PopulationInAgriculture": 0.9608595799322336,
+                    "Sailors": 0.0010369764444269,
+                    "Bureaucrats": 0.004535377693997408,
+                    "Intellectuals": 0.006666666666666666,
+                    "Merchants": 0.00033391630916824257
                 },
                 "SocietalClasses": {
                     "High": 0.01,
@@ -12697,13 +12791,13 @@
                 "ExoticFruitInflation": 0,
                 "ResourcePopulationGrowthBoost": 0,
                 "ResourceHappinessBoost": 1.2937500000000002,
-                "ResourceBudgetBoost": 214.70220150222346,
+                "ResourceBudgetBoost": 214.0875159549524,
                 "CoalDemand": 64.69657592244137,
                 "CoalValue": 61.69314991734045,
                 "GoldDemand": 53.03881326870115,
                 "GoldValue": 530.3881326870114,
-                "IronDemand": 22.39392530748046,
-                "IronValue": 14.455736035849043,
+                "IronDemand": 22.212547680943057,
+                "IronValue": 14.33865307446408,
                 "SulphurDemand": 5.303881326870115,
                 "SulphurValue": 53.03881326870114,
                 "CottonDemand": 21.21552530748046,
@@ -12712,8 +12806,8 @@
                 "TeaValue": 17.14481040098471,
                 "SpiceDemand": 26.519406634350574,
                 "SpiceValue": 265.1940663435057,
-                "CopperDemand": 14.732883538320305,
-                "CopperValue": 147.32883538320303,
+                "CopperDemand": 14.642194725051604,
+                "CopperValue": 146.42194725051604,
                 "SilkDemand": 26.519406634350574,
                 "SilkValue": 265.1940663435057,
                 "WoolDemand": 15.153946648200327,
@@ -12780,7 +12874,7 @@
                 "HighClassTax": 0.2,
                 "MediumClassTax": 0.2,
                 "LowerClassTax": 0.2,
-                "EffectiveTax": 1290.2807473920332,
+                "EffectiveTax": 802.7222900402151,
                 "PublicDebtTaken": 0,
                 "PublicDebtLength": 0,
                 "InterestRate": 0.05,
@@ -13154,13 +13248,14 @@
                         "Pixels": 0
                     }
                 },
-                "HabitableLand": 1
+                "HabitableLand": 1,
+                "AdministrativeStrain": 48.11021012299219
             },
             "KingdomOfKyrat": {
                 "FuturePopulation": 12493742.142951347,
                 "FutureLiteracyPercent": 12.125,
                 "FutureHigherEducation": 0.8666666666666666,
-                "FutureBudget": 1687.932935792983,
+                "FutureBudget": 1343.751996288713,
                 "FutureFood": 1022.1997623193179,
                 "FutureResearchPoints": 7.5,
                 "FuturePublicDebtLength": 0,
@@ -13189,7 +13284,7 @@
                 "HigherEducation": 0.7333333333333333,
                 "EducationEfficiency": 4,
                 "AdministrativeEfficiency": 34.5,
-                "Corruption": 0.008333333333333571,
+                "Corruption": 3.2152995246386347,
                 "Overextension": 1.0921221066666666,
                 "Propaganda": 0,
                 "SocialSpending": 1,
@@ -13210,7 +13305,7 @@
                 "Mercantilism": 1.4000000000000001,
                 "PossiblePublicDebt": 845.0184701839694,
                 "EffectiveDebt": 0,
-                "DailyBudget": 439.3967041508388,
+                "DailyBudget": 95.21576464656866,
                 "Budget": 1248.5362316421442,
                 "Inflation": 0.36189455989627367,
                 "Spies": 0,
@@ -13245,7 +13340,7 @@
                 "AdministrativeUpkeep": 8.190915799999999,
                 "ProductionRevenue": 13.548207720588234,
                 "ResearchUpkeep": 59.70285486796265,
-                "OverallIncome": 1669.8379051773659,
+                "OverallIncome": 1325.6569656730958,
                 "Levies": 0,
                 "LightInfantry": 0,
                 "HeavyInfantry": 400,
@@ -13277,7 +13372,7 @@
                 "TrainingQuality": 0.35,
                 "ArmyTech": 1.7,
                 "MilitaryTactics": 0.35,
-                "ArmyQuality": 3.359833333333333,
+                "ArmyQuality": 2.718440095072273,
                 "MilitaryLoyalty": 1,
                 "MilitaryMorale": 0.9800000000000004,
                 "MilitaryDiscipline": 1.0099999999999998,
@@ -13320,7 +13415,11 @@
                     "Burghers": 0.005,
                     "PopulationInMilitary": 0.0001956564728074388,
                     "PopulationInResourceHarvest": 0.0019565647280743877,
-                    "PopulationInAgriculture": 0.9603477787991183
+                    "PopulationInAgriculture": 0.9603477787991183,
+                    "Sailors": 0,
+                    "Bureaucrats": 0.004633262483948779,
+                    "Intellectuals": 0.007333333333333333,
+                    "Merchants": 0.000577485457303871
                 },
                 "SocietalClasses": {
                     "High": 0.01,
@@ -13476,7 +13575,7 @@
                 "HighClassTax": 0.2,
                 "MediumClassTax": 0.17,
                 "LowerClassTax": 0.15,
-                "EffectiveTax": 1072.334728651165,
+                "EffectiveTax": 728.153789146895,
                 "PublicDebtTaken": 0,
                 "PublicDebtLength": 0,
                 "InterestRate": 0.05,
@@ -13850,7 +13949,8 @@
                         "Pixels": 0
                     }
                 },
-                "HabitableLand": 0.6959592625772077
+                "HabitableLand": 0.6959592625772077,
+                "AdministrativeStrain": 47.36119809855454
             },
             "KingdomOfEngland": {
                 "FuturePopulation": 6736895.313020021,
@@ -14016,7 +14116,11 @@
                     "Burghers": 0.015,
                     "PopulationInMilitary": 0.0004925230990049608,
                     "PopulationInResourceHarvest": 0.015201330216202496,
-                    "PopulationInAgriculture": 0.9193061466847926
+                    "PopulationInAgriculture": 0.9193061466847926,
+                    "Sailors": 0.0028502494155379678,
+                    "Bureaucrats": 0.005033414752899703,
+                    "Intellectuals": 0.007166666666666667,
+                    "Merchants": 0.0028559442474750765
                 },
                 "SocietalClasses": {
                     "High": 0.01,
@@ -14555,13 +14659,14 @@
                         "Pixels": 0
                     }
                 },
-                "HabitableLand": 1
+                "HabitableLand": 1,
+                "AdministrativeStrain": 33.111673000398255
             },
             "KingdomOfWestphalia": {
                 "FuturePopulation": 5928969.487498804,
                 "FutureLiteracyPercent": 12,
                 "FutureHigherEducation": 0.85,
-                "FutureBudget": 507.4921916405806,
+                "FutureBudget": 457.8144301216232,
                 "FutureFood": 499.14980267313655,
                 "FutureResearchPoints": 7.5,
                 "FuturePublicDebtLength": 0,
@@ -14587,7 +14692,7 @@
                 "HigherEducation": 0.7166666666666667,
                 "EducationEfficiency": 4,
                 "AdministrativeEfficiency": 34.5,
-                "Corruption": 0.07500000000000036,
+                "Corruption": 0.8700996053462742,
                 "Overextension": 0.32662221333333336,
                 "Propaganda": 0,
                 "SocialSpending": 1,
@@ -14608,7 +14713,7 @@
                 "Mercantilism": 1.4000000000000001,
                 "PossiblePublicDebt": 409.30283819197194,
                 "EffectiveDebt": 0,
-                "DailyBudget": 142.86568614781035,
+                "DailyBudget": 93.18792462885298,
                 "Budget": 364.6265054927702,
                 "Inflation": 0.10568884217181744,
                 "Spies": 0,
@@ -14643,7 +14748,7 @@
                 "AdministrativeUpkeep": 2.4496666,
                 "ProductionRevenue": 12.663126118067979,
                 "ResearchUpkeep": 27.453239147022508,
-                "OverallIncome": 769.2675638265339,
+                "OverallIncome": 719.5898023075765,
                 "Levies": 0,
                 "LightInfantry": 0,
                 "HeavyInfantry": 600,
@@ -14675,7 +14780,7 @@
                 "TrainingQuality": 0.35,
                 "ArmyTech": 1.9,
                 "MilitaryTactics": 0.35,
-                "ArmyQuality": 3.5404999999999998,
+                "ArmyQuality": 3.381480078930745,
                 "MilitaryLoyalty": 1,
                 "MilitaryMorale": 0.8831961696259656,
                 "MilitaryDiscipline": 1.005,
@@ -14718,7 +14823,11 @@
                     "Burghers": 0.005,
                     "PopulationInMilitary": 0.00018030659236569033,
                     "PopulationInResourceHarvest": 0.004006813163682008,
-                    "PopulationInAgriculture": 0.9583128802439523
+                    "PopulationInAgriculture": 0.9583128802439523,
+                    "Sailors": 0.0013422824098334725,
+                    "Bureaucrats": 0.007609018017834658,
+                    "Intellectuals": 0.007166666666666667,
+                    "Merchants": 0.0011139181229100246
                 },
                 "SocietalClasses": {
                     "High": 0.01,
@@ -14874,7 +14983,7 @@
                 "HighClassTax": 0.18,
                 "MediumClassTax": 0.18,
                 "LowerClassTax": 0.18,
-                "EffectiveTax": 620.1132282802765,
+                "EffectiveTax": 570.4354667613192,
                 "PublicDebtTaken": 0,
                 "PublicDebtLength": 0,
                 "InterestRate": 0.05,
@@ -15248,13 +15357,14 @@
                         "Pixels": 0
                     }
                 },
-                "HabitableLand": 0.9435795364969257
+                "HabitableLand": 0.9435795364969257,
+                "AdministrativeStrain": 37.9803984213851
             },
             "DuchyOfBelarus": {
                 "FuturePopulation": 12099684.253701793,
                 "FutureLiteracyPercent": 11.375,
                 "FutureHigherEducation": 0.8166666666666668,
-                "FutureBudget": 1921.728471446413,
+                "FutureBudget": 1659.9284312088785,
                 "FutureFood": 1015.9205910971067,
                 "FutureResearchPoints": 7.5,
                 "FuturePublicDebtLength": 0,
@@ -15277,7 +15387,7 @@
                 "HigherEducation": 0.7000000000000001,
                 "EducationEfficiency": 3.5,
                 "AdministrativeEfficiency": 34,
-                "Corruption": 0.04999999999999964,
+                "Corruption": 2.208941182194213,
                 "Overextension": 0.71527792,
                 "Propaganda": 0,
                 "SocialSpending": 1,
@@ -15298,7 +15408,7 @@
                 "Mercantilism": 1.4,
                 "PossiblePublicDebt": 838.1344876551132,
                 "EffectiveDebt": 0,
-                "DailyBudget": 838.1929414080736,
+                "DailyBudget": 576.392901170539,
                 "Budget": 1083.5355300383394,
                 "Inflation": 0.3186869205995116,
                 "Spies": 0,
@@ -15333,7 +15443,7 @@
                 "AdministrativeUpkeep": 5.364584399999999,
                 "ProductionRevenue": 19.497994652406412,
                 "ResearchUpkeep": 55.24068214090518,
-                "OverallIncome": 1921.9420165588244,
+                "OverallIncome": 1660.1419763212898,
                 "Levies": 0,
                 "LightInfantry": 0,
                 "HeavyInfantry": 600,
@@ -15365,7 +15475,7 @@
                 "TrainingQuality": 0.35,
                 "ArmyTech": 1.9,
                 "MilitaryTactics": 0.35,
-                "ArmyQuality": 3.5700000000000003,
+                "ArmyQuality": 3.1382117635611575,
                 "MilitaryLoyalty": 1,
                 "MilitaryMorale": 1.018570246714269,
                 "MilitaryDiscipline": 1.0099999999999998,
@@ -15408,7 +15518,11 @@
                     "Burghers": 0.005,
                     "PopulationInMilitary": 0.0000885896011840923,
                     "PopulationInResourceHarvest": 0.007382466765341025,
-                    "PopulationInAgriculture": 0.9450289436334749
+                    "PopulationInAgriculture": 0.9450289436334749,
+                    "Sailors": 0,
+                    "Bureaucrats": 0.004216448126375499,
+                    "Intellectuals": 0.007000000000000001,
+                    "Merchants": 0.00040768060675626556
                 },
                 "SocietalClasses": {
                     "High": 0.01,
@@ -15564,7 +15678,7 @@
                 "HighClassTax": 0.175,
                 "MediumClassTax": 0.175,
                 "LowerClassTax": 0.175,
-                "EffectiveTax": 1206.5684891498536,
+                "EffectiveTax": 944.768448912319,
                 "PublicDebtTaken": 0,
                 "PublicDebtLength": 0,
                 "InterestRate": 0.05,
@@ -15938,13 +16052,14 @@
                         "Pixels": 0
                     }
                 },
-                "HabitableLand": 0.9860896027658731
+                "HabitableLand": 0.9860896027658731,
+                "AdministrativeStrain": 42.83576472877685
             },
             "KingdomOfBurgundy": {
                 "FuturePopulation": 12328603.604738897,
                 "FutureLiteracyPercent": 12.75,
                 "FutureHigherEducation": 0.9500000000000001,
-                "FutureBudget": -25.753019549358783,
+                "FutureBudget": -188.0186210752846,
                 "FutureFood": 1135.564385377211,
                 "FutureResearchPoints": 7.5,
                 "FuturePublicDebtLength": 0,
@@ -15970,7 +16085,7 @@
                 "HigherEducation": 0.8,
                 "EducationEfficiency": 4.5,
                 "AdministrativeEfficiency": 33,
-                "Corruption": 0.31666666666666643,
+                "Corruption": 1.3450973362531573,
                 "Overextension": 0.7329344266666666,
                 "Propaganda": 1,
                 "SocialSpending": 1,
@@ -15991,7 +16106,7 @@
                 "Mercantilism": 1.4,
                 "PossiblePublicDebt": 868.7968789711359,
                 "EffectiveDebt": 0,
-                "DailyBudget": -147.56035498443782,
+                "DailyBudget": -309.82595651036365,
                 "Budget": 121.80733543507904,
                 "Inflation": 0.03691131376820577,
                 "Spies": 0,
@@ -16026,7 +16141,7 @@
                 "AdministrativeUpkeep": 5.4970082,
                 "ProductionRevenue": 22.05656253268718,
                 "ResearchUpkeep": 62.861599904809886,
-                "OverallIncome": 1759.0985272594903,
+                "OverallIncome": 1596.8329257335645,
                 "Levies": 0,
                 "LightInfantry": 3000,
                 "HeavyInfantry": 1000,
@@ -16058,7 +16173,7 @@
                 "TrainingQuality": 0.5,
                 "ArmyTech": 1.9,
                 "MilitaryTactics": 0.8,
-                "ArmyQuality": 4.096666666666667,
+                "ArmyQuality": 3.8909805327493685,
                 "MilitaryLoyalty": 0.8425683848685175,
                 "MilitaryMorale": 0.685136769737035,
                 "MilitaryDiscipline": 1,
@@ -16101,7 +16216,11 @@
                     "Burghers": 0.01,
                     "PopulationInMilitary": 0.0009403694002302498,
                     "PopulationInResourceHarvest": 0.0018493006887517205,
-                    "PopulationInAgriculture": 0.944710329911018
+                    "PopulationInAgriculture": 0.944710329911018,
+                    "Sailors": 0.0015626590819952037,
+                    "Bureaucrats": 0.0035395975190707935,
+                    "Intellectuals": 0.008,
+                    "Merchants": 0.0005181509384567207
                 },
                 "SocietalClasses": {
                     "High": 0.01,
@@ -16263,7 +16382,7 @@
                 "HighClassTax": 0.15,
                 "MediumClassTax": 0.22,
                 "LowerClassTax": 0.22,
-                "EffectiveTax": 1527.8345488676996,
+                "EffectiveTax": 1365.5689473417735,
                 "PublicDebtTaken": 0,
                 "PublicDebtLength": 0,
                 "InterestRate": 0.05,
@@ -16637,7 +16756,8 @@
                         "Pixels": 0
                     }
                 },
-                "HabitableLand": 1
+                "HabitableLand": 1,
+                "AdministrativeStrain": 38.28038934501263
             },
             "KingdomOfSerbia": {
                 "FuturePopulation": 4329187.742759444,
@@ -16797,7 +16917,11 @@
                     "Burghers": 0.01,
                     "PopulationInMilitary": 0.00020428224055237096,
                     "PopulationInResourceHarvest": 0.005107056013809274,
-                    "PopulationInAgriculture": 0.9521886617456384
+                    "PopulationInAgriculture": 0.9521886617456384,
+                    "Sailors": 0,
+                    "Bureaucrats": 0.006268533438466694,
+                    "Intellectuals": 0.0071666666666666675,
+                    "Merchants": 0.0011384444815069872
                 },
                 "SocietalClasses": {
                     "High": 0.01,
@@ -17327,13 +17451,14 @@
                         "Pixels": 0
                     }
                 },
-                "HabitableLand": 0.9404763884270037
+                "HabitableLand": 0.9404763884270037,
+                "AdministrativeStrain": 24.54852040595142
             },
             "CumanKipchakKhanate": {
                 "FuturePopulation": 9565553.205020113,
                 "FutureLiteracyPercent": 12,
                 "FutureHigherEducation": 0.8499999999999999,
-                "FutureBudget": 201.19870773914712,
+                "FutureBudget": -214.38951502023863,
                 "FutureFood": 1004.2803333706727,
                 "FutureResearchPoints": 7.5,
                 "FuturePublicDebtLength": 0,
@@ -17356,7 +17481,7 @@
                 "HigherEducation": 0.7166666666666666,
                 "EducationEfficiency": 4,
                 "AdministrativeEfficiency": 33,
-                "Corruption": 1.1166666666666665,
+                "Corruption": 4.421598533393077,
                 "Overextension": 0.6516290666666665,
                 "Propaganda": 1.25,
                 "SocialSpending": 0.75,
@@ -17377,7 +17502,7 @@
                 "Mercantilism": 1.2,
                 "PossiblePublicDebt": 621.3147662453227,
                 "EffectiveDebt": 0,
-                "DailyBudget": 8.175898266025179,
+                "DailyBudget": -407.4123244933606,
                 "Budget": 193.02280947312195,
                 "Inflation": 0.058491760446400594,
                 "Spies": 20,
@@ -17412,7 +17537,7 @@
                 "AdministrativeUpkeep": 4.887217999999999,
                 "ProductionRevenue": 10.25460845314838,
                 "ResearchUpkeep": 44.18833466830959,
-                "OverallIncome": 1337.7315396253691,
+                "OverallIncome": 922.1433168659835,
                 "Levies": 3000,
                 "LightInfantry": 0,
                 "HeavyInfantry": 500,
@@ -17444,7 +17569,7 @@
                 "TrainingQuality": 0.44999999999999996,
                 "ArmyTech": 2.1,
                 "MilitaryTactics": 0.30000000000000004,
-                "ArmyQuality": 3.5933333333333333,
+                "ArmyQuality": 2.932346959988051,
                 "MilitaryLoyalty": 0.8084683326156531,
                 "MilitaryMorale": 0.416936665231306,
                 "MilitaryDiscipline": 1.02,
@@ -17487,7 +17612,11 @@
                     "Burghers": 0.005,
                     "PopulationInMilitary": 0.0013100176875756985,
                     "PopulationInResourceHarvest": 0.0037340171617359576,
-                    "PopulationInAgriculture": 0.9574559651506884
+                    "PopulationInAgriculture": 0.9574559651506884,
+                    "Sailors": 0,
+                    "Bureaucrats": 0.006059861041259995,
+                    "Intellectuals": 0.007166666666666666,
+                    "Merchants": 0.0005622866172575495
                 },
                 "SocietalClasses": {
                     "High": 0.01,
@@ -17643,7 +17772,7 @@
                 "HighClassTax": 0.22,
                 "MediumClassTax": 0.22,
                 "LowerClassTax": 0.24,
-                "EffectiveTax": 1117.0604602617746,
+                "EffectiveTax": 701.472237502389,
                 "PublicDebtTaken": 0,
                 "PublicDebtLength": 0,
                 "InterestRate": 0.05,
@@ -18017,13 +18146,14 @@
                         "Pixels": 0
                     }
                 },
-                "HabitableLand": 0.7609022556390977
+                "HabitableLand": 0.7609022556390977,
+                "AdministrativeStrain": 48.68639413357231
             },
             "KingdomOfToledoCatalonia": {
                 "FuturePopulation": 13498803.725393536,
                 "FutureLiteracyPercent": 12.25,
                 "FutureHigherEducation": 0.8833333333333333,
-                "FutureBudget": 2653.675935357726,
+                "FutureBudget": 2385.03188007948,
                 "FutureFood": 1252.0186970987324,
                 "FutureResearchPoints": 7.5,
                 "FuturePublicDebtLength": 0,
@@ -18049,7 +18179,7 @@
                 "HigherEducation": 0.75,
                 "EducationEfficiency": 4,
                 "AdministrativeEfficiency": 37.25,
-                "Corruption": 0.1375,
+                "Corruption": 1.6135280456480992,
                 "Overextension": 0.7645005199999999,
                 "Propaganda": 1,
                 "SocialSpending": 1,
@@ -18070,7 +18200,7 @@
                 "Mercantilism": 1.2,
                 "PossiblePublicDebt": 1001.614957678986,
                 "EffectiveDebt": 0,
-                "DailyBudget": 1124.4302775851058,
+                "DailyBudget": 855.7862223068599,
                 "Budget": 1529.24565777262,
                 "Inflation": 0.41053574705305235,
                 "Spies": 0,
@@ -18105,7 +18235,7 @@
                 "AdministrativeUpkeep": 5.733753899999999,
                 "ProductionRevenue": 32.94413571674136,
                 "ResearchUpkeep": 70.4260517118037,
-                "OverallIncome": 3253.326837065856,
+                "OverallIncome": 2984.68278178761,
                 "Levies": 0,
                 "LightInfantry": 6946,
                 "HeavyInfantry": 2726,
@@ -18137,7 +18267,7 @@
                 "TrainingQuality": 0.5499999999999999,
                 "ArmyTech": 1.9,
                 "MilitaryTactics": 0.9,
-                "ArmyQuality": 4.3225,
+                "ArmyQuality": 4.02729439087038,
                 "MilitaryLoyalty": 1,
                 "MilitaryMorale": 1,
                 "MilitaryDiscipline": 1,
@@ -18180,7 +18310,11 @@
                     "Burghers": 0.005,
                     "PopulationInMilitary": 0.0012621217268254483,
                     "PopulationInResourceHarvest": 0.019568397865601495,
-                    "PopulationInAgriculture": 0.926669480407573
+                    "PopulationInAgriculture": 0.926669480407573,
+                    "Sailors": 0.0017092396503015183,
+                    "Bureaucrats": 0.003490691655313671,
+                    "Intellectuals": 0.0075,
+                    "Merchants": 0.0006704715027131821
                 },
                 "SocietalClasses": {
                     "High": 0.01,
@@ -18342,7 +18476,7 @@
                 "HighClassTax": 0.18,
                 "MediumClassTax": 0.21,
                 "LowerClassTax": 0.21,
-                "EffectiveTax": 1795.0214448793581,
+                "EffectiveTax": 1526.3773896011116,
                 "PublicDebtTaken": 0,
                 "PublicDebtLength": 0,
                 "InterestRate": 0.05,
@@ -18716,13 +18850,14 @@
                         "Pixels": 63
                     }
                 },
-                "HabitableLand": 0.8452162670427831
+                "HabitableLand": 0.8452162670427831,
+                "AdministrativeStrain": 43.7041121825924
             },
             "KingdomOfIreland": {
                 "FuturePopulation": 2635081.1451698137,
                 "FutureLiteracyPercent": 11.375,
                 "FutureHigherEducation": 0.8166666666666668,
-                "FutureBudget": 161.90268818627735,
+                "FutureBudget": 170.54267210806765,
                 "FutureFood": 256.51225767593616,
                 "FutureResearchPoints": 7.5,
                 "FuturePublicDebtLength": 3,
@@ -18748,7 +18883,7 @@
                 "HigherEducation": 0.7000000000000001,
                 "EducationEfficiency": 3.5,
                 "AdministrativeEfficiency": 34.75,
-                "Corruption": 1.2625000000000004,
+                "Corruption": 1,
                 "Overextension": 0.10777337999999999,
                 "Propaganda": 0.5,
                 "SocialSpending": 1,
@@ -18769,7 +18904,7 @@
                 "Mercantilism": 1.15,
                 "PossiblePublicDebt": 0,
                 "EffectiveDebt": 345,
-                "DailyBudget": 76.10295885990034,
+                "DailyBudget": 84.74294278169064,
                 "Budget": 85.799729326377,
                 "Inflation": 0.024690569590324316,
                 "Spies": 10,
@@ -18804,7 +18939,7 @@
                 "AdministrativeUpkeep": 0.8083003499999999,
                 "ProductionRevenue": 16.59957131528906,
                 "ResearchUpkeep": 13.947854011129028,
-                "OverallIncome": 388.0981802569405,
+                "OverallIncome": 397.52566417873084,
                 "Levies": 0,
                 "LightInfantry": 0,
                 "HeavyInfantry": 0,
@@ -18828,7 +18963,7 @@
                 "BigForts": 0,
                 "HugeForts": 0,
                 "ExtraCityFortifications": 0,
-                "FortUpkeep": 48.7125,
+                "FortUpkeep": 49.49999999999999,
                 "IronShortage": 0,
                 "SulphurShortage": 0,
                 "CommanderFreedom": 0,
@@ -18836,7 +18971,7 @@
                 "TrainingQuality": 0.4,
                 "ArmyTech": 1.7,
                 "MilitaryTactics": 0.4,
-                "ArmyQuality": 3.2474999999999996,
+                "ArmyQuality": 3.2999999999999994,
                 "MilitaryLoyalty": 0.75,
                 "MilitaryMorale": 0.5,
                 "MilitaryDiscipline": 1,
@@ -18879,7 +19014,11 @@
                     "Burghers": 0.01,
                     "PopulationInMilitary": 0,
                     "PopulationInResourceHarvest": 0.003898449177673788,
-                    "PopulationInAgriculture": 0.9536015508223262
+                    "PopulationInAgriculture": 0.9536015508223262,
+                    "Sailors": 0,
+                    "Bureaucrats": 0.010274216049102279,
+                    "Intellectuals": 0.007000000000000001,
+                    "Merchants": 0.002734094058281362
                 },
                 "SocietalClasses": {
                     "High": 0.01,
@@ -18957,8 +19096,8 @@
                 "CoalValue": 205.2098061407489,
                 "GoldDemand": 12.825612883796806,
                 "GoldValue": 128.25612883796805,
-                "IronDemand": 6.104495153518722,
-                "IronValue": 61.04495153518722,
+                "IronDemand": 6.120245153518723,
+                "IronValue": 61.20245153518722,
                 "SulphurDemand": 1.2825612883796806,
                 "SulphurValue": 12.825612883796806,
                 "CottonDemand": 5.130245153518723,
@@ -18967,8 +19106,8 @@
                 "TeaValue": 51.302451535187224,
                 "SpiceDemand": 6.412806441898403,
                 "SpiceValue": 64.12806441898402,
-                "CopperDemand": 3.907288435679148,
-                "CopperValue": 39.07288435679148,
+                "CopperDemand": 3.9151634356791485,
+                "CopperValue": 39.15163435679148,
                 "SilkDemand": 6.412806441898403,
                 "SilkValue": 64.12806441898402,
                 "WoolDemand": 3.6644608239419445,
@@ -19035,7 +19174,7 @@
                 "HighClassTax": 0.2,
                 "MediumClassTax": 0.2,
                 "LowerClassTax": 0.2,
-                "EffectiveTax": 313.8005362538779,
+                "EffectiveTax": 323.22802017566823,
                 "PublicDebtTaken": 300,
                 "PublicDebtLength": 2,
                 "InterestRate": 0.15,
@@ -19409,13 +19548,14 @@
                         "Pixels": 0
                     }
                 },
-                "HabitableLand": 1
+                "HabitableLand": 1,
+                "AdministrativeStrain": 26.35462354605562
             },
             "KingdomOfScotland": {
                 "FuturePopulation": 3306790.6176204192,
                 "FutureLiteracyPercent": 12.125,
                 "FutureHigherEducation": 0.8666666666666666,
-                "FutureBudget": 912.3558182255392,
+                "FutureBudget": 915.2543646184636,
                 "FutureFood": 334.7340625376848,
                 "FutureResearchPoints": 7.5,
                 "FuturePublicDebtLength": 0,
@@ -19441,7 +19581,7 @@
                 "HigherEducation": 0.7333333333333333,
                 "EducationEfficiency": 4,
                 "AdministrativeEfficiency": 36,
-                "Corruption": 0.062333333333333484,
+                "Corruption": 0,
                 "Overextension": 0.14853312,
                 "Propaganda": 0,
                 "SocialSpending": 0.75,
@@ -19462,7 +19602,7 @@
                 "Mercantilism": 1.35,
                 "PossiblePublicDebt": 272.39542229108326,
                 "EffectiveDebt": 0,
-                "DailyBudget": 298.42963738464715,
+                "DailyBudget": 301.3281837775715,
                 "Budget": 613.926180840892,
                 "Inflation": 0.17053505023358112,
                 "Spies": 0,
@@ -19497,7 +19637,7 @@
                 "AdministrativeUpkeep": 1.1139983999999998,
                 "ProductionRevenue": 31.707737857038378,
                 "ResearchUpkeep": 18.619582228658714,
-                "OverallIncome": 806.5661853886493,
+                "OverallIncome": 809.4647317815736,
                 "Levies": 600,
                 "LightInfantry": 700,
                 "HeavyInfantry": 600,
@@ -19529,7 +19669,7 @@
                 "TrainingQuality": 0.5,
                 "ArmyTech": 1.9,
                 "MilitaryTactics": 0.5,
-                "ArmyQuality": 3.8442,
+                "ArmyQuality": 3.8566666666666665,
                 "MilitaryLoyalty": 0.8157278938043695,
                 "MilitaryMorale": 0.631455787608739,
                 "MilitaryDiscipline": 1.0199999999999998,
@@ -19572,7 +19712,11 @@
                     "Burghers": 0.005,
                     "PopulationInMilitary": 0.0008992213033775523,
                     "PopulationInResourceHarvest": 0.02240584642967323,
-                    "PopulationInAgriculture": 0.9241949322669492
+                    "PopulationInAgriculture": 0.9241949322669492,
+                    "Sailors": 0.0012995390929210473,
+                    "Bureaucrats": 0.007421482351360445,
+                    "Intellectuals": 0.007333333333333333,
+                    "Merchants": 0.0025015227295594727
                 },
                 "SocietalClasses": {
                     "High": 0.01,
@@ -19728,7 +19872,7 @@
                 "HighClassTax": 0.1743,
                 "MediumClassTax": 0.1845,
                 "LowerClassTax": 0.1999,
-                "EffectiveTax": 462.10889632220454,
+                "EffectiveTax": 465.00744271512883,
                 "PublicDebtTaken": 0,
                 "PublicDebtLength": 0,
                 "InterestRate": 0.05,
@@ -20102,7 +20246,8 @@
                         "Pixels": 0
                     }
                 },
-                "HabitableLand": 1
+                "HabitableLand": 1,
+                "AdministrativeStrain": 24.84222937522611
             },
             "ValublidSultanate": {
                 "FuturePopulation": 6506534.743799074,
@@ -20262,7 +20407,11 @@
                     "Burghers": 0.005,
                     "PopulationInMilitary": 0.00013290213498001413,
                     "PopulationInResourceHarvest": 0.036548087119503886,
-                    "PopulationInAgriculture": 0.9108190107455162
+                    "PopulationInAgriculture": 0.9108190107455162,
+                    "Sailors": 0.0012625702823101342,
+                    "Bureaucrats": 0.005214254143521418,
+                    "Intellectuals": 0.007166666666666667,
+                    "Merchants": 0.001026779560147545
                 },
                 "SocietalClasses": {
                     "High": 0.01,
@@ -20792,7 +20941,8 @@
                         "Pixels": 1316
                     }
                 },
-                "HabitableLand": 0.4858763630532392
+                "HabitableLand": 0.4858763630532392,
+                "AdministrativeStrain": 31.387030128932324
             },
             "MagajiyaTribe": {
                 "FuturePopulation": 7486034.179700665,
@@ -20952,7 +21102,11 @@
                     "Burghers": 0.005,
                     "PopulationInMilitary": 0.00018789457397276363,
                     "PopulationInResourceHarvest": 0.026618397979474847,
-                    "PopulationInAgriculture": 0.9206937074465524
+                    "PopulationInAgriculture": 0.9206937074465524,
+                    "Sailors": 0.002552234629796706,
+                    "Bureaucrats": 0.004917042244776472,
+                    "Intellectuals": 0.007166666666666667,
+                    "Merchants": 0.0008463472241998175
                 },
                 "SocietalClasses": {
                     "High": 0.01,
@@ -21482,7 +21636,8 @@
                         "Pixels": 0
                     }
                 },
-                "HabitableLand": 0.7162979086257967
+                "HabitableLand": 0.7162979086257967,
+                "AdministrativeStrain": 31.402986094675992
             },
             "AdenCaliphate": {
                 "FuturePopulation": 4434751.520279105,
@@ -21642,7 +21797,11 @@
                     "Burghers": 0.005,
                     "PopulationInMilitary": 0.00026815960001926796,
                     "PopulationInResourceHarvest": 0.034860748002504834,
-                    "PopulationInAgriculture": 0.9123710923974759
+                    "PopulationInAgriculture": 0.9123710923974759,
+                    "Sailors": 0.003593338640258191,
+                    "Bureaucrats": 0.00899924135988351,
+                    "Intellectuals": 0.007166666666666667,
+                    "Merchants": 0.004787316166755036
                 },
                 "SocietalClasses": {
                     "High": 0.01,
@@ -22172,13 +22331,14 @@
                         "Pixels": 14379
                     }
                 },
-                "HabitableLand": 0.2887529824359674
+                "HabitableLand": 0.2887529824359674,
+                "AdministrativeStrain": 33.55927350442382
             },
             "QuasimidEmirate": {
                 "FuturePopulation": 8946634.420919709,
                 "FutureLiteracyPercent": 11.375,
                 "FutureHigherEducation": 0.8166666666666668,
-                "FutureBudget": 1287.6306317439198,
+                "FutureBudget": 1128.0522418059436,
                 "FutureFood": 782.5448918299896,
                 "FutureResearchPoints": 7.5,
                 "FuturePublicDebtLength": 0,
@@ -22201,7 +22361,7 @@
                 "HigherEducation": 0.7000000000000001,
                 "EducationEfficiency": 3.5,
                 "AdministrativeEfficiency": 34,
-                "Corruption": 0,
+                "Corruption": 1.8750897836599787,
                 "Overextension": 0.84065184,
                 "Propaganda": 0,
                 "SocialSpending": 1.25,
@@ -22222,7 +22382,7 @@
                 "Mercantilism": 1.4000000000000001,
                 "PossiblePublicDebt": 657.3377091371913,
                 "EffectiveDebt": 0,
-                "DailyBudget": 279.3353203075136,
+                "DailyBudget": 119.75693036953749,
                 "Budget": 1008.2953114364061,
                 "Inflation": 0.29655744454011945,
                 "Spies": 0,
@@ -22257,7 +22417,7 @@
                 "AdministrativeUpkeep": 6.3048888,
                 "ProductionRevenue": 13.29532710280374,
                 "ResearchUpkeep": 42.55087849325568,
-                "OverallIncome": 1241.079088257156,
+                "OverallIncome": 1081.5006983191797,
                 "Levies": 0,
                 "LightInfantry": 1200,
                 "HeavyInfantry": 800,
@@ -22289,7 +22449,7 @@
                 "TrainingQuality": 0.44999999999999996,
                 "ArmyTech": 1.9,
                 "MilitaryTactics": 0.44999999999999996,
-                "ArmyQuality": 3.8,
+                "ArmyQuality": 3.4249820432680043,
                 "MilitaryLoyalty": 1,
                 "MilitaryMorale": 0.9800000000000004,
                 "MilitaryDiscipline": 1.0099999999999998,
@@ -22332,7 +22492,11 @@
                     "Burghers": 0.005,
                     "PopulationInMilitary": 0.0005068079852550652,
                     "PopulationInResourceHarvest": 0.01213987861806132,
-                    "PopulationInAgriculture": 0.9498533133966837
+                    "PopulationInAgriculture": 0.9498533133966837,
+                    "Sailors": 0.0003194704899489821,
+                    "Bureaucrats": 0.005303256026320851,
+                    "Intellectuals": 0.007000000000000001,
+                    "Merchants": 0.0007235644047389229
                 },
                 "SocietalClasses": {
                     "High": 0.01,
@@ -22488,7 +22652,7 @@
                 "HighClassTax": 0.16,
                 "MediumClassTax": 0.16,
                 "LowerClassTax": 0.16,
-                "EffectiveTax": 851.0439944187408,
+                "EffectiveTax": 691.4656044807647,
                 "PublicDebtTaken": 0,
                 "PublicDebtLength": 0,
                 "InterestRate": 0.05,
@@ -22862,7 +23026,8 @@
                         "Pixels": 3662
                     }
                 },
-                "HabitableLand": 0.601259422687994
+                "HabitableLand": 0.601259422687994,
+                "AdministrativeStrain": 41.500359134639915
             },
             "Cheonje": {
                 "FuturePopulation": 6463935.965155665,
@@ -23025,7 +23190,11 @@
                     "Burghers": 0.01,
                     "PopulationInMilitary": 0.0006663167152485272,
                     "PopulationInResourceHarvest": 0.015576234901913623,
-                    "PopulationInAgriculture": 0.9362574483828379
+                    "PopulationInAgriculture": 0.9362574483828379,
+                    "Sailors": 0.003011405414369967,
+                    "Bureaucrats": 0.004662671468291621,
+                    "Intellectuals": 0.007000000000000001,
+                    "Merchants": 0.008503650921987816
                 },
                 "SocietalClasses": {
                     "High": 0.01,
@@ -23555,7 +23724,8 @@
                         "Pixels": 0
                     }
                 },
-                "HabitableLand": 1
+                "HabitableLand": 1,
+                "AdministrativeStrain": 26.941069827772743
             },
             "KingdomOfPoland": {
                 "FuturePopulation": 9256651.630462965,
@@ -23715,7 +23885,11 @@
                     "Burghers": 0.005,
                     "PopulationInMilitary": 0.0012029260284206992,
                     "PopulationInResourceHarvest": 0.0066160931563138455,
-                    "PopulationInAgriculture": 0.9546809808152655
+                    "PopulationInAgriculture": 0.9546809808152655,
+                    "Sailors": 0,
+                    "Bureaucrats": 0.004030626258967767,
+                    "Intellectuals": 0.0055,
+                    "Merchants": 0.0019445772725499566
                 },
                 "SocietalClasses": {
                     "High": 0.01,
@@ -24245,13 +24419,14 @@
                         "Pixels": 0
                     }
                 },
-                "HabitableLand": 0.9528828676501669
+                "HabitableLand": 0.9528828676501669,
+                "AdministrativeStrain": 33.50685049403667
             },
             "KingdomOfWallachia": {
                 "FuturePopulation": 3860879.3291161326,
                 "FutureLiteracyPercent": 12.25,
                 "FutureHigherEducation": 0.8833333333333333,
-                "FutureBudget": 425.44960206014446,
+                "FutureBudget": 427.6092185230396,
                 "FutureFood": 342.7793328291392,
                 "FutureResearchPoints": 7.5,
                 "FuturePublicDebtLength": 0,
@@ -24274,7 +24449,7 @@
                 "HigherEducation": 0.75,
                 "EducationEfficiency": 4,
                 "AdministrativeEfficiency": 35,
-                "Corruption": 0.05000000000000036,
+                "Corruption": 0,
                 "Overextension": 0.2612448,
                 "Propaganda": 0.5,
                 "SocialSpending": 0.75,
@@ -24295,7 +24470,7 @@
                 "Mercantilism": 1.2,
                 "PossiblePublicDebt": 281.0790529198942,
                 "EffectiveDebt": 0,
-                "DailyBudget": 108.35372663442371,
+                "DailyBudget": 110.51334309731885,
                 "Budget": 317.09587542572075,
                 "Inflation": 0.09059882155020593,
                 "Spies": 0,
@@ -24330,7 +24505,7 @@
                 "AdministrativeUpkeep": 1.9593359999999997,
                 "ProductionRevenue": 12.924122987003393,
                 "ResearchUpkeep": 19.28133747163908,
-                "OverallIncome": 606.2911531485738,
+                "OverallIncome": 608.4507696114689,
                 "Levies": 2330,
                 "LightInfantry": 925,
                 "HeavyInfantry": 500,
@@ -24362,7 +24537,7 @@
                 "TrainingQuality": 0.25,
                 "ArmyTech": 2.1,
                 "MilitaryTactics": 0.75,
-                "ArmyQuality": 4.050329166666667,
+                "ArmyQuality": 4.0603291666666665,
                 "MilitaryLoyalty": 0.95,
                 "MilitaryMorale": 0.7038320894982417,
                 "MilitaryDiscipline": 1,
@@ -24405,7 +24580,11 @@
                     "Burghers": 0.005,
                     "PopulationInMilitary": 0.001395941803289849,
                     "PopulationInResourceHarvest": 0.011669314970030086,
-                    "PopulationInAgriculture": 0.9494347432266801
+                    "PopulationInAgriculture": 0.9494347432266801,
+                    "Sailors": 0,
+                    "Bureaucrats": 0.00792703158988848,
+                    "Intellectuals": 0.0075,
+                    "Merchants": 0.0014929503210922327
                 },
                 "SocietalClasses": {
                     "High": 0.01,
@@ -24561,7 +24740,7 @@
                 "HighClassTax": 0.18,
                 "MediumClassTax": 0.18,
                 "LowerClassTax": 0.18,
-                "EffectiveTax": 429.7636761161347,
+                "EffectiveTax": 431.92329257902986,
                 "PublicDebtTaken": 0,
                 "PublicDebtLength": 0,
                 "InterestRate": 0.05,
@@ -24935,13 +25114,14 @@
                         "Pixels": 0
                     }
                 },
-                "HabitableLand": 0.7131205673758865
+                "HabitableLand": 0.7131205673758865,
+                "AdministrativeStrain": 27.172225996974838
             },
             "MongolianKhanate": {
                 "FuturePopulation": 7181209.665559236,
                 "FutureLiteracyPercent": 9.75,
                 "FutureHigherEducation": 0.7499999999999999,
-                "FutureBudget": 577.7435717082541,
+                "FutureBudget": 500.3424502552624,
                 "FutureFood": 628.6566631108625,
                 "FutureResearchPoints": 7.5,
                 "FuturePublicDebtLength": 0,
@@ -24964,7 +25144,7 @@
                 "HigherEducation": 0.6499999999999999,
                 "EducationEfficiency": 3,
                 "AdministrativeEfficiency": 32,
-                "Corruption": 0.14999999999999963,
+                "Corruption": 1.2569633262217241,
                 "Overextension": 0.6883899733333333,
                 "Propaganda": 0.25,
                 "SocialSpending": 0.5,
@@ -24985,7 +25165,7 @@
                 "Mercantilism": 1.2,
                 "PossiblePublicDebt": 518.6417470664616,
                 "EffectiveDebt": 0,
-                "DailyBudget": 64.42326860813316,
+                "DailyBudget": -12.977852844858514,
                 "Budget": 513.3203031001209,
                 "Inflation": 0.16041259471878777,
                 "Spies": 0,
@@ -25020,7 +25200,7 @@
                 "AdministrativeUpkeep": 5.162924799999999,
                 "ProductionRevenue": 13,
                 "ResearchUpkeep": 30.647012326654544,
-                "OverallIncome": 866.6810300743872,
+                "OverallIncome": 789.2799086213955,
                 "Levies": 0,
                 "LightInfantry": 0,
                 "HeavyInfantry": 1100,
@@ -25052,7 +25232,7 @@
                 "TrainingQuality": 0.45,
                 "ArmyTech": 1.9,
                 "MilitaryTactics": 0.45,
-                "ArmyQuality": 3.598,
+                "ArmyQuality": 3.3766073347556547,
                 "MilitaryLoyalty": 1,
                 "MilitaryMorale": 0.882457399639879,
                 "MilitaryDiscipline": 1.005,
@@ -25095,7 +25275,11 @@
                     "Burghers": 0.005,
                     "PopulationInMilitary": 0.000747625894354223,
                     "PopulationInResourceHarvest": 0.0015906933922430276,
-                    "PopulationInAgriculture": 0.9551616807134028
+                    "PopulationInAgriculture": 0.9551616807134028,
+                    "Sailors": 0,
+                    "Bureaucrats": 0.005889996158102774,
+                    "Intellectuals": 0.006499999999999999,
+                    "Merchants": 0.000636277356897211
                 },
                 "SocietalClasses": {
                     "High": 0.01,
@@ -25251,7 +25435,7 @@
                 "HighClassTax": 0.175,
                 "MediumClassTax": 0.175,
                 "LowerClassTax": 0.175,
-                "EffectiveTax": 688.7319825799359,
+                "EffectiveTax": 611.3308611269442,
                 "PublicDebtTaken": 0,
                 "PublicDebtLength": 0,
                 "InterestRate": 0.05,
@@ -25625,13 +25809,14 @@
                         "Pixels": 0
                     }
                 },
-                "HabitableLand": 0.664491150442478
+                "HabitableLand": 0.664491150442478,
+                "AdministrativeStrain": 37.0278533048869
             },
             "LatvianEmpire": {
                 "FuturePopulation": 6792851.590413609,
                 "FutureLiteracyPercent": 11,
                 "FutureHigherEducation": 0.7166666666666668,
-                "FutureBudget": 818.637178011595,
+                "FutureBudget": 754.6408100123738,
                 "FutureFood": 630.3952339068153,
                 "FutureResearchPoints": 7.5,
                 "FuturePublicDebtLength": 0,
@@ -25657,7 +25842,7 @@
                 "HigherEducation": 0.6000000000000001,
                 "EducationEfficiency": 3.5,
                 "AdministrativeEfficiency": 32,
-                "Corruption": 0.5,
+                "Corruption": 1.3800904678136323,
                 "Overextension": 0.3894199466666666,
                 "Propaganda": 0,
                 "SocialSpending": 0.5,
@@ -25678,7 +25863,7 @@
                 "Mercantilism": 1.2,
                 "PossiblePublicDebt": 498.0122347863841,
                 "EffectiveDebt": 0,
-                "DailyBudget": 192.41923333298985,
+                "DailyBudget": 128.42286533376858,
                 "Budget": 626.2179446786051,
                 "Inflation": 0.1956931077120641,
                 "Spies": 0,
@@ -25713,7 +25898,7 @@
                 "AdministrativeUpkeep": 2.9206495999999995,
                 "ProductionRevenue": 12.219999999999999,
                 "ResearchUpkeep": 33.50944665235916,
-                "OverallIncome": 897.0052259367701,
+                "OverallIncome": 833.0088579375488,
                 "Levies": 0,
                 "LightInfantry": 0,
                 "HeavyInfantry": 600,
@@ -25745,7 +25930,7 @@
                 "TrainingQuality": 0.25,
                 "ArmyTech": 1.9,
                 "MilitaryTactics": 0.25,
-                "ArmyQuality": 3.2151666666666667,
+                "ArmyQuality": 3.0391485731039403,
                 "MilitaryLoyalty": 1,
                 "MilitaryMorale": 0.7838159474452855,
                 "MilitaryDiscipline": 1.005,
@@ -25788,7 +25973,11 @@
                     "Burghers": 0.005,
                     "PopulationInMilitary": 0.00015863064093974726,
                     "PopulationInResourceHarvest": 0,
-                    "PopulationInAgriculture": 0.9573413693590602
+                    "PopulationInAgriculture": 0.9573413693590602,
+                    "Sailors": 0.0012055928711420792,
+                    "Bureaucrats": 0.00595187905192836,
+                    "Intellectuals": 0.006000000000000001,
+                    "Merchants": 0.0005393441791951407
                 },
                 "SocietalClasses": {
                     "High": 0.01,
@@ -25944,7 +26133,7 @@
                 "HighClassTax": 0.25,
                 "MediumClassTax": 0.2,
                 "LowerClassTax": 0.18,
-                "EffectiveTax": 690.7988646927879,
+                "EffectiveTax": 626.8024966935667,
                 "PublicDebtTaken": 0,
                 "PublicDebtLength": 0,
                 "InterestRate": 0.05,
@@ -26318,13 +26507,14 @@
                         "Pixels": 0
                     }
                 },
-                "HabitableLand": 0.9401431791064563
+                "HabitableLand": 0.9401431791064563,
+                "AdministrativeStrain": 37.52036187125453
             },
             "TimuridEmirate": {
                 "FuturePopulation": 6697517.553122387,
                 "FutureLiteracyPercent": 11.25,
                 "FutureHigherEducation": 0.75,
-                "FutureBudget": 1386.4704034117287,
+                "FutureBudget": 1251.4559313041411,
                 "FutureFood": 596.5406849155437,
                 "FutureResearchPoints": 7.5,
                 "FuturePublicDebtLength": 0,
@@ -26347,7 +26537,7 @@
                 "HigherEducation": 0.6166666666666667,
                 "EducationEfficiency": 4,
                 "AdministrativeEfficiency": 34,
-                "Corruption": 0.3000000000000004,
+                "Corruption": 1.968181369831088,
                 "Overextension": 0.64920352,
                 "Propaganda": 0,
                 "SocialSpending": 1,
@@ -26368,7 +26558,7 @@
                 "Mercantilism": 1.3,
                 "PossiblePublicDebt": 477.23254793243484,
                 "EffectiveDebt": 0,
-                "DailyBudget": 489.2104114238709,
+                "DailyBudget": 354.1959393162833,
                 "Budget": 897.2599919878579,
                 "Inflation": 0.2638999976434876,
                 "Spies": 0,
@@ -26403,7 +26593,7 @@
                 "AdministrativeUpkeep": 4.8690264,
                 "ProductionRevenue": 15.283928571428573,
                 "ResearchUpkeep": 30.572710101921608,
-                "OverallIncome": 1246.9130668102284,
+                "OverallIncome": 1111.8985947026408,
                 "Levies": 0,
                 "LightInfantry": 1000,
                 "HeavyInfantry": 500,
@@ -26435,7 +26625,7 @@
                 "TrainingQuality": 0.35,
                 "ArmyTech": 1.9,
                 "MilitaryTactics": 0.35,
-                "ArmyQuality": 3.495,
+                "ArmyQuality": 3.1613637260337826,
                 "MilitaryLoyalty": 1,
                 "MilitaryMorale": 0.8210675676807031,
                 "MilitaryDiscipline": 1.005,
@@ -26478,7 +26668,11 @@
                     "Burghers": 0.005,
                     "PopulationInMilitary": 0.00038555626768786553,
                     "PopulationInResourceHarvest": 0.01341065278914315,
-                    "PopulationInAgriculture": 0.943703790943169
+                    "PopulationInAgriculture": 0.943703790943169,
+                    "Sailors": 0,
+                    "Bureaucrats": 0.007019257284229081,
+                    "Intellectuals": 0.006166666666666667,
+                    "Merchants": 0.0008082313064885381
                 },
                 "SocietalClasses": {
                     "High": 0.01,
@@ -26634,7 +26828,7 @@
                 "HighClassTax": 0.2,
                 "MediumClassTax": 0.2,
                 "LowerClassTax": 0.2,
-                "EffectiveTax": 785.0707381873037,
+                "EffectiveTax": 650.0562660797161,
                 "PublicDebtTaken": 0,
                 "PublicDebtLength": 0,
                 "InterestRate": 0.05,
@@ -27008,13 +27202,14 @@
                         "Pixels": 225
                     }
                 },
-                "HabitableLand": 0.5575192445044044
+                "HabitableLand": 0.5575192445044044,
+                "AdministrativeStrain": 41.87272547932435
             },
             "AztecEmpire": {
                 "FuturePopulation": 3304732.0581870843,
                 "FutureLiteracyPercent": 9.75,
                 "FutureHigherEducation": 0.5499999999999999,
-                "FutureBudget": 1172.0382431912171,
+                "FutureBudget": 1176.8626610715714,
                 "FutureFood": 353.18336366407374,
                 "FutureResearchPoints": 7.5,
                 "FuturePublicDebtLength": 0,
@@ -27037,7 +27232,7 @@
                 "HigherEducation": 0.44999999999999996,
                 "EducationEfficiency": 3,
                 "AdministrativeEfficiency": 32.5,
-                "Corruption": 0.12499999999999964,
+                "Corruption": 0,
                 "Overextension": 0.206658,
                 "Propaganda": 0,
                 "SocialSpending": 0.5,
@@ -27058,7 +27253,7 @@
                 "Mercantilism": 1.2,
                 "PossiblePublicDebt": 291.37627502286085,
                 "EffectiveDebt": 0,
-                "DailyBudget": 437.8917772188214,
+                "DailyBudget": 442.7161950991755,
                 "Budget": 734.1464659723958,
                 "Inflation": 0.22589122029919873,
                 "Spies": 0,
@@ -27093,7 +27288,7 @@
                 "AdministrativeUpkeep": 1.549935,
                 "ProductionRevenue": 11.988888888888889,
                 "ResearchUpkeep": 15.893251364883318,
-                "OverallIncome": 789.5376159747054,
+                "OverallIncome": 794.3620338550594,
                 "Levies": 0,
                 "LightInfantry": 0,
                 "HeavyInfantry": 400,
@@ -27125,7 +27320,7 @@
                 "TrainingQuality": 0.35,
                 "ArmyTech": 1.9,
                 "MilitaryTactics": 0.35,
-                "ArmyQuality": 3.575,
+                "ArmyQuality": 3.6,
                 "MilitaryLoyalty": 1,
                 "MilitaryMorale": 0.8745158904102079,
                 "MilitaryDiscipline": 1.005,
@@ -27168,7 +27363,11 @@
                     "Burghers": 0.005,
                     "PopulationInMilitary": 0.00016988342649420008,
                     "PopulationInResourceHarvest": 0.033976685298840015,
-                    "PopulationInAgriculture": 0.9233534312746658
+                    "PopulationInAgriculture": 0.9233534312746658,
+                    "Sailors": 0.0021518567355932007,
+                    "Bureaucrats": 0.008475050069963803,
+                    "Intellectuals": 0.0045,
+                    "Merchants": 0.0009123369200614448
                 },
                 "SocietalClasses": {
                     "High": 0.01,
@@ -27324,7 +27523,7 @@
                 "HighClassTax": 0.175,
                 "MediumClassTax": 0.175,
                 "LowerClassTax": 0.175,
-                "EffectiveTax": 381.1290125479679,
+                "EffectiveTax": 385.9534304283219,
                 "PublicDebtTaken": 0,
                 "PublicDebtLength": 0,
                 "InterestRate": 0.05,
@@ -27698,13 +27897,14 @@
                         "Pixels": 0
                     }
                 },
-                "HabitableLand": 0.6584269662921348
+                "HabitableLand": 0.6584269662921348,
+                "AdministrativeStrain": 29.93246690931259
             },
             "MenzenConfederation": {
                 "FuturePopulation": 5998668.004632392,
                 "FutureLiteracyPercent": 9.75,
                 "FutureHigherEducation": 0.5499999999999999,
-                "FutureBudget": 1450.813702909788,
+                "FutureBudget": 1456.255787003719,
                 "FutureFood": 545.654352655714,
                 "FutureResearchPoints": 7.5,
                 "FuturePublicDebtLength": 0,
@@ -27727,7 +27927,7 @@
                 "HigherEducation": 0.44999999999999996,
                 "EducationEfficiency": 3,
                 "AdministrativeEfficiency": 32,
-                "Corruption": 0.14999999999999963,
+                "Corruption": 0.05980870531142557,
                 "Overextension": 0.31608426666666667,
                 "Propaganda": 0,
                 "SocialSpending": 0.5,
@@ -27748,7 +27948,7 @@
                 "Mercantilism": 1.2,
                 "PossiblePublicDebt": 450.16484094096404,
                 "EffectiveDebt": 0,
-                "DailyBudget": 511.3166102142773,
+                "DailyBudget": 516.7586943082083,
                 "Budget": 939.4970926955107,
                 "Inflation": 0.29359284146734704,
                 "Spies": 0,
@@ -27783,7 +27983,7 @@
                 "AdministrativeUpkeep": 2.370632,
                 "ProductionRevenue": 12.384210526315792,
                 "ResearchUpkeep": 24.554445869507127,
-                "OverallIncome": 1038.2538945183078,
+                "OverallIncome": 1043.6959786122388,
                 "Levies": 0,
                 "LightInfantry": 0,
                 "HeavyInfantry": 600,
@@ -27815,7 +28015,7 @@
                 "TrainingQuality": 0.25,
                 "ArmyTech": 1.9,
                 "MilitaryTactics": 0.25,
-                "ArmyQuality": 3.313833333333333,
+                "ArmyQuality": 3.331871592271048,
                 "MilitaryLoyalty": 1,
                 "MilitaryMorale": 0.8313786452863965,
                 "MilitaryDiscipline": 1.005,
@@ -27858,7 +28058,11 @@
                     "Burghers": 0.005,
                     "PopulationInMilitary": 0.00018326620050458203,
                     "PopulationInResourceHarvest": 0.007330648020183282,
-                    "PopulationInAgriculture": 0.9499860857793122
+                    "PopulationInAgriculture": 0.9499860857793122,
+                    "Sailors": 0,
+                    "Bureaucrats": 0.005908362072864718,
+                    "Intellectuals": 0.0045,
+                    "Merchants": 0.0006462544965161577
                 },
                 "SocietalClasses": {
                     "High": 0.01,
@@ -28014,7 +28218,7 @@
                 "HighClassTax": 0.175,
                 "MediumClassTax": 0.175,
                 "LowerClassTax": 0.175,
-                "EffectiveTax": 594.3425971465849,
+                "EffectiveTax": 599.784681240516,
                 "PublicDebtTaken": 0,
                 "PublicDebtLength": 0,
                 "InterestRate": 0.05,
@@ -28388,7 +28592,8 @@
                         "Pixels": 0
                     }
                 },
-                "HabitableLand": 1
+                "HabitableLand": 1,
+                "AdministrativeStrain": 32.2392348212457
             },
             "ZuluKingdom": {
                 "FuturePopulation": 4227761.998234148,
@@ -28548,7 +28753,11 @@
                     "Burghers": 0.005,
                     "PopulationInMilitary": 0.000060183808683592126,
                     "PopulationInResourceHarvest": 0.007522976085449016,
-                    "PopulationInAgriculture": 0.9599168401058674
+                    "PopulationInAgriculture": 0.9599168401058674,
+                    "Sailors": 0,
+                    "Bureaucrats": 0.007800038971797285,
+                    "Intellectuals": 0.004666666666666667,
+                    "Merchants": 0.0007522976085449016
                 },
                 "SocietalClasses": {
                     "High": 0.01,
@@ -29078,7 +29287,8 @@
                         "Pixels": 42
                     }
                 },
-                "HabitableLand": 0.8050370481251403
+                "HabitableLand": 0.8050370481251403,
+                "AdministrativeStrain": 25.92072234180089
             },
             "BlackfeetConfederation": {
                 "FuturePopulation": 3908984.061751164,
@@ -29238,7 +29448,11 @@
                     "Burghers": 0.005,
                     "PopulationInMilitary": 0,
                     "PopulationInResourceHarvest": 0,
-                    "PopulationInAgriculture": 0.9675
+                    "PopulationInAgriculture": 0.9675,
+                    "Sailors": 0,
+                    "Bureaucrats": 0.0063611571385795325,
+                    "Intellectuals": 0.004833333333333334,
+                    "Merchants": 0.0006707536022409524
                 },
                 "SocietalClasses": {
                     "High": 0.01,
@@ -29768,10 +29982,11 @@
                         "Pixels": 0
                     }
                 },
-                "HabitableLand": 0.75
+                "HabitableLand": 0.75,
+                "AdministrativeStrain": 26.07989293333635
             },
             "KingdomOfMaguidanao": {
-                "FuturePopulation": 2678543.9180970117,
+                "FuturePopulation": 3246599.6121437815,
                 "FutureLiteracyPercent": 10.125,
                 "FutureHigherEducation": 0.6000000000000001,
                 "FutureBudget": -1178.4334991308433,
@@ -29791,7 +30006,7 @@
                 "CulturalDisunity": 0,
                 "ReligiousDisunity": 0,
                 "Population": 2605113.3249085792,
-                "PopulationGrowth": 0.011274840520192618,
+                "PopulationGrowth": 0.09849648859443977,
                 "Health": 2.5,
                 "LiteracyPercent": 9.25,
                 "HigherEducation": 0.4833333333333334,
@@ -29801,7 +30016,7 @@
                 "Overextension": 0.16813333333333333,
                 "Propaganda": 0,
                 "SocialSpending": 0.25,
-                "Prosperity": -0.5912152204778276,
+                "Prosperity": -4.725813602153703,
                 "PopulationHappiness": null,
                 "Stability": null,
                 "AtWar": false,
@@ -29928,7 +30143,11 @@
                     "Burghers": 0.005,
                     "PopulationInMilitary": 0.004836641799620049,
                     "PopulationInResourceHarvest": 0.02878953452154791,
-                    "PopulationInAgriculture": 0.9238738236788321
+                    "PopulationInAgriculture": 0.9238738236788321,
+                    "Sailors": 0.008847983609622391,
+                    "Bureaucrats": 0.008246500368923125,
+                    "Intellectuals": 0.004833333333333334,
+                    "Merchants": 0.0011086563039063432
                 },
                 "SocietalClasses": {
                     "High": 0.01,
@@ -30458,13 +30677,14 @@
                         "Pixels": 0
                     }
                 },
-                "HabitableLand": 0.6
+                "HabitableLand": 0.6,
+                "AdministrativeStrain": 21.48306799494515
             },
             "MayanEmpire": {
                 "FuturePopulation": 3918420.6707302947,
                 "FutureLiteracyPercent": 9.75,
                 "FutureHigherEducation": 0.5499999999999999,
-                "FutureBudget": 1187.3253524157751,
+                "FutureBudget": 1210.1151737070186,
                 "FutureFood": 410.059976307444,
                 "FutureResearchPoints": 7.5,
                 "FuturePublicDebtLength": 0,
@@ -30487,7 +30707,7 @@
                 "HigherEducation": 0.44999999999999996,
                 "EducationEfficiency": 3,
                 "AdministrativeEfficiency": 31,
-                "Corruption": 0.45000000000000034,
+                "Corruption": 0,
                 "Overextension": 0.22739199999999996,
                 "Propaganda": 0,
                 "SocialSpending": 0,
@@ -30508,7 +30728,7 @@
                 "Mercantilism": 1,
                 "PossiblePublicDebt": 328.04798104595517,
                 "EffectiveDebt": 0,
-                "DailyBudget": 368.78420286630694,
+                "DailyBudget": 391.5740241575505,
                 "Budget": 818.5411495494682,
                 "Inflation": 0.2640455321127317,
                 "Spies": 0,
@@ -30543,7 +30763,7 @@
                 "AdministrativeUpkeep": 1.7054399999999996,
                 "ProductionRevenue": 4.5,
                 "ResearchUpkeep": 18.452698933834977,
-                "OverallIncome": 716.2355690165806,
+                "OverallIncome": 739.0253903078242,
                 "Levies": 0,
                 "LightInfantry": 0,
                 "HeavyInfantry": 0,
@@ -30575,7 +30795,7 @@
                 "TrainingQuality": 0.2,
                 "ArmyTech": 1.7,
                 "MilitaryTactics": 0.2,
-                "ArmyQuality": 3.0100000000000002,
+                "ArmyQuality": 3.1,
                 "MilitaryLoyalty": 0.75,
                 "MilitaryMorale": 0.5,
                 "MilitaryDiscipline": 1,
@@ -30618,7 +30838,11 @@
                     "Burghers": 0.005,
                     "PopulationInMilitary": 0,
                     "PopulationInResourceHarvest": 0,
-                    "PopulationInAgriculture": 0.9675
+                    "PopulationInAgriculture": 0.9675,
+                    "Sailors": 0,
+                    "Bureaucrats": 0.007399034668946005,
+                    "Intellectuals": 0.0045,
+                    "Merchants": 0.0006096669132433485
                 },
                 "SocietalClasses": {
                     "High": 0.01,
@@ -30774,7 +30998,7 @@
                 "HighClassTax": 0.2,
                 "MediumClassTax": 0.2,
                 "LowerClassTax": 0.2,
-                "EffectiveTax": 483.65065184750205,
+                "EffectiveTax": 506.44047313874563,
                 "PublicDebtTaken": 0,
                 "PublicDebtLength": 0,
                 "InterestRate": 0.05,
@@ -31148,13 +31372,14 @@
                         "Pixels": 0
                     }
                 },
-                "HabitableLand": 0.7193181818181817
+                "HabitableLand": 0.7193181818181817,
+                "AdministrativeStrain": 30.340479810459556
             },
             "EmpireOfJapan": {
                 "FuturePopulation": 8741279.03333444,
                 "FutureLiteracyPercent": 9.75,
                 "FutureHigherEducation": 0.7499999999999999,
-                "FutureBudget": 1653.6185413045648,
+                "FutureBudget": 1529.6543299293435,
                 "FutureFood": 789.1975451805912,
                 "FutureResearchPoints": 7.5,
                 "FuturePublicDebtLength": 0,
@@ -31177,7 +31402,7 @@
                 "HigherEducation": 0.6499999999999999,
                 "EducationEfficiency": 3,
                 "AdministrativeEfficiency": 33,
-                "Corruption": 0.65,
+                "Corruption": 1.7403900677708855,
                 "Overextension": 0.6796076000000001,
                 "Propaganda": 1.25,
                 "SocialSpending": 0.625,
@@ -31198,7 +31423,7 @@
                 "Mercantilism": 1,
                 "PossiblePublicDebt": 607.6821097890552,
                 "EffectiveDebt": 0,
-                "DailyBudget": 911.7865057671227,
+                "DailyBudget": 787.8222943919013,
                 "Budget": 741.8320355374422,
                 "Inflation": 0.22479758652649764,
                 "Spies": 0,
@@ -31233,7 +31458,7 @@
                 "AdministrativeUpkeep": 5.097057,
                 "ProductionRevenue": 10.166835590849526,
                 "ResearchUpkeep": 38.47338032755382,
-                "OverallIncome": 1787.461860230028,
+                "OverallIncome": 1662.4072587870355,
                 "Levies": 0,
                 "LightInfantry": 0,
                 "HeavyInfantry": 250,
@@ -31257,7 +31482,7 @@
                 "BigForts": 0,
                 "HugeForts": 0,
                 "ExtraCityFortifications": 0,
-                "FortUpkeep": 16.224999999999998,
+                "FortUpkeep": 15.134609932229115,
                 "IronShortage": 0,
                 "SulphurShortage": 0,
                 "CommanderFreedom": 0.75,
@@ -31265,7 +31490,7 @@
                 "TrainingQuality": 0.25,
                 "ArmyTech": 1.8,
                 "MilitaryTactics": 0.25,
-                "ArmyQuality": 3.245,
+                "ArmyQuality": 3.026921986445823,
                 "MilitaryLoyalty": 1,
                 "MilitaryMorale": 1.002206578202962,
                 "MilitaryDiscipline": 1.0099999999999998,
@@ -31308,7 +31533,11 @@
                     "Burghers": 0.005,
                     "PopulationInMilitary": 0.00003167774678553933,
                     "PopulationInResourceHarvest": 0.03547907639980404,
-                    "PopulationInAgriculture": 0.9319892458534104
+                    "PopulationInAgriculture": 0.9319892458534104,
+                    "Sailors": 0.0017486116225617708,
+                    "Bureaucrats": 0.00468343578826334,
+                    "Intellectuals": 0.006499999999999999,
+                    "Merchants": 0.0013234615399569136
                 },
                 "SocietalClasses": {
                     "High": 0.01,
@@ -31384,13 +31613,13 @@
                 "ExoticFruitInflation": 0,
                 "ResourcePopulationGrowthBoost": 0.05157500000000001,
                 "ResourceHappinessBoost": 13.427375000000001,
-                "ResourceBudgetBoost": 468.4809731204976,
+                "ResourceBudgetBoost": 468.3592775937246,
                 "CoalDemand": 51.270602710835476,
                 "CoalValue": 30.642000969625826,
                 "GoldDemand": 39.45987725902956,
                 "GoldValue": 20.58858330932027,
-                "IronDemand": 16.163450903611825,
-                "IronValue": 8.433441222095281,
+                "IronDemand": 16.141643102256406,
+                "IronValue": 8.422062784903199,
                 "SulphurDemand": 3.945987725902956,
                 "SulphurValue": 2.35832920485049,
                 "CottonDemand": 15.783950903611824,
@@ -31399,8 +31628,8 @@
                 "TeaValue": 11.305355395317694,
                 "SpiceDemand": 19.72993862951478,
                 "SpiceValue": 23.25734592689568,
-                "CopperDemand": 10.712383935741215,
-                "CopperValue": 8.83546756581724,
+                "CopperDemand": 10.701480035063506,
+                "CopperValue": 8.826474137150315,
                 "SilkDemand": 19.72993862951478,
                 "SilkValue": 13.153292419676518,
                 "WoolDemand": 11.274250645437018,
@@ -31467,7 +31696,7 @@
                 "HighClassTax": 0.23,
                 "MediumClassTax": 0.23,
                 "LowerClassTax": 0.23,
-                "EffectiveTax": 1071.2888028269329,
+                "EffectiveTax": 946.3558969107136,
                 "PublicDebtTaken": 0,
                 "PublicDebtLength": 0,
                 "InterestRate": 0.05,
@@ -31841,7 +32070,8 @@
                         "Pixels": 0
                     }
                 },
-                "HabitableLand": 0.8880440144185164
+                "HabitableLand": 0.8880440144185164,
+                "AdministrativeStrain": 36.96156027108354
             },
             "KingdomOfSfveadsland": {
                 "FuturePopulation": 5724037.998303282,
@@ -32001,7 +32231,11 @@
                     "Burghers": 0.005,
                     "PopulationInMilitary": 0.00014912859697989382,
                     "PopulationInResourceHarvest": 0.01584491342911372,
-                    "PopulationInAgriculture": 0.9465059579739064
+                    "PopulationInAgriculture": 0.9465059579739064,
+                    "Sailors": 0.004362011461661894,
+                    "Bureaucrats": 0.006187848528836622,
+                    "Intellectuals": 0.007666666666666667,
+                    "Merchants": 0.002352468493500784
                 },
                 "SocietalClasses": {
                     "High": 0.01,
@@ -32531,7 +32765,8 @@
                         "Pixels": 0
                     }
                 },
-                "HabitableLand": 0.6570267686424474
+                "HabitableLand": 0.6570267686424474,
+                "AdministrativeStrain": 33.19469855762618
             },
             "SashimoKingdom": {
                 "FuturePopulation": 5262986.566982466,
@@ -32694,7 +32929,11 @@
                     "Burghers": 0.015,
                     "PopulationInMilitary": 0.00019481780803652434,
                     "PopulationInResourceHarvest": 0.01861592387904566,
-                    "PopulationInAgriculture": 0.9336892583129178
+                    "PopulationInAgriculture": 0.9336892583129178,
+                    "Sailors": 0.0020888798306138443,
+                    "Bureaucrats": 0.0060335985446773556,
+                    "Intellectuals": 0.007333333333333333,
+                    "Merchants": 0.0012977802936671107
                 },
                 "SocietalClasses": {
                     "High": 0.01,
@@ -33224,7 +33463,8 @@
                         "Pixels": 0
                     }
                 },
-                "HabitableLand": 0.5204311173233162
+                "HabitableLand": 0.5204311173233162,
+                "AdministrativeStrain": 27.87342053038376
             },
             "LakanateOfTondo": {
                 "FuturePopulation": 1219748.506461098,
@@ -33384,7 +33624,11 @@
                     "Burghers": 0.005,
                     "PopulationInMilitary": 0.0003290125071464511,
                     "PopulationInResourceHarvest": 0.1603935972338949,
-                    "PopulationInAgriculture": 0.8017773902589587
+                    "PopulationInAgriculture": 0.8017773902589587,
+                    "Sailors": 0,
+                    "Bureaucrats": 0.02357654883222737,
+                    "Intellectuals": 0.006666666666666666,
+                    "Merchants": 0.0025744160461784
                 },
                 "SocietalClasses": {
                     "High": 0.01,
@@ -33914,7 +34158,8 @@
                         "Pixels": 0
                     }
                 },
-                "HabitableLand": 0.6
+                "HabitableLand": 0.6,
+                "AdministrativeStrain": 28.663407402604182
             },
             "NewEngland": {
                 "FuturePopulation": 286958.093318527,
@@ -34074,7 +34319,11 @@
                     "Burghers": 0.015,
                     "PopulationInMilitary": 0,
                     "PopulationInResourceHarvest": 0,
-                    "PopulationInAgriculture": 0.9375
+                    "PopulationInAgriculture": 0.9375,
+                    "Sailors": 0,
+                    "Bureaucrats": 0.17823765117084445,
+                    "Intellectuals": 0.007000000000000001,
+                    "Merchants": 0.037008659140866096
                 },
                 "SocietalClasses": {
                     "High": 0.01,
@@ -34607,13 +34856,14 @@
                         "Pixels": 0
                     }
                 },
-                "HabitableLand": 0.7409619860356866
+                "HabitableLand": 0.7409619860356866,
+                "AdministrativeStrain": 29.669752052432635
             },
             "KingdomOfBalanto": {
                 "FuturePopulation": 4211589.412338708,
                 "FutureLiteracyPercent": 9,
                 "FutureHigherEducation": 0.44999999999999996,
-                "FutureBudget": 1038.7904410066371,
+                "FutureBudget": 1046.1573385160634,
                 "FutureFood": 447.391894235097,
                 "FutureResearchPoints": 7.5,
                 "FuturePublicDebtLength": 0,
@@ -34636,7 +34886,7 @@
                 "HigherEducation": 0.35,
                 "EducationEfficiency": 3,
                 "AdministrativeEfficiency": 32,
-                "Corruption": 0.14999999999999963,
+                "Corruption": 0,
                 "Overextension": 0.25436458666666667,
                 "Propaganda": 0,
                 "SocialSpending": 0.5,
@@ -34657,7 +34907,7 @@
                 "Mercantilism": 1.2,
                 "PossiblePublicDebt": 369.09831274395515,
                 "EffectiveDebt": 0,
-                "DailyBudget": 427.87709123586035,
+                "DailyBudget": 435.2439887452865,
                 "Budget": 610.9133497707769,
                 "Inflation": 0.19091042180336779,
                 "Spies": 0,
@@ -34692,7 +34942,7 @@
                 "AdministrativeUpkeep": 1.9077343999999998,
                 "ProductionRevenue": 12.104724409448817,
                 "ResearchUpkeep": 18.454915637197754,
-                "OverallIncome": 859.1546859297324,
+                "OverallIncome": 866.5215834391586,
                 "Levies": 0,
                 "LightInfantry": 0,
                 "HeavyInfantry": 400,
@@ -34724,7 +34974,7 @@
                 "TrainingQuality": 0.25,
                 "ArmyTech": 1.9,
                 "MilitaryTactics": 0.25,
-                "ArmyQuality": 3.356666666666667,
+                "ArmyQuality": 3.3866666666666667,
                 "MilitaryLoyalty": 1,
                 "MilitaryMorale": 0.8334250251385065,
                 "MilitaryDiscipline": 1.005,
@@ -34767,7 +35017,11 @@
                     "Burghers": 0.005,
                     "PopulationInMilitary": 0.0001341106103466215,
                     "PopulationInResourceHarvest": 0.01452864945421733,
-                    "PopulationInAgriculture": 0.9428372399354361
+                    "PopulationInAgriculture": 0.9428372399354361,
+                    "Sailors": 0.0016987343977238724,
+                    "Bureaucrats": 0.006941327179602838,
+                    "Intellectuals": 0.0034999999999999996,
+                    "Merchants": 0.0007401400229810011
                 },
                 "SocietalClasses": {
                     "High": 0.01,
@@ -34923,7 +35177,7 @@
                 "HighClassTax": 0.175,
                 "MediumClassTax": 0.175,
                 "LowerClassTax": 0.175,
-                "EffectiveTax": 483.75960311898484,
+                "EffectiveTax": 491.126500628411,
                 "PublicDebtTaken": 0,
                 "PublicDebtLength": 0,
                 "InterestRate": 0.05,
@@ -35297,13 +35551,14 @@
                         "Pixels": 0
                     }
                 },
-                "HabitableLand": 0.6876750558148975
+                "HabitableLand": 0.6876750558148975,
+                "AdministrativeStrain": 31.054935153880773
             },
             "GuangxiClique": {
                 "FuturePopulation": 7960281.2176396735,
                 "FutureLiteracyPercent": 11.375,
                 "FutureHigherEducation": 0.8166666666666668,
-                "FutureBudget": 1716.570607025314,
+                "FutureBudget": 1651.0272517399762,
                 "FutureFood": 693.3806916180695,
                 "FutureResearchPoints": 7.5,
                 "FuturePublicDebtLength": 0,
@@ -35332,7 +35587,7 @@
                 "HigherEducation": 0.7000000000000001,
                 "EducationEfficiency": 3.5,
                 "AdministrativeEfficiency": 32,
-                "Corruption": 0,
+                "Corruption": 0.719011383236138,
                 "Overextension": 0.5352394666666667,
                 "Propaganda": 0.25,
                 "SocialSpending": 1,
@@ -35353,7 +35608,7 @@
                 "Mercantilism": 1.1,
                 "PossiblePublicDebt": 598.6186637635999,
                 "EffectiveDebt": 0,
-                "DailyBudget": 471.75791984985057,
+                "DailyBudget": 406.21456456451284,
                 "Budget": 1244.8126871754635,
                 "Inflation": 0.3890039647423323,
                 "Spies": 0,
@@ -35388,7 +35643,7 @@
                 "AdministrativeUpkeep": 4.014296,
                 "ProductionRevenue": 5.737612612612613,
                 "ResearchUpkeep": 37.702575106732525,
-                "OverallIncome": 1264.3852373709558,
+                "OverallIncome": 1198.841882085618,
                 "Levies": 0,
                 "LightInfantry": 0,
                 "HeavyInfantry": 400,
@@ -35420,7 +35675,7 @@
                 "TrainingQuality": 0.4,
                 "ArmyTech": 1.7,
                 "MilitaryTactics": 0.25,
-                "ArmyQuality": 3.3286666666666664,
+                "ArmyQuality": 3.1848643900194387,
                 "MilitaryLoyalty": 1,
                 "MilitaryMorale": 0.8481706833893312,
                 "MilitaryDiscipline": 1.0199999999999998,
@@ -35463,7 +35718,11 @@
                     "Burghers": 0.005,
                     "PopulationInMilitary": 0.00026103986192292053,
                     "PopulationInResourceHarvest": 0.0028844183637891773,
-                    "PopulationInAgriculture": 0.9643545417742879
+                    "PopulationInAgriculture": 0.9643545417742879,
+                    "Sailors": 0.0007066824991283484,
+                    "Bureaucrats": 0.0050298553095786385,
+                    "Intellectuals": 0.007000000000000001,
+                    "Merchants": 0.0004586485055935043
                 },
                 "SocietalClasses": {
                     "High": 0.01,
@@ -35619,7 +35878,7 @@
                 "HighClassTax": 0.1,
                 "MediumClassTax": 0.1,
                 "LowerClassTax": 0.21,
-                "EffectiveTax": 911.5760447399219,
+                "EffectiveTax": 846.0326894545841,
                 "PublicDebtTaken": 0,
                 "PublicDebtLength": 0,
                 "InterestRate": 0.05,
@@ -35993,7 +36252,8 @@
                         "Pixels": 0
                     }
                 },
-                "HabitableLand": 0.9455148299975887
+                "HabitableLand": 0.9455148299975887,
+                "AdministrativeStrain": 34.87604553294455
             },
             "ZelenvaUnion": {
                 "FuturePopulation": 5249783.182375755,
@@ -36153,7 +36413,11 @@
                     "Burghers": 0.005,
                     "PopulationInMilitary": 0,
                     "PopulationInResourceHarvest": 0.0029585826340028923,
-                    "PopulationInAgriculture": 0.9645414173659972
+                    "PopulationInAgriculture": 0.9645414173659972,
+                    "Sailors": 0,
+                    "Bureaucrats": 0.004248760790863087,
+                    "Intellectuals": 0.004833333333333334,
+                    "Merchants": 0.0005424068162338635
                 },
                 "SocietalClasses": {
                     "High": 0.01,
@@ -36683,7 +36947,8 @@
                         "Pixels": 0
                     }
                 },
-                "HabitableLand": 1
+                "HabitableLand": 1,
+                "AdministrativeStrain": 21.541197170051394
             },
             "KingdomOfAvanorolsk": {
                 "FuturePopulation": 4435771.229901891,
@@ -36843,7 +37108,11 @@
                     "Burghers": 0.005,
                     "PopulationInMilitary": 0.0021239688440103407,
                     "PopulationInResourceHarvest": 0,
-                    "PopulationInAgriculture": 0.9653760311559897
+                    "PopulationInAgriculture": 0.9653760311559897,
+                    "Sailors": 0,
+                    "Bureaucrats": 0.005644455682145066,
+                    "Intellectuals": 0.0034999999999999996,
+                    "Merchants": 0.000537713631395023
                 },
                 "SocietalClasses": {
                     "High": 0.01,
@@ -37373,7 +37642,8 @@
                         "Pixels": 0
                     }
                 },
-                "HabitableLand": 0.5916925338996896
+                "HabitableLand": 0.5916925338996896,
+                "AdministrativeStrain": 26.2428519224132
             },
             "KingdomOfBornu": {
                 "FuturePopulation": 9447396.53334691,
@@ -37533,7 +37803,11 @@
                     "Burghers": 0.005,
                     "PopulationInMilitary": 0.00014786963037703704,
                     "PopulationInResourceHarvest": 0.008625728438660494,
-                    "PopulationInAgriculture": 0.9387264019309625
+                    "PopulationInAgriculture": 0.9387264019309625,
+                    "Sailors": 0.0020085624792880864,
+                    "Bureaucrats": 0.004362117619756374,
+                    "Intellectuals": 0.0075,
+                    "Merchants": 0.0007326333007548096
                 },
                 "SocietalClasses": {
                     "High": 0.01,
@@ -38063,13 +38337,14 @@
                         "Pixels": 0
                     }
                 },
-                "HabitableLand": 0.7180985068289577
+                "HabitableLand": 0.7180985068289577,
+                "AdministrativeStrain": 35.39970398492678
             },
             "KingdomOfAlvheim": {
                 "FuturePopulation": 6406525.364734367,
                 "FutureLiteracyPercent": 11.375,
                 "FutureHigherEducation": 0.8166666666666668,
-                "FutureBudget": -380.8822987862026,
+                "FutureBudget": -440.26317592083143,
                 "FutureFood": 579.8512744362337,
                 "FutureResearchPoints": 7.5,
                 "FuturePublicDebtLength": 1,
@@ -38092,7 +38367,7 @@
                 "HigherEducation": 0.7000000000000001,
                 "EducationEfficiency": 3.5,
                 "AdministrativeEfficiency": 32.5,
-                "Corruption": 0,
+                "Corruption": 0.9731025488724683,
                 "Overextension": 0.4326144,
                 "Propaganda": 0,
                 "SocialSpending": 0.5,
@@ -38113,7 +38388,7 @@
                 "Mercantilism": 1.3,
                 "PossiblePublicDebt": 70.03373828033216,
                 "EffectiveDebt": 417.0413322461041,
-                "DailyBudget": -380.8822987862026,
+                "DailyBudget": -440.26317592083143,
                 "Budget": 0,
                 "Inflation": 0,
                 "Spies": 0,
@@ -38148,7 +38423,7 @@
                 "AdministrativeUpkeep": 3.244608,
                 "ProductionRevenue": 10.276618559650663,
                 "ResearchUpkeep": 31.529413047470207,
-                "OverallIncome": 648.3078285977891,
+                "OverallIncome": 588.9269514631603,
                 "Levies": -50,
                 "LightInfantry": 2000,
                 "HeavyInfantry": 4000,
@@ -38180,7 +38455,7 @@
                 "TrainingQuality": 0.25,
                 "ArmyTech": 1.8,
                 "MilitaryTactics": 0.25,
-                "ArmyQuality": 2.8594375,
+                "ArmyQuality": 2.664816990225506,
                 "MilitaryLoyalty": 1,
                 "MilitaryMorale": 0.7601134465436679,
                 "MilitaryDiscipline": 1.005,
@@ -38223,7 +38498,11 @@
                     "Burghers": 0.005,
                     "PopulationInMilitary": 0.0027679511467151256,
                     "PopulationInResourceHarvest": 0,
-                    "PopulationInAgriculture": 0.9597320488532849
+                    "PopulationInAgriculture": 0.9597320488532849,
+                    "Sailors": 0.002552378627500552,
+                    "Bureaucrats": 0.006276162836905509,
+                    "Intellectuals": 0.007000000000000001,
+                    "Merchants": 0.0007156570845887224
                 },
                 "SocietalClasses": {
                     "High": 0.01,
@@ -38379,7 +38658,7 @@
                 "HighClassTax": 0.16,
                 "MediumClassTax": 0.16,
                 "LowerClassTax": 0.16,
-                "EffectiveTax": 610.2221929583197,
+                "EffectiveTax": 550.8413158236909,
                 "PublicDebtTaken": 397.1822211867658,
                 "PublicDebtLength": 0,
                 "InterestRate": 0.05,
@@ -38753,7 +39032,8 @@
                         "Pixels": 0
                     }
                 },
-                "HabitableLand": 0.8610925572519085
+                "HabitableLand": 0.8610925572519085,
+                "AdministrativeStrain": 36.39241019548987
             },
             "TexasTribes": {
                 "FuturePopulation": 5518643.722098125,
@@ -38913,7 +39193,11 @@
                     "Burghers": 0.005,
                     "PopulationInMilitary": 0.0004335411062170546,
                     "PopulationInResourceHarvest": 0.008482325991203242,
-                    "PopulationInAgriculture": 0.9485841329025797
+                    "PopulationInAgriculture": 0.9485841329025797,
+                    "Sailors": 0,
+                    "Bureaucrats": 0.004603120653868488,
+                    "Intellectuals": 0.003916666666666666,
+                    "Merchants": 0.0005654883994135495
                 },
                 "SocietalClasses": {
                     "High": 0.01,
@@ -39443,13 +39727,14 @@
                         "Pixels": 0
                     }
                 },
-                "HabitableLand": 0.7851967764650654
+                "HabitableLand": 0.7851967764650654,
+                "AdministrativeStrain": 24.420239170116886
             },
             "KingdomOfUralikslavia": {
                 "FuturePopulation": 3511507.473817346,
                 "FutureLiteracyPercent": 3.25,
                 "FutureHigherEducation": 0.09999999999999998,
-                "FutureBudget": 825.8452628375835,
+                "FutureBudget": 834.6930034423475,
                 "FutureFood": 373.475361474289,
                 "FutureResearchPoints": 7.5,
                 "FuturePublicDebtLength": 0,
@@ -39472,7 +39757,7 @@
                 "HigherEducation": 0.09999999999999998,
                 "EducationEfficiency": 1,
                 "AdministrativeEfficiency": 30.25,
-                "Corruption": 0.25416666666666676,
+                "Corruption": 0,
                 "Overextension": 0.24592860000000002,
                 "Propaganda": 0,
                 "SocialSpending": 0,
@@ -39493,7 +39778,7 @@
                 "Mercantilism": 1,
                 "PossiblePublicDebt": 307.49471428049793,
                 "EffectiveDebt": 0,
-                "DailyBudget": 325.2776757719626,
+                "DailyBudget": 334.1254163767266,
                 "Budget": 500.5675870656209,
                 "Inflation": 0.16547688828615567,
                 "Spies": 0,
@@ -39528,7 +39813,7 @@
                 "AdministrativeUpkeep": 1.8444645,
                 "ProductionRevenue": 4.5,
                 "ResearchUpkeep": 6.068974623957196,
-                "OverallIncome": 509.0443280394178,
+                "OverallIncome": 517.8920686441818,
                 "Levies": 0,
                 "LightInfantry": 500,
                 "HeavyInfantry": 0,
@@ -39560,7 +39845,7 @@
                 "TrainingQuality": 0.25,
                 "ArmyTech": 1.8,
                 "MilitaryTactics": 0.25,
-                "ArmyQuality": 3.1158333333333332,
+                "ArmyQuality": 3.1666666666666665,
                 "MilitaryLoyalty": 1,
                 "MilitaryMorale": 0.7289675196297891,
                 "MilitaryDiscipline": 1,
@@ -39603,7 +39888,11 @@
                     "Burghers": 0.005,
                     "PopulationInMilitary": 0.0005689799700873415,
                     "PopulationInResourceHarvest": 0.0013387764002055094,
-                    "PopulationInAgriculture": 0.9655922436297072
+                    "PopulationInAgriculture": 0.9655922436297072,
+                    "Sailors": 0,
+                    "Bureaucrats": 0.006711233317467406,
+                    "Intellectuals": 0.0009999999999999998,
+                    "Merchants": 0.0006693882001027547
                 },
                 "SocietalClasses": {
                     "High": 0.01,
@@ -39759,7 +40048,7 @@
                 "HighClassTax": 0.2,
                 "MediumClassTax": 0.18,
                 "LowerClassTax": 0.15,
-                "EffectiveTax": 339.2600864679192,
+                "EffectiveTax": 348.1078270726832,
                 "PublicDebtTaken": 0,
                 "PublicDebtLength": 0,
                 "InterestRate": 0.05,
@@ -40133,13 +40422,14 @@
                         "Pixels": 0
                     }
                 },
-                "HabitableLand": 0.586540483701367
+                "HabitableLand": 0.586540483701367,
+                "AdministrativeStrain": 25.06480289179431
             },
             "Chechnya": {
                 "FuturePopulation": 4419034.795120359,
                 "FutureLiteracyPercent": 9.375,
                 "FutureHigherEducation": 0.5,
-                "FutureBudget": 432.2358198833539,
+                "FutureBudget": 446.395999942358,
                 "FutureFood": 461.4435589035014,
                 "FutureResearchPoints": 7.5,
                 "FuturePublicDebtLength": 0,
@@ -40162,7 +40452,7 @@
                 "HigherEducation": 0.375,
                 "EducationEfficiency": 3.75,
                 "AdministrativeEfficiency": 34,
-                "Corruption": 0.3,
+                "Corruption": 0,
                 "Overextension": 0.31996496,
                 "Propaganda": 0,
                 "SocialSpending": 0.75,
@@ -40183,7 +40473,7 @@
                 "Mercantilism": 1.25,
                 "PossiblePublicDebt": 369.1548471228012,
                 "EffectiveDebt": 0,
-                "DailyBudget": 111.12702227125956,
+                "DailyBudget": 125.28720233026368,
                 "Budget": 321.10879761209435,
                 "Inflation": 0.09444376400355717,
                 "Spies": 0,
@@ -40218,7 +40508,7 @@
                 "AdministrativeUpkeep": 2.3997371999999997,
                 "ProductionRevenue": 11.925,
                 "ResearchUpkeep": 19.46715014124147,
-                "OverallIncome": 596.5749183411771,
+                "OverallIncome": 610.7350984001812,
                 "Levies": 0,
                 "LightInfantry": 0,
                 "HeavyInfantry": 0,
@@ -40250,7 +40540,7 @@
                 "TrainingQuality": 0.35,
                 "ArmyTech": 1.9,
                 "MilitaryTactics": 0.35,
-                "ArmyQuality": 3.54,
+                "ArmyQuality": 3.6,
                 "MilitaryLoyalty": 1,
                 "MilitaryMorale": 0.9512316257936051,
                 "MilitaryDiscipline": 1,
@@ -40293,7 +40583,11 @@
                     "Burghers": 0.005,
                     "PopulationInMilitary": 0,
                     "PopulationInResourceHarvest": 0,
-                    "PopulationInAgriculture": 0.9575
+                    "PopulationInAgriculture": 0.9575,
+                    "Sailors": 0,
+                    "Bureaucrats": 0.006013858210387178,
+                    "Intellectuals": 0.00375,
+                    "Merchants": 0.0006501336820322525
                 },
                 "SocietalClasses": {
                     "High": 0.01,
@@ -40449,7 +40743,7 @@
                 "HighClassTax": 0.3,
                 "MediumClassTax": 0.15,
                 "LowerClassTax": 0.15,
-                "EffectiveTax": 457.8458219077985,
+                "EffectiveTax": 472.0060019668026,
                 "PublicDebtTaken": 0,
                 "PublicDebtLength": 0,
                 "InterestRate": 0.05,
@@ -40823,13 +41117,14 @@
                         "Pixels": 0
                     }
                 },
-                "HabitableLand": 0.5803397472023186
+                "HabitableLand": 0.5803397472023186,
+                "AdministrativeStrain": 27.750561353421013
             },
             "RepublicOfLaPlata": {
                 "FuturePopulation": 6524519.011386337,
                 "FutureLiteracyPercent": 9.25,
                 "FutureHigherEducation": 0.4833333333333334,
-                "FutureBudget": 1044.2692075558214,
+                "FutureBudget": 1066.6894136396932,
                 "FutureFood": 586.5060929355013,
                 "FutureResearchPoints": 7.5,
                 "FuturePublicDebtLength": 0,
@@ -40852,7 +41147,7 @@
                 "HigherEducation": 0.3666666666666667,
                 "EducationEfficiency": 3.5,
                 "AdministrativeEfficiency": 34.5,
-                "Corruption": 0.27500000000000036,
+                "Corruption": 0,
                 "Overextension": 0.3309219066666667,
                 "Propaganda": 0,
                 "SocialSpending": 0.75,
@@ -40873,7 +41168,7 @@
                 "Mercantilism": 1.4000000000000001,
                 "PossiblePublicDebt": 469.2048743484011,
                 "EffectiveDebt": 0,
-                "DailyBudget": 456.8372725897142,
+                "DailyBudget": 479.257478673586,
                 "Budget": 587.4319349661072,
                 "Inflation": 0.1702701260771325,
                 "Spies": 0,
@@ -40908,7 +41203,7 @@
                 "AdministrativeUpkeep": 2.4819143,
                 "ProductionRevenue": 14.35,
                 "ResearchUpkeep": 24.55994264167412,
-                "OverallIncome": 1038.04410516871,
+                "OverallIncome": 1060.4643112525816,
                 "Levies": 0,
                 "LightInfantry": 0,
                 "HeavyInfantry": 0,
@@ -40940,7 +41235,7 @@
                 "TrainingQuality": 0.39999999999999997,
                 "ArmyTech": 1.9,
                 "MilitaryTactics": 0.39999999999999997,
-                "ArmyQuality": 3.6699999999999995,
+                "ArmyQuality": 3.7249999999999996,
                 "MilitaryLoyalty": 0.7601238549808701,
                 "MilitaryMorale": 0.5702477099617402,
                 "MilitaryDiscipline": 1.005,
@@ -40983,7 +41278,11 @@
                     "Burghers": 0.005,
                     "PopulationInMilitary": 0,
                     "PopulationInResourceHarvest": 0.0017050121252704033,
-                    "PopulationInAgriculture": 0.9557949878747296
+                    "PopulationInAgriculture": 0.9557949878747296,
+                    "Sailors": 0,
+                    "Bureaucrats": 0.00483532684471732,
+                    "Intellectuals": 0.003666666666666667,
+                    "Merchants": 0.0006393795469764013
                 },
                 "SocietalClasses": {
                     "High": 0.01,
@@ -41139,7 +41438,7 @@
                 "HighClassTax": 0.2,
                 "MediumClassTax": 0.2,
                 "LowerClassTax": 0.2,
-                "EffectiveTax": 792.8600151478227,
+                "EffectiveTax": 815.2802212316943,
                 "PublicDebtTaken": 0,
                 "PublicDebtLength": 0,
                 "InterestRate": 0.05,
@@ -41513,7 +41812,8 @@
                         "Pixels": 0
                     }
                 },
-                "HabitableLand": 1
+                "HabitableLand": 1,
+                "AdministrativeStrain": 28.359486557613014
             },
             "Songhai": {
                 "FuturePopulation": 4163319.407456838,
@@ -41673,7 +41973,11 @@
                     "Burghers": 0.005,
                     "PopulationInMilitary": 0,
                     "PopulationInResourceHarvest": 0,
-                    "PopulationInAgriculture": 0.9575
+                    "PopulationInAgriculture": 0.9575,
+                    "Sailors": 0,
+                    "Bureaucrats": 0.005297969418497045,
+                    "Intellectuals": 0.003666666666666667,
+                    "Merchants": 0.0006764437399745209
                 },
                 "SocietalClasses": {
                     "High": 0.01,
@@ -42203,7 +42507,8 @@
                         "Pixels": 0
                     }
                 },
-                "HabitableLand": 0.4887404864945531
+                "HabitableLand": 0.4887404864945531,
+                "AdministrativeStrain": 23.49627517595151
             },
             "Deccan": {
                 "FuturePopulation": 4893506.517817538,
@@ -42363,7 +42668,11 @@
                     "Burghers": 0.005,
                     "PopulationInMilitary": 0,
                     "PopulationInResourceHarvest": 0,
-                    "PopulationInAgriculture": 0.9575
+                    "PopulationInAgriculture": 0.9575,
+                    "Sailors": 0,
+                    "Bureaucrats": 0.004754323875374785,
+                    "Intellectuals": 0.003666666666666667,
+                    "Merchants": 0.0006079261114748865
                 },
                 "SocietalClasses": {
                     "High": 0.01,
@@ -42893,7 +43202,8 @@
                         "Pixels": 0
                     }
                 },
-                "HabitableLand": 0.75
+                "HabitableLand": 0.75,
+                "AdministrativeStrain": 23.46168614393126
             },
             "Bosnia": {
                 "FuturePopulation": 1277621.6770448277,
@@ -43053,7 +43363,11 @@
                     "Burghers": 0.01,
                     "PopulationInMilitary": 0,
                     "PopulationInResourceHarvest": 0,
-                    "PopulationInAgriculture": 0.9575
+                    "PopulationInAgriculture": 0.9575,
+                    "Sailors": 0,
+                    "Bureaucrats": 0.016868149732445988,
+                    "Intellectuals": 0.0071666666666666675,
+                    "Merchants": 0.002237607058231869
                 },
                 "SocietalClasses": {
                     "High": 0.01,
@@ -43583,7 +43897,8 @@
                         "Pixels": 0
                     }
                 },
-                "HabitableLand": 0.8
+                "HabitableLand": 0.8,
+                "AdministrativeStrain": 19.788502581261696
             }
         },
         "Religions": {
