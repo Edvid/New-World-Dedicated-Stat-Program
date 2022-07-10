@@ -58,8 +58,8 @@ A convenient shorthand is also available for moving stats
 
 Or made shorter with selections
 
-`> noble loyalty`
-`move ajuran sultanate > self interests, 10`
+`> noble loyalty`\
+`move ajuran sultanate > self interests, 10`\
 `<`
 
 **III: setting a stat to something specific**
@@ -121,12 +121,12 @@ If there are any opinions you know the Catholics should have of other religions.
 
 Then onto creating Protestant and Muslim object within this, and set their scores
 
-`+> Protestant`
-`= -75 Protestant.Score`
-`+> Muslim`
+`+> Protestant`\
+`= -75 Protestant.Score`\
+`+> Muslim`\
 `= -50 Muslim.Score`
 
-SocialBehaviourGroups exists too, and one of these would be the ReligionGroups. They store the information of how many of reach religion reside within each nation, so this stat exists on the nation object. 
+SocialBehaviourGroups exists too, and one of these would be the ReligionGroups. They store the information of how many of each religion reside within each nation, so this stat exists on the nation object. Every nation has a corresponding socialBehaviourGroup to every socialBehavour existing globally, but they will all be set to 0 by default.
 
 Let's first select a random nation
 
@@ -136,17 +136,13 @@ Then its ReligionGroups
 
 `> ReligionGroups`
 
-In here we may set the Religions this nation has. By default, all nations are 100% pagan to begin with, so we must first clear that update
+In here we may set the points of the Religions this nation has. By default, all nations are 100% pagan to begin with, so we must first clear that
 
 `= 0 Pagan.Points`
 
-Now we can begin creating the religions within this nation and set their points too
+Now we can begin setting points of the others
 
-`+> Catholic`
 `= 95 Catholic.Points`
-
-
-`+> Protestant`
 `= 95 Protestant.Points`
 
 If everything is done correctly, you should be able to see a pie chart with only a sliver for protestants, and a table showing the opinion of the catholics towards the protestants in their nation having a displeased smiley.
