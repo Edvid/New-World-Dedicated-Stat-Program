@@ -8,3 +8,1179 @@
 
 > KingdomOfPrussia
 =1.2 ArmyWages
+
+# VespucianTribes Climates
+<... > Nations > VespucianTribes > Climates
+=253 TaigaAndTundra.Pixels
+=60083 Moderate.Pixels
+=644 SubTropical.Pixels
+
+# TainoTribalConfederacy Climates
+<... > Nations > TainoTribalConfederacy > Climates
+=7151 SubTropical.Pixels
+=926 Tropical.Pixels
+
+# AztecEmpire Climates
+<... > Nations > AztecEmpire > Climates
+=4895 SubTropical.Pixels
+=187 Tropical.Pixels
+=5481 Savanna.Pixels
+=161 Desert.Pixels
+=2002 Mountainous.Pixels
+
+# MayanEmpire Climates
+<... > Nations > MayanEmpire > Climates
+=7601 SubTropical.Pixels
+=3156 Tropical.Pixels
+=376 Mountainous.Pixels
+
+# NewEngland Climates
+<... > Nations > NewEngland > Climates
+=4299 TaigaAndTundra.Pixels
+=6262 Moderate.Pixels
+
+# TexasTribes Climates
+<... > Nations > TexasTribes > Climates
+=4948 Moderate.Pixels
+=7851 Savanna.Pixels
+
+# RepublicOfLaPlata Climates
+<... > Nations > RepublicOfLaPlata > Climates
+=13576 Moderate.Pixels
+
+<... > Nations
++> EnglishMexico = KingdomOfEngland
+
+# EnglishMexico Climates
+<... > Nations > EnglishMexico > Climates
+=83 SubTropical.Pixels
+=179 Tropical.Pixels
+=313 Savanna.Pixels
+<
+=75000 pop
+="false" AtWar
+=15 Budget
+=0 Spies
+=0 Levies
+=0 LightInfantry
+=0 HeavyInfantry
+=0 Archers
+=0 Crossbowmen
+=0 LightCavalry
+=0 HeavyCavalry
+=0 EliteInfantry
+=0 EliteCavalry
+=0 HandCannoneers
+=0 Musketeers
+=0 Militia
+=0 SiegeEquipment
+=0 LargeSiegeEquipment
+=0 Cannons
+=0 SmallForts
+=0 MediumForts
+=0 BigForts
+=0 HugeForts
+=0 ExtraCityFortifications
+=0 LightShips
+=0 MediumShips
+=0 HeavyShips
+=0 Coal
+=0 Sulphur
+=0 Cotton
+=0 Gold
+=0 Iron
+=0 Tea
+=0 Silk
+=0 Spice
+=0 Wool
+=0 Coffee
+=0 Fur
+=0 Diamond
+=0 Silver
+=0 Ivory
+=0 Cocoa
+=0 Tobacco
+=0 Sugar
+=0 ExoticFruit
+=0 PublicDebtTaken
+=0 PublicDebtLength
+=0.5 Fertility
+=15 Food
+=0 Casualties
+=0 Pillaging
+=0 Occupation
+=0 MinorBattles
+=0 MajorBattles
+> Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=0 Arid.Pixels
+=0 Steppe.Pixels
+=0 Moderate.Pixels
+=0 SubTropical.Pixels
+=0 Tropical.Pixels
+=0 Savanna.Pixels
+=0 Desert.Pixels
+=0 CoastalDesert.Pixels
+=0 Mountainous.Pixels
+<
+> Trade Influences
+=0 Alaska.tp
+=0 Cascadia.tp
+=0 CaliforniaAndWestMexico.tp
+=0 HudsonBay.tp
+=0 GreatLakes.tp
+=0 Louisiana.tp
+=0 GulfOfMexico.tp
+=0 LawrenceGulf.tp
+=0 EastCoast.tp
+=0 Carribean.tp
+=0 CentralAmerica.tp
+
+=0 GuyanaAndSuriname.tp
+=0 Amazon.tp
+=0 Peru.tp
+=0 RioGrande.tp
+=0 LaPlata.tp
+=0 Chile.tp
+=0 Patagonia.tp
+
+=0 NorthernAnatolia.tp
+=0 NorthSea.tp
+=0 BritishIsles.tp
+=0 EnglishChannel.tp
+=0 France.tp
+=0 BayOfBiscay.tp
+=0 WestIberia.tp
+=0 Gibraltar.tp
+=0 WesternMediterranean.tp
+=0 Rhine.tp
+=0 CentralMediterranean.tp
+=0 Adriatic.tp
+=0 Germany.tp
+=0 WesternDanube.tp
+=0 Denmark.tp
+=0 Baltic.tp
+=0 NorthNordics.tp
+=0 BarentsSea.tp
+=0 Novgorod.tp
+=0 Poland.tp
+=0 Dniepr.tp
+=0 Crimea.tp
+=0 EasternDanube.tp
+=0 Greece.tp
+=0 EasternMediterranean.tp
+=0 Egypt.tp
+=0 RedSea.tp
+=0 WesternSahara.tp
+=0 CoteDIvoire.tp
+=0 Nigeria.tp
+=0 SouthNile.tp
+=0 Somalia.tp
+=0 Kongo.tp
+=0 EastAfrica.tp
+=0 Mozambique.tp
+=0 SouthAfrica.tp
+
+=0 Mesopotamia.tp
+=0 PersianGulf.tp
+=0 Caucasus.tp
+=0 DonRiver.tp
+=0 Volga.tp
+=0 CentralAsia.tp
+=0 WestSiberia.tp
+=0 EastSiberia.tp
+=0 Iran.tp
+=0 Pakistan.tp
+=0 Tibet.tp
+=0 Mongolia.tp
+=0 Manchuria.tp
+=0 SeaOfJapan.tp
+=0 NorthChina.tp
+=0 YangtzeRiver.tp
+=0 SouthChina.tp
+=0 NorthIndia.tp
+=0 WestIndia.tp
+=0 EastIndia.tp
+=0 Burma.tp
+=0 SouthEastAsia.tp
+=0 NorthAustralia.tp
+=0 SouthAustralia.tp
+
+<... > Nations
++> EnglishCentralAmerica = KingdomOfEngland
+
+# EnglishCentralAmerica Climates
+<... > Nations > EnglishCentralAmerica > Climates
+=1309 Tropical.Pixels
+=256 Savanna.Pixels
+=74 Mountainous.Pixels
+<
+=75000 pop
+="false" AtWar
+=15 Budget
+=0 Spies
+=0 Levies
+=0 LightInfantry
+=0 HeavyInfantry
+=0 Archers
+=0 Crossbowmen
+=0 LightCavalry
+=0 HeavyCavalry
+=0 EliteInfantry
+=0 EliteCavalry
+=0 HandCannoneers
+=0 Musketeers
+=0 Militia
+=0 SiegeEquipment
+=0 LargeSiegeEquipment
+=0 Cannons
+=0 SmallForts
+=0 MediumForts
+=0 BigForts
+=0 HugeForts
+=0 ExtraCityFortifications
+=0 LightShips
+=0 MediumShips
+=0 HeavyShips
+=0 Coal
+=0 Sulphur
+=0 Cotton
+=0 Gold
+=0 Iron
+=0 Tea
+=0 Silk
+=0 Spice
+=0 Wool
+=0 Coffee
+=0 Fur
+=0 Diamond
+=0 Silver
+=0 Ivory
+=0 Cocoa
+=0 Tobacco
+=0 Sugar
+=0 ExoticFruit
+=0 PublicDebtTaken
+=0 PublicDebtLength
+=0.5 Fertility
+=15 Food
+=0 Casualties
+=0 Pillaging
+=0 Occupation
+=0 MinorBattles
+=0 MajorBattles
+> Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=0 Arid.Pixels
+=0 Steppe.Pixels
+=0 Moderate.Pixels
+=0 SubTropical.Pixels
+=0 Tropical.Pixels
+=0 Savanna.Pixels
+=0 Desert.Pixels
+=0 CoastalDesert.Pixels
+=0 Mountainous.Pixels
+<
+> Trade Influences
+=0 Alaska.tp
+=0 Cascadia.tp
+=0 CaliforniaAndWestMexico.tp
+=0 HudsonBay.tp
+=0 GreatLakes.tp
+=0 Louisiana.tp
+=0 GulfOfMexico.tp
+=0 LawrenceGulf.tp
+=0 EastCoast.tp
+=0 Carribean.tp
+=0 CentralAmerica.tp
+
+=0 GuyanaAndSuriname.tp
+=0 Amazon.tp
+=0 Peru.tp
+=0 RioGrande.tp
+=0 LaPlata.tp
+=0 Chile.tp
+=0 Patagonia.tp
+
+=0 NorthernAnatolia.tp
+=0 NorthSea.tp
+=0 BritishIsles.tp
+=0 EnglishChannel.tp
+=0 France.tp
+=0 BayOfBiscay.tp
+=0 WestIberia.tp
+=0 Gibraltar.tp
+=0 WesternMediterranean.tp
+=0 Rhine.tp
+=0 CentralMediterranean.tp
+=0 Adriatic.tp
+=0 Germany.tp
+=0 WesternDanube.tp
+=0 Denmark.tp
+=0 Baltic.tp
+=0 NorthNordics.tp
+=0 BarentsSea.tp
+=0 Novgorod.tp
+=0 Poland.tp
+=0 Dniepr.tp
+=0 Crimea.tp
+=0 EasternDanube.tp
+=0 Greece.tp
+=0 EasternMediterranean.tp
+=0 Egypt.tp
+=0 RedSea.tp
+=0 WesternSahara.tp
+=0 CoteDIvoire.tp
+=0 Nigeria.tp
+=0 SouthNile.tp
+=0 Somalia.tp
+=0 Kongo.tp
+=0 EastAfrica.tp
+=0 Mozambique.tp
+=0 SouthAfrica.tp
+
+=0 Mesopotamia.tp
+=0 PersianGulf.tp
+=0 Caucasus.tp
+=0 DonRiver.tp
+=0 Volga.tp
+=0 CentralAsia.tp
+=0 WestSiberia.tp
+=0 EastSiberia.tp
+=0 Iran.tp
+=0 Pakistan.tp
+=0 Tibet.tp
+=0 Mongolia.tp
+=0 Manchuria.tp
+=0 SeaOfJapan.tp
+=0 NorthChina.tp
+=0 YangtzeRiver.tp
+=0 SouthChina.tp
+=0 NorthIndia.tp
+=0 WestIndia.tp
+=0 EastIndia.tp
+=0 Burma.tp
+=0 SouthEastAsia.tp
+=0 NorthAustralia.tp
+=0 SouthAustralia.tp
+
+<... > Nations
++> EnglishColombia = KingdomOfEngland
+
+# EnglishColombia Climates
+<... > Nations > EnglishColombia > Climates
+=2130 SubTropical.Pixels
+=348 Tropical.Pixels
+=21 Mountainous.Pixels
+<
+=75000 pop
+="false" AtWar
+=15 Budget
+=0 Spies
+=0 Levies
+=0 LightInfantry
+=0 HeavyInfantry
+=0 Archers
+=0 Crossbowmen
+=0 LightCavalry
+=0 HeavyCavalry
+=0 EliteInfantry
+=0 EliteCavalry
+=0 HandCannoneers
+=0 Musketeers
+=0 Militia
+=0 SiegeEquipment
+=0 LargeSiegeEquipment
+=0 Cannons
+=0 SmallForts
+=0 MediumForts
+=0 BigForts
+=0 HugeForts
+=0 ExtraCityFortifications
+=0 LightShips
+=0 MediumShips
+=0 HeavyShips
+=0 Coal
+=0 Sulphur
+=0 Cotton
+=0 Gold
+=0 Iron
+=0 Tea
+=0 Silk
+=0 Spice
+=0 Wool
+=0 Coffee
+=0 Fur
+=0 Diamond
+=0 Silver
+=0 Ivory
+=0 Cocoa
+=0 Tobacco
+=0 Sugar
+=0 ExoticFruit
+=0 PublicDebtTaken
+=0 PublicDebtLength
+=0.5 Fertility
+=15 Food
+=0 Casualties
+=0 Pillaging
+=0 Occupation
+=0 MinorBattles
+=0 MajorBattles
+> Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=0 Arid.Pixels
+=0 Steppe.Pixels
+=0 Moderate.Pixels
+=0 SubTropical.Pixels
+=0 Tropical.Pixels
+=0 Savanna.Pixels
+=0 Desert.Pixels
+=0 CoastalDesert.Pixels
+=0 Mountainous.Pixels
+<
+> Trade Influences
+=0 Alaska.tp
+=0 Cascadia.tp
+=0 CaliforniaAndWestMexico.tp
+=0 HudsonBay.tp
+=0 GreatLakes.tp
+=0 Louisiana.tp
+=0 GulfOfMexico.tp
+=0 LawrenceGulf.tp
+=0 EastCoast.tp
+=0 Carribean.tp
+=0 CentralAmerica.tp
+
+=0 GuyanaAndSuriname.tp
+=0 Amazon.tp
+=0 Peru.tp
+=0 RioGrande.tp
+=0 LaPlata.tp
+=0 Chile.tp
+=0 Patagonia.tp
+
+=0 NorthernAnatolia.tp
+=0 NorthSea.tp
+=0 BritishIsles.tp
+=0 EnglishChannel.tp
+=0 France.tp
+=0 BayOfBiscay.tp
+=0 WestIberia.tp
+=0 Gibraltar.tp
+=0 WesternMediterranean.tp
+=0 Rhine.tp
+=0 CentralMediterranean.tp
+=0 Adriatic.tp
+=0 Germany.tp
+=0 WesternDanube.tp
+=0 Denmark.tp
+=0 Baltic.tp
+=0 NorthNordics.tp
+=0 BarentsSea.tp
+=0 Novgorod.tp
+=0 Poland.tp
+=0 Dniepr.tp
+=0 Crimea.tp
+=0 EasternDanube.tp
+=0 Greece.tp
+=0 EasternMediterranean.tp
+=0 Egypt.tp
+=0 RedSea.tp
+=0 WesternSahara.tp
+=0 CoteDIvoire.tp
+=0 Nigeria.tp
+=0 SouthNile.tp
+=0 Somalia.tp
+=0 Kongo.tp
+=0 EastAfrica.tp
+=0 Mozambique.tp
+=0 SouthAfrica.tp
+
+=0 Mesopotamia.tp
+=0 PersianGulf.tp
+=0 Caucasus.tp
+=0 DonRiver.tp
+=0 Volga.tp
+=0 CentralAsia.tp
+=0 WestSiberia.tp
+=0 EastSiberia.tp
+=0 Iran.tp
+=0 Pakistan.tp
+=0 Tibet.tp
+=0 Mongolia.tp
+=0 Manchuria.tp
+=0 SeaOfJapan.tp
+=0 NorthChina.tp
+=0 YangtzeRiver.tp
+=0 SouthChina.tp
+=0 NorthIndia.tp
+=0 WestIndia.tp
+=0 EastIndia.tp
+=0 Burma.tp
+=0 SouthEastAsia.tp
+=0 NorthAustralia.tp
+=0 SouthAustralia.tp
+
+<... > Nations
++> NewToledo = KingdomOfToledoCatalonia
+
+# NewToledo Climates
+<... > Nations > NewToledo > Climates
+=883 Tropical.Pixels
+<
+=75000 pop
+="false" AtWar
+=15 Budget
+=0 Spies
+=0 Levies
+=0 LightInfantry
+=0 HeavyInfantry
+=0 Archers
+=0 Crossbowmen
+=0 LightCavalry
+=0 HeavyCavalry
+=0 EliteInfantry
+=0 EliteCavalry
+=0 HandCannoneers
+=0 Musketeers
+=0 Militia
+=0 SiegeEquipment
+=0 LargeSiegeEquipment
+=0 Cannons
+=0 SmallForts
+=0 MediumForts
+=0 BigForts
+=0 HugeForts
+=0 ExtraCityFortifications
+=0 LightShips
+=0 MediumShips
+=0 HeavyShips
+=0 Coal
+=0 Sulphur
+=0 Cotton
+=0 Gold
+=0 Iron
+=0 Tea
+=0 Silk
+=0 Spice
+=0 Wool
+=0 Coffee
+=0 Fur
+=0 Diamond
+=0 Silver
+=0 Ivory
+=0 Cocoa
+=0 Tobacco
+=0 Sugar
+=0 ExoticFruit
+=0 PublicDebtTaken
+=0 PublicDebtLength
+=0.5 Fertility
+=15 Food
+=0 Casualties
+=0 Pillaging
+=0 Occupation
+=0 MinorBattles
+=0 MajorBattles
+> Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=0 Arid.Pixels
+=0 Steppe.Pixels
+=0 Moderate.Pixels
+=0 SubTropical.Pixels
+=0 Tropical.Pixels
+=0 Savanna.Pixels
+=0 Desert.Pixels
+=0 CoastalDesert.Pixels
+=0 Mountainous.Pixels
+<
+> Trade Influences
+=0 Alaska.tp
+=0 Cascadia.tp
+=0 CaliforniaAndWestMexico.tp
+=0 HudsonBay.tp
+=0 GreatLakes.tp
+=0 Louisiana.tp
+=0 GulfOfMexico.tp
+=0 LawrenceGulf.tp
+=0 EastCoast.tp
+=0 Carribean.tp
+=0 CentralAmerica.tp
+
+=0 GuyanaAndSuriname.tp
+=0 Amazon.tp
+=0 Peru.tp
+=0 RioGrande.tp
+=0 LaPlata.tp
+=0 Chile.tp
+=0 Patagonia.tp
+
+=0 NorthernAnatolia.tp
+=0 NorthSea.tp
+=0 BritishIsles.tp
+=0 EnglishChannel.tp
+=0 France.tp
+=0 BayOfBiscay.tp
+=0 WestIberia.tp
+=0 Gibraltar.tp
+=0 WesternMediterranean.tp
+=0 Rhine.tp
+=0 CentralMediterranean.tp
+=0 Adriatic.tp
+=0 Germany.tp
+=0 WesternDanube.tp
+=0 Denmark.tp
+=0 Baltic.tp
+=0 NorthNordics.tp
+=0 BarentsSea.tp
+=0 Novgorod.tp
+=0 Poland.tp
+=0 Dniepr.tp
+=0 Crimea.tp
+=0 EasternDanube.tp
+=0 Greece.tp
+=0 EasternMediterranean.tp
+=0 Egypt.tp
+=0 RedSea.tp
+=0 WesternSahara.tp
+=0 CoteDIvoire.tp
+=0 Nigeria.tp
+=0 SouthNile.tp
+=0 Somalia.tp
+=0 Kongo.tp
+=0 EastAfrica.tp
+=0 Mozambique.tp
+=0 SouthAfrica.tp
+
+=0 Mesopotamia.tp
+=0 PersianGulf.tp
+=0 Caucasus.tp
+=0 DonRiver.tp
+=0 Volga.tp
+=0 CentralAsia.tp
+=0 WestSiberia.tp
+=0 EastSiberia.tp
+=0 Iran.tp
+=0 Pakistan.tp
+=0 Tibet.tp
+=0 Mongolia.tp
+=0 Manchuria.tp
+=0 SeaOfJapan.tp
+=0 NorthChina.tp
+=0 YangtzeRiver.tp
+=0 SouthChina.tp
+=0 NorthIndia.tp
+=0 WestIndia.tp
+=0 EastIndia.tp
+=0 Burma.tp
+=0 SouthEastAsia.tp
+=0 NorthAustralia.tp
+=0 SouthAustralia.tp
+
+<... > Nations
++> NewRabat = ValublidSultanate
+
+# NewRabat Climates
+<... > Nations > NewRabat > Climates
+=369 Tropical.Pixels
+<
+=75000 pop
+="false" AtWar
+=15 Budget
+=0 Spies
+=0 Levies
+=0 LightInfantry
+=0 HeavyInfantry
+=0 Archers
+=0 Crossbowmen
+=0 LightCavalry
+=0 HeavyCavalry
+=0 EliteInfantry
+=0 EliteCavalry
+=0 HandCannoneers
+=0 Musketeers
+=0 Militia
+=0 SiegeEquipment
+=0 LargeSiegeEquipment
+=0 Cannons
+=0 SmallForts
+=0 MediumForts
+=0 BigForts
+=0 HugeForts
+=0 ExtraCityFortifications
+=0 LightShips
+=0 MediumShips
+=0 HeavyShips
+=0 Coal
+=0 Sulphur
+=0 Cotton
+=0 Gold
+=0 Iron
+=0 Tea
+=0 Silk
+=0 Spice
+=0 Wool
+=0 Coffee
+=0 Fur
+=0 Diamond
+=0 Silver
+=0 Ivory
+=0 Cocoa
+=0 Tobacco
+=0 Sugar
+=0 ExoticFruit
+=0 PublicDebtTaken
+=0 PublicDebtLength
+=0.5 Fertility
+=15 Food
+=0 Casualties
+=0 Pillaging
+=0 Occupation
+=0 MinorBattles
+=0 MajorBattles
+> Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=0 Arid.Pixels
+=0 Steppe.Pixels
+=0 Moderate.Pixels
+=0 SubTropical.Pixels
+=0 Tropical.Pixels
+=0 Savanna.Pixels
+=0 Desert.Pixels
+=0 CoastalDesert.Pixels
+=0 Mountainous.Pixels
+<
+> Trade Influences
+=0 Alaska.tp
+=0 Cascadia.tp
+=0 CaliforniaAndWestMexico.tp
+=0 HudsonBay.tp
+=0 GreatLakes.tp
+=0 Louisiana.tp
+=0 GulfOfMexico.tp
+=0 LawrenceGulf.tp
+=0 EastCoast.tp
+=0 Carribean.tp
+=0 CentralAmerica.tp
+
+=0 GuyanaAndSuriname.tp
+=0 Amazon.tp
+=0 Peru.tp
+=0 RioGrande.tp
+=0 LaPlata.tp
+=0 Chile.tp
+=0 Patagonia.tp
+
+=0 NorthernAnatolia.tp
+=0 NorthSea.tp
+=0 BritishIsles.tp
+=0 EnglishChannel.tp
+=0 France.tp
+=0 BayOfBiscay.tp
+=0 WestIberia.tp
+=0 Gibraltar.tp
+=0 WesternMediterranean.tp
+=0 Rhine.tp
+=0 CentralMediterranean.tp
+=0 Adriatic.tp
+=0 Germany.tp
+=0 WesternDanube.tp
+=0 Denmark.tp
+=0 Baltic.tp
+=0 NorthNordics.tp
+=0 BarentsSea.tp
+=0 Novgorod.tp
+=0 Poland.tp
+=0 Dniepr.tp
+=0 Crimea.tp
+=0 EasternDanube.tp
+=0 Greece.tp
+=0 EasternMediterranean.tp
+=0 Egypt.tp
+=0 RedSea.tp
+=0 WesternSahara.tp
+=0 CoteDIvoire.tp
+=0 Nigeria.tp
+=0 SouthNile.tp
+=0 Somalia.tp
+=0 Kongo.tp
+=0 EastAfrica.tp
+=0 Mozambique.tp
+=0 SouthAfrica.tp
+
+=0 Mesopotamia.tp
+=0 PersianGulf.tp
+=0 Caucasus.tp
+=0 DonRiver.tp
+=0 Volga.tp
+=0 CentralAsia.tp
+=0 WestSiberia.tp
+=0 EastSiberia.tp
+=0 Iran.tp
+=0 Pakistan.tp
+=0 Tibet.tp
+=0 Mongolia.tp
+=0 Manchuria.tp
+=0 SeaOfJapan.tp
+=0 NorthChina.tp
+=0 YangtzeRiver.tp
+=0 SouthChina.tp
+=0 NorthIndia.tp
+=0 WestIndia.tp
+=0 EastIndia.tp
+=0 Burma.tp
+=0 SouthEastAsia.tp
+=0 NorthAustralia.tp
+=0 SouthAustralia.tp
+
+<... > Nations
++> ByzantineCuba = Byzantium
+
+# ByzantineCuba Climates
+<... > Nations > ByzantineCuba > Climates
+=966 SubTropical.Pixels
+<
+=75000 pop
+="false" AtWar
+=15 Budget
+=0 Spies
+=0 Levies
+=0 LightInfantry
+=0 HeavyInfantry
+=0 Archers
+=0 Crossbowmen
+=0 LightCavalry
+=0 HeavyCavalry
+=0 EliteInfantry
+=0 EliteCavalry
+=0 HandCannoneers
+=0 Musketeers
+=0 Militia
+=0 SiegeEquipment
+=0 LargeSiegeEquipment
+=0 Cannons
+=0 SmallForts
+=0 MediumForts
+=0 BigForts
+=0 HugeForts
+=0 ExtraCityFortifications
+=0 LightShips
+=0 MediumShips
+=0 HeavyShips
+=0 Coal
+=0 Sulphur
+=0 Cotton
+=0 Gold
+=0 Iron
+=0 Tea
+=0 Silk
+=0 Spice
+=0 Wool
+=0 Coffee
+=0 Fur
+=0 Diamond
+=0 Silver
+=0 Ivory
+=0 Cocoa
+=0 Tobacco
+=0 Sugar
+=0 ExoticFruit
+=0 PublicDebtTaken
+=0 PublicDebtLength
+=0.5 Fertility
+=15 Food
+=0 Casualties
+=0 Pillaging
+=0 Occupation
+=0 MinorBattles
+=0 MajorBattles
+> Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=0 Arid.Pixels
+=0 Steppe.Pixels
+=0 Moderate.Pixels
+=0 SubTropical.Pixels
+=0 Tropical.Pixels
+=0 Savanna.Pixels
+=0 Desert.Pixels
+=0 CoastalDesert.Pixels
+=0 Mountainous.Pixels
+<
+> Trade Influences
+=0 Alaska.tp
+=0 Cascadia.tp
+=0 CaliforniaAndWestMexico.tp
+=0 HudsonBay.tp
+=0 GreatLakes.tp
+=0 Louisiana.tp
+=0 GulfOfMexico.tp
+=0 LawrenceGulf.tp
+=0 EastCoast.tp
+=0 Carribean.tp
+=0 CentralAmerica.tp
+
+=0 GuyanaAndSuriname.tp
+=0 Amazon.tp
+=0 Peru.tp
+=0 RioGrande.tp
+=0 LaPlata.tp
+=0 Chile.tp
+=0 Patagonia.tp
+
+=0 NorthernAnatolia.tp
+=0 NorthSea.tp
+=0 BritishIsles.tp
+=0 EnglishChannel.tp
+=0 France.tp
+=0 BayOfBiscay.tp
+=0 WestIberia.tp
+=0 Gibraltar.tp
+=0 WesternMediterranean.tp
+=0 Rhine.tp
+=0 CentralMediterranean.tp
+=0 Adriatic.tp
+=0 Germany.tp
+=0 WesternDanube.tp
+=0 Denmark.tp
+=0 Baltic.tp
+=0 NorthNordics.tp
+=0 BarentsSea.tp
+=0 Novgorod.tp
+=0 Poland.tp
+=0 Dniepr.tp
+=0 Crimea.tp
+=0 EasternDanube.tp
+=0 Greece.tp
+=0 EasternMediterranean.tp
+=0 Egypt.tp
+=0 RedSea.tp
+=0 WesternSahara.tp
+=0 CoteDIvoire.tp
+=0 Nigeria.tp
+=0 SouthNile.tp
+=0 Somalia.tp
+=0 Kongo.tp
+=0 EastAfrica.tp
+=0 Mozambique.tp
+=0 SouthAfrica.tp
+
+=0 Mesopotamia.tp
+=0 PersianGulf.tp
+=0 Caucasus.tp
+=0 DonRiver.tp
+=0 Volga.tp
+=0 CentralAsia.tp
+=0 WestSiberia.tp
+=0 EastSiberia.tp
+=0 Iran.tp
+=0 Pakistan.tp
+=0 Tibet.tp
+=0 Mongolia.tp
+=0 Manchuria.tp
+=0 SeaOfJapan.tp
+=0 NorthChina.tp
+=0 YangtzeRiver.tp
+=0 SouthChina.tp
+=0 NorthIndia.tp
+=0 WestIndia.tp
+=0 EastIndia.tp
+=0 Burma.tp
+=0 SouthEastAsia.tp
+=0 NorthAustralia.tp
+=0 SouthAustralia.tp
+
+<... > Nations
++> NewScotland = KingdomOfScotland
+
+# NewScotland Climates
+<... > Nations > NewScotland > Climates
+=773 TaigaAndTundra.Pixels
+<
+=75000 pop
+="false" AtWar
+=15 Budget
+=0 Spies
+=0 Levies
+=0 LightInfantry
+=0 HeavyInfantry
+=0 Archers
+=0 Crossbowmen
+=0 LightCavalry
+=0 HeavyCavalry
+=0 EliteInfantry
+=0 EliteCavalry
+=0 HandCannoneers
+=0 Musketeers
+=0 Militia
+=0 SiegeEquipment
+=0 LargeSiegeEquipment
+=0 Cannons
+=0 SmallForts
+=0 MediumForts
+=0 BigForts
+=0 HugeForts
+=0 ExtraCityFortifications
+=0 LightShips
+=0 MediumShips
+=0 HeavyShips
+=0 Coal
+=0 Sulphur
+=0 Cotton
+=0 Gold
+=0 Iron
+=0 Tea
+=0 Silk
+=0 Spice
+=0 Wool
+=0 Coffee
+=0 Fur
+=0 Diamond
+=0 Silver
+=0 Ivory
+=0 Cocoa
+=0 Tobacco
+=0 Sugar
+=0 ExoticFruit
+=0 PublicDebtTaken
+=0 PublicDebtLength
+=0.5 Fertility
+=15 Food
+=0 Casualties
+=0 Pillaging
+=0 Occupation
+=0 MinorBattles
+=0 MajorBattles
+> Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=0 Arid.Pixels
+=0 Steppe.Pixels
+=0 Moderate.Pixels
+=0 SubTropical.Pixels
+=0 Tropical.Pixels
+=0 Savanna.Pixels
+=0 Desert.Pixels
+=0 CoastalDesert.Pixels
+=0 Mountainous.Pixels
+<
+> Trade Influences
+=0 Alaska.tp
+=0 Cascadia.tp
+=0 CaliforniaAndWestMexico.tp
+=0 HudsonBay.tp
+=0 GreatLakes.tp
+=0 Louisiana.tp
+=0 GulfOfMexico.tp
+=0 LawrenceGulf.tp
+=0 EastCoast.tp
+=0 Carribean.tp
+=0 CentralAmerica.tp
+
+=0 GuyanaAndSuriname.tp
+=0 Amazon.tp
+=0 Peru.tp
+=0 RioGrande.tp
+=0 LaPlata.tp
+=0 Chile.tp
+=0 Patagonia.tp
+
+=0 NorthernAnatolia.tp
+=0 NorthSea.tp
+=0 BritishIsles.tp
+=0 EnglishChannel.tp
+=0 France.tp
+=0 BayOfBiscay.tp
+=0 WestIberia.tp
+=0 Gibraltar.tp
+=0 WesternMediterranean.tp
+=0 Rhine.tp
+=0 CentralMediterranean.tp
+=0 Adriatic.tp
+=0 Germany.tp
+=0 WesternDanube.tp
+=0 Denmark.tp
+=0 Baltic.tp
+=0 NorthNordics.tp
+=0 BarentsSea.tp
+=0 Novgorod.tp
+=0 Poland.tp
+=0 Dniepr.tp
+=0 Crimea.tp
+=0 EasternDanube.tp
+=0 Greece.tp
+=0 EasternMediterranean.tp
+=0 Egypt.tp
+=0 RedSea.tp
+=0 WesternSahara.tp
+=0 CoteDIvoire.tp
+=0 Nigeria.tp
+=0 SouthNile.tp
+=0 Somalia.tp
+=0 Kongo.tp
+=0 EastAfrica.tp
+=0 Mozambique.tp
+=0 SouthAfrica.tp
+
+=0 Mesopotamia.tp
+=0 PersianGulf.tp
+=0 Caucasus.tp
+=0 DonRiver.tp
+=0 Volga.tp
+=0 CentralAsia.tp
+=0 WestSiberia.tp
+=0 EastSiberia.tp
+=0 Iran.tp
+=0 Pakistan.tp
+=0 Tibet.tp
+=0 Mongolia.tp
+=0 Manchuria.tp
+=0 SeaOfJapan.tp
+=0 NorthChina.tp
+=0 YangtzeRiver.tp
+=0 SouthChina.tp
+=0 NorthIndia.tp
+=0 WestIndia.tp
+=0 EastIndia.tp
+=0 Burma.tp
+=0 SouthEastAsia.tp
+=0 NorthAustralia.tp
+=0 SouthAustralia.tp
+
+#new nation template
+<... > Cultures
++> Floridian
+<... > Nations
++> KingdomOfFlorida
+<... > Nations > KingdomOfFlorida > CultureGroups
++> Floridian
+=100 Floridian.Points
+<... > Nations > KingdomOfFlorida
+= "https://cdn.discordapp.com/attachments/969287009879359578/994085311497900053/download_37.jpeg" Flag
+= "Floridian" cultrep
+= "Pagan" relrep
+
+# KingdomOfFlorida Climates
+<... > Nations > KingdomOfFlorida > Climates
+=2053 Moderate.Pixels
+=2279 SubTropical.Pixels
