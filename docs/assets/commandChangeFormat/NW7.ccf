@@ -1288,3 +1288,102 @@
 <... > Nations > SitaoRiverTribes > Climates
 =10791 Savanna.Pixels
 =1966 Desert.Pixels
+
+# EmpireOfJapan Climates
+<... > Nations > EmpireOfJapan > Climates
+=26025 Moderate.Pixels
+=2791 SubTropical.Pixels
+=2006 Tropical.Pixels
+=3303 Mountainous.Pixels
+
+# KingdomOfKhmbodj Climates
+<... > Nations > KingdomOfKhmbodj > Climates
+=14208 SubTropical.Pixels
+=9881 Tropical.Pixels
+
+# SindhEmpire Climates
+<... > Nations > SindhEmpire > Climates
+=35359 Arid.Pixels
+=9562 SubTropical.Pixels
+=93 Tropical.Pixels
+=10000 Savanna.Pixels
+=1584 CoastalDesert.Pixels
+=2606 Mountainous.Pixels
+
+# HittiteEmpire Climates
+<... > Nations > HittiteEmpire > Climates
+=796 Medditereanian.Pixels
+=7631 Arid.Pixels
+=91 Mountainous.Pixels
+
+# ZiEmpire Climates
+<... > Nations > ZiEmpire > Climates
+=30411 Arid.Pixels
+=2834 Mountainous.Pixels
+
+# EmpireOfLonguo Climates
+<... > Nations > EmpireOfLonguo > Climates
+=33349 Moderate.Pixels
+
+# AdenCaliphate Climates
+<... > Nations > AdenCaliphate > Climates
+=2895 SubTropical.Pixels
+=7639 Savanna.Pixels
+=16112 Desert.Pixels
+=15159 CoastalDesert.Pixels
+
+# QuasimidEmirate Climates
+<... > Nations > QuasimidEmirate > Climates
+=31182 Arid.Pixels
+=3662 CoastalDesert.Pixels
+=1935 Mountainous.Pixels
+
+# GuangxiClique Climates
+<... > Nations > GuangxiClique > Climates
+=23456 Moderate.Pixels
+=4056 SubTropical.Pixels
+=192 Tropical.Pixels
+
+# Cheonje Climates
+<... > Nations > Cheonje > Climates
+=16988 Moderate.Pixels
+
+# KingdomOfKyrat Climates
+<... > Nations > KingdomOfKyrat > Climates
+=38301 SubTropical.Pixels
+=7431 Tropical.Pixels
+=4068 Savanna.Pixels
+=5496 Mountainous.Pixels
+
+# SashimoKingdom Climates
+<... > Nations > SashimoKingdom > Climates
+=17855 TaigaAndTundra.Pixels
+=247 MontaneForest.Pixels
+=11055 Moderate.Pixels
+
+# TimuridEmirate Climates
+<... > Nations > TimuridEmirate > Climates
+=24684 Arid.Pixels
+=3383 Desert.Pixels
+=367 CoastalDesert.Pixels
+=3839 Mountainous.Pixels
+
+# MongolianKhanate Climates
+<... > Nations > MongolianKhanate > Climates
+=4315 MontaneForest.Pixels
+=21615 Steppe.Pixels
+=6176 Desert.Pixels
+
+# MenzenConfederation Climates
+<... > Nations > MenzenConfederation > Climates
+=18177 Moderate.Pixels
+
+# KingdomOfUralikslavia Climates
+<... > Nations > KingdomOfUralikslavia > Climates
+=5674 TaigaAndTundra.Pixels
+=9742 Moderate.Pixels
+=1189 Mountainous.Pixels
+
+# ZelenvaUnion Climates
+<... > Nations > ZelenvaUnion > Climates
+=13615 Moderate.Pixels
