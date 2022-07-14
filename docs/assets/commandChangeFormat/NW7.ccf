@@ -119,9 +119,6 @@
 =0 Arid.Pixels
 =0 Steppe.Pixels
 =0 Moderate.Pixels
-=0 SubTropical.Pixels
-=0 Tropical.Pixels
-=0 Savanna.Pixels
 =0 Desert.Pixels
 =0 CoastalDesert.Pixels
 =0 Mountainous.Pixels
@@ -281,11 +278,8 @@
 =0 Steppe.Pixels
 =0 Moderate.Pixels
 =0 SubTropical.Pixels
-=0 Tropical.Pixels
-=0 Savanna.Pixels
 =0 Desert.Pixels
 =0 CoastalDesert.Pixels
-=0 Mountainous.Pixels
 <
 > Trade Influences
 =0 Alaska.tp
@@ -441,12 +435,9 @@
 =0 Arid.Pixels
 =0 Steppe.Pixels
 =0 Moderate.Pixels
-=0 SubTropical.Pixels
-=0 Tropical.Pixels
 =0 Savanna.Pixels
 =0 Desert.Pixels
 =0 CoastalDesert.Pixels
-=0 Mountainous.Pixels
 <
 > Trade Influences
 =0 Alaska.tp
@@ -601,7 +592,6 @@
 =0 Steppe.Pixels
 =0 Moderate.Pixels
 =0 SubTropical.Pixels
-=0 Tropical.Pixels
 =0 Savanna.Pixels
 =0 Desert.Pixels
 =0 CoastalDesert.Pixels
@@ -760,7 +750,6 @@
 =0 Steppe.Pixels
 =0 Moderate.Pixels
 =0 SubTropical.Pixels
-=0 Tropical.Pixels
 =0 Savanna.Pixels
 =0 Desert.Pixels
 =0 CoastalDesert.Pixels
@@ -918,7 +907,6 @@
 =0 Arid.Pixels
 =0 Steppe.Pixels
 =0 Moderate.Pixels
-=0 SubTropical.Pixels
 =0 Tropical.Pixels
 =0 Savanna.Pixels
 =0 Desert.Pixels
@@ -1071,7 +1059,6 @@
 =0 MajorBattles
 > Climates
 =0 PolarDesert.Pixels
-=0 TaigaAndTundra.Pixels
 =0 MontaneForest.Pixels
 =0 Medditereanian.Pixels
 =0 Arid.Pixels
@@ -1184,3 +1171,62 @@
 <... > Nations > KingdomOfFlorida > Climates
 =2053 Moderate.Pixels
 =2279 SubTropical.Pixels
+
+# TsardomOfMuscovy Climates
+<... > Nations > TsardomOfMuscovy > Climates
+=12131 TaigaAndTundra.Pixels
+=30088 Moderate.Pixels
+
+# Byzantium Climates
+<... > Nations > Byzantium > Climates
+=21993 Medditereanian.Pixels
+=9692 Arid.Pixels
+=4092 Steppe.Pixels
+=267 Moderate.Pixels
+=1033 Mountainous.Pixels
+
+# ArchudchyOfAustria Climates
+<... > Nations > ArchduchyOfAustria > Climates
+=522 Medditereanian.Pixels
+=24952 Moderate.Pixels
+=4007 Mountainous.Pixels
+
+# DuchyOfBelarus Climates
+<... > Nations > DuchyOfBelarus > Climates
+=2205 Steppe.Pixels
+=31034 Moderate.Pixels
+
+# KingdomOfSerbia Climates
+<... > Nations > KingdomOfSerbia > Climates
+=3222 Medditereanian.Pixels
+=546 Steppe.Pixels
+=3615 Moderate.Pixels
+
+# CumanKpichakKhanate Climates
+<... > Nations > CumanKipchakKhanate > Climates
+=29680 Steppe.Pixels
+=2198 Moderate.Pixels
+=1000 Mountainous.Pixels
+
+# KingdomOfPoland Climates
+<... > Nations > KingdomOfPoland > Climates
+=179 Steppe.Pixels
+=22836 Moderate.Pixels
+=1646 Mountainous.Pixels
+
+# KingdomOfWallachia Climates
+<... > Nations > KingdomOfWallachia > Climates
+=8513 Steppe.Pixels
+=1725 Moderate.Pixels
+=1472 Mountainous.Pixels
+
+# LatvianEmpire Climates
+<... > Nations > LatvianEmpire > Climates
+=836 TaigaAndTundra.Pixels
+=15698 Moderate.Pixels
+
+# KingdomOfSfveadsland Climates
+<... > Nations > KingdomOfSfveadsland > Climates
+=12225 TaigaAndTundra.Pixels
+=364 MontaneForest.Pixels
+=9918 Moderate.Pixels
