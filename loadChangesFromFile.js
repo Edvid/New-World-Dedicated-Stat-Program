@@ -187,19 +187,21 @@ Aborting.`);
     }
 }
 
-let showingdownloadoption = false;
+async function populateAdvancedSettings(){
+    if (typeof advancedSettings === 'undefined') return;
+    advancedSettings.innerHTML = "";
+    displayProgress();
+    displayDownloadButton();
+}
 
 async function displayProgress() {
-    if (showingdownloadoption) return;
-    if (typeof loadingField === 'undefined') return;
-
+    
     let lines = changeCommandFileLength;
     let line = changeCommandIndex;
+    
 
-
-
-    loadingField.innerHTML = "";
     if (lines > line) {
+        console.log("aaa");
         let loadingFieldTitle = document.createElement("p");
         loadingFieldTitle.innerText = "Generating All nation Stats...";
 
@@ -220,29 +222,28 @@ async function displayProgress() {
         loadingText.style.fontSize = "12px";
         loadingText.style.color = "grey";
         loadingText.innerText = `line ${line} / ${lines} lines loaded`;
-        loadingField.appendChild(loadingFieldTitle);
-        loadingField.appendChild(loadingFieldTitle);
-        loadingField.appendChild(bar);
-        loadingField.appendChild(loadingText);
-    } else if (HashMatchedTill != changeCommandFileLength && typeof changeCommandFileLength !== 'undefined') {
-        let loadingFieldTitle = document.createElement("p");
-        loadingFieldTitle.innerText = "Download the new JSON file";
-        let downloadbutton = document.createElement("button");
-        downloadbutton.innerText = "Download JSON";
-        downloadbutton.addEventListener('click', () => {
-            let jsonobj = {
-                Lines: changeCommandFileLength, 
-                Hash: preloadStatChanges.replace(/\r?\n/gmi, "").hashCode(),
-                State: gameStats
-            };
-            let downloadString = JSON.stringify(jsonobj, null, 4);
+        advancedSettings.appendChild(loadingFieldTitle);
+        advancedSettings.appendChild(loadingFieldTitle);
+        advancedSettings.appendChild(bar);
+        advancedSettings.appendChild(loadingText);
+    } 
+}
 
-            downloadToFile(downloadString, 'NW7.json', 'application/json');
-        });
-        loadingField.appendChild(loadingFieldTitle);
-        loadingField.appendChild(downloadbutton);
-        showingdownloadoption = true;
-    }
+async function displayDownloadButton(){
+    let downloadbutton = document.createElement("button");
+    downloadbutton.innerText = "Download gameStats as JSON";
+    downloadbutton.addEventListener('click', () => {
+        let jsonobj = {
+            Lines: changeCommandFileLength, 
+            Hash: preloadStatChanges.replace(/\r?\n/gmi, "").hashCode(),
+            State: gameStats
+        };
+        let downloadString = JSON.stringify(jsonobj, null, 4);
+
+        downloadToFile(downloadString, 'NW7.json', 'application/json');
+    });
+    advancedSettings.appendChild(downloadbutton);
+
 }
 
 /* #region  taken from blog https://robkendal.co.uk/blog/2020-04-17-saving-text-to-client-side-file-using-vanilla-js */
@@ -258,4 +259,4 @@ const downloadToFile = (content, filename, contentType) => {
 };
 /* #endregion */
 
-setInterval(displayProgress, 30);
+setInterval(populateAdvancedSettings, 30);

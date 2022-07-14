@@ -1,9 +1,9 @@
 let primaryColor = "DodgerBlue";
 let secondaryColor = "lightSkyBlue";
 
-let loadingField = document.createElement("div");
+let advancedSettings = document.createElement("div");
 
-loadingField.style.marginLeft = "40px";
+advancedSettings.style.marginLeft = "40px";
 
 let nationSheetContainer = document.createElement("div");
 nationSheetContainer.classList.add("nationsheet");
@@ -81,7 +81,7 @@ function updateDropdownSelection() {
     }
 }
 
-document.body.appendChild(loadingField);
+document.body.appendChild(advancedSettings);
 
 
 document.body.appendChild(currentNationNameDisplay);
