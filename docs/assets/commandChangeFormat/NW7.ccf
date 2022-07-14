@@ -1230,3 +1230,61 @@
 =12225 TaigaAndTundra.Pixels
 =364 MontaneForest.Pixels
 =9918 Moderate.Pixels
+
+#new nation template
+<... > Cultures
++> Sitao
+<... > Nations
++> SitaoRiverTribes
+<... > Nations > SitaoRiverTribes > CultureGroups
++> Sitao
+=100 Sitao.Points
+<... > Nations > SitaoRiverTribes
+= "https://cdn.discordapp.com/attachments/969287009879359578/996882758037143552/unknown.png" Flag
+= "Sitao" cultrep
+= "Pagan" relrep
+
+# Mitiva Climates
+<... > Nations > Mitiva > Climates
+=6308 Medditereanian.Pixels
+=2434 Savanna.Pixels
+=10497 Desert.Pixels
+=3208 CoastalDesert.Pixels
+
+# KingdomOfBornu Climates
+<... > Nations > KingdomOfBornu > Climates
+=25183 SubTropical.Pixels
+=8463 Savanna.Pixels
+=79 Desert.Pixels
+
+# MagajiyaTribe Climates
+<... > Nations > MagajiyaTribe > Climates
+=22689 SubTropical.Pixels
+=6907 Tropical.Pixels
+=1776 Savanna.Pixels
+
+# ZuluKingdom Climates
+<... > Nations > ZuluKingdom > Climates
+=11599 Medditereanian.Pixels
+=3263 Moderate.Pixels
+=1277 SubTropical.Pixels
+=2996 Desert.Pixels
+=692 CoastalDesert.Pixels
+
+# KingdomOfBalanto Climates
+<... > Nations > KingdomOfBalanto > Climates
+=6060 SubTropical.Pixels
+=2651 Tropical.Pixels
+=6053 Savanna.Pixels
+=68 CoastalDesert.Pixels
+
+# Songhai Climates
+<... > Nations > Songhai > Climates
+=1133 SubTropical.Pixels
+=13689 Savanna.Pixels
+=3602 Desert.Pixels
+
+# SitaoRiverTribes Climates
+<... > Nations > SitaoRiverTribes > Climates
+=10791 Savanna.Pixels
+=1966 Desert.Pixels
