@@ -3,8 +3,117 @@ function evaluateNation(nationName) {
 
   n.AgricultureTechnology = 0 + n.Technologies.HorseCollar / 2;
   n.FarmingEfficiency = 1 + n.AgricultureSubsidies / 5 + n.Fertility - 0.5 + (n.AgricultureInfrastructure - 1) / 10 + (n.AgricultureAdvancements - 1) / 10 + n.AgricultureTechnology / 10;
+  
+  let SocialBehaviourCalc = function(socialBehaviourGroup, socialBehaviourWorldwideGroups, socialGroupRepresentedAtGovernmentLevel){
+    let pointSum = 0;
+    let SocialBehaviourDisunity = 0;
+
+    for (const socialbehaviourname in socialBehaviourGroup) {
+      const Points = socialBehaviourGroup[socialbehaviourname].Points;
+      pointSum += Points;
+    }
+
+    let socialGroupRepresentedAtGovernmentLevelPercent;
+    for (const OpinionatedSocialBehaviourGroupName in socialBehaviourGroup) {
+    
+      const OpinionatedSocialBehaviourGroup = socialBehaviourWorldwideGroups[OpinionatedSocialBehaviourGroupName];
+      const Points = socialBehaviourGroup[OpinionatedSocialBehaviourGroupName].Points;
+      //if the social behaviour is listed, but no one is actually here. Skip
+      if(Points == 0) continue;
+      if(OpinionatedSocialBehaviourGroupName == socialGroupRepresentedAtGovernmentLevel){
+        socialGroupRepresentedAtGovernmentLevelPercent = (Points / +pointSum);
+      }
+      for (const nameOfSocialBehaviourGroupToBeHadAnOpinionAbout in socialBehaviourGroup) {
+        //we don't account for social behaviour groups having Opinions on themselves
+        if (nameOfSocialBehaviourGroupToBeHadAnOpinionAbout == OpinionatedSocialBehaviourGroupName) continue; 
+        //If the social behaviour group to be had an opinion about is also not present in the nation either, n.also doesn't add to the disunity
+        const PointsOfOther = socialBehaviourGroup[nameOfSocialBehaviourGroupToBeHadAnOpinionAbout].Points;
+        if (PointsOfOther == 0) continue; 
+        
+        let opinionScore;
+        //If the social behaviour group to be had an opinion about, isn't recorded by the social behaviour group we are currently checking Opinions for. Treat the opinion as neutral
+        let opinionobj;
+        if (OpinionatedSocialBehaviourGroup.Opinions === undefined || OpinionatedSocialBehaviourGroup.Opinions[nameOfSocialBehaviourGroupToBeHadAnOpinionAbout] === undefined) 
+          opinionScore = Opinion.Neutral;
+        else {
+          opinionobj = OpinionatedSocialBehaviourGroup.Opinions[nameOfSocialBehaviourGroupToBeHadAnOpinionAbout];
+          if(isNaN(opinionobj.Score))
+            opinionScore = Opinion[opinionobj.Score];
+          else 
+            opinionScore = opinionobj.Score;
+        }
+        let socialBehaviourGroupDisunityFactor = (-opinionScore + 100) * (Points / pointSum) * (PointsOfOther / pointSum);
+        if (nameOfSocialBehaviourGroupToBeHadAnOpinionAbout == socialGroupRepresentedAtGovernmentLevel) {
+          socialBehaviourGroupDisunityFactor *= 1.5 / 53;
+        }else {
+          socialBehaviourGroupDisunityFactor *= 1 / 53;
+        }
+        SocialBehaviourDisunity += socialBehaviourGroupDisunityFactor;
+      }
+    }
+    return {
+      GovernmentRepresentationPercent: typeof socialGroupRepresentedAtGovernmentLevelPercent !== 'undefined' ? socialGroupRepresentedAtGovernmentLevelPercent : 0, 
+      disunity: SocialBehaviourDisunity
+    }
+  }
+  let cultureCalc = SocialBehaviourCalc(
+    n.CultureGroups, 
+    gameStats.Cultures, 
+    typeof n.CultureRepresentedAtGovernmentLevel !== 'undefined' ? n.CultureRepresentedAtGovernmentLevel : null
+  );
+  let religionCalc = SocialBehaviourCalc(
+    n.ReligionGroups, 
+    gameStats.Religions, 
+    typeof n.ReligionRepresentedAtGovernmentLevel !== 'undefined' ? n.ReligionRepresentedAtGovernmentLevel : null
+  );
+  n.Size = (function () {
+    let s = 0;
+    for (const climate in n.Climates) {
+      s += n.Climates[climate].Pixels;
+    }
+    return s;
+  })();
+  n.CultureRepresentedAtGovernmentLevelPercent =  cultureCalc.GovernmentRepresentationPercent;
+  n.CulturalDisunity = cultureCalc.disunity;
+  n.ReligionRepresentedAtGovernmentLevelPercent = religionCalc.GovernmentRepresentationPercent;
+  n.ReligiousDisunity = religionCalc.disunity;
   n.OverallNumbers = n.Musketeers + n.Levies + n.LightInfantry + n.HeavyInfantry + n.Archers + n.Crossbowmen + n.LightCavalry + n.HeavyCavalry + n.EliteInfantry + n.Militia + n.EliteCavalry + n.HandCannoneers + (n.SiegeEquipment + n.LargeSiegeEquipment) * 10;
+  n.OverallShipCount = n.LightShips + n.MediumShips + n.HeavyShips;
   n.AdministrativeStrain = (0 + n.Population / 1250000 + n.Health * 2 + n.EducationEfficiency * 1.5 + n.SocialSpending * 4 + n.Propaganda * 2 + n.PopulationControl * 2 + n.BirthControl * 4 + (n.HighClassTax + n.MediumClassTax + n.LowerClassTax) / 3 * 75 + n.OverallNumbers / 5000 + n.OverallShipCount / 100 + n.AgricultureSubsidies * 4 + (n.AgricultureInfrastructure - 1) * 4 + n.Size / 5000 + (n.ResearchSpending - 1) * 10 + (1 - n.CultureRepresentedAtGovernmentLevelPercent) * 10) * (n.CulturalAdvancements.EarlyModernAdministration == true ? 0.75 : 1) * (n.CulturalAdvancements.NationalSovereignity == true ? 0.75 : 1); 
+  n.TradePowerFromResourceTrade = (function () {
+    let num = 0;
+    let TradePowerResources = [
+      "Sulphur",
+      "Coal",
+      "Cotton",
+      "Gold",
+      "Iron",
+      "Tea",
+      "Silk",
+      "Spice",
+      "Wool",
+      "Coffee",
+      "Fur",
+      "Diamond",
+      "Silver",
+      "Copper",
+      "Ivory",
+      "Cocoa",
+      "Tobacco",
+      "Sugar",
+      "ExoticFruit"
+    ];
+    for (const resourceName in TradePowerResources) {
+      const resource = TradePowerResources[resourceName];
+      num += +n[resource + "Incoming"] * +n[resource + "Value"];
+      if(isNaN(num)){
+        lazyerror(`something went wrong. Tried to multiply ${n[resource + "Incoming"]} (${n.nationName ?? nationName}.${resource}Incoming) with ${n[resource + "Value"]} (${n.nationName ?? nationName}.${resource}Value)`);
+        return 0;
+      }
+    }
+    return num;
+  })();
+  n.TradePower = n.TradePowerFromResourceTrade + n.LocalTrade / 2 + (pseudoTradePower);
   n.ConscriptionPercent = n.OverallNumbers / n.Population;
   n.Workforces.PopulationInMilitary = n.ConscriptionPercent;
   n.Workforces.Sailors = (n.LightShips * 200 + n.MediumShips * 450 + n.HeavyShips * 800) / n.Population
@@ -161,13 +270,6 @@ function evaluateNation(nationName) {
   n.Prosperity = 1 + n.SocialSpending / 2.5 + (n.FutureFood < 0 ? n.FutureFood / (n.Population / 10000) : 0) + (n.Budget < 0 ? n.Budget / n.OverallIncome : 0) - (n.Pillaging) * 3;
   n.Food = max(0, n.Food);
   n.FutureFood = min(n.MaxFoodStock, n.Food + n.FoodGain);
-  n.Size = (function () {
-    let s = 0;
-    for (const climate in n.Climates) {
-      s += n.Climates[climate].Pixels;
-    }
-    return s;
-  })();
   n.KmSquared = n.Size != 0 ? n.Size * 20 : 78870; //But Please specify Size as soon as possible in game
   n.HabitableLand = (function () {
     if (n.Size == 0) return 0.8;
@@ -257,74 +359,8 @@ let PopulationGrowthModifier = (n.Fertility > 0.5 ? (n.Fertility - 0.5) / 10 : 0
   n.LandAdministration = ((n.Size - n.DetachedLand) / 25000 + n.DetachedLand / 10000) * (1 - n.AdministrativeEfficiency / 1000);
   n.Overextension = n.UnderPopulation / 4 + n.LandAdministration / 1.5;
   
-  let SocialBehaviourCalc = function(socialBehaviourGroup, socialBehaviourWorldwideGroups, socialGroupRepresentedAtGovernmentLevel){
-    let pointSum = 0;
-    let SocialBehaviourDisunity = 0;
+  
 
-    for (const socialbehaviourname in socialBehaviourGroup) {
-      const Points = socialBehaviourGroup[socialbehaviourname].Points;
-      pointSum += Points;
-    }
-
-    let socialGroupRepresentedAtGovernmentLevelPercent;
-    for (const OpinionatedSocialBehaviourGroupName in socialBehaviourGroup) {
-    
-      const OpinionatedSocialBehaviourGroup = socialBehaviourWorldwideGroups[OpinionatedSocialBehaviourGroupName];
-      const Points = socialBehaviourGroup[OpinionatedSocialBehaviourGroupName].Points;
-      //if the social behaviour is listed, but no one is actually here. Skip
-      if(Points == 0) continue;
-      if(OpinionatedSocialBehaviourGroupName == socialGroupRepresentedAtGovernmentLevel){
-        socialGroupRepresentedAtGovernmentLevelPercent = (Points / +pointSum);
-      }
-      for (const nameOfSocialBehaviourGroupToBeHadAnOpinionAbout in socialBehaviourGroup) {
-        //we don't account for social behaviour groups having Opinions on themselves
-        if (nameOfSocialBehaviourGroupToBeHadAnOpinionAbout == OpinionatedSocialBehaviourGroupName) continue; 
-        //If the social behaviour group to be had an opinion about is also not present in the nation either, n.also doesn't add to the disunity
-        const PointsOfOther = socialBehaviourGroup[nameOfSocialBehaviourGroupToBeHadAnOpinionAbout].Points;
-        if (PointsOfOther == 0) continue; 
-        
-        let opinionScore;
-        //If the social behaviour group to be had an opinion about, isn't recorded by the social behaviour group we are currently checking Opinions for. Treat the opinion as neutral
-        let opinionobj;
-        if (OpinionatedSocialBehaviourGroup.Opinions === undefined || OpinionatedSocialBehaviourGroup.Opinions[nameOfSocialBehaviourGroupToBeHadAnOpinionAbout] === undefined) 
-          opinionScore = Opinion.Neutral;
-        else {
-          opinionobj = OpinionatedSocialBehaviourGroup.Opinions[nameOfSocialBehaviourGroupToBeHadAnOpinionAbout];
-          if(isNaN(opinionobj.Score))
-            opinionScore = Opinion[opinionobj.Score];
-          else 
-            opinionScore = opinionobj.Score;
-        }
-        let socialBehaviourGroupDisunityFactor = (-opinionScore + 100) * (Points / pointSum) * (PointsOfOther / pointSum);
-        if (nameOfSocialBehaviourGroupToBeHadAnOpinionAbout == socialGroupRepresentedAtGovernmentLevel) {
-          socialBehaviourGroupDisunityFactor *= 1.5 / 53;
-        }else {
-          socialBehaviourGroupDisunityFactor *= 1 / 53;
-        }
-        SocialBehaviourDisunity += socialBehaviourGroupDisunityFactor;
-      }
-    }
-    return {
-      GovernmentRepresentationPercent: typeof socialGroupRepresentedAtGovernmentLevelPercent !== 'undefined' ? socialGroupRepresentedAtGovernmentLevelPercent : 0, 
-      disunity: SocialBehaviourDisunity
-    }
-  }
-
-  let cultureCalc = SocialBehaviourCalc(
-    n.CultureGroups, 
-    gameStats.Cultures, 
-    typeof n.CultureRepresentedAtGovernmentLevel !== 'undefined' ? n.CultureRepresentedAtGovernmentLevel : null
-    );
-  let religionCalc = SocialBehaviourCalc(
-    n.ReligionGroups, 
-    gameStats.Religions, 
-    typeof n.ReligionRepresentedAtGovernmentLevel !== 'undefined' ? n.ReligionRepresentedAtGovernmentLevel : null
-    );
-
-  n.CultureRepresentedAtGovernmentLevelPercent =  cultureCalc.GovernmentRepresentationPercent;
-  n.CulturalDisunity = cultureCalc.disunity;
-  n.ReligionRepresentedAtGovernmentLevelPercent = religionCalc.GovernmentRepresentationPercent;
-  n.ReligiousDisunity = religionCalc.disunity;
 
   n.NobleStateLoyalty = (function () {
     let pointSum = 0;
@@ -499,40 +535,7 @@ n.PopulationGrowth = (n.FutureFood < 0 ? n.FutureFood * 1000 / n.Population - (n
 
 
 
-  n.TradePowerFromResourceTrade = (function () {
-    let num = 0;
-    let TradePowerResources = [
-      "Sulphur",
-      "Coal",
-      "Cotton",
-      "Gold",
-      "Iron",
-      "Tea",
-      "Silk",
-      "Spice",
-      "Wool",
-      "Coffee",
-      "Fur",
-      "Diamond",
-      "Silver",
-      "Copper",
-      "Ivory",
-      "Cocoa",
-      "Tobacco",
-      "Sugar",
-      "ExoticFruit"
-    ];
-    for (const resourceName in TradePowerResources) {
-      const resource = TradePowerResources[resourceName];
-      num += +n[resource + "Incoming"] * +n[resource + "Value"];
-      if(isNaN(num)){
-        lazyerror(`something went wrong. Tried to multiply ${n[resource + "Incoming"]} with ${n[resource + "Value"]}. The resource is ${resource} in nation ${nationName}`);
-        return 0;
-      }
-    }
-    return num;
-  })();
-  n.TradePower = n.TradePowerFromResourceTrade + n.LocalTrade / 2 + (pseudoTradePower);
+  
   n.ProductionEfficiency = n.Mercantilism + n.Technologies.VerticalLoom / 5 + n.Technologies.Workshops + n.Technologies.Cranes / 5 + n.Technologies.TextileManufactories / 2;
   n.Production = (n.LocalTrade + n.TradePower) * n.Workforces.Artisans * n.ProductionEfficiency * 10;
   n.TradeProtection = n.LightShips * 0.75 + n.MediumShips * 1 + n.HeavyShips * 0.75;
@@ -601,7 +604,6 @@ n.PopulationGrowth = (n.FutureFood < 0 ? n.FutureFood * 1000 / n.Population - (n
 
   n.MaxPopulation = n.Population / n.Disease;
   
-  n.OverallShipCount = n.LightShips + n.MediumShips + n.HeavyShips;
   n.NavalPower = (n.LightShips*0.5 + n.MediumShips + 2*n.HeavyShips) * n.NavyQuality;
   
 
