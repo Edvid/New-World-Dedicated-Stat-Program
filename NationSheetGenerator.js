@@ -1,8 +1,13 @@
 let primaryColor = "DodgerBlue";
 let secondaryColor = "lightSkyBlue";
 
-let advancedSettings = document.createElement("div");
+let advancedSettingsToggle = document.createElement("button");
+advancedSettingsToggle.classList.add("collapsible");
+advancedSettingsToggle.id = "advancedsettingstoggle";
+advancedSettingsToggle.innerText = "Show advanced settings";
 
+let advancedSettings = document.createElement("div");
+advancedSettings.classList.add("content");
 advancedSettings.id = "advancedsettings";
 
 let cffContainer = document.createElement("div");
@@ -133,6 +138,7 @@ function updateDropdownSelection() {
     }
 }
 
+document.body.appendChild(advancedSettingsToggle);
 document.body.appendChild(advancedSettings);
 
 

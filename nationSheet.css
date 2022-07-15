@@ -2,7 +2,7 @@
     font-family: 'Consolas', 'Courier New', Courier, monospace;
 }
 
-#advancedsettings, .collapsible ,.nationsheet{
+#advancedsettings, #advancedsettingstoggle, .nationsheet{
     margin: 40px;
 }
 
@@ -60,7 +60,7 @@ td{
     padding: 0 18px;
     display: none;
     overflow: hidden;
-    background-color: #f1f1f1;
+    border: 2px dashed #ccc ;
 }
 
 /* #endregion */
