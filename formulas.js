@@ -113,6 +113,24 @@ function evaluateNation(nationName) {
     }
     return num;
   })();
+  let pseudoTradePower = (function () {
+    let stp = 0;
+    for (const region in gameStats.TradeZones) {
+      let allNationPoints = 0;
+      for (const nation in gameStats.Nations) {
+        let point = +gameStats.Nations[nation].TradeInfluences[region].TradingPoints;
+        allNationPoints += (typeof point !== 'undefined') ? point : 0;
+      }
+      let Point = n.TradeInfluences[region].TradingPoints;
+      let percent = allNationPoints != 0 ? 
+        (
+          ((typeof Point !== 'undefined') ? Point : 0
+        ) / allNationPoints) 
+        : 0;
+      stp += gameStats.TradeZones[region] * percent;
+    }
+    return stp;
+  })();
   n.TradePower = n.TradePowerFromResourceTrade + n.LocalTrade / 2 + (pseudoTradePower);
   n.ConscriptionPercent = n.OverallNumbers / n.Population;
   n.Workforces.PopulationInMilitary = n.ConscriptionPercent;
@@ -244,24 +262,7 @@ function evaluateNation(nationName) {
     return n.FoodGain + n.Food > n.MaxFoodStock ? n.FoodGain + n.Food - n.MaxFoodStock : 0;
   })();
 
-  let pseudoTradePower = (function () {
-    let stp = 0;
-    for (const region in gameStats.TradeZones) {
-      let allNationPoints = 0;
-      for (const nation in gameStats.Nations) {
-        let point = +gameStats.Nations[nation].TradeInfluences[region].TradingPoints;
-        allNationPoints += (typeof point !== 'undefined') ? point : 0;
-      }
-      let Point = n.TradeInfluences[region].TradingPoints;
-      let percent = allNationPoints != 0 ? 
-        (
-          ((typeof Point !== 'undefined') ? Point : 0
-        ) / allNationPoints) 
-        : 0;
-      stp += gameStats.TradeZones[region] * percent;
-    }
-    return stp;
-  })();
+  
   n.SellingCapability = (n.LocalTrade / 2 + pseudoTradePower / 5) * n.Mercantilism * 200;
   n.FoodSold = min(n.SellingCapability, n.SurplusFood);
   n.Foodlost = n.SurplusFood - n.FoodSold;
