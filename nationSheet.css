@@ -2,7 +2,7 @@
     font-family: 'Consolas', 'Courier New', Courier, monospace;
 }
 
-form, .collapsible ,.nationsheet{
+#advancedsettings, .collapsible ,.nationsheet{
     margin: 40px;
 }
 

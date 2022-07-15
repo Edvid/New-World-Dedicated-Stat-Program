@@ -3,11 +3,23 @@ let secondaryColor = "lightSkyBlue";
 
 let advancedSettings = document.createElement("div");
 
-advancedSettings.style.marginLeft = "40px";
+advancedSettings.id = "advancedsettings";
 
 let cffContainer = document.createElement("div");
 let loadingContainer = document.createElement("div");
 let DownloadButtonContainer = document.createElement("div");
+
+
+
+let uploadccf = document.createElement("form");
+let uploadccfinput = document.createElement("input");
+uploadccfinput.type = "file";
+uploadccfinput.id = "myFile";
+uploadccfinput.name = "filename";
+uploadccfinput.onchange = (event) => loadChangesFromFile(event);
+uploadccf.appendChild(uploadccfinput)
+
+cffContainer.appendChild(uploadccf)
 
 advancedSettings.appendChild(cffContainer);
 advancedSettings.appendChild(loadingContainer);
