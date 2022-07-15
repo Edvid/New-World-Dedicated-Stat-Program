@@ -16,6 +16,20 @@ loadingContainer.style.minHeight = "20px"
 
 let DownloadButtonContainer = document.createElement("div");
 
+let downloadbutton = document.createElement("button");
+downloadbutton.innerText = "Download gameStats as JSON";
+downloadbutton.style.color = "#000";
+downloadbutton.addEventListener('click', () => {
+    let jsonobj = {
+        Lines: changeCommandFileLength, 
+        Hash: preloadStatChanges.replace(/\r?\n/gmi, "").hashCode(),
+        State: gameStats
+    };
+    let downloadString = JSON.stringify(jsonobj, null, 4);
+
+    downloadToFile(downloadString, 'NW7.json', 'application/json');
+});
+DownloadButtonContainer.appendChild(downloadbutton);
 
 
 let uploadccf = document.createElement("div");
@@ -54,10 +68,6 @@ let downloadbuttonshowing = false;
 async function populateAdvancedSettings(){
     if (typeof advancedSettings === 'undefined') return;
     displayProgress();
-    if(!downloadbuttonshowing){
-        displayDownloadButton();
-        downloadbuttonshowing = true;
-    }
 }
 
 async function displayProgress() {
@@ -90,26 +100,12 @@ async function displayProgress() {
         loadingContainer.appendChild(loadingFieldTitle);
         loadingContainer.appendChild(bar);
         loadingContainer.appendChild(loadingText);
-    } 
+
+        if(downloadbutton.style.color != "#f00") downloadbutton.style.color = "#f00"
+    } else{
+        if(downloadbutton.style.color != "#000") downloadbutton.style.color = "#000"
+    }
 }
-
-async function displayDownloadButton(){
-    let downloadbutton = document.createElement("button");
-    downloadbutton.innerText = "Download gameStats as JSON";
-    downloadbutton.addEventListener('click', () => {
-        let jsonobj = {
-            Lines: changeCommandFileLength, 
-            Hash: preloadStatChanges.replace(/\r?\n/gmi, "").hashCode(),
-            State: gameStats
-        };
-        let downloadString = JSON.stringify(jsonobj, null, 4);
-
-        downloadToFile(downloadString, 'NW7.json', 'application/json');
-    });
-    DownloadButtonContainer.appendChild(downloadbutton);
-
-}
-
 
 uploadccftextform.appendChild(uploadccftextinput);
 uploadccftextform.appendChild(document.createElement("br"));
