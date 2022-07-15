@@ -5,6 +5,14 @@ let advancedSettings = document.createElement("div");
 
 advancedSettings.style.marginLeft = "40px";
 
+let cffContainer = document.createElement("div");
+let loadingContainer = document.createElement("div");
+let DownloadButtonContainer = document.createElement("div");
+
+advancedSettings.appendChild(cffContainer);
+advancedSettings.appendChild(loadingContainer);
+advancedSettings.appendChild(DownloadButtonContainer);
+
 let nationSheetContainer = document.createElement("div");
 nationSheetContainer.classList.add("nationsheet");
 

@@ -49,7 +49,7 @@ async function loadChangesFromContent(changes, skip) {
         const changeCommand = changes[changeCommandIndex];
         evaluteChangeCommand(changeCommand);
         let now = Date.now();
-        if (now - then > 1000) {
+        if (now - then > 17) {
             await new Promise(resolve => setTimeout(resolve));
             then = now;
         }
@@ -187,11 +187,14 @@ Aborting.`);
     }
 }
 
+let downloadbuttonshowing = false;
 async function populateAdvancedSettings(){
     if (typeof advancedSettings === 'undefined') return;
-    advancedSettings.innerHTML = "";
     displayProgress();
-    displayDownloadButton();
+    if(!downloadbuttonshowing){
+        displayDownloadButton();
+        downloadbuttonshowing = true;
+    }
 }
 
 async function displayProgress() {
@@ -199,9 +202,8 @@ async function displayProgress() {
     let lines = changeCommandFileLength;
     let line = changeCommandIndex;
     
-
+    loadingContainer.innerHTML = "";
     if (lines > line) {
-        console.log("aaa");
         let loadingFieldTitle = document.createElement("p");
         loadingFieldTitle.innerText = "Generating All nation Stats...";
 
@@ -222,10 +224,9 @@ async function displayProgress() {
         loadingText.style.fontSize = "12px";
         loadingText.style.color = "grey";
         loadingText.innerText = `line ${line} / ${lines} lines loaded`;
-        advancedSettings.appendChild(loadingFieldTitle);
-        advancedSettings.appendChild(loadingFieldTitle);
-        advancedSettings.appendChild(bar);
-        advancedSettings.appendChild(loadingText);
+        loadingContainer.appendChild(loadingFieldTitle);
+        loadingContainer.appendChild(bar);
+        loadingContainer.appendChild(loadingText);
     } 
 }
 
@@ -242,7 +243,7 @@ async function displayDownloadButton(){
 
         downloadToFile(downloadString, 'NW7.json', 'application/json');
     });
-    advancedSettings.appendChild(downloadbutton);
+    DownloadButtonContainer.appendChild(downloadbutton);
 
 }
 
