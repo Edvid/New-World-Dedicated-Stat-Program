@@ -50,6 +50,67 @@ uploadccftextinputsubmit.onclick = (e) => {
     loadChangesFromContent(changes, 0);
 }
 
+let downloadbuttonshowing = false;
+async function populateAdvancedSettings(){
+    if (typeof advancedSettings === 'undefined') return;
+    displayProgress();
+    if(!downloadbuttonshowing){
+        displayDownloadButton();
+        downloadbuttonshowing = true;
+    }
+}
+
+async function displayProgress() {
+    
+    let lines = changeCommandFileLength;
+    let line = changeCommandIndex;
+    
+    loadingContainer.innerHTML = "";
+    if (lines > line) {
+        let loadingFieldTitle = document.createElement("p");
+        loadingFieldTitle.innerText = "Generating All nation Stats...";
+
+        let bar = document.createElement("canvas");
+        bar.width = 100;
+        bar.height = 20;
+        let barctx = bar.getContext("2d");
+
+        barctx.lineWidth = 3;
+        barctx.fillStyle = 'green'
+        barctx.fillRect(0, 0, (HashMatchedTill / lines) * 100, 20);
+        barctx.fillStyle = 'black'
+        barctx.fillRect((HashMatchedTill / lines) * 100, 0, ((line - HashMatchedTill) / lines) * 100, 20);
+        barctx.strokeRect(0, 0, 100, 20);
+
+        let loadingText = document.createElement("p");
+        loadingText.style.fontStyle = "Italic";
+        loadingText.style.fontSize = "12px";
+        loadingText.style.color = "grey";
+        loadingText.innerText = `line ${line} / ${lines} lines loaded`;
+        loadingContainer.appendChild(loadingFieldTitle);
+        loadingContainer.appendChild(bar);
+        loadingContainer.appendChild(loadingText);
+    } 
+}
+
+async function displayDownloadButton(){
+    let downloadbutton = document.createElement("button");
+    downloadbutton.innerText = "Download gameStats as JSON";
+    downloadbutton.addEventListener('click', () => {
+        let jsonobj = {
+            Lines: changeCommandFileLength, 
+            Hash: preloadStatChanges.replace(/\r?\n/gmi, "").hashCode(),
+            State: gameStats
+        };
+        let downloadString = JSON.stringify(jsonobj, null, 4);
+
+        downloadToFile(downloadString, 'NW7.json', 'application/json');
+    });
+    DownloadButtonContainer.appendChild(downloadbutton);
+
+}
+
+
 uploadccftextform.appendChild(uploadccftextinput);
 uploadccftextform.appendChild(document.createElement("br"));
 uploadccftextform.appendChild(uploadccftextinputsubmit);
