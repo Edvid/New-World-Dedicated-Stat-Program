@@ -80,6 +80,60 @@ function evaluateNation(nationName) {
   n.OverallNumbers = n.Musketeers + n.Levies + n.LightInfantry + n.HeavyInfantry + n.Archers + n.Crossbowmen + n.LightCavalry + n.HeavyCavalry + n.EliteInfantry + n.Militia + n.EliteCavalry + n.HandCannoneers + (n.SiegeEquipment + n.LargeSiegeEquipment) * 10;
   n.OverallShipCount = n.LightShips + n.MediumShips + n.HeavyShips;
   n.AdministrativeStrain = (0 + n.Population / 1250000 + n.Health * 2 + n.EducationEfficiency * 1.5 + n.SocialSpending * 4 + n.Propaganda * 2 + n.PopulationControl * 2 + n.BirthControl * 4 + (n.HighClassTax + n.MediumClassTax + n.LowerClassTax) / 3 * 75 + n.OverallNumbers / 5000 + n.OverallShipCount / 100 + n.AgricultureSubsidies * 4 + (n.AgricultureInfrastructure - 1) * 4 + n.Size / 5000 + (n.ResearchSpending - 1) * 10 + (1 - n.CultureRepresentedAtGovernmentLevelPercent) * 10) * (n.CulturalAdvancements.EarlyModernAdministration == true ? 0.75 : 1) * (n.CulturalAdvancements.NationalSovereignity == true ? 0.75 : 1); 
+  for (const resourceIndex in gameStats.ResourceTypes) { // demands and values... Does not apply to Budget or Food
+    const resource = gameStats.ResourceTypes[resourceIndex];
+    if(resource == "Budget" || resource == "Food") continue;
+
+    let PopulationDemand = (function () {
+      switch (resource) {
+        case "Sulphur":
+          return 2000000;
+        case "Gold":
+          return 200000;
+        case "Silk":
+          return 400000;
+        case "Spice":
+          return 400000;
+        case "Wool":
+          return 700000;
+        case "Fur":
+          return 450000;
+        case "Diamond":
+          return 250000;
+        case "Silver":
+          return 300000;
+        case "Copper":
+          return 750000;
+        case "Ivory":
+          return 250000;
+        case "Sugar":
+          return 350000;
+        case "ExoticFruit":
+          return 350000;
+        default:
+          return 500000;
+      }
+    })();
+
+    let extraDemands = (function () {
+      switch (resource) {
+        case "Coal":
+          return (n.EffectiveIron + n.EffectiveGold + n.EffectiveCopper + n.EffectiveSilver) * 0.5 + (n.Population * n.Health / 500000);
+        case "Iron":
+          return (n.UnitUpkeep + n.FortUpkeep) / 50;
+        case "Copper":
+          return (n.UnitUpkeep + n.FortUpkeep) / 100;
+        default:
+          return 0;
+      }
+    })();
+
+    n[resource + "Demand"] = (n.Population / PopulationDemand) + extraDemands;
+
+    if (resource == "Iron" && n.Technologies.Metallurgy) n[resource + "Demand"] *= 1.1;
+
+    n[resource + "Value"] = n[resource + "Demand"] / (Math.sqrt(n["Effective" + resource]) + 0.1);
+  }
   n.TradePowerFromResourceTrade = (function () {
     let num = 0;
     let TradePowerResources = [
@@ -287,8 +341,8 @@ function evaluateNation(nationName) {
   n.Disease = n.PopulationDensityPerKmSquared / 25 - n.Health / 20 - (n.Technologies.HumanAnatomy ? 0.15 : 0);
   n.UnderPopulation = n.Disease < 0.5 ? (1 - n.Disease) / 10 : 0;
 
-let PopulationGrowthModifier = (n.Fertility > 0.5 ? (n.Fertility - 0.5) / 10 : 0) + n.FoodPopulationBoost + (n.Prosperity - 1) / 10 + n.UnderPopulation;
-
+  let PopulationGrowthModifier = (n.Fertility > 0.5 ? (n.Fertility - 0.5) / 10 : 0) + n.FoodPopulationBoost + (n.Prosperity - 1) / 10 + n.UnderPopulation;
+  
   n.UnitUpkeep = (function () {
     let uu = 0;
     for (const unitName in gameStats.UnitUpkeepCosts) {
@@ -430,60 +484,9 @@ let PopulationGrowthModifier = (n.Fertility > 0.5 ? (n.Fertility - 0.5) / 10 : 0
   ) * n.ArmyQuality / gameStats.TimeDivide;
   
   
-  for (const resourceIndex in gameStats.ResourceTypes) { // demands and values... Does not apply to Budget or Food
-    const resource = gameStats.ResourceTypes[resourceIndex];
-    if(resource == "Budget" || resource == "Food") continue;
+  
 
-    let PopulationDemand = (function () {
-      switch (resource) {
-        case "Sulphur":
-          return 2000000;
-        case "Gold":
-          return 200000;
-        case "Silk":
-          return 400000;
-        case "Spice":
-          return 400000;
-        case "Wool":
-          return 700000;
-        case "Fur":
-          return 450000;
-        case "Diamond":
-          return 250000;
-        case "Silver":
-          return 300000;
-        case "Copper":
-          return 750000;
-        case "Ivory":
-          return 250000;
-        case "Sugar":
-          return 350000;
-        case "ExoticFruit":
-          return 350000;
-        default:
-          return 500000;
-      }
-    })();
-
-    let extraDemands = (function () {
-      switch (resource) {
-        case "Coal":
-          return (n.EffectiveIron + n.EffectiveGold + n.EffectiveCopper + n.EffectiveSilver) * 0.5 + (n.Population * n.Health / 500000);
-        case "Iron":
-          return (n.UnitUpkeep + n.FortUpkeep) / 50;
-        case "Copper":
-          return (n.UnitUpkeep + n.FortUpkeep) / 100;
-        default:
-          return 0;
-      }
-    })();
-
-    n[resource + "Demand"] = (n.Population / PopulationDemand) + extraDemands;
-
-    if (resource == "Iron" && n.Technologies.Metallurgy) n[resource + "Demand"] *= 1.1;
-
-    n[resource + "Value"] = n[resource + "Demand"] / (Math.sqrt(n["Effective" + resource]) + 0.1);
-  }
+  
 
 
 
