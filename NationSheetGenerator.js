@@ -12,12 +12,32 @@ let DownloadButtonContainer = document.createElement("div");
 
 
 let uploadccf = document.createElement("form");
-let uploadccfinput = document.createElement("input");
-uploadccfinput.type = "file";
-uploadccfinput.id = "myFile";
-uploadccfinput.name = "filename";
-uploadccfinput.onchange = (event) => loadChangesFromFile(event);
-uploadccf.appendChild(uploadccfinput)
+let uploadccffileinputtitle = document.createElement("h3");
+uploadccffileinputtitle.innerText = "Choose A Saved File";
+let uploadccffileinput = document.createElement("input");
+uploadccffileinput.type = "file";
+uploadccffileinput.id = "myFile";
+uploadccffileinput.name = "filename";
+uploadccffileinput.onchange = (event) => loadChangesFromFile(event);
+let uploadccftextinputtitle = document.createElement("h3");
+uploadccftextinputtitle.innerText = "Paste Text"
+let uploadccftextinput = document.createElement("form");
+let uploadccftextinputfield = document.createElement("textarea");
+uploadccftextinputfield.cols = "70";
+uploadccftextinputfield.rows = "18";
+let uploadccftextinputsubmit = document.createElement("button");
+uploadccftextinputsubmit.innerText = "Submit";
+uploadccftextinput.onsubmit = (event) => loadChangesFromFile(event);
+
+uploadccftextinput.appendChild(uploadccftextinputfield);
+uploadccftextinput.appendChild(document.createElement("br"));
+uploadccftextinput.appendChild(uploadccftextinputsubmit);
+
+
+uploadccf.appendChild(uploadccffileinputtitle);
+uploadccf.appendChild(uploadccffileinput);
+uploadccf.appendChild(uploadccftextinputtitle);
+uploadccf.appendChild(uploadccftextinput);
 
 cffContainer.appendChild(uploadccf)
 
