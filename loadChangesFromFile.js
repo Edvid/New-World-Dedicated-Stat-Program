@@ -26,17 +26,6 @@ let preloadStatChanges;
     
 })();
 
-async function loadChangesFromFile(event) {
-    var file = event.target.files[0];
-    var reader = new FileReader();
-    reader.onload = function (e) {
-        changes = e.target.result.split(/\r?\n|\r/);
-        loadChangesFromContent(changes, 0);
-    };
-
-    reader.readAsText(file);
-}
-
 const normalCommandRegex = /(?<Operand>add|\+|sub|-|set|=) *(?<Value>(\*?\d*\.?\d+%?)|(\".*\")|( .*? ))(?<StatName>.+)/i;
 let ignore;
 let currentSelection;
@@ -49,7 +38,7 @@ async function loadChangesFromContent(changes, skip) {
         const changeCommand = changes[changeCommandIndex];
         evaluteChangeCommand(changeCommand);
         let now = Date.now();
-        if (now - then > 1000) {
+        if (now - then > 17) {
             await new Promise(resolve => setTimeout(resolve));
             then = now;
         }
@@ -187,63 +176,6 @@ Aborting.`);
     }
 }
 
-let showingdownloadoption = false;
-
-async function displayProgress() {
-    if (showingdownloadoption) return;
-    if (typeof loadingField === 'undefined') return;
-
-    let lines = changeCommandFileLength;
-    let line = changeCommandIndex;
-
-
-
-    loadingField.innerHTML = "";
-    if (lines > line) {
-        let loadingFieldTitle = document.createElement("p");
-        loadingFieldTitle.innerText = "Generating All nation Stats...";
-
-        let bar = document.createElement("canvas");
-        bar.width = 100;
-        bar.height = 20;
-        let barctx = bar.getContext("2d");
-
-        barctx.lineWidth = 3;
-        barctx.fillStyle = 'green'
-        barctx.fillRect(0, 0, (HashMatchedTill / lines) * 100, 20);
-        barctx.fillStyle = 'black'
-        barctx.fillRect((HashMatchedTill / lines) * 100, 0, ((line - HashMatchedTill) / lines) * 100, 20);
-        barctx.strokeRect(0, 0, 100, 20);
-
-        let loadingText = document.createElement("p");
-        loadingText.style.fontStyle = "Italic";
-        loadingText.style.fontSize = "12px";
-        loadingText.style.color = "grey";
-        loadingText.innerText = `line ${line} / ${lines} lines loaded`;
-        loadingField.appendChild(loadingFieldTitle);
-        loadingField.appendChild(loadingFieldTitle);
-        loadingField.appendChild(bar);
-        loadingField.appendChild(loadingText);
-    } else if (HashMatchedTill != changeCommandFileLength && typeof changeCommandFileLength !== 'undefined') {
-        let loadingFieldTitle = document.createElement("p");
-        loadingFieldTitle.innerText = "Download the new JSON file";
-        let downloadbutton = document.createElement("button");
-        downloadbutton.innerText = "Download JSON";
-        downloadbutton.addEventListener('click', () => {
-            let jsonobj = {
-                Lines: changeCommandFileLength, 
-                Hash: preloadStatChanges.replace(/\r?\n/gmi, "").hashCode(),
-                State: gameStats
-            };
-            let downloadString = JSON.stringify(jsonobj, null, 4);
-
-            downloadToFile(downloadString, 'NW7.json', 'application/json');
-        });
-        loadingField.appendChild(loadingFieldTitle);
-        loadingField.appendChild(downloadbutton);
-        showingdownloadoption = true;
-    }
-}
 
 /* #region  taken from blog https://robkendal.co.uk/blog/2020-04-17-saving-text-to-client-side-file-using-vanilla-js */
 const downloadToFile = (content, filename, contentType) => {
@@ -258,4 +190,4 @@ const downloadToFile = (content, filename, contentType) => {
 };
 /* #endregion */
 
-setInterval(displayProgress, 30);
+setInterval(populateAdvancedSettings, 30);

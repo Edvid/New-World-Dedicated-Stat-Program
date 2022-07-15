@@ -520,26 +520,26 @@ class Nation {
         Points: 100
       }
     };
-    this.Population = 5000000;
-    this.LiteracyPercent = 7.50;
-    this.HigherEducation = 0.25;
-    this.Budget = 250.00;
-    this.Food = 100.00;
-    this.ResearchPoints = 6.00;
+    this.Population = 7500000;
+    this.LiteracyPercent = 10;
+    this.HigherEducation = 0.5;
+    this.Budget = 400.00;
+    this.Food = 200.00;
+    this.ResearchPoints = 7.50;
     this.PublicDebtLength = 0;
     this.CulturalPower = 6.00;
     /* #endregion */
 
     /* #region  Most Stats */
     this.ReligiousDisunity = 0.00;
-    this.Health = 2.00;
-    this.EducationEfficiency = 3;
-    this.AdministrativeEfficiency = 30.00;
+    this.Health = 3.00;
+    this.EducationEfficiency = 3.5;
+    this.AdministrativeEfficiency = 35.00;
     this.Propaganda = 0;
-    this.SocialSpending = 0;
+    this.SocialSpending = 0.5;
     this.AtWar = false;
 
-    this.NobleInfluence = 0.55; //Show in percent
+    this.NobleInfluence = 0.50; //Show in percent
     this.NobleLoyaltyGroups = JSON.parse(`{\
     "${n.GovernmentName}": 55,\
     "SelfInterests": 45\
@@ -551,7 +551,7 @@ class Nation {
     "SelfInterests": 50\
     }`);
     
-    this.BurghersInfluence = 0.10; //Show in percent
+    this.BurghersInfluence = 0.15; //Show in percent
     this.BurghersLoyaltyGroups = JSON.parse(`{\
     "${n.GovernmentName}": 50,\
     "SelfInterests": 50\
@@ -560,10 +560,10 @@ class Nation {
     this.Absolutism = 0;
     this.PopulationControl = 0;
     this.BirthControl = 0;
-    this.LocalTrade = 5.00;
-    this.Mercantilism = 1;
+    this.LocalTrade = 6.50;
+    this.Mercantilism = 1.25;
     this.Spies = 0;
-    this.SpyQuality = 1.2;
+    this.SpyQuality = 1.3;
     /* #endregion */
 
     /* #region  Army */
@@ -591,14 +591,14 @@ class Nation {
 
 
     this.CommanderFreedom = 0;
-    this.ArmyWages = 1;
-    this.TrainingQuality = 0.15;
-    this.MilitaryTactics = 0.15;
-    this.MilitaryDiscipline = 1; //Show In Percent
+    this.ArmyWages = 1.1;
+    this.TrainingQuality = 0.45;
+    this.MilitaryTactics = 0.45;
+    this.MilitaryDiscipline = 1.01; //Show In Percent
     /* #endregion */
 
     /* #region  Navy */
-    this.NavyImprovements = 0.30;
+    this.NavyImprovements = 0.60;
 
     this.LightShips = 0;
     this.MediumShips = 0;
@@ -610,7 +610,7 @@ class Nation {
     this.Fertility = 0.50;
     this.AgricultureInfrastructure = 1.10;
     this.StockingCapabilities = 1.00;
-    this.AgricultureAdvancements = 1.30;
+    this.AgricultureAdvancements = 1.40;
     /* #endregion */
 
     /* #region  Recruitments / New Troops */
@@ -639,7 +639,7 @@ class Nation {
 
     /* #region  Population */
     this.Workforces = {
-      Artisans: 0.01,
+      Artisans: 0.025,
       Clergy: 0.0075,
       Nobility: 0.01,
       Burghers: 0.005
@@ -650,7 +650,7 @@ class Nation {
     /* #endregion */
 
     /* #region  Resources */
-    this.MiningEfficiency = 1.20;
+    this.MiningEfficiency = 1.30;
 
     this.Coal = 0.00;
     this.Sulphur = 0.00;
@@ -693,12 +693,12 @@ class Nation {
       SappersAndEngineers: true,
       Workshops: true,
       StandardizedPikes: true,
-      Galleons: false,
-      PrintingPress: false,
-      Muskets: false,
-      Limber: false,
-      Docks: false,
-      Gunports: false,
+      Galleons: true,
+      PrintingPress: true,
+      Muskets: true,
+      Limber: true,
+      Docks: true,
+      Gunports: true,
       Matchlock: false,
       StarForts: false,
       TextileManufactories: false,
@@ -715,15 +715,15 @@ class Nation {
     /* #endregion */
 
     /* #region  Economy */
-    this.HighClassTax = 0.12; //As Percentage
-    this.MediumClassTax = 0.12; //As Percentage
-    this.LowerClassTax = 0.12; //As Percentage
+    this.HighClassTax = 0.14; //As Percentage
+    this.MediumClassTax = 0.14; //As Percentage
+    this.LowerClassTax = 0.14; //As Percentage
     this.PublicDebtTaken = 0.00;
     this.BudgetIncoming = 0;
     this.BudgetOutgoing = 0;
     /* #endregion */
 
-    this.CulturalProsperity = 1.00;
+    this.CulturalProsperity = 1.10;
     this.CulturalAdvancements = {
       DivineRightToRule: true,
       Serfdom: true,
@@ -731,8 +731,8 @@ class Nation {
       Universities: true,
       NobleDuty: true,
       Courthouses: true,
-      RenaissanceThought: false,
-      EarlyModernAdministration: false,
+      RenaissanceThought: true,
+      EarlyModernAdministration: true,
       NationalSovereignity: false,
       Newspapers: false
     }

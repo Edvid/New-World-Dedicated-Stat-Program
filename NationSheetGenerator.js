@@ -1,9 +1,125 @@
 let primaryColor = "DodgerBlue";
 let secondaryColor = "lightSkyBlue";
 
-let loadingField = document.createElement("div");
+let advancedSettingsToggle = document.createElement("button");
+advancedSettingsToggle.classList.add("collapsible");
+advancedSettingsToggle.id = "advancedsettingstoggle";
+advancedSettingsToggle.innerText = "Show advanced settings";
 
-loadingField.style.marginLeft = "40px";
+let advancedSettings = document.createElement("div");
+advancedSettings.classList.add("content");
+advancedSettings.id = "advancedsettings";
+
+let cffContainer = document.createElement("div");
+let loadingContainer = document.createElement("div");
+loadingContainer.style.minHeight = "20px"
+
+let DownloadButtonContainer = document.createElement("div");
+
+let downloadbutton = document.createElement("button");
+downloadbutton.innerText = "Download gameStats as JSON";
+downloadbutton.style.color = "#000";
+downloadbutton.addEventListener('click', () => {
+    let jsonobj = {
+        Lines: changeCommandFileLength, 
+        Hash: preloadStatChanges.replace(/\r?\n/gmi, "").hashCode(),
+        State: gameStats
+    };
+    let downloadString = JSON.stringify(jsonobj, null, 4);
+
+    downloadToFile(downloadString, 'NW7.json', 'application/json');
+});
+DownloadButtonContainer.appendChild(downloadbutton);
+
+
+let uploadccf = document.createElement("div");
+let uploadccffileform = document.createElement("form");
+let uploadccffileinputtitle = document.createElement("h3");
+uploadccffileinputtitle.innerText = "Choose A Saved File";
+let uploadccffileinput = document.createElement("input");
+uploadccffileinput.type = "file";
+uploadccffileinput.id = "myFile";
+uploadccffileinput.name = "filename";
+uploadccffileinput.onchange = (e) => {
+    var file = e.target.files[0];
+    var reader = new FileReader();
+    reader.onload = function (e) {
+        changes = e.target.result.split(/\r?\n|\r/);
+        loadChangesFromContent(changes, 0);
+    };
+
+    reader.readAsText(file);
+}
+uploadccffileform.appendChild(uploadccffileinput);
+let uploadccftextinputtitle = document.createElement("h3");
+uploadccftextinputtitle.innerText = "Paste Text"
+let uploadccftextform = document.createElement("div");
+let uploadccftextinput = document.createElement("textarea");
+uploadccftextinput.cols = "70";
+uploadccftextinput.rows = "18";
+let uploadccftextinputsubmit = document.createElement("button");
+uploadccftextinputsubmit.innerText = "Submit";
+uploadccftextinputsubmit.onclick = (e) => {
+    changes = uploadccftextinput.value.split(/\r?\n|\r/);
+    loadChangesFromContent(changes, 0);
+}
+
+let downloadbuttonshowing = false;
+async function populateAdvancedSettings(){
+    if (typeof advancedSettings === 'undefined') return;
+    displayProgress();
+}
+
+async function displayProgress() {
+    
+    let lines = changeCommandFileLength;
+    let line = changeCommandIndex;
+    
+    loadingContainer.innerHTML = "";
+    if (lines > line) {
+        let loadingFieldTitle = document.createElement("p");
+        loadingFieldTitle.innerText = "Generating All nation Stats...";
+
+        let bar = document.createElement("canvas");
+        bar.width = 100;
+        bar.height = 20;
+        let barctx = bar.getContext("2d");
+
+        barctx.lineWidth = 3;
+        barctx.fillStyle = 'green'
+        barctx.fillRect(0, 0, (HashMatchedTill / lines) * 100, 20);
+        barctx.fillStyle = 'black'
+        barctx.fillRect((HashMatchedTill / lines) * 100, 0, ((line - HashMatchedTill) / lines) * 100, 20);
+        barctx.strokeRect(0, 0, 100, 20);
+
+        let loadingText = document.createElement("p");
+        loadingText.style.fontStyle = "Italic";
+        loadingText.style.fontSize = "12px";
+        loadingText.style.color = "grey";
+        loadingText.innerText = `line ${line} / ${lines} lines loaded`;
+        loadingContainer.appendChild(loadingFieldTitle);
+        loadingContainer.appendChild(bar);
+        loadingContainer.appendChild(loadingText);
+
+        if(downloadbutton.style.color != "#f00") downloadbutton.style.color = "#f00"
+    } else{
+        if(downloadbutton.style.color != "#000") downloadbutton.style.color = "#000"
+    }
+}
+
+uploadccftextform.appendChild(uploadccftextinput);
+uploadccftextform.appendChild(document.createElement("br"));
+uploadccftextform.appendChild(uploadccftextinputsubmit);
+
+
+cffContainer.appendChild(uploadccffileinputtitle);
+cffContainer.appendChild(uploadccffileform);
+cffContainer.appendChild(uploadccftextinputtitle);
+cffContainer.appendChild(uploadccftextform);
+
+advancedSettings.appendChild(cffContainer);
+advancedSettings.appendChild(loadingContainer);
+advancedSettings.appendChild(DownloadButtonContainer);
 
 let nationSheetContainer = document.createElement("div");
 nationSheetContainer.classList.add("nationsheet");
@@ -81,7 +197,8 @@ function updateDropdownSelection() {
     }
 }
 
-document.body.appendChild(loadingField);
+document.body.appendChild(advancedSettingsToggle);
+document.body.appendChild(advancedSettings);
 
 
 document.body.appendChild(currentNationNameDisplay);

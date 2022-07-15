@@ -2,7 +2,7 @@
     font-family: 'Consolas', 'Courier New', Courier, monospace;
 }
 
-form, .collapsible ,.nationsheet{
+#advancedsettings, #advancedsettingstoggle, .nationsheet{
     margin: 40px;
 }
 
@@ -60,7 +60,20 @@ td{
     padding: 0 18px;
     display: none;
     overflow: hidden;
-    background-color: #f1f1f1;
+    border: 2px dashed #ccc ;
+}
+
+.content textarea {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.content button{
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: none;
+    padding: 12px;
 }
 
 /* #endregion */
