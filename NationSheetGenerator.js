@@ -32,14 +32,15 @@ uploadccffileinput.onchange = (e) => {
 uploadccffileform.appendChild(uploadccffileinput);
 let uploadccftextinputtitle = document.createElement("h3");
 uploadccftextinputtitle.innerText = "Paste Text"
-let uploadccftextform = document.createElement("form");
+let uploadccftextform = document.createElement("div");
 let uploadccftextinput = document.createElement("textarea");
 uploadccftextinput.cols = "70";
 uploadccftextinput.rows = "18";
 let uploadccftextinputsubmit = document.createElement("button");
 uploadccftextinputsubmit.innerText = "Submit";
-uploadccftextform.onsubmit = (e) => {
-    console.log(e.value);
+uploadccftextinputsubmit.onclick = (e) => {
+    changes = uploadccftextinput.value.split(/\r?\n|\r/);
+    loadChangesFromContent(changes, 0);
 }
 
 uploadccftextform.appendChild(uploadccftextinput);
