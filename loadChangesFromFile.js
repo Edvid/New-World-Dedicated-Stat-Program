@@ -26,17 +26,6 @@ let preloadStatChanges;
     
 })();
 
-async function loadChangesFromFile(event) {
-    var file = event.target.files[0];
-    var reader = new FileReader();
-    reader.onload = function (e) {
-        changes = e.target.result.split(/\r?\n|\r/);
-        loadChangesFromContent(changes, 0);
-    };
-
-    reader.readAsText(file);
-}
-
 const normalCommandRegex = /(?<Operand>add|\+|sub|-|set|=) *(?<Value>(\*?\d*\.?\d+%?)|(\".*\")|( .*? ))(?<StatName>.+)/i;
 let ignore;
 let currentSelection;
