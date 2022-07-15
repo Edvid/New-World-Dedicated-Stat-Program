@@ -63,6 +63,19 @@ td{
     border: 2px dashed #ccc ;
 }
 
+.content textarea {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.content button{
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: none;
+    padding: 12px;
+}
+
 /* #endregion */
 
 .nationsheet{
