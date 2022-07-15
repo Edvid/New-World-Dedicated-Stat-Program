@@ -80,6 +80,109 @@ function evaluateNation(nationName) {
   n.OverallNumbers = n.Musketeers + n.Levies + n.LightInfantry + n.HeavyInfantry + n.Archers + n.Crossbowmen + n.LightCavalry + n.HeavyCavalry + n.EliteInfantry + n.Militia + n.EliteCavalry + n.HandCannoneers + (n.SiegeEquipment + n.LargeSiegeEquipment) * 10;
   n.OverallShipCount = n.LightShips + n.MediumShips + n.HeavyShips;
   n.AdministrativeStrain = (0 + n.Population / 1250000 + n.Health * 2 + n.EducationEfficiency * 1.5 + n.SocialSpending * 4 + n.Propaganda * 2 + n.PopulationControl * 2 + n.BirthControl * 4 + (n.HighClassTax + n.MediumClassTax + n.LowerClassTax) / 3 * 75 + n.OverallNumbers / 5000 + n.OverallShipCount / 100 + n.AgricultureSubsidies * 4 + (n.AgricultureInfrastructure - 1) * 4 + n.Size / 5000 + (n.ResearchSpending - 1) * 10 + (1 - n.CultureRepresentedAtGovernmentLevelPercent) * 10) * (n.CulturalAdvancements.EarlyModernAdministration == true ? 0.75 : 1) * (n.CulturalAdvancements.NationalSovereignity == true ? 0.75 : 1); 
+  let GatheringEffectiveness = function (name) {
+    switch (name) {
+      case "Food":
+        return "Farming"
+      case "Cotton":
+        return "Farming"
+      case "Tea":
+        return "Farming"
+      case "Silk":
+        return "Farming"
+      case "Spice":
+        return "Farming"
+      case "Coffee":
+        return "Farming"
+      case "Cocoa":
+        return "Farming"
+      case "Tobacco":
+        return "Farming"
+      case "Sugar":
+        return "Farming"
+      case "ExoticFruit":
+        return "Farming"
+      case "Wool":
+        return "None"
+      case "Fur":
+        return "None"
+      case "Ivory":
+        return "None"
+      default:
+        return "Mining"
+    }
+  };
+  for (const resourceIndex in gameStats.ResourceTypes) { //in, out, effective resources and potential inflation adjustments
+    const resource = gameStats.ResourceTypes[resourceIndex];
+    n[resource + "Incoming"] = 0;
+    n[resource + "Outgoing"] = 0;
+
+    for (const tradename in gameStats.Trades) {
+      const trade = gameStats.Trades[tradename];
+      if (trade.resource == resource) {
+        if (nationName == trade.receiver) {
+          n[resource + "Incoming"] += +trade.amount;
+        } else if (nationName == trade.giver) {
+          n[resource + "Outgoing"] += +trade.amount;
+        }
+      }
+    }
+
+    if(resource == "Budget" || resource == "Food") continue;
+    //the things below do not apply to Budget or Food
+
+    n["Effective" + resource] = (function () {
+
+      let er = n[resource] * (GatheringEffectiveness(resource) == "Farming" ? n.FarmingEfficiency : n.MiningEfficiency) + n[resource + "Incoming"] - n[resource + "Outgoing"];
+      if(er < 0){
+        lazyerror(`It seems the effective resource ${resource} in ${nationName} is negative: ${er}. Is an impossible trade taking place?`);
+      }
+      return er;
+    })();
+
+    let inflationMod = (function () {
+      switch (resource) {
+        case "Cotton":
+          return 3;
+        case "Gold":
+          return 3;
+        case "Tea":
+          return 3;
+        case "Silk":
+          return 3;
+        case "Spice":
+          return 5;
+        case "Wool":
+          return 5;
+        case "Coffee":
+          return 3;
+        case "Fur":
+          return 3.5;
+        case "Diamond":
+          return 3;
+        case "Silver":
+          return 3;
+        case "Ivory":
+          return 2.5;
+        case "Cocoa":
+          return 3;
+        case "Tobacco":
+          return 3;
+        case "Sugar":
+          return 3;
+        case "ExoticFruit":
+          return 3;
+        default:
+          return NaN;
+      }
+    })();
+    if (!isNaN(inflationMod)) {
+      n[resource + "Inflation"] = max(0, n["Effective" + resource] - inflationMod);
+    }
+
+
+
+  }
   for (const resourceIndex in gameStats.ResourceTypes) { // demands and values... Does not apply to Budget or Food
     const resource = gameStats.ResourceTypes[resourceIndex];
     if(resource == "Budget" || resource == "Food") continue;
@@ -196,110 +299,9 @@ function evaluateNation(nationName) {
   n.Workforces.PopulationInAgriculture = 1 - n.Workforces.PopulationInMilitary - n.Workforces.Artisans - n.Workforces.Clergy - n.Workforces.Burghers - n.Workforces.Nobility - n.Workforces.PopulationInResourceHarvest;
   n.AgricultureSpending = (n.Workforces.PopulationInAgriculture * n.Population / 1000 * n.AgricultureInfrastructure / 100 * (1 + n.AgricultureSubsidies / 10) * n.StockingCapabilities) / 2;
 
-  let GatheringEffectiveness = function (name) {
-    switch (name) {
-      case "Food":
-        return "Farming"
-      case "Cotton":
-        return "Farming"
-      case "Tea":
-        return "Farming"
-      case "Silk":
-        return "Farming"
-      case "Spice":
-        return "Farming"
-      case "Coffee":
-        return "Farming"
-      case "Cocoa":
-        return "Farming"
-      case "Tobacco":
-        return "Farming"
-      case "Sugar":
-        return "Farming"
-      case "ExoticFruit":
-        return "Farming"
-      case "Wool":
-        return "None"
-      case "Fur":
-        return "None"
-      case "Ivory":
-        return "None"
-      default:
-        return "Mining"
-    }
-  };
+  
 
-  for (const resourceIndex in gameStats.ResourceTypes) { //in, out, effective resources and potential inflation adjustments
-    const resource = gameStats.ResourceTypes[resourceIndex];
-    n[resource + "Incoming"] = 0;
-    n[resource + "Outgoing"] = 0;
-
-    for (const tradename in gameStats.Trades) {
-      const trade = gameStats.Trades[tradename];
-      if (trade.resource == resource) {
-        if (nationName == trade.receiver) {
-          n[resource + "Incoming"] += +trade.amount;
-        } else if (nationName == trade.giver) {
-          n[resource + "Outgoing"] += +trade.amount;
-        }
-      }
-    }
-
-    if(resource == "Budget" || resource == "Food") continue;
-    //the things below do not apply to Budget or Food
-
-    n["Effective" + resource] = (function () {
-
-      let er = n[resource] * (GatheringEffectiveness(resource) == "Farming" ? n.FarmingEfficiency : n.MiningEfficiency) + n[resource + "Incoming"] - n[resource + "Outgoing"];
-      if(er < 0){
-        lazyerror(`It seems the effective resource ${resource} in ${nationName} is negative: ${er}. Is an impossible trade taking place?`);
-      }
-      return er;
-    })();
-
-    let inflationMod = (function () {
-      switch (resource) {
-        case "Cotton":
-          return 3;
-        case "Gold":
-          return 3;
-        case "Tea":
-          return 3;
-        case "Silk":
-          return 3;
-        case "Spice":
-          return 5;
-        case "Wool":
-          return 5;
-        case "Coffee":
-          return 3;
-        case "Fur":
-          return 3.5;
-        case "Diamond":
-          return 3;
-        case "Silver":
-          return 3;
-        case "Ivory":
-          return 2.5;
-        case "Cocoa":
-          return 3;
-        case "Tobacco":
-          return 3;
-        case "Sugar":
-          return 3;
-        case "ExoticFruit":
-          return 3;
-        default:
-          return NaN;
-      }
-    })();
-    if (!isNaN(inflationMod)) {
-      n[resource + "Inflation"] = max(0, n["Effective" + resource] - inflationMod);
-    }
-
-
-
-  }
+  
 
   n.DailyFood = n.Workforces.PopulationInAgriculture * n.Population / 1000 * n.FarmingEfficiency * (1 - n.Pillaging) + n.FoodIncoming - n.FoodOutgoing;
   n.FoodConsumption = n.Population / 1000;
