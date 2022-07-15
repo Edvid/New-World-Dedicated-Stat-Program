@@ -12,6 +12,8 @@ advancedSettings.id = "advancedsettings";
 
 let cffContainer = document.createElement("div");
 let loadingContainer = document.createElement("div");
+loadingContainer.style.minHeight = "20px"
+
 let DownloadButtonContainer = document.createElement("div");
 
 
