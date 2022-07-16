@@ -1090,6 +1090,7 @@ function createOpinionMatrixTable(title, SocialBehaviourGroups) {
     opinioneeNameRow.appendChild(blankCornerCell);
 
     for (const opinioneeName in nationsSocialBehaviourGroups) {
+        if(nationsSocialBehaviourGroups[opinioneeName].Points == 0) continue;
         let opinioneeNameCell = document.createElement("th");
         opinioneeNameCell.style.background = primaryColor;
         opinioneeNameCell.innerText = opinioneeName;
@@ -1097,12 +1098,14 @@ function createOpinionMatrixTable(title, SocialBehaviourGroups) {
     }
     table.appendChild(opinioneeNameRow);
     for (const opinionerName in nationsSocialBehaviourGroups) {
+        if(nationsSocialBehaviourGroups[opinionerName].Points == 0) continue;
         let opRow = document.createElement("tr");
         let opinionerNameCell = document.createElement("th");
         opinionerNameCell.style.background = primaryColor;
         opinionerNameCell.innerHTML = opinionerName + " Opinion on ...";
         opRow.appendChild(opinionerNameCell);
         for (const opinioneeName in nationsSocialBehaviourGroups) {
+            if(nationsSocialBehaviourGroups[opinioneeName].Points == 0) continue;
             let cell = document.createElement("td");
             cell.style.background = secondaryColor;
             if (opinionerName == opinioneeName) {
