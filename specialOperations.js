@@ -93,8 +93,8 @@ function PostStatCreate(selection, name){
             n.ReligionGroups[rel] = {Points: 0};
         }
         for (const cul in gameStats.Cultures) {
-            if(typeof n.ReligionGroups[cul] !== 'undefined') continue;
-            n.ReligionGroups[cul] = {Points: 0};
+            if(typeof n.CultureGroups[cul] !== 'undefined') continue;
+            n.CultureGroups[cul] = {Points: 0};
         }
     }
     else if(/Religion$/.test(selection)){
