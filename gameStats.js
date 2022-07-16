@@ -159,7 +159,7 @@ class Nation {
   ArmyQuality;
   MilitaryLoyalty;
   MilitaryMorale;
-  MilitaryDiscipline;
+  ExtraMilitaryDiscipline;
   /* #endregion */
 
   /* #region  Navy */
@@ -594,7 +594,7 @@ class Nation {
     this.ArmyWages = 1.1;
     this.TrainingQuality = 0.45;
     this.MilitaryTactics = 0.45;
-    this.MilitaryDiscipline = 1.01; //Show In Percent
+    this.ExtraMilitaryDiscipline = 1.01; //Show In Percent
     /* #endregion */
 
     /* #region  Navy */

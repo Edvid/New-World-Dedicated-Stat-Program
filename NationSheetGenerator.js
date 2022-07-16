@@ -467,7 +467,7 @@ function createNationSheet(nationName) {
             [
                 "MilitaryLoyalty",
                 "MilitaryMorale",
-                "MilitaryDiscipline"
+                "ExtraMilitaryDiscipline"
             ]
         ]
     );

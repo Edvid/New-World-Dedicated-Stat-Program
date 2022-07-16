@@ -49,7 +49,7 @@ let defaultStatValues = {
     ArmyWages: 0.05,
     TrainingQuality: 0.05,
     MilitaryTactics: 0.05,
-    MilitaryDiscipline: 0.005,
+    ExtraMilitaryDiscipline: 0.005,
     NavyImprovements: 0.05,
     TradeInfluences: 0.5
 }

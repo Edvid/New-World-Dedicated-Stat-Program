@@ -458,7 +458,7 @@ function evaluateNation(nationName) {
   let WarStabilityModifier = ((WarStatus == 'offensive' && n.WarSupport < 0.75) ? (n.WarSupport - 0.75) / 10 : 0) + max(-0.075, ((WarStatus == 'defensive' && n.WarSupport < 0.4 && n.Fervor < 0) ? (n.Fervor) / 10 : 0));
   
   n.MilitaryMorale = clamp(0, 1.5, 
-    1 + n.Fervor + (n.MilitaryDiscipline > 1 ? - n.MilitaryDiscipline + 1 : 0) * 2 +
+    1 + n.Fervor + max(0, n.ExtraMilitaryDiscipline * 2) +
   (n.WarSupport < 0.5 ? n.WarSupport - 0.5 : 0) +
   (n.WarSupport > 0.75 ? n.WarSupport - 0.75 : 0) +
   n.ArmyWages - 1);
