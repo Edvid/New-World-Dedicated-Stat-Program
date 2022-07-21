@@ -3,6 +3,26 @@ function evaluateNation(nationName) {
 
   n.AgricultureTechnology = 0 + n.Technologies.HorseCollar / 2;
   n.FarmingEfficiency = 1 + n.AgricultureSubsidies / 5 + n.Fertility - 0.5 + (n.AgricultureInfrastructure - 1) / 10 + (n.AgricultureAdvancements - 1) / 10 + n.AgricultureTechnology / 10;
+
+  {
+    let rels = []
+    let culs = []
+    for (const relname in n.ReligionGroups) {
+      const rel = n.ReligionGroups[relname];
+      if (rel.Points > 0) {
+        rels.push(relname)
+      }
+    }
+    for (const culname in n.CultureGroups) {
+      const cul = n.CultureGroups[culname];
+      if (cul.Points > 0) {
+        culs.push(culname)
+      }
+    }
+    if(rels.length < 2) n.ReligionRepresentedAtGovernmentLevel = rels[0]; 
+    if(culs.length < 2) n.CultureRepresentedAtGovernmentLevel = culs[0]; 
+  }
+  
   
   let SocialBehaviourCalc = function(socialBehaviourGroup, socialBehaviourWorldwideGroups, socialGroupRepresentedAtGovernmentLevel){
     let pointSum = 0;
