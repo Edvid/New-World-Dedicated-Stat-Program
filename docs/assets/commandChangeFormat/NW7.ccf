@@ -1727,7 +1727,7 @@ trade TreatyOfBreslau2, KingdomOfPrussia > Byzantium, 30 Budget
 = 30 light ships
 = 90 medium ships
 = 30 heavy ships
-+ 0.5 mining efficiency
++ 0.2 mining efficiency
 + .75 Sulphur
 + .5 Coal
 + .25 Ivory
