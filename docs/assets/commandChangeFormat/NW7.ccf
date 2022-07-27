@@ -1091,7 +1091,7 @@ trade TreatyOfBreslau2, KingdomOfPrussia > Byzantium, 30 Budget
 +0.5 CulturalProsperity
 +0.05 ResearchSpending
 +0.25 social spending
-+0.8 burghers
++0.8% burghers
 +8% BurghersInfluence 
 -20% nobleinfluence 
 -30 NobleLoyalty.RepublicOfLaPlata
