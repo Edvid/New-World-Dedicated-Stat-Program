@@ -1715,7 +1715,7 @@ trade TreatyOfBreslau2, KingdomOfPrussia > Byzantium, 30 Budget
 = "true" Matchlock
 = "true" Mortars
 - 4 CulturalPower
-= “true” Renaissance Thought
+= "true" Renaissance Thought
 + 0.75 Propaganda
 = 2000 musketeers
 = 1200 heavy infantry
