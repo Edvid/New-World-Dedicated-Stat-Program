@@ -1709,10 +1709,10 @@ trade TreatyOfBreslau2, KingdomOfPrussia > Byzantium, 30 Budget
 + 1.5 local trade
 + 0.75 social spending
 -  7.5 Research Points
-= “true” Limber
-= “true” Reiters
-= “true” Matchlock
-= “true” Mortars
+= "true" Limber
+= "true" Reiters
+= "true" Matchlock
+= "true" Mortars
 - 4 CulturalPower
 = “true” Renaissance Thought
 + 0.75 Propaganda
