@@ -1087,7 +1087,7 @@ trade TreatyOfBreslau2, KingdomOfPrussia > Byzantium, 30 Budget
 +1.50 LocalTrade
 =5 LightShips
 - 4 culturalpower
-`="true" Newspapers
+="true" Newspapers
 +0.5 CulturalProsperity
 +0.05 ResearchSpending
 +0.25 social spending
@@ -1132,6 +1132,7 @@ trade TreatyOfBreslau2, KingdomOfPrussia > Byzantium, 30 Budget
 +0.50 Gibraltar
 +0.50 BayofBiscay
 +0.50 WestIberia
+
 <... > Nations > SashimoKingdom
 +0.75 AdministrativeEfficiency
 +1700 HeavyInfantry
@@ -1231,9 +1232,9 @@ trade TreatyOfBreslau2, KingdomOfPrussia > Byzantium, 30 Budget
 +1.50 Denmark
 +0.20 MilitaryTactics
 <...> Nations > RepublicOfLaPlata
-+5 LowerTax
-+5 MediumTax
-+5 HighTax
++5% LowerTax
++5% MediumTax
++5% HighTax
 -6 ResearchPoints
 ="true" Gunports
 ="true" Docks
