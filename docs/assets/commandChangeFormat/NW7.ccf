@@ -1,10 +1,4 @@
 
-<... > Trades
-<- TainoProtectionTreaty3
-<- TainoProtectionTreaty4
-trade TainoProtectionTreaty3, TainoTribalConfederacy > VespucianTribes, 0.2 Cocoa
-trade TainoProtectionTreaty4, TainoTribalConfederacy > VespucianTribes, 0.2 Sugar
-
 # iberia war
 <... > nations > KingdomOfToledoCatalonia
 -123 Light Infantry
@@ -1011,8 +1005,8 @@ pay debt 351
 
 trade TainoProtectionTreaty1, TainoTribalConfederacy > VespucianTribes, 0.2 Spice
 trade TainoProtectionTreaty2, TainoTribalConfederacy > VespucianTribes, 0.2 ExoticFruits
-trade TainoProtectionTreaty3, TainoTribalConfederacy > VespucianTribes, 0.2 Spice
-trade TainoProtectionTreaty4, TainoTribalConfederacy > VespucianTribes, 0.2 Spice
+trade TainoProtectionTreaty3, TainoTribalConfederacy > VespucianTribes, 0.2 Cocoa
+trade TainoProtectionTreaty4, TainoTribalConfederacy > VespucianTribes, 0.2 Sugar
 <... > Nations > KingdomOfPrussia
 +0.2 MilitaryTactics
 +0.3 TrainingQuality
