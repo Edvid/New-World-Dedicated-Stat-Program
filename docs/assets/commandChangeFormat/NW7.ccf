@@ -1,4 +1,10 @@
 
+<... > Trades
+<- TainoProtectionTreaty3
+<- TainoProtectionTreaty4
+trade TainoProtectionTreaty3, TainoTribalConfederacy > VespucianTribes, 0.2 Cocoa
+trade TainoProtectionTreaty4, TainoTribalConfederacy > VespucianTribes, 0.2 Sugar
+
 # iberia war
 <... > nations > KingdomOfToledoCatalonia
 -123 Light Infantry
