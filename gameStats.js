@@ -708,9 +708,13 @@ class Nation {
       Mortars: false,
       Metallurgy: false,
       Experimentation: false,
+	  Fluyt: false,
       Bayonet: false,
       SocketBayonet: false,
-      Flintlock: false
+      Flintlock: false,
+	  FlyingShuttle: false,
+	  LeadChamberProcess: false,
+	  Gunlock: false
     }
     /* #endregion */
 

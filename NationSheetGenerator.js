@@ -728,8 +728,10 @@ function createNationSheet(nationName) {
         "StandardizedPikes",
         "Gunports",
         "Mortars",
-        "Experimentation",
-        "Flintlock"
+        "Fluyt",
+        "Flintlock",
+		"LeadChamberProcess",
+		"Gunlock "
     ];
 
     for (const techname in gameStats.Nations[currentNationName].Technologies) {
