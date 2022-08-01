@@ -481,6 +481,7 @@ class Nation {
   Casualties;
   Pillaging;
   Occupation;
+  Blockade;
   WarExhaustion;
   MinorBattles;
   MajorBattles;
@@ -745,6 +746,7 @@ class Nation {
     this.Casualties = 0;
     this.Pillaging = 0; //Show In Percent
     this.Occupation = 0; //Show in Percent
+	this.Blockade = 0; //Show in Percent
     this.MinorBattles = 0;
     this.MajorBattles = 0;
     /* #endregion */

@@ -75,6 +75,7 @@ function PostStatChange(selection, change){
             "Casualties",
             "Pillaging",
             "Occupation",
+			"Blockade",
             "MinorBattles",
             "MajorBattles"
         ];

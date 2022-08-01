@@ -538,6 +538,7 @@ function createNationSheet(nationName) {
                 "Casualties",
                 "Pillaging",
                 "Occupation",
+				"Blockade",
                 "MinorBattles",
                 "MajorBattles",
                 "WarExhaustion",

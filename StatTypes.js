@@ -451,6 +451,7 @@ let WarStats = [
     "Casualties",
     "Pillaging",
     "Occupation",
+	"Blockade",
     "MinorBattles",
     "MajorBattles"
 ];
