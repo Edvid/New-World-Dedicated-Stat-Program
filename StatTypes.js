@@ -10,6 +10,7 @@ let BaseStats = [
 	"AgricultureSubsidies",
     "Flag",
     "GovernmentName",
+	"CapitalName",
     "Health",
     "EducationEfficiency",
     "AdministrativeEfficiency",

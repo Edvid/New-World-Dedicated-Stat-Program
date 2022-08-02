@@ -60,6 +60,7 @@ class Nation {
 
   /* #region Most Stats */
   GovernmentName;
+  CapitalName
   Flag;
   ReligionGroups;  //object of {name: {Points: num}, name: {Points: num}}
   ReligionRepresentedAtGovernmentLevel;

@@ -225,7 +225,10 @@ function createNationSheet(nationName) {
             ],
             [
                 "GovernmentName"
-            ]
+            ],
+			[
+				"CapitalName"
+			]
         ]
     );
 
