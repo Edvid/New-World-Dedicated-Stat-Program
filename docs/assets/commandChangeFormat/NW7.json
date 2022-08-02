@@ -15,6 +15,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "VespucianTribes",
+				"CapitalName": "unknown",
                 "Flag": "https://media.discordapp.net/attachments/974675695580110888/991028609777008690/flag.png?width=1307&height=676",
                 "ReligionGroups": {
                     "Pagan": {
@@ -940,6 +941,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "KingdomOfPrussia",
+                "CapitalName": "unknown",
                 "Flag": "https://cdn.discordapp.com/attachments/969287009879359578/974657308225306654/unknown.jpeg",
                 "ReligionGroups": {
                     "Catholic": {
@@ -1868,6 +1870,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "KingdomOfKhmbodj",
+                "CapitalName": "unknown",
                 "Flag": "",
                 "ReligionGroups": {
                     "Buddhism": {
@@ -2796,6 +2799,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "KingdomOfPotskig",
+                "CapitalName": "unknown",
                 "Flag": "https://cdn.discordapp.com/attachments/974676379503308870/988190825366319174/image288.png",
                 "ReligionGroups": {
                     "Pagan": {
@@ -3724,6 +3728,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "TsardomOfMuscovy",
+                "CapitalName": "unknown",
                 "Flag": "https://discord.com/channels/969281716009181395/974678756067278939/1000066349512544346",
                 "ReligionGroups": {
                     "Orthodox": {
@@ -4652,6 +4657,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "SindhEmpire",
+                "CapitalName": "unknown",
                 "Flag": "https://media.discordapp.net/attachments/974678499291955241/979802401525608518/SindhuFlag.png",
                 "ReligionGroups": {
                     "Hindu": {
@@ -5580,6 +5586,7 @@
                 "FuturePublicDebtLength": 5,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "SiouxTribes",
+                "CapitalName": "unknown",
                 "Flag": "https://cdn.discordapp.com/attachments/974679262143610910/975034474658168922/unknown.png",
                 "ReligionGroups": {
                     "Pagan": {
@@ -6508,6 +6515,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "Byzantium",
+                "CapitalName": "unknown",
                 "Flag": "https://cdn.discordapp.com/attachments/663909343208538156/974661588902629396/unknown.png",
                 "ReligionGroups": {
                     "Orthodox": {
@@ -7436,6 +7444,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "OrderOfStMary",
+                "CapitalName": "unknown",
                 "Flag": "https://media.discordapp.net/attachments/676497834077323301/974652267200413726/unknown.png",
                 "ReligionGroups": {
                     "Catholic": {
@@ -8364,6 +8373,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "ArchduchyOfAustria",
+                "CapitalName": "unknown",
                 "Flag": "https://cdn.discordapp.com/attachments/969287009879359578/974662588019404830/unknown.png",
                 "ReligionGroups": {
                     "Catholic": {
@@ -9292,6 +9302,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "HittiteEmpire",
+                "CapitalName": "unknown",
                 "Flag": "https://cdn.discordapp.com/attachments/969287009879359578/974663436208308284/IMG_6462.jpg",
                 "ReligionGroups": {
                     "Muslim": {
@@ -10220,6 +10231,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "TainoTribalConfederacy",
+                "CapitalName": "unknown",
                 "Flag": "https://media.discordapp.net/attachments/929658724363173938/932118700679634965/Flag_of_Cueva.jpg",
                 "ReligionGroups": {
                     "Pagan": {
@@ -11147,6 +11159,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "Mitiva",
+                "CapitalName": "unknown",
                 "Flag": "https://cdn.discordapp.com/attachments/969287009879359578/974685811796754533/21DD478A-6243-4653-9855-B37360F1E72B.jpg",
                 "ReligionGroups": {
                     "Muslim": {
@@ -12075,6 +12088,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "ArberberKingdom",
+                "CapitalName": "unknown",
                 "Flag": "https://media.discordapp.net/attachments/849399731436126249/982669416758128670/213.png",
                 "ReligionGroups": {
                     "Jewish": {
@@ -13003,6 +13017,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "KingdomOfAndalusia",
+                "CapitalName": "unknown",
                 "Flag": "https://cdn.discordapp.com/attachments/969287009879359578/974737096986210364/image318.png",
                 "ReligionGroups": {
                     "Catholic": {
@@ -13931,6 +13946,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "ZiEmpire",
+                "CapitalName": "unknown",
                 "Flag": "https://cdn.discordapp.com/attachments/975021837652217946/991159601183588363/Untitled203_20220627215118.png",
                 "ReligionGroups": {
                     "Pagan": {
@@ -14859,6 +14875,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "TheFaithfulKingdom",
+                "CapitalName": "unknown",
                 "Flag": "https://cdn.discordapp.com/attachments/969287009879359578/974757248398135507/unknown.png",
                 "ReligionGroups": {
                     "Catholic": {
@@ -15787,6 +15804,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "EulacianTradeCouncil",
+                "CapitalName": "unknown",
                 "Flag": "https://cdn.discordapp.com/attachments/974913146638712832/997386559236083833/unknown.png",
                 "ReligionGroups": {
                     "Buddhism": {
@@ -16715,6 +16733,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "EmpireOfLonguo",
+                "CapitalName": "unknown",
                 "Flag": "https://cdn.discordapp.com/attachments/969287009879359578/974845856182304798/flag.png",
                 "ReligionGroups": {
                     "Pagan": {
@@ -17643,6 +17662,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "KingdomOfKyrat",
+                "CapitalName": "unknown",
                 "Flag": "https://media.discordapp.net/attachments/950037530642898986/973664764649689088/unknown.png",
                 "ReligionGroups": {
                     "Buddhism": {
@@ -18571,6 +18591,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "KingdomOfEngland",
+                "CapitalName": "unknown",
                 "Flag": "https://cdn.discordapp.com/attachments/974974128006242324/997157892350291988/unknown.png",
                 "ReligionGroups": {
                     "Catholic": {
@@ -19499,6 +19520,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "KingdomOfWestphalia",
+                "CapitalName": "unknown",
                 "Flag": "https://media.discordapp.net/attachments/969287009879359578/975219338451755038/Westphalia.png?width=1009&height=673",
                 "ReligionGroups": {
                     "Catholic": {
@@ -20427,6 +20449,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "DuchyOfBelarus",
+                "CapitalName": "unknown",
                 "Flag": "https://media.discordapp.net/attachments/969287009879359578/975389127249915984/20220515_135245.jpg",
                 "ReligionGroups": {
                     "Orthodox": {
@@ -21355,6 +21378,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "KingdomOfBurgundy",
+                "CapitalName": "unknown",
                 "Flag": "https://media.discordapp.net/attachments/969287009879359578/975399289180258314/unknown.png",
                 "ReligionGroups": {
                     "Catholic": {
@@ -22283,6 +22307,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "KingdomOfSerbia",
+                "CapitalName": "unknown",
                 "Flag": "",
                 "ReligionGroups": {
                     "Orthodox": {
@@ -23211,6 +23236,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "CumanKipchakKhanate",
+                "CapitalName": "unknown",
                 "Flag": "https://media.discordapp.net/attachments/969287009879359578/975431116372738130/unknown.png",
                 "ReligionGroups": {
                     "Muslim": {
@@ -24139,6 +24165,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "KingdomOfToledoCatalonia",
+                "CapitalName": "unknown",
                 "Flag": "https://media.discordapp.net/attachments/969287009879359578/975453678767063142/unknown.png?width=839&height=678",
                 "ReligionGroups": {
                     "Catholic": {
@@ -25067,6 +25094,7 @@
                 "FuturePublicDebtLength": 4,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "KingdomOfIreland",
+                "CapitalName": "unknown",
                 "Flag": "https://cdn.discordapp.com/attachments/975489818052153354/997156767823822848/unknown.png",
                 "ReligionGroups": {
                     "Catholic": {
@@ -25995,6 +26023,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "KingdomOfScotland",
+                "CapitalName": "unknown",
                 "Flag": "https://media.discordapp.net/attachments/969287009879359578/975496188398809168/unknown.png?width=1009&height=673",
                 "ReligionGroups": {
                     "Catholic": {
@@ -26923,6 +26952,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "ValublidSultanate",
+                "CapitalName": "unknown",
                 "Flag": "https://media.discordapp.net/attachments/969287009879359578/975011913622777856/flag_2.png",
                 "ReligionGroups": {
                     "Muslim": {
@@ -27851,6 +27881,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "MagajiyaTribe",
+                "CapitalName": "unknown",
                 "Flag": "https://media.discordapp.net/attachments/969287009879359578/975473812785213480/image1.jpg?width=959&height=672",
                 "ReligionGroups": {
                     "Pagan": {
@@ -28779,6 +28810,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "AdenCaliphate",
+                "CapitalName": "unknown",
                 "Flag": "https://media.discordapp.net/attachments/969287009879359578/975076435683336232/unknown.png",
                 "ReligionGroups": {
                     "Muslim": {
@@ -29707,6 +29739,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "QuasimidEmirate",
+                "CapitalName": "unknown",
                 "Flag": "https://cdn.discordapp.com/attachments/975116066474852415/991010381478645820/IMG_3925.png",
                 "ReligionGroups": {
                     "Muslim": {
@@ -30635,6 +30668,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "Cheonje",
+                "CapitalName": "unknown",
                 "Flag": "",
                 "ReligionGroups": {
                     "Pagan": {
@@ -31563,6 +31597,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "KingdomOfPoland",
+                "CapitalName": "unknown",
                 "Flag": "https://cdn.discordapp.com/attachments/969287009879359578/975668498984489011/1024px-Kingdom_of_Poland-flag.svg.png",
                 "ReligionGroups": {
                     "Orthodox": {
@@ -32491,6 +32526,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "KingdomOfWallachia",
+                "CapitalName": "unknown",
                 "Flag": "https://cdn.discordapp.com/attachments/976907066042114058/991683604574904450/1200px-Flag_of_Wallachia.svg.png",
                 "ReligionGroups": {
                     "Orthodox": {
@@ -33419,6 +33455,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "MongolianKhanate",
+                "CapitalName": "unknown",
                 "Flag": "https://cdn.discordapp.com/attachments/969287009879359578/976959313300045885/1652995645353.jpg",
                 "ReligionGroups": {
                     "Pagan": {
@@ -34347,6 +34384,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "LatvianEmpire",
+                "CapitalName": "unknown",
                 "Flag": "https://cdn.discordapp.com/attachments/969287009879359578/978821533994729522/nvjoo-savienba.png",
                 "ReligionGroups": {
                     "Pagan": {
@@ -35275,6 +35313,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "TimuridEmirate",
+                "CapitalName": "unknown",
                 "Flag": "https://cdn.discordapp.com/attachments/969287009879359578/979075172126580786/1920px-Timurid.svg.png",
                 "ReligionGroups": {
                     "Muslim": {
@@ -36203,6 +36242,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "AztecEmpire",
+                "CapitalName": "unknown",
                 "Flag": "",
                 "ReligionGroups": {
                     "Pagan": {
@@ -37131,6 +37171,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "MenzenConfederation",
+                "CapitalName": "unknown",
                 "Flag": "https://cdn.discordapp.com/attachments/969287009879359578/980764296130740254/unknown.png",
                 "ReligionGroups": {
                     "Pagan": {
@@ -38059,6 +38100,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "ZuluKingdom",
+                "CapitalName": "unknown",
                 "Flag": "https://cdn.discordapp.com/attachments/969287009879359578/987114249090371584/unknown.png",
                 "ReligionGroups": {
                     "Pagan": {
@@ -38987,6 +39029,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "BlackfeetConfederation",
+                "CapitalName": "unknown",
                 "Flag": "https://cdn.discordapp.com/attachments/985579906069049384/985580079356723221/unknown.png",
                 "ReligionGroups": {
                     "Pagan": {
@@ -39915,6 +39958,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "MayanEmpire",
+                "CapitalName": "unknown",
                 "Flag": "https://cdn.discordapp.com/attachments/987773542198280193/987776937495781396/unknown.png",
                 "ReligionGroups": {
                     "Pagan": {
@@ -40843,6 +40887,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "EmpireOfJapan",
+                "CapitalName": "unknown",
                 "Flag": "https://cdn.discordapp.com/attachments/974675787959648327/977312475395534849/391.jpg",
                 "ReligionGroups": {
                     "Shinto": {
@@ -41771,6 +41816,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "KingdomOfSfveadsland",
+                "CapitalName": "unknown",
                 "Flag": "https://cdn.discordapp.com/attachments/969287009879359578/979256371759439872/unknown.png",
                 "ReligionGroups": {
                     "Catholic": {
@@ -42699,6 +42745,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "SashimoKingdom",
+                "CapitalName": "unknown",
                 "Flag": "https://cdn.discordapp.com/attachments/977191300304601158/987381145614299136/sashimo_flag.png",
                 "ReligionGroups": {
                     "Pagan": {
@@ -43627,6 +43674,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "NewEngland",
+                "CapitalName": "unknown",
                 "Flag": "",
                 "ReligionGroups": {
                     "Catholic": {
@@ -44555,6 +44603,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "KingdomOfBalanto",
+                "CapitalName": "unknown",
                 "Flag": "",
                 "ReligionGroups": {
                     "Muslim": {
@@ -45483,6 +45532,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "GuangxiClique",
+                "CapitalName": "unknown",
                 "Flag": "",
                 "ReligionGroups": {
                     "Pagan": {
@@ -46411,6 +46461,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "ZelenvaUnion",
+                "CapitalName": "unknown",
                 "Flag": "https://cdn.discordapp.com/attachments/969286601790324736/987070537715056690/Screenshot_20220616-104153_Adblock_Browser.jpg",
                 "ReligionGroups": {
                     "Pagan": {
@@ -47339,6 +47390,7 @@
                 "FuturePublicDebtLength": 1,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "KingdomOfAvanorolsk",
+                "CapitalName": "unknown",
                 "Flag": "",
                 "ReligionGroups": {
                     "Pagan": {
@@ -48267,6 +48319,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "KingdomOfBornu",
+                "CapitalName": "unknown",
                 "Flag": "https://media.discordapp.net/attachments/969287009879359578/975434490417647636/Kanem_flag_from_dulcerta_1339-pt.svg.png",
                 "ReligionGroups": {
                     "Muslim": {
@@ -49195,6 +49248,7 @@
                 "FuturePublicDebtLength": 2,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "KingdomOfAlvheim",
+                "CapitalName": "unknown",
                 "Flag": "https://cdn.discordapp.com/attachments/975169811350974464/997962178361565244/unknown.png",
                 "ReligionGroups": {
                     "Pagan": {
@@ -50123,6 +50177,7 @@
                 "FuturePublicDebtLength": 1,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "TexasTribes",
+                "CapitalName": "unknown",
                 "Flag": "",
                 "ReligionGroups": {
                     "Pagan": {
@@ -51051,6 +51106,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "KingdomOfUralikslavia",
+                "CapitalName": "unknown",
                 "Flag": "",
                 "ReligionGroups": {
                     "Orthodox": {
@@ -51979,6 +52035,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "Chechnya",
+                "CapitalName": "unknown",
                 "Flag": "https://cdn.discordapp.com/attachments/663909343208538156/993984997528698940/unknown.png",
                 "ReligionGroups": {
                     "Muslim": {
@@ -52907,6 +52964,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "RepublicOfLaPlata",
+                "CapitalName": "unknown",
                 "Flag": "https://media.discordapp.net/attachments/991421931830116482/993981750365659136/unknown.png",
                 "ReligionGroups": {
                     "Pagan": {
@@ -53835,6 +53893,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "Songhai",
+                "CapitalName": "unknown",
                 "Flag": "",
                 "ReligionGroups": {
                     "Muslim": {
@@ -54763,6 +54822,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "Deccan",
+                "CapitalName": "unknown",
                 "Flag": "https://cdn.discordapp.com/attachments/969287009879359578/992982433119084554/unknown.png",
                 "ReligionGroups": {
                     "Muslim": {
@@ -55691,6 +55751,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "Bosnia",
+                "CapitalName": "unknown",
                 "Flag": "",
                 "ReligionGroups": {
                     "Orthodox": {
@@ -56619,6 +56680,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "NewToledo",
+                "CapitalName": "unknown",
                 "Flag": "https://media.discordapp.net/attachments/969287009879359578/975453678767063142/unknown.png?width=839&height=678",
                 "ReligionGroups": {
                     "Catholic": {
@@ -57547,6 +57609,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "NewRabat",
+                "CapitalName": "unknown",
                 "Flag": "https://media.discordapp.net/attachments/969287009879359578/975011913622777856/flag_2.png",
                 "ReligionGroups": {
                     "Muslim": {
@@ -58475,6 +58538,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "NewScotland",
+                "CapitalName": "unknown",
                 "Flag": "https://media.discordapp.net/attachments/969287009879359578/975496188398809168/unknown.png?width=1009&height=673",
                 "ReligionGroups": {
                     "Catholic": {
@@ -59403,6 +59467,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "KingdomOfFlorida",
+                "CapitalName": "unknown",
                 "Flag": "https://cdn.discordapp.com/attachments/969287009879359578/994085311497900053/download_37.jpeg",
                 "ReligionGroups": {
                     "Pagan": {
@@ -60330,6 +60395,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "SitaoRiverTribes",
+                "CapitalName": "unknown",
                 "Flag": "https://cdn.discordapp.com/attachments/969287009879359578/996882758037143552/unknown.png",
                 "ReligionGroups": {
                     "Pagan": {
@@ -61258,6 +61324,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "KingdomOfMaharlika",
+                "CapitalName": "unknown",
                 "Flag": "https://cdn.discordapp.com/attachments/975820591548465232/997248320625967224/dcxq9kj-0d22c2ad-71f6-4476-9a3d-72b05e6db7cc.png",
                 "ReligionGroups": {
                     "Pagan": {
@@ -62186,6 +62253,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "KingdomOfYugoslavia",
+                "CapitalName": "unknown",
                 "Flag": "",
                 "ReligionGroups": {
                     "Orthodox": {
@@ -63114,6 +63182,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "KingdomOfPhilian",
+                "CapitalName": "unknown",
                 "Flag": "",
                 "ReligionGroups": {
                     "Pagan": {
@@ -64042,6 +64111,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "KingdomOfLao",
+                "CapitalName": "unknown",
                 "Flag": "https://cdn.discordapp.com/attachments/998063504697348157/998063815470092348/unknown.png",
                 "ReligionGroups": {
                     "Catholic": {
@@ -64970,6 +65040,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "NewCornwall",
+                "CapitalName": "unknown",
                 "Flag": "https://cdn.discordapp.com/attachments/994261982708506684/998672989358915765/IMG_0085.png",
                 "ReligionGroups": {
                     "Catholic": {
@@ -65898,6 +65969,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "NewWales",
+                "CapitalName": "unknown",
                 "Flag": "https://cdn.discordapp.com/attachments/994261956070473728/998673424958365776/IMG_0086.png",
                 "ReligionGroups": {
                     "Catholic": {
@@ -66826,6 +66898,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "NovaKreta",
+                "CapitalName": "unknown",
                 "Flag": "https://cdn.discordapp.com/attachments/663909343208538156/974661588902629396/unknown.png",
                 "ReligionGroups": {
                     "Orthodox": {
@@ -67754,6 +67827,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "NewCuthsbury",
+                "CapitalName": "unknown",
                 "Flag": "https://cdn.discordapp.com/attachments/994262008096636999/998673613509111908/IMG_0087.png",
                 "ReligionGroups": {
                     "Catholic": {
@@ -68682,6 +68756,7 @@
                 "FuturePublicDebtLength": 0,
                 "FutureCulturalPower": 6,
                 "GovernmentName": "KingdomOfXiltinol",
+                "CapitalName": "unknown",
                 "Flag": "https://cdn.discordapp.com/attachments/969287009879359578/998157058480287764/IMG_3173.webp",
                 "ReligionGroups": {
                     "Pagan": {
