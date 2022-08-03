@@ -1021,7 +1021,13 @@ function createStatTable(title, tables, upmigrations) {
             if (displayValue.appendable) {
                 nationStatCell.appendChild(displayValue.value);
             } else {
-                nationStatCell.innerText = displayValue.value.replace(/(?<=[a-zA-Z])(?=[A-Z])/g, " ");
+                try {
+                    nationStatCell.innerText = displayValue.value.replace(/(?<=[a-zA-Z])(?=[A-Z])/g, " ");
+                }catch (error){
+                    console.log(error);
+                    console.log("Object:");
+                    console.log(displayValue);
+                }
             }
 
             let statTypeIcon = document.createElement("img");
