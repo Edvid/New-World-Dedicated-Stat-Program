@@ -87,6 +87,7 @@ function displayValueFix(statName, statValue) {
             "PopulationInAgriculture",
             "Pillaging",
             "Occupation",
+			"Blockade",
             "Fervor",
             "Disease",
             "HabitableLand",

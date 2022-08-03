@@ -315,7 +315,7 @@ function evaluateNation(nationName) {
   n.Workforces.Bureaucrats = n.AdministrativeStrain * 1000 / n.Population;
   n.Workforces.Intellectuals = n.HigherEducation / 100;
   n.Workforces.Merchants = n.TradePower * 1000 / n.Population;
-  n.Workforces.PopulationInResourceHarvest = (n.Coal + n.Sulphur + n.Cotton + n.Gold + n.Iron + n.Tea + n.Silk + n.Spice + n.Wool + n.Coffee + n.Fur + n.Diamond + n.Silver + n.Copper) * 20000 / n.Population;
+  n.Workforces.PopulationInResourceHarvest = (n.Coal + n.Sulphur + n.Cotton + n.Gold + n.Iron + n.Tea + n.Silk + n.Spice + n.Wool + n.Coffee + n.Fur + n.Diamond + n.Silver + n.Copper + n.Ivory + n.Cocoa + n.Tobacco + n.Sugar + n.ExoticFruit) * 20000 / n.Population;
   n.Workforces.PopulationInAgriculture = 1 - n.Workforces.PopulationInMilitary - n.Workforces.Artisans - n.Workforces.Clergy - n.Workforces.Burghers - n.Workforces.Nobility - n.Workforces.PopulationInResourceHarvest;
   n.AgricultureSpending = (n.Workforces.PopulationInAgriculture * n.Population / 1000 * n.AgricultureInfrastructure / 100 * (1 + n.AgricultureSubsidies / 10) * n.StockingCapabilities) / 2;
 
@@ -528,7 +528,7 @@ n.PopulationGrowth = (n.FutureFood < 0 ? n.FutureFood * 1000 / n.Population - (n
 
 
 
-  n.NavyTech = 0 + n.Technologies.Galleons / 4 + n.Technologies.Docks / 2 + n.Technologies.Gunports / 2;
+  n.NavyTech = 0 + n.Technologies.Galleons / 4 + n.Technologies.Docks / 2 + n.Technologies.Gunports / 2 + n.Technologies.Gunlock / 4;
   n.NavyQuality = 1 + n.NavyImprovements + n.NavyTech;
 
   n.UpkeepForOneLightShip = ((1 / 8) * n.NavyQuality) / gameStats.TimeDivide * (1 + n.Technologies.Gunports);
@@ -562,10 +562,10 @@ n.PopulationGrowth = (n.FutureFood < 0 ? n.FutureFood * 1000 / n.Population - (n
 
 
   
-  n.ProductionEfficiency = n.Mercantilism + n.Technologies.VerticalLoom / 5 + n.Technologies.Workshops + n.Technologies.Cranes / 5 + n.Technologies.TextileManufactories / 2;
+  n.ProductionEfficiency = n.Mercantilism + n.Technologies.VerticalLoom / 5 + n.Technologies.Workshops + n.Technologies.Cranes / 5 + n.Technologies.TextileManufactories / 2 + n.Technologies.FlyingShuttle / 5 + n.Technologies.LeadChamberProcess / 5;
   n.Production = (n.LocalTrade + n.TradePower) * n.Workforces.Artisans * n.ProductionEfficiency * 10;
   n.TradeProtection = n.LightShips * 0.75 + n.MediumShips * 1 + n.HeavyShips * 0.75;
-  n.TradeEfficiency = 1 * n.Mercantilism + n.Technologies.Cranes / 10 + n.Technologies.PromissoryNotes / 20 + n.TradeProtection / 200;
+  n.TradeEfficiency = (1 * n.Mercantilism + n.Technologies.Cranes / 10 + n.Technologies.PromissoryNotes / 20 + n.TradeProtection / 200 + n.Technologies.Fluyt / 5) * (1 - n.Blockade);
 
   n.Inflation = max(0, (n.Budget / 1000) / (n.AdministrativeEfficiency / 10));
   n.ResourceBudgetBoost = (function () {

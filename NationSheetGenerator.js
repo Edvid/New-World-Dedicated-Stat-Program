@@ -225,7 +225,10 @@ function createNationSheet(nationName) {
             ],
             [
                 "GovernmentName"
-            ]
+            ],
+			[
+				"CapitalName"
+			]
         ]
     );
 
@@ -538,6 +541,7 @@ function createNationSheet(nationName) {
                 "Casualties",
                 "Pillaging",
                 "Occupation",
+				"Blockade",
                 "MinorBattles",
                 "MajorBattles",
                 "WarExhaustion",
@@ -728,8 +732,10 @@ function createNationSheet(nationName) {
         "StandardizedPikes",
         "Gunports",
         "Mortars",
-        "Experimentation",
-        "Flintlock"
+        "Fluyt",
+        "Flintlock",
+		"LeadChamberProcess",
+		"Gunlock "
     ];
 
     for (const techname in gameStats.Nations[currentNationName].Technologies) {

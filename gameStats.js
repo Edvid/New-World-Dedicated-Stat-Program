@@ -60,6 +60,7 @@ class Nation {
 
   /* #region Most Stats */
   GovernmentName;
+  CapitalName
   Flag;
   ReligionGroups;  //object of {name: {Points: num}, name: {Points: num}}
   ReligionRepresentedAtGovernmentLevel;
@@ -481,6 +482,7 @@ class Nation {
   Casualties;
   Pillaging;
   Occupation;
+  Blockade;
   WarExhaustion;
   MinorBattles;
   MajorBattles;
@@ -708,9 +710,13 @@ class Nation {
       Mortars: false,
       Metallurgy: false,
       Experimentation: false,
+	  Fluyt: false,
       Bayonet: false,
       SocketBayonet: false,
-      Flintlock: false
+      Flintlock: false,
+	  FlyingShuttle: false,
+	  LeadChamberProcess: false,
+	  Gunlock: false
     }
     /* #endregion */
 
@@ -741,6 +747,7 @@ class Nation {
     this.Casualties = 0;
     this.Pillaging = 0; //Show In Percent
     this.Occupation = 0; //Show in Percent
+	this.Blockade = 0; //Show in Percent
     this.MinorBattles = 0;
     this.MajorBattles = 0;
     /* #endregion */
