@@ -1033,6 +1033,8 @@ function createStatTable(title, tables, upmigrations) {
                     console.log(error);
                     console.log("Object:");
                     console.log(displayValue);
+                    console.log("Stat Name:");
+                    console.log(statName);
                 }
             }
 
