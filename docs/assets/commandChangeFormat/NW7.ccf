@@ -2,3 +2,20 @@
 <... > nations > KingdomOfPrussia
 -0.9 tactics
 -0.4 training
+
+<... > nations > VespucianTribes > TradeInfluences
+=0 Greece.tp
+=0 NorthernAnatolia.tp
+=0 Mesopotamia.tp
+=0 PersianGulf.tp
+=0 Pakistan.tp
+=0 =0 WestIndia.tp
+=0 EastIndia.tp
+=0 NorthIndia.tp
+=0 Burma.tp
+=0 SouthEastAsia.tp
+=0 SouthChina.tp
+=0 YangtzeRiver.tp
+=0 NorthChina.tp
+=0 SeaOfJapan.tp
+=0 NorthAustralia.tp
