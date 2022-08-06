@@ -103,6 +103,20 @@ function matchToken(searchIn, approxName) {
     }
 }
 
+
+/* #region  taken from blog https://robkendal.co.uk/blog/2020-04-17-saving-text-to-client-side-file-using-vanilla-js */
+const downloadToFile = (content, filename, contentType) => {
+    const a = document.createElement('a');
+    const file = new Blob([content], { type: contentType });
+
+    a.href = URL.createObjectURL(file);
+    a.download = filename;
+    a.click();
+
+    URL.revokeObjectURL(a.href);
+};
+/* #endregion */
+
 document.querySelector("body").onload = function () {
     /* #region  Taken from https://www.w3schools.com/howto/howto_js_collapsible.asp */
     var coll = document.getElementsByClassName("collapsible");
