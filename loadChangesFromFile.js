@@ -9,9 +9,9 @@ let preloadGameState;
 let preloadStatChanges;
 (async function () {
     preloadGameState;
-    await fetch("./docs/assets/commandChangeFormat/NW7.json").then(response => response.json()).then(data => preloadGameState = data);
+    await fetch("./docs/assets/gamestats/NW7.json").then(response => response.json()).then(data => preloadGameState = data);
     preloadStatChanges;
-    await fetch("./docs/assets/commandChangeFormat/NW7.ccf").then(response => response.text()).then(data => preloadStatChanges = data);
+    await fetch("./docs/assets/gamestats/NW7.ccf").then(response => response.text()).then(data => preloadStatChanges = data);
     //If hash in JSON is the same as the hashcode of the entire
     //ccf file. Then the JSON _is_ the state the changes will 
     //genereate, and we can use the State for the gameStats
