@@ -4,7 +4,7 @@ let canvasZoomScale = 1;
 const WIDTH = 8192;
 const HEIGHT = 3365;
 
-async function onLoad() {
+document.querySelector("body").onload = async function () {
     canvasContainer = document.getElementById("canvascontainer");
     canvasContainer.width = WIDTH;
     canvasContainer.height = HEIGHT;

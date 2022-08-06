@@ -6,7 +6,7 @@ let canvasZoomScale = 1;
 const WIDTH = 1200;
 const HEIGHT = 493;
 
-async function onLoad() {
+document.querySelector("body").onload = async function () {
     document.getElementById("isloading").innerText = "Loading..."
 }
 async function onLoadStatTradeZoneWealth() {
