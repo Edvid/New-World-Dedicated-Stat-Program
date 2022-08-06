@@ -27,7 +27,7 @@ downloadbutton.addEventListener('click', () => {
     };
     let downloadString = JSON.stringify(jsonobj, null, 4);
 
-    downloadToFile(downloadString, 'NW7.json', 'application/json');
+    downloadToFile(downloadString, 'safefile.json', 'application/json');
 });
 DownloadButtonContainer.appendChild(downloadbutton);
 
