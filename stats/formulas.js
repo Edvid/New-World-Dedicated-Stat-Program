@@ -471,7 +471,7 @@ function evaluateNation(nationName) {
   })();
   n.PopulationStabilityImpact = (n.Population > n.AdministrativeEfficiency * 500000 ? (n.AdministrativeEfficiency * 500000 - n.Population) / 50000000 : 0) * 10;
   n.Fervor = clamp(1, -1, 0 + n.MinorBattles / 20 + n.MajorBattles / 10 + n.Pillaging - (n.Casualties / (n.OverallNumbers + n.Casualties + 0.0000001)));
-  n.WarSupport = clamp(1, 0, n.PopulationHappiness / 10 * 2.5 + n.Propaganda / 10 + n.Fervor);
+  n.WarSupport = clamp(1, 0, n.PopulationHappiness / 10 * 2.5 + n.Propaganda / 10 * (1 + n.CulturalAdvancements.Newspapers / 2) + n.Fervor);
   let WarStatus = n.AtWar;
   if(WarStatus == false) WarStatus = "false";
   WarStatus = WarStatus.toLowerCase();
