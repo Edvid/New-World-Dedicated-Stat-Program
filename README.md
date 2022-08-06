@@ -32,7 +32,7 @@ adding or subtracting values from a stat can be done in two ways. The explicit a
 You can explicidly state what value you wish to change a stat by, by the following line:
 `+2 administrativeefficiency`
 
-or with [synonyms](https://edvid.github.io/New-World-Dedicated-Stat-Program/Synonyms.js) implemented in the program:
+or with [synonyms](https://edvid.github.io/New-World-Dedicated-Stat-Program/ccfassist/synonyms.js) implemented in the program:
 
 `+ 2 adm`
 

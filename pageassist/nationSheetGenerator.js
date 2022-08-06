@@ -1023,7 +1023,7 @@ function createStatTable(title, tables, upmigrations) {
             statName = statName[statName.length - 1 - upmigrations].replace(/(\[|\"| |\])/gmi, "");
             nationStatNameCell.innerText = statName.replace(/(?<=[a-zA-Z])(?=[A-Z])/g, " ");
             let nationStatCell = document.createElement("td");
-            let displayValue = displayValueFix(statName, statvalue);
+            let displayValue = ValueTypeFix(statName, statvalue);
             if (displayValue.appendable) {
                 nationStatCell.appendChild(displayValue.value);
             } else {

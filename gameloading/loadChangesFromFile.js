@@ -51,13 +51,13 @@ async function loadChangesFromContent(changes, skip) {
 function refreshNationPageItems() {
     evaluateNations();
 
-    if (typeof updateDropdownSelection !== 'undefined') updateDropdownSelection();
-    if (typeof createNationSheet !== 'undefined') {
+    if (typeof updateDropdownSelection === 'function') updateDropdownSelection();
+    if (typeof createNationSheet === 'function') {
         currentNationName = Object.keys(gameStats.Nations)[0];
         createNationSheet(currentNationName);
     }
-    if(typeof onLoadStatTradeZoneWealth !== 'undefined') onLoadStatTradeZoneWealth();
-    if (typeof loadAllTrades !== 'undefined') loadAllTrades();
+    if(typeof onLoadStatTradeZoneWealth === 'function') onLoadStatTradeZoneWealth();
+    if (typeof loadAllTrades === 'function') loadAllTrades();
 }
 
 let commentblockregex = /(?<!\\)"""/i;
@@ -176,4 +176,5 @@ Aborting.`);
     }
 }
 
-setInterval(populateAdvancedSettings, 30);
+if(typeof onLoadStatTradeZoneWealth === 'function')
+    setInterval(populateAdvancedSettings, 30);

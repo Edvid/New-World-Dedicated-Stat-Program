@@ -1,5 +1,5 @@
 
-function displayValueFix(statName, statValue) {
+function ValueTypeFix(statName, statValue) {
     
     let statVal = statValue;
     if (statVal == "false") statVal = false;
