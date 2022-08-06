@@ -5,24 +5,24 @@ function sleep(ms) {
 
 let warnSuppress = 0;
 
-function suppressWarning(){
+function suppressWarning() {
     warnSuppress = changeCommandIndex + 1;
 }
 
-function warn(message){
-    if(warnSuppress == changeCommandIndex) return;
+function warn(message) {
+    if (warnSuppress == changeCommandIndex) return;
     alert(`WARNING At line ${(changeCommandIndex + 1)}:
 
 ${message}`)
 }
 
-function error(message){
+function error(message) {
     alert(`ERROR At line ${(changeCommandIndex + 1)}:
 
 ${message}`)
 }
 
-function lazyerror(message){
+function lazyerror(message) {
     alert(`ERROR At line ${(changeCommandIndex + 1)}
 but the source of the ERROR could have occured earlier:
 
@@ -43,7 +43,7 @@ String.prototype.hashCode = function () {
 /* #endregion */
 
 
-String.prototype.capitalSpacing = function (){
+String.prototype.capitalSpacing = function () {
     return this.replace(/(?<=[a-zA-Z])(?=[A-Z1-9])/gm, " ");
 }
 
@@ -53,7 +53,7 @@ function correctAndSynonymCheck(selection) {
     let step = 'gameStats';
     for (let i = 0; i < correctSelection.length; i++) {
         let matched = matchToken(step, correctSelection[i]);
-        if(matched == null) {
+        if (matched == null) {
             alert(`Line ${changeCommandIndex}: The Specified Stat '${correctSelection[i]}' in '${correctSelection.slice(0, i).join('.')}' was not found!`);
             return;
         }
@@ -63,10 +63,10 @@ function correctAndSynonymCheck(selection) {
     return "." + correctSelection.join(".");
 }
 
-function matchToken(searchIn, approxName){
+function matchToken(searchIn, approxName) {
     let searchObject = (new Function(`return ${searchIn}`))();
     let nameToCheck = approxName.toLowerCase().replaceAll(" ", "")
-    
+
     //check same stats but correct casing
     for (const propertyName in searchObject) {
         if (propertyName.toLowerCase() == nameToCheck)
@@ -80,25 +80,44 @@ function matchToken(searchIn, approxName){
             //if what was written in change file exists in the synonym dictionary
             if (synonym.toLowerCase() == nameToCheck) {
                 //Then, if the real name for the stat exists in this object
-                if(realName in searchObject) return realName;
+                if (realName in searchObject) return realName;
             }
         }
     }
 
     let subObjects = [];
-    for (const objectName in searchObject){
-        if(typeof searchObject[objectName] == 'object') subObjects.push(objectName);
+    for (const objectName in searchObject) {
+        if (typeof searchObject[objectName] == 'object') subObjects.push(objectName);
     }
-    if(subObjects.length > 0){
+    if (subObjects.length > 0) {
         for (let i = 0; i < subObjects.length; i++) {
             const element = subObjects[i];
-            
+
             within = true;
             let subMatch = matchToken(`${searchIn}.${element}`, approxName)
-            if(subMatch != null)
+            if (subMatch != null)
                 return `${element}.${subMatch}`
         }
-    }else{
+    } else {
         return null;
     }
+}
+
+document.querySelector("body").onload = function () {
+    /* #region  Taken from https://www.w3schools.com/howto/howto_js_collapsible.asp */
+    var coll = document.getElementsByClassName("collapsible");
+    var collitem;
+
+    for (collitem = 0; collitem < coll.length; collitem++) {
+        coll[collitem].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        });
+    }
+    /* #endregion */
 }
