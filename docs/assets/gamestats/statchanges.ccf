@@ -3060,7 +3060,7 @@ trade TreatyOfGermany2, KingdomOfPrussia > ArchduchyOfAustria, 100 Food
 =1000 HeavyCav
 =2000 Crossbowmen
 =1000 Musketeers
-=500 HandCannons
+=500 HandCannoneers
 =500 LightCav
 =25 Cannons
 =0 Militia
@@ -3726,3 +3726,5 @@ trade ByzantiumColonyShipment, Byzantium > NovaKreta, 150 Food
 <... > Nations > Byzantium
 +3663728 Population
 +2521041 Population
+<...
+sync
