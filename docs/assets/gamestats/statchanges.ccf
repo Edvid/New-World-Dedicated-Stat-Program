@@ -3507,9 +3507,9 @@ trade ByzantiumColonyShipment, Byzantium > NovaKreta, 150 Food
 ="true" Metallurgy
 ="true" Fluyt
 +130 Budget
-+0.6 TrainingQuality
-+0.7 MilitaryTactics
-+4% MilitaryDiscipline
++0.1 TrainingQuality
++0.4 MilitaryTactics
++1% MilitaryDiscipline
 +0.35 NavalImprovements
 +1 LocalTrade
 +1% workforces.artisans
