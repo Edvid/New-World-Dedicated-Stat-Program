@@ -103,3 +103,3626 @@
 =7.5 SouthEastAsia 
 =3 NorthAustralia
 =0 SouthAustralia
+
+# Nation Climates
+<... > Nations > KingdomOfEngland > Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=0 Arid.Pixels
+=0 Steppe.Pixels
+=11633 Moderate.Pixels
+=0 SubTropical.Pixels
+=184 Tropical.Pixels
+=0 Savanna.Pixels
+=0 Desert.Pixels
+=377 CoastalDesert.Pixels
+=0 Mountainous.Pixels
+
+
+# Nation Climates
+<... > Nations > TsardomOfMuscovy > Climates
+=0 PolarDesert.Pixels
+=15431 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=0 Arid.Pixels
+=396 Steppe.Pixels
+=42671 Moderate.Pixels
+=0 SubTropical.Pixels
+=0 Tropical.Pixels
+=0 Savanna.Pixels
+=0 Desert.Pixels
+=0 CoastalDesert.Pixels
+=0 Mountainous.Pixels
+
+# Nation Climates
+<... > Nations > VespucianTribes > Climates
+=0 PolarDesert.Pixels
+=817 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=0 Arid.Pixels
+=0 Steppe.Pixels
+=76901 Moderate.Pixels
+=644 SubTropical.Pixels
+=712 Tropical.Pixels
+=0 Savanna.Pixels
+=0 Desert.Pixels
+=0 CoastalDesert.Pixels
+=0 Mountainous.Pixels
+
+# Nation Climates
+<... > Nations > SiouxTribes > Climates
+=0 PolarDesert.Pixels
+=8985 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=0 Arid.Pixels
+=0 Steppe.Pixels
+=40426 Moderate.Pixels
+=0 SubTropical.Pixels
+=0 Tropical.Pixels
+=0 Savanna.Pixels
+=0 Desert.Pixels
+=0 CoastalDesert.Pixels
+=0 Mountainous.Pixels
+
+# Nation Climates
+<... > Nations > TainoTribalConfederacy > Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=0 Arid.Pixels
+=0 Steppe.Pixels
+=0 Moderate.Pixels
+=7151 SubTropical.Pixels
+=926 Tropical.Pixels
+=0 Savanna.Pixels
+=0 Desert.Pixels
+=0 CoastalDesert.Pixels
+=0 Mountainous.Pixels
+
+# Nation Climates
+<... > Nations > Aztecempire > Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=0 Arid.Pixels
+=0 Steppe.Pixels
+=0 Moderate.Pixels
+=4695 SubTropical.Pixels
+=0 Tropical.Pixels
+=5701 Savanna.Pixels
+=596 Desert.Pixels
+=0 CoastalDesert.Pixels
+=2176 Mountainous.Pixels
+
+# Nation Climates
+<... > Nations > Blackfeetconfederation > Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=0 Arid.Pixels
+=11789 Steppe.Pixels
+=0 Moderate.Pixels
+=0 SubTropical.Pixels
+=0 Tropical.Pixels
+=0 Savanna.Pixels
+=0 Desert.Pixels
+=0 CoastalDesert.Pixels
+=176 Mountainous.Pixels
+
+# Nation Climates
+<... > Nations > Mayanempire > Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=0 Arid.Pixels
+=0 Steppe.Pixels
+=0 Moderate.Pixels
+=7601 SubTropical.Pixels
+=3156 Tropical.Pixels
+=0 Savanna.Pixels
+=0 Desert.Pixels
+=0 CoastalDesert.Pixels
+=376 Mountainous.Pixels
+
+
+
+# Nation Climates
+<... > Nations > newengland > Climates
+=0 PolarDesert.Pixels
+=4218 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=0 Arid.Pixels
+=0 Steppe.Pixels
+=6262 Moderate.Pixels
+=0 SubTropical.Pixels
+=0 Tropical.Pixels
+=0 Savanna.Pixels
+=0 Desert.Pixels
+=0 CoastalDesert.Pixels
+=0 Mountainous.Pixels
+
+# Nation Climates
+<... > Nations > Texastribes > Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=0 Arid.Pixels
+=0 Steppe.Pixels
+=4948 Moderate.Pixels
+=0 SubTropical.Pixels
+=0 Tropical.Pixels
+=9044 Savanna.Pixels
+=376 Desert.Pixels
+=724 CoastalDesert.Pixels
+=0 Mountainous.Pixels
+
+# Nation Climates
+<... > Nations > RepublicofLaPlata > Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=0 Arid.Pixels
+=0 Steppe.Pixels
+=13717 Moderate.Pixels
+=195 SubTropical.Pixels
+=639 Tropical.Pixels
+=0 Savanna.Pixels
+=0 Desert.Pixels
+=0 CoastalDesert.Pixels
+=0 Mountainous.Pixels
+
+# Nation Climates
+<... > Nations > Newwales > Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=0 Arid.Pixels
+=0 Steppe.Pixels
+=0 Moderate.Pixels
+=105 SubTropical.Pixels
+=969 Tropical.Pixels
+=859 Savanna.Pixels
+=0 Desert.Pixels
+=0 CoastalDesert.Pixels
+=0 Mountainous.Pixels
+
+# Nation Climates
+<... > Nations > NewCornwall > Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=0 Arid.Pixels
+=0 Steppe.Pixels
+=0 Moderate.Pixels
+=760 SubTropical.Pixels
+=2689 Tropical.Pixels
+=0 Savanna.Pixels
+=0 Desert.Pixels
+=0 CoastalDesert.Pixels
+=455 Mountainous.Pixels
+
+# Nation Climates
+<... > Nations > NewCuthsbury > Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=0 Arid.Pixels
+=0 Steppe.Pixels
+=0 Moderate.Pixels
+=5262 SubTropical.Pixels
+=1590 Tropical.Pixels
+=0 Savanna.Pixels
+=0 Desert.Pixels
+=0 CoastalDesert.Pixels
+=250 Mountainous.Pixels
+
+# Nation Climates
+<... > Nations > NewToledo > Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=0 Arid.Pixels
+=0 Steppe.Pixels
+=0 Moderate.Pixels
+=0 SubTropical.Pixels
+=2712 Tropical.Pixels
+=0 Savanna.Pixels
+=0 Desert.Pixels
+=0 CoastalDesert.Pixels
+=0 Mountainous.Pixels
+
+# Nation Climates
+<... > Nations > NewRabat > Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=0 Arid.Pixels
+=0 Steppe.Pixels
+=0 Moderate.Pixels
+=0 SubTropical.Pixels
+=369 Tropical.Pixels
+=0 Savanna.Pixels
+=0 Desert.Pixels
+=0 CoastalDesert.Pixels
+=0 Mountainous.Pixels
+
+# Nation Climates
+<... > Nations > NovaKreta > Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=0 Arid.Pixels
+=0 Steppe.Pixels
+=0 Moderate.Pixels
+=1762 SubTropical.Pixels
+=264 Tropical.Pixels
+=0 Savanna.Pixels
+=0 Desert.Pixels
+=0 CoastalDesert.Pixels
+=50 Mountainous.Pixels
+
+# Nation Climates
+<... > Nations > NewScotland > Climates
+=0 PolarDesert.Pixels
+=2663 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=0 Arid.Pixels
+=0 Steppe.Pixels
+=0 Moderate.Pixels
+=0 SubTropical.Pixels
+=0 Tropical.Pixels
+=0 Savanna.Pixels
+=0 Desert.Pixels
+=0 CoastalDesert.Pixels
+=0 Mountainous.Pixels
+
+# Nation Climates
+<... > Nations > Byzantium > Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=21993 Medditereanian.Pixels
+=9936 Arid.Pixels
+=4791 Steppe.Pixels
+=313 Moderate.Pixels
+=217 SubTropical.Pixels
+=550 Tropical.Pixels
+=33 Savanna.Pixels
+=0 Desert.Pixels
+=56 CoastalDesert.Pixels
+=1191 Mountainous.Pixels
+
+# Nation Climates
+<... > Nations > ArchduchyOfAustria > Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=535 Medditereanian.Pixels
+=0 Arid.Pixels
+=0 Steppe.Pixels
+=25071 Moderate.Pixels
+=219 SubTropical.Pixels
+=49 Tropical.Pixels
+=0 Savanna.Pixels
+=0 Desert.Pixels
+=148 CoastalDesert.Pixels
+=4007 Mountainous.Pixels
+
+# Nation Climates
+<... > Nations > KingdomOFPrussia > Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=0 Arid.Pixels
+=0 Steppe.Pixels
+=15629 Moderate.Pixels
+=0 SubTropical.Pixels
+=0 Tropical.Pixels
+=0 Savanna.Pixels
+=0 Desert.Pixels
+=0 CoastalDesert.Pixels
+=279 Mountainous.Pixels
+
+# Nation Climates
+<... > Nations > The Faithful Kingdom > Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=9780 Medditereanian.Pixels
+=0 Arid.Pixels
+=0 Steppe.Pixels
+=3776 Moderate.Pixels
+=0 SubTropical.Pixels
+=0 Tropical.Pixels
+=0 Savanna.Pixels
+=0 Desert.Pixels
+=0 CoastalDesert.Pixels
+=4148 Mountainous.Pixels
+
+# Nation Climates
+<... > Nations > KingdomOfAlvheim > Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=5823 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=0 Arid.Pixels
+=0 Steppe.Pixels
+=10945 Moderate.Pixels
+=0 SubTropical.Pixels
+=0 Tropical.Pixels
+=0 Savanna.Pixels
+=0 Desert.Pixels
+=0 CoastalDesert.Pixels
+=0 Mountainous.Pixels
+
+# Nation Climates
+<... > Nations > DuchyofBelarus > Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=0 Arid.Pixels
+=2351 Steppe.Pixels
+=25539 Moderate.Pixels
+=0 SubTropical.Pixels
+=0 Tropical.Pixels
+=0 Savanna.Pixels
+=0 Desert.Pixels
+=0 CoastalDesert.Pixels
+=0 Mountainous.Pixels
+
+# Nation Climates
+<... > Nations > KingdomofSerbia > Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=3222 Medditereanian.Pixels
+=0 Arid.Pixels
+=536 Steppe.Pixels
+=3615 Moderate.Pixels
+=0 SubTropical.Pixels
+=0 Tropical.Pixels
+=0 Savanna.Pixels
+=0 Desert.Pixels
+=0 CoastalDesert.Pixels
+=0 Mountainous.Pixels
+
+# Nation Climates
+<... > Nations > KingdomofBurgundy > Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=0 Arid.Pixels
+=0 Steppe.Pixels
+=28404 Moderate.Pixels
+=0 SubTropical.Pixels
+=0 Tropical.Pixels
+=0 Savanna.Pixels
+=0 Desert.Pixels
+=0 CoastalDesert.Pixels
+=0 Mountainous.Pixels
+
+# Nation Climates
+<... > Nations > CumanKipchakKhanate > Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=0 Arid.Pixels
+=34500 Steppe.Pixels
+=2571 Moderate.Pixels
+=0 SubTropical.Pixels
+=0 Tropical.Pixels
+=0 Savanna.Pixels
+=0 Desert.Pixels
+=0 CoastalDesert.Pixels
+=1151 Mountainous.Pixels
+
+# Nation Climates
+<... > Nations > KingdomOFToledoCatalonia > Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=24062 Medditereanian.Pixels
+=0 Arid.Pixels
+=0 Steppe.Pixels
+=4047 Moderate.Pixels
+=701 SubTropical.Pixels
+=2712 Tropical.Pixels
+=42 Savanna.Pixels
+=0 Desert.Pixels
+=63 CoastalDesert.Pixels
+=0 Mountainous.Pixels
+
+# Nation Climates
+<... > Nations > KingdomofIreland> Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=0 Arid.Pixels
+=0 Steppe.Pixels
+=4047 Moderate.Pixels
+=182 SubTropical.Pixels
+=27 Tropical.Pixels
+=69 Savanna.Pixels
+=0 Desert.Pixels
+=0 CoastalDesert.Pixels
+=0 Mountainous.Pixels
+
+# Nation Climates
+<... > Nations > KingdomofPoland > Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=0 Arid.Pixels
+=179 Steppe.Pixels
+=23426 Moderate.Pixels
+=0 SubTropical.Pixels
+=0 Tropical.Pixels
+=0 Savanna.Pixels
+=0 Desert.Pixels
+=0 CoastalDesert.Pixels
+=1646 Mountainous.Pixels
+
+# Nation Climates
+<... > Nations > KingdomofWallachia > Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=0 Arid.Pixels
+=9068 Steppe.Pixels
+=1699 Moderate.Pixels
+=0 SubTropical.Pixels
+=0 Tropical.Pixels
+=0 Savanna.Pixels
+=0 Desert.Pixels
+=0 CoastalDesert.Pixels
+=1472 Mountainous.Pixels
+
+# Nation Climates
+<... > Nations > LatvianEmpire > Climates
+=0 PolarDesert.Pixels
+=836 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=0 Arid.Pixels
+=0 Steppe.Pixels
+=15698 Moderate.Pixels
+=0 SubTropical.Pixels
+=0 Tropical.Pixels
+=0 Savanna.Pixels
+=0 Desert.Pixels
+=0 CoastalDesert.Pixels
+=0 Mountainous.Pixels
+
+# Nation Climates
+<... > Nations > KingdomofSfveadsland > Climates
+=0 PolarDesert.Pixels
+=12225 TaigaAndTundra.Pixels
+=364 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=0 Arid.Pixels
+=0 Steppe.Pixels
+=9918 Moderate.Pixels
+=0 SubTropical.Pixels
+=0 Tropical.Pixels
+=0 Savanna.Pixels
+=0 Desert.Pixels
+=0 CoastalDesert.Pixels
+=0 Mountainous.Pixels
+
+# Nation Climates
+<... > Nations > Chechnya > Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=3212 Arid.Pixels
+=5013 Steppe.Pixels
+=1383 Moderate.Pixels
+=0 SubTropical.Pixels
+=0 Tropical.Pixels
+=0 Savanna.Pixels
+=0 Desert.Pixels
+=0 CoastalDesert.Pixels
+=5438 Mountainous.Pixels
+
+#new nation template
+<... > Cultures
++> OBo
+<... > Nations
++> DuchyofOBo
+<... > Nations > DuchyofOBo > CultureGroups
++> OBo
+=100 OBo.Points
+<... > Nations > DuchyofOBo
+= "OBo" cultrep
+= "Pagan" relrep
+
+# Nation Climates
+<... > Nations > DuchyofOBo > Climates
+=2275 PolarDesert.Pixels
+=10494 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=0 Arid.Pixels
+=0 Steppe.Pixels
+=0 Moderate.Pixels
+=0 SubTropical.Pixels
+=0 Tropical.Pixels
+=0 Savanna.Pixels
+=0 Desert.Pixels
+=0 CoastalDesert.Pixels
+=0 Mountainous.Pixels
+
+# Nation Climates
+<... > Nations > ArberberKingdom > Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=7192 Medditereanian.Pixels
+=2565 Arid.Pixels
+=0 Steppe.Pixels
+=19 Moderate.Pixels
+=41 SubTropical.Pixels
+=21 Tropical.Pixels
+=0 Savanna.Pixels
+=3081 Desert.Pixels
+=3096 CoastalDesert.Pixels
+=0 Mountainous.Pixels
+
+# Nation Climates
+<... > Nations > Mitiva > Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=6308 Medditereanian.Pixels
+=0 Arid.Pixels
+=0 Steppe.Pixels
+=0 Moderate.Pixels
+=0 SubTropical.Pixels
+=0 Tropical.Pixels
+=2439 Savanna.Pixels
+=10497 Desert.Pixels
+=3208 CoastalDesert.Pixels
+=0 Mountainous.Pixels
+
+# Nation Climates
+<... > Nations > ValublidSultanate> Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=4949 Medditereanian.Pixels
+=6400 Arid.Pixels
+=0 Steppe.Pixels
+=0 Moderate.Pixels
+=0 SubTropical.Pixels
+=0 Tropical.Pixels
+=0 Savanna.Pixels
+=7409 Desert.Pixels
+=1723 CoastalDesert.Pixels
+=0 Mountainous.Pixels
+
+# Nation Climates
+<... > Nations > KingdomofBornu > Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=0 Arid.Pixels
+=0 Steppe.Pixels
+=0 Moderate.Pixels
+=27800 SubTropical.Pixels
+=0 Tropical.Pixels
+=8463 Savanna.Pixels
+=79 Desert.Pixels
+=0 CoastalDesert.Pixels
+=0 Mountainous.Pixels
+
+# Nation Climates
+<... > Nations > MagajiyaTribe > Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=0 Arid.Pixels
+=0 Steppe.Pixels
+=0 Moderate.Pixels
+=26305 SubTropical.Pixels
+=8065 Tropical.Pixels
+=2393 Savanna.Pixels
+=0 Desert.Pixels
+=0 CoastalDesert.Pixels
+=0 Mountainous.Pixels
+
+# Nation Climates
+<... > Nations > ZuluKingdom > Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=11599 Medditereanian.Pixels
+=0 Arid.Pixels
+=0 Steppe.Pixels
+=3263 Moderate.Pixels
+=1277 SubTropical.Pixels
+=0 Tropical.Pixels
+=0 Savanna.Pixels
+=2996 Desert.Pixels
+=692 CoastalDesert.Pixels
+=0 Mountainous.Pixels
+
+
+# Nation Climates
+<... > Nations > KingdomofBalanto > Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=0 Arid.Pixels
+=0 Steppe.Pixels
+=0 Moderate.Pixels
+=7998 SubTropical.Pixels
+=3711 Tropical.Pixels
+=10089 Savanna.Pixels
+=322 Desert.Pixels
+=125 CoastalDesert.Pixels
+=0 Mountainous.Pixels
+
+# Nation Climates
+<... > Nations > Songhai > Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=0 Arid.Pixels
+=0 Steppe.Pixels
+=0 Moderate.Pixels
+=5212 SubTropical.Pixels
+=0 Tropical.Pixels
+=15342 Savanna.Pixels
+=3602 Desert.Pixels
+=0 CoastalDesert.Pixels
+=0 Mountainous.Pixels
+
+# Nation Climates
+<... > Nations > SitaoRiverTribes > Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=0 Arid.Pixels
+=0 Steppe.Pixels
+=0 Moderate.Pixels
+=162 SubTropical.Pixels
+=0 Tropical.Pixels
+=15884 Savanna.Pixels
+=2687 Desert.Pixels
+=0 CoastalDesert.Pixels
+=0 Mountainous.Pixels
+
+# Nation Climates
+<... > Nations > EmpireofJapan > Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=0 Arid.Pixels
+=0 Steppe.Pixels
+=31235 Moderate.Pixels
+=4418 SubTropical.Pixels
+=4056 Tropical.Pixels
+=0 Savanna.Pixels
+=0 Desert.Pixels
+=0 CoastalDesert.Pixels
+=3303 Mountainous.Pixels
+
+# Nation Climates
+<... > Nations > KingdomofKhmbodj > Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=0 Arid.Pixels
+=0 Steppe.Pixels
+=0 Moderate.Pixels
+=19790 SubTropical.Pixels
+=10315 Tropical.Pixels
+=0 Savanna.Pixels
+=0 Desert.Pixels
+=0 CoastalDesert.Pixels
+=0 Mountainous.Pixels
+
+# Nation Climates
+<... > Nations > KingdomofPotskig > Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=0 Arid.Pixels
+=0 Steppe.Pixels
+=0 Moderate.Pixels
+=14990 SubTropical.Pixels
+=5832 Tropical.Pixels
+=9138 Savanna.Pixels
+=0 Desert.Pixels
+=0 CoastalDesert.Pixels
+=0 Mountainous.Pixels
+
+# Nation Climates
+<... > Nations > SindhEmpire > Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=39704 Arid.Pixels
+=0 Steppe.Pixels
+=0 Moderate.Pixels
+=11211 SubTropical.Pixels
+=399 Tropical.Pixels
+=11182 Savanna.Pixels
+=0 Desert.Pixels
+=113 CoastalDesert.Pixels
+=4681 Mountainous.Pixels
+
+# Nation Climates
+<... > Nations > EulacianTradeCouncil > Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=0 Arid.Pixels
+=0 Steppe.Pixels
+=0 Moderate.Pixels
+=5441 SubTropical.Pixels
+=59964 Tropical.Pixels
+=148 Savanna.Pixels
+=0 Desert.Pixels
+=536 CoastalDesert.Pixels
+=9723 Mountainous.Pixels
+
+# Nation Climates
+<... > Nations > ZiEmpire > Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=33555 Arid.Pixels
+=0 Steppe.Pixels
+=0 Moderate.Pixels
+=0 SubTropical.Pixels
+=0 Tropical.Pixels
+=0 Savanna.Pixels
+=721 Desert.Pixels
+=8 CoastalDesert.Pixels
+=3422 Mountainous.Pixels
+
+# Nation Climates
+<... > Nations > EmpireOfLonguo > Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=360 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=0 Arid.Pixels
+=0 Steppe.Pixels
+=40082 Moderate.Pixels
+=0 SubTropical.Pixels
+=0 Tropical.Pixels
+=0 Savanna.Pixels
+=0 Desert.Pixels
+=0 CoastalDesert.Pixels
+=0 Mountainous.Pixels
+
+# Nation Climates
+<... > Nations > AdenCaliphate > Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=0 Arid.Pixels
+=0 Steppe.Pixels
+=0 Moderate.Pixels
+=5622 SubTropical.Pixels
+=0 Tropical.Pixels
+=9328 Savanna.Pixels
+=16727 Desert.Pixels
+=15159 CoastalDesert.Pixels
+=0 Mountainous.Pixels
+
+# Nation Climates
+<... > Nations > QuasimidEmirate > Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=35592 Arid.Pixels
+=0 Steppe.Pixels
+=0 Moderate.Pixels
+=0 SubTropical.Pixels
+=0 Tropical.Pixels
+=0 Savanna.Pixels
+=413 Desert.Pixels
+=7082 CoastalDesert.Pixels
+=2903 Mountainous.Pixels
+
+# Nation Climates
+<... > Nations > GuangxiClique > Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=0 Arid.Pixels
+=0 Steppe.Pixels
+=30499 Moderate.Pixels
+=4083 SubTropical.Pixels
+=192 Tropical.Pixels
+=0 Savanna.Pixels
+=0 Desert.Pixels
+=0 CoastalDesert.Pixels
+=0 Mountainous.Pixels
+
+# Nation Climates
+<... > Nations > GuangxiClique > Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=0 Arid.Pixels
+=0 Steppe.Pixels
+=16987 Moderate.Pixels
+=0 SubTropical.Pixels
+=0 Tropical.Pixels
+=0 Savanna.Pixels
+=0 Desert.Pixels
+=0 CoastalDesert.Pixels
+=0 Mountainous.Pixels
+
+# Nation Climates
+<... > Nations > Kingdom Of Maharlika  > Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=0 Arid.Pixels
+=0 Steppe.Pixels
+=0 Moderate.Pixels
+=0 SubTropical.Pixels
+=3708 Tropical.Pixels
+=0 Savanna.Pixels
+=0 Desert.Pixels
+=0 CoastalDesert.Pixels
+=0 Mountainous.Pixels
+
+# Nation Climates
+<... > Nations > KingdomofKyrat > Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=0 Arid.Pixels
+=0 Steppe.Pixels
+=0 Moderate.Pixels
+=39656 SubTropical.Pixels
+=9415 Tropical.Pixels
+=5555 Savanna.Pixels
+=0 Desert.Pixels
+=0 CoastalDesert.Pixels
+=9027 Mountainous.Pixels
+
+# Nation Climates
+<... > Nations > KingdomofKyrat > Climates
+=0 PolarDesert.Pixels
+=20343 TaigaAndTundra.Pixels
+=4241 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=0 Arid.Pixels
+=0 Steppe.Pixels
+=18041 Moderate.Pixels
+=0 SubTropical.Pixels
+=0 Tropical.Pixels
+=0 Savanna.Pixels
+=0 Desert.Pixels
+=0 CoastalDesert.Pixels
+=540 Mountainous.Pixels
+
+# Nation Climates
+<... > Nations > TimuridEmirate > Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=28700 Arid.Pixels
+=0 Steppe.Pixels
+=0 Moderate.Pixels
+=0 SubTropical.Pixels
+=0 Tropical.Pixels
+=0 Savanna.Pixels
+=6900 Desert.Pixels
+=682 CoastalDesert.Pixels
+=4947 Mountainous.Pixels
+
+# Nation Climates
+<... > Nations > MongolianKhanate > Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=6061 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=0 Arid.Pixels
+=23851 Steppe.Pixels
+=0 Moderate.Pixels
+=0 SubTropical.Pixels
+=0 Tropical.Pixels
+=0 Savanna.Pixels
+=10769 Desert.Pixels
+=0 CoastalDesert.Pixels
+=0 Mountainous.Pixels
+
+# Nation Climates
+<... > Nations > MenzenConfederation > Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=1577 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=0 Arid.Pixels
+=0 Steppe.Pixels
+=26407 Moderate.Pixels
+=0 SubTropical.Pixels
+=0 Tropical.Pixels
+=0 Savanna.Pixels
+=0 Desert.Pixels
+=0 CoastalDesert.Pixels
+=0 Mountainous.Pixels
+
+# Nation Climates
+<... > Nations > KingdomofPhilian > Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=0 Arid.Pixels
+=0 Steppe.Pixels
+=0 Moderate.Pixels
+=0 SubTropical.Pixels
+=6705 Tropical.Pixels
+=0 Savanna.Pixels
+=0 Desert.Pixels
+=0 CoastalDesert.Pixels
+=0 Mountainous.Pixels
+
+# Nation Climates
+<... > Nations > KingdomofPhilian > Climates
+=0 PolarDesert.Pixels
+=9232 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=0 Arid.Pixels
+=0 Steppe.Pixels
+=14079 Moderate.Pixels
+=0 SubTropical.Pixels
+=0 Tropical.Pixels
+=0 Savanna.Pixels
+=0 Desert.Pixels
+=0 CoastalDesert.Pixels
+=1294 Mountainous.Pixels
+
+# Nation Climates
+<... > Nations > KingdomofAvanorolsk > Climates
+=0 PolarDesert.Pixels
+=2082 TaigaAndTundra.Pixels
+=12420 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=0 Arid.Pixels
+=0 Steppe.Pixels
+=1075 Moderate.Pixels
+=0 SubTropical.Pixels
+=0 Tropical.Pixels
+=0 Savanna.Pixels
+=0 Desert.Pixels
+=0 CoastalDesert.Pixels
+=0 Mountainous.Pixels
+
+# Nation Climates
+<... > Nations > Deccan > Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=0 Arid.Pixels
+=0 Steppe.Pixels
+=0 Moderate.Pixels
+=13632 SubTropical.Pixels
+=0 Tropical.Pixels
+=0 Savanna.Pixels
+=0 Desert.Pixels
+=0 CoastalDesert.Pixels
+=0 Mountainous.Pixels
+
+# Nation Climates
+<... > Nations > kingdomofLao > Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=0 Arid.Pixels
+=0 Steppe.Pixels
+=6447 Moderate.Pixels
+=0 SubTropical.Pixels
+=0 Tropical.Pixels
+=0 Savanna.Pixels
+=0 Desert.Pixels
+=0 CoastalDesert.Pixels
+=4835 Mountainous.Pixels
+
+
+<... > Nations > SiouxTribes
+# template
++0.5 health
++3 adm
++0.5 propaganda
++0.5 socialspending
++1.5 localtrade
++0.2 mercantilism
+=20% hightax
+=20% mediumtax
+=20% lowertax
++0.2 tactics
++0.2 training
++1% discipline
++0.1 armywages
++0.1 spyquality
+=20 spies
++0.3 navalimprov
++0.05 agradv
+-5% nobleinf
++5% burghersinf
++1% artisans
++0.1% burghers
++0.2 miningeff
+# extra
+-125 budget
+=0 publicdebttaken
+="Milwaukee" capitalname
++0.25 health
++0.25 edueff
+=0 lightinf
+=500 heavyinf
+=0 archers
+=500 musketeers
+> TradeInfluences
++1 GreatLakes.tp
++0.5 Louisiana.tp
+<
+-1 isolation
+> Technologies
+="true" galleons
+="true" gunports
+="true" MiningCarts
+="true" TextileManufactories
+<
+-5 researchpoints
+> CulturalAdvancements
+="true" EarlyModernAdministration
+<
+-4 culturalpower
+=1 coal
+=1 sulphur
+=4 iron
+=3 fur
+=1 silver
+=2 copper
+<... > Nations > TheFaithfulKingdom
+# template
++0.5 health
++3 adm
++0.5 propaganda
++0.5 socialspending
++1.5 localtrade
++0.2 mercantilism
+=20% hightax
+=20% mediumtax
+=20% lowertax
++0.2 tactics
++0.2 training
++1% discipline
++0.1 armywages
++0.1 spyquality
+=20 spies
++0.3 navalimprov
++0.05 agradv
+-5% nobleinf
++5% burghersinf
++1% artisans
++0.1% burghers
++0.2 miningeff
+# extra
+="Rome" CapitalName
+=0 lightinf
+=2000 heavyinf
+=0 archers
+=0 crossbowmen
+=2000 musketeers
+=500 lightcav
+=20 cannons
+=30 mediumships
+=20 heavyships
+> TradeInfluences
++0.5 Gibraltar
++0.5 WesternMediterranean
++1 CentralMediterranean
++1 Adriatic
++0.5 EasternMediterranean
++0.5 Greece
++0.5 Egypt
+<
+-6.5 researchpoints
+> Technologies
+="true" Limber
+="true" Galleons
+="true" HumanAnatomy
+="true" TextileManufactories
+="true" Reiters
+<
+-4 CulturalPower
+> CulturalAdvancements
+="true" EarlyModernAdministration
+<
+<... > Nations > Kingdom Of Alvheim
+# template
++0.5 health
++3 adm
++0.5 propaganda
++0.5 socialspending
++1.5 localtrade
++0.2 mercantilism
+=20% hightax
+=20% mediumtax
+=20% lowertax
++0.2 tactics
++0.2 training
++1% discipline
++0.1 armywages
++0.1 spyquality
+=20 spies
++0.3 navalimprov
++0.05 agradv
+-5% nobleinf
++5% burghersinf
++1% artisans
++0.1% burghers
++0.2 miningeff
+# extra
++0.25 health
++0.1 tactics
++0.1 training
+> TradeInfluences
++0.5 NorthSea
++0.5 BritishIsles
++0.5 EnglishChannel
++0.5 Germany
++0.5 Rhine
++1 Denmark
++1 Baltic
++0.5 Novgorod
++0.5 Poland
+<
+-7.5 researchpoints
++1 adm
++0.5 edueff
+> Technologies
+="true" Galleons
+="true" PrintingPress
+="true" Limber
+="true" Matchlock
+="true" HumanAnatomy
+="true" Reiters
+<
+-4 CulturalPower
+> CulturalAdvancements
+="true" EarlyModernAdministration
+<
+=25% lowertax
+="Copenhagen" CapitalName
+<... > Nations > Cuman Kipchak Khanate
+# template
++0.5 health
++3 adm
++0.5 propaganda
++0.5 socialspending
++1.5 localtrade
++0.2 mercantilism
+=20% hightax
+=20% mediumtax
+=20% lowertax
++0.2 tactics
++0.2 training
++1% discipline
++0.1 armywages
++0.1 spyquality
+=20 spies
++0.3 navalimprov
++0.05 agradv
+-5% nobleinf
++5% burghersinf
++1% artisans
++0.1% burghers
++0.2 miningeff
+# extra
+="Volgodonsk" CapitalName
+=0 levies
+=0 militia
+=2000 heavyinf
+=2000 musketeers
+=500 lightcav
+=2000 heavycav
+=40 cannons
+=0 elitecav
+> TradeInfluences
++1 Crimea
++0.5 NorthernAnatolia
++0.5 EasternDanube
++0.5 Dniepr
++0.5 DonRiver
++0.5 Caucasus
+<
+-7.5 researchpoints
+> Technologies
+="true" StarForts
+="true" docks
+="true" Metallurgy
+="true" Experimentation
+<
+-4 CulturalPower
+="true" CulturalAdvancements.NationalSovereignity
+=1.5 coal
+=1.25 iron
+=1.5 silver
+<... > Nations 
++> EmpireOfIberia = Kingdom Of Toledo Catalonia
+<- Kingdom Of Toledo Catalonia
+> EmpireOfIberia
+# template
++0.5 health
++3 adm
++0.5 propaganda
++0.5 socialspending
++1.5 localtrade
++0.2 mercantilism
+=20% hightax
+=20% mediumtax
+=20% lowertax
++0.2 tactics
++0.2 training
++1% discipline
++0.1 armywages
++0.1 spyquality
++0.3 navalimprov
++0.05 agradv
+-5% nobleinf
++5% burghersinf
++1% artisans
++0.1% burghers
++0.2 miningeff
+# extra
+="Madrid" CapitalName
+="https://cdn.discordapp.com/attachments/975454375520665610/1003343599892705352/unknown.png" flag
+="false" atwar
+> TradeInfluences
++0.5 BritishIsles
++0.5 EnglishChannel
++0.5 France
++1 BayOfBiscay
++1 WestIberia
++1 Gibraltar
++1 WesternMediterranean
++0.5 CentralMediterranean
++0.5 Adriatic
++0.5 Greece
++0.5 Egypt
++0.5 EasternMediterranean
++0.5 WesternSahara
++0.5 Cote D Ivoire
++0.5 Nigeria
++0.5 Carribean
++0.5 Central America
++0.5 Guyana And Suriname
++0.5 Amazon
+<
+-7 researchpoints
+> Technologies
+="true" StarForts
+="true" Reiters
+="true" MiningCarts
+="true" Fluyt
+<
+-4 CulturalPower
+="true" CulturalAdvancements.NationalSovereignity
+=6 coal
+=5 iron
+=4 sulphur
+=2 copper
+=2 silver
+<... > Nations > KingdomOfLao
++0.05 CommanderFreedom
++0.15 TrainingQuality
++1% MilitaryDiscipline
++0.1 MilitaryTactics
++1000 Musketeers
++1.5 Copper
++1.5 Ivory
++5 AdmEff
++2 EduEff
++1.5 Health
++10% BurghersInfluence
++5% ClergyInfluence
++5 BurghersLoyalty.KingdomOfLao
+-5 BurghersLoyalty.SelfInterests
++1.5 SocialSpending
+-5% ClergyInfluence
++0.05 ResearchEff
++0.05 ResearchSpending
++0.1 AgrAdv
++0.1 AgrInf
++0.05 StockingCapabilities
+="true" HumanAnatomy
+="true" MiningCarts
+="true" Metallurgy
+="true" Matchlock
++0.35 MiningEff
+-7 ResearchPoints
++1 ExoticFruits
++0.05 AgrInf
++1 LocalTrade
++1500 Militia
+="true" Newspapers
+-4 CulturalPower
++2 Coal
++0.5 SouthChina
++4 LightShips
+="Vongxay" CapitalName
+<... > Nations > Deccan
++1 AdmEff
++5 NobleLoyalty.Deccan
+-5 NobleLoyalty.SelfInterests
++5 ClergyLoyalty.Deccan
+-5 ClergyLoyalty.SelfInterests
+=17.5% LowerTax
+-2 Hindu
++2 Muslim
++250 Budget
+="Mughalabad" CapitalName
+<... > Nations > MongolianKhanate
++2500 LightCav
++250 Musketeers
++1 AdmEff
+<... > Nations > ZiEmpire
+=2000 LightCav
+=400 Militia
+=600 Musketeers
+=1400 Levies
+=150 HeavyCav
+=600 LightInf
+=150 HeavyInf
+=12 LightShips
+=10 MediumShips
+=1 HeavyShips
+="true" Newspapers
+-4 CulturalPower
+="true" TextileManufactories
+="true" HumanAnatomy
+="true" Mortars
+-4.5 ResearchPoints
++0.5 Health
+> ReligionGroups
++4 Shinto
++3.5 Catholic
+-7.5 Pagan
+<
+="true" Metallurgy
+-2.5 ResearchPoints
++1 Spices
+<... > Nations > ValublidSultanate
++0.25 Propaganda
++0.05 TrainingQuality
+<... > Nations > Mitiva
+=0 HeavyCav
+=500 Musketeers
+=800 LightCav
+=1000 HeavyInf
++0.5 EduEff
++1 AdmEff
+="true" PrintingPress
+-1.5 ResearchPoints
+<... > Nations > TexasTribes
++15 Cannons
++17 SiegeEquipment
++0.5 SocialSpending
+="true" EarlyModernAdministration
++1 AdmEff
+-4 CulturalPower
++0.25 MilitaryTactics
++0.15 TrainingQuality
+="https://cdn.discordapp.com/attachments/990368344861466654/1000247794306658475/IMG_0478.png" Flag
+=20% LowerTax
+=20% MediumTax
+=16% HighTax
+-75 Budget
+=100 Militia
+=700 Levies
+=500 Musketeers
+=100 LightCav
+=100 LightInf
+=50 HeavyInf
+=10 LightShips
+=3 MediumShips
+=2 HeavyShips
+="true" Fluyt
+-2.5 ResearchPoints
+="true" StarForts
+-1.5 ResearchPoints
+trade TreatyOfTikali1, TexasTribes > MayanEmpire, .25 Spices
+trade TreatyOfTikali2, MayanEmpire > TexasTribes, 30 Budget
++110 Budget
++0.5 GulfOfMexico
++0.15 NavalImprovements
++0.05 AgrAdv
+="Austin" CapitalName
++0.75 Cotton
++0.75 Wool
++0.05 SpyQuality
++0.5 Carribean
++0.5 GreatLakes
++0.5 EastCoast
++0.5 Louisiana
++0.5 GulfOfMexico
++0.5% workforces.burghers
++5 BurghersLoyalty.TexasTribes
+-5 BurghersLoyalty.SelfInterests
+="false" atwar
+<...
++0.5 Carribean
+<... > Nations > VespucianTribes
++0.1 AgrAdv
++0.5 Health
++1% workforces.artisans
++0.5% workforces.burghers
+="true" Fluyt
+="true" Experimentation
+="true" Metallurgy
+="true" NationalSovereignity
+-4 CulturalPower
+-7.5 ResearchPoints
++1 NavalImprovements
++0.25 Mercantilism
++0.45 MilitaryTactics
++0.25 TrainingQuality
++1% MilitaryDiscipline
++0.75 Coal
++1 Sulphur
++3 Iron
++1 Fur
++0.5 Copper
++0.75 Cotton
++0.75 Wool
++0.75 Tobacco
+=2100 HeavyInf
+=2100 Musketeers
+=700 LightCav
+=28 Cannons
+=42 LightShips
+=84 MediumShips
+=42 HeavyShips
+="Pittsburgh" CapitalName
+="false" atwar
+
+#From Florida Annexation
++109.9 Budget
++1875000 Population
+> CultureGroups
+-10 Vespucian
++10 Floridian
+<
++0.75 Wool
++0.75 Sugar
+
+<...
++0.5 EastCoast
++0.5 GreatLakes
+> Nations
+<- KingdomOfFlorida
+<... > Nations > TainoTribalConfederacy
++0.15 MilitaryTactics
++0.15 TrainingQuality
++1% MilitaryDiscipline
++0.5 Propaganda
++150 Budget
++2 AdmEff
++0.05 Mercantilism
++0.5 Carribean
++5% BurghersInfluence
++1 Health
++0.5 LocalTrade
++0.05 NavalImprovements
++0.15 MiningEfficiency
++0.5 EduEff
+="true" HumanAnatomy
+="true" Experimentation
++0.1 AgrAdv
+-4 ResearchPoints
++200 LightInf
++200 HeavyInf
++150 LightCav
++150 Musketeers
++6 LightShips
++5 MediumShips
++3 HeavyShips
+="Maguana" CapitalName
+="false" atwar
+trade TreatyOfNewLondon1, KingdomOfEngland > TainoTribalConfederacy, 0.45 Coal
+trade TreatyOfNewLondon2, KingdomOfEngland > TainoTribalConfederacy, 0.45 Iron
+trade TreatyOfNewLondon3, TainoTribalConfederacy > KingdomOfEngland, 0.4 Tobacco
+trade TreatyOfNewLondon4, TainoTribalConfederacy > KingdomOfEngland, 0.4 Sugar
+trade TreatyOfNewLondon5, TainoTribalConfederacy > KingdomOfEngland, 0.4 Cocoa
+trade TreatyOfNewLondon6, TainoTribalConfederacy > KingdomOfEngland, 0.4 ExoticFruits
+<... > Nations
++> UnitedKingdom = KingdomOfEngland
+<- KingdomOfEngland
+<- KingdomOfScotland
+<... > Nations > UnitedKingdom
++4 AdmEff
++0.95 NavalImprovements
++0.1 SpyQuality
++10% BurghersInfluence
++5 BurghersLoyalty.UnitedKingdom
+-5 BurghersLoyalty.SelfInterests
+-5% NobleInfluence
++0.4 Mercantilism
++1.5 LocalTrade
++0.6 MilitaryTactics
++0.35 TrainingQuality
++0.05 StockingCapabilities
++0.5 Health
++0.05 AgrAdv
++0.05 AgrSub
++0.05 AgrInf
+="London" CapitalName
++1% workforces.artisans
++1% workforces.burghers
+="true" Fluyt
+="true" HumanAnatomy
+="true" MiningCarts
++0.25 MiningEff
+="https://cdn.discordapp.com/attachments/974974128006242324/1003272864268566548/unknown.png" Flag
++105 Budget
+-6.5 ResearchPoints
+
+> ReligionGroups
++15 Protestant
+-15 Catholic
+<
+> CultureGroups
+-5 Irish
+-26 English
++26 Scottish
++5 English
+<
+-250 Budget
++2.5 BritishIsles
++2.5 Louisiana
++2.5 CentralAmerica
++2.5 Louisiana
++2.5 LawrenceGulf
++2.5 Nigeria
++2.5 CoteDIvoire
++2.5 EnglishChannel
++2.5 NorthSea
++2.5 Carribean
++2 France
++2 WestIberia
++2 BayOfBiscay
++2 Gibraltar
++2 WestMed
++2 CentralMed
++2 EastMed
++2 Greece
++2 Egypt
++2 Kongo
++2 Somalia
++2 Mozambique
++2 SouthAfrica
++2 RioGrande
+#Scottish Annexation
++3295325 Population
++716.91 Budget
++2.75 Coal
++1 Wool
+="true" NationalSovereignity
+-4 CulturalPower
+<... > Nations > KingdomOfBurgundy
++0.75 Propaganda
++3 AdmEff
++0.75 SocialSpending
++1% workforces.artisans
++0.15 Mercantilism
++4.25 LocalTrade
++0.1 CommanderFreedom
+=2 Gold
+=3.75 Sulphur
+=3.75 Iron
+=3 Coal
++2% workforces.burghers
++5% NobleInfluence
++5 NobleLoyalty.KingdomOfBurgundy
+-5 NobleLoyalty.SelfInterests
++10 BurghersLoyalty.KingdomOfBurgundy
+-10 BurghersLoyalty.SelfInterests
++5% BurghersInfluence
++1.5 Health
++5 ClergyLoyalty.KingdomOfBurgundy
+-5 ClergyLoyalty.SelfInterests
++0.45 TrainingQuality
++0.45 MilitaryTactics
++3% MilitaryDiscipline
++0.3 NavalImprovements
+-500 Archers
++500 Musketeers
+-1000 Crossbowmen
++1000 Musketeers
++500 Musketeers
++9 Cannons
++0.35 MiningEff
+> ReligionGroups
++31 Protestant
+-31 Catholic
+<
++1200 HeavyInf
++600 HeavyCav
++500 LightCav
++1000 LightInf
++1000 Musketeers
++25 Cannons
+-105 Budget
+="true" NationalSovereignity
+-4 CulturalPower
++0.5 Rhine
++0.5 France
++0.5 EnglishChannel
++0.5 BritishIsles
++0.5 NorthSea
+="true" Metallurgy
+="true" Fluyt
+="true" Experimentation
+="true" Reiters
+="true" StarForts
+-7.5 ResearchPoints
+
++0.5 Greece
++0.5 NorthernAnatolia
++0.5 EasternDanube
++0.5 Crimea
++0.5 EastMed
++0.5 Egypt
++0.5 CentralMed
++0.5 Gibraltar
++0.5 WestMed
++0.5 Adriatic
++0.5 WestDanube
++0.5 WestIberia
++0.5 BayOfBiscay
++0.5 Rhine
++0.5 France
++0.5 Dniepr
++0.5 Poland
++0.5 EnglishChannel
++0.5 BritishIsles
++0.5 Novgorod
++0.5 Baltic
++0.5 NorthNordics
++0.5 BarentsSea
++0.5 Mesopotamia
++0.5 Caucasus
++0.5 Carribean
++0.5 GulfOfMexico
++0.5 EastCoast
++0.5 CentralAmerica
++0.5 Louisiana
++0.5 GuyanaAndSuriname
++0.5 Amazon
++0.5 RioGrande
++0.5 LaPlata
+
+<... > Cultures > Burgundian
+= 15 Westphalian.score
+= 10 English.score
+<... > Cultures > Westphalian
+= -10 Burgundian.score
+<...
++1 France
++1 EnglishChannel
++1 NorthSea
++0.5 BayOfBiscay
+
+<... > Nations
++> KingdomOfDenmark = KingdomOfAlvheim
+<- KingdomOfAlvheim
+<... > Nations > KingdomOfDenmark
+> ReligionGroups
++7 Protestant
+-7 Pagan
+<
+<... > Nations > Kingdom Of Ireland
+# template
++0.5 health
++3 adm
++0.5 propaganda
++0.5 socialspending
++1.5 localtrade
++0.2 mercantilism
+=20% hightax
+=20% mediumtax
+=20% lowertax
++0.2 tactics
++0.2 training
++1% discipline
++0.1 armywages
++0.1 spyquality
+=20 spies
++0.3 navalimprov
++0.05 agradv
+-5% nobleinf
++5% burghersinf
++1% artisans
++0.1% burghers
++0.2 miningeff
+# extra
+="Cork" CapitalName
+pay debt 100
++1 BritishIsles
++0.5 NorthSea
++0.5 EnglishChannel
+-7 researchpoints
+="true" StarForts
+="true" Reiters
+="true" Mortars
+="true" Metallurgy
+-4 culturalpower
+="true" NationalSovereignity 
+<... > Nations > Kingdom Of Wallachia
+# template
++0.5 health
++3 adm
++0.5 propaganda
++0.5 socialspending
++1.5 localtrade
++0.2 mercantilism
+=20% hightax
+=20% mediumtax
+=20% lowertax
++0.2 tactics
++0.2 training
++1% discipline
++0.1 armywages
++0.1 spyquality
+=20 spies
++0.3 navalimprov
++0.05 agradv
+-5% nobleinf
++5% burghersinf
++1% artisans
++0.1% burghers
++0.2 miningeff
+# extra
+="Bucharest" CapitalName
+=0 levies
+=0 lightinf
+=500 heavyinf
+=0 crossbowmen
+=300 lightcav
+=8 cannons
++0.5 Crimea
++1 Eastern Danube
++0.5 Northern Anatolia
+-6.5 researchpoints
+="true" Reiters
+="true" Experimentation
+="true" Metallurgy
+-4 culturalpower
+="true" National Sovereignity
+<... > Nations > Kingdom Of Sfveadsland
+# template
++0.5 health
++3 adm
++0.5 propaganda
++0.5 socialspending
++1.5 localtrade
++0.2 mercantilism
+=20% hightax
+=20% mediumtax
+=20% lowertax
++0.2 tactics
++0.2 training
++1% discipline
++0.1 armywages
++0.1 spyquality
+=20 spies
++0.3 navalimprov
++0.05 agradv
+-5% nobleinf
++5% burghersinf
++1% artisans
++0.1% burghers
++0.2 miningeff
+# extra
+="Stockholm" CapitalName
+=0 militia
+=600 musketeers
+=8 cannons
++0.5 NorthSea
++0.5 BritishIsles
++0.5 EnglishChannel
++0.5 France
++0.5 Germany
++0.5 Denmark
++1 Baltic
++0.5 Poland
++0.5 Novgorod
++0.5 NorthNordics
+-7.5 researchpoints
+="true" HumanAnatomy
+="true" Matchlock
+="true" TextileManufactories
+="true" StarForts
+="true" Reiters
+-4 CulturalPower
+="true" Newspapers
+<... > Nations > Chechnya
+# template
++0.5 health
++3 adm
++0.5 propaganda
++0.5 socialspending
++1.5 localtrade
++0.2 mercantilism
+=20% hightax
+=20% mediumtax
+=20% lowertax
++0.2 tactics
++0.2 training
++1% discipline
++0.1 armywages
++0.1 spyquality
+=20 spies
++0.3 navalimprov
++0.05 agradv
+-5% nobleinf
++5% burghersinf
++1% artisans
++0.1% burghers
++0.2 miningeff
+# extra
+="Baku" CapitalName
+=500 lightinf
+=500 musketeers
+=200 lightcav
+=8 cannons
++1 Caucasus
++0.5 mesopotamia
+-7.5 researchpoints
+="true" Matchlock
+="true" Starforts
+="true" TextileManufactories
+="true" Reiters
+="true" HumanAnatomy
+-4 culturalpower
+="true" newspapers
+=1 iron
+<... > Nations > Arberber Kingdom
+# template
++0.5 health
++3 adm
++0.5 propaganda
++0.5 socialspending
++1.5 localtrade
++0.2 mercantilism
+=20% hightax
+=20% mediumtax
+=20% lowertax
++0.2 tactics
++0.2 training
++1% discipline
++0.1 armywages
++0.1 spyquality
+=20 spies
++0.3 navalimprov
++0.05 agradv
+-5% nobleinf
++5% burghersinf
++1% artisans
++0.1% burghers
++0.2 miningeff
+# extra
+="Tunis" CapitalName
+=0 militia
+=2500 heavyinf
+=2500 musketeers
+=1000 lightcav
+=8 lightships
+=16 mediumships
+=8 heavyships
++0.5 WesternMediterranean
++1 CentralMediterranean
++0.5 Adriatic
++0.5 Greece
++0.5 Egypt
++0.5 EasternMediterranean
+-6.5 researchpoints
+="true" Printingpress
+="true" Limber
+="true" Matchlock
+="true" Reiters
+="true" StarForts
+-4 culturalpower
+="true" NationalSovereignity
+=0.75 iron
+=0.75 gold
+=3.5 sulphur
+="false" atwar
+=25% lowertax
+<... > Nations > Kingdom Of Bornu
+# template
++0.5 health
++3 adm
++0.5 propaganda
++0.5 socialspending
++1.5 localtrade
++0.2 mercantilism
+=20% hightax
+=20% mediumtax
+=20% lowertax
++0.2 tactics
++0.2 training
++1% discipline
++0.1 armywages
++0.1 spyquality
+=20 spies
++0.3 navalimprov
++0.05 agradv
+-5% nobleinf
++5% burghersinf
++1% artisans
++0.1% burghers
++0.2 miningeff
+# extra
+="NDjamena" CapitalName
+=2500 heavyinf
+=2500 musketeers
+=500 lightcav
+=0 heavycav
+=40 cannons
+=0 lightships
+=0 mediumships
+=0 heavyships
++1 Nigeria
+-7 researchpoints
+="true" HumanAnatomy
+="true" Reiters
+="true" StarForts
+="true" TextileManufactories
+="true" docks
+-4 culturalpower
+="true" National Sovereignity
+=1 iron
+=1.25 coal
+=0.25 diamonds
+=1 isolation 
+<... > Nations > Magajiya Tribe
+# template
++0.5 health
++3 adm
++0.5 propaganda
++0.5 socialspending
++1.5 localtrade
++0.2 mercantilism
+=20% hightax
+=20% mediumtax
+=20% lowertax
++0.2 tactics
++0.2 training
++1% discipline
++0.1 armywages
++0.1 spyquality
+=20 spies
++0.3 navalimprov
++0.05 agradv
+-5% nobleinf
++5% burghersinf
++1% artisans
++0.1% burghers
++0.2 miningeff
+# extra
+="Ibadan" CapitalName
+=2500 heavyinf
+=2500 musketeers
+=500 lightcav
+=0 heavycav
+=40 cannons
+=16 lightships
+=32 mediumships
+=16 heavyships
++1 Nigeria
++1 Cote D Ivoire
++0.5 Western Sahara
++0.5 Kongo
+-6.5 researchpoints
+="true" Galleons
+="true" PrintingPress
+="true" Matchlock
+="true" StarForts
+="true" HumanAnatomy
+-4 culturalpower
+="true" National Sovereignity
+=4 gold
+=1.75 diamonds
+=3 coal
+=3 ivory
+=1 isolation
+<... > Nations > MayanEmpire
++1 AdmEff
++0.5 Health
++0.1 AgrAdv
++0.1 AgrSub
++0.1 AgrInf
++0.05 StockingCapabilities
++0.75 Tobacco
++0.75 Cotton
++0.75 Sugar
++0.05 CulturalProsperity
++450 LightInf
++175 HeavyInf
++750 Archers
+="true" Docks
+="true" Gunports
+="true" Galleons
+-4.5 ResearchPoints
+-110 Budget
+="Tikal" CapitalName
+<... > Nations > Zulu Kingdom
+# template
++0.5 health
++3 adm
++0.5 propaganda
++0.5 socialspending
++1.5 localtrade
++0.2 mercantilism
+=20% hightax
+=20% mediumtax
+=20% lowertax
++0.2 tactics
++0.2 training
++1% discipline
++0.1 armywages
++0.1 spyquality
+=20 spies
++0.3 navalimprov
++0.05 agradv
+-5% nobleinf
++5% burghersinf
++1% artisans
++0.1% burghers
++0.2 miningeff
+# extra
+="Cape" CapitalName
+=3 gold
+=6 lightships
+=12 mediumships
+=6 heavyships
+=500 heavyinf
+=500 musketeers
+=0 crossbowmen
+=0 lightcav
++1 SouthAfrica
++0.5 Mozambique
++0.5 Kongo
+-7 researchpoints
+="true" galleons
+="true" limber
+="true" docks
+="true" gunports
+="true" matchlock
+-4 culturalpower
+<... > Nations > Kingdom Of Balanto
+# template
++0.5 health
++3 adm
++0.5 propaganda
++0.5 socialspending
++1.5 localtrade
++0.2 mercantilism
+=20% hightax
+=20% mediumtax
+=20% lowertax
++0.2 tactics
++0.2 training
++1% discipline
++0.1 armywages
++0.1 spyquality
+=20 spies
++0.3 navalimprov
++0.05 agradv
+-5% nobleinf
++5% burghersinf
++1% artisans
++0.1% burghers
++0.2 miningeff
+# extra
+="Conakry" CapitalName
+=1000 heavyinf
+=1000 musketeers
+=400 lightcav
+=16 cannons
+=12 Lightships
+=24 mediumships
+=12 heavyships
++1 Nigeria
++1 WesternSahara
++1 Cote D Ivoire
+-7.5 researchpoints
+="true" galleons
+="true" docks
+="true" gunports
+="true" Matchlock
+="true" humananatomy
+="true" TextileManufactories
+-4 culturalpower
+="true" earlymodernadministration
+=2 coal
+=2 iron
+=4 gold
+="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Flag_of_Senegal_%281958%E2%80%931959%29.svg/440px-Flag_of_Senegal_%281958%E2%80%931959%29.svg.png" flag
+<... > Nations > Songhai
+# template
++0.5 health
++3 adm
++0.5 propaganda
++0.5 socialspending
++1.5 localtrade
++0.2 mercantilism
+=20% hightax
+=20% mediumtax
+=20% lowertax
++0.2 tactics
++0.2 training
++1% discipline
++0.1 armywages
++0.1 spyquality
+=20 spies
++0.3 navalimprov
++0.05 agradv
+-5% nobleinf
++5% burghersinf
++1% artisans
++0.1% burghers
++0.2 miningeff
+# extra
+="Sevare" CapitalName
+="https://preview.redd.it/56kinhiuphyx.png?auto=webp&s=c3451b0573c79e4b1ecf6d15c7010adb56c55db8" flag
+=800 heavyinf
+=800 musketeers
+=200 lightcav
+=4 cannons
+=4 lightships
+=8 mediumships
+=4 heavyships
++1 Nigeria
++1 Cote D Ivoire
++1 WesternSahara
+-7.5 researchpoints
+="true" Matchlock
+="true" StarForts
+="true" TextileManufactories
+="true" Reiters
+="true" humananatomy
+-4 culturalpower
+="true" National Sovereignity
+=3 gold
+=2 coal
+=1.5 diamonds
+<... > Nations > QuasimidEmirate
+="true" MiningCarts
+="true" Mortars
+="true" Metallurgy
+="true" Matchlock
+-7.5 ResearchPoints
+="true" EarlyModernAdministration
+-4 CulturalPower
++1.5 AdmEff
++0.05 NavalImprovements
++0.5 MiningEff
++0.5 Health
++0.5% workforces.artisans
++1 PersianGulf
++0.75 Iran
++0.75 Caucasus
++0.05 CulturalProsperity
++0.5 LocalTrade
++0.05 Mercantilism
+=4 Sulphur
+=2 Iron
+=1.5 Copper
+=2 Coal
++0.5 Spices
++0.5 Tea
++0.5 Tobacco
++1.5 Coffee
++0.1 AgrAdv
++0.05 AgrSub
++0.05 AgrInf
++0.05 StockingCapabilities
++0.05 MilitaryTactics
++0.05 TrainingQuality
++1% MilitaryDiscipline
+="Shiraz" CapitalName
+
+trade TreatyOfShiraz, QuasimidEmirate > Byzantium, 0.2 Iron
+<... > Nations > SitaoRiverTribes
++.75 Sulphur
++.75 Diamond 
++.75 Iron
++.75 Coal
++.75 Ivory 
++.75 ExoticFruits
++.5 Coffee
++.5 Spices
++1 Wool
+="true" Matchlock
+="true" Mortars
+="true" Reiters
+="true" Star Forts
+-6 ResearchPoints
++1 administrative efficiency
+-4 CulturalPower
+="true" NationalSovereignity
+="Kapti" CapitalName
+<... > Nations > KingdomOfKhmbodj
+# template
++0.5 health
++3 adm
++0.5 propaganda
++0.5 socialspending
++1.5 localtrade
++0.2 mercantilism
+=20% hightax
+=20% mediumtax
+=20% lowertax
++0.2 tactics
++0.2 training
++1% discipline
++0.1 armywages
++0.1 spyquality
+=20 spies
++0.3 navalimprov
++0.05 agradv
+-5% nobleinf
++5% burghersinf
++1% artisans
++0.1% burghers
++0.2 miningeff
+# extra
+="PhnomPenh" CapitalName
+="https://static.wikia.nocookie.net/althistory/images/2/2b/Flag_of_the_State_of_Cambodia.svg/revision/latest?cb=20200503054441" flag
+=0 levies
+=0 militia
+=1000 lightinf
+=1000 heavyinf
+=2000 musketeers
+=0 heavycav
+=400 lightcav
+=20 cannons
+-2.5% nobleinf
+-2.5% clergyinf
++0.5 SeaOfJapan
++0.5 NorthChina
++0.5 YangtzeRiver
++0.5 SouthChina
++0.5 EastIndia
++1 Burma
++1 SouthEastAsia
++0.5 NorthAustralia
+-7 researchpoints
+="true" Docks
+="true" Limber
+="true" Muskets
+="true" PrintingPress
+="true" Matchlock
+="true" HumanAnatomy
+-4 culturalpower
+="true" EarlyModernAdministration
+=3 ivory
+=2 iron
+-0.25 adm
+<... > Nations > KingdomOfPotskig
+# template
++0.5 health
++3 adm
++0.5 propaganda
++0.5 socialspending
++1.5 localtrade
++0.2 mercantilism
+=20% hightax
+=20% mediumtax
+=20% lowertax
++0.2 tactics
++0.2 training
++1% discipline
++0.1 armywages
++0.1 spyquality
+=20 spies
++0.3 navalimprov
++0.05 agradv
+-5% nobleinf
++5% burghersinf
++1% artisans
++0.1% burghers
++0.2 miningeff
+# extra
+="Madurai" CapitalName
++30 Hindu
+-30 Pagan
+="Hindu" Religion Represented At Government Level
+=1000 HeavyInf
+=1000 Musketeers
+=200 LightCav
+=8 cannons
++6 LightShips
++12 MediumShips
++6 HeavyShips
++1 NorthIndia
++1 WestIndia
++1 EastIndia
++0.5 Burma
++0.5 Pakistan
+-7.5 researchpoints
+="true" Galleons
+="true" Printingpress
+="true" Muskets
+="true" Limber
+="true" Docks
+="true" Gunports
+="true" HumanAnatomy
+-4 CulturalPower
+="true" EarlyModernAdministration
+=3 ivory
+=2 sulphur
+=1.75 iron
++1 Spice
++1 Tea
++0.1 Tactics
++0.1 Training
++0.15 NavalImprovements
+<... > Nations > SindhEmpire
+# template
++0.5 health
++3 adm
++0.5 propaganda
++0.5 socialspending
++1.5 localtrade
++0.2 mercantilism
+=20% hightax
+=20% mediumtax
+=25% lowertax
++0.2 tactics
++0.2 training
++1% discipline
++0.1 armywages
++0.1 spyquality
+=20 spies
++0.3 navalimprov
++0.05 agradv
+-5% nobleinf
++5% burghersinf
++1% artisans
++0.1% burghers
++0.2 miningeff
+# extra
+="Hyderabad" CapitalName
+=0 levies
+=0 lightinf
+=3500 HeavyInf
+=0 archers
+=3500 Musketeers
+=1000 LightCav
+=40 Cannons
+=16 LightShips
+=32 MediumShips
+=16 HeavyShips
++0.5 Mesopotamia
++0.5 PersianGulf
++1 Pakistan
++0.5 NorthIndia
++0.5 WestIndia
++0.5 EastIndia
++0.5 Burma
+-7 researchpoints
++1 adm
++0.5 edueff
+="true" PrintingPress
+="true" Matchlock
+="true" HumanAnatomy
+="true" TextileManufactories
+="true" StarForts
+-4 culturalpower
+="true" RenaissanceThought
+=2.5 sulphur
+=2 iron
+=2 copper
+<... > Nations > Order Of St Mary
+# template
++0.5 health
++3 adm
++0.5 propaganda
++0.5 socialspending
++1.5 localtrade
++0.2 mercantilism
+=20% hightax
+=20% mediumtax
+=25% lowertax
++0.2 tactics
++0.2 training
++1% discipline
++0.1 armywages
++0.1 spyquality
+=20 spies
++0.3 navalimprov
++0.05 agradv
+-5% nobleinf
++5% burghersinf
++1% artisans
++0.1% burghers
++0.2 miningeff
+# extra
+="Jerusalem" CapitalName
++1000 musketeers
++2000 heavyinf
++500 lightcav
++20 cannons
++600 lightcav
++500 levies
++1500 militia
+-7 researchpoints
+="true" Matchlock
+="true" Reiters
+="true" Mortars
+="true" Metallurgy
+-4 Culturalpower
+="true" Newspapers
+<... > Nations > AdenCaliphate
+# template
++0.5 health
++3 adm
++0.5 propaganda
++0.5 socialspending
++1.5 localtrade
++0.2 mercantilism
+=20% hightax
+=20% mediumtax
+=25% lowertax
++0.2 tactics
++0.2 training
++1% discipline
++0.1 armywages
++0.1 spyquality
+=20 spies
++0.3 navalimprov
++0.05 agradv
+-5% nobleinf
++5% burghersinf
++1% artisans
++0.1% burghers
++0.2 miningeff
+# extra
+="Aden" CapitalName
+=2500 HeavyInf
+=2500 Musketeers
+=500 LightCav
+=30 cannons
+=16 LightShips
+=32 MediumShips
+=16 heavyShips
++0.5 Egypt
++0.5 RedSea
++0.5 SouthNile
++0.5 Somalia
++0.5 EastAfrica
++0.5 Mozambique
++0.5 SouthAfrica
++0.5 PersianGulf
++0.5 Pakistan
++0.5 WestIndia
++0.5 EastIndia
+-7 ResearchPoints
+="true" TextileManufactories
+="true" Reiters
+="true" HumanAnatomy
+="true" Fluyt
+-4 CulturalPower
+="true" National Sovereignity
+=3 iron
+=2 coal
+=1 copper
+<... > Nations > Cheonje
+# template
++0.5 health
++3 adm
++0.5 propaganda
++0.5 socialspending
++1.5 localtrade
++0.2 mercantilism
+=20% hightax
+=20% mediumtax
+=25% lowertax
++0.2 tactics
++0.2 training
++1% discipline
++0.1 armywages
++0.1 spyquality
+=20 spies
++0.3 navalimprov
++0.05 agradv
+-5% nobleinf
++5% burghersinf
++1% artisans
++0.1% burghers
++0.2 miningeff
+# extra
+="Seoul" CapitalName
+="https://external-preview.redd.it/dPY4iar1sxg5VbNVCNqenYGra6ColZDIGvbjI8mjmHE.png?auto=webp&s=ca168de55784e5c6f8331b4a7d40f533bdbd69af" flag
+=0 lightinf
+=2000 heavyinf
+=2000 musketeers
+=500 lightcav
+=40 cannons
+=0 crossbowmen
+=0 handcannoneers
+=200 heavycav
+=16 lightships
+=32 mediumships
+=16 heavyships
++1 Manchuria
++1 SeaOfJapan
++1 NorthChina
++0.5 YangtzeRiver
++0.5 SouthChina
+-7 researchpoints
++1 adm
++0.5 edueff
+="true" PrintingPress
+="true" HumanAnatomy
+="true" Matchlock
+="true" TextileManufactories
+="true" Reiters
+-4 culturalpower
+="true" National Sovereignity
+=2 coal
+=2 silver
+=1 iron
+<... > Nations > Kingdom Of Maharlika
+# template
++0.5 health
++3 adm
++0.5 propaganda
++0.5 socialspending
++1.5 localtrade
++0.2 mercantilism
+=20% hightax
+=20% mediumtax
+=25% lowertax
++0.2 tactics
++0.2 training
++1% discipline
++0.1 armywages
++0.1 spyquality
+=20 spies
++0.3 navalimprov
++0.05 agradv
+-5% nobleinf
++5% burghersinf
++1% artisans
++0.1% burghers
++0.2 miningeff
+# extra
+="Manila" Capitalname
+=500 LightInf
+=500 Musketeers
+=200 LightCav
+=8 Cannons
+=12 LightShips
+=24 mediumShips
+=12 heavyShips
++0.5 SeaOfjapan
++0.5 NorthChina
++0.5 YangtzeRiver
++1 SouthChina
++1 SouthEastAsia
+-7.5 researchpoints
+="true" HumanAnatomy
+="true" Reiters
+="true" TextileManufactories
+="true" StarForts
+="true" Matchlock
+-4 culturalpower
+="true" EarlyModernAdministration
+=2.75 sulphur
+=2 gold
++0.25 AgrInf
++0.25 AgrSubsidies
+<... > Nations > TimuridEmirate
+# template
++0.5 health
++3 adm
++0.5 propaganda
++0.5 socialspending
++1.5 localtrade
++0.2 mercantilism
+=20% hightax
+=20% mediumtax
+=25% lowertax
++0.2 tactics
++0.2 training
++1% discipline
++0.1 armywages
++0.1 spyquality
+=20 spies
++0.3 navalimprov
++0.05 agradv
+-5% nobleinf
++5% burghersinf
++1% artisans
++0.1% burghers
++0.2 miningeff
+# extra
+="Mashhad" Capitalname
+=0 lightinf
+=1500 heavyinf
+=1500 musketeers
+=400 lightcav
+=20 cannons
+=200 heavycav
+=0 crossbowmen
++1 Iran
++1 CentralAsia
+=6 lightships
+-7 researchpoints
+="true" Matchlock
+="true" Starforts
+="true" reiters
+="true" mortars
+="true" gunports
+-4 culturalpower
+="true" Newspapers
+=2 sulphur
+=2 coal
+<... > Nations > Menzen Confederation
+# template
++0.5 health
++3 adm
++0.5 propaganda
++0.5 socialspending
++1.5 localtrade
++0.2 mercantilism
+=20% hightax
+=20% mediumtax
+=20% lowertax
++0.2 tactics
++0.2 training
++1% discipline
++0.1 armywages
++0.1 spyquality
+=20 spies
++0.3 navalimprov
++0.05 agradv
+-5% nobleinf
++5% burghersinf
++1% artisans
++0.1% burghers
++0.2 miningeff
+# extra
+="ChangChun" Capitalname
+=2000 heavyInf
+=2000 musketeers
+=500 lightcav
++1 manchuria
+-7 researchpoints
+="true" Matchlock
+="true" mortars
+="true" humananatomy
+="true" Metallurgy
+-4 culturalpower
+="true" newspapers
+=2 coal
+=2 iron
+<... > Nations > Kingdom Of Philian
+# template
++0.5 health
++3 adm
++0.5 propaganda
++0.5 socialspending
++1.5 localtrade
++0.2 mercantilism
+=20% hightax
+=20% mediumtax
+=20% lowertax
++0.2 tactics
++0.2 training
++1% discipline
++0.1 armywages
++0.1 spyquality
+=20 spies
++0.3 navalimprov
++0.05 agradv
+-5% nobleinf
++5% burghersinf
++1% artisans
++0.1% burghers
++0.2 miningeff
+# extra
++0.5 propaganda
+-7.5 researchpoints
+="true" Mortars
+="true" matchlock
+="true" HumanAnatomy
+="true" TextileManufactories
+="true" Reiters
+-4 culturalpower
+="true" newspapers
+=2 coal
+=4 sulphur
+=2 gold
+=3 iron
+<... > Nations > Kingdom Of Avanorolsk
+# template
++0.5 health
++3 adm
++0.5 propaganda
++0.5 socialspending
++1.5 localtrade
++0.2 mercantilism
+=20% hightax
+=20% mediumtax
+=20% lowertax
++0.2 tactics
++0.2 training
++1% discipline
++0.1 armywages
++0.1 spyquality
+=20 spies
++0.3 navalimprov
++0.05 agradv
+-5% nobleinf
++5% burghersinf
++1% artisans
++0.1% burghers
++0.2 miningeff
+# extra
+="Zeya" CapitalName
+=0.5 fur
+=0 levies
+=0 militia
+=1000 heavyinf
+=0 lightinf
+=1000 musketeers
+=500 lightcav
+=0 archers
+=0 crossbowmen
+=0 handcannoneers
+=0 heavycav
++1 manchuria
+-7.5 researchpoints
+="true" Matchlock
+="true" StarForts
+="true" TextileManufactories
+="true" Reiters
+="true" HumanAnatomy
+-4 culturalpower
+="true" Renaissance Thought
+<... > Nations > KingdomOfUralikslavia
+="true" Muskets
++0.25 Coal
+<... > Nations > TsardomOfMuscovy
+="https://cdn.discordapp.com/attachments/974678756067278939/1000156048478445749/image0.jpg" Flag
+=4000 HeavyInf
+=4000 Musketeers
+=2000 LightCav
+=40 Cannons
+=0 Levies
+=0 LightInf
+=0 HeavyCav
+=24 LightShips
+=14 MediumShips
+=6 HeavyShips
+-1 ResearchPoints
++1.5% workforces.burghers
++0.25 SocialSpending
++0.25 Propaganda
+trade TreatyOnTheOresund, TsardomOfMuscovy > KingdomOfDenmark, 25 Budget
+trade TreatyOfTabonTabon, TsardomOfMuscovy > MagajiyaTribe, .2 Sulphur
+-80 Budget
+="true" Matchlock
+="true" StarForts
+="true" Fluyt
+="true" Metallurgy
+="true" NationalSovereignity
+-4 CulturalPower
+-6.5 ResearchPoints
++0.45 NavalImprovements
++0.05 Mercantilism
++0.5 MilitaryTactics
++0.3 TrainingQuality
+
+="Moscow" CapitalName
+=2.25 Iron
+=4 Coal
+=2.25 Fur
++1 Novgorod
++1 Baltic
++1 NorthNordics
++1 Poland
++1 Germany
++1 Denmark
++0.5 Dniepr
++0.5 NorthSea
++0.5 Crimea
++0.5 Don
++0.5 EastDanube
++0.5 BarentsSea
+<... > Nations > KingdomOfSfveadsland
+=0 Novgorod
+<... > Trades
+<- TreatyOfBelgrade1
+<- TreatyOfBelgrade2
+<- TreatyOfBelgrade3
+<- TreatyOfBelgrade4
+<- TreatyOfMoskva4
+<- TreatyOfHattusilan1
+<- TreatyOfHattusilan2
+<- TreatyOfHattusilan3
+<- TreatyOfAnkara1
+<- TreatyOfAnkara2
+<- TreatyOfAnkara3
+<... > Nations > ArchduchyOfAustria
++0.75% workforces.artisans
++0.75% workforces.burghers
++1 LocalTrade
++0.2 Mercantilism
++0.75 Wool
++0.1 AgrAdv
++0.05 AgrInf
++0.15 MiningEff
++0.05 CulturalProsperity
++3 AdmEff
+-1.25 EduEff
++0.5 Adriatic
++0.5 EasternDanube
++0.5 WesternDanube
++0.5 Germany
++0.5 Poland
++0.5 EastMed
++0.5 WestMed
++0.5 Greece
++0.5 Egypt
++0.5 WestIberia
++0.5 BayOfBiscay
++0.5 Gibraltar
+=25% HighTax
+=25% MediumTax
+=25% LowerTax
+
+#fuck everyone that does cannons, shot, ships, etc
++0.3 MilitaryTactics
++0.15 TrainingQuality
++0.7 NavalImprovements
++0.05 CommanderFreedom
++15 LightShips
++50 MediumShips
++18 HeavyShips
+
+-7.5 ResearchPoints
+="true" Fluyt
+="true" Metallurgy
+="true" Experimentation
+="true" NationalSovereignity
+-4 CulturalPower
+trade TreatyOfGermany1, ArchduchyOfAustria > KingdomOfPrussia, 60 Budget
+trade TreatyOfGermany2, KingdomOfPrussia > ArchduchyOfAustria, 100 Food
+<... > Nations > DuchyOfBelarus
+=1000 HeavyInf
+=1000 HeavyCav
+=2000 Crossbowmen
+=1000 Musketeers
+=500 HandCannons
+=500 LightCav
+=25 Cannons
+=0 Militia
+=0 Levies
+=5 LightShips
+=3 MediumShips
+=1 HeavyShips
+="true" Galleons
+-1 ResearchPoints
++0.5 Baltic
+
+<... > nations > DuchyofOBo
+=2250 LightInf
+=500 LightCav
+=2 Sulphur
+=1000 HeavyInf
++0.05 AgrInf
++0.5 AdmEff
+=17% LowerTax
+=10% MediumTax
+=10% HighTax
+<... > ZelenvaUnion
+=3 HeavyShips
+=7 MediumShips
+=10 LightShips
++5% LowerTax
++3% HighTax
+<... > Nations > EulacianTradeCouncil
++0.5 Propaganda
+=4800 LightCav
+=1200 HeavyCav
+=7200 HeavyInf
+=7200 Musketeers
+=3600 LightInf
+=100 Cannons
+=50 SiegeEquipment
+=180 LightShips
+=120 MediumShips
+=80 HeavyShips
++0.5 MiningEff
++4 LocalTrade
++0.15 Mercantilism
++2.5% workforces.artisans
++0.5% workforces.burghers
+=8 Coal
+=8.75 Sulphur
+=8.75 Gold
+=4 Iron
+=1 Copper
+=1 Silver
+=5 Ivory
++1.25 ExoticFruits
++0.75 Tobacco
++0.75 Tea
++0.75 Spices
++0.75 Sugar
++0.75 Silk
+-130 Budget
+="true" Fluyt
+="true" Matchlock
+="true" NationalSovereignity
+="true" StarForts
+="true" Reiters
+="true" Mortars
+-4 CulturalPower
+-6.5 ResearchPoints
++1.4 NavalImprovements
++0.5 MilitaryTactics
++0.25 TrainingQuality
++5.5 AdmEff
++0.25 SocialSpending
++2 Health
++0.2 SpyQuality
++200 Spies
++1 EduEff
++0.15 AgrAdv
++0.05 AgrInf
++0.1 ResearchEff
+="Trebia" CapitalName
+=5% HighTax
+=7% MediumTax
+=25% LowerTax
++3.5 SouthAustralia
++3.75 NorthAustralia
++3.75 SouthEastAsia
++3.75 Burma
++3.75 SouthChina
++2.5 YangtzeRiver
++2.5 NorthChina
++2.5 SeaOfJapan
++2.5 Manchuria
++2.75 NorthIndia
++2.5 EastIndia
++2.5 WestIndia
++2.5 Pakistan
++2.5 PersianGulf
++2.5 Mesopotamia
++2.5 RedSea
++2.5 Somalia
++2.5 Egypt
++2.5 EastAfrica
++2.5 Mozambique
++2 SouthAfrica
++2 Kongo
++2 Nigeria
++2 CoteDIvoire
+-2 Chinese
++2 Eulacian
+<... > Cultures > Chinese
+= -20 Eulacian.score
+<... > Cultures > Eulacian
+= 0 Chinese.score
+<... > Trades
+<- CheonjeEulacianTradeDeal1
+<- CheonjeEulacianTradeDeal2
+<- CheonjeEulacianTradeDeal3
+<- CheonjeEulacianTradeDeal4
+<- CheonjeEulacianTradeDeal5
+<- CheonjeEulacianTradeDeal6
+<- CheonjeEulacianTradeDeal7
+<- TreatyOfBahria1
+<- TreatyOfBahria2
+<... > Nations > NewEngland
+="true" Reiters
+="true" Matchlock
+="true" Mortars
+-6 ResearchPoints
+<... > Nations > NewWales
+="true" Reiters
+="true" Matchlock
+="true" Mortars
+-6 ResearchPoints
+="NewManchester" CapitalName
+<... > Nations > NewCornwall
++1.5 AdmEff
++0.05 AgrInf
++0.15 MiningEff
++1 Sugar
++0.75 Cocoa
++0.75 ExoticFruits
++0.75 Spice
++0.75 Tobacco
++1 LocalTrade
++0.5 Health
+="true" Reiters
+="true" Matchlock
+="true" Mortars
+-6 ResearchPoints
+="NewCambridge" CapitalName
+<... > Nations > NewCuthsbury
+="true" Reiters
+="true" Matchlock
+="true" Mortars
+-6 ResearchPoints
+="NewSailsbury" CapitalName
+<... > Nations > RepublicOfLaPlata
+-500000 Population
+-0.05 Mercantilism
+-0.5 RioGrande
+-0.5 Chile
+-0.25 LaPlata
+-0.25 Patagonia
+-600 Budget
+-1550000 Population
+-0.05 Mercantilism
+-1 EduEff
+-2 AdmEff
+<... > Nations > GuangxiClique
+="GuangZhou" CapitalName
+<... > Nations > KingdomOfKyrat
++0.05 NavalImprovements
+="true" Matchlock
+="true" MiningCarts
+="true" Galleons
+="true" Muskets
+="true" Limber
+="true" Docks
+="true" Gunports
+="true" Mortars
+="true" Fluyt
+-7.5 ResearchPoints
++0.25 MiningEff
+="true" PrintingPress
++4.5 AdmEff
++0.5 Health
++0.25 SocialSpending
++1 EduEff
++1 LocalTrade
++1.5 NorthIndia
++1 Burma
++1 EastIndia
++1.5 Pakistan
++1 Tibet
++0.5 WestIndia
++10 Budget
++0.5 PopulationControl
+-5% NobleInfluence
+-5 NobleLoyalty.KingdomOfKyrat
++5 NobleLoyalty.SelfInterests
++0.15 MilitaryTactics
++0.05 TrainingQuality
+="true" EarlyModernAdministration
+-4 CulturalPower
+=20% LowerTax
+=20% MediumTax
+=20% HighTax
+=9000 Musketeers
+=7000 LightInf
+=3000 HeavyInf
+=5000 LightCav
+=1000 HeavyCav
+=200 EliteCav
+=25 Spies
++0.15 MilitaryTactics
++0.15 TrainingQuality
++0.05 CommanderFreedom
++1.5% MilitaryDiscipline
++0.05 AgrInf
++0.05 StockingCapabilities
++0.05 AgrSub
++0.1 AgrAdv
+-8 Shinto
+-4 Hindu
++12 Buddhism
++10 ClergyLoyalty.KingdomOfKyrat
+-10 ClergyLoyalty.SelfInterests
++5% ClergyInfluence
+=15 HeavyShips
+=20 MediumShips
+=40 LightShips
++0.1 NavalImprovements
+=5 Coal
+=2 Gold
+=2 Sulphur
+="https://cdn.discordapp.com/attachments/974678889655836693/1004912584740311090/unknown.png" Flag
+="Chhapra" CapitalName
+
+
+<... > Nations > EmpireOfJapan
+-0.25 NorthIndia
+<... > Nations > EulacianTradeCouncil
+-0.25 NorthIndia
+<... > Nations > AztecEmpire
++0.25 Propaganda
++0.05 NavalImprovements
++12 LightShips
++8 MediumShips
++4 HeavyShips
+=20% LowerTax
+=20% MediumTax
++0.05 MilitaryTactics
++5 BurghersLoyalty.AztecEmpire
+-5 BurghersLoyalty.SelfInterests
+<... > Nations > KingdomOfPoland
+=2000 HeavyCav
++4.5 AdmEff
++1% workforces.artisans
++1% workforces.burghers
++1% workforces.clergy
++1.25 EduEff
++5% ClergyInfluence
++7.5 ClergyLoyalty.KingdomOfPoland
+-7.5 ClergyLoyalty.SelfInterests
++1 LocalTrade
++0.05 Mercantilism
++0.15 MiningEff
+="true" EarlyModernAdministration
+-6 ResearchPoints
+="true" Limber
+="true" PrintingPress
+="true" Matchlock
+="true" TextileManufactories
++0.05 AgrInf
++0.05 AgrAdv
+=3 Sulphur
+=1 Coal
+=2.5 Iron
++0.15 MilitaryTactics
++0.1 TrainingQuality
+=20% LowerTax
+<... > Nations > KingdomOfSerbia
++0.25 Propaganda
++0.5 AdmEff
++0.5 EduEff
++0.25 SocialSpending
+=30% LowerTax
+<... > Nations > BlackfeetConfederation
+="true" Limber
++0.05 MilitaryTactics
++0.05 TrainingQuality
+<... > Nations > EmpireOfJapan
+="true" Fluyt
+="true" Experimentation
+="true" TextileManufactories
+-6.5 ResearchPoints
+="true" NationalSovereignity
+-4 CulturalPower
++2.5 AdmEff
++1 Absolutism
++0.05 TrainingQuality
++0.05 MilitaryTactics
++1% MilitaryDiscipline
++0.05 NavalImprovements
++1 LocalTrade
++1 SeaOfJapan
++1 Manchuria
++1 YangtzeRiver
++1 NorthChina
++0.75 SouthChina
++0.5 NorthAustralia
++0.5 SouthEastAsia
++0.5 Burma
++0.5 NorthIndia
++0.5 EastIndia
++0.5 WestIndia
++0.5 Pakistan
++0.5 PersianGulf
++0.5 Mesopotamia
++0.5 Somalia
++0.5 RedSea
++0.5 Egypt
++0.5 EastAfrica
++0.5 Mozambique
++0.5 SouthAfrica
+<... > Nations > KingdomOfKhmbodj
+-2 Buddhism
++2 Shinto
+<... > Nations > Zi Empire
+-5 Pagan
++5 Shinto
+
+<... > Nations > Kingdom Of Maharlika
+-2 Pagan
++2 Shinto
+<... > Nations > Guangxi Clique
+-5 Pagan
++5 Shinto
+<... > Nations > NewToledo
++0.5 AdmEff
++1.5 LocalTrade
+=20% LowerTax
+=20% MediumTax
+=18% HighTax
++0.05 MilitaryTactics
++4 LightShips
++2 MediumShips
++5% ClergyInfluence
++5 ClergyLoyalty.NewToledo
+-5 ClergyLoyalty.SelfInterests
+-5 Protestant
++5 Catholic
++0.05 AgrAdv
++0.05 AgrInf
++0.5 EduEff
+-7.5 ResearchPoints
+="true" TextileManufactories
+="true" Matchlock
+="true" Reiters
+="true" HumanAnatomy
+="true" StarForts
+<... > Nations > NovaKreta
+=3200 Militia
+=648 HeavyInf
+=648 Musketeers
+=18 Cannons
+=180 HeavyCav
++0.05 AgrInf
++0.05 StockingCapabilities
++3.25 AdmEff
++0.1 Mercantilism
++1 LocalTrade
+="true" NationalSovereignity
+="true" HumanAnatomy
+="true" Mortars
+="true" MiningCarts
++0.25 MiningEff
+-7.5 ResearchPoints
++0.5 Tea
++0.5 Sugar
++0.5 Spices
++0.5 Cocoa
++0.5 Coffee
++0.5 Cotton
++0.5 Tobacco
++0.5 ExoticFruits
++0.5 Louisiana
++0.5 EastCoast
++1 Carribean
++0.5 GulfOfMexico
++1 CentralAmerica
++0.5 GuyanaAndSuriname
+=20% LowerTax
+=20% MediumTax
+=5% HighTax
++200000 Population
+trade ByzantiumColonyShipment, Byzantium > NovaKreta, 150 Food
++1% workforces.clergy
++5% ClergyInfluence
++5 ClergyLoyalty.NovaKreta
+-5 ClergyLoyalty.SelfInterests
++1080 HeavyInf
++1080 Musketeers
++30 Cannons
++18 LightShips
++24 MediumShips
++6 HeavyShips
+-8.2 Hittite
++7.5 Anatolian
++0.7 Byzantine
+-8.6 Muslim
++8.6 Orthodox
+<... > Cultures > Byzantine
+=40 Anatolian.Score
+<... > Cultures > Anatolian
+=40 Byzantine.Score
+<... > Cultures
++> Levantine
+<... > Nations > Byzantium
+-440 Budget
+-550 Budget
++12.5% NobleInfluence
++5% ClergyInfluence
++5% BurghersInfluence
+-7.5 NobleLoyalty.Byzantium
++7.5 NobleLoyalty.SelfInterests
+-2.5 ClergyLoyalty.Byzantium
++2.5 ClergyLoyalty.SelfInterests
+-5 BurghersLoyalty.Byzantium
++5 BurghersLoyalty.SelfInterests
++369.44 Budget
++1 Copper
++1 Sulphur
++0.5 Cotton
++0.75 Silk
++0.5 Spice
++0.5 Wool
++0.75 ExoticFruits
++0.6 Coal
+="true" NationalSovereignity
+="true" Experimentation
+="true" StarForts
+-4 CulturalPower
+-7 ResearchPoints
+="true" Metallurgy
+="true" Fluyt
++130 Budget
++0.6 TrainingQuality
++0.7 MilitaryTactics
++4% MilitaryDiscipline
++0.35 NavalImprovements
++1 LocalTrade
++1% workforces.artisans
++.65 Coal
++1 Copper
++3 Sulphur
++0.05 Mercantilism
++0.5% workforces.clergy
++5 Outremer
+-5 Byzantine
++10 Muslim
++6 Catholic
+-16 Orthodox
++0.05 AgrInf
++0.75 AgrInf
++0.5 LocalTrade
++0.5% workforces.artisans
++0.5% workforces.burghers
+=10800 Heavy Infantry
+=14400 Musketeers
+=488 Cannons
+=3600 Heavy Cavalry
+=2736 Light Cavalry
+=60 Heavy Ships
+=160 Medium Ships
+=140 Light Ships
+=1% HighTax
+=25% MediumTax
+=25% LowerTax
+=0 Militia
+="false" atwar
++924.46 budget
+> CultureGroups
++> Levantine
++5 Levantine
+-5 Byzantine
+<... > Religions > Orthodox > Opinions
+= -75 Muslim.Score
+= -40 Jewish.Score
+<... > Religions > Muslim > Opinions
+= -75 Orthodox.Score
+= -40 Jewish.Score
+<... > Religions > Jewish > Opinions
+= -75 Muslim.Score
+= -40 Orthodox.Score
+ 
+<... > Nations > LatvianEmpire
+=20% LowerTax
+=25% MediumTax
+="true" Mortars
+-1.5 ResearchPoints
+> ReligionGroups
+-6 Orthodox
+-12 Pagan
++18 Protestant
+<
+<... > Nations > DuchyOfBelarus
+> ReligionGroups
+-6 Orthodox
++6 Protestant
+<... > Nations > KingdomOfPoland
+> ReligionGroups
+-2 Orthodox
++2 Protestant
+<... > Nations > TsardomOfMuscovy
+> ReligionGroups
+-1 Orthodox
++1 Protestant
+<... > Nations
++> ZhengRuDynasty = EmpireOfLonguo
+<- EmpireOfLonguo
+<... > Nations > ZhengRuDynasty
+-5 NobleLoyalty.ZhengRuDynasty
++5 NobleLoyalty.SelfInterests
++5% BurghersInfluence
+="true" Docks
+="true" Gunports
+="true" Galleons
+-5 ResearchPoints
++30 LightShips
++10 MediumShips
+="true" Muskets
+="true" Limber
++600 HeavyCav
++600 LightCav
++900 LightInf
++2000 HeavyInf
++1000 Musketeers
++2 Cannons
+-340 Archers
+="https://cdn.discordapp.com/attachments/959591600147812364/1006426040454877214/steagu.jpg" Flag
+="Xian" CapitalName
++1 Silk
++0.5 NorthChina
++0.5 YangtzeRiver
++1 LocalTrade
++0.05 Mercantilism
++1 AdmEff
+
+<... > Religions
++> Confucian
+
+<... > Nations > ZhengRuDynasty > ReligionGroups
++> Confucian
+=5 Shinto
+=90 Pagan
+=5 Confucian
+
+<...
++0.5 NorthChina
++0.5 YangtzeRiver
+<... > Nations
+<- KingdomOfWestphalia
+<- HittiteEmpire
+<... > Nations > QuasimidEmirate
++0.75 Silk
++0.5 Iran
++1% workforces.burghers
++0.05 Mercantilism
+<... > Nations > KingdomOfUralikslavia
++4 SmallForts
++2 ExtraCityFortifications
+="true" StarForts
+-5 ResearchPoints
+="true" NationalSovereignity
+-4 CulturalPower
++3.25 AdmEff
++2% workforces.burghers
++1% workforces.artisans
++5% BurghersInfluence
+-10% NobleInfluence
+-5 NobleLoyalty.KingdomOfUralikslavia
++5 NobleLoyalty.SelfInterests
+="true" Metallurgy
+="true" Reiters
+="Perm" CapitalName
++0.25 Propaganda
+=6 Iron
+=0.5 Coal
++0.1 MiningEff
+=18% HighTax
+=18% MediumTax
+=18% LowerTax
+=520 Musketeers
+=510 Heavy Infantry
+=450 Heavy Cavalry
+=69 Cannons
+=0 Archers
+=0 LightCav
+=0 Crossbowmen
+=0 LightInf
+=0 EliteCav
+=37 EliteInf
++1 tactics
++0.6 training
++2.5% discipline
++0.15 armywages
+<... > Nations
++> NorthGermanConfederation = KingdomOfPrussia
+<- KingdomOfPrussia
+<... > Nations > NorthGermanConfederation
+="Berlin" CapitalName
+="true" Metallurgy
+="true" Experimentation
+="true" Fluyt
+-7.5 ResearchPoints
+="true" RenaissanceThought
+-4 CulturalPower
+=2000 LightInf
+=2000 Musketeers
+=1000 LightInf
+=500 HeavyInf
+=70 Cannons
++0.25 Propaganda
++5928969 Population
++420.67 Budget
++30 Westphalian
+-30 Prussian
+-250 Budget
++1.25 AdmEff
++5% BurghersInfluence
++0.35 MilitaryTactics
++0.2 TrainingQuality
++0.1% MilitaryDiscipline
++0.15 Naval Improvements
+="https://cdn.discordapp.com/attachments/974675904859082792/1006151353124536410/unknown.png" Flag
+<... > Cultures
++> German
+<... > Nations > NorthGermanConfederation
+> CultureGroups
++> German
+=10 German
+-5 Westphalian
+-5 Prussian
+<
+<... > Nations > EmpireOfIberia
++4891157 Population
++1265.35 Budget
++0.5 Coal
++0.5 Iron
++0.5 Copper
+> CultureGroups
++>Andalusian
+=25% Andalusian
+=30% Galician
+=0.8% Arberber
+=44.2% Catalonian
+<... > Nations
+<- KingdomOfAndalusia
+<- OrderOfStMary
+<... > Nations > ZhengRuDynasty
+-2 Pagan
++2 Shinto
+<... > Nations > Byzantium
++3663728 Population
++2521041 Population
