@@ -3767,3 +3767,11 @@ sync
 +> Yakush 
 =10% Yakush
 =90% Ainu
+
+<... > Cultures > Byzantine > Opinions
++> Outremer
+= -25 Outremer.Score
+
+<... > Cultures > Outremer > Opinions
++> Byzantine
+= -100 Byzantine.Score
