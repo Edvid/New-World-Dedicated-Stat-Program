@@ -3729,4 +3729,10 @@ trade ByzantiumColonyShipment, Byzantium > NovaKreta, 150 Food
 +3663728 Population
 +2521041 Population
 <...
+
+<... > Nations > UnitedKingdom
+-250 food
+<... > Nations > New Cornwall
++250 food
+<...
 sync
