@@ -3736,3 +3736,34 @@ trade ByzantiumColonyShipment, Byzantium > NovaKreta, 150 Food
 +250 food
 <...
 sync
+
+<... > Nations > VespucianTribes > CultureGroups
+=4% Floridian
+=96% Vespucian
+
+<... > Nations > TsardomOfMuscovy > CultureGroups
++> Bellarussian
+=12% Bellarussian
++> Latvian 
+=3% Latvian
+=85% Muscovite
+
+<... > Nations > Mitiva > CultureGroups
++> Outremer
+=5% Outremer
+=95% Egyptian
+
+<... > Nations > KingdomOfWallachia > CultureGroups
++> Cuman
+=16.5% Cuman
+=83.5% Wallachian
+
+<... > Nations > CumanKipchakKhanate > CultureGroups
++> Wallachian
+=4% Wallachian
+=96% Cuman
+
+<... > Nations > SashimoKingdom > CultureGroups
++> Yakush 
+=10% Yakush
+=90% Ainu
