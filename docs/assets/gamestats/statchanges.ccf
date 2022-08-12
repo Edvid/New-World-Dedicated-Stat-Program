@@ -3800,6 +3800,7 @@ sync
 +> Byzantine
 = -100 Byzantine.Score
 
+<... > Nations
 +> NovaAnatolia = Byzantium
 <... > Nations > Nova Anatolia
 =75000 pop
