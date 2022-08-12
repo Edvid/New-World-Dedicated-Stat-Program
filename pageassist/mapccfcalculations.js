@@ -11,6 +11,15 @@ let outputField = document.querySelector("div.output");
 let nationCanvas = document.createElement("canvas");
 let climateCanvas = document.createElement("canvas");
 
+nationCanvas.width = WIDTH;
+nationCanvas.height = HEIGHT;
+
+climateCanvas.width = WIDTH;
+climateCanvas.height = HEIGHT;
+
+nationCanvas.style.width = "500px"
+climateCanvas.style.width = "500px"
+
 document.querySelector("body").appendChild(nationCanvas);
 document.querySelector("body").appendChild(climateCanvas);
 
