@@ -3735,6 +3735,30 @@ trade ByzantiumColonyShipment, Byzantium > NovaKreta, 150 Food
 <... > Nations > New Cornwall
 +250 food
 <...
+
+<... > Nations > KingdomOfPhilian
+="true" atwar
+="Defensive" AtWar
++25% Occupation
+-3 LightShips
+-2 MediumShips
+<... > Nations > EmpireOfJapan
+="true" atwar
+="Offensive" AtWar
+
+<... > Nations > KingdomOfPoland
+="true" MiningCarts
++0.25 MiningEff
+<... > Nations > TainoTribalConfederacy
+=200 LightInf
+=200 HeavyInf
+=150 LightCav
+=150 Musketeers
+=6 LightShips
+=5 MediumShips
+=3 HeavyShips
+=0 Levies
+
 sync
 
 <... > Nations > VespucianTribes > CultureGroups
@@ -3775,3 +3799,473 @@ sync
 <... > Cultures > Outremer > Opinions
 +> Byzantine
 = -100 Byzantine.Score
+
++> NovaAnatolia = Byzantium
+<... > Nations > Nova Anatolia
+=75000 pop
+="false" AtWar
+=15 Budget
+=0 Spies
+=0 Levies
+=0 LightInfantry
+=0 HeavyInfantry
+=0 Archers
+=0 Crossbowmen
+=0 LightCavalry
+=0 HeavyCavalry
+=0 EliteInfantry
+=0 EliteCavalry
+=0 HandCannoneers
+=0 Musketeers
+=0 Militia
+=0 SiegeEquipment
+=0 LargeSiegeEquipment
+=0 Cannons
+=0 SmallForts
+=0 MediumForts
+=0 BigForts
+=0 HugeForts
+=0 ExtraCityFortifications
+=0 LightShips
+=0 MediumShips
+=0 HeavyShips
+=0 Coal
+=0 Sulphur
+=0 Cotton
+=0 Gold
+=0 Iron
+=0 Tea
+=0 Silk
+=0 Spice
+=0 Wool
+=0 Coffee
+=0 Fur
+=0 Diamond
+=0 Silver
+=0 Ivory
+=0 Cocoa
+=0 Tobacco
+=0 Sugar
+=0 ExoticFruit
+=0 PublicDebtTaken
+=0 PublicDebtLength
+=0.5 Fertility
+=15 Food
+=0 Casualties
+=0 Pillaging
+=0 Occupation
+=0 MinorBattles
+=0 MajorBattles
+> Climates
+=0 PolarDesert.Pixels
+=0 TaigaAndTundra.Pixels
+=0 MontaneForest.Pixels
+=0 Medditereanian.Pixels
+=0 Arid.Pixels
+=0 Steppe.Pixels
+=0 Moderate.Pixels
+=0 SubTropical.Pixels
+=0 Tropical.Pixels
+=0 Savanna.Pixels
+=0 Desert.Pixels
+=0 CoastalDesert.Pixels
+=0 Mountainous.Pixels
+<
+> Trade Influences
+=0 Alaska.tp
+=0 Cascadia.tp
+=0 CaliforniaAndWestMexico.tp
+=0 HudsonBay.tp
+=0 GreatLakes.tp
+=0 Louisiana.tp
+=0 GulfOfMexico.tp
+=0 LawrenceGulf.tp
+=0 EastCoast.tp
+=0 Carribean.tp
+=0 CentralAmerica.tp
+
+=0 GuyanaAndSuriname.tp
+=0 Amazon.tp
+=0 Peru.tp
+=0 RioGrande.tp
+=0 LaPlata.tp
+=0 Chile.tp
+=0 Patagonia.tp
+
+=0 NorthernAnatolia.tp
+=0 NorthSea.tp
+=0 BritishIsles.tp
+=0 EnglishChannel.tp
+=0 France.tp
+=0 BayOfBiscay.tp
+=0 WestIberia.tp
+=0 Gibraltar.tp
+=0 WesternMediterranean.tp
+=0 Rhine.tp
+=0 CentralMediterranean.tp
+=0 Adriatic.tp
+=0 Germany.tp
+=0 WesternDanube.tp
+=0 Denmark.tp
+=0 Baltic.tp
+=0 NorthNordics.tp
+=0 BarentsSea.tp
+=0 Novgorod.tp
+=0 Poland.tp
+=0 Dniepr.tp
+=0 Crimea.tp
+=0 EasternDanube.tp
+=0 Greece.tp
+=0 EasternMediterranean.tp
+=0 Egypt.tp
+=0 RedSea.tp
+=0 WesternSahara.tp
+=0 CoteDIvoire.tp
+=0 Nigeria.tp
+=0 SouthNile.tp
+=0 Somalia.tp
+=0 Kongo.tp
+=0 EastAfrica.tp
+=0 Mozambique.tp
+=0 SouthAfrica.tp
+
+=0 Mesopotamia.tp
+=0 PersianGulf.tp
+=0 Caucasus.tp
+=0 DonRiver.tp
+=0 Volga.tp
+=0 CentralAsia.tp
+=0 WestSiberia.tp
+=0 EastSiberia.tp
+=0 Iran.tp
+=0 Pakistan.tp
+=0 Tibet.tp
+=0 Mongolia.tp
+=0 Manchuria.tp
+=0 SeaOfJapan.tp
+=0 NorthChina.tp
+=0 YangtzeRiver.tp
+=0 SouthChina.tp
+=0 NorthIndia.tp
+=0 WestIndia.tp
+=0 EastIndia.tp
+=0 Burma.tp
+=0 SouthEastAsia.tp
+=0 NorthAustralia.tp
+=0 SouthAustralia.tp
+<... > Nations > Nova Anatolia > Climates
+#Byzantine Brazil also has to be created I suppose
+=1405 Tropical.Pixels
+=1282 SubTropical.Pixels
+<... > Nations > Byzantium > Climates
+=25469 Medditereanian.Pixels
+=18137 Arid.Pixels
+=4791 Steppe.Pixels
+=313 Moderate.Pixels
+=360 SubTropical.Pixels
+=738 Tropical.Pixels
+=115 Savanna.Pixels
+=2509 Desert.Pixels
+=386 CoastalDesert.Pixels
+=1282 Mountainous.Pixels
+<... > Nations > Kingdom Of Wallachia > Climates
+=9068 Steppe.Pixels
+=2869 Moderate.Pixels
+=1488 Mountainous.Pixels
+<... > Nations > Kingdom Of Wallachia > Climates
+=546 Steppe.Pixels
+=3615 Moderate.Pixels
+=3222 Medditereanian.Pixels
+<... > Nations > Kingdom Of Serbia > Climates
+=2216 Moderate.Pixels
+=245 Medditereanian.Pixels
+<... > Nations > Archduchy Of Austria > Climates
+=3 Steppe.Pixels
+=24959 Moderate.Pixels
+=535 Medditereanian.Pixels
+=4007 Mountainous.Pixels
+=46 Tropical.Pixels
+=483 SubTropical.Pixels
+<... > Nations > The Faithful Kingdom > Climates
+=3 Steppe.Pixels
+=3893 Moderate.Pixels
+=9577 Medditereanian.Pixels
+=4148 Mountainous.Pixels
+<... > Nations > Empire Of Iberia > Climates
+=3 Steppe.Pixels
+=3930 Moderate.Pixels
+=34684 Medditereanian.Pixels
+=1383 Mountainous.Pixels
+=46 Tropical.Pixels
+=210 SubTropical.Pixels
+=42 Savanna.Pixels
+=63 CoastalDesert.Pixels
+<... > Nations > Kingdom Of Burgundy > Climates
+=28422 Moderate.Pixels
+<... > Nations > North German Confederation > Climates
+=24617 Moderate.Pixels
+=279 Mountainous.Pixels
+<... > Nations > Kingdom Of Denmark > Climates
+=10337 Moderate.Pixels
+=11018 MontaneForest.Pixels
+<... > Nations > Kingdom Of Sfveadsland > Climates
+=9919 Moderate.Pixels
+=885 MontaneForest.Pixels
+=21334 TaigaAndTundra.Pixels
+<... > Nations > Duchyof O Bo > Climates
+=2275 PolarDesert.Pixels
+=10494 TaigaAndTundra.Pixels
+<... > Nations > Latvian Empire > Climates
+=15698 Moderate.Pixels
+=836 TaigaAndTundra.Pixels
+<... > Nations > Kingdom Of Poland > Climates
+=23426 Moderate.Pixels
+=1647 Mountainous.Pixels
+=179 Steppe.Pixels
+<... > Nations > Duchy Of Belarus > Climates
+=25542 Moderate.Pixels
+=2351 Steppe.Pixels
+<... > Nations > Cuman Kipchak Khanate > Climates
+=2936 Moderate.Pixels
+=40259 Steppe.Pixels
+=1151 Mountainous.Pixels
+<... > Nations > Tsardom Of Muscovy > Climates
+=48441 Moderate.Pixels
+=23923 TaigaAndTundra.Pixels
+=1661 Steppe.Pixels
+=1151 Mountainous.Pixels
+=64 Savanna.Pixels
+=135 SubTropical.Pixels
+=119 Tropical.Pixels
+=61 CoastalDesert.Pixels
+<... > Nations > Chechnya > Climates
+=1383 Moderate.Pixels
+=5571 Steppe.Pixels
+=5438 Mountainous.Pixels
+=3214 Arid.Pixels
+<... > Nations > Kingdom Of Uralikslavia > Climates
+=20515 Moderate.Pixels
+=11379 TaigaAndTundra.Pixels
+=36 Steppe.Pixels
+=1151 Mountainous.Pixels
+<... > Nations > Empire Of Japan > Climates
+=33578 Moderate.Pixels
+=164 TaigaAndTundra.Pixels
+=5020 SubTropical.Pixels
+=3303 Mountainous.Pixels
+=2363 PolarDesert.Pixels
+=4038 Tropical.Pixels
+<... > Nations > Zi Empire > Climates
+=34716 Arid.Pixels
+=2804 Desert.Pixels
+=3422 Mountainous.Pixels
+=20 CoastalDesert.Pixels
+<... > Nations > Mitiva > Climates
+=11122 Desert.Pixels
+=3422 Mountainous.Pixels
+=4359 CoastalDesert.Pixels
+=6308 Medditereanian.Pixels
+=2434 Savanna.Pixels
+<... > Nations > Arberber Kingdom > Climates
+=3081 Desert.Pixels
+=3096 CoastalDesert.Pixels
+=7192 Medditereanian.Pixels
+=76 SubTropical.Pixels
+=21 Tropical.Pixels
+=2565 Arid.Pixels
+=19 Moderate.Pixels
+<... > Nations > Valublid Sultanate > Climates
+=7409 Desert.Pixels
+=1723 CoastalDesert.Pixels
+=4949 Medditereanian.Pixels
+=6410 Arid.Pixels
+<... > Nations > Quasimid Emirate > Climates
+=413 Desert.Pixels
+=7306 CoastalDesert.Pixels
+=2903 Mountainous.Pixels
+=35592 Arid.Pixels
+=150 Steppe.Pixels
+<... > Nations > Timurid Emirate > Climates
+=10430 Desert.Pixels
+=1380 CoastalDesert.Pixels
+=6948 Mountainous.Pixels
+=32549 Arid.Pixels
+<... > Nations > Aden Caliphate > Climates
+=21890 Desert.Pixels
+=17402 CoastalDesert.Pixels
+=13875 Savanna.Pixels
+=9839 SubTropical.Pixels
+<... > Nations > Sindh Empire > Climates
+=44846 Arid.Pixels
+=116 CoastalDesert.Pixels
+=12647 Savanna.Pixels
+=12552 SubTropical.Pixels
+=401 Tropical.Pixels
+=6183 Mountainous.Pixels
+<... > Nations > Kingdom Of Potskig > Climates
+=9472 Savanna.Pixels
+=17777 SubTropical.Pixels
+=5772 Tropical.Pixels
+<... > Nations > Deccan > Climates
+=104 Arid.Pixels
+=14707 SubTropical.Pixels
+=44 Tropical.Pixels
+<... > Nations > Deccan > Climates
+=274 Arid.Pixels
+=39656 SubTropical.Pixels
+=11874 Tropical.Pixels
+=7188 Savanna.Pixels
+=16958 Mountainous.Pixels
+<... > Nations > Kingdom Of Lao > Climates
+=6447 Moderate.Pixels
+=7188 Savanna.Pixels
+=4835 Mountainous.Pixels
+<... > Nations > Guangxi Clique > Climates
+=30499 Moderate.Pixels
+=4083 SubTropical.Pixels
+=204 Tropical.Pixels
+<... > Nations > Zheng Ru Dynasty > Climates
+=40082 Moderate.Pixels
+=367 MontaneForest.Pixels
+<... > Nations > Mongolian Khanate > Climates
+=16113 Desert.Pixels
+=8949 MontaneForest.Pixels
+=26752 Steppe.Pixels
+<... > Nations > Menzen Confederation > Climates
+=33672 Moderate.Pixels
+=4278 MontaneForest.Pixels
+<... > Nations > Cheonje > Climates
+=16988 Moderate.Pixels
+<... > Nations > Sashimo Kingdom > Climates
+=1862 PolarDesert.Pixels
+=20451 TaigaAndTundra.Pixels
+=4241 MontaneForest.Pixels
+=18041 Moderate.Pixels
+=25 SubTropical.Pixels
+=52 Tropical.Pixels
+=540 Mountainous.Pixels
+<... > Nations > Kingdom Of Avanorolsk > Climates
+=4991 TaigaAndTundra.Pixels
+=14831 MontaneForest.Pixels
+=3177 Moderate.Pixels
+<... > Nations > Kingdom Of Khmbodj > Climates
+=26799 SubTropical.Pixels
+=11772 Tropical.Pixels
+<... > Nations > Eulacian Trade Council > Climates
+=7662 SubTropical.Pixels
+=71789 Tropical.Pixels
+=803 Savanna.Pixels
+=1054 CoastalDesert.Pixels
+=62 Moderate.Pixels
+=13846 Mountainous.Pixels
+<... > Nations > Zelenva Union > Climates
+=643 SubTropical.Pixels
+=1071 Tropical.Pixels
+=95 Savanna.Pixels
+=1054 CoastalDesert.Pixels
+=13888 Moderate.Pixels
+=177 Mountainous.Pixels
+<... > Nations > Kingdom Of Balanto > Climates
+=125 CoastalDesert.Pixels
+=322 Desert.Pixels
+=11611 Savanna.Pixels
+=9281 SubTropical.Pixels
+=4714 Tropical.Pixels
+<... > Nations > Songhai > Climates
+=3602 Desert.Pixels
+=15509 Savanna.Pixels
+=10869 SubTropical.Pixels
+<... > Nations > Kingdom Of Bornu > Climates
+=481 Desert.Pixels
+=9347 Savanna.Pixels
+=32422 SubTropical.Pixels
+=690 Tropical.Pixels
+<... > Nations > Magajiya Tribe > Climates
+=2393 Savanna.Pixels
+=29197 SubTropical.Pixels
+=9561 Tropical.Pixels
+<... > Nations > Sitao River Tribes > Climates
+=25167 Savanna.Pixels
+=1710 SubTropical.Pixels
+=3155 Desert.Pixels
+<... > Nations > Zulu Kingdom > Climates
+=11599 Medditereanian.Pixels
+=1277 SubTropical.Pixels
+=3263 Moderate.Pixels
+=2996 Desert.Pixels
+=692 CoastalDesert.Pixels
+<... > Nations > Kingdom Of Maharlika > Climates
+=3708 Tropical.Pixels
+<... > Nations > Kingdom Of Philian > Climates
+=6706 Tropical.Pixels
+<... > Nations > Republic Of La Plata > Climates
+=2383 Tropical.Pixels
+=14950 Moderate.Pixels
+=1684 SubTropical.Pixels
+<... > Nations > Nova Kreta > Climates
+=3149 SubTropical.Pixels
+=149 Mountainous.Pixels
+=1556 Tropical.Pixels
+<... > Nations > New Cuthsbury > Climates
+=8820 SubTropical.Pixels
+=1049 Mountainous.Pixels
+=5541 Tropical.Pixels
+<... > Nations > New Cornwall > Climates
+=2148 SubTropical.Pixels
+=1010 Mountainous.Pixels
+=2556 Tropical.Pixels
+<... > Nations > New Wales > Climates
+=798 SubTropical.Pixels
+=96 Mountainous.Pixels
+=1816 Tropical.Pixels
+=2003 Savanna.Pixels
+<... > Nations > New England > Climates
+=6905 TaigaAndTundra.Pixels
+=6262 Moderate.Pixels
+<... > Nations > Taino Tribal Confederacy > Climates
+=7151 SubTropical.Pixels
+=913 Tropical.Pixels
+<... > Nations > Mayan Empire > Climates
+=7601 SubTropical.Pixels
+=376 Mountainous.Pixels
+=3156 Tropical.Pixels
+<... > Nations > Aztec Empire > Climates
+=5647 SubTropical.Pixels
+=2336 Mountainous.Pixels
+=191 Tropical.Pixels
+=6977 Savanna.Pixels
+=1811 Desert.Pixels
+<... > Nations > Texas Tribes > Climates
+=11830 Savanna.Pixels
+=3002 Desert.Pixels
+=4948 Moderate.Pixels
+=2941 CoastalDesert.Pixels
+<... > Nations > Vespucian Tribes > Climates
+=1514 TaigaAndTundra.Pixels
+=96438 Moderate.Pixels
+=2923 SubTropical.Pixels
+=783 Tropical.Pixels
+<... > Nations > Sioux Tribes > Climates
+=13199 TaigaAndTundra.Pixels
+=48357 Moderate.Pixels
+<... > Nations > Sioux Tribes > Climates
+=112 TaigaAndTundra.Pixels
+=15813 Steppe.Pixels
+=180 Mountainous.Pixels
+<... > Nations > United Kingdom > Climates
+=61 TaigaAndTundra.Pixels
+=18640 Moderate.Pixels
+=276 SubTropical.Pixels
+=4284 MontaneForest.Pixels
+=182 Tropical.Pixels
+=610 CoastalDesert.Pixels
+<... > Nations > Kingdom Of Ireland > Climates
+=4117 Moderate.Pixels
+=276 SubTropical.Pixels
+=27 Tropical.Pixels
+=69 Savanna.Pixels
+<... > Nations > New Toledo > Climates
+=514 SubTropical.Pixels
+=2714 Tropical.Pixels
+<... > Nations > New Rabat > Climates
+=369 Tropical.Pixels
