@@ -103,6 +103,30 @@ function matchToken(searchIn, approxName) {
     }
 }
 
+/* #region  taken from https://stackoverflow.com/questions/6735470/get-pixel-color-from-canvas-on-mousemove, answer by Wayne and Woold */
+function findPos(obj) {
+    var curleft = 0, curtop = 0;
+    if (obj.offsetParent) {
+        do {
+            curleft += obj.offsetLeft;
+            curtop += obj.offsetTop;
+        } while (obj = obj.offsetParent);
+        return { x: curleft, y: curtop };
+    }
+    return undefined;
+}
+
+function rgbToHex(color) {
+    let r = color[0];
+    let g = color[1];
+    let b = color[2];
+    if (r > 255 || g > 255 || b > 255)
+        throw "Invalid color component";
+    let str = ((r << 16) | (g << 8) | b).toString(16);
+    while(str.length < 6) str = "0" + str;
+    return str;
+}
+/* #endregion */
 
 /* #region  taken from blog https://robkendal.co.uk/blog/2020-04-17-saving-text-to-client-side-file-using-vanilla-js */
 const downloadToFile = (content, filename, contentType) => {

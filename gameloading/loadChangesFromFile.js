@@ -45,7 +45,7 @@ async function loadChangesFromContent(changes, skip) {
             
     }
 
-    document.querySelector("body").dispatchEvent(new Event("load done"));
+    document.querySelector("body").dispatchEvent(new Event("game load done"));
 
     refreshNationPageItems();
 }
