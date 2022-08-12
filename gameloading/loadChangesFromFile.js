@@ -45,6 +45,8 @@ async function loadChangesFromContent(changes, skip) {
             
     }
 
+    document.querySelector("body").dispatchEvent(new Event("load done"));
+
     refreshNationPageItems();
 }
 
