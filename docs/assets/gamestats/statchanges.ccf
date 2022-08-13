@@ -4283,3 +4283,12 @@ sync
 <... > Nations > Kingdom Of Lao > Climates
 =6447 Moderate.Pixels
 =4835 Mountainous.Pixels
+
+<... > Nations > Vespucian Tribes
+="defensive" atwar
+<... > Nations > United Kingdom
+="defensive" atwar
+<... > Nations > KingdomOfBurgundy
+="defensive" atwar
+<... > Nations > Empire Of Iberia
+="offensive" atwar
