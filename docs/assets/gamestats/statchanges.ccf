@@ -653,18 +653,18 @@
 
 #new nation template
 <... > Cultures
-+> OBo
++> Oso
 <... > Nations
-+> DuchyofOBo
-<... > Nations > DuchyofOBo > CultureGroups
-+> OBo
-=100 OBo.Points
-<... > Nations > DuchyofOBo
-= "OBo" cultrep
++> DuchyOfOso
+<... > Nations > DuchyOfOso > CultureGroups
++> Oso
+=100 Oso.Points
+<... > Nations > DuchyOfOso
+= "Oso" cultrep
 = "Pagan" relrep
 
 # Nation Climates
-<... > Nations > DuchyofOBo > Climates
+<... > Nations > DuchyOfOso > Climates
 =2275 PolarDesert.Pixels
 =10494 TaigaAndTundra.Pixels
 =0 MontaneForest.Pixels
@@ -3073,7 +3073,7 @@ trade TreatyOfGermany2, KingdomOfPrussia > ArchduchyOfAustria, 100 Food
 -1 ResearchPoints
 +0.5 Baltic
 
-<... > nations > DuchyofOBo
+<... > nations > DuchyOfOso
 =2250 LightInf
 =500 LightCav
 =2 Sulphur
@@ -3758,6 +3758,9 @@ trade ByzantiumColonyShipment, Byzantium > NovaKreta, 150 Food
 =5 MediumShips
 =3 HeavyShips
 =0 Levies
+
+<... > Nations > Kingdom Of Uralikslavia
+=3.5 edueff
 
 sync
 
