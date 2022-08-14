@@ -3057,13 +3057,14 @@ trade TreatyOfTabonTabon, TsardomOfMuscovy > MagajiyaTribe, .2 Sulphur
 trade TreatyOfGermany1, ArchduchyOfAustria > KingdomOfPrussia, 60 Budget
 trade TreatyOfGermany2, KingdomOfPrussia > ArchduchyOfAustria, 100 Food
 <... > Nations > DuchyOfBelarus
-=1000 HeavyInf
+=1500 HeavyInf
 =1000 HeavyCav
-=2000 Crossbowmen
-=1000 Musketeers
-=500 HandCannoneers
+=0 Crossbowmen
+=1500 Musketeers
+=0 HandCannoneers
 =500 LightCav
 =25 Cannons
+=0 lightinf
 =0 Militia
 =0 Levies
 =5 LightShips
