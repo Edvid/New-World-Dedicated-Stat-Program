@@ -221,6 +221,7 @@ let BaseStats = [
     "SouthAustralia"
 ];
 let DerivedStats = [
+	"PassiveInvestmentIncome",
 	"AdministrativeStrain",
     "FuturePopulation",
     "FutureLiteracyPercent",
