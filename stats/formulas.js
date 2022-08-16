@@ -611,7 +611,7 @@ n.PopulationGrowth = (n.FutureFood < 0 ? n.FutureFood * 1000 / n.Population - (n
   n.FutureBudget = n.Budget + n.DailyBudget;
 
   n.OverallIncome = (n.Budget / (10 - n.AdministrativeEfficiency / 10 + 1) / gameStats.TimeDivide) / (1 + n.Inflation) + n.ResourceBudgetBoost + n.TradeRevenue + n.EffectiveTax + n.ProductionRevenue + n.Balance;
-
+  n.PassiveInvestmentIncome = (n.Budget / (10 - n.AdministrativeEfficiency / 10 + 1) / gameStats.TimeDivide) / (1 + n.Inflation);
   n.EliteUnitsCap = ((n.OverallNumbers - n.Militia - n.Levies - n.EliteCavalry - n.EliteInfantry) * 0.025);
 
 

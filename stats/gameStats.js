@@ -123,6 +123,7 @@ class Nation {
   ProductionRevenue;
   ResearchUpkeep;
   OverallIncome;
+  PassiveInvestmentIncome;
   /* #endregion */
 
   /* #region  Armies */
