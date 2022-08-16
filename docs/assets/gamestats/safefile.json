@@ -575,7 +575,10 @@
                     "RenaissanceThought": true,
                     "EarlyModernAdministration": true,
                     "NationalSovereignity": true,
-                    "Newspapers": false
+                    "Newspapers": false,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 1300,
                 "FoodOutgoing": 0,
@@ -1501,7 +1504,10 @@
                     "RenaissanceThought": false,
                     "EarlyModernAdministration": true,
                     "NationalSovereignity": false,
-                    "Newspapers": false
+                    "Newspapers": false,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
@@ -2427,7 +2433,10 @@
                     "RenaissanceThought": false,
                     "EarlyModernAdministration": true,
                     "NationalSovereignity": false,
-                    "Newspapers": false
+                    "Newspapers": false,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
@@ -3353,7 +3362,10 @@
                     "RenaissanceThought": true,
                     "EarlyModernAdministration": true,
                     "NationalSovereignity": true,
-                    "Newspapers": false
+                    "Newspapers": false,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
@@ -4279,7 +4291,10 @@
                     "RenaissanceThought": true,
                     "EarlyModernAdministration": true,
                     "NationalSovereignity": false,
-                    "Newspapers": false
+                    "Newspapers": false,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
@@ -5205,7 +5220,10 @@
                     "RenaissanceThought": false,
                     "EarlyModernAdministration": true,
                     "NationalSovereignity": false,
-                    "Newspapers": false
+                    "Newspapers": false,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 1350,
@@ -6134,7 +6152,10 @@
                     "RenaissanceThought": true,
                     "EarlyModernAdministration": true,
                     "NationalSovereignity": true,
-                    "Newspapers": false
+                    "Newspapers": false,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 150,
@@ -7060,7 +7081,10 @@
                     "RenaissanceThought": true,
                     "EarlyModernAdministration": true,
                     "NationalSovereignity": true,
-                    "Newspapers": false
+                    "Newspapers": false,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 100,
                 "FoodOutgoing": 0,
@@ -7986,7 +8010,10 @@
                     "RenaissanceThought": true,
                     "EarlyModernAdministration": true,
                     "NationalSovereignity": false,
-                    "Newspapers": false
+                    "Newspapers": false,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
@@ -8912,7 +8939,10 @@
                     "RenaissanceThought": true,
                     "EarlyModernAdministration": true,
                     "NationalSovereignity": false,
-                    "Newspapers": false
+                    "Newspapers": false,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
@@ -9838,7 +9868,10 @@
                     "RenaissanceThought": true,
                     "EarlyModernAdministration": true,
                     "NationalSovereignity": true,
-                    "Newspapers": false
+                    "Newspapers": false,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
@@ -10764,7 +10797,10 @@
                     "RenaissanceThought": true,
                     "EarlyModernAdministration": true,
                     "NationalSovereignity": false,
-                    "Newspapers": true
+                    "Newspapers": true,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
@@ -11690,7 +11726,10 @@
                     "RenaissanceThought": false,
                     "EarlyModernAdministration": true,
                     "NationalSovereignity": false,
-                    "Newspapers": false
+                    "Newspapers": false,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
@@ -12616,7 +12655,10 @@
                     "RenaissanceThought": true,
                     "EarlyModernAdministration": true,
                     "NationalSovereignity": true,
-                    "Newspapers": false
+                    "Newspapers": false,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
@@ -13542,7 +13584,10 @@
                     "RenaissanceThought": false,
                     "EarlyModernAdministration": true,
                     "NationalSovereignity": false,
-                    "Newspapers": false
+                    "Newspapers": false,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
@@ -14468,7 +14513,10 @@
                     "RenaissanceThought": true,
                     "EarlyModernAdministration": true,
                     "NationalSovereignity": false,
-                    "Newspapers": false
+                    "Newspapers": false,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
@@ -15394,7 +15442,10 @@
                     "RenaissanceThought": true,
                     "EarlyModernAdministration": true,
                     "NationalSovereignity": true,
-                    "Newspapers": false
+                    "Newspapers": false,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
@@ -16320,7 +16371,10 @@
                     "RenaissanceThought": false,
                     "EarlyModernAdministration": false,
                     "NationalSovereignity": false,
-                    "Newspapers": false
+                    "Newspapers": false,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
@@ -17246,7 +17300,10 @@
                     "RenaissanceThought": true,
                     "EarlyModernAdministration": true,
                     "NationalSovereignity": true,
-                    "Newspapers": false
+                    "Newspapers": false,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
@@ -18172,7 +18229,10 @@
                     "RenaissanceThought": true,
                     "EarlyModernAdministration": true,
                     "NationalSovereignity": true,
-                    "Newspapers": false
+                    "Newspapers": false,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
@@ -19098,7 +19158,10 @@
                     "RenaissanceThought": true,
                     "EarlyModernAdministration": true,
                     "NationalSovereignity": false,
-                    "Newspapers": false
+                    "Newspapers": false,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
@@ -20024,7 +20087,10 @@
                     "RenaissanceThought": true,
                     "EarlyModernAdministration": true,
                     "NationalSovereignity": true,
-                    "Newspapers": false
+                    "Newspapers": false,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
@@ -20950,7 +21016,10 @@
                     "RenaissanceThought": true,
                     "EarlyModernAdministration": true,
                     "NationalSovereignity": true,
-                    "Newspapers": false
+                    "Newspapers": false,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
@@ -21876,7 +21945,10 @@
                     "RenaissanceThought": false,
                     "EarlyModernAdministration": true,
                     "NationalSovereignity": false,
-                    "Newspapers": false
+                    "Newspapers": false,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
@@ -22802,7 +22874,10 @@
                     "RenaissanceThought": true,
                     "EarlyModernAdministration": true,
                     "NationalSovereignity": true,
-                    "Newspapers": false
+                    "Newspapers": false,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
@@ -23728,7 +23803,10 @@
                     "RenaissanceThought": false,
                     "EarlyModernAdministration": true,
                     "NationalSovereignity": false,
-                    "Newspapers": false
+                    "Newspapers": false,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
@@ -24654,7 +24732,10 @@
                     "RenaissanceThought": true,
                     "EarlyModernAdministration": true,
                     "NationalSovereignity": true,
-                    "Newspapers": false
+                    "Newspapers": false,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
@@ -25580,7 +25661,10 @@
                     "RenaissanceThought": true,
                     "EarlyModernAdministration": false,
                     "NationalSovereignity": false,
-                    "Newspapers": false
+                    "Newspapers": false,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
@@ -26506,7 +26590,10 @@
                     "RenaissanceThought": true,
                     "EarlyModernAdministration": true,
                     "NationalSovereignity": false,
-                    "Newspapers": false
+                    "Newspapers": false,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
@@ -27432,7 +27519,10 @@
                     "RenaissanceThought": true,
                     "EarlyModernAdministration": true,
                     "NationalSovereignity": false,
-                    "Newspapers": true
+                    "Newspapers": true,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
@@ -28358,7 +28448,10 @@
                     "RenaissanceThought": true,
                     "EarlyModernAdministration": false,
                     "NationalSovereignity": false,
-                    "Newspapers": false
+                    "Newspapers": false,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
@@ -29284,7 +29377,10 @@
                     "RenaissanceThought": true,
                     "EarlyModernAdministration": true,
                     "NationalSovereignity": false,
-                    "Newspapers": true
+                    "Newspapers": true,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
@@ -30210,7 +30306,10 @@
                     "RenaissanceThought": true,
                     "EarlyModernAdministration": false,
                     "NationalSovereignity": false,
-                    "Newspapers": false
+                    "Newspapers": false,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
@@ -31136,7 +31235,10 @@
                     "RenaissanceThought": false,
                     "EarlyModernAdministration": false,
                     "NationalSovereignity": false,
-                    "Newspapers": false
+                    "Newspapers": false,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
@@ -32062,7 +32164,10 @@
                     "RenaissanceThought": true,
                     "EarlyModernAdministration": false,
                     "NationalSovereignity": false,
-                    "Newspapers": false
+                    "Newspapers": false,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
@@ -32988,7 +33093,10 @@
                     "RenaissanceThought": true,
                     "EarlyModernAdministration": true,
                     "NationalSovereignity": true,
-                    "Newspapers": false
+                    "Newspapers": false,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
@@ -33914,7 +34022,10 @@
                     "RenaissanceThought": true,
                     "EarlyModernAdministration": true,
                     "NationalSovereignity": false,
-                    "Newspapers": true
+                    "Newspapers": true,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
@@ -34840,7 +34951,10 @@
                     "RenaissanceThought": true,
                     "EarlyModernAdministration": true,
                     "NationalSovereignity": false,
-                    "Newspapers": false
+                    "Newspapers": false,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
@@ -35766,7 +35880,10 @@
                     "RenaissanceThought": true,
                     "EarlyModernAdministration": true,
                     "NationalSovereignity": false,
-                    "Newspapers": false
+                    "Newspapers": false,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
@@ -36692,7 +36809,10 @@
                     "RenaissanceThought": true,
                     "EarlyModernAdministration": true,
                     "NationalSovereignity": false,
-                    "Newspapers": false
+                    "Newspapers": false,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
@@ -37618,7 +37738,10 @@
                     "RenaissanceThought": false,
                     "EarlyModernAdministration": false,
                     "NationalSovereignity": false,
-                    "Newspapers": false
+                    "Newspapers": false,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
@@ -38544,7 +38667,10 @@
                     "RenaissanceThought": false,
                     "EarlyModernAdministration": true,
                     "NationalSovereignity": false,
-                    "Newspapers": false
+                    "Newspapers": false,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
@@ -39470,7 +39596,10 @@
                     "RenaissanceThought": true,
                     "EarlyModernAdministration": false,
                     "NationalSovereignity": false,
-                    "Newspapers": false
+                    "Newspapers": false,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
@@ -40396,7 +40525,10 @@
                     "RenaissanceThought": true,
                     "EarlyModernAdministration": true,
                     "NationalSovereignity": true,
-                    "Newspapers": false
+                    "Newspapers": false,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
@@ -41322,7 +41454,10 @@
                     "RenaissanceThought": true,
                     "EarlyModernAdministration": true,
                     "NationalSovereignity": false,
-                    "Newspapers": false
+                    "Newspapers": false,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 50,
                 "FoodOutgoing": 30,
@@ -42248,7 +42383,10 @@
                     "RenaissanceThought": true,
                     "EarlyModernAdministration": false,
                     "NationalSovereignity": true,
-                    "Newspapers": false
+                    "Newspapers": false,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
@@ -43174,7 +43312,10 @@
                     "RenaissanceThought": true,
                     "EarlyModernAdministration": true,
                     "NationalSovereignity": false,
-                    "Newspapers": true
+                    "Newspapers": true,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
@@ -44100,7 +44241,10 @@
                     "RenaissanceThought": true,
                     "EarlyModernAdministration": true,
                     "NationalSovereignity": false,
-                    "Newspapers": true
+                    "Newspapers": true,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
@@ -45026,7 +45170,10 @@
                     "RenaissanceThought": true,
                     "EarlyModernAdministration": true,
                     "NationalSovereignity": true,
-                    "Newspapers": false
+                    "Newspapers": false,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
@@ -45952,7 +46099,10 @@
                     "RenaissanceThought": true,
                     "EarlyModernAdministration": true,
                     "NationalSovereignity": false,
-                    "Newspapers": false
+                    "Newspapers": false,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
@@ -46878,7 +47028,10 @@
                     "RenaissanceThought": false,
                     "EarlyModernAdministration": false,
                     "NationalSovereignity": false,
-                    "Newspapers": false
+                    "Newspapers": false,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
@@ -47805,7 +47958,10 @@
                     "RenaissanceThought": true,
                     "EarlyModernAdministration": true,
                     "NationalSovereignity": false,
-                    "Newspapers": false
+                    "Newspapers": false,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
@@ -48731,7 +48887,10 @@
                     "RenaissanceThought": true,
                     "EarlyModernAdministration": true,
                     "NationalSovereignity": false,
-                    "Newspapers": false
+                    "Newspapers": false,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
@@ -49657,7 +49816,10 @@
                     "RenaissanceThought": false,
                     "EarlyModernAdministration": true,
                     "NationalSovereignity": false,
-                    "Newspapers": false
+                    "Newspapers": false,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
@@ -50583,7 +50745,10 @@
                     "RenaissanceThought": true,
                     "EarlyModernAdministration": true,
                     "NationalSovereignity": true,
-                    "Newspapers": false
+                    "Newspapers": false,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
@@ -51509,7 +51674,10 @@
                     "RenaissanceThought": true,
                     "EarlyModernAdministration": true,
                     "NationalSovereignity": false,
-                    "Newspapers": false
+                    "Newspapers": false,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
@@ -52435,7 +52603,10 @@
                     "RenaissanceThought": false,
                     "EarlyModernAdministration": false,
                     "NationalSovereignity": false,
-                    "Newspapers": false
+                    "Newspapers": false,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
@@ -53361,7 +53532,10 @@
                     "RenaissanceThought": true,
                     "EarlyModernAdministration": true,
                     "NationalSovereignity": false,
-                    "Newspapers": true
+                    "Newspapers": true,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
@@ -54287,7 +54461,10 @@
                     "RenaissanceThought": true,
                     "EarlyModernAdministration": true,
                     "NationalSovereignity": false,
-                    "Newspapers": true
+                    "Newspapers": true,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
@@ -55213,7 +55390,10 @@
                     "RenaissanceThought": true,
                     "EarlyModernAdministration": true,
                     "NationalSovereignity": false,
-                    "Newspapers": false
+                    "Newspapers": false,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
@@ -56139,7 +56319,10 @@
                     "RenaissanceThought": true,
                     "EarlyModernAdministration": true,
                     "NationalSovereignity": false,
-                    "Newspapers": false
+                    "Newspapers": false,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
@@ -57065,7 +57248,10 @@
                     "RenaissanceThought": true,
                     "EarlyModernAdministration": true,
                     "NationalSovereignity": true,
-                    "Newspapers": false
+                    "Newspapers": false,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 150,
                 "FoodOutgoing": 0,
@@ -57991,7 +58177,10 @@
                     "RenaissanceThought": true,
                     "EarlyModernAdministration": true,
                     "NationalSovereignity": false,
-                    "Newspapers": false
+                    "Newspapers": false,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
@@ -58923,7 +59112,10 @@
                     "RenaissanceThought": true,
                     "EarlyModernAdministration": true,
                     "NationalSovereignity": false,
-                    "Newspapers": false
+                    "Newspapers": false,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
@@ -59857,7 +60049,10 @@
                     "RenaissanceThought": true,
                     "EarlyModernAdministration": true,
                     "NationalSovereignity": false,
-                    "Newspapers": false
+                    "Newspapers": false,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
@@ -60783,7 +60978,10 @@
                     "RenaissanceThought": true,
                     "EarlyModernAdministration": true,
                     "NationalSovereignity": true,
-                    "Newspapers": false
+                    "Newspapers": false,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
@@ -61709,7 +61907,10 @@
                     "RenaissanceThought": true,
                     "EarlyModernAdministration": true,
                     "NationalSovereignity": true,
-                    "Newspapers": false
+                    "Newspapers": false,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
@@ -62635,7 +62836,10 @@
                     "RenaissanceThought": false,
                     "EarlyModernAdministration": true,
                     "NationalSovereignity": false,
-                    "Newspapers": false
+                    "Newspapers": false,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
@@ -63564,7 +63768,10 @@
                     "RenaissanceThought": false,
                     "EarlyModernAdministration": true,
                     "NationalSovereignity": false,
-                    "Newspapers": false
+                    "Newspapers": false,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
@@ -64493,7 +64700,10 @@
                     "RenaissanceThought": true,
                     "EarlyModernAdministration": true,
                     "NationalSovereignity": false,
-                    "Newspapers": false
+                    "Newspapers": false,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
@@ -65422,7 +65632,10 @@
                     "RenaissanceThought": true,
                     "EarlyModernAdministration": true,
                     "NationalSovereignity": true,
-                    "Newspapers": false
+                    "Newspapers": false,
+					"ScientificRevolution": false,
+					"PotatoPopulationBoom": false,
+					"Constitution": false
                 },
                 "FoodIncoming": 0,
                 "FoodOutgoing": 0,
