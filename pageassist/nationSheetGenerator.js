@@ -361,8 +361,13 @@ function createNationSheet(nationName) {
             [
                 "ProductionRevenue",
                 "TradeRevenue",
-                "OverallIncome"
+				"PassiveInvestmentIncome"
             ],
+			[
+				"ResourceBudgetBoost",
+				"EffectiveTax",
+                "OverallIncome"
+			],
             [
                 "ArmyUpkeep",
                 "NavyUpkeep",
