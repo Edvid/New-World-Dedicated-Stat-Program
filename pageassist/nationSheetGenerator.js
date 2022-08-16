@@ -750,7 +750,10 @@ function createNationSheet(nationName) {
         "NobleDuty",
         "Courthouses",
         "EarlyModernAdministration",
-        "Newspapers"
+        "Newspapers",
+		"ScientificRevolution",
+		"PotatoPopulationBoom",
+		"Constitution",
     ];
 
     for (const cultname in gameStats.Nations[currentNationName].CulturalAdvancements) {
