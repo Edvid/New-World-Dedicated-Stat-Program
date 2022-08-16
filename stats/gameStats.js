@@ -740,7 +740,10 @@ class Nation {
       RenaissanceThought: true,
       EarlyModernAdministration: true,
       NationalSovereignity: false,
-      Newspapers: false
+      Newspapers: false,
+      ScientificRevolution: false,
+      PotatoPopulationBoom: false,
+      Constitution: false
     }
 
     /* #region  War */

@@ -99,7 +99,7 @@ function evaluateNation(nationName) {
   n.ReligiousDisunity = religionCalc.disunity;
   n.OverallNumbers = n.Musketeers + n.Levies + n.LightInfantry + n.HeavyInfantry + n.Archers + n.Crossbowmen + n.LightCavalry + n.HeavyCavalry + n.EliteInfantry + n.Militia + n.EliteCavalry + n.HandCannoneers + (n.SiegeEquipment + n.LargeSiegeEquipment) * 10;
   n.OverallShipCount = n.LightShips + n.MediumShips + n.HeavyShips;
-  n.AdministrativeStrain = (0 + n.Population / 1250000 + n.Health * 2 + n.EducationEfficiency * 1.5 + n.SocialSpending * 4 + n.Propaganda * 2 + n.PopulationControl * 2 + n.BirthControl * 4 + (n.HighClassTax + n.MediumClassTax + n.LowerClassTax) / 3 * 75 + n.OverallNumbers / 5000 + n.OverallShipCount / 100 + n.AgricultureSubsidies * 4 + (n.AgricultureInfrastructure - 1) * 4 + n.Size / 5000 + (n.ResearchSpending - 1) * 10 + (1 - n.CultureRepresentedAtGovernmentLevelPercent) * 10) * (n.CulturalAdvancements.EarlyModernAdministration == true ? 0.75 : 1) * (n.CulturalAdvancements.NationalSovereignity == true ? 0.75 : 1); 
+  n.AdministrativeStrain = (0 + n.Population / 1250000 + n.Health * 2 + n.EducationEfficiency * 1.5 + n.SocialSpending * 4 + n.Propaganda * 2 + n.PopulationControl * 2 + n.BirthControl * 4 + (n.HighClassTax + n.MediumClassTax + n.LowerClassTax) / 3 * 75 + n.OverallNumbers / 5000 + n.OverallShipCount / 100 + n.AgricultureSubsidies * 4 + (n.AgricultureInfrastructure - 1) * 4 + n.Size / 5000 + (n.ResearchSpending - 1) * 10 + (1 - n.CultureRepresentedAtGovernmentLevelPercent) * 10) * (n.CulturalAdvancements.EarlyModernAdministration == true ? 0.75 : 1) * (n.CulturalAdvancements.NationalSovereignity == true ? 0.75 : 1) * (n.CulturalAdvancements.Constitution == true ? 0.75 : 1); 
   let GatheringEffectiveness = function (name) {
     switch (name) {
       case "Food":
@@ -360,7 +360,7 @@ function evaluateNation(nationName) {
   })();
   n.PopulationDensityPerKmSquared = n.Population / (n.KmSquared * n.HabitableLand);
 
-  n.Disease = n.PopulationDensityPerKmSquared / 25 - n.Health / 20 - (n.Technologies.HumanAnatomy ? 0.15 : 0);
+  n.Disease = n.PopulationDensityPerKmSquared / 25 - n.Health / 20 - (n.Technologies.HumanAnatomy ? 0.15 : 0) - (n.CulturalAdvancements.PotatoPopulationBoom == true ? 0.2 : 0);
   n.UnderPopulation = n.Disease < 0.5 ? (1 - n.Disease) / 10 : 0;
 
   let PopulationGrowthModifier = (n.Fertility > 0.5 ? (n.Fertility - 0.5) / 10 : 0) + n.FoodPopulationBoost + (n.Prosperity - 1) / 10 + n.UnderPopulation;
@@ -640,7 +640,8 @@ n.PopulationGrowth = (n.FutureFood < 0 ? n.FutureFood * 1000 / n.Population - (n
   1 + 
   n.CulturalAdvancements.Universities / 10 + 
   n.CulturalAdvancements.RenaissanceThought / 5 + 
-  n.Technologies.Experimentation / 5;
+  n.Technologies.Experimentation / 5 +
+  n.CulturalAdvancements.ScientificRevolution / 5;
   n.ResearchPointGain = max(1, (n.ResearchSpending * n.ResearchEffectiveness * n.ResearchBoostFromTech * n.LiteracyPercent / n.Isolation / gameStats.TimeDivide * 2 / 10 + n.ResearchSpending * n.ResearchEffectiveness * n.HigherEducation / n.Isolation / gameStats.TimeDivide * 5 / 10) * (1 - (n.NobleInfluence > 0.5 ? n.NobleInfluence - 0.5 : 0) / 1.5 - (n.ClergyInfluence > 0.5? n.ClergyInfluence - 0.5 : 0) / 1.5) * (1 - n.PopulationTechImpact));
   n.FutureResearchPoints = min(7.5, n.ResearchPoints + n.ResearchPointGain);
 }
