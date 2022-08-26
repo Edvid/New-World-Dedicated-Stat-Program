@@ -1,7 +1,7 @@
 function evaluateNation(nationName) {
   let n = gameStats.Nations[nationName];
 
-  n.AgricultureTechnology = 0 + n.Technologies.HorseCollar / 2;
+  n.AgricultureTechnology = 0 + n.Technologies.HorseCollar / 2 + n.CulturalAdvancements.PotatoPopulationBoom / 2;
   n.FarmingEfficiency = 1 + n.AgricultureSubsidies / 5 + n.Fertility - 0.5 + (n.AgricultureInfrastructure - 1) / 10 + (n.AgricultureAdvancements - 1) / 10 + n.AgricultureTechnology / 10;
 
   {
