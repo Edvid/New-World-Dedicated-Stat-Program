@@ -391,8 +391,8 @@ trade TreatyOfNatives2, VespucianTribes > BlackfeetConfederation, 0.25 Iron
 +0.5 EduEff
 +0.15 NavalImprovements
 -5% NobleInfluence
--4 Wallachian
-+4 Cuman
+-4% Wallachian
++4% Cuman
 +2.5 LocalTrade
 +0.25 Mercantilism
 +0.5 Crimea
