@@ -529,7 +529,7 @@ n.PopulationGrowth = (n.FutureFood < 0 ? n.FutureFood * 1000 / n.Population - (n
 
 
   n.NavyTech = 0 + n.Technologies.Galleons / 4 + n.Technologies.Docks / 2 + n.Technologies.Gunports / 2 + n.Technologies.Gunlock / 4;
-  n.NavyQuality = 1 + n.NavyImprovements + n.NavyTech;
+  n.NavyQuality = 1 + n.NavyImprovements + n.NavyTech - n.Corruption / 5;
 
   n.UpkeepForOneLightShip = ((1 / 8) * n.NavyQuality) / gameStats.TimeDivide * (1 + n.Technologies.Gunports);
   n.UpkeepForOneMediumShip = ((1 / 4) * n.NavyQuality) / gameStats.TimeDivide * (1 + n.Technologies.Gunports);
