@@ -403,7 +403,8 @@ function evaluateNation(nationName) {
   
   n.IronShortage = max(0, n.UnitUpkeep / 200 - n.EffectiveIron);
   n.SulphurShortage = max(0, (n.Cannons * 100 + n.Musketeers + n.HandCannoneers +
-    (n.Technologies.Reiters == true ? n.LightCavalry + n.HeavyCavalry : 0)) / 15000 - n.EffectiveSulphur);
+    (n.Technologies.Reiters == true ? n.LightCavalry + n.HeavyCavalry : 0) +
+    (n.Technologies.Flintlock == true ? n.Militia : 0)) / 15000 - n.EffectiveSulphur);
 
   n.ResourceHappinessBoost =
     n.EffectiveCotton - n.CottonInflation +
@@ -531,9 +532,9 @@ n.PopulationGrowth = (n.FutureFood < 0 ? n.FutureFood * 1000 / n.Population - (n
   n.NavyTech = 0 + n.Technologies.Galleons / 4 + n.Technologies.Docks / 2 + n.Technologies.Gunports / 2 + n.Technologies.Gunlock / 4;
   n.NavyQuality = 1 + n.NavyImprovements + n.NavyTech - n.Corruption / 5;
 
-  n.UpkeepForOneLightShip = ((1 / 8) * n.NavyQuality) / gameStats.TimeDivide * (1 + n.Technologies.Gunports);
-  n.UpkeepForOneMediumShip = ((1 / 4) * n.NavyQuality) / gameStats.TimeDivide * (1 + n.Technologies.Gunports);
-  n.UpkeepForOneHeavyShip = ((1 / 2) * n.NavyQuality) / gameStats.TimeDivide * (1 + n.Technologies.Gunports + n.Technologies.Galleons / 2);
+  n.UpkeepForOneLightShip = ((1 / 8) * (n.NavyQuality + n.Corruption / 5)) / gameStats.TimeDivide * (1 + n.Technologies.Gunports);
+  n.UpkeepForOneMediumShip = ((1 / 4) * (n.NavyQuality + n.Corruption / 5)) / gameStats.TimeDivide * (1 + n.Technologies.Gunports);
+  n.UpkeepForOneHeavyShip = ((1 / 2) * (n.NavyQuality + n.Corruption / 5)) / gameStats.TimeDivide * (1 + n.Technologies.Gunports + n.Technologies.Galleons / 2);
 
   n.NavyUpkeep = (
     n.LightShips * n.UpkeepForOneLightShip +
