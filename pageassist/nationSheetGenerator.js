@@ -361,8 +361,13 @@ function createNationSheet(nationName) {
             [
                 "ProductionRevenue",
                 "TradeRevenue",
-                "OverallIncome"
+				"PassiveInvestmentIncome"
             ],
+			[
+				"ResourceBudgetBoost",
+				"EffectiveTax",
+                "OverallIncome"
+			],
             [
                 "ArmyUpkeep",
                 "NavyUpkeep",
@@ -750,7 +755,10 @@ function createNationSheet(nationName) {
         "NobleDuty",
         "Courthouses",
         "EarlyModernAdministration",
-        "Newspapers"
+        "Newspapers",
+		"ScientificRevolution",
+		"PotatoPopulationBoom",
+		"Constitution",
     ];
 
     for (const cultname in gameStats.Nations[currentNationName].CulturalAdvancements) {

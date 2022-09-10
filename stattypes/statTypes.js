@@ -105,6 +105,9 @@ let BaseStats = [
     "EarlyModernAdministration",
     "NationalSovereignity",
     "Newspapers",
+	"ScientificRevolution",
+	"PotatoPopulationBoom",
+	"Constitution",
     "Levies",
     "LightInfantry",
     "HeavyInfantry",
@@ -218,6 +221,7 @@ let BaseStats = [
     "SouthAustralia"
 ];
 let DerivedStats = [
+	"PassiveInvestmentIncome",
 	"AdministrativeStrain",
     "FuturePopulation",
     "FutureLiteracyPercent",
