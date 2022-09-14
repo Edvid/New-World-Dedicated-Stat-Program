@@ -858,67 +858,6 @@ trade TreatyOfGermany1.2, ArchduchyOfAustria > NorthGermanConfederation, 120 Bud
 =1.5 Copper
 +0.2 MiningEff
 
-<... > Nations > TsardomOfMuscovy
-="true" SocketBayonet
--2.5 ResearchPoints
-="https://cdn.discordapp.com/attachments/974678756067278939/1013173180258586664/mrflag_tsardomrussia_152_91.jpg" Flag
-+0.25 Propaganda
-+90 Budget
-+3 AdmEff
-+0.5 SocialSpending
-+4 Sulphur
-="true" ScientificRevolution
--4 CulturalPower
-+1.5 LocalTrade
-+0.1 Mercantilism
-+1% Burghers
-+1% Artisans
-+0.15 NavalImprovements
-+1.5 Health
-+0.15 MilitaryTactics
-+0.15 TrainingQuality
--0.75 EduEff
--1.5 PopulationControl
-=30% LowerTax
-=10% MediumTax
-=6% HighTax
-+0.4 MiningEff
-+0.05 AgrAdv
-+0.05 AgrSub
-=18000 Musketeers
-=3000 HeavyInfantry 
-=8000 LightCavalry
-=2000 HeavyCavalry
-=4000 Militia
-=140 Cannons
-=11 SiegeEquipment
-=7 LargeSiegeEquipment
-=4 Iron
-=4 Fur
-=6 Coal
-+0.75 Wool
-+0.75 Fur
-+0.5 Novgorod
-+0.5 North Nordics
-+0.5 Dniepr
-+0.5 Don
-+0.5 Volga
-+0.5 Poland
-+0.5 Germany
-+0.5 Denmark
-+0.5 East Danube
-+0.5 BarentsSea
-+1709450 Population
-+749.67 Budget
-+4 Sulphur
-> CultureGroups
-+> Oso
-=2 Oso
-=98 Muscovite
-<> ReligionGroups
-+>Pagan
-=2 Pagan
-=98 Orthodox
 <... > Nations
 +> KingdomOfNorway = KingdomOfDenmark
 <- KingdomOfDenmark
@@ -2195,9 +2134,9 @@ trade MitivanArberberNPCTrade2, Mitiva > ArberberKingdom, 10 budget
 +0.15 TrainingQuality
 -0.75 EduEff
 -1.5 PopulationControl
-=30 LowerTax
-=10 MediumTax
-=6 HighTax
+=30% LowerTax
+=10% MediumTax
+=6% HighTax
 +0.4 MiningEff
 +0.05 AgrAdv
 +0.05 AgrSub
