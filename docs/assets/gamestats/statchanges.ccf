@@ -879,9 +879,9 @@ trade TreatyOfGermany1.2, ArchduchyOfAustria > NorthGermanConfederation, 120 Bud
 +0.15 TrainingQuality
 -0.75 EduEff
 -1.5 PopulationControl
-=30 LowerTax
-=10 MediumTax
-=6 HighTax
+=30% LowerTax
+=10% MediumTax
+=6% HighTax
 +0.4 MiningEff
 +0.05 AgrAdv
 +0.05 AgrSub
