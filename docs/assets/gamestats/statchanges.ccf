@@ -12,6 +12,7 @@
 -2 lightships
 -21 lightcav
 =11% occupation
+="defensive" atwar
 
 <... > Nations > Kingdom Of Hispania
 -11 lightships
@@ -20,6 +21,7 @@
 +8% pillaging
 -40 budget
 +12% blockade
+="offensive" atwar
 
 <... > Cultures > Galician > Opinions
 -15 Catalonian.score
@@ -28,11 +30,13 @@
 
 <... > Nations > UnitedKingdom
 +40 budget
+="defensive" atwar
 
 <... > Nations > VespucianTribes
 -3 lightships
 -4 mediumships
 -3 heavyships
+="defensive" atwar
 
 <... > Nations > KingdomOfPotskig
 -400 levies
@@ -41,6 +45,7 @@
 +796 Casualties
 -796 Militia
 =7% occupation
+="defensive" atwar
 
 <... > Nations > KingdomOfKyrat
 -80 light cav
@@ -49,6 +54,7 @@
 -174 LightInf
 -43 HeavyInf
 -29 EliteCav
+="offensive" atwar
 
 <... > Nations > Sashimo Kingdom
 -230 population
@@ -64,12 +70,12 @@
 -139 light infantry
 -66 musketeers
 -120 light cavalry
-#
 -1 heavy ships
 -4 medium ships
 -12 light ships
 +602 casualties
 =20% occupation
+="defensive" atwar
 
 <... > Nations > Empire Of Japan
 -78 musketeers
@@ -85,10 +91,10 @@
 -86 light cavalry
 -25 heavy cavalry
 +1229 casualties
-#
 -4 heavy ships
 -16 medium ships
 -15 light ships
+="offensive" atwar
 
 <... > Nations > CumanKipchakKhanate
 -32 spies
@@ -126,6 +132,7 @@
 -702 Militia
 -257 Musketeers
 -2 Cannons
+="defensive" atwar
 
 <... > Nations > TsardomOfMuscovy
 -300 LightCav 
@@ -146,12 +153,12 @@
 -576 Militia
 -72 HeavyInf
 -288 Musketeers
-#
 -275 Heavy Cav
 -100 Heavy Cav 
 -150 Light Cav
 +525 casualties
 -525 population
+="offensive" atwar
 
 <... > Nations > KingdomOfRomania
 +1950 Casualties
@@ -162,6 +169,7 @@
 -343 LightCav
 -114 HeavyCav
 -4 Cannons
+="offensive" atwar
 
 <... > Nations > Quasimid Emirate
 -200 heavy Cavalry 
