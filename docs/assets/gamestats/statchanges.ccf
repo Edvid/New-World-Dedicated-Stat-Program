@@ -1,3 +1,2239 @@
 
 <... > nations > vespuciantribes
 =0.5 propaganda
+
+<... > Nations > New Toledo
+-9700 population
+
+<... > Nations > Blackfeet Confederation
++9700 population
+
+<... > Nations > KingdomOfBurgundy
+-2 lightships
+-21 lightcav
+=11% occupation
+
+<... > Nations > Kingdom Of Hispania
+-11 lightships
+-13 mediumships
+-2 heavyships
++8% pillaging
+-40 budget
++12% blockade
+
+<... > Cultures > Galician > Opinions
+-15 Catalonian.score
++> Hispanian
+-15 Hispanian.score
+
+<... > Nations > UnitedKingdom
++40 budget
+
+<... > Nations > VespucianTribes
+-3 lightships
+-4 mediumships
+-3 heavyships
+
+<... > Nations > KingdomOfPotskig
+-400 levies
++600 casualties
+-200 light cav
++796 Casualties
+-796 Militia
+=7% occupation
+
+<... > Nations > KingdomOfKyrat
+-80 light cav
++80 casualties
++246 Casualties
+-174 LightInf
+-43 HeavyInf
+-29 EliteCav
+
+<... > Nations > Sashimo Kingdom
+-230 population
+#
+-34 heavy infantry
+-57 light infantry
+-25 musketeers
+-75 light cavalry
+#
+-580 population
+#
+-86 heavy infantry
+-139 light infantry
+-66 musketeers
+-120 light cavalry
+#
+-1 heavy ships
+-4 medium ships
+-12 light ships
++602 casualties
+=20% occupation
+
+<... > Nations > Empire Of Japan
+-78 musketeers
+-97 heavy infantry
+-167 light infantry
+-32 crossbowmen
+-42 light infantry
+-12 heavy cavalry
+-132 musketeers
+-150 heavy infantry
+-351 light infantry
+-57 crossbowmen
+-86 light cavalry
+-25 heavy cavalry
++1229 casualties
+#
+-4 heavy ships
+-16 medium ships
+-15 light ships
+
+<... > Nations > CumanKipchakKhanate
+-32 spies
+-100 LightCav 
+-200 LightCav 
+-300 HeavyCav
+-75 LightCav 
+-175 LightCav 
+-250 HeavyCav
+-50 LightCav 
+-125 LightCav 
+-150 HeavyCav
++1425 casualties
+-1425 population
++475 Casualties
+-475 population
+-400 Musketeers
+-75 LightCav
+-3 Cannons
++510 Casualties
+-510 population
+-435 Musketeers
+-75 LightCav
+-6 Cannons
++637 Casualties
+-637 population
+-179 LightCav
+-458 HeavyCav
++412 Casualties
+-412 population
+-125 LightCav
+-287 HeavyCav
++961 Casualties
+-961 population
+-702 Militia
+-257 Musketeers
+-2 Cannons
+
+<... > Nations > TsardomOfMuscovy
+-300 LightCav 
+-150 HeavyCav
+-500 LightCav
+-300 LightCav
++1250 casualties
+-1250 population
++469 Casualties
+-469 population
+-313 LightCav
+-156 HeavyCav
++401 Casualties
+-401 population
+-401 LightCav
++936 Casualties
+-936 population
+-576 Militia
+-72 HeavyInf
+-288 Musketeers
+#
+-275 Heavy Cav
+-100 Heavy Cav 
+-150 Light Cav
++525 casualties
+-525 population
+
+<... > Nations > KingdomOfRomania
++1950 Casualties
+-1950 population
+-917 Militia
+-114 HeavyInf
+-458 Musketeers
+-343 LightCav
+-114 HeavyCav
+-4 Cannons
+
+<... > Nations > Quasimid Emirate
+-200 heavy Cavalry 
+-333 light cavalry
+-200 heavy Cavalry 
+-333 light cavalry
+-1066 population
+
+<... > Nations > KingdomOfLao
++4.5 Health
++0.25 SocialSpending
++0.2 AgrAdv
++0.05 AgrInf
++0.05 StockingCapabilities
++3 AdmEff
++5% ClergyInfluence
+-5 NobleLoyalty.KingdomOfLao
++5 NobleLoyalty.SelfInterests
++0.05 CulturalProsperity
++0.15 Military Tactics
++0.05 TrainingQuality
++0.05 MilitaryDiscipline
++1 LocalTrade
++10% NobleInfluence
++0.1 SpyQuality
+-11 Budget
+-12 Population
+="true" Experimentation
+="true" Bayonet
+-3.5 ResearchPoints
++0.15 MiningEfficiency
++1 SouthChina
++1 Burma
+
+<... > Nations > MongolianKhanate
++0.75 Propaganda
+="true" Bayonet
+="true" SocketBayonet
+="true" Newspapers
+-4 CulturalPower
+-4 ResearchPoints
++1 AdmEff
++0.5 EduEff
++0.15 TrainingQuality
++0.15 MilitaryTactics
+
+=1.5 Iron
+=2 Coal
+=4 Sulphur
+=1 Fur
+
+<... > Nations > TimuridEmirate
++300 Budget
+
+<... > Nations > KingdomOfKyrat
++8 AdmEff
++0.05 ResearchEffectiveness
++1% Artisans
++0.05 AgrAdv
++0.05 AgrInf
+-5% NobleInfluence
+-5% BurghersInfluence
++0.1 CulturalProsperity
++1% Burghers
++15 LocalTrade
++0.15 Mercantilism
++5 BurghersLoyalty.KingdomOfKyrat
+-5 BurghersLoyalty.SelfInterests
++5 NobleLoyalty.KingdomOfKyrat
+-5 NobleLoyalty.SelfInterests
+=10% HighTax
+=10% MediumTax
+=25% LowerTax
++3000 Budget
+="true" NationalSovereignity
+
++8295639 Population
++997.11 Budget
+
++1 EastIndia
++1 WestIndia
++1 Pakistan
++1 NorthIndia
++1 Burma
++1 Somalia
++1 SouthChina
++1 PersianGulf
++1 Tibet
+
++350 LightInf
++50 HeavyInf
++200 Archers
++400 HandCannoneers
++800 Musketeers
++400 LightCav
++200 HeavyCav
++15 Cannons
++31 LightShips
++14 MediumShips
++13 HeavyShips
+
++2 Coal
++2 Iron
++0.75 Spice
+-2 Shinto
+-1 Hindu
++3 Buddhism
+
+> Culture Groups
++22 Deccani
+-22 Kyratese
+<> Religion Groups
++22 Muslim
+-22 Buddhism
+<... > Cultures > Deccani > Opinions
++> Kyratese
+=35 Kyratese.Score
+<... > Cultures > Kyratese > Opinions
++> Deccani
+=35 Deccani.Score
+<... > Nations
+<- Deccan
+
+<... > Nations > Cheonje
++0.1 NavalImprovements
++1.5 AdmEff
++0.5 LocalTrade
++0.05 Mercantilism
++0.5% Artisans
++0.5% Burghers
++0.5 SeaOfJapan
++0.5 NorthChina
++0.5 YangtzeRiver
+
+<... > Nations > QuasimidEmirate
++0.5 LocalTrade
++0.05 Mercantilism
+=2 Coal
+=2.5 Sulphur
+=2 Iron
+=2 Copper
+=20% LowerTax
+=20% MediumTax
+=16% HighTax
++1 AdmEff
++0.25 MiningEff
++0.05 AgrSub
++0.05 AgrAdv
++0.75 Sugar
++0.75 Spices
++0.75 Silk
++1.5 PersianGulf
++1.5 Iran
++0.5 Pakistan
++1 Mesopotamia
++1 Caucasus
++0.5 EastAfrica
++0.5 RedSea
++1 CentralAsia
++0.5 Volga
++0.5 Somalia
++0.5 NorthIndia
+-200 Budget
+="true" SocketBayonet
+-2 ResearchPoints
++1% MilitaryDiscipline
++0.15 TrainingQuality
++0.3 MilitaryTactics
++0.05 CommanderFreedom
+=1.2 ArmyWages
++0.25 NavalImprovements
++20 LightShips
++4 MediumShips
++20 Spies
++2700 Musketeers
++2800 LightInf
++600 HeavyInf
++2000 LightCav
+-1000 Archers
+-200 Crossbowmen
++200 HeavyCav
+
++97 Elite Infantry
+
+trade TreatyOfEarth1, QuasimidEmirate > AdenCaliphate, 0.25 Sulphur
+trade TreatyOfEarth2, AdenCaliphate > QuasimidEmirate, 100 Budget
+trade TreatyOfDun1, QuasimidEmirate > EulacianTradeCouncil, .4 Coffee
+trade TreatyOfDun2, EulacianTradeCouncil > QuasimidEmirate, .2 Silver
+trade TreatyOfDun3, EulacianTradeCouncil > QuasimidEmirate, .2 Silk
+
+<... > Nations > AdenCaliphate
++3 AdmEff
++0.5 EduEff
++5 NobleLoyalty.AdenCaliphate
+-5 NobleLoyalty.SelfInterests
++5 ClergyLoyalty.AdenCaliphate
+-5 ClergyLoyalty.SelfInterests
++5 BurghersLoyalty.AdenCaliphate
+-5 BurghersLoyalty.SelfInterests
++5% NobleInfluence
++5% ClergyInfluence
++5% BurghersInfluence
++3 LocalTrade
++0.15 MiningEff
++0.2 Mercantilism
++0.05 AgrAdv
++0.05 AgrInf
++0.05 AgrSub
++0.05 StockingCapabilities
++1 RedSea
++1 SouthNile
++1 Egypt
++1 Somalia
++1 EastAfrica
++0.5 Mozambique
++0.5 SouthAfrica
++0.5 PersianGulf
++0.5 Pakistan
++0.5 WestIndia
++0.5 EastIndia
++0.5 NorthIndia
++0.5 Mesopotamia
++0.5 Kongo
+=2 Coal
+=3 Iron
+=1 Copper
+=0.25 Gold
++12500 Musketeers
++70 Cannons
++24 LightShips
+trade AdenSindh1, AdenCaliphate > SindhEmpire, 75 Budget
+trade AdenSindh2, SindhEmpire > AdenCaliphate, 0.25 Sulphur
++1% Burghers
++1% Artisans
++0.5 Health
++0.25 SocialSpending
+="true" Metallurgy
+="true" Mortars
+="true" Newspapers
+="true" Flintlock
+-4 CulturalPower
+-4 ResearchPoints
+-100 Budget
+trade TreatyOfDjBooty1, AdenCaliphate > Byzantium, 50 Budget
+trade TreatyOfDjBooty2, Byzantium > AdenCaliphate, 0.75 Sulphur
+
+<... > Nations > EulacianTradeCouncil
+-9900 Budget
+trade TreatyOfLondon2.1, EulacianTradeCouncil > NewWales, 100 Food
+trade TreatyOfLondon2.2, EulacianTradeCouncil > NewCornwall, 100 Food
+trade TreatyOfLondon2.3, EulacianTradeCouncil > UnitedKingdom, 200 Budget
+trade TreatyOfLondon2.4, NewWales > EulacianTradeCouncil, 0.5 Cotton
+-40000 Levies
+-8000 Musketeers
+-8000 HeavyInfantry
+-4000 LightInfantry
+-3500 Militia
+-4600 LightCavalry
+-1400 HeavyCavalry
+-100 SiegeEquipment
+-100 Cannons
+-120 Light Ships
+-80 Medium Ships
+-60 Heavy Ships
++6.5 AdmEff
++0.2 TrainingQuality
++0.25 MilitaryTactics
++0.15 NavalImprovements
++0.05 CulturalProsperity
+-2.5 BurghersLoyalty.EulacianTradeCouncil
++2.5 BurghersLoyalty.SelfInterests
+-0.1 Mercantilism
+-1 LocalTrade
+-0.25% Burghers
+-125000 Population
+-1000 Budget
+="true" PotatoPopulationBoom
+-4 CulturalPower
+-2% HighTax
+-2% MediumTax
+=10 Coal
+=11 Gold
+=7 Iron
+=4 Copper
+=10 Ivory
+-4 Health
+
+trade TreatyOfStockholm1, SwedishKingdom > EulacianTradeCouncil, 0.75 Fur
+trade TreatyOfStockholm2, SwedishKingdom > EulacianTradeCouncil, 0.75 Wool
+trade TreatyOfStockholm3, EulacianTradeCouncil > SwedishKingdom, 0.75 Gold
+trade TreatyOfStockholm4, EulacianTradeCouncil > SwedishKingdom, 0.75 Spices
+trade TreatyOfStockholm5, EulacianTradeCouncil > SwedishKingdom, 0.75 Silk
+trade TreatyOfStPetersburg1, TsardomOfMuscovy > EulacianTradeCouncil, 0.5 Wool
+trade TreatyOfStPetersburg2, TsardomOfMuscovy > EulacianTradeCouncil, 0.5 Fur
+trade TreatyOfStPetersburg3, EulacianTradeCouncil > TsardomOfMuscovy, 1 Gold
+<... > Nations > KingdomOfHispania
++6000 Budget
+
+<... > TradeZones
+-1.5 SouthEastAsia
+
+<... > Nations > SindhEmpire
++100 Budget
+-2 Hindu
++2 Muslim
+> Culture Groups
++> Quasimid
+-2 Sindh
++2 Quasimidian
+<... > Cultures > Quasimidian > Opinions
++> Sindh
+=0 Sindh.score
+<... > Cultures > Sindh > Opinions
++> Quasimidian
+=0 Quasimidian.score
+
+
+<... > Nations > KingdomOfPotskig
+-100 Budget
+
+<... > Nations > EmpireOfJapan
++2.25 AdmEff
++1 LocalTrade
++1 MediumForts
+="true" PotatoPopulationBoom
+-4 CulturalPower
+="true" Flintlock
+="true" HumanAnatomy
+="true" StarForts
+-3 ResearchPoints
++0.05 TrainingQuality
++0.05 MilitaryTactics
++0.5% MilitaryDiscipline
++0.05 CommanderFreedom
+="Kyoto" CapitalName
++1 Health
+<... > Nations > ZuluKingdom
+-69 Budget
++100 Food
++0.1 CulturalProsperity
+<... > Nations > Bosnia
++1000 Musketeers
++500 LightCav
++10 Cannons
+<... > Nations
++> BulgarianEmpire = UrualiImperia
+<- UrualiImperia
+<... > Nations > BulgarianEmpire
+="https://cdn.discordapp.com/attachments/988053470949027840/1013503685155901451/Screen_Shot_2022-08-28_at_6.57.10_AM.png" Flag
++0.05 AgrInf
++0.5 Volga
+
+<... > Nations > MagajiyaTribe
+="true" MiningCarts
+="true" Metallurgy
+="true" Experimentation
++0.25 MiningEff
+-4.5 ResearchPoints
++0.75 Ivory
++3 SmallForts
++0.75 Cocoa
++0.75 Coffee
+="true" Newspapers
++1 AdmEff
++0.5 EduEff
+Trade MagaVesp1, MagajiyaTribe > VespucianTribes, 0.5 Coffee
+Trade MagaVesp2, MagajiyaTribe > VespucianTribes, 0.5 Diamonds
+Trade MagaVesp3, MagajiyaTribe > VespucianTribes, 0.5 Ivory
+Trade MagaVesp4, VespucianTribes > MagajiyaTribe, 0.5 Iron
+Trade MagaVesp5, VespucianTribes > MagajiyaTribe, 90 Budget
+
+<... > Nations > KingdomOfRomania
+=2000 Musketeers
+=4000 Militia
+=1500 Light Cavalry
+=500 Heavy Infantry
+=500 Heavy Cavalry
+=20 Cannons
+=5 SiegeEquipment
+=5 LightShips
+=3 MediumShips
+=1 HeavyShips
++0.25 MilitaryTactics
++0.1 TrainingQuality
++0.5% MilitaryDiscipline
++0.05 NavalImprovements
++480 Budget
+-250 Population
+=18% LowerTax
+=14% MediumTax
+=12% HighTax
++0.05 SpyQuality
+=1 Coal
++0.5 LocalTrade
++0.05 Mercantilism
++0.5 EastDanube
++0.5 Health
++1 AdmEff
+
+> CultureGroups
+=10 Cuman
+=90 Wallachian
+<... > Nations > KingdomOfPoland
+=5000 Militia
+=1000 HeavyCav
+=2000 Musketeers
+=10 Cannons
+=1500 LightCav
+=0 HeavyInf
++0.5 Propaganda
+<... > Nations > KingdomOfIreland
++0.5 AdmEff
++1 Health
+trade IrishSupply1, UnitedKingdom > KingdomOfIreland, 0.2 Coal
+trade IrishSupply2, UnitedKingdom > KingdomOfIreland, 0.2 Iron
++0.75 Spices
++0.75 Tea
++0.75 Sugar
+trade VespIrish1, KingdomOfIreland > VespucianTribes, 0.2 Spices
+trade VespIrish2, VespucianTribes > KingdomOfIreland, 0.2 Sugar
++3300 Musketeers
+-2500 LightInf
++1000 LightCav
++1000 HeavyInf
++20 LightShips
++8 MediumShips
++0.1 MilitaryTactics
++0.05 TrainingQuality
++0.05 NavalImprovements
+<... > Nations > KingdomOfHispania
++100 Budget
+
+<... > Nations > CumanKipchakKhanate
++60 Militia
++62 Cannons
+
+="true" GunPorts
+="true" Galleons
+="true" SocketBayonet
++0.05 NavalImprovements
++0.2 Mercantilism
+-3.5 ResearchPoints
++2800 HeavyCav 
++1680 LightCav
++1480 Musketeers
++20 Cannons
++30 Spies
++3085 Militia
++0.2 SpyQuality
++0.1 TrainingQuality
++0.1 MilitaryTactics
++1.5 AdmEff
++1 LocalTrade
++0.25 Propaganda
+-0.5 EduEff
++2.25 Spices
++0.05 AgrAdv
++0.05 CulturalProsperity
++0.15 MiningEff
++0.05 AgrAdv
++0.25 SocialSpending
+trade TreatyOfTrade1, Byzantium > CumanKipchakKhanate, 1.5 Sulphur
+trade TreatyOfTrade2, CumanKipchakKhanate > Byzantium, 75 Budget
++1.5 Crimea
++1.5 Caucasus
++1 Dniepr
++1 Don River
++1 Eastern Danube
++1 Northern Anatolia
++1% Burghers
+
+
+
+<... > Nations > TsardomOfMuscovy
+-0.5 Crimea
+-0.5 Caucasus
+<... > Nations > KingdomOfBurgundy
++100 Budget
++200 Cannons
++19000 Musketeers
++5000 Militia
++4000 HeavyCav
+
++0.25 Propaganda
+<... > Nations > Byzantium
++859.99 Budget
++381.16 Food
++2091681 Population
++.25 Wool
+
+> Culture Groups
++> Serbian
++7 Serbian
+-7 Byzantine
+<... > Nations
+<- KingdomOfSerbia
+
+<... > Nations > UnitedKingdom
+trade TreatyOfLondon3.1, UnitedKingdom > VespucianTribes, 50 Budget
+trade TreatyOfLondon3.2, VespucianTribes > UnitedKingdom, 700 Food
++900 Budget
++7300 Musketeers
++50 Cannons
++2000 LightCav
++0.2 MilitaryTactics
++0.05 NavalImprovements
++2 AdmEff
++0.1 StockingCapabilities
++15 NobleLoyalty.UnitedKingdom
+-15 NobleLoyalty.SelfInterests
++15 BurghersLoyalty.UnitedKingdom
+-15 BurghersLoyalty.SelfInterests
++15 ClergyLoyalty.UnitedKingdom
+-15 ClergyLoyalty.SelfInterests
++0.3 Mercantilism
++3 LocalTrade
++0.5 Propaganda
++0.5 SocialSpending
++0.5 Poland
++0.5 Denmark
++0.5 France
++0.5 BayOfBiscay
++0.5 WestMed
++0.5 EastMed
++0.5 Baltic
++0.5 CentralMed
++0.5 Gibraltar
++0.5 WestSahara
++0.5 WestIberia
++0.5 CoteDIvoire
++0.5 WestAfrica
++0.5 Kongo
++0.5 SouthAfrica
++0.5 Mozambique
++0.5 Louisiana
++0.5 EastCoast
++0.5 CentralAmerica
++0.5 LawrenceGulf
++0.5 WestIndia
++0.5 NorthIndia
++0.5 EastIndia
++0.5 Somalia
++0.5 Mesopotamia
++0.5 PersianGulf
++0.5 RedSea
++0.5 Dniepr
++1 SeaOfJapan
+-20 Catholic
++20 Protestant
+-5 Irish
+-6 Scottish
++11 English
+=5% HighTax
+=20% MediumTax
+=25% LowTax
+="true" StarForts
+="true" Experimentation
+="true" SocketBayonet
+="true" ScientificRevolution
+-4 CulturalPower
+-5 ResearchPoints
+<... > Cultures > English > Opinions
+<- Irish
+=35 Scottish.Score
+=35 Cornish.Score
+=35 JudeoEnglish.Score
+<... > Cultures > Cornish > Opinions
+<- Irish
+=35 English.Score
+=35 JudeoEnglish.Score
+=35 Scottish.Score
+<... > Cultures > JudeoEnglish > Opinions
+<- Irish
+=35 English.Score
+=35 Cornish.Score
+=35 Scottish.Score
+<... > Cultures > Scottish > Opinions
+<- Irish
+=35 English.Score
+=35 Cornish.Score
+=35 JudeoEnglish.Score
+<... > Cultures > Irish > Opinions
+=0 English.score
+=0 Cornish.score
+=0 JudeoEnglish.score
+=0 Scottish.score
+
+<... > Nations > NorthGermanConfederation
++100 Budget
++0.45 MilitaryTactics
++2.5 AdmEff
++0.15 AgrInf
++0.05 AgrAdv
+
++0.3 TrainingQuality
++0.15 NavalImprovements
++1.5% MilitaryDiscipline
++0.65 MiningEff
+=2 Coal
+=1.25 Sulphur
+=2 Iron
+=0.5 Copper
+=2 ArmyWages
++0.5 CommanderFreedom
+=0 HeavyInf
+=0 LightInf
+="true" Mortars
+="true" StarForts
+-1 ResearchPoints
+
+trade TreatyOfGermany1.1, NorthGermanConfederation > ArchduchyOfAustria, 200 Food
+trade TreatyOfGermany1.2, ArchduchyOfAustria > NorthGermanConfederation, 120 Budget
+=0 HeavyInf
+=0 LightInf
+=45000 Militia
+=20000 Musketeers
+=200 Cannons
++0.5 Health
+=5% HighTax
+=6% MediumTax
+=40% LowerTax
++1.25 Wool
++2 LocalTrade
++0.15 Mercantilism
++1.5 Germany
++1.5 Poland
++2 Denmark
++1.5 Baltic
++1.5 Rhine
++1.5 WesternDanube
++1.5 EasternDanube
++0.5 Adriatic
++0.5 CentralMed
++0.5 France
++0.5 EnglishChannel
++0.5 BayOfBiscay
+="true" Newspapers
+-4 CulturalPower
+
+<... > Trades
+<- TreatyOfGermany1
+<- TreatyOfGermany2
+
+<... > Cultures > Westphalian > Opinions
+= -40 Prussian.score
+<... > Cultures > Prussian > Opinions
+= -10 Westphalian.score
+<... > Nations > SwedishKingdom
+-3.5 Germany
+
+<... > Nations > ArchduchyOfAustria
++1900 Budget
++1900 Food
++10 NobleLoyalty.ArchduchyOfAustria
+-10 NobleLoyalty.SelfInterests
++2.5 ClergyLoyalty.ArchduchyOfAustria
+-2.5 ClergyLoyalty.SelfInterests
++1% Artisans
++0.75 Wool
++0.3 Mercantilism
++2.5 LocalTrade
++2.5 AdmEff
++0.05 AgrInf
++1 WestDanube
++1 Adriatic
++1 EastDanube
++0.5 Germany
++0.5 Poland
++0.5 EastMed
++0.5 WestMed
++0.5 Greece
++0.5 Egypt
++0.5 Gibraltar
++0.5 BayOfBiscay
++0.5 WestIberia
++1 Health
++0.25 SocialSpending
++1 EduEff
++0.1 StockingCapabilities
++0.2 NavalImprovements
++1 CommanderFreedom
+="true" Reiters
+="true" StarForts
+-4 ResearchPoints
++6 SmallForts
++1 ExtraCityFortifications
++0.05 MilitaryTactics
++0.05 TrainingQuality
+
+="true" PotatoPopulationBoom
+-4 CulturalPower
+=1.75 Gold
+=7 Iron
+=1.5 Copper
++0.2 MiningEff
+
+<... > Nations > TsardomOfMuscovy
+="true" SocketBayonet
+-2.5 ResearchPoints
+="https://cdn.discordapp.com/attachments/974678756067278939/1013173180258586664/mrflag_tsardomrussia_152_91.jpg" Flag
++0.25 Propaganda
++90 Budget
++3 AdmEff
++0.5 SocialSpending
++4 Sulphur
+="true" ScientificRevolution
+-4 CulturalPower
++1.5 LocalTrade
++0.1 Mercantilism
++1% Burghers
++1% Artisans
++0.15 NavalImprovements
++1.5 Health
++0.15 MilitaryTactics
++0.15 TrainingQuality
+-0.75 EduEff
+-1.5 PopulationControl
+=30 LowerTax
+=10 MediumTax
+=6 HighTax
++0.4 MiningEff
++0.05 AgrAdv
++0.05 AgrSub
+=18000 Musketeers
+=3000 HeavyInfantry 
+=8000 LightCavalry
+=2000 HeavyCavalry
+=4000 Militia
+=140 Cannons
+=11 SiegeEquipment
+=7 LargeSiegeEquipment
+=4 Iron
+=4 Fur
+=6 Coal
++0.75 Wool
++0.75 Fur
++0.5 Novgorod
++0.5 North Nordics
++0.5 Dniepr
++0.5 Don
++0.5 Volga
++0.5 Poland
++0.5 Germany
++0.5 Denmark
++0.5 East Danube
++0.5 BarentsSea
++1709450 Population
++749.67 Budget
++4 Sulphur
+> CultureGroups
++> Oso
+=2 Oso
+=98 Muscovite
+<> ReligionGroups
++>Pagan
+=2 Pagan
+=98 Orthodox
+<... > Nations
++> KingdomOfNorway = KingdomOfDenmark
+<- KingdomOfDenmark
+<... > Nations > KingdomOfNorway
++0.5 Propaganda
++0.25 TrainingQuality
++0.15 MilitaryTactics
++1 CommanderFreedom
++400 Budget
++6 HeavyShips
++24 MediumShips
++0.05 ArmyWages
++2 AdmEff
++0.5 EduEff
++0.5 Propaganda
+=10000 Musketeers
+=4000 Militia
+=500 HeavyCav
+=900 LightCav
+=20 Cannons
++0.5 AdmEff
++2 SmallForts
+="true" Bayonet
+="true" TextileManufactories
+-3 ResearchPoints
+="true" Newspapers
+-4 CulturalPower
++5% HighTax
++5% MediumTax
++5% LowerTax
++1 Denmark
++1 Baltic
++1 NorthSea
++0.5 LocalTrade
++0.05 Mercantilism
+trade OsonianNorwegian1, KingdomOfNorway > TsardomOfMuscovy, 30 Budget
+trade OsonianNorwegian2, TsardomOfMuscovy > KingdomOfNorway, 1.5 Sulphur
+
+<... > Cultures
++> Norwegian
+<... > Cultures > Norwegian > Opinions
++> Alvheimish
+= -25 Alvheimish.score
+<... > Cultures > Alvheimish > Opinions
++> Norwegian
+= -25 Norwegian.score
+<... > Nations > KingdomOfNorway > CultureGroups
++> Norwegian
+-18 Alvheimish
++18 Norwegian
+<... > Nations > NewEngland
+="https://cdn.discordapp.com/attachments/989179006505066506/1014849404399796315/unknown.png" Flag
++192651 Population
++69.26 Budget
+
+<... > Nations > RepublicOfLaPlata
+="true" PotatoPopulationBoom
+-4 CulturalPower
++0.05 AgrAdv
++109 Budget
+=3000 Musketeers
+=6000 Militia
+=20 cannons
+=30 heavy ships
+=30 medium ships
+=30 light ships
++0.2 MiningEff
++0.5 LaPlata
++0.5 Patagonia
+=2 Coal
+=1 Sulphur
+=1 Gold
+=1 Iron
+=1 Silver
+<... > Nations > TexasTribes
++400 Budget
+
++0.35 MilitaryTactics
++0.1 TrainingQuality
++0.05 NavalImprovements
+
+="true" Bayonet
+="true" SocketBayonet
+-4 ResearchPoints
+="true" PotatoPopulationBoom
+-4 CulturalPower
+
++0.5 LocalTrade
++0.75 Propaganda
++0.5 AdmEff
+-10% NobleInfluence
++5% ClergyInfluence
+
+=25% LowerTax
+=23% MediumTax
+=10% HighTax
+
++1694 light cavalry 
++1096 musketeers 
++3288 levies
++6 cannons
++1150 light infantry 
++100 heavy infantry 
++649  militia
++0.2 Fur
+
++0.5 Gulf Of Mexico 
++0.5 East coast
++0.5 Louisiana
++0.5 Carribean 
++0.5 Great Lakes
+
+<... > BlackfeetConfederation
++0.2 Tobacco
+<... > Nations > TainoTribalConfederacy
++0.75 EduEff
+="true" Metallurgy
+="true" Galleons
+="true" Fluyt
+="true" Bayonet
+-5.5 ResearchPoints
++1 AdmEff
+="true" ScientificRevolution
+-4 CulturalPower
++0.05 StockingCapabilities
+
+trade SiouxTaino1, SiouxTribes > TainoTribalConfederacy, 1.5 Iron
+trade SiouxTaino2, SiouxTribes > TainoTribalConfederacy, 1 Coal
+trade SiouxTaino3, TainoTribalConfederacy > SiouxTribes, .4 Cotton
+trade SiouxTaino4, TainoTribalConfederacy > SiouxTribes, .21 Cocoa
+trade SiouxTaino5, TainoTribalConfederacy > SiouxTribes, .75 Sugar
+<... > Nations > BlackfeetConfederation
++0.2 TrainingQuality
++0.2 MilitaryTactics
++4400 Population
++0.15 MiningEff
++0.05 AgrInf
+="true" RenaissanceThought
+-4 CulturalPower
++1.5 AdmEff
+-10% NobleInfluence
+-5% ClergyInfluence
++5 ClergyLoyalty.BlackfeetConfederation
+-5 ClergyLoyalty.SelfInterests
++5 BurghersLoyalty.BlackfeetConfederation
+-5 BurghersLoyalty.SelfInterests
+
+="true" SocketBayonet
+="true" Mortars
+-3 ResearchPoints
+<... > Nations > SiouxTribes
+="true" Fluyt
+="true" Flintlock
++0.1 AgrInf
++0.05 AgrAdv
+
+=1000 Musketeers
+=500 HeavyInfantry
+=300 HeavyCav
+-700 Budget
++0.5 AdmEff
++0.1 NavalImprovements 
+="true" PotatoPopulationBoom
+-4 CulturalPower
+
++0.5 Louisiana 
++0.5 Gulf of Mexico
++0.5 Central America 
++1 Carribean
++0.5 East Coast
++0.5 Lawrence Gulf 
++0.5 Cote D Ivoire
+
+=4 Iron
+=2 Sulphur
++0.75 Wool
++0.75 Cotton
++0.75 Tobacco
++0.75 Sugar
++0.75 Cocoa
+
+trade BlackSioux1, BlackfeetConfederation > SiouxTribes, 17 Budget
+trade BlackSioux2, SiouxTribes > BlackfeetConfederation, .5 Sulphur
+
++20 HeavyShips
+
+<... > Nations > VespucianTribes
+=4 Coal
+=6 Sulphur
+=1 Gold
+=6 Iron
+=2.25 Fur
+=2 Copper
++0.75 Cotton
++0.75 Wool
++0.75 Tobacco
+=0 HeavyInf
+=10944 Musketeers
+=2130 Militia
+=2046 LightInf
+=168 Cannons
+=1056 HeavyCav
+=704 LightCav
++200 Budget
+
++3.5 Adm
++1 LocalTrade
++0.1 Mercantilism
++0.05 TrainingQuality
++0.05 MilitaryTactics
++0.05 NavalImprovements
++0.5 CommanderFreedom
++0.5% MilitaryDiscipline
++0.15 ArmyWages
+
+="true" Mortars
+-0.5 ResearchPoints
+="true" ScientificRevolution
+-4 CulturalPower
+
+trade TreatyOfPittsburgh1, VespucianTribes > Byzantium, 0.75 Fur
+trade TreatyOfPittsburgh2, Byzantium > VespucianTribes, 0.25 Tea
+trade TreatyOfPittsburgh3, Byzantium > VespucianTribes, 0.75 Spices
+trade SecondFood1, VespucianTribes > SiouxTribes, 100 Budget
+trade SecondFood2, SiouxTribes > VespucianTribes, 4000 Food
+
++1 SeaOfJapan
++1 NorthChina
++1 YangtzeRiver
++0.5 North India
++0.5 Burma
++0.5 South East Asia
++0.5 North Australia
++0.5 South Australia
++0.5 South China
+ 
+<... > Nations > Byzantium
+-100 Budget
+-400 Food
++5760 Militia
++300 Budget
++0.5 AdmEff
++1.5 LocalTrade
++0.05 TrainingQuality
++0.5% MilitaryDiscipline
++0.05 ArmyWages
+=18 SmallForts
++0.25 NavalImprovements
++0.1 Mercantilism
++1 Greece
++1 Northern Anatolia
++1 Eastern Mediterranean
++1 Egypt
++1 Crimea
++1 Mozambique
++0.5 South Africa
++0.5 West India
++0.5 East Africa
++0.5 Somalia
++0.5 Persian Gulf
++0.5 Pakistan
++0.5 East India
++0.5 North India
++0.5 Burma
++0.5 South East Asia
++0.5 Kongo
++0.5 Nigeria
++0.5 Cote D Ivoire
++0.5 Rio Grande
++0.5 La Plata
++0.5 Guyana And Suriname
++0.5 Central America
++0.5 Gulf Of Mexico
++0.5 Louisiana
++0.5 East Coast
++0.5 Western Sahara
++0.5 Gibraltar
++0.5 West Iberia
++0.5 Bay Of Biscay
++0.5 France
++0.5 English Channel
++0.5 British Isles
++0.5 Rhine
++0.5 Germany
++0.5 Denmark
++0.5 Poland
++0.5 Eastern Danube
++0.5 Dniepr
++0.5 Baltic
++0.5 Novgorod
++0.5 Red Sea
++0.5 Central Mediterranean
++0.5 Adriatic
++0.5 Sea of Japan
++0.5 South China
++0.5 Carribean
++0.5 South Africa
++0.5 West India
++0.5 East Africa
++0.5 Somalia
++0.5 Persian Gulf
++0.5 Pakistan
++0.5 East India
++0.5 North India
++0.5 Burma
++0.5 South East Asia
++0.5 Kongo
++0.5 Nigeria
++0.5 Cote D Ivoire
++0.5 Rio Grande
++0.5 La Plata
++0.5 Guyana And Suriname
++0.5 Central America
++0.5 Gulf Of Mexico
++0.5 Louisiana
++0.5 East Coast
++0.5 Western Sahara
++0.5 Gibraltar
++0.5 West Iberia
++0.5 Bay Of Biscay
++0.5 France
++0.5 English Channel
++0.5 British Isles
++0.5 Rhine
++0.5 Germany
++0.5 Denmark
++0.5 Poland
++0.5 Eastern Danube
++0.5 Dniepr
++0.5 Baltic
++0.5 Novgorod
++0.5 Red Sea
++0.5 Central Mediterranean
++0.5 Adriatic
++0.5 Sea of Japan
++0.5 South China
++0.5 Carribean
+="true" PotatoPopulationBoom
+-4 CulturalPower
+<... > Nations > Bosnia  
+>Religion Groups
++ 2 Orthodox
+- 2 Catholic 
+<... > Nations > The Faithful Kingdom  
+>Religion Groups
++ 2 Orthodox
+- 2 Catholic
+<... > Nations > Valublid Sultanate  
+>Religion Groups
++ 2 Orthodox
+- 2 Muslim
+ <... > Nations > Arberber Kingdom
+>Religion Groups
++ 2 Orthodox
+- 2 Jewish
+<... > Nations > Mitiva
+>Religion Groups
++ 2 Orthodox
+- 2 Muslim
+<... > Nations > Aden Caliphate
+>Religion Groups
++ 2 Orthodox
+- 2 Muslim
+<... > Nations > Zi Empire
+>Religion Groups
++ 2 Orthodox
+- 2 Pagan
+<... > Nations > Mayan Empire
+>Religion Groups
++ 2 Orthodox
+- 2 Pagan
+<... > Nations > Taino Tribal Confederacy
+>Religion Groups
++ 2 Orthodox
+- 2 Pagan
+<... > Nations > Texas Tribes 
+>Religion Groups
++ 2 Orthodox
+- 2 Pagan
+<... > Nations > Aztec Empire
+>Religion Groups
++ 2 Orthodox
+- 2 Pagan
+<... > Nations > Kingdom Of Balanto
+>Religion Groups
++ 2 Orthodox
+- 2 Pagan
+<... > Nations > Kingdom Of Maharlika
+>Religion Groups
++ 2 Orthodox
+- 2 Pagan
+<... > Nations > Republic Of La Plata 
+>Religion Groups
++ 2 Orthodox
+- 2 Pagan
+<... > Nations > Nova Kreta
+="true" ScientificRevolution 
+-4 CulturalPower
+<... > Nations > Nova Anatolia
+="true" ScientificRevolution
+-4 CulturalPower 
+
+trade LaosKyrat1, KingdomOfKyrat > KingdomOfLao, .5 Sulphur
+trade LaosKyrat2, KingdomOfKyrat > KingdomOfLao, .2 Gold
+trade LaosKyrat3, KingdomOfKyrat > KingdomOfLao, .3 Iron
+trade LaosKyrat4, KingdomOfLao > KingdomOfKyrat, .5 Copper
+trade LaosKyrat5, KingdomOfLao > KingdomOfKyrat, .3 Ivory
+trade LaosKyrat6, KingdomOfLao > KingdomOfKyrat, .35 ExoticFruits
+
+<...> Trades
+<- TreatyOfTabonTabon
+<- TreatyOfKotka1
+<- TreatyOfKotka2
+<- TreatyOfOso1
+<- TreatyOfOso2
+<- TreatyOfOso3
+<- PermaAgreement1
+<- PermaAgreement2
+<- PermaAgreement3
+<- TreatyOfHouston1
+<- TreatyOfHouston2
+
+<... > Nations > SwedishKingdom
+-500 Budget
+
++0.6 TrainingQuality
++0.65 MilitaryTactics
++5.5% MilitaryDiscipline
++1.1 NavalImprovements
++0.1 ArmyWages
++1 CommanderFreedom
++0.05 SpyQuality
+
+="true" Bayonet
+="true" SocketBayonet
+="true" Experimentation
+-7 ResearchPoints
+="true" NationalSovereignity
+-4 CulturalPower
+
++80 Spies
+=3000 HeavyInf
+=25000 Musketeers
+=3000 LightCav
+=12000 HeavyCav
+=230 Cannons
+=1000 EliteCav
+=79 LightShips
+=47 Mediumships
+=18 HeavyShips
+
++7.5 NobleLoyalty.SwedishKingdom
+-7.5 NobleLoyalty.SelfInterests
++10 BurghersLoyalty.SwedishKingdom
+-10 BurghersLoyalty.SelfInterests
++5 ClergyLoyalty.SwedishKingdom
+-5 ClergyLoyalty.SelfInterests
+-5% BurghersInfluence
+-10% NobleInfluence
+
++9 AdmEff
++0.2 CulturalProsperity
++0.6 MiningEff
++0.05 ResearchEffectiveness
++0.5 PopulationControl
++0.75 Propaganda
++0.55 Mercantilism
++7 LocalTrade
++4% Artisans
++0.15 AgrAdv
++0.3 AgrInf
++0.1 AgrSub
++1 Health
+=5% HighTax
+=5% MediumTax
+=30% LowerTax
+
+=6 Iron
+=2 Fur
+=1.25 Silver
+=0.25 Copper
+
++3.5 NorthSea
+=0.5 Germany
++4.5 Denmark
++4.5 Baltic
++3.5 NorthNordics
++4 Novgorod
++3.5 Poland
++1.5 Rhine
++1 EnglishChannel
++1 BarentsSea
++1 Amazon
++1 HudsonBay
++1 LawrenceGulf
+
+<... > TradeZones
+-0.75 Germany
+-0.75 Baltic
+
+<... > Nations > LatvianEmpire
++1 AdmEff
+
+> CultureGroups
++>Swedish
+=22 Swedish
+=78 Latvian
+<> ReligionGroups
+=13 Protestant
+=13 Orthodox
+=44 Pagan
+=20 Catholic
+
+<... > Nations > KingdomOfNorway
+
+=0.5 Baltic
+-.25 Denmark
+> CultureGroups
++>Swedish
+=66 Alvheimish
+=20 Norwegian
+=14 Swedish
+
+<> ReligionGroups
+=6 Protestant
+=74 Pagan
+=20 Catholic
+
+<... > Nations > TsardomOfMuscovy
+
+> CultureGroups
++>Swedish
+=97 Muscovite
+=3 Swedish
+<> ReligionGroups
+=97 Orthodox
+=3 Catholic
+
+trade SwedeRus1, SwedishKingdom > TsardomOfMuscovy, 15 Budget
+trade SwedeRus2, TsardomOfMuscovy > SwedishKingdom, 1 Sulphur
+trade TreatyOfTainoSwedishTrade1, SwedishKingdom > TainoTribalConfederacy, 50 Budget
+trade TreatyOfTainoSwedishTrade2, TainoTribalConfederacy > SwedishKingdom, 1.5 Sulphur
+
+<... > Nations > EmpireOfJapan
++6145588 Population
++718.9 Budget
++2 Coal
++4 Sulphur
++3 Iron
++1.5 Copper
++.5 Cotton
++2 Gold
++.5 Tea
++0.5 Coffee
+> ReligionGroups
+=24 Pagan
+=76 Shinto
+<> CultureGroups
++> Maguidanaoan
+=24 Maguidanaoan
+=11 Chinese
+=65 Japanese
+<
+="false" atwar
+<.
+<- KingdomOfPhilian
+
+<... > Nations > CumanKipchakKhanate
++1120 heavy cav
++18200 militia
++11400 Musketeers
++378 cannons
++1120 light cav
+
+<... > Nations > AztecEmpire
+#template NPC UPDATE
++0.5 health
++0.5 propaganda
++2.5 adm
++1.5 localtrade
++0.15 mercantilism
++0.3 Tactics
++0.3 Training
++1.5% discipline
++0.3 navalimprovements
++0.05 agradv
++1% artisans
++0.15% burghers
++0.15 miningeff
++0.5 edueff
+
+#Extra Stuff
+="MexicoCity" CapitalName
+-5% nobleinf
++0.5 edueff
+=1 isolation
++1 Gulf Of Mexico
++0.5 Carribean
++0.5 Central America
+-6 researchpoints
+="true" StarForts
+="true" TextileManufactories
+="true" Reiters
+="true" MiningCarts
+="true" HumanAnatomy
+="true" Mortars
+="true" Metallurgy
+="true" Experimentation
+-4 culturalpower
+="true" EarlyModernAdministration
+="true" Newspapers
+=2 iron
+=3 gold
+=2 sulphur
+=3.5 coal
++0.5 edueff
+
+<... > Nations > Mayan Empire
+#template NPC UPDATE
++0.5 health
++0.5 propaganda
++2.5 adm
++1.5 localtrade
++0.15 mercantilism
++0.3 Tactics
++0.3 Training
++1.5% discipline
++0.3 navalimprovements
++0.05 agradv
++1% artisans
++0.15% burghers
++0.15 miningeff
++0.5 edueff
+
+#Extra Stuff
++0.5 Carribean
++0.5 Central America
+-6.5 researchpoints
+="true" metallurgy
+="true" Experimentation
+="true" Fluyt
+="true" flintlock
+-5 culturalpower
+="true" newspapers
+="true" National Sovereignity
++0.5 edueff
+
+<... > Nations > KingdomOfIreland
+#template NPC UPDATE
++0.5 health
++0.5 propaganda
++2.5 adm
++1.5 localtrade
++0.15 mercantilism
++0.3 Tactics
++0.3 Training
++1.5% discipline
++0.3 navalimprovements
++0.05 agradv
++1% artisans
++0.15% burghers
++0.15 miningeff
++0.5 edueff
+
+#Extra Stuff
+=25% lowtax
++0.5 North Sea
++0.5 British Isles
++0.5 English Channel
++0.5 France
+-7 researchpoints
+="true" Experimentation
+="true" Fluyt
+="true" Flintlock
+="true" Bayonet
+-6 culturalpower
+="true" newspapers
+="true" ScientificRevolution
+=0 lightinf
+=400 heavyinf
+=1600 musketeers
+=0 militia
+=500 lightcav
++0.5 edueff
+
+<... > Nations > LatvianEmpire
+#template NPC UPDATE
++0.5 health
++0.5 propaganda
++2.5 adm
++1.5 localtrade
++0.15 mercantilism
++0.3 Tactics
++0.3 Training
++1.5% discipline
++0.3 navalimprovements
++0.05 agradv
++1% artisans
++0.15% burghers
++0.15 miningeff
++0.5 edueff
+
+#Extra Stuff
+="Riga" Capitalname
++1 Baltic
+-7.5 researchpoints
+="true" StarForts
+="true" Textile Manufactories
+="true" Reiters
+="true" Mining Carts
+="true" Metallurgy
+="true" Bayonet
+="true" SocketBayonet
+-5 culturalpower
+="true" newspapers
+="true" NationalSovereignity
+=0 levies
+=0 militia
+=0 lightinf
+=0 heavyinf
+=10000 Musketeers
+=500 lightcav
+=500 heavycav
+=100 cannons
+=0 siegeeq
+=0 largesiegeeq
+=20% mediumtax
+=22.5% lowertax
++0.5 edueff
+
+<...
+trade LatvianArberberNPCTrade1, ArberberKingdom > LatvianEmpire, 1.5 sulphur
+trade LatvianArberberNPCTrade2, ArberberKingdom > LatvianEmpire, 0.3 iron
+trade LatvianArberberNPCTrade3, LatvianEmpire > ArberberKingdom, 20 budget
+
+<... > Nations > ArberberKingdom
+#template NPC UPDATE
++0.5 health
++0.5 propaganda
++2.5 adm
++1.5 localtrade
++0.15 mercantilism
++0.3 Tactics
++0.3 Training
++1.5% discipline
++0.3 navalimprovements
++0.05 agradv
++1% artisans
++0.15% burghers
++0.15 miningeff
++0.5 edueff
+
+#Extra Stuff
++750 budget
++0.5 English Channel
++0.5 France
++0.5 Bay Of Biscay
++0.5 West Iberia
++1 Gibraltar
++1 Western Mediterranean
++1 Central Mediterranean
++1 Adriatic
++1 Greece
++1 Eastern Mediterranean
++1 Egypt
++0.5 Crimea
++0.5 Northern Anatolia
+-7.5 researchpoints
+="true" Mortars
+="true" MiningCarts
++0.25 miningeff
+="true" Metallurgy
+="true" Fluyt
+="true" Experimentation
+="true" flintlock
+-6 culturalpower
+="true" Scientific Revolution
+="true" Newspapers
+=5.75 sulphur
+=1 iron
+=1 gold
+=25% mediumtax
+=30% lowertax
++0.5 edueff
+
+<... > Nations > mitiva
+#template NPC UPDATE
++0.5 health
++0.5 propaganda
++2.5 adm
++1.5 localtrade
++0.15 mercantilism
++0.3 Tactics
++0.3 Training
++1.5% discipline
++0.3 navalimprovements
++0.05 agradv
++1% artisans
++0.15% burghers
++0.15 miningeff
++0.5 edueff
+
+#Extra Stuff
+="Cairo" CapitalName
+=25% lowertax
+=20% mediumtax
+=20% hightax
++1 Egypt
++1 Red Sea
++0.5 South Nile
++1 Greece
++1 Eastern Mediterranean
++0.5 Central Mediterranean
+-7.5 researchpoints
+="true" StarForts
+="true" TextileManufactories
+="true" Reiters
+="true" MiningCarts
+="true" Mortars
+="true" Metallurgy
+="true" Experimentation
+="true" Flintlock
+-6 culturalpower
+="true" Newspapers
+="true" Scientific Revolution
+=0.75 iron
+=1.25 gold
+=1500 Heavy Inf
+=4500 Musketeers
+=750 lightcav
+=250 heavycav
+=50 cannons
++0.5 edueff
+<...
+trade MitivanArberberNPCTrade1, ArberberKingdom > Mitiva, 1 sulphur
+trade MitivanArberberNPCTrade2, Mitiva > ArberberKingdom, 10 budget
+
+<... > Nations > Kingdom Of Bornu
+#template NPC UPDATE
++0.5 health
++0.5 propaganda
++2.5 adm
++1.5 localtrade
++0.15 mercantilism
++0.3 Tactics
++0.3 Training
++1.5% discipline
++0.3 navalimprovements
++0.05 agradv
++1% artisans
++0.15% burghers
++0.15 miningeff
++0.5 edueff
+
+#Extra Stuff
++1 Cote D Ivoire
++1 Nigeria
++1 Kongo
+-5 researchpoints
+="true" gunports
+="true" Experimentation
+="true" Fluyt
+="true" Flintlock
+-3.5 culturalpower
+="true" Scientific Revolution
+=0.5 coal
+=1 iron
+=2 ivory
+=0 heavyinf
+=10000 musketeers
+=500 lightcav
+=500 heavycav
+=100 cannons
++0.5 edueff
+
+<... > Nations > Kingdom Of Balanto
+#template NPC UPDATE
++0.5 health
++0.5 propaganda
++2.5 adm
++1.5 localtrade
++0.15 mercantilism
++0.3 Tactics
++0.3 Training
++1.5% discipline
++0.3 navalimprovements
++0.05 agradv
++1% artisans
++0.15% burghers
++0.15 miningeff
++0.5 edueff
+
+#Extra Stuff
++1 Western Sahara
++1 Cote D Ivoire
++1 Nigeria
++0.5 Kongo
++1 Gibraltar
++1 Guyana And Suriname
++1 Amazon
++1 Rio Grande
+-7.5 researchpoints
+="true" Experimentation
+="true" Bayonet
+="true" Socket Bayonet
+="true" Flintlock
+-6 culturalpower
+="true" Scientific Revolution
+="true" National Sovereignity
+=2 coal
+=5.5 gold
+=0.75 diamonds
+=0.25 ivory
+=2 iron
+=0 heavyinf
+=10000 musketeers
+=500 lightcav
+=500 heavycav
+=100 cannons
+=20 lightships
+=20 mediumships
+=20 heavyships
++0.5 edueff
+ 
+<... > Nations > Songhai
+#template NPC UPDATE
++0.5 health
++0.5 propaganda
++2.5 adm
++1.5 localtrade
++0.15 mercantilism
++0.3 Tactics
++0.3 Training
++1.5% discipline
++0.3 navalimprovements
++0.05 agradv
++1% artisans
++0.15% burghers
++0.15 miningeff
++0.5 edueff
+
+#Extra Stuff
++1 Cote D Ivoire
++1 Nigeria
+-7.5 researchpoints
+="true" Experimentation
+="true" Bayonet
+="true" Socket Bayonet
+="true" Flintlock
+-3.5 culturalpower
+="true" Scientific Revolution
+=2 ivory
+=2.5 gold
+=2 coal
+=1.25 diamonds
+=0 heavyinf
+=10000 musketeers
+=500 lightcav
+=500 heavycav
+=100 cannons
++0.5 edueff
+
+<... > Nations > Kingdom Of Potskig
+#template NPC UPDATE
++0.5 health
++0.5 propaganda
++2.5 adm
++1.5 localtrade
++0.15 mercantilism
++0.3 Tactics
++0.3 Training
++1.5% discipline
++0.3 navalimprovements
++0.05 agradv
++1% artisans
++0.15% burghers
++0.15 miningeff
++0.5 edueff
+
+#Extra Stuff
++1 NorthIndia
++1 EastIndia
++1 WestIndia
+-7.5 researchpoints
+="true" metallurgy
+="true" flintlock
+="true" bayonet
+="true" socketbayonet
+-5 culturalpower
+="true" nationalsovereignity
+="true" newspapers
+=2 iron
+=2 sulphur
+=3 ivory
++0.5 spices
++0.5 tea
+=0 levies
++1500 light cavalry
++1000 heavy cavalry
++1200 musketeers
++2000 militia 
++5 cannons
++2 heavyships
++5 mediumships
++10 lightships
++4000 militia
++2500 musketeers
++15 cannons
++10 heavy ships
++15 medium ships
++20 light ships 
++1000 musketeers 
++3000 militia
++3000 musketeers
++2000 militia
++20 light ships
++16 medium ships
++10 heavy ships
++10 cannons
++0.5 edueff
+ 
+<... > Nations > ZiEmpire
+#template NPC UPDATE
++0.5 health
++0.5 propaganda
++2.5 adm
++1.5 localtrade
++0.15 mercantilism
++0.3 Tactics
++0.3 Training
++1.5% discipline
++0.3 navalimprovements
++0.05 agradv
++1% artisans
++0.15% burghers
++0.15 miningeff
++0.5 edueff
+
+#Extra Stuff
+="Baghdad" capitalname
+=22.5% lowertax
++0.5 socialspending
++2 adm
++1.5 Mesopotamia
++1.5 Persian Gulf
++1 Caucasus
++1 Iran
++1 Eastern Mediterranean
+-7.5 researchpoints
+="true" galleons
+="true" Fluyt
+="true" Bayonet
+="true" SocketBayonet
+="true" Flintlock
+-4 culturalpower
+="true" Potato Population Boom
+=3.5 sulphur
+=3 iron
+=2 copper
+=0 levies
+=0 militia
+=0 lightinf
+=0 heavyinf
+=10000 musketeers
+=500 lightcav
+=500 heavycav
+=80 cannons
++0.5 edueff
+
+<... > Nations > ZhengRuDynasty
+#template NPC UPDATE
++0.5 health
++0.5 propaganda
++2.5 adm
++1.5 localtrade
++0.15 mercantilism
++0.3 Tactics
++0.3 Training
++1.5% discipline
++0.3 navalimprovements
++0.05 agradv
++1% artisans
++0.15% burghers
++0.15 miningeff
++0.5 edueff
+
+#Extra Stuff
+=15% hightax
+=17.5% mediumtax
+=22.5% lowertax
++1 Manchuria
++1 Sea Of Japan
++1 North China
++1 Yangtze River
++1 South China
+-7.5 researchpoints
+="true" Matchlock
+="true" Star Forts
+="true" Textile Manufactories
+="true" Reiters
+="true" Mining Carts
+="true" Human Anatomy
+="true" Mortars
+="true" Printing Press
+="true" Metallurgy
+="true" Experimentation
+-6 culturalpower
+="true" Renaissance Thought
+="true" National Sovereignity
+="true" Newspapers
+=4 iron
+=4 coal
++1 tea
++1 silk
+=0 lightinf
+=2000 heavyinf
+=4000 musketeers
+=0 siegeeq
+=60 cannons
++0.5 edueff
+=1000 heavycav
+=20 mediumships
+=20 heavyships
+
+<... > Nations > Sashimo Kingdom
+#template NPC UPDATE
++0.5 health
++0.5 propaganda
++2.5 adm
++1.5 localtrade
++0.15 mercantilism
++0.3 Tactics
++0.3 Training
++1.5% discipline
++0.3 navalimprovements
++0.05 agradv
++1% artisans
++0.15% burghers
++0.15 miningeff
++0.5 edueff
+
+#Extra Stuff
++1 Sea Of Japan
++1 Manchuria
+-7.5 researchpoints
+="true" experimentation
+="true" bayonet
+="true" socket bayonet
+="true" flintlock
+-6 culturalpower
+="true" newspapers
+="true" Scientific Revolution
+=2 copper
+=4 gold
+=3 coal
+=1 fur
++0.5 edueff
+
+<... > Nations > Menzen Confederation
+#template NPC UPDATE
++0.5 health
++0.5 propaganda
++2.5 adm
++1.5 localtrade
++0.15 mercantilism
++0.3 Tactics
++0.3 Training
++1.5% discipline
++0.3 navalimprovements
++0.05 agradv
++1% artisans
++0.15% burghers
++0.15 miningeff
++1 edueff
+
+#Extra Stuff
++1 Manchuria
++1 Sea Of Japan
++0.5 Mongolia
+-7.5 researchpoints
+="true" Experimentation
+="true" Bayonet
+="true" Socket Bayonet
+="true" Flintlock
+-6 culturalpower
+="true" National Sovereignity
+="true" Scientific Revolution
+=2.5 iron
+=2.5 coal
+=0 heavyinf
+=5000 musketeers
+=40 cannons
+<... > Nations > Kingdom Of Avanorolsk
+#template NPC UPDATE
++0.5 health
++0.5 propaganda
++2.5 adm
++1.5 localtrade
++0.15 mercantilism
++0.3 Tactics
++0.3 Training
++1.5% discipline
++0.3 navalimprovements
++0.05 agradv
++1% artisans
++0.15% burghers
++0.15 miningeff
++1 edueff
+
+#Extra Stuff
++1 Manchuria
++1 East Siberia
+-6 researchpoints
+="true" Bayonet
+="true" Socket Bayonet
+="true" Flintlock
+-6 culturalpower
+="true" Scientific Revolution
+="true" Newspapers
+=0 heavyinf
+=2500 musketeers
+=25 cannons
+=0 Public Debt Taken
+-104.62 budget
+<... > Nations > Zelenva Union
+#template NPC UPDATE
++0.5 health
++0.5 propaganda
++2.5 adm
++1.5 localtrade
++0.15 mercantilism
++0.3 Tactics
++0.3 Training
++1.5% discipline
++0.3 navalimprovements
++0.05 agradv
++1% artisans
++0.15% burghers
++0.15 miningeff
++1 edueff
+
+#Extra Stuff
++1 North Australia
++1 South Australia
+-6.5 researchpoints
+="true" Metallurgy
+="true" Experimentation
+="true" Fluyt
+="true" Flintlock
+-6 culturalpower
+="true" Newspapers
+="true" Scientific Revolution
+=2 sulphur
++2000 budget
+
+<... > Nations > TsardomOfMuscovy
+="true" SocketBayonet
+-2.5 ResearchPoints
+="https://cdn.discordapp.com/attachments/974678756067278939/1013173180258586664/mrflag_tsardomrussia_152_91.jpg" Flag
++0.25 Propaganda
++90 Budget
++3 AdmEff
++0.5 SocialSpending
++4 Sulphur
+="true" ScientificRevolution
+-4 CulturalPower
++1.5 LocalTrade
++0.1 Mercantilism
++1% Burghers
++1% Artisans
++0.15 NavalImprovements
++1.5 Health
++0.15 MilitaryTactics
++0.15 TrainingQuality
+-0.75 EduEff
+-1.5 PopulationControl
+=30 LowerTax
+=10 MediumTax
+=6 HighTax
++0.4 MiningEff
++0.05 AgrAdv
++0.05 AgrSub
+=18000 Musketeers
+=3000 HeavyInfantry 
+=8000 LightCavalry
+=2000 HeavyCavalry
+=4000 Militia
+=140 Cannons
+=11 SiegeEquipment
+=7 LargeSiegeEquipment
+=4 Iron
+=4 Fur
+=6 Coal
++0.75 Wool
++0.75 Fur
++0.5 Novgorod
++0.5 North Nordics
++0.5 Dniepr
++0.5 Don
++0.5 Volga
++0.5 Poland
++0.5 Germany
++0.5 Denmark
++0.5 East Danube
++0.5 BarentsSea
++1709450 Population
++749.67 Budget
++4 Sulphur
+> CultureGroups
++> Oso
+=2 Oso
+=98 Muscovite
+<> ReligionGroups
++>Pagan
+=2 Pagan
+=98 Orthodox
+trade RussoNorwegian1, KingdomOfNorway > TsardomOfMuscovy, 1 Silver
+trade RussoNorwegian2, TsardomOfMuscovy > KingdomOfNorway, 1 Sulphur
