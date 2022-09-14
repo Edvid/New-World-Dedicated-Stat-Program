@@ -2237,5 +2237,5 @@ trade MitivanArberberNPCTrade2, Mitiva > ArberberKingdom, 10 budget
 =98 Orthodox
 trade RussoNorwegian1, KingdomOfNorway > TsardomOfMuscovy, 1 Silver
 trade RussoNorwegian2, TsardomOfMuscovy > KingdomOfNorway, 1 Sulphur
-
+<...
 sync
