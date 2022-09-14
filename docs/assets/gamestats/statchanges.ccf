@@ -1428,9 +1428,7 @@ trade TreatyOfTainoSwedishTrade2, TainoTribalConfederacy > SwedishKingdom, 1.5 S
 =24 Maguidanaoan
 =11 Chinese
 =65 Japanese
-<
-="false" atwar
-<.
+<... > nations
 <- KingdomOfPhilian
 
 <... > Nations > CumanKipchakKhanate
