@@ -2186,4 +2186,6 @@ trade MitivanArberberNPCTrade2, Mitiva > ArberberKingdom, 10 budget
 trade RussoNorwegian1, KingdomOfNorway > TsardomOfMuscovy, 1 Silver
 trade RussoNorwegian2, TsardomOfMuscovy > KingdomOfNorway, 1 Sulphur
 <...
+trade VespucianCuthsburyFoodTrade1, VespucianTribes > NewCuthsbury, 600 food
+trade VespucianCuthsburyFoodTrade2, NewCuthsbury > VespucianTribes, 60 budget
 sync
