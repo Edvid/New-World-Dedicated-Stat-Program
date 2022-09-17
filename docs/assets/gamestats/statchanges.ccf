@@ -2599,6 +2599,15 @@ sync
 +> NewBanzai = EmpireOfJapan
 > NewBanzai
 =100000 pop
+> CultureGroups
+=0 Maguidanaoan
+=0 Chinese
+=100 Japanese
+<
+> ReligionGroups
+=0 Pagan
+=100 shinto
+<
 ="false" AtWar
 =15 Budget
 =0 Spies
@@ -2758,6 +2767,15 @@ sync
 +> NewNagasaki = EmpireOfJapan
 > NewNagasaki
 =100000 pop
+> CultureGroups
+=0 Maguidanaoan
+=0 Chinese
+=100 Japanese
+<
+> ReligionGroups
+=0 Pagan
+=100 shinto
+<
 ="false" AtWar
 =15 Budget
 =0 Spies
@@ -2918,6 +2936,15 @@ sync
 +> NewShangai = EmpireOfJapan
 > NewShangai
 =100000 pop
+> CultureGroups
+=0 Maguidanaoan
+=0 Chinese
+=100 Japanese
+<
+> ReligionGroups
+=0 Pagan
+=100 shinto
+<
 ="false" AtWar
 =15 Budget
 =0 Spies
