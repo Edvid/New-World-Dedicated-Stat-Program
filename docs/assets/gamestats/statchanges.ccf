@@ -2933,8 +2933,8 @@ sync
 =352 Moderate.Pixels
 
 <... > Nations
-+> NewShangai = EmpireOfJapan
-> NewShangai
++> NewShanghai = EmpireOfJapan
+> NewShanghai
 =100000 pop
 > CultureGroups
 =0 Maguidanaoan
@@ -3096,7 +3096,7 @@ sync
 =0 NorthAustralia.tp
 =0 SouthAustralia.tp
 
-<... > Nations > New Shangai > Climates
+<... > Nations > NewShanghai > Climates
 #Japanese Ecuador
 =457 SubTropical.Pixels
 =641 Arid.Pixels
