@@ -3272,6 +3272,8 @@ sync
 #Swedish Brazil
 =6655 Tropical.Pixels
 =3171 SubTropical.Pixels
+<
+=0 copper
 
 <... > Cultures
 +> Konoga
@@ -3300,3 +3302,12 @@ sync
 > religiongroups
 =16 catholic
 =80 protestant
+
+<... > nations > NewBanzai
+=0 copper
+
+<... > nations > NewShanghai
+=0 copper
+
+<... > nations > NewNagasaki
+=0 copper
