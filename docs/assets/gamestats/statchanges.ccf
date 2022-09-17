@@ -3288,3 +3288,15 @@ sync
 =2888 Tropical.Pixels
 =7324 SubTropical.Pixels
 =2326 Savanna.Pixels
+
+<... > nations > NewWales
+-100000 pop
+> religiongroups
+=96 catholic
+=0 protestant
+
+<... > nations > NewCork
+=100000 pop
+> religiongroups
+=16 catholic
+=80 protestant
