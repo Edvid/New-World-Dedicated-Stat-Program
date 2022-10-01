@@ -1,0 +1,16 @@
+# Use at end of development of this branch, then download those changes and merge into main
+
+> Nations
+
+> Japan
++> Color
+= Color "#ff0000"
++> MaxCoal
++> MaxSulphur
++> MaxIron
++> MaxCopper
++> MaxGold
++> MaxDiamond
++> MaxSilver
+
+
