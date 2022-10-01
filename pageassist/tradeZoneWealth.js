@@ -156,7 +156,7 @@ async function onLoadStatTradeZoneWealth() {
                 title.innerText = ColorToZoneNamePair[1].capitalSpacing();
                 zonewealth.innerText = gameStats.TradeZones[ColorToZoneNamePair[1]];
                 let chartdiv = zoneinfluencerschart(ColorToZoneNamePair[1]);
-                zoneinfluencers.    innerHTML = "";
+                zoneinfluencers.innerHTML = "";
                 zoneinfluencers.appendChild(chartdiv);
 
                 zonewealthname.style.background = col;
@@ -172,8 +172,6 @@ function zoneinfluencerschart(zoneName){
     let chartdiv = document.createElement("div");
     chartdiv.style.margin = ".5em";
     chartdiv.style.textAlign = "center";
-    chartdiv.style.width = "500px";
-    chartdiv.style.height = "360px";
     chartdiv.style.border = "3px solid black";
     
     let ObjectToChartNationRef = new Object();
@@ -244,7 +242,9 @@ function zoneinfluencerschart(zoneName){
 
     legend.data.setAll(series.dataItems);
 
-
+    
+    chartdiv.style.width = "500px";
+    chartdiv.style.height = (360 + 29*Object.values(chartData).length) + "px";
 
 
 

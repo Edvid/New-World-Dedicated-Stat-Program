@@ -1,3 +1,10 @@
 
-<... > nations > vespuciantribes
-=0.5 propaganda
+<... > nations > Byzantium
+="offensive" atwar
+<
+> ArchduchyOfAustria
+="defensive" atwar
+<
+> BulgarianEmpire
+="offensive" atwar
+<

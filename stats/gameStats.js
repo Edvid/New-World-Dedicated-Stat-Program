@@ -523,38 +523,38 @@ class Nation {
         Points: 100
       }
     };
-    this.Population = 7500000;
-    this.LiteracyPercent = 10;
-    this.HigherEducation = 0.5;
-    this.Budget = 400.00;
-    this.Food = 200.00;
-    this.ResearchPoints = 7.50;
+    this.Population = 10000000;
+    this.LiteracyPercent = 12.5;
+    this.HigherEducation = 1;
+    this.Budget = 1250.00;
+    this.Food = 500.00;
+    this.ResearchPoints = 10;
     this.PublicDebtLength = 0;
     this.CulturalPower = 6.00;
     /* #endregion */
 
     /* #region  Most Stats */
     this.ReligiousDisunity = 0.00;
-    this.Health = 3.00;
-    this.EducationEfficiency = 3.5;
-    this.AdministrativeEfficiency = 35.00;
-    this.Propaganda = 0;
+    this.Health = 4.00;
+    this.EducationEfficiency = 4.5;
+    this.AdministrativeEfficiency = 42.50;
+    this.Propaganda = 0.5;
     this.SocialSpending = 0.5;
     this.AtWar = false;
 
-    this.NobleInfluence = 0.50; //Show in percent
+    this.NobleInfluence = 0.45; //Show in percent
     this.NobleLoyaltyGroups = JSON.parse(`{\
     "${n.GovernmentName}": 55,\
     "SelfInterests": 45\
     }`);
     
-    this.ClergyInfluence = 0.25; //Show in percent
+    this.ClergyInfluence = 0.20; //Show in percent
     this.ClergyLoyaltyGroups = JSON.parse(`{\
     "${n.GovernmentName}": 50,\
     "SelfInterests": 50\
     }`);
     
-    this.BurghersInfluence = 0.15; //Show in percent
+    this.BurghersInfluence = 0.25; //Show in percent
     this.BurghersLoyaltyGroups = JSON.parse(`{\
     "${n.GovernmentName}": 50,\
     "SelfInterests": 50\
@@ -563,10 +563,10 @@ class Nation {
     this.Absolutism = 0;
     this.PopulationControl = 0;
     this.BirthControl = 0;
-    this.LocalTrade = 6.50;
-    this.Mercantilism = 1.25;
+    this.LocalTrade = 8.50;
+    this.Mercantilism = 1.5;
     this.Spies = 0;
-    this.SpyQuality = 1.3;
+    this.SpyQuality = 1.4;
     /* #endregion */
 
     /* #region  Army */
@@ -594,14 +594,14 @@ class Nation {
 
 
     this.CommanderFreedom = 0;
-    this.ArmyWages = 1.1;
-    this.TrainingQuality = 0.45;
-    this.MilitaryTactics = 0.45;
-    this.MilitaryDiscipline = 1.01; //Show In Percent
+    this.ArmyWages = 1.15;
+    this.TrainingQuality = 1;
+    this.MilitaryTactics = 1.25;
+    this.MilitaryDiscipline = 1.035; //Show In Percent
     /* #endregion */
 
     /* #region  Navy */
-    this.NavyImprovements = 0.60;
+    this.NavyImprovements = 1.25;
 
     this.LightShips = 0;
     this.MediumShips = 0;
@@ -613,7 +613,7 @@ class Nation {
     this.Fertility = 0.50;
     this.AgricultureInfrastructure = 1.10;
     this.StockingCapabilities = 1.00;
-    this.AgricultureAdvancements = 1.40;
+    this.AgricultureAdvancements = 1.45;
     /* #endregion */
 
     /* #region  Recruitments / New Troops */
@@ -642,7 +642,7 @@ class Nation {
 
     /* #region  Population */
     this.Workforces = {
-      Artisans: 0.025,
+      Artisans: 0.045,
       Clergy: 0.0075,
       Nobility: 0.01,
       Burghers: 0.005
@@ -653,7 +653,7 @@ class Nation {
     /* #endregion */
 
     /* #region  Resources */
-    this.MiningEfficiency = 1.30;
+    this.MiningEfficiency = 1.4;
 
     this.Coal = 0.00;
     this.Sulphur = 0.00;
@@ -678,8 +678,8 @@ class Nation {
 
     /* #region  Technology */
     this.Isolation = 1;
-    this.ResearchSpending = 1.00;
-    this.ResearchEffectiveness = 1.00;
+    this.ResearchSpending = 1.05;
+    this.ResearchEffectiveness = 1.05;
 
     this.Technologies = {
       Gunpowder: true,
@@ -702,19 +702,19 @@ class Nation {
       Limber: true,
       Docks: true,
       Gunports: true,
-      Matchlock: false,
-      StarForts: false,
-      TextileManufactories: false,
-      Reiters: false,
-      MiningCarts: false,
-      HumanAnatomy: false,
-      Mortars: false,
-      Metallurgy: false,
-      Experimentation: false,
-	  Fluyt: false,
-      Bayonet: false,
-      SocketBayonet: false,
-      Flintlock: false,
+      Matchlock: true,
+      StarForts: true,
+      TextileManufactories: true,
+      Reiters: true,
+      MiningCarts: true,
+      HumanAnatomy: true,
+      Mortars: true,
+      Metallurgy: true,
+      Experimentation: true,
+	  Fluyt: true,
+      Bayonet: true,
+      SocketBayonet: true,
+      Flintlock: true,
 	  FlyingShuttle: false,
 	  LeadChamberProcess: false,
 	  Gunlock: false
@@ -740,10 +740,10 @@ class Nation {
       Courthouses: true,
       RenaissanceThought: true,
       EarlyModernAdministration: true,
-      NationalSovereignity: false,
-      Newspapers: false,
-      ScientificRevolution: false,
-      PotatoPopulationBoom: false,
+      NationalSovereignity: true,
+      Newspapers: true,
+      ScientificRevolution: true,
+      PotatoPopulationBoom: true,
       Constitution: false
     }
 
