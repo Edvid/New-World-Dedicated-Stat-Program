@@ -8,3 +8,21 @@
 > BulgarianEmpire
 ="offensive" atwar
 <
+
+# Use at end of development of this branch, then download those changes and merge into main
+<... > Nations
+
+> Japan
+= "#ff0000" Color
+
++> MaxCoal
++> MaxSulphur
++> MaxGold
++> MaxIron
++> MaxFur
++> MaxDiamond
++> MaxSilver
++> MaxCopper
++> MaxIvory
+
+
