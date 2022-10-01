@@ -44,7 +44,12 @@ function normalCommand(selection) {
     let selectionValue = (new Function(`return gameStats${propertySelection}`))();
     
     while(typeof selectionValue == 'object'){
-        if(Object.keys(selectionValue).length == 1){
+        if(Object.keys(selectionValue).length == 0){
+            selectionValue = `""`;
+            console.log(`gameStats${propertySelection} = ${selectionValue}`);
+            (new Function(`gameStats${propertySelection} = ${selectionValue}`))();
+        }
+        else if(Object.keys(selectionValue).length == 1){
             propertySelection = `${propertySelection}.${Object.keys(selectionValue)[0]}`;
             selectionValue = (new Function(`return gameStats${propertySelection}`))();
         }else{
@@ -137,7 +142,7 @@ Aborting.`);
 
 
 function createStat(currentSelection, arg){
-    let objectClass = "Object";
+    let objectClass;
     if (/^\.Nations$/.test(currentSelection)) objectClass = "Nation";
     if (/^\.(Cultures|Religions)$/.test(currentSelection)) objectClass = "SocialBehaviour";
     if (/^\.Nations\..+\.(Culture|Religion)Groups$/.test(currentSelection)) objectClass = "SocialBehaviourGroup";
@@ -195,8 +200,10 @@ function createStat(currentSelection, arg){
             `))();
         }
     } else {
-        (new Function(`gameStats${currentSelection}.${arg} = new ${objectClass}("${arg}");`))();
-
+        if(objectClass != null)
+            (new Function(`gameStats${currentSelection}.${arg} = new ${objectClass}("${arg}");`))();
+        else
+            (new Function(`gameStats${currentSelection}.${arg} = {};`))();
         if(objectClass == "Nation") evaluateNation(arg);
     }
     
