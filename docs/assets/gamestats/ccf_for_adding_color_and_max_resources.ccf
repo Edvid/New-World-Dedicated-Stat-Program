@@ -7,10 +7,12 @@
 = Color "#ff0000"
 +> MaxCoal
 +> MaxSulphur
-+> MaxIron
-+> MaxCopper
 +> MaxGold
++> MaxIron
++> MaxFur
 +> MaxDiamond
 +> MaxSilver
++> MaxCopper
++> MaxIvory
 
 
