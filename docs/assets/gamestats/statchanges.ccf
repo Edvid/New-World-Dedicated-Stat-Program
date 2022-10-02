@@ -29,7 +29,7 @@
 
 > VespucianTribes
 +> Color
-= "000000" Color
+= "ffd54c" Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -139,7 +139,7 @@
 
 < > SiouxTribes
 +> Color
-= "000000" Color
+= "e3ff5b" Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -425,7 +425,7 @@
 
 < > KingdomOfIreland
 +> Color
-= "000000" Color
+= "c4ff44" Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -711,7 +711,7 @@
 
 < > BlackfeetConfederation
 +> Color
-= "000000" Color
+= "717c26" Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -931,7 +931,7 @@
 
 < > TexasTribes
 +> Color
-= "000000" Color
+= "7c6c42" Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
