@@ -2475,3 +2475,10 @@ trade Treaty Of Germany 1.2, AustrianEmpire > NorthGermanConfederation, 120 Budg
 
 <...
 sync
+
+> nations > SwedishKingdom
+="false" atWar
+="offensive" atwar
+
+<... > nations > North German Confederation
+="false" atWar
