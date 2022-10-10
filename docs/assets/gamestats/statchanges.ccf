@@ -11,6 +11,230 @@
 > TsardomOfMuscovy
 =4 sulphur
 
+
+<... > Nations > KingdomOfPotskig
++11.5% Pillaging
+-80 heavy cavalry
+-46 light cavalry
++126 casualties
+<... > Nations > KingdomOfKyrat
+-450 musketeers
+-150 heavy infantry
+-350 light infantry
+-20 crossbowmen
++970 casualties
++3% Pillaging
+<... > Nations > EulacianTradeCouncil
+-25 elite cavalry
++25 casualties
+
+<... > Nations > TsardomOfMuscovy
+-300 lightcav
++300 casualties
+-500 Musketeers
+-1350 Militia
+-200 HeavyInf
++22 Cannons
++2050 casualties
+-350 LightCav
++350 Casualties
+-5000 population
+-5 budget
++3950 casualties
+-1750 musketeers
+-200 heavy inf
+-1750 Militia
+-150 light cav
+-100 heavy cav
++1 major battles
+-700 LightCav
++700 Casualties
+-2640 militia
++2640 casualties
+-50 budget
+=7% occupation
+=3.5% pillaging
+-50000 pop
+-20 cannons
+-692 heavycav
+-938 lightcav
++1630 casualties
+-1400 Musketeers
+-600 militia
+-200 HeavyInf
+-250 lightcav
+-150 heavycav
++2600 casualties
+=20% blockade
+-20 food
+-500 pop
+<... > Nations > SteppeKhanate
+-200 heavycav
+-300 lightcav
++500 casualties
+-2298 Militia
+-623 Musketeers
+-38 cannons
+-560 heavycav
+-355 lightcav
++3836 casualties
+-600 HeavyCav
+-100 LightCav
++700 Casualties
++6090 casualties
+-4000 musketeers
+-100 cannons
+-1750 militia
+-240 light cav
+-1 major battles
+-450 HeavyCav
+-100 LightCav
+-600 militia
+-200 musketeers
++1350 Casualties
+-2 cannons
+-949 heavycav
+-300 lightcav
++1249 casualties
+-400 musketeers
+-5600 militia
+-400 heavycav
+-100 lightcav
++6500 casualties
+<... > Nations > KingdomOfRomania
+-25 musketeers
+-50 militia
++75 casualties
+=4% occupation
+=2% pillaging
+-40000 pop
+<... > Nations > BulgarianEmpire
+-650 musketeers
+-250 militia
+-100 lightcav
++1000 casualties
+-4 spies
+<... > Nations > Byzantium
+-100 Light Infantry
+-100 Militia
+-8500 Musketeers
+-40 Cannons
+-300 Light Cavalry
+-1050 Heavy Cavalry
+-800 Light Cavalry
++10890 casualties
+-1 major battles
+-700 Musketeers
+-2 cannons
+-418 HeavyCav
+-564 lightcav
++1682 casualties
+<... > Nations > AustrianEmpire
+-200 Light Inf
+-4250 Musketeers
+-25 Elite Inf
+-850 Light Cav
+-750 Heavy Cav
+-100 Militia
+-8 cannons
++6183 casualties
++1 major battles
+=20% blockade
++0.5% pillaging
+-20 budget
+-2000 pop
+<... > Nations > SwedishKingdom
+-10 nobleloyalty.swedishkingdom
+-7.5 clergyloyalty.swedishkingdom
+-5 burghersloyalty.swedishkingdom
++10 nobleloyalty.selfinterests
++7.5 clergyloyalty.selfinterests
++5 burghersloyalty.selfinterests
+<... > nations > KingdomOfHispania
++1% blockade
+<
+> ArberberKingdom
++2% blockade
+<
+> Italia
++2% blockade
+<... > Nations > TexasTribes
+-2 Light Ships
++2% Pillaging
+<... > Nations > SiouxTribes
+-1 Light Ships
+<... > Nations > AztecEmpire
+-4 Light Ships
+-2 Medium Ships
+-1 Heavy Ships
+<... > Nations > SwedishKingdom
+-4 LightShips
+-2 MediumShips
+-100 heavy infantry 
+-210 musketeers
+-120 heavy cavalry
+-220 light cavalry
++650 Casualties
+-1 MinorBattles
+-2000 heavy cavalry
+-750 light cavalry
++2750 Casualties
++1% pillaging
+-650 Musketeers
++650 Casualties
+-43 HeavyInf
++43 Casualties
+-16992 Musketeers
+-2857 HeavyInf
+-4982 heavy cavalry 
+-653 light cavalry
++25485 casualties
+-2 HeavyShips
+-13 MediumShips
+-578 Heavy Cavalry
+-3092 Musketeers
++3670 Casualties
+-9678 Musketeers
+-2134 Heavy Cavalry
+-15 Elite Cavalry
++11827 Casualties
+<... > Nations > NorthGermanConfederation
+-4 LightShips
+-1 HeavyShips
+-4 MediumShips
+-20 Cannons
+-500 HeavyCav
+-250 LightCav
++750 Casualties
+-24 Musketeers
++24 Casualties
+-16492 militia
+-6932 Musketeers
+-1258 heavy cavalry
+-687 light cavalry
++25369 casualties
+=1% Occupation
+-13636 Militia
+-367 Musketeers
++14003 Casualties
+-9858 militia
+-8692 musketeers
+-142 heavy cav
+-213 light cav
++18905 Casualties
++10% Pillaging
+=8% Occupation
+=65% Blockade
+<... > Nations > RepublicOfLaPlata
+-9 HeavyShips
+<... > Nations > LatvianEmpire
+-12 MediumShips
+-10 LightShips
+<... > Nations > SwedishKingdom
+="Offensive" AtWar
+<... > Nations > NorthGermanConfederation
+="false" AtWar
+
 <... > Nations > TheFaithfulKingdom
 +3.5 AdmEff
 ="true" MiningCarts
@@ -2175,229 +2399,6 @@ trade BulgariaQuasimid4, BulgarianEmpire > QuasimidEmirate, 50 budget
 +5 BurghersLoyalty.KingdomOfKhmbodj
 -5 BurghersLoyalty.SelfInterests
 +1 AdmEff
-
-<... > Nations > KingdomOfPotskig
-+11.5% Pillaging
--80 heavy cavalry
--46 light cavalry
-+126 casualties
-<... > Nations > KingdomOfKyrat
--450 musketeers
--150 heavy infantry
--350 light infantry
--20 crossbowmen
-+970 casualties
-+3% Pillaging
-<... > Nations > EulacianTradeCouncil
--25 elite cavalry
-+25 casualties
-
-<... > Nations > TsardomOfMuscovy
--300 lightcav
-+300 casualties
--500 Musketeers
--1350 Militia
--200 HeavyInf
-+22 Cannons
-+2050 casualties
--350 LightCav
-+350 Casualties
--5000 population
--5 budget
-+3950 casualties
--1750 musketeers
--200 heavy inf
--1750 Militia
--150 light cav
--100 heavy cav
-+1 major battles
--700 LightCav
-+700 Casualties
--2640 militia
-+2640 casualties
--50 budget
-=7% occupation
-=3.5% pillaging
--50000 pop
--20 cannons
--692 heavycav
--938 lightcav
-+1630 casualties
--1400 Musketeers
--600 militia
--200 HeavyInf
--250 lightcav
--150 heavycav
-+2600 casualties
-=20% blockade
--20 food
--500 pop
-<... > Nations > SteppeKhanate
--200 heavycav
--300 lightcav
-+500 casualties
--2298 Militia
--623 Musketeers
--38 cannons
--560 heavycav
--355 lightcav
-+3836 casualties
--600 HeavyCav
--100 LightCav
-+700 Casualties
-+6090 casualties
--4000 musketeers
--100 cannons
--1750 militia
--240 light cav
--1 major battles
--450 HeavyCav
--100 LightCav
--600 militia
--200 musketeers
-+1350 Casualties
--2 cannons
--949 heavycav
--300 lightcav
-+1249 casualties
--400 musketeers
--5600 militia
--400 heavycav
--100 lightcav
-+6500 casualties
-<... > Nations > KingdomOfRomania
--25 musketeers
--50 militia
-+75 casualties
-=4% occupation
-=2% pillaging
--40000 pop
-<... > Nations > BulgarianEmpire
--650 musketeers
--250 militia
--100 lightcav
-+1000 casualties
--4 spies
-<... > Nations > Byzantium
--100 Light Infantry
--100 Militia
--8500 Musketeers
--40 Cannons
--300 Light Cavalry
--1050 Heavy Cavalry
--800 Light Cavalry
-+10890 casualties
--1 major battles
--700 Musketeers
--2 cannons
--418 HeavyCav
--564 lightcav
-+1682 casualties
-<... > Nations > AustrianEmpire
--200 Light Inf
--4250 Musketeers
--25 Elite Inf
--850 Light Cav
--750 Heavy Cav
--100 Militia
--8 cannons
-+6183 casualties
-+1 major battles
-=20% blockade
-+0.5% pillaging
--20 budget
--2000 pop
-<... > Nations > SwedishKingdom
--10 nobleloyalty.swedishkingdom
--7.5 clergyloyalty.swedishkingdom
--5 burghersloyalty.swedishkingdom
-+10 nobleloyalty.selfinterests
-+7.5 clergyloyalty.selfinterests
-+5 burghersloyalty.selfinterests
-<... > nations > KingdomOfHispania
-+1% blockade
-<
-> ArberberKingdom
-+2% blockade
-<
-> Italia
-+2% blockade
-<... > Nations > TexasTribes
--2 Light Ships
-+2% Pillaging
-<... > Nations > SiouxTribes
--1 Light Ships
-<... > Nations > AztecEmpire
--4 Light Ships
--2 Medium Ships
--1 Heavy Ships
-<... > Nations > SwedishKingdom
--4 LightShips
--2 MediumShips
--100 heavy infantry 
--210 musketeers
--120 heavy cavalry
--220 light cavalry
-+650 Casualties
--1 MinorBattles
--2000 heavy cavalry
--750 light cavalry
-+2750 Casualties
-+1% pillaging
--650 Musketeers
-+650 Casualties
--43 HeavyInf
-+43 Casualties
--16992 Musketeers
--2857 HeavyInf
--4982 heavy cavalry 
--653 light cavalry
-+25485 casualties
--2 HeavyShips
--13 MediumShips
--578 Heavy Cavalry
--3092 Musketeers
-+3670 Casualties
--9678 Musketeers
--2134 Heavy Cavalry
--15 Elite Cavalry
-+11827 Casualties
-<... > Nations > NorthGermanConfederation
--4 LightShips
--1 HeavyShips
--4 MediumShips
--20 Cannons
--500 HeavyCav
--250 LightCav
-+750 Casualties
--24 Musketeers
-+24 Casualties
--16492 militia
--6932 Musketeers
--1258 heavy cavalry
--687 light cavalry
-+25369 casualties
-=1% Occupation
--13636 Militia
--367 Musketeers
-+14003 Casualties
--9858 militia
--8692 musketeers
--142 heavy cav
--213 light cav
-+18905 Casualties
-+10% Pillaging
-=8% Occupation
-=65% Blockade
-<... > Nations > RepublicOfLaPlata
--9 HeavyShips
-<... > Nations > LatvianEmpire
--12 MediumShips
--10 LightShips
-<... > Nations > SwedishKingdom
-="Offensive" AtWar
-<... > Nations > NorthGermanConfederation
-="false" AtWar
 
 <... > Nations > KingdomOfIreland
 +0.05 AgrAdv
