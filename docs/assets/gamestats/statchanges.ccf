@@ -68,7 +68,7 @@
 =20% blockade
 -20 food
 -500 pop
-<... > Nations > SteppeKhanate
+<... > Nations > CumanKipchakKhanate
 -200 heavycav
 -300 lightcav
 +500 casualties
@@ -129,7 +129,7 @@
 -418 HeavyCav
 -564 lightcav
 +1682 casualties
-<... > Nations > AustrianEmpire
+<... > Nations > ArchduchyOfAustria
 -200 Light Inf
 -4250 Musketeers
 -25 Elite Inf
@@ -156,7 +156,7 @@
 > ArberberKingdom
 +2% blockade
 <
-> Italia
+> FaithfulKingdom
 +2% blockade
 <... > Nations > TexasTribes
 -2 Light Ships
