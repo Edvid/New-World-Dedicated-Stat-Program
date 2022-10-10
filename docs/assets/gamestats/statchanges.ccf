@@ -235,6 +235,10 @@
 <... > Nations > NorthGermanConfederation
 ="false" AtWar
 
+<... > Nations
++> Italia = TheFaithfulKingdom
+<- TheFaithfulKingdom
+
 <... > Nations > Italia
 +3.5 AdmEff
 ="true" MiningCarts
@@ -289,9 +293,7 @@
 =1200 heavy cavalry
 =2000 heavy infantry
 =22 cannons
-<... > Nations
-+> Italia = TheFaithfulKingdom
-<- TheFaithfulKingdom
+
 <... > Nations > KingdomOfLao
 ="true" ScientificRevolution
 -3 CulturalPower
