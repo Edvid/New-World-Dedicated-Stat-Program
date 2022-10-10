@@ -858,10 +858,6 @@ trade TreatyOfTreatyT9, NorthGermanConfederation > TexasTribes, 110 budget
 -10 NobleLoyalty.SelfInterests
 +5 BurghersLoyalty.CumanKipchakKhanate
 -5 BurghersLoyalty.SelfInterests
-trade TradeOfManyDeals1, QuasimidEmirate > Steppe Khanate, 2 Sulphur
-trade TradeOfManyDeals2, Steppe Khanate > QuasimidEmirate, 95 Budget
-trade TradeOfSulphur1, Italia > Steppe Khanate, 2 Sulphur
-trade TradeOfSulphur2, Steppe Khanate > Italia, 100 Budget
 > CultureGroups
 +77 Cuman
 +22 Chechnyan
@@ -869,6 +865,10 @@ trade TradeOfSulphur2, Steppe Khanate > Italia, 100 Budget
 +> SteppeKhanate = CumanKipchakKhanate
 <- CumanKipchakKhanate
 <- Chechnya
+trade TradeOfManyDeals1, QuasimidEmirate > Steppe Khanate, 2 Sulphur
+trade TradeOfManyDeals2, Steppe Khanate > QuasimidEmirate, 95 Budget
+trade TradeOfSulphur1, Italia > Steppe Khanate, 2 Sulphur
+trade TradeOfSulphur2, Steppe Khanate > Italia, 100 Budget
 <... > Cultures > Cuman > Opinions
 +> Chechnyan
 =45 Chechnyan.score
