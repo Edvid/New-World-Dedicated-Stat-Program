@@ -1284,7 +1284,7 @@ trade TreatyOfDresden2, AustrianEmpire > NorthGermanConfederation, 1.5 Sulphur
 -7 ResearchPoints
 ="true" ScientificRevolution
 -3 CulturalPower
-+14.5 AdmEff
++13.5 AdmEff
 +5.5 LocalTrade
 +0.4 Mercantilism
 +0.4 MiningEff
