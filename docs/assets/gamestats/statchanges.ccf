@@ -2476,6 +2476,13 @@ trade Treaty Of Germany 1.2, AustrianEmpire > NorthGermanConfederation, 120 Budg
 <- RussoNorwegian1
 <- RussoNorwegian2
 
+<... > nations > Empire Of Japan
+-18 japanese
++18 Yakush
+
+<... > nations > Tsardom Of Muscovy
+
+
 <...
 sync
 
