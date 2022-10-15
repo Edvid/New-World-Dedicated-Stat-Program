@@ -1227,6 +1227,9 @@ trade TreatyOfTreatyB2, SiouxTribes > BlackfeetConfederation, 500 food
 ="true" Newspapers
 ="true" ScientificRevolution
 -5 CulturalPower
++18 HeavyShips
++65 MediumShips
++15 LightShips
 <... > Nations
 +> AustrianEmpire = ArchduchyOfAustria
 <- ArchduchyOfAustria
