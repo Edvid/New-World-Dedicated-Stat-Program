@@ -2620,3 +2620,263 @@ sync
 <- New Toledo
 <- New Scotland
 <- Kingdom Of Oso
+
+# 1750-1775 Climates
+
+<... > Nations > Vespucian Tribes > Climates
+=3282 TaigaAndTundra
+=5293 MontaneForest
+=11867 Medditereanian
+=131438 Moderate
+=2935 SubTropical
+=712 Tropical
+=1563 CoastalDesert
+
+<... > Nations > Tsardom Of Muscovy > Climates
+=4988 PolarDesert
+=77449 TaigaAndTundra
+=1786 Steppe
+=60342 Moderate
+=306 SubTropical
+=438 Tropical
+=304 CoastalDesert
+
+<... > Nations > Sioux Tribes > Climates
+=24532 TaigaAndTundra
+=58118 Moderate
+=172 SubTropical
+
+<... > Nations > Eulacian Trade Council > Climates
+=2906 Medditereanian
+=3986 Moderate
+=63560 SubTropical
+=99124 Tropical
+=17075 Savanna
+=6227 Desert
+=7184 CoastalDesert
+=18167 Mountainous
+
+<... > Nations > Kingdom Of Kyrat > Climates
+=0 PolarDesert
+=0 TaigaAndTundra
+=5805 MontaneForest
+=0 Medditereanian
+=378 Arid
+=0 Steppe
+=0 Moderate
+=58227 SubTropical
+=12634 Tropical
+=7877 Savanna
+=0 Desert
+=0 CoastalDesert
+=33796 Mountainous
+
+<... > Nations > Aden Caliphate > Climates
+=114 Medditereanian
+=20241 SubTropical
+=42150 Savanna
+=36243 Desert
+=18399 CoastalDesert
+
+<... > Nations > Mongolian Khanate > Climates
+=17639 MontaneForest
+=39611 Steppe
+=24907 Desert
+
+<... > Nations > Timurid Emirate > Climates
+=33079 Arid
+=17704 Desert
+=1922 CoastalDesert
+=7157 Mountainous
+
+<... > Nations > Menzen Confederation > Climates
+=5065 MontaneForest
+=1339 Steppe
+=34902 Moderate
+=0 Mountainous
+
+<... > Nations > Zulu Kingdom > Climates
+=12316 Medditereanian
+=5822 Moderate
+=1960 SubTropical
+=6978 Desert
+=2563 CoastalDesert
+
+<... > Nations > Blackfeet Confederation > Climates
+=1851 TaigaAndTundra
+=1397 MontaneForest
+=35220 Steppe
+=1931 Mountainous
+
+<... > Nations > Empire Of Japan > Climates
+=25749 PolarDesert
+=28709 TaigaAndTundra
+=5686 MontaneForest
+=63551 Moderate
+=3902 SubTropical
+=11472 Tropical
+=3843 Mountainous
+
+<... > Nations > Guangxi Clique > Climates
+=0 PolarDesert
+=0 TaigaAndTundra
+=0 MontaneForest
+=0 Medditereanian
+=0 Arid
+=0 Steppe
+=0 Moderate
+=0 SubTropical
+=0 Tropical
+=0 Savanna
+=0 Desert
+=0 CoastalDesert
+=0 Mountainous
+
+<... > Nations > Zelenva Union > Climates
+=44810 Moderate
+=4083 SubTropical
+
+<... > Nations > Kingdom Of Avanorolsk > Climates
+=22486 TaigaAndTundra
+=22125 MontaneForest
+=5715 Moderate
+
+<... > Nations > Kingdom Of Bornu > Climates
+=42070 SubTropical
+=13511 Tropical
+=12873 Savanna
+
+<... > Nations > Texas Tribes > Climates
+=4783 Steppe
+=4948 Moderate
+=13744 Savanna
+=8109 Desert
+=4324 CoastalDesert
+=177 Mountainous
+
+<... > Nations > Republic Of La Plata > Climates
+=1420 Arid
+=33924 Moderate
+=177 SubTropical
+=423 Tropical
+=661 Savanna
+=335 Desert
+=2840 CoastalDesert
+
+<... > Nations > Sitao River Tribes > Climates
+=222 Moderate
+=29526 SubTropical
+=54097 Savanna
+=5794 Desert
+
+<... > Nations > New Cornwall > Climates
+=8346 SubTropical
+=6142 Tropical
+=1460 Mountainous
+
+<... > Nations > New Wales > Climates
+=1570 SubTropical
+=1854 Tropical
+=988 Mountainous
+
+<... > Nations > Nova Kreta > Climates
+=635 MontaneForest
+=2947 Arid
+=3264 SubTropical
+=5566 Tropical
+=5412 Mountainous
+
+<... > Nations > New Cuthsbury > Climates
+=20771 SubTropical
+=12597 Tropical
+=3263 Mountainous
+
+<... > Nations > Zheng Ru Dynasty > Climates
+=6371 MontaneForest
+=648 Steppe
+=51517 Moderate
+
+<... > Nations > North German Confederation > Climates
+=22083 Moderate
+
+<... > Nations > Nova Anatolia > Climates
+=150 Moderate
+=23150 SubTropical
+=3243 Tropical
+=964 Savanna
+=750 CoastalDesert
+
+<... > Nations > Swedish Kingdom > Climates
+=8528 PolarDesert
+=28930 TaigaAndTundra
+=26927 MontaneForest
+=21455 Moderate
+
+<... > Nations > Kingdom Of Hispania > Climates
+=0 PolarDesert
+=0 TaigaAndTundra
+=0 MontaneForest
+=0 Medditereanian
+=0 Arid
+=0 Steppe
+=0 Moderate
+=0 SubTropical
+=0 Tropical
+=0 Savanna
+=0 Desert
+=0 CoastalDesert
+=0 Mountainous
+
+<... > Nations > Bulgarian Empire > Climates
+=0 PolarDesert
+=0 TaigaAndTundra
+=0 MontaneForest
+=0 Medditereanian
+=0 Arid
+=0 Steppe
+=0 Moderate
+=0 SubTropical
+=0 Tropical
+=0 Savanna
+=0 Desert
+=0 CoastalDesert
+=0 Mountainous
+
+<... > Nations > New Cork > Climates
+=32499 Medditereanian
+=237 Moderate
+=772 Mountainous
+
+<... > Nations > New Banzai > Climates
+=2413 SubTropical
+=144 Savanna
+
+<... > Nations > New Nagasaki > Climates
+=2231 Arid
+=6057 Moderate
+
+<... > Nations > New Shanghai > Climates
+=1956 Arid
+=1440 SubTropical
+=432 Tropical
+=450 Mountainous
+
+<... > Nations > Brasilien > Climates
+=7784 SubTropical
+=9933 Tropical
+
+<... > Nations > Kingdom Of Konoga > Climates
+=9073 SubTropical
+=2906 Tropical
+=2837 Savanna
+
+<... > Nations > Steppe Khanate > Climates
+=50218 Steppe
+=3775 Moderate
+=756 CoastalDesert
+=1151 Mountainous
+
+<... > Nations > French Empire > Climates
+=2176 Medditereanian
+=32097 Moderate
+=611 Mountainous
