@@ -2813,34 +2813,19 @@ sync
 =21455 Moderate
 
 <... > Nations > Kingdom Of Hispania > Climates
-=0 PolarDesert
-=0 TaigaAndTundra
-=0 MontaneForest
-=0 Medditereanian
-=0 Arid
-=0 Steppe
-=0 Moderate
-=0 SubTropical
-=0 Tropical
-=0 Savanna
-=0 Desert
-=0 CoastalDesert
-=0 Mountainous
+=32499 Medditereanian
+=237 Moderate
+=181 SubTropical
+=42 Savanna
+=63 CoastalDesert
+=772 Mountainous
 
 <... > Nations > Bulgarian Empire > Climates
-=0 PolarDesert
-=0 TaigaAndTundra
-=0 MontaneForest
-=0 Medditereanian
-=0 Arid
-=0 Steppe
-=0 Moderate
-=0 SubTropical
-=0 Tropical
-=0 Savanna
-=0 Desert
-=0 CoastalDesert
-=0 Mountainous
+=345 PolarDesert
+=22686 TaigaAndTundra
+=3692 Steppe
+=44522 Moderate
+=2908 Mountainous
 
 <... > Nations > New Cork > Climates
 =32499 Medditereanian
