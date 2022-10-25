@@ -22,7 +22,7 @@
 # Replace..
 # (> .+\n)
 # With...
-# $1+> Color\n= "000000" Color\n+> MaxCoal\n= 0 MaxCoal\n+> MaxSulphur\n= 0 MaxSulphur\n+> MaxGold\n= 0 MaxGold\n+> MaxIron\n= 0 MaxIron\n+> MaxFur\n= 0 MaxFur\n+> MaxDiamond\n= 0 MaxDiamond\n+> MaxSilver\n= 0 MaxSilver\n+> MaxCopper\n= 0 MaxCopper\n+> MaxIvory\n= 0 MaxIvory\n
+# $1+> Color\n= false Color\n+> MaxCoal\n= 0 MaxCoal\n+> MaxSulphur\n= 0 MaxSulphur\n+> MaxGold\n= 0 MaxGold\n+> MaxIron\n= 0 MaxIron\n+> MaxFur\n= 0 MaxFur\n+> MaxDiamond\n= 0 MaxDiamond\n+> MaxSilver\n= 0 MaxSilver\n+> MaxCopper\n= 0 MaxCopper\n+> MaxIvory\n= 0 MaxIvory\n
 
 # Use at end of development of this branch, then download those changes and merge into main
 <... > Nations
@@ -51,7 +51,7 @@
 
 < > KingdomOfKhmbodj
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -73,7 +73,7 @@
 
 < > KingdomOfPotskig
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -95,7 +95,7 @@
 
 < > TsardomOfMuscovy
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -117,7 +117,7 @@
 
 < > SindhEmpire
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -161,7 +161,7 @@
 
 < > Byzantium
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -183,7 +183,7 @@
 
 < > ArchduchyOfAustria
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -205,7 +205,7 @@
 
 < > TainoTribalConfederacy
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -227,7 +227,7 @@
 
 < > Mitiva
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -249,7 +249,7 @@
 
 < > ArberberKingdom
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -271,7 +271,7 @@
 
 < > ZiEmpire
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -293,7 +293,7 @@
 
 < > TheFaithfulKingdom
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -315,7 +315,7 @@
 
 < > EulacianTradeCouncil
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -337,7 +337,7 @@
 
 < > KingdomOfKyrat
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -359,7 +359,7 @@
 
 < > DuchyOfBelarus
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -381,7 +381,7 @@
 
 < > KingdomOfBurgundy
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -403,7 +403,7 @@
 
 < > CumanKipchakKhanate
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -447,7 +447,7 @@
 
 < > ValublidSultanate
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -469,7 +469,7 @@
 
 < > MagajiyaTribe
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -491,7 +491,7 @@
 
 < > AdenCaliphate
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -513,7 +513,7 @@
 
 < > QuasimidEmirate
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -535,7 +535,7 @@
 
 < > Cheonje
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -557,7 +557,7 @@
 
 < > KingdomOfPoland
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -579,7 +579,7 @@
 
 < > MongolianKhanate
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -601,7 +601,7 @@
 
 < > LatvianEmpire
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -623,7 +623,7 @@
 
 < > TimuridEmirate
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -645,7 +645,7 @@
 
 < > AztecEmpire
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -667,7 +667,7 @@
 
 < > MenzenConfederation
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -689,7 +689,7 @@
 
 < > ZuluKingdom
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -733,7 +733,7 @@
 
 < > MayanEmpire
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -777,7 +777,7 @@
 
 < > SashimoKingdom
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -799,7 +799,7 @@
 
 < > NewEngland
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -821,7 +821,7 @@
 
 < > KingdomOfBalanto
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -843,7 +843,7 @@
 
 < > GuangxiClique
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -865,7 +865,7 @@
 
 < > ZelenvaUnion
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -887,7 +887,7 @@
 
 < > KingdomOfAvanorolsk
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -909,7 +909,7 @@
 
 < > KingdomOfBornu
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -953,7 +953,7 @@
 
 < > Chechnya
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -975,7 +975,7 @@
 
 < > RepublicOfLaPlata
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -997,7 +997,7 @@
 
 < > Songhai
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -1019,7 +1019,7 @@
 
 < > Bosnia
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -1041,7 +1041,7 @@
 
 < > NewToledo
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -1063,7 +1063,7 @@
 
 < > NewRabat
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -1085,7 +1085,7 @@
 
 < > NewScotland
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -1107,7 +1107,7 @@
 
 < > SitaoRiverTribes
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -1129,7 +1129,7 @@
 
 < > KingdomOfMaharlika
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -1151,7 +1151,7 @@
 
 < > KingdomOfLao
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -1173,7 +1173,7 @@
 
 < > NewCornwall
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -1195,7 +1195,7 @@
 
 < > NewWales
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -1217,7 +1217,7 @@
 
 < > NovaKreta
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -1239,7 +1239,7 @@
 
 < > NewCuthsbury
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -1261,7 +1261,7 @@
 
 < > UnitedKingdom
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -1283,7 +1283,7 @@
 
 < > ZhengRuDynasty
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -1305,7 +1305,7 @@
 
 < > NorthGermanConfederation
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -1327,7 +1327,7 @@
 
 < > NovaAnatolia
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -1349,7 +1349,7 @@
 
 < > KingdomOfOso
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -1371,7 +1371,7 @@
 
 < > KingdomOfRomania
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -1393,7 +1393,7 @@
 
 < > SwedishKingdom
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -1415,7 +1415,7 @@
 
 < > KingdomOfHispania
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -1437,7 +1437,7 @@
 
 < > BulgarianEmpire
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -1459,7 +1459,7 @@
 
 < > KingdomOfNorway
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -1481,7 +1481,7 @@
 
 < > NewCork
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -1503,7 +1503,7 @@
 
 < > NewBanzai
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -1525,7 +1525,7 @@
 
 < > NewNagasaki
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -1547,7 +1547,7 @@
 
 < > NewShanghai
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -1569,7 +1569,7 @@
 
 < > Brasilien
 +> Color
-= "000000" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
