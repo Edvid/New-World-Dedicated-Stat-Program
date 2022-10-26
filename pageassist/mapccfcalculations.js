@@ -21,9 +21,9 @@ climateCanvas.height = HEIGHT;
 nationPromptedCanvas.width = WIDTH;
 nationPromptedCanvas.height = HEIGHT;
 
-nationCanvas.style.width = "200px"
-climateCanvas.style.width = "200px"
-nationPromptedCanvas.style.width = "500px"
+nationCanvas.style.width = "10vw"
+climateCanvas.style.width = "10vw"
+nationPromptedCanvas.style.width = "60vw"
 
 document.querySelector("body").appendChild(nationCanvas);
 document.querySelector("body").appendChild(climateCanvas);
@@ -112,12 +112,19 @@ document.querySelector("body").addEventListener("image load done", () => {
                 
             }
             for(let j = 0; j < dat.length / 4; j++){
-                if(rgbToHex([dat[j*4], dat[j*4+1], dat[j*4+2]]) != foundNationColor){
+                if(rgbToHex([climateData[j*4], climateData[j*4+1], climateData[j*4+2]]) == '000000'){
+                    dat[j*4] = 128;
+                    dat[j*4+1] = 128;
+                    dat[j*4+2] = 255;
+                    dat[j*4+3] = 255;
+                }
+                else if(rgbToHex([nationData[j*4], nationData[j*4+1], nationData[j*4+2]]) != foundNationColor){
                     dat[j*4] = 0;
                     dat[j*4+1] = 0;
                     dat[j*4+2] = 0;
                     dat[j*4+3] = 0;
                 }
+                
             }
             dat = new ImageData(dat, WIDTH);
             nationPromptedCanvas.getContext("2d").putImageData(dat, 0, 0);
