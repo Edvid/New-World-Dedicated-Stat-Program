@@ -2887,7 +2887,7 @@ sync
 
 > VespucianTribes
 +> Color
-= "ffd54c" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -2997,28 +2997,6 @@ sync
 
 < > SiouxTribes
 +> Color
-= "e3ff5b" Color
-+> MaxCoal
-= 0 MaxCoal
-+> MaxSulphur
-= 0 MaxSulphur
-+> MaxGold
-= 0 MaxGold
-+> MaxIron
-= 0 MaxIron
-+> MaxFur
-= 0 MaxFur
-+> MaxDiamond
-= 0 MaxDiamond
-+> MaxSilver
-= 0 MaxSilver
-+> MaxCopper
-= 0 MaxCopper
-+> MaxIvory
-= 0 MaxIvory
-
-< > Byzantium
-+> Color
 = false Color
 +> MaxCoal
 = 0 MaxCoal
@@ -3039,7 +3017,7 @@ sync
 +> MaxIvory
 = 0 MaxIvory
 
-< > ArchduchyOfAustria
+< > Byzantium
 +> Color
 = false Color
 +> MaxCoal
@@ -3149,28 +3127,6 @@ sync
 +> MaxIvory
 = 0 MaxIvory
 
-< > TheFaithfulKingdom
-+> Color
-= false Color
-+> MaxCoal
-= 0 MaxCoal
-+> MaxSulphur
-= 0 MaxSulphur
-+> MaxGold
-= 0 MaxGold
-+> MaxIron
-= 0 MaxIron
-+> MaxFur
-= 0 MaxFur
-+> MaxDiamond
-= 0 MaxDiamond
-+> MaxSilver
-= 0 MaxSilver
-+> MaxCopper
-= 0 MaxCopper
-+> MaxIvory
-= 0 MaxIvory
-
 < > EulacianTradeCouncil
 +> Color
 = false Color
@@ -3237,53 +3193,9 @@ sync
 +> MaxIvory
 = 0 MaxIvory
 
-< > KingdomOfBurgundy
-+> Color
-= false Color
-+> MaxCoal
-= 0 MaxCoal
-+> MaxSulphur
-= 0 MaxSulphur
-+> MaxGold
-= 0 MaxGold
-+> MaxIron
-= 0 MaxIron
-+> MaxFur
-= 0 MaxFur
-+> MaxDiamond
-= 0 MaxDiamond
-+> MaxSilver
-= 0 MaxSilver
-+> MaxCopper
-= 0 MaxCopper
-+> MaxIvory
-= 0 MaxIvory
-
-< > CumanKipchakKhanate
-+> Color
-= false Color
-+> MaxCoal
-= 0 MaxCoal
-+> MaxSulphur
-= 0 MaxSulphur
-+> MaxGold
-= 0 MaxGold
-+> MaxIron
-= 0 MaxIron
-+> MaxFur
-= 0 MaxFur
-+> MaxDiamond
-= 0 MaxDiamond
-+> MaxSilver
-= 0 MaxSilver
-+> MaxCopper
-= 0 MaxCopper
-+> MaxIvory
-= 0 MaxIvory
-
 < > KingdomOfIreland
 +> Color
-= "c4ff44" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -3569,7 +3481,7 @@ sync
 
 < > BlackfeetConfederation
 +> Color
-= "717c26" Color
+= false Color
 +> MaxCoal
 = 0 MaxCoal
 +> MaxSulphur
@@ -3612,28 +3524,6 @@ sync
 = 0 MaxIvory
 
 < > EmpireOfJapan
-+> Color
-= "ff0000" Color
-+> MaxCoal
-= 0 MaxCoal
-+> MaxSulphur
-= 0 MaxSulphur
-+> MaxGold
-= 0 MaxGold
-+> MaxIron
-= 0 MaxIron
-+> MaxFur
-= 0 MaxFur
-+> MaxDiamond
-= 0 MaxDiamond
-+> MaxSilver
-= 0 MaxSilver
-+> MaxCopper
-= 0 MaxCopper
-+> MaxIvory
-= 0 MaxIvory
-
-< > SashimoKingdom
 +> Color
 = false Color
 +> MaxCoal
@@ -3789,28 +3679,6 @@ sync
 
 < > TexasTribes
 +> Color
-= "7c6c42" Color
-+> MaxCoal
-= 0 MaxCoal
-+> MaxSulphur
-= 0 MaxSulphur
-+> MaxGold
-= 0 MaxGold
-+> MaxIron
-= 0 MaxIron
-+> MaxFur
-= 0 MaxFur
-+> MaxDiamond
-= 0 MaxDiamond
-+> MaxSilver
-= 0 MaxSilver
-+> MaxCopper
-= 0 MaxCopper
-+> MaxIvory
-= 0 MaxIvory
-
-< > Chechnya
-+> Color
 = false Color
 +> MaxCoal
 = 0 MaxCoal
@@ -3897,51 +3765,7 @@ sync
 +> MaxIvory
 = 0 MaxIvory
 
-< > NewToledo
-+> Color
-= false Color
-+> MaxCoal
-= 0 MaxCoal
-+> MaxSulphur
-= 0 MaxSulphur
-+> MaxGold
-= 0 MaxGold
-+> MaxIron
-= 0 MaxIron
-+> MaxFur
-= 0 MaxFur
-+> MaxDiamond
-= 0 MaxDiamond
-+> MaxSilver
-= 0 MaxSilver
-+> MaxCopper
-= 0 MaxCopper
-+> MaxIvory
-= 0 MaxIvory
-
 < > NewRabat
-+> Color
-= false Color
-+> MaxCoal
-= 0 MaxCoal
-+> MaxSulphur
-= 0 MaxSulphur
-+> MaxGold
-= 0 MaxGold
-+> MaxIron
-= 0 MaxIron
-+> MaxFur
-= 0 MaxFur
-+> MaxDiamond
-= 0 MaxDiamond
-+> MaxSilver
-= 0 MaxSilver
-+> MaxCopper
-= 0 MaxCopper
-+> MaxIvory
-= 0 MaxIvory
-
-< > NewScotland
 +> Color
 = false Color
 +> MaxCoal
@@ -4205,28 +4029,6 @@ sync
 +> MaxIvory
 = 0 MaxIvory
 
-< > KingdomOfOso
-+> Color
-= false Color
-+> MaxCoal
-= 0 MaxCoal
-+> MaxSulphur
-= 0 MaxSulphur
-+> MaxGold
-= 0 MaxGold
-+> MaxIron
-= 0 MaxIron
-+> MaxFur
-= 0 MaxFur
-+> MaxDiamond
-= 0 MaxDiamond
-+> MaxSilver
-= 0 MaxSilver
-+> MaxCopper
-= 0 MaxCopper
-+> MaxIvory
-= 0 MaxIvory
-
 < > KingdomOfRomania
 +> Color
 = false Color
@@ -4294,28 +4096,6 @@ sync
 = 0 MaxIvory
 
 < > BulgarianEmpire
-+> Color
-= false Color
-+> MaxCoal
-= 0 MaxCoal
-+> MaxSulphur
-= 0 MaxSulphur
-+> MaxGold
-= 0 MaxGold
-+> MaxIron
-= 0 MaxIron
-+> MaxFur
-= 0 MaxFur
-+> MaxDiamond
-= 0 MaxDiamond
-+> MaxSilver
-= 0 MaxSilver
-+> MaxCopper
-= 0 MaxCopper
-+> MaxIvory
-= 0 MaxIvory
-
-< > KingdomOfNorway
 +> Color
 = false Color
 +> MaxCoal
@@ -4448,6 +4228,94 @@ sync
 = 0 MaxIvory
 
 < > KingdomOfKonoga
++> Color
+= false Color
++> MaxCoal
+= 0 MaxCoal
++> MaxSulphur
+= 0 MaxSulphur
++> MaxGold
+= 0 MaxGold
++> MaxIron
+= 0 MaxIron
++> MaxFur
+= 0 MaxFur
++> MaxDiamond
+= 0 MaxDiamond
++> MaxSilver
+= 0 MaxSilver
++> MaxCopper
+= 0 MaxCopper
++> MaxIvory
+= 0 MaxIvory
+
+< > Italia
++> Color
+= false Color
++> MaxCoal
+= 0 MaxCoal
++> MaxSulphur
+= 0 MaxSulphur
++> MaxGold
+= 0 MaxGold
++> MaxIron
+= 0 MaxIron
++> MaxFur
+= 0 MaxFur
++> MaxDiamond
+= 0 MaxDiamond
++> MaxSilver
+= 0 MaxSilver
++> MaxCopper
+= 0 MaxCopper
++> MaxIvory
+= 0 MaxIvory
+
+< > SteppeKhanate
++> Color
+= false Color
++> MaxCoal
+= 0 MaxCoal
++> MaxSulphur
+= 0 MaxSulphur
++> MaxGold
+= 0 MaxGold
++> MaxIron
+= 0 MaxIron
++> MaxFur
+= 0 MaxFur
++> MaxDiamond
+= 0 MaxDiamond
++> MaxSilver
+= 0 MaxSilver
++> MaxCopper
+= 0 MaxCopper
++> MaxIvory
+= 0 MaxIvory
+
+< > FrenchEmpire
++> Color
+= false Color
++> MaxCoal
+= 0 MaxCoal
++> MaxSulphur
+= 0 MaxSulphur
++> MaxGold
+= 0 MaxGold
++> MaxIron
+= 0 MaxIron
++> MaxFur
+= 0 MaxFur
++> MaxDiamond
+= 0 MaxDiamond
++> MaxSilver
+= 0 MaxSilver
++> MaxCopper
+= 0 MaxCopper
++> MaxIvory
+= 0 MaxIvory
+
+< > AustrianEmpire
 +> Color
 = false Color
 +> MaxCoal
