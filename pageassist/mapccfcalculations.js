@@ -186,7 +186,7 @@ async function scanImage() {
 
         //if the pixel in nationData is transparent, skip
         if(nationDataEmpty) continue;
-        //if only the pixel in climateData is transparent, warn
+        //if the pixel in climateData is transparent, warn
         else if(climateDataEmpty) {
             let x = i % WIDTH;
             let y = Math.floor(i / WIDTH);
@@ -196,8 +196,8 @@ async function scanImage() {
         nationCol = "Col" + rgbToHex([nationData[i*4], nationData[i*4+1], nationData[i*4+2]]);
         climateCol = "Col" + rgbToHex([climateData[i*4], climateData[i*4+1], climateData[i*4+2]]);
 
-        const NationOfPixel = typeof colorToNationMap[nationCol] !== 'undefined' ? colorToNationMap[nationCol] : `undefined${nationCol}_transparencyAt${nationData[i*4+3]}`;
-        const ClimateOfPixel = climateDataEmpty ? unassignedClimatePixelAssumption : (typeof colorToClimateMap[climateCol] !== 'undefined' ? colorToClimateMap[climateCol] : `undefined${climateCol}_transparencyAt${climateData[i*4+3]}`);
+        const NationOfPixel = colorToNationMap[nationCol];
+        const ClimateOfPixel = climateDataEmpty ? unassignedClimatePixelAssumption : (typeof colorToClimateMap[climateCol] !== 'undefined' ? colorToClimateMap[climateCol] : `undefined${climateCol}`);
 
         if(typeof climateDistribution[NationOfPixel] === 'undefined') climateDistribution[NationOfPixel] = {};
         if(typeof climateDistribution[NationOfPixel][ClimateOfPixel] === 'undefined') climateDistribution[NationOfPixel][ClimateOfPixel] = 0;
