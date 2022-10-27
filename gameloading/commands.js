@@ -198,16 +198,19 @@ function createStat(currentSelection, arg){
             
             
             `))();
+            PostStatCreate(currentSelection, newName);
         }
     } else {
+        
         if(objectClass != null)
             (new Function(`gameStats${currentSelection}.${arg} = new ${objectClass}("${arg}");`))();
         else
             (new Function(`gameStats${currentSelection}.${arg} = {};`))();
         if(objectClass == "Nation") evaluateNation(arg);
+        
+        PostStatCreate(currentSelection, arg);
     }
     
-    PostStatCreate(currentSelection, arg);
 }
 
 function deleteStat(currentSelection, arg){

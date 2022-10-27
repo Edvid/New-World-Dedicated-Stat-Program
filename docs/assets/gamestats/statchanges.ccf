@@ -637,10 +637,10 @@ trade TreatyOfMagajiya2, Italia > MagajiyaTribe, 75 Budget
 +1 PersianGulf
 +0.5 EastDanube
 +0.5 Poland
-trade BulgariaQuasimid1.1, QuasimidEmirate > BulgarianEmpire, 1 Silk
-trade BulgariaQuasimid1.2, QuasimidEmirate > BulgarianEmpire, 1 Copper
-trade BulgariaQuasimid1.3, QuasimidEmirate > BulgarianEmpire, 1 Coffee
-trade BulgariaQuasimid1.4, BulgarianEmpire > QuasimidEmirate, 3 Iron
+trade BulgariaQuasimid1_1, QuasimidEmirate > BulgarianEmpire, 1 Silk
+trade BulgariaQuasimid1_2, QuasimidEmirate > BulgarianEmpire, 1 Copper
+trade BulgariaQuasimid1_3, QuasimidEmirate > BulgarianEmpire, 1 Coffee
+trade BulgariaQuasimid1_4, BulgarianEmpire > QuasimidEmirate, 3 Iron
 trade ByzantineBulgarian1, Byzantium > BulgarianEmpire, 1 Sulphur
 trade ByzantineBulgarian2, Byzantium > BulgarianEmpire, 1 Cotton
 trade ByzantineBulgarian3, Byzantium > BulgarianEmpire, 0.5 Spices
@@ -2474,10 +2474,10 @@ trade TreatyOfSevastopol2, SteppeKhanate > Byzantium, .5 Silver
 <- TreatyOfTrade2
 trade TreatyOfTrade1, Byzantium > SteppeKhanate, 1.5 Sulphur
 trade TreatyOfTrade2, SteppeKhanate > Byzantium, 75 Budget
-<- Treaty Of Germany 1.1
-<- Treaty Of Germany 1.2
-trade Treaty Of Germany 1.1, NorthGermanConfederation > AustrianEmpire, 200 Food
-trade Treaty Of Germany 1.2, AustrianEmpire > NorthGermanConfederation, 120 Budget
+<- Treaty Of Germany 1_1
+<- Treaty Of Germany 1_2
+trade Treaty Of Germany 1_1, NorthGermanConfederation > AustrianEmpire, 200 Food
+trade Treaty Of Germany 1_2, AustrianEmpire > NorthGermanConfederation, 120 Budget
 <- OsonianNorwegian1
 <- OsonianNorwegian2
 <- RussoNorwegian1
