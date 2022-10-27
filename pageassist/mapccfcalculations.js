@@ -112,7 +112,7 @@ async function scanImage() {
         //let the site know you're still alive
         let now = Date.now();
         if (now - then > 500) {
-            progressText.innerText = `${i} out of ${nationData.length / 4} pixels read.\nThat's row ${Math.floor(i / WIDTH)} out of ${HEIGHT}`
+            progressText.innerText = `Double checking colours of nations:\n\n${i} out of ${nationData.length / 4} pixels read.\nThat's row ${Math.floor(i / WIDTH)} out of ${HEIGHT}`
             await new Promise(resolve => setTimeout(resolve));
             then = now;
         }
@@ -165,19 +165,32 @@ async function scanImage() {
     //find nations' climates
     let climateDistribution = {};
     
+
+    then = Date.now();
     for (let i = 0; i < nationData.length / 4; i++) {
+        //let the site know you're still alive
+        let now = Date.now();
+        if (now - then > 500) {
+            progressText.innerText = `Assigning every nation' climate sizes:\n\n${i} out of ${nationData.length / 4} pixels read.\nThat's row ${Math.floor(i / WIDTH)} out of ${HEIGHT}`
+            await new Promise(resolve => setTimeout(resolve));
+            then = now;
+        }
+        
         //if the pixel in climateData and nationData is transparent, skip
         if(climateData[i*4+3] == 0 && nationData[i*4+3] == 0) continue;
         //if only the pixel in climateData is transparent, warn
         else if(climateData[i*4+3] == 0) {
             let x = i % WIDTH;
             let y = Math.floor(i / WIDTH);
-            alert(`The pixel (${x}, ${y}) is null in the climate image, but not the nation image. Investigate this`);
+            alert(`The pixel (${x}, ${y}) is transparent in the climate image, but not the nation image. It is (${nationData[i*4]}, ${nationData[i*4+1]}, ${nationData[i*4+2]}, ${nationData[i*4+3]}) in the nation image. Investigate this`);
             continue;
         }
 
         let nationCol = rgbToHex([nationData[i*4], nationData[i*4+1], nationData[i*4+2]]);
         let climateCol = rgbToHex([climateData[i*4], climateData[i*4+1], climateData[i*4+2]]);
+
+        if(typeof climateDistribution[colorToNationMap[nationCol]] === 'undefined') climateDistribution[colorToNationMap[nationCol]] = {};
+        if(typeof climateDistribution[colorToNationMap[nationCol]][colorToClimateMap[climateCol]] === 'undefined') climateDistribution[colorToNationMap[nationCol]][colorToClimateMap[climateCol]] = 0;
 
         climateDistribution[colorToNationMap[nationCol]][colorToClimateMap[climateCol]]++;
     }
