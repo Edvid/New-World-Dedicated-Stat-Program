@@ -80,7 +80,7 @@ ${allProperties}`);
 
 
     //If value at all is a number, make sure the program understands this
-    if(/^(\*?\d*\.?\d+%?)|(\*)$/.test(value)){
+    if(/^((\*?\d*\.?\d+%?)|(\*))$/.test(value)){
         let useDefault = false;
         if(/^\*/.test(value)){
             useDefault = true;
