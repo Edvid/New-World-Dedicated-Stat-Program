@@ -68345,25 +68345,25 @@
                 "amount": "75",
                 "resource": "Budget"
             },
-            "TreatyOfLondon3.1": {
+            "TreatyOfLondon3_1": {
                 "giver": "UnitedKingdom",
                 "receiver": "VespucianTribes",
                 "amount": "50",
                 "resource": "Budget"
             },
-            "TreatyOfLondon3.2": {
+            "TreatyOfLondon3_2": {
                 "giver": "VespucianTribes",
                 "receiver": "UnitedKingdom",
                 "amount": "700",
                 "resource": "Food"
             },
-            "TreatyOfGermany1.1": {
+            "TreatyOfGermany1_1": {
                 "giver": "NorthGermanConfederation",
                 "receiver": "ArchduchyOfAustria",
                 "amount": "200",
                 "resource": "Food"
             },
-            "TreatyOfGermany1.2": {
+            "TreatyOfGermany1_2": {
                 "giver": "ArchduchyOfAustria",
                 "receiver": "NorthGermanConfederation",
                 "amount": "120",
