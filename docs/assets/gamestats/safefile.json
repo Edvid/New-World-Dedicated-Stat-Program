@@ -68141,13 +68141,13 @@
                 "amount": "195",
                 "resource": "Food"
             },
-            "Sindh-Potskig1": {
+            "Sindh_Potskig1": {
                 "giver": "SindhEmpire",
                 "receiver": "KingdomOfPotskig",
                 "amount": "50",
                 "resource": "Budget"
             },
-            "Sindh-Potskig2": {
+            "Sindh_Potskig2": {
                 "giver": "KingdomOfPotskig",
                 "receiver": "SindhEmpire",
                 "amount": "1",
