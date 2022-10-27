@@ -44,11 +44,12 @@ function normalCommand(selection) {
     let selectionValue = (new Function(`return gameStats${propertySelection}`))();
     
     while(typeof selectionValue == 'object'){
+        //if object have no properties. It is probably a newly created stat. Set it to ""
         if(Object.keys(selectionValue).length == 0){
             selectionValue = `""`;
-            console.log(`gameStats${propertySelection} = ${selectionValue}`);
             (new Function(`gameStats${propertySelection} = ${selectionValue}`))();
         }
+        //If object has exactly 1 property, treat the selectionvalue as if it is the value of that property instead of the object as a whole
         else if(Object.keys(selectionValue).length == 1){
             propertySelection = `${propertySelection}.${Object.keys(selectionValue)[0]}`;
             selectionValue = (new Function(`return gameStats${propertySelection}`))();
@@ -127,9 +128,12 @@ ${allProperties}`);
         //quotation
         setval = `'${value}'`;
         //but if just number or boolean, don't do quotation
-        if((!isNaN(value) && value !== '') || typeof value === 'boolean' || value.toLowerCase().trim() === "false" || value.toLowerCase().trim() === "true")
+        if((!isNaN(value) && value !== '') || typeof value === 'boolean')
             setval = value;
-        
+        else if(typeof value === 'string'){
+            if(value.toLowerCase().trim() === "false" || value.toLowerCase().trim() === "true")
+                setval = value;
+        }
         (new Function(`gameStats${propertySelection} = ${setval}`))();
 
     } else {
