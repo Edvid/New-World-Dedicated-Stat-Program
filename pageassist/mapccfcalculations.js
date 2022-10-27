@@ -81,7 +81,7 @@ async function scanImage() {
 
     const colorToClimateMap = {
         "Col103c6d": "Ocean",
-        "Colffffff": "PolarDesert",
+        "Col808080": "PolarDesert",
         "Col004a7f": "TaigaAndTundra",
         "Colffac7f": "MontaneForest",
         "Colff6a00": "Medditereanian",
@@ -93,7 +93,7 @@ async function scanImage() {
         "Colc1bd3e": "Savanna",
         "Colff0000": "Mountainous",
         "Colfffb99": "Desert",
-        "Colffd800": "CoastalDesert"
+        "Colffd802": "CoastalDesert"
     }
 
     let unassignedClimatePixelAssumption = "Moderate";
