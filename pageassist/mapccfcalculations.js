@@ -134,7 +134,8 @@ async function scanImage() {
             let nationNamePrompt = "";
             
             const PromptLabel = document.createElement("label");
-            PromptLabel.text = `The color #${foundNationColor} did not have a matching nation. Which nation is it?`;
+            PromptLabel.innerText = `The color #${foundNationColor} did not have a matching nation. Which nation is it?\n(Give the name it has in stats)`;
+            PromptLabel.style.fontWeight = "Bold";
             const PromptField = document.createElement("input");
             PromptField.type = "text";
             const submitButton = document.createElement("input");
