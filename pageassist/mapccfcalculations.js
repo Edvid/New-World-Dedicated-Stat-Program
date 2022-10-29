@@ -238,6 +238,10 @@ async function scanImage() {
 
         nationCol = "Col" + rgbToHex([nationData[i*4], nationData[i*4+1], nationData[i*4+2]]);
         climateCol = "Col" + rgbToHex([climateData[i*4], climateData[i*4+1], climateData[i*4+2]]);
+        
+        if(typeof colorToClimateMap[climateCol] === 'undefined'){
+            console.warn(`The pixel (${x}, ${y}) is of a colour not found on the colorToClimateMap. Investigate this. For now undefined${climateCol} is assigned`);
+        }
 
         const NationOfPixel = colorToNationMap[nationCol];
         const ClimateOfPixel = climateDataEmpty ? unassignedClimatePixelAssumption : (typeof colorToClimateMap[climateCol] !== 'undefined' ? colorToClimateMap[climateCol] : `undefined${climateCol}`);
