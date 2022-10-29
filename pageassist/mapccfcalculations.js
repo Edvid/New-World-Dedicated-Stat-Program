@@ -213,6 +213,10 @@ async function scanImage() {
 
     then = Date.now();
     for (let i = 0; i < nationData.length / 4; i++) {
+        
+        let x = i % WIDTH;
+        let y = Math.floor(i / WIDTH);
+
         //let the site know you're still alive
         let now = Date.now();
         if (now - then > 500) {
@@ -231,8 +235,6 @@ async function scanImage() {
         if(nationDataEmpty) continue;
         //if the pixel in climateData is transparent, warn
         else if(climateDataEmpty) {
-            let x = i % WIDTH;
-            let y = Math.floor(i / WIDTH);
             console.warn(`The pixel (${x}, ${y}) is transparent in the climate image, but not the nation image. It is (${nationData[i*4]}, ${nationData[i*4+1]}, ${nationData[i*4+2]}, ${nationData[i*4+3]}) in the nation image. Investigate this. For now ${unassignedClimatePixelAssumption} is assumed`);   
         }
 
