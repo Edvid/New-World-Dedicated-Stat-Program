@@ -380,8 +380,6 @@ async function scanImage() {
         }
 
         //use resourceBlobSizes to divide all. 
-
-        console.log(resourceOverlap)
         
         Object.keys(resourceOverlap).forEach(nationKey => {
             let count = 0.0;
