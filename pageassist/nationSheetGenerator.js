@@ -220,45 +220,19 @@ function createNationSheet(nationName) {
     createStatTable(
         "Flag and Government",
         [
-            [
-                "Flag"
-            ],
-            [
-                "GovernmentName"
-            ],
-			[
-				"CapitalName"
-			]
+            [ "Flag" ],
+            [ "GovernmentName" ],
+			[ "CapitalName" ]
         ]
     );
 
     createStatTable(
         "Turn Based Stats",
         [
-            [
-                "FuturePopulation",
-                "FutureLiteracyPercent",
-                "FutureHigherEducation",
-                "FutureBudget",
-                "FutureFood"
-            ],
-            [
-                "Population",
-                "LiteracyPercent",
-                "HigherEducation",
-                "Budget",
-                "Food"
-            ],
-            [
-                "FutureResearchPoints",
-                "FuturePublicDebtLength",
-                "FutureCulturalPower",
-            ],
-            [
-                "ResearchPoints",
-                "PublicDebtLength",
-                "CulturalPower",
-            ]
+            [ "FuturePopulation", "FutureLiteracyPercent", "FutureHigherEducation", "FutureBudget", "FutureFood" ],
+            [ "Population", "LiteracyPercent", "HigherEducation", "Budget", "Food" ],
+            [ "FutureResearchPoints", "FuturePublicDebtLength", "FutureCulturalPower" ],
+            [ "ResearchPoints", "PublicDebtLength", "CulturalPower" ]
         ]
     );
 
@@ -275,50 +249,19 @@ function createNationSheet(nationName) {
     createStatTable(
         "Population Stuff",
         [
-            [
-                "ReligionRepresentedAtGovernmentLevel",
-                "CultureRepresentedAtGovernmentLevel",
-                "PopulationStabilityImpact"
-            ],
-            [
-                "ReligionRepresentedAtGovernmentLevelPercent",
-                "CultureRepresentedAtGovernmentLevelPercent",
-                "PopulationTechImpact"
-            ],
-            [
-                "ReligiousDisunity",
-                "CulturalDisunity",
-                "PopulationGrowth"
-            ]
+            [ "ReligionRepresentedAtGovernmentLevel", "CultureRepresentedAtGovernmentLevel", "PopulationStabilityImpact" ],
+            [ "ReligionRepresentedAtGovernmentLevelPercent", "CultureRepresentedAtGovernmentLevelPercent", "PopulationTechImpact" ],
+            [ "ReligiousDisunity", "CulturalDisunity", "PopulationGrowth" ]
         ]
     );
 
     createStatTable(
         "Basic Stats",
         [
-            [
-                "Health",
-                "Corruption",
-                "SocialSpending",
-                "Stability",
-                "Absolutism"
-            ],
-            [
-                "EducationEfficiency",
-                "Overextension",
-                "Prosperity",
-                "AtWar",
-                "PopulationControl"
-            ],
-            [
-                "AdministrativeEfficiency",
-                "Propaganda",
-                "PopulationHappiness",
-                "WarSupport",
-                "BirthControl"
-            ],
-			[
-				"AdministrativeStrain"
+            [ "Health", "Corruption", "SocialSpending", "Stability", "Absolutism" ],
+            [ "EducationEfficiency", "Overextension", "Prosperity", "AtWar", "PopulationControl" ],
+            [ "AdministrativeEfficiency", "Propaganda", "PopulationHappiness", "WarSupport", "BirthControl" ],
+			[ "AdministrativeStrain"
 			]
         ]
     );
@@ -326,232 +269,88 @@ function createNationSheet(nationName) {
     createStatTable(
         "Budget Stats",
         [
-            [
-                "TradeEfficiency",
-                "LocalTrade",
-                "TradePower"
-            ],
-            [
-                "Mercantilism",
-                "ProductionEfficiency",
-                "Production"
-            ],
-            [
-                "Inflation",
-                "DailyBudget",
-                "Budget"
-            ],
-            [
-                "BudgetIncoming",
-                "BudgetOutgoing",
-                "Balance"
-            ],
-            [
-                "HighClassTax",
-                "MediumClassTax",
-                "LowerClassTax",
-                "EffectiveTax"
-            ]
+            [ "TradeEfficiency", "LocalTrade", "TradePower" ],
+            [ "Mercantilism", "ProductionEfficiency", "Production" ],
+            [ "Inflation", "DailyBudget", "Budget" ],
+            [ "BudgetIncoming", "BudgetOutgoing", "Balance" ],
+            [ "HighClassTax", "MediumClassTax", "LowerClassTax", "EffectiveTax" ]
         ]
     );
 
     createStatTable(
         "Upkeeps and Income",
         [
-            [
-                "ProductionRevenue",
-                "TradeRevenue",
-				"PassiveInvestmentIncome"
-            ],
-			[
-				"ResourceBudgetBoost",
-				"EffectiveTax",
-                "OverallIncome"
+            [ "ProductionRevenue", "TradeRevenue",
+				"PassiveInvestmentIncome" ],
+			[ "ResourceBudgetBoost", "EffectiveTax", "OverallIncome"
 			],
-            [
-                "ArmyUpkeep",
-                "NavyUpkeep",
-                "FortUpkeep"
-            ],
-            [
-                "SpyUpkeep",
-                "EducationUpkeep",
-                "PopulationControlUpkeep"
-            ],
-            [
-                "SocialSpendingUpkeep",
-                "AgricultureSpending",
-                "AdministrativeUpkeep"
-            ],
-            [
-                "HygieneUpkeep",
-                "ResearchUpkeep",
-                "PropagandaUpkeep"
-            ]
+            [ "ArmyUpkeep", "NavyUpkeep", "FortUpkeep" ],
+            [ "SpyUpkeep", "EducationUpkeep", "PopulationControlUpkeep" ],
+            [ "SocialSpendingUpkeep", "AgricultureSpending", "AdministrativeUpkeep" ],
+            [ "HygieneUpkeep", "ResearchUpkeep", "PropagandaUpkeep" ]
         ]
     );
 
     createStatTable(
         "Army Units",
         [
-            [
-                "Levies",
-                "Militia",
-                "LightInfantry",
-                "HeavyInfantry",
-            ],
-            [
-                "Archers",
-                "Crossbowmen",
-                "HandCannoneers",
-                "Musketeers"
-            ],
-            [
-                "LightCavalry",
-                "HeavyCavalry",
-                "SiegeEquipment",
-                "LargeSiegeEquipment"
-            ],
-            [
-                "Cannons",
-                "EliteInfantry",
-                "EliteCavalry",
-                "EliteUnitsCap"
-            ],
-            [
-                "OverallNumbers",
-                "Spies"
-            ]
+            [ "Levies", "Militia", "LightInfantry", "HeavyInfantry", ],
+            [ "Archers", "Crossbowmen", "HandCannoneers", "Musketeers" ],
+            [ "LightCavalry", "HeavyCavalry", "SiegeEquipment", "LargeSiegeEquipment" ],
+            [ "Cannons", "EliteInfantry", "EliteCavalry", "EliteUnitsCap" ],
+            [ "OverallNumbers", "Spies" ]
         ]
     );
 
     createStatTable(
         "Debt Stats",
         [
-            [
-                "PossiblePublicDebt",
-                "PublicDebtLength",
-                "InterestRate"
-            ],
-            [
-                "PublicDebtTaken",
-                "EffectiveDebt",
-                "DebtHappinessEffect"
-            ]
+            [ "PossiblePublicDebt", "PublicDebtLength", "InterestRate" ],
+            [ "PublicDebtTaken", "EffectiveDebt", "DebtHappinessEffect" ]
         ]
     );
 
     createStatTable(
         "Fortifications",
         [
-            [
-                "SmallForts",
-                "MediumForts",
-                "BigForts",
-                "HugeForts",
-                "ExtraCityFortifications"
-            ]
+            [ "SmallForts", "MediumForts", "BigForts", "HugeForts", "ExtraCityFortifications" ]
         ]
     );
 
     createStatTable(
         "Army Stats",
         [
-            [
-                "IronShortage",
-                "SulphurShortage",
-                "ArmyWages"
-            ],
-            [
-                "CommanderFreedom",
-                "TrainingQuality",
-                "MilitaryTactics"
-            ],
-            [
-                "ArmyTech",
-                "ArmyQuality",
-                "SpyQuality"
-            ],
-            [
-                "MilitaryLoyalty",
-                "MilitaryMorale",
-                "MilitaryDiscipline"
-            ]
+            [ "IronShortage", "SulphurShortage", "ArmyWages" ],
+            [ "CommanderFreedom", "TrainingQuality", "MilitaryTactics" ],
+            [ "ArmyTech", "ArmyQuality", "SpyQuality" ],
+            [ "MilitaryLoyalty", "MilitaryMorale", "MilitaryDiscipline" ]
         ]
     );
 
     createStatTable(
         "Navy",
         [
-            [
-                "UpkeepForOneLightShip",
-                "UpkeepForOneMediumShip",
-                "UpkeepForOneHeavyShip"
-            ],
-            [
-                "LightShips",
-                "MediumShips",
-                "HeavyShips"
-            ],
-            [
-                "NavyImprovements",
-                "NavyTech",
-                "NavyQuality"
-            ],
-            [
-                "OverallShipCount",
-                "TradeProtection",
-                "NavalPower"
-            ]
+            [ "UpkeepForOneLightShip", "UpkeepForOneMediumShip", "UpkeepForOneHeavyShip" ],
+            [ "LightShips", "MediumShips", "HeavyShips" ],
+            [ "NavyImprovements", "NavyTech", "NavyQuality" ],
+            [ "OverallShipCount", "TradeProtection", "NavalPower" ]
         ]
     );
 
     createStatTable(
         "Agriculture",
         [
-            [
-                "Fertility",
-                "AgricultureSubsidies",
-                "AgricultureInfrastructure",
-                "AgricultureAdvancements",
-                "AgricultureTechnology",
-                "FarmingEfficiency",
-                "AgricultureSpending"
-            ],
-            [
-                ".Workforces.PopulationInAgriculture",
-                "DailyFood",
-                "FoodConsumption",
-                "FoodGain",
-                "StockingCapabilities",
-                "MaxFoodStock",
-                "SellingCapability"
-            ],
-            [
-                "Food",
-                "FutureFood",
-                "SurplusFood",
-                "FoodSold",
-                "Foodlost",
-                "TradeProfit",
-                "FoodPopulationBoost"
-            ]
+            [ "Fertility", "AgricultureSubsidies", "AgricultureInfrastructure", "AgricultureAdvancements", "AgricultureTechnology", "FarmingEfficiency", "AgricultureSpending" ],
+            [ ".Workforces.PopulationInAgriculture", "DailyFood", "FoodConsumption", "FoodGain", "StockingCapabilities", "MaxFoodStock", "SellingCapability" ],
+            [ "Food", "FutureFood", "SurplusFood", "FoodSold", "Foodlost", "TradeProfit", "FoodPopulationBoost" ]
         ]
     );
 
     createStatTable(
         "War Stats",
         [
-            [
-                "Casualties",
-                "Pillaging",
-                "Occupation",
-				"Blockade",
-                "MinorBattles",
-                "MajorBattles",
-                "WarExhaustion",
-                "Fervor"
-            ]
+            [ "Casualties", "Pillaging", "Occupation",
+				"Blockade", "MinorBattles", "MajorBattles", "WarExhaustion", "Fervor" ]
         ]
     );
 
@@ -562,31 +361,15 @@ function createNationSheet(nationName) {
     createStatTable(
         "Land Stats",
         [
-            [
-                "Size",
-                "KmSquared",
-                "PopulationDensityPerKmSquared",
-                "Disease",
-                "UnderPopulation"
-            ],
-            [
-                "MaxPopulation",
-                "DetachedLand",
-                "LandAdministration",
-                "Overextension",
-                "HabitableLand"
-            ]
+            [ "Size", "KmSquared", "PopulationDensityPerKmSquared", "Disease", "UnderPopulation" ],
+            [ "MaxPopulation", "DetachedLand", "LandAdministration", "Overextension", "HabitableLand" ]
         ]
     );
     
     createStatTable(
         "Estate Influences",
         [
-            [
-                "NobleInfluence",
-                "ClergyInfluence",
-                "BurghersInfluence",
-            ]
+            [ "NobleInfluence", "ClergyInfluence", "BurghersInfluence", ]
         ]
     );
 
@@ -604,31 +387,15 @@ function createNationSheet(nationName) {
 
     createBreaker();
 
+    function ti(zone){
+        return `.TradeInfluences["${zone}"].TradingPoints`
+    }
+    
     createStatTable(
         "Trade Influence - Americas",
         [
-            [
-                ".TradeInfluences[\"Alaska\"].TradingPoints",
-                ".TradeInfluences[\"Cascadia\"].TradingPoints",
-                ".TradeInfluences[\"CaliforniaAndWestMexico\"].TradingPoints",
-                ".TradeInfluences[\"HudsonBay\"].TradingPoints",
-                ".TradeInfluences[\"GreatLakes\"].TradingPoints",
-                ".TradeInfluences[\"Louisiana\"].TradingPoints",
-                ".TradeInfluences[\"GulfOfMexico\"].TradingPoints",
-                ".TradeInfluences[\"LawrenceGulf\"].TradingPoints",
-                ".TradeInfluences[\"EastCoast\"].TradingPoints",
-                ".TradeInfluences[\"Carribean\"].TradingPoints",
-                ".TradeInfluences[\"CentralAmerica\"].TradingPoints"
-            ],
-            [
-                ".TradeInfluences[\"GuyanaAndSuriname\"].TradingPoints",
-                ".TradeInfluences[\"Amazon\"].TradingPoints",
-                ".TradeInfluences[\"Peru\"].TradingPoints",
-                ".TradeInfluences[\"RioGrande\"].TradingPoints",
-                ".TradeInfluences[\"LaPlata\"].TradingPoints",
-                ".TradeInfluences[\"Chile\"].TradingPoints",
-                ".TradeInfluences[\"Patagonia\"].TradingPoints"
-            ]
+            [ ti("Alaska"), ti("Cascadia"), ti("CaliforniaAndWestMexico"), ti("HudsonBay"), ti("GreatLakes"), ti("Louisiana"), ti("GulfOfMexico"), ti("LawrenceGulf"), ti("EastCoast"), ti("Carribean"), ti("CentralAmerica") ],
+            [ ti("GuyanaAndSuriname"), ti("Amazon"), ti("Peru"), ti("RioGrande"), ti("LaPlata"), ti("Chile"), ti("Patagonia") ]
         ],
         /*upmigrations: */1
     ).classList.add("tradeinfluences");
@@ -636,37 +403,9 @@ function createNationSheet(nationName) {
     createStatTable(
         "Trade Influence - Europe",
         [
-            [
-                ".TradeInfluences[\"NorthSea\"].TradingPoints",
-                ".TradeInfluences[\"BritishIsles\"].TradingPoints",
-                ".TradeInfluences[\"EnglishChannel\"].TradingPoints",
-                ".TradeInfluences[\"France\"].TradingPoints",
-                ".TradeInfluences[\"BayOfBiscay\"].TradingPoints",
-                ".TradeInfluences[\"WestIberia\"].TradingPoints",
-                ".TradeInfluences[\"Gibraltar\"].TradingPoints",
-                ".TradeInfluences[\"WesternMediterranean\"].TradingPoints",
-                ".TradeInfluences[\"Rhine\"].TradingPoints"
-            ],
-            [
-                ".TradeInfluences[\"CentralMediterranean\"].TradingPoints",
-                ".TradeInfluences[\"Adriatic\"].TradingPoints",
-                ".TradeInfluences[\"Germany\"].TradingPoints",
-                ".TradeInfluences[\"WesternDanube\"].TradingPoints",
-                ".TradeInfluences[\"Denmark\"].TradingPoints",
-                ".TradeInfluences[\"Baltic\"].TradingPoints",
-                ".TradeInfluences[\"NorthNordics\"].TradingPoints",
-                ".TradeInfluences[\"BarentsSea\"].TradingPoints"
-            ],
-            [
-                ".TradeInfluences[\"Novgorod\"].TradingPoints",
-                ".TradeInfluences[\"Poland\"].TradingPoints",
-                ".TradeInfluences[\"Dniepr\"].TradingPoints",
-                ".TradeInfluences[\"Crimea\"].TradingPoints",
-                ".TradeInfluences[\"EasternDanube\"].TradingPoints",
-                ".TradeInfluences[\"Greece\"].TradingPoints",
-                ".TradeInfluences[\"NorthernAnatolia\"].TradingPoints",
-                ".TradeInfluences[\"EasternMediterranean\"].TradingPoints"
-            ]
+            [ ti("NorthSea"), ti("BritishIsles"), ti("EnglishChannel"), ti("France"), ti("BayOfBiscay"), ti("WestIberia"), ti("Gibraltar"), ti("WesternMediterranean"), ti("Rhine") ],
+            [ ti("CentralMediterranean"), ti("Adriatic"), ti("Germany"), ti("WesternDanube"), ti("Denmark"), ti("Baltic"), ti("NorthNordics"), ti("BarentsSea") ],
+            [ ti("Novgorod"), ti("Poland"), ti("Dniepr"), ti("Crimea"), ti("EasternDanube"), ti("Greece"), ti("NorthernAnatolia"), ti("EasternMediterranean") ]
         ],
         /*upmigrations: */1
     ).classList.add("tradeinfluences");
@@ -674,19 +413,7 @@ function createNationSheet(nationName) {
     createStatTable(
         "Trade Influence - Africa",
         [
-            [
-                ".TradeInfluences[\"Egypt\"].TradingPoints",
-                ".TradeInfluences[\"RedSea\"].TradingPoints",
-                ".TradeInfluences[\"WesternSahara\"].TradingPoints",
-                ".TradeInfluences[\"CoteDIvoire\"].TradingPoints",
-                ".TradeInfluences[\"Nigeria\"].TradingPoints",
-                ".TradeInfluences[\"SouthNile\"].TradingPoints",
-                ".TradeInfluences[\"Somalia\"].TradingPoints",
-                ".TradeInfluences[\"Kongo\"].TradingPoints",
-                ".TradeInfluences[\"EastAfrica\"].TradingPoints",
-                ".TradeInfluences[\"Mozambique\"].TradingPoints",
-                ".TradeInfluences[\"SouthAfrica\"].TradingPoints"
-            ]
+            [ ti("Egypt"), ti("RedSea"), ti("WesternSahara"), ti("CoteDIvoire"), ti("Nigeria"), ti("SouthNile"), ti("Somalia"), ti("Kongo"), ti("EastAfrica"), ti("Mozambique"), ti("SouthAfrica") ]
         ],
         /*upmigrations: */1
     ).classList.add("tradeinfluences");
@@ -694,36 +421,9 @@ function createNationSheet(nationName) {
     createStatTable(
         "Trade Influence - Asia",
         [
-            [
-                ".TradeInfluences[\"Mesopotamia\"].TradingPoints",
-                ".TradeInfluences[\"PersianGulf\"].TradingPoints",
-                ".TradeInfluences[\"Caucasus\"].TradingPoints",
-                ".TradeInfluences[\"DonRiver\"].TradingPoints",
-                ".TradeInfluences[\"Volga\"].TradingPoints",
-                ".TradeInfluences[\"CentralAsia\"].TradingPoints",
-                ".TradeInfluences[\"WestSiberia\"].TradingPoints",
-                ".TradeInfluences[\"EastSiberia\"].TradingPoints"
-            ],
-            [
-                ".TradeInfluences[\"Iran\"].TradingPoints",
-                ".TradeInfluences[\"Pakistan\"].TradingPoints",
-                ".TradeInfluences[\"Tibet\"].TradingPoints",
-                ".TradeInfluences[\"Mongolia\"].TradingPoints",
-                ".TradeInfluences[\"Manchuria\"].TradingPoints",
-                ".TradeInfluences[\"SeaOfJapan\"].TradingPoints",
-                ".TradeInfluences[\"NorthChina\"].TradingPoints",
-                ".TradeInfluences[\"YangtzeRiver\"].TradingPoints"
-            ],
-            [
-                ".TradeInfluences[\"SouthChina\"].TradingPoints",
-                ".TradeInfluences[\"NorthIndia\"].TradingPoints",
-                ".TradeInfluences[\"WestIndia\"].TradingPoints",
-                ".TradeInfluences[\"EastIndia\"].TradingPoints",
-                ".TradeInfluences[\"Burma\"].TradingPoints",
-                ".TradeInfluences[\"SouthEastAsia\"].TradingPoints",
-                ".TradeInfluences[\"NorthAustralia\"].TradingPoints",
-                ".TradeInfluences[\"SouthAustralia\"].TradingPoints"
-            ]
+            [ ti("Mesopotamia"), ti("PersianGulf"), ti("Caucasus"), ti("DonRiver"), ti("Volga"), ti("CentralAsia"), ti("WestSiberia"), ti("EastSiberia") ],
+            [ ti("Iran"), ti("Pakistan"), ti("Tibet"), ti("Mongolia"), ti("Manchuria"), ti("SeaOfJapan"), ti("NorthChina"), ti("YangtzeRiver") ],
+            [ ti("SouthChina"), ti("NorthIndia"), ti("WestIndia"), ti("EastIndia"), ti("Burma"), ti("SouthEastAsia"), ti("NorthAustralia"), ti("SouthAustralia") ]
         ],
         /*upmigrations: */1
     ).classList.add("tradeinfluences");
@@ -769,15 +469,7 @@ function createNationSheet(nationName) {
     createStatTable(
         "Tech Stats",
         [
-            [
-                "Isolation",
-                "ResearchSpending",
-                "ResearchEffectiveness",
-                "ResearchBoostFromTech",
-                "ResearchPointGain",
-                "ResearchPoints",
-                "FutureResearchPoints"
-            ]
+            [ "Isolation", "ResearchSpending", "ResearchEffectiveness", "ResearchBoostFromTech", "ResearchPointGain", "ResearchPoints", "FutureResearchPoints" ]
         ]
     );
 
@@ -786,13 +478,7 @@ function createNationSheet(nationName) {
     createStatTable(
         "Culture Stats",
         [
-            [
-                "CulturalAdvance",
-                "CulturalProsperity",
-                "CulturalPowerGain",
-                "CulturalPower",
-                "FutureCulturalPower"
-            ]
+            [ "CulturalAdvance", "CulturalProsperity", "CulturalPowerGain", "CulturalPower", "FutureCulturalPower" ]
         ]
     );
 
@@ -801,186 +487,34 @@ function createNationSheet(nationName) {
     createStatTable(
         "Resources",
         [
-            [
-                "MiningEfficiency"
-            ],
-            [
-                "Coal",
-                "Sulphur",
-                "Iron",
-                "Copper"
-            ],
-            [
-                "EffectiveCoal",
-                "EffectiveSulphur",
-                "EffectiveIron",
-                "EffectiveCopper"
-            ],
-            [
-                "Cotton",
-                "Gold",
-                "Tea",
-                "Silk",
-                "Spice",
-                "Wool",
-                "Coffee",
-                "Fur",
-                "Diamond",
-                "Silver",
-                "Ivory",
-                "Cocoa",
-                "Tobacco",
-                "Sugar",
-                "ExoticFruit"
-            ],
-            [
-                "EffectiveCotton",
-                "EffectiveGold",
-                "EffectiveTea",
-                "EffectiveSilk",
-                "EffectiveSpice",
-                "EffectiveWool",
-                "EffectiveCoffee",
-                "EffectiveFur",
-                "EffectiveDiamond",
-                "EffectiveSilver",
-                "EffectiveIvory",
-                "EffectiveCocoa",
-                "EffectiveTobacco",
-                "EffectiveSugar",
-                "EffectiveExoticFruit"
-            ],
-            [
-                "CottonInflation",
-                "GoldInflation",
-                "TeaInflation",
-                "SilkInflation",
-                "SpiceInflation",
-                "WoolInflation",
-                "CoffeeInflation",
-                "FurInflation",
-                "DiamondInflation",
-                "SilverInflation",
-                "IvoryInflation",
-                "CocoaInflation",
-                "TobaccoInflation",
-                "SugarInflation",
-                "ExoticFruitInflation"
-            ],
-            [
-                "ResourcePopulationGrowthBoost",
-                "ResourceHappinessBoost",
-                "ResourceBudgetBoost"
-            ]
+            [ "MiningEfficiency" ],
+            [ "Coal", "Sulphur", "Iron", "Copper" ],
+            [ "EffectiveCoal", "EffectiveSulphur", "EffectiveIron", "EffectiveCopper" ],
+            [ "Cotton", "Gold", "Tea", "Silk", "Spice", "Wool", "Coffee", "Fur", "Diamond", "Silver", "Ivory", "Cocoa", "Tobacco", "Sugar", "ExoticFruit" ],
+            [ "EffectiveCotton", "EffectiveGold", "EffectiveTea", "EffectiveSilk", "EffectiveSpice", "EffectiveWool", "EffectiveCoffee", "EffectiveFur", "EffectiveDiamond", "EffectiveSilver", "EffectiveIvory", "EffectiveCocoa", "EffectiveTobacco", "EffectiveSugar", "EffectiveExoticFruit" ],
+            [ "CottonInflation", "GoldInflation", "TeaInflation", "SilkInflation", "SpiceInflation", "WoolInflation", "CoffeeInflation", "FurInflation", "DiamondInflation", "SilverInflation", "IvoryInflation", "CocoaInflation", "TobaccoInflation", "SugarInflation", "ExoticFruitInflation" ],
+            [ "ResourcePopulationGrowthBoost", "ResourceHappinessBoost", "ResourceBudgetBoost" ]
         ]
     );
 
     createStatTable(
         "Resource Prices",
         [
-            [
-                "CoalDemand",
-                "GoldDemand",
-                "IronDemand",
-                "SulphurDemand",
-                "CottonDemand",
-                "TeaDemand",
-                "SpiceDemand",
-                "CopperDemand",
-                "SilkDemand",
-                "WoolDemand"
-            ],
-            [
-                "CoalValue",
-                "GoldValue",
-                "IronValue",
-                "SulphurValue",
-                "CottonValue",
-                "TeaValue",
-                "SpiceValue",
-                "CopperValue",
-                "SilkValue",
-                "WoolValue"
-            ],
-            [
-                "CoffeeDemand",
-                "SilverDemand",
-                "DiamondDemand",
-                "FurDemand",
-                "IvoryDemand",
-                "CocoaDemand",
-                "TobaccoDemand",
-                "SugarDemand",
-                "ExoticFruitDemand"
-            ],
-            [
-                "CoffeeValue",
-                "SilverValue",
-                "DiamondValue",
-                "FurValue",
-                "IvoryValue",
-                "CocoaValue",
-                "TobaccoValue",
-                "SugarValue",
-                "ExoticFruitValue"
-            ]
+            [ "CoalDemand", "GoldDemand", "IronDemand", "SulphurDemand", "CottonDemand", "TeaDemand", "SpiceDemand", "CopperDemand", "SilkDemand", "WoolDemand" ],
+            [ "CoalValue", "GoldValue", "IronValue", "SulphurValue", "CottonValue", "TeaValue", "SpiceValue", "CopperValue", "SilkValue", "WoolValue" ],
+            [ "CoffeeDemand", "SilverDemand", "DiamondDemand", "FurDemand", "IvoryDemand", "CocoaDemand", "TobaccoDemand", "SugarDemand", "ExoticFruitDemand" ],
+            [ "CoffeeValue", "SilverValue", "DiamondValue", "FurValue", "IvoryValue", "CocoaValue", "TobaccoValue", "SugarValue", "ExoticFruitValue" ]
         ]
     );
 
     createStatTable(
         "Resource Trade",
         [
-            [
-                "FoodIncoming",
-                "CoalIncoming",
-                "SulphurIncoming",
-                "CottonIncoming",
-                "GoldIncoming",
-                "IronIncoming",
-                "TeaIncoming",
-                "SilkIncoming",
-                "SpiceIncoming",
-                "WoolIncoming"
-            ],
-            [
-                "FoodOutgoing",
-                "CoalOutgoing",
-                "SulphurOutgoing",
-                "CottonOutgoing",
-                "GoldOutgoing",
-                "IronOutgoing",
-                "TeaOutgoing",
-                "SilkOutgoing",
-                "SpiceOutgoing",
-                "WoolOutgoing"
-            ],
-            [
-                "CoffeeIncoming",
-                "FurIncoming",
-                "DiamondIncoming",
-                "SilverIncoming",
-                "CopperIncoming",
-                "IvoryIncoming",
-                "CocoaIncoming",
-                "TobaccoIncoming",
-                "SugarIncoming",
-                "ExoticFruitIncoming"
-            ],
-            [
-                "CoffeeOutgoing",
-                "FurOutgoing",
-                "DiamondOutgoing",
-                "SilverOutgoing",
-                "CopperOutgoing",
-                "IvoryOutgoing",
-                "CocoaOutgoing",
-                "TobaccoOutgoing",
-                "SugarOutgoing",
-                "ExoticFruitOutgoing"
-            ],
-            [
-                "TradePowerFromResourceTrade"
-            ]
+            [ "FoodIncoming", "CoalIncoming", "SulphurIncoming", "CottonIncoming", "GoldIncoming", "IronIncoming", "TeaIncoming", "SilkIncoming", "SpiceIncoming", "WoolIncoming" ],
+            [ "FoodOutgoing", "CoalOutgoing", "SulphurOutgoing", "CottonOutgoing", "GoldOutgoing", "IronOutgoing", "TeaOutgoing", "SilkOutgoing", "SpiceOutgoing", "WoolOutgoing" ],
+            [ "CoffeeIncoming", "FurIncoming", "DiamondIncoming", "SilverIncoming", "CopperIncoming", "IvoryIncoming", "CocoaIncoming", "TobaccoIncoming", "SugarIncoming", "ExoticFruitIncoming" ],
+            [ "CoffeeOutgoing", "FurOutgoing", "DiamondOutgoing", "SilverOutgoing", "CopperOutgoing", "IvoryOutgoing", "CocoaOutgoing", "TobaccoOutgoing", "SugarOutgoing", "ExoticFruitOutgoing" ],
+            [ "TradePowerFromResourceTrade" ]
         ]
     );
 
