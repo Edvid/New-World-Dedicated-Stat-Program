@@ -47,6 +47,26 @@ function PostStatChange(selection, change){
         let newTroopSelection = selection.replace(/\.(?=[^.]*$)/gm, ".New_");
         (new Function(`gameStats${newTroopSelection} += ${change}`))();
     }
+    else if(
+        /Fur$/.test(selection) ||
+        /Gold$/.test(selection) ||
+        /Iron$/.test(selection) ||
+        /Ivory$/.test(selection) ||
+        /Sulphur$/.test(selection) ||
+        /Coal$/.test(selection) ||
+        /Copper$/.test(selection) ||
+        /Diamonds$/.test(selection) ||
+        /Silver$/.test(selection)
+    ){
+        let resourceSelection = "." + selection.split(/\./gm).slice(1, -1).join(".");
+        let resourceName = resourceSelection.split(/\./gm).slice(-1).join(".");
+        let maxResource = (new Function(`return gameStats${resourceSelection}.Max${resourceName}`))();
+        let curResource = (new Function(`return gameStats${resourceSelection}.${resourceName}`))();
+
+        if(curResource > maxResource){
+            (new Function(`return gameStats${resourceSelection}.${resourceName} = ${maxResource}`))()
+        }
+    }
     //public debt taken exceed check
     else if(/PublicDebtTaken/.test(selection)){
         //we're only interested in all below if the change is positive
