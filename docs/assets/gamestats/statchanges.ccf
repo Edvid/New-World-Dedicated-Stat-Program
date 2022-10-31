@@ -4403,3 +4403,1069 @@ sync
 = "ff0c0c" NewNagasaki.Color
 = "7c1912" ZuluKingdom.Color
 = "9f9eff" ZelenvaUnion.Color
+
+<... > Nations
+
+<...
+
+> TsardomOfMuscovy
+= 5000 PolarDesert
+= 77497 TaigaAndTundra
+= 60347 Moderate
+= 1786 Steppe
+= 304 CoastalDesert
+= 438 Tropical
+= 309 SubTropical
+= 216 Savanna
+= 2 Desert
+
+
+< > SwedishKingdom
+= 8648 PolarDesert
+= 26934 MontaneForest
+= 28938 TaigaAndTundra
+= 21458 Moderate
+= 638 SubTropical
+= 663 CoastalDesert
+= 1 Desert
+
+
+< > BulgarianEmpire
+= 346 PolarDesert
+= 22686 TaigaAndTundra
+= 2908 Mountainous
+= 44541 Moderate
+= 3692 Steppe
+
+
+< > KingdomOfAvanorolsk
+= 22486 TaigaAndTundra
+= 64 PolarDesert
+= 22125 MontaneForest
+= 5715 Moderate
+
+
+< > EmpireOfJapan
+= 25900 PolarDesert
+= 30085 TaigaAndTundra
+= 12668 MontaneForest
+= 63590 Moderate
+= 3843 Mountainous
+= 12284 Tropical
+= 3966 SubTropical
+
+
+< > UnitedKingdom
+= 18652 Moderate
+= 631 CoastalDesert
+= 762 SubTropical
+= 1014 Tropical
+
+
+< > LatvianEmpire
+= 25 TaigaAndTundra
+= 11584 Moderate
+
+
+< > EulacianTradeCouncil
+= 5054 Moderate
+= 3045 Medditereanian
+= 8664 CoastalDesert
+= 63647 SubTropical
+= 18245 Mountainous
+= 99481 Tropical
+= 17075 Savanna
+= 6240 Desert
+= 387 TaigaAndTundra
+
+
+< > VespucianTribes
+= 5315 MontaneForest
+= 3286 TaigaAndTundra
+= 131614 Moderate
+= 11885 Medditereanian
+= 80 Steppe
+= 21 Mountainous
+= 285 Savanna
+= 1571 CoastalDesert
+= 2 Desert
+= 2955 SubTropical
+= 810 Tropical
+
+
+< > DuchyOfBelarus
+= 25543 Moderate
+= 2354 Steppe
+
+
+< > SiouxTribes
+= 24533 TaigaAndTundra
+= 58130 Moderate
+= 172 SubTropical
+= 173 Tropical
+
+
+< > NorthGermanConfederation
+= 22090 Moderate
+= 279 Mountainous
+
+
+< > KingdomOfPoland
+= 19545 Moderate
+
+
+< > KingdomOfIreland
+= 4117 Moderate
+= 2864 Savanna
+= 7 Mountainous
+
+
+< > NewEngland
+= 6907 TaigaAndTundra
+= 6269 Moderate
+
+
+< > MongolianKhanate
+= 17639 MontaneForest
+= 39611 Steppe
+= 25 Mountainous
+= 24907 Desert
+
+
+< > FrenchEmpire
+= 32134 Moderate
+= 2176 Medditereanian
+= 611 Mountainous
+= 165 Tropical
+
+
+< > SteppeKhanate
+= 5158 Moderate
+= 56130 Steppe
+= 41 Desert
+= 1464 CoastalDesert
+= 6590 Mountainous
+= 3214 Arid
+
+
+< > MenzenConfederation
+= 5065 MontaneForest
+= 34902 Moderate
+= 1339 Steppe
+
+
+< > AustrianEmpire
+= 29398 Moderate
+= 5033 Mountainous
+= 3 Steppe
+= 547 Medditereanian
+= 368 SubTropical
+= 64 Tropical
+
+
+< > BlackfeetConfederation
+= 1851 TaigaAndTundra
+= 35223 Steppe
+= 1397 MontaneForest
+= 1931 Mountainous
+
+
+< > KingdomOfRomania
+= 4149 Moderate
+= 2108 Mountainous
+= 7891 Steppe
+
+
+< > Italia
+= 3894 Moderate
+= 4148 Mountainous
+= 9584 Medditereanian
+
+
+< > Byzantium
+= 6694 Steppe
+= 4044 Moderate
+= 34903 Medditereanian
+= 1282 Mountainous
+= 18137 Arid
+= 14689 Desert
+= 5552 CoastalDesert
+= 4882 Savanna
+= 2109 Tropical
+= 11911 SubTropical
+
+
+< > QuasimidEmirate
+= 107 Steppe
+= 8307 CoastalDesert
+= 445 Desert
+= 36781 Arid
+= 3313 Mountainous
+
+
+< > Bosnia
+= 2216 Moderate
+= 245 Medditereanian
+
+
+< > KingdomOfHispania
+= 32543 Medditereanian
+= 238 Moderate
+= 772 Mountainous
+= 63 CoastalDesert
+= 42 Savanna
+= 207 SubTropical
+
+
+< > Cheonje
+= 16988 Moderate
+
+
+< > ZhengRuDynasty
+= 648 Steppe
+= 6371 MontaneForest
+= 51526 Moderate
+
+
+< > TimuridEmirate
+= 1932 CoastalDesert
+= 17704 Desert
+= 33079 Arid
+= 7157 Mountainous
+
+
+< > ZiEmpire
+= 3422 Mountainous
+= 34721 Arid
+= 4306 Desert
+= 24 CoastalDesert
+
+
+< > ArberberKingdom
+= 7587 Medditereanian
+= 3470 Arid
+= 8684 Desert
+= 3874 CoastalDesert
+= 34 Moderate
+= 223 SubTropical
+= 49 Tropical
+
+
+< > TexasTribes
+= 4783 Steppe
+= 177 Mountainous
+= 13745 Savanna
+= 8109 Desert
+= 4324 CoastalDesert
+= 4952 Moderate
+
+
+< > ValublidSultanate
+= 4957 Medditereanian
+= 6408 Arid
+= 7409 Desert
+= 1723 CoastalDesert
+
+
+< > SindhEmpire
+= 8885 Mountainous
+= 49739 Arid
+= 12648 Savanna
+= 13152 SubTropical
+= 401 Tropical
+= 114 CoastalDesert
+
+
+< > NewRabat
+= 170 Desert
+= 784 Tropical
+
+
+< > KingdomOfKyrat
+= 33794 Mountainous
+= 5805 MontaneForest
+= 7877 Savanna
+= 378 Arid
+= 58231 SubTropical
+= 12638 Tropical
+= 12 Moderate
+
+
+< > GuangxiClique
+= 44833 Moderate
+= 4088 SubTropical
+
+
+< > KingdomOfLao
+= 4837 Mountainous
+= 6447 Moderate
+= 7 SubTropical
+
+
+< > AdenCaliphate
+= 36243 Desert
+= 18433 CoastalDesert
+= 114 Medditereanian
+= 42158 Savanna
+= 20242 SubTropical
+
+
+< > AztecEmpire
+= 9662 Savanna
+= 4616 Desert
+= 2933 Mountainous
+= 8768 SubTropical
+= 191 Tropical
+
+
+< > NewBanzai
+= 144 Savanna
+= 2413 SubTropical
+
+
+< > TainoTribalConfederacy
+= 7172 SubTropical
+= 928 Tropical
+
+
+< > KingdomOfPotskig
+= 9476 Savanna
+= 17779 SubTropical
+= 5688 Tropical
+
+
+< > NovaAnatolia
+= 3269 SubTropical
+= 5412 Mountainous
+= 5567 Tropical
+= 2947 Arid
+= 635 MontaneForest
+
+
+< > MayanEmpire
+= 7497 SubTropical
+= 3157 Tropical
+= 657 Mountainous
+
+
+< > KingdomOfMaharlika
+= 3708 Tropical
+
+
+< > NewWales
+= 1573 SubTropical
+= 1854 Tropical
+= 988 Mountainous
+
+
+< > Songhai
+= 13297 Savanna
+= 3602 Desert
+= 11965 SubTropical
+= 215 Tropical
+
+
+< > KingdomOfBalanto
+= 125 CoastalDesert
+= 322 Desert
+= 14108 Savanna
+= 16384 SubTropical
+= 7673 Tropical
+
+
+< > NewCornwall
+= 8347 SubTropical
+= 6160 Tropical
+= 1460 Mountainous
+
+
+< > KingdomOfKhmbodj
+= 6154 SubTropical
+= 1256 Tropical
+
+
+< > KingdomOfBornu
+= 479 Desert
+= 12874 Savanna
+= 42072 SubTropical
+= 13513 Tropical
+
+
+< > MagajiyaTribe
+= 3103 Savanna
+= 32930 SubTropical
+= 10258 Tropical
+
+
+< > NewCuthsbury
+= 20772 SubTropical
+= 3263 Mountainous
+= 12600 Tropical
+
+
+< > Brasilien
+= 9964 Tropical
+= 7797 SubTropical
+
+
+< > NewShanghai
+= 432 Tropical
+= 1441 SubTropical
+= 450 Mountainous
+= 1956 Arid
+
+
+< > NovaKreta
+= 23154 SubTropical
+= 3244 Tropical
+= 160 Moderate
+= 964 Savanna
+= 754 CoastalDesert
+= 196 TaigaAndTundra
+
+
+< > SitaoRiverTribes
+= 29528 SubTropical
+= 54107 Savanna
+= 5794 Desert
+= 222 Moderate
+
+
+< > KingdomOfKonoga
+= 9073 SubTropical
+= 2906 Tropical
+= 2837 Savanna
+
+
+< > RepublicOfLaPlata
+= 1420 Arid
+= 335 Desert
+= 177 SubTropical
+= 33931 Moderate
+= 423 Tropical
+= 661 Savanna
+= 2861 CoastalDesert
+
+
+< > NewNagasaki
+= 2231 Arid
+= 45 Desert
+= 6130 Moderate
+
+
+< > ZuluKingdom
+= 1962 SubTropical
+= 6978 Desert
+= 5822 Moderate
+= 2563 CoastalDesert
+= 1779 Savanna
+= 12318 Medditereanian
+
+
+< > ZelenvaUnion
+= 30039 Moderate
+= 2105 Savanna
+= 4260 Medditereanian
+= 3 PolarDesert
+
+
+<... > Nations
+= 2.30 VespucianTribes.MaxFur
+= 0.00 KingdomOfKhmbodj.MaxFur
+= 0.00 KingdomOfPotskig.MaxFur
+= 6.70 TsardomOfMuscovy.MaxFur
+= 0.00 SindhEmpire.MaxFur
+= 4.45 SiouxTribes.MaxFur
+= 0.00 Byzantium.MaxFur
+= 0.00 TainoTribalConfederacy.MaxFur
+= 0.00 Mitiva.MaxFur
+= 0.00 ArberberKingdom.MaxFur
+= 0.00 ZiEmpire.MaxFur
+= 0.00 EulacianTradeCouncil.MaxFur
+= 0.00 KingdomOfKyrat.MaxFur
+= 0.00 DuchyOfBelarus.MaxFur
+= 0.00 KingdomOfIreland.MaxFur
+= 0.00 ValublidSultanate.MaxFur
+= 0.00 MagajiyaTribe.MaxFur
+= 0.00 AdenCaliphate.MaxFur
+= 0.00 QuasimidEmirate.MaxFur
+= 0.00 Cheonje.MaxFur
+= 0.00 KingdomOfPoland.MaxFur
+= 1.00 MongolianKhanate.MaxFur
+= 0.00 LatvianEmpire.MaxFur
+= 0.00 TimuridEmirate.MaxFur
+= 0.00 AztecEmpire.MaxFur
+= 0.00 MenzenConfederation.MaxFur
+= 0.00 ZuluKingdom.MaxFur
+= 2.00 BlackfeetConfederation.MaxFur
+= 0.00 MayanEmpire.MaxFur
+= 1.30 EmpireOfJapan.MaxFur
+= 0.00 NewEngland.MaxFur
+= 0.00 KingdomOfBalanto.MaxFur
+= 0.00 GuangxiClique.MaxFur
+= 0.00 ZelenvaUnion.MaxFur
+= 1.25 KingdomOfAvanorolsk.MaxFur
+= 0.00 KingdomOfBornu.MaxFur
+= 0.00 TexasTribes.MaxFur
+= 0.00 RepublicOfLaPlata.MaxFur
+= 0.00 Songhai.MaxFur
+= 0.00 Bosnia.MaxFur
+= 0.00 NewRabat.MaxFur
+= 0.00 SitaoRiverTribes.MaxFur
+= 0.00 KingdomOfMaharlika.MaxFur
+= 0.00 KingdomOfLao.MaxFur
+= 0.00 NewCornwall.MaxFur
+= 0.00 NewWales.MaxFur
+= 0.00 NovaKreta.MaxFur
+= 0.00 NewCuthsbury.MaxFur
+= 0.00 UnitedKingdom.MaxFur
+= 0.00 ZhengRuDynasty.MaxFur
+= 0.00 NorthGermanConfederation.MaxFur
+= 0.00 NovaAnatolia.MaxFur
+= 0.00 KingdomOfRomania.MaxFur
+= 1.00 SwedishKingdom.MaxFur
+= 0.00 KingdomOfHispania.MaxFur
+= 0.85 BulgarianEmpire.MaxFur
+= 0.00 NewCork.MaxFur
+= 0.00 NewBanzai.MaxFur
+= 0.00 NewNagasaki.MaxFur
+= 0.00 NewShanghai.MaxFur
+= 0.00 Brasilien.MaxFur
+= 0.00 KingdomOfKonoga.MaxFur
+= 0.00 Italia.MaxFur
+= 0.00 SteppeKhanate.MaxFur
+= 0.00 FrenchEmpire.MaxFur
+= 0.00 AustrianEmpire.MaxFur
+= 3.00 VespucianTribes.MaxGold
+= 0.00 KingdomOfKhmbodj.MaxGold
+= 0.00 KingdomOfPotskig.MaxGold
+= 0.20 TsardomOfMuscovy.MaxGold
+= 0.00 SindhEmpire.MaxGold
+= 0.00 SiouxTribes.MaxGold
+= 4.95 Byzantium.MaxGold
+= 0.00 TainoTribalConfederacy.MaxGold
+= 0.00 Mitiva.MaxGold
+= 1.10 ArberberKingdom.MaxGold
+= 0.00 ZiEmpire.MaxGold
+= 13.10 EulacianTradeCouncil.MaxGold
+= 2.05 KingdomOfKyrat.MaxGold
+= 0.00 DuchyOfBelarus.MaxGold
+= 0.00 KingdomOfIreland.MaxGold
+= 0.00 ValublidSultanate.MaxGold
+= 4.95 MagajiyaTribe.MaxGold
+= 0.05 AdenCaliphate.MaxGold
+= 0.00 QuasimidEmirate.MaxGold
+= 0.00 Cheonje.MaxGold
+= 0.00 KingdomOfPoland.MaxGold
+= 0.00 MongolianKhanate.MaxGold
+= 0.00 LatvianEmpire.MaxGold
+= 0.00 TimuridEmirate.MaxGold
+= 6.70 AztecEmpire.MaxGold
+= 0.00 MenzenConfederation.MaxGold
+= 3.95 ZuluKingdom.MaxGold
+= 0.00 BlackfeetConfederation.MaxGold
+= 0.00 MayanEmpire.MaxGold
+= 9.90 EmpireOfJapan.MaxGold
+= 0.00 NewEngland.MaxGold
+= 6.45 KingdomOfBalanto.MaxGold
+= 0.00 GuangxiClique.MaxGold
+= 0.00 ZelenvaUnion.MaxGold
+= 1.55 KingdomOfAvanorolsk.MaxGold
+= 0.00 KingdomOfBornu.MaxGold
+= 1.60 TexasTribes.MaxGold
+= 2.05 RepublicOfLaPlata.MaxGold
+= 2.55 Songhai.MaxGold
+= 0.00 Bosnia.MaxGold
+= 0.00 NewRabat.MaxGold
+= 2.00 SitaoRiverTribes.MaxGold
+= 1.85 KingdomOfMaharlika.MaxGold
+= 0.00 KingdomOfLao.MaxGold
+= 0.00 NewCornwall.MaxGold
+= 0.35 NewWales.MaxGold
+= 0.00 NovaKreta.MaxGold
+= 0.00 NewCuthsbury.MaxGold
+= 0.75 UnitedKingdom.MaxGold
+= 0.00 ZhengRuDynasty.MaxGold
+= 0.00 NorthGermanConfederation.MaxGold
+= 2.35 NovaAnatolia.MaxGold
+= 0.00 KingdomOfRomania.MaxGold
+= 0.40 SwedishKingdom.MaxGold
+= 2.00 KingdomOfHispania.MaxGold
+= 0.00 BulgarianEmpire.MaxGold
+= 0.00 NewCork.MaxGold
+= 0.30 NewBanzai.MaxGold
+= 0.80 NewNagasaki.MaxGold
+= 0.75 NewShanghai.MaxGold
+= 0.00 Brasilien.MaxGold
+= 0.00 KingdomOfKonoga.MaxGold
+= 0.20 Italia.MaxGold
+= 0.00 SteppeKhanate.MaxGold
+= 2.00 FrenchEmpire.MaxGold
+= 1.80 AustrianEmpire.MaxGold
+= 7.85 VespucianTribes.MaxIron
+= 0.00 KingdomOfKhmbodj.MaxIron
+= 1.90 KingdomOfPotskig.MaxIron
+= 6.00 TsardomOfMuscovy.MaxIron
+= 2.00 SindhEmpire.MaxIron
+= 4.00 SiouxTribes.MaxIron
+= 0.95 Byzantium.MaxIron
+= 0.00 TainoTribalConfederacy.MaxIron
+= 0.00 Mitiva.MaxIron
+= 1.00 ArberberKingdom.MaxIron
+= 2.95 ZiEmpire.MaxIron
+= 9.15 EulacianTradeCouncil.MaxIron
+= 1.95 KingdomOfKyrat.MaxIron
+= 0.80 DuchyOfBelarus.MaxIron
+= 0.00 KingdomOfIreland.MaxIron
+= 2.30 ValublidSultanate.MaxIron
+= 0.00 MagajiyaTribe.MaxIron
+= 2.70 AdenCaliphate.MaxIron
+= 2.00 QuasimidEmirate.MaxIron
+= 1.15 Cheonje.MaxIron
+= 0.30 KingdomOfPoland.MaxIron
+= 3.05 MongolianKhanate.MaxIron
+= 0.00 LatvianEmpire.MaxIron
+= 0.00 TimuridEmirate.MaxIron
+= 1.95 AztecEmpire.MaxIron
+= 2.45 MenzenConfederation.MaxIron
+= 0.45 ZuluKingdom.MaxIron
+= 0.00 BlackfeetConfederation.MaxIron
+= 0.40 MayanEmpire.MaxIron
+= 6.35 EmpireOfJapan.MaxIron
+= 0.00 NewEngland.MaxIron
+= 3.70 KingdomOfBalanto.MaxIron
+= 2.45 GuangxiClique.MaxIron
+= 0.00 ZelenvaUnion.MaxIron
+= 0.00 KingdomOfAvanorolsk.MaxIron
+= 1.25 KingdomOfBornu.MaxIron
+= 0.00 TexasTribes.MaxIron
+= 0.85 RepublicOfLaPlata.MaxIron
+= 0.10 Songhai.MaxIron
+= 0.80 Bosnia.MaxIron
+= 0.05 NewRabat.MaxIron
+= 4.95 SitaoRiverTribes.MaxIron
+= 0.00 KingdomOfMaharlika.MaxIron
+= 0.00 KingdomOfLao.MaxIron
+= 1.55 NewCornwall.MaxIron
+= 0.00 NewWales.MaxIron
+= 0.10 NovaKreta.MaxIron
+= 2.00 NewCuthsbury.MaxIron
+= 2.15 UnitedKingdom.MaxIron
+= 4.10 ZhengRuDynasty.MaxIron
+= 1.25 NorthGermanConfederation.MaxIron
+= 1.70 NovaAnatolia.MaxIron
+= 0.05 KingdomOfRomania.MaxIron
+= 5.75 SwedishKingdom.MaxIron
+= 4.80 KingdomOfHispania.MaxIron
+= 9.80 BulgarianEmpire.MaxIron
+= 0.00 NewCork.MaxIron
+= 0.75 NewBanzai.MaxIron
+= 0.75 NewNagasaki.MaxIron
+= 0.00 NewShanghai.MaxIron
+= 0.00 Brasilien.MaxIron
+= 0.00 KingdomOfKonoga.MaxIron
+= 1.70 Italia.MaxIron
+= 2.05 SteppeKhanate.MaxIron
+= 3.70 FrenchEmpire.MaxIron
+= 9.55 AustrianEmpire.MaxIron
+= 0.00 VespucianTribes.MaxIvory
+= 3.05 KingdomOfKhmbodj.MaxIvory
+= 4.45 KingdomOfPotskig.MaxIvory
+= 0.05 TsardomOfMuscovy.MaxIvory
+= 0.15 SindhEmpire.MaxIvory
+= 0.00 SiouxTribes.MaxIvory
+= 1.20 Byzantium.MaxIvory
+= 0.00 TainoTribalConfederacy.MaxIvory
+= 0.00 Mitiva.MaxIvory
+= 0.00 ArberberKingdom.MaxIvory
+= 0.00 ZiEmpire.MaxIvory
+= 17.40 EulacianTradeCouncil.MaxIvory
+= 1.35 KingdomOfKyrat.MaxIvory
+= 0.00 DuchyOfBelarus.MaxIvory
+= 0.00 KingdomOfIreland.MaxIvory
+= 0.00 ValublidSultanate.MaxIvory
+= 9.20 MagajiyaTribe.MaxIvory
+= 0.40 AdenCaliphate.MaxIvory
+= 0.00 QuasimidEmirate.MaxIvory
+= 0.00 Cheonje.MaxIvory
+= 0.00 KingdomOfPoland.MaxIvory
+= 0.00 MongolianKhanate.MaxIvory
+= 0.00 LatvianEmpire.MaxIvory
+= 0.00 TimuridEmirate.MaxIvory
+= 0.00 AztecEmpire.MaxIvory
+= 0.00 MenzenConfederation.MaxIvory
+= 0.00 ZuluKingdom.MaxIvory
+= 0.00 BlackfeetConfederation.MaxIvory
+= 0.00 MayanEmpire.MaxIvory
+= 0.70 EmpireOfJapan.MaxIvory
+= 0.00 NewEngland.MaxIvory
+= 0.75 KingdomOfBalanto.MaxIvory
+= 0.10 GuangxiClique.MaxIvory
+= 0.00 ZelenvaUnion.MaxIvory
+= 0.00 KingdomOfAvanorolsk.MaxIvory
+= 3.55 KingdomOfBornu.MaxIvory
+= 0.00 TexasTribes.MaxIvory
+= 0.00 RepublicOfLaPlata.MaxIvory
+= 2.65 Songhai.MaxIvory
+= 0.00 Bosnia.MaxIvory
+= 0.00 NewRabat.MaxIvory
+= 6.60 SitaoRiverTribes.MaxIvory
+= 0.00 KingdomOfMaharlika.MaxIvory
+= 0.65 KingdomOfLao.MaxIvory
+= 0.00 NewCornwall.MaxIvory
+= 0.00 NewWales.MaxIvory
+= 0.00 NovaKreta.MaxIvory
+= 0.00 NewCuthsbury.MaxIvory
+= 0.20 UnitedKingdom.MaxIvory
+= 0.00 ZhengRuDynasty.MaxIvory
+= 0.00 NorthGermanConfederation.MaxIvory
+= 0.00 NovaAnatolia.MaxIvory
+= 0.00 KingdomOfRomania.MaxIvory
+= 0.10 SwedishKingdom.MaxIvory
+= 0.00 KingdomOfHispania.MaxIvory
+= 0.00 BulgarianEmpire.MaxIvory
+= 0.00 NewCork.MaxIvory
+= 0.00 NewBanzai.MaxIvory
+= 0.00 NewNagasaki.MaxIvory
+= 0.00 NewShanghai.MaxIvory
+= 0.00 Brasilien.MaxIvory
+= 0.00 KingdomOfKonoga.MaxIvory
+= 0.00 Italia.MaxIvory
+= 0.00 SteppeKhanate.MaxIvory
+= 0.00 FrenchEmpire.MaxIvory
+= 0.00 AustrianEmpire.MaxIvory
+= 14.55 VespucianTribes.MaxSulphur
+= 0.00 KingdomOfKhmbodj.MaxSulphur
+= 2.00 KingdomOfPotskig.MaxSulphur
+= 4.00 TsardomOfMuscovy.MaxSulphur
+= 2.45 SindhEmpire.MaxSulphur
+= 1.65 SiouxTribes.MaxSulphur
+= 7.00 Byzantium.MaxSulphur
+= 4.00 TainoTribalConfederacy.MaxSulphur
+= 0.00 Mitiva.MaxSulphur
+= 5.60 ArberberKingdom.MaxSulphur
+= 3.85 ZiEmpire.MaxSulphur
+= 12.55 EulacianTradeCouncil.MaxSulphur
+= 1.85 KingdomOfKyrat.MaxSulphur
+= 0.00 DuchyOfBelarus.MaxSulphur
+= 0.00 KingdomOfIreland.MaxSulphur
+= 3.20 ValublidSultanate.MaxSulphur
+= 0.00 MagajiyaTribe.MaxSulphur
+= 0.00 AdenCaliphate.MaxSulphur
+= 4.20 QuasimidEmirate.MaxSulphur
+= 0.00 Cheonje.MaxSulphur
+= 2.15 KingdomOfPoland.MaxSulphur
+= 7.00 MongolianKhanate.MaxSulphur
+= 0.00 LatvianEmpire.MaxSulphur
+= 2.00 TimuridEmirate.MaxSulphur
+= 4.00 AztecEmpire.MaxSulphur
+= 0.00 MenzenConfederation.MaxSulphur
+= 0.00 ZuluKingdom.MaxSulphur
+= 0.00 BlackfeetConfederation.MaxSulphur
+= 0.00 MayanEmpire.MaxSulphur
+= 14.80 EmpireOfJapan.MaxSulphur
+= 0.00 NewEngland.MaxSulphur
+= 0.00 KingdomOfBalanto.MaxSulphur
+= 0.00 GuangxiClique.MaxSulphur
+= 2.00 ZelenvaUnion.MaxSulphur
+= 0.00 KingdomOfAvanorolsk.MaxSulphur
+= 0.00 KingdomOfBornu.MaxSulphur
+= 0.10 TexasTribes.MaxSulphur
+= 2.05 RepublicOfLaPlata.MaxSulphur
+= 0.00 Songhai.MaxSulphur
+= 0.00 Bosnia.MaxSulphur
+= 0.00 NewRabat.MaxSulphur
+= 4.00 SitaoRiverTribes.MaxSulphur
+= 2.65 KingdomOfMaharlika.MaxSulphur
+= 0.00 KingdomOfLao.MaxSulphur
+= 3.00 NewCornwall.MaxSulphur
+= 0.00 NewWales.MaxSulphur
+= 1.00 NovaKreta.MaxSulphur
+= 0.00 NewCuthsbury.MaxSulphur
+= 2.10 UnitedKingdom.MaxSulphur
+= 0.00 ZhengRuDynasty.MaxSulphur
+= 1.00 NorthGermanConfederation.MaxSulphur
+= 3.05 NovaAnatolia.MaxSulphur
+= 0.00 KingdomOfRomania.MaxSulphur
+= 0.00 SwedishKingdom.MaxSulphur
+= 4.45 KingdomOfHispania.MaxSulphur
+= 0.00 BulgarianEmpire.MaxSulphur
+= 0.00 NewCork.MaxSulphur
+= 1.80 NewBanzai.MaxSulphur
+= 1.70 NewNagasaki.MaxSulphur
+= 0.00 NewShanghai.MaxSulphur
+= 0.00 Brasilien.MaxSulphur
+= 0.00 KingdomOfKonoga.MaxSulphur
+= 5.35 Italia.MaxSulphur
+= 0.00 SteppeKhanate.MaxSulphur
+= 4.45 FrenchEmpire.MaxSulphur
+= 3.90 AustrianEmpire.MaxSulphur
+= 6.20 VespucianTribes.MaxCoal
+= 0.00 KingdomOfKhmbodj.MaxCoal
+= 0.00 KingdomOfPotskig.MaxCoal
+= 6.10 TsardomOfMuscovy.MaxCoal
+= 2.00 SindhEmpire.MaxCoal
+= 1.50 SiouxTribes.MaxCoal
+= 7.60 Byzantium.MaxCoal
+= 0.00 TainoTribalConfederacy.MaxCoal
+= 0.00 Mitiva.MaxCoal
+= 0.00 ArberberKingdom.MaxCoal
+= 0.00 ZiEmpire.MaxCoal
+= 10.90 EulacianTradeCouncil.MaxCoal
+= 8.00 KingdomOfKyrat.MaxCoal
+= 1.95 DuchyOfBelarus.MaxCoal
+= 0.00 KingdomOfIreland.MaxCoal
+= 2.00 ValublidSultanate.MaxCoal
+= 3.40 MagajiyaTribe.MaxCoal
+= 3.40 AdenCaliphate.MaxCoal
+= 2.00 QuasimidEmirate.MaxCoal
+= 2.00 Cheonje.MaxCoal
+= 0.20 KingdomOfPoland.MaxCoal
+= 4.00 MongolianKhanate.MaxCoal
+= 0.00 LatvianEmpire.MaxCoal
+= 2.55 TimuridEmirate.MaxCoal
+= 4.00 AztecEmpire.MaxCoal
+= 2.50 MenzenConfederation.MaxCoal
+= 0.00 ZuluKingdom.MaxCoal
+= 2.00 BlackfeetConfederation.MaxCoal
+= 0.00 MayanEmpire.MaxCoal
+= 7.70 EmpireOfJapan.MaxCoal
+= 0.00 NewEngland.MaxCoal
+= 2.00 KingdomOfBalanto.MaxCoal
+= 4.40 GuangxiClique.MaxCoal
+= 1.50 ZelenvaUnion.MaxCoal
+= 0.00 KingdomOfAvanorolsk.MaxCoal
+= 0.60 KingdomOfBornu.MaxCoal
+= 2.55 TexasTribes.MaxCoal
+= 2.10 RepublicOfLaPlata.MaxCoal
+= 2.00 Songhai.MaxCoal
+= 0.00 Bosnia.MaxCoal
+= 0.00 NewRabat.MaxCoal
+= 4.10 SitaoRiverTribes.MaxCoal
+= 0.00 KingdomOfMaharlika.MaxCoal
+= 1.30 KingdomOfLao.MaxCoal
+= 0.00 NewCornwall.MaxCoal
+= 0.00 NewWales.MaxCoal
+= 0.00 NovaKreta.MaxCoal
+= 0.00 NewCuthsbury.MaxCoal
+= 4.00 UnitedKingdom.MaxCoal
+= 5.75 ZhengRuDynasty.MaxCoal
+= 2.30 NorthGermanConfederation.MaxCoal
+= 2.50 NovaAnatolia.MaxCoal
+= 0.40 KingdomOfRomania.MaxCoal
+= 0.00 SwedishKingdom.MaxCoal
+= 6.00 KingdomOfHispania.MaxCoal
+= 2.95 BulgarianEmpire.MaxCoal
+= 0.00 NewCork.MaxCoal
+= 0.00 NewBanzai.MaxCoal
+= 0.50 NewNagasaki.MaxCoal
+= 0.00 NewShanghai.MaxCoal
+= 0.00 Brasilien.MaxCoal
+= 4.00 KingdomOfKonoga.MaxCoal
+= 0.30 Italia.MaxCoal
+= 2.95 SteppeKhanate.MaxCoal
+= 3.70 FrenchEmpire.MaxCoal
+= 9.45 AustrianEmpire.MaxCoal
+= 2.75 VespucianTribes.MaxCopper
+= 0.00 KingdomOfKhmbodj.MaxCopper
+= 0.00 KingdomOfPotskig.MaxCopper
+= 1.30 TsardomOfMuscovy.MaxCopper
+= 2.20 SindhEmpire.MaxCopper
+= 2.05 SiouxTribes.MaxCopper
+= 3.95 Byzantium.MaxCopper
+= 0.00 TainoTribalConfederacy.MaxCopper
+= 0.00 Mitiva.MaxCopper
+= 0.00 ArberberKingdom.MaxCopper
+= 2.00 ZiEmpire.MaxCopper
+= 5.35 EulacianTradeCouncil.MaxCopper
+= 0.00 KingdomOfKyrat.MaxCopper
+= 0.00 DuchyOfBelarus.MaxCopper
+= 0.00 KingdomOfIreland.MaxCopper
+= 0.00 ValublidSultanate.MaxCopper
+= 0.00 MagajiyaTribe.MaxCopper
+= 0.85 AdenCaliphate.MaxCopper
+= 1.70 QuasimidEmirate.MaxCopper
+= 0.00 Cheonje.MaxCopper
+= 0.00 KingdomOfPoland.MaxCopper
+= 0.00 MongolianKhanate.MaxCopper
+= 0.00 LatvianEmpire.MaxCopper
+= 0.00 TimuridEmirate.MaxCopper
+= 0.00 AztecEmpire.MaxCopper
+= 0.00 MenzenConfederation.MaxCopper
+= 0.00 ZuluKingdom.MaxCopper
+= 0.15 BlackfeetConfederation.MaxCopper
+= 0.00 MayanEmpire.MaxCopper
+= 4.20 EmpireOfJapan.MaxCopper
+= 2.00 NewEngland.MaxCopper
+= 0.00 KingdomOfBalanto.MaxCopper
+= 0.00 GuangxiClique.MaxCopper
+= 0.00 ZelenvaUnion.MaxCopper
+= 0.00 KingdomOfAvanorolsk.MaxCopper
+= 0.00 KingdomOfBornu.MaxCopper
+= 0.00 TexasTribes.MaxCopper
+= 0.00 RepublicOfLaPlata.MaxCopper
+= 0.00 Songhai.MaxCopper
+= 0.00 Bosnia.MaxCopper
+= 0.00 NewRabat.MaxCopper
+= 1.65 SitaoRiverTribes.MaxCopper
+= 0.00 KingdomOfMaharlika.MaxCopper
+= 1.60 KingdomOfLao.MaxCopper
+= 0.65 NewCornwall.MaxCopper
+= 0.00 NewWales.MaxCopper
+= 0.00 NovaKreta.MaxCopper
+= 0.00 NewCuthsbury.MaxCopper
+= 0.00 UnitedKingdom.MaxCopper
+= 0.00 ZhengRuDynasty.MaxCopper
+= 0.55 NorthGermanConfederation.MaxCopper
+= 1.00 NovaAnatolia.MaxCopper
+= 0.00 KingdomOfRomania.MaxCopper
+= 2.00 SwedishKingdom.MaxCopper
+= 1.95 KingdomOfHispania.MaxCopper
+= 0.15 BulgarianEmpire.MaxCopper
+= 0.00 NewCork.MaxCopper
+= 0.00 NewBanzai.MaxCopper
+= 0.00 NewNagasaki.MaxCopper
+= 0.00 NewShanghai.MaxCopper
+= 0.00 Brasilien.MaxCopper
+= 0.00 KingdomOfKonoga.MaxCopper
+= 0.00 Italia.MaxCopper
+= 0.55 SteppeKhanate.MaxCopper
+= 0.00 FrenchEmpire.MaxCopper
+= 1.45 AustrianEmpire.MaxCopper
+= 0.00 VespucianTribes.MaxDiamonds
+= 0.00 KingdomOfKhmbodj.MaxDiamonds
+= 0.00 KingdomOfPotskig.MaxDiamonds
+= 0.00 TsardomOfMuscovy.MaxDiamonds
+= 0.00 SindhEmpire.MaxDiamonds
+= 0.00 SiouxTribes.MaxDiamonds
+= 0.50 Byzantium.MaxDiamonds
+= 0.00 TainoTribalConfederacy.MaxDiamonds
+= 0.00 Mitiva.MaxDiamonds
+= 0.00 ArberberKingdom.MaxDiamonds
+= 0.00 ZiEmpire.MaxDiamonds
+= 2.00 EulacianTradeCouncil.MaxDiamonds
+= 0.00 KingdomOfKyrat.MaxDiamonds
+= 0.00 DuchyOfBelarus.MaxDiamonds
+= 0.00 KingdomOfIreland.MaxDiamonds
+= 0.00 ValublidSultanate.MaxDiamonds
+= 1.85 MagajiyaTribe.MaxDiamonds
+= 0.00 AdenCaliphate.MaxDiamonds
+= 0.00 QuasimidEmirate.MaxDiamonds
+= 0.00 Cheonje.MaxDiamonds
+= 0.00 KingdomOfPoland.MaxDiamonds
+= 0.00 MongolianKhanate.MaxDiamonds
+= 0.00 LatvianEmpire.MaxDiamonds
+= 0.00 TimuridEmirate.MaxDiamonds
+= 0.00 AztecEmpire.MaxDiamonds
+= 0.00 MenzenConfederation.MaxDiamonds
+= 0.00 ZuluKingdom.MaxDiamonds
+= 0.00 BlackfeetConfederation.MaxDiamonds
+= 0.00 MayanEmpire.MaxDiamonds
+= 0.00 EmpireOfJapan.MaxDiamonds
+= 0.00 NewEngland.MaxDiamonds
+= 0.40 KingdomOfBalanto.MaxDiamonds
+= 0.00 GuangxiClique.MaxDiamonds
+= 0.00 ZelenvaUnion.MaxDiamonds
+= 0.00 KingdomOfAvanorolsk.MaxDiamonds
+= 0.15 KingdomOfBornu.MaxDiamonds
+= 0.00 TexasTribes.MaxDiamonds
+= 0.00 RepublicOfLaPlata.MaxDiamonds
+= 1.60 Songhai.MaxDiamonds
+= 0.00 Bosnia.MaxDiamonds
+= 0.00 NewRabat.MaxDiamonds
+= 2.00 SitaoRiverTribes.MaxDiamonds
+= 0.00 KingdomOfMaharlika.MaxDiamonds
+= 0.00 KingdomOfLao.MaxDiamonds
+= 0.00 NewCornwall.MaxDiamonds
+= 0.00 NewWales.MaxDiamonds
+= 1.65 NovaKreta.MaxDiamonds
+= 0.15 NewCuthsbury.MaxDiamonds
+= 0.00 UnitedKingdom.MaxDiamonds
+= 0.00 ZhengRuDynasty.MaxDiamonds
+= 0.00 NorthGermanConfederation.MaxDiamonds
+= 0.00 NovaAnatolia.MaxDiamonds
+= 0.00 KingdomOfRomania.MaxDiamonds
+= 0.00 SwedishKingdom.MaxDiamonds
+= 0.00 KingdomOfHispania.MaxDiamonds
+= 0.00 BulgarianEmpire.MaxDiamonds
+= 0.00 NewCork.MaxDiamonds
+= 0.00 NewBanzai.MaxDiamonds
+= 0.00 NewNagasaki.MaxDiamonds
+= 0.00 NewShanghai.MaxDiamonds
+= 0.00 Brasilien.MaxDiamonds
+= 0.00 KingdomOfKonoga.MaxDiamonds
+= 0.00 Italia.MaxDiamonds
+= 0.00 SteppeKhanate.MaxDiamonds
+= 0.00 FrenchEmpire.MaxDiamonds
+= 0.00 AustrianEmpire.MaxDiamonds
+= 0.90 VespucianTribes.MaxSilver
+= 0.00 KingdomOfKhmbodj.MaxSilver
+= 0.00 KingdomOfPotskig.MaxSilver
+= 0.00 TsardomOfMuscovy.MaxSilver
+= 0.00 SindhEmpire.MaxSilver
+= 2.05 SiouxTribes.MaxSilver
+= 0.00 Byzantium.MaxSilver
+= 0.00 TainoTribalConfederacy.MaxSilver
+= 0.00 Mitiva.MaxSilver
+= 0.00 ArberberKingdom.MaxSilver
+= 0.00 ZiEmpire.MaxSilver
+= 2.00 EulacianTradeCouncil.MaxSilver
+= 0.00 KingdomOfKyrat.MaxSilver
+= 0.00 DuchyOfBelarus.MaxSilver
+= 0.00 KingdomOfIreland.MaxSilver
+= 2.00 ValublidSultanate.MaxSilver
+= 0.00 MagajiyaTribe.MaxSilver
+= 0.00 AdenCaliphate.MaxSilver
+= 0.00 QuasimidEmirate.MaxSilver
+= 2.00 Cheonje.MaxSilver
+= 0.00 KingdomOfPoland.MaxSilver
+= 0.00 MongolianKhanate.MaxSilver
+= 0.00 LatvianEmpire.MaxSilver
+= 0.00 TimuridEmirate.MaxSilver
+= 0.00 AztecEmpire.MaxSilver
+= 0.00 MenzenConfederation.MaxSilver
+= 0.00 ZuluKingdom.MaxSilver
+= 0.00 BlackfeetConfederation.MaxSilver
+= 0.00 MayanEmpire.MaxSilver
+= 0.00 EmpireOfJapan.MaxSilver
+= 0.00 NewEngland.MaxSilver
+= 0.00 KingdomOfBalanto.MaxSilver
+= 0.00 GuangxiClique.MaxSilver
+= 0.00 ZelenvaUnion.MaxSilver
+= 0.00 KingdomOfAvanorolsk.MaxSilver
+= 0.00 KingdomOfBornu.MaxSilver
+= 0.15 TexasTribes.MaxSilver
+= 1.30 RepublicOfLaPlata.MaxSilver
+= 0.00 Songhai.MaxSilver
+= 0.00 Bosnia.MaxSilver
+= 0.00 NewRabat.MaxSilver
+= 1.25 SitaoRiverTribes.MaxSilver
+= 0.00 KingdomOfMaharlika.MaxSilver
+= 0.00 KingdomOfLao.MaxSilver
+= 0.00 NewCornwall.MaxSilver
+= 0.00 NewWales.MaxSilver
+= 0.00 NovaKreta.MaxSilver
+= 0.00 NewCuthsbury.MaxSilver
+= 0.00 UnitedKingdom.MaxSilver
+= 0.00 ZhengRuDynasty.MaxSilver
+= 0.00 NorthGermanConfederation.MaxSilver
+= 0.00 NovaAnatolia.MaxSilver
+= 0.00 KingdomOfRomania.MaxSilver
+= 2.00 SwedishKingdom.MaxSilver
+= 2.00 KingdomOfHispania.MaxSilver
+= 0.00 BulgarianEmpire.MaxSilver
+= 0.00 NewCork.MaxSilver
+= 0.00 NewBanzai.MaxSilver
+= 0.70 NewNagasaki.MaxSilver
+= 0.00 NewShanghai.MaxSilver
+= 0.00 Brasilien.MaxSilver
+= 0.00 KingdomOfKonoga.MaxSilver
+= 0.00 Italia.MaxSilver
+= 2.00 SteppeKhanate.MaxSilver
+= 0.00 FrenchEmpire.MaxSilver
+= 0.00 AustrianEmpire.MaxSilver
+<...
+
+> Nations > AustrianEmpire
+
+= 10 Coal
