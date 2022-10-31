@@ -60,8 +60,9 @@ class Nation {
 
   /* #region Most Stats */
   GovernmentName;
-  CapitalName
+  CapitalName;
   Flag;
+  Color;
   ReligionGroups;  //object of {name: {Points: num}, name: {Points: num}}
   ReligionRepresentedAtGovernmentLevel;
   ReligionRepresentedAtGovernmentLevelPercent;
@@ -220,59 +221,68 @@ class Nation {
 
   Coal;
   EffectiveCoal;
-
+  MaxCoal;
+  
   Sulphur;
   EffectiveSulphur;
-
+  MaxSulphur;
+  
   Cotton;
   EffectiveCotton;
   CottonInflation;
-
+  
   Gold;
   EffectiveGold;
   GoldInflation;
-
+  MaxGold;
+  
   Iron;
   EffectiveIron;
-
+  MaxIron;
+  
   Tea;
   EffectiveTea;
   TeaInflation;
-
+  
   Silk;
   EffectiveSilk;
   SilkInflation;
-
+  
   Spice;
   EffectiveSpice;
   SpiceInflation;
-
+  
   Wool;
   EffectiveWool;
   WoolInflation;
-
+  
   Coffee;
   EffectiveCoffee;
   CoffeeInflation;
-
+  
   Fur;
   EffectiveFur;
   FurInflation;
-
+  MaxFur;
+  
   Diamond;
   EffectiveDiamond;
   DiamondInflation;
-
+  MaxDiamond;
+  
   Silver;
   EffectiveSilver;
   SilverInflation;
-
+  MaxSilver;
+  
   Copper;
   EffectiveCopper;
-
+  MaxCopper;
+  
   Ivory;
   EffectiveIvory;
   IvoryInflation;
+  MaxIvory;
 
   Cocoa;
   EffectiveCocoa;
@@ -518,6 +528,7 @@ class Nation {
     /* #region  Main */
     this.GovernmentName = nationName;
     this.Flag = "";
+    this.Color = false;
     this.ReligionGroups = {
       "Pagan": {
         Points: 100
@@ -674,6 +685,16 @@ class Nation {
     this.Tobacco = 0;
     this.Sugar = 0;
     this.ExoticFruit = 0;
+
+    this.MaxCoal = 0.00;
+    this.MaxSulphur = 0.00;
+    this.MaxGold = 0.00;
+    this.MaxIron = 0;
+    this.MaxFur = 0;
+    this.MaxDiamond = 0;
+    this.MaxSilver = 0;
+    this.MaxCopper = 0;
+    this.MaxIvory = 0;
     /* #endregion */
 
     /* #region  Technology */
