@@ -132,7 +132,7 @@ ${allProperties}`);
             setval = value;
         else if(typeof value === 'string'){
             if(value.toLowerCase().trim() === "false" || value.toLowerCase().trim() === "true")
-                setval = value;
+                setval = value.toLowerCase();
         }
         (new Function(`gameStats${propertySelection} = ${setval}`))();
 
