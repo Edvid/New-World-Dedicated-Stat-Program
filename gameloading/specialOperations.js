@@ -64,7 +64,7 @@ function PostStatChange(selection, change){
         let curResource = (new Function(`return gameStats${nationSelection}.${resourceName}`))();
 
         if(curResource > maxResource){
-            (new Function(`return gameStats${nationSelection}.${resourceName} = ${maxResource}`))()
+            (new Function(`gameStats${nationSelection}.${resourceName} = ${maxResource}`))()
         }
     }
     //public debt taken exceed check
