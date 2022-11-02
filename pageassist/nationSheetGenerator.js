@@ -489,10 +489,12 @@ function createNationSheet(nationName) {
         [
             [ "MiningEfficiency" ],
             [ "Coal", "Sulphur", "Iron", "Copper" ],
+            [ "MaxCoal", "MaxSulphur", "MaxIron", "MaxCopper" ],
             [ "EffectiveCoal", "EffectiveSulphur", "EffectiveIron", "EffectiveCopper" ],
-            [ "Cotton", "Gold", "Tea", "Silk", "Spice", "Wool", "Coffee", "Fur", "Diamond", "Silver", "Ivory", "Cocoa", "Tobacco", "Sugar", "ExoticFruit" ],
-            [ "EffectiveCotton", "EffectiveGold", "EffectiveTea", "EffectiveSilk", "EffectiveSpice", "EffectiveWool", "EffectiveCoffee", "EffectiveFur", "EffectiveDiamond", "EffectiveSilver", "EffectiveIvory", "EffectiveCocoa", "EffectiveTobacco", "EffectiveSugar", "EffectiveExoticFruit" ],
-            [ "CottonInflation", "GoldInflation", "TeaInflation", "SilkInflation", "SpiceInflation", "WoolInflation", "CoffeeInflation", "FurInflation", "DiamondInflation", "SilverInflation", "IvoryInflation", "CocoaInflation", "TobaccoInflation", "SugarInflation", "ExoticFruitInflation" ],
+            [ "Gold", "Fur", "Diamond", "Silver", "Ivory", "Cotton", "Tea", "Silk", "Spice", "Wool", "Coffee", "Cocoa", "Tobacco", "Sugar", "ExoticFruit" ],
+            [ "MaxGold", "MaxFur", "MaxDiamond", "MaxSilver", "MaxIvory"],
+            [ "EffectiveGold", "EffectiveFur", "EffectiveDiamond", "EffectiveSilver", "EffectiveIvory", "EffectiveCotton", "EffectiveTea", "EffectiveSilk", "EffectiveSpice", "EffectiveWool", "EffectiveCoffee", "EffectiveCocoa", "EffectiveTobacco", "EffectiveSugar", "EffectiveExoticFruit" ],
+            [ "GoldInflation", "FurInflation", "DiamondInflation", "SilverInflation", "IvoryInflation", "CottonInflation", "TeaInflation", "SilkInflation", "SpiceInflation", "WoolInflation", "CoffeeInflation", "CocoaInflation", "TobaccoInflation", "SugarInflation", "ExoticFruitInflation" ],
             [ "ResourcePopulationGrowthBoost", "ResourceHappinessBoost", "ResourceBudgetBoost" ]
         ]
     );
