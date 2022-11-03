@@ -226,11 +226,13 @@ let newOuterAfterRename;
 function renameStat(currentSelection, arg){
     let newName = arg.slice(arg.indexOf('>') + 1).trim();
     let oldName = arg.slice(0, arg.indexOf('>')).trim();
-    console.log(oldName);
     oldName = correctAndSynonymCheck(`${currentSelection}.${oldName}`).split(".").pop();
     
-    if (/^\.Nations$/.test(currentSelection)) evaluateNation(oldName);
+    if (/^\.Nations$/.test(currentSelection)) {
+        evaluateNation(oldName);
+    }
 
+    //copy over all properties of selected object, as is, except the property with oldName name, it will now be newName named
     let outer = (new Function(`return gameStats${currentSelection}`))();
     newOuterAfterRename = new Object();
 
@@ -239,6 +241,21 @@ function renameStat(currentSelection, arg){
     });
 
     (new Function(`gameStats${currentSelection} = newOuterAfterRename`))();
+
+    if (/^\.Nations$/.test(currentSelection)) {
+        //copy over all Trades, as is, except if giver or receiver is oldName, then it's newName now
+
+        Object.keys(gameStats.Trades).forEach(property => {
+            if(gameStats.Trades[property].giver == oldName)
+                gameStats.Trades[property].giver = newName;
+            if(gameStats.Trades[property].receiver == oldName)
+                gameStats.Trades[property].receiver = newName;
+                
+        });
+    }
+    
+    
+
         
 }
 
