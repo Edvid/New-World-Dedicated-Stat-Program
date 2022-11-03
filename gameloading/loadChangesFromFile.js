@@ -70,7 +70,7 @@ function refreshPageItems() {
 
     if (typeof updateDropdownSelection === 'function') updateDropdownSelection();
     if (typeof createNationSheet === 'function') {
-        currentNationName = Object.keys(gameStats.Nations)[0];
+        currentNationName = Object.keys(gameStats.Nations)[currentNationID];
         createNationSheet(currentNationName);
     }
     if(typeof onLoadStatTradeZoneWealth === 'function') onLoadStatTradeZoneWealth();

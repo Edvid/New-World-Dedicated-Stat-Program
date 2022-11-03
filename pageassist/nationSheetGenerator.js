@@ -195,6 +195,7 @@ function updateDropdownSelection() {
         option.innerText = `${spacedkeywithmargin} - ${index++}`;
         dropdownselection.appendChild(option);
     }
+    dropdownselection.selectedIndex = currentNationID;
 }
 
 document.body.appendChild(advancedSettingsToggle);
