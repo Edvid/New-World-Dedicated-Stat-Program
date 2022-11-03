@@ -224,8 +224,9 @@ function deleteStat(currentSelection, arg){
 
 let newOuterAfterRename;
 function renameStat(currentSelection, arg){
-    let newName = arg.slice(0, arg.indexOf('=')).trim();
-    let oldName = arg.slice(arg.indexOf('=') + 1).trim();
+    let newName = arg.slice(arg.indexOf('>') + 1).trim();
+    let oldName = arg.slice(0, arg.indexOf('>')).trim();
+    console.log(oldName);
     oldName = correctAndSynonymCheck(`${currentSelection}.${oldName}`).split(".").pop();
     
     if (/^\.Nations$/.test(currentSelection)) evaluateNation(oldName);
