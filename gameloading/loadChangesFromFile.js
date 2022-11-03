@@ -47,10 +47,25 @@ async function loadChangesFromContent(changes, skip) {
 
     document.querySelector("body").dispatchEvent(new Event("game load done"));
 
-    refreshNationPageItems();
+    errorsPresentAtCompletion();
+    refreshPageItems();
 }
 
-function refreshNationPageItems() {
+function errorsPresentAtCompletion(){
+    Object.keys(gameStats.Trades).forEach(tradeName => {
+        let trade = gameStats.Trades[tradeName];
+        let nationNames = Object.keys(gameStats.Nations);
+
+        //if either the giver or the receiver in the given trade, is not a name found among nations
+        if(nationNames.indexOf(trade.giver) == -1){
+            alert(`The treaty '${tradeName}' has ${trade.giver} as its giver. This is not a nation. Investigate this`)
+        }else if(nationNames.indexOf(trade.receiver) == -1){
+            alert(`The treaty '${tradeName}' has ${trade.receiver} as its receiver. This is not a nation. Investigate this`)
+        }
+    });
+}
+
+function refreshPageItems() {
     evaluateNations();
 
     if (typeof updateDropdownSelection === 'function') updateDropdownSelection();
