@@ -59,8 +59,16 @@ uploadccftextinput.cols = "70";
 uploadccftextinput.rows = "18";
 let uploadccftextinputsubmit = document.createElement("button");
 uploadccftextinputsubmit.innerText = "Submit";
+uploadccftextinputsubmit.classList.add("submitccf");
+uploadccftextinputsubmit.disabled = true;
+
+uploadccftextinput.addEventListener('input', (e) => {
+    uploadccftextinputsubmit.disabled = false;
+});
+
 uploadccftextinputsubmit.onclick = (e) => {
     changes = uploadccftextinput.value.split(/\r?\n|\r/);
+    uploadccftextinputsubmit.disabled = true;
     loadChangesFromContent(changes, 0);
 }
 
