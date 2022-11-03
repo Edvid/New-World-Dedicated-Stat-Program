@@ -30,6 +30,9 @@
 			"include": "#delete"
 		},
 		{
+			"include": "#rename"
+		},
+		{
 			"include": "#shorthand"
 		},
 		{
@@ -139,7 +142,7 @@
 		},
 		"switch": {
 			"name": "entity.name.function.switch.commandchangeformat",
-			"begin": "(?=<[^-])|(?<!\\+)(?=>)",
+			"begin": "(?=<[^-=])|(?<!\\+)(?=>)",
 			"end": "\\n|(?=#)",
 			"patterns": [
 				{
@@ -163,8 +166,7 @@
 			"patterns": [
 				{
 					"name": "string.unquoted.create.commandchangeformat",
-					"begin": "[a-zA-Z]",
-					"end": "(?=\\n|#|=)"
+					"match": "[a-zA-Z]"
 				}
 			]
 		},
@@ -175,8 +177,22 @@
 			"patterns": [
 				{
 					"name": "string.unquoted.delete.commandchangeformat",
-					"begin": "[a-zA-Z]",
-					"end": "(?=\\n|#)"
+					"match": "[a-zA-Z]"
+				}
+			]
+		},
+		"rename": {
+			"name": "entity.name.function.rename.commandchangeformat",
+			"begin": "<=>",
+			"end": "\\n|(?=#)",
+			"patterns": [
+				{
+					"name": "string.unquoted.rename.commandchangeformat",
+					"match": "[a-zA-Z]"
+				},
+				{
+					"name": "entity.name.function.rename.commandchangeformat",
+					"match": "="
 				}
 			]
 		},

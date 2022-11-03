@@ -779,6 +779,24 @@
 			}
 		},
 		{
+			"name": "CCF - Rename",
+			"scope": [
+				"entity.name.function.rename.commandchangeformat"
+			],
+			"settings": {
+				"foreground": "#ff00dd"
+			}
+		},
+		{
+			"name": "CCF - Rename Parameter",
+			"scope": [
+				"string.unquoted.rename.commandchangeformat"
+			],
+			"settings": {
+				"foreground": "#ff68eb"
+			}
+		},
+		{
 			"name": "CCF - Shorthand",
 			"scope": [
 				"entity.name.function.shorthand.commandchangeformat"
