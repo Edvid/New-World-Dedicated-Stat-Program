@@ -142,7 +142,7 @@ In here we may set the points of the Religions this nation has. By default, all 
 
 Now we can begin setting points of the others
 
-`= 95 Catholic.Points`
+`= 95 Catholic.Points`\
 `= 95 Protestant.Points`
 
 If everything is done correctly, you should be able to see a pie chart with only a sliver for protestants, and a table showing the opinion of the catholics towards the protestants in their nation having a displeased smiley.
@@ -159,25 +159,35 @@ Deletion has a very opposite syntax to that of creation; `<-`. It looks like a m
 
 E.g. If the treaty of Llivia is terminated, one could remove the trade instances from the list of trades in the game's stats. The following selects the trades object and deletes the two instances of the treaty of Llivia and then reselects France once again (assuming this was learned while updating France)
 
-`<... > trades`
-`<- TreatyOfLlivia1`
-`<- TreatyOfLlivia2`
+`<... > trades`\
+`<- TreatyOfLlivia1`\
+`<- TreatyOfLlivia2`\
 `< > France`
 
 Any object can be deleted from the game. Be in trades, nations, cultures, culturegroups within nations etc.
 
-When e.g. a nation needs to be renamed for whatever reason, where government name (dynasty) change wouldn't suffice, we have the option to create a nation from copied stats of another. This is conjunction with deletion can work as renaming of a nation, however it shall be noted that the newly renamed nation would move to the bottom of the list to select from, and all nations below the old posision of the nation in the list would move one number up in the list too.
+When e.g. a nation needs to be split for whatever reason, we have the option to create a nation from copied stats of another, and delete the previous. However it shall be noted that the newly created subparts of this nation would move to the bottom of the list to select from, and all nations below the old deleted nation's posision of the nation in the list would move one number up in the list too.
 
-Making a new nation from copied stats may also be used when splitting nations (although you should then remember to deal with a split population, land size etc.). 
+Making the new nations (Czechia and Slovakia) with copied stats from another (Czechoslovakia) would work like the following:
 
-Making a new nation (France) with copied stats from another (Gaul) would work like the following:
+`<... > Nations`\
+`+> Czechia = czechoslovakia`\
+`+> Slovakia = czecho slovakia`
 
-`<... > Nations`
-`+> France = Gaul`
+Then we would delete the old Czechoslovakia nation from the game
 
-Then we would delete the old Gaul nation from the game
+`<- czechoslovakia`
 
-`<- Gaul`
+Note: the second parameter, the one naming the existing nation at this moment, can be written with arbitrary spacing and casing; but the first parameter, the new name, must be written exact
+
+The syntax for renaming, where government name (dynasty) change wouldn't suffice, we use a different syntax entirely
+
+`<... > Nations`\
+`<=> Gaul > France`
+
+This is method differs from just creating a new nation from anither base, and then deleting that base, in two main ways:
+1) The position in the dropdown menu is kept
+2) It automatically caries over trades 
 
 ## Reminders for stat updaters for special situations
 
@@ -196,12 +206,6 @@ When creating a new nation you must remember the following
   + Set the culture represented at government level to the culture created earlier
   + Set the religion represented at government to the _one_ religion that best represents the entire nation (majority or only one)
   + Set flag if any are specified
-
-### Nation splitting / Renaming / Deletion
-
-When a nation's name changes, or is removed from the game for whatever reason, rememeber the following
-
-+ check with all trades the old nation was involved in, if changes should happen there too. Deletion or change in the involved nations is an option.
 
 ## Structure
 
