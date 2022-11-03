@@ -222,12 +222,22 @@ function deleteStat(currentSelection, arg){
     (new Function(`delete gameStats${dottedStatName}`))();
 }
 
+let newOuterAfterRename;
 function renameStat(currentSelection, arg){
     let newName = arg.slice(0, arg.indexOf('=')).trim();
     let oldName = arg.slice(arg.indexOf('=') + 1).trim();
     oldName = correctAndSynonymCheck(`${currentSelection}.${oldName}`).split(".").pop();
     
     if (/^\.Nations$/.test(currentSelection)) evaluateNation(oldName);
+
+    let outer = (new Function(`return gameStats${currentSelection}`))();
+    newOuterAfterRename = new Object();
+
+    Object.keys(outer).forEach(property => {
+        newOuterAfterRename[property == oldName ? newName : property] = outer[property];
+    });
+
+    (new Function(`gameStats${currentSelection} = newOuterAfterRename`))();
         
 }
 
