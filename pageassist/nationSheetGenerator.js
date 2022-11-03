@@ -135,7 +135,8 @@ nationSheetContainer.classList.add("nationsheet");
 let arrowContainer = document.createElement("div");
 arrowContainer.classList.add("arrowcontainer");
 
-let currentNationID = 0;
+const URLParamNationID = new URLSearchParams(window.location.search).get('nat'); 
+let currentNationID = URLParamNationID != null ? URLParamNationID - 1: 0;
 let currentNationName = 'undefined';
 let currentNationNameDisplay = document.createElement("h1");
 currentNationNameDisplay.classList = "nationnamedisplay";
