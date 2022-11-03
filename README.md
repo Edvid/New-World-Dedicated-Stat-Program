@@ -185,7 +185,7 @@ The syntax for renaming, where government name (dynasty) change wouldn't suffice
 `<... > Nations`\
 `<=> Gaul > France`
 
-This is method differs from just creating a new nation from anither base, and then deleting that base, in two main ways:
+This is method differs from just creating a new nation from another base, and then deleting that base, in two main ways:
 1) The position in the dropdown menu is kept
 2) It automatically caries over trades 
 
