@@ -264,7 +264,7 @@ function createNationSheet(nationName) {
 			[ "AdministrativeStrain"
 			]
         ]
-    );
+    ).classList.add("basicstats");
 
     createStatTable(
         "Budget Stats",
@@ -529,6 +529,19 @@ function createNationSheet(nationName) {
         element.style.height = element.parentElement.clientHeight + "px";
     });
 
+    //make stability stat get a color
+
+    let stabilityValueElement = document.querySelector(".basicstats td.Stability.value");
+
+    stabilityValueElement.style.fontWeight = 
+        stabilityValueElement.innerText < 2 ? "Bold" : 
+        "Normal";
+    stabilityValueElement.style.color = 
+        stabilityValueElement.innerText < 2 ? 
+            (stabilityValueElement.innerText < -2 ? "Red" : 
+            "Orange") : 
+        "LawnGreen";
+
     //make non 0.00 in tradeinfluence bold
 
     let alltdsintradeinf = document.querySelectorAll(".tradeinfluences td");
@@ -566,7 +579,10 @@ function createStatTable(title, tables, upmigrations) {
             let statName = statSelection.split(/\.|(?<=\[)/g);
             statName = statName[statName.length - 1 - upmigrations].replace(/(\[|\"| |\])/gmi, "");
             nationStatNameCell.innerText = statName.replace(/(?<=[a-zA-Z])(?=[A-Z])/g, " ");
+            nationStatNameCell.classList.add(statName, "name")
             let nationStatCell = document.createElement("td");
+            nationStatCell.classList.add(statName, "value")
+            
             let displayValue = ValueTypeFix(statName, statvalue);
             if (displayValue.appendable) {
                 nationStatCell.appendChild(displayValue.value);
