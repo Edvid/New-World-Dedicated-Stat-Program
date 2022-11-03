@@ -133,6 +133,11 @@ async function evaluteChangeCommand(changeCommandRaw) {
         let arg = changeCommand.slice(2).trim();
         deleteStat(correctAndSynonymCheck(currentSelection), arg);
     }
+    //renaming
+    else if (changeCommand.slice(0, 3) == "<=>") {
+        let arg = changeCommand.slice(3).trim();
+        renameStat(correctAndSynonymCheck(currentSelection), arg);
+    }
     //Selection and deselections
     else if (changeCommand[0] == '>' || changeCommand[0] == '<') {
         let cc = changeCommand;

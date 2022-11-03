@@ -157,7 +157,7 @@ function createStat(currentSelection, arg){
         let newName = arg.slice(0, arg.indexOf('=')).trim();
         let oldName = arg.slice(arg.indexOf('=') + 1).trim();
         oldName = correctAndSynonymCheck(`${currentSelection}.${oldName}`).split(".").pop();
-        evaluateNation(oldName);
+        if(objectClass == "Nation") evaluateNation(oldName);
 
         /* Copy all property values from old to new */
         (new Function(`
@@ -220,6 +220,15 @@ function createStat(currentSelection, arg){
 function deleteStat(currentSelection, arg){
     let dottedStatName = correctAndSynonymCheck(`${currentSelection}.${arg}`);
     (new Function(`delete gameStats${dottedStatName}`))();
+}
+
+function renameStat(currentSelection, arg){
+    let newName = arg.slice(0, arg.indexOf('=')).trim();
+    let oldName = arg.slice(arg.indexOf('=') + 1).trim();
+    oldName = correctAndSynonymCheck(`${currentSelection}.${oldName}`).split(".").pop();
+    
+    if (/^\.Nations$/.test(currentSelection)) evaluateNation(oldName);
+        
 }
 
 let Shorthands = {}
