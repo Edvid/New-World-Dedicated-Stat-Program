@@ -550,7 +550,7 @@ function createNationSheet(nationName) {
         stabilityValueElement.innerText < 2 ? 
             (stabilityValueElement.innerText < -2 ? "Red" : 
             "Orange") : 
-        "LawnGreen";
+        "Green";
 
     //make non 0.00 in tradeinfluence bold
 
