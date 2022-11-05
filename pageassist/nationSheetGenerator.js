@@ -540,8 +540,10 @@ function createSearchStatTable(){
             for (let stat = 0; stat < stats.length; stat++) {
                 const statName = stats[stat];
                 //filter out everything that isn't matching the search
-                if(new RegExp(searchStat).test(statName)) 
+                if(new RegExp(searchStatValue, "i").test(statName)) {
+                    console.log(`${searchStatValue} found in ${statName}`)
                     columns.push([statName]);
+                }
             }
         }
     });
@@ -647,7 +649,7 @@ function createStatTable(title, tables) {
 }
 
 function createOpinionMatrixTable(title, SocialBehaviourGroups) {
-    if (searchStatValue != "" && !new RegExp(searchStat).test(title)) return;
+    if (searchStatValue != "" && !new RegExp(searchStatValue, "i").test(title)) return;
     let tablecontainer = document.createElement("div");
     let table = document.createElement("table");
     table.classList.add("opiniontable");
@@ -741,7 +743,7 @@ function createOpinionMatrixTable(title, SocialBehaviourGroups) {
 }
 
 function createPieDiagram(ObjectToChart, ValName) {
-    if (searchStatValue != "" && !new RegExp(searchStat).test(ObjectToChart)) return;
+    if (searchStatValue != "" && !new RegExp(searchStatValue, "i").test(ObjectToChart)) return;
     let ValueName = ValName;
     if (typeof ValueName == 'undefined') ValueName = "Points"
 
