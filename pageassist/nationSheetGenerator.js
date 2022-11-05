@@ -186,12 +186,22 @@ dropdownselection.onchange = function () {
 dropdown.appendChild(dropdowntitle);
 dropdown.appendChild(dropdownselection);
 
+let SearchStatContainer = document.createElement("form");
+SearchStatContainer.id = "searchstatcontainer";
+
 let searchStatLabel = document.createElement("label");
 let searchStat = document.createElement("input");
 searchStat.type = "text";
+searchStatLabel.innerText = "search stat: ";
 const URLParamStatQuerry = new URLSearchParams(window.location.search).get('q');
 searchStat.value = URLParamStatQuerry != null ? URLParamStatQuerry : "";
-
+let searchStatValue = URLParamStatQuerry != null ? URLParamStatQuerry : "";
+searchStat.addEventListener('input', (e) => {
+    searchStatValue = searchStat.value;
+    createNationSheet(currentNationName);
+});
+SearchStatContainer.appendChild(searchStatLabel);
+SearchStatContainer.appendChild(searchStat);
 
 
 function updateDropdownSelection() {
@@ -224,6 +234,7 @@ arrowContainer.appendChild(rightArrow);
 
 document.body.appendChild(arrowContainer);
 document.body.appendChild(dropdown);
+document.body.appendChild(SearchStatContainer);
 document.body.appendChild(nationSheetContainer);
 
 function ti(zone) {
@@ -390,6 +401,8 @@ function createNationSheet(nationName) {
     /* #endregion */
     /* #region  Display */
 
+    tableIndex = 0;
+
     StandardCreateStatTable();
 
     StandardCreateStatTable();
@@ -406,7 +419,7 @@ function createNationSheet(nationName) {
 
     StandardCreateStatTable();
 
-    StandardCreateStatTable().classList.add("basicstats");
+    StandardCreateStatTable();
 
     StandardCreateStatTable();
 
@@ -481,7 +494,7 @@ function createNationSheet(nationName) {
 
     //make stability stat get a color
 
-    let stabilityValueElement = document.querySelector(".basicstats td.Stability.value");
+    let stabilityValueElement = document.querySelector("td.Stability.value");
 
     stabilityValueElement.style.fontWeight =
         stabilityValueElement.innerText < 2 ? "Bold" :
@@ -507,23 +520,22 @@ function createNationSheet(nationName) {
 
 let tableIndex = 0;
 
-function StandardCreateStatTable(title, tables) {
-    if (searchStat.value != "") return;
+function StandardCreateStatTable() {
+    if (searchStatValue != "") return document.createElement("div");
     let title = Object.keys(TableLayouts)[tableIndex++];
     let tables = TableLayouts[title];
-    createStatTable(title, tables);
-    tableIndex++;
+    return createStatTable(title, tables);
 }
 
 function createSearchStatTable(){
     
-    if(searchStat.value == "") return;
+    if(searchStatValue == "") return document.createElement("div");
     
     let columns = [];
 
     Object.keys(TableLayouts).forEach(tableGroupName => {
         const tableGroup = TableLayouts[tableGroupName];
-        for (let table = 0; table < TableLayouts[tableGroup].length; table++) {
+        for (let table = 0; table < TableLayouts[tableGroupName].length; table++) {
             const stats = tableGroup[table];
             for (let stat = 0; stat < stats.length; stat++) {
                 const statName = stats[stat];
@@ -532,10 +544,9 @@ function createSearchStatTable(){
                     columns.push([statName]);
             }
         }
-        Object.keys()
     });
     
-    createStatTable("search results", columns);
+    return createStatTable("search results", columns);
 }
 
 function createStatTable(title, tables) {
@@ -559,9 +570,10 @@ function createStatTable(title, tables) {
                 (new Function(`return gameStats.Nations["${currentNationName}"]${statSelection}`))();
             let nationStatNameCell = document.createElement("th");
             let upmigrations = 0;
-            let statName = statSelection.split(/\.|(?<=\[)/g)[statName.length - 1 - upmigrations++].replace(/(\[|\"| |\])/gmi, "");
+            let splitStatSelection = statSelection.split(/\.|(?<=\[)/g); 
+            let statName = splitStatSelection[splitStatSelection.length - 1 - upmigrations++].replace(/(\[|\"| |\])/gmi, "");
             while(statName == "tradingPoints"){
-                statName = statSelection.split(/\.|(?<=\[)/g)[statName.length - 1 - upmigrations++].replace(/(\[|\"| |\])/gmi, "");
+                statName = splitStatSelection[splitStatSelection.length - 1 - upmigrations++].replace(/(\[|\"| |\])/gmi, "");
             }
             nationStatNameCell.innerText = statName.replace(/(?<=[a-zA-Z])(?=[A-Z])/g, " ");
             nationStatNameCell.classList.add(statName, "name")
@@ -635,7 +647,7 @@ function createStatTable(title, tables) {
 }
 
 function createOpinionMatrixTable(title, SocialBehaviourGroups) {
-    if (searchStat.value != "" && !new RegExp(searchStat).test(title)) return;
+    if (searchStatValue != "" && !new RegExp(searchStat).test(title)) return;
     let tablecontainer = document.createElement("div");
     let table = document.createElement("table");
     table.classList.add("opiniontable");
@@ -729,7 +741,7 @@ function createOpinionMatrixTable(title, SocialBehaviourGroups) {
 }
 
 function createPieDiagram(ObjectToChart, ValName) {
-    if (searchStat.value != "" && !new RegExp(searchStat).test(ObjectToChart)) return;
+    if (searchStatValue != "" && !new RegExp(searchStat).test(ObjectToChart)) return;
     let ValueName = ValName;
     if (typeof ValueName == 'undefined') ValueName = "Points"
 

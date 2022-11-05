@@ -128,7 +128,7 @@ td{
     height: auto;
 }
 
-#dropdownselection{
+#dropdownselection, #searchstatcontainer{
     display: grid;
     align-items: center;
     width: 200px;
@@ -136,7 +136,7 @@ td{
     padding-bottom: 1em;
 }
 
-#dropdownselection label{
+#dropdownselection label, #searchstatcontainer label{
     text-align: center;
     font-size: 18px;
     font-weight: bolder;
