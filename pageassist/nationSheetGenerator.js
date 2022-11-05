@@ -574,7 +574,7 @@ function createStatTable(title, tables) {
             let upmigrations = 0;
             let splitStatSelection = statSelection.split(/\.|(?<=\[)/g); 
             let statName = splitStatSelection[splitStatSelection.length - 1 - upmigrations++].replace(/(\[|\"| |\])/gmi, "");
-            while(statName == "tradingPoints"){
+            while(/tradingpoints$/i.test(statName)){
                 statName = splitStatSelection[splitStatSelection.length - 1 - upmigrations++].replace(/(\[|\"| |\])/gmi, "");
             }
             nationStatNameCell.innerText = statName.replace(/(?<=[a-zA-Z])(?=[A-Z])/g, " ");
