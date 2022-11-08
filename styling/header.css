@@ -23,6 +23,19 @@ header button{
     border: 0px;
 }
 
+header button.admintool{
+    background-color: rgb(182, 149, 254);
+}
+
+header button:hover{
+    background-color: rgb(114, 178, 217);
+}
+
+
+header button.admintool:hover{
+    background-color: rgb(156, 127, 218);
+}
+
 body{
     margin: 0px;
 }

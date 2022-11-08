@@ -13,10 +13,12 @@ headerElement.appendChild(alltradeslink);
 headerElement.appendChild(mapccflink);
 
 homelink.innerText = "home";
-nationslink.innerText = "all nations";
+nationslink.innerText = "Nations' Resource Overlap";
 tradezonelink.innerText = "trade zone map";
 alltradeslink.innerText = "all trades";
 mapccflink.innerText = "map ccf calculations";
+
+mapccflink.classList.add("admintool");
 
 homelink.onclick = function(){
     document.location.href = "./";
