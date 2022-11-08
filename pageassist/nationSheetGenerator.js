@@ -403,9 +403,9 @@ function createNationSheet(nationName) {
 
     tableIndex = 0;
 
-    StandardCreateStatTable();
+    AddNextStatTable();
 
-    StandardCreateStatTable();
+    AddNextStatTable();
 
     createBreaker();
 
@@ -417,35 +417,35 @@ function createNationSheet(nationName) {
     createPieDiagram("ReligionGroups");
     createOpinionMatrixTable("Religion Groups Opinions", "ReligionGroups");
 
-    StandardCreateStatTable();
+    AddNextStatTable();
 
-    StandardCreateStatTable();
+    AddNextStatTable();
 
-    StandardCreateStatTable();
+    AddNextStatTable();
 
-    StandardCreateStatTable();
+    AddNextStatTable();
 
-    StandardCreateStatTable();
+    AddNextStatTable();
 
-    StandardCreateStatTable();
+    AddNextStatTable();
 
-    StandardCreateStatTable();
+    AddNextStatTable();
 
-    StandardCreateStatTable();
+    AddNextStatTable();
 
-    StandardCreateStatTable();
+    AddNextStatTable();
 
-    StandardCreateStatTable();
+    AddNextStatTable();
 
-    StandardCreateStatTable();
+    AddNextStatTable();
 
     createBreaker();
 
     createPieDiagram("Climates", "Pixels");
 
-    StandardCreateStatTable();
+    AddNextStatTable();
 
-    StandardCreateStatTable();
+    AddNextStatTable();
 
 
     createBreaker();
@@ -461,27 +461,27 @@ function createNationSheet(nationName) {
 
     createBreaker();
 
-    StandardCreateStatTable().classList.add("tradeinfluences");
+    AddNextStatTable().classList.add("tradeinfluences");
 
-    StandardCreateStatTable().classList.add("tradeinfluences");
+    AddNextStatTable().classList.add("tradeinfluences");
 
-    StandardCreateStatTable().classList.add("tradeinfluences");
+    AddNextStatTable().classList.add("tradeinfluences");
 
-    StandardCreateStatTable().classList.add("tradeinfluences");
+    AddNextStatTable().classList.add("tradeinfluences");
 
-    StandardCreateStatTable();
+    AddNextStatTable();
 
-    StandardCreateStatTable();
+    AddNextStatTable();
 
-    StandardCreateStatTable();
+    AddNextStatTable();
 
-    StandardCreateStatTable();
+    AddNextStatTable();
 
-    StandardCreateStatTable();
+    AddNextStatTable();
 
-    StandardCreateStatTable();
+    AddNextStatTable();
 
-    StandardCreateStatTable();
+    AddNextStatTable();
 
     /* #endregion */
 
@@ -520,7 +520,7 @@ function createNationSheet(nationName) {
 
 let tableIndex = 0;
 
-function StandardCreateStatTable() {
+function AddNextStatTable() {
     if (searchStatValue != "") return document.createElement("div");
     let title = Object.keys(TableLayouts)[tableIndex++];
     let tables = TableLayouts[title];
