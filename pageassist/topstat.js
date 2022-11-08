@@ -1,0 +1,18 @@
+let TopStats = [
+    {name: "AdmEfficiency"},
+    {name: "DailyBudget"},
+    {name: "Stability"},
+    {name: "PopulationSize"},
+    {name: "Area" /*and map*/},
+    {name: "ArmySize"},
+    {name: "NavySize"},
+    {name: "ArmyQuality"},
+    {name: "NavyQuality"},
+    {name: "Literacy"},
+    {name: "Literacy"},
+    {name: "TradePower"},
+    {name: "TradeProtection"},
+    {name: "OverallIncome"},
+    {name: "Production"},
+    {name: "ReseachPointGain"},
+]
