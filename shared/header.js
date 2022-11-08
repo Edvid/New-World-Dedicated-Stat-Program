@@ -1,3 +1,12 @@
+let buttonNamesAndLinks = [
+    {name: "home", link: "./"},
+    {name: "Nations' Resource Overlap", link: "./Nations"},
+    {name: "Trade Zone Map", link: "./TradeZones"},
+    {name: "All Trades", link: "./alltrades"},
+    {name: "Top Stat", link: "./TopStat"},
+    {name: "Map Ccf Calculations", link: "./mapccfcalculations", class: "admintool"},
+]
+
 let headerElement = document.createElement("header");
 let headerMargin = document.createElement("div");
 headerMargin.id = "headerstartspace";
@@ -5,43 +14,14 @@ headerMargin.id = "headerstartspace";
 document.querySelector("body").prepend(headerMargin);
 document.querySelector("body").prepend(headerElement);
 
-let homelink = document.createElement("button");
-let nationslink = document.createElement("button");
-let tradezonelink = document.createElement("button");
-let alltradeslink = document.createElement("button");
-let mapccflink = document.createElement("button");
+buttonNamesAndLinks.forEach(button =>{
+    let btn = document.createElement("button");
+    btn.innerHTML = button.name;
+    btn.onclick = function(){
+        document.location.href = button.link;
+    };
 
-headerElement.appendChild(homelink);
-headerElement.appendChild(nationslink);
-headerElement.appendChild(tradezonelink);
-headerElement.appendChild(alltradeslink);
-headerElement.appendChild(mapccflink);
+    if(button.class != null) btn.classList.add(button.class);
 
-homelink.innerText = "home";
-nationslink.innerText = "Nations' Resource Overlap";
-tradezonelink.innerText = "trade zone map";
-alltradeslink.innerText = "all trades";
-mapccflink.innerText = "map ccf calculations";
-
-mapccflink.classList.add("admintool");
-
-homelink.onclick = function(){
-    document.location.href = "./";
-};
-
-tradezonelink.onclick = function(){
-    document.location.href = "./TradeZones";
-};
-
-nationslink.onclick = function(){
-    document.location.href = "./Nations";
-};
-
-alltradeslink.onclick = function(){
-    document.location.href = "./alltrades";
-};
-
-mapccflink.onclick = function(){
-    document.location.href = "./mapccfcalculations";
-};
-
+    headerElement.appendChild(btn);
+});
