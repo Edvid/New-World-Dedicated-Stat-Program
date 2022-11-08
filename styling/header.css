@@ -36,6 +36,11 @@ header button.admintool:hover{
     background-color: rgb(156, 127, 218);
 }
 
+header button:disabled{
+    background-color: lightgrey;
+    color: grey;
+}
+
 body{
     margin: 0px;
 }

@@ -3,7 +3,7 @@ let buttonNamesAndLinks = [
     {name: "Nations' Resource Overlap", link: "./Nations"},
     {name: "Trade Zone Map", link: "./TradeZones"},
     {name: "All Trades", link: "./alltrades"},
-    {name: "Top Stat", link: "./TopStat"},
+    {name: "Top Stat", link: "./TopStat", disabled: true},
     {name: "Map Ccf Calculations", link: "./mapccfcalculations", class: "admintool"},
 ]
 
@@ -22,6 +22,7 @@ buttonNamesAndLinks.forEach(button =>{
     };
 
     if(button.class != null) btn.classList.add(button.class);
+    if(button.disabled) btn.disabled = true;
 
     headerElement.appendChild(btn);
 });
