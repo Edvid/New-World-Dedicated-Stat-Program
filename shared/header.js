@@ -1,4 +1,9 @@
-let headerElement = document.querySelector("header");
+let headerElement = document.createElement("header");
+let headerMargin = document.createElement("div");
+headerMargin.id = "headerstartspace";
+
+document.querySelector("body").prepend(headerMargin);
+document.querySelector("body").prepend(headerElement);
 
 let homelink = document.createElement("button");
 let nationslink = document.createElement("button");
