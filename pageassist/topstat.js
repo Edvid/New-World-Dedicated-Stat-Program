@@ -50,7 +50,7 @@ function populateTopStatTable(){
         const TopStatTitle = document.createElement("th");
         
         TopStatTitle.innerText = TopStat.displayName != null ? TopStat.displayName : TopStat.name;
-        TopStatTitle.colSpan = TopStat.map ? 5 : 4;
+        TopStatTitle.colSpan = TopStat.map ? 4 : 3;
         TopStatTitle.style.backgroundColor = primaryColor;
         
         TopStatTitle.style.borderBottom = "5px black solid";
@@ -67,20 +67,18 @@ function populateTopStatTable(){
         //populate column
         for (let r = 1; r < nationNames.length + 1; r++) {
             const NationName = nationNames[r - 1];
-            const nameElement = document.createElement("td");
             const flagElement = document.createElement("td");
-            const middleElement = document.createElement("th");
+            const nameElement = document.createElement("td");
             const valueElement = document.createElement("td");
             
-            nameElement.innerText = NationName;
-
+            
             const flag = document.createElement("img");
             flag.style.width = "30px";
             flag.src = gameStats.Nations[NationName].Flag;
-
+            
             flagElement.appendChild(flag);
-
-            middleElement.innerText = "with: ";
+            
+            nameElement.innerText = NationName;
 
             let statNam = TopStat.displayName;
             let statval = gameStats.Nations[NationName][statNam];
@@ -98,23 +96,20 @@ function populateTopStatTable(){
 
             valueElement.innerText = statval;
 
-            nameElement.style.backgroundColor = secondaryColor;
             flagElement.style.backgroundColor = secondaryColor;
-            middleElement.style.backgroundColor = primaryColor;
+            nameElement.style.backgroundColor = secondaryColor;
             valueElement.style.backgroundColor = secondaryColor;
             
-            nameElement.style.border = "1px black solid";
             flagElement.style.border = "1px black solid";
-            middleElement.style.border = "1px black solid";
+            nameElement.style.border = "1px black solid";
             valueElement.style.border = "1px black solid";
             
-            if (c != 0) nameElement.style.borderLeft = "5px solid black";
+            if (c != 0) flagElement.style.borderLeft = "5px solid black";
 
             valueElement.style.whiteSpace = "noWrap";
 
-            rows[r].appendChild(nameElement);
             rows[r].appendChild(flagElement);
-            rows[r].appendChild(middleElement);
+            rows[r].appendChild(nameElement);
             rows[r].appendChild(valueElement);
             if(TopStat.map != null){
                 let img = document.createElement("img");
