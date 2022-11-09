@@ -64,6 +64,10 @@ function populateTopStatTable(){
         const TopStat = TopStats[c];
         //sort for this stat
 
+        nationNames.sort((a, b) => 
+            gameStats.Nations[b][TopStat.name] - gameStats.Nations[a][TopStat.name]
+        );
+
         //populate column
         for (let r = 1; r < nationNames.length + 1; r++) {
             const NationName = nationNames[r - 1];
@@ -80,19 +84,10 @@ function populateTopStatTable(){
             
             nameElement.innerText = NationName;
 
-            let statNam = TopStat.displayName;
-            let statval = gameStats.Nations[NationName][statNam];
-            if(statval != null){
-                statval = ValueTypeFix(statNam, statval).value;
-            }else{
-                statNam = TopStat.name;
-                statval = gameStats.Nations[NationName][statNam];
-                if(statval != null){
-                    statval = ValueTypeFix(statNam, statval).value;
-                }else{
-                    statval = "unknown";
-                }
-            }
+            let statval = ValueTypeFix(
+                TopStat.name, 
+                gameStats.Nations[NationName][TopStat.name]
+            ).value;
 
             valueElement.innerText = statval;
 
