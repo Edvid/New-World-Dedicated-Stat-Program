@@ -22,15 +22,18 @@ function populateTopStatTable(){
     
     let nationNames = Object.keys(gameStats.Nations);
 
-    let topStatLabel = document.createElement("label");
+    let topStatTitle = document.createElement("h1");
     let topStatTable = document.createElement("table");
 
     let body = document.querySelector("body");
 
-    body.appendChild(topStatLabel);
+    body.appendChild(topStatTitle);
     body.appendChild(topStatTable);
 
-    topStatLabel.innerHTML = "Top Stats:"
+    topStatTitle.innerHTML = "Top Stats:";
+    topStatTitle.style.marginTop = ".5em";
+    topStatTitle.style.marginBottom = ".5em";
+
     topStatTable.style.borderCollapse = "collapse";
     
     let rows = [];
