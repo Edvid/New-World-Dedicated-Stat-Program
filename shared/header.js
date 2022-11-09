@@ -3,7 +3,7 @@ let buttonNamesAndLinks = [
     {name: "Nations' Resource Overlap", link: "./Nations"},
     {name: "Trade Zone Map", link: "./TradeZones"},
     {name: "All Trades", link: "./alltrades"},
-    {name: "Top Stat", link: "./TopStat", disabled: true},
+    {name: "Top Stat", link: "./TopStat"},
     {name: "Map Ccf Calculations", link: "./mapccfcalculations", class: "admintool"},
 ]
 
