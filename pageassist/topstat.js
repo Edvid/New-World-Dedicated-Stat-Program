@@ -3,7 +3,7 @@ const TopStats = [
     {name: "DailyBudget"},
     {name: "Stability"},
     {name: "Population", displayName: "PopulationSize"},
-    {name: "Size", displayName: "Area", map: true /*and map*/},
+    {name: "Size", displayName: "Area", map: true},
     {name: "OverallNumbers", displayName: "ArmySize"},
     {name: "OverallShipCount", displayName: "NavySize"},
     {name: "ArmyQuality"},
@@ -47,7 +47,7 @@ function populateTopStatTable(){
         const TopStatTitle = document.createElement("th");
         
         TopStatTitle.innerText = TopStat.displayName != null ? TopStat.displayName : TopStat.name;
-        TopStatTitle.colSpan = 3;
+        TopStatTitle.colSpan = TopStat.map ? 5 : 4;
         TopStatTitle.style.backgroundColor = primaryColor;
         
         TopStatTitle.style.borderBottom = "5px black solid";
@@ -65,25 +65,43 @@ function populateTopStatTable(){
         for (let r = 1; r < nationNames.length + 1; r++) {
             const NationName = nationNames[r - 1];
             const nameElement = document.createElement("td");
+            const flagElement = document.createElement("td");
             const middleElement = document.createElement("th");
             const valueElement = document.createElement("td");
             
             nameElement.innerText = NationName;
+
+            const flag = document.createElement("img");
+            flag.style.width = "30px";
+            flag.src = gameStats.Nations[NationName].Flag;
+
+            flagElement.appendChild(flag);
+
             middleElement.innerText = "with: ";
-            valueElement.innerText = 
-                gameStats.Nations[NationName][TopStat.displayName] != null ? 
-                    ValueTypeFix(TopStat.displayName, gameStats.Nations[NationName][TopStat.displayName]).value : 
-                    (gameStats.Nations[NationName][TopStat.name] != null ? 
-                        ValueTypeFix(TopStat.name, gameStats.Nations[NationName][TopStat.name]).value : 
-                        "unknown"
-                    )
-                ;
+
+            let statNam = TopStat.displayName;
+            let statval = gameStats.Nations[NationName][statNam];
+            if(statval != null){
+                statval = ValueTypeFix(statNam, statval).value;
+            }else{
+                statNam = TopStat.name;
+                statval = gameStats.Nations[NationName][statNam];
+                if(statval != null){
+                    statval = ValueTypeFix(statNam, statval).value;
+                }else{
+                    statval = "unknown";
+                }
+            }
+
+            valueElement.innerText = statval;
 
             nameElement.style.backgroundColor = secondaryColor;
+            flagElement.style.backgroundColor = secondaryColor;
             middleElement.style.backgroundColor = primaryColor;
             valueElement.style.backgroundColor = secondaryColor;
             
             nameElement.style.border = "1px black solid";
+            flagElement.style.border = "1px black solid";
             middleElement.style.border = "1px black solid";
             valueElement.style.border = "1px black solid";
             
@@ -92,8 +110,20 @@ function populateTopStatTable(){
             valueElement.style.whiteSpace = "noWrap";
 
             rows[r].appendChild(nameElement);
+            rows[r].appendChild(flagElement);
             rows[r].appendChild(middleElement);
             rows[r].appendChild(valueElement);
+            if(TopStat.map != null){
+                let img = document.createElement("img");
+                img.src = "docs/assets/images/world/small_blank.png";
+                
+                let imgcell = document.createElement("td");
+                imgcell.style.backgroundColor = secondaryColor;
+                imgcell.style.border = "1px black solid";
+                
+                imgcell.appendChild(img);
+                rows[r].appendChild(imgcell);
+            }
         }
     }
 }
