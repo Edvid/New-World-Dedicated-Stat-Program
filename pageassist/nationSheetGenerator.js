@@ -1,6 +1,3 @@
-let primaryColor = "DodgerBlue";
-let secondaryColor = "lightSkyBlue";
-
 let advancedSettingsToggle = document.createElement("button");
 advancedSettingsToggle.classList.add("collapsible");
 advancedSettingsToggle.id = "advancedsettingstoggle";

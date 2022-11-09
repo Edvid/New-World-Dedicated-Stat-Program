@@ -2,18 +2,18 @@ const TopStats = [
     {name: "AdministrativeEfficiency", displayName: "AdmEfficiency"},
     {name: "DailyBudget"},
     {name: "Stability"},
-    {name: "PopulationSize"},
-    {name: "Area" /*and map*/},
-    {name: "ArmySize"},
-    {name: "NavySize"},
+    {name: "Population", displayName: "PopulationSize"},
+    {name: "Size", displayName: "Area", map: true /*and map*/},
+    {name: "OverallNumbers", displayName: "ArmySize"},
+    {name: "OverallShipCount", displayName: "NavySize"},
     {name: "ArmyQuality"},
     {name: "NavyQuality"},
-    {name: "Literacy"},
+    {name: "Literacy", displayName: "LiteracyPercent"},
     {name: "TradePower"},
     {name: "TradeProtection"},
     {name: "OverallIncome"},
     {name: "Production"},
-    {name: "ReseachPointGain"},
+    {name: "ResearchPointGain"},
 ];
 
 document.querySelector("body").addEventListener("game load done", populateTopStatTable);
@@ -31,7 +31,8 @@ function populateTopStatTable(){
     body.appendChild(topStatTable);
 
     topStatLabel.innerHTML = "Top Stats:"
-
+    topStatTable.style.borderCollapse = "collapse";
+    
     let rows = [];
 
     //initialise rows
@@ -44,7 +45,7 @@ function populateTopStatTable(){
     for (let c = 0; c < TopStats.length; c++) {
         const TopStat = TopStats[c];
         const TopStatTitle = document.createElement("th");
-        TopStatTitle.innerText = TopStat.name;
+        TopStatTitle.innerText = TopStat.displayName != null ? TopStat.displayName : TopStat.name;
         TopStatTitle.colSpan = 3;
         rows[0].appendChild(TopStatTitle);
     }
@@ -65,14 +66,24 @@ function populateTopStatTable(){
             middleElement.innerText = "with: ";
             valueElement.innerText = 
                 gameStats.Nations[NationName][TopStat.displayName] != null ? 
-                    gameStats.Nations[NationName][TopStat.displayName] : 
+                    ValueTypeFix(TopStat.displayName, gameStats.Nations[NationName][TopStat.displayName]).value : 
                     (gameStats.Nations[NationName][TopStat.name] != null ? 
-                        gameStats.Nations[NationName][TopStat.name] : 
+                        ValueTypeFix(TopStat.name, gameStats.Nations[NationName][TopStat.name]).value : 
                         "unknown"
                     )
                 ;
 
+            nameElement.style.backgroundColor = secondaryColor;
+            middleElement.style.backgroundColor = primaryColor;
+            valueElement.style.backgroundColor = secondaryColor;
+            
+            nameElement.style.border = "1px black solid";
+            middleElement.style.border = "1px black solid";
+            valueElement.style.border = "1px black solid";
+            
             nameElement.style.borderLeft = "5px solid black"
+
+            valueElement.style.whiteSpace = "noWrap";
 
             rows[r].appendChild(nameElement);
             rows[r].appendChild(middleElement);
