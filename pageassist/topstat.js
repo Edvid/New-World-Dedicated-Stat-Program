@@ -45,8 +45,14 @@ function populateTopStatTable(){
     for (let c = 0; c < TopStats.length; c++) {
         const TopStat = TopStats[c];
         const TopStatTitle = document.createElement("th");
+        
         TopStatTitle.innerText = TopStat.displayName != null ? TopStat.displayName : TopStat.name;
         TopStatTitle.colSpan = 3;
+        TopStatTitle.style.backgroundColor = primaryColor;
+        
+        TopStatTitle.style.borderBottom = "5px black solid";
+        TopStatTitle.style.borderTop = "5px black solid";
+        if (c != 0) TopStatTitle.style.borderLeft = "5px black solid";
         rows[0].appendChild(TopStatTitle);
     }
 
@@ -81,7 +87,7 @@ function populateTopStatTable(){
             middleElement.style.border = "1px black solid";
             valueElement.style.border = "1px black solid";
             
-            nameElement.style.borderLeft = "5px solid black"
+            if (c != 0) nameElement.style.borderLeft = "5px solid black";
 
             valueElement.style.whiteSpace = "noWrap";
 
