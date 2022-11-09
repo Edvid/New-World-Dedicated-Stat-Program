@@ -112,14 +112,20 @@ function populateTopStatTable(){
             rows[r].appendChild(nameElement);
             rows[r].appendChild(valueElement);
             if(TopStat.map != null){
+                let imgButton = document.createElement("a");
+
+                imgButton.href = `./nation?col=${gameStats.Nations[NationName].Color}`
+                imgButton.target = "_blank";
                 let img = document.createElement("img");
                 img.src = "docs/assets/images/world/small_blank.png";
+                img.title = `see ${NationName} specific area`;
                 
                 let imgcell = document.createElement("td");
                 imgcell.style.backgroundColor = secondaryColor;
                 imgcell.style.border = "1px black solid";
                 
-                imgcell.appendChild(img);
+                imgButton.appendChild(img);
+                imgcell.appendChild(imgButton);
                 rows[r].appendChild(imgcell);
             }
         }
