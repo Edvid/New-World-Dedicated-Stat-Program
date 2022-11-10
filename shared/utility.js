@@ -1,30 +1,9 @@
 let primaryColor = "DodgerBlue";
 let secondaryColor = "lightSkyBlue";
 
-let mappedResources = [
-    "Fur",
-    "Gold",
-    "Iron",
-    "Ivory",
-    "Sulphur",
-    "Coal",
-    "Copper",
-    "Diamonds",
-    "Silver"
-];
-
-let mappedResourcesMultipliers = [
-    1, //fur
-    1, //gold
-    1, //iron
-    1, //ivory
-    1, //sulphur
-    //x2
-    2, //coal
-    2, //copper
-    2, //diamonds
-    2 //silver
-];
+const min = (_min, _num) => Math.min(_min, _num);
+const max = (_max, _num) => Math.max(_max, _num);
+const clamp = (_clamper1, _clamper2, _num) => _clamper1 < _clamper2 ? min(max(_num, _clamper1), _clamper2) : min(max(_num, _clamper2), _clamper1);
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
