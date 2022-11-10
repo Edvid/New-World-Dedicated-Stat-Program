@@ -78,6 +78,7 @@ ${allProperties}`);
     //if stat is not of type RP, prompt and return
     let statTypesNotRP = Object.keys(statTypes);
     statTypesNotRP.remove("BaseStats");
+    statTypesNotRP.remove("WatStats");
     let thisStatStatType = getStatType(selection.split(/\.|(?<=\[)/g).last());
     if (~statTypesNotRP.indexOf(thisStatStatType)) {
         prompt(`The specified stat ${selection} was of type ${thisStatStatType}. Those cannot be changed with ccf.`);
@@ -89,7 +90,7 @@ ${allProperties}`);
 
     /* #region  impelement check for technologies and cultural advances, where prerequisites not met makes this prompt and return */
     
-    
+
 
     /* #endregion */
 
