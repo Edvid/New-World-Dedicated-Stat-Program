@@ -558,9 +558,7 @@ let DerivedStats = [
     "ExoticFruitOutgoing",
     "TradePowerFromResourceTrade"
 ];
-let ConstantStats = [
-    
-];
+let ConstantStats = [ ];
 let TurnBasedStats = [
     "Population",
     "LiteracyPercent",

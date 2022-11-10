@@ -33,75 +33,89 @@ function syncNations() {
 
 
 function normalCommand(selection) {
-    
+
     let propertySelection = selection;
 
     let value = commandParameters.Value.trim();
     let change;
-    
+
     //implement check for stat that are objects, and disallow their change
 
     let selectionValue = (new Function(`return gameStats${propertySelection}`))();
-    
-    while(typeof selectionValue == 'object'){
+
+    while (typeof selectionValue == 'object') {
         //if object have no properties. It is probably a newly created stat. Set it to ""
-        if(Object.keys(selectionValue).length == 0){
+        if (Object.keys(selectionValue).length == 0) {
             selectionValue = `""`;
             (new Function(`gameStats${propertySelection} = ${selectionValue}`))();
         }
         //If object has exactly 1 property, treat the selectionvalue as if it is the value of that property instead of the object as a whole
-        else if(Object.keys(selectionValue).length == 1){
+        else if (Object.keys(selectionValue).length == 1) {
             propertySelection = `${propertySelection}.${Object.keys(selectionValue)[0]}`;
             selectionValue = (new Function(`return gameStats${propertySelection}`))();
-        }else{
-            
+        } else {
+
             let allProperties = "";
-            
+
             for (const propertyName in selectionValue) {
                 allProperties += `${propertyName}\n`
             }
             error(
-`The currently selected thing, ${propertySelection}, is an object not a value, and cannot be set
+                `The currently selected thing, ${propertySelection}, is an object not a value, and cannot be set
 Did you mean to select any of the following within this?:
 
 ${allProperties}`);
-        }  
-    
+        }
+
     }
+
+
+
+
+
+    /* #region  implement check for stats that are formulas, and disallow their change */
+
+    //if stat is not of type RP, prompt and return
+    let statTypesNotRP = Object.keys(statTypes);
+    statTypesNotRP.remove("BaseStats");
+    let thisStatStatType = getStatType(selection.split(/\.|(?<=\[)/g).last());
+    if (~statTypesNotRP.indexOf(thisStatStatType)) {
+        prompt(`The specified stat ${selection} was of type ${thisStatStatType}. Those cannot be changed with ccf.`);
+        return;
+    }
+
+    /* #endregion */
+
+
+    /* #region  impelement check for technologies and cultural advances, where prerequisites not met makes this prompt and return */
+    
     
 
-
-
-
-    //implement check for stats that are forumulas, and disallow their change
-    //
-    //
-    //
-
+    /* #endregion */
 
     //If value at all is a number, make sure the program understands this
-    if(/^((\*?\d*\.?\d+%?)|(\*))$/.test(value)){
+    if (/^((\*?\d*\.?\d+%?)|(\*))$/.test(value)) {
         let useDefault = false;
-        if(/^\*/.test(value)){
+        if (/^\*/.test(value)) {
             useDefault = true;
             value = value.replaceAll("*", "");
         }
         //If number to change by is written in percent. Divide that number by 100 
-        if(/%/.test(value)){
+        if (/%/.test(value)) {
             value = value.replace("%", "") / 100;
-        }else{
+        } else {
             value = value.toString().length != 0 ? +value : 1;
         }
 
-        if(useDefault){
+        if (useDefault) {
             let found = false;
-            
+
             for (const StatName in defaultStatValues) {
-                if(!propertySelection.includes(StatName)) continue;
+                if (!propertySelection.includes(StatName)) continue;
                 value *= defaultStatValues[StatName];
                 found = true;
             }
-            if(!found) error(`a default value was not found for ${propertySelection}`);
+            if (!found) error(`a default value was not found for ${propertySelection}`);
         }
     }
 
@@ -128,10 +142,10 @@ ${allProperties}`);
         //quotation
         setval = `'${value}'`;
         //but if just number or boolean, don't do quotation
-        if((!isNaN(value) && value !== '') || typeof value === 'boolean')
+        if ((!isNaN(value) && value !== '') || typeof value === 'boolean')
             setval = value;
-        else if(typeof value === 'string'){
-            if(value.toLowerCase().trim() === "false" || value.toLowerCase().trim() === "true")
+        else if (typeof value === 'string') {
+            if (value.toLowerCase().trim() === "false" || value.toLowerCase().trim() === "true")
                 setval = value.toLowerCase();
         }
         (new Function(`gameStats${propertySelection} = ${setval}`))();
@@ -145,7 +159,7 @@ Aborting.`);
 }
 
 
-function createStat(currentSelection, arg){
+function createStat(currentSelection, arg) {
     let objectClass;
     if (/^\.Nations$/.test(currentSelection)) objectClass = "Nation";
     if (/^\.(Cultures|Religions)$/.test(currentSelection)) objectClass = "SocialBehaviour";
@@ -157,7 +171,7 @@ function createStat(currentSelection, arg){
         let newName = arg.slice(0, arg.indexOf('=')).trim();
         let oldName = arg.slice(arg.indexOf('=') + 1).trim();
         oldName = correctAndSynonymCheck(`${currentSelection}.${oldName}`).split(".").pop();
-        if(objectClass == "Nation") evaluateNation(oldName);
+        if (objectClass == "Nation") evaluateNation(oldName);
 
         /* Copy all property values from old to new */
         (new Function(`
@@ -167,9 +181,9 @@ function createStat(currentSelection, arg){
             gameStats${currentSelection}.${newName}[propertyName] = JSON.parse(JSON.stringify(propertyToCopy));
         }`))();
         //for nation copying specifically, override the copied stuff for government name and noble loyalties towards state
-        
-        if (objectClass == "Nation"){
-            
+
+        if (objectClass == "Nation") {
+
             (new Function(`
             gameStats${currentSelection}.${newName}.GovernmentName = "${newName}"
             
@@ -205,29 +219,29 @@ function createStat(currentSelection, arg){
             PostStatCreate(currentSelection, newName);
         }
     } else {
-        
-        if(objectClass != null)
+
+        if (objectClass != null)
             (new Function(`gameStats${currentSelection}.${arg} = new ${objectClass}("${arg}");`))();
         else
             (new Function(`gameStats${currentSelection}.${arg} = {};`))();
-        if(objectClass == "Nation") evaluateNation(arg);
-        
+        if (objectClass == "Nation") evaluateNation(arg);
+
         PostStatCreate(currentSelection, arg);
     }
-    
+
 }
 
-function deleteStat(currentSelection, arg){
+function deleteStat(currentSelection, arg) {
     let dottedStatName = correctAndSynonymCheck(`${currentSelection}.${arg}`);
     (new Function(`delete gameStats${dottedStatName}`))();
 }
 
 let newOuterAfterRename;
-function renameStat(currentSelection, arg){
+function renameStat(currentSelection, arg) {
     let newName = arg.slice(arg.indexOf('>') + 1).trim();
     let oldName = arg.slice(0, arg.indexOf('>')).trim();
     oldName = correctAndSynonymCheck(`${currentSelection}.${oldName}`).split(".").pop();
-    
+
     if (/^\.Nations$/.test(currentSelection)) {
         evaluateNation(oldName);
     }
@@ -246,22 +260,22 @@ function renameStat(currentSelection, arg){
         //copy over all Trades, as is, except if giver or receiver is oldName, then it's newName now
 
         Object.keys(gameStats.Trades).forEach(property => {
-            if(gameStats.Trades[property].giver == oldName)
+            if (gameStats.Trades[property].giver == oldName)
                 gameStats.Trades[property].giver = newName;
-            if(gameStats.Trades[property].receiver == oldName)
+            if (gameStats.Trades[property].receiver == oldName)
                 gameStats.Trades[property].receiver = newName;
-                
+
         });
     }
-    
-    
 
-        
+
+
+
 }
 
 let Shorthands = {}
 
-Shorthands.Trade = function(parameters){
+Shorthands.Trade = function (parameters) {
     parameters = parameters.split(/,|>/gm);
     let tradename = parameters[0].trim();
     let giver = parameters[1].trim();
@@ -287,7 +301,7 @@ Shorthands.Trade = function(parameters){
     gameStats.Trades[tradename].amount = amount;
 }
 
-Shorthands.PayDebt = function(parameter){
+Shorthands.PayDebt = function (parameter) {
     if (isNaN(parameter)) {
         error(`The debt paid wasn't a number. Operation Aborted.`);
         return;
@@ -325,7 +339,7 @@ Shorthands.PayDebt = function(parameter){
     }
 }
 
-Shorthands.Move = function(parameters){
+Shorthands.Move = function (parameters) {
     parameters = parameters.split(/,|>/gm);
     let from = parameters[0].trim();
     let to = parameters[1].trim();
@@ -338,7 +352,7 @@ Shorthands.Move = function(parameters){
 
     from = correctAndSynonymCheck(`${currentSelection}.${from}`);
     to = correctAndSynonymCheck(`${currentSelection}.${to}`);
-    
+
     (new Function(
         `gameStats${from} = +gameStats${from} - ${amount};\
          gameStats${to} = +gameStats${to} + ${amount}`
