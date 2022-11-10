@@ -17,23 +17,14 @@ document.querySelector("body").onload = async function () {
     canvasMap.height = HEIGHT;
     canvasContainer.appendChild(canvasMap);
 
-    let resources = [
-        "Fertility",
-        "Coal",
-        "Sulphur",
-        "Gold",
-        "Iron",
-        "Fur",
-        "Diamonds",
-        "Silver",
-        "Copper",
-        "Ivory"
-    ];
+    let overlapProperties = [...mappedResources];
+
+    overlapProperties.push("Fertility");
 
     let resourceMaps = [];
     let table = document.querySelector("tbody");
-    for (const resource in resources) {
-        const resourceName = resources[resource];
+    for (const resource in overlapProperties) {
+        const resourceName = overlapProperties[resource];
         resourceMaps[resourceName] = document.createElement("canvas");
         resourceMaps[resourceName].hidden = "true";
         resourceMaps[resourceName].id = "resourcecanvas" + resourceName.toLowerCase();

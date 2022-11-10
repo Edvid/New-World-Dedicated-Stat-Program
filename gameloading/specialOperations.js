@@ -47,17 +47,7 @@ function PostStatChange(selection, change){
         let newTroopSelection = selection.replace(/\.(?=[^.]*$)/gm, ".New_");
         (new Function(`gameStats${newTroopSelection} += ${change}`))();
     }
-    else if(
-        /\.Fur$/.test(selection) ||
-        /\.Gold$/.test(selection) ||
-        /\.Iron$/.test(selection) ||
-        /\.Ivory$/.test(selection) ||
-        /\.Sulphur$/.test(selection) ||
-        /\.Coal$/.test(selection) ||
-        /\.Copper$/.test(selection) ||
-        /\.Diamonds$/.test(selection) ||
-        /\.Silver$/.test(selection)
-    ){
+    else if(~mappedResources.indexOf(selection)) {
         let nationSelection = "." + selection.split(/\./gm).slice(1, -1).join(".");
         let resourceName = selection.split(/\./gm).slice(-1).join(".");
         let maxResource = (new Function(`return gameStats${nationSelection}.Max${resourceName}`))();
