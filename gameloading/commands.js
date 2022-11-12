@@ -81,7 +81,8 @@ ${allProperties}`);
         "Turn Based",
         "Constant"
     ];
-    let thisStatStatType = getStatType(selection.split(/\.|(?<=\[)/g).last());
+    //.slice(-1)[0] is the last element - Credit to Datageek's answer on https://stackoverflow.com/questions/9050345/selecting-last-element-in-javascript-array
+    let thisStatStatType = getStatType(selection.split(/\.|(?<=\[)/g).slice(-1)[0]);
     if (~statTypesNotRP.indexOf(thisStatStatType)) {
         prompt(`The specified stat ${selection} was of type ${thisStatStatType}. Those cannot be changed with ccf.`);
         return;

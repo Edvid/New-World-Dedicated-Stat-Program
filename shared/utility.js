@@ -5,10 +5,6 @@ const min = (_min, _num) => Math.min(_min, _num);
 const max = (_max, _num) => Math.max(_max, _num);
 const clamp = (_clamper1, _clamper2, _num) => _clamper1 < _clamper2 ? min(max(_num, _clamper1), _clamper2) : min(max(_num, _clamper2), _clamper1);
 
-Array.prototype.last = function(){
-    return this[this.length - 1];
-};
-
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
