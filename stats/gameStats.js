@@ -852,7 +852,7 @@ class Stats{
       "Explosives": [
         "Gunpowder"
       ],
-      "FireLance": [
+      "Firelance": [
         "Explosives"
       ]
     }
