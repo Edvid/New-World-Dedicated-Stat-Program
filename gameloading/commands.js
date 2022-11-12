@@ -34,6 +34,11 @@ function syncNations() {
 
 function normalCommand(selection) {
 
+
+    let splitSelection = selection.split(/\.|(?<=\[)/g); 
+    //.slice(-1)[0] is the last element - Credit to Datageek's answer on https://stackoverflow.com/questions/9050345/selecting-last-element-in-javascript-array
+    let statName = splitSelection.slice(-1)[0];
+
     let propertySelection = selection;
 
     let value = commandParameters.Value.trim();
@@ -81,8 +86,7 @@ ${allProperties}`);
         "Turn Based",
         "Constant"
     ];
-    //.slice(-1)[0] is the last element - Credit to Datageek's answer on https://stackoverflow.com/questions/9050345/selecting-last-element-in-javascript-array
-    let thisStatStatType = getStatType(selection.split(/\.|(?<=\[)/g).slice(-1)[0]);
+    let thisStatStatType = getStatType(statName);
     if (~statTypesNotRP.indexOf(thisStatStatType)) {
         alert(`The specified stat ${selection.slice(1)} was of type ${thisStatStatType}. Those cannot be changed with ccf.`);
         return;
@@ -93,7 +97,22 @@ ${allProperties}`);
 
     /* #region  impelement check for technologies and cultural advances, where prerequisites not met makes this prompt and return */
     
-    
+    if(~gameStats.AdvancesPrerequisites.indexOf(statName)){
+        let nationSelection = new Function(`return gameStats.${selection.split(/\.((?=technologies)|(?=CulturalAdvancements))/i)[0]}`); 
+        gameStats.AdvancesPrerequisites[statName].forEach(prerequisite => {
+            if(prerequisite in nationSelection.Technologies){
+                if(nationSelection.Technologies[prerequisite] == false) {
+                    alert(`the technology '${statName}' could not be changed, as the prerequisite '${prerequisite}' was not met`);
+                    return;
+                }
+            }else if(prerequisite in nationSelection.CulturalAdvancements){
+                if(nationSelection.CulturalAdvancements[prerequisite] == false) {
+                    alert(`the cultural advancements '${statName}' could not be changed, as the prerequisite '${prerequisite}' was not met`);
+                    return;
+                }
+            }
+        });
+    }
 
     /* #endregion */
 
