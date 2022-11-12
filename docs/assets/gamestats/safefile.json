@@ -64400,6 +64400,14 @@
             "SiegeEquipment": 0.1,
             "LargeSiegeEquipment": 0.2,
             "Cannons": 0.1
+        },
+        "AdvancesPrerequisites": {
+            "Explosives": [
+                "Gunpowder"
+            ],
+            "FireLance": [
+                "Explosives"
+            ]
         }
     }
 }

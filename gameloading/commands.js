@@ -97,7 +97,7 @@ ${allProperties}`);
 
     /* #region  impelement check for technologies and cultural advances, where prerequisites not met makes this prompt and return */
     
-    if(~gameStats.AdvancesPrerequisites.indexOf(statName)){
+    if(statName in gameStats.AdvancesPrerequisites){
         let nationSelection = new Function(`return gameStats.${selection.split(/\.((?=technologies)|(?=CulturalAdvancements))/i)[0]}`); 
         gameStats.AdvancesPrerequisites[statName].forEach(prerequisite => {
             if(prerequisite in nationSelection.Technologies){
