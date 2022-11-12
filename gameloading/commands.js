@@ -93,7 +93,7 @@ ${allProperties}`);
 
     /* #region  impelement check for technologies and cultural advances, where prerequisites not met makes this prompt and return */
     
-
+    
 
     /* #endregion */
 

@@ -828,6 +828,7 @@ class Stats{
   Nations;
   Religions;
   Cultures;
+  AdvancesPrerequisites;
   ResourceTypes;
   Trades;
   TradeZones;
@@ -847,6 +848,14 @@ class Stats{
         Opinions: []
       }
     };
+    this.AdvancesPrerequisites = {
+      "Explosives": [
+        "Gunpowder"
+      ],
+      "FireLance": [
+        "Explosives"
+      ]
+    }
     this.Cultures = { //For Opinions not mentioned, they are neutral towards them.
     }; 
     this.ResourceTypes = [
