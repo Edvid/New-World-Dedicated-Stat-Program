@@ -64401,13 +64401,87 @@
             "LargeSiegeEquipment": 0.2,
             "Cannons": 0.1
         },
-        "AdvancesPrerequisites": {
-            "Explosives": [
-                "Gunpowder"
-            ],
-            "Firelance": [
-                "Explosives"
-            ]
-        }
+        AdvancesPrerequisites: {
+      "Explosives": [
+        "Gunpowder"
+      ],
+      "Firelance": [
+        "Explosives"
+      ],
+      "HandCannons": [
+        "Firelance"
+      ],
+      "Bombards": [
+        "Firelance"
+      ],
+      "Muskets": [
+        "HandCannons"
+      ],
+      "Limber": [
+        "Bombards"
+      ],
+      "Gunports": [
+        "Bombards"
+      ],
+      "EarlyModernAdministration": [
+        "Courthouses"
+      ],
+      "Galleons": [
+        "Gunports",
+	"Docks"
+      ],
+      "Matchlock": [
+        "Muskets"
+      ],
+      "Reiters": [
+        "Muskets"
+      ],
+      "StarForts": [
+        "Limber"
+      ],
+      "Mortars": [
+        "Limber"
+      ],
+      "TextileManufactories": [
+        "Workshops"
+      ],
+      "Fluyt": [
+        "Galleons"
+      ],
+      "NationalSovereignity": [
+        "RenaissanceThought"
+      ],
+      "Experimentation": [
+        "RenaissanceThought"
+      ],
+      "Metallurgy": [
+        "Workshops"
+      ],
+      "Newspapers": [
+        "PrintingPress"
+      ],
+      "Flintlock": [
+        "Matchlock"
+      ],
+      "ScientificRevolution": [
+        "Experimentation"
+      ],
+      "Bayonet": [
+        "Metallurgy"
+      ],
+      "SocketBayonet": [
+        "Bayonet"
+      ],
+      "FlyingShuttle": [
+        "Metallurgy",
+	"TextileManufactories"
+      ],
+      "Gunlock": [
+        "Flintlock"
+      ],
+      "Constitution": [
+        "EarlyModernAdministration"
+      ]
+    }
     }
 }
