@@ -472,6 +472,8 @@ function createNationSheet(nationName) {
 
     AddNextStatTable();
 
+    createBreaker();
+
     AddNextStatTable();
 
     AddNextStatTable();
@@ -511,6 +513,24 @@ function createNationSheet(nationName) {
             element.style.fontWeight = "bolder";
         } else {
             element.style = "";
+        }
+    });
+
+    //add tech tree button to tech and cultural adv
+
+    let allTabletitles = document.querySelectorAll(".nationsheet > div > h2")
+
+    allTabletitles.forEach(TableTitle => {
+        if(TableTitle.innerHTML == "Cultural Advancements" || TableTitle.innerHTML == "Technologies"){
+            let TechtreeButton = document.createElement("a");
+            TechtreeButton.style.margin = "0em 1em 0.5em 1em";
+            TechtreeButton.href = "techtree";
+            let TechtreeIcon = document.createElement("img");
+            TechtreeIcon.src = "docs/assets/images/small_techTree.png";
+            TechtreeIcon.style.border = "1px solid black";
+            TechtreeButton.appendChild(TechtreeIcon);
+
+            TableTitle.parentElement.insertBefore(TechtreeButton, TableTitle.nextSibling);
         }
     });
 }
