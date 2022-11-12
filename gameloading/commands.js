@@ -79,6 +79,7 @@ ${allProperties}`);
     let statTypesNotRP = Object.keys(statTypes);
     statTypesNotRP.remove("BaseStats");
     statTypesNotRP.remove("WatStats");
+    statTypesNotRP.remove("Unknown");
     let thisStatStatType = getStatType(selection.split(/\.|(?<=\[)/g).last());
     if (~statTypesNotRP.indexOf(thisStatStatType)) {
         prompt(`The specified stat ${selection} was of type ${thisStatStatType}. Those cannot be changed with ccf.`);
