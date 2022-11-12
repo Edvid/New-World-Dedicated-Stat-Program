@@ -854,6 +854,80 @@ class Stats{
       ],
       "Firelance": [
         "Explosives"
+      ],
+      "HandCannons": [
+        "Firelance"
+      ],
+      "Bombards": [
+        "Firelance"
+      ],
+      "Muskets": [
+        "HandCannons"
+      ],
+      "Limber": [
+        "Bombards"
+      ],
+      "Gunports": [
+        "Bombards"
+      ],
+      "EarlyModernAdministration": [
+        "Courthouses"
+      ],
+      "Galleons": [
+        "Gunports",
+	"Docks"
+      ],
+      "Matchlock": [
+        "Muskets"
+      ],
+      "Reiters": [
+        "Muskets"
+      ],
+      "StarForts": [
+        "Limber"
+      ],
+      "Mortars": [
+        "Limber"
+      ],
+      "TextileManufactories": [
+        "Workshops"
+      ],
+      "Fluyt": [
+        "Galleons"
+      ],
+      "NationalSovereignity": [
+        "RenaissanceThought"
+      ],
+      "Experimentation": [
+        "RenaissanceThought"
+      ],
+      "Metallurgy": [
+        "Workshops"
+      ],
+      "Newspapers": [
+        "PrintingPress"
+      ],
+      "Flintlock": [
+        "Matchlock"
+      ],
+      "ScientificRevolution": [
+        "Experimentation"
+      ],
+      "Bayonet": [
+        "Metallurgy"
+      ],
+      "SocketBayonet": [
+        "Bayonet"
+      ],
+      "FlyingShuttle": [
+        "Metallurgy",
+	"TextileManufactories"
+      ],
+      "Gunlock": [
+        "Flintlock"
+      ],
+      "Constitution": [
+        "EarlyModernAdministration"
       ]
     }
     this.Cultures = { //For Opinions not mentioned, they are neutral towards them.
