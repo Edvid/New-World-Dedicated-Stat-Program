@@ -76,10 +76,11 @@ ${allProperties}`);
     /* #region  implement check for stats that are formulas, and disallow their change */
 
     //if stat is not of type RP, prompt and return
-    let statTypesNotRP = Object.keys(statTypes);
-    statTypesNotRP.remove("BaseStats");
-    statTypesNotRP.remove("WatStats");
-    statTypesNotRP.remove("Unknown");
+    let statTypesNotRP = [
+        "Derived",
+        "Turn Based",
+        "Constant"
+    ];
     let thisStatStatType = getStatType(selection.split(/\.|(?<=\[)/g).last());
     if (~statTypesNotRP.indexOf(thisStatStatType)) {
         prompt(`The specified stat ${selection} was of type ${thisStatStatType}. Those cannot be changed with ccf.`);

@@ -5,6 +5,10 @@ const min = (_min, _num) => Math.min(_min, _num);
 const max = (_max, _num) => Math.max(_max, _num);
 const clamp = (_clamper1, _clamper2, _num) => _clamper1 < _clamper2 ? min(max(_num, _clamper1), _clamper2) : min(max(_num, _clamper2), _clamper1);
 
+Array.prototype.last = function(){
+    return this[this.length - 1];
+};
+
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -583,37 +587,11 @@ let StatTypes = {
 
 
 function getStatType(statName){
-    for (let i = 0; i < StatTypes.BaseStats.length; i++) {
-        const curStatName = StatTypes.BaseStats[i];
-        if(curStatName == statName){
-            return "Base";
-        }
-    }
-    for (let i = 0; i < StatTypes.DerivedStats.length; i++) {
-        const curStatName = StatTypes.DerivedStats[i];
-        if(curStatName == statName){
-            return "Derived";
-        }
-    }
-    for (let i = 0; i < StatTypes.ConstantStats.length; i++) {
-        const curStatName = StatTypes.ConstantStats[i];
-        if(curStatName == statName){
-            return "Constant";
-        }
-    }
-    for (let i = 0; i < StatTypes.TurnBasedStats.length; i++) {
-        const curStatName = StatTypes.TurnBasedStats[i];
-        if(curStatName == statName){
-            return "Turn Based";
-        }
-    }
-    for (let i = 0; i < StatTypes.WarStats.length; i++) {
-        const curStatName = StatTypes.WarStats[i];
-        if(curStatName == statName){
-            return "War";
-        }
-    }
-    return "Unknown";
+    let ret;
+    Object.keys(StatTypes).forEach(statType => {
+        if(~StatTypes[statType].indexOf(statName)) ret = statType.split(/Stats/)[0].replace(/([a-z])([A-Z])/, "$1 $2"); 
+    });
+    return ret != null ? ret : "Unknown";
 }
 
 function ValueTypeFix(statName, statValue) {
