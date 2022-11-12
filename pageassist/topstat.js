@@ -8,7 +8,7 @@ const TopStats = [
     {name: "OverallShipCount", displayName: "NavySize"},
     {name: "ArmyQuality"},
     {name: "NavyQuality"},
-    {name: "Literacy", displayName: "LiteracyPercent"},
+    {name: "LiteracyPercent", displayName: "Literacy"},
     {name: "TradePower"},
     {name: "TradeProtection"},
     {name: "OverallIncome"},
