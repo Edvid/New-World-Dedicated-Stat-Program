@@ -62238,7 +62238,8 @@
                     "Shinto": {
                         "Score": -50
                     }
-                }
+                },
+                "Color": "none"
             },
             "Catholic": {
                 "definingFeatures": "",
@@ -62267,7 +62268,8 @@
                     "Shinto": {
                         "Score": 0
                     }
-                }
+                },
+                "Color": "none"
             },
             "Protestant": {
                 "definingFeatures": "",
@@ -62296,7 +62298,8 @@
                     "Shinto": {
                         "Score": 0
                     }
-                }
+                },
+                "Color": "none"
             },
             "Orthodox": {
                 "definingFeatures": "",
@@ -62325,7 +62328,8 @@
                     "Shinto": {
                         "Score": 0
                     }
-                }
+                },
+                "Color": "none"
             },
             "Muslim": {
                 "definingFeatures": "",
@@ -62354,7 +62358,8 @@
                     "Shinto": {
                         "Score": 0
                     }
-                }
+                },
+                "Color": "none"
             },
             "Jewish": {
                 "definingFeatures": "",
@@ -62383,7 +62388,8 @@
                     "Shinto": {
                         "Score": 0
                     }
-                }
+                },
+                "Color": "none"
             },
             "Buddhism": {
                 "definingFeatures": "",
@@ -62412,7 +62418,8 @@
                     "Shinto": {
                         "Score": -25
                     }
-                }
+                },
+                "Color": "none"
             },
             "Hindu": {
                 "definingFeatures": "",
@@ -62441,7 +62448,8 @@
                     "Shinto": {
                         "Score": 0
                     }
-                }
+                },
+                "Color": "none"
             },
             "Shinto": {
                 "definingFeatures": "",
@@ -62470,17 +62478,20 @@
                     "Catholic": {
                         "Score": 0
                     }
-                }
+                },
+                "Color": "none"
             },
             "Confucian": {
                 "definingFeatures": "",
-                "Opinions": {}
+                "Opinions": {},
+                "Color": "none"
             }
         },
         "Cultures": {
             "Vespucian": {
                 "definingFeatures": "",
-                "Opinions": {}
+                "Opinions": {},
+                "Color": "none"
             },
             "Japanese": {
                 "definingFeatures": "",
@@ -62494,7 +62505,8 @@
                     "Maguidanaoan": {
                         "Score": 30
                     }
-                }
+                },
+                "Color": "none"
             },
             "Prussian": {
                 "definingFeatures": "",
@@ -62502,7 +62514,8 @@
                     "Westphalian": {
                         "Score": 15
                     }
-                }
+                },
+                "Color": "none"
             },
             "Khmer": {
                 "definingFeatures": "",
@@ -62510,15 +62523,18 @@
                     "Eulacian": {
                         "Score": 45
                     }
-                }
+                },
+                "Color": "none"
             },
             "Potskig": {
                 "definingFeatures": "",
-                "Opinions": {}
+                "Opinions": {},
+                "Color": "none"
             },
             "Muscovite": {
                 "definingFeatures": "",
-                "Opinions": {}
+                "Opinions": {},
+                "Color": "none"
             },
             "Sindh": {
                 "definingFeatures": "",
@@ -62526,11 +62542,13 @@
                     "Quasimidian": {
                         "Score": 0
                     }
-                }
+                },
+                "Color": "none"
             },
             "Sioux": {
                 "definingFeatures": "",
-                "Opinions": {}
+                "Opinions": {},
+                "Color": "none"
             },
             "Byzantine": {
                 "definingFeatures": "",
@@ -62550,7 +62568,8 @@
                     "Levantine": {
                         "Score": 20
                     }
-                }
+                },
+                "Color": "none"
             },
             "Outremer": {
                 "definingFeatures": "",
@@ -62558,7 +62577,8 @@
                     "Byzantine": {
                         "Score": -100
                     }
-                }
+                },
+                "Color": "none"
             },
             "Austrian": {
                 "definingFeatures": "",
@@ -62566,7 +62586,8 @@
                     "Serbian": {
                         "Score": -25
                     }
-                }
+                },
+                "Color": "none"
             },
             "Hittite": {
                 "definingFeatures": "",
@@ -62574,15 +62595,18 @@
                     "Byzantine": {
                         "Score": -75
                     }
-                }
+                },
+                "Color": "none"
             },
             "Taino": {
                 "definingFeatures": "",
-                "Opinions": {}
+                "Opinions": {},
+                "Color": "none"
             },
             "Egyptian": {
                 "definingFeatures": "",
-                "Opinions": {}
+                "Opinions": {},
+                "Color": "none"
             },
             "Arberber": {
                 "definingFeatures": "",
@@ -62590,19 +62614,23 @@
                     "Catalonian": {
                         "Score": -25
                     }
-                }
+                },
+                "Color": "none"
             },
             "Andalusian": {
                 "definingFeatures": "",
-                "Opinions": {}
+                "Opinions": {},
+                "Color": "none"
             },
             "Zi": {
                 "definingFeatures": "",
-                "Opinions": {}
+                "Opinions": {},
+                "Color": "none"
             },
             "Italian": {
                 "definingFeatures": "",
-                "Opinions": {}
+                "Opinions": {},
+                "Color": "none"
             },
             "Eulacian": {
                 "definingFeatures": "",
@@ -62613,11 +62641,13 @@
                     "Khmer": {
                         "Score": 45
                     }
-                }
+                },
+                "Color": "none"
             },
             "Longuo": {
                 "definingFeatures": "",
-                "Opinions": {}
+                "Opinions": {},
+                "Color": "none"
             },
             "Galician": {
                 "definingFeatures": "",
@@ -62628,7 +62658,8 @@
                     "Hispanian": {
                         "Score": -15
                     }
-                }
+                },
+                "Color": "none"
             },
             "Kyratese": {
                 "definingFeatures": "",
@@ -62636,7 +62667,8 @@
                     "Deccani": {
                         "Score": 35
                     }
-                }
+                },
+                "Color": "none"
             },
             "English": {
                 "definingFeatures": "",
@@ -62650,7 +62682,8 @@
                     "JudeoEnglish": {
                         "Score": 35
                     }
-                }
+                },
+                "Color": "none"
             },
             "Alvheimish": {
                 "definingFeatures": "",
@@ -62658,7 +62691,8 @@
                     "Norwegian": {
                         "Score": -25
                     }
-                }
+                },
+                "Color": "none"
             },
             "Westphalian": {
                 "definingFeatures": "",
@@ -62669,11 +62703,13 @@
                     "Prussian": {
                         "Score": -15
                     }
-                }
+                },
+                "Color": "none"
             },
             "Bellarussian": {
                 "definingFeatures": "",
-                "Opinions": {}
+                "Opinions": {},
+                "Color": "none"
             },
             "Burgundian": {
                 "definingFeatures": "",
@@ -62690,7 +62726,8 @@
                     "Hispanian": {
                         "Score": 10
                     }
-                }
+                },
+                "Color": "none"
             },
             "Serbian": {
                 "definingFeatures": "",
@@ -62698,7 +62735,8 @@
                     "Austrian": {
                         "Score": -50
                     }
-                }
+                },
+                "Color": "none"
             },
             "Cuman": {
                 "definingFeatures": "",
@@ -62706,7 +62744,8 @@
                     "Chechnyan": {
                         "Score": 45
                     }
-                }
+                },
+                "Color": "none"
             },
             "Catalonian": {
                 "definingFeatures": "",
@@ -62723,7 +62762,8 @@
                     "French": {
                         "Score": 10
                     }
-                }
+                },
+                "Color": "none"
             },
             "Irish": {
                 "definingFeatures": "",
@@ -62743,7 +62783,8 @@
                     "Scottish": {
                         "Score": 0
                     }
-                }
+                },
+                "Color": "none"
             },
             "Scottish": {
                 "definingFeatures": "",
@@ -62757,23 +62798,28 @@
                     "JudeoEnglish": {
                         "Score": 35
                     }
-                }
+                },
+                "Color": "none"
             },
             "Valublidan": {
                 "definingFeatures": "",
-                "Opinions": {}
+                "Opinions": {},
+                "Color": "none"
             },
             "Bornish": {
                 "definingFeatures": "",
-                "Opinions": {}
+                "Opinions": {},
+                "Color": "none"
             },
             "Magajiyanish": {
                 "definingFeatures": "",
-                "Opinions": {}
+                "Opinions": {},
+                "Color": "none"
             },
             "Adenish": {
                 "definingFeatures": "",
-                "Opinions": {}
+                "Opinions": {},
+                "Color": "none"
             },
             "Quasimidian": {
                 "definingFeatures": "",
@@ -62781,7 +62827,8 @@
                     "Sindh": {
                         "Score": 0
                     }
-                }
+                },
+                "Color": "none"
             },
             "Chinese": {
                 "definingFeatures": "",
@@ -62792,27 +62839,33 @@
                     "Japanese": {
                         "Score": 25
                     }
-                }
+                },
+                "Color": "none"
             },
             "Igorot": {
                 "definingFeatures": "",
-                "Opinions": {}
+                "Opinions": {},
+                "Color": "none"
             },
             "Cheonje": {
                 "definingFeatures": "",
-                "Opinions": {}
+                "Opinions": {},
+                "Color": "none"
             },
             "Polish": {
                 "definingFeatures": "",
-                "Opinions": {}
+                "Opinions": {},
+                "Color": "none"
             },
             "Wallachian": {
                 "definingFeatures": "",
-                "Opinions": {}
+                "Opinions": {},
+                "Color": "none"
             },
             "Mongolian": {
                 "definingFeatures": "",
-                "Opinions": {}
+                "Opinions": {},
+                "Color": "none"
             },
             "Ainu": {
                 "definingFeatures": "",
@@ -62820,19 +62873,23 @@
                     "Japanese": {
                         "Score": 20
                     }
-                }
+                },
+                "Color": "none"
             },
             "Latvian": {
                 "definingFeatures": "",
-                "Opinions": {}
+                "Opinions": {},
+                "Color": "none"
             },
             "Swedish": {
                 "definingFeatures": "",
-                "Opinions": {}
+                "Opinions": {},
+                "Color": "none"
             },
             "Timurid": {
                 "definingFeatures": "",
-                "Opinions": {}
+                "Opinions": {},
+                "Color": "none"
             },
             "JudeoByzantine": {
                 "definingFeatures": "",
@@ -62846,7 +62903,8 @@
                     "Levantine": {
                         "Score": 15
                     }
-                }
+                },
+                "Color": "none"
             },
             "Cornish": {
                 "definingFeatures": "",
@@ -62860,7 +62918,8 @@
                     "Scottish": {
                         "Score": 35
                     }
-                }
+                },
+                "Color": "none"
             },
             "JudeoEnglish": {
                 "definingFeatures": "",
@@ -62874,27 +62933,33 @@
                     "Scottish": {
                         "Score": 35
                     }
-                }
+                },
+                "Color": "none"
             },
             "Aztec": {
                 "definingFeatures": "",
-                "Opinions": {}
+                "Opinions": {},
+                "Color": "none"
             },
             "Menzen": {
                 "definingFeatures": "",
-                "Opinions": {}
+                "Opinions": {},
+                "Color": "none"
             },
             "Zulu": {
                 "definingFeatures": "",
-                "Opinions": {}
+                "Opinions": {},
+                "Color": "none"
             },
             "Aotearoan": {
                 "definingFeatures": "",
-                "Opinions": {}
+                "Opinions": {},
+                "Color": "none"
             },
             "Blackfeet": {
                 "definingFeatures": "",
-                "Opinions": {}
+                "Opinions": {},
+                "Color": "none"
             },
             "Maguidanaoan": {
                 "definingFeatures": "",
@@ -62902,27 +62967,33 @@
                     "Japanese": {
                         "Score": 30
                     }
-                }
+                },
+                "Color": "none"
             },
             "Mayan": {
                 "definingFeatures": "",
-                "Opinions": {}
+                "Opinions": {},
+                "Color": "none"
             },
             "Urualslavian": {
                 "definingFeatures": "",
-                "Opinions": {}
+                "Opinions": {},
+                "Color": "none"
             },
             "Balanto": {
                 "definingFeatures": "",
-                "Opinions": {}
+                "Opinions": {},
+                "Color": "none"
             },
             "Yakush": {
                 "definingFeatures": "",
-                "Opinions": {}
+                "Opinions": {},
+                "Color": "none"
             },
             "Texan": {
                 "definingFeatures": "",
-                "Opinions": {}
+                "Opinions": {},
+                "Color": "none"
             },
             "Chechnyan": {
                 "definingFeatures": "",
@@ -62930,7 +63001,8 @@
                     "Cuman": {
                         "Score": 50
                     }
-                }
+                },
+                "Color": "none"
             },
             "Anatolian": {
                 "definingFeatures": "",
@@ -62944,15 +63016,18 @@
                     "Levantine": {
                         "Score": 15
                     }
-                }
+                },
+                "Color": "none"
             },
             "LaPlatan": {
                 "definingFeatures": "",
-                "Opinions": {}
+                "Opinions": {},
+                "Color": "none"
             },
             "Songhai": {
                 "definingFeatures": "",
-                "Opinions": {}
+                "Opinions": {},
+                "Color": "none"
             },
             "Deccani": {
                 "definingFeatures": "",
@@ -62960,27 +63035,33 @@
                     "Kyratese": {
                         "Score": 35
                     }
-                }
+                },
+                "Color": "none"
             },
             "Floridian": {
                 "definingFeatures": "",
-                "Opinions": {}
+                "Opinions": {},
+                "Color": "none"
             },
             "Sitao": {
                 "definingFeatures": "",
-                "Opinions": {}
+                "Opinions": {},
+                "Color": "none"
             },
             "Lao": {
                 "definingFeatures": "",
-                "Opinions": {}
+                "Opinions": {},
+                "Color": "none"
             },
             "Xiltinol": {
                 "definingFeatures": "",
-                "Opinions": {}
+                "Opinions": {},
+                "Color": "none"
             },
             "Oso": {
                 "definingFeatures": "",
-                "Opinions": {}
+                "Opinions": {},
+                "Color": "none"
             },
             "Levantine": {
                 "definingFeatures": "",
@@ -62994,15 +63075,18 @@
                     "Byzantine": {
                         "Score": 15
                     }
-                }
+                },
+                "Color": "none"
             },
             "German": {
                 "definingFeatures": "",
-                "Opinions": {}
+                "Opinions": {},
+                "Color": "none"
             },
             "Hispanian": {
                 "definingFeatures": "",
-                "Opinions": {}
+                "Opinions": {},
+                "Color": "none"
             },
             "Norwegian": {
                 "definingFeatures": "",
@@ -63010,11 +63094,13 @@
                     "Alvheimish": {
                         "Score": -25
                     }
-                }
+                },
+                "Color": "none"
             },
             "Konoga": {
                 "definingFeatures": "",
-                "Opinions": {}
+                "Opinions": {},
+                "Color": "none"
             },
             "French": {
                 "definingFeatures": "",
@@ -63031,11 +63117,13 @@
                     "Hispanian": {
                         "Score": 10
                     }
-                }
+                },
+                "Color": "none"
             },
             "Finnish": {
                 "definingFeatures": "",
-                "Opinions": {}
+                "Opinions": {},
+                "Color": "none"
             }
         },
         "ResourceTypes": [
