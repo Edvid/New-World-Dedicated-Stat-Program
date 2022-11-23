@@ -25,10 +25,13 @@ let mappedResourcesMultipliers = [
 
 class SocialBehaviour {
   definingFeatures;
-  Opinions = {};
+  Opinions;
+  Color;
 
   constructor(){
     this.definingFeatures = "";
+    this.Opinions = {};
+    this.Color = "none";
   }
 }
 
