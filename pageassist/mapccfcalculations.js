@@ -329,7 +329,7 @@ async function scanImage() {
         }
 
         nationCol = "Col" + rgbToHex([nationData[i*4], nationData[i*4+1], nationData[i*4+2]]);
-        cultureCol = "Col" + rgbToHex([cultureData[i*4], cultureData[i*4+1], cultureData[i*4+2]]);
+        cultureCol = rgbToHex([cultureData[i*4], cultureData[i*4+1], cultureData[i*4+2]]);
         
         let foundCulture = cultureColorProperties.find(element => element.color == cultureCol);
 
@@ -339,7 +339,7 @@ async function scanImage() {
             let cultureNamePrompt = "";
             
             const PromptLabel = document.createElement("label");
-            PromptLabel.innerText = `The color #${cultureCol.replace('Col', '')} did not have a matching culture. Which culture is it?\n(Give the name it has in stats)`;
+            PromptLabel.innerText = `The color #${cultureCol} did not have a matching culture. Which culture is it?\n(Give the name it has in stats)`;
             PromptLabel.style.fontWeight = "Bold";
             const PromptField = document.createElement("input");
             PromptField.type = "text";
@@ -370,7 +370,7 @@ async function scanImage() {
                     dat[j*4+2] = 255;
                     dat[j*4+3] = 255;
                 }
-                else if(rgbToHex([nationData[j*4], nationData[j*4+1], nationData[j*4+2]]) != cultureCol){
+                else if(rgbToHex([cultureData[j*4], cultureData[j*4+1], cultureData[j*4+2]]) != cultureCol){
                     dat[j*4] = 0;
                     dat[j*4+1] = 0;
                     dat[j*4+2] = 0;
@@ -403,7 +403,7 @@ async function scanImage() {
         }
 
         const NationOfPixel = colorToNationMap[nationCol];
-        const CultureOfPixel = cultureDataEmpty ? unassignedCulturePixelAssumption : (foundCulture !== 'undefined' ? foundCulture : `undefined${cultureCol}`);
+        const CultureOfPixel = cultureDataEmpty ? unassignedCulturePixelAssumption : (foundCulture !== 'undefined' ? foundCulture : `undefinedCol${cultureCol}`);
 
         if(typeof cultureDistribution[NationOfPixel] === 'undefined') cultureDistribution[NationOfPixel] = {};
         if(typeof cultureDistribution[NationOfPixel][CultureOfPixel] === 'undefined') cultureDistribution[NationOfPixel][CultureOfPixel] = 0;
@@ -446,7 +446,7 @@ async function scanImage() {
         }
 
         nationCol = "Col" + rgbToHex([nationData[i*4], nationData[i*4+1], nationData[i*4+2]]);
-        religionCol = "Col" + rgbToHex([religionData[i*4], religionData[i*4+1], religionData[i*4+2]]);
+        religionCol = rgbToHex([religionData[i*4], religionData[i*4+1], religionData[i*4+2]]);
         
 
         
@@ -458,7 +458,7 @@ async function scanImage() {
             let religionNamePrompt = "";
             
             const PromptLabel = document.createElement("label");
-            PromptLabel.innerText = `The color #${religionCol.replace('Col', '')} did not have a matching religion. Which religion is it?\n(Give the name it has in stats)`;
+            PromptLabel.innerText = `The color #${religionCol} did not have a matching religion. Which religion is it?\n(Give the name it has in stats)`;
             PromptLabel.style.fontWeight = "Bold";
             const PromptField = document.createElement("input");
             PromptField.type = "text";
@@ -489,7 +489,7 @@ async function scanImage() {
                     dat[j*4+2] = 255;
                     dat[j*4+3] = 255;
                 }
-                else if(rgbToHex([nationData[j*4], nationData[j*4+1], nationData[j*4+2]]) != religionCol){
+                else if(rgbToHex([religionData[j*4], religionData[j*4+1], religionData[j*4+2]]) != religionCol){
                     dat[j*4] = 0;
                     dat[j*4+1] = 0;
                     dat[j*4+2] = 0;
@@ -522,7 +522,7 @@ async function scanImage() {
         }
 
         const NationOfPixel = colorToNationMap[nationCol];
-        const religionOfPixel = religionDataEmpty ? unassignedReligionPixelAssumption : (foundReligion !== 'undefined' ? foundReligion : `undefined${religionCol}`);
+        const religionOfPixel = religionDataEmpty ? unassignedReligionPixelAssumption : (foundReligion !== 'undefined' ? foundReligion : `undefinedCol${religionCol}`);
 
         if(typeof religionDistribution[NationOfPixel] === 'undefined') religionDistribution[NationOfPixel] = {};
         if(typeof religionDistribution[NationOfPixel][religionOfPixel] === 'undefined') religionDistribution[NationOfPixel][religionOfPixel] = 0;
