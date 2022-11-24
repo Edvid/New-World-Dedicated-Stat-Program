@@ -370,7 +370,7 @@ async function scanImage() {
                     dat[j*4+2] = 255;
                     dat[j*4+3] = 255;
                 }
-                else if(rgbToHex([cultureData[j*4], cultureData[j*4+1], cultureData[j*4+2]]) != cultureCol){
+                else if(rgbToHex([nationData[j*4], nationData[j*4+1], nationData[j*4+2]]) != cultureCol){
                     dat[j*4] = 0;
                     dat[j*4+1] = 0;
                     dat[j*4+2] = 0;
@@ -489,7 +489,7 @@ async function scanImage() {
                     dat[j*4+2] = 255;
                     dat[j*4+3] = 255;
                 }
-                else if(rgbToHex([religionData[j*4], religionData[j*4+1], religionData[j*4+2]]) != religionCol){
+                else if(rgbToHex([nationData[j*4], nationData[j*4+1], nationData[j*4+2]]) != religionCol){
                     dat[j*4] = 0;
                     dat[j*4+1] = 0;
                     dat[j*4+2] = 0;
