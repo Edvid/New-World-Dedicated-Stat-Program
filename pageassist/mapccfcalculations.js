@@ -75,7 +75,7 @@ climateImage.onload = function () {
     allImagesLoaded++;
 }
 
-let cultureImagePath = "./docs/assets/images/world/cultures.png";
+let cultureImagePath = "./docs/assets/images/cultures.png";
 let cultureImage = new Image(WIDTH, HEIGHT);
 cultureImage.src = cultureImagePath;
 cultureImage.onload = function () {
@@ -83,7 +83,7 @@ cultureImage.onload = function () {
     allImagesLoaded++;
 }
 
-let religionImagePath = "./docs/assets/images/world/religions.png";
+let religionImagePath = "./docs/assets/images/religions.png";
 let religionImage = new Image(WIDTH, HEIGHT);
 religionImage.src = religionImagePath;
 religionImage.onload = function () {
@@ -334,7 +334,7 @@ async function scanImage() {
         let foundCulture = cultureColorProperties.find(element => element.color == cultureCol);
 
         //if cultureCol isn't present in cultureColors. Throw error
-        if(cultureCol === 'undefined'){
+        if(typeof foundCulture === 'undefined'){
             
             let cultureNamePrompt = "";
             
@@ -453,7 +453,7 @@ async function scanImage() {
         let foundReligion = religionColorProperties.find(element => element.color == religionCol);
 
         //if religionCol isn't present in religionColors. Throw error
-        if(foundReligion === 'undefined'){
+        if(typeof foundReligion === 'undefined'){
                 
             let religionNamePrompt = "";
             
