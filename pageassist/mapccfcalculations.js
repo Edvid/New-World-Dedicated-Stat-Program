@@ -321,9 +321,10 @@ async function scanImage() {
         nationCol = "Col" + rgbToHex([nationData[i*4], nationData[i*4+1], nationData[i*4+2]]);
         cultureCol = "Col" + rgbToHex([cultureData[i*4], cultureData[i*4+1], cultureData[i*4+2]]);
         
+        let foundCulture = gameStats.CultureColors.find(element => element.Color == cultureCol);
 
         //if cultureCol isn't present in cultureColors. Throw error
-        if(typeof gameStats.CultureColors[cultureCol] === 'undefined'){
+        if(cultureCol === 'undefined'){
             
             let cultureNamePrompt = "";
             
@@ -392,7 +393,7 @@ async function scanImage() {
         }
 
         const NationOfPixel = colorToNationMap[nationCol];
-        const CultureOfPixel = cultureDataEmpty ? unassignedCulturePixelAssumption : (typeof gameStats.CultureColors[cultureCol] !== 'undefined' ? gameStats.CultureColors[cultureCol] : `undefined${cultureCol}`);
+        const CultureOfPixel = cultureDataEmpty ? unassignedCulturePixelAssumption : (foundCulture !== 'undefined' ? foundCulture : `undefined${cultureCol}`);
 
         if(typeof cultureDistribution[NationOfPixel] === 'undefined') cultureDistribution[NationOfPixel] = {};
         if(typeof cultureDistribution[NationOfPixel][CultureOfPixel] === 'undefined') cultureDistribution[NationOfPixel][CultureOfPixel] = 0;
@@ -431,15 +432,18 @@ async function scanImage() {
         if(nationDataEmpty) continue;
         //if the pixel in religionData is transparent, warn
         else if(religionDataEmpty) {
-            console.warn(`The pixel (${x}, ${y}) is transparent in the religion image, but not the nation image. It is (${nationData[i*4]}, ${nationData[i*4+1]}, ${nationData[i*4+2]}, ${nationData[i*4+3]}) in the nation image. Investigate this. For now ${unassignedreligionPixelAssumption} is assumed`);   
+            console.warn(`The pixel (${x}, ${y}) is transparent in the religion image, but not the nation image. It is (${nationData[i*4]}, ${nationData[i*4+1]}, ${nationData[i*4+2]}, ${nationData[i*4+3]}) in the nation image. Investigate this. For now ${unassignedReligionPixelAssumption} is assumed`);   
         }
 
         nationCol = "Col" + rgbToHex([nationData[i*4], nationData[i*4+1], nationData[i*4+2]]);
         religionCol = "Col" + rgbToHex([religionData[i*4], religionData[i*4+1], religionData[i*4+2]]);
         
 
+        
+        let foundReligion = gameStats.ReligionColors.find(element => element.Color == religionCol);
+
         //if religionCol isn't present in religionColors. Throw error
-        if(typeof gameStats.religionColors[religionCol] === 'undefined'){
+        if(foundReligion === 'undefined'){
                 
             let religionNamePrompt = "";
             
@@ -508,7 +512,7 @@ async function scanImage() {
         }
 
         const NationOfPixel = colorToNationMap[nationCol];
-        const religionOfPixel = religionDataEmpty ? unassignedreligionPixelAssumption : (typeof gameStats.religionColors[religionCol] !== 'undefined' ? gameStats.religionColors[religionCol] : `undefined${religionCol}`);
+        const religionOfPixel = religionDataEmpty ? unassignedReligionPixelAssumption : (foundReligion !== 'undefined' ? foundReligion : `undefined${religionCol}`);
 
         if(typeof religionDistribution[NationOfPixel] === 'undefined') religionDistribution[NationOfPixel] = {};
         if(typeof religionDistribution[NationOfPixel][religionOfPixel] === 'undefined') religionDistribution[NationOfPixel][religionOfPixel] = 0;
