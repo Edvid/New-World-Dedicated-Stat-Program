@@ -133,10 +133,20 @@ async function scanImage() {
 
     //find nations' colors
     let nationColorProperties = [];
+    let cultureColorProperties = [];
+    let religionColorProperties = [];
     let colorToNationMap = {};
 
     Object.keys(gameStats.Nations).forEach(key => {
         nationColorProperties.push({color: gameStats.Nations[key].Color, name: key}); 
+    });
+    
+    Object.keys(gameStats.Cultures).forEach(key => {
+        cultureColorProperties.push({color: gameStats.Cultures[key].Color, name: key}); 
+    });
+    
+    Object.keys(gameStats.Religions).forEach(key => {
+        religionColorProperties.push({color: gameStats.Religions[key].Color, name: key}); 
     });
 
 
@@ -321,7 +331,7 @@ async function scanImage() {
         nationCol = "Col" + rgbToHex([nationData[i*4], nationData[i*4+1], nationData[i*4+2]]);
         cultureCol = "Col" + rgbToHex([cultureData[i*4], cultureData[i*4+1], cultureData[i*4+2]]);
         
-        let foundCulture = gameStats.CultureColors.find(element => element.Color == cultureCol);
+        let foundCulture = cultureColorProperties.find(element => element.color == cultureCol);
 
         //if cultureCol isn't present in cultureColors. Throw error
         if(cultureCol === 'undefined'){
@@ -440,7 +450,7 @@ async function scanImage() {
         
 
         
-        let foundReligion = gameStats.ReligionColors.find(element => element.Color == religionCol);
+        let foundReligion = religionColorProperties.find(element => element.color == religionCol);
 
         //if religionCol isn't present in religionColors. Throw error
         if(foundReligion === 'undefined'){
