@@ -304,7 +304,7 @@ let TableLayouts = {
     ],
     "Agriculture": [
         ["Fertility", "AgricultureSubsidies", "AgricultureInfrastructure", "AgricultureAdvancements", "AgricultureTechnology", "FarmingEfficiency", "AgricultureSpending"],
-        [".Workforces.PopulationInAgriculture", "DailyFood", "FoodConsumption", "FoodGain", "StockingCapabilities", "MaxFoodStock", "SellingCapability"],
+        [".Workforces.Farmers", "DailyFood", "FoodConsumption", "FoodGain", "StockingCapabilities", "MaxFoodStock", "SellingCapability"],
         ["Food", "FutureFood", "SurplusFood", "FoodSold", "Foodlost", "TradeProfit", "FoodPopulationBoost"]
     ],
     "War Stats": [
@@ -315,8 +315,8 @@ let TableLayouts = {
         ["MaxPopulation", "DetachedLand", "LandAdministration", "Overextension", "HabitableLand"]
     ],
     "Estates": [
-        ["NobleInfluence", "ClergyInfluence", "BurghersInfluence"],
-		["NobleLoyalty", "ClergyLoyalty", "BurgherLoyalty"]
+        ["AristocratInfluence", "ClergyInfluence", "BurgousieInfluence"],
+		["AristocratLoyalty", "ClergyLoyalty", "BurgousieLoyalty"]
     ],
     "Trade Influence - Americas": [
         [ti("Alaska"), ti("Cascadia"), ti("CaliforniaAndWestMexico"), ti("HudsonBay"), ti("GreatLakes"), ti("Louisiana"), ti("GulfOfMexico"), ti("LawrenceGulf"), ti("EastCoast"), ti("Carribean"), ti("CentralAmerica")],
@@ -355,7 +355,7 @@ let TableLayouts = {
     ],
     "Cultural Advancements": [
         ["CulturalAdvancements.DivineRightToRule", "CulturalAdvancements.Serfdom", "CulturalAdvancements.Feudalism"],
-        ["CulturalAdvancements.Universities", "CulturalAdvancements.NobleDuty"],
+        ["CulturalAdvancements.Universities", "CulturalAdvancements.AristocratDuty"],
         ["CulturalAdvancements.Courthouses"],
         ["CulturalAdvancements.RenaissanceThought", "CulturalAdvancements.EarlyModernAdministration"],
         ["CulturalAdvancements.NationalSovereignity", "CulturalAdvancements.Newspapers"],
