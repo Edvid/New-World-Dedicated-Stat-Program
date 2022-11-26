@@ -120,19 +120,18 @@ let Synonyms = {
 		"burghersinf"
 	],
 	
-	NobleLoyaltyGroups: [
-		"nobilityloyaltygroups",
+	NobleLoyalty: [
+		"nobilityloyalty",
 		"nobleloyalty",
 		"noblelg"
 	],
 	
-	ClergyLoyaltyGroups: [
+	ClergyLoyalty: [
 		"clergyloyalty",
 		"clergylg"
 	],
 	
-	BurghersLoyaltyGroups: [
-		"burgherloyaltygroups",
+	BurgherLoyalty: [
 		"burghersloyalty",
 		"burgherloyalty",
 		"burgherslg",
