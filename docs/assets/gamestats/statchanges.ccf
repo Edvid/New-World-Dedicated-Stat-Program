@@ -5,3 +5,19 @@
 > nations > SwedishKingdom
 -7.5 nobleloyaltygroups.SwedishKingdom
 +7.5 nobleloyaltygroups.selfinterests
+
+<... > Cultures
+
+= "238dff" European.Color
+= "ffd54c" American.Color
+= "ff0000" Asian.Color
+= "7c6d35" African.Color
+
+<... > Religions
+
+= "238dff" Kaching.Color
+= "ff0000" Chingchong.Color
+= "ffd800" Woowoowoo.Color
+= "187a00" Alakubar.Color
+= "ffb835" Oogabooga.Color
+<...
