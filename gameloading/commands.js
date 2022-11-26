@@ -184,7 +184,7 @@ function createStat(currentSelection, arg) {
             const propertyToCopy = gameStats${currentSelection}.${oldName}[propertyName];
             gameStats${currentSelection}.${newName}[propertyName] = JSON.parse(JSON.stringify(propertyToCopy));
         }`))();
-        //for nation copying specifically, override the copied stuff for government name and noble loyalties towards state
+        //for nation copying specifically, override the copied stuff for government name and Aristocrat loyalties towards state
     } else {
 
         if (objectClass != null)
