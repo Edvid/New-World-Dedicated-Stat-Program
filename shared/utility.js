@@ -658,6 +658,13 @@ function ValueTypeFix(statName, statValue) {
         }
         //percentages
         else if (~[
+			"AristocratLoyalty", 
+			"ClergyLoyalty", 
+			"BurgousieLoyalty", 
+			"BureaucratLoyalty", 
+			"IntellectualsLoyalty", 
+			"WorkersLoyalty", 
+			"MilitaryLoyalty",
             "LowerClassTax",
             "MediumClassTax",
             "HighClassTax",
