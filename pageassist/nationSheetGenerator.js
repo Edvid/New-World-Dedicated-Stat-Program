@@ -315,8 +315,7 @@ let TableLayouts = {
         ["MaxPopulation", "DetachedLand", "LandAdministration", "Overextension", "HabitableLand"]
     ],
     "Estates": [
-        ["AristocratInfluence", "ClergyInfluence", "BurgousieInfluence"],
-		["AristocratLoyalty", "ClergyLoyalty", "BurgousieLoyalty"]
+		["AristocratLoyalty", "ClergyLoyalty", "BurgousieLoyalty", "BureaucratLoyalty", "IntellectualsLoyalty", "WorkersLoyalty", "MilitaryLoyalty"]
     ],
     "Trade Influence - Americas": [
         [ti("Alaska"), ti("Cascadia"), ti("CaliforniaAndWestMexico"), ti("HudsonBay"), ti("GreatLakes"), ti("Louisiana"), ti("GulfOfMexico"), ti("LawrenceGulf"), ti("EastCoast"), ti("Carribean"), ti("CentralAmerica")],
@@ -449,6 +448,11 @@ function createNationSheet(nationName) {
     createBreaker();
 	
 	// loyalty
+
+    createBreaker();
+
+    createPieDiagram("EstateInfluences");
+    createPieDiagram("GovernmentRepresentation");
 
     createBreaker();
 
