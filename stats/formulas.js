@@ -315,15 +315,15 @@ function evaluateNation(nationName) {
   n.Workforces.Bureaucrats = n.AdministrativeStrain * 1000 / n.Population;
   n.Workforces.Intellectuals = n.HigherEducation / 100;
   n.Workforces.Merchants = n.TradePower * 1000 / n.Population;
-  n.Workforces.PopulationInResourceHarvest = (n.Coal + n.Sulphur + n.Cotton + n.Gold + n.Iron + n.Tea + n.Silk + n.Spice + n.Wool + n.Coffee + n.Fur + n.Diamond + n.Silver + n.Copper + n.Ivory + n.Cocoa + n.Tobacco + n.Sugar + n.ExoticFruit) * 20000 / n.Population;
-  n.Workforces.PopulationInAgriculture = 1 - n.Workforces.PopulationInMilitary - n.Workforces.Artisans - n.Workforces.Clergy - n.Workforces.Burghers - n.Workforces.Nobility - n.Workforces.PopulationInResourceHarvest;
-  n.AgricultureSpending = (n.Workforces.PopulationInAgriculture * n.Population / 1000 * n.AgricultureInfrastructure / 100 * (1 + n.AgricultureSubsidies / 10) * n.StockingCapabilities) / 2;
+  n.Workforces.Labourers = (n.Coal + n.Sulphur + n.Cotton + n.Gold + n.Iron + n.Tea + n.Silk + n.Spice + n.Wool + n.Coffee + n.Fur + n.Diamond + n.Silver + n.Copper + n.Ivory + n.Cocoa + n.Tobacco + n.Sugar + n.ExoticFruit) * 20000 / n.Population;
+  n.Workforces.Farmers = 1 - n.Workforces.PopulationInMilitary - n.Workforces.Townsfolk - n.Workforces.Clergy - n.Workforces.Burgousie - n.Workforces.Aristocracy - n.Workforces.Labourers;
+  n.AgricultureSpending = (n.Workforces.Farmers * n.Population / 1000 * n.AgricultureInfrastructure / 100 * (1 + n.AgricultureSubsidies / 10) * n.StockingCapabilities) / 2;
 
   
 
   
 
-  n.DailyFood = n.Workforces.PopulationInAgriculture * n.Population / 1000 * n.FarmingEfficiency * (1 - n.Pillaging) + n.FoodIncoming - n.FoodOutgoing;
+  n.DailyFood = n.Workforces.Farmers * n.Population / 1000 * n.FarmingEfficiency * (1 - n.Pillaging) + n.FoodIncoming - n.FoodOutgoing;
   n.FoodConsumption = n.Population / 1000;
   n.FoodGain = n.DailyFood - n.FoodConsumption;
 
@@ -423,9 +423,9 @@ function evaluateNation(nationName) {
     n.EffectiveSugar - n.SugarInflation +
     n.EffectiveExoticFruit - n.ExoticFruitInflation;
 
-  n.SocietalClasses.High = n.Workforces.Nobility;
-  n.SocietalClasses.Medium = n.Workforces.Artisans + n.Workforces.Clergy + n.Workforces.Burghers;
-  n.SocietalClasses.Lower = n.Workforces.PopulationInAgriculture + n.Workforces.PopulationInMilitary;
+  n.SocietalClasses.High = n.Workforces.Aristocracy;
+  n.SocietalClasses.Medium = n.Workforces.Townsfolk + n.Workforces.Clergy + n.Workforces.Burgousie;
+  n.SocietalClasses.Lower = n.Workforces.Farmers + n.Workforces.PopulationInMilitary;
   n.InterestRate = 0.05 + n.PublicDebtLength * 0.02 / gameStats.TimeDivide;
   n.EffectiveDebt = n.PublicDebtTaken * (1 + n.InterestRate);
   n.PossiblePublicDebt = max(0, n.Population / 10000 * (1 - (n.HighClassTax + n.MediumClassTax + n.LowerClassTax) / 3) - n.EffectiveDebt);
@@ -458,15 +458,15 @@ function evaluateNation(nationName) {
   
   n.MilitaryLoyalty = clamp(1, 0, 
     1 * n.ArmyWages +
-    (n.CulturalAdvancements.EarlyModernAdministration == false && n.NobleLoyalty < 0.50 ?
-      ( n.NobleLoyalty - 0.50) * 2 : 0) +
+    (n.CulturalAdvancements.EarlyModernAdministration == false && n.AristocratLoyalty < 0.50 ?
+      ( n.AristocratLoyalty - 0.50) * 2 : 0) +
     (n.MilitaryMorale < 0.70 ?
       -(1 - n.MilitaryMorale) / 2 :
       0) +
     (n.Budget < 0 ? n.Budget / n.ArmyUpkeep :
       0)
     - n.CommanderFreedom / 10);
-  n.Stability = n.PopulationHappiness + n.AdministrativeEfficiency / 10 - n.Overextension - n.CulturalDisunity - n.ReligiousDisunity + (n.Propaganda / 1.75 * (1 + n.CulturalAdvancements.Newspapers / 2)) + n.PopulationControl + (n.NobleLoyalty/100 - 0.5) * 10 + (n.ClergyLoyalty/100 - 0.5) * 7.5 + (n.BurgherLoyalty/100 - 0.5) * 7.5 + n.PopulationStabilityImpact + WarStabilityModifier * 100 + (n.MilitaryLoyalty - 1) * 7.5;
+  n.Stability = n.PopulationHappiness + n.AdministrativeEfficiency / 10 - n.Overextension - n.CulturalDisunity - n.ReligiousDisunity + (n.Propaganda / 1.75 * (1 + n.CulturalAdvancements.Newspapers / 2)) + n.PopulationControl + (n.AristocratLoyalty/100 - 0.5) * 10 + (n.ClergyLoyalty/100 - 0.5) * 7.5 + (n.BurgousieLoyalty/100 - 0.5) * 7.5 + n.PopulationStabilityImpact + WarStabilityModifier * 100 + (n.MilitaryLoyalty - 1) * 7.5;
   n.Corruption =  (n.Stability < 1 ? 0.5 : 0) + (n.Stability < -1 ? 0.5 : 0) + max(0, n.AdministrativeStrain - n.AdministrativeEfficiency) / 4 + n.Absolutism / 2;
   n.ArmyQuality = max(0.1, 1 + n.TrainingQuality + n.ArmyTech + n.MilitaryTactics + n.CommanderFreedom / 10 - n.IronShortage - n.SulphurShortage - n.Corruption / 5);
   n.FortUpkeep = (
@@ -536,7 +536,7 @@ n.PopulationGrowth = (n.FutureFood < 0 ? n.FutureFood * 1000 / n.Population - (n
 
   
   n.ProductionEfficiency = n.Mercantilism + n.Technologies.VerticalLoom / 5 + n.Technologies.Workshops + n.Technologies.Cranes / 5 + n.Technologies.TextileManufactories / 2 + n.Technologies.FlyingShuttle / 5 + n.Technologies.LeadChamberProcess / 5;
-  n.Production = (n.LocalTrade + n.TradePower) * n.Workforces.Artisans * n.ProductionEfficiency * 10;
+  n.Production = (n.LocalTrade + n.TradePower) * n.Workforces.Townsfolk * n.ProductionEfficiency * 10;
   n.TradeProtection = n.LightShips * 0.75 + n.MediumShips * 1 + n.HeavyShips * 0.75;
   n.TradeEfficiency = (1 * n.Mercantilism + n.Technologies.Cranes / 10 + n.Technologies.PromissoryNotes / 20 + n.TradeProtection / 200 + n.Technologies.Fluyt / 5) * (1 - n.Blockade);
 
@@ -561,12 +561,12 @@ n.PopulationGrowth = (n.FutureFood < 0 ? n.FutureFood * 1000 / n.Population - (n
     return rbb / gameStats.TimeDivide;
   })();
 
-  n.TradeRevenue = (n.TradePower * (1 - n.BurghersInfluence)) / gameStats.TimeDivide * n.TradeEfficiency + n.TradeProfit / gameStats.TimeDivide;
+  n.TradeRevenue = (n.TradePower * (1 - n.BurgousieInfluence)) / gameStats.TimeDivide * n.TradeEfficiency + n.TradeProfit / gameStats.TimeDivide;
   n.EffectiveTax = (
     (
       n.SocietalClasses.Lower * n.Population * n.LowerClassTax / 10000 +
-      n.Population * n.SocietalClasses.Medium * n.MediumClassTax / 7500 * (1 - n.ClergyInfluence - n.BurghersInfluence) + n.Population * n.SocietalClasses.High * n.HighClassTax / 5000 * (1 - n.NobleInfluence)
-    ) * n.AdministrativeEfficiency / 10 * (1 - n.NobleInfluence / 4 - n.ClergyInfluence / 4
+      n.Population * n.SocietalClasses.Medium * n.MediumClassTax / 7500 * (1 - n.ClergyInfluence - n.BurgousieInfluence) + n.Population * n.SocietalClasses.High * n.HighClassTax / 5000 * (1 - n.AristocratInfluence)
+    ) * n.AdministrativeEfficiency / 10 * (1 - n.AristocratInfluence / 4 - n.ClergyInfluence / 4
     ) * (1 - n.Occupation)) / gameStats.TimeDivide * (1 - n.Corruption / 10);
 
   n.SpyUpkeep = n.Spies / 200 * n.SpyQuality / gameStats.TimeDivide;
@@ -615,6 +615,6 @@ n.PopulationGrowth = (n.FutureFood < 0 ? n.FutureFood * 1000 / n.Population - (n
   n.CulturalAdvancements.RenaissanceThought / 5 + 
   n.Technologies.Experimentation / 5 +
   n.CulturalAdvancements.ScientificRevolution / 5;
-  n.ResearchPointGain = max(1, (n.ResearchSpending * n.ResearchEffectiveness * n.ResearchBoostFromTech * n.LiteracyPercent / n.Isolation / gameStats.TimeDivide * 2 / 10 + n.ResearchSpending * n.ResearchEffectiveness * n.HigherEducation / n.Isolation / gameStats.TimeDivide * 5 / 10) * (1 - (n.NobleInfluence > 0.5 ? n.NobleInfluence - 0.5 : 0) / 1.5 - (n.ClergyInfluence > 0.5? n.ClergyInfluence - 0.5 : 0) / 1.5) * (1 - n.PopulationTechImpact));
+  n.ResearchPointGain = max(1, (n.ResearchSpending * n.ResearchEffectiveness * n.ResearchBoostFromTech * n.LiteracyPercent / n.Isolation / gameStats.TimeDivide * 2 / 10 + n.ResearchSpending * n.ResearchEffectiveness * n.HigherEducation / n.Isolation / gameStats.TimeDivide * 5 / 10) * (1 - (n.AristocratInfluence > 0.5 ? n.AristocratInfluence - 0.5 : 0) / 1.5 - (n.ClergyInfluence > 0.5? n.ClergyInfluence - 0.5 : 0) / 1.5) * (1 - n.PopulationTechImpact));
   n.FutureResearchPoints = min(5 + (n.CulturalAdvancements.Universities == true ? 2.5 : 0) + (n.CulturalAdvancements.ScientificRevolution == true ? 2.5 : 0), n.ResearchPoints + n.ResearchPointGain);
 }

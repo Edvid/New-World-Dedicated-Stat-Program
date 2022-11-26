@@ -122,15 +122,15 @@ class Nation {
   Inflation;
   Spies;
   SpyQuality;
-  NobleInfluence;
-  NobleLoyaltyGroups;
-  NobleStateLoyalty;
+  AristocratInfluence;
+  AristocratLoyaltyGroups;
+  AristocratStateLoyalty;
   ClergyInfluence;
   ClergyLoyaltyGroups;
   ClergyStateLoyalty;
-  BurghersInfluence;
-  BurghersLoyaltyGroups;
-  BurghersStateLoyalty;
+  BurgousieInfluence;
+  BurgousieLoyaltyGroups;
+  BurgousieStateLoyalty;
   ArmyUpkeep;
   SpyUpkeep;
   SocialSpendingUpkeep;
@@ -573,14 +573,14 @@ class Nation {
     this.SocialSpending = 0.5;
     this.AtWar = false;
 
-    this.NobleInfluence = 0.45; //Show in percent
-    this.NobleLoyalty = 0.50; //Show in percent
+    this.AristocratInfluence = 0.45; //Show in percent
+    this.AristocratLoyalty = 0.50; //Show in percent
     
     this.ClergyInfluence = 0.20; //Show in percent
     this.ClergyLoyalty = 0.50; //Show in percent
     
-    this.BurghersInfluence = 0.25; //Show in percent
-    this.BurgherLoyalty = 0.50; //Show in percent
+    this.BurgousieInfluence = 0.25; //Show in percent
+    this.BurgousieLoyalty = 0.50; //Show in percent
 
     this.Absolutism = 0;
     this.PopulationControl = 0;
@@ -664,10 +664,10 @@ class Nation {
 
     /* #region  Population */
     this.Workforces = {
-      Artisans: 0.045,
+      Townsfolk: 0.045,
       Clergy: 0.0075,
-      Nobility: 0.01,
-      Burghers: 0.005
+      Aristocracy: 0.01,
+      Burgousie: 0.005
     };
     
     this.SocietalClasses = {};
@@ -768,7 +768,7 @@ class Nation {
       Serfdom: true,
       Feudalism: true,
       Universities: true,
-      NobleDuty: true,
+      AristocratDuty: true,
       Courthouses: true,
       RenaissanceThought: true,
       EarlyModernAdministration: true,
