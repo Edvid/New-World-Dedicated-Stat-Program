@@ -46081,12 +46081,12 @@
                         "Score": -75
                     }
                 },
-                "Color": "none"
+                "Color": "ffb835"
             },
             "Kaching": {
                 "definingFeatures": "",
                 "Opinions": {},
-                "Color": "none"
+                "Color": "238dff"
             },
             "Chingchong": {
                 "definingFeatures": "",
@@ -46095,7 +46095,7 @@
                         "Score": -75
                     }
                 },
-                "Color": "none"
+                "Color": "ff0000"
             },
             "Woowoowoo": {
                 "definingFeatures": "",
@@ -46104,14 +46104,23 @@
                         "Score": -75
                     }
                 },
-                "Color": "none"
+                "Color": "ffd800"
+            },
+            "Alakubar": {
+                "definingFeatures": "",
+                "Opinions": {
+                    "Kaching": {
+                        "Score": -25
+                    }
+                },
+                "Color": "187a00"
             }
         },
         "Cultures": {
             "American": {
                 "definingFeatures": "",
                 "Opinions": {},
-                "Color": "none"
+                "Color": "ffd54c"
             },
             "Asian": {
                 "definingFeatures": "",
@@ -46120,7 +46129,7 @@
                         "Score": -50
                     }
                 },
-                "Color": "none"
+                "Color": "ff0000"
             },
             "European": {
                 "definingFeatures": "",
@@ -46132,7 +46141,7 @@
                         "Score": -25
                     }
                 },
-                "Color": "none"
+                "Color": "238dff"
             },
             "African": {
                 "definingFeatures": "",
@@ -46144,7 +46153,7 @@
                         "Score": -100
                     }
                 },
-                "Color": "none"
+                "Color": "7c6d35"
             }
         },
         "ResourceTypes": [
