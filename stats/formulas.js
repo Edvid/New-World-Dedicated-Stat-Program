@@ -440,36 +440,8 @@ function evaluateNation(nationName) {
   
 
 
-  n.NobleStateLoyalty = (function () {
-    let pointSum = 0;
-    let StatePoints = 0;
-    for (const loyaltyName in n.NobleLoyaltyGroups) {
-      const loyalty = n.NobleLoyaltyGroups[loyaltyName];
-      pointSum += +loyalty;
-      if (loyaltyName == n.GovernmentName) StatePoints += +loyalty;
-    }
-    return 100 * StatePoints / pointSum;
-  })();
-  n.ClergyStateLoyalty = (function () {
-    let pointSum = 0;
-    let StatePoints = 0;
-    for (const loyaltyName in n.ClergyLoyaltyGroups) {
-      const loyalty = n.ClergyLoyaltyGroups[loyaltyName];
-      pointSum += +loyalty;
-      if (loyaltyName == n.GovernmentName) StatePoints += +loyalty;
-    }
-    return 100 * StatePoints / pointSum;
-  })();
-  n.BurghersStateLoyalty = (function () {
-    let pointSum = 0;
-    let StatePoints = 0;
-    for (const loyaltyName in n.BurghersLoyaltyGroups) {
-      const loyalty = n.BurghersLoyaltyGroups[loyaltyName];
-      pointSum += +loyalty;
-      if (loyaltyName == n.GovernmentName) StatePoints += +loyalty;
-    }
-    return 100 * StatePoints / pointSum;
-  })();
+  //loyalty
+  
   n.PopulationStabilityImpact = (n.Population > n.AdministrativeEfficiency * 500000 * (n.CulturalAdvancements.Constitution == true ? 1.5 : 1) ? (n.AdministrativeEfficiency * 500000 * (n.CulturalAdvancements.Constitution == true ? 1.5 : 1) - n.Population) / 50000000 : 0) * 10;
   n.Fervor = clamp(1, -1, 0 + n.MinorBattles / 20 + n.MajorBattles / 10 + n.Pillaging - (n.Casualties / (n.OverallNumbers + n.Casualties + 0.0000001)));
   n.WarSupport = clamp(1, 0, n.PopulationHappiness / 10 * 2.5 + n.Propaganda / 10 * (1 + n.CulturalAdvancements.Newspapers / 2) + n.Fervor);
@@ -486,15 +458,15 @@ function evaluateNation(nationName) {
   
   n.MilitaryLoyalty = clamp(1, 0, 
     1 * n.ArmyWages +
-    (n.CulturalAdvancements.EarlyModernAdministration == false && n.NobleStateLoyalty < 0.50 ?
-      ( n.NobleStateLoyalty - 0.50) * 2 : 0) +
+    (n.CulturalAdvancements.EarlyModernAdministration == false && n.NobleLoyalty < 0.50 ?
+      ( n.NobleLoyalty - 0.50) * 2 : 0) +
     (n.MilitaryMorale < 0.70 ?
       -(1 - n.MilitaryMorale) / 2 :
       0) +
     (n.Budget < 0 ? n.Budget / n.ArmyUpkeep :
       0)
     - n.CommanderFreedom / 10);
-  n.Stability = n.PopulationHappiness + n.AdministrativeEfficiency / 10 - n.Overextension - n.CulturalDisunity - n.ReligiousDisunity + (n.Propaganda / 1.75 * (1 + n.CulturalAdvancements.Newspapers / 2)) + n.PopulationControl + (n.NobleStateLoyalty/100 - 0.5) * 10 + (n.ClergyStateLoyalty/100 - 0.5) * 7.5 + (n.BurghersStateLoyalty/100 - 0.5) * 7.5 + n.PopulationStabilityImpact + WarStabilityModifier * 100 + (n.MilitaryLoyalty - 1) * 7.5;
+  n.Stability = n.PopulationHappiness + n.AdministrativeEfficiency / 10 - n.Overextension - n.CulturalDisunity - n.ReligiousDisunity + (n.Propaganda / 1.75 * (1 + n.CulturalAdvancements.Newspapers / 2)) + n.PopulationControl + (n.NobleLoyalty/100 - 0.5) * 10 + (n.ClergyLoyalty/100 - 0.5) * 7.5 + (n.BurgherLoyalty/100 - 0.5) * 7.5 + n.PopulationStabilityImpact + WarStabilityModifier * 100 + (n.MilitaryLoyalty - 1) * 7.5;
   n.Corruption =  (n.Stability < 1 ? 0.5 : 0) + (n.Stability < -1 ? 0.5 : 0) + max(0, n.AdministrativeStrain - n.AdministrativeEfficiency) / 4 + n.Absolutism / 2;
   n.ArmyQuality = max(0.1, 1 + n.TrainingQuality + n.ArmyTech + n.MilitaryTactics + n.CommanderFreedom / 10 - n.IronShortage - n.SulphurShortage - n.Corruption / 5);
   n.FortUpkeep = (

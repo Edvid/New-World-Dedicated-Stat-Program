@@ -574,22 +574,13 @@ class Nation {
     this.AtWar = false;
 
     this.NobleInfluence = 0.45; //Show in percent
-    this.NobleLoyaltyGroups = JSON.parse(`{\
-    "${n.GovernmentName}": 55,\
-    "SelfInterests": 45\
-    }`);
+    this.NobleLoyalty = 0.50; //Show in percent
     
     this.ClergyInfluence = 0.20; //Show in percent
-    this.ClergyLoyaltyGroups = JSON.parse(`{\
-    "${n.GovernmentName}": 50,\
-    "SelfInterests": 50\
-    }`);
+    this.ClergyLoyalty = 0.50; //Show in percent
     
     this.BurghersInfluence = 0.25; //Show in percent
-    this.BurghersLoyaltyGroups = JSON.parse(`{\
-    "${n.GovernmentName}": 50,\
-    "SelfInterests": 50\
-    }`);
+    this.BurgherLoyalty = 0.50; //Show in percent
 
     this.Absolutism = 0;
     this.PopulationControl = 0;
