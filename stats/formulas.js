@@ -466,7 +466,7 @@ function evaluateNation(nationName) {
     (n.Budget < 0 ? n.Budget / n.ArmyUpkeep :
       0)
     - n.CommanderFreedom / 10);
-  n.Stability = n.PopulationHappiness + n.AdministrativeEfficiency / 10 - n.Overextension - n.CulturalDisunity - n.ReligiousDisunity + (n.Propaganda / 1.75 * (1 + n.CulturalAdvancements.Newspapers / 2)) + n.PopulationControl + (n.AristocratLoyalty/100 - 0.5) * 10 + (n.ClergyLoyalty/100 - 0.5) * 7.5 + (n.BurgousieLoyalty/100 - 0.5) * 7.5 + n.PopulationStabilityImpact + WarStabilityModifier * 100 + (n.MilitaryLoyalty - 1) * 7.5;
+  n.Stability = n.PopulationHappiness + n.AdministrativeEfficiency / 10 - n.Overextension - n.CulturalDisunity - n.ReligiousDisunity + (n.Propaganda / 1.75 * (1 + n.CulturalAdvancements.Newspapers / 2)) + n.PopulationControl + (n.AristocratLoyalty - 0.5) * 10 + (n.ClergyLoyalty - 0.5) * 7.5 + (n.BurgousieLoyalty - 0.5) * 7.5 + n.PopulationStabilityImpact + WarStabilityModifier * 100 + (n.MilitaryLoyalty - 1) * 7.5;
   n.Corruption =  (n.Stability < 1 ? 0.5 : 0) + (n.Stability < -1 ? 0.5 : 0) + max(0, n.AdministrativeStrain - n.AdministrativeEfficiency) / 4 + n.Absolutism / 2;
   n.ArmyQuality = max(0.1, 1 + n.TrainingQuality + n.ArmyTech + n.MilitaryTactics + n.CommanderFreedom / 10 - n.IronShortage - n.SulphurShortage - n.Corruption / 5);
   n.FortUpkeep = (
@@ -561,12 +561,13 @@ n.PopulationGrowth = (n.FutureFood < 0 ? n.FutureFood * 1000 / n.Population - (n
     return rbb / gameStats.TimeDivide;
   })();
 
-  n.TradeRevenue = (n.TradePower * (1 - n.BurgousieInfluence)) / gameStats.TimeDivide * n.TradeEfficiency + n.TradeProfit / gameStats.TimeDivide;
+  n.TradeRevenue = (n.TradePower * (1 - n.EstateInfluences.BurgousieInfluence)) / gameStats.TimeDivide * n.TradeEfficiency + n.TradeProfit / gameStats.TimeDivide;
   n.EffectiveTax = (
     (
       n.SocietalClasses.Lower * n.Population * n.LowerClassTax / 10000 +
-      n.Population * n.SocietalClasses.Medium * n.MediumClassTax / 7500 * (1 - n.ClergyInfluence - n.BurgousieInfluence) + n.Population * n.SocietalClasses.High * n.HighClassTax / 5000 * (1 - n.AristocratInfluence)
-    ) * n.AdministrativeEfficiency / 10 * (1 - n.AristocratInfluence / 4 - n.ClergyInfluence / 4
+      n.Population * n.SocietalClasses.Medium * n.MediumClassTax / 7500 * (1 - n.EstateInfluences.ClergyInfluence - n.EstateInfluences.BurgousieInfluence) + 
+	  n.Population * n.SocietalClasses.High * n.HighClassTax / 5000 * (1 - n.EstateInfluences.AristocratInfluence)
+    ) * n.AdministrativeEfficiency / 10 * (1 - n.EstateInfluences.AristocratInfluence / 4 - n.EstateInfluences.ClergyInfluence / 4
     ) * (1 - n.Occupation)) / gameStats.TimeDivide * (1 - n.Corruption / 10);
 
   n.SpyUpkeep = n.Spies / 200 * n.SpyQuality / gameStats.TimeDivide;
@@ -615,6 +616,6 @@ n.PopulationGrowth = (n.FutureFood < 0 ? n.FutureFood * 1000 / n.Population - (n
   n.CulturalAdvancements.RenaissanceThought / 5 + 
   n.Technologies.Experimentation / 5 +
   n.CulturalAdvancements.ScientificRevolution / 5;
-  n.ResearchPointGain = max(1, (n.ResearchSpending * n.ResearchEffectiveness * n.ResearchBoostFromTech * n.LiteracyPercent / n.Isolation / gameStats.TimeDivide * 2 / 10 + n.ResearchSpending * n.ResearchEffectiveness * n.HigherEducation / n.Isolation / gameStats.TimeDivide * 5 / 10) * (1 - (n.AristocratInfluence > 0.5 ? n.AristocratInfluence - 0.5 : 0) / 1.5 - (n.ClergyInfluence > 0.5? n.ClergyInfluence - 0.5 : 0) / 1.5) * (1 - n.PopulationTechImpact));
+  n.ResearchPointGain = max(1, (n.ResearchSpending * n.ResearchEffectiveness * n.ResearchBoostFromTech * n.LiteracyPercent / n.Isolation / gameStats.TimeDivide * 2 / 10 + n.ResearchSpending * n.ResearchEffectiveness * n.HigherEducation / n.Isolation / gameStats.TimeDivide * 5 / 10) * (1 - (n.EstateInfluences.AristocratInfluence > 0.5 ? n.EstateInfluences.AristocratInfluence - 0.5 : 0) / 1.5 - (n.EstateInfluences.ClergyInfluence > 0.5? n.EstateInfluences.ClergyInfluence - 0.5 : 0) / 1.5) * (1 - n.PopulationTechImpact));
   n.FutureResearchPoints = min(5 + (n.CulturalAdvancements.Universities == true ? 2.5 : 0) + (n.CulturalAdvancements.ScientificRevolution == true ? 2.5 : 0), n.ResearchPoints + n.ResearchPointGain);
 }

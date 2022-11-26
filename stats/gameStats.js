@@ -554,41 +554,60 @@ class Nation {
         Points: 100
       }
     };
-    this.Population = 10000000;
-    this.LiteracyPercent = 12.5;
-    this.HigherEducation = 1;
-    this.Budget = 1250.00;
-    this.Food = 500.00;
-    this.ResearchPoints = 10;
+    this.Population = 2500000;
+    this.LiteracyPercent = 7.5;
+    this.HigherEducation = 0.5;
+    this.Budget = 250.00;
+    this.Food = 200.00;
+    this.ResearchPoints = 5;
     this.PublicDebtLength = 0;
     this.CulturalPower = 6.00;
     /* #endregion */
 
     /* #region  Most Stats */
     this.ReligiousDisunity = 0.00;
-    this.Health = 4.00;
-    this.EducationEfficiency = 4.5;
-    this.AdministrativeEfficiency = 42.50;
-    this.Propaganda = 0.5;
-    this.SocialSpending = 0.5;
+    this.Health = 1.00;
+    this.EducationEfficiency = 1;
+    this.AdministrativeEfficiency = 25;
+    this.Propaganda = 0;
+    this.SocialSpending = 0;
     this.AtWar = false;
 
-    this.AristocratInfluence = 0.45; //Show in percent
     this.AristocratLoyalty = 0.50; //Show in percent
-    
-    this.ClergyInfluence = 0.20; //Show in percent
     this.ClergyLoyalty = 0.50; //Show in percent
-    
-    this.BurgousieInfluence = 0.25; //Show in percent
     this.BurgousieLoyalty = 0.50; //Show in percent
+    this.BureaucratLoyalty = 0.50; //Show in percent
+    this.IntellectualsLoyalty = 0.50; //Show in percent
+    this.WorkersLoyalty = 0.50; //Show in percent
+	
+	this.EstateInfluences = {
+		AristocratInfluence: 0.55,
+		ClergyInfluence: 0.25,
+		BurgousieInfluence: 0.20,
+		BureaucratInfluence: 0.0,
+		IntellectualsInfluence: 0.0,
+		MilitaryInfluence: 0.0,
+		WorkersInfluence: 0.0
+	};
+	
+	this.GovernmentRepresentation = {
+		UnitaryRepresentation: 0.30,
+		AristocratRepresentation: 0.40,
+		ClergyRepresentation: 0.20,
+		BurgousieRepresentation: 0.10,
+		BureaucratRepresentation: 0.0,
+		IntellectualsRepresentation: 0.0,
+		MilitaryRepresentation: 0.0,
+		WorkersRepresentation: 0.0
+	};
 
     this.Absolutism = 0;
     this.PopulationControl = 0;
     this.BirthControl = 0;
-    this.LocalTrade = 8.50;
-    this.Mercantilism = 1.5;
+    this.LocalTrade = 2.5;
+    this.Mercantilism = 1;
     this.Spies = 0;
-    this.SpyQuality = 1.4;
+    this.SpyQuality = 1;
     /* #endregion */
 
     /* #region  Army */
@@ -616,14 +635,14 @@ class Nation {
 
 
     this.CommanderFreedom = 0;
-    this.ArmyWages = 1.15;
-    this.TrainingQuality = 1;
-    this.MilitaryTactics = 1.25;
-    this.MilitaryDiscipline = 1.035; //Show In Percent
+    this.ArmyWages = 1.00;
+    this.TrainingQuality = 1.00;
+    this.MilitaryTactics = 1.00;
+    this.MilitaryDiscipline = 1.00; //Show In Percent
     /* #endregion */
 
     /* #region  Navy */
-    this.NavyImprovements = 1.25;
+    this.NavyImprovements = 1.00;
 
     this.LightShips = 0;
     this.MediumShips = 0;
@@ -631,11 +650,11 @@ class Nation {
     /* #endregion */
 
     /* #region  Agriculture */
-    this.AgricultureSubsidies = 0.05;
+    this.AgricultureSubsidies = 0.00;
     this.Fertility = 0.50;
-    this.AgricultureInfrastructure = 1.10;
+    this.AgricultureInfrastructure = 1.00;
     this.StockingCapabilities = 1.00;
-    this.AgricultureAdvancements = 1.45;
+    this.AgricultureAdvancements = 1.00;
     /* #endregion */
 
     /* #region  Recruitments / New Troops */
@@ -664,9 +683,9 @@ class Nation {
 
     /* #region  Population */
     this.Workforces = {
-      Townsfolk: 0.045,
-      Clergy: 0.0075,
-      Aristocracy: 0.01,
+      Townsfolk: 0.01,
+      Clergy: 0.0125,
+      Aristocracy: 0.02,
       Burgousie: 0.005
     };
     
@@ -675,7 +694,7 @@ class Nation {
     /* #endregion */
 
     /* #region  Resources */
-    this.MiningEfficiency = 1.4;
+    this.MiningEfficiency = 1;
 
     this.Coal = 0.00;
     this.Sulphur = 0.00;
@@ -710,43 +729,43 @@ class Nation {
 
     /* #region  Technology */
     this.Isolation = 1;
-    this.ResearchSpending = 1.05;
-    this.ResearchEffectiveness = 1.05;
+    this.ResearchSpending = 1.0;
+    this.ResearchEffectiveness = 1.0;
 
     this.Technologies = {
-      Gunpowder: true,
-      VerticalLoom: true,
-      SaddleAndStirrup: true,
-      HorseCollar: true,
-      Explosives: true,
-      Firelance: true,
-      Cranes: true,
-      PromissoryNotes: true,
-      Bombards: true,
-      HandCannons: true,
-      PlateArmour: true,
-      SappersAndEngineers: true,
-      Workshops: true,
-      StandardizedPikes: true,
-      Galleons: true,
-      PrintingPress: true,
-      Muskets: true,
-      Limber: true,
-      Docks: true,
-      Gunports: true,
-      Matchlock: true,
-      StarForts: true,
-      TextileManufactories: true,
-      Reiters: true,
-      MiningCarts: true,
-      HumanAnatomy: true,
-      Mortars: true,
-      Metallurgy: true,
-      Experimentation: true,
-	  Fluyt: true,
-      Bayonet: true,
-      SocketBayonet: true,
-      Flintlock: true,
+      Gunpowder: false,
+      VerticalLoom: false,
+      SaddleAndStirrup: false,
+      HorseCollar: false,
+      Explosives: false,
+      Firelance: false,
+      Cranes: false,
+      PromissoryNotes: false,
+      Bombards: false,
+      HandCannons: false,
+      PlateArmour: false,
+      SappersAndEngineers: false,
+      Workshops: false,
+      StandardizedPikes: false,
+      Galleons: false,
+      PrintingPress: false,
+      Muskets: false,
+      Limber: false,
+      Docks: false,
+      Gunports: false,
+      Matchlock: false,
+      StarForts: false,
+      TextileManufactories: false,
+      Reiters: false,
+      MiningCarts: false,
+      HumanAnatomy: false,
+      Mortars: false,
+      Metallurgy: false,
+      Experimentation: false,
+	  Fluyt: false,
+      Bayonet: false,
+      SocketBayonet: false,
+      Flintlock: false,
 	  FlyingShuttle: false,
 	  LeadChamberProcess: false,
 	  Gunlock: false
@@ -754,28 +773,28 @@ class Nation {
     /* #endregion */
 
     /* #region  Economy */
-    this.HighClassTax = 0.14; //As Percentage
-    this.MediumClassTax = 0.14; //As Percentage
-    this.LowerClassTax = 0.14; //As Percentage
+    this.HighClassTax = 0.1; //As Percentage
+    this.MediumClassTax = 0.1; //As Percentage
+    this.LowerClassTax = 0.1; //As Percentage
     this.PublicDebtTaken = 0.00;
     this.BudgetIncoming = 0;
     this.BudgetOutgoing = 0;
     /* #endregion */
 
-    this.CulturalProsperity = 1.10;
+    this.CulturalProsperity = 1.0;
     this.CulturalAdvancements = {
-      DivineRightToRule: true,
-      Serfdom: true,
-      Feudalism: true,
-      Universities: true,
-      AristocratDuty: true,
-      Courthouses: true,
-      RenaissanceThought: true,
-      EarlyModernAdministration: true,
-      NationalSovereignity: true,
-      Newspapers: true,
-      ScientificRevolution: true,
-      PotatoPopulationBoom: true,
+      DivineRightToRule: false,
+      Serfdom: false,
+      Feudalism: false,
+      Universities: false,
+      AristocratDuty: false,
+      Courthouses: false,
+      RenaissanceThought: false,
+      EarlyModernAdministration: false,
+      NationalSovereignity: false,
+      Newspapers: false,
+      ScientificRevolution: false,
+      PotatoPopulationBoom: false,
       Constitution: false
     }
 
