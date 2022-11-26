@@ -4,6 +4,8 @@
     "State": {
         "TimeSpeed": 50,
         "TimeDivide": 2.5,
+        "Nations": {
+        },
         "Religions": {
             "Pagan": {
                 "definingFeatures": "",
