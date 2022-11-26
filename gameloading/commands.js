@@ -185,43 +185,6 @@ function createStat(currentSelection, arg) {
             gameStats${currentSelection}.${newName}[propertyName] = JSON.parse(JSON.stringify(propertyToCopy));
         }`))();
         //for nation copying specifically, override the copied stuff for government name and noble loyalties towards state
-
-        if (objectClass == "Nation") {
-
-            (new Function(`
-            gameStats${currentSelection}.${newName}.GovernmentName = "${newName}"
-            
-            if(
-                typeof 
-                gameStats${currentSelection}.${newName}.NobleLoyaltyGroups.${oldName} != "undefined"
-            ){
-                gameStats${currentSelection}.${newName}.NobleLoyaltyGroups.${newName} = 
-                gameStats${currentSelection}.${newName}.NobleLoyaltyGroups.${oldName}
-                delete gameStats${currentSelection}.${newName}.NobleLoyaltyGroups.${oldName}
-            }
-            
-            if(
-                typeof 
-                gameStats${currentSelection}.${newName}.ClergyLoyaltyGroups.${oldName} != "undefined"
-            ){
-                gameStats${currentSelection}.${newName}.ClergyLoyaltyGroups.${newName} = 
-                gameStats${currentSelection}.${newName}.ClergyLoyaltyGroups.${oldName}
-                delete gameStats${currentSelection}.${newName}.ClergyLoyaltyGroups.${oldName}
-            }
-            
-            if(
-                typeof 
-                gameStats${currentSelection}.${newName}.BurghersLoyaltyGroups.${oldName} != "undefined"
-            ){
-                gameStats${currentSelection}.${newName}.BurghersLoyaltyGroups.${newName} = 
-                gameStats${currentSelection}.${newName}.BurghersLoyaltyGroups.${oldName}
-                delete gameStats${currentSelection}.${newName}.BurghersLoyaltyGroups.${oldName}
-            }
-            
-            
-            `))();
-            PostStatCreate(currentSelection, newName);
-        }
     } else {
 
         if (objectClass != null)
