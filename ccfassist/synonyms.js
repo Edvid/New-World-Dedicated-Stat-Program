@@ -106,24 +106,24 @@ let Synonyms = {
 		"treasury"
 	],
 	
-	NobleInfluence: [
-		"nobilityinfluence",
-		"nobleinf",
-		"nobilityinf"
+	AristocratInfluence: [
+		"Aristocracyinfluence",
+		"Aristocratinf",
+		"Aristocracyinf"
 	],
 	
 	ClergyInfluence: [
 		"clergyinf"
 	],
 	
-	BurghersInfluence: [
-		"burghersinf"
+	BurgousieInfluence: [
+		"Burgousieinf"
 	],
 	
-	NobleLoyalty: [
-		"nobilityloyalty",
-		"nobleloyalty",
-		"noblelg"
+	AristocratLoyalty: [
+		"Aristocracyloyalty",
+		"Aristocratloyalty",
+		"Aristocratlg"
 	],
 	
 	ClergyLoyalty: [
@@ -131,11 +131,11 @@ let Synonyms = {
 		"clergylg"
 	],
 	
-	BurgherLoyalty: [
-		"burghersloyalty",
-		"burgherloyalty",
-		"burgherslg",
-		"burgherlg",
+	BurgousieLoyalty: [
+		"Burgousieloyalty",
+		"Burgousieloyalty",
+		"Burgousielg",
+		"Burgousielg",
 	],
 
 	Levies: [
@@ -284,8 +284,8 @@ let Synonyms = {
 		"navalimprov"
 	],
 	
-	Nobility: [
-		"nobles",
+	Aristocracy: [
+		"Aristocrats",
 		"aristocracy"
 	],
 	
