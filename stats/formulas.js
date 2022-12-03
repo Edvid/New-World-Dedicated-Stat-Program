@@ -517,7 +517,48 @@ n.PopulationGrowth = (n.FutureFood < 0 ? n.FutureFood * 1000 / n.Population - (n
     return ntrp;
   })();
   
-  n.UnitUpkeep = (
+  function unitType(unitName) {
+    if(~[
+      "Levies",
+      "Militia"
+    ].indexOf(unitName)) return "Irregular";
+    else if(~[
+      "Archers",
+      "Crossbowmen"
+    ].indexOf(unitName)) return "Ranged";
+    else if(~[
+      "HandCannoneers",
+      "Musketeers",
+      "MusketMilitia",
+      "Riflemen"
+    ].indexOf(unitName)) return "Firearm";
+    else if(~[
+      "LightCavalry",
+      "HeavyCavalry",
+      "EliteCavalry"
+    ].indexOf(unitName)) return "Cavalry";
+    else if(~[
+      "SiegeEquipment",
+      "LargeSiegeEquipment"
+    ].indexOf(unitName)) return "Siege";
+    else if(~[
+      "Cannons"
+    ].indexOf(unitName)) return "Artillery";
+    
+    //default
+    return "Melee"
+  }
+
+  n.UnitUpkeep = function(){
+    let uu = 0.0;
+    Object.keys(gameStats.UnitUpkeepCosts).forEach(unitName => {
+      uu += gameStats.UnitUpkeepCosts[unitName] * n[unitName] * n[unitType(unitName) + 'Quality']; 
+    });
+
+    return uu;
+  }();
+
+  /*n.UnitUpkeep = (
 	(gameStats.UnitUpkeepCosts.Levies * n.Levies + gameStats.UnitUpkeepCosts.Militia * n.Militia) * n.IrregularQuality +
 	(gameStats.UnitUpkeepCosts.LightInfantry * n.LightInfantry + gameStats.UnitUpkeepCosts.HeavyInfantry * n.HeavyInfantry + gameStats.UnitUpkeepCosts.EliteInfantry * n.EliteInfantry) * n.MeleeQuality +
 	(gameStats.UnitUpkeepCosts.Archers * n.Archers + gameStats.UnitUpkeepCosts.Crossbowmen * n.Crossbowmen) * n.RangedQuality +
@@ -525,7 +566,7 @@ n.PopulationGrowth = (n.FutureFood < 0 ? n.FutureFood * 1000 / n.Population - (n
 	(gameStats.UnitUpkeepCosts.LightCavalry * n.LightCavalry + gameStats.UnitUpkeepCosts.HeavyCavalry * n.HeavyCavalry + gameStats.UnitUpkeepCosts.EliteCavalry * n.EliteCavalry) * n.CavalryQuality +
 	(gameStats.UnitUpkeepCosts.SiegeEquipment * n.SiegeEquipment + gameStats.UnitUpkeepCosts.LargeSiegeEquipment * n.LargeSiegeEquipment) * n.SiegeQuality +
 	(gameStats.UnitUpkeepCosts.Cannons * n.Cannons) * n.ArtilleryQuality
-  );
+  );*/
 
   n.ArmyUpkeep = n.UnitUpkeep * (1 + n.Corruption / 5 + n.ArmyWages - 1) / gameStats.TimeDivide;
 
