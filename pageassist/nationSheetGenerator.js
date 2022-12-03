@@ -510,12 +510,16 @@ function createNationSheet(nationName) {
     let allDivs = document.querySelectorAll("div");
 
     allDivs.forEach(DivElement => {
-        if(/Trade Influence/.test(DivElement.querySelector("h2").innerText)){
-            let tdElement = DivElement.querySelector("td");
-            if(tdElement.innerHTML != "0.00") {
-                tdElement.style.fontWeight = "bolder";
-            } else {
-                tdElement.style = "";
+        if(DivElement.querySelector("h2") != null){
+            if(/Trade Influence/.test(DivElement.querySelector("h2").innerText)){
+                let tdElements = DivElement.querySelectorAll("td");
+                tdElements.forEach(tdElement => {
+                    if(tdElement.innerHTML != "0.00") {
+                        tdElement.style.fontWeight = "bolder";
+                    } else {
+                        tdElement.style = "";
+                    }
+                });
             }
         }
     });
