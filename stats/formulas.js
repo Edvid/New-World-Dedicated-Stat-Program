@@ -245,14 +245,19 @@ function evaluateNation(nationName) {
       }
     })();
 
+    let ZeroIfUndefined = function (e) {
+      if(typeof e == 'undefined') return 0;
+      return e;
+    }
+
     let extraDemands = (function () {
       switch (resource) {
         case "Coal":
           return (n.EffectiveIron + n.EffectiveGold + n.EffectiveCopper + n.EffectiveSilver) * 0.5 + (n.Population * n.Health / 500000);
         case "Iron":
-          return (n.UnitUpkeep + n.FortUpkeep) / 50;
+          return (ZeroIfUndefined(n.UnitUpkeep) + ZeroIfUndefined(n.FortUpkeep)) / 50;
         case "Copper":
-          return (n.UnitUpkeep + n.FortUpkeep) / 100;
+          return (ZeroIfUndefined(n.UnitUpkeep) + ZeroIfUndefined(n.FortUpkeep)) / 100;
         default:
           return 0;
       }
