@@ -304,7 +304,7 @@ let TableLayouts = {
     ],
     "Agriculture": [
         ["Fertility", "AgricultureSubsidies", "AgricultureInfrastructure", "AgricultureAdvancements", "AgricultureTechnology", "FarmingEfficiency", "AgricultureSpending"],
-        [".Workforces.PopulationInAgriculture", "DailyFood", "FoodConsumption", "FoodGain", "StockingCapabilities", "MaxFoodStock", "SellingCapability"],
+        [".Workforces.Farmers", "DailyFood", "FoodConsumption", "FoodGain", "StockingCapabilities", "MaxFoodStock", "SellingCapability"],
         ["Food", "FutureFood", "SurplusFood", "FoodSold", "Foodlost", "TradeProfit", "FoodPopulationBoost"]
     ],
     "War Stats": [
@@ -314,8 +314,8 @@ let TableLayouts = {
         ["Size", "KmSquared", "PopulationDensityPerKmSquared", "Disease", "UnderPopulation"],
         ["MaxPopulation", "DetachedLand", "LandAdministration", "Overextension", "HabitableLand"]
     ],
-    "Estate Influences": [
-        ["NobleInfluence", "ClergyInfluence", "BurghersInfluence"]
+    "Estates": [
+		["AristocratLoyalty", "ClergyLoyalty", "BurgousieLoyalty", "BureaucratLoyalty", "IntellectualsLoyalty", "WorkersLoyalty", "MilitaryLoyalty"]
     ],
     "Trade Influence - Americas": [
         [ti("Alaska"), ti("Cascadia"), ti("CaliforniaAndWestMexico"), ti("HudsonBay"), ti("GreatLakes"), ti("Louisiana"), ti("GulfOfMexico"), ti("LawrenceGulf"), ti("EastCoast"), ti("Carribean"), ti("CentralAmerica")],
@@ -354,7 +354,7 @@ let TableLayouts = {
     ],
     "Cultural Advancements": [
         ["CulturalAdvancements.DivineRightToRule", "CulturalAdvancements.Serfdom", "CulturalAdvancements.Feudalism"],
-        ["CulturalAdvancements.Universities", "CulturalAdvancements.NobleDuty"],
+        ["CulturalAdvancements.Universities", "CulturalAdvancements.AristocratDuty"],
         ["CulturalAdvancements.Courthouses"],
         ["CulturalAdvancements.RenaissanceThought", "CulturalAdvancements.EarlyModernAdministration"],
         ["CulturalAdvancements.NationalSovereignity", "CulturalAdvancements.Newspapers"],
@@ -446,10 +446,13 @@ function createNationSheet(nationName) {
 
 
     createBreaker();
+	
+	// loyalty
 
-    createPieDiagram("NobleLoyaltyGroups");
-    createPieDiagram("ClergyLoyaltyGroups");
-    createPieDiagram("BurghersLoyaltyGroups");
+    createBreaker();
+
+    createPieDiagram("EstateInfluences");
+    createPieDiagram("GovernmentRepresentation");
 
     createBreaker();
 

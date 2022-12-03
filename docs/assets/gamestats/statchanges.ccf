@@ -1,7 +1,2 @@
-
-> Nations
-<=> Vespucian tribes > Vespucian Federate Republic
-<...
-> nations > SwedishKingdom
--7.5 nobleloyaltygroups.SwedishKingdom
-+7.5 nobleloyaltygroups.selfinterests
+<... > nations
++> test
