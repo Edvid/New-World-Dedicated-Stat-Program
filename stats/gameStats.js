@@ -25,13 +25,10 @@ let mappedResourcesMultipliers = [
 
 class SocialBehaviour {
   definingFeatures;
-  Opinions;
-  Color;
+  Opinions = {};
 
   constructor(){
     this.definingFeatures = "";
-    this.Opinions = {};
-    this.Color = "none";
   }
 }
 
@@ -125,15 +122,6 @@ class Nation {
   Inflation;
   Spies;
   SpyQuality;
-  AristocratInfluence;
-  AristocratLoyaltyGroups;
-  AristocratStateLoyalty;
-  ClergyInfluence;
-  ClergyLoyaltyGroups;
-  ClergyStateLoyalty;
-  BurgousieInfluence;
-  BurgousieLoyaltyGroups;
-  BurgousieStateLoyalty;
   ArmyUpkeep;
   SpyUpkeep;
   SocialSpendingUpkeep;
@@ -571,10 +559,14 @@ class Nation {
     this.ReligiousDisunity = 0.00;
     this.Health = 1.00;
     this.EducationEfficiency = 1;
+	this.BureaucratWages = 0.75;
     this.AdministrativeEfficiency = 25;
+	this.AdministrationSize = 0.5;
     this.Propaganda = 0;
     this.SocialSpending = 0;
     this.AtWar = false;
+	this.Nationalism = 0;
+	this.ReligiousFervor = 0;
 
     this.AristocratLoyalty = 0.50; //Show in percent
     this.ClergyLoyalty = 0.50; //Show in percent
@@ -584,13 +576,13 @@ class Nation {
     this.WorkersLoyalty = 0.50; //Show in percent
 	
 	this.EstateInfluences = {
-		AristocratInfluence: 0.55,
+		AristocratInfluence: 0.525,
 		ClergyInfluence: 0.25,
-		BurgousieInfluence: 0.20,
-		BureaucratInfluence: 0.0,
-		IntellectualsInfluence: 0.0,
+		BurgousieInfluence: 0.175,
+		BureaucratInfluence: 0.025,
+		IntellectualsInfluence: 0.02,
 		MilitaryInfluence: 0.0,
-		WorkersInfluence: 0.0
+		WorkersInfluence: 0.005
 	};
 	
 	this.GovernmentRepresentation = {
@@ -603,8 +595,17 @@ class Nation {
 		MilitaryRepresentation: 0.0,
 		WorkersRepresentation: 0.0
 	};
+	
+	this.MilitaryControl = {
+		UnitaryControl: 0.25,
+		AristocratControl: 0.35,
+		ClergyControl: 0.10,
+		BurgousieControl: 0.10,
+		BureaucratControl: 0.10,
+		IntellectualsControl: 0.0,
+		WorkersControl: 0.10
+	};
 
-    this.Absolutism = 0;
     this.PopulationControl = 0;
     this.BirthControl = 0;
     this.LocalTrade = 2.5;
@@ -614,6 +615,15 @@ class Nation {
     /* #endregion */
 
     /* #region  Army */
+	this.OverallImprovements = 1;
+	this.IrregularImprovements = 0;
+	this.MeleeImprovements = 0;
+	this.RangedImprovements = 0;
+	this.CavalryImprovements = 0;
+	this.FirearmImprovements = 0;
+	this.SiegeImprovements = 0;
+	this.ArtilleryImprovements = 0;
+	
     this.Levies = 0;
     this.LightInfantry = 0;
     this.HeavyInfantry = 0;
@@ -625,6 +635,8 @@ class Nation {
     this.EliteCavalry = 0;
     this.HandCannoneers = 0;
     this.Musketeers = 0;
+    this.MusketMilitia = 0;
+    this.Riflemen = 0;
     this.Militia = 0;
     this.SiegeEquipment = 0;
     this.LargeSiegeEquipment = 0;
@@ -639,8 +651,6 @@ class Nation {
 
     this.CommanderFreedom = 0;
     this.ArmyWages = 1.00;
-    this.TrainingQuality = 1.00;
-    this.MilitaryTactics = 1.00;
     this.MilitaryDiscipline = 1.00; //Show In Percent
     /* #endregion */
 
@@ -841,7 +851,6 @@ class Stats{
   Nations;
   Religions;
   Cultures;
-  AdvancesPrerequisites;
   ResourceTypes;
   Trades;
   TradeZones;
@@ -861,88 +870,6 @@ class Stats{
         Opinions: []
       }
     };
-    this.AdvancesPrerequisites = {
-      "Explosives": [
-        "Gunpowder"
-      ],
-      "Firelance": [
-        "Explosives"
-      ],
-      "HandCannons": [
-        "Firelance"
-      ],
-      "Bombards": [
-        "Firelance"
-      ],
-      "Muskets": [
-        "HandCannons"
-      ],
-      "Limber": [
-        "Bombards"
-      ],
-      "Gunports": [
-        "Bombards"
-      ],
-      "EarlyModernAdministration": [
-        "Courthouses"
-      ],
-      "Galleons": [
-        "Gunports",
-	"Docks"
-      ],
-      "Matchlock": [
-        "Muskets"
-      ],
-      "Reiters": [
-        "Muskets"
-      ],
-      "StarForts": [
-        "Limber"
-      ],
-      "Mortars": [
-        "Limber"
-      ],
-      "TextileManufactories": [
-        "Workshops"
-      ],
-      "Fluyt": [
-        "Galleons"
-      ],
-      "NationalSovereignity": [
-        "RenaissanceThought"
-      ],
-      "Experimentation": [
-        "RenaissanceThought"
-      ],
-      "Metallurgy": [
-        "Workshops"
-      ],
-      "Newspapers": [
-        "PrintingPress"
-      ],
-      "Flintlock": [
-        "Matchlock"
-      ],
-      "ScientificRevolution": [
-        "Experimentation"
-      ],
-      "Bayonet": [
-        "Metallurgy"
-      ],
-      "SocketBayonet": [
-        "Bayonet"
-      ],
-      "FlyingShuttle": [
-        "Metallurgy",
-	"TextileManufactories"
-      ],
-      "Gunlock": [
-        "Flintlock"
-      ],
-      "Constitution": [
-        "EarlyModernAdministration"
-      ]
-    }
     this.Cultures = { //For Opinions not mentioned, they are neutral towards them.
     }; 
     this.ResourceTypes = [
@@ -1111,6 +1038,8 @@ class Stats{
       EliteCavalry: 8.5 / 1000,
       HandCannoneers: 5 / 1000,
       Musketeers: 3.5 / 1000,
+	  MusketMilitia: 2 / 1000,
+	  Riflemen: 10 / 1000,
       Militia: 1.25 / 1000,
 
       SiegeEquipment: 1 / 10,

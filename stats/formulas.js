@@ -94,13 +94,20 @@ function evaluateNation(nationName) {
     return s;
   })();
   n.CultureRepresentedAtGovernmentLevelPercent =  cultureCalc.GovernmentRepresentationPercent;
-  n.CulturalDisunity = cultureCalc.disunity;
+  n.CulturalDisunity = cultureCalc.disunity * (1 + n.Nationalism * 0.2);
   n.ReligionRepresentedAtGovernmentLevelPercent = religionCalc.GovernmentRepresentationPercent;
-  n.ReligiousDisunity = religionCalc.disunity;
-  n.OverallNumbers = n.Musketeers + n.Levies + n.LightInfantry + n.HeavyInfantry + n.Archers + n.Crossbowmen + n.LightCavalry + n.HeavyCavalry + n.EliteInfantry + n.Militia + n.EliteCavalry + n.HandCannoneers + (n.SiegeEquipment + n.LargeSiegeEquipment) * 10;
+  n.ReligiousDisunity = religionCalc.disunity * (1 + n.ReligiousFervor * 0.2);
+  n.OverallNumbers = n.Riflemen + n.MusketMilitia + n.Musketeers + n.Levies + n.LightInfantry + n.HeavyInfantry + n.Archers + n.Crossbowmen + n.LightCavalry + n.HeavyCavalry + n.EliteInfantry + n.Militia + n.EliteCavalry + n.HandCannoneers + (n.SiegeEquipment + n.LargeSiegeEquipment) * 10;
   n.OverallShipCount = n.LightShips + n.MediumShips + n.HeavyShips;
-  n.AdministrativeStrain = (0 + n.Population / 1250000 + n.Health * 2 + n.EducationEfficiency * 1.5 + n.SocialSpending * 4 + n.Propaganda * 2 + n.PopulationControl * 2 + n.BirthControl * 4 + (n.HighClassTax + n.MediumClassTax + n.LowerClassTax) / 3 * 75 + n.OverallNumbers / 5000 + n.OverallShipCount / 100 + n.AgricultureSubsidies * 4 + (n.AgricultureInfrastructure - 1) * 4 + n.Size / 5000 + (n.ResearchSpending - 1) * 10 + (1 - n.CultureRepresentedAtGovernmentLevelPercent) * 10) * (n.CulturalAdvancements.EarlyModernAdministration == true ? 0.75 : 1) * (n.CulturalAdvancements.NationalSovereignity == true ? 0.75 : 1) * (n.CulturalAdvancements.Constitution == true ? 0.75 : 1); 
-  let GatheringEffectiveness = function (name) {
+  n.AdministrativeTech = (n.CulturalAdvancements.EarlyModernAdministration == true ? 1 : 0) + (n.CulturalAdvancements.NationalSovereignity == true ? 1 : 0) + (n.CulturalAdvancements.Constitution == true ? 1 : 0)	
+  n.AdministrativePower = n.AdministrativeEfficiency * (1 + n.AdministrationSize / 2 + n.AdministrativeTech / 10) * 0.75;
+  n.AdministrativeDemand = (
+    0 + n.Population / 1000000 + n.Health * 2 + n.EducationEfficiency * 2 + n.SocialSpending * 4 + n.Propaganda * 2 + n.PopulationControl * 2 + n.BirthControl * 4 + 
+    (n.HighClassTax + n.MediumClassTax + n.LowerClassTax) / 3 * 75 + n.OverallNumbers / 5000 + n.OverallShipCount / 25 + n.AgricultureSubsidies * 4 + (n.AgricultureInfrastructure - 1) * 4 + n.Size / 7500 + 
+    (n.ResearchSpending - 1) * 10 + (1 - n.CultureRepresentedAtGovernmentLevelPercent) * 10
+  );
+  n.AdministrativeStrain = max(0, n.AdministrativeDemand - n.AdministrativePower);
+ let GatheringEffectiveness = function (name) {
     switch (name) {
       case "Food":
         return "Farming"
@@ -238,19 +245,14 @@ function evaluateNation(nationName) {
       }
     })();
 
-    let ZeroIfUndefined = function (e) {
-      if(typeof e == 'undefined') return 0;
-      return e;
-    }
-
     let extraDemands = (function () {
       switch (resource) {
         case "Coal":
           return (n.EffectiveIron + n.EffectiveGold + n.EffectiveCopper + n.EffectiveSilver) * 0.5 + (n.Population * n.Health / 500000);
         case "Iron":
-          return (ZeroIfUndefined(n.UnitUpkeep) + ZeroIfUndefined(n.FortUpkeep)) / 50;
+          return (n.UnitUpkeep + n.FortUpkeep) / 50;
         case "Copper":
-          return (ZeroIfUndefined(n.UnitUpkeep) + ZeroIfUndefined(n.FortUpkeep)) / 100;
+          return (n.UnitUpkeep + n.FortUpkeep) / 100;
         default:
           return 0;
       }
@@ -289,11 +291,7 @@ function evaluateNation(nationName) {
       const resource = TradePowerResources[resourceName];
       num += +n[resource + "Incoming"] * +n[resource + "Value"];
       if(isNaN(num)){
-        let allNaNStats = "";
-        Object.keys(n).forEach(property => {
-          if(typeof n[property] != 'undefined' && typeof n[property] != 'string' && typeof n[property] != 'object' && isNaN(n[property])) allNaNStats += `${property}\n`
-        });
-        lazyerror(`something went wrong. Tried to multiply ${n[resource + "Incoming"]} (${n.nationName ?? nationName}.${resource}Incoming) with ${n[resource + "Value"]} (${n.nationName ?? nationName}.${resource}Value).\nThe following stats are NaN currently: \n\n${allNaNStats}`);
+        lazyerror(`something went wrong. Tried to multiply ${n[resource + "Incoming"]} (${n.nationName ?? nationName}.${resource}Incoming) with ${n[resource + "Value"]} (${n.nationName ?? nationName}.${resource}Value)`);
         return 0;
       }
     }
@@ -321,7 +319,7 @@ function evaluateNation(nationName) {
   n.ConscriptionPercent = n.OverallNumbers / n.Population;
   n.Workforces.PopulationInMilitary = n.ConscriptionPercent;
   n.Workforces.Sailors = (n.LightShips * 200 + n.MediumShips * 450 + n.HeavyShips * 800) / n.Population
-  n.Workforces.Bureaucrats = n.AdministrativeStrain * 1000 / n.Population;
+  n.Workforces.Bureaucrats = n.AdministrationSize / 100;
   n.Workforces.Intellectuals = n.HigherEducation / 100;
   n.Workforces.Merchants = n.TradePower * 1000 / n.Population;
   n.Workforces.Labourers = (n.Coal + n.Sulphur + n.Cotton + n.Gold + n.Iron + n.Tea + n.Silk + n.Spice + n.Wool + n.Coffee + n.Fur + n.Diamond + n.Silver + n.Copper + n.Ivory + n.Cocoa + n.Tobacco + n.Sugar + n.ExoticFruit) * 20000 / n.Population;
@@ -374,42 +372,6 @@ function evaluateNation(nationName) {
 
   let PopulationGrowthModifier = (n.Fertility > 0.5 ? (n.Fertility - 0.5) / 10 : 0) + n.FoodPopulationBoost + (n.Prosperity - 1) / 10 + n.UnderPopulation;
   
-  n.UnitUpkeep = (function () {
-    let uu = 0;
-    for (const unitName in gameStats.UnitUpkeepCosts) {
-      const cost = gameStats.UnitUpkeepCosts[unitName];
-      uu += n[unitName] * cost;
-    }
-    return uu;
-  })();
-
-  n.ArmyTechBoost = (
-    n.Technologies.SaddleAndStirrup +
-    n.Technologies.Matchlock +
-    n.Technologies.SocketBayonet +
-    n.Technologies.Flintlock)
-    / 5 +
-    (
-      n.Technologies.Gunpowder +
-      n.Technologies.PlateArmour +
-      n.Technologies.StandardizedPikes +
-      n.Technologies.Muskets +
-      n.Technologies.Limber +
-      n.Technologies.Mortars +
-      n.Technologies.Reiters +
-      n.Technologies.Metallurgy +
-      n.Technologies.Bayonet)
-    / 10 +
-    (
-      n.Technologies.Firelance +
-      n.Technologies.Bombards +
-      n.Technologies.HandCannons +
-      n.Technologies.SappersAndEngineers)
-    / 20;
-  n.ArmyTech = 1 + n.ArmyTechBoost;
-
-
-  
   n.IronShortage = max(0, n.UnitUpkeep / 200 - n.EffectiveIron);
   n.SulphurShortage = max(0, (n.Cannons * 100 + n.Musketeers + n.HandCannoneers +
     (n.Technologies.Reiters == true ? n.LightCavalry + n.HeavyCavalry : 0) +
@@ -440,6 +402,7 @@ function evaluateNation(nationName) {
   n.PossiblePublicDebt = max(0, n.Population / 10000 * (1 - (n.HighClassTax + n.MediumClassTax + n.LowerClassTax) / 3) - n.EffectiveDebt);
   n.DebtHappinessEffect = (n.PublicDebtLength > 1 ? n.EffectiveDebt / (n.PossiblePublicDebt + n.PublicDebtTaken) * (2 + n.PublicDebtLength) : 0);
   n.WarExhaustion = (n.Casualties / n.Population * 500) + (n.Pillaging * 20) + (n.Occupation * 5);
+  n.Absolutism = n.GovernmentRepresentation.UnitaryRepresentation*10;
 
   n.PopulationHappiness = (50 + n.ResourceHappinessBoost) * n.Prosperity / 10 - (n.LowerClassTax * n.SocietalClasses.Lower + n.MediumClassTax * n.SocietalClasses.Medium + n.SocietalClasses.High * n.HighClassTax) * 100 / 4 - n.Absolutism / 2 - n.PopulationControl +
     (n.Mercantilism > 1 ? (-n.Mercantilism + 1) * 2.5 : 0) + (n.EffectiveDebt > 0 && n.Budget < 0 ? - (n.EffectiveDebt / n.PossiblePublicDebt) * 10 : 0) - n.WarExhaustion / 2 - n.DebtHappinessEffect + (n.Disease > 0.10 ? - n.Disease / 4 : 0);
@@ -476,8 +439,18 @@ function evaluateNation(nationName) {
       0)
     - n.CommanderFreedom / 10);
   n.Stability = n.PopulationHappiness + n.AdministrativeEfficiency / 10 - n.Overextension - n.CulturalDisunity - n.ReligiousDisunity + (n.Propaganda / 1.75 * (1 + n.CulturalAdvancements.Newspapers / 2)) + n.PopulationControl + (n.AristocratLoyalty - 0.5) * 10 + (n.ClergyLoyalty - 0.5) * 7.5 + (n.BurgousieLoyalty - 0.5) * 7.5 + n.PopulationStabilityImpact + WarStabilityModifier * 100 + (n.MilitaryLoyalty - 1) * 7.5;
-  n.Corruption =  (n.Stability < 1 ? 0.5 : 0) + (n.Stability < -1 ? 0.5 : 0) + max(0, n.AdministrativeStrain - n.AdministrativeEfficiency) / 4 + n.Absolutism / 2;
+  n.Corruption =  (n.Stability < 1 ? 0.5 : 0) + (n.Stability < -1 ? 0.5 : 0) + n.AdministrativeStrain / 4 + n.Absolutism / 3;
+  
+	n.IrregularQuality = n.OverallImprovements + n.IrregularImprovements + n.Technologies.Metallurgy / 10;
+	n.MeleeQuality = n.OverallImprovements + n.MeleeImprovements + n.Technologies.PlateArmour / 5 + n.Technologies.StandardizedPikes / 10 + n.Technologies.Metallurgy / 10;
+	n.RangedQuality = n.OverallImprovements + n.RangedImprovements + n.Technologies.Metallurgy / 10;
+	n.CavalryQuality = n.OverallImprovements + n.CavalryImprovements + n.Technologies.SaddleAndStirrup / 5 + n.Technologies.PlateArmour / 5 + n.Technologies.Reiters / 10 + n.Technologies.Metallurgy / 10;
+	n.FirearmQuality = n.OverallImprovements + n.FirearmImprovements + n.Technologies.Matchlock / 5 + n.Technologies.SocketBayonet / 5 + n.Technologies.Flintlock / 5 + n.Technologies.Metallurgy / 10 + n.Technologies.Bayonet / 20;
+	n.SiegeQuality = n.OverallImprovements + n.SiegeImprovements + n.Technologies.Metallurgy / 10;
+	n.ArtilleryQuality = n.OverallImprovements + n.ArtilleryImprovements + n.Technologies.Limber / 5 + n.Technologies.Mortars / 5 + n.Technologies.Metallurgy / 10;
+  
   n.ArmyQuality = max(0.1, 1 + n.TrainingQuality + n.ArmyTech + n.MilitaryTactics + n.CommanderFreedom / 10 - n.IronShortage - n.SulphurShortage - n.Corruption / 5);
+  
   n.FortUpkeep = (
     n.SmallForts * 2 +
     n.MediumForts * 4 +
@@ -485,7 +458,7 @@ function evaluateNation(nationName) {
     n.HugeForts * 16 +
 
     n.ExtraCityFortifications * 5
-  ) * n.ArmyQuality / gameStats.TimeDivide;
+  ) * n.OverallImprovements / gameStats.TimeDivide;
   
   
   
@@ -536,8 +509,18 @@ n.PopulationGrowth = (n.FutureFood < 0 ? n.FutureFood * 1000 / n.Population - (n
     ntrp /= 2;
     return ntrp;
   })();
+  
+  n.UnitUpkeep = (
+	(gameStats.UnitUpkeepCosts.Levies * n.Levies + gameStats.UnitUpkeepCosts.Militia * n.Militia) * n.IrregularQuality +
+	(gameStats.UnitUpkeepCosts.LightInfantry * n.LightInfantry + gameStats.UnitUpkeepCosts.HeavyInfantry * n.HeavyInfantry + gameStats.UnitUpkeepCosts.EliteInfantry * n.EliteInfantry) * n.MeleeQuality +
+	(gameStats.UnitUpkeepCosts.Archers * n.Archers + gameStats.UnitUpkeepCosts.Crossbowmen * n.Crossbowmen) * n.RangedQuality +
+	(gameStats.UnitUpkeepCosts.HandCannoneers * n.HandCannoneers + gameStats.UnitUpkeepCosts.Musketeers * n.Musketeers + gameStats.UnitUpkeepCosts.MusketMilitia * n.MusketMilitia + gameStats.UnitUpkeepCosts.Riflemen * n.Riflemen) * n.FirearmQuality +
+	(gameStats.UnitUpkeepCosts.LightCavalry * n.LightCavalry + gameStats.UnitUpkeepCosts.HeavyCavalry * n.HeavyCavalry + gameStats.UnitUpkeepCosts.EliteCavalry * n.EliteCavalry) * n.CavalryQuality +
+	(gameStats.UnitUpkeepCosts.SiegeEquipment * n.SiegeEquipment + gameStats.UnitUpkeepCosts.LargeSiegeEquipment * n.LargeSiegeEquipment) * n.SiegeQuality +
+	(gameStats.UnitUpkeepCosts.Cannons * n.Cannons) * n.ArtilleryQuality
+  );
 
-  n.ArmyUpkeep = n.UnitUpkeep * ((n.ArmyQuality + n.Corruption / 5) + n.ArmyWages - 1) / gameStats.TimeDivide;
+  n.ArmyUpkeep = n.UnitUpkeep * (1 + n.Corruption / 5 + n.ArmyWages - 1) / gameStats.TimeDivide;
 
 
 
@@ -585,7 +568,7 @@ n.PopulationGrowth = (n.FutureFood < 0 ? n.FutureFood * 1000 / n.Population - (n
   n.EducationUpkeep = n.EducationEfficiency * n.Population / 500000 * (1.1 - n.AdministrativeEfficiency / 100) * 6 / gameStats.TimeDivide;
   n.PropagandaUpkeep = n.Propaganda * (100 - n.AdministrativeEfficiency) / 100 * n.Population / 1000000 / gameStats.TimeDivide;
   n.PopulationControlUpkeep = n.PopulationControl * n.Population / 800000 / gameStats.TimeDivide;
-  n.AdministrativeUpkeep = n.LandAdministration / gameStats.TimeDivide * 2;
+  n.AdministrativeUpkeep = (n.LandAdministration + n.BureaucratWages / 100 * n.AdministrationSize / 100 * n.Population / 2.5) / gameStats.TimeDivide;
   n.ProductionRevenue = n.Production / gameStats.TimeDivide;
   n.ResearchUpkeep = n.ResearchSpending * n.Population / 500000 / gameStats.TimeDivide * n.LiteracyPercent / 10;
   n.Balance = n.BudgetIncoming - n.BudgetOutgoing;
