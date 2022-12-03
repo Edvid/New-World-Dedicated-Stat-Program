@@ -507,13 +507,20 @@ function createNationSheet(nationName) {
 
     //make non 0.00 in tradeinfluence bold
 
-    let alltdsintradeinf = document.querySelectorAll(".tradeinfluences td");
+    let allDivs = document.querySelectorAll("div");
 
-    alltdsintradeinf.forEach(element => {
-        if (element.innerText != "0.00") {
-            element.style.fontWeight = "bolder";
-        } else {
-            element.style = "";
+    allDivs.forEach(DivElement => {
+        if(DivElement.querySelector("h2") != null){
+            if(/Trade Influence/.test(DivElement.querySelector("h2").innerText)){
+                let tdElements = DivElement.querySelectorAll("td");
+                tdElements.forEach(tdElement => {
+                    if(tdElement.innerHTML != "0.00") {
+                        tdElement.style.fontWeight = "bolder";
+                    } else {
+                        tdElement.style = "";
+                    }
+                });
+            }
         }
     });
 }
