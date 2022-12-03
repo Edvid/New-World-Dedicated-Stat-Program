@@ -253,20 +253,20 @@ let TableLayouts = {
     "Population Stuff": [
         ["ReligionRepresentedAtGovernmentLevel", "CultureRepresentedAtGovernmentLevel", "PopulationStabilityImpact"],
         ["ReligionRepresentedAtGovernmentLevelPercent", "CultureRepresentedAtGovernmentLevelPercent", "PopulationTechImpact"],
-        ["ReligiousDisunity", "CulturalDisunity", "PopulationGrowth"]
+        ["ReligiousDisunity", "CulturalDisunity", "PopulationGrowth"],
+        ["ReligiousFervor", "Nationalism", "AtWar"]
     ],
     "Basic Stats": [
-        ["Health", "Corruption", "SocialSpending", "Stability", "Absolutism"],
-        ["EducationEfficiency", "Overextension", "Prosperity", "AtWar", "PopulationControl"],
-        ["AdministrativeEfficiency", "Propaganda", "PopulationHappiness", "WarSupport", "BirthControl"],
-        ["AdministrativeStrain"]
+        ["Health", "EducationEfficiency", "Propaganda", "SocialSpending", "PopulationControl", "BirthControl"],
+        ["Stability", "Absolutism", "Corruption", "Overextension", "Prosperity", "PopulationHappiness", "WarSupport"],
+        ["AdministrativeTech", "BureaucratWages", "AdministrativeEfficiency", "AdministrationSize", "AdministrativePower", "AdministrativeDemand", "AdministrativeStrain"]
     ],
     "Budget Stats": [
         ["TradeEfficiency", "LocalTrade", "TradePower"],
         ["Mercantilism", "ProductionEfficiency", "Production"],
         ["Inflation", "DailyBudget", "Budget"],
         ["BudgetIncoming", "BudgetOutgoing", "Balance"],
-        ["HighClassTax", "MediumClassTax", "LowerClassTax", "EffectiveTax"]
+        ["HighClassTax", "MediumClassTax", "LowerClassTax"]
     ],
     "Upkeeps and Income": [
         ["ProductionRevenue", "TradeRevenue", "PassiveInvestmentIncome"],
@@ -276,12 +276,17 @@ let TableLayouts = {
         ["SocialSpendingUpkeep", "AgricultureSpending", "AdministrativeUpkeep"],
         ["HygieneUpkeep", "ResearchUpkeep", "PropagandaUpkeep"]
     ],
-    "Army Units": [
-        ["Levies", "Militia", "LightInfantry", "HeavyInfantry",],
-        ["Archers", "Crossbowmen", "HandCannoneers", "Musketeers"],
-        ["LightCavalry", "HeavyCavalry", "SiegeEquipment", "LargeSiegeEquipment"],
-        ["Cannons", "EliteInfantry", "EliteCavalry", "EliteUnitsCap"],
-        ["OverallNumbers", "Spies"]
+    "Army": [
+		["OverallImprovements", "CommanderFreedom", "IronShortage", "SulphurShortage", "ArmyWages"],
+		["MilitaryLoyalty", "MilitaryMorale", "MilitaryDiscipline"],
+        ["IrregularImprovements", "IrregularQuality", "Levies", "Militia"],
+        ["MeleeImprovements", "MeleeQuality", "LightInfantry", "HeavyInfantry", "EliteInfantry"],
+        ["RangedImprovements", "RangedQuality", "Archers", "Crossbowmen"],
+        ["FirearmImprovements", "FirearmQuality", "HandCannoneers", "Musketeers", "MusketMilitia", "Riflemen"],
+        ["CavalryImprovements", "CavalryQuality", "LightCavalry", "HeavyCavalry", "EliteCavalry"],
+        ["SiegeImprovements", "SiegeQuality", "SiegeEquipment", "LargeSiegeEquipment"],
+        ["ArtilleryImprovements", "ArtilleryQuality", "Cannons"],
+        ["OverallNumbers", "UnitUpkeep", "EliteUnitsCap", "Spies", "SpyQuality"]
     ],
     "Debt Stats": [
         ["PossiblePublicDebt", "PublicDebtLength", "InterestRate"],
@@ -289,12 +294,6 @@ let TableLayouts = {
     ],
     "Fortifications": [
         ["SmallForts", "MediumForts", "BigForts", "HugeForts", "ExtraCityFortifications"]
-    ],
-    "Army Stats": [
-        ["IronShortage", "SulphurShortage", "ArmyWages"],
-        ["CommanderFreedom", "TrainingQuality", "MilitaryTactics"],
-        ["ArmyTech", "ArmyQuality", "SpyQuality"],
-        ["MilitaryLoyalty", "MilitaryMorale", "MilitaryDiscipline"]
     ],
     "Navy": [
         ["UpkeepForOneLightShip", "UpkeepForOneMediumShip", "UpkeepForOneHeavyShip"],
@@ -364,11 +363,11 @@ let TableLayouts = {
     ],
     "Resources": [
         ["MiningEfficiency"],
-        ["Coal", "Sulphur", "Iron", "Copper"],
         ["MaxCoal", "MaxSulphur", "MaxIron", "MaxCopper"],
+        ["Coal", "Sulphur", "Iron", "Copper"],
         ["EffectiveCoal", "EffectiveSulphur", "EffectiveIron", "EffectiveCopper"],
-        ["Gold", "Fur", "Diamond", "Silver", "Ivory", "Cotton", "Tea", "Silk", "Spice", "Wool", "Coffee", "Cocoa", "Tobacco", "Sugar", "ExoticFruit"],
         ["MaxGold", "MaxFur", "MaxDiamond", "MaxSilver", "MaxIvory"],
+        ["Gold", "Fur", "Diamond", "Silver", "Ivory", "Cotton", "Tea", "Silk", "Spice", "Wool", "Coffee", "Cocoa", "Tobacco", "Sugar", "ExoticFruit"],
         ["EffectiveGold", "EffectiveFur", "EffectiveDiamond", "EffectiveSilver", "EffectiveIvory", "EffectiveCotton", "EffectiveTea", "EffectiveSilk", "EffectiveSpice", "EffectiveWool", "EffectiveCoffee", "EffectiveCocoa", "EffectiveTobacco", "EffectiveSugar", "EffectiveExoticFruit"],
         ["GoldInflation", "FurInflation", "DiamondInflation", "SilverInflation", "IvoryInflation", "CottonInflation", "TeaInflation", "SilkInflation", "SpiceInflation", "WoolInflation", "CoffeeInflation", "CocoaInflation", "TobaccoInflation", "SugarInflation", "ExoticFruitInflation"],
         ["ResourcePopulationGrowthBoost", "ResourceHappinessBoost", "ResourceBudgetBoost"]
@@ -442,8 +441,6 @@ function createNationSheet(nationName) {
 
     AddNextStatTable();
 
-    AddNextStatTable();
-
 
     createBreaker();
 	
@@ -453,6 +450,7 @@ function createNationSheet(nationName) {
 
     createPieDiagram("EstateInfluences");
     createPieDiagram("GovernmentRepresentation");
+    createPieDiagram("MilitaryControl");
 
     createBreaker();
 
@@ -461,6 +459,8 @@ function createNationSheet(nationName) {
 
     createBreaker();
 
+  //  AddNextStatTable();
+
     AddNextStatTable().classList.add("tradeinfluences");
 
     AddNextStatTable().classList.add("tradeinfluences");
@@ -474,8 +474,6 @@ function createNationSheet(nationName) {
     AddNextStatTable();
 
     AddNextStatTable();
-
-    createBreaker();
 
     AddNextStatTable();
 
@@ -516,30 +514,6 @@ function createNationSheet(nationName) {
             element.style.fontWeight = "bolder";
         } else {
             element.style = "";
-        }
-    });
-
-    //add tech tree button to tech and cultural adv
-
-    let allTabletitles = document.querySelectorAll(".nationsheet > div > h2")
-
-    allTabletitles.forEach(TableTitle => {
-        if(TableTitle.innerHTML == "Cultural Advancements" || TableTitle.innerHTML == "Technologies"){
-            let TechtreeButton = document.createElement("a");
-            TechtreeButton.style.margin = "0em 1em 0.5em 1em";
-            TechtreeButton.addEventListener("click", collapsibleNextSibling);
-            let TechtreeIcon = document.createElement("img");
-            TechtreeIcon.src = "docs/assets/images/small_techTree.png";
-            TechtreeIcon.style.border = "1px solid black";
-            TechtreeButton.appendChild(TechtreeIcon);
-            let TechTreeImage = document.createElement("img");
-            TechTreeImage.src = "docs/assets/images/techTree.png";
-            TechTreeImage.style.margin = "2em";
-            TechTreeImage.style.width = document.body.clientWidth - 100 + "px";
-            TechTreeImage.style.display = "none";
-
-            TableTitle.parentElement.insertBefore(TechTreeImage, TableTitle.nextSibling);
-            TableTitle.parentElement.insertBefore(TechtreeButton, TechTreeImage);
         }
     });
 }
