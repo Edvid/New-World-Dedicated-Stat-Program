@@ -74,7 +74,7 @@ function refreshPageItems() {
         createNationSheet(currentNationName);
     }
     if(typeof onLoadStatTradeZoneWealth === 'function') onLoadStatTradeZoneWealth();
-    if (typeof loadAllTrades === 'function') loadAllTrades();
+    if (typeof loadIndividualNationMap === 'function') loadIndividualNationMap();
 }
 
 let commentblockregex = /(?<!\\)"""/i;
