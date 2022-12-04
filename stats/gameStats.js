@@ -1046,6 +1046,8 @@ class Stats{
       LargeSiegeEquipment: 1 / 5,
       Cannons: 1 / 10
     }
+
+    this.AdvancesPrerequisites = {};
   }
 }
 
