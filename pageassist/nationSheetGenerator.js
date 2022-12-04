@@ -546,6 +546,22 @@ function createNationSheet(nationName) {
             TableTitle.parentElement.insertBefore(TechTreeImage, TableTitle.nextSibling);
             TableTitle.parentElement.insertBefore(TechtreeButton, TechTreeImage);
         }
+        else if(TableTitle.innerHTML == "Land Stats"){
+            let imgButton = document.createElement("a");
+
+            imgButton.href = `./nation?col=${gameStats.Nations[nationName].Color}`
+            imgButton.target = "_blank";
+            let img = document.createElement("img");
+            img.src = "docs/assets/images/world/small_blank.png";
+            img.title = `see ${nationName} specific area`;
+            img.style.width = "58px";
+            img.classList.add("pixelated");
+
+            imgButton.style.margin = "0em 1em 0.5em 1em";
+            
+            imgButton.appendChild(img);
+            TableTitle.parentElement.insertBefore(imgButton, TableTitle.nextSibling);
+        }
     });
 }
 
