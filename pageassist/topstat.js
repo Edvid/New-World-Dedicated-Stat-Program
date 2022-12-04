@@ -123,6 +123,12 @@ function populateTopStatTable(){
                 imgcell.appendChild(imgButton);
                 rows[r].appendChild(imgcell);
             }
+            
+            if (r == nationNames.length){
+                rows[r].querySelectorAll("td").forEach(element => {
+                    element.style.borderBottom = "5px solid black"; 
+                });
+            }
         }
     }
 }
