@@ -27,37 +27,37 @@ nationImage.onload = async function () {
 
     climateImage.onload = async function () {
         canvas.getContext("2d").drawImage(climateImage, 0, 0, WIDTH, HEIGHT);
-        
+
         climateData = canvas.getContext("2d").getImageData(0, 0, WIDTH, HEIGHT).data;
 
-        for(let j = 0; j < nationData.length / 4; j++){
+        for (let j = 0; j < nationData.length / 4; j++) {
             //if climatedat transparent, make blue
-            if(climateData[j*4+3] == '0'){
-                nationData[j*4] = 128;
-                nationData[j*4+1] = 128;
-                nationData[j*4+2] = 255;
-                nationData[j*4+3] = 255;
+            if (climateData[j * 4 + 3] == '0') {
+                nationData[j * 4] = 128;
+                nationData[j * 4 + 1] = 128;
+                nationData[j * 4 + 2] = 255;
+                nationData[j * 4 + 3] = 255;
             }
             //if nationdat is not the nation color. Make white 
-            else if(rgbToHex([nationData[j*4], nationData[j*4+1], nationData[j*4+2]]) != color) {
-                nationData[j*4] = 255;
-                nationData[j*4+1] = 255;
-                nationData[j*4+2] = 255;
-                nationData[j*4+3] = 255;
+            else if (rgbToHex([nationData[j * 4], nationData[j * 4 + 1], nationData[j * 4 + 2]]) != color) {
+                nationData[j * 4] = 255;
+                nationData[j * 4 + 1] = 255;
+                nationData[j * 4 + 2] = 255;
+                nationData[j * 4 + 3] = 255;
             }
             //nation is always orange
             else {
-                nationData[j*4] = 255;
-                nationData[j*4+1] = 128;
-                nationData[j*4+2] = 0;
-                nationData[j*4+3] = 255;
+                nationData[j * 4] = 255;
+                nationData[j * 4 + 1] = 128;
+                nationData[j * 4 + 2] = 0;
+                nationData[j * 4 + 3] = 255;
             }
-            
+
         }
         let dat = new ImageData(nationData, WIDTH);
-    
+
         canvas.getContext("2d").putImageData(dat, 0, 0);
-        
+
         canvas.style.width = WIDTH + "px";
         canvas.style.height = HEIGHT + "px";
 
@@ -65,58 +65,94 @@ nationImage.onload = async function () {
         await new Promise(resolve => setTimeout(resolve));
 
         //mark pixels for high interconnectivity
-        for(let j = 0; j < nationData.length / 4; j++){
+        for (let j = 0; j < nationData.length / 4; j++) {
             let x = j % WIDTH;
             let y = Math.floor(j / WIDTH);
-            
-            if (j % (100 * WIDTH) == 0 ) {
-                await new Promise(resolve => setTimeout(resolve));
-                console.log(Math.floor(j / WIDTH));
-            }
-                
 
-            if(nationClaimWithinRadius(x,y, 2) && waterAtRelative(x,y)) {
-                nationData[j*4] = 255;
-                nationData[j*4+1] = 150;
-                nationData[j*4+2] = 40;
-                nationData[j*4+3] = 255;
+            if (y % 500 == 0 && x == 0) {
+                await new Promise(resolve => setTimeout(resolve));
+                console.log(y);
+            }
+
+            if (nationClaimWithinRadius(x, y, 2) && waterAtRelative(x, y)) {
+                nationData[j * 4] = 255;
+                nationData[j * 4 + 1] = 192;
+                nationData[j * 4 + 2] = 128;
+                nationData[j * 4 + 3] = 255;
             }
         }
-        
+
         dat = new ImageData(nationData, WIDTH);
         canvas.getContext("2d").putImageData(dat, 0, 0);
-            
+
+        //find those blobs that don't quite make it to 50+
+        let bucketed = [];
+        /* #region  actually initialising the 2D bucketed array */
+
+
+        /* #endregion */
+
+        for (let j = 0; j < nationData.length / 4; j++) {
+            let x = j % WIDTH;
+            let y = Math.floor(j / WIDTH);
+
+            if (y % 500 == 0 && x == 0) {
+                await new Promise(resolve => setTimeout(resolve));
+                console.log(y);
+            }
+
+            if (nationClaimPixelAtRelative(x, y) && bucketed[x][y] == 0) {
+                let thisBucketingSize = [];
+
+                /* #region  actually doing the bucketing */
+
+
+                /* #endregion */
+                //if size is not 50+, colour everything [255, 150, 40, 255]
+                if (!thisBucketingSize.length > 50) {
+
+                    thisBucketingSize.forEach(item => {
+                        let datpos = (item.x + item.y * WIDTH) * 4;
+                        nationData[datpos] = 255;
+                        nationData[datpos + 1] = 150;
+                        nationData[datpos + 2] = 40;
+                        nationData[datpos + 3] = 255;
+                    })
+                }
+            }
+        }
+
     }
 }
 
-function isColorAtRelative(col,x,y) {
-    try{
-        return nationData[(x + y * WIDTH) * 4] == col[0] && 
-        nationData[(x + y * WIDTH) * 4 + 1] == col[1] && 
-        nationData[(x + y * WIDTH) * 4 + 2] == col[2] && 
-        nationData[(x + y * WIDTH) * 4 + 3] == col[3];
+function isColorAtRelative(col, x, y) {
+    try {
+        return nationData[(x + y * WIDTH) * 4] == col[0] &&
+            nationData[(x + y * WIDTH) * 4 + 1] == col[1] &&
+            nationData[(x + y * WIDTH) * 4 + 2] == col[2] &&
+            nationData[(x + y * WIDTH) * 4 + 3] == col[3];
     } catch (e) {
         //console.log("bruh");
         return false;
     }
 };
 
-function nationClaimWithinRadius(x,y,radius){
+function nationClaimWithinRadius(x, y, radius) {
     for (let Y = -radius; Y < radius; Y++) {
         for (let X = -radius; X < radius; X++) {
-            if(X * X + Y * Y > radius * radius) continue;
-            if(nationClaimPixelAtRelative(X + x, Y + y)) return true;
-        }   
+            if (X * X + Y * Y > radius * radius) continue;
+            if (nationClaimPixelAtRelative(X + x, Y + y)) return true;
+        }
     }
     return false;
 }
 
 const orangeArray = [255, 128, 0, 255];
-function nationClaimPixelAtRelative(x,y){
-    return isColorAtRelative(orangeArray, x,y);
+function nationClaimPixelAtRelative(x, y) {
+    return isColorAtRelative(orangeArray, x, y);
 }
 
 const waterArray = [128, 128, 255, 255]
-function waterAtRelative(x,y){
-    return isColorAtRelative(waterArray, x,y);
+function waterAtRelative(x, y) {
+    return isColorAtRelative(waterArray, x, y);
 }
