@@ -86,11 +86,17 @@ nationImage.onload = async function () {
         canvas.getContext("2d").putImageData(dat, 0, 0);
 
         //find those blobs that don't quite make it to 50+
-        let bucketed = [];
         /* #region  actually initialising the 2D bucketed array */
-
+        let bucketed = new Array(WIDTH);
+        for(let x = 0; x < bucketed.length; x++){
+            bucketed[x] = new Array(HEIGHT);
+            for(let y = 0; y < bucketed[x].length; y++){
+                bucketed[x][y] = 0;
+            }
+        }
 
         /* #endregion */
+
 
         for (let j = 0; j < nationData.length / 4; j++) {
             let x = j % WIDTH;
@@ -106,7 +112,7 @@ nationImage.onload = async function () {
 
                 /* #region  actually doing the bucketing */
 
-
+                
                 /* #endregion */
                 //if size is not 50+, colour everything [255, 150, 40, 255]
                 if (!thisBucketingSize.length > 50) {
