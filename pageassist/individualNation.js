@@ -40,9 +40,9 @@ nationImage.onload = function () {
             }
             //if nationdat is not the nation color. Make white 
             else if(rgbToHex([nationData[j*4], nationData[j*4+1], nationData[j*4+2]]) != color) {
-                nationData[j*4] = 0;
-                nationData[j*4+1] = 0;
-                nationData[j*4+2] = 0;
+                nationData[j*4] = 255;
+                nationData[j*4+1] = 255;
+                nationData[j*4+2] = 255;
                 nationData[j*4+3] = 255;
             }
             
@@ -51,8 +51,8 @@ nationImage.onload = function () {
     
         canvas.getContext("2d").putImageData(dat, 0, 0);
         
-        canvas.style.width = WIDTH;
-        canvas.style.height = HEIGHT;
+        canvas.style.width = WIDTH + "px";
+        canvas.style.height = HEIGHT + "px";
 
         console.log("hi");
     }
