@@ -151,7 +151,6 @@ nationImage.onload = async function () {
                 yetToFillStack.push({x: x, y: y});
 
                 while(yetToFillStack.length > 0) {
-                    debugger;
                     bucketPixels();
                 }
                     
@@ -171,7 +170,14 @@ nationImage.onload = async function () {
                 }
             }
         }
+        
+        dat = new ImageData(nationData, WIDTH);
+        canvas.getContext("2d").putImageData(dat, 0, 0);
+        //find which coasts can be reached with small and big settlements considered
 
+        //done
+
+        console.log("actually done :)))");
     }
 }
 
@@ -183,7 +189,6 @@ function isColorAtCoord(col, x, y) {
             nationData[redRefOfPixel + 2] == col[2] &&
             nationData[redRefOfPixel + 3] == col[3];
     } catch (e) {
-        //console.log("bruh");
         return false;
     }
 };
@@ -191,7 +196,7 @@ function isColorAtCoord(col, x, y) {
 function setColorAtCoord(x, y, col){
     let redRefOfPixel = (x + y * WIDTH) * 4;
     for (let ci = 0; ci < 4; ci++)
-        nationData[redRefOfPixel + ci] = waterColorArray[ci];
+        nationData[redRefOfPixel + ci] = col[ci];
 }
 
 function nationClaimWithinRadius(x, y, radius) {
