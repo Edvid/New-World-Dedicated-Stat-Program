@@ -1,6 +1,13 @@
-
 const WIDTH = 8192;
 const HEIGHT = 3365;
+
+const islandColorArray = [255, 128, 0, 255];
+const connectiveIslandColorArray = [255, 192, 128, 255];
+const waterColorArray = [128, 128, 255, 255];
+const smallIslandFillColorArray = [0, 128, 0, 255];
+const connectiveSmallIslandFillColorArray = [128, 255, 128, 255];
+const bigislandFillColorArray = [255, 144, 0, 255];
+const connectiveBigIslandFillColorArray = [255, 200, 136, 255];
 
 let color = new URLSearchParams(window.location.search).get('col')
 let canvas = document.querySelector("canvas");
@@ -33,10 +40,8 @@ nationImage.onload = async function () {
         for (let j = 0; j < nationData.length / 4; j++) {
             //if climatedat transparent, make blue
             if (climateData[j * 4 + 3] == '0') {
-                nationData[j * 4] = 128;
-                nationData[j * 4 + 1] = 128;
-                nationData[j * 4 + 2] = 255;
-                nationData[j * 4 + 3] = 255;
+                for (let ci = 0; ci < 4; ci++)
+                    nationData[j * 4 + ci] = waterColorArray[ci];
             }
             //if nationdat is not the nation color. Make white 
             else if (rgbToHex([nationData[j * 4], nationData[j * 4 + 1], nationData[j * 4 + 2]]) != color) {
@@ -47,10 +52,8 @@ nationImage.onload = async function () {
             }
             //nation is always orange
             else {
-                nationData[j * 4] = 255;
-                nationData[j * 4 + 1] = 128;
-                nationData[j * 4 + 2] = 0;
-                nationData[j * 4 + 3] = 255;
+                for (let ci = 0; ci < 4; ci++)
+                    nationData[j * 4 + ci] = islandColorArray[ci];
             }
 
         }
@@ -74,11 +77,10 @@ nationImage.onload = async function () {
                 console.log(y);
             }
 
-            if (nationClaimWithinRadius(x, y, 2) && waterAtRelative(x, y)) {
-                nationData[j * 4] = 255;
-                nationData[j * 4 + 1] = 192;
-                nationData[j * 4 + 2] = 128;
-                nationData[j * 4 + 3] = 255;
+            if (nationClaimWithinRadius(x, y, 2) && waterAtCoord(x, y)) {
+                
+                for (let ci = 0; ci < 4; ci++)
+                    nationData[j * 4 + ci] = connectiveIslandColorArray[ci];
             }
         }
 
@@ -86,44 +88,86 @@ nationImage.onload = async function () {
         canvas.getContext("2d").putImageData(dat, 0, 0);
 
         //find those blobs that don't quite make it to 50+
-        /* #region  actually initialising the 2D bucketed array */
-        let bucketed = new Array(WIDTH);
-        for(let x = 0; x < bucketed.length; x++){
-            bucketed[x] = new Array(HEIGHT);
-            for(let y = 0; y < bucketed[x].length; y++){
-                bucketed[x][y] = 0;
-            }
-        }
 
-        /* #endregion */
-
-
+        let then = Date.now();
         for (let j = 0; j < nationData.length / 4; j++) {
             let x = j % WIDTH;
             let y = Math.floor(j / WIDTH);
 
-            if (y % 500 == 0 && x == 0) {
+            let now = Date.now();
+            if (now - then > 2000) {
                 await new Promise(resolve => setTimeout(resolve));
                 console.log(y);
+                then = now;
             }
 
-            if (nationClaimPixelAtRelative(x, y) && bucketed[x][y] == 0) {
-                let thisBucketingSize = [];
+            if (nationClaimPixelAtCoord(x, y)) {
+                let IslandSize = 0;
 
-                /* #region  actually doing the bucketing */
+                /* #region  actually doing the bucketing - Credit to Spongman on https://stackoverflow.com/questions/51115359/flood-fill-algorithm-for-bucket-tool-in-p5-js-electron-paint-application */
 
+                let oldColor = islandColorArray;
+                let oldConnectiveColor = connectiveIslandColorArray;
+                let fillColor = smallIslandFillColorArray;
+                let fillConnectiveColor = connectiveSmallIslandFillColorArray;
                 
+                let yetToFillStack = [];
+
+                function bucketPixels(){
+                    function matches(c, x, y){
+                        let redRefOfPixel = (x + y * WIDTH) * 4;
+                        for(let ci = 0; ci < c.length; ci++){
+                            if (c[ci] != nationData[redRefOfPixel + ci]) return false;
+                        }
+                        return true;
+                    }
+
+                    if(!yetToFillStack.length) return;
+
+                    let p = yetToFillStack.pop();
+                    let beginX = p.x, beginY = p.y;
+                    while(beginX > 0 && matches(oldColor, beginX - 1, beginY))
+                        beginX--;
+    
+                    let spanAbove = false, spanBelow = false;
+                    
+                    for (let traverserX = beginX + 1; traverserX < WIDTH && matches(oldColor, traverserX, beginY); ++traverserX){
+                        setColorAtCoord(traverserX, beginY, fillColor);
+                        IslandSize++;
+
+                        if (beginY > 0 && spanAbove !== matches(oldColor, traverserX, beginY - 1)) {
+                            if (!spanAbove)
+                                yetToFillStack.push({ x: traverserX, y: beginY - 1 });
+                            spanAbove = !spanAbove;
+                          }
+                          if (beginY < HEIGHT - 1 && spanBelow !== matches(oldColor, traverserX, beginY + 1)) {
+                            if (!spanBelow)
+                                yetToFillStack.push({ x: traverserX, y: beginY + 1 });
+                            spanBelow = !spanBelow;
+                          }
+                    }
+                }
+
+                yetToFillStack.push({x: x, y: y});
+
+                while(yetToFillStack.length > 0) {
+                    debugger;
+                    bucketPixels();
+                }
+                    
                 /* #endregion */
                 //if size is not 50+, colour everything [255, 150, 40, 255]
-                if (!thisBucketingSize.length > 50) {
+                if (IslandSize > 50) {
+                    //fill back with bigIslandColor
+                    
+                    oldColor = smallIslandFillColorArray;
+                    oldConnectiveColor = connectiveSmallIslandFillColorArray;
+                    fillColor = bigislandFillColorArray;
+                    fillConnectiveColor = connectiveBigIslandFillColorArray;
 
-                    thisBucketingSize.forEach(item => {
-                        let datpos = (item.x + item.y * WIDTH) * 4;
-                        nationData[datpos] = 255;
-                        nationData[datpos + 1] = 150;
-                        nationData[datpos + 2] = 40;
-                        nationData[datpos + 3] = 255;
-                    })
+                    yetToFillStack.push({x: x, y: y});
+
+                    while(yetToFillStack.length > 0) bucketPixels();
                 }
             }
         }
@@ -131,34 +175,39 @@ nationImage.onload = async function () {
     }
 }
 
-function isColorAtRelative(col, x, y) {
+function isColorAtCoord(col, x, y) {
+    let redRefOfPixel = (x + y * WIDTH) * 4;
     try {
-        return nationData[(x + y * WIDTH) * 4] == col[0] &&
-            nationData[(x + y * WIDTH) * 4 + 1] == col[1] &&
-            nationData[(x + y * WIDTH) * 4 + 2] == col[2] &&
-            nationData[(x + y * WIDTH) * 4 + 3] == col[3];
+        return nationData[redRefOfPixel] == col[0] &&
+            nationData[redRefOfPixel + 1] == col[1] &&
+            nationData[redRefOfPixel + 2] == col[2] &&
+            nationData[redRefOfPixel + 3] == col[3];
     } catch (e) {
         //console.log("bruh");
         return false;
     }
 };
 
+function setColorAtCoord(x, y, col){
+    let redRefOfPixel = (x + y * WIDTH) * 4;
+    for (let ci = 0; ci < 4; ci++)
+        nationData[redRefOfPixel + ci] = waterColorArray[ci];
+}
+
 function nationClaimWithinRadius(x, y, radius) {
     for (let Y = -radius; Y < radius; Y++) {
         for (let X = -radius; X < radius; X++) {
             if (X * X + Y * Y > radius * radius) continue;
-            if (nationClaimPixelAtRelative(X + x, Y + y)) return true;
+            if (nationClaimPixelAtCoord(X + x, Y + y)) return true;
         }
     }
     return false;
 }
 
-const orangeArray = [255, 128, 0, 255];
-function nationClaimPixelAtRelative(x, y) {
-    return isColorAtRelative(orangeArray, x, y);
+function nationClaimPixelAtCoord(x, y) {
+    return isColorAtCoord(islandColorArray, x, y);
 }
 
-const waterArray = [128, 128, 255, 255]
-function waterAtRelative(x, y) {
-    return isColorAtRelative(waterArray, x, y);
+function waterAtCoord(x, y) {
+    return isColorAtCoord(waterColorArray, x, y);
 }
