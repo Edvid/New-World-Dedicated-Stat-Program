@@ -131,7 +131,7 @@ nationImage.onload = async function () {
     
                     let spanAbove = false, spanBelow = false;
                     
-                    for (let traverserX = beginX + 1; traverserX < WIDTH && matches(oldColor, traverserX, beginY); ++traverserX){
+                    for (let traverserX = beginX; traverserX < WIDTH && matches(oldColor, traverserX, beginY); ++traverserX){
                         setColorAtCoord(traverserX, beginY, fillColor);
                         IslandSize++;
 
