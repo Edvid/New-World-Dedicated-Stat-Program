@@ -131,16 +131,19 @@ nationImage.onload = async function () {
     
                     let spanAbove = false, spanBelow = false;
                     
-                    for (let traverserX = beginX; traverserX < WIDTH && matches(oldColor, traverserX, beginY); ++traverserX){
-                        setColorAtCoord(traverserX, beginY, fillColor);
-                        IslandSize++;
+                    for (let traverserX = beginX; traverserX < WIDTH && (matches(oldColor, traverserX, beginY) || matches(oldConnectiveColor, traverserX, beginY)); ++traverserX){
+                        if(matches(oldColor, traverserX, beginY)){
+                            setColorAtCoord(traverserX, beginY, fillColor);
+                            IslandSize++;
+                        } else
+                            setColorAtCoord(traverserX, beginY, fillConnectiveColor);
 
-                        if (beginY > 0 && spanAbove !== matches(oldColor, traverserX, beginY - 1)) {
+                        if (beginY > 0 && spanAbove !== (matches(oldColor, traverserX, beginY - 1) || matches(oldConnectiveColor, traverserX, beginY - 1))) {
                             if (!spanAbove)
                                 yetToFillStack.push({ x: traverserX, y: beginY - 1 });
                             spanAbove = !spanAbove;
                           }
-                          if (beginY < HEIGHT - 1 && spanBelow !== matches(oldColor, traverserX, beginY + 1)) {
+                          if (beginY < HEIGHT - 1 && spanBelow !== (matches(oldColor, traverserX, beginY + 1) || matches(oldConnectiveColor, traverserX, beginY + 1))) {
                             if (!spanBelow)
                                 yetToFillStack.push({ x: traverserX, y: beginY + 1 });
                             spanBelow = !spanBelow;
