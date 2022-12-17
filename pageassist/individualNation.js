@@ -126,7 +126,7 @@ nationImage.onload = async function () {
 
                     let p = yetToFillStack.pop();
                     let beginX = p.x, beginY = p.y;
-                    while(beginX > 0 && matches(oldColor, beginX - 1, beginY))
+                    while(beginX > 0 && (matches(oldColor, beginX - 1, beginY) || matches(oldConnectiveColor, beginX - 1, beginY)))
                         beginX--;
     
                     let spanAbove = false, spanBelow = false;
