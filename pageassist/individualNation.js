@@ -240,7 +240,9 @@ nationImage.onload = async function () {
                 if(distanceFromClaim > shipRangeMid) growFromColours.push(distanceFromClaim % 2 == 0 ? shipRangeHighColor : shipRangeHighColor2);
 
                 //if(distanceFromClaim > 6) debugger;
-                let growIntoColours = [waterColorArray, connectiveBigIslandFillColorArray, paintColorMinor];
+                let growIntoColours = [waterColorArray, connectiveBigIslandFillColorArray];
+                if(distanceFromClaim < shipRangeMid) growFromColours.push(distanceFromClaim % 2 == 0 ? shipRangeMidSmallColor : shipRangeMidSmallColor2);
+                if(distanceFromClaim < shipRangeHigh) growFromColours.push(distanceFromClaim % 2 == 0 ? shipRangeHighSmallColor : shipRangeHighSmallColor2);
                 if(isOneOfColorsAtCoord(growIntoColours,x,y) && OneNeighbourIsOneOfColors(growFromColours, x, y)){
                     setColorAtCoord(x,y, paintColor);
                 }
