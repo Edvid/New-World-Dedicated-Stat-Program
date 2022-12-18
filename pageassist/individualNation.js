@@ -1,23 +1,37 @@
 const WIDTH = 8192;
 const HEIGHT = 3365;
 
-const shipRangeLow = 3;
-const shipRangeMid = 15;
-const shipRangeHigh = 25; 
+const shipRangeLow = 4;
+const shipRangeMid = 16;
+const shipRangeHigh = 26; 
+
+const waterColorArray = [128, 128, 255, 255];
 
 const islandColorArray = [255, 128, 0, 255];
 const connectiveIslandColorArray = [255, 192, 128, 255];
-const waterColorArray = [128, 128, 255, 255];
+
 const smallIslandFillColorArray = [0, 128, 0, 255];
 const connectiveSmallIslandFillColorArray = [128, 255, 128, 255];
+
 const bigIslandFillColorArray = [255, 144, 0, 255];
 const connectiveBigIslandFillColorArray = [255, 200, 136, 255];
+
 const shipRangeLowColor = [20, 220, 144, 255];
 const shipRangeMidColor = [30, 144, 90, 255];
 const shipRangeHighColor = [22, 98, 48, 255];
+
+const shipRangeLowColor2 = [21, 220, 144, 255];
+const shipRangeMidColor2 = [31, 144, 90, 255];
+const shipRangeHighColor2 = [23, 98, 48, 255];
+
+
 const shipRangeLowSmallColor = [20, 212, 144, 255];
 const shipRangeMidSmallColor = [30, 136, 90, 255];
 const shipRangeHighSmallColor = [22, 90, 48, 255];
+
+const shipRangeLowSmallColor2 = [21, 212, 144, 255];
+const shipRangeMidSmallColor2 = [31, 136, 90, 255];
+const shipRangeHighSmallColor2 = [23, 90, 48, 255];
 
 
 let color = new URLSearchParams(window.location.search).get('col')
@@ -189,26 +203,43 @@ nationImage.onload = async function () {
         canvas.getContext("2d").putImageData(dat, 0, 0);
         //find which coasts can be reached with small and big settlements considered
 
+        
+        then = Date.now();
         for(let distanceFromClaim = 0; distanceFromClaim < shipRangeHigh; distanceFromClaim++){
             
             let paintColor;
             let paintColorMinor;
 
-            if(distanceFromClaim <= shipRangeLow) paintColor = shipRangeLowColor;
-            else if(distanceFromClaim <= shipRangeMid) paintColor = shipRangeMidColor;
-            else if(distanceFromClaim <= shipRangeHigh) paintColor = shipRangeHighColor;
+            if(distanceFromClaim <= shipRangeLow) paintColor = distanceFromClaim % 2 == 1 ? shipRangeLowColor : shipRangeLowColor2;
+            else if(distanceFromClaim <= shipRangeMid) paintColor = distanceFromClaim % 2 == 1 ? shipRangeMidColor : shipRangeMidColor2;
+            else if(distanceFromClaim <= shipRangeHigh) paintColor = distanceFromClaim % 2 == 1 ? shipRangeHighColor : shipRangeHighColor2;
 
-            if(distanceFromClaim <= shipRangeLow) paintColorMinor = shipRangeLowSmallColor;
-            else if(distanceFromClaim <= shipRangeMid) paintColorMinor = shipRangeMidSmallColor;
-            else if(distanceFromClaim <= shipRangeHigh) paintColorMinor = shipRangeHighSmallColor;
+            if(distanceFromClaim <= shipRangeLow) paintColorMinor = distanceFromClaim % 4 > 1 ? shipRangeLowSmallColor : shipRangeLowSmallColor2;
+            else if(distanceFromClaim <= shipRangeMid) paintColorMinor = distanceFromClaim % 4 > 1 ? shipRangeMidSmallColor : shipRangeMidSmallColor2;
+            else if(distanceFromClaim <= shipRangeHigh) paintColorMinor = distanceFromClaim % 4 > 1 ? shipRangeHighSmallColor : shipRangeHighSmallColor2;
 
 
             for(let j = 0; j < nationData.length / 4; j++){
                 let x = j % WIDTH;
                 let y = Math.floor(j / WIDTH);
+
+                let now = Date.now();
+                if(now - then > 2000) {
+                    dat = new ImageData(nationData, WIDTH);
+                    canvas.getContext("2d").putImageData(dat, 0, 0);
+                    await new Promise(resolve => setTimeout(resolve));
+                    console.log(`row: ${y}, iteration: ${distanceFromClaim}`);
+                    then = now;
+                }
+
                 //big island stuff
 
-                let growFromColours = [bigIslandFillColorArray, shipRangeLowColor, shipRangeMidColor, shipRangeHighColor];
+                let growFromColours = [bigIslandFillColorArray];
+                growFromColours.push(distanceFromClaim % 2 == 0 ? shipRangeLowColor : shipRangeLowColor2);
+                if(distanceFromClaim > shipRangeLow) growFromColours.push(distanceFromClaim % 2 == 0 ? shipRangeMidColor : shipRangeMidColor2);
+                if(distanceFromClaim > shipRangeMid) growFromColours.push(distanceFromClaim % 2 == 0 ? shipRangeHighColor : shipRangeHighColor2);
+
+                //if(distanceFromClaim > 6) debugger;
                 let growIntoColours = [waterColorArray, connectiveBigIslandFillColorArray, paintColorMinor];
                 if(isOneOfColorsAtCoord(growIntoColours,x,y) && OneNeighbourIsOneOfColors(growFromColours, x, y)){
                     setColorAtCoord(x,y, paintColor);
@@ -218,18 +249,15 @@ nationImage.onload = async function () {
                 //only if even number iteration, will the small island ranges grow
                 if(distanceFromClaim % 2 > 0) continue;
 
-                growFromColours = [smallIslandFillColorArray, shipRangeLowSmallColor, shipRangeMidSmallColor, shipRangeHighSmallColor];
+                growFromColours = [smallIslandFillColorArray];
+                growFromColours.push(distanceFromClaim % 4 < 2 ? shipRangeLowSmallColor : shipRangeLowSmallColor2);
+                if(distanceFromClaim > shipRangeLow) growFromColours.push(distanceFromClaim % 4 < 2 ? shipRangeMidSmallColor : shipRangeMidSmallColor2);
+                if(distanceFromClaim > shipRangeMid) growFromColours.push(distanceFromClaim % 4 < 2 ? shipRangeHighSmallColor : shipRangeHighSmallColor2);
+
                 growIntoColours = [waterColorArray, connectiveSmallIslandFillColorArray];
                 if(isOneOfColorsAtCoord(growIntoColours, x, y) && OneNeighbourIsOneOfColors(growFromColours, x, y)){
                     setColorAtCoord(x,y, paintColorMinor);
                 }
-            }
-
-            if(distanceFromClaim % 5 == 0) {
-                dat = new ImageData(nationData, WIDTH);
-                canvas.getContext("2d").putImageData(dat, 0, 0);
-                await new Promise(resolve => setTimeout(resolve));
-                console.log(distanceFromClaim);
             }
         }
 
