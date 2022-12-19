@@ -232,28 +232,22 @@ nationImage.onload = async function () {
 
         
         then = Date.now();
-        for(let distanceFromClaim = 0; distanceFromClaim < shipRangeHigh; distanceFromClaim++){
-            
+        //small island stuff first
+        //small islands half half range
+        for(let distanceFromClaim = 0; distanceFromClaim < shipRangeHigh / 2; distanceFromClaim++){
             let paintColor;
-            let paintColorMinor;
 
-            if(distanceFromClaim <= shipRangeLow) paintColor = shipRangeLowColor;
-            else if(distanceFromClaim <= shipRangeMid) paintColor = shipRangeMidColor;
-            else if(distanceFromClaim <= shipRangeHigh) paintColor = shipRangeHighColor;
+            if(distanceFromClaim <= shipRangeLow / 2) paintColor = shipRangeLowSmallColor;
+            else if(distanceFromClaim <= shipRangeMid / 2) paintColor = shipRangeMidSmallColor;
+            else if(distanceFromClaim <= shipRangeHigh / 2) paintColor = shipRangeHighSmallColor;
+            
+            let SetRead = distanceFromClaim % 2 == 0 ? SmallIslandGrowthSet : SmallIslandGrowthSet2;
+            let SetWrite = distanceFromClaim % 2 == 1 ? SmallIslandGrowthSet : SmallIslandGrowthSet2;
 
-            if(distanceFromClaim <= shipRangeLow) paintColorMinor = shipRangeLowSmallColor;
-            else if(distanceFromClaim <= shipRangeMid) paintColorMinor = shipRangeMidSmallColor;
-            else if(distanceFromClaim <= shipRangeHigh) paintColorMinor = shipRangeHighSmallColor;
-
-            //small island stuff first
-
-            let SmallIslandSetRead = distanceFromClaim % 2 == 0 ? SmallIslandGrowthSet : SmallIslandGrowthSet2;
-            let SmallIslandSetWrite = distanceFromClaim % 2 == 1 ? SmallIslandGrowthSet : SmallIslandGrowthSet2;
-
-            SmallIslandSetWrite.clear();
-
+            SetWrite.clear();
+            
             let growFromColours, growIntoColours;
-            for(const j of SmallIslandSetRead){
+            for(const j of SetRead){
                 let x = j % WIDTH;
                 let y = Math.floor(j / WIDTH);
 
@@ -273,28 +267,36 @@ nationImage.onload = async function () {
 
                 growIntoColours = [waterColorArray];
                 if(isOneOfColorsAtCoord(growIntoColours, x, y) && OneNeighbourIsOneOfColors(growFromColours, x, y)){
-                    setColorAtCoord(x,y, paintColorMinor);
+                    setColorAtCoord(x,y, paintColor);
 
                     //add neighbours of this newly coloured pixel
-                    SmallIslandSetWrite.add(j + 1);
-                    SmallIslandSetWrite.add(j + 1 + WIDTH);
-                    SmallIslandSetWrite.add(j + WIDTH);
-                    SmallIslandSetWrite.add(j - 1 + WIDTH);
-                    SmallIslandSetWrite.add(j - 1);
-                    SmallIslandSetWrite.add(j - 1 - WIDTH);
-                    SmallIslandSetWrite.add(j - WIDTH);
-                    SmallIslandSetWrite.add(j + 1 - WIDTH);
+                    SetWrite.add(j + 1);
+                    SetWrite.add(j + 1 + WIDTH);
+                    SetWrite.add(j + WIDTH);
+                    SetWrite.add(j - 1 + WIDTH);
+                    SetWrite.add(j - 1);
+                    SetWrite.add(j - 1 - WIDTH);
+                    SetWrite.add(j - WIDTH);
+                    SetWrite.add(j + 1 - WIDTH);
                 }
             }
-            
-            //big island stuff next
-            
-            let BigIslandSetRead = distanceFromClaim % 2 == 0 ? BigIslandGrowthSet : BigIslandGrowthSet2;
-            let BigIslandSetWrite = distanceFromClaim % 2 == 1 ? BigIslandGrowthSet : BigIslandGrowthSet2;
-            
-            BigIslandSetWrite.clear();
+        }
 
-            for(const j of BigIslandSetRead){
+        //big island stuff next
+        for(let distanceFromClaim = 0; distanceFromClaim < shipRangeHigh; distanceFromClaim++){
+            
+            let paintColor;
+            
+            if(distanceFromClaim <= shipRangeLow) paintColor = shipRangeLowColor;
+            else if(distanceFromClaim <= shipRangeMid) paintColor = shipRangeMidColor;
+            else if(distanceFromClaim <= shipRangeHigh) paintColor = shipRangeHighColor;
+            
+            let SetRead = distanceFromClaim % 2 == 0 ? BigIslandGrowthSet : BigIslandGrowthSet2;
+            let SetWrite = distanceFromClaim % 2 == 1 ? BigIslandGrowthSet : BigIslandGrowthSet2;
+            
+            SetWrite.clear();
+
+            for(const j of SetRead){
                 let x = j % WIDTH;
                 let y = Math.floor(j / WIDTH);
 
@@ -320,14 +322,14 @@ nationImage.onload = async function () {
 
                     
                     //add neighbours of this newly coloured pixel
-                    BigIslandSetWrite.add(j + 1);
-                    BigIslandSetWrite.add(j + 1 + WIDTH);
-                    BigIslandSetWrite.add(j + WIDTH);
-                    BigIslandSetWrite.add(j - 1 + WIDTH);
-                    BigIslandSetWrite.add(j - 1);
-                    BigIslandSetWrite.add(j - 1 - WIDTH);
-                    BigIslandSetWrite.add(j - WIDTH);
-                    BigIslandSetWrite.add(j + 1 - WIDTH);
+                    SetWrite.add(j + 1);
+                    SetWrite.add(j + 1 + WIDTH);
+                    SetWrite.add(j + WIDTH);
+                    SetWrite.add(j - 1 + WIDTH);
+                    SetWrite.add(j - 1);
+                    SetWrite.add(j - 1 - WIDTH);
+                    SetWrite.add(j - WIDTH);
+                    SetWrite.add(j + 1 - WIDTH);
                 }
             }
         }
