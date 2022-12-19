@@ -313,7 +313,6 @@ nationImage.onload = async function () {
 
                 let now = Date.now();
                 if(now - then > 500) {
-                    debugger;
                     dat = new ImageData(nationData, WIDTH);
                     canvas.getContext("2d").putImageData(dat, 0, 0);
                     await new Promise(resolve => setTimeout(resolve));
@@ -327,8 +326,8 @@ nationImage.onload = async function () {
                 if(distanceFromClaim > shipRangeMid) growFromColours.push(shipRangeHighColor);
 
                 growIntoColours = [waterColorArray, connectiveBigIslandFillColorArray];
-                if(distanceFromClaim < shipRangeMid) growFromColours.push(shipRangeMidSmallColor);
-                if(distanceFromClaim < shipRangeHigh) growFromColours.push(shipRangeHighSmallColor);
+                if(distanceFromClaim < shipRangeMid) growIntoColours.push(shipRangeMidSmallColor);
+                if(distanceFromClaim < shipRangeHigh) growIntoColours.push(shipRangeHighSmallColor);
                 if(isOneOfColorsAtCoord(growIntoColours, x, y) && OneNeighbourIsOneOfColors(growFromColours, x, y)){
                     setColorAtCoord(x,y, paintColor);
 
