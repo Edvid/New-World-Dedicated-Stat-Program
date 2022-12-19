@@ -358,7 +358,7 @@ nationImage.onload = async function () {
 
         let longNow = Date.now();
 
-        console.log(`actually done in ${longNow - longThen / 1000} seconds`);
+        console.log(`done in ${(longNow - longThen) / 1000} seconds`);
     }
 }
 
