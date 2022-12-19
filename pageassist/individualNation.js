@@ -65,7 +65,7 @@ nationImage.onload = async function () {
                     nationData[j * 4 + ci] = waterColorArray[ci];
             }
             //if nationdat is not the nation color. Make white 
-            else if (rgbToHex([nationData[j * 4], nationData[j * 4 + 1], nationData[j * 4 + 2]]) != color) {
+            else if (rgbToHex([nationData[j * 4], nationData[j * 4 + 1], nationData[j * 4 + 2]]) != color.toString()) {
                 nationData[j * 4] = 255;
                 nationData[j * 4 + 1] = 255;
                 nationData[j * 4 + 2] = 255;
