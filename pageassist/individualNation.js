@@ -20,18 +20,10 @@ const shipRangeLowColor = [20, 220, 144, 255];
 const shipRangeMidColor = [30, 144, 90, 255];
 const shipRangeHighColor = [22, 98, 48, 255];
 
-const shipRangeLowColor2 = [21, 220, 144, 255];
-const shipRangeMidColor2 = [31, 144, 90, 255];
-const shipRangeHighColor2 = [23, 98, 48, 255];
-
 
 const shipRangeLowSmallColor = [20, 212, 144, 255];
 const shipRangeMidSmallColor = [30, 136, 90, 255];
 const shipRangeHighSmallColor = [22, 90, 48, 255];
-
-const shipRangeLowSmallColor2 = [21, 212, 144, 255];
-const shipRangeMidSmallColor2 = [31, 136, 90, 255];
-const shipRangeHighSmallColor2 = [23, 90, 48, 255];
 
 
 let color = new URLSearchParams(window.location.search).get('col')
@@ -201,6 +193,41 @@ nationImage.onload = async function () {
         
         dat = new ImageData(nationData, WIDTH);
         canvas.getContext("2d").putImageData(dat, 0, 0);
+
+        //remove connective stuff
+
+        for (let j = 0; j < nationData.length / 4; j++) {
+            let x = j % WIDTH;
+            let y = Math.floor(j / WIDTH);
+
+            if(isOneOfColorsAtCoord([connectiveBigIslandFillColorArray, connectiveSmallIslandFillColorArray], x, y))
+                setColorAtCoord(x, y, waterColorArray);
+        }
+
+        dat = new ImageData(nationData, WIDTH);
+        canvas.getContext("2d").putImageData(dat, 0, 0);
+        
+        //mark claimed coasts
+
+        SmallIslandGrowthSet = new Set();
+        BigIslandGrowthSet = new Set();
+
+        SmallIslandGrowthSet2 = new Set();
+        BigIslandGrowthSet2 = new Set();
+        
+
+        for (let j = 0; j < nationData.length / 4; j++) {
+            let x = j % WIDTH;
+            let y = Math.floor(j / WIDTH);
+
+            if(isColorAtCoord(waterColorArray, x, y) && OneNeighbourIsColor(bigIslandFillColorArray, x, y))
+                BigIslandGrowthSet.add(j);
+
+            if(isColorAtCoord(waterColorArray, x, y) && OneNeighbourIsColor(smallIslandFillColorArray, x, y))
+                SmallIslandGrowthSet.add(j);
+        }
+
+
         //find which coasts can be reached with small and big settlements considered
 
         
@@ -210,16 +237,23 @@ nationImage.onload = async function () {
             let paintColor;
             let paintColorMinor;
 
-            if(distanceFromClaim <= shipRangeLow) paintColor = distanceFromClaim % 2 == 1 ? shipRangeLowColor : shipRangeLowColor2;
-            else if(distanceFromClaim <= shipRangeMid) paintColor = distanceFromClaim % 2 == 1 ? shipRangeMidColor : shipRangeMidColor2;
-            else if(distanceFromClaim <= shipRangeHigh) paintColor = distanceFromClaim % 2 == 1 ? shipRangeHighColor : shipRangeHighColor2;
+            if(distanceFromClaim <= shipRangeLow) paintColor = shipRangeLowColor;
+            else if(distanceFromClaim <= shipRangeMid) paintColor = shipRangeMidColor;
+            else if(distanceFromClaim <= shipRangeHigh) paintColor = shipRangeHighColor;
 
-            if(distanceFromClaim <= shipRangeLow) paintColorMinor = distanceFromClaim % 4 > 1 ? shipRangeLowSmallColor : shipRangeLowSmallColor2;
-            else if(distanceFromClaim <= shipRangeMid) paintColorMinor = distanceFromClaim % 4 > 1 ? shipRangeMidSmallColor : shipRangeMidSmallColor2;
-            else if(distanceFromClaim <= shipRangeHigh) paintColorMinor = distanceFromClaim % 4 > 1 ? shipRangeHighSmallColor : shipRangeHighSmallColor2;
+            if(distanceFromClaim <= shipRangeLow) paintColorMinor = shipRangeLowSmallColor;
+            else if(distanceFromClaim <= shipRangeMid) paintColorMinor = shipRangeMidSmallColor;
+            else if(distanceFromClaim <= shipRangeHigh) paintColorMinor = shipRangeHighSmallColor;
 
+            //small island stuff first
 
-            for(let j = 0; j < nationData.length / 4; j++){
+            let SmallIslandSetRead = distanceFromClaim % 2 == 0 ? SmallIslandGrowthSet : SmallIslandGrowthSet2;
+            let SmallIslandSetWrite = distanceFromClaim % 2 == 1 ? SmallIslandGrowthSet : SmallIslandGrowthSet2;
+
+            SmallIslandSetWrite.clear();
+
+            let growFromColours, growIntoColours;
+            for(const j of SmallIslandSetRead){
                 let x = j % WIDTH;
                 let y = Math.floor(j / WIDTH);
 
@@ -228,37 +262,72 @@ nationImage.onload = async function () {
                     dat = new ImageData(nationData, WIDTH);
                     canvas.getContext("2d").putImageData(dat, 0, 0);
                     await new Promise(resolve => setTimeout(resolve));
-                    console.log(`row: ${y}, iteration: ${distanceFromClaim}`);
+                    console.log(`Small >> row: ${y}, iteration: ${distanceFromClaim}`);
                     then = now;
                 }
 
-                //big island stuff
-
-                let growFromColours = [bigIslandFillColorArray];
-                growFromColours.push(distanceFromClaim % 2 == 0 ? shipRangeLowColor : shipRangeLowColor2);
-                if(distanceFromClaim > shipRangeLow) growFromColours.push(distanceFromClaim % 2 == 0 ? shipRangeMidColor : shipRangeMidColor2);
-                if(distanceFromClaim > shipRangeMid) growFromColours.push(distanceFromClaim % 2 == 0 ? shipRangeHighColor : shipRangeHighColor2);
-
-                //if(distanceFromClaim > 6) debugger;
-                let growIntoColours = [waterColorArray, connectiveBigIslandFillColorArray];
-                if(distanceFromClaim < shipRangeMid) growFromColours.push(distanceFromClaim % 2 == 0 ? shipRangeMidSmallColor : shipRangeMidSmallColor2);
-                if(distanceFromClaim < shipRangeHigh) growFromColours.push(distanceFromClaim % 2 == 0 ? shipRangeHighSmallColor : shipRangeHighSmallColor2);
-                if(isOneOfColorsAtCoord(growIntoColours,x,y) && OneNeighbourIsOneOfColors(growFromColours, x, y)){
-                    setColorAtCoord(x,y, paintColor);
-                }
-
-                //small island stuff
-                //only if even number iteration, will the small island ranges grow
-                if(distanceFromClaim % 2 > 0) continue;
-
                 growFromColours = [smallIslandFillColorArray];
-                growFromColours.push(distanceFromClaim % 4 < 2 ? shipRangeLowSmallColor : shipRangeLowSmallColor2);
-                if(distanceFromClaim > shipRangeLow) growFromColours.push(distanceFromClaim % 4 < 2 ? shipRangeMidSmallColor : shipRangeMidSmallColor2);
-                if(distanceFromClaim > shipRangeMid) growFromColours.push(distanceFromClaim % 4 < 2 ? shipRangeHighSmallColor : shipRangeHighSmallColor2);
+                growFromColours.push(shipRangeLowSmallColor);
+                if(distanceFromClaim > shipRangeLow) growFromColours.push(shipRangeMidSmallColor);
+                if(distanceFromClaim > shipRangeMid) growFromColours.push(shipRangeHighSmallColor);
 
-                growIntoColours = [waterColorArray, connectiveSmallIslandFillColorArray];
+                growIntoColours = [waterColorArray];
                 if(isOneOfColorsAtCoord(growIntoColours, x, y) && OneNeighbourIsOneOfColors(growFromColours, x, y)){
                     setColorAtCoord(x,y, paintColorMinor);
+
+                    //add neighbours of this newly coloured pixel
+                    SmallIslandSetWrite.add(j + 1);
+                    SmallIslandSetWrite.add(j + 1 + WIDTH);
+                    SmallIslandSetWrite.add(j + WIDTH);
+                    SmallIslandSetWrite.add(j - 1 + WIDTH);
+                    SmallIslandSetWrite.add(j - 1);
+                    SmallIslandSetWrite.add(j - 1 - WIDTH);
+                    SmallIslandSetWrite.add(j - WIDTH);
+                    SmallIslandSetWrite.add(j + 1 - WIDTH);
+                }
+            }
+            
+            //big island stuff next
+            
+            let BigIslandSetRead = distanceFromClaim % 2 == 0 ? BigIslandGrowthSet : BigIslandGrowthSet2;
+            let BigIslandSetWrite = distanceFromClaim % 2 == 1 ? BigIslandGrowthSet : BigIslandGrowthSet2;
+            
+            BigIslandSetWrite.clear();
+
+            for(const j of BigIslandSetRead){
+                let x = j % WIDTH;
+                let y = Math.floor(j / WIDTH);
+
+                let now = Date.now();
+                if(now - then > 2000) {
+                    dat = new ImageData(nationData, WIDTH);
+                    canvas.getContext("2d").putImageData(dat, 0, 0);
+                    await new Promise(resolve => setTimeout(resolve));
+                    console.log(`Big >> row: ${y}, iteration: ${distanceFromClaim}`);
+                    then = now;
+                }
+
+                growFromColours = [bigIslandFillColorArray];
+                growFromColours.push(shipRangeLowColor);
+                if(distanceFromClaim > shipRangeLow) growFromColours.push(shipRangeMidColor);
+                if(distanceFromClaim > shipRangeMid) growFromColours.push(shipRangeHighColor);
+
+                growIntoColours = [waterColorArray, connectiveBigIslandFillColorArray];
+                if(distanceFromClaim < shipRangeMid) growFromColours.push(shipRangeMidSmallColor);
+                if(distanceFromClaim < shipRangeHigh) growFromColours.push(shipRangeHighSmallColor);
+                if(isOneOfColorsAtCoord(growIntoColours, x, y) && OneNeighbourIsOneOfColors(growFromColours, x, y)){
+                    setColorAtCoord(x,y, paintColor);
+
+                    
+                    //add neighbours of this newly coloured pixel
+                    BigIslandSetWrite.add(j + 1);
+                    BigIslandSetWrite.add(j + 1 + WIDTH);
+                    BigIslandSetWrite.add(j + WIDTH);
+                    BigIslandSetWrite.add(j - 1 + WIDTH);
+                    BigIslandSetWrite.add(j - 1);
+                    BigIslandSetWrite.add(j - 1 - WIDTH);
+                    BigIslandSetWrite.add(j - WIDTH);
+                    BigIslandSetWrite.add(j + 1 - WIDTH);
                 }
             }
         }
@@ -295,6 +364,15 @@ function OneNeighbourIsOneOfColors(cols, x, y){
     for (let Y = -1; Y <= 1; Y++) {
         for (let X = -1; X <= 1; X++) {
             if (isOneOfColorsAtCoord(cols, X + x, Y + y)) return true;
+        }
+    }
+    return false;
+}
+
+function OneNeighbourIsColor(col, x, y){
+    for (let Y = -1; Y <= 1; Y++) {
+        for (let X = -1; X <= 1; X++) {
+            if (isColorAtCoord(col, X + x, Y + y)) return true;
         }
     }
     return false;
