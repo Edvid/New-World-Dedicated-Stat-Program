@@ -1,6 +1,8 @@
 const WIDTH = 8192;
 const HEIGHT = 3365;
 
+const imagePixelCount = WIDTH * HEIGHT;
+
 const shipRangeLow = 300;
 const shipRangeMid = 1500;
 const shipRangeHigh = 2500; 
@@ -42,6 +44,8 @@ let nationData;
 let climateData;
 nationImage.src = nationImagePath;
 nationImage.onload = async function () {
+
+    let longThen = Date.now();
     canvas.getContext("2d").drawImage(nationImage, 0, 0, WIDTH, HEIGHT);
 
     nationData = canvas.getContext("2d").getImageData(0, 0, WIDTH, HEIGHT).data;
@@ -258,6 +262,7 @@ nationImage.onload = async function () {
             
             let growFromColours, growIntoColours;
             for(const j of SetRead) {
+                if(j < 0 || j >= imagePixelCount) continue;
                 let x = j % WIDTH;
                 let y = Math.floor(j / WIDTH);
 
@@ -266,7 +271,7 @@ nationImage.onload = async function () {
                     dat = new ImageData(nationData, WIDTH);
                     canvas.getContext("2d").putImageData(dat, 0, 0);
                     await new Promise(resolve => setTimeout(resolve));
-                    console.log(`Small >> row: ${y}, iteration: ${distanceFromClaim}`);
+                    console.log(`Small >> Iteration: ${distanceFromClaim}`);
                     then = now;
                 }
 
@@ -308,6 +313,7 @@ nationImage.onload = async function () {
             SetWrite.clear();
 
             for(const j of SetRead){
+                if(j < 0 || j >= imagePixelCount) continue;
                 let x = j % WIDTH;
                 let y = Math.floor(j / WIDTH);
 
@@ -316,7 +322,7 @@ nationImage.onload = async function () {
                     dat = new ImageData(nationData, WIDTH);
                     canvas.getContext("2d").putImageData(dat, 0, 0);
                     await new Promise(resolve => setTimeout(resolve));
-                    console.log(`Big >> row: ${y}, iteration: ${distanceFromClaim}`);
+                    console.log(`Big >> I   teration: ${distanceFromClaim}`);
                     then = now;
                 }
 
@@ -350,7 +356,9 @@ nationImage.onload = async function () {
 
         //done
 
-        console.log("actually done :)))");
+        let longNow = Date.now();
+
+        console.log(`actually done in ${longNow - longThen / 1000} seconds`);
     }
 }
 
