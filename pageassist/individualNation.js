@@ -193,6 +193,7 @@ nationImage.onload = async function () {
         
         dat = new ImageData(nationData, WIDTH);
         canvas.getContext("2d").putImageData(dat, 0, 0);
+        await new Promise(resolve => setTimeout(resolve));
 
         //remove connective stuff
 
@@ -206,6 +207,7 @@ nationImage.onload = async function () {
 
         dat = new ImageData(nationData, WIDTH);
         canvas.getContext("2d").putImageData(dat, 0, 0);
+        await new Promise(resolve => setTimeout(resolve));
         
         //mark claimed coasts
 
@@ -215,7 +217,7 @@ nationImage.onload = async function () {
         SmallIslandGrowthSet2 = new Set();
         BigIslandGrowthSet2 = new Set();
         
-
+        then = Date.now();
         for (let j = 0; j < nationData.length / 4; j++) {
             let x = j % WIDTH;
             let y = Math.floor(j / WIDTH);
@@ -225,11 +227,19 @@ nationImage.onload = async function () {
 
             if(isColorAtCoord(waterColorArray, x, y) && OneNeighbourIsColor(smallIslandFillColorArray, x, y))
                 SmallIslandGrowthSet.add(j);
+
+            let now = Date.now();
+            if(now - then > 500) {
+                dat = new ImageData(nationData, WIDTH);
+                canvas.getContext("2d").putImageData(dat, 0, 0);
+                await new Promise(resolve => setTimeout(resolve));
+                console.log(`putting all coast pixels in sets >> row: ${y}`);
+                then = now;
+            }
         }
 
 
         //find which coasts can be reached with small and big settlements considered
-
         
         then = Date.now();
         //small island stuff first
@@ -247,12 +257,12 @@ nationImage.onload = async function () {
             SetWrite.clear();
             
             let growFromColours, growIntoColours;
-            for(const j of SetRead){
+            for(const j of SetRead) {
                 let x = j % WIDTH;
                 let y = Math.floor(j / WIDTH);
 
                 let now = Date.now();
-                if(now - then > 2000) {
+                if(now - then > 500) {
                     dat = new ImageData(nationData, WIDTH);
                     canvas.getContext("2d").putImageData(dat, 0, 0);
                     await new Promise(resolve => setTimeout(resolve));
@@ -262,8 +272,8 @@ nationImage.onload = async function () {
 
                 growFromColours = [smallIslandFillColorArray];
                 growFromColours.push(shipRangeLowSmallColor);
-                if(distanceFromClaim > shipRangeLow) growFromColours.push(shipRangeMidSmallColor);
-                if(distanceFromClaim > shipRangeMid) growFromColours.push(shipRangeHighSmallColor);
+                if(distanceFromClaim > shipRangeLow / 2) growFromColours.push(shipRangeMidSmallColor);
+                if(distanceFromClaim > shipRangeMid / 2) growFromColours.push(shipRangeHighSmallColor);
 
                 growIntoColours = [waterColorArray];
                 if(isOneOfColorsAtCoord(growIntoColours, x, y) && OneNeighbourIsOneOfColors(growFromColours, x, y)){
@@ -281,6 +291,7 @@ nationImage.onload = async function () {
                 }
             }
         }
+
 
         //big island stuff next
         for(let distanceFromClaim = 0; distanceFromClaim < shipRangeHigh; distanceFromClaim++){
@@ -301,7 +312,8 @@ nationImage.onload = async function () {
                 let y = Math.floor(j / WIDTH);
 
                 let now = Date.now();
-                if(now - then > 2000) {
+                if(now - then > 500) {
+                    debugger;
                     dat = new ImageData(nationData, WIDTH);
                     canvas.getContext("2d").putImageData(dat, 0, 0);
                     await new Promise(resolve => setTimeout(resolve));
