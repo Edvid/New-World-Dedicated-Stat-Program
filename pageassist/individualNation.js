@@ -1,29 +1,29 @@
 const WIDTH = 8192;
 const HEIGHT = 3365;
 
-const shipRangeLow = 4;
-const shipRangeMid = 16;
-const shipRangeHigh = 26; 
+const shipRangeLow = 300;
+const shipRangeMid = 1500;
+const shipRangeHigh = 2500; 
 
 const waterColorArray = [128, 128, 255, 255];
 
 const islandColorArray = [255, 128, 0, 255];
 const connectiveIslandColorArray = [255, 192, 128, 255];
 
-const smallIslandFillColorArray = [0, 128, 0, 255];
-const connectiveSmallIslandFillColorArray = [128, 255, 128, 255];
+const smallIslandFillColorArray = [255, 184, 0, 255];
+const connectiveSmallIslandFillColorArray = [255, 220, 128, 255];
 
-const bigIslandFillColorArray = [255, 144, 0, 255];
-const connectiveBigIslandFillColorArray = [255, 200, 136, 255];
+const bigIslandFillColorArray = [255, 97, 0, 255];
+const connectiveBigIslandFillColorArray = [255, 176, 128, 255];
 
-const shipRangeLowColor = [20, 220, 144, 255];
-const shipRangeMidColor = [30, 144, 90, 255];
-const shipRangeHighColor = [22, 98, 48, 255];
+const shipRangeLowColor = [51, 143, 121, 255];
+const shipRangeMidColor = [71, 140, 155, 255];
+const shipRangeHighColor = [95, 136, 196, 255];
 
 
-const shipRangeLowSmallColor = [20, 212, 144, 255];
-const shipRangeMidSmallColor = [30, 136, 90, 255];
-const shipRangeHighSmallColor = [22, 90, 48, 255];
+const shipRangeLowSmallColor = [51, 142, 121, 255];
+const shipRangeMidSmallColor = [71, 142, 155, 255];
+const shipRangeHighSmallColor = [95, 142, 196, 255];
 
 
 let color = new URLSearchParams(window.location.search).get('col')
