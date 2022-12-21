@@ -109,7 +109,7 @@ function populateTopStatTable(){
             if(TopStat.map != null){
                 let imgButton = document.createElement("a");
 
-                imgButton.href = `./individualNation?col=${gameStats.Nations[NationName].Color}`
+                imgButton.href = `./IndividualNation?col=${gameStats.Nations[NationName].Color}`
                 imgButton.target = "_blank";
                 let img = document.createElement("img");
                 img.src = "docs/assets/images/world/small_blank.png";

@@ -37,6 +37,8 @@ canvas.style.height = "0px";
 canvas.width = WIDTH;
 canvas.height = HEIGHT;
 
+let loadingText = document.querySelector("h3");
+
 const nationImagePath = "./docs/assets/images/world/Nations.png";
 const climateImagePath = "./docs/assets/images/world/Climates.png";
 const nationImage = new Image(WIDTH, HEIGHT);
@@ -82,9 +84,6 @@ nationImage.onload = async function () {
 
         canvas.getContext("2d").putImageData(dat, 0, 0);
 
-        canvas.style.width = WIDTH + "px";
-        canvas.style.height = HEIGHT + "px";
-
         //yield
         await new Promise(resolve => setTimeout(resolve));
 
@@ -95,7 +94,7 @@ nationImage.onload = async function () {
 
             if (y % 500 == 0 && x == 0) {
                 await new Promise(resolve => setTimeout(resolve));
-                console.log(y);
+                loadingText.innerText = `Making blobs 'close enough' count as the same blob:\nRow: ${y} of ${HEIGHT}`;
             }
 
             if (nationClaimWithinRadius(x, y, 2) && waterAtCoord(x, y)) {
@@ -118,7 +117,7 @@ nationImage.onload = async function () {
             let now = Date.now();
             if (now - then > 2000) {
                 await new Promise(resolve => setTimeout(resolve));
-                console.log(y);
+                loadingText.innerText = `Marking settlements as big or small:\nRow: ${y} of ${HEIGHT}`;
                 then = now;
             }
 
@@ -237,7 +236,7 @@ nationImage.onload = async function () {
                 dat = new ImageData(nationData, WIDTH);
                 canvas.getContext("2d").putImageData(dat, 0, 0);
                 await new Promise(resolve => setTimeout(resolve));
-                console.log(`putting all coast pixels in sets >> row: ${y}`);
+                loadingText.innerText = `Marking settlement coasts:\nRow: ${y} of ${HEIGHT}`;
                 then = now;
             }
         }
@@ -271,7 +270,7 @@ nationImage.onload = async function () {
                     dat = new ImageData(nationData, WIDTH);
                     canvas.getContext("2d").putImageData(dat, 0, 0);
                     await new Promise(resolve => setTimeout(resolve));
-                    console.log(`Small >> Iteration: ${distanceFromClaim}`);
+                    loadingText.innerText = `Marking pixels reachable from small settlement coasts:\nIteration: ${distanceFromClaim} of ${shipRangeHigh / 2}`;
                     then = now;
                 }
 
@@ -322,7 +321,7 @@ nationImage.onload = async function () {
                     dat = new ImageData(nationData, WIDTH);
                     canvas.getContext("2d").putImageData(dat, 0, 0);
                     await new Promise(resolve => setTimeout(resolve));
-                    console.log(`Big >> I   teration: ${distanceFromClaim}`);
+                    loadingText.innerText = `Marking pixels reachable from big settlement coasts:\nIteration: ${distanceFromClaim} of ${shipRangeHigh}`;
                     then = now;
                 }
 
@@ -356,7 +355,12 @@ nationImage.onload = async function () {
 
         //done
 
+        canvas.style.width = WIDTH + "px";
+        canvas.style.height = HEIGHT + "px";
+
         let longNow = Date.now();
+
+        loadingText.innerText = `completed in ${(longNow - longThen) / 1000} seconds`;
 
         console.log(`done in ${(longNow - longThen) / 1000} seconds`);
     }

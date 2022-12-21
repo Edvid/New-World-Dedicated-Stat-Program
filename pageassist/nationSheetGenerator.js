@@ -549,7 +549,7 @@ function createNationSheet(nationName) {
         else if(TableTitle.innerHTML == "Land Stats"){
             let imgButton = document.createElement("a");
 
-            imgButton.href = `./individualNation?col=${gameStats.Nations[nationName].Color}`
+            imgButton.href = `./IndividualNation?col=${gameStats.Nations[nationName].Color}`
             imgButton.target = "_blank";
             let img = document.createElement("img");
             img.src = "docs/assets/images/world/small_blank.png";
