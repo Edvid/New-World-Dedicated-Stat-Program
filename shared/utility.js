@@ -121,7 +121,7 @@ let StatTypes = {
         "ResearchSpending",
         "ReligionRepresentedAtGovernmentLevel",
         "CultureRepresentedAtGovernmentLevel",
-        "Mercantilism",
+        "TradeImprovements",
         "LowerClassTax",
         "MilitaryDiscipline",
         "NavyImprovements",
@@ -239,7 +239,9 @@ let StatTypes = {
         "Militia",
         "SiegeEquipment",
         "LargeSiegeEquipment",
-        "Cannons",
+        "FieldCannons",
+		"RegimentalGuns",
+		"SiegeGuns",
         "SmallForts",
         "MediumForts",
         "BigForts",
@@ -636,7 +638,9 @@ function ValueTypeFix(statName, statValue) {
             "Militia",
             "SiegeEquipment",
             "LargeSiegeEquipment",
-            "Cannons",
+            "FieldCannons",
+			"SiegeGuns",
+			"RegimentalGuns",
             "EliteUnitsCap",
             "OverallNumbers",
             "SmallForts",
@@ -786,17 +790,15 @@ document.querySelector("body").onload = function () {
     var collitem;
 
     for (collitem = 0; collitem < coll.length; collitem++) {
-        coll[collitem].addEventListener("click", collapsibleNextSibling);
+        coll[collitem].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        });
     }
     /* #endregion */
-}
-
-function collapsibleNextSibling() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.display === "block") {
-        content.style.display = "none";
-    } else {
-        content.style.display = "block";
-    }
 }
