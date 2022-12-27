@@ -114,7 +114,7 @@ class Nation {
   TradeEfficiency;
   LocalTrade;
   TradePower;
-  Mercantilism;
+  TradeImprovements;
   PossiblePublicDebt;
   EffectiveDebt;
   DailyBudget;
@@ -153,7 +153,7 @@ class Nation {
   Militia;
   SiegeEquipment;
   LargeSiegeEquipment;
-  Cannons;
+  FieldCannons;
   EliteUnitsCap;
   UnitUpkeep;
   OverallNumbers;
@@ -207,7 +207,7 @@ class Nation {
   New_Militia;
   New_SiegeEquipment;
   New_LargeSiegeEquipment;
-  New_Cannons;
+  New_FieldCannons;
 
   New_LightShips;
   New_MediumShips;
@@ -609,7 +609,7 @@ class Nation {
     this.PopulationControl = 0;
     this.BirthControl = 0;
     this.LocalTrade = 2.5;
-    this.Mercantilism = 1;
+    this.TradeImprovements = 1;
     this.Spies = 0;
     this.SpyQuality = 1;
     /* #endregion */
@@ -640,7 +640,9 @@ class Nation {
     this.Militia = 0;
     this.SiegeEquipment = 0;
     this.LargeSiegeEquipment = 0;
-    this.Cannons = 0;
+    this.FieldCannons = 0;
+    this.SiegeGuns = 0;
+    this.RegimentalGuns = 0;
 
     this.SmallForts = 0;
     this.MediumForts = 0;
@@ -685,7 +687,7 @@ class Nation {
     this.New_Militia = 0;
     this.New_SiegeEquipment = 0;
     this.New_LargeSiegeEquipment = 0;
-    this.New_Cannons = 0;
+    this.New_FieldCannons = 0;
 
     this.New_LightShips = 0;
     this.New_MediumShips = 0;
@@ -708,6 +710,7 @@ class Nation {
 
     /* #region  Resources */
     this.MiningEfficiency = 1;
+	this.Forestry = 1;
 
     this.Coal = 0.00;
     this.Sulphur = 0.00;
@@ -784,6 +787,60 @@ class Nation {
 	  Gunlock: false
     }
     /* #endregion */
+
+	/* #region Reforms */
+	
+	this.Reforms = {
+	  SlaveryAllowed: true,
+	  SlaveryBanned: false,
+	  
+	  SerfdomAllowed: true,
+	  SerfdomBanned: false,
+	  
+	  OpenFieldSystem: true,
+	  Enclosure: false,
+	  
+	  Mercantilism: true,
+	  Protectionism: false,
+	  FreeTrade: false,
+	  
+	  Guilds: true,
+	  GuildsBanned: false,
+	  AntiMonopolyLaws: false,
+	  
+	  WomenGuardianship: true,
+	  PropertiedWomen: false,
+	  GenderEquality: false,
+	  
+	  NoVoting: true,
+	  HighClassVoting: false,
+	  WealthVoting: false,
+	  UniversalSuffrage: false,
+	  
+	  NoblePrivellege: true,
+	  WealthPrivellege: false,
+	  ClassEquality: false,
+	  
+	  NobleOfficers: true,
+	  WealthyOfficers: false,
+	  MeritocraticOfficers: false,
+	  
+	  NobleBureaucrats: true,
+	  WealthyBureaucrats: false,
+	  MeritocraticBureaucrats: false,
+	  
+	  NobleResourceOwnership: true,
+	  MixedResourceOwnership: false,
+	  BurgousieResourceOwnership: false,
+	  GovernmentResourceOwnership: false,
+	  
+	  NoArmyReserve: true,
+	  NationalMilitia: false,
+	  Conscripts: false,
+	  ProffesionalReservists: false
+	}
+	
+	/* #endregion */
 
     /* #region  Economy */
     this.HighClassTax = 0.1; //As Percentage
@@ -875,7 +932,7 @@ class Stats{
     this.ResourceTypes = [
       "Budget",
       "Food",
-
+	  "Wood",
       "Sulphur",
       "Cotton",
       "Gold",
@@ -1044,7 +1101,9 @@ class Stats{
 
       SiegeEquipment: 1 / 10,
       LargeSiegeEquipment: 1 / 5,
-      Cannons: 1 / 10
+      FieldCannons: 1 / 10,
+	  RegimentalGuns: 1 / 20,
+	  SiegeGuns: 1 / 5
     }
 
     this.AdvancesPrerequisites = {};
