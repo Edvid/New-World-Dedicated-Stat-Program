@@ -263,7 +263,7 @@ let TableLayouts = {
     ],
     "Budget Stats": [
         ["TradeEfficiency", "LocalTrade", "TradePower"],
-        ["Mercantilism", "ProductionEfficiency", "Production"],
+        ["TradeImprovements", "ProductionEfficiency", "Production"],
         ["Inflation", "DailyBudget", "Budget"],
         ["BudgetIncoming", "BudgetOutgoing", "Balance"],
         ["HighClassTax", "MediumClassTax", "LowerClassTax"]
@@ -271,7 +271,7 @@ let TableLayouts = {
     "Upkeeps and Income": [
         ["ProductionRevenue", "TradeRevenue", "PassiveInvestmentIncome"],
         ["ResourceBudgetBoost", "EffectiveTax", "OverallIncome" ],
-        ["ArmyUpkeep", "NavyUpkeep", "FortUpkeep"],
+        ["ArmyUpkeep", "NavyUpkeep", "FortUpkeep", "NewTroopRecruitmentPenalty"],
         ["SpyUpkeep", "EducationUpkeep", "PopulationControlUpkeep"],
         ["SocialSpendingUpkeep", "AgricultureSpending", "AdministrativeUpkeep"],
         ["HygieneUpkeep", "ResearchUpkeep", "PropagandaUpkeep"]
@@ -285,7 +285,7 @@ let TableLayouts = {
         ["FirearmImprovements", "FirearmQuality", "HandCannoneers", "Musketeers", "MusketMilitia", "Riflemen"],
         ["CavalryImprovements", "CavalryQuality", "LightCavalry", "HeavyCavalry", "EliteCavalry"],
         ["SiegeImprovements", "SiegeQuality", "SiegeEquipment", "LargeSiegeEquipment"],
-        ["ArtilleryImprovements", "ArtilleryQuality", "Cannons"],
+        ["ArtilleryImprovements", "ArtilleryQuality", "RegimentalGuns", "FieldCannons", "SiegeGuns"],
         ["OverallNumbers", "UnitUpkeep", "EliteUnitsCap", "Spies", "SpyQuality"]
     ],
     "Debt Stats": [
@@ -316,6 +316,19 @@ let TableLayouts = {
     "Estates": [
 		["AristocratLoyalty", "ClergyLoyalty", "BurgousieLoyalty", "BureaucratLoyalty", "IntellectualsLoyalty", "WorkersLoyalty", "MilitaryLoyalty"]
     ],
+	"Reforms": [
+		["Reforms.SlaveryAllowed", "Reforms.SlaveryBanned", "Reforms.SerfdomAllowed", "Reforms.SerfdomBanned"],
+		["Reforms.OpenFieldSystem", "Reforms.Enclosure"],
+		["Reforms.Mercantilism", "Reforms.Protectionism", "Reforms.FreeTrade"],
+		["Reforms.Guilds", "Reforms.GuildsBanned", "Reforms.AntiMonopolyLaws"],
+		["Reforms.WomenGuardianship", "Reforms.PropertiedWomen", "Reforms.GenderEquality"],
+		["Reforms.NoVoting", "Reforms.HighClassVoting", "Reforms.WealthVoting", "Reforms.UniversalSuffrage"],
+		["Reforms.NoblePrivellege", "Reforms.WealthPrivellege", "Reforms.ClassEquality"],
+		["Reforms.NobleOfficers", "Reforms.WealthyOfficers", "Reforms.MeritocraticOfficers"],
+		["Reforms.NobleBureaucrats", "Reforms.WealthyBureaucrats", "Reforms.MeritocraticBureaucrats"],
+		["Reforms.NobleResourceOwnership", "Reforms.MixedResourceOwnership", "Reforms.BurgousieResourceOwnership", "Reforms.GovernmentResourceOwnership"],
+		["Reforms.NoArmyReserve", "Reforms.NationalMilitia", "Reforms.Conscripts", "Reforms.ProffesionalReservists"]
+	],
     "Trade Influence - Americas": [
         [ti("Alaska"), ti("Cascadia"), ti("CaliforniaAndWestMexico"), ti("HudsonBay"), ti("GreatLakes"), ti("Louisiana"), ti("GulfOfMexico"), ti("LawrenceGulf"), ti("EastCoast"), ti("Carribean"), ti("CentralAmerica")],
         [ti("GuyanaAndSuriname"), ti("Amazon"), ti("Peru"), ti("RioGrande"), ti("LaPlata"), ti("Chile"), ti("Patagonia")]
@@ -362,9 +375,9 @@ let TableLayouts = {
         ["CulturalAdvancements.Constitution"]
     ],
     "Resources": [
-        ["MiningEfficiency"],
+        ["MiningEfficiency", "Forestry"],
         ["MaxCoal", "MaxSulphur", "MaxIron", "MaxCopper"],
-        ["Coal", "Sulphur", "Iron", "Copper"],
+        ["Coal", "Sulphur", "Iron", "Copper", "Wood"],
         ["EffectiveCoal", "EffectiveSulphur", "EffectiveIron", "EffectiveCopper"],
         ["MaxGold", "MaxFur", "MaxDiamond", "MaxSilver", "MaxIvory"],
         ["Gold", "Fur", "Diamond", "Silver", "Ivory", "Cotton", "Tea", "Silk", "Spice", "Wool", "Coffee", "Cocoa", "Tobacco", "Sugar", "ExoticFruit"],
@@ -373,10 +386,10 @@ let TableLayouts = {
         ["ResourcePopulationGrowthBoost", "ResourceHappinessBoost", "ResourceBudgetBoost"]
     ],
     "Resource Prices": [
-        ["CoalDemand", "GoldDemand", "IronDemand", "SulphurDemand", "CottonDemand", "TeaDemand", "SpiceDemand", "CopperDemand", "SilkDemand", "WoolDemand"],
-        ["CoalValue", "GoldValue", "IronValue", "SulphurValue", "CottonValue", "TeaValue", "SpiceValue", "CopperValue", "SilkValue", "WoolValue"],
-        ["CoffeeDemand", "SilverDemand", "DiamondDemand", "FurDemand", "IvoryDemand", "CocoaDemand", "TobaccoDemand", "SugarDemand", "ExoticFruitDemand"],
-        ["CoffeeValue", "SilverValue", "DiamondValue", "FurValue", "IvoryValue", "CocoaValue", "TobaccoValue", "SugarValue", "ExoticFruitValue"]
+        ["CoalDemand", "GoldDemand", "IronDemand", "SulphurDemand", "CottonDemand", "TeaDemand", "SpiceDemand", "CopperDemand", "SilkDemand", "WoolDemand", "FoodDemand"],
+        ["CoalValue", "GoldValue", "IronValue", "SulphurValue", "CottonValue", "TeaValue", "SpiceValue", "CopperValue", "SilkValue", "WoolValue", "FoodValue"],
+        ["CoffeeDemand", "SilverDemand", "DiamondDemand", "FurDemand", "IvoryDemand", "CocoaDemand", "TobaccoDemand", "SugarDemand", "ExoticFruitDemand", "WoodDemand"],
+        ["CoffeeValue", "SilverValue", "DiamondValue", "FurValue", "IvoryValue", "CocoaValue", "TobaccoValue", "SugarValue", "ExoticFruitValue", "WoodValue"]
     ],"Resource Trade": [
         ["FoodIncoming", "CoalIncoming", "SulphurIncoming", "CottonIncoming", "GoldIncoming", "IronIncoming", "TeaIncoming", "SilkIncoming", "SpiceIncoming", "WoolIncoming"],
         ["FoodOutgoing", "CoalOutgoing", "SulphurOutgoing", "CottonOutgoing", "GoldOutgoing", "IronOutgoing", "TeaOutgoing", "SilkOutgoing", "SpiceOutgoing", "WoolOutgoing"],
@@ -483,6 +496,8 @@ function createNationSheet(nationName) {
 
     AddNextStatTable();
 
+    AddNextStatTable();
+
     /* #endregion */
 
     //fix size of notapplicables
@@ -521,46 +536,6 @@ function createNationSheet(nationName) {
                     }
                 });
             }
-        }
-    });    
-
-    //add tech tree button to tech and cultural adv
-
-    let allTabletitles = document.querySelectorAll(".nationsheet > div > h2")
-
-    allTabletitles.forEach(TableTitle => {
-        if(TableTitle.innerHTML == "Cultural Advancements" || TableTitle.innerHTML == "Technologies"){
-            let TechtreeButton = document.createElement("a");
-            TechtreeButton.style.margin = "0em 1em 0.5em 1em";
-            TechtreeButton.addEventListener("click", collapsibleNextSibling);
-            let TechtreeIcon = document.createElement("img");
-            TechtreeIcon.src = "docs/assets/images/small_techTree.png";
-            TechtreeIcon.style.border = "1px solid black";
-            TechtreeButton.appendChild(TechtreeIcon);
-            let TechTreeImage = document.createElement("img");
-            TechTreeImage.src = "docs/assets/images/techTree.png";
-            TechTreeImage.style.margin = "2em";
-            TechTreeImage.style.width = document.body.clientWidth - 100 + "px";
-            TechTreeImage.style.display = "none";
-
-            TableTitle.parentElement.insertBefore(TechTreeImage, TableTitle.nextSibling);
-            TableTitle.parentElement.insertBefore(TechtreeButton, TechTreeImage);
-        }
-        else if(TableTitle.innerHTML == "Land Stats"){
-            let imgButton = document.createElement("a");
-
-            imgButton.href = `./IndividualNation?col=${gameStats.Nations[nationName].Color}`
-            imgButton.target = "_blank";
-            let img = document.createElement("img");
-            img.src = "docs/assets/images/world/small_blank.png";
-            img.title = `see ${nationName} specific area`;
-            img.style.width = "58px";
-            img.classList.add("pixelated");
-
-            imgButton.style.margin = "0em 1em 0.5em 1em";
-            
-            imgButton.appendChild(img);
-            TableTitle.parentElement.insertBefore(imgButton, TableTitle.nextSibling);
         }
     });
 }
