@@ -140,9 +140,9 @@ function evaluateNation(nationName) {
   n.NavyTech = 0 + n.Technologies.Galleons / 4 + n.Technologies.Docks / 2 + n.Technologies.Gunports / 2 + n.Technologies.Gunlock / 4;
   n.NavyQualityIC = 1 + n.NavyImprovements + n.NavyTech;
 
-  n.UpkeepForOneLightShip = ((1 / 8) * (n.NavyQualityIC)) / gameStats.TimeDivide * (1 + n.Technologies.Gunports);
-  n.UpkeepForOneMediumShip = ((1 / 4) * (n.NavyQualityIC)) / gameStats.TimeDivide * (1 + n.Technologies.Gunports);
-  n.UpkeepForOneHeavyShip = ((1 / 2) * (n.NavyQualityIC)) / gameStats.TimeDivide * (1 + n.Technologies.Gunports + n.Technologies.Galleons / 2);
+  n.UpkeepForOneLightShip = ((1.5 + n.Technologies.Gunports * 2) * (n.NavyQualityIC)) / gameStats.TimeDivide;
+  n.UpkeepForOneMediumShip = ((3 + n.Technologies.Gunports * 5) * (n.NavyQualityIC)) / gameStats.TimeDivide;
+  n.UpkeepForOneHeavyShip = ((6 + n.Technologies.Gunports * 15) * (n.NavyQualityIC)) / gameStats.TimeDivide;
   
   n.NavyQuality = 1 + n.NavyImprovements + n.NavyTech - n.Corruption / 5;
 
@@ -545,7 +545,7 @@ n.PopulationGrowth = (n.FutureFood < 0 ? n.FutureFood * 1000 / n.Population - (n
     let ntrp = 0;
     for (const unitName in gameStats.UnitUpkeepCosts) {
       const cost = gameStats.UnitUpkeepCosts[unitName];
-      ntrp += n["New_" + unitName] * cost;
+      ntrp += n["New_" + unitName] * cost * n[unitType(unitName) + 'QualityIC'];
     }
     ntrp += n.New_LightShips * n.UpkeepForOneLightShip;
     ntrp += n.New_MediumShips * n.UpkeepForOneMediumShip;

@@ -90,6 +90,7 @@ class Nation {
   ReligiousDisunity;
   Population;
   PopulationGrowth;
+  AverageDevelopment;
   Health;
   LiteracyPercent;
   HigherEducation;
@@ -557,6 +558,7 @@ class Nation {
 
     /* #region  Most Stats */
     this.ReligiousDisunity = 0.00;
+	this.AverageDevelopment = 1;
     this.Health = 1.00;
     this.EducationEfficiency = 1;
 	this.BureaucratWages = 0.75;
@@ -657,7 +659,7 @@ class Nation {
     /* #endregion */
 
     /* #region  Navy */
-    this.NavyImprovements = 1.00;
+    this.NavyImprovements = 0;
 
     this.LightShips = 0;
     this.MediumShips = 0;
@@ -1099,15 +1101,15 @@ class Stats{
       EliteCavalry: 8.5 / 1000,
       HandCannoneers: 5 / 1000,
       Musketeers: 3.5 / 1000,
-	    MusketMilitia: 2 / 1000,
-	    Riflemen: 10 / 1000,
+	  MusketMilitia: 2 / 1000,
+	  Riflemen: 10 / 1000,
       Militia: 1.25 / 1000,
 
       SiegeEquipment: 1 / 10,
       LargeSiegeEquipment: 1 / 5,
-      FieldCannons: 1 / 10,
-	    RegimentalGuns: 1 / 20,
-	    SiegeGuns: 1 / 5
+      FieldCannons: 1 / 5,
+	  RegimentalGuns: 1 / 10,
+	  SiegeGuns: 1 / 2.5
     }
 
     this.AdvancesPrerequisites = {};
