@@ -684,10 +684,14 @@ class Nation {
     this.New_EliteCavalry = 0;
     this.New_HandCannoneers = 0;
     this.New_Musketeers = 0;
+    this.New_MusketMilitia = 0;
+    this.New_Riflemen = 0;
     this.New_Militia = 0;
     this.New_SiegeEquipment = 0;
     this.New_LargeSiegeEquipment = 0;
     this.New_FieldCannons = 0;
+    this.New_SiegeGuns = 0;
+    this.New_RegimentalGuns = 0;
 
     this.New_LightShips = 0;
     this.New_MediumShips = 0;
@@ -1095,15 +1099,15 @@ class Stats{
       EliteCavalry: 8.5 / 1000,
       HandCannoneers: 5 / 1000,
       Musketeers: 3.5 / 1000,
-	  MusketMilitia: 2 / 1000,
-	  Riflemen: 10 / 1000,
+	    MusketMilitia: 2 / 1000,
+	    Riflemen: 10 / 1000,
       Militia: 1.25 / 1000,
 
       SiegeEquipment: 1 / 10,
       LargeSiegeEquipment: 1 / 5,
       FieldCannons: 1 / 10,
-	  RegimentalGuns: 1 / 20,
-	  SiegeGuns: 1 / 5
+	    RegimentalGuns: 1 / 20,
+	    SiegeGuns: 1 / 5
     }
 
     this.AdvancesPrerequisites = {};
