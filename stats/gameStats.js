@@ -524,6 +524,7 @@ class Nation {
   MaxPopulation;
   UnderPopulation;
   DetachedLand;
+  CoastalLandPercent;
   LandAdministration;
   Overextension;
 

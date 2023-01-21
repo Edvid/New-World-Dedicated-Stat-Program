@@ -437,6 +437,7 @@ let StatTypes = {
         "UnderPopulation",
         "MaxPopulation",
         "DetachedLand",
+        "CoastalLandPercent",
         "LandAdministration",
         "HabitableLand",
         "ResearchBoostFromTech",
