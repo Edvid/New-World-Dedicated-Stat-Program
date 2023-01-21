@@ -524,6 +524,7 @@ class Nation {
   MaxPopulation;
   UnderPopulation;
   DetachedLand;
+  CoastPixels;
   CoastalLandPercent;
   LandAdministration;
   Overextension;
@@ -559,17 +560,17 @@ class Nation {
 
     /* #region  Most Stats */
     this.ReligiousDisunity = 0.00;
-	this.AverageDevelopment = 1;
+	  this.AverageDevelopment = 1;
     this.Health = 1.00;
     this.EducationEfficiency = 1;
-	this.BureaucratWages = 0.75;
+	  this.BureaucratWages = 0.75;
     this.AdministrativeEfficiency = 25;
-	this.AdministrationSize = 0.5;
+	  this.AdministrationSize = 0.5;
     this.Propaganda = 0;
     this.SocialSpending = 0;
     this.AtWar = false;
-	this.Nationalism = 0;
-	this.ReligiousFervor = 0;
+	  this.Nationalism = 0;
+	  this.ReligiousFervor = 0;
 
     this.AristocratLoyalty = 0.50; //Show in percent
     this.ClergyLoyalty = 0.50; //Show in percent
@@ -578,36 +579,36 @@ class Nation {
     this.IntellectualsLoyalty = 0.50; //Show in percent
     this.WorkersLoyalty = 0.50; //Show in percent
 	
-	this.EstateInfluences = {
-		AristocratInfluence: 0.525,
-		ClergyInfluence: 0.25,
-		BurgousieInfluence: 0.175,
-		BureaucratInfluence: 0.025,
-		IntellectualsInfluence: 0.02,
-		MilitaryInfluence: 0.0,
-		WorkersInfluence: 0.005
-	};
+    this.EstateInfluences = {
+      AristocratInfluence: 0.525,
+      ClergyInfluence: 0.25,
+      BurgousieInfluence: 0.175,
+      BureaucratInfluence: 0.025,
+      IntellectualsInfluence: 0.02,
+      MilitaryInfluence: 0.0,
+      WorkersInfluence: 0.005
+    };
 	
-	this.GovernmentRepresentation = {
-		UnitaryRepresentation: 0.30,
-		AristocratRepresentation: 0.40,
-		ClergyRepresentation: 0.20,
-		BurgousieRepresentation: 0.10,
-		BureaucratRepresentation: 0.0,
-		IntellectualsRepresentation: 0.0,
-		MilitaryRepresentation: 0.0,
-		WorkersRepresentation: 0.0
-	};
+    this.GovernmentRepresentation = {
+      UnitaryRepresentation: 0.30,
+      AristocratRepresentation: 0.40,
+      ClergyRepresentation: 0.20,
+      BurgousieRepresentation: 0.10,
+      BureaucratRepresentation: 0.0,
+      IntellectualsRepresentation: 0.0,
+      MilitaryRepresentation: 0.0,
+      WorkersRepresentation: 0.0
+    };
 	
-	this.MilitaryControl = {
-		UnitaryControl: 0.25,
-		AristocratControl: 0.35,
-		ClergyControl: 0.10,
-		BurgousieControl: 0.10,
-		BureaucratControl: 0.10,
-		IntellectualsControl: 0.0,
-		WorkersControl: 0.10
-	};
+    this.MilitaryControl = {
+      UnitaryControl: 0.25,
+      AristocratControl: 0.35,
+      ClergyControl: 0.10,
+      BurgousieControl: 0.10,
+      BureaucratControl: 0.10,
+      IntellectualsControl: 0.0,
+      WorkersControl: 0.10
+    };
 
     this.PopulationControl = 0;
     this.BirthControl = 0;
@@ -618,14 +619,14 @@ class Nation {
     /* #endregion */
 
     /* #region  Army */
-	this.OverallImprovements = 1;
-	this.IrregularImprovements = 0;
-	this.MeleeImprovements = 0;
-	this.RangedImprovements = 0;
-	this.CavalryImprovements = 0;
-	this.FirearmImprovements = 0;
-	this.SiegeImprovements = 0;
-	this.ArtilleryImprovements = 0;
+    this.OverallImprovements = 1;
+    this.IrregularImprovements = 0;
+    this.MeleeImprovements = 0;
+    this.RangedImprovements = 0;
+    this.CavalryImprovements = 0;
+    this.FirearmImprovements = 0;
+    this.SiegeImprovements = 0;
+    this.ArtilleryImprovements = 0;
 	
     this.Levies = 0;
     this.LightInfantry = 0;
@@ -717,7 +718,7 @@ class Nation {
 
     /* #region  Resources */
     this.MiningEfficiency = 1;
-	this.Forestry = 1;
+	  this.Forestry = 1;
 
     this.Coal = 0.00;
     this.Sulphur = 0.00;
