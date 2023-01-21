@@ -701,6 +701,7 @@ function ValueTypeFix(statName, statValue) {
 			"Blockade",
             "Fervor",
             "Disease",
+            "CoastalLandPercent",
             "HabitableLand",
             "InterestRate"
         ].indexOf(statName)) {
