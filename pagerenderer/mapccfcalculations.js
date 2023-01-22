@@ -284,7 +284,7 @@ async function scanMaps() {
         //devCol = "Col" + rgbToHex([coastData[i*4], coastData[i*4+1], coastData[i*4+2]]);
 
         const NationOfPixel = colorToNationMap[nationCol];
-        const developmentPixelValue = coastData[i*4]; //expects greyscale, just reads from the red channel
+        const developmentPixelValue = 255 - developmentData[i*4]; //expects greyscale, just reads from the red channel. Blacker is better
 
         if(typeof developmentScore[NationOfPixel] === 'undefined') developmentScore[NationOfPixel] = 0;
         if (developmentPixelValue > 0) developmentScore[NationOfPixel] += developmentPixelValue;
