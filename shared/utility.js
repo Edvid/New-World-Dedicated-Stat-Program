@@ -438,6 +438,7 @@ let StatTypes = {
         "MaxPopulation",
         "DetachedLand",
         "CoastalLandPercent",
+        "AverageDevelopment",
         "LandAdministration",
         "HabitableLand",
         "ResearchBoostFromTech",
@@ -702,6 +703,7 @@ function ValueTypeFix(statName, statValue) {
             "Fervor",
             "Disease",
             "CoastalLandPercent",
+            "AverageDevelopment",
             "HabitableLand",
             "InterestRate"
         ].indexOf(statName)) {

@@ -526,6 +526,8 @@ class Nation {
   DetachedLand;
   CoastalPixels;
   CoastalLandPercent;
+  DevelopementPixelCount;
+  AverageDevelopment;
   LandAdministration;
   Overextension;
 
