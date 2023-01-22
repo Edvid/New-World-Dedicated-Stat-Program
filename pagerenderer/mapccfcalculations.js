@@ -286,8 +286,8 @@ async function scanMaps() {
         const NationOfPixel = colorToNationMap[nationCol];
         const developmentPixelValue = coastData[i*4]; //expects greyscale, just reads from the red channel
 
-        if(typeof coastPixelCount[NationOfPixel] === 'undefined') coastPixelCount[NationOfPixel] = 0;
-        if (developmentPixelValue > 0) coastPixelCount[NationOfPixel] += developmentPixelValue;
+        if(typeof developmentScore[NationOfPixel] === 'undefined') developmentScore[NationOfPixel] = 0;
+        if (developmentPixelValue > 0) developmentScore[NationOfPixel] += developmentPixelValue;
     }
     
     let coastPixelCount = {};
