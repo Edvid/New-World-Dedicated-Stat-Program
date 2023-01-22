@@ -87,8 +87,9 @@ async function scanMaps() {
     climateData = await prepareData("./docs/assets/images/world/Climates.png")
     coastData = await prepareData("./docs/assets/images/world/CoastalLand.png")
     developmentData = await prepareData("./docs/assets/images/world/Development.png")
-    cultureData = await prepareData("./docs/assets/images/world/cultures.png")
-    religionData = await prepareData("./docs/assets/images/world/religions.png")
+    cultureData = await prepareData("./docs/assets/images/world/Cultures.png")
+    religionData = await prepareData("./docs/assets/images/world/Religions.png")
+
 
     //wait until image datas are loaded
     while(nationData == null || 
