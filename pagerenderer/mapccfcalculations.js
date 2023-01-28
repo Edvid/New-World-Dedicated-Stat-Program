@@ -27,9 +27,14 @@ PromptLabel.style.fontWeight = "Bold";
 const PromptField = document.createElement("input");
 PromptField.type = "text";
 
+let PromptFieldReturnedText = "";
 const submitButton = document.createElement("input");
 submitButton.type = "button";
 submitButton.value = "Submit name";
+submitButton.addEventListener("click", function () {
+    PromptFieldReturnedText = PromptField.value;
+    PromptMissingInfoContainer.hidden = true;
+});
 
 PromptMissingInfoContainer.appendChild(PromptLabel);
 PromptMissingInfoContainer.appendChild(document.createElement("br"));
@@ -99,28 +104,12 @@ async function scanMaps() {
         await new Promise(resolve => setTimeout(resolve));
     }
 
-    const colorToClimateMap = {
-        "Col103c6d": "Ocean",
-        "Col808080": "PolarDesert",
-        "Col004a7f": "TaigaAndTundra",
-        "Colffac7f": "MontaneForest",
-        "Colff6a00": "Medditereanian",
-        "Col7f3300": "Arid",
-        "Colc8ff7c": "Steppe",
-        "Col4cff00": "Moderate",
-        "Col5b7f00": "SubTropical",
-        "Col008010": "Tropical",
-        "Colc1bd3e": "Savanna",
-        "Colff0000": "Mountainous",
-        "Colfffb99": "Desert",
-        "Colffd802": "CoastalDesert"
-    }
-
-    let unassignedClimatePixelAssumption = "Moderate";
-    let unassignedCulturePixelAssumption = "Foreign";
-    let unassignedReligionPixelAssumption = "Pagan";
+    const colorToCoastMap = [
+        { color: "Col00ffff", name: "coast"}
+    ];
 
     let nationColorProperties = fillInColorProperties(gameStats.Nations);
+    let climateColorProperties = fillInColorProperties(gameStats.Climates);
     let cultureColorProperties = fillInColorProperties(gameStats.Cultures);
     let religionColorProperties = fillInColorProperties(gameStats.Religions);
     let colorToNationMap = {};
@@ -209,333 +198,94 @@ async function scanMaps() {
     }
 
 
-    //find nations' climates
-    let climateDistribution = {};
+    let climateDistribution = await findDistribution(
+        nationData, climateData, "nation", "climate", 
+        climateColorProperties, 
+        "Moderate"
+    );
+
+    let coastPixelCount = await findDistribution(
+        nationData, coastData, "nation", "coast", 
+        colorToCoastMap, 
+        "Noncoast", 
+        {canIgnoreTransparentInner: true}
+    );
     
-
-    then = Date.now();
-    for (let i = 0; i < nationData.length / 4; i++) {
-        
-        let x = i % WIDTH;
-        let y = Math.floor(i / WIDTH);
-
-        //let the site know you're still alive
-        let now = Date.now();
-        if (now - then > 500) {
-            progressText.innerText = `Assigning every nation' climate sizes:\n\n${i} out of ${nationData.length / 4} pixels read.\nThat's row ${Math.floor(i / WIDTH)} out of ${HEIGHT}`
-            await new Promise(resolve => setTimeout(resolve));
-            then = now;
-        }
-        
-        let nationCol;
-        let climateCol;
-
-        let nationDataEmpty = nationData[i*4+3] == 0;
-        let climateDataEmpty = climateData[i*4+3] == 0;
-
-        //if the pixel in nationData is transparent, skip
-        if(nationDataEmpty) continue;
-        //if the pixel in climateData is transparent, warn
-        else if(climateDataEmpty) {
-            console.warn(`The pixel (${x}, ${y}) is transparent in the climate image, but not the nation image. It is (${nationData[i*4]}, ${nationData[i*4+1]}, ${nationData[i*4+2]}, ${nationData[i*4+3]}) in the nation image. Investigate this. For now ${unassignedClimatePixelAssumption} is assumed`);   
-        }
-
-        nationCol = "Col" + rgbToHex([nationData[i*4], nationData[i*4+1], nationData[i*4+2]]);
-        climateCol = "Col" + rgbToHex([climateData[i*4], climateData[i*4+1], climateData[i*4+2]]);
-        
-        if(typeof colorToClimateMap[climateCol] === 'undefined'){
-            console.warn(`The pixel (${x}, ${y}) is of a colour not found on the colorToClimateMap. Investigate this. For now undefined${climateCol} is assigned`);
-        }
-
-        const NationOfPixel = colorToNationMap[nationCol];
-        const ClimateOfPixel = climateDataEmpty ? unassignedClimatePixelAssumption : (typeof colorToClimateMap[climateCol] !== 'undefined' ? colorToClimateMap[climateCol] : `undefined${climateCol}`);
-
-        if(typeof climateDistribution[NationOfPixel] === 'undefined') climateDistribution[NationOfPixel] = {};
-        if(typeof climateDistribution[NationOfPixel][ClimateOfPixel] === 'undefined') climateDistribution[NationOfPixel][ClimateOfPixel] = 0;
-
-        climateDistribution[NationOfPixel][ClimateOfPixel]++;
-    }
-
-    let developmentScore = {};
-
-    then = Date.now();
-    for (let i = 0; i < nationData.length / 4; i++) {
-        
-        let x = i % WIDTH;
-        let y = Math.floor(i / WIDTH);
-
-        //let the site know you're still alive
-        let now = Date.now();
-        if (now - then > 500) {
-            progressText.innerText = `Assigning every nation' development scores:\n\n${i} out of ${nationData.length / 4} pixels read.\nThat's row ${Math.floor(i / WIDTH)} out of ${HEIGHT}`
-            await new Promise(resolve => setTimeout(resolve));
-            then = now;
-        }
-        
-        let nationCol;
-        let devCol;
-
-        let nationDataEmpty = nationData[i*4+3] == 0;
-
-        //if the pixel in nationData is transparent, skip
-        if(nationDataEmpty) continue;
-
-        nationCol = "Col" + rgbToHex([nationData[i*4], nationData[i*4+1], nationData[i*4+2]]);
-        //devCol = "Col" + rgbToHex([coastData[i*4], coastData[i*4+1], coastData[i*4+2]]);
-
-        const NationOfPixel = colorToNationMap[nationCol];
-        const developmentPixelValue = 255 - developmentData[i*4]; //expects greyscale, just reads from the red channel. Blacker is better
-
-        if(typeof developmentScore[NationOfPixel] === 'undefined') developmentScore[NationOfPixel] = 0;
-        if (developmentPixelValue > 0) developmentScore[NationOfPixel] += developmentPixelValue;
-    }
-    
-    let coastPixelCount = {};
-
-    then = Date.now();
-    for (let i = 0; i < nationData.length / 4; i++) {
-        
-        let x = i % WIDTH;
-        let y = Math.floor(i / WIDTH);
-
-        //let the site know you're still alive
-        let now = Date.now();
-        if (now - then > 500) {
-            progressText.innerText = `Assigning every nation' coastal pixels:\n\n${i} out of ${nationData.length / 4} pixels read.\nThat's row ${Math.floor(i / WIDTH)} out of ${HEIGHT}`
-            await new Promise(resolve => setTimeout(resolve));
-            then = now;
-        }
-        
-        let nationCol;
-        let coastCol;
-
-        let nationDataEmpty = nationData[i*4+3] == 0;
-
-        //if the pixel in nationData is transparent, skip
-        if(nationDataEmpty) continue;
-
-        nationCol = "Col" + rgbToHex([nationData[i*4], nationData[i*4+1], nationData[i*4+2]]);
-        coastCol = "Col" + rgbToHex([coastData[i*4], coastData[i*4+1], coastData[i*4+2]]);
-
-        const NationOfPixel = colorToNationMap[nationCol];
-        const IsCoastalPixel = coastCol == "Col00ffff";
-
-        if(typeof coastPixelCount[NationOfPixel] === 'undefined') coastPixelCount[NationOfPixel] = 0;
-        if (IsCoastalPixel) coastPixelCount[NationOfPixel]++;
-    }
-
-    //find nations' cultures
-    let cultureDistribution = {};
-    
-    autoGeneratedCffTextField.value += "<... > Cultures\n\n";
-
-    then = Date.now();
-    for (let i = 0; i < nationData.length / 4; i++) {
-        
-        let x = i % WIDTH;
-        let y = Math.floor(i / WIDTH);
-
-        //let the site know you're still alive
-        let now = Date.now();
-        if (now - then > 500) {
-            progressText.innerText = `Assigning every nation' culture groups:\n\n${i} out of ${nationData.length / 4} pixels read.\nThat's row ${Math.floor(i / WIDTH)} out of ${HEIGHT}`
-            await new Promise(resolve => setTimeout(resolve));
-            then = now;
-        }
-        
-        let nationCol;
-        let cultureCol;
-
-        let nationDataEmpty = nationData[i*4+3] == 0;
-        let cultureDataEmpty = climateData[i*4+3] == 0;
-
-        //if the pixel in nationData is transparent, skip
-        if(nationDataEmpty) continue;
-        //if the pixel in cultureData is transparent, warn
-        else if(cultureDataEmpty) {
-            console.warn(`The pixel (${x}, ${y}) is transparent in the culture image, but not the nation image. It is (${nationData[i*4]}, ${nationData[i*4+1]}, ${nationData[i*4+2]}, ${nationData[i*4+3]}) in the nation image. Investigate this. For now ${unassignedCulturePixelAssumption} is assumed`);   
-        }
-
-        nationCol = "Col" + rgbToHex([nationData[i*4], nationData[i*4+1], nationData[i*4+2]]);
-        cultureCol = rgbToHex([cultureData[i*4], cultureData[i*4+1], cultureData[i*4+2]]);
-        
-        let foundCulture = cultureColorProperties.find(element => element.color == cultureCol);
-
-        if(typeof foundCulture === 'undefined'){
-            
-            let cultureNamePrompt = "";
-            
-            PromptMissingInfoContainer.hidden = false;
-            PromptLabel.innerText = `The color #${cultureCol} did not have a matching culture. Which culture is it?\n(Give the name it has in stats)`;
-
-            let dat = new Uint8ClampedArray(cultureData.length);
-            for (let j = 0; j < cultureData.length; j++) {
-                dat[j] = cultureData[j];
-                
+    let developmentScore = await findDistribution(
+        nationData, developmentData, "nation", "development",
+        () => {
+            let ret = [];
+            for(let i = 0; i < 255; i++){
+                ret.push({color: rgbToHex(i, i, i), name: 'dev' + i})
             }
-            for(let j = 0; j < dat.length / 4; j++){
-                if(rgbToHex([cultureData[j*4], cultureData[j*4+1], cultureData[j*4+2]]) == '000000'){
-                    dat[j*4] = 128;
-                    dat[j*4+1] = 128;
-                    dat[j*4+2] = 255;
-                    dat[j*4+3] = 255;
-                }
-                else if(rgbToHex([cultureData[j*4], cultureData[j*4+1], cultureData[j*4+2]]) != cultureCol){
-                    dat[j*4] = 0;
-                    dat[j*4+1] = 0;
-                    dat[j*4+2] = 0;
-                    dat[j*4+3] = 0;
-                }
-                
-            }
-            dat = new ImageData(dat, WIDTH);
-        
-            PromptedMissingInfoCanvas.getContext("2d").putImageData(dat, 0, 0);
+            return ret;
+        },
+        "dev0", 
+        {canIgnoreTransparentInner: true}
+    );
+    
+    let cultureDistribution = await findDistribution(
+        nationData, cultureData, "nation", "culture", 
+        cultureColorProperties, 
+        "Foreign");
 
-            submitButton.addEventListener("click", function () {
-                cultureNamePrompt = PromptField.value;
-                PromptMissingInfoContainer.hidden = true;
-            });
-
-            console.log("ok, just waiting now :)");
-
-            //idle until cultureNamePrompt answered;
-            let then = Date.now();
-            while(cultureNamePrompt == ""){
-                let now = Date.now();
-                if (now - then > 17) {
-                    await new Promise(resolve => setTimeout(resolve));
-                    then = now;
-                }
-            }
-
-            foundCulture = {
-                color: cultureCol, 
-                name: cultureNamePrompt
-            };
-            
-            cultureColorProperties.push({color: cultureCol, name: cultureNamePrompt});
-
-            autoGeneratedCffTextField.value += `= "${cultureCol}" ${cultureNamePrompt}.Color\n`
-        }
-
-        const NationOfPixel = colorToNationMap[nationCol];
-
-        if(typeof cultureDistribution[NationOfPixel] === 'undefined') cultureDistribution[NationOfPixel] = {};
-        if(typeof cultureDistribution[NationOfPixel][foundCulture.name] === 'undefined') cultureDistribution[NationOfPixel][foundCulture.name] = 0;
-
-        cultureDistribution[NationOfPixel][foundCulture.name]++;
-    }
-
-    //find nations' religions
-    let religionDistribution = {};
+    let religionDistribution = await findDistribution(
+        nationData, religionData, "nation", "religion", 
+        religionColorProperties, 
+        "Pagan"
+    );
 
     
-    autoGeneratedCffTextField.value += "<... > Religions\n\n";
+    //divide to make all constituencies make up 100(%). 
     
-
-    then = Date.now();
-    for (let i = 0; i < nationData.length / 4; i++) {
+    Object.keys(cultureDistribution).forEach(nationKey => {
+        autoGeneratedCffTextField.value += `> ${nationKey}\n`
         
-        let x = i % WIDTH;
-        let y = Math.floor(i / WIDTH);
+        let total = 0.0;
 
-        //let the site know you're still alive
-        let now = Date.now();
-        if (now - then > 500) {
-            progressText.innerText = `Assigning every nation' religion groups:\n\n${i} out of ${nationData.length / 4} pixels read.\nThat's row ${Math.floor(i / WIDTH)} out of ${HEIGHT}`
-            await new Promise(resolve => setTimeout(resolve));
-            then = now;
-        }
-        
-        let nationCol;
-        let religionCol;
+        //finding the total of all culturekey values in this nation, so we got something to divide by to find the constituencies' ratios
+        Object.keys(cultureDistribution[nationKey]).forEach(CultureKey => {
+            total += cultureDistribution[nationKey][CultureKey];
+        });
 
-        let nationDataEmpty = nationData[i*4+3] == 0;
-        let religionDataEmpty = climateData[i*4+3] == 0;
+        //replace CultureGroups by empty, before re-initialising every culture in it from scratch
+        autoGeneratedCffTextField.value += `+> CultureGroups\n`
+        autoGeneratedCffTextField.value += `> CultureGroups\n`
 
-        //if the pixel in nationData is transparent, skip
-        if(nationDataEmpty) continue;
-        //if the pixel in religionData is transparent, warn
-        else if(religionDataEmpty) {
-            console.warn(`The pixel (${x}, ${y}) is transparent in the religion image, but not the nation image. It is (${nationData[i*4]}, ${nationData[i*4+1]}, ${nationData[i*4+2]}, ${nationData[i*4+3]}) in the nation image. Investigate this. For now ${unassignedReligionPixelAssumption} is assumed`);   
-        }
+        //dividing and adding to autoGeneratedCffTextField
+        Object.keys(cultureDistribution[nationKey]).forEach(CultureKey => {
 
-        nationCol = "Col" + rgbToHex([nationData[i*4], nationData[i*4+1], nationData[i*4+2]]);
-        religionCol = rgbToHex([religionData[i*4], religionData[i*4+1], religionData[i*4+2]]);
-        
+            autoGeneratedCffTextField.value += `+> ${CultureKey}\n`
+            autoGeneratedCffTextField.value += `= ${cultureDistribution[nationKey][CultureKey] * 100 / total} ${CultureKey}.Points\n`
+        });
+        autoGeneratedCffTextField.value += `< <\n`
+    });
 
-        
-        let foundReligion = religionColorProperties.find(element => element.color == religionCol);
-
-        if(typeof foundReligion === 'undefined'){
-                
-            let religionNamePrompt = "";
-            
-            PromptMissingInfoContainer.hidden = false;
-            PromptLabel.innerText = `The color #${religionCol} did not have a matching religion. Which religion is it?\n(Give the name it has in stats)`;
-            
-            let dat = new Uint8ClampedArray(religionData.length);
-            for (let j = 0; j < religionData.length; j++) {
-                dat[j] = religionData[j];
-                
-            }
-            for(let j = 0; j < dat.length / 4; j++){
-                if(rgbToHex([religionData[j*4], religionData[j*4+1], religionData[j*4+2]]) == '000000'){
-                    dat[j*4] = 128;
-                    dat[j*4+1] = 128;
-                    dat[j*4+2] = 255;
-                    dat[j*4+3] = 255;
-                }
-                else if(rgbToHex([religionData[j*4], religionData[j*4+1], religionData[j*4+2]]) != religionCol){
-                    dat[j*4] = 0;
-                    dat[j*4+1] = 0;
-                    dat[j*4+2] = 0;
-                    dat[j*4+3] = 0;
-                }
-                
-            }
-            dat = new ImageData(dat, WIDTH);
-        
-            PromptedMissingInfoCanvas.getContext("2d").putImageData(dat, 0, 0);
-
-            submitButton.addEventListener("click", function () {
-                religionNamePrompt = PromptField.value;
-                PromptMissingInfoContainer.hidden = true;
-            });
-
-            console.log("ok, just waiting now :)");
-
-            //idle until religionNamePrompt answered;
-            let then = Date.now();
-            while(religionNamePrompt == ""){
-                let now = Date.now();
-                if (now - then > 17) {
-                    await new Promise(resolve => setTimeout(resolve));
-                    then = now;
-                }
-            }
-
-            foundReligion = {
-                color: religionCol, 
-                name: religionNamePrompt
-            };
-
-            religionColorProperties.push({color: religionCol, name: religionNamePrompt});
-
-            autoGeneratedCffTextField.value += `= "${religionCol}" ${religionNamePrompt}.Color\n`
-        }
-
-        const NationOfPixel = colorToNationMap[nationCol];
-
-        if(typeof religionDistribution[NationOfPixel] === 'undefined') religionDistribution[NationOfPixel] = {};
-        if(typeof religionDistribution[NationOfPixel][foundReligion.name] === 'undefined') religionDistribution[NationOfPixel][foundReligion.name] = 0;
-
-        religionDistribution[NationOfPixel][foundReligion.name]++;
-    }
-
+    //divide to make all constituencies make up 100(%). 
     
-    
+    Object.keys(religionDistribution).forEach(nationKey => {
+        autoGeneratedCffTextField.value += `> ${nationKey}\n`
+        
+        let total = 0.0;
+
+        //finding the total of all religionkey values in this nation, so we got something to divide by to find the constituencies' ratios
+        Object.keys(religionDistribution[nationKey]).forEach(ReligionKey => {
+            total += religionDistribution[nationKey][ReligionKey];
+        });
+
+        //replace ReligionGroups by empty, before re-initialising every religion in it from scratch
+        autoGeneratedCffTextField.value += `+> ReligionGroups\n`
+        autoGeneratedCffTextField.value += `> ReligionGroups\n`
+
+        //dividing and adding to autoGeneratedCffTextField
+        Object.keys(religionDistribution[nationKey]).forEach(ReligionKey => {
+
+            autoGeneratedCffTextField.value += `+> ${ReligionKey}\n`
+            autoGeneratedCffTextField.value += `= ${religionDistribution[nationKey][ReligionKey] * 100 / total} ${ReligionKey}.Points\n`
+        });
+        autoGeneratedCffTextField.value += `< <\n`
+    });
+
     //add climate distributions to autogeneratedccf
     
     autoGeneratedCffTextField.value += "<...\n\n"
@@ -564,9 +314,13 @@ async function scanMaps() {
         
         autoGeneratedCffTextField.value += (insideNation ? '< ' :'') + `> ${nationKey}\n`;
         insideNation = true;
+
+        let developmentSum = 0;
+        Object.keys(developmentScore[nationKey]).forEach(dKey => {
+            developmentSum += developmentScore[nationKey][dKey];
+        });
         
-        autoGeneratedCffTextField.value += `= ${developmentScore[nationKey]} DevelopementPixelCount\n`;
-        
+        autoGeneratedCffTextField.value += `= ${developmentSum} DevelopementPixelCount\n`;
         
         autoGeneratedCffTextField.value += `\n\n`;
     });
@@ -693,174 +447,7 @@ async function scanMaps() {
 
     }
     
-
-
     /* #endregion */
-    
-
-    let cultureOverlap = {};
-
-    //instantiate all nations in cultureOverlap
-    Object.keys(gameStats.Nations).forEach(key => {
-        cultureOverlap[key] = {};
-    });
-
-    then = Date.now();
-    for (let i = 0; i < nationData.length / 4; i++) {
-        
-        //let the site know you're still alive
-        let now = Date.now();
-        if (now - then > 500) {
-            progressText.innerText = `Assigning every nation' culture based on culture map:\n\n${i} out of ${nationData.length / 4} pixels read.\nThat's row ${Math.floor(i / WIDTH)} out of ${HEIGHT}`
-            await new Promise(resolve => setTimeout(resolve));
-            then = now;
-        }       
-
-        //populate each nation in cultureOverlap with culturename properties with values of how many pixels it overlaps that blob multiplied by that pixel's climate's Climatescore
-        
-
-        //if the pixel is empty on the nation image, skip
-        if(nationData[i*4+3] == 0) continue;
-        //if the pixel is empty on the culture image, but wasn't on nation image, throw warning and assume default 
-        else if(cultureData[i*4+3] == 0) {
-            console.warn(`The pixel (${i % WIDTH}, ${Math.floor(i / WIDTH)}) is transparent in the culture image, but not the nation image. It is (${cultureData[i*4]}, ${cultureData[i*4+1]}, ${cultureData[i*4+2]}, ${cultureData[i*4+3]}) in the culture image. Investigate this. For now ${unassignedCulturePixelAssumption} is assumed`)
-            //actually assume something
-        }
-        //if the pixel is empty on the climate image, but wasn't on nation image, nor culture image, throw warning and assume default 
-        else if(cultureData[i*4+3] == 0) {
-            console.warn(`The pixel (${i % WIDTH}, ${Math.floor(i / WIDTH)}) is transparent in the culture image, but not the nation image. It is (${climateData[i*4]}, ${climateData[i*4+1]}, ${climateData[i*4+2]}, ${climateData[i*4+3]}) in the climate image. Investigate this. For now ${unassignedClimatePixelAssumption} is assumed`)
-            //actually assume something 
-        }
-
-        nationCol = "Col" + rgbToHex([nationData[i*4], nationData[i*4+1], nationData[i*4+2]]);        
-        climateCol = "Col" + rgbToHex([climateData[i*4], climateData[i*4+1], climateData[i*4+2]]);
-
-        cultureCol = rgbToHex([cultureData[i*4], cultureData[i*4+1], cultureData[i*4+2]]);
-
-        const NationOfPixel = colorToNationMap[nationCol];
-        const cultureOfPixel = cultureColorProperties.find(element => element.color == cultureCol).name;
-        
-        if(typeof gameStats.Climates[colorToClimateMap[climateCol]] === 'undefined') {            
-            console.log(`gameStats.Climates[colorToClimateMap[climateCol]] was ${gameStats.Climates[colorToClimateMap[climateCol]]}. climateCol was ${climateCol} and colorToClimateMap[climateCol] ${colorToClimateMap[climateCol]}`)
-        }
-        
-        const climateScoreOfCulture = gameStats.Climates[colorToClimateMap[climateCol]].ClimateScore;
-
-        if(typeof cultureOverlap[NationOfPixel] === 'undefined') {            
-            console.log(`cultureOverlap[NationOfPixel] was ${cultureOverlap[NationOfPixel]}. NationOfPixel was ${NationOfPixel} and nationCol ${nationCol}`)
-        }
-
-        if(typeof cultureOverlap[NationOfPixel][cultureOfPixel] === 'undefined') cultureOverlap[NationOfPixel][cultureOfPixel] = 0;
-        cultureOverlap[NationOfPixel][cultureOfPixel] += climateScoreOfCulture;
-        
-    }
-
-    //divide to make all constituencies make up 100(%). 
-    
-    Object.keys(cultureOverlap).forEach(nationKey => {
-        autoGeneratedCffTextField.value += `> ${nationKey}\n`
-        
-        let total = 0.0;
-
-        //finding the total of all culturekey values in this nation, so we got something to divide by to find the constituencies' ratios
-        Object.keys(cultureOverlap[nationKey]).forEach(CultureKey => {
-            total += cultureOverlap[nationKey][CultureKey];
-        });
-
-        //replace CultureGroups by empty, before re-initialising every culture in it from scratch
-        autoGeneratedCffTextField.value += `+> CultureGroups\n`
-        autoGeneratedCffTextField.value += `> CultureGroups\n`
-
-        //dividing and adding to autoGeneratedCffTextField
-        Object.keys(cultureOverlap[nationKey]).forEach(CultureKey => {
-
-            autoGeneratedCffTextField.value += `+> ${CultureKey}\n`
-            autoGeneratedCffTextField.value += `= ${cultureOverlap[nationKey][CultureKey] * 100 / total} ${CultureKey}.Points\n`
-        });
-        autoGeneratedCffTextField.value += `< <\n`
-    });
-
-    let religionOverlap = {};
-
-    //instantiate all nations in religionOverlap
-    Object.keys(gameStats.Nations).forEach(key => {
-        religionOverlap[key] = {};
-    });
-
-    then = Date.now();
-    for (let i = 0; i < nationData.length / 4; i++) {
-        
-        //let the site know you're still alive
-        let now = Date.now();
-        if (now - then > 500) {
-            progressText.innerText = `Assigning every nation' religion based on religion map:\n\n${i} out of ${nationData.length / 4} pixels read.\nThat's row ${Math.floor(i / WIDTH)} out of ${HEIGHT}`
-            await new Promise(resolve => setTimeout(resolve));
-            then = now;
-        }       
-
-        //populate each nation in religionOverlap with religionname properties with values of how many pixels it overlaps that blob multiplied by that pixel's climate's Climatescore
-        
-
-        //if the pixel is empty on the nation image, skip
-        if(nationData[i*4+3] == 0) continue;
-        //if the pixel is empty on the religion image, but wasn't on nation image, throw warning and assume default 
-        else if(religionData[i*4+3] == 0) {
-            console.warn(`The pixel (${i % WIDTH}, ${Math.floor(i / WIDTH)}) is transparent in the religion image, but not the nation image. It is (${religionData[i*4]}, ${religionData[i*4+1]}, ${religionData[i*4+2]}, ${religionData[i*4+3]}) in the religion image. Investigate this. For now ${unassignedReligionPixelAssumption} is assumed`)
-            //actually assume something
-        }
-        //if the pixel is empty on the climate image, but wasn't on nation image, nor religion image, throw warning and assume default 
-        else if(religionData[i*4+3] == 0) {
-            console.warn(`The pixel (${i % WIDTH}, ${Math.floor(i / WIDTH)}) is transparent in the religion image, but not the nation image. It is (${climateData[i*4]}, ${climateData[i*4+1]}, ${climateData[i*4+2]}, ${climateData[i*4+3]}) in the climate image. Investigate this. For now ${unassignedClimatePixelAssumption} is assumed`)
-            //actually assume something 
-        }
-
-        nationCol = "Col" + rgbToHex([nationData[i*4], nationData[i*4+1], nationData[i*4+2]]);        
-        climateCol = "Col" + rgbToHex([climateData[i*4], climateData[i*4+1], climateData[i*4+2]]);
-
-        religionCol = rgbToHex([religionData[i*4], religionData[i*4+1], religionData[i*4+2]]);
-
-        const NationOfPixel = colorToNationMap[nationCol];
-        const religionOfPixel = religionColorProperties.find(element => element.color == religionCol).name;
-        
-        if(typeof gameStats.Climates[colorToClimateMap[climateCol]] === 'undefined') {            
-            console.log(`gameStats.Climates[colorToClimateMap[climateCol]] was ${gameStats.Climates[colorToClimateMap[climateCol]]}. climateCol was ${climateCol} and colorToClimateMap[climateCol] ${colorToClimateMap[climateCol]}`)
-        }
-        
-        const climateScoreOfReligion = gameStats.Climates[colorToClimateMap[climateCol]].ClimateScore;
-
-        if(typeof religionOverlap[NationOfPixel] === 'undefined') {            
-            console.log(`religionOverlap[NationOfPixel] was ${religionOverlap[NationOfPixel]}. NationOfPixel was ${NationOfPixel} and nationCol ${nationCol}`)
-        }
-
-        if(typeof religionOverlap[NationOfPixel][religionOfPixel] === 'undefined') religionOverlap[NationOfPixel][religionOfPixel] = 0;
-        religionOverlap[NationOfPixel][religionOfPixel] += climateScoreOfReligion;
-        
-    }
-
-    //divide to make all constituencies make up 100(%). 
-    
-    Object.keys(religionOverlap).forEach(nationKey => {
-        autoGeneratedCffTextField.value += `> ${nationKey}\n`
-        
-        let total = 0.0;
-
-        //finding the total of all religionkey values in this nation, so we got something to divide by to find the constituencies' ratios
-        Object.keys(religionOverlap[nationKey]).forEach(ReligionKey => {
-            total += religionOverlap[nationKey][ReligionKey];
-        });
-
-        //replace ReligionGroups by empty, before re-initialising every religion in it from scratch
-        autoGeneratedCffTextField.value += `+> ReligionGroups\n`
-        autoGeneratedCffTextField.value += `> ReligionGroups\n`
-
-        //dividing and adding to autoGeneratedCffTextField
-        Object.keys(religionOverlap[nationKey]).forEach(ReligionKey => {
-
-            autoGeneratedCffTextField.value += `+> ${ReligionKey}\n`
-            autoGeneratedCffTextField.value += `= ${religionOverlap[nationKey][ReligionKey] * 100 / total} ${ReligionKey}.Points\n`
-        });
-        autoGeneratedCffTextField.value += `< <\n`
-    });
     
     progressText.innerText = `Done`
 
@@ -878,4 +465,101 @@ function fillInColorProperties(searchObj){
 
     return ret;
 
+}
+
+async function findDistribution(outerDataset, innerDataset, outerName, innerName, colorToInnerNameMapping, unassignedPixelAssumption, options) {
+    let ret = {};
+    let then = Date.now();
+    for (let i = 0; i < outerDataset.length / 4; i++) {
+        
+        let x = i % WIDTH;
+        let y = Math.floor(i / WIDTH);
+
+        //let the site know you're still alive
+        let now = Date.now();
+        if (now - then > 500) {
+            progressText.innerText = `counting ${innerName}s in ${outerName}s:\n\n${i} out of ${outerDataset.length / 4} pixels read.\nThat's row ${Math.floor(i / WIDTH)} out of ${HEIGHT}`
+            await new Promise(resolve => setTimeout(resolve));
+            then = now;
+        }
+        
+        let outerCol;
+        let innerCol;
+
+        let isOuterDataEmpty = outerDataset[i*4+3] == 0;
+        let isInnerDataEmpty = innerDataset[i*4+3] == 0;
+
+        //if the pixel in nationData is transparent, skip
+        if(isOuterDataEmpty) continue;
+        //if the pixel in climateData is transparent, warn
+        else if(isInnerDataEmpty && !options.canIgnoreTransparentInner) {
+            console.warn(`The pixel (${x}, ${y}) is transparent in the ${innerName} image, but not the ${outerName} image. It is (${outerDataset[i*4]}, ${outerDataset[i*4+1]}, ${outerDataset[i*4+2]}, ${outerDataset[i*4+3]}) in the ${outerName} image. Investigate this. For now ${unassignedPixelAssumption} is assumed`);   
+        }
+
+        outerCol = "Col" + rgbToHex([outerDataset[i*4], outerDataset[i*4+1], outerDataset[i*4+2]]);
+        innerCol = "Col" + rgbToHex([innerDataset[i*4], innerDataset[i*4+1], innerDataset[i*4+2]]);
+
+        const OuterNameOfPixel = colorToNationMap[outerCol];
+        const foundInnerObject = isInnerDataEmpty ? unassignedPixelAssumption : colorToInnerNameMapping.find(element => element.color == innerCol);
+
+        if(typeof foundInnerObject === 'undefined'){
+            PromptFieldReturnedText = "";
+            let plainInnerCol = innerCol.replace('Col', '');
+            
+            PromptMissingInfoContainer.hidden = false;
+            PromptLabel.innerText = `The color #${plainInnerCol} did not have a matching ${innerName}. Which ${innerName} is it?\n(Give the name it has in stats)`;
+
+            let dat = new Uint8ClampedArray(innerDataset.length);
+            for (let j = 0; j < innerDataset.length; j++) {
+                dat[j] = innerDataset[j];
+                
+            }
+            for(let j = 0; j < dat.length / 4; j++){
+                if(innerDataset[j*4+3] == 0){
+                    dat[j*4] = 128;
+                    dat[j*4+1] = 128;
+                    dat[j*4+2] = 255;
+                    dat[j*4+3] = 255;
+                }
+                else if(rgbToHex([innerDataset[j*4], innerDataset[j*4+1], innerDataset[j*4+2]]) != plainInnerCol){
+                    dat[j*4] = 0;
+                    dat[j*4+1] = 0;
+                    dat[j*4+2] = 0;
+                    dat[j*4+3] = 0;
+                }
+                
+            }
+            dat = new ImageData(dat, WIDTH);
+        
+            PromptedMissingInfoCanvas.getContext("2d").putImageData(dat, 0, 0);
+
+            console.log("ok, just waiting now :)");
+
+            //idle until cultureNamePrompt answered;
+            let then = Date.now();
+            while(PromptFieldReturnedText == ""){
+                let now = Date.now();
+                if (now - then > 17) {
+                    await new Promise(resolve => setTimeout(resolve));
+                    then = now;
+                }
+            }
+
+            foundInnerObject = {
+                color: plainInnerCol, 
+                name: PromptFieldReturnedText
+            };
+            
+            colorToInnerNameMapping.push(foundInnerObject);
+
+            autoGeneratedCffTextField.value += `= "${plainInnerCol}" ${innerName}s.${PromptFieldReturnedText}.Color\n`
+        }
+
+        if(typeof ret[OuterNameOfPixel] === 'undefined') ret[OuterNameOfPixel] = {};
+        if(typeof ret[OuterNameOfPixel][foundInnerObject.name] === 'undefined') ret[OuterNameOfPixel][foundInnerObject.name] = 0;
+
+        ret[OuterNameOfPixel][foundInnerObject.name]++;
+    }
+
+    return ret;
 }
