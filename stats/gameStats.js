@@ -25,6 +25,7 @@ let mappedResourcesMultipliers = [
 
 class SocialBehaviour {
   definingFeatures;
+  Color = "000000";
   Opinions = {};
 
   constructor(){
@@ -527,6 +528,8 @@ class Nation {
   DetachedLand;
   CoastalPixels;
   CoastalLandPercent;
+  DevelopementPixelCount;
+  AverageDevelopment;
   LandAdministration;
   Overextension;
 

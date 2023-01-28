@@ -2,3 +2,28 @@
 +> test
 > test
 = "ff0000" Color
+
+<...
+
+> test
+= 18297 Moderate
+= 631 CoastalDesert
+= 762 SubTropical
+= 1179 Tropical
+
+<...
+
+> test
+= 3822745 DevelopementPixelCount
+
+<...
+
+> test
+= 10644 CoastalPixels
+
+<...
+
+<... > Nations
+= 0.00 test.MaxFur
+= 0.75 test.MaxGold
+= 2.25 test.MaxIron
