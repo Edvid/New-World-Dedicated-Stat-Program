@@ -382,44 +382,61 @@
             "SouthAustralia": 6
         },
         "Climates": {
+            "Ocean": {
+                "ClimateScore": 0,
+                "Color": "Col103c6d"
+            },
             "PolarDesert": {
-                "ClimateScore": 0
+                "ClimateScore": 0,
+                "Color": "Col808080"
             },
             "TaigaAndTundra": {
-                "ClimateScore": 0.25
+                "ClimateScore": 0.25,
+                "Color": "Col004a7f"
             },
             "MontaneForest": {
-                "ClimateScore": 0.6
+                "ClimateScore": 0.6,
+                "Color": "Colffac7f"
             },
             "Medditereanian": {
-                "ClimateScore": 0.85
+                "ClimateScore": 0.85,
+                "Color": "Colff6a00"
             },
             "Arid": {
-                "ClimateScore": 0.65
+                "ClimateScore": 0.65,
+                "Color": "Col7f3300"
             },
             "Steppe": {
-                "ClimateScore": 0.75
+                "ClimateScore": 0.75,
+                "Color": "Colc8ff7c"
             },
             "Moderate": {
-                "ClimateScore": 1
+                "ClimateScore": 1,
+                "Color": "Col4cff00"
             },
             "SubTropical": {
-                "ClimateScore": 0.75
+                "ClimateScore": 0.75,
+                "Color": "Col5b7f00"
             },
             "Tropical": {
-                "ClimateScore": 0.6
+                "ClimateScore": 0.6,
+                "Color": "Col008010"
             },
             "Savanna": {
-                "ClimateScore": 0.65
+                "ClimateScore": 0.65,
+                "Color": "Colc1bd3e"
             },
             "Mountainous": {
-                "ClimateScore": 0.35
+                "ClimateScore": 0.35,
+                "Color": "Colff0000"
             },
             "Desert": {
-                "ClimateScore": 0.05
+                "ClimateScore": 0.05,
+                "Color": "Colfffb99"
             },
             "CoastalDesert": {
-                "ClimateScore": 0.35
+                "ClimateScore": 0.35,
+                "Color": "Colffd802"
             }
         },
         "UnitUpkeepCosts": {
