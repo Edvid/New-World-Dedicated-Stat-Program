@@ -201,7 +201,7 @@ async function scanMaps() {
     let developmentScore = await findDistribution(
         nationData, developmentData, "nation", "development",
         colorToNationMap,
-        (e) => { return e },
+        0,
         {
             canIgnoreTransparentInner: true,
             greyScale: true 
@@ -352,7 +352,10 @@ async function scanMaps() {
             () => {return 255}, resourceData, "world", resourceName,
             {Colffffff: "world" },
             (e) => { return "Col" + e },
-            { }
+            {
+                skipsTransparentInner: true,
+                unnamedGroup: true
+            }
         )["world"];
 
         //find nations' max resources
@@ -362,7 +365,8 @@ async function scanMaps() {
             colorToNationMap,
             (e) => { return "Col" + e },
             {
-                skipsTransparentInner: true
+                skipsTransparentInner: true,
+                unnamedGroup: true
             }
         );
 
@@ -478,12 +482,17 @@ async function findDistribution(outerDataset, innerDataset, outerName, innerName
 
         if(typeof OuterNameOfPixel === 'undefined') debugger;
 
-        if(!options.greyScale){            
-            let foundInnerObject = isInnerDataEmpty ? options.unassignedPixelAssumption : colorToInnerNameMapping.find(element => element.color == innerCol);
-            
+        if(!options.greyScale){
+            let foundInnerObject = 
+                isInnerDataEmpty ? 
+                    options.unassignedPixelAssumption : 
+                    !options.unnamedGroup ? 
+                        colorToInnerNameMapping.find(element => element.color == innerCol):
+                        {color: innerCol, name: "Col" + innerCol};
             if(typeof foundInnerObject === 'undefined'){
+                debugger;
                 foundInnerObject = await PromptInnerName(innerCol, getInnerDataPoint, innerName);
-                colorToInnerNameMapping.push(foundInnerObject);
+                if (!options.unnamedGroup) colorToInnerNameMapping.push(foundInnerObject);
             }
             
             const InnerNameOfPixel = foundInnerObject.name;
@@ -494,7 +503,7 @@ async function findDistribution(outerDataset, innerDataset, outerName, innerName
             ret[OuterNameOfPixel][InnerNameOfPixel]++;
         }else{
             const innerGreyScale = getInnerDataPoint(i*4);
-            const InnerPixelValue = isInnerDataEmpty ? options.unassignedPixelAssumption : colorToInnerNameMapping(innerGreyScale);
+            const InnerPixelValue = isInnerDataEmpty ? options.unassignedPixelAssumption : innerGreyScale;
 
             if(typeof ret[OuterNameOfPixel] === 'undefined') ret[OuterNameOfPixel] = {};
             
