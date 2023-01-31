@@ -473,10 +473,10 @@ async function findDistribution(outerDataset, innerDataset, outerName, innerName
                 continue;
         }
 
-        outerCol = "Col" + rgbToHex([getOuterDataPoint(i*4), getOuterDataPoint(i*4+1), getOuterDataPoint(i*4+2)]);
-        innerCol = "Col" + rgbToHex([getInnerDataPoint(i*4), getInnerDataPoint(i*4+1), getInnerDataPoint(i*4+2)]);
+        outerCol = rgbToHex([getOuterDataPoint(i*4), getOuterDataPoint(i*4+1), getOuterDataPoint(i*4+2)]);
+        innerCol = rgbToHex([getInnerDataPoint(i*4), getInnerDataPoint(i*4+1), getInnerDataPoint(i*4+2)]);
 
-        const OuterNameOfPixel = colorToOuterNameMapping[outerCol];
+        const OuterNameOfPixel = colorToOuterNameMapping["Col" + outerCol];
 
         if(typeof OuterNameOfPixel === 'undefined') debugger;
 
@@ -484,7 +484,7 @@ async function findDistribution(outerDataset, innerDataset, outerName, innerName
             const foundInnerObject = isInnerDataEmpty ? options.unassignedPixelAssumption : colorToInnerNameMapping.find(element => element.color == innerCol);
             
             if(typeof foundInnerObject === 'undefined'){
-                foundInnerObject = await PromptInnerName(innerCol.replace('Col', ''), getInnerDataPoint, innerName);
+                foundInnerObject = await PromptInnerName(innerCol, getInnerDataPoint, innerName);
             }
             
             const InnerNameOfPixel = foundInnerObject.name;
