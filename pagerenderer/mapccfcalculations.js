@@ -349,7 +349,7 @@ async function scanMaps() {
         progressText.innerText = "";
 
         let resourceBlobSizes = await findDistribution(
-            () => {return "ffffff"}, resourceData, "world", resourceName,
+            () => {return 255}, resourceData, "world", resourceName,
             {Colffffff: "world" },
             (e) => { return "Col" + e },
             {
