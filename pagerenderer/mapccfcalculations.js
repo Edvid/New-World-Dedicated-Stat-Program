@@ -86,7 +86,7 @@ async function scanMaps() {
     }
 
     const colorToCoastMap = [
-        { color: "Col00ffff", name: "coast"}
+        { color: "00ffff", name: "coast"}
     ];
 
     let nationColorProperties = fillInColorProperties(gameStats.Nations);
