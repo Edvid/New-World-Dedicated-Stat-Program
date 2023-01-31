@@ -193,9 +193,9 @@ async function scanMaps() {
         colorToNationMap,
         colorToCoastMap, 
         {
-            unassignedPixelAssumption: "Noncoast" 
-        },
-        {canIgnoreTransparentInner: true}
+            unassignedPixelAssumption: "Noncoast",
+            canIgnoreTransparentInner: true
+        }
     );
     
     let developmentScore = await findDistribution(
@@ -468,7 +468,7 @@ async function findDistribution(outerDataset, innerDataset, outerName, innerName
         //if the pixel in innerDataset is transparent, warn
         else if(isInnerDataEmpty) {
             if(!options.canIgnoreTransparentInner)
-                console.warn(`The pixel (${x}, ${y}) is transparent in the ${innerName} image, but not the ${outerName} image. It is (${getOuterDataPoint(i*4)}, ${getOuterDataPoint(i*4+1)}, ${getOuterDataPoint(i*4+2)}, ${getOuterDataPoint(i*4+3)}) in the ${outerName} image. Investigate this. For now ${options.unassignedPixelAssumption} is assumed`);   
+                console.warn(`The pixel (${x}, ${y}) is transparent in the ${innerName} image, but not the ${outerName} image. It is (${getOuterDataPoint(i*4)}, ${getOuterDataPoint(i*4+1)}, ${getOuterDataPoint(i*4+2)}, ${getOuterDataPoint(i*4+3)}) in the ${outerName} image. Investigate this. For now ${options.unassignedPixelAssumption} is assumed`);
             else if (options.skipsTransparentInner)
                 continue;
         }
