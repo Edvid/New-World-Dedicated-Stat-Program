@@ -352,9 +352,7 @@ async function scanMaps() {
             () => {return 255}, resourceData, "world", resourceName,
             {Colffffff: "world" },
             (e) => { return "Col" + e },
-            {
-                outerDataAsFunction: true
-            }
+            { }
         )["world"];
 
         //find nations' max resources
@@ -433,12 +431,12 @@ async function findDistribution(outerDataset, innerDataset, outerName, innerName
     let getOuterDataPoint;
     let getInnerDataPoint;
 
-    if(!options.outerDataAsFunction)
+    if(typeof outerDataset != 'function')
         getOuterDataPoint = (i) => outerDataset[i];
     else
         getOuterDataPoint = (i) => outerDataset(i);
 
-    if(!options.innerDataAsFunction)
+    if(typeof innerDataset != 'function')
         getInnerDataPoint = (i) => innerDataset[i];
     else
         getInnerDataPoint = (i) => innerDataset(i);
@@ -480,7 +478,7 @@ async function findDistribution(outerDataset, innerDataset, outerName, innerName
 
         if(typeof OuterNameOfPixel === 'undefined') debugger;
 
-        if(!options.greyScale){
+        if(!options.greyScale){            
             let foundInnerObject = isInnerDataEmpty ? options.unassignedPixelAssumption : colorToInnerNameMapping.find(element => element.color == innerCol);
             
             if(typeof foundInnerObject === 'undefined'){
