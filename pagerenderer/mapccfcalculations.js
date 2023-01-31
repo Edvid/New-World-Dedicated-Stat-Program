@@ -469,10 +469,10 @@ async function findDistribution(outerDataset, innerDataset, outerName, innerName
         if(isOuterDataEmpty) continue;
         //if the pixel in innerDataset is transparent, warn
         else if(isInnerDataEmpty) {
-            if(!options.canIgnoreTransparentInner)
-                console.warn(`The pixel (${x}, ${y}) is transparent in the ${innerName} image, but not the ${outerName} image. It is (${getOuterDataPoint(i*4)}, ${getOuterDataPoint(i*4+1)}, ${getOuterDataPoint(i*4+2)}, ${getOuterDataPoint(i*4+3)}) in the ${outerName} image. Investigate this. For now ${options.unassignedPixelAssumption} is assumed`);
-            else if (options.skipsTransparentInner)
+            if (options.skipsTransparentInner)
                 continue;
+            else if(!options.canIgnoreTransparentInner)
+                console.warn(`The pixel (${x}, ${y}) is transparent in the ${innerName} image, but not the ${outerName} image. It is (${getOuterDataPoint(i*4)}, ${getOuterDataPoint(i*4+1)}, ${getOuterDataPoint(i*4+2)}, ${getOuterDataPoint(i*4+3)}) in the ${outerName} image. Investigate this. For now ${options.unassignedPixelAssumption} is assumed`);
         }
 
         outerCol = rgbToHex([getOuterDataPoint(i*4), getOuterDataPoint(i*4+1), getOuterDataPoint(i*4+2)]);
@@ -490,7 +490,6 @@ async function findDistribution(outerDataset, innerDataset, outerName, innerName
                         colorToInnerNameMapping.find(element => element.color == innerCol):
                         {color: innerCol, name: "Col" + innerCol};
             if(typeof foundInnerObject === 'undefined'){
-                debugger;
                 foundInnerObject = await PromptInnerName(innerCol, getInnerDataPoint, innerName);
                 if (!options.unnamedGroup) colorToInnerNameMapping.push(foundInnerObject);
             }
