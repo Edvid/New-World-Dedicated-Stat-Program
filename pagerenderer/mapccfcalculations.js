@@ -199,22 +199,28 @@ async function scanMaps() {
 
 
     let climateDistribution = await findDistribution(
-        nationData, climateData, "nation", "climate", 
+        nationData, climateData, "nation", "climate",
+        colorToNationMap,
         climateColorProperties, 
-        "Moderate"
+        {
+            unassignedPixelAssumption: "Moderate"
+        }
     );
 
     let coastPixelCount = await findDistribution(
         nationData, coastData, "nation", "coast", 
+        colorToNationMap,
         colorToCoastMap, 
-        "Noncoast", 
+        {
+            unassignedPixelAssumption: "Noncoast" 
+        },
         {canIgnoreTransparentInner: true}
     );
     
     let developmentScore = await findDistribution(
         nationData, developmentData, "nation", "development",
+        colorToNationMap,
         (e) => { return e },
-        0, 
         {
             canIgnoreTransparentInner: true,
             greyScale: true 
@@ -223,13 +229,20 @@ async function scanMaps() {
     
     let cultureDistribution = await findDistribution(
         nationData, cultureData, "nation", "culture", 
-        cultureColorProperties, 
-        "Foreign");
+        colorToNationMap,
+        cultureColorProperties,
+        {
+            unassignedPixelAssumption: "Foreign"
+        } 
+    );
 
     let religionDistribution = await findDistribution(
         nationData, religionData, "nation", "religion", 
+        colorToNationMap,
         religionColorProperties, 
-        "Pagan"
+        {
+            unassignedPixelAssumption: "Pagan"
+        }
     );
 
     
@@ -348,9 +361,6 @@ async function scanMaps() {
     for (let r = 0; r < mappedResources.length; r++) {
         let resourceName = mappedResources[r];
         
-        let resourceBlobSizes = {}; 
-        
-        
         let resourceData = null;
         
         then = Date.now();
@@ -368,63 +378,25 @@ async function scanMaps() {
         
         progressText.innerText = "";
 
-        then = Date.now();
-        for (let i = 0; i < nationData.length / 4; i++) {
-            
-            //let the site know you're still alive
-            let now = Date.now();
-            if (now - then > 500) {
-                progressText.innerText = `Counting size of all ${resourceName} blobs:\n\n${i} out of ${nationData.length / 4} pixels read.\nThat's row ${Math.floor(i / WIDTH)} out of ${HEIGHT}`
-                await new Promise(resolve => setTimeout(resolve));
-                then = now;
-            }       
-
-            if(resourceData[i*4+3] == 0) continue;
-            
-            resourceCol = "Col" + rgbToHex([resourceData[i*4], resourceData[i*4+1], resourceData[i*4+2]]);
-        
-            if(typeof resourceBlobSizes[resourceCol] === 'undefined') resourceBlobSizes[resourceCol] = 0;
-            resourceBlobSizes[resourceCol]++;
-        }
+        let resourceBlobSizes = await findDistribution(
+            () => {return "ffffff"}, resourceData, "world", resourceName,
+            {Colffffff: "world" },
+            (e) => { return "Col" + e },
+            {
+                outerDataAsFunction: true
+            }
+        )["world"];
 
         //find nations' max resources
 
-        let resourceOverlap = {};
-
-        //instantiate all nations in resourceOverlap
-        Object.keys(gameStats.Nations).forEach(key => {
-            resourceOverlap[key] = {};
-        });
-    
-        then = Date.now();
-        for (let i = 0; i < nationData.length / 4; i++) {
-            
-            //let the site know you're still alive
-            let now = Date.now();
-            if (now - then > 500) {
-                progressText.innerText = `Assigning every nation' max ${resourceName}:\n\n${i} out of ${nationData.length / 4} pixels read.\nThat's row ${Math.floor(i / WIDTH)} out of ${HEIGHT}`
-                await new Promise(resolve => setTimeout(resolve));
-                then = now;
-            }       
-
-            //populate each nation in resourceOverlap with Col<hex> properties with values of how many pixels it overlaps that blob
-            
-
-            //if the pixel is either empty on the resource image or nation image, skip
-            if(nationData[i*4+3] == 0 || resourceData[i*4+3] == 0) continue;
-
-            nationCol = "Col" + rgbToHex([nationData[i*4], nationData[i*4+1], nationData[i*4+2]]);        
-            resourceBlobCol = "Col" + rgbToHex([resourceData[i*4], resourceData[i*4+1], resourceData[i*4+2]]);
-            const NationOfPixel = colorToNationMap[nationCol];
-
-            if(typeof resourceOverlap[NationOfPixel] === 'undefined') {            
-                console.log(`resourceOverlap[NationOfPixel] was ${resourceOverlap[NationOfPixel]}. NationOfPixel was ${NationOfPixel} and nationCol ${nationCol}`)
+        let resourceOverlap = await findDistribution(
+            nationData, resourceData, "nation", resourceName,
+            colorToNationMap,
+            (e) => { return "Col" + e },
+            {
+                skipsTransparentInner: true
             }
-
-            if(typeof resourceOverlap[NationOfPixel][resourceBlobCol] === 'undefined') resourceOverlap[NationOfPixel][resourceBlobCol] = 0;
-            resourceOverlap[NationOfPixel][resourceBlobCol]++;
-            
-        }
+        );
 
         //use resourceBlobSizes to divide all. 
         
@@ -464,10 +436,28 @@ function fillInColorProperties(searchObj){
 
 }
 
-async function findDistribution(outerDataset, innerDataset, outerName, innerName, colorToInnerNameMapping, unassignedPixelAssumption, options) {
+async function findDistribution(outerDataset, innerDataset, outerName, innerName, colorToOuterNameMapping, colorToInnerNameMapping, options) {
     let ret = {};
+    
+    if(!options.pixelCount){
+        pixelCount = WIDTH * HEIGHT;
+    }
+
+    let getOuterDataPoint;
+    let getInnerDataPoint;
+
+    if(!options.outerDataAsFunction)
+        getOuterDataPoint = (i) => outerDataset[i];
+    else
+        getOuterDataPoint = (i) => outerDataset(i);
+
+    if(!options.innerDataAsFunction)
+        getInnerDataPoint = (i) => innerDataset[i];
+    else
+        getInnerDataPoint = (i) => innerDataset(i);
+
     let then = Date.now();
-    for (let i = 0; i < outerDataset.length / 4; i++) {
+    for (let i = 0; i < pixelCount; i++) {
         
         let x = i % WIDTH;
         let y = Math.floor(i / WIDTH);
@@ -475,7 +465,7 @@ async function findDistribution(outerDataset, innerDataset, outerName, innerName
         //let the site know you're still alive
         let now = Date.now();
         if (now - then > 500) {
-            progressText.innerText = `counting ${innerName}s in ${outerName}s:\n\n${i} out of ${outerDataset.length / 4} pixels read.\nThat's row ${Math.floor(i / WIDTH)} out of ${HEIGHT}`
+            progressText.innerText = `counting ${innerName}s in ${outerName}s:\n\n${i} out of ${pixelCount} pixels read.\nThat's row ${Math.floor(i / WIDTH)} out of ${HEIGHT}`
             await new Promise(resolve => setTimeout(resolve));
             then = now;
         }
@@ -483,25 +473,31 @@ async function findDistribution(outerDataset, innerDataset, outerName, innerName
         let outerCol;
         let innerCol;
 
-        let isOuterDataEmpty = outerDataset[i*4+3] == 0;
-        let isInnerDataEmpty = innerDataset[i*4+3] == 0;
+        let isOuterDataEmpty = getOuterDataPoint(i*4+3) == 0;
+        let isInnerDataEmpty = getInnerDataPoint(i*4+3) == 0;
 
-        //if the pixel in nationData is transparent, skip
+        //if the pixel in outerDataset is transparent, skip
         if(isOuterDataEmpty) continue;
-        //if the pixel in climateData is transparent, warn
-        else if(isInnerDataEmpty && !options.canIgnoreTransparentInner) {
-            console.warn(`The pixel (${x}, ${y}) is transparent in the ${innerName} image, but not the ${outerName} image. It is (${outerDataset[i*4]}, ${outerDataset[i*4+1]}, ${outerDataset[i*4+2]}, ${outerDataset[i*4+3]}) in the ${outerName} image. Investigate this. For now ${unassignedPixelAssumption} is assumed`);   
+        //if the pixel in innerDataset is transparent, warn
+        else if(isInnerDataEmpty) {
+            if(!options.canIgnoreTransparentInner)
+                console.warn(`The pixel (${x}, ${y}) is transparent in the ${innerName} image, but not the ${outerName} image. It is (${getOuterDataPoint(i*4)}, ${getOuterDataPoint(i*4+1)}, ${getOuterDataPoint(i*4+2)}, ${getOuterDataPoint(i*4+3)}) in the ${outerName} image. Investigate this. For now ${options.unassignedPixelAssumption} is assumed`);   
+            else if (options.skipsTransparentInner)
+                continue;
         }
 
-        outerCol = "Col" + rgbToHex([outerDataset[i*4], outerDataset[i*4+1], outerDataset[i*4+2]]);
-        innerCol = "Col" + rgbToHex([innerDataset[i*4], innerDataset[i*4+1], innerDataset[i*4+2]]);
+        outerCol = "Col" + rgbToHex([getOuterDataPoint(i*4), getOuterDataPoint(i*4+1), getOuterDataPoint(i*4+2)]);
+        innerCol = "Col" + rgbToHex([getInnerDataPoint(i*4), getInnerDataPoint(i*4+1), getInnerDataPoint(i*4+2)]);
 
-        const OuterNameOfPixel = colorToNationMap[outerCol];
+        const OuterNameOfPixel = colorToOuterNameMapping[outerCol];
+
+        if(typeof OuterNameOfPixel === 'undefined') debugger;
+
         if(!options.greyScale){
-            const foundInnerObject = isInnerDataEmpty ? unassignedPixelAssumption : colorToInnerNameMapping.find(element => element.color == innerCol);
+            const foundInnerObject = isInnerDataEmpty ? options.unassignedPixelAssumption : colorToInnerNameMapping.find(element => element.color == innerCol);
             
             if(typeof foundInnerObject === 'undefined'){
-                foundInnerObject = await PromptInnerName(innerCol.replace('Col', ''), innerDataset, innerName);
+                foundInnerObject = await PromptInnerName(innerCol.replace('Col', ''), getInnerDataPoint, innerName);
             }
             
             const InnerNameOfPixel = foundInnerObject.name;
@@ -511,8 +507,8 @@ async function findDistribution(outerDataset, innerDataset, outerName, innerName
             
             ret[OuterNameOfPixel][InnerNameOfPixel]++;
         }else{
-            const innerGreyScale = innerDataset[i*4];
-            const InnerPixelValue = isInnerDataEmpty ? unassignedPixelAssumption : colorToInnerNameMapping(innerGreyScale);
+            const innerGreyScale = getInnerDataPoint(i*4);
+            const InnerPixelValue = isInnerDataEmpty ? options.unassignedPixelAssumption : colorToInnerNameMapping(innerGreyScale);
 
             if(typeof ret[OuterNameOfPixel] === 'undefined') ret[OuterNameOfPixel] = {};
             
@@ -523,25 +519,27 @@ async function findDistribution(outerDataset, innerDataset, outerName, innerName
     return ret;
 }
 
-async function PromptInnerName(innerCol, innerDataset, innerName){
+async function PromptInnerName(innerCol, getInnerDataPointFunction, innerName){
     PromptFieldReturnedText = "";
     
+    let InnerDatasetLength = WIDTH * HEIGHT * 4;
+
     PromptMissingInfoContainer.hidden = false;
     PromptLabel.innerText = `The color #${innerCol} did not have a matching ${innerName}. Which ${innerName} is it?\n(Give the name it has in stats)`;
 
-    let dat = new Uint8ClampedArray(innerDataset.length);
-    for (let j = 0; j < innerDataset.length; j++) {
-        dat[j] = innerDataset[j];
+    let dat = new Uint8ClampedArray(InnerDatasetLength);
+    for (let j = 0; j < InnerDatasetLength; j++) {
+        dat[j] = getInnerDataPointFunction(j);
         
     }
     for(let j = 0; j < dat.length / 4; j++){
-        if(innerDataset[j*4+3] == 0){
+        if(getInnerDataPointFunction(j*4+3) == 0){
             dat[j*4] = 128;
             dat[j*4+1] = 128;
             dat[j*4+2] = 255;
             dat[j*4+3] = 255;
         }
-        else if(rgbToHex([innerDataset[j*4], innerDataset[j*4+1], innerDataset[j*4+2]]) != innerCol){
+        else if(rgbToHex([getInnerDataPointFunction(j*4), getInnerDataPointFunction(j*4+1), getInnerDataPointFunction(j*4+2)]) != innerCol){
             dat[j*4] = 0;
             dat[j*4+1] = 0;
             dat[j*4+2] = 0;
