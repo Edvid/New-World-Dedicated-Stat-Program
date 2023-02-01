@@ -490,7 +490,7 @@ async function findDistribution(outerDataset, innerDataset, outerName, innerName
             ret[OuterNameOfPixel][InnerNameOfPixel]++;
         }else{
             const innerGreyScale = getInnerDataPoint(i*4);
-            const InnerPixelValue = isInnerDataEmpty ? options.unassignedPixelAssumption : innerGreyScale;
+            const InnerPixelValue = isInnerDataEmpty ? options.unassignedPixelAssumption : 255 - innerGreyScale;
 
             if(typeof ret[OuterNameOfPixel] === 'undefined') ret[OuterNameOfPixel] = 0;
             
