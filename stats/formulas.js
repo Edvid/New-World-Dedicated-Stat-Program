@@ -441,7 +441,7 @@ function evaluateNation(nationName) {
   })();
   n.PopulationDensityPerKmSquared = n.Population / (n.KmSquared * n.HabitableLand);
   n.CoastalLandPercent = n.CoastalPixels / n.Size;
-  n.AverageDevelopment = n.DevelopementPixelCount / n.Size / 255;
+  n.AverageDevelopment = n.DevelopmentPixelCount / n.Size / 255;
 
   n.Disease = n.PopulationDensityPerKmSquared / 25 - n.Health / 20 - (n.Technologies.HumanAnatomy ? 0.15 : 0) - (n.CulturalAdvancements.PotatoPopulationBoom == true ? 0.2 : 0);
   n.UnderPopulation = n.Disease < 0.5 ? (1 - n.Disease) / 10 : 0;
