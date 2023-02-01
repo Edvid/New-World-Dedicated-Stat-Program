@@ -348,7 +348,7 @@ async function scanMaps() {
         
         progressText.innerText = "";
 
-        let resourceBlobSizes = await findDistribution(
+        let resourceBlobSizes = (await findDistribution(
             () => {return 255}, resourceData, "world", resourceName,
             {Colffffff: "world" },
             (e) => { return "Col" + e },
@@ -356,7 +356,7 @@ async function scanMaps() {
                 skipsTransparentInner: true,
                 unnamedGroup: true
             }
-        )["world"];
+        ))["world"];
 
         //find nations' max resources
 
@@ -369,7 +369,7 @@ async function scanMaps() {
                 unnamedGroup: true
             }
         );
-
+        
         //use resourceBlobSizes to divide all. 
         
         Object.keys(resourceOverlap).forEach(nationKey => {
