@@ -48,6 +48,10 @@ String.prototype.hashCode = function () {
 };
 /* #endregion */
 
+String.prototype.trimIndents = function () {
+    return this.valueOf().replace(/(    |\t)+/g, "");
+}
+
 
 String.prototype.capitalSpacing = function () {
     return this.replace(/(?<=[a-zA-Z])(?=[A-Z1-9])/gm, " ");
