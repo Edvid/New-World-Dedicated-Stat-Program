@@ -62,8 +62,8 @@ async function scanMaps() {
 
         for(let i = 0; i < WIDTH * HEIGHT; i++) {
             let foundZoneColor = rgbToHex([nationData[i*4], nationData[i*4+1], nationData[i*4+2]]);
-            climateName = climateColorProperties.find(element => element.color == foundZoneColor).name;
-            climateScore = gameStats.Climates[climateName].Score;
+            let climateObject = climateColorProperties.find(element => element.color == foundZoneColor);
+            climateScore = climateObject ? gameStats.Climates[climateObject.name].Score : 0;
             ret[i] = climateScore * developmentData[i];
         }
 

@@ -29,6 +29,14 @@
 = 2.25 test.MaxIron
 
 <...
+> cultures
++> eu
++> af
++> as
++> am
+< > religions
++> west
+<
 
 = "238dff" cultures.eu.Color
 = "7c6d35" cultures.af.Color
