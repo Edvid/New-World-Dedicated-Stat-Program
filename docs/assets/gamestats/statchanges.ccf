@@ -27,3 +27,11 @@
 = 0.00 test.MaxFur
 = 0.75 test.MaxGold
 = 2.25 test.MaxIron
+
+<...
+
+= "238dff" cultures.eu.Color
+= "7c6d35" cultures.af.Color
+= "ff0000" cultures.as.Color
+= "ffd54c" cultures.am.Color
+= "238dff" religions.west.Color

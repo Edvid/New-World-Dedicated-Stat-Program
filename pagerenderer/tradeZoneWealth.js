@@ -45,7 +45,7 @@ async function onLoadStatTradeZoneWealth() {
 
     let worldContext = worldCanvas.getContext("2d");
 
-    let imagePath = "./docs/assets/images/world/zones.png";
+    let imagePath = "./docs/assets/images/world/TradeZones.png";
     //render image
     let image = new Image(WIDTH, HEIGHT);
     image.src = imagePath;

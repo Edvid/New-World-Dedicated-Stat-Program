@@ -37,6 +37,7 @@ async function scanMaps() {
     developmentData = await prepareData("./docs/assets/images/world/Development.png")
     cultureData = await prepareData("./docs/assets/images/world/Cultures.png")
     religionData = await prepareData("./docs/assets/images/world/Religions.png")
+    tradeZoneData = await prepareData("./docs/assets/images/world/TradeZones.png")
 
     
     populationXDevelopmentData = () => {
@@ -202,7 +203,7 @@ async function scanMaps() {
 
 
     let tradeZoneScore = await findDistribution(
-        tradeZoneWealthData, populationXDevelopmentData, "wealth", "trade zone",
+        tradeZoneData, populationXDevelopmentData, "wealth", "trade zone",
         colorToTradeZoneMap,
         0,
         {
