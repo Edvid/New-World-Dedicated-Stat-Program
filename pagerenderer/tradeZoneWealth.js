@@ -66,12 +66,12 @@ async function onLoadStatTradeZoneWealth() {
         let col = `rgba(${data[0]}, ${data[1]}, ${data[2]}, ${data[3]})`
         let weakcol = `rgba(${(data[0] + 255) / 2}, ${(data[1] + 255) / 2}, ${(data[2] + 255) / 2}, ${data[3]})`
         
-        for (ClimateZoneName in gameStats.Climates) {
-            const ClimateZone = gameStats.Climates[ColorToZoneName];
-            if(rgbToHex(data).toLowerCase() == ClimateZone.Color.toLowerCase()){
-                title.innerText = ClimateZoneName.capitalSpacing();
-                zonewealth.innerText = gameStats.TradeZones[ClimateZoneName];
-                let chartdiv = zoneinfluencerschart(ColorToZoneNamePair[1]);
+        for (TradeZoneName in gameStats.TradeZones) {
+            const TradeZone = gameStats.TradeZones[TradeZoneName];
+            if(rgbToHex(data).toLowerCase() == TradeZone.Color.toLowerCase()){
+                title.innerText = TradeZoneName.capitalSpacing();
+                zonewealth.innerText = TradeZone.Score;
+                let chartdiv = zoneinfluencerschart(TradeZoneName);
                 zoneinfluencers.innerHTML = "";
                 zoneinfluencers.appendChild(chartdiv);
 
