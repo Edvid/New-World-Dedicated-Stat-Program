@@ -68,7 +68,7 @@ async function onLoadStatTradeZoneWealth() {
         
         for (TradeZoneName in gameStats.TradeZones) {
             const TradeZone = gameStats.TradeZones[TradeZoneName];
-            if(rgbToHex(data).toLowerCase() == TradeZone.Color.toLowerCase()){
+            if(rgbToHex(data).toLowerCase() == TradeZone.Color.toString().toLowerCase()){
                 title.innerText = TradeZoneName.capitalSpacing();
                 zonewealth.innerText = TradeZone.Score;
                 let chartdiv = zoneinfluencerschart(TradeZoneName);
