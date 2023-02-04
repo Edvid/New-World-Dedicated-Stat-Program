@@ -967,91 +967,319 @@ class Stats{
     ];
     this.Trades = {};
     this.TradeZones = {
-      Alaska: 0,
-      Cascadia: 0,
-      CaliforniaAndWestMexico: 0,
-      HudsonBay: 0,
-      GreatLakes: 0,
-      Louisiana: 0,
-      GulfOfMexico: 0,
-      LawrenceGulf: 0,
-      EastCoast: 0,
-      Carribean: 0,
-      CentralAmerica: 0,
-
-      GuyanaAndSuriname: 0,
-      Amazon: 0,
-      Peru: 0,
-      RioGrande: 0,
-      LaPlata: 0,
-      Chile: 0,
-      Patagonia: 0,
-
-
-
-
-      NorthernAnatolia: 0,
-      NorthSea: 0,
-      BritishIsles: 0,
-      EnglishChannel: 0,
-      France: 0,
-      BayOfBiscay: 0,
-      WestIberia: 0,
-      Gibraltar: 0,
-      WesternMediterranean: 0,
-      Rhine: 0,
-      CentralMediterranean: 0,
-      Adriatic: 0,
-      Germany: 0,
-      WesternDanube: 0,
-      Denmark: 0,
-      Baltic: 0,
-      NorthNordics: 0,
-      BarentsSea: 0,
-      Novgorod: 0,
-      Poland: 0,
-      Dniepr: 0,
-      Crimea: 0,
-      EasternDanube: 0,
-      Greece: 0,
-      EasternMediterranean: 0,
-      Egypt: 0,
-      RedSea: 0,
-      WesternSahara: 0,
-      CoteDIvoire: 0,
-      Nigeria: 0,
-      SouthNile: 0,
-      Somalia: 0,
-      Kongo: 0,
-      EastAfrica: 0,
-      Mozambique: 0,
-      SouthAfrica: 0,
-
-      Mesopotamia: 0,
-      PersianGulf: 0,
-      Caucasus: 0,
-      DonRiver: 0,
-      Volga: 0,
-      CentralAsia: 0,
-      WestSiberia: 0,
-      EastSiberia: 0,
-      Iran: 0,
-      Pakistan: 0,
-      Tibet: 0,
-      Mongolia: 0,
-      Manchuria: 0,
-      SeaOfJapan: 0,
-      NorthChina: 0,
-      YangtzeRiver: 0,
-      SouthChina: 0,
-      NorthIndia: 0,
-      WestIndia: 0,
-      EastIndia: 0,
-      Burma: 0,
-      SouthEastAsia: 0,
-      NorthAustralia: 0,
-      SouthAustralia: 0
-    }
+      Alaska: {
+        Color: "none",
+        Score: 1
+      },
+      Cascadia: {
+        Color: "none",
+        Score: 3
+      },
+      CaliforniaAndWestMexico: {
+        Color: "none",
+        Score: 4
+      },
+      HudsonBay: {
+        Color: "none",
+        Score: 3
+      },
+      GreatLakes: {
+        Color: "none",
+        Score: 7
+      },
+      Louisiana: {
+        Color: "none",
+        Score: 7
+      },
+      GulfOfMexico: {
+        Color: "none",
+        Score: 8
+      },
+      LawrenceGulf: {
+        Color: "none",
+        Score: 4.5
+      },
+      EastCoast: {
+        Color: "none",
+        Score: 7
+      },
+      Carribean: {
+        Color: "none",
+        Score: 8
+      },
+      CentralAmerica: {
+        Color: "none",
+        Score: 6
+      },
+      GuyanaAndSuriname: {
+        Color: "none",
+        Score: 3
+      },
+      Amazon: {
+        Color: "none",
+        Score: 3
+      },
+      Peru: {
+        Color: "none",
+        Score: 2
+      },
+      RioGrande: {
+        Color: "none",
+        Score: 3
+      },
+      LaPlata: {
+        Color: "none",
+        Score: 3
+      },
+      Chile: {
+        Color: "none",
+        Score: 2
+      },
+      Patagonia: {
+        Color: "none",
+        Score: 2
+      },
+      NorthernAnatolia: {
+        Color: "none",
+        Score: 10
+      },
+      NorthSea: {
+        Color: "none",
+        Score: 4.5
+      },
+      BritishIsles: {
+        Color: "none",
+        Score: 8
+      },
+      EnglishChannel: {
+        Color: "none",
+        Score: 10
+      },
+      France: {
+        Color: "none",
+        Score: 7
+      },
+      BayOfBiscay: {
+        Color: "none",
+        Score: 7
+      },
+      WestIberia: {
+        Color: "none",
+        Score: 7
+      },
+      Gibraltar: {
+        Color: "none",
+        Score: 9
+      },
+      WesternMediterranean: {
+        Color: "none",
+        Score: 7
+      },
+      Rhine: {
+        Color: "none",
+        Score: 7
+      },
+      CentralMediterranean: {
+        Color: "none",
+        Score: 8
+      },
+      Adriatic: {
+        Color: "none",
+        Score: 10
+      },
+      Germany: {
+        Color: "none",
+        Score: 7
+      },
+      WesternDanube: {
+        Color: "none",
+        Score: 7
+      },
+      Denmark: {
+        Color: "none",
+        Score: 8
+      },
+      Baltic: {
+        Color: "none",
+        Score: 7.5
+      },
+      NorthNordics: {
+        Color: "none",
+        Score: 3
+      },
+      BarentsSea: {
+        Color: "none",
+        Score: 3
+      },
+      Novgorod: {
+        Color: "none",
+        Score: 8
+      },
+      Poland: {
+        Color: "none",
+        Score: 6
+      },
+      Dniepr: {
+        Color: "none",
+        Score: 8.5
+      },
+      Crimea: {
+        Color: "none",
+        Score: 7
+      },
+      EasternDanube: {
+        Color: "none",
+        Score: 8.5
+      },
+      Greece: {
+        Color: "none",
+        Score: 9.5
+      },
+      EasternMediterranean: {
+        Color: "none",
+        Score: 8
+      },
+      Egypt: {
+        Color: "none",
+        Score: 7
+      },
+      RedSea: {
+        Color: "none",
+        Score: 7
+      },
+      WesternSahara: {
+        Color: "none",
+        Score: 2
+      },
+      CoteDIvoire: {
+        Color: "none",
+        Score: 7
+      },
+      Nigeria: {
+        Color: "none",
+        Score: 8
+      },
+      SouthNile: {
+        Color: "none",
+        Score: 3
+      },
+      Somalia: {
+        Color: "none",
+        Score: 7
+      },
+      Kongo: {
+        Color: "none",
+        Score: 3
+      },
+      EastAfrica: {
+        Color: "none",
+        Score: 3
+      },
+      Mozambique: {
+        Color: "none",
+        Score: 4
+      },
+      SouthAfrica: {
+        Color: "none",
+        Score: 5
+      },
+      Mesopotamia: {
+        Color: "none",
+        Score: 6.5
+      },
+      PersianGulf: {
+        Color: "none",
+        Score: 7
+      },
+      Caucasus: {
+        Color: "none",
+        Score: 6
+      },
+      DonRiver: {
+        Color: "none",
+        Score: 6
+      },
+      Volga: {
+        Color: "none",
+        Score: 6
+      },
+      CentralAsia: {
+        Color: "none",
+        Score: 3
+      },
+      WestSiberia: {
+        Color: "none",
+        Score: 2
+      },
+      EastSiberia: {
+        Color: "none",
+        Score: 2
+      },
+      Iran: {
+        Color: "none",
+        Score: 5
+      },
+      Pakistan: {
+        Color: "none",
+        Score: 7
+      },
+      Tibet: {
+        Color: "none",
+        Score: 2
+      },
+      Mongolia: {
+        Color: "none",
+        Score: 3
+      },
+      Manchuria: {
+        Color: "none",
+        Score: 6.5
+      },
+      SeaOfJapan: {
+        Color: "none",
+        Score: 7.5
+      },
+      NorthChina: {
+        Color: "none",
+        Score: 7
+      },
+      YangtzeRiver: {
+        Color: "none",
+        Score: 7
+      },
+      SouthChina: {
+        Color: "none",
+        Score: 8
+      },
+      NorthIndia: {
+        Color: "none",
+        Score: 7
+      },
+      WestIndia: {
+        Color: "none",
+        Score: 7
+      },
+      EastIndia: {
+        Color: "none",
+        Score: 7
+      },
+      Burma: {
+        Color: "none",
+        Score: 6
+      },
+      SouthEastAsia: {
+        Color: "none",
+        Score: 8
+      },
+      NorthAustralia: {
+        Color: "none",
+        Score: 5
+      },
+      SouthAustralia: {
+        Color: "none",
+        Score: 6
+      }
+  };
 
     this.Climates = {
       Ocean: {
