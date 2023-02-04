@@ -37,6 +37,7 @@ async function scanMaps() {
 
     let nationData, climateData, coastData, developmentData, cultureData, religionData, tradeZoneData = null;
 
+    baseData = await prepareData("Blank.png")
     nationData = await prepareData("Nations.png")
     climateData = await prepareData("Climates.png")
     coastData = await prepareData("CoastalLand.png")
@@ -447,17 +448,17 @@ async function PromptName(color, getDatasetPointFunction, name){
         
     }
     for(let j = 0; j < dat.length / 4; j++){
-        if(getDatasetPointFunction(j*4+3) == 0){
-            dat[j*4] = 128;
-            dat[j*4+1] = 128;
-            dat[j*4+2] = 255;
-            dat[j*4+3] = 255;
+        if(rgbToHex([getDatasetPointFunction(j*4), getDatasetPointFunction(j*4+1), getDatasetPointFunction(j*4+2)]) == color){
+            dat[j*4] = getDatasetPointFunction(j*4);
+            dat[j*4+1] = getDatasetPointFunction(j*4+1);
+            dat[j*4+2] = getDatasetPointFunction(j*4+2);
+            dat[j*4+3] = getDatasetPointFunction(j*4+3);
         }
-        else if(rgbToHex([getDatasetPointFunction(j*4), getDatasetPointFunction(j*4+1), getDatasetPointFunction(j*4+2)]) != color){
-            dat[j*4] = 0;
-            dat[j*4+1] = 0;
-            dat[j*4+2] = 0;
-            dat[j*4+3] = 0;
+        else {
+            dat[j*4] = baseData[j*4];
+            dat[j*4+1] = baseData[j*4+1];
+            dat[j*4+2] = baseData[j*4+2];
+            dat[j*4+3] = baseData[j*4+3];
         }
         
     }
