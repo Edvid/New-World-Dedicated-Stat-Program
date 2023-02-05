@@ -3,8 +3,8 @@ let canvasContainer;
 let zonewealth;
 let canvasZoomScale = 1;
 
-const WIDTH = 1200;
-const HEIGHT = 493;
+const WIDTH = 8192;
+const HEIGHT = 3365;
 
 document.querySelector("body").onload = async function () {
     document.getElementById("isloading").innerText = "Loading..."
@@ -33,16 +33,11 @@ async function onLoadStatTradeZoneWealth() {
     let zoneinfluencers = document.createElement("td");
     tr2.appendChild(zoneinfluencers);
 
-    canvasContainer = document.getElementById("canvascontainer");
-    
-    let worldCanvas = document.createElement("canvas");
-    worldCanvas.id = "worldcanvas";
-    canvasContainer.width = WIDTH;
-    canvasContainer.height = HEIGHT;
+    let worldCanvas = document.querySelector("canvas");
     worldCanvas.width = WIDTH;
     worldCanvas.height = HEIGHT;
-    canvasContainer.appendChild(worldCanvas);
-
+    worldCanvas.style.width = "60vw";
+    
     let worldContext = worldCanvas.getContext("2d");
 
     let imagePath = "./docs/assets/images/world/TradeZones.png";
@@ -51,6 +46,43 @@ async function onLoadStatTradeZoneWealth() {
     image.src = imagePath;
     image.onload = function () {
         worldContext.drawImage(image, 0, 0, WIDTH, HEIGHT);
+    }
+
+    await new Promise(resolve => setTimeout(resolve));
+
+    let baseImagePath = "./docs/assets/images/world/Blank.png";
+    //render base background
+    let baseImage = new Image(WIDTH, HEIGHT);
+    baseImage.src = baseImagePath;
+    baseImage.onload = async function () {
+        let tempCanvas = document.createElement("canvas");
+        tempCanvas.width = WIDTH;
+        tempCanvas.height = HEIGHT;
+        tempCanvas.getContext("2d").drawImage(baseImage, 0, 0, WIDTH, HEIGHT);
+        let baseData = (await tempCanvas.getContext("2d").getImageData(0, 0, WIDTH, HEIGHT)).data;
+        let worldCanvasData = (await worldContext.getImageData(0, 0, WIDTH, HEIGHT)).data;
+        let newDat = new Uint8ClampedArray(baseData);
+        for (let i = 0; i < newDat.length; i++) {
+            newDat[i] = worldCanvasData[i];
+        }
+        let then = Date.now();
+        for(let i = 0; i < newDat.length / 4; i++){
+            
+            if(newDat[i*4+3] == 0){
+                newDat[i*4] = baseData[i*4];
+                newDat[i*4+1] = baseData[i*4+1];
+                newDat[i*4+2] = baseData[i*4+2];
+                newDat[i*4+3] = baseData[i*4+3];
+            }
+            
+            let now = Date.now();
+            if (now - then > 250) {
+                worldContext.putImageData(new ImageData(newDat, WIDTH), 0, 0);
+                await new Promise(resolve => setTimeout(resolve));
+                then = now;
+            }
+        }
+        worldContext.putImageData(new ImageData(newDat, WIDTH), 0, 0);
     }
     
     worldCanvas.onclick = function (e) {
