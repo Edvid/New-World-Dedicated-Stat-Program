@@ -85,16 +85,15 @@ async function onLoadStatTradeZoneWealth() {
         worldContext.putImageData(new ImageData(newDat, WIDTH), 0, 0);
     }
     
-    worldCanvas.onclick = function (e) {
-        
-        let context = worldCanvas.getContext("2d");
-        
+    worldCanvas.onclick = function (e) {        
         let canvasPos = findPos(this);
         let realPos = {
-            x: e.pageX - canvasPos.x,
-            y: e.pageY - canvasPos.y
+            x: Math.floor((e.pageX - canvasPos.x) * WIDTH / worldCanvas.clientWidth ),
+            y: Math.floor((e.pageY - canvasPos.y) * HEIGHT / worldCanvas.clientHeight )
         }
-        let data = context.getImageData(realPos.x, realPos.y, 1, 1).data;
+        console.log(`{${realPos.x}, ${realPos.y}}`);
+        let data = worldContext.getImageData(realPos.x, realPos.y, 1, 1).data;
+        console.log(data);
         let col = `rgba(${data[0]}, ${data[1]}, ${data[2]}, ${data[3]})`
         let weakcol = `rgba(${(data[0] + 255) / 2}, ${(data[1] + 255) / 2}, ${(data[2] + 255) / 2}, ${data[3]})`
         
