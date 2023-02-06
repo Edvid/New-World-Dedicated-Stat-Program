@@ -384,7 +384,7 @@ function evaluateNation(nationName) {
           ((typeof Point !== 'undefined') ? Point : 0
         ) / allNationPoints) 
         : 0;
-      stp += gameStats.TradeZones[region] * percent;
+      stp += gameStats.TradeZones[region].Score * percent;
     }
     return stp;
   })();
