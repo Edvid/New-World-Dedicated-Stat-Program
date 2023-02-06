@@ -1,8 +1,26 @@
+> cultures
++> eu
++> af
++> as
++> am
+< > religions
++> west
+<
+
+= "238dff" cultures.eu.Color
+= "7c6d35" cultures.af.Color
+= "ff0000" cultures.as.Color
+= "ffd54c" cultures.am.Color
+= "238dff" religions.west.Color
+
 <... > nations
 +> test
 > test
 = "ff0000" Color
-
+= "london" Capital Name
+> culture groups
++> eu
+= 100 eu.points
 <...
 
 > test
@@ -29,20 +47,6 @@
 = 2.25 test.MaxIron
 
 <...
-> cultures
-+> eu
-+> af
-+> as
-+> am
-< > religions
-+> west
-<
-
-= "238dff" cultures.eu.Color
-= "7c6d35" cultures.af.Color
-= "ff0000" cultures.as.Color
-= "ffd54c" cultures.am.Color
-= "238dff" religions.west.Color
 
 = "ffeb63" TradeZones.HudsonBay.Color
 = "ff6c7a" TradeZones.Alaska.Color
