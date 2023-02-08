@@ -64,52 +64,23 @@ document.querySelector("body").onload = async function () {
         table.appendChild(resourceRow);
     }
 
+    let BlankData = prepareData("Blank.png");
+    let NationsData = prepareData("Nations.png");
+    let BumpData = prepareData("Bump.png");
+    let FoWData = prepareData("FoW.png");
 
-    let layers = [
-        "Blank",
-        "Nations",
-        "Bump",
-        "FoW"
 
-    ];
-
-    let ctx = canvasMap.getContext("2d");
-    for (const layer in layers) {
-        let layername = layers[layer];
-        await new Promise((resolve) => {
-            let imagePath = "./docs/assets/images/world/" + layername + ".png";
-            let image = new Image(WIDTH, HEIGHT);
-            image.src = imagePath;
+    let worldData = new Uint8ClampedArray(WIDTH * HEIGHT * 4);
+    for(let i = 0; i < worldData.length; i++){
+        //transparent
+        if(i % 4 == 3) worldData[i] = 255;
+        //color channels
+        else {
+            const thisPixelsAlpha = Math.ceil(i / 4) * 4 - 1;
             
-            image.onload = function () {
-                ctx.globalCompositeOperation = "source-over";
-                ctx.globalAlpha = 1.0;
-                
-                if (layername == 'Nations') {
-                    ctx.globalCompositeOperation = "multiply";
-                    ctx.drawImage(image, 0, 0, WIDTH, HEIGHT);
-                }else if(layername == 'Bump'){
-                    ctx.globalAlpha = 75/255;
-                    ctx.drawImage(image, 0, 0, WIDTH, HEIGHT);
-                }
-                else{
-                    ctx.drawImage(image, 0, 0, WIDTH, HEIGHT);
-                }
-                resolve(image);
-            }
-        })   
-    }; 
-}
-
-function outZoomChange(zoom) {
-    canvasZoomScale *= zoom;
-
-    let canvaslist = document.querySelectorAll("#canvascontainer canvas");
-
-    canvaslist.forEach(element => {
-        element.style.width = (WIDTH / canvasZoomScale) + "px";
-        element.style.height = (HEIGHT / canvasZoomScale) + "px";
-    });
-
-
+            worldData[i] = FoWData[thisPixelsAlpha] != 0 ? 
+                FoWData[i] : 
+                BlankData[i] * NationsData[i] / 255 + BumpData[i] * 75 / 255;
+        }
+    } 
 }
