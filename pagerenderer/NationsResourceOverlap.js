@@ -66,9 +66,9 @@ document.querySelector("body").onload = async function () {
 
 
     let layers = [
-        "blank",
+        "Blank",
         "Nations",
-        "bump",
+        "Bump",
         "FoW"
 
     ];
@@ -88,7 +88,7 @@ document.querySelector("body").onload = async function () {
                 if (layername == 'Nations') {
                     ctx.globalCompositeOperation = "multiply";
                     ctx.drawImage(image, 0, 0, WIDTH, HEIGHT);
-                }else if(layername == 'bump'){
+                }else if(layername == 'Bump'){
                     ctx.globalAlpha = 75/255;
                     ctx.drawImage(image, 0, 0, WIDTH, HEIGHT);
                 }
