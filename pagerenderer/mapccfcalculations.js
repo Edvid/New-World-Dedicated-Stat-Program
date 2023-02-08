@@ -6,12 +6,8 @@ document.querySelector("body").addEventListener("game load done", scanMaps);
 const progressText = document.querySelector(".progressText");
 progressText.innerText = "Loading...";
 
-const canvas = document.querySelector(".mainCanvas");
 const PromptMissingInfoContainer = document.querySelector(".promptMissingInfoContainer");
 const PromptedMissingInfoCanvas = document.querySelector(".promptMissingInfoContainer canvas");
-
-canvas.width = WIDTH;
-canvas.height = HEIGHT;
 
 PromptedMissingInfoCanvas.width = WIDTH;
 PromptedMissingInfoCanvas.height = HEIGHT;
@@ -37,14 +33,14 @@ async function scanMaps() {
 
     let nationData, climateData, coastData, developmentData, cultureData, religionData, tradeZoneData = null;
 
-    baseData = await prepareData("Blank.png")
-    nationData = await prepareData("Nations.png")
-    climateData = await prepareData("Climates.png")
-    coastData = await prepareData("CoastalLand.png")
-    developmentData = await prepareData("Development.png")
-    cultureData = await prepareData("Cultures.png")
-    religionData = await prepareData("Religions.png")
-    tradeZoneData = await prepareData("TradeZones.png")
+    baseData = await prepareData("Blank.png", progressText)
+    nationData = await prepareData("Nations.png", progressText)
+    climateData = await prepareData("Climates.png", progressText)
+    coastData = await prepareData("CoastalLand.png", progressText)
+    developmentData = await prepareData("Development.png", progressText)
+    cultureData = await prepareData("Cultures.png", progressText)
+    religionData = await prepareData("Religions.png", progressText)
+    tradeZoneData = await prepareData("TradeZones.png", progressText)
 
     //wait until image datas are loaded
     while(nationData == null || 
@@ -56,6 +52,9 @@ async function scanMaps() {
         tradeZoneData == null){
         await new Promise(resolve => setTimeout(resolve));
     }
+
+    progressText.innerText = "loading population X development";
+    await new Promise(resolve => setTimeout(resolve));
 
     let populationXDevelopmentData = function () {
 
@@ -328,26 +327,6 @@ function fillInColorProperties(searchObj){
 
     return ret;
 
-}
-
-async function prepareData(path){
-
-    progressText.innerText = `loading ${path}`;
-
-    let Img = new Image(WIDTH, HEIGHT);
-    Img.src = `./docs/assets/images/world/${path}`;
-    let done = false;
-    Img.onload = function () {
-        canvas.getContext("2d").clearRect(0, 0, WIDTH, HEIGHT);
-        canvas.getContext("2d").drawImage(Img, 0, 0, WIDTH, HEIGHT);
-        done = true;
-    }
-
-    while(!done){
-        await new Promise(resolve => setTimeout(resolve));
-    }
-
-    return canvas.getContext("2d").getImageData(0, 0, WIDTH, HEIGHT).data;
 }
 
 async function findDistribution(outerDataset, innerDataset, outerName, innerName, colorToOuterNameMapping, colorToInnerNameMapping, options) {

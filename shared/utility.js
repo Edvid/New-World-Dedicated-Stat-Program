@@ -792,8 +792,33 @@ const downloadToFile = (content, filename, contentType) => {
 };
 /* #endregion */
 
+async function prepareData(path, progressTextElement){
+
+    const WIDTH = 8192;
+    const HEIGHT = 3365;
+    
+    const canvas = document.createElement("canvas");
+
+    if(progressTextElement != null) progressTextElement.innerText = `Loading ${path}`;
+
+    let Img = new Image(WIDTH, HEIGHT);
+    Img.src = `./docs/assets/images/world/${path}`;
+    let done = false;
+    Img.onload = function () {
+        canvas.getContext("2d").clearRect(0, 0, WIDTH, HEIGHT);
+        canvas.getContext("2d").drawImage(Img, 0, 0, WIDTH, HEIGHT);
+        done = true;
+    }
+
+    while(!done){
+        await new Promise(resolve => setTimeout(resolve));
+    }
+
+    return canvas.getContext("2d").getImageData(0, 0, WIDTH, HEIGHT).data;
+}
+
+/* #region  Taken from https://www.w3schools.com/howto/howto_js_collapsible.asp */
 document.querySelector("body").onload = function () {
-    /* #region  Taken from https://www.w3schools.com/howto/howto_js_collapsible.asp */
     var coll = document.getElementsByClassName("collapsible");
     var collitem;
 
@@ -808,5 +833,5 @@ document.querySelector("body").onload = function () {
             }
         });
     }
-    /* #endregion */
 }
+/* #endregion */
