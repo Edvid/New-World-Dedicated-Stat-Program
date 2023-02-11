@@ -11,11 +11,11 @@ document.querySelector("body").onload = async function () {
 
 
     
-    let canvasMap = document.createElement("canvas");
-    canvasMap.id = "worldcanvas";
-    canvasMap.width = WIDTH;
-    canvasMap.height = HEIGHT;
-    canvasContainer.appendChild(canvasMap);
+    let worldCanvas = document.createElement("canvas");
+    worldCanvas.id = "worldcanvas";
+    worldCanvas.width = WIDTH;
+    worldCanvas.height = HEIGHT;
+    canvasContainer.appendChild(worldCanvas);
 
     let overlapProperties = [...mappedResources];
 
@@ -84,5 +84,5 @@ document.querySelector("body").onload = async function () {
         }
     }
     const newWorldImage = new Image(worldData, WIDTH);
-    canvasMap.getContext("2d").drawImage(newWorldImage, 0, 0);
+    worldCanvas.getContext("2d").drawImage(newWorldImage, 0, 0, WIDTH, HEIGHT);
 }
