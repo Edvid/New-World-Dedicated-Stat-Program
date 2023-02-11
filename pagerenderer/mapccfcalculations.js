@@ -46,17 +46,6 @@ async function scanMaps() {
     religionData = await prepareData("Religions.png")
     tradeZoneData = await prepareData("TradeZones.png")
 
-    //wait until image datas are loaded
-    while(nationData == null || 
-        climateData == null || 
-        coastData == null || 
-        developmentData == null || 
-        cultureData == null || 
-        religionData == null || 
-        tradeZoneData == null){
-        await new Promise(resolve => setTimeout(resolve));
-    }
-
     let populationXDevelopmentData = function () {
 
         let ret = new Uint8ClampedArray(WIDTH * HEIGHT * 4);
