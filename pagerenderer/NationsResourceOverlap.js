@@ -64,10 +64,10 @@ document.querySelector("body").onload = async function () {
         table.appendChild(resourceRow);
     }
 
-    let BlankData = prepareData("Blank.png");
-    let NationsData = prepareData("Nations.png");
-    let BumpData = prepareData("Bump.png");
-    let FoWData = prepareData("FoW.png");
+    let BlankData = await prepareData("Blank.png");
+    let NationsData = await prepareData("Nations.png");
+    let BumpData = await prepareData("Bump.png");
+    let FoWData = await prepareData("FoW.png");
 
 
     let worldData = new Uint8ClampedArray(WIDTH * HEIGHT * 4);
@@ -82,5 +82,7 @@ document.querySelector("body").onload = async function () {
                 FoWData[i] : 
                 BlankData[i] * NationsData[i] / 255 + BumpData[i] * 75 / 255;
         }
-    } 
+    }
+    const newWorldImage = new Image(BlankData, WIDTH);
+    canvasMap.getContext("2d").drawImage(newWorldImage, 0 , 0);
 }
