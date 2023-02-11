@@ -31,7 +31,7 @@ async function scanMaps() {
     let religionColorProperties = fillInColorProperties(gameStats.Religions);
     let tradeZoneColorProperties = fillInColorProperties(gameStats.TradeZones);
 
-    let nationData, climateData, coastData, developmentData, cultureData, religionData, tradeZoneData = null;
+    let baseData, nationData, climateData, coastData, developmentData, cultureData, religionData, tradeZoneData = null;
 
     baseData = await prepareData("Blank.png", progressText)
     nationData = await prepareData("Nations.png", progressText)
