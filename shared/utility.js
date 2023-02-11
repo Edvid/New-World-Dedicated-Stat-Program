@@ -798,6 +798,8 @@ async function prepareData(path, progressTextElement){
     const HEIGHT = 3365;
     
     let tempCanvas = document.createElement("canvas");
+    tempCanvas.width = WIDTH;
+    tempCanvas.height = HEIGHT;    
 
     if(progressTextElement != null) progressTextElement.innerText = `Loading ${path}`;
 
@@ -815,16 +817,7 @@ async function prepareData(path, progressTextElement){
         await new Promise(resolve => setTimeout(resolve));
     }
 
-    const tempData = tempCanvas.getContext("2d").getImageData(0, 0, WIDTH, HEIGHT).data;
-
-    //how many non 0 valued bytes are there in the bitmap
-    let counter = 0;
-    for(let i = 0; i < tempData.length; i++){
-        if(tempData[i] > 0) counter++;
-    }
-
-    debugger;
-    return tempData; 
+    return tempCanvas.getContext("2d").getImageData(0, 0, WIDTH, HEIGHT).data; 
 }
 
 /* #region  Taken from https://www.w3schools.com/howto/howto_js_collapsible.asp */
