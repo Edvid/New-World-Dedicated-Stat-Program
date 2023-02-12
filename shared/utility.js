@@ -792,6 +792,10 @@ const downloadToFile = (content, filename, contentType) => {
 };
 /* #endregion */
 
+function lerp(a, b, t){
+    return a*(1-t) + b*t;
+}
+
 async function prepareData(path, progressTextElement){
     
     const WIDTH = 8192;
