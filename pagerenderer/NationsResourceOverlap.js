@@ -83,6 +83,6 @@ document.querySelector("body").onload = async function () {
                 BlankData[i] * NationsData[i] / 255 + BumpData[i] * 75 / 255;
         }
     }
-    const newWorldImage = new Image(worldData, WIDTH);
-    worldCanvas.getContext("2d").drawImage(newWorldImage, 0, 0, WIDTH, HEIGHT);
+    const newWorldImage = new ImageData(worldData, WIDTH);
+    worldCanvas.getContext("2d").putImageData(newWorldImage, 0, 0);
 }
