@@ -83,7 +83,7 @@ document.querySelector("body").onload = async function () {
                 (NationsData[thisPixelsAlpha] != 0 ? 
                     NationsData[i] : 
                     BlankData[i])
-                * BumpData[i] * (75 / 255) / 255;
+                * Math.min((BumpData[i] + 49) / 255, 255);
         }
     }
     const newWorldImage = new ImageData(worldData, WIDTH);
