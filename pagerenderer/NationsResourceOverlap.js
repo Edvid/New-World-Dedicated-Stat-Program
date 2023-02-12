@@ -78,12 +78,21 @@ document.querySelector("body").onload = async function () {
         else {
             const thisPixelsAlpha = Math.ceil(i / 4) * 4 - 1;
             
-            worldData[i] = FoWData[thisPixelsAlpha] != 0 ? 
-                FoWData[i] : 
+            if(FoWData[thisPixelsAlpha] != 0)
+                worldData[i] = FoWData[i];
+            else {
+
+                
+                
+                worldData[i] =  
                 (NationsData[thisPixelsAlpha] != 0 ? 
                     NationsData[i] : 
                     BlankData[i])
-                * Math.min((BumpData[i] + 49) / 255, 255);
+                    * Math.min((BumpData[i] + 49) / 255, 255);
+                    
+                    //mute colours
+                    worldData[i] -= (worldData[i] - 128) / 2;
+                }    
         }
     }
     const newWorldImage = new ImageData(worldData, WIDTH);
