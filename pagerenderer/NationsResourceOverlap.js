@@ -92,7 +92,7 @@ document.querySelector("body").onload = async function () {
                 else 
                     worldData[i] = BlankData[i];
                 
-                const bumpData255Cap = Math.min((BumpData[i] + 49), 255);
+                const bumpData255Cap = Math.min((BumpData[i]), 255);
                 worldData[i] = lerp(worldData[i], bumpData255Cap, bumpMapOpacity);
             }    
         }
