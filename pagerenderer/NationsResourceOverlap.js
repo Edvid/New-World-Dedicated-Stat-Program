@@ -4,7 +4,7 @@ let canvasZoomScale = 1;
 const WIDTH = 8192;
 const HEIGHT = 3365;
 
-const bumpMapOpacity = 0.5;
+const bumpMapOpacity = 0.6;
 
 document.querySelector("body").onload = async function () {
     canvasContainer = document.getElementById("canvascontainer");
