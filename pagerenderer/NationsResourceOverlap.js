@@ -77,22 +77,25 @@ document.querySelector("body").onload = async function () {
         //color channels
         else {
             const thisPixelsAlpha = Math.ceil(i / 4) * 4 - 1;
-            
-            if(FoWData[thisPixelsAlpha] != 0)
+            const isFoWPixelEmpty = FoWData[thisPixelsAlpha] != 0
+
+            if(isFoWPixelEmpty)
                 worldData[i] = FoWData[i];
             else {
-
+                const isNationPixelEmpty  =
+                NationsData[thisPixelsAlpha] != 0;                
                 
+                if(isNationPixelEmpty)
+                    worldData[i] = NationsData[i];
+                else 
+                    worldData[i] = BlankData[i];
                 
-                worldData[i] =  
-                (NationsData[thisPixelsAlpha] != 0 ? 
-                    NationsData[i] : 
-                    BlankData[i])
-                    * Math.min((BumpData[i] + 49) / 255, 255);
+                const bumpData255Cap = Math.min((BumpData[i] + 49) / 255, 255);
+                worldData[i] *= bumpData255Cap;
                     
-                    //mute colours
-                    worldData[i] -= (worldData[i] - 128) / 2;
-                }    
+                //mute colours
+                worldData[i] -= (worldData[i] - 255) * 49 / 255;
+            }    
         }
     }
     const newWorldImage = new ImageData(worldData, WIDTH);
