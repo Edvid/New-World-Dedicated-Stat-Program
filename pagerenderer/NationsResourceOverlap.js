@@ -4,7 +4,7 @@ let canvasZoomScale = 1;
 const WIDTH = 8192;
 const HEIGHT = 3365;
 
-const bumpMapOpacity = 0.6;
+const bumpMapOpacity = 0.3;
 
 document.querySelector("body").onload = async function () {
     canvasContainer = document.getElementById("canvascontainer");
@@ -92,12 +92,8 @@ document.querySelector("body").onload = async function () {
                 else 
                     worldData[i] = BlankData[i];
                 
-                const bumpData255Cap = Math.min((BumpData[i] + 49) / 255, 255);
-                const bumpDataWithOpacity = bumpData255Cap + (1.0 - bumpData255Cap) * (1.0 - bumpMapOpacity);
-                worldData[i] *= bumpDataWithOpacity;
-                    
-                //mute colours
-                worldData[i] -= (worldData[i] - 255) * 49 / 255;
+                const bumpData255Cap = Math.min((BumpData[i] + 49), 255);
+                worldData[i] = lerp(worldData[i], bumpData255Cap, bumpMapOpacity);
             }    
         }
     }
