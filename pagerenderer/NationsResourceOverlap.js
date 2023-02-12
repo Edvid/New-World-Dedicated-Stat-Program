@@ -4,6 +4,8 @@ let canvasZoomScale = 1;
 const WIDTH = 8192;
 const HEIGHT = 3365;
 
+const bumpMapOpacity = 0.5;
+
 document.querySelector("body").onload = async function () {
     canvasContainer = document.getElementById("canvascontainer");
     canvasContainer.width = WIDTH;
@@ -91,7 +93,8 @@ document.querySelector("body").onload = async function () {
                     worldData[i] = BlankData[i];
                 
                 const bumpData255Cap = Math.min((BumpData[i] + 49) / 255, 255);
-                worldData[i] *= bumpData255Cap;
+                const bumpDataWithOpacity = bumpData255Cap + (1.0 - bumpData255Cap) * (1.0 - bumpMapOpacity);
+                worldData[i] *= bumpDataWithOpacity;
                     
                 //mute colours
                 worldData[i] -= (worldData[i] - 255) * 49 / 255;
