@@ -1,3 +1,206 @@
+<... > trade zones
+
++> CentralSiberia
+= "69a826" CentralSiberia.Color
++> EasternSiberia
+= "331b1b" EasternSiberia.Color
++> WesternSiberia
+= "264a00" WesternSiberia.Color
++> NorthSea
+= "7382ff" NorthSea.Color
++> Alaska
+= "ff6c7a" Alaska.Color
++> NorthernNordics
+= "ffd6e4" NorthernNordics.Color
++> HudsonBay
+= "ffeb63" HudsonBay.Color
++> BarentsSea
+= "ff553e" BarentsSea.Color
++> CentralCanada
+= "a5a5a5" CentralCanada.Color
++> BalticSea
+= "8f00c2" BalticSea.Color
++> Novgorod
+= "00ff21" Novgorod.Color
++> Denmark
+= "ff0000" Denmark.Color
++> LawrenceGulf
+= "ff6a38" LawrenceGulf.Color
++> Volga
+= "db7a25" Volga.Color
++> Livonia
+= "801065" Livonia.Color
++> BritishIsles
+= "808080" BritishIsles.Color
++> Muscovy
+= "e1d869" Muscovy.Color
++> Dniepr
+= "80ff65" Dniepr.Color
++> UralRiver
+= "dcff44" UralRiver.Color
++> Manchuria
+= "e8ff65" Manchuria.Color
++> Vistula
+= "ff7e70" Vistula.Color
++> CentralEurope
+= "8080a3" CentralEurope.Color
++> DonRiver
+= "ffd86d" DonRiver.Color
++> Cascadia
+= "ff006e" Cascadia.Color
++> SeaOfJapan
+= "00ffff" SeaOfJapan.Color
++> Rhine
+= "0094ff" Rhine.Color
++> EnglishChannel
+= "ff4a00" EnglishChannel.Color
++> GreatLakes
+= "3dffff" GreatLakes.Color
++> Romania
+= "d100dc" Romania.Color
++> CentralAsia
+= "9fffff" CentralAsia.Color
++> France
+= "00d5ff" France.Color
++> WesternDanube
+= "404040" WesternDanube.Color
++> EasternDanube
+= "5d7c3d" EasternDanube.Color
++> TheRockies
+= "7f4618" TheRockies.Color
++> Mississippi
+= "00ba21" Mississippi.Color
++> SouthernFrance
+= "46a7ff" SouthernFrance.Color
++> CaspianSea
+= "3881ff" CaspianSea.Color
++> GobiDesert
+= "e1e9cd" GobiDesert.Color
++> Crimea
+= "31aadb" Crimea.Color
++> BayOfBiscay
+= "efff66" BayOfBiscay.Color
++> Adriatic
+= "007f0e" Adriatic.Color
++> EastCoast
+= "cc0000" EastCoast.Color
++> CentralMediterranean
+= "ff7d49" CentralMediterranean.Color
++> WestCoast
+= "ffdb7b" WestCoast.Color
++> Caucasus
+= "ff2f3e" Caucasus.Color
++> Greece
+= "0065ff" Greece.Color
++> WesternMediterranean
+= "ffd846" WesternMediterranean.Color
++> Iberia
+= "3a9112" Iberia.Color
++> NorthernAnatolia
+= "5b8f00" NorthernAnatolia.Color
++> YellowRiver
+= "3aaa0e" YellowRiver.Color
++> Mesopotamia
+= "7f3300" Mesopotamia.Color
++> EasternMediterranean
+= "80ff00" EasternMediterranean.Color
++> GulfOfMexico
+= "ffac54" GulfOfMexico.Color
++> Afghanistan
+= "592b37" Afghanistan.Color
++> IndusRiver
+= "267f00" IndusRiver.Color
++> Morocco
+= "7f0001" Morocco.Color
++> Tibet
+= "b200ff" Tibet.Color
++> Iran
+= "8ffd42" Iran.Color
++> Sichuan
+= "c6d521" Sichuan.Color
++> Sahara
+= "b7a791" Sahara.Color
++> ArabianDesert
+= "e2ceb1" ArabianDesert.Color
++> YangtzeRiver
+= "3dfd00" YangtzeRiver.Color
++> WesternMexico
+= "469b52" WesternMexico.Color
++> Egypt
+= "ff1410" Egypt.Color
++> Ganges
+= "db6525" Ganges.Color
++> RedSea
+= "2b6d0e" RedSea.Color
++> PersianGulf
+= "ffc430" PersianGulf.Color
++> Caribbean
+= "3c02ff" Caribbean.Color
++> WesternSahara
+= "fed800" WesternSahara.Color
++> SouthEastAsia
+= "ff3d3d" SouthEastAsia.Color
++> Pacific
+= "93ffff" Pacific.Color
++> SouthChinaSea
+= "4d007f" SouthChinaSea.Color
++> CentralIndia
+= "ec7f7f" CentralIndia.Color
++> Deccan
+= "84ff55" Deccan.Color
++> SouthernNile
+= "d9ff00" SouthernNile.Color
++> Somalia
+= "529bae" Somalia.Color
++> WesternNiger
+= "b6ff4a" WesternNiger.Color
++> Guinea
+= "ff8ca3" Guinea.Color
++> CentralAmerica
+= "a0a0a0" CentralAmerica.Color
++> EasternNiger
+= "3bd323" EasternNiger.Color
++> Venezuela
+= "c3ff2b" Venezuela.Color
++> Indonesia
+= "fec605" Indonesia.Color
++> CongoRiver
+= "dd6a00" CongoRiver.Color
++> Gabon
+= "107f00" Gabon.Color
++> LakeVictoria
+= "9fa300" LakeVictoria.Color
++> Amazon
+= "2d9600" Amazon.Color
++> Peru
+= "9e0000" Peru.Color
++> EastAfrica
+= "0094d7" EastAfrica.Color
++> LakeTanganyika
+= "b67871" LakeTanganyika.Color
++> SaoFranciscoRiver
+= "6aff2b" SaoFranciscoRiver.Color
++> NorthernAustralia
+= "ff7400" NorthernAustralia.Color
++> Angola
+= "a3ff27" Angola.Color
++> Mozambique
+= "00ff69" Mozambique.Color
++> ParanaRiver
+= "2ba6ff" ParanaRiver.Color
++> Chile
+= "ffe846" Chile.Color
++> SouthernAustralia
+= "b6c2ff" SouthernAustralia.Color
++> SouthAfrica
+= "8f00ff" SouthAfrica.Color
++> AustralianDesert
+= "d8c5a9" AustralianDesert.Color
++> Patagonia
+= "68d7ff" Patagonia.Color
+
+<...
+
 > cultures
 +> eu
 +> af
