@@ -184,11 +184,13 @@ Aborting.`);
 function createStat(currentSelection, arg) {
     let objectClass;
     if (/^\.Nations$/.test(currentSelection)) objectClass = "Nation";
-    if (/^\.(Cultures|Religions)$/.test(currentSelection)) objectClass = "SocialBehaviour";
-    if (/^\.Nations\..+\.(Culture|Religion)Groups$/.test(currentSelection)) objectClass = "SocialBehaviourGroup";
-    if (/^\.Nations\..+\.Climates$/.test(currentSelection)) objectClass = "Climate";
-    if (/^\.(Cultures|Religions)\..+\.Opinions$/.test(currentSelection)) objectClass = "Opinion";
-    if (/^\.Trades$/.test(currentSelection)) objectClass = "Trade";
+    else if (/^\.(Cultures|Religions)$/.test(currentSelection)) objectClass = "SocialBehaviour";
+    else if (/^\.Nations\..+\.(Culture|Religion)Groups$/.test(currentSelection)) objectClass = "SocialBehaviourGroup";
+    else if (/^\.Nations\..+\.Climates$/.test(currentSelection)) objectClass = "Climate";
+    else if (/^\.(Cultures|Religions)\..+\.Opinions$/.test(currentSelection)) objectClass = "Opinion";
+    else if (/^\.TradeZones$/.test(currentSelection)) objectClass = "TradeZone";
+    else if (/^\.Trades$/.test(currentSelection)) objectClass = "Trade";
+    
     if (arg.includes('=')) {
         let newName = arg.slice(0, arg.indexOf('=')).trim();
         let oldName = arg.slice(arg.indexOf('=') + 1).trim();
