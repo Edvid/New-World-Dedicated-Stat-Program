@@ -527,12 +527,6 @@ function evaluateNation(nationName) {
   n.Stability = n.PopulationHappiness + n.AdministrativeEfficiency / 10 - n.Overextension - n.CulturalDisunity - n.ReligiousDisunity + (n.Propaganda / 1.75 * (1 + n.CulturalAdvancements.Newspapers / 2)) + n.PopulationControl + (n.AristocratLoyalty - 0.5) * 10 + (n.ClergyLoyalty - 0.5) * 7.5 + (n.BurgousieLoyalty - 0.5) * 7.5 + n.PopulationStabilityImpact + WarStabilityModifier * 100 + (n.MilitaryLoyalty - 1) * 7.5;
   
   n.Corruption =  (n.Stability < 1 ? 0.5 : 0) + (n.Stability < -1 ? 0.5 : 0) + n.AdministrativeStrain / 4 + n.Absolutism / 3;
-  
-  
-
-  
-
-
 
   n.ResourcePopulationGrowthBoost = (n.EffectiveCotton - n.CottonInflation + n.EffectiveSpice - n.SpiceInflation + n.EffectiveWool - n.WoolInflation + n.EffectiveFur - n.FurInflation + (n.EffectiveSugar - n.SugarInflation + n.EffectiveExoticFruit - n.ExoticFruitInflation) / 2) / 100;
 n.PopulationGrowth = (n.FutureFood < 0 ? n.FutureFood * 1000 / n.Population - (n.Disease > 1 ? n.Disease - 1 : 0) / 10 : max(-0.3, (0.1 + PopulationGrowthModifier + n.ResourcePopulationGrowthBoost) * (1 - n.Disease) - n.BirthControl / 20));
@@ -591,11 +585,6 @@ n.PopulationGrowth = (n.FutureFood < 0 ? n.FutureFood * 1000 / n.Population - (n
     return "Melee"
   }
 
-
-
-
-
-  
   n.ProductionEfficiency = n.TradeImprovements + n.Technologies.VerticalLoom / 5 + n.Technologies.Workshops + n.Technologies.Cranes / 5 + n.Technologies.TextileManufactories / 2 + n.Technologies.FlyingShuttle / 5 + n.Technologies.LeadChamberProcess / 5;
   n.Production = (n.LocalTrade + n.TradePower) * n.Workforces.Townsfolk * n.ProductionEfficiency * 10;
   n.TradeProtection = n.LightShips * 0.75 + n.MediumShips * 1 + n.HeavyShips * 0.75;
@@ -621,6 +610,33 @@ n.PopulationGrowth = (n.FutureFood < 0 ? n.FutureFood * 1000 / n.Population - (n
     }
     return rbb / gameStats.TimeDivide;
   })();
+
+    /*
+      Aristocracy - 3200 * AristocratInf + (slaves and serfs) + (from farmers?)
+      Burgousie - 4300 * BurgousieInf + (slaves) + (from townsfolk and merchants?)
+    */
+
+    n.ResourceOwners = (n.Reforms.NobleResourceOwnership == 1 ? n.Workforces.Aristocracy : 0) + (n.Reforms.MixedResourceOwnership == 1 ? n.Workforces.Aristocracy + n.Workforces.Burgousie : 0) + (n.Reforms.BurgousieResourceOwnership == 1 ? n.Workforces.Burgousie : 0)
+    n.ResourceOwnersInfluence = (n.Reforms.NobleResourceOwnership == 1 ? n.EstateInfluences.AristocratInfluence : 0) + (n.Reforms.MixedResourceOwnership == 1 ? (n.EstateInfluences.AristocratInfluence + n.EstateInfluences.BurgousieInfluence) / 2 : 0) + (n.Reforms.BurgousieResourceOwnership == 1 ? n.EstateInfluences.BurgousieInfluence : 0)
+
+    n.SlavesWage = n.ResourceBudgetBoost / (n.Population / 1000 * n.Workforces.Slaves) * 0.2;
+    n.LabourersWage = n.ResourceBudgetBoost / (n.Population / 1000 * n.Workforces.Labourers) * (1 - n.ResourceOwnersInfluence);
+    n.SlavesAndLabourersWageToOwner = n.Workforces.Slaves / 1000 * n.ResourceBudgetBoost / (n.Population / 1000 * n.Workforces.Slaves) * 0.8 + n.Workforces.Labourers / 1000 * n.ResourceBudgetBoost / (n.Population / 1000 * n.Workforces.Labourers) * n.ResourceOwnersInfluence;
+    n.SerfsWage = n.FoodValue * 0.25;
+    n.FarmersWage = n.FoodValue * (1 - n.EstateInfluences.AristocratInfluence);
+    n.SerfsAndFarmersWageToAristocracy = n.Workforces.Serfs / 1000 * n.FoodValue * 0.75 + n.Workforces.Farmers / 1000 * n.FoodValue * n.EstateInfluences.AristocratInfluence;
+    n.TownsfolkWage = (n.Production / (n.Population / 1000 * n.Workforces.Townsfolk)) * (1 - n.EstateInfluences.BurgousieInfluence);
+    n.TownsfolkWageToBurgousie = n.Workforces.Townsfolk / 1000 * (n.Production / (n.Population * n.Workforces.Townsfolk)) * n.EstateInfluences.BurgousieInfluence;
+    n.ClergyWage = n.Population * (n.ReligiousFervor + 1) / (n.Population / 1000 * n.Workforces.Clergy) * n.EstateInfluences.ClergyInfluence / 1000;
+    n.BureaucratsWage = n.BureaucratWages * n.EstateInfluences.BureaucratInfluence;
+    n.MerchantsWage = n.TradeRevenue / (n.Population / 1000 * n.Workforces.Merchants) * (1 - n.EstateInfluences.BurgousieInfluence);
+    n.MerchantsWageToBurggousie = n.Workforces.Merchants / 1000 * n.TradeRevenue / (n.Population / 1000 * n.Workforces.Merchants) * (1 - n.EstateInfluences.BurgousieInfluence);
+    n.IntellectualsWage = 30 * n.EstateInfluences.IntellectualsInfluence;
+    n.SailorsWage = 3 * n.ArmyWages;
+    n.SoldiersWage = 6 * n.ArmyWages;
+    n.AristocracyWage = n.SerfsAndFarmersWageToAristocracy / (n.Population * n.Workforces.Aristocracy) + (n.Reforms.NobleResourceOwnership == 1 ? n.SlavesAndLabourersWageToOwner : 0) + (n.Reforms.MixedResourceOwnership == 1 ? n.SlavesAndLabourersWageToOwner : 0);
+    n.BurgousieWage = (n.TownsfolkWageToBurgousie + n.MerchantsWageToBurggousie) / (n.Population * n.Workforces.Burgousie) + (n.Reforms.MixedResourceOwnership == 1 ? n.SlavesAndLabourersWageToOwner : 0) + (n.Reforms.BurgousieResourceOwnership == 1 ? n.SlavesAndLabourersWageToOwner : 0);
+
 
   n.TradeRevenue = (n.TradePower * (1 - n.EstateInfluences.BurgousieInfluence)) / gameStats.TimeDivide * n.TradeEfficiency + n.TradeProfit / gameStats.TimeDivide;
   n.EffectiveTax = (
