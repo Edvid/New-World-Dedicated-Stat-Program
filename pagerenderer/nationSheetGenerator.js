@@ -314,7 +314,9 @@ let TableLayouts = {
         ["MaxPopulation", "DetachedLand", "LandAdministration", "Overextension", "CoastalLandPercent", "AverageDevelopment", "HabitableLand"]
     ],
     "Estates": [
-		["AristocratLoyalty", "ClergyLoyalty", "BurgousieLoyalty", "BureaucratLoyalty", "IntellectualsLoyalty", "WorkersLoyalty", "MilitaryLoyalty"]
+        ["AristocratLoyalty", "ClergyLoyalty", "BurgousieLoyalty", "BureaucratLoyalty", "IntellectualsLoyalty", "WorkersLoyalty", "MilitaryLoyalty"],
+        ["SlavesWage", "LabourersWage", "SerfsWage", "FarmersWage", "TownsfolkWage", "ClergyWage", "BureaucratsWage", "MerchantsWage", "IntellectualsWage", "SailorsWage", "SoldiersWage", "AristocracyWage", "BurgousieWage"],
+        ["SlavesAndLabourersWageToOwner", "SerfsAndFarmersWageToAristocracy", "TownsfolkWageToBurgousie", "MerchantsWageToBurggousie"]
     ],
 	"Reforms": [
 		["Reforms.SlaveryAllowed", "Reforms.SlaveryBanned", "Reforms.SerfdomAllowed", "Reforms.SerfdomBanned"],
