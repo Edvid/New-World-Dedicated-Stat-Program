@@ -207,6 +207,14 @@ When creating a new nation you must remember the following
   + Set the religion represented at government to the _one_ religion that best represents the entire nation (majority or only one)
   + Set flag if any are specified
 
+### Modifying protected stats
+
+The stats of type `Derived`, `Turn Based`, and `Constant` will usually not be modified directly during the game by other than automated systems in place. Updaters will have to know exactly what they are doing if they are to modify those stats at all. A warning will pop up if ccf has been used to modify these types of stats, but the change will succeed. These warnings can be suppressed in two ways, using the same command; `!suppress`.
+
+`!suppress` as is will make the following line not throw a warning if it otherwise would have. You can put this line above a line modifying one of these types of stats if so desired
+
+`!suppress 999` (or any other number) will make the following number of lines not throw a warning if it otherwise would have. This technique is applied by the mapccfcalculations page for admins to suppress several changes to religionGroups, cultureGroups, Climate Sizes, DevelopmentPixelCount, CoastalPixels, maxResources, and TradeZones. The page first uses `!suppress 99999` to suppress the next many many unspecified amount of lines, and then at the end using `!suppress 0` to effectively turn off the suppression again.
+
 ## Structure
 
 The gameStats is structured as follows:
@@ -269,7 +277,7 @@ Templates:
 `#Just a comment`
 `sync` or the not so global `sync<`
 `> Nations > Ireland` to select Ireland or `< > France` to select france if you within another nation just before. Use `<...` as freely as you wish.
-`+0.5 admEfficiency`, or for other objects, it might be slightly more 
+`+0.5 admEfficiency`, or for other objects, it might be slightly more
 
 ## Example of command change file
 
