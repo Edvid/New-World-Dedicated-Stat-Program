@@ -574,7 +574,13 @@ let StatTypes = {
         "SugarOutgoing",
         "ExoticFruitIncoming",
         "ExoticFruitOutgoing",
-        "TradePowerFromResourceTrade"
+        "TradePowerFromResourceTrade",
+        "DevelopmentPixelCount",
+        "CoastalPixels",
+        "ReligionGroups\..+\.Points",
+        "CultureGroups\..+\.Points",
+        "Climates\..+\.Pixels",
+        "TradeZones\..+\.Score"
     ],
     ConstantStats: [ ],
     TurnBasedStats: [
