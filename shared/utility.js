@@ -11,12 +11,13 @@ function sleep(ms) {
 
 let warnSuppress = 0;
 
-function suppressWarning() {
-    warnSuppress = changeCommandIndex + 1;
+function suppressWarning(linesToSuppressParam) {
+    linesToSuppress = linesToSuppressParam ? linesToSuppressParam : 1;
+    warnSuppress = changeCommandIndex + linesToSuppress;
 }
 
 function warn(message) {
-    if (warnSuppress == changeCommandIndex) return;
+    if (warnSuppress >= changeCommandIndex) return;
     alert(`WARNING At line ${(changeCommandIndex + 1)}:
 
 ${message}`)

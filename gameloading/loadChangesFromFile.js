@@ -90,7 +90,11 @@ async function evaluteChangeCommand(changeCommandRaw) {
     }
     //suppress
     else if(/!suppress/.test(changeCommand)){
-        suppressWarning();
+        let match = changeCommand.match(/!suppress ?(\d+)$/)
+        if(match)
+            suppressWarning(match[1]);
+        else 
+            suppressWarning();
     }
     //sync
     else if (changeCommand.toLowerCase().startsWith("sync")) {
