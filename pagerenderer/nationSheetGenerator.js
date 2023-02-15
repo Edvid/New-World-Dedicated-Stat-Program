@@ -620,7 +620,7 @@ function createStatTable(title, tables) {
             }
 
             let statTypeIcon = document.createElement("img");
-            switch (getStatType(statName)) {
+            switch (getStatType(statSelection)) {
                 case "Base":
                     statTypeIcon.src = "./docs/assets/images/Base.png"; //red
                     statTypeIcon.alt = "Base";
