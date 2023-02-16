@@ -812,7 +812,7 @@ function createPieDiagram(ObjectToChart, ValName) {
                 objectPoints = objectPoints[ValueName];
             } else if (typeof objectPoints === 'number'){
                 warn(`a nan object was found. ${keyName} in ${ObjectToChart}`);
-                break;
+                objectPoints = 0;
             }
         }
 
