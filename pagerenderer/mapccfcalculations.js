@@ -4,8 +4,8 @@
 
 class MapCCFCalculations {
     self;
-    static WIDTH = 8192;
-    static HEIGHT = 3365;
+    WIDTH = 8192;
+    HEIGHT = 3365;
     
     progressText;
     PromptMissingInfoContainer;
@@ -61,12 +61,18 @@ class MapCCFCalculations {
     religionData;
     tradeZoneData;
 
+    nationColorProperties;
+    climateColorProperties; 
+    cultureColorProperties; 
+    religionColorProperties;
+    tradeZoneColorProperties;
+
     async scanMaps() {
-        let nationColorProperties = self.fillInColorProperties(gameStats.Nations);
-        let climateColorProperties = self.fillInColorProperties(gameStats.Climates);
-        let cultureColorProperties = self.fillInColorProperties(gameStats.Cultures);
-        let religionColorProperties = self.fillInColorProperties(gameStats.Religions);
-        let tradeZoneColorProperties = self.fillInColorProperties(gameStats.TradeZones);
+        self.nationColorProperties = self.fillInColorProperties(gameStats.Nations);
+        self.climateColorProperties = self.fillInColorProperties(gameStats.Climates);
+        self.cultureColorProperties = self.fillInColorProperties(gameStats.Cultures);
+        self.religionColorProperties = self.fillInColorProperties(gameStats.Religions);
+        self.tradeZoneColorProperties = self.fillInColorProperties(gameStats.TradeZones);
 
         self.baseData = await prepareData("Blank.png", self.progressText)
         
@@ -90,8 +96,8 @@ class MapCCFCalculations {
 
         let climateDistribution = await self.findDistribution(
             self.nationData, self.climateData, "nation", "climate",
-            nationColorProperties,
-            climateColorProperties, 
+            self.nationColorProperties,
+            self.climateColorProperties, 
             {
                 unassignedPixelAssumption: "Moderate"
             }
@@ -99,7 +105,7 @@ class MapCCFCalculations {
 
         let coastPixelCount = await self.findDistribution(
             self.nationData, self.coastData, "nation", "coast", 
-            nationColorProperties,
+            self.nationColorProperties,
             colorToCoastMap, 
             {
                 unassignedPixelAssumption: "Noncoast",
@@ -109,7 +115,7 @@ class MapCCFCalculations {
         
         let developmentScore = await self.findDistribution(
             self.nationData, self.developmentData, "nation", "development",
-            nationColorProperties,
+            self.nationColorProperties,
             0,
             {
                 canIgnoreTransparentInner: true,
@@ -119,8 +125,8 @@ class MapCCFCalculations {
     
         let cultureDistribution = await self.findDistribution(
             self.nationData, self.cultureData, "nation", "culture", 
-            nationColorProperties,
-            cultureColorProperties,
+            self.nationColorProperties,
+            self.cultureColorProperties,
             {
                 unassignedPixelAssumption: "Foreign"
             } 
@@ -128,8 +134,8 @@ class MapCCFCalculations {
 
         let religionDistribution = await self.findDistribution(
             self.nationData, self.religionData, "nation", "religion", 
-            nationColorProperties,
-            religionColorProperties, 
+            self.nationColorProperties,
+            self.religionColorProperties, 
             {
                 unassignedPixelAssumption: "Pagan"
             }
@@ -138,7 +144,7 @@ class MapCCFCalculations {
 
         let tradeZoneScore = await self.findDistribution(
             self.tradeZoneData, populationXDevelopmentData, "trade zone", "wealth",
-            tradeZoneColorProperties,
+            self.tradeZoneColorProperties,
             0,
             {
                 canIgnoreTransparentInner: true,
@@ -154,7 +160,6 @@ class MapCCFCalculations {
         `.trimIndents();
 
         //divide to make all constituencies make up 100(%). 
-        
         Object.keys(cultureDistribution).forEach(nationKey => {
             
             let total = 0.0;
@@ -281,7 +286,7 @@ class MapCCFCalculations {
 
             let resourceOverlap = await self.findDistribution(
                 self.nationData, resourceData, "nation", resourceName,
-                nationColorProperties,
+                self.nationColorProperties,
                 (e) => { return {color: e, name: "Col" + e}},
                 {
                     skipsTransparentInner: true,
@@ -378,7 +383,7 @@ class MapCCFCalculations {
             //let the site know you're still alive
             let now = Date.now();
             if (now - then > 500) {
-                progressText.innerText = `counting ${innerName}s in ${outerName}s:\n\n${i} out of ${pixelCount} pixels read.\nThat's row ${Math.floor(i / self.WIDTH)} out of ${self.HEIGHT}`
+                self.progressText.innerText = `counting ${innerName}s in ${outerName}s:\n\n${i} out of ${pixelCount} pixels read.\nThat's row ${Math.floor(i / self.WIDTH)} out of ${self.HEIGHT}`
                 await new Promise(resolve => setTimeout(resolve));
                 then = now;
             }
@@ -478,7 +483,7 @@ class MapCCFCalculations {
 
         //idle until cultureNamePrompt answered;
         let then = Date.now();
-        while(PromptFieldReturnedText == ""){
+        while(self.PromptFieldReturnedText == ""){
             let now = Date.now();
             if (now - then > 17) {
                 await new Promise(resolve => setTimeout(resolve));
@@ -488,10 +493,10 @@ class MapCCFCalculations {
 
         let ret = {
             color: color, 
-            name: PromptFieldReturnedText
+            name: self.PromptFieldReturnedText
         };
 
-        self.autoGeneratedCffTextField.value += `= "${color}" ${name}s.${PromptFieldReturnedText}.Color\n`
+        self.autoGeneratedCffTextField.value += `= "${color}" ${name}s.${self.PromptFieldReturnedText}.Color\n`
 
         return ret;
     }
@@ -508,17 +513,17 @@ class MapCCFCalculations {
 
     populationXDevelopmentMerger(mapIndex){
         let foundZoneColor = rgbToHex([self.nationData[mapIndex*4], self.nationData[mapIndex*4+1], self.nationData[mapIndex*4+2]]);
-        let climateObject = climateColorProperties.find(element => element.color == foundZoneColor);
+        let climateObject = self.climateColorProperties.find(element => element.color == foundZoneColor);
         let climateScore = climateObject ? gameStats.Climates[climateObject.name].ClimateScore : 0;
-        ret[mapIndex] = climateScore * developmentData[mapIndex];
+        return climateScore * self.developmentData[mapIndex];
     }
 
     populationXDevelopmentBonusMerger(mapIndex){
         let foundZoneColor = rgbToHex([self.nationData[mapIndex*4], self.nationData[mapIndex*4+1], self.nationData[mapIndex*4+2]]);
-        let climateObject = climateColorProperties.find(element => element.color == foundZoneColor);
+        let climateObject = self.climateColorProperties.find(element => element.color == foundZoneColor);
         let climateScore = climateObject ? gameStats.Climates[climateObject.name].ClimateScore : 0;
-        ret[mapIndex] = climateScore * (128 + developmentData[mapIndex] / 2);
+        return climateScore * (128 + self.developmentData[mapIndex] / 2);
     }
 }
 
-let MapCCFCalculationsSingleton = new MapCCFCalculations()
+new MapCCFCalculations();
