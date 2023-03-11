@@ -414,7 +414,7 @@ class MapCCFCalculations {
                 colorToOuterNameMapping.push(foundOuterObject);
             }
 
-            OuterNameOfPixel = foundOuterObject.name;
+            const OuterNameOfPixel = foundOuterObject.name;
 
             if(!options.greyScale){
                 let foundInnerObject = 
