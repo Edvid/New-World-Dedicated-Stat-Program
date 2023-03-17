@@ -485,3 +485,154 @@ async function PromptName(color, getDatasetPointFunction, name){
 
     return ret;
 }
+
+/*
+
+Generates:
+
+<... > Nations
+!suppress 99999
+
+> test
++> CultureGroups
+> CultureGroups
++> eu
+= 83.38684172696344 eu.Points
++> af
+= 9.535674924529205 af.Points
++> as
+= 0.17250467200153338 as.Points
++> am
+= 6.904978676505822 am.Points
+< <
+> test
++> ReligionGroups
+> ReligionGroups
++> west
+= 100 west.Points
+< <
+
+<... > Nations
+= 18297 test.Moderate
+= 631 test.CoastalDesert
+= 762 test.SubTropical
+= 1179 test.Tropical
+
+<... > Nations
+= 3822745 test.DevelopmentPixelCount
+
+<... > Nations
+= 10644 test.CoastalPixels
+
+<... > Nations
+= 0.75 test.MaxGold
+= 2.25 test.MaxIron
+= 0.20 test.MaxIvory
+= 2.10 test.MaxSulphur
+= 4.00 test.MaxCoal
+
+<... > TradeZones
+= 0.00 CentralSiberia.Score
+= 3.75 EasternSiberia.Score
+= 0.20 WesternSiberia.Score
+= 0.00 NorthSea.Score
+= 1.20 Alaska.Score
+= 0.00 NorthernNordics.Score
+= 0.00 HudsonBay.Score
+= 0.15 BarentsSea.Score
+= 0.00 CentralCanada.Score
+= 0.00 BalticSea.Score
+= 0.00 Novgorod.Score
+= 0.00 Denmark.Score
+= 1.15 LawrenceGulf.Score
+= 0.00 Volga.Score
+= 0.80 Livonia.Score
+= 0.00 BritishIsles.Score
+= 0.00 Muscovy.Score
+= 0.95 Dniepr.Score
+= 0.00 UralRiver.Score
+= 0.00 Manchuria.Score
+= 0.00 Vistula.Score
+= 0.00 CentralEurope.Score
+= 0.00 DonRiver.Score
+= 0.00 Cascadia.Score
+= 0.00 SeaOfJapan.Score
+= 0.00 Rhine.Score
+= 0.00 EnglishChannel.Score
+= 0.00 GreatLakes.Score
+= 0.00 Romania.Score
+= 0.00 CentralAsia.Score
+= 0.00 France.Score
+= 0.00 WesternDanube.Score
+= 0.00 EasternDanube.Score
+= 0.00 TheRockies.Score
+= 0.00 Mississippi.Score
+= 0.00 SouthernFrance.Score
+= 0.00 CaspianSea.Score
+= 0.00 GobiDesert.Score
+= 0.00 Crimea.Score
+= 0.00 BayOfBiscay.Score
+= 0.00 Adriatic.Score
+= 0.00 EastCoast.Score
+= 0.00 CentralMediterranean.Score
+= 0.00 WestCoast.Score
+= 0.00 Caucasus.Score
+= 0.00 Greece.Score
+= 0.00 WesternMediterranean.Score
+= 0.00 Iberia.Score
+= 0.00 NorthernAnatolia.Score
+= 0.00 YellowRiver.Score
+= 0.00 Mesopotamia.Score
+= 0.00 EasternMediterranean.Score
+= 0.00 GulfOfMexico.Score
+= 0.00 Afghanistan.Score
+= 0.00 IndusRiver.Score
+= 0.00 Morocco.Score
+= 0.00 Tibet.Score
+= 0.00 Iran.Score
+= 0.00 Sichuan.Score
+= 0.00 Sahara.Score
+= 0.00 ArabianDesert.Score
+= 0.00 YangtzeRiver.Score
+= 0.00 WesternMexico.Score
+= 0.00 Egypt.Score
+= 0.00 Ganges.Score
+= 0.00 RedSea.Score
+= 0.00 PersianGulf.Score
+= 0.00 Caribbean.Score
+= 0.00 WesternSahara.Score
+= 0.00 SouthEastAsia.Score
+= 0.00 Pacific.Score
+= 0.00 SouthChinaSea.Score
+= 0.00 CentralIndia.Score
+= 0.00 Deccan.Score
+= 0.00 SouthernNile.Score
+= 0.00 Somalia.Score
+= 0.00 WesternNiger.Score
+= 0.00 Guinea.Score
+= 0.00 CentralAmerica.Score
+= 0.00 EasternNiger.Score
+= 0.00 Venezuela.Score
+= 0.00 Indonesia.Score
+= 0.00 CongoRiver.Score
+= 0.00 Gabon.Score
+= 0.00 LakeVictoria.Score
+= 0.00 Amazon.Score
+= 0.00 Peru.Score
+= 0.00 EastAfrica.Score
+= 0.00 LakeTanganyika.Score
+= 0.00 SaoFranciscoRiver.Score
+= 0.00 NorthernAustralia.Score
+= 0.00 Angola.Score
+= 0.00 Mozambique.Score
+= 0.00 ParanaRiver.Score
+= 0.00 Chile.Score
+= 0.00 SouthernAustralia.Score
+= 0.00 SouthAfrica.Score
+= 0.00 AustralianDesert.Score
+= 0.00 Patagonia.Score
+!suppress 0
+<...
+
+
+*/
