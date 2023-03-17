@@ -87,6 +87,11 @@ class MapCCFCalculations {
         self.religionData = await prepareData("Religions.png", self.progressText)
         self.tradeZoneData = await prepareData("TradeZones.png", self.progressText)
 
+        self.progressText.innerText = "reversing development map";
+        await new Promise(resolve => setTimeout(resolve));
+
+        self.developmentData = await self.mapDataIterator(self.reverseRBGsOfDevelopment);
+
         self.progressText.innerText = "loading population X development";
         await new Promise(resolve => setTimeout(resolve));
 
@@ -434,7 +439,7 @@ class MapCCFCalculations {
 
             if(options.valueMode == "greyScale"){
                 const innerGreyScale = getInnerDataPoint(i*4);
-                const InnerPixelValue = isInnerDataEmpty ? options.unassignedPixelAssumption : 255 - innerGreyScale;
+                const InnerPixelValue = isInnerDataEmpty ? options.unassignedPixelAssumption : innerGreyScale;
                 
                 if(typeof ret[OuterNameOfPixel] === 'undefined') ret[OuterNameOfPixel] = 0;
                 
@@ -557,6 +562,15 @@ class MapCCFCalculations {
         return ret;
     }
 
+    reverseRBGsOfDevelopment(mapIndex){
+        return [
+            255 - self.developmentData[mapIndex], 
+            255 - self.developmentData[mapIndex + 1], 
+            255 - self.developmentData[mapIndex + 2], 
+            self.developmentData[mapIndex + 3], 
+        ]
+    }
+
     populationXDevelopmentMerger(mapIndex){
         let foundZoneColor = rgbToHex([self.nationData[mapIndex], self.nationData[mapIndex+1], self.nationData[mapIndex+2]]);
         let climateObject = self.climateColorProperties.find(element => element.color == foundZoneColor);
@@ -574,7 +588,7 @@ class MapCCFCalculations {
         let climateObject = self.climateColorProperties.find(element => element.color == foundZoneColor);
         let climateScore = climateObject ? gameStats.Climates[climateObject.name].ClimateScore : 0;
         if(climateScore > 1) error(`climateScore is not allowed to be bigger than 1. ${climateObject.name} was ${climateScore}. Fix this immedietly`);
-        let ret = climateScore * (128 + self.developmentData[mapIndex] / 2);
+        let ret = climateScore * (self.developmentData[mapIndex] / 2);
         ret = ret % 256;
         
         return [ret, ret, ret, 255];
@@ -614,13 +628,13 @@ Generates:
 +> CultureGroups
 > CultureGroups
 +> eu
-= 80.60600949958129 eu.Points
+= 88.55114339965327 eu.Points
 +> af
-= 11.131826102057463 af.Points
+= 6.571452158837612 af.Points
 +> as
-= 0.20137976868043653 as.Points
+= 0.11888054156691158 as.Points
 +> am
-= 8.060784629680807 am.Points
+= 4.758523899942211 am.Points
 < <
 > test
 +> ReligionGroups
@@ -650,23 +664,23 @@ Generates:
 
 <... > TradeZones
 = 0.00 CentralSiberia.Score
-= 3.75 EasternSiberia.Score
-= 0.20 WesternSiberia.Score
-= 0.00 NorthSea.Score
-= 1.20 Alaska.Score
+= 0.00 EasternSiberia.Score
+= 0.00 WesternSiberia.Score
+= 20.15 NorthSea.Score
+= 0.00 Alaska.Score
 = 0.00 NorthernNordics.Score
 = 0.00 HudsonBay.Score
-= 0.15 BarentsSea.Score
+= 0.00 BarentsSea.Score
 = 0.00 CentralCanada.Score
 = 0.00 BalticSea.Score
 = 0.00 Novgorod.Score
 = 0.00 Denmark.Score
-= 1.15 LawrenceGulf.Score
+= 0.00 LawrenceGulf.Score
 = 0.00 Volga.Score
-= 0.80 Livonia.Score
-= 0.00 BritishIsles.Score
+= 0.00 Livonia.Score
+= 69.30 BritishIsles.Score
 = 0.00 Muscovy.Score
-= 0.95 Dniepr.Score
+= 0.00 Dniepr.Score
 = 0.00 UralRiver.Score
 = 0.00 Manchuria.Score
 = 0.00 Vistula.Score
@@ -675,11 +689,11 @@ Generates:
 = 0.00 Cascadia.Score
 = 0.00 SeaOfJapan.Score
 = 0.00 Rhine.Score
-= 0.00 EnglishChannel.Score
+= 25.05 EnglishChannel.Score
 = 0.00 GreatLakes.Score
 = 0.00 Romania.Score
 = 0.00 CentralAsia.Score
-= 0.00 France.Score
+= 1.90 France.Score
 = 0.00 WesternDanube.Score
 = 0.00 EasternDanube.Score
 = 0.00 TheRockies.Score
@@ -717,37 +731,37 @@ Generates:
 = 0.00 RedSea.Score
 = 0.00 PersianGulf.Score
 = 0.00 Caribbean.Score
-= 0.00 WesternSahara.Score
+= 1.85 WesternSahara.Score
 = 0.00 SouthEastAsia.Score
 = 0.00 Pacific.Score
 = 0.00 SouthChinaSea.Score
-= 0.00 CentralIndia.Score
+= 0.15 CentralIndia.Score
 = 0.00 Deccan.Score
 = 0.00 SouthernNile.Score
 = 0.00 Somalia.Score
-= 0.00 WesternNiger.Score
+= 4.30 WesternNiger.Score
 = 0.00 Guinea.Score
 = 0.00 CentralAmerica.Score
 = 0.00 EasternNiger.Score
 = 0.00 Venezuela.Score
 = 0.00 Indonesia.Score
 = 0.00 CongoRiver.Score
-= 0.00 Gabon.Score
+= 2.90 Gabon.Score
 = 0.00 LakeVictoria.Score
 = 0.00 Amazon.Score
 = 0.00 Peru.Score
-= 0.00 EastAfrica.Score
+= 0.10 EastAfrica.Score
 = 0.00 LakeTanganyika.Score
 = 0.00 SaoFranciscoRiver.Score
 = 0.00 NorthernAustralia.Score
 = 0.00 Angola.Score
-= 0.00 Mozambique.Score
+= 1.20 Mozambique.Score
 = 0.00 ParanaRiver.Score
 = 0.00 Chile.Score
 = 0.00 SouthernAustralia.Score
 = 0.00 SouthAfrica.Score
 = 0.00 AustralianDesert.Score
-= 0.00 Patagonia.Score
+= 6.50 Patagonia.Score
 !suppress 0
 <...
 
