@@ -90,19 +90,19 @@ class MapCCFCalculations {
         self.progressText.innerText = "loading population X development";
         await new Promise(resolve => setTimeout(resolve));
 
-        self.populationXDevelopmentData = await self.mergeMaps(self.populationXDevelopmentMerger);
+        self.populationXDevelopmentData = await self.mapDataIterator(self.populationXDevelopmentMerger);
 
         self.progressText.innerText = "loading population X (100% + development/2)";
         await new Promise(resolve => setTimeout(resolve));
 
-        self.populationXDevelopmentBonusData = await self.mergeMaps(self.populationXDevelopmentBonusMerger);
+        self.populationXDevelopmentBonusData = await self.mapDataIterator(self.populationXDevelopmentBonusMerger);
 
         self.progressText.innerText = "adjusting culture map data for population and development";
         await new Promise(resolve => setTimeout(resolve));
 
-        let popDevAdjustedCulture = await self.mergeMaps(self.culturePopXDevBonusMerger);
+        let popDevAdjustedCulture = await self.mapDataIterator(self.culturePopXDevBonusMerger);
 
-        let popDevAdjustedReligion = await self.mergeMaps(self.religionPopXDevBonusMerger);
+        let popDevAdjustedReligion = await self.mapDataIterator(self.religionPopXDevBonusMerger);
 
         const colorToCoastMap = [
             { color: "00ffff", name: "coast"}
@@ -164,7 +164,7 @@ class MapCCFCalculations {
             0,
             {
                 canIgnoreTransparentInner: true,
-                valueMode: "rbgAs24bitNum",
+                valueMode: "greyScale",
                 unassignedPixelAssumption: 0
             }
         );
@@ -440,17 +440,6 @@ class MapCCFCalculations {
                 
                 ret[OuterNameOfPixel] += InnerPixelValue;
             }
-            else if(options.valueMode == "rbgAs24bitNum"){
-                let InnerPixelValue = getInnerDataPoint(i*4+2);
-                InnerPixelValue *= 255;
-                InnerPixelValue += getInnerDataPoint(i*4+1);
-                InnerPixelValue *= 255;
-                InnerPixelValue = getInnerDataPoint(i*4);
-
-                if(typeof ret[OuterNameOfPixel] === 'undefined') ret[OuterNameOfPixel] = 0;
-
-                ret[OuterNameOfPixel] += InnerPixelValue;
-            }
             else{
                 let foundInnerObject = 
                     isInnerDataEmpty ? 
@@ -539,7 +528,7 @@ class MapCCFCalculations {
         };
     }
 
-    async mergeMaps(delegate){
+    async mapDataIterator(delegate){
         let ret = new Uint8ClampedArray(self.WIDTH * self.HEIGHT * 4);
 
         let then = Date.now();
@@ -572,24 +561,23 @@ class MapCCFCalculations {
         let foundZoneColor = rgbToHex([self.nationData[mapIndex], self.nationData[mapIndex+1], self.nationData[mapIndex+2]]);
         let climateObject = self.climateColorProperties.find(element => element.color == foundZoneColor);
         let climateScore = climateObject ? gameStats.Climates[climateObject.name].ClimateScore : 0;
+        if(climateScore > 1) error(`climateScore is not allowed to be bigger than 1. ${climateObject.name} was ${climateScore}. Fix this immedietly`);
         let ret = climateScore * self.developmentData[mapIndex];
 
-        let lsbyte = ret % 256;
-        let msbyte = Math.floor(ret / 256);
-
-        return [0, msbyte, lsbyte, 255];
+        ret = ret % 256;
+        
+        return [ret, ret, ret, 255];
     }
 
     populationXDevelopmentBonusMerger(mapIndex){
         let foundZoneColor = rgbToHex([self.nationData[mapIndex], self.nationData[mapIndex+1], self.nationData[mapIndex+2]]);
         let climateObject = self.climateColorProperties.find(element => element.color == foundZoneColor);
         let climateScore = climateObject ? gameStats.Climates[climateObject.name].ClimateScore : 0;
+        if(climateScore > 1) error(`climateScore is not allowed to be bigger than 1. ${climateObject.name} was ${climateScore}. Fix this immedietly`);
         let ret = climateScore * (128 + self.developmentData[mapIndex] / 2);
+        ret = ret % 256;
         
-        let lsbyte = ret % 256;
-        let msbyte = Math.floor(ret / 256);
-        
-        return [0, msbyte, lsbyte, 255];
+        return [ret, ret, ret, 255];
     }
 
     culturePopXDevBonusMerger(mapIndex){
@@ -597,8 +585,7 @@ class MapCCFCalculations {
         ret[0] = self.cultureData[mapIndex];
         ret[1] = self.cultureData[mapIndex+1];
         ret[2] = self.cultureData[mapIndex+2];
-        if(self.populationXDevelopmentBonusData[mapIndex+1] != 0) error("The value of populationXDevelopmentBonusData is higher than expected.")
-        ret[3] = self.populationXDevelopmentBonusData[mapIndex+2];
+        ret[3] = self.populationXDevelopmentBonusData[mapIndex];
         
         return ret;
     }
@@ -608,8 +595,7 @@ class MapCCFCalculations {
         ret[0] = self.religionData[mapIndex];
         ret[1] = self.religionData[mapIndex+1];
         ret[2] = self.religionData[mapIndex+2];
-        if(self.populationXDevelopmentBonusData[mapIndex+1] != 0) error("The value of populationXDevelopmentBonusData is higher than expected.")
-        ret[3] = self.populationXDevelopmentBonusData[mapIndex+2];
+        ret[3] = self.populationXDevelopmentBonusData[mapIndex];
         
         return ret;
     }
@@ -621,7 +607,6 @@ new MapCCFCalculations();
 /*
 
 Generates:
-
 <... > Nations
 !suppress 99999
 
@@ -629,13 +614,13 @@ Generates:
 +> CultureGroups
 > CultureGroups
 +> eu
-= 83.38684172696344 eu.Points
+= 80.60600949958129 eu.Points
 +> af
-= 9.535674924529205 af.Points
+= 11.131826102057463 af.Points
 +> as
-= 0.17250467200153338 as.Points
+= 0.20137976868043653 as.Points
 +> am
-= 6.904978676505822 am.Points
+= 8.060784629680807 am.Points
 < <
 > test
 +> ReligionGroups
