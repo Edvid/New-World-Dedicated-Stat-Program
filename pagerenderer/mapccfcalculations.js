@@ -103,15 +103,6 @@ class MapCCFCalculations {
         let popDevAdjustedCulture = await self.mergeMaps(self.culturePopXDevBonusMerger);
 
 
-        self.PromptMissingInfoContainer.hidden = false;
-        self.PromptLabel.innerText = `hov!`;
-
-        self.PromptedMissingInfoCanvas.getContext("2d").putImageData(new ImageData(popDevAdjustedCulture, self.WIDTH), 0, 0);
-
-        self.progressText.innerText = "adjusting religion map data for population and development";
-        await new Promise(resolve => setTimeout(resolve));
-
-
         let popDevAdjustedReligion = await self.mergeMaps(self.religionPopXDevBonusMerger);
 
         const colorToCoastMap = [
@@ -599,22 +590,22 @@ class MapCCFCalculations {
 
     culturePopXDevBonusMerger(mapIndex){
         let ret = [];
-        ret[mapIndex] = self.cultureData[mapIndex];
-        ret[mapIndex+1] = self.cultureData[mapIndex+1];
-        ret[mapIndex+2] = self.cultureData[mapIndex+2];
+        ret[0] = self.cultureData[mapIndex];
+        ret[1] = self.cultureData[mapIndex+1];
+        ret[2] = self.cultureData[mapIndex+2];
         if(self.populationXDevelopmentBonusData[mapIndex+1] != 0) error("The value of populationXDevelopmentBonusData is higher than expected.")
-        ret[mapIndex+3] = self.populationXDevelopmentBonusData[mapIndex+2];
+        ret[3] = self.populationXDevelopmentBonusData[mapIndex+2];
         
         return ret;
     }
 
     religionPopXDevBonusMerger(mapIndex){
         let ret = [];
-        ret[mapIndex] = self.religionData[mapIndex];
-        ret[mapIndex+1] = self.religionData[mapIndex+1];
-        ret[mapIndex+2] = self.religionData[mapIndex+2];
+        ret[0] = self.religionData[mapIndex];
+        ret[1] = self.religionData[mapIndex+1];
+        ret[2] = self.religionData[mapIndex+2];
         if(self.populationXDevelopmentBonusData[mapIndex+1] != 0) error("The value of populationXDevelopmentBonusData is higher than expected.")
-        ret[mapIndex+3] = self.populationXDevelopmentBonusData[mapIndex+2];
+        ret[3] = self.populationXDevelopmentBonusData[mapIndex+2];
         
         return ret;
     }
