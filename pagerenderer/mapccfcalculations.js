@@ -90,23 +90,23 @@ class MapCCFCalculations {
         self.progressText.innerText = "loading population X development";
         await new Promise(resolve => setTimeout(resolve));
 
-        self.populationXDevelopmentData = self.mergeMaps(self.populationXDevelopmentMerger);
+        self.populationXDevelopmentData = await self.mergeMaps(self.populationXDevelopmentMerger);
 
         self.progressText.innerText = "loading population X (100% + development/2)";
         await new Promise(resolve => setTimeout(resolve));
 
-        self.populationXDevelopmentBonusData = self.mergeMaps(self.populationXDevelopmentBonusMerger);
+        self.populationXDevelopmentBonusData = await self.mergeMaps(self.populationXDevelopmentBonusMerger);
 
         self.progressText.innerText = "adjusting culture map data for population and development";
         await new Promise(resolve => setTimeout(resolve));
 
-        let popDevAdjustedCulture = self.mergeMaps(self.culturePopXDevBonusMerger);
+        let popDevAdjustedCulture = await self.mergeMaps(self.culturePopXDevBonusMerger);
 
         self.progressText.innerText = "adjusting religion map data for population and development";
         await new Promise(resolve => setTimeout(resolve));
 
 
-        let popDevAdjustedReligion = self.mergeMaps(self.religionPopXDevBonusMerger);
+        let popDevAdjustedReligion = await self.mergeMaps(self.religionPopXDevBonusMerger);
 
         const colorToCoastMap = [
             { color: "00ffff", name: "coast"}
@@ -539,22 +539,36 @@ class MapCCFCalculations {
         return ret;
     }
 
-    mergeMaps(delegate){
+    async mergeMaps(delegate){
         let ret = new Uint8ClampedArray(self.WIDTH * self.HEIGHT * 4);
 
+        let then = Date.now();
         for(let i = 0; i < ret.length / 4; i++) {
-            let res = delegate(i);
-            ret[i] = res[0];
-            ret[i+1] = res[1];
-            ret[i+2] = res[2];
-            ret[i+3] = res[3];
+            let res = delegate(i*4);
+            ret[i*4] = res[0];
+            ret[i*4+1] = res[1];
+            ret[i*4+2] = res[2];
+            ret[i*4+3] = res[3];
+            if(i % self.WIDTH == 0) {
+                let now = Date.now();
+                if (now - then > 100) {
+                    let progressPercent = i / (self.WIDTH * self.HEIGHT) * 100;
+                    let percentDisplay = progressPercent + "%";
+
+                    if(Math.floor(i / self.WIDTH) > 0) self.progressText.innerText = self.progressText.innerText.replace(/\n\n.+$/, "");
+                    
+                    self.progressText.innerText += "\n\n" + percentDisplay;
+                    await new Promise(resolve => setTimeout(resolve));
+                    then = now;
+                }
+            }
         }
 
         return ret;
     }
 
     populationXDevelopmentMerger(mapIndex){
-        let foundZoneColor = rgbToHex([self.nationData[mapIndex*4], self.nationData[mapIndex*4+1], self.nationData[mapIndex*4+2]]);
+        let foundZoneColor = rgbToHex([self.nationData[mapIndex], self.nationData[mapIndex+1], self.nationData[mapIndex+2]]);
         let climateObject = self.climateColorProperties.find(element => element.color == foundZoneColor);
         let climateScore = climateObject ? gameStats.Climates[climateObject.name].ClimateScore : 0;
         let ret = climateScore * self.developmentData[mapIndex];
@@ -566,7 +580,7 @@ class MapCCFCalculations {
     }
 
     populationXDevelopmentBonusMerger(mapIndex){
-        let foundZoneColor = rgbToHex([self.nationData[mapIndex*4], self.nationData[mapIndex*4+1], self.nationData[mapIndex*4+2]]);
+        let foundZoneColor = rgbToHex([self.nationData[mapIndex], self.nationData[mapIndex+1], self.nationData[mapIndex+2]]);
         let climateObject = self.climateColorProperties.find(element => element.color == foundZoneColor);
         let climateScore = climateObject ? gameStats.Climates[climateObject.name].ClimateScore : 0;
         let ret = climateScore * (128 + self.developmentData[mapIndex] / 2);
