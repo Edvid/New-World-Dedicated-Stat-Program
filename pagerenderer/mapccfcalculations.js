@@ -471,7 +471,7 @@ class MapCCFCalculations {
                 if(!options.adjustForAlpha)
                     ret[OuterNameOfPixel][InnerNameOfPixel]++;
                 else {
-                    let alpha = getOuterDataPoint(i*4+3);
+                    let alpha = getInnerDataPoint(i*4+3);
                     ret[OuterNameOfPixel][InnerNameOfPixel] += alpha;
                 }
 
