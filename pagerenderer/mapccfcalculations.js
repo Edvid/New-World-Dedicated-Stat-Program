@@ -102,6 +102,12 @@ class MapCCFCalculations {
 
         let popDevAdjustedCulture = await self.mergeMaps(self.culturePopXDevBonusMerger);
 
+
+        self.PromptMissingInfoContainer.hidden = false;
+        self.PromptLabel.innerText = `hov!`;
+
+        self.PromptedMissingInfoCanvas.getContext("2d").putImageData(new ImageData(popDevAdjustedCulture, self.WIDTH), 0, 0);
+
         self.progressText.innerText = "adjusting religion map data for population and development";
         await new Promise(resolve => setTimeout(resolve));
 
@@ -142,7 +148,7 @@ class MapCCFCalculations {
         );
     
         let cultureDistribution = await self.findDistribution(
-            self.nationData, popDevAdjustedCulture, "nation", "culture-popdev-adjusted", 
+            self.nationData, popDevAdjustedCulture, "nation", "popdev-adjusted-culture", 
             self.nationColorProperties,
             self.cultureColorProperties,
             {
@@ -152,7 +158,7 @@ class MapCCFCalculations {
         );
 
         let religionDistribution = await self.findDistribution(
-            self.nationData, popDevAdjustedReligion, "nation", "religion-popdev-adjusted", 
+            self.nationData, popDevAdjustedReligion, "nation", "popdev-adjusted-religion", 
             self.nationColorProperties,
             self.religionColorProperties, 
             {
@@ -584,7 +590,7 @@ class MapCCFCalculations {
         let climateObject = self.climateColorProperties.find(element => element.color == foundZoneColor);
         let climateScore = climateObject ? gameStats.Climates[climateObject.name].ClimateScore : 0;
         let ret = climateScore * (128 + self.developmentData[mapIndex] / 2);
-
+        
         let lsbyte = ret % 256;
         let msbyte = Math.floor(ret / 256);
         
