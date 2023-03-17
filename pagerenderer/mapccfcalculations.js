@@ -102,8 +102,6 @@ class MapCCFCalculations {
 
         let popDevAdjustedCulture = await self.mergeMaps(self.culturePopXDevBonusMerger);
 
-        await self.promptMap(popDevAdjustedCulture, "it sure looks. But does it look right?");
-
         let popDevAdjustedReligion = await self.mergeMaps(self.religionPopXDevBonusMerger);
 
         const colorToCoastMap = [
@@ -433,8 +431,8 @@ class MapCCFCalculations {
             }
 
             const OuterNameOfPixel = foundOuterObject.name;
-            
-            if(options.valueMode = "greyScale"){
+
+            if(options.valueMode == "greyScale"){
                 const innerGreyScale = getInnerDataPoint(i*4);
                 const InnerPixelValue = isInnerDataEmpty ? options.unassignedPixelAssumption : 255 - innerGreyScale;
                 
@@ -442,7 +440,7 @@ class MapCCFCalculations {
                 
                 ret[OuterNameOfPixel] += InnerPixelValue;
             }
-            else if(options.valueMode = "rbgAs24bitNum"){
+            else if(options.valueMode == "rbgAs24bitNum"){
                 let InnerPixelValue = getInnerDataPoint(i*4+2);
                 InnerPixelValue *= 255;
                 InnerPixelValue += getInnerDataPoint(i*4+1);
@@ -555,6 +553,7 @@ class MapCCFCalculations {
                 let now = Date.now();
                 if (now - then > 100) {
                     let progressPercent = i / (self.WIDTH * self.HEIGHT) * 100;
+                    progressPercent = progressPercent.toFixed(2);
                     let percentDisplay = progressPercent + "%";
 
                     if(Math.floor(i / self.WIDTH) > 0) self.progressText.innerText = self.progressText.innerText.replace(/\n\n.+$/, "");
