@@ -224,7 +224,22 @@
 > culture groups
 +> eu
 = 100 eu.points
+<
+
++> microtest
+> microtest
+= "f7ff00" Color
+= "Verxni Baksan" Capital Name
+> culture groups
++> eu
++> as
+= 50 eu.points
+= 50 as.points
+
+
 <...
+
+
 
 > test
 = 18297 Moderate
