@@ -65,6 +65,12 @@ class Trade {
   amount;
   resource; //can include food or budget
 }
+
+class TradeZone {
+  Color;
+  Score;
+}
+
 class Nation {
 
   /* #region  Properties */
