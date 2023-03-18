@@ -590,7 +590,7 @@ class MapCCFCalculations {
         let climateObject = self.climateColorProperties.find(element => element.color == foundZoneColor);
         let climateScore = climateObject ? gameStats.Climates[climateObject.name].ClimateScore : 0;
         if(climateScore > 1) error(`climateScore is not allowed to be bigger than 1. ${climateObject.name} was ${climateScore}. Fix this immedietly`);
-        let ret = climateScore * (self.developmentData[mapIndex] / 2);
+        let ret = climateScore * (128 + self.developmentData[mapIndex] / 2);
         ret = ret % 256;
         
         return [ret, ret, ret, 255];
