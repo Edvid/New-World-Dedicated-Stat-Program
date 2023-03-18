@@ -48,6 +48,7 @@ class Opinion {
   Score;
   static Undesired = -100;
   static Skeptical = -50;
+  static DefaultDistrust = -30;
   static Neutral = 0;
   static Fond = 50;
   static Obsessed = 100; //Like Frankophiles or they see them as brothers 
