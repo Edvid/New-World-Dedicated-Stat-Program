@@ -40,50 +40,27 @@ async function onLoadStatTradeZoneWealth() {
     
     let worldContext = worldCanvas.getContext("2d");
 
-    let imagePath = "./docs/assets/images/world/TradeZones.png";
-    //render image
-    let image = new Image(WIDTH, HEIGHT);
-    image.src = imagePath;
-    image.onload = function () {
-        worldContext.drawImage(image, 0, 0, WIDTH, HEIGHT);
+    let tradeZoneData = await prepareData("TradeZones.png", document.getElementById("isloading"));
+
+    let baseZoneData =  await prepareData("Blank.png", document.getElementById("isloading"));
+
+    let newData = new Uint8ClampedArray(WIDTH * HEIGHT * 4);
+
+    for(let i = 0; i < newData.length / 4; i++) {
+        if(tradeZoneData[i*4+3] != 0){
+            newData[i*4] = tradeZoneData[i*4];
+            newData[i*4+1] = tradeZoneData[i*4+1];
+            newData[i*4+2] = tradeZoneData[i*4+2];
+        }else{
+            newData[i*4] = baseZoneData[i*4];
+            newData[i*4+1] = baseZoneData[i*4+1];
+            newData[i*4+2] = baseZoneData[i*4+2];
+        }
+        newData[i*4+3] = 255;
+        
     }
 
-    await new Promise(resolve => setTimeout(resolve));
-
-    let baseImagePath = "./docs/assets/images/world/Blank.png";
-    //render base background
-    let baseImage = new Image(WIDTH, HEIGHT);
-    baseImage.src = baseImagePath;
-    baseImage.onload = async function () {
-        let tempCanvas = document.createElement("canvas");
-        tempCanvas.width = WIDTH;
-        tempCanvas.height = HEIGHT;
-        tempCanvas.getContext("2d").drawImage(baseImage, 0, 0, WIDTH, HEIGHT);
-        let baseData = (await tempCanvas.getContext("2d").getImageData(0, 0, WIDTH, HEIGHT)).data;
-        let worldCanvasData = (await worldContext.getImageData(0, 0, WIDTH, HEIGHT)).data;
-        let newDat = new Uint8ClampedArray(baseData);
-        for (let i = 0; i < newDat.length; i++) {
-            newDat[i] = worldCanvasData[i];
-        }
-        let then = Date.now();
-        for(let i = 0; i < newDat.length / 4; i++){
-            
-            if(newDat[i*4+3] == 0){
-                newDat[i*4] = baseData[i*4];
-                newDat[i*4+1] = baseData[i*4+1];
-                newDat[i*4+2] = baseData[i*4+2];
-                newDat[i*4+3] = baseData[i*4+3];
-            }
-            
-            let now = Date.now();
-            if (now - then > 250) {
-                worldContext.putImageData(new ImageData(newDat, WIDTH), 0, 0);
-                await new Promise(resolve => setTimeout(resolve));
-                then = now;
-            }
-        }
-        worldContext.putImageData(new ImageData(newDat, WIDTH), 0, 0);
-    }
+    worldContext.putImageData(new ImageData(newData, WIDTH), 0, 0);
     
     worldCanvas.onclick = function (e) {        
         let canvasPos = findPos(this);
