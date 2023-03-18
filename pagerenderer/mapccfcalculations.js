@@ -395,6 +395,7 @@ class MapCCFCalculations {
         else
             getInnerDataPoint = (i) => innerDataset(i);
 
+        self.progressText.innerText = `counting ${innerName}s in ${outerName}s`;
         let then = Date.now();
         for (let i = 0; i < pixelCount; i++) {
             
@@ -403,8 +404,8 @@ class MapCCFCalculations {
 
             //let the site know you're still alive
             let now = Date.now();
-            if (now - then > 500) {
-                self.progressText.innerText = `counting ${innerName}s in ${outerName}s:\n\n${i} out of ${pixelCount} pixels read.\nThat's row ${Math.floor(i / self.WIDTH)} out of ${self.HEIGHT}`
+            if (now - then > 100) {
+                await self.reportProgress(i);
                 await new Promise(resolve => setTimeout(resolve));
                 then = now;
             }
@@ -548,13 +549,7 @@ class MapCCFCalculations {
             if(i % self.WIDTH == 0) {
                 let now = Date.now();
                 if (now - then > 100) {
-                    let progressPercent = i / (self.WIDTH * self.HEIGHT) * 100;
-                    progressPercent = progressPercent.toFixed(2);
-                    let percentDisplay = progressPercent + "%";
-
-                    if(Math.floor(i / self.WIDTH) > 0) self.progressText.innerText = self.progressText.innerText.replace(/\n\n.+$/, "");
-                    
-                    self.progressText.innerText += "\n\n" + percentDisplay;
+                    await self.reportProgress(i);
                     await new Promise(resolve => setTimeout(resolve));
                     then = now;
                 }
@@ -614,6 +609,16 @@ class MapCCFCalculations {
         ret[3] = self.populationXDevelopmentBonusData[mapIndex];
         
         return ret;
+    }
+
+    reportProgress(i){
+        let progressPercent = i / (self.WIDTH * self.HEIGHT) * 100;
+        progressPercent = progressPercent.toFixed(2);
+        let percentDisplay = progressPercent + "%";
+
+        if(Math.floor(i / self.WIDTH) > 0) self.progressText.innerText = self.progressText.innerText.replace(/\n\n.+$/, "");
+        
+        self.progressText.innerText += "\n\n" + percentDisplay;
     }
 
 }
