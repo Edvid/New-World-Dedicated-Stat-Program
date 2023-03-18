@@ -51,10 +51,10 @@ function evaluateNation(nationName) {
         if (PointsOfOther == 0) continue; 
         
         let opinionScore;
-        //If the social behaviour group to be had an opinion about, isn't recorded by the social behaviour group we are currently checking Opinions for. Treat the opinion as neutral
+        //If the social behaviour group to be had an opinion about, isn't recorded by the social behaviour group we are currently checking Opinions for. Treat the opinion as the default distrust
         let opinionobj;
         if (OpinionatedSocialBehaviourGroup.Opinions === undefined || OpinionatedSocialBehaviourGroup.Opinions[nameOfSocialBehaviourGroupToBeHadAnOpinionAbout] === undefined) 
-          opinionScore = Opinion.Neutral;
+          opinionScore = Opinion.DefaultDistrust;
         else {
           opinionobj = OpinionatedSocialBehaviourGroup.Opinions[nameOfSocialBehaviourGroupToBeHadAnOpinionAbout];
           if(isNaN(opinionobj.Score))
