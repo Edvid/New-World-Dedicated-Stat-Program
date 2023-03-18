@@ -259,18 +259,19 @@ let TableLayouts = {
     "Basic Stats": [
         ["AverageDevelopment", "Health", "EducationEfficiency", "Propaganda", "SocialSpending", "PopulationControl", "BirthControl"],
         ["Stability", "Absolutism", "Corruption", "Overextension", "Prosperity", "PopulationHappiness", "WarSupport"],
-        ["AdministrativeTech", "BureaucratWages", "AdministrativeEfficiency", "AdministrationSize", "AdministrativePower", "AdministrativeDemand", "AdministrativeStrain"]
+        ["AdministrativeTech", "BureaucratWages", "AdministrativeEfficiency", "AdministrationSize", "AdministrativePower", "AdministrativeDemand", "AdministrativeStrain", "TaxEfficiency"]
     ],
     "Budget Stats": [
         ["TradeEfficiency", "LocalTrade", "TradePower"],
         ["TradeImprovements", "ProductionEfficiency", "Production"],
         ["Inflation", "DailyBudget", "Budget"],
         ["BudgetIncoming", "BudgetOutgoing", "Balance"],
-        ["HighClassTax", "MediumClassTax", "LowerClassTax"]
+        ["HighClassTax", "MediumClassTax", "LowerClassTax"],
+        ["InternalTariffs", "ExternalTariffs"]
     ],
     "Upkeeps and Income": [
-        ["ProductionRevenue", "TradeRevenue", "PassiveInvestmentIncome"],
-        ["ResourceBudgetBoost", "EffectiveTax", "OverallIncome" ],
+        ["ProductionRevenue", "TariffsRevenue", "PassiveInvestmentIncome"],
+        ["ResourceBudgetBoost", "TaxRevenue", "OverallIncome" ],
         ["ArmyUpkeep", "NavyUpkeep", "FortUpkeep", "NewTroopRecruitmentPenalty"],
         ["SpyUpkeep", "EducationUpkeep", "PopulationControlUpkeep"],
         ["SocialSpendingUpkeep", "AgricultureSpending", "AdministrativeUpkeep"],
@@ -303,7 +304,7 @@ let TableLayouts = {
     ],
     "Agriculture": [
         ["Fertility", "AgricultureSubsidies", "AgricultureInfrastructure", "AgricultureAdvancements", "AgricultureTechnology", "FarmingEfficiency", "AgricultureSpending"],
-        [".Workforces.Farmers", "DailyFood", "FoodConsumption", "FoodGain", "StockingCapabilities", "MaxFoodStock", "SellingCapability"],
+        ["PopInAgriculture", "DailyFood", "FoodConsumption", "FoodGain", "StockingCapabilities", "MaxFoodStock", "SellingCapability"],
         ["Food", "FutureFood", "SurplusFood", "FoodSold", "Foodlost", "TradeProfit", "FoodPopulationBoost"]
     ],
     "War Stats": [
@@ -314,7 +315,12 @@ let TableLayouts = {
         ["MaxPopulation", "DetachedLand", "LandAdministration", "Overextension", "CoastalLandPercent", "AverageDevelopment", "HabitableLand"]
     ],
     "Estates": [
-		["AristocratLoyalty", "ClergyLoyalty", "BurgousieLoyalty", "BureaucratLoyalty", "IntellectualsLoyalty", "WorkersLoyalty", "MilitaryLoyalty"]
+        ["AristocratLoyalty", "ClergyLoyalty", "BurgousieLoyalty", "UrbanLoyalty", "BureaucratLoyalty", "IntellectualsLoyalty", "WorkersLoyalty", "MilitaryLoyalty"],
+        ["AristocratTax", "ClergyTax", "BurgousieTax", "UrbanTax", "BureaucratTax", "IntellectualsTax", "WorkersTax", "MilitaryTax"],
+        ["SlavesWage", "LabourersWage", "SerfsWage", "FarmersWage", "TownsfolkWage", "ClergyWage", "BureaucratsWage", "MerchantsWage", "IntellectualsWage", "SailorsWage", "SoldiersWage", "AristocracyWage", "BurgousieWage"],
+        ["SlavesAndLabourersWageToOwner", "SerfsAndFarmersWageToAristocracy", "TownsfolkWageToBurgousie", "MerchantsWageToBurggousie"],
+        ["SlavesTaxes", "LabourersTaxes", "SerfsTaxes", "FarmersTaxes", "TownsfolkTaxes", "ClergyTaxes", "BureaucratsTaxes", "MerchantsTaxes", "IntellectualsTaxes", "SailorsTaxes", "SoldiersTaxes", "AristocracyTaxes", "BurgousieTaxes"],
+        ["TaxRevenue"]
     ],
 	"Reforms": [
 		["Reforms.SlaveryAllowed", "Reforms.SlaveryBanned", "Reforms.SerfdomAllowed", "Reforms.SerfdomBanned"],

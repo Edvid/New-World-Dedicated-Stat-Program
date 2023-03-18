@@ -71,6 +71,7 @@ class TradeZone {
   Color;
   Score;
 }
+
 class Nation {
 
   /* #region  Properties */
@@ -584,15 +585,29 @@ class Nation {
 
     this.AristocratLoyalty = 0.50; //Show in percent
     this.ClergyLoyalty = 0.50; //Show in percent
-    this.BurgousieLoyalty = 0.50; //Show in percent
+      this.BurgousieLoyalty = 0.50; //Show in percent
+      this.UrbanLoyalty = 0.50; //Show in percent
     this.BureaucratLoyalty = 0.50; //Show in percent
     this.IntellectualsLoyalty = 0.50; //Show in percent
     this.WorkersLoyalty = 0.50; //Show in percent
+
+      this.AristocratTax = 0.1; //Show in percent
+      this.ClergyTax = 0.1; //Show in percent
+      this.BurgousieTax = 0.1; //Show in percent
+      this.UrbanTax = 0.1; //Show in percent
+      this.BureaucratTax = 0.1; //Show in percent
+      this.IntellectualsTax = 0.1; //Show in percent
+      this.MilitaryTax = 0.1; //Show in percent
+      this.WorkersTax = 0.1; //Show in percent
+
+      this.ExternalTariffs = 0.1; //Show in percent
+      this.InternalTariffs = 0.1; //Show in percent
 	
     this.EstateInfluences = {
       AristocratInfluence: 0.525,
       ClergyInfluence: 0.25,
-      BurgousieInfluence: 0.175,
+        BurgousieInfluence: 0.175,
+        UrbanInfluence: 0.175,
       BureaucratInfluence: 0.025,
       IntellectualsInfluence: 0.02,
       MilitaryInfluence: 0.0,
@@ -603,7 +618,8 @@ class Nation {
       UnitaryRepresentation: 0.30,
       AristocratRepresentation: 0.40,
       ClergyRepresentation: 0.20,
-      BurgousieRepresentation: 0.10,
+        BurgousieRepresentation: 0.10,
+        UrbanRepresentation: 0.0,
       BureaucratRepresentation: 0.0,
       IntellectualsRepresentation: 0.0,
       MilitaryRepresentation: 0.0,
@@ -611,18 +627,19 @@ class Nation {
     };
 	
     this.MilitaryControl = {
-      UnitaryControl: 0.25,
-      AristocratControl: 0.35,
-      ClergyControl: 0.10,
-      BurgousieControl: 0.10,
-      BureaucratControl: 0.10,
+      UnitaryControl: 0.35,
+      AristocratControl: 0.45,
+      ClergyControl: 0.05,
+        BurgousieControl: 0.05,
+        UrbanControl: 0.05,
+      BureaucratControl: 0.05,
       IntellectualsControl: 0.0,
-      WorkersControl: 0.10
+      WorkersControl: 0.05
     };
 
     this.PopulationControl = 0;
     this.BirthControl = 0;
-    this.LocalTrade = 2.5;
+    this.LocalTrade = 5;
     this.TradeImprovements = 1;
     this.Spies = 0;
     this.SpyQuality = 1;
