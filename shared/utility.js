@@ -12,7 +12,7 @@ function sleep(ms) {
 let warnSuppress = 0;
 
 function suppressWarning(linesToSuppressParam) {
-    linesToSuppress = linesToSuppressParam == null ? linesToSuppressParam : 1;
+    linesToSuppress = linesToSuppressParam != null ? linesToSuppressParam : 1;
     warnSuppress = changeCommandIndex + linesToSuppress;
 }
 

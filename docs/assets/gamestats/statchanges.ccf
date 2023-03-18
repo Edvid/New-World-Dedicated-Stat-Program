@@ -201,6 +201,8 @@
 
 <...
 
+!suppress 999
+
 > cultures
 +> eu
 +> af
@@ -257,8 +259,6 @@
 
 <...
 
-!suppress 999
-
 <... > Nations
 = 0.00 test.MaxFur
 = 0.75 test.MaxGold
@@ -266,3 +266,5 @@
 
 <...
 
+
+!suppress 0
