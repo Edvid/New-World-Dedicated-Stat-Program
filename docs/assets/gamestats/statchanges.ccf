@@ -244,12 +244,11 @@
 
 <...
 
+!suppress 999
+
 <... > Nations
-!suppress
 = 0.00 test.MaxFur
-!suppress
 = 0.75 test.MaxGold
-!suppress
 = 2.25 test.MaxIron
 
 <...

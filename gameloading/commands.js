@@ -86,7 +86,7 @@ ${allProperties}`);
         "Turn Based",
         "Constant"
     ];
-    let thisStatStatType = getStatType(statName);
+    let thisStatStatType = getStatType(selection);
     if (~statTypesNotRP.indexOf(thisStatStatType)) {
         warn(`The specified stat ${selection.slice(1)} was of type ${thisStatStatType}, but has been modified with ccf (${commandParameters.Operand} ${value}).\nMake sure this is intended, f.x. via game event`);
     }

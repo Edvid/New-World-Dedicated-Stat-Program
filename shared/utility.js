@@ -11,12 +11,13 @@ function sleep(ms) {
 
 let warnSuppress = 0;
 
-function suppressWarning() {
-    warnSuppress = changeCommandIndex + 1;
+function suppressWarning(linesToSuppressParam) {
+    linesToSuppress = linesToSuppressParam == null ? linesToSuppressParam : 1;
+    warnSuppress = changeCommandIndex + linesToSuppress;
 }
 
 function warn(message) {
-    if (warnSuppress == changeCommandIndex) return;
+    if (warnSuppress >= changeCommandIndex) return;
     alert(`WARNING At line ${(changeCommandIndex + 1)}:
 
 ${message}`)
@@ -573,7 +574,13 @@ let StatTypes = {
         "SugarOutgoing",
         "ExoticFruitIncoming",
         "ExoticFruitOutgoing",
-        "TradePowerFromResourceTrade"
+        "TradePowerFromResourceTrade",
+        "DevelopmentPixelCount",
+        "CoastalPixels",
+        "ReligionGroups\..+\.Points",
+        "CultureGroups\..+\.Points",
+        "Climates\..+\.Pixels",
+        "TradeZones\..+\.Score"
     ],
     ConstantStats: [ ],
     TurnBasedStats: [
@@ -598,12 +605,21 @@ let StatTypes = {
 };
 
 
-function getStatType(statName){
-    let ret;
+function getStatType(selection){
+    let foundStatType;
     Object.keys(StatTypes).forEach(statType => {
-        if(~StatTypes[statType].indexOf(statName)) ret = statType.split(/Stats/)[0].replace(/([a-z])([A-Z])/, "$1 $2"); 
+        if (foundStatType != null) return;
+        for(let i = 0; i < StatTypes[statType].length; i++){
+            const endCompare = StatTypes[statType][i];
+            const testString = endCompare + '$';
+            
+            if(new RegExp(testString).test(selection)) {
+                foundStatType = statType.split(/Stats/)[0].replace(/([a-z])([A-Z])/, "$1 $2");
+                break;
+            } 
+        }
     });
-    return ret != null ? ret : "Unknown";
+    return foundStatType != null ? foundStatType : "Unknown";
 }
 
 function ValueTypeFix(statName, statValue) {
