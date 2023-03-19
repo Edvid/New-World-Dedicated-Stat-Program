@@ -1,203 +1,304 @@
 <... > trade zones
 
+!suppress 999
+
 +> CentralSiberia
-= "69a826" CentralSiberia.Color
+= "69a826" CentralSiberia.Color 
+= 0 CentralSiberia.Score
 +> EasternSiberia
-= "331b1b" EasternSiberia.Color
+= "331b1b" EasternSiberia.Color 
+ = 0 EasternSiberia.Score
 +> WesternSiberia
-= "264a00" WesternSiberia.Color
+= "264a00" WesternSiberia.Color 
+ = 0 WesternSiberia.Score
 +> NorthSea
-= "7382ff" NorthSea.Color
+= "7382ff" NorthSea.Color 
+ = 0 NorthSea.Score
 +> Alaska
-= "ff6c7a" Alaska.Color
+= "ff6c7a" Alaska.Color 
+ = 0 Alaska.Score
 +> NorthernNordics
-= "ffd6e4" NorthernNordics.Color
+= "ffd6e4" NorthernNordics.Color 
+ = 0 NorthernNordics.Score
 +> HudsonBay
-= "ffeb63" HudsonBay.Color
+= "ffeb63" HudsonBay.Color 
+ = 0 HudsonBay.Score
 +> BarentsSea
-= "ff553e" BarentsSea.Color
+= "ff553e" BarentsSea.Color 
+ = 0 BarentsSea.Score
 +> CentralCanada
-= "a5a5a5" CentralCanada.Color
+= "a5a5a5" CentralCanada.Color 
+ = 0 CentralCanada.Score
 +> BalticSea
-= "8f00c2" BalticSea.Color
+= "8f00c2" BalticSea.Color 
+ = 0 BalticSea.Score
 +> Novgorod
-= "00ff21" Novgorod.Color
+= "00ff21" Novgorod.Color 
+ = 0 Novgorod.Score
 +> Denmark
-= "ff0000" Denmark.Color
+= "ff0000" Denmark.Color 
+ = 0 Denmark.Score
 +> LawrenceGulf
-= "ff6a38" LawrenceGulf.Color
+= "ff6a38" LawrenceGulf.Color 
+ = 0 LawrenceGulf.Score
 +> Volga
-= "db7a25" Volga.Color
+= "db7a25" Volga.Color 
+ = 0 Volga.Score
 +> Livonia
-= "801065" Livonia.Color
+= "801065" Livonia.Color 
+ = 0 Livonia.Score
 +> BritishIsles
-= "808080" BritishIsles.Color
+= "808080" BritishIsles.Color 
+ = 0 BritishIsles.Score
 +> Muscovy
-= "e1d869" Muscovy.Color
+= "e1d869" Muscovy.Color 
+ = 0 Muscovy.Score
 +> Dniepr
-= "80ff65" Dniepr.Color
+= "80ff65" Dniepr.Color 
+ = 0 Dniepr.Score
 +> UralRiver
-= "dcff44" UralRiver.Color
+= "dcff44" UralRiver.Color 
+ = 0 UralRiver.Score
 +> Manchuria
-= "e8ff65" Manchuria.Color
+= "e8ff65" Manchuria.Color 
+ = 0 Manchuria.Score
 +> Vistula
-= "ff7e70" Vistula.Color
+= "ff7e70" Vistula.Color 
+ = 0 Vistula.Score
 +> CentralEurope
-= "8080a3" CentralEurope.Color
+= "8080a3" CentralEurope.Color 
+ = 0 CentralEurope.Score
 +> DonRiver
-= "ffd86d" DonRiver.Color
+= "ffd86d" DonRiver.Color 
+ = 0 DonRiver.Score
 +> Cascadia
-= "ff006e" Cascadia.Color
+= "ff006e" Cascadia.Color 
+ = 0 Cascadia.Score
 +> SeaOfJapan
-= "00ffff" SeaOfJapan.Color
+= "00ffff" SeaOfJapan.Color 
+ = 0 SeaOfJapan.Score
 +> Rhine
-= "0094ff" Rhine.Color
+= "0094ff" Rhine.Color 
+ = 0 Rhine.Score
 +> EnglishChannel
-= "ff4a00" EnglishChannel.Color
+= "ff4a00" EnglishChannel.Color 
+ = 0 EnglishChannel.Score
 +> GreatLakes
-= "3dffff" GreatLakes.Color
+= "3dffff" GreatLakes.Color 
+ = 0 GreatLakes.Score
 +> Romania
-= "d100dc" Romania.Color
+= "d100dc" Romania.Color 
+ = 0 Romania.Score
 +> CentralAsia
-= "9fffff" CentralAsia.Color
+= "9fffff" CentralAsia.Color 
+ = 0 CentralAsia.Score
 +> France
-= "00d5ff" France.Color
+= "00d5ff" France.Color 
+ = 0 France.Score
 +> WesternDanube
-= "404040" WesternDanube.Color
+= "404040" WesternDanube.Color 
+ = 0 WesternDanube.Score
 +> EasternDanube
-= "5d7c3d" EasternDanube.Color
+= "5d7c3d" EasternDanube.Color 
+ = 0 EasternDanube.Score
 +> TheRockies
-= "7f4618" TheRockies.Color
+= "7f4618" TheRockies.Color 
+ = 0 TheRockies.Score
 +> Mississippi
-= "00ba21" Mississippi.Color
+= "00ba21" Mississippi.Color 
+ = 0 Mississippi.Score
 +> SouthernFrance
-= "46a7ff" SouthernFrance.Color
+= "46a7ff" SouthernFrance.Color 
+ = 0 SouthernFrance.Score
 +> CaspianSea
-= "3881ff" CaspianSea.Color
+= "3881ff" CaspianSea.Color 
+ = 0 CaspianSea.Score
 +> GobiDesert
-= "e1e9cd" GobiDesert.Color
+= "e1e9cd" GobiDesert.Color 
+ = 0 GobiDesert.Score
 +> Crimea
-= "31aadb" Crimea.Color
+= "31aadb" Crimea.Color 
+ = 0 Crimea.Score
 +> BayOfBiscay
-= "efff66" BayOfBiscay.Color
+= "efff66" BayOfBiscay.Color 
+ = 0 BayOfBiscay.Score
 +> Adriatic
-= "007f0e" Adriatic.Color
+= "007f0e" Adriatic.Color 
+ = 0 Adriatic.Score
 +> EastCoast
-= "cc0000" EastCoast.Color
+= "cc0000" EastCoast.Color 
+ = 0 EastCoast.Score
 +> CentralMediterranean
-= "ff7d49" CentralMediterranean.Color
+= "ff7d49" CentralMediterranean.Color 
+ = 0 CentralMediterranean.Score
 +> WestCoast
-= "ffdb7b" WestCoast.Color
+= "ffdb7b" WestCoast.Color 
+ = 0 WestCoast.Score
 +> Caucasus
-= "ff2f3e" Caucasus.Color
+= "ff2f3e" Caucasus.Color 
+ = 0 Caucasus.Score
 +> Greece
-= "0065ff" Greece.Color
+= "0065ff" Greece.Color 
+ = 0 Greece.Score
 +> WesternMediterranean
-= "ffd846" WesternMediterranean.Color
+= "ffd846" WesternMediterranean.Color 
+ = 0 WesternMediterranean.Score
 +> Iberia
-= "3a9112" Iberia.Color
+= "3a9112" Iberia.Color 
+ = 0 Iberia.Score
 +> NorthernAnatolia
-= "5b8f00" NorthernAnatolia.Color
+= "5b8f00" NorthernAnatolia.Color 
+ = 0 NorthernAnatolia.Score
 +> YellowRiver
-= "3aaa0e" YellowRiver.Color
+= "3aaa0e" YellowRiver.Color 
+ = 0 YellowRiver.Score
 +> Mesopotamia
-= "7f3300" Mesopotamia.Color
+= "7f3300" Mesopotamia.Color 
+ = 0 Mesopotamia.Score
 +> EasternMediterranean
-= "80ff00" EasternMediterranean.Color
+= "80ff00" EasternMediterranean.Color 
+ = 0 EasternMediterranean.Score
 +> GulfOfMexico
-= "ffac54" GulfOfMexico.Color
+= "ffac54" GulfOfMexico.Color 
+ = 0 GulfOfMexico.Score
 +> Afghanistan
-= "592b37" Afghanistan.Color
+= "592b37" Afghanistan.Color 
+ = 0 Afghanistan.Score
 +> IndusRiver
-= "267f00" IndusRiver.Color
+= "267f00" IndusRiver.Color 
+ = 0 IndusRiver.Score
 +> Morocco
-= "7f0001" Morocco.Color
+= "7f0001" Morocco.Color 
+ = 0 Morocco.Score
 +> Tibet
-= "b200ff" Tibet.Color
+= "b200ff" Tibet.Color 
+ = 0 Tibet.Score
 +> Iran
-= "8ffd42" Iran.Color
+= "8ffd42" Iran.Color 
+ = 0 Iran.Score
 +> Sichuan
-= "c6d521" Sichuan.Color
+= "c6d521" Sichuan.Color 
+ = 0 Sichuan.Score
 +> Sahara
-= "b7a791" Sahara.Color
+= "b7a791" Sahara.Color 
+ = 0 Sahara.Score
 +> ArabianDesert
-= "e2ceb1" ArabianDesert.Color
+= "e2ceb1" ArabianDesert.Color 
+ = 0 ArabianDesert.Score
 +> YangtzeRiver
-= "3dfd00" YangtzeRiver.Color
+= "3dfd00" YangtzeRiver.Color 
+ = 0 YangtzeRiver.Score
 +> WesternMexico
-= "469b52" WesternMexico.Color
+= "469b52" WesternMexico.Color 
+ = 0 WesternMexico.Score
 +> Egypt
-= "ff1410" Egypt.Color
+= "ff1410" Egypt.Color 
+ = 0 Egypt.Score
 +> Ganges
-= "db6525" Ganges.Color
+= "db6525" Ganges.Color 
+ = 0 Ganges.Score
 +> RedSea
-= "2b6d0e" RedSea.Color
+= "2b6d0e" RedSea.Color 
+ = 0 RedSea.Score
 +> PersianGulf
-= "ffc430" PersianGulf.Color
+= "ffc430" PersianGulf.Color 
+ = 0 PersianGulf.Score
 +> Caribbean
-= "3c02ff" Caribbean.Color
+= "3c02ff" Caribbean.Color 
+ = 0 Caribbean.Score
 +> WesternSahara
-= "fed800" WesternSahara.Color
+= "fed800" WesternSahara.Color 
+ = 0 WesternSahara.Score
 +> SouthEastAsia
-= "ff3d3d" SouthEastAsia.Color
+= "ff3d3d" SouthEastAsia.Color 
+ = 0 SouthEastAsia.Score
 +> Pacific
-= "93ffff" Pacific.Color
+= "93ffff" Pacific.Color 
+ = 0 Pacific.Score
 +> SouthChinaSea
-= "4d007f" SouthChinaSea.Color
+= "4d007f" SouthChinaSea.Color 
+ = 0 SouthChinaSea.Score
 +> CentralIndia
-= "ec7f7f" CentralIndia.Color
+= "ec7f7f" CentralIndia.Color 
+ = 0 CentralIndia.Score
 +> Deccan
-= "84ff55" Deccan.Color
+= "84ff55" Deccan.Color 
+ = 0 Deccan.Score
 +> SouthernNile
-= "d9ff00" SouthernNile.Color
+= "d9ff00" SouthernNile.Color 
+ = 0 SouthernNile.Score
 +> Somalia
-= "529bae" Somalia.Color
+= "529bae" Somalia.Color 
+ = 0 Somalia.Score
 +> WesternNiger
-= "b6ff4a" WesternNiger.Color
+= "b6ff4a" WesternNiger.Color 
+ = 0 WesternNiger.Score
 +> Guinea
-= "ff8ca3" Guinea.Color
+= "ff8ca3" Guinea.Color 
+ = 0 Guinea.Score
 +> CentralAmerica
-= "a0a0a0" CentralAmerica.Color
+= "a0a0a0" CentralAmerica.Color 
+ = 0 CentralAmerica.Score
 +> EasternNiger
-= "3bd323" EasternNiger.Color
+= "3bd323" EasternNiger.Color 
+ = 0 EasternNiger.Score
 +> Venezuela
-= "c3ff2b" Venezuela.Color
+= "c3ff2b" Venezuela.Color 
+ = 0 Venezuela.Score
 +> Indonesia
-= "fec605" Indonesia.Color
+= "fec605" Indonesia.Color 
+ = 0 Indonesia.Score
 +> CongoRiver
-= "dd6a00" CongoRiver.Color
+= "dd6a00" CongoRiver.Color 
+ = 0 CongoRiver.Score
 +> Gabon
-= "107f00" Gabon.Color
+= "107f00" Gabon.Color 
+ = 0 Gabon.Score
 +> LakeVictoria
-= "9fa300" LakeVictoria.Color
+= "9fa300" LakeVictoria.Color 
+ = 0 LakeVictoria.Score
 +> Amazon
-= "2d9600" Amazon.Color
+= "2d9600" Amazon.Color 
+ = 0 Amazon.Score
 +> Peru
-= "9e0000" Peru.Color
+= "9e0000" Peru.Color 
+ = 0 Peru.Score
 +> EastAfrica
-= "0094d7" EastAfrica.Color
+= "0094d7" EastAfrica.Color 
+ = 0 EastAfrica.Score
 +> LakeTanganyika
-= "b67871" LakeTanganyika.Color
+= "b67871" LakeTanganyika.Color 
+ = 0 LakeTanganyika.Score
 +> SaoFranciscoRiver
-= "6aff2b" SaoFranciscoRiver.Color
+= "6aff2b" SaoFranciscoRiver.Color 
+ = 0 SaoFranciscoRiver.Score
 +> NorthernAustralia
-= "ff7400" NorthernAustralia.Color
+= "ff7400" NorthernAustralia.Color 
+ = 0 NorthernAustralia.Score
 +> Angola
-= "a3ff27" Angola.Color
+= "a3ff27" Angola.Color 
+ = 0 Angola.Score
 +> Mozambique
-= "00ff69" Mozambique.Color
+= "00ff69" Mozambique.Color 
+ = 0 Mozambique.Score
 +> ParanaRiver
-= "2ba6ff" ParanaRiver.Color
+= "2ba6ff" ParanaRiver.Color 
+ = 0 ParanaRiver.Score
 +> Chile
-= "ffe846" Chile.Color
+= "ffe846" Chile.Color 
+ = 0 Chile.Score
 +> SouthernAustralia
-= "b6c2ff" SouthernAustralia.Color
+= "b6c2ff" SouthernAustralia.Color 
+ = 0 SouthernAustralia.Score
 +> SouthAfrica
-= "8f00ff" SouthAfrica.Color
+= "8f00ff" SouthAfrica.Color 
+ = 0 SouthAfrica.Score
 +> AustralianDesert
-= "d8c5a9" AustralianDesert.Color
+= "d8c5a9" AustralianDesert.Color 
+ = 0 AustralianDesert.Score
 +> Patagonia
-= "68d7ff" Patagonia.Color
+= "68d7ff" Patagonia.Color 
+ = 0 Patagonia.Score
 
 <...
 

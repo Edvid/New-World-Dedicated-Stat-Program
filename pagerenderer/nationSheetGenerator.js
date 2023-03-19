@@ -262,7 +262,7 @@ let TableLayouts = {
         ["AdministrativeTech", "BureaucratWages", "AdministrativeEfficiency", "AdministrationSize", "AdministrativePower", "AdministrativeDemand", "AdministrativeStrain", "TaxEfficiency"]
     ],
     "Budget Stats": [
-        ["TradeEfficiency", "LocalTrade", "TradePower"],
+        ["TradeEfficiency", "LocalTrade", "InternalTrade", "ExternalTrade", "TradePower"],
         ["TradeImprovements", "ProductionEfficiency", "Production"],
         ["Inflation", "DailyBudget", "Budget"],
         ["BudgetIncoming", "BudgetOutgoing", "Balance"],
