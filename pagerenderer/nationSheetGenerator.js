@@ -551,7 +551,6 @@ function createNationSheet(nationName) {
 
     allTabletitles.forEach(TableTitle => {
         if(TableTitle.innerHTML == "Cultural Advancements" || TableTitle.innerHTML == "Technologies"){
-            debugger;
             let TechtreeButton = document.createElement("a");
             TechtreeButton.style.margin = "0em 1em 0.5em 1em";
             TechtreeButton.addEventListener("click", collapsibleNextSibling);
@@ -561,7 +560,6 @@ function createNationSheet(nationName) {
             TechtreeButton.appendChild(TechtreeIcon);
             let TechTreeImage = document.createElement("img");
             TechTreeImage.src = "docs/assets/images/techTree.png";
-            debugger;
             TechTreeImage.style.margin = "2em";
             TechTreeImage.style.width = document.body.clientWidth - 100 + "px";
             TechTreeImage.style.display = "none";
