@@ -543,6 +543,47 @@ function createNationSheet(nationName) {
                 });
             }
         }
+    });    
+
+    //add tech tree button to tech and cultural adv & add individual nation view to land stats
+
+    let allTabletitles = document.querySelectorAll(".nationsheet > div > h2")
+
+    allTabletitles.forEach(TableTitle => {
+        if(TableTitle.innerHTML == "Cultural Advancements" || TableTitle.innerHTML == "Technologies"){
+            debugger;
+            let TechtreeButton = document.createElement("a");
+            TechtreeButton.style.margin = "0em 1em 0.5em 1em";
+            TechtreeButton.addEventListener("click", collapsibleNextSibling);
+            let TechtreeIcon = document.createElement("img");
+            TechtreeIcon.src = "docs/assets/images/small_techTree.png";
+            TechtreeIcon.style.border = "1px solid black";
+            TechtreeButton.appendChild(TechtreeIcon);
+            let TechTreeImage = document.createElement("img");
+            TechTreeImage.src = "docs/assets/images/techTree.png";
+            debugger;
+            TechTreeImage.style.margin = "2em";
+            TechTreeImage.style.width = document.body.clientWidth - 100 + "px";
+            TechTreeImage.style.display = "none";
+
+            TableTitle.parentElement.insertBefore(TechTreeImage, TableTitle.nextSibling);
+            TableTitle.parentElement.insertBefore(TechtreeButton, TechTreeImage);
+        }
+        else if(TableTitle.innerHTML == "Land Stats"){
+            let imgButton = document.createElement("a");
+            imgButton.href = `./IndividualNation?col=${gameStats.Nations[nationName].Color}`
+            imgButton.target = "_blank";
+            let img = document.createElement("img");
+            img.src = "docs/assets/images/world/small_blank.png";
+            img.title = `see ${nationName} specific area`;
+            img.style.width = "58px";
+            img.classList.add("pixelated");
+
+            imgButton.style.margin = "0em 1em 0.5em 1em";
+            
+            imgButton.appendChild(img);
+            TableTitle.parentElement.insertBefore(imgButton, TableTitle.nextSibling);
+        }
     });
 }
 
