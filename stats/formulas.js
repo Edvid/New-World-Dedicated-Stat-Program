@@ -387,10 +387,13 @@ function evaluateNation(nationName) {
       stp += gameStats.TradeZones[region].Score * percent;
     }
     return stp;
-  })();
+    })();
+
+    n.CoastalLandPercent = n.CoastalPixels / n.Size;
+    n.AverageDevelopment = n.DevelopmentPixelCount / n.Size / 255;
 
     n.ExternalTrade = n.TradePowerFromResourceTrade + pseudoTradePower * n.TradeEfficiency;
-    n.InternalTrade = (n.LocalTrade * n.Population / 100000 * (1 + n.AverageDevelopment)) * n.TradeEfficiency;
+    n.InternalTrade = (n.LocalTrade * n.Population / 2000000 * (1 + n.AverageDevelopment)) * n.TradeEfficiency;
     n.TradePower = n.ExternalTrade + n.InternalTrade;
 
   n.ConscriptionPercent = n.OverallNumbers / n.Population;
@@ -443,8 +446,6 @@ function evaluateNation(nationName) {
     return hl;
   })();
   n.PopulationDensityPerKmSquared = n.Population / (n.KmSquared * n.HabitableLand);
-  n.CoastalLandPercent = n.CoastalPixels / n.Size;
-  n.AverageDevelopment = n.DevelopmentPixelCount / n.Size / 255;
 
   n.Disease = n.PopulationDensityPerKmSquared / 25 - n.Health / 20 - (n.Technologies.HumanAnatomy ? 0.15 : 0) - (n.CulturalAdvancements.PotatoPopulationBoom == true ? 0.2 : 0);
   n.UnderPopulation = n.Disease < 0.5 ? (1 - n.Disease) / 10 : 0;
