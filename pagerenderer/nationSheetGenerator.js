@@ -305,7 +305,7 @@ let TableLayouts = {
     "Agriculture": [
         ["Fertility", "AgricultureSubsidies", "AgricultureInfrastructure", "AgricultureAdvancements", "AgricultureTechnology", "FarmingEfficiency", "AgricultureSpending"],
         ["PopInAgriculture", "DailyFood", "FoodConsumption", "FoodGain", "StockingCapabilities", "MaxFoodStock", "SellingCapability"],
-        ["Food", "FutureFood", "SurplusFood", "FoodSold", "Foodlost", "TradeProfit", "FoodPopulationBoost"]
+        ["Food", "FutureFood", "SurplusFood", "FoodSold", "Foodlost", "FoodTradeProfit", "FoodPopulationBoost"]
     ],
     "War Stats": [
         ["Casualties", "Pillaging", "Occupation", "Blockade", "MinorBattles", "MajorBattles", "WarExhaustion", "Fervor"]
