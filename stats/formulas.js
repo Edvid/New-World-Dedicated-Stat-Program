@@ -97,8 +97,8 @@ function evaluateNation(nationName) {
   n.CultureRepresentedAtGovernmentLevelPercent =  cultureCalc.GovernmentRepresentationPercent;
   n.CulturalDisunity = cultureCalc.disunity * (1 + n.Nationalism * 0.2);
   n.ReligionRepresentedAtGovernmentLevelPercent = religionCalc.GovernmentRepresentationPercent;
-  n.ReligiousDisunity = religionCalc.disunity * (1 + n.ReligiousFervor * 0.2);
-  n.OverallNumbers = n.Riflemen + n.MusketMilitia + n.Musketeers + n.Levies + n.LightInfantry + n.HeavyInfantry + n.Archers + n.Crossbowmen + n.LightCavalry + n.HeavyCavalry + n.EliteInfantry + n.Militia + n.EliteCavalry + n.HandCannoneers + (n.SiegeEquipment + n.LargeSiegeEquipment) * 10;
+    n.ReligiousDisunity = religionCalc.disunity * (1 + n.ReligiousFervor * 0.2);
+    n.OverallNumbers = n.Riflemen + n.MusketMilitia + n.Musketeers + n.Levies + n.LightInfantry + n.HeavyInfantry + n.Archers + n.Crossbowmen + n.LightCavalry + n.HeavyCavalry + n.EliteInfantry + n.Militia + n.EliteCavalry + n.HandCannoneers + (n.SiegeEquipment + n.LargeSiegeEquipment) * 10 + n.RegimentalGuns * 3 + n.FieldCannons * 6 + n.SiegeGuns * 10;
   n.OverallShipCount = n.LightShips + n.MediumShips + n.HeavyShips;
   n.AdministrativeTech = (n.CulturalAdvancements.EarlyModernAdministration == true ? 1 : 0) + (n.CulturalAdvancements.NationalSovereignity == true ? 1 : 0) + (n.CulturalAdvancements.Constitution == true ? 1 : 0)	
   n.AdministrativePower = n.AdministrativeEfficiency * (1 + n.AdministrationSize / 2 + n.AdministrativeTech / 10) * 0.75;
@@ -155,7 +155,7 @@ function evaluateNation(nationName) {
     n.CoastalLandPercent = n.CoastalPixels / n.Size;
     n.AverageDevelopment = n.DevelopmentPixelCount / n.Size / 255;
 
-    n.ConscriptionPercent = n.OverallNumbers / n.Population;
+    n.ConscriptionPercent = (n.OverallNumbers + n.SmallForts * 100 + n.MediumForts * 250 + n.BigForts * 400 + n.HugeForts * 800 + n.ExtraCityFortifications * 250) / n.Population;
     n.Workforces.PopulationInMilitary = n.ConscriptionPercent;
     n.Workforces.Bureaucrats = n.AdministrationSize / 100;
     n.Workforces.Intellectuals = n.HigherEducation / 100;
@@ -274,7 +274,25 @@ function evaluateNation(nationName) {
 
 
 
-  }
+    }
+
+    n.ProductionEfficiency = n.TradeImprovements + n.Technologies.VerticalLoom / 5 + n.Technologies.Workshops + n.Technologies.Cranes / 5 + n.Technologies.TextileManufactories / 2 + n.Technologies.FlyingShuttle / 5 + n.Technologies.LeadChamberProcess / 5;
+    n.Production = n.Population / 1000 * n.Workforces.Townsfolk * n.ProductionEfficiency / 3;
+
+    n.TotalSupply = n.ProductionSectors.ConstructionSector + n.ProductionSectors.BasicArmamentsSector + n.ProductionSectors.HeavyArmamentsSector + n.ProductionSectors.ShipBuildingSector + n.ProductionSectors.BasicToolsSector + n.ProductionSectors.BasicGoodsSector + n.ProductionSectors.LuxuryGoodsSector + n.ProductionSectors.ChemicalSector + n.ProductionSectors.ElectronicsSector + n.ProductionSectors.AutomotiveSector + n.ProductionSectors.AerospaceSector + n.ProductionSectors.HeavyIndustrySector;
+    n.ConstructionSupply = n.Production * n.ProductionSectors.ConstructionSector * (n.ProductionSectors.ConstructionSector / n.TotalSupply);
+    n.BasicArmamentsSupply = n.Production * n.ProductionSectors.BasicArmamentsSector * (n.ProductionSectors.BasicArmamentsSector / n.TotalSupply);
+    n.HeavyArmamentsSupply = n.Production * n.ProductionSectors.HeavyArmamentsSector * (n.ProductionSectors.HeavyArmamentsSector / n.TotalSupply);
+    n.ShipBuildingSupply = n.Production * n.ProductionSectors.ShipBuildingSector * (n.ProductionSectors.ShipBuildingSector / n.TotalSupply);
+    n.BasicToolsSupply = n.Production * n.ProductionSectors.BasicToolsSector * (n.ProductionSectors.BasicToolsSector / n.TotalSupply);
+    n.BasicGoodsSupply = n.Production * n.ProductionSectors.BasicGoodsSector * (n.ProductionSectors.BasicGoodsSector / n.TotalSupply);
+    n.LuxuryGoodsSupply = n.Production * n.ProductionSectors.LuxuryGoodsSector * (n.ProductionSectors.LuxuryGoodsSector / n.TotalSupply);
+    n.ChemicalSupply = n.Production * n.ProductionSectors.ChemicalSector * (n.ProductionSectors.ChemicalSector / n.TotalSupply);
+    n.ElectronicsSupply = n.Production * n.ProductionSectors.ElectronicsSector * (n.ProductionSectors.ElectronicsSector / n.TotalSupply);
+    n.AutomotiveSupply = n.Production * n.ProductionSectors.AutomotiveSector * (n.ProductionSectors.AutomotiveSector / n.TotalSupply);
+    n.AerospaceSupply = n.Production * n.ProductionSectors.AerospaceSector * (n.ProductionSectors.AerospaceSector / n.TotalSupply);
+    n.HeavyIndustrySupply = n.Production * n.ProductionSectors.HeavyIndustrySector * (n.ProductionSectors.HeavyIndustrySector / n.TotalSupply);
+
   n.Wood = (
   n.Climates.TaigaAndTundra.Pixels * 0.85 +
   n.Climates.MontaneForest.Pixels * 0.8 +
@@ -430,7 +448,7 @@ function evaluateNation(nationName) {
     n.TradePower = n.ExternalTrade + n.InternalTrade;
 
     n.Workforces.Merchants = n.TradePower * 1000 / n.Population;
-    n.Workforces.Sailors = (n.LightShips * 400 + n.MediumShips * 900 + n.HeavyShips * 1600 + n.TradePower * 10000) / n.Population
+    n.Workforces.Sailors = (n.LightShips * 400 + n.MediumShips * 900 + n.HeavyShips * 1600 + n.TradePower * 1000) / n.Population
 
   n.Prosperity = 1 + n.SocialSpending / 2.5 + (n.FutureFood < 0 ? n.FutureFood / (n.Population / 10000) : 0) + (n.Budget < 0 ? n.Budget / n.OverallIncome : 0) - (n.Pillaging) * 3;
   n.Food = max(0, n.Food);
@@ -598,8 +616,6 @@ function evaluateNation(nationName) {
     return "Melee"
   }
 
-  n.ProductionEfficiency = n.TradeImprovements + n.Technologies.VerticalLoom / 5 + n.Technologies.Workshops + n.Technologies.Cranes / 5 + n.Technologies.TextileManufactories / 2 + n.Technologies.FlyingShuttle / 5 + n.Technologies.LeadChamberProcess / 5;
-  n.Production = n.TradePower * n.Workforces.Townsfolk * n.ProductionEfficiency * 10;
   n.TradeProtection = n.LightShips * 0.75 + n.MediumShips * 1 + n.HeavyShips * 0.75;
   n.TradeEfficiency = (1 * n.TradeImprovements + n.Technologies.Cranes / 10 + n.Technologies.PromissoryNotes / 20 + n.TradeProtection / 200 + n.Technologies.Fluyt / 5) * (1 - n.Blockade);
 
@@ -636,7 +652,7 @@ function evaluateNation(nationName) {
     n.SerfsWage = n.FoodValue * n.FarmingEfficiency * 0.25;
     n.FarmersWage = n.FoodValue * n.FarmingEfficiency * (1 - n.LandOwnersInfluence);
         n.SerfsAndFarmersWageToOnwers = n.Population * n.Workforces.Serfs / 1000 * n.FoodValue * n.FarmingEfficiency * 0.75 + n.Population * n.Workforces.Farmers / 1000 * n.FoodValue * n.LandOwnersInfluence;
-    n.TownsfolkWage = (n.Production * 100 / (n.Population / 1000 * n.Workforces.Townsfolk)) * (1 - n.EstateInfluences.BurgousieInfluence * 2);
+    n.TownsfolkWage = (n.Production * 10 / (n.Population / 1000 * n.Workforces.Townsfolk)) * (1 - n.EstateInfluences.BurgousieInfluence * 2);
         n.TownsfolkWageToBurgousie = n.Population * n.Workforces.Townsfolk / 1000 * n.TownsfolkWage / (1 - n.EstateInfluences.BurgousieInfluence * 2) * n.EstateInfluences.BurgousieInfluence * 2;
     n.ClergyWage = n.Population * (n.ReligiousFervor + 1) / (n.Population / 1000 * n.Workforces.Clergy) * n.EstateInfluences.ClergyInfluence / 1000;
     n.BureaucratsWage = n.BureaucratWages * 50 * n.EstateInfluences.BureaucratInfluence;
@@ -681,7 +697,7 @@ function evaluateNation(nationName) {
 
     n.OverallIncome = n.PassiveInvestmentIncome + n.TariffsRevenue + n.TaxRevenue + n.BudgetIncoming;
     n.OverallSpending = n.ArmyUpkeep + n.NavyUpkeep + n.FortUpkeep + n.EducationUpkeep + n.HygieneUpkeep + n.AgricultureSpending + n.SocialSpendingUpkeep + n.SpyUpkeep + n.PopulationControlUpkeep + n.PropagandaUpkeep + n.AdministrativeUpkeep + n.ResearchUpkeep + n.NewTroopRecruitmentPenalty + n.BudgetOutgoing;
-    n.DailyBudget = n.OverallIncome - n.OverallSpending
+    n.DailyBudget = n.OverallIncome - n.OverallSpending;
     n.FutureBudget = n.Budget + n.DailyBudget;
 
 
