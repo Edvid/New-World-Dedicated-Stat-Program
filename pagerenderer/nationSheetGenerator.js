@@ -267,11 +267,11 @@ let TableLayouts = {
         ["Inflation", "DailyBudget", "Budget"],
         ["BudgetIncoming", "BudgetOutgoing", "Balance"],
         ["HighClassTax", "MediumClassTax", "LowerClassTax"],
-        ["InternalTariffs", "ExternalTariffs"]
+        ["InternalTariffs", "ExternalTariffs", "TariffEfficiency"]
     ],
     "Upkeeps and Income": [
-        ["ProductionRevenue", "TariffsRevenue", "PassiveInvestmentIncome"],
-        ["ResourceBudgetBoost", "TaxRevenue", "OverallIncome" ],
+        ["TaxRevenue", "TariffsRevenue", "PassiveInvestmentIncome"],
+        ["OverallIncome", "OverallSpending"],
         ["ArmyUpkeep", "NavyUpkeep", "FortUpkeep", "NewTroopRecruitmentPenalty"],
         ["SpyUpkeep", "EducationUpkeep", "PopulationControlUpkeep"],
         ["SocialSpendingUpkeep", "AgricultureSpending", "AdministrativeUpkeep"],
@@ -318,9 +318,7 @@ let TableLayouts = {
         ["AristocratLoyalty", "ClergyLoyalty", "BurgousieLoyalty", "UrbanLoyalty", "BureaucratLoyalty", "IntellectualsLoyalty", "WorkersLoyalty", "MilitaryLoyalty"],
         ["AristocratTax", "ClergyTax", "BurgousieTax", "UrbanTax", "BureaucratTax", "IntellectualsTax", "WorkersTax", "MilitaryTax"],
         ["SlavesWage", "LabourersWage", "SerfsWage", "FarmersWage", "TownsfolkWage", "ClergyWage", "BureaucratsWage", "MerchantsWage", "IntellectualsWage", "SailorsWage", "SoldiersWage", "AristocracyWage", "BurgousieWage"],
-        ["SlavesAndLabourersWageToOwner", "SerfsAndFarmersWageToAristocracy", "TownsfolkWageToBurgousie", "MerchantsWageToBurggousie"],
-        ["SlavesTaxes", "LabourersTaxes", "SerfsTaxes", "FarmersTaxes", "TownsfolkTaxes", "ClergyTaxes", "BureaucratsTaxes", "MerchantsTaxes", "IntellectualsTaxes", "SailorsTaxes", "SoldiersTaxes", "AristocracyTaxes", "BurgousieTaxes"],
-        ["TaxRevenue"]
+        ["SlavesTaxes", "LabourersTaxes", "SerfsTaxes", "FarmersTaxes", "TownsfolkTaxes", "ClergyTaxes", "BureaucratsTaxes", "MerchantsTaxes", "IntellectualsTaxes", "SailorsTaxes", "SoldiersTaxes", "AristocracyTaxes", "BurgousieTaxes", "TaxRevenue"]
     ],
 	"Reforms": [
 		["Reforms.SlaveryAllowed", "Reforms.SlaveryBanned", "Reforms.SerfdomAllowed", "Reforms.SerfdomBanned"],
@@ -332,7 +330,8 @@ let TableLayouts = {
 		["Reforms.NoblePrivellege", "Reforms.WealthPrivellege", "Reforms.ClassEquality"],
 		["Reforms.NobleOfficers", "Reforms.WealthyOfficers", "Reforms.MeritocraticOfficers"],
 		["Reforms.NobleBureaucrats", "Reforms.WealthyBureaucrats", "Reforms.MeritocraticBureaucrats"],
-		["Reforms.NobleResourceOwnership", "Reforms.MixedResourceOwnership", "Reforms.BurgousieResourceOwnership", "Reforms.GovernmentResourceOwnership"],
+        ["Reforms.NobleResourceOwnership", "Reforms.MixedResourceOwnership", "Reforms.BurgousieResourceOwnership", "Reforms.GovernmentResourceOwnership"],
+        ["Reforms.NobleLandOwnership", "Reforms.MixedLandOwnership", "Reforms.PrivateLandOwnership", "Reforms.GovernmentLandOwnership"],
 		["Reforms.NoArmyReserve", "Reforms.NationalMilitia", "Reforms.Conscripts", "Reforms.ProffesionalReservists"]
 	],
     "Trade Influence - Americas": [
@@ -439,6 +438,10 @@ function createNationSheet(nationName) {
     AddNextStatTable();
 
     AddNextStatTable();
+
+    createBreaker();
+
+    createPieDiagram("ProductionSectors");
 
     AddNextStatTable();
 

@@ -733,11 +733,25 @@ class Nation {
 
     /* #region  Population */
     this.Workforces = {
-      Townsfolk: 0.01,
       Clergy: 0.0125,
       Aristocracy: 0.02,
       Burgousie: 0.005
-    };
+     };
+
+    this.ProductionSectors = {
+        ConstructionSector: 5,
+        BasicArmamentsSector: 2,
+        HeavyArmamentsSector: 0.2,
+        ShipBuildingSector: 0.2,
+        BasicToolsSector: 4,
+        BasicGoodsSector: 7,
+        LuxuryGoodsSector: 2,
+        ChemicalSector: 0,
+        ElectronicsSector: 0,
+        AutomotiveSector: 0,
+        AerospaceSector: 0,
+        HeavyIndustrySector: 0
+     }
     
     this.SocietalClasses = {};
     this.CultureGroups = {}
@@ -867,8 +881,13 @@ class Nation {
 	  NobleResourceOwnership: true,
 	  MixedResourceOwnership: false,
 	  BurgousieResourceOwnership: false,
-	  GovernmentResourceOwnership: false,
-	  
+      GovernmentResourceOwnership: false,
+
+      NobleLandOwnership: true,
+      MixedLandOwnership: false,
+      PrivateLandOwnership: false,
+      GovernmentLandOwnership: false,
+
 	  NoArmyReserve: true,
 	  NationalMilitia: false,
 	  Conscripts: false,
