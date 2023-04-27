@@ -571,17 +571,17 @@ class Nation {
 
     /* #region  Most Stats */
     this.ReligiousDisunity = 0.00;
-	  this.AverageDevelopment = 1;
+      this.AverageDevelopment = 1;
     this.Health = 1.00;
     this.EducationEfficiency = 1;
-	  this.BureaucratWages = 0.75;
+      this.BureaucratWages = 0.75;
     this.AdministrativeEfficiency = 25;
-	  this.AdministrationSize = 0.5;
+      this.AdministrationSize = 0.5;
     this.Propaganda = 0;
     this.SocialSpending = 0;
     this.AtWar = false;
-	  this.Nationalism = 0;
-	  this.ReligiousFervor = 0;
+      this.Nationalism = 0;
+      this.ReligiousFervor = 0;
 
     this.AristocratLoyalty = 0.50; //Show in percent
     this.ClergyLoyalty = 0.50; //Show in percent
@@ -602,7 +602,7 @@ class Nation {
 
       this.ExternalTariffs = 0.1; //Show in percent
       this.InternalTariffs = 0.1; //Show in percent
-	
+    
     this.EstateInfluences = {
       AristocratInfluence: 0.525,
       ClergyInfluence: 0.25,
@@ -613,7 +613,7 @@ class Nation {
       MilitaryInfluence: 0.0,
       WorkersInfluence: 0.005
     };
-	
+    
     this.GovernmentRepresentation = {
       UnitaryRepresentation: 0.30,
       AristocratRepresentation: 0.40,
@@ -625,7 +625,7 @@ class Nation {
       MilitaryRepresentation: 0.0,
       WorkersRepresentation: 0.0
     };
-	
+    
     this.MilitaryControl = {
       UnitaryControl: 0.35,
       AristocratControl: 0.45,
@@ -654,7 +654,7 @@ class Nation {
     this.FirearmImprovements = 0;
     this.SiegeImprovements = 0;
     this.ArtilleryImprovements = 0;
-	
+    
     this.Levies = 0;
     this.LightInfantry = 0;
     this.HeavyInfantry = 0;
@@ -739,13 +739,14 @@ class Nation {
      };
 
     this.ProductionSectors = {
-        ConstructionSector: 5,
-        BasicArmamentsSector: 2,
+        ConstructionSector: 7,
+        BasicArmamentsSector: 1,
         HeavyArmamentsSector: 0.2,
         ShipBuildingSector: 0.2,
         BasicToolsSector: 4,
         BasicGoodsSector: 7,
-        LuxuryGoodsSector: 2,
+        LuxuryGoodsSector: 1,
+        AlcoholSector: 4,
         ChemicalSector: 0,
         ElectronicsSector: 0,
         AutomotiveSector: 0,
@@ -759,7 +760,7 @@ class Nation {
 
     /* #region  Resources */
     this.MiningEfficiency = 1;
-	  this.Forestry = 1;
+    this.Forestry = 1;
 
     this.Coal = 0.00;
     this.Sulphur = 0.00;
@@ -827,60 +828,76 @@ class Nation {
       Mortars: false,
       Metallurgy: false,
       Experimentation: false,
-	  Fluyt: false,
+      Fluyt: false,
       Bayonet: false,
       SocketBayonet: false,
       Flintlock: false,
-	  FlyingShuttle: false,
-	  LeadChamberProcess: false,
-	  Gunlock: false
+      FlyingShuttle: false,
+      LeadChamberProcess: false,
+      Gunlock: false,
+      SteamEngine: false,
+      PuddlingProcess: false,
+      Rifles: false,
+      ModernChemistry: false,
+      CottonGin: false,
+      SteamBoats: false,
+      HotAirBalloon: false,
+      PowerLoomAndSewingMachine: false,
+      Fulimnate: false,
+      PaperMachine: false,
+      FirstFactories: false,
+      LinearAssemblyProcess: false,
+      InterchangeableParts: false,
+      CannedFood: false,
+      Vaccines: false,
+      Morphine: false
     }
     /* #endregion */
 
-	/* #region Reforms */
-	
-	this.Reforms = {
-	  SlaveryAllowed: true,
-	  SlaveryBanned: false,
-	  
-	  SerfdomAllowed: true,
-	  SerfdomBanned: false,
-	  
-	  OpenFieldSystem: true,
-	  Enclosure: false,
-	  
-	  Mercantilism: true,
-	  Protectionism: false,
-	  FreeTrade: false,
-	  
-	  Guilds: true,
-	  GuildsBanned: false,
-	  AntiMonopolyLaws: false,
-	  
-	  WomenGuardianship: true,
-	  PropertiedWomen: false,
-	  GenderEquality: false,
-	  
-	  NoVoting: true,
-	  HighClassVoting: false,
-	  WealthVoting: false,
-	  UniversalSuffrage: false,
-	  
-	  NoblePrivellege: true,
-	  WealthPrivellege: false,
-	  ClassEquality: false,
-	  
-	  NobleOfficers: true,
-	  WealthyOfficers: false,
-	  MeritocraticOfficers: false,
-	  
-	  NobleBureaucrats: true,
-	  WealthyBureaucrats: false,
-	  MeritocraticBureaucrats: false,
-	  
-	  NobleResourceOwnership: true,
-	  MixedResourceOwnership: false,
-	  BurgousieResourceOwnership: false,
+    /* #region Reforms */
+    
+    this.Reforms = {
+      SlaveryAllowed: true,
+      SlaveryBanned: false,
+      
+      SerfdomAllowed: true,
+      SerfdomBanned: false,
+      
+      OpenFieldSystem: true,
+      Enclosure: false,
+      
+      Mercantilism: true,
+      Protectionism: false,
+      FreeTrade: false,
+      
+      Guilds: true,
+      GuildsBanned: false,
+      AntiMonopolyLaws: false,
+      
+      WomenGuardianship: true,
+      PropertiedWomen: false,
+      GenderEquality: false,
+      
+      NoVoting: true,
+      HighClassVoting: false,
+      WealthVoting: false,
+      UniversalSuffrage: false,
+      
+      NoblePrivellege: true,
+      WealthPrivellege: false,
+      ClassEquality: false,
+      
+      NobleOfficers: true,
+      WealthyOfficers: false,
+      MeritocraticOfficers: false,
+      
+      NobleBureaucrats: true,
+      WealthyBureaucrats: false,
+      MeritocraticBureaucrats: false,
+      
+      NobleResourceOwnership: true,
+      MixedResourceOwnership: false,
+      BurgousieResourceOwnership: false,
       GovernmentResourceOwnership: false,
 
       NobleLandOwnership: true,
@@ -888,13 +905,13 @@ class Nation {
       PrivateLandOwnership: false,
       GovernmentLandOwnership: false,
 
-	  NoArmyReserve: true,
-	  NationalMilitia: false,
-	  Conscripts: false,
-	  ProffesionalReservists: false
-	}
-	
-	/* #endregion */
+      NoArmyReserve: true,
+      NationalMilitia: false,
+      Conscripts: false,
+      ProffesionalReservists: false
+    }
+    
+    /* #endregion */
 
     /* #region  Economy */
     this.HighClassTax = 0.1; //As Percentage
@@ -919,14 +936,18 @@ class Nation {
       Newspapers: false,
       ScientificRevolution: false,
       PotatoPopulationBoom: false,
-      Constitution: false
+      Constitution: false,
+      PublicEducation: false,
+      Nationalism: false,
+      Conscription: false,
+      Industrialisation: false
     }
 
     /* #region  War */
     this.Casualties = 0;
     this.Pillaging = 0; //Show In Percent
     this.Occupation = 0; //Show in Percent
-	  this.Blockade = 0; //Show in Percent
+      this.Blockade = 0; //Show in Percent
     this.MinorBattles = 0;
     this.MajorBattles = 0;
     /* #endregion */
@@ -986,7 +1007,7 @@ class Stats{
     this.ResourceTypes = [
       "Budget",
       "Food",
-	  "Wood",
+      "Wood",
       "Sulphur",
       "Cotton",
       "Gold",
@@ -1005,7 +1026,20 @@ class Stats{
       "Cocoa",
       "Tobacco",
       "Sugar",
-      "ExoticFruit"
+        "ExoticFruit",
+        "Housing",
+        "BasicArmaments",
+        "HeavyArmaments",
+        "ShipBuilding",
+        "BasicTools",
+        "BasicGoods",
+      "LuxuryGoods",
+      "Alcohol",
+        "Chemicals",
+        "Electronics",
+        "Motors",
+        "Planes",
+        "HeavyIndustry"
     ];
     this.Trades = {};
     this.TradeZones = {
@@ -1394,15 +1428,15 @@ class Stats{
       EliteCavalry: 8.5 / 1000,
       HandCannoneers: 5 / 1000,
       Musketeers: 3.5 / 1000,
-	  MusketMilitia: 2 / 1000,
-	  Riflemen: 10 / 1000,
+      MusketMilitia: 2 / 1000,
+      Riflemen: 10 / 1000,
       Militia: 1.25 / 1000,
 
       SiegeEquipment: 1 / 10,
       LargeSiegeEquipment: 1 / 5,
       FieldCannons: 1 / 5,
-	  RegimentalGuns: 1 / 10,
-	  SiegeGuns: 1 / 2.5
+      RegimentalGuns: 1 / 10,
+      SiegeGuns: 1 / 2.5
     }
 
     this.AdvancesPrerequisites = {};

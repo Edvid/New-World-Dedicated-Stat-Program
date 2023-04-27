@@ -277,6 +277,13 @@ let TableLayouts = {
         ["SocialSpendingUpkeep", "AgricultureSpending", "AdministrativeUpkeep"],
         ["HygieneUpkeep", "ResearchUpkeep", "PropagandaUpkeep"]
     ],
+  "Production": [
+      ["Production", "ProductionEfficiency", "IronShortage", "CoalShortage", "WoodShortage"],
+      ["Housing", "BasicGoods", "LuxuryGoods", "Alcohol", "BasicTools", "HeavyIndustry", "BasicArmaments", "HeavyArmaments", "ShipBuilding", "Chemicals", "Motors", "Planes", "Electronics"],
+      ["HousingDemand", "BasicGoodsDemand", "LuxuryGoodsDemand", "AlcoholDemand", "BasicToolsDemand", "HeavyIndustryDemand", "BasicArmamentsDemand", "HeavyArmamentsDemand", "ShipBuildingDemand", "ChemicalsDemand", "MotorsDemand", "PlanesDemand", "ElectronicsDemand"],
+      ["HousingValue", "BasicGoodsValue", "LuxuryGoodsValue", "AlcoholValue", "BasicToolsValue", "HeavyIndustryValue", "BasicArmamentsValue", "HeavyArmamentsValue", "ShipBuildingValue", "ChemicalsValue", "MotorsValue", "PlanesValue", "ElectronicsValue"],
+      ["HousingShortage", "BasicGoodsShortage", "LuxuryGoodsShortage", "AlcoholShortage", "BasicToolsShortage", "HeavyIndustryShortage", "BasicArmamentsShortage", "HeavyArmamentsShortage", "ShipBuildingShortage", "ChemicalsShortage", "MotorsShortage", "PlanesShortage", "ElectronicsShortage"]
+    ],
     "Army": [
 		["OverallImprovements", "CommanderFreedom", "IronShortage", "SulphurShortage", "ArmyWages"],
 		["MilitaryLoyalty", "MilitaryMorale", "MilitaryDiscipline"],
@@ -364,7 +371,10 @@ let TableLayouts = {
         ["Technologies.Metallurgy", "Technologies.Experimentation", "Technologies.Fluyt"],
         ["Technologies.Bayonet", "Technologies.SocketBayonet", "Technologies.Flintlock"],
         ["Technologies.FlyingShuttle", "Technologies.LeadChamberProcess"],
-        ["Technologies.Gunlock"]
+        ["Technologies.Gunlock"],
+        ["Technologies.SteamEngine", "Technologies.PuddlingProcess"],
+        ["Technologies.Rifles", "Technologies.ModernChemistry", "Technologies.CottonGin", "Technologies.Steamboats", "Technologies.HotAirBalloon", "Technologies.PowerLoomAndSewingMachine"],
+        ["Technologies.Fulminate", "Technologies.PaperMachine", "Technologies.FirstFactories", "Technologies.LinearAssemblyProcess", "Technologies.InterchangeableParts", "Technologies.CannedFood", "Technologies.Vaccines", "Technologies.Morphine"]
     ],
     "Culture Stats": [
         ["CulturalAdvance", "CulturalProsperity", "CulturalPowerGain", "CulturalPower", "FutureCulturalPower"]
@@ -377,7 +387,9 @@ let TableLayouts = {
         ["CulturalAdvancements.NationalSovereignity", "CulturalAdvancements.Newspapers"],
         ["CulturalAdvancements.ScientificRevolution"],
         ["CulturalAdvancements.PotatoPopulationBoom"],
-        ["CulturalAdvancements.Constitution"]
+        ["CulturalAdvancements.Constitution"],
+        ["CulturalAdvancements.PublicEducation"],
+        ["CulturalAdvancements.Nationalism", "CulturalAdvancements.Conscription", "CulturalAdvancements.Industrialisation"]
     ],
     "Resources": [
         ["MiningEfficiency", "Forestry"],
@@ -400,6 +412,8 @@ let TableLayouts = {
         ["FoodOutgoing", "CoalOutgoing", "SulphurOutgoing", "CottonOutgoing", "GoldOutgoing", "IronOutgoing", "TeaOutgoing", "SilkOutgoing", "SpiceOutgoing", "WoolOutgoing"],
         ["CoffeeIncoming", "FurIncoming", "DiamondIncoming", "SilverIncoming", "CopperIncoming", "IvoryIncoming", "CocoaIncoming", "TobaccoIncoming", "SugarIncoming", "ExoticFruitIncoming"],
         ["CoffeeOutgoing", "FurOutgoing", "DiamondOutgoing", "SilverOutgoing", "CopperOutgoing", "IvoryOutgoing", "CocoaOutgoing", "TobaccoOutgoing", "SugarOutgoing", "ExoticFruitOutgoing"],
+      ["HousingIncoming", "BasicGoodsIncoming", "LuxuryGoodsIncoming", "AlcoholIncoming", "BasicToolsIncoming", "HeavyIndustryIncoming", "BasicArmamentsIncoming", "HeavyArmamentsIncoming", "ShipBuildingIncoming", "ChemicalsIncoming", "MotorsIncoming", "PlanesIncoming", "ElectronicsIncoming"],
+      ["HousingOutgoing", "BasicGoodsOutgoing", "LuxuryGoodsOutgoing", "AlcoholOutgoing", "BasicToolsOutgoing", "HeavyIndustryOutgoing", "BasicArmamentsOutgoing", "HeavyArmamentsOutgoing", "ShipBuildingOutgoing", "ChemicalsOutgoing", "MotorsOutgoing", "PlanesOutgoing", "ElectronicsOutgoing"],
         ["TradePowerFromResourceTrade"]
     ]
 }
@@ -505,7 +519,9 @@ function createNationSheet(nationName) {
 
     AddNextStatTable();
 
-    AddNextStatTable();
+  AddNextStatTable();
+
+  AddNextStatTable();
 
     /* #endregion */
 
