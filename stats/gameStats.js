@@ -601,7 +601,21 @@ class Nation {
       this.WorkersTax = 0.1; //Show in percent
 
       this.ExternalTariffs = 0.1; //Show in percent
-      this.InternalTariffs = 0.1; //Show in percent
+    this.InternalTariffs = 0.1; //Show in percent
+
+    this.ExpectedSlavesSol = 0.5;
+    this.ExpectedLabourersSol = 1;
+    this.ExpectedSerfsSol = 0.75;
+    this.ExpectedFarmersSol = 1.25;
+    this.ExpectedTownsfolkSol = 1.75;
+    this.ExpectedClergySol = 3;
+    this.ExpectedBureaucratsSol = 2;
+    this.ExpectedMerchantsSol = 1.75;
+    this.ExpectedIntellectualsSol = 2;
+    this.ExpectedSailorsSol = 0.75;
+    this.ExpectedSoldiersSol = 1;
+    this.ExpectedAristocracySol = 6;
+    this.ExpectedBurgousieSol = 3;
     
     this.EstateInfluences = {
       AristocratInfluence: 0.525,

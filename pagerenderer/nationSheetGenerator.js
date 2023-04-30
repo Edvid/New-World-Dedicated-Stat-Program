@@ -280,6 +280,7 @@ let TableLayouts = {
   "Production": [
       ["Production", "ProductionEfficiency", "IronShortage", "CoalShortage", "WoodShortage"],
       ["Housing", "BasicGoods", "LuxuryGoods", "Alcohol", "BasicTools", "HeavyIndustry", "BasicArmaments", "HeavyArmaments", "ShipBuilding", "Chemicals", "Motors", "Planes", "Electronics"],
+      ["EffectiveHousing", "EffectiveBasicGoods", "EffectiveLuxuryGoods", "EffectiveAlcohol", "EffectiveBasicTools", "EffectiveHeavyIndustry", "EffectiveBasicArmaments", "EffectiveHeavyArmaments", "EffectiveShipBuilding", "EffectiveChemicals", "EffectiveMotors", "EffectivePlanes", "EffectiveElectronics"],
       ["HousingDemand", "BasicGoodsDemand", "LuxuryGoodsDemand", "AlcoholDemand", "BasicToolsDemand", "HeavyIndustryDemand", "BasicArmamentsDemand", "HeavyArmamentsDemand", "ShipBuildingDemand", "ChemicalsDemand", "MotorsDemand", "PlanesDemand", "ElectronicsDemand"],
       ["HousingValue", "BasicGoodsValue", "LuxuryGoodsValue", "AlcoholValue", "BasicToolsValue", "HeavyIndustryValue", "BasicArmamentsValue", "HeavyArmamentsValue", "ShipBuildingValue", "ChemicalsValue", "MotorsValue", "PlanesValue", "ElectronicsValue"],
       ["HousingShortage", "BasicGoodsShortage", "LuxuryGoodsShortage", "AlcoholShortage", "BasicToolsShortage", "HeavyIndustryShortage", "BasicArmamentsShortage", "HeavyArmamentsShortage", "ShipBuildingShortage", "ChemicalsShortage", "MotorsShortage", "PlanesShortage", "ElectronicsShortage"]
@@ -325,7 +326,9 @@ let TableLayouts = {
         ["AristocratLoyalty", "ClergyLoyalty", "BurgousieLoyalty", "UrbanLoyalty", "BureaucratLoyalty", "IntellectualsLoyalty", "WorkersLoyalty", "MilitaryLoyalty"],
         ["AristocratTax", "ClergyTax", "BurgousieTax", "UrbanTax", "BureaucratTax", "IntellectualsTax", "WorkersTax", "MilitaryTax"],
         ["SlavesWage", "LabourersWage", "SerfsWage", "FarmersWage", "TownsfolkWage", "ClergyWage", "BureaucratsWage", "MerchantsWage", "IntellectualsWage", "SailorsWage", "SoldiersWage", "AristocracyWage", "BurgousieWage"],
-        ["SlavesTaxes", "LabourersTaxes", "SerfsTaxes", "FarmersTaxes", "TownsfolkTaxes", "ClergyTaxes", "BureaucratsTaxes", "MerchantsTaxes", "IntellectualsTaxes", "SailorsTaxes", "SoldiersTaxes", "AristocracyTaxes", "BurgousieTaxes", "TaxRevenue"]
+      ["SlavesTaxes", "LabourersTaxes", "SerfsTaxes", "FarmersTaxes", "TownsfolkTaxes", "ClergyTaxes", "BureaucratsTaxes", "MerchantsTaxes", "IntellectualsTaxes", "SailorsTaxes", "SoldiersTaxes", "AristocracyTaxes", "BurgousieTaxes", "TaxRevenue"],
+      ["ExpectedSlavesSol", "ExpectedLabourersSol", "ExpectedSerfsSol", "ExpectedFarmersSol", "ExpectedTownsfolkSol", "ExpectedClergySol", "ExpectedBureaucratsSol", "ExpectedMerchantsSol", "ExpectedIntellectualsSol", "ExpectedSailorsSol", "ExpectedSoldiersSol", "ExpectedAristocracySol", "ExpectedBurgousieSol"],
+      ["SlavesSol", "LabourersSol", "SerfsSol", "FarmersSol", "TownsfolkSol", "ClergySol", "BureaucratsSol", "MerchantsSol", "IntellectualsSol", "SailorsSol", "SoldiersSol", "AristocracySol", "BurgousieSol"]
     ],
 	"Reforms": [
 		["Reforms.SlaveryAllowed", "Reforms.SlaveryBanned", "Reforms.SerfdomAllowed", "Reforms.SerfdomBanned"],

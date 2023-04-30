@@ -160,8 +160,8 @@ function evaluateNation(nationName) {
     n.Workforces.Townsfolk = n.AverageDevelopment;
     n.Workforces.Labourers = (n.Reforms.SlaveryBanned ? (n.Coal + n.Sulphur + n.Cotton + n.Gold + n.Iron + n.Tea + n.Silk + n.Spice + n.Wool + n.Coffee + n.Fur + n.Diamond + n.Silver + n.Copper + n.Ivory + n.Cocoa + n.Tobacco + n.Sugar + n.ExoticFruit) * 20000 / n.Population : 0);
     n.Workforces.Slaves = (n.Reforms.SlaveryAllowed ? (n.Coal + n.Sulphur + n.Cotton + n.Gold + n.Iron + n.Tea + n.Silk + n.Spice + n.Wool + n.Coffee + n.Fur + n.Diamond + n.Silver + n.Copper + n.Ivory + n.Cocoa + n.Tobacco + n.Sugar + n.ExoticFruit) * 20000 / n.Population : 0);
-    n.Workforces.Farmers = (n.Reforms.SerfdomBanned ? 1 - n.Workforces.PopulationInMilitary - n.Workforces.Townsfolk - n.Workforces.Clergy - n.Workforces.Burgousie - n.Workforces.Aristocracy - n.Workforces.Labourers : 0.075);
-    n.Workforces.Serfs = (n.Reforms.SerfdomAllowed ? 1 - n.Workforces.PopulationInMilitary - n.Workforces.Townsfolk - n.Workforces.Clergy - n.Workforces.Burgousie - n.Workforces.Aristocracy - n.Workforces.Labourers - n.Workforces.Farmers : 0);
+  n.Workforces.Farmers = max(n.Reforms.SerfdomBanned ? 1 - n.Workforces.PopulationInMilitary - n.Workforces.Townsfolk - n.Workforces.Intellectuals - n.Workforces.Clergy - n.Workforces.Burgousie - n.Workforces.Aristocracy - n.Workforces.Labourers - n.Workforces.Slaves : min(0.075, 1 - n.Workforces.PopulationInMilitary - n.Workforces.Townsfolk - n.Workforces.Intellectuals - n.Workforces.Clergy - n.Workforces.Burgousie - n.Workforces.Aristocracy - n.Workforces.Labourers - n.Workforces.Slaves), 0);
+  n.Workforces.Serfs = max(n.Reforms.SerfdomAllowed ? 1 - n.Workforces.PopulationInMilitary - n.Workforces.Townsfolk - n.Workforces.Intellectuals - n.Workforces.Clergy - n.Workforces.Burgousie - n.Workforces.Aristocracy - n.Workforces.Labourers - n.Workforces.Slaves - n.Workforces.Farmers : 0, 0);
 
     n.PopInAgriculture = n.Workforces.Farmers + n.Workforces.Serfs;
     n.AgricultureSpending = (n.Workforces.Farmers * n.Population / 1000 * n.AgricultureInfrastructure / 100 * (1 + n.AgricultureSubsidies / 10) * n.StockingCapabilities) / 2 / gameStats.TimeDivide;
@@ -412,10 +412,10 @@ function evaluateNation(nationName) {
 
   for (const resourceIndex in gameStats.ResourceTypes) {
     const resource = gameStats.ResourceTypes[resourceIndex];
-    n[resource + "Value"] = n[resource + "Demand"] / (Math.sqrt(n["Effective" + resource]) + 0.1);
+    n[resource + "Value"] = n[resource + "Demand"] / (n["Effective" + resource] + 0.1);
   }
 
-  n.FoodValue = n.FoodDemand / (Math.sqrt(n.Food + n.DailyFood) + 0.1);
+  n.FoodValue = n.FoodDemand / ((n.Food + n.DailyFood) + 0.1);
 
   n.TradePowerFromResourceTrade = (function () {
     let num = 0;
@@ -720,6 +720,37 @@ function evaluateNation(nationName) {
     n.SoldiersWage = 1.5 * n.ArmyWages;
     n.AristocracyWage = (n.Reforms.NobleLandOwnership == 1 ? n.SerfsAndFarmersWageToOnwers / (n.Population * n.Workforces.Aristocracy / 1000) : 0) + (n.Reforms.MixedLandOwnership == 1 ? n.SerfsAndFarmersWageToOnwers / (n.Population * n.Workforces.Aristocracy / 1000) : 0) + (n.Reforms.NobleResourceOwnership == 1 ? n.SlavesAndLabourersWageToOwner / (n.Population * n.Workforces.Aristocracy / 1000) : 0) + (n.Reforms.MixedResourceOwnership == 1 ? n.SlavesAndLabourersWageToOwner / (n.Population * n.Workforces.Aristocracy / 1000) : 0);
     n.BurgousieWage = (n.TownsfolkWageToBurgousie + n.MerchantsWageToBurggousie) / (n.Population * n.Workforces.Burgousie / 1000) + (n.Reforms.MixedResourceOwnership == 1 ? n.SlavesAndLabourersWageToOwner / (n.Population * n.Workforces.Aristocracy / 1000) : 0) + (n.Reforms.BurgousieResourceOwnership == 1 ? n.SlavesAndLabourersWageToOwner / (n.Population * n.Workforces.Aristocracy / 1000) : 0) + (n.Reforms.MixedLandOwnership == 1 ? n.SerfsAndFarmersWageToOnwers / (n.Population * n.Workforces.Aristocracy / 1000) : 0) + (n.Reforms.PrivateLandOwnership == 1 ? n.SerfsAndFarmersWageToOnwers / (n.Population * n.Workforces.Aristocracy / 1000) : 0);
+
+  n.SlavesEffectiveWage = n.SlavesWage * (1 - n.WorkersTax * n.TaxEfficiency);
+  n.LabourersEffectiveWage = n.LabourersWage * (1 - n.WorkersTax * n.TaxEfficiency);
+  n.SerfsEffectiveWage = n.SerfsWage * (1 - n.WorkersTax * n.TaxEfficiency);
+  n.FarmersEffectiveWage = n.FarmersWage * (1 - n.WorkersTax * n.TaxEfficiency);
+  n.TownsfolkEffectiveWage = n.TownsfolkWage * (1 - n.UrbanTax * n.TaxEfficiency);
+  n.ClergyEffectiveWage = n.ClergyWage * (1 - n.ClergyTax * n.TaxEfficiency);
+  n.BureaucratsEffectiveWage = n.BureaucratsWage * (1 - n.BureaucratTax * n.TaxEfficiency);
+  n.MerchantsEffectiveWage = n.MerchantsWage * (1 - n.UrbanTax * n.TaxEfficiency);
+  n.IntellectualsEffectiveWage = n.IntellectualsWage * (1 - n.IntellectualsTax * n.TaxEfficiency);
+  n.SailorsEffectiveWage = n.SailorsWage * (1 - n.MilitaryTax * n.TaxEfficiency);
+  n.SoldiersEffectiveWage = n.SoldiersWage * (1 - n.MilitaryTax * n.TaxEfficiency);
+  n.AristocracyEffectiveWage = n.AristocracyWage * (1 - n.AristocratTax * n.TaxEfficiency);
+  n.BurgousieEffectiveWage = n.BurgousieWage * (1 - n.BurgousieTax * n.TaxEfficiency);
+
+  n.NecessitiesCost = 0.5 * n.HousingValue + n.BasicGoodsValue + n.AlcoholValue + 0.5 * n.BasicToolsValue + (n.CoalValue * 0.25 > n.WoodValue * 0.5 ? 0.5 * n.WoodValue : 0.25 * n.CoalValue) + n.FoodValue;
+  n.LuxuriesCost = n.HousingValue + 1.5 * n.BasicGoodsValue + n.LuxuryGoodsValue + 2 * n.AlcoholValue + (n.CoalValue * 0.5 > n.WoodValue ? n.WoodValue : 0.5 * n.CoalValue) + 1.5 * n.FoodValue;
+
+  n.SlavesSol = (n.SlavesEffectiveWage < n.NecessitiesCost ? n.SlavesEffectiveWage / n.NecessitiesCost : 1 + (n.SlavesEffectiveWage - n.NecessitiesCost) / n.LuxuriesCost);
+  n.LabourersSol = (n.LabourersEffectiveWage < n.NecessitiesCost ? n.LabourersEffectiveWage / n.NecessitiesCost : 1 + (n.LabourersEffectiveWage - n.NecessitiesCost) / n.LuxuriesCost);
+  n.SerfsSol = (n.SerfsEffectiveWage < n.NecessitiesCost ? n.SerfsEffectiveWage / n.NecessitiesCost : 1 + (n.SerfsEffectiveWage - n.NecessitiesCost) / n.LuxuriesCost);
+  n.FarmersSol = (n.FarmersEffectiveWage < n.NecessitiesCost ? n.FarmersEffectiveWage / n.NecessitiesCost : 1 + (n.FarmersEffectiveWage - n.NecessitiesCost) / n.LuxuriesCost);
+  n.TownsfolkSol = (n.TownsfolkEffectiveWage < n.NecessitiesCost ? n.TownsfolkEffectiveWage / n.NecessitiesCost : 1 + (n.TownsfolkEffectiveWage - n.NecessitiesCost) / n.LuxuriesCost);
+  n.ClergySol = (n.ClergyEffectiveWage < n.NecessitiesCost ? n.ClergyEffectiveWage / n.NecessitiesCost : 1 + (n.ClergyEffectiveWage - n.NecessitiesCost) / n.LuxuriesCost);
+  n.BureaucratsSol = (n.BureaucratsEffectiveWage < n.NecessitiesCost ? n.BureaucratsEffectiveWage / n.NecessitiesCost : 1 + (n.BureaucratsEffectiveWage - n.NecessitiesCost) / n.LuxuriesCost);
+  n.MerchantsSol = (n.MerchantsEffectiveWage < n.NecessitiesCost ? n.MerchantsEffectiveWage / n.NecessitiesCost : 1 + (n.MerchantsEffectiveWage - n.NecessitiesCost) / n.LuxuriesCost);
+  n.IntellectualsSol = (n.IntellectualsEffectiveWage < n.NecessitiesCost ? n.IntellectualsEffectiveWage / n.NecessitiesCost : 1 + (n.IntellectualsEffectiveWage - n.NecessitiesCost) / n.LuxuriesCost);
+  n.SailorsSol = (n.SailorsEffectiveWage < n.NecessitiesCost ? n.SailorsEffectiveWage / n.NecessitiesCost : 1 + (n.SailorsEffectiveWage - n.NecessitiesCost) / n.LuxuriesCost);
+  n.SoldiersSol = (n.SoldiersEffectiveWage < n.NecessitiesCost ? n.SoldiersEffectiveWage / n.NecessitiesCost : 1 + (n.SoldiersEffectiveWage - n.NecessitiesCost) / n.LuxuriesCost);
+  n.AristocracySol = (n.AristocracyEffectiveWage < n.NecessitiesCost ? n.AristocracyEffectiveWage / n.NecessitiesCost : 1 + (n.AristocracyEffectiveWage - n.NecessitiesCost) / n.LuxuriesCost);
+  n.BurgousieSol = (n.BurgousieEffectiveWage < n.NecessitiesCost ? n.BurgousieEffectiveWage / n.NecessitiesCost : 1 + (n.BurgousieEffectiveWage - n.NecessitiesCost) / n.LuxuriesCost);
 
     n.TaxEfficiency = (1 - n.EstateInfluences.AristocratInfluence / 4 - n.EstateInfluences.ClergyInfluence / 4 - n.AdministrativeStrain / n.AdministrativePower) * (1 - n.Occupation) * (1 - n.Corruption / 10)
     n.TariffEfficiency = (1 - n.EstateInfluences.BurgousieInfluence / 2 - n.AdministrativeStrain / n.AdministrativePower) * (1 - n.Occupation) * (1 - n.Corruption / 10)
