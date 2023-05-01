@@ -140,7 +140,7 @@ function evaluateNation(nationName) {
   n.NavyTech = 0 + n.Technologies.Galleons / 4 + n.Technologies.Docks / 2 + n.Technologies.Gunports / 2 + n.Technologies.Gunlock / 4;
   n.NavyQualityIC = 1 + n.NavyImprovements + n.NavyTech;
 
-  n.UpkeepForOneMerchantShip = ((1.5 + n.Technologies.Gunports) * (n.NavyQualityIC)) / gameStats.TimeDivide;
+  n.UpkeepForOneMerchantShip = ((1 + n.Technologies.Gunports) * (n.NavyQualityIC)) / gameStats.TimeDivide;
   n.UpkeepForOneLightShip = ((1.5 + n.Technologies.Gunports * 2) * (n.NavyQualityIC)) / gameStats.TimeDivide;
   n.UpkeepForOneMediumShip = ((3 + n.Technologies.Gunports * 5) * (n.NavyQualityIC)) / gameStats.TimeDivide;
   n.UpkeepForOneHeavyShip = ((6 + n.Technologies.Gunports * 15) * (n.NavyQualityIC)) / gameStats.TimeDivide;
@@ -471,6 +471,50 @@ function evaluateNation(nationName) {
     }
     return num;
   })();
+
+  n.ResourceTrade = (function () {
+    let num = 0;
+    let TradePowerResources = [
+      "Sulphur",
+      "Coal",
+      "Cotton",
+      "Gold",
+      "Iron",
+      "Tea",
+      "Silk",
+      "Spice",
+      "Wool",
+      "Coffee",
+      "Fur",
+      "Diamond",
+      "Silver",
+      "Copper",
+      "Ivory",
+      "Cocoa",
+      "Tobacco",
+      "Sugar",
+      "ExoticFruit",
+      "Housing",
+      "BasicGoods",
+      "LuxuryGoods",
+      "Alcohol",
+      "BasicTools",
+      "HeavyIndustry",
+      "BasicArmaments",
+      "HeavyArmaments",
+      "ShipBuilding",
+      "Chemicals",
+      "Motors",
+      "Planes",
+      "Electronics"
+    ];
+    for (const resourceName in TradePowerResources) {
+      const resource = TradePowerResources[resourceName];
+      num += +n[resource + "Outgoing"];
+    }
+    return num;
+  })();
+
   let pseudoTradePower = (function () {
     let stp = 0;
     for (const region in gameStats.TradeZones) {
@@ -508,7 +552,7 @@ function evaluateNation(nationName) {
   n.FoodTradeProfit = n.FoodSold * n.FoodValue;
 
   n.TradeProtection = (n.LightShips * 2 + n.MediumShips * 3.5 + n.HeavyShips * 2) / n.MerchantShips;
-  n.MerchantShipsFullfilment = min(n.MerchantShips / ((n.TradePowerFromResourceTrade + pseudoTradePower) / 2 + (n.LocalTrade * n.Population / 2000000 * (1 + n.AverageDevelopment) + n.FoodTradeProfit) / 4), 1);
+  n.MerchantShipsFullfilment = min(n.MerchantShips / (n.ResourceTrade + pseudoTradePower / 2 + (n.LocalTrade * n.Population / 2000000 * (1 + n.AverageDevelopment) + n.FoodTradeProfit) / 4), 1);
   n.TradeEfficiency = (1 * n.TradeImprovements + n.Technologies.Cranes / 10 + n.Technologies.PromissoryNotes / 20 + n.TradeProtection + n.Technologies.Fluyt / 5) * (1 - n.Blockade) * n.MerchantShipsFullfilment;
 
     n.ExternalTrade = n.TradePowerFromResourceTrade + pseudoTradePower * n.TradeEfficiency;
