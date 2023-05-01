@@ -305,10 +305,10 @@ let TableLayouts = {
         ["SmallForts", "MediumForts", "BigForts", "HugeForts", "ExtraCityFortifications"]
     ],
     "Navy": [
-        ["UpkeepForOneLightShip", "UpkeepForOneMediumShip", "UpkeepForOneHeavyShip"],
-        ["LightShips", "MediumShips", "HeavyShips"],
+        ["UpkeepForOneMerchantShip", "UpkeepForOneLightShip", "UpkeepForOneMediumShip", "UpkeepForOneHeavyShip"],
+        ["MerchantShips", "LightShips", "MediumShips", "HeavyShips"],
         ["NavyImprovements", "NavyTech", "NavyQuality"],
-        ["OverallShipCount", "TradeProtection", "NavalPower"]
+        ["OverallShipCount", "MerchantShipsFullfilment", "TradeProtection", "NavalPower"]
     ],
     "Agriculture": [
         ["Fertility", "AgricultureSubsidies", "AgricultureInfrastructure", "AgricultureAdvancements", "AgricultureTechnology", "FarmingEfficiency", "AgricultureSpending"],

@@ -190,6 +190,8 @@ class Nation {
   NavyImprovements;
   NavyTech;
   NavyQuality;
+  MerchantShips;
+  UpkeepForOneMerchantShip;
   LightShips;
   UpkeepForOneLightShip;
   MediumShips;
@@ -204,21 +206,26 @@ class Nation {
 
   /* #region  Recruitments / New Troops */
   New_Levies;
+  New_Militia;
   New_LightInfantry;
   New_HeavyInfantry;
+  New_EliteInfantry;
   New_Archers;
   New_Crossbowmen;
-  New_LightCavalry;
-  New_HeavyCavalry;
-  New_EliteInfantry;
-  New_EliteCavalry;
   New_HandCannoneers;
   New_Musketeers;
-  New_Militia;
+  New_MusketMilitia;
+  New_Riflemen;
+  New_LightCavalry;
+  New_HeavyCavalry;
+  New_EliteCavalry;
   New_SiegeEquipment;
   New_LargeSiegeEquipment;
+  New_RegimentalGuns;
   New_FieldCannons;
+  New_SiegeGuns;
 
+  New_MerchantShips
   New_LightShips;
   New_MediumShips;
   New_HeavyShips;
@@ -704,6 +711,7 @@ class Nation {
     /* #region  Navy */
     this.NavyImprovements = 0;
 
+    this.MerchantShips = 25;
     this.LightShips = 0;
     this.MediumShips = 0;
     this.HeavyShips = 0;
@@ -738,6 +746,7 @@ class Nation {
     this.New_SiegeGuns = 0;
     this.New_RegimentalGuns = 0;
 
+    this.New_MerchantShips = 0;
     this.New_LightShips = 0;
     this.New_MediumShips = 0;
     this.New_HeavyShips = 0;
@@ -1471,6 +1480,7 @@ function clearNewTroops(nationName){
     n["New_" + unitName] = 0;
   }
   //reset
+  n.New_MerchantShips = 0;
   n.New_LightShips = 0;
   n.New_MediumShips = 0;
   n.New_HeavyShips = 0;

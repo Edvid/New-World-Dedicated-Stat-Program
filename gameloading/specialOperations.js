@@ -2,24 +2,29 @@ function PostStatChange(selection, change){
 
     //New Recruitment handling
     if(
-        /Levies$/.test(selection) ||
-        /LightInfantry$/.test(selection) ||
-        /HeavyInfantry$/.test(selection) ||
-        /Archers$/.test(selection) ||
-        /Crossbowmen$/.test(selection) ||
-        /LightCavalry$/.test(selection) ||
-        /HeavyCavalry$/.test(selection) ||
-        /EliteInfantry$/.test(selection) ||
-        /EliteCavalry$/.test(selection) ||
-        /HandCannoneers$/.test(selection) ||
-        /Musketeers$/.test(selection) ||
-        /Militia$/.test(selection) ||
-        /SiegeEquipment$/.test(selection) ||
-        /LargeSiegeEquipment$/.test(selection) ||
-        /Cannons$/.test(selection) ||
-        /LightShips$/.test(selection) ||
-        /MediumShips$/.test(selection) ||
-        /HeavyShips$/.test(selection)
+      /Levies$/.test(selection) ||
+      /Militia$/.test(selection) ||
+      /LightInfantry$/.test(selection) ||
+      /HeavyInfantry$/.test(selection) ||
+      /EliteInfantry$/.test(selection) ||
+      /Archers$/.test(selection) ||
+      /Crossbowmen$/.test(selection) ||
+      /HandCannoneers$/.test(selection) ||
+      /Musketeers$/.test(selection) ||
+      /MusketMilitia$/.test(selection) ||
+      /Riflemen$/.test(selection) ||
+      /LightCavalry$/.test(selection) ||
+      /HeavyCavalry$/.test(selection) ||
+      /EliteCavalry$/.test(selection) ||
+      /SiegeEquipment$/.test(selection) ||
+      /LargeSiegeEquipment$/.test(selection) ||
+      /RegimentalGuns$/.test(selection) ||
+      /FieldCannons$/.test(selection) ||
+      /SiegeGuns$/.test(selection) ||
+      /MerchantShips$/.test(selection) ||
+      /LightShips$/.test(selection) ||
+      /MediumShips$/.test(selection) ||
+      /HeavyShips$/.test(selection)
     ){
         //elite exceed check
         if(/Elite/.test(selection)){
