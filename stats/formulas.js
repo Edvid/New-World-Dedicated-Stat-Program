@@ -355,12 +355,42 @@ function evaluateNation(nationName) {
     if (resource == "Iron" && n.Technologies.Metallurgy) n[resource + "Demand"] *= 1.1;
   }
 
+  n.AverageExpectedSol = (function () {
+    let num = 0;
+    let Estates = [
+      "Slaves",
+      "Labourers",
+      "Serfs",
+      "Farmers",
+      "Townsfolk",
+      "Clergy",
+      "Bureaucrats",
+      "Merchants",
+      "Intellectuals",
+      "Sailors",
+      "Soldiers",
+      "Aristocracy",
+      "Burgousie"
+    ];
+    for (const EstateName in Estates) {
+      const Estate = Estates[EstateName];
+      num += (isNaN(n["Workforces." + Estate]) ? 0 : n["workforces." + Estate] * n["Expected" + Estate + "Sol"]);
+      debugger;
+    }
+    return num;
+  })();
+
+  n.NaturalFabrics = n.EffectiveWool + n.EffectiveCotton;
+  n.LuxuryNaturalFabrics = n.EffectiveFur + n.EffectiveSilk;
+
   n.IronShortage = min(1, max(0, 1 - (n.EffectiveIron / n.IronDemand)));
   n.SulphurShortage = min(1, max(0, 1 - (n.EffectiveSulphur / n.SulphurDemand)));
   n.CoalShortage = min(1, max(0, 1 - (n.EffectiveCoal / n.CoalDemand)));
   n.WoodShortage = min(1, max(0, 1 - (n.EffectiveWood / n.WoodDemand)));
+  n.NaturalFabricsShortage = min(1, max(0, 1 - (n.NaturalFabrics / n.NaturalFabricsDemand)));
+  n.LuxuryNaturalFabricsShortage = min(1, max(0, 1 - (n.LuxuryNaturalFabrics / n.LuxuryNaturalFabricsDemand)));
 
-  n.TotalSupply = n.ProductionSectors.ConstructionSector + n.ProductionSectors.BasicArmamentsSector + n.ProductionSectors.HeavyArmamentsSector + n.ProductionSectors.ShipBuildingSector + n.ProductionSectors.BasicToolsSector + n.ProductionSectors.BasicGoodsSector + n.ProductionSectors.LuxuryGoodsSector + n.ProductionSectors.AlcoholSector + n.ProductionSectors.ChemicalSector + n.ProductionSectors.ElectronicsSector + n.ProductionSectors.AutomotiveSector + n.ProductionSectors.AerospaceSector + n.ProductionSectors.HeavyIndustrySector;
+  n.TotalSupply = n.ProductionSectors.ConstructionSector + n.ProductionSectors.BasicArmamentsSector + n.ProductionSectors.HeavyArmamentsSector + n.ProductionSectors.ShipBuildingSector + n.ProductionSectors.BasicToolsSector + n.ProductionSectors.TextilesSector + n.ProductionSectors.BasicGoodsSector + n.ProductionSectors.LuxuryGoodsSector + n.ProductionSectors.AlcoholSector + n.ProductionSectors.ChemicalSector + n.ProductionSectors.ElectronicsSector + n.ProductionSectors.AutomotiveSector + n.ProductionSectors.AerospaceSector + n.ProductionSectors.HeavyIndustrySector;
 
   n.BasicTools = n.Production * (n.ProductionSectors.BasicToolsSector / n.TotalSupply) * (1 - n.WoodShortage) * (1 - n.IronShortage) * (1 - n.CoalShortage);
   n.EffectiveBasicTools = n.BasicTools + n.BasicToolsIncoming - n.BasicToolsOutgoing;
@@ -382,11 +412,15 @@ function evaluateNation(nationName) {
   n.EffectiveShipBuilding = n.ShipBuilding + n.ShipBuildingIncoming - n.ShipBuildingOutgoing;
   n.ShipBuildingShortage = min(1, max(0, 1 - (n.EffectiveShipBuilding / n.ShipBuildingDemand)));
 
-  n.BasicGoods = n.Production * (n.ProductionSectors.BasicGoodsSector / n.TotalSupply) * (1 - n.BasicToolsShortage) * (1 - n.WoodShortage);
+  n.Textiles = n.Production * (n.ProductionSectors.TextilesSector / n.TotalSupply) * (1 - n.BasicToolsShortage) * (1 - n.NaturalFabricsShortage);
+  n.EffectiveTextiles = n.Textiles + n.TextilesIncoming - n.TextilesOutgoing;
+  n.TextilesShortage = min(1, max(0, 1 - (n.EffectiveTextiles / n.TextilesDemand)));
+
+  n.BasicGoods = n.Production * (n.ProductionSectors.BasicGoodsSector / n.TotalSupply) * (1 - n.BasicToolsShortage) * (1 - n.WoodShortage) * (1 - n.TextilesShortage / 3);
   n.EffectiveBasicGoods = n.BasicGoods + n.BasicGoodsIncoming - n.BasicGoodsOutgoing;
   n.BasicGoodsShortage = min(1, max(0, 1 - (n.EffectiveBasicGoods / n.BasicGoodsDemand)));
 
-  n.LuxuryGoods = n.Production * (n.ProductionSectors.LuxuryGoodsSector / n.TotalSupply) * (1 - n.BasicToolsShortage) * (1 - n.WoodShortage) * (1 - n.IronShortage) * (1 - n.IronShortage);
+  n.LuxuryGoods = n.Production * (n.ProductionSectors.LuxuryGoodsSector / n.TotalSupply) * (1 - n.BasicToolsShortage) * (1 - n.WoodShortage) * (1 - n.IronShortage) * (1 - n.IronShortage) * (1 - n.LuxuryNaturalFabricsShortage / 4);
   n.EffectiveLuxuryGoods = n.LuxuryGoods + n.LuxuryGoodsIncoming - n.LuxuryGoodsOutgoing;
   n.LuxuryGoodsShortage = min(1, max(0, 1 - (n.EffectiveLuxuryGoods / n.LuxuryGoodsDemand)));
 
@@ -444,6 +478,7 @@ function evaluateNation(nationName) {
       "Sugar",
       "ExoticFruit",
       "Housing",
+      "Textiles",
       "BasicGoods",
       "LuxuryGoods",
       "Alcohol",
@@ -495,6 +530,7 @@ function evaluateNation(nationName) {
       "Sugar",
       "ExoticFruit",
       "Housing",
+      "Textiles",
       "BasicGoods",
       "LuxuryGoods",
       "Alcohol",
@@ -782,8 +818,8 @@ function evaluateNation(nationName) {
   n.AristocracyEffectiveWage = n.AristocracyWage * (1 - n.AristocratTax * n.TaxEfficiency);
   n.BurgousieEffectiveWage = n.BurgousieWage * (1 - n.BurgousieTax * n.TaxEfficiency);
 
-  n.NecessitiesCost = 0.5 * n.HousingValue + n.BasicGoodsValue + n.AlcoholValue + 0.5 * n.BasicToolsValue + (n.CoalValue * 0.25 > n.WoodValue * 0.5 ? 0.5 * n.WoodValue : 0.25 * n.CoalValue) + n.FoodValue;
-  n.LuxuriesCost = n.HousingValue + 1.5 * n.BasicGoodsValue + n.LuxuryGoodsValue + 2 * n.AlcoholValue + (n.CoalValue * 0.5 > n.WoodValue ? n.WoodValue : 0.5 * n.CoalValue) + 1.5 * n.FoodValue;
+  n.NecessitiesCost = 0.5 * n.HousingValue + 0.5 * n.TextilesValue + n.BasicGoodsValue + n.AlcoholValue + 0.5 * n.BasicToolsValue + (n.CoalValue * 0.25 > n.WoodValue * 0.5 ? 0.5 * n.WoodValue : 0.25 * n.CoalValue) + n.FoodValue;
+  n.LuxuriesCost = n.HousingValue + n.TextilesValue + 1.5 * n.BasicGoodsValue + n.LuxuryGoodsValue + 2 * n.AlcoholValue + (n.CoalValue * 0.5 > n.WoodValue ? n.WoodValue : 0.5 * n.CoalValue) + 1.5 * n.FoodValue;
 
   n.SlavesSol = (n.SlavesEffectiveWage < n.NecessitiesCost ? n.SlavesEffectiveWage / n.NecessitiesCost : 1 + (n.SlavesEffectiveWage - n.NecessitiesCost) / n.LuxuriesCost);
   n.LabourersSol = (n.LabourersEffectiveWage < n.NecessitiesCost ? n.LabourersEffectiveWage / n.NecessitiesCost : 1 + (n.LabourersEffectiveWage - n.NecessitiesCost) / n.LuxuriesCost);
