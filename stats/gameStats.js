@@ -762,15 +762,15 @@ class Nation {
      };
 
     this.ProductionSectors = {
-        ConstructionSector: 7,
-        BasicArmamentsSector: 1,
+        ConstructionSector: 3,
+        BasicArmamentsSector: 0.5,
         HeavyArmamentsSector: 0.2,
         ShipBuildingSector: 0.2,
         BasicToolsSector: 4,
-        TextilesSector: 4,
-        BasicGoodsSector: 7,
-        LuxuryGoodsSector: 1,
-        AlcoholSector: 4,
+        TextilesSector: 2,
+        BasicGoodsSector: 2,
+        LuxuryGoodsSector: 0.25,
+        AlcoholSector: 2,
         ChemicalSector: 0,
         ElectronicsSector: 0,
         AutomotiveSector: 0,
@@ -785,6 +785,8 @@ class Nation {
     /* #region  Resources */
     this.MiningEfficiency = 1;
     this.Forestry = 1;
+    this.Reforestation = 1;
+    this.ForestsCutDown = 0;
 
     this.Coal = 0.00;
     this.Sulphur = 0.00;

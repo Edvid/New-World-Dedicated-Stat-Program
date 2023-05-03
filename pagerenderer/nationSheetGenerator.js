@@ -278,7 +278,7 @@ let TableLayouts = {
         ["HygieneUpkeep", "ResearchUpkeep", "PropagandaUpkeep"]
     ],
   "Production": [
-      ["Production", "ProductionEfficiency", "IronShortage", "CoalShortage", "WoodShortage", "NaturalFabricsShortage", "LuxuryNaturalFabricsShortage"],
+    ["Production", "ProductionEfficiency", "IronShortage", "CoalShortage", "WoodShortage", "NaturalFabricsShortage", "LuxuryNaturalFabricsShortage", "ValuableMaterialsShortage"],
       ["Housing", "Textiles", "BasicGoods", "LuxuryGoods", "Alcohol", "BasicTools", "HeavyIndustry", "BasicArmaments", "HeavyArmaments", "ShipBuilding", "Chemicals", "Motors", "Planes", "Electronics"],
       ["EffectiveHousing", "EffectiveTextiles", "EffectiveBasicGoods", "EffectiveLuxuryGoods", "EffectiveAlcohol", "EffectiveBasicTools", "EffectiveHeavyIndustry", "EffectiveBasicArmaments", "EffectiveHeavyArmaments", "EffectiveShipBuilding", "EffectiveChemicals", "EffectiveMotors", "EffectivePlanes", "EffectiveElectronics"],
       ["HousingDemand", "TextilesDemand", "BasicGoodsDemand", "LuxuryGoodsDemand", "AlcoholDemand", "BasicToolsDemand", "HeavyIndustryDemand", "BasicArmamentsDemand", "HeavyArmamentsDemand", "ShipBuildingDemand", "ChemicalsDemand", "MotorsDemand", "PlanesDemand", "ElectronicsDemand"],
@@ -395,7 +395,7 @@ let TableLayouts = {
         ["CulturalAdvancements.Nationalism", "CulturalAdvancements.Conscription", "CulturalAdvancements.Industrialisation"]
     ],
     "Resources": [
-        ["MiningEfficiency", "Forestry"],
+        ["MiningEfficiency", "BaseIronHarvest", "BaseCoalHarvest", "BaseSulphurHarvest", "Forestry", "Reforestation", "ForestsLeft"],
         ["MaxCoal", "MaxSulphur", "MaxIron", "MaxCopper"],
         ["Coal", "Sulphur", "Iron", "Copper", "Wood"],
         ["EffectiveCoal", "EffectiveSulphur", "EffectiveIron", "EffectiveCopper"],
