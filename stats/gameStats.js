@@ -610,19 +610,19 @@ class Nation {
       this.ExternalTariffs = 0.1; //Show in percent
     this.InternalTariffs = 0.1; //Show in percent
 
-    this.ExpectedSlavesSol = 0.5;
-    this.ExpectedLabourersSol = 1;
+    this.ExpectedSlavesSol = 0.25;
+    this.ExpectedLabourersSol = 0.75;
     this.ExpectedSerfsSol = 0.75;
     this.ExpectedFarmersSol = 1.25;
-    this.ExpectedTownsfolkSol = 1.75;
-    this.ExpectedClergySol = 3;
+    this.ExpectedTownsfolkSol = 1.5;
+    this.ExpectedClergySol = 6;
     this.ExpectedBureaucratsSol = 2;
     this.ExpectedMerchantsSol = 1.75;
     this.ExpectedIntellectualsSol = 2;
     this.ExpectedSailorsSol = 0.75;
     this.ExpectedSoldiersSol = 1;
-    this.ExpectedAristocracySol = 6;
-    this.ExpectedBurgousieSol = 3;
+    this.ExpectedAristocracySol = 10;
+    this.ExpectedBurgousieSol = 6;
     
     this.EstateInfluences = {
       AristocratInfluence: 0.525,
@@ -711,7 +711,7 @@ class Nation {
     /* #region  Navy */
     this.NavyImprovements = 0;
 
-    this.MerchantShips = 25;
+    this.MerchantShips = 15;
     this.LightShips = 0;
     this.MediumShips = 0;
     this.HeavyShips = 0;
@@ -785,7 +785,7 @@ class Nation {
     /* #region  Resources */
     this.MiningEfficiency = 1;
     this.Forestry = 1;
-    this.Reforestation = 1;
+    this.Reforestation = 0.1;
     this.ForestsCutDown = 0;
 
     this.Coal = 0.00;

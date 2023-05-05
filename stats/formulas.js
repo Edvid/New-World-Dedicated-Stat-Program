@@ -205,8 +205,8 @@ function evaluateNation(nationName) {
     n.Workforces.Bureaucrats = n.AdministrationSize / 100;
     n.Workforces.Intellectuals = n.HigherEducation / 100;
     n.Workforces.Townsfolk = n.AverageDevelopment;
-    n.Workforces.Labourers = (n.Reforms.SlaveryBanned ? (n.Coal + n.Sulphur + n.Cotton + n.Gold + n.Iron + n.Tea + n.Silk + n.Spice + n.Wool + n.Coffee + n.Fur + n.Diamond + n.Silver + n.Copper + n.Ivory + n.Cocoa + n.Tobacco + n.Sugar + n.ExoticFruit + (n.Forestry + n.Reforestation) * 10) * 20000 / n.Population : 0);
-  n.Workforces.Slaves = (n.Reforms.SlaveryAllowed ? (n.Coal + n.Sulphur + n.Cotton + n.Gold + n.Iron + n.Tea + n.Silk + n.Spice + n.Wool + n.Coffee + n.Fur + n.Diamond + n.Silver + n.Copper + n.Ivory + n.Cocoa + n.Tobacco + n.Sugar + n.ExoticFruit) * 20000 / n.Population : 0);
+  n.Workforces.Labourers = (n.Reforms.SlaveryBanned ? (n.BaseIronHarvest + n.BaseCoalHarvest + n.BaseSulphurHarvest + n.Coal + n.Sulphur + n.Cotton + n.Gold + n.Iron + n.Tea + n.Silk + n.Spice + n.Wool + n.Coffee + n.Fur + n.Diamond + n.Silver + n.Copper + n.Ivory + n.Cocoa + n.Tobacco + n.Sugar + n.ExoticFruit + n.Forestry + n.Reforestation) * 20000 / n.Population : 0);
+  n.Workforces.Slaves = (n.Reforms.SlaveryAllowed ? (n.BaseIronHarvest + n.BaseCoalHarvest + n.BaseSulphurHarvest + n.Coal + n.Sulphur + n.Cotton + n.Gold + n.Iron + n.Tea + n.Silk + n.Spice + n.Wool + n.Coffee + n.Fur + n.Diamond + n.Silver + n.Copper + n.Ivory + n.Cocoa + n.Tobacco + n.Sugar + n.ExoticFruit + n.Forestry + n.Reforestation) * 20000 / n.Population : 0);
   n.Workforces.Merchants = (n.MerchantShips * 200) / n.Population;
   n.Workforces.Sailors = (n.MerchantShips * 200 + n.LightShips * 400 + n.MediumShips * 900 + n.HeavyShips * 1600) / n.Population;
   n.Workforces.Farmers = max(n.Reforms.SerfdomBanned ? 1 - n.Workforces.PopulationInMilitary - n.Workforces.Townsfolk - n.Workforces.Sailors - n.Workforces.Merchants - n.Workforces.Intellectuals - n.Workforces.Bureaucrats - n.Workforces.Clergy - n.Workforces.Burgousie - n.Workforces.Aristocracy - n.Workforces.Labourers - n.Workforces.Slaves : min(0.075, 1 - n.Workforces.PopulationInMilitary - n.Workforces.Townsfolk - n.Workforces.Sailors - n.Workforces.Merchants - n.Workforces.Intellectuals - n.Workforces.Bureaucrats - n.Workforces.Clergy - n.Workforces.Burgousie - n.Workforces.Aristocracy - n.Workforces.Labourers - n.Workforces.Slaves), 0);
@@ -375,42 +375,46 @@ function evaluateNation(nationName) {
   n.AverageExpectedSol = (isNaN(n.Workforces.Slaves) ? 0 : n.Workforces.Slaves) * n.ExpectedSlavesSol + (isNaN(n.Workforces.Labourers) ? 0 : n.Workforces.Labourers) * n.ExpectedLabourersSol + (isNaN(n.Workforces.Serfs) ? 0 : n.Workforces.Serfs) * n.ExpectedSerfsSol + (isNaN(n.Workforces.Farmers) ? 0 : n.Workforces.Farmers) * n.ExpectedFarmersSol + (isNaN(n.Workforces.Townsfolk) ? 0 : n.Workforces.Townsfolk) * n.ExpectedTownsfolkSol + (isNaN(n.Workforces.Clergy) ? 0 : n.Workforces.Clergy) * n.ExpectedClergySol + (isNaN(n.Workforces.Bureaucrats) ? 0 : n.Workforces.Bureaucrats) * n.ExpectedBureaucratsSol + (isNaN(n.Workforces.Merchants) ? 0 : n.Workforces.Merchants) * n.ExpectedMerchantsSol + (isNaN(n.Workforces.Intellectuals) ? 0 : n.Workforces.Intellectuals) * n.ExpectedIntellectualsSol + (isNaN(n.Workforces.Sailors) ? 0 : n.Workforces.Sailors) * n.ExpectedSailorsSol + (isNaN(n.Workforces.Soldiers) ? 0 : n.Workforces.Soldiers) * n.ExpectedSoldiersSol + (isNaN(n.Workforces.Aristocracy) ? 0 : n.Workforces.Aristocracy) * n.ExpectedAristocracySol + (isNaN(n.Workforces.Burgousie) ? 0 : n.Workforces.Burgousie) * n.ExpectedBurgousieSol;
 
   n.SulphurDemand = 0;
-  n.CoalDemand = n.Production * (n.ProductionSectors.HeavyIndustrySector / n.TotalSupply) / 10 + n.Production * (n.ProductionSectors.HeavyArmamentsSector / n.TotalSupply) / 6 + n.Production * (n.ProductionSectors.BasicArmamentsSector / n.TotalSupply) / 8 + n.Production * (n.ProductionSectors.BasicToolsSector / n.TotalSupply) / 10 + (n.AverageExpectedSol < 1 ? n.AverageExpectedSol * 0.005 * n.Population / 1000 : 0.005 * n.Population / 1000 + (n.AverageExpectedSol - 1) * 0.01 * n.Population / 1000) / 10;
-  n.IronDemand = n.Production * (n.ProductionSectors.HeavyIndustrySector / n.TotalSupply) / 10 + n.Production * (n.ProductionSectors.LuxuryGoodsSector / n.TotalSupply) / 10 + n.Production * (n.ProductionSectors.ShipBuildingSector / n.TotalSupply) / 10 + n.Production * (n.ProductionSectors.HeavyArmamentsSector / n.TotalSupply) / 5 + n.Production * (n.ProductionSectors.BasicArmamentsSector / n.TotalSupply) / 10 + n.Production * (n.ProductionSectors.BasicToolsSector / n.TotalSupply) / 10;
-  n.WoodDemand = n.Production * (n.ProductionSectors.LuxuryGoodsSector / n.TotalSupply) / 10 + n.Production * (n.ProductionSectors.BasicGoodsSector / n.TotalSupply) / 8 + n.Production * (n.ProductionSectors.ShipBuildingSector / n.TotalSupply) / 2 + n.Production * (n.ProductionSectors.BasicArmamentsSector / n.TotalSupply) / 10 + n.Production * (n.ProductionSectors.ConstructionSector / n.TotalSupply) / 2 + n.Production * (n.ProductionSectors.BasicToolsSector / n.TotalSupply) / 6 + (n.AverageExpectedSol < 1 ? n.AverageExpectedSol * 0.01 * n.Population / 1000 : 0.01 * n.Population / 1000 + (n.AverageExpectedSol - 1) * 0.02 * n.Population / 1000) / 10;
+  n.CoalDemand = (n.Production * (n.ProductionSectors.HeavyIndustrySector / n.TotalSupply) / 10 + n.Production * (n.ProductionSectors.HeavyArmamentsSector / n.TotalSupply) / 6 + n.Production * (n.ProductionSectors.BasicArmamentsSector / n.TotalSupply) / 8 + n.Production * (n.ProductionSectors.BasicToolsSector / n.TotalSupply) / 10) / n.ProductionEfficiency + (n.AverageExpectedSol < 1 ? n.AverageExpectedSol * 0.005 * n.Population / 1000 : 0.005 * n.Population / 1000 + (n.AverageExpectedSol - 1) * 0.01 * n.Population / 1000) / 10;
+  n.IronDemand = (n.Production * (n.ProductionSectors.HeavyIndustrySector / n.TotalSupply) / 10 + n.Production * (n.ProductionSectors.LuxuryGoodsSector / n.TotalSupply) / 10 + n.Production * (n.ProductionSectors.ShipBuildingSector / n.TotalSupply) / 10 + n.Production * (n.ProductionSectors.HeavyArmamentsSector / n.TotalSupply) / 5 + n.Production * (n.ProductionSectors.BasicArmamentsSector / n.TotalSupply) / 10 + n.Production * (n.ProductionSectors.BasicToolsSector / n.TotalSupply) / 10) / n.ProductionEfficiency;
+  n.WoodDemand = (n.Production * (n.ProductionSectors.LuxuryGoodsSector / n.TotalSupply) / 10 + n.Production * (n.ProductionSectors.BasicGoodsSector / n.TotalSupply) / 8 + n.Production * (n.ProductionSectors.ShipBuildingSector / n.TotalSupply) / 2 + n.Production * (n.ProductionSectors.BasicArmamentsSector / n.TotalSupply) / 10 + n.Production * (n.ProductionSectors.ConstructionSector / n.TotalSupply) / 2 + n.Production * (n.ProductionSectors.BasicToolsSector / n.TotalSupply) / 6) / n.ProductionEfficiency + (n.AverageExpectedSol < 1 ? n.AverageExpectedSol * 0.01 * n.Population / 1000 : 0.01 * n.Population / 1000 + (n.AverageExpectedSol - 1) * 0.02 * n.Population / 1000) / 10;
 
   n.FoodDemand = n.Production * (n.ProductionSectors.AlcoholSector / n.TotalSupply) + (n.AverageExpectedSol < 1 ? n.AverageExpectedSol * n.Population / 1000 : n.Population / 1000 + (n.AverageExpectedSol - 1) * 1.75 * n.Population / 1000);
 
-  n.NaturalFabricsDemand = n.Production * (n.ProductionSectors.TextilesSector / n.TotalSupply) / 10;
+  n.NaturalFabricsDemand = (n.Production * (n.ProductionSectors.TextilesSector / n.TotalSupply) / 10) / n.ProductionEfficiency;
   n.WoolDemand = n.NaturalFabricsDemand;
   n.CottonDemand = n.NaturalFabricsDemand;
 
-  n.LuxuryNaturalFabricsDemand = n.Production * (n.ProductionSectors.LuxuryGoodsSector / n.TotalSupply) / 10;
+  n.LuxuryNaturalFabricsDemand = (n.Production * (n.ProductionSectors.LuxuryGoodsSector / n.TotalSupply) / 10) / n.ProductionEfficiency;
   n.FurDemand = n.LuxuryNaturalFabricsDemand;
   n.SilkDemand = n.LuxuryNaturalFabricsDemand;
 
-  n.ValuableMaterialsDemand = n.Production * (n.ProductionSectors.LuxuryGoodsSector / n.TotalSupply);
+  n.ValuableMaterialsDemand = (n.Production * (n.ProductionSectors.LuxuryGoodsSector / n.TotalSupply)) / n.ProductionEfficiency;
   n.DiamondDemand = n.ValuableMaterialsDemand + n.Population / 50000;
   n.GoldDemand = n.ValuableMaterialsDemand + n.Population / 100000;
   n.SilverDemand = n.ValuableMaterialsDemand + n.Population / 200000;
   n.CopperDemand = n.ValuableMaterialsDemand + n.Population / 400000;
   n.IvoryDemand = n.ValuableMaterialsDemand + n.Population / 150000;
   
-  n.SpiceDemand = 0;
 
-  n.TeaDemand = 0;
-  n.CoffeeDemand = 0;
-  n.TobaccoDemand = 0;
+  n.LuxuryConsumables = n.EffectiveTea + n.EffectiveCoffee + n.EffectiveTobacco + n.EffectiveExoticFruit + n.EffectiveCocoa;
+  n.LuxuryConsumablesDemand = (n.AverageExpectedSol - 1) * n.Population / 1000 * 0.025;
+  n.TeaDemand = n.LuxuryConsumablesDemand * 0.2;
+  n.CoffeeDemand = n.LuxuryConsumablesDemand * 0.2;
+  n.TobaccoDemand = n.LuxuryConsumablesDemand * 0.2;
+  n.ExoticFruitDemand = n.LuxuryConsumablesDemand * 0.2;
+  n.CocoaDemand = n.LuxuryConsumablesDemand * 0.2;
 
-  n.ExoticFruitDemand = 0;
-  n.CocoaDemand = 0;
-  n.SugarDemand = 0;
+  n.FoodAdditions = n.EffectiveSugar + n.EffectiveSpice;
+  n.FoodAdditionsDemand = (n.AverageExpectedSol < 1 ? n.AverageExpectedSol * n.Population / 1000 * 0.1 : n.Population / 1000 * 0.1 + (n.AverageExpectedSol - 1) * 1.5 * n.Population / 1000 * 1) / 200;
+  n.SugarDemand = n.FoodAdditionsDemand * 0.45;
+  n.SpiceDemand = n.FoodAdditionsDemand * 0.55;
 
-  n.BasicToolsDemand = n.Production * (n.ProductionSectors.AerospaceSector / n.TotalSupply) + n.Production * (n.ProductionSectors.AutomotiveSector / n.TotalSupply) + n.Production * (n.ProductionSectors.ElectronicsSector / n.TotalSupply) + n.Production * (n.ProductionSectors.ChemicalSector / n.TotalSupply) / 4 + n.Production * (n.ProductionSectors.HeavyIndustrySector / n.TotalSupply) / 10 + n.Production * (n.ProductionSectors.LuxuryGoodsSector / n.TotalSupply) / 4 + n.Production * (n.ProductionSectors.BasicGoodsSector / n.TotalSupply) / 4 + n.Production * (n.ProductionSectors.ShipBuildingSector / n.TotalSupply) + n.Production * (n.ProductionSectors.TextilesSector / n.TotalSupply) / 4 + n.Production * (n.ProductionSectors.HeavyArmamentsSector / n.TotalSupply) / 4 + n.Production * (n.ProductionSectors.BasicArmamentsSector / n.TotalSupply) / 4 + n.Production * (n.ProductionSectors.ConstructionSector / n.TotalSupply) + (n.AverageExpectedSol < 1 ? n.AverageExpectedSol * 0.5 * n.Population / 1000 : 0.5 * n.Population / 1000) / 200;
+  n.BasicToolsDemand = (n.Production * (n.ProductionSectors.AerospaceSector / n.TotalSupply) + n.Production * (n.ProductionSectors.AutomotiveSector / n.TotalSupply) + n.Production * (n.ProductionSectors.ElectronicsSector / n.TotalSupply) + n.Production * (n.ProductionSectors.ChemicalSector / n.TotalSupply) / 4 + n.Production * (n.ProductionSectors.HeavyIndustrySector / n.TotalSupply) / 10 + n.Production * (n.ProductionSectors.LuxuryGoodsSector / n.TotalSupply) / 4 + n.Production * (n.ProductionSectors.BasicGoodsSector / n.TotalSupply) / 4 + n.Production * (n.ProductionSectors.ShipBuildingSector / n.TotalSupply) + n.Production * (n.ProductionSectors.TextilesSector / n.TotalSupply) / 4 + n.Production * (n.ProductionSectors.HeavyArmamentsSector / n.TotalSupply) / 4 + n.Production * (n.ProductionSectors.BasicArmamentsSector / n.TotalSupply) / 4 + n.Production * (n.ProductionSectors.ConstructionSector / n.TotalSupply)) / n.ProductionEfficiency + (n.AverageExpectedSol < 1 ? n.AverageExpectedSol * 0.5 * n.Population / 1000 : 0.5 * n.Population / 1000) / 200;
   n.HousingDemand = (n.AverageExpectedSol < 1 ? n.AverageExpectedSol * 0.5 * n.Population / 1000 : 0.5 * n.Population / 1000 + (n.AverageExpectedSol - 1) * n.Population / 1000) / 200;
   n.BasicArmamentsDemand = 0; // define once weapon stockpile implemented
   n.HeavyArmamentsDemand = 0; // define once weapon stockpile implemented
-  n.TextilesDemand = n.Production * (n.ProductionSectors.BasicGoodsSector / n.TotalSupply) / 2 + n.Production * (n.ProductionSectors.ShipBuildingSector / n.TotalSupply) / 2 + (n.AverageExpectedSol < 1 ? n.AverageExpectedSol * 0.5 * n.Population / 1000 : 0.5 * n.Population / 1000 + (n.AverageExpectedSol - 1) * n.Population / 1000) / 200;
+  n.TextilesDemand = (n.Production * (n.ProductionSectors.BasicGoodsSector / n.TotalSupply) / 2 + n.Production * (n.ProductionSectors.ShipBuildingSector / n.TotalSupply) / 2) / n.ProductionEfficiency + (n.AverageExpectedSol < 1 ? n.AverageExpectedSol * 0.5 * n.Population / 1000 : 0.5 * n.Population / 1000 + (n.AverageExpectedSol - 1) * n.Population / 1000) / 200;
   n.ShipBuildingDemand = n.CoastalLandPercent * n.Population / 100000 + n.NavyUpkeep / 100 * gameStats.TimeDivide;
   n.BasicGoodsDemand = (n.AverageExpectedSol < 1 ? n.AverageExpectedSol * n.Population / 1000 : n.Population / 1000 + (n.AverageExpectedSol - 1) * 1.5 * n.Population / 1000) / 200;
   n.LuxuryGoodsDemand = (n.AverageExpectedSol - 1) * n.Population / 1000 / 200;
@@ -492,10 +496,14 @@ function evaluateNation(nationName) {
   n.EffectivePlanes = n.Planes + n.PlanesIncoming - n.PlanesOutgoing;
   n.PlanesShortage = (n.PlanesDemand==0 ? 0 : min(1, max(0, 1 - (n.EffectivePlanes / n.PlanesDemand))));
 
+  // resource and goods values
   for (const resourceIndex in gameStats.ResourceTypes) {
     const resource = gameStats.ResourceTypes[resourceIndex];
     n[resource + "Value"] = n[resource + "Demand"] / (n["Effective" + resource] + 0.1);
   }
+
+  n.LuxuryConsumablesValue = n.LuxuryConsumablesDemand / (n.LuxuryConsumables + 0.1);
+  n.FoodAdditionsValue = n.FoodAdditionsDemand / (n.FoodAdditions + 0.1);
 
   n.FoodValue = n.FoodDemand / ((n.Food + n.DailyFood) + 0.1);
 
@@ -545,6 +553,58 @@ function evaluateNation(nationName) {
           if(typeof n[property] != 'undefined' && typeof n[property] != 'string' && typeof n[property] != 'object' && isNaN(n[property])) allNaNStats += `${property}\n`
         });
         lazyerror(`something went wrong. Tried to multiply ${n[resource + "Incoming"]} (${n.nationName ?? nationName}.${resource}Incoming) with ${n[resource + "Value"]} (${n.nationName ?? nationName}.${resource}Value).\nThe following stats are NaN currently: \n\n${allNaNStats}`);
+        return 0;
+      }
+    }
+    return num;
+  })();
+
+  n.OutgoingTradePowerFromResourceTrade = (function () {
+    let num = 0;
+    let TradePowerResources = [
+      "Sulphur",
+      "Coal",
+      "Cotton",
+      "Gold",
+      "Iron",
+      "Tea",
+      "Silk",
+      "Spice",
+      "Wool",
+      "Coffee",
+      "Fur",
+      "Diamond",
+      "Silver",
+      "Copper",
+      "Ivory",
+      "Cocoa",
+      "Tobacco",
+      "Sugar",
+      "ExoticFruit",
+      "Housing",
+      "Textiles",
+      "BasicGoods",
+      "LuxuryGoods",
+      "Alcohol",
+      "BasicTools",
+      "HeavyIndustry",
+      "BasicArmaments",
+      "HeavyArmaments",
+      "ShipBuilding",
+      "Chemicals",
+      "Motors",
+      "Planes",
+      "Electronics"
+    ];
+    for (const resourceName in TradePowerResources) {
+      const resource = TradePowerResources[resourceName];
+      num += +n[resource + "Outgoing"] * +n[resource + "Value"];
+      if (isNaN(num)) {
+        let allNaNStats = "";
+        Object.keys(n).forEach(property => {
+          if (typeof n[property] != 'undefined' && typeof n[property] != 'string' && typeof n[property] != 'object' && isNaN(n[property])) allNaNStats += `${property}\n`
+        });
+        lazyerror(`something went wrong. Tried to multiply ${n[resource + "Outgoing"]} (${n.nationName ?? nationName}.${resource}Incoming) with ${n[resource + "Value"]} (${n.nationName ?? nationName}.${resource}Value).\nThe following stats are NaN currently: \n\n${allNaNStats}`);
         return 0;
       }
     }
@@ -635,7 +695,7 @@ function evaluateNation(nationName) {
   n.MerchantShipsFullfilment = min(n.MerchantShips / (n.ResourceTrade + pseudoTradePower / 2 + (n.LocalTrade * n.Population / 2000000 * (1 + n.AverageDevelopment) + n.FoodTradeProfit) / 4), 1);
   n.TradeEfficiency = (1 * n.TradeImprovements + n.Technologies.Cranes / 10 + n.Technologies.PromissoryNotes / 20 + n.TradeProtection + n.Technologies.Fluyt / 5) * (1 - n.Blockade) * n.MerchantShipsFullfilment;
 
-    n.ExternalTrade = n.TradePowerFromResourceTrade + pseudoTradePower * n.TradeEfficiency;
+    n.ExternalTrade = n.TradePowerFromResourceTrade - n.OutgoingTradePowerFromResourceTrade + pseudoTradePower * n.TradeEfficiency;
     n.InternalTrade = (n.LocalTrade * n.Population / 2000000 * (1 + n.AverageDevelopment)) * n.TradeEfficiency + n.FoodTradeProfit;
     n.TradePower = n.ExternalTrade + n.InternalTrade;
 
@@ -824,6 +884,8 @@ function evaluateNation(nationName) {
     return rbb / gameStats.TimeDivide;
   })();
 
+  n.ResourceBudgetBoost += n.OutgoingTradePowerFromResourceTrade;
+
     n.ResourceOwners = (n.Reforms.NobleResourceOwnership == 1 ? n.Workforces.Aristocracy : 0) + (n.Reforms.MixedResourceOwnership == 1 ? n.Workforces.Aristocracy + n.Workforces.Burgousie : 0) + (n.Reforms.BurgousieResourceOwnership == 1 ? n.Workforces.Burgousie : 0)
     n.ResourceOwnersInfluence = (n.Reforms.NobleResourceOwnership == 1 ? n.EstateInfluences.AristocratInfluence : 0) + (n.Reforms.MixedResourceOwnership == 1 ? (n.EstateInfluences.AristocratInfluence + n.EstateInfluences.BurgousieInfluence) / 2 : 0) + (n.Reforms.BurgousieResourceOwnership == 1 ? n.EstateInfluences.BurgousieInfluence : 0)
 
@@ -839,10 +901,10 @@ function evaluateNation(nationName) {
     n.TownsfolkWage = (n.Production * 10 / (n.Population / 1000 * n.Workforces.Townsfolk)) * (1 - n.EstateInfluences.BurgousieInfluence * 2);
         n.TownsfolkWageToBurgousie = n.Population * n.Workforces.Townsfolk / 1000 * n.TownsfolkWage / (1 - n.EstateInfluences.BurgousieInfluence * 2) * n.EstateInfluences.BurgousieInfluence * 2;
     n.ClergyWage = n.Population * (n.ReligiousFervor + 1) / (n.Population / 1000 * n.Workforces.Clergy) * n.EstateInfluences.ClergyInfluence / 1000;
-    n.BureaucratsWage = n.BureaucratWages * 50 * n.EstateInfluences.BureaucratInfluence;
+    n.BureaucratsWage = n.BureaucratWages * 100 * n.EstateInfluences.BureaucratInfluence;
     n.MerchantsWage = (n.InternalTrade * (1 - n.InternalTariffs) + n.ExternalTrade * (1 - n.ExternalTariffs)) / (n.Population / 1000 * n.Workforces.Merchants) * (1 - n.EstateInfluences.BurgousieInfluence * 2);
         n.MerchantsWageToBurggousie = n.Population * n.Workforces.Merchants / 1000 * n.MerchantsWage / (1 - n.EstateInfluences.BurgousieInfluence * 2) * n.EstateInfluences.BurgousieInfluence * 2;
-    n.IntellectualsWage = 30 * n.EstateInfluences.IntellectualsInfluence;
+    n.IntellectualsWage = 60 * n.EstateInfluences.IntellectualsInfluence;
     n.SailorsWage = 1 * n.ArmyWages;
     n.SoldiersWage = 1.5 * n.ArmyWages;
     n.AristocracyWage = (n.Reforms.NobleLandOwnership == 1 ? n.SerfsAndFarmersWageToOnwers / (n.Population * n.Workforces.Aristocracy / 1000) : 0) + (n.Reforms.MixedLandOwnership == 1 ? n.SerfsAndFarmersWageToOnwers / (n.Population * n.Workforces.Aristocracy / 1000) : 0) + (n.Reforms.NobleResourceOwnership == 1 ? n.SlavesAndLabourersWageToOwner / (n.Population * n.Workforces.Aristocracy / 1000) : 0) + (n.Reforms.MixedResourceOwnership == 1 ? n.SlavesAndLabourersWageToOwner / (n.Population * n.Workforces.Aristocracy / 1000) : 0);
@@ -862,8 +924,8 @@ function evaluateNation(nationName) {
   n.AristocracyEffectiveWage = n.AristocracyWage * (1 - n.AristocratTax * n.TaxEfficiency);
   n.BurgousieEffectiveWage = n.BurgousieWage * (1 - n.BurgousieTax * n.TaxEfficiency);
 
-  n.NecessitiesCost = (0.5 * n.HousingValue + 0.5 * n.TextilesValue + n.BasicGoodsValue + n.AlcoholValue + 0.5 * n.BasicToolsValue) / 200 + (n.CoalValue * 0.005 > n.WoodValue * 0.01 ? 0.01 * n.WoodValue : 0.005 * n.CoalValue) + n.FoodValue;
-  n.LuxuriesCost = (n.HousingValue + n.TextilesValue + 1.5 * n.BasicGoodsValue + n.LuxuryGoodsValue + 2 * n.AlcoholValue) / 200 + (n.CoalValue * 0.01 > n.WoodValue * 0.02 ? n.WoodValue * 0.02 : 0.01 * n.CoalValue) + 1.75 * n.FoodValue;
+  n.NecessitiesCost = (0.5 * n.HousingValue + 0.5 * n.TextilesValue + n.BasicGoodsValue + n.AlcoholValue + 0.5 * n.BasicToolsValue) / 200 + (n.CoalValue * 0.005 > n.WoodValue * 0.01 ? 0.01 * n.WoodValue : 0.005 * n.CoalValue) + n.FoodValue + (n.FoodAdditions > 0 ? 0.1 * n.FoodAdditionsValue : 0);
+  n.LuxuriesCost = (n.HousingValue + n.TextilesValue + 1.5 * n.BasicGoodsValue + n.LuxuryGoodsValue + 2 * n.AlcoholValue) / 200 + (n.CoalValue * 0.01 > n.WoodValue * 0.02 ? n.WoodValue * 0.02 : 0.01 * n.CoalValue) + 1.75 * n.FoodValue + (n.FoodAdditions > 0 ? 1 * n.FoodAdditionsValue : 0) + (n.LuxuryConsumables > 0 ? 0.025 * n.LuxuryConsumablesValue : 0);
 
   n.SlavesSol = (n.SlavesEffectiveWage < n.NecessitiesCost ? n.SlavesEffectiveWage / n.NecessitiesCost : 1 + (n.SlavesEffectiveWage - n.NecessitiesCost) / n.LuxuriesCost);
   n.LabourersSol = (n.LabourersEffectiveWage < n.NecessitiesCost ? n.LabourersEffectiveWage / n.NecessitiesCost : 1 + (n.LabourersEffectiveWage - n.NecessitiesCost) / n.LuxuriesCost);
