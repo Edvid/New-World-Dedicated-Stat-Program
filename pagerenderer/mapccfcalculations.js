@@ -432,7 +432,7 @@ class MapCCFCalculations {
             let foundOuterObject = colorToOuterNameMapping.find(element => element.color == outerCol);
 
             if(typeof foundOuterObject === 'undefined') {
-                foundOuterObject = await PromptName(outerCol, getOuterDataPoint, outerName);
+                foundOuterObject = await self.PromptName(outerCol, getOuterDataPoint, outerName);
                 colorToOuterNameMapping.push(foundOuterObject);
             }
 
@@ -454,7 +454,7 @@ class MapCCFCalculations {
                             colorToInnerNameMapping.find(element => element.color == innerCol):
                             {color: innerCol, name: "Col" + innerCol};
                 if(typeof foundInnerObject === 'undefined'){
-                    foundInnerObject = await PromptName(innerCol, getInnerDataPoint, innerName);
+                    foundInnerObject = await self.PromptName(innerCol, getInnerDataPoint, innerName);
                     if (!options.unnamedGroup) colorToInnerNameMapping.push(foundInnerObject);
                 }
                 
