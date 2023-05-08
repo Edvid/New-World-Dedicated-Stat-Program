@@ -304,69 +304,47 @@
 
 !suppress 999
 
-> cultures
-+> eu
-+> af
-+> as
-+> am
-< > religions
-+> west
-<
+= "776544" religions.Pagan.Color
 
-= "238dff" cultures.eu.Color
-= "7c6d35" cultures.af.Color
-= "ff0000" cultures.as.Color
-= "ffd54c" cultures.am.Color
-= "238dff" religions.west.Color
+> Cultures
 
-<... > nations
-+> test
-> test
-= "ff0000" Color
-= "london" Capital Name
-> culture groups
-+> eu
-= 100 eu.points
-<... > nations
-
-+> microtest
-> microtest
-= "f7ff00" Color
-= "Verxni Baksan" Capital Name
-> culture groups
-+> eu
-+> as
-= 50 eu.points
-= 50 as.points
-<...
-
-
-
-> test
-= 18297 Moderate
-= 631 CoastalDesert
-= 762 SubTropical
-= 1179 Tropical
++> Celtic
++> English
++> French
++> Caucasian
++> Maghrebi
++> Garjati
++> Mandinka
++> Akan
++> Fang
++> Malagasi
++> EastBantu
++> Araucanian
++> Tehuelche
++> Alacaluf
 
 <...
 
-> test
-= 382274 DevelopmentPixelCount
+= "93ff68" cultures.Celtic.Color
+= "ff476c" cultures.English.Color
+= "96c5ff" cultures.French.Color
+= "42ffa0" cultures.Caucasian.Color
+= "bca8ff" cultures.Maghrebi.Color
+= "ff7797" cultures.Garjati.Color
+= "b54468" cultures.Mandinka.Color
+= "8a6acc" cultures.Akan.Color
+= "adceb9" cultures.Fang.Color
+= "d85bff" cultures.Malagasi.Color
+= "7c5e44" cultures.EastBantu.Color
+= "99deff" cultures.Araucanian.Color
+= "d3bc89" cultures.Tehuelche.Color
+= "936c00" cultures.Alacaluf.Color
 
-<...
-
-> test
-= 10644 CoastalPixels
-
-<...
-
-<... > Nations
-= 0.00 test.MaxFur
-= 0.75 test.MaxGold
-= 2.25 test.MaxIron
-= 1000 microtest.moderate
-= 8000 microtest.DevelopmentPixelCount
-<...
-
-
-!suppress 0
+> nations
++> TestNA
++> TestSA
++> TestAF
++> TestEU
++> TestME
++> TestAS
++> TestOC
