@@ -348,3 +348,12 @@
 +> TestME
 +> TestAS
 +> TestOC
+<...
+
+= "5eff91" nations.TestNA.Color
+= "0094ff" nations.TestEU.Color
+= "00ffff" nations.TestAS.Color
+= "7f3300" nations.TestME.Color
+= "b6ff00" nations.TestAF.Color
+= "b200ff" nations.TestOC.Color
+= "00ff21" nations.TestSA.Color
