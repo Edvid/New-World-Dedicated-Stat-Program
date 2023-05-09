@@ -578,6 +578,7 @@ class Nation {
 
     /* #region  Most Stats */
     this.ReligiousDisunity = 0.00;
+    this.DevelopmentPixelCount = 1000;
       this.AverageDevelopment = 1;
     this.Health = 1.00;
     this.EducationEfficiency = 1;

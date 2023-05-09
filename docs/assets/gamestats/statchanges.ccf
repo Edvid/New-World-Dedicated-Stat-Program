@@ -322,6 +322,143 @@
 +> Araucanian
 +> Tehuelche
 +> Alacaluf
++> Siberian
++> Uralic
++> Scandinavian
++> Finnic
++> Russian
++> Eskimo
++> Kutchin
++> Chipewyan
++> Kaskas
++> Buryat
++> Baltic
++> Naskapis
++> Tatar
++> Cree
++> Haida
++> Altaic
++> Ruthenian
++> Germanic
++> WestSlav
++> Mongol
++> Blackfeet
++> Nogai
++> Yakimas
++> Jurchen
++> Beothuk
++> Ottawa
++> Sioux
++> Chinook
++> Uyghur
++> Mandan
++> Magyar
++> Cheyenne
++> Romanian
++> Abenaki
++> Italian
++> SouthSlav
++> Japanese
++> Potawatomi
++> Shoshone
++> Iroquoi
++> Illinoi
++> Iberian
++> Uzbek
++> Pawnee
++> Kyrgyz
++> Ute
++> Korean
++> Uzbek
++> Pomo
++> HanChinese
++> Turkish
++> Greek
++> Washo
++> Shawnee
++> Persian
++> Wichita
++> Powhatan
++> Kurdish
++> Afghan
++> Kiowa
++> Mohave
++> Navaho
++> Luisena
++> Tunisian
++> Cherokee
++> Hindustani
++> Arab
++> Tibetan
++> Apache
++> Natchez
++> Creek
++> Choctaw
++> Egyptian
++> Taino
++> SouthChinese
++> Calusa
++> Bengali
++> Aryan
++> Coahuiltec
++> Burmese
++> Polynesian
++> Tuareg
++> Aztec
++> Tagalog
++> Thai
++> Vietnamese
++> Sudanese
++> Olmec
++> Deccani
++> Cushitic
++> Fula
++> Khmer
++> Miskito
++> Timote
++> Mossi
++> Hausa
++> Indonesian
++> Jukun
++> Banda
++> Yoruba
++> Guaymi
++> Sinhalese
++> Chibcha
++> Arawak
++> Waica
++> Zande
++> Ganda
++> Ngala
++> Papuan
++> Colorado
++> Jivaro
++> Kuba
++> Tarariu
++> Omagua
++> Tapajo
++> Kongo
++> Caapor
++> Inca
++> Chokwe
++> Conibo
++> Xavante
++> Amniape
++> Ambundu
++> Makua
++> Aboriginal
++> Siriono
++> Tonga
++> Guaitaca
++> Shona
++> Guarani
++> Nama
++> Mataco
++> Zulu
++> Atacama
++> Puelche
++> Charrua
++> Kiwi
 
 <...
 
@@ -339,6 +476,145 @@
 = "99deff" cultures.Araucanian.Color
 = "d3bc89" cultures.Tehuelche.Color
 = "936c00" cultures.Alacaluf.Color
+= "7c1d12" cultures.Siberian.Color
+= "7affe4" cultures.Uralic.Color
+= "9870ff" cultures.Scandinavian.Color
+= "2f717c" cultures.Finnic.Color
+= "20407c" cultures.Russian.Color
+= "c83dff" cultures.Eskimo.Color
+= "b8cc82" cultures.Kutchin.Color
+= "c6cc66" cultures.Chipewyan.Color
+= "cc9d72" cultures.Kaskas.Color
+= "7a3953" cultures.Buryat.Color
+= "c4ffdf" cultures.Baltic.Color
+= "b2cc8c" cultures.Naskapis.Color
+= "1f7c7b" cultures.Tatar.Color
+= "a1cca6" cultures.Cree.Color
+= "ff8cf7" cultures.Haida.Color
+= "5e747c" cultures.Altaic.Color
+= "599bff" cultures.Ruthenian.Color
+= "868989" cultures.Germanic.Color
+= "ffa0cf" cultures.WestSlav.Color
+= "337c26" cultures.Mongol.Color
+= "ffbc82" cultures.Blackfeet.Color
+= "395c7a" cultures.Nogai.Color
+= "d4a0a4" cultures.Yakimas.Color
+= "7c362b" cultures.Jurchen.Color
+= "8cd1ff" cultures.Beothuk.Color
+= "7ad0ff" cultures.Ottawa.Color
+= "4f7c4f" cultures.Sioux.Color
+= "7c3075" cultures.Chinook.Color
+= "ccd3ff" cultures.Uyghur.Color
+= "ffa987" cultures.Mandan.Color
+= "587c22" cultures.Magyar.Color
+= "ffe1db" cultures.Cheyenne.Color
+= "ffaa60" cultures.Romanian.Color
+= "eabcff" cultures.Abenaki.Color
+= "61ff3a" cultures.Italian.Color
+= "ffee91" cultures.SouthSlav.Color
+= "ff3330" cultures.Japanese.Color
+= "7cffb0" cultures.Potawatomi.Color
+= "bc8060" cultures.Shoshone.Color
+= "ddffe7" cultures.Iroquoi.Color
+= "8abf78" cultures.Illinoi.Color
+= "ff9e44" cultures.Iberian.Color
+= "776727" cultures.Uzbek.Color
+= "ffc9a8" cultures.Pawnee.Color
+= "ff597a" cultures.Kyrgyz.Color
+= "bc8753" cultures.Ute.Color
+= "7c680e" cultures.Korean.Color
+= "447a5d" cultures.Uzbek.Color
+= "f0de72" cultures.Pomo.Color
+= "ffd3af" cultures.HanChinese.Color
+= "7c6d13" cultures.Turkish.Color
+= "3590ff" cultures.Greek.Color
+= "bda382" cultures.Washo.Color
+= "60ff68" cultures.Shawnee.Color
+= "247c56" cultures.Persian.Color
+= "ff9996" cultures.Wichita.Color
+= "78c191" cultures.Powhatan.Color
+= "7c3722" cultures.Kurdish.Color
+= "ff75ae" cultures.Afghan.Color
+= "ffcb72" cultures.Kiowa.Color
+= "79cc6e" cultures.Mohave.Color
+= "51cc72" cultures.Navaho.Color
+= "efd95d" cultures.Luisena.Color
+= "c596ff" cultures.Tunisian.Color
+= "c2ff68" cultures.Cherokee.Color
+= "7c5c1a" cultures.Hindustani.Color
+= "207c12" cultures.Arab.Color
+= "70227c" cultures.Tibetan.Color
+= "accc90" cultures.Apache.Color
+= "fff38c" cultures.Natchez.Color
+= "dfff54" cultures.Creek.Color
+= "fff659" cultures.Choctaw.Color
+= "ff2348" cultures.Egyptian.Color
+= "e26a9c" cultures.Taino.Color
+= "ff60af" cultures.SouthChinese.Color
+= "adff84" cultures.Calusa.Color
+= "52ff3f" cultures.Bengali.Color
+= "288cff" cultures.Aryan.Color
+= "ffb5d3" cultures.Coahuiltec.Color
+= "ff5c47" cultures.Burmese.Color
+= "ff7ad5" cultures.Polynesian.Color
+= "82e1ff" cultures.Tuareg.Color
+= "ffa993" cultures.Aztec.Color
+= "82ff4c" cultures.Tagalog.Color
+= "597c35" cultures.Thai.Color
+= "e8ff59" cultures.Vietnamese.Color
+= "7c7856" cultures.Sudanese.Color
+= "c1ffa3" cultures.Olmec.Color
+= "467c43" cultures.Deccani.Color
+= "fcff6d" cultures.Cushitic.Color
+= "88cea6" cultures.Fula.Color
+= "4fe4ff" cultures.Khmer.Color
+= "8fc1b8" cultures.Miskito.Color
+= "3dd8ff" cultures.Timote.Color
+= "f4be61" cultures.Mossi.Color
+= "994f56" cultures.Hausa.Color
+= "4f257c" cultures.Indonesian.Color
+= "48a6b5" cultures.Jukun.Color
+= "617a70" cultures.Banda.Color
+= "9486cc" cultures.Yoruba.Color
+= "aca3ff" cultures.Guaymi.Color
+= "fff2aa" cultures.Sinhalese.Color
+= "96f6ff" cultures.Chibcha.Color
+= "8effb7" cultures.Arawak.Color
+= "61ff59" cultures.Waica.Color
+= "82cea4" cultures.Zande.Color
+= "ffbba0" cultures.Ganda.Color
+= "72b5a4" cultures.Ngala.Color
+= "ffbe70" cultures.Papuan.Color
+= "a6c1ba" cultures.Colorado.Color
+= "b7ff91" cultures.Jivaro.Color
+= "98b8a6" cultures.Kuba.Color
+= "b7edff" cultures.Tarariu.Color
+= "43ff3d" cultures.Omagua.Color
+= "acff7c" cultures.Tapajo.Color
+= "478a4b" cultures.Kongo.Color
+= "a3ffec" cultures.Caapor.Color
+= "a9a9cc" cultures.Inca.Color
+= "4cb6a5" cultures.Chokwe.Color
+= "8cffac" cultures.Conibo.Color
+= "e2f1ff" cultures.Xavante.Color
+= "ceffe5" cultures.Amniape.Color
+= "c6c939" cultures.Ambundu.Color
+= "ffcfa8" cultures.Makua.Color
+= "7c330b" cultures.Aboriginal.Color
+= "fff0b7" cultures.Siriono.Color
+= "d6d98b" cultures.Tonga.Color
+= "ded3ff" cultures.Guaitaca.Color
+= "3f777c" cultures.Shona.Color
+= "2e7c2e" cultures.Guarani.Color
+= "ffbf66" cultures.Nama.Color
+= "f7b983" cultures.Mataco.Color
+= "ff6c4f" cultures.Zulu.Color
+= "68b4cc" cultures.Atacama.Color
+= "d6a653" cultures.Puelche.Color
+= "d37769" cultures.Charrua.Color
+= "9b9eff" cultures.Kiwi.Color
+
+<...
 
 > nations
 +> TestNA
@@ -357,3 +633,692 @@
 = "b6ff00" nations.TestAF.Color
 = "b200ff" nations.TestOC.Color
 = "00ff21" nations.TestSA.Color
+
+<... > Nations
+!suppress 99999
+
+> TestNA
++> CultureGroups
+> CultureGroups
++> Foreign
+= 0 Foreign.Points
++> Eskimo
+= 2.7104056525211524 Eskimo.Points
++> Kutchin
+= 3.854347681473935 Kutchin.Points
++> Chipewyan
+= 2.9835602741371505 Chipewyan.Points
++> Kaskas
+= 3.0170856933066488 Kaskas.Points
++> Naskapis
+= 4.473955898148921 Naskapis.Points
++> Cree
+= 2.6755209742883745 Cree.Points
++> Haida
+= 1.0458629457452413 Haida.Points
++> Blackfeet
+= 4.334371133817852 Blackfeet.Points
++> Yakimas
+= 1.9349580128589177 Yakimas.Points
++> Beothuk
+= 2.715971929799959 Beothuk.Points
++> Ottawa
+= 2.778934592245901 Ottawa.Points
++> Sioux
+= 3.2788210532620687 Sioux.Points
++> Chinook
+= 1.267952506923828 Chinook.Points
++> Mandan
+= 3.6354653774730754 Mandan.Points
++> Cheyenne
+= 3.196387561808035 Cheyenne.Points
++> Abenaki
+= 2.0239738834488983 Abenaki.Points
++> Potawatomi
+= 1.7977545515643913 Potawatomi.Points
++> Shoshone
+= 1.794948387225009 Shoshone.Points
++> Iroquoi
+= 3.4417969577137923 Iroquoi.Points
++> Illinoi
+= 2.7719436926264547 Illinoi.Points
++> Pawnee
+= 3.82836577872338 Pawnee.Points
++> Ute
+= 1.8267877309444283 Ute.Points
++> Pomo
+= 1.3052080894899327 Pomo.Points
++> Washo
+= 0.9506078532254534 Washo.Points
++> Shawnee
+= 2.6702607159899343 Shawnee.Points
++> Wichita
+= 3.417337722219916 Wichita.Points
++> Powhatan
+= 2.2030113277827827 Powhatan.Points
++> Iberian
+= 0.021990286244509223 Iberian.Points
++> Kiowa
+= 3.133805194794005 Kiowa.Points
++> Mohave
+= 1.067052531842092 Mohave.Points
++> Navaho
+= 1.1096797873839546 Navaho.Points
++> Luisena
+= 0.8726086659286757 Luisena.Points
++> Cherokee
+= 1.3823620107681245 Cherokee.Points
++> Apache
+= 1.2574854693720607 Apache.Points
++> Italian
+= 0.00016489372243062378 Italian.Points
++> Natchez
+= 3.899810811935798 Natchez.Points
++> Creek
+= 2.091875929922604 Creek.Points
++> Choctaw
+= 2.655917933196532 Choctaw.Points
++> Maghrebi
+= 0.01651908282368051 Maghrebi.Points
++> Taino
+= 1.1598713567511931 Taino.Points
++> Calusa
+= 0.9099489236495419 Calusa.Points
++> Coahuiltec
+= 1.8570078480201597 Coahuiltec.Points
++> Polynesian
+= 0.24021747194273893 Polynesian.Points
++> Aztec
+= 2.7930218640459876 Aztec.Points
++> Olmec
+= 1.982355302119021 Olmec.Points
++> Fula
+= 0.021691694909297014 Fula.Points
++> Miskito
+= 1.26466206012037 Miskito.Points
++> Guaymi
+= 0.29289730243674594 Guaymi.Points
++> Tarariu
+= 0.00014558184502883902 Tarariu.Points
++> Kongo
+= 0.0010428413796963775 Kongo.Points
++> Alacaluf
+= 0.01223630262757701 Alacaluf.Points
++> Aboriginal
+= 0.019641664846646017 Aboriginal.Points
++> Kiwi
+= 0.0003892086060975084 Kiwi.Points
+< <
+> TestEU
++> CultureGroups
+> CultureGroups
++> Foreign
+= 0 Foreign.Points
++> Scandinavian
+= 8.948012478812275 Scandinavian.Points
++> Finnic
+= 3.6220051772609536 Finnic.Points
++> Russian
+= 14.072517823066486 Russian.Points
++> Uralic
+= 3.4962635481282023 Uralic.Points
++> Celtic
+= 2.5055292513039977 Celtic.Points
++> Baltic
+= 2.3205029898518337 Baltic.Points
++> Tatar
+= 15.685437724413902 Tatar.Points
++> Ruthenian
+= 9.501563124958697 Ruthenian.Points
++> English
+= 1.8963546984124442 English.Points
++> Germanic
+= 6.791525875658035 Germanic.Points
++> WestSlav
+= 5.11701049884427 WestSlav.Points
++> Nogai
+= 2.430486807791878 Nogai.Points
++> French
+= 6.2750751194176 French.Points
++> Magyar
+= 2.223163988935307 Magyar.Points
++> Romanian
+= 1.7687316605184087 Romanian.Points
++> Italian
+= 2.4726118902635363 Italian.Points
++> SouthSlav
+= 2.9923895476124276 SouthSlav.Points
++> Caucasian
+= 1.751051927886526 Caucasian.Points
++> Iberian
+= 4.775203414965947 Iberian.Points
++> Greek
+= 1.0903322846599652 Greek.Points
++> Persian
+= 0.2591158467802744 Persian.Points
++> Turkish
+= 0.004676783535803274 Turkish.Points
++> Egyptian
+= 0.0004375369212289965 Egyptian.Points
+< <
+> TestAS
++> CultureGroups
+> CultureGroups
++> Foreign
+= 0 Foreign.Points
++> Siberian
+= 9.55714191261798 Siberian.Points
++> Uralic
+= 8.51619837356912 Uralic.Points
++> Buryat
+= 4.46219867234642 Buryat.Points
++> Altaic
+= 12.281156308921728 Altaic.Points
++> Tatar
+= 0.769621022617948 Tatar.Points
++> Mongol
+= 11.699313161270386 Mongol.Points
++> Nogai
+= 1.1632143653034384 Nogai.Points
++> Jurchen
+= 6.044286748874887 Jurchen.Points
++> Uyghur
+= 2.035454564976556 Uyghur.Points
++> Japanese
+= 1.7276873241659334 Japanese.Points
++> Uzbek
+= 0.7403343686410166 Uzbek.Points
++> Kyrgyz
+= 0.2876092209611349 Kyrgyz.Points
++> Korean
+= 0.987687122920833 Korean.Points
++> HanChinese
+= 9.455955280471768 HanChinese.Points
++> Afghan
+= 1.3023294623003654 Afghan.Points
++> Hindustani
+= 2.800991112571436 Hindustani.Points
++> Tibetan
+= 3.7347069431523643 Tibetan.Points
++> SouthChinese
+= 5.080322718578917 SouthChinese.Points
++> Bengali
+= 2.91365858221412 Bengali.Points
++> Aryan
+= 4.133306280977795 Aryan.Points
++> Burmese
+= 1.6651607879935275 Burmese.Points
++> Tagalog
+= 0.12472448991930062 Tagalog.Points
++> Garjati
+= 1.8734820457675851 Garjati.Points
++> Thai
+= 2.33139563095398 Thai.Points
++> Vietnamese
+= 0.7578013635835561 Vietnamese.Points
++> Deccani
+= 1.6867029496751256 Deccani.Points
++> Khmer
+= 1.2868023137452629 Khmer.Points
++> Indonesian
+= 0.3761282093997528 Indonesian.Points
++> Sinhalese
+= 0.20462866150776124 Sinhalese.Points
+< <
+> TestME
++> CultureGroups
+> CultureGroups
++> Turkish
+= 13.600077403974982 Turkish.Points
++> Caucasian
+= 2.7742051253371414 Caucasian.Points
++> Greek
+= 0.57326289663104 Greek.Points
++> Uzbek
+= 2.43991327735498 Uzbek.Points
++> Persian
+= 37.480377097344075 Persian.Points
++> Kurdish
+= 6.164560988053506 Kurdish.Points
++> Arab
+= 22.169925742277016 Arab.Points
++> Afghan
+= 13.124832094103471 Afghan.Points
++> Egyptian
+= 0.48550408137847695 Egyptian.Points
++> Foreign
+= 0 Foreign.Points
++> Aryan
+= 1.1681961614353222 Aryan.Points
++> Sudanese
+= 0.0009263773601607642 Sudanese.Points
++> Cushitic
+= 0.018218754749828363 Cushitic.Points
+< <
+> TestAF
++> CultureGroups
+> CultureGroups
++> Tunisian
+= 1.1059398116154555 Tunisian.Points
++> Maghrebi
+= 3.8833206870075565 Maghrebi.Points
++> Egyptian
+= 1.7475800146744782 Egyptian.Points
++> Tuareg
+= 2.7695114861481254 Tuareg.Points
++> Sudanese
+= 8.053998230981612 Sudanese.Points
++> Cushitic
+= 7.2223711076432 Cushitic.Points
++> Fula
+= 1.5290880729403502 Fula.Points
++> Mandinka
+= 3.0579377222912005 Mandinka.Points
++> Mossi
+= 3.110142612858441 Mossi.Points
++> Hausa
+= 2.398342388915205 Hausa.Points
++> Arab
+= 0.009586321246470625 Arab.Points
++> Jukun
+= 1.7810228027756683 Jukun.Points
++> Banda
+= 3.8930890002247107 Banda.Points
++> Yoruba
+= 1.9924085929103152 Yoruba.Points
++> Akan
+= 2.5065344993008685 Akan.Points
++> Fang
+= 2.879187748108666 Fang.Points
++> Zande
+= 3.897325604007367 Zande.Points
++> Ganda
+= 2.3456761698641384 Ganda.Points
++> Ngala
+= 2.733525042828777 Ngala.Points
++> EastBantu
+= 5.83494050583723 EastBantu.Points
++> Foreign
+= 0 Foreign.Points
++> Kuba
+= 5.123711652034512 Kuba.Points
++> Kongo
+= 2.77727647689729 Kongo.Points
++> Chokwe
+= 4.673906504771124 Chokwe.Points
++> Malagasi
+= 3.0901912140258307 Malagasi.Points
++> Ambundu
+= 2.3769632701265344 Ambundu.Points
++> Makua
+= 4.667313880902874 Makua.Points
++> Tonga
+= 3.2465533542333476 Tonga.Points
++> Shona
+= 2.845564378827263 Shona.Points
++> Nama
+= 1.928986507312804 Nama.Points
++> Zulu
+= 6.5180043386885815 Zulu.Points
+< <
+> TestOC
++> CultureGroups
+> CultureGroups
++> Polynesian
+= 1.335373505355235 Polynesian.Points
++> Tagalog
+= 3.5574687139510663 Tagalog.Points
++> Indonesian
+= 20.322974178038272 Indonesian.Points
++> Foreign
+= 0 Foreign.Points
++> Papuan
+= 10.624219926048893 Papuan.Points
++> Aboriginal
+= 58.17754965206042 Aboriginal.Points
++> Kiwi
+= 5.98241402454611 Kiwi.Points
+< <
+> TestSA
++> CultureGroups
+> CultureGroups
++> Taino
+= 0.007474860479482608 Taino.Points
++> Timote
+= 3.9553166099851884 Timote.Points
++> Chibcha
+= 2.043342188272789 Chibcha.Points
++> Guaymi
+= 0.3313257829177978 Guaymi.Points
++> Arawak
+= 5.367925420812808 Arawak.Points
++> Waica
+= 2.5257251926457553 Waica.Points
++> Foreign
+= 0 Foreign.Points
++> Colorado
+= 0.5766686761965535 Colorado.Points
++> Jivaro
+= 2.665687949051301 Jivaro.Points
++> Omagua
+= 5.894180420509446 Omagua.Points
++> Tapajo
+= 4.958069614610459 Tapajo.Points
++> Caapor
+= 3.2689349542919666 Caapor.Points
++> Inca
+= 3.274755542370252 Inca.Points
++> Tarariu
+= 5.060609367341822 Tarariu.Points
++> Conibo
+= 3.040819744917794 Conibo.Points
++> Xavante
+= 8.81604179838922 Xavante.Points
++> Amniape
+= 4.724744939630997 Amniape.Points
++> Siriono
+= 4.679378914816786 Siriono.Points
++> Guaitaca
+= 4.793093254053101 Guaitaca.Points
++> Guarani
+= 7.217310846833196 Guarani.Points
++> Mataco
+= 5.277139956880832 Mataco.Points
++> Atacama
+= 1.3175062143614662 Atacama.Points
++> Puelche
+= 7.823649597644191 Puelche.Points
++> Charrua
+= 4.671712391248085 Charrua.Points
++> Araucanian
+= 2.6384859294627674 Araucanian.Points
++> Alacaluf
+= 2.7446201506214236 Alacaluf.Points
++> Tehuelche
+= 2.3254796816545213 Tehuelche.Points
+< <
+> TestNA
++> ReligionGroups
+> ReligionGroups
++> Pagan
+= 100 Pagan.Points
+< <
+> TestEU
++> ReligionGroups
+> ReligionGroups
++> Pagan
+= 100 Pagan.Points
+< <
+> TestAS
++> ReligionGroups
+> ReligionGroups
++> Pagan
+= 100 Pagan.Points
+< <
+> TestME
++> ReligionGroups
+> ReligionGroups
++> Pagan
+= 100 Pagan.Points
+< <
+> TestAF
++> ReligionGroups
+> ReligionGroups
++> Pagan
+= 100 Pagan.Points
+< <
+> TestOC
++> ReligionGroups
+> ReligionGroups
++> Pagan
+= 100 Pagan.Points
+< <
+> TestSA
++> ReligionGroups
+> ReligionGroups
++> Pagan
+= 100 Pagan.Points
+< <
+
+<... > Nations
+= 222863 TestNA.Moderate
+= 819263 TestNA.PolarDesert
+= 198195 TestNA.Mountainous
+= 321755 TestNA.TaigaAndTundra
+= 18303 TestNA.MontaneForest
+= 87294 TestNA.Steppe
+= 10927 TestNA.Medditereanian
+= 44106 TestNA.Desert
+= 14916 TestNA.CoastalDesert
+= 39003 TestNA.Savanna
+= 28721 TestNA.SubTropical
+= 11432 TestNA.Tropical
+= 299304 TestEU.Moderate
+= 57939 TestEU.PolarDesert
+= 16966 TestEU.MontaneForest
+= 159529 TestEU.TaigaAndTundra
+= 68598 TestEU.Mountainous
+= 85409 TestEU.Steppe
+= 375 TestEU.Desert
+= 75 TestEU.CoastalDesert
+= 40191 TestEU.Medditereanian
+= 2331 TestEU.Arid
+= 528612 TestAS.PolarDesert
+= 252390 TestAS.Moderate
+= 338608 TestAS.TaigaAndTundra
+= 439608 TestAS.Mountainous
+= 80361 TestAS.MontaneForest
+= 160443 TestAS.Steppe
+= 193000 TestAS.Desert
+= 23387 TestAS.CoastalDesert
+= 12981 TestAS.Arid
+= 132547 TestAS.SubTropical
+= 32219 TestAS.Savanna
+= 34130 TestAS.Tropical
+= 8963 TestME.Medditereanian
+= 74637 TestME.Mountainous
+= 98839 TestME.Arid
+= 76 TestME.Moderate
+= 21101 TestME.CoastalDesert
+= 125926 TestME.Desert
+= 1 TestME.Steppe
+= 1051 TestME.SubTropical
+= 30282 TestAF.Medditereanian
+= 59235 TestAF.Mountainous
+= 509001 TestAF.Desert
+= 25876 TestAF.CoastalDesert
+= 233971 TestAF.Savanna
+= 338130 TestAF.SubTropical
+= 85328 TestAF.Tropical
+= 7351 TestAF.Moderate
+= 16386 TestOC.SubTropical
+= 24603 TestOC.Moderate
+= 79333 TestOC.Tropical
+= 56256 TestOC.Mountainous
+= 80405 TestOC.Savanna
+= 219133 TestOC.Desert
+= 6247 TestOC.CoastalDesert
+= 9960 TestOC.Medditereanian
+= 211194 TestSA.Tropical
+= 254762 TestSA.SubTropical
+= 133879 TestSA.Mountainous
+= 90040 TestSA.Moderate
+= 4396 TestSA.Arid
+= 1827 TestSA.MontaneForest
+= 39473 TestSA.Savanna
+= 24909 TestSA.Desert
+= 8372 TestSA.CoastalDesert
+
+<... > Nations
+= NaN TestNA.DevelopmentPixelCount
+= NaN TestEU.DevelopmentPixelCount
+= NaN TestAS.DevelopmentPixelCount
+= NaN TestME.DevelopmentPixelCount
+= NaN TestAF.DevelopmentPixelCount
+= 1213308 TestOC.DevelopmentPixelCount
+= 3403065 TestSA.DevelopmentPixelCount
+
+<... > Nations
+= 174971 TestNA.CoastalPixels
+= 147633 TestEU.CoastalPixels
+= 232520 TestAS.CoastalPixels
+= 30607 TestME.CoastalPixels
+= 140370 TestAF.CoastalPixels
+= 82073 TestOC.CoastalPixels
+= 141543 TestSA.CoastalPixels
+
+<... > Nations
+= 10.00 TestEU.MaxFur
+= 10.00 TestAS.MaxFur
+= 10.00 TestNA.MaxFur
+= 17.00 TestAS.MaxGold
+= 19.00 TestNA.MaxGold
+= 6.00 TestEU.MaxGold
+= 6.00 TestME.MaxGold
+= 36.00 TestAF.MaxGold
+= 21.00 TestOC.MaxGold
+= 12.00 TestSA.MaxGold
+= 44.50 TestEU.MaxIron
+= 27.00 TestNA.MaxIron
+= 43.60 TestAS.MaxIron
+= 9.65 TestME.MaxIron
+= 26.25 TestAF.MaxIron
+= 17.00 TestSA.MaxIron
+= 8.00 TestOC.MaxIron
+= 27.00 TestAS.MaxIvory
+= 47.00 TestAF.MaxIvory
+= 1.00 TestOC.MaxIvory
+= 29.20 TestEU.MaxSulphur
+= 41.10 TestNA.MaxSulphur
+= 32.10 TestAS.MaxSulphur
+= 19.20 TestME.MaxSulphur
+= 13.00 TestAF.MaxSulphur
+= 21.10 TestOC.MaxSulphur
+= 15.35 TestSA.MaxSulphur
+= 30.00 TestNA.MaxCoal
+= 67.80 TestAS.MaxCoal
+= 42.20 TestEU.MaxCoal
+= 8.00 TestME.MaxCoal
+= 26.00 TestAF.MaxCoal
+= 20.00 TestOC.MaxCoal
+= 8.00 TestSA.MaxCoal
+= 10.00 TestEU.MaxCopper
+= 14.25 TestNA.MaxCopper
+= 12.00 TestAS.MaxCopper
+= 8.00 TestME.MaxCopper
+= 10.00 TestAF.MaxCopper
+= 7.75 TestSA.MaxCopper
+= 8.00 TestOC.MaxCopper
+= 2.00 TestAS.MaxDiamond
+= 20.00 TestAF.MaxDiamond
+= 4.00 TestSA.MaxDiamond
+= 4.00 TestOC.MaxDiamond
+= 20.00 TestNA.MaxSilver
+= 6.00 TestEU.MaxSilver
+= 2.00 TestAS.MaxSilver
+= 4.00 TestAF.MaxSilver
+= 6.00 TestOC.MaxSilver
+= 10.00 TestSA.MaxSilver
+
+<... > TradeZones
+= 23.10 CentralSiberia.Score
+= 24.75 EasternSiberia.Score
+= 78.00 WesternSiberia.Score
+= 8.15 NorthSea.Score
+= 20.70 Alaska.Score
+= 2.30 NorthernNordics.Score
+= 11.10 HudsonBay.Score
+= 6.50 BarentsSea.Score
+= 14.55 CentralCanada.Score
+= 11.30 BalticSea.Score
+= 13.40 Novgorod.Score
+= 7.70 Denmark.Score
+= 21.85 LawrenceGulf.Score
+= 39.35 Volga.Score
+= 11.35 Livonia.Score
+= 9.30 BritishIsles.Score
+= 11.55 Muscovy.Score
+= 22.25 Dniepr.Score
+= 11.70 UralRiver.Score
+= 61.25 Manchuria.Score
+= 10.80 Vistula.Score
+= 15.00 CentralEurope.Score
+= 9.00 DonRiver.Score
+= 14.60 Cascadia.Score
+= 24.45 SeaOfJapan.Score
+= 7.20 Rhine.Score
+= 3.20 EnglishChannel.Score
+= 20.60 GreatLakes.Score
+= 9.40 Romania.Score
+= 17.55 CentralAsia.Score
+= 8.40 France.Score
+= 4.25 WesternDanube.Score
+= 10.65 EasternDanube.Score
+= 9.55 TheRockies.Score
+= 80.90 Mississippi.Score
+= 3.75 SouthernFrance.Score
+= 4.20 CaspianSea.Score
+= 9.95 GobiDesert.Score
+= 3.70 Crimea.Score
+= 1.90 BayOfBiscay.Score
+= 4.10 Adriatic.Score
+= 22.25 EastCoast.Score
+= 4.70 CentralMediterranean.Score
+= 8.90 WestCoast.Score
+= 3.15 Caucasus.Score
+= 7.05 Greece.Score
+= 5.90 WesternMediterranean.Score
+= 7.70 Iberia.Score
+= 3.95 NorthernAnatolia.Score
+= 25.95 YellowRiver.Score
+= 10.95 Mesopotamia.Score
+= 3.15 EasternMediterranean.Score
+= 18.00 GulfOfMexico.Score
+= 9.15 Afghanistan.Score
+= 18.00 IndusRiver.Score
+= 4.55 Morocco.Score
+= 5.10 Tibet.Score
+= 14.90 Iran.Score
+= 8.30 Sichuan.Score
+= 9.95 Sahara.Score
+= 0.20 ArabianDesert.Score
+= 25.55 YangtzeRiver.Score
+= 9.55 WesternMexico.Score
+= 4.45 Egypt.Score
+= 22.25 Ganges.Score
+= 1.85 RedSea.Score
+= 3.80 PersianGulf.Score
+= 6.40 Caribbean.Score
+= 0.40 WesternSahara.Score
+= 23.80 SouthEastAsia.Score
+= 3.30 Pacific.Score
+= 11.95 SouthChinaSea.Score
+= 12.55 CentralIndia.Score
+= 9.05 Deccan.Score
+= 25.05 SouthernNile.Score
+= 13.60 Somalia.Score
+= 23.45 WesternNiger.Score
+= 8.45 Guinea.Score
+= 6.50 CentralAmerica.Score
+= 25.25 EasternNiger.Score
+= 18.40 Venezuela.Score
+= 14.00 Indonesia.Score
+= 35.90 CongoRiver.Score
+= 9.35 Gabon.Score
+= 6.20 LakeVictoria.Score
+= 82.25 Amazon.Score
+= 5.35 Peru.Score
+= 14.15 EastAfrica.Score
+= 11.05 LakeTanganyika.Score
+= 20.50 SaoFranciscoRiver.Score
+= 26.10 NorthernAustralia.Score
+= 15.00 Angola.Score
+= 47.25 Mozambique.Score
+= 74.15 ParanaRiver.Score
+= 4.75 Chile.Score
+= 37.30 SouthernAustralia.Score
+= 15.35 SouthAfrica.Score
+= 0.00 AustralianDesert.Score
+= 22.25 Patagonia.Score
+!suppress 0
+<...

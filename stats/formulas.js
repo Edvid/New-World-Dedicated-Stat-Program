@@ -94,6 +94,9 @@ function evaluateNation(nationName) {
     }
     return s;
   })();
+
+  n.Size += (n.Size <= 0 ? 1 : 0);
+
   n.CultureRepresentedAtGovernmentLevelPercent =  cultureCalc.GovernmentRepresentationPercent;
   n.CulturalDisunity = cultureCalc.disunity * (1 + n.Nationalism * 0.2);
   n.ReligionRepresentedAtGovernmentLevelPercent = religionCalc.GovernmentRepresentationPercent;
@@ -500,8 +503,8 @@ function evaluateNation(nationName) {
   for (const resourceIndex in gameStats.ResourceTypes) {
     const resource = gameStats.ResourceTypes[resourceIndex];
     n[resource + "Value"] = n[resource + "Demand"] / (n["Effective" + resource] + 0.1);
+    debugger;
   }
-
   n.LuxuryConsumablesValue = n.LuxuryConsumablesDemand / (n.LuxuryConsumables + 0.1);
   n.FoodAdditionsValue = n.FoodAdditionsDemand / (n.FoodAdditions + 0.1);
 
@@ -940,7 +943,6 @@ function evaluateNation(nationName) {
   n.SoldiersSol = (n.SoldiersEffectiveWage < n.NecessitiesCost ? n.SoldiersEffectiveWage / n.NecessitiesCost : 1 + (n.SoldiersEffectiveWage - n.NecessitiesCost) / n.LuxuriesCost);
   n.AristocracySol = (n.AristocracyEffectiveWage < n.NecessitiesCost ? n.AristocracyEffectiveWage / n.NecessitiesCost : 1 + (n.AristocracyEffectiveWage - n.NecessitiesCost) / n.LuxuriesCost);
   n.BurgousieSol = (n.BurgousieEffectiveWage < n.NecessitiesCost ? n.BurgousieEffectiveWage / n.NecessitiesCost : 1 + (n.BurgousieEffectiveWage - n.NecessitiesCost) / n.LuxuriesCost);
-  debugger;
 
     n.TaxEfficiency = (1 - n.EstateInfluences.AristocratInfluence / 4 - n.EstateInfluences.ClergyInfluence / 4 - n.AdministrativeStrain / n.AdministrativePower) * (1 - n.Occupation) * (1 - n.Corruption / 10)
     n.TariffEfficiency = (1 - n.EstateInfluences.BurgousieInfluence / 2 - n.AdministrativeStrain / n.AdministrativePower) * (1 - n.Occupation) * (1 - n.Corruption / 10)
