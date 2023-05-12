@@ -578,8 +578,8 @@ class Nation {
 
     /* #region  Most Stats */
     this.ReligiousDisunity = 0.00;
-    this.DevelopmentPixelCount = 1000;
-      this.AverageDevelopment = 1;
+    this.DevelopmentPixelCount = 60000;
+    this.CoastalPixels = 1000;
     this.Health = 1.00;
     this.EducationEfficiency = 1;
       this.BureaucratWages = 0.75;
@@ -589,7 +589,7 @@ class Nation {
     this.SocialSpending = 0;
     this.AtWar = false;
       this.Nationalism = 0;
-      this.ReligiousFervor = 0;
+      this.ReligiousFervor = 1;
 
     this.AristocratLoyalty = 0.50; //Show in percent
     this.ClergyLoyalty = 0.50; //Show in percent
@@ -626,14 +626,14 @@ class Nation {
     this.ExpectedBurgousieSol = 6;
     
     this.EstateInfluences = {
-      AristocratInfluence: 0.525,
-      ClergyInfluence: 0.25,
-        BurgousieInfluence: 0.175,
-        UrbanInfluence: 0.175,
-      BureaucratInfluence: 0.025,
-      IntellectualsInfluence: 0.02,
-      MilitaryInfluence: 0.0,
-      WorkersInfluence: 0.005
+      AristocratInfluence: 30,
+      ClergyInfluence: 20,
+        BurgousieInfluence: 15,
+        UrbanInfluence: 5,
+      BureaucratInfluence: 5,
+      IntellectualsInfluence: 2.5,
+      MilitaryInfluence: 2.5,
+      WorkersInfluence: 0.5
     };
     
     this.GovernmentRepresentation = {
@@ -763,15 +763,15 @@ class Nation {
      };
 
     this.ProductionSectors = {
-        ConstructionSector: 3,
-        BasicArmamentsSector: 0.5,
+        ConstructionSector: 2.5,
+        BasicArmamentsSector: 0.25,
         HeavyArmamentsSector: 0.2,
         ShipBuildingSector: 0.2,
         BasicToolsSector: 4,
         TextilesSector: 2,
-        BasicGoodsSector: 2,
+        BasicGoodsSector: 3,
         LuxuryGoodsSector: 0.25,
-        AlcoholSector: 2,
+        AlcoholSector: 2.5,
         ChemicalSector: 0,
         ElectronicsSector: 0,
         AutomotiveSector: 0,
@@ -797,7 +797,7 @@ class Nation {
     this.Tea = 0.00;
     this.Silk = 0;
     this.Spice = 0;
-    this.Wool = 0;
+    this.Wool = 0.5;
     this.Coffee = 0;
     this.Fur = 0;
     this.Diamond = 0;
@@ -826,20 +826,20 @@ class Nation {
     this.ResearchEffectiveness = 1.0;
 
     this.Technologies = {
-      Gunpowder: false,
-      VerticalLoom: false,
-      SaddleAndStirrup: false,
-      HorseCollar: false,
-      Explosives: false,
-      Firelance: false,
-      Cranes: false,
-      PromissoryNotes: false,
-      Bombards: false,
-      HandCannons: false,
-      PlateArmour: false,
-      SappersAndEngineers: false,
-      Workshops: false,
-      StandardizedPikes: false,
+      Gunpowder: true,
+      VerticalLoom: true,
+      SaddleAndStirrup: true,
+      HorseCollar: true,
+      Explosives: true,
+      Firelance: true,
+      Cranes: true,
+      PromissoryNotes: true,
+      Bombards: true,
+      HandCannons: true,
+      PlateArmour: true,
+      SappersAndEngineers: true,
+      Workshops: true,
+      StandardizedPikes: true,
       Galleons: false,
       PrintingPress: false,
       Muskets: false,
@@ -900,10 +900,6 @@ class Nation {
       Guilds: true,
       GuildsBanned: false,
       AntiMonopolyLaws: false,
-      
-      WomenGuardianship: true,
-      PropertiedWomen: false,
-      GenderEquality: false,
       
       NoVoting: true,
       HighClassVoting: false,

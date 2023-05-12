@@ -335,7 +335,6 @@ let TableLayouts = {
 		["Reforms.OpenFieldSystem", "Reforms.Enclosure"],
 		["Reforms.Mercantilism", "Reforms.Protectionism", "Reforms.FreeTrade"],
 		["Reforms.Guilds", "Reforms.GuildsBanned", "Reforms.AntiMonopolyLaws"],
-		["Reforms.WomenGuardianship", "Reforms.PropertiedWomen", "Reforms.GenderEquality"],
 		["Reforms.NoVoting", "Reforms.HighClassVoting", "Reforms.WealthVoting", "Reforms.UniversalSuffrage"],
 		["Reforms.NoblePrivellege", "Reforms.WealthPrivellege", "Reforms.ClassEquality"],
 		["Reforms.NobleOfficers", "Reforms.WealthyOfficers", "Reforms.MeritocraticOfficers"],
@@ -487,7 +486,7 @@ function createNationSheet(nationName) {
 
     createBreaker();
 
-    createPieDiagram("EstateInfluences");
+    createPieDiagram("EstateInfluencesReal");
     createPieDiagram("GovernmentRepresentation");
     createPieDiagram("MilitaryControl");
 

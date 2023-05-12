@@ -11,7 +11,7 @@ function syncNation(nationName) {
     /* #endregion */
 
     // deforestation from forestry
-    gameStats.Nations[nationName].ForestsCutDown += (gameStats.Nations[nationName].Forestry - gameStats.Nations[nationName].Reforestation) * 1500;
+    gameStats.Nations[nationName].ForestsCutDown += (gameStats.Nations[nationName].Forestry - gameStats.Nations[nationName].Reforestation) * 750 / gamestats.TimeDivide;
 
     /* #region  deal with automatic debt taking */
 
