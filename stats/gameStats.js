@@ -637,26 +637,26 @@ class Nation {
     };
     
     this.GovernmentRepresentation = {
-      UnitaryRepresentation: 0.30,
-      AristocratRepresentation: 0.40,
-      ClergyRepresentation: 0.20,
-        BurgousieRepresentation: 0.10,
-        UrbanRepresentation: 0.0,
-      BureaucratRepresentation: 0.0,
-      IntellectualsRepresentation: 0.0,
-      MilitaryRepresentation: 0.0,
-      WorkersRepresentation: 0.0
+      UnitaryRepresentation: 30,
+      AristocratRepresentation: 40,
+      ClergyRepresentation: 20,
+      BurgousieRepresentation: 10,
+      UrbanRepresentation: 0,
+      BureaucratRepresentation: 0,
+      IntellectualsRepresentation: 0,
+      MilitaryRepresentation: 0,
+      WorkersRepresentation: 0
     };
     
     this.MilitaryControl = {
-      UnitaryControl: 0.35,
-      AristocratControl: 0.45,
-      ClergyControl: 0.05,
-        BurgousieControl: 0.05,
-        UrbanControl: 0.05,
-      BureaucratControl: 0.05,
-      IntellectualsControl: 0.0,
-      WorkersControl: 0.05
+      UnitaryControl: 35,
+      AristocratControl: 45,
+      ClergyControl: 5,
+        BurgousieControl: 5,
+        UrbanControl: 5,
+      BureaucratControl: 5,
+      IntellectualsControl: 0,
+      WorkersControl: 5
     };
 
     this.PopulationControl = 0;

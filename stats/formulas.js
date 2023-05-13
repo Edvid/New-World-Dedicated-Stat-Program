@@ -732,7 +732,7 @@ function evaluateNation(nationName) {
   n.PossiblePublicDebt = max(0, n.Population / 10000 * (1 - (n.HighClassTax + n.MediumClassTax + n.LowerClassTax) / 3) - n.EffectiveDebt);
   n.DebtHappinessEffect = (n.PublicDebtLength > 1 ? n.EffectiveDebt / (n.PossiblePublicDebt + n.PublicDebtTaken) * (2 + n.PublicDebtLength) : 0);
   n.WarExhaustion = (n.Casualties / n.Population * 500) + (n.Pillaging * 20) + (n.Occupation * 5);
-  n.Absolutism = n.GovernmentRepresentation.UnitaryRepresentation * 10;
+  n.Absolutism = n.GovernmentRepresentation.UnitaryRepresentation / 10;
 
   n.EffectiveHealth = n.Health / 20 + (n.Technologies.HumanAnatomy ? 0.15 : 0) + (n.CulturalAdvancements.PotatoPopulationBoom == true ? 0.2 : 0);
 
