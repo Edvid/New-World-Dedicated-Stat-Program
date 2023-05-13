@@ -13,11 +13,6 @@ function syncNation(nationName) {
     // deforestation from forestry
     gameStats.Nations[nationName].ForestsCutDown += (gameStats.Nations[nationName].Forestry - gameStats.Nations[nationName].Reforestation) * 750 / gameStats.TimeDivide;
 
-    // alerts for stats equiring atttention
-  if (gameStats.Nations[nationName].Stability < -2) {
-    alert(nationName + " has stabiity below -2");
-  }
-
     /* #region  deal with automatic debt taking */
 
     //If budget is negative
