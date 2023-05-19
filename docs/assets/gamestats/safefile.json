@@ -1,283 +1,2476 @@
 {
-    "Lines": 1,
-    "Hash": 0,
+    "Lines": 623,
+    "Hash": 1261349857,
     "State": {
         "TimeSpeed": 50,
-        "TimeDivide": 2.5,
+        "TimeDivide": 0.4,
         "Nations": {
+            "Test": {
+                "FuturePopulation": 3362986.111111111,
+                "FutureLiteracyPercent": 3.25,
+                "FutureHigherEducation": 0.25,
+                "FutureBudget": 541.9003970246202,
+                "FutureFood": 20.536029411764957,
+                "FutureResearchPoints": 5,
+                "FuturePublicDebtLength": 0,
+                "FutureCulturalPower": 6,
+                "GovernmentName": "Test",
+                "Flag": "",
+                "Color": false,
+                "ReligionGroups": {
+                    "Pagan": {
+                        "Points": 100
+                    }
+                },
+                "ReligionRepresentedAtGovernmentLevel": "Pagan",
+                "ReligionRepresentedAtGovernmentLevelPercent": 1,
+                "CulturalDisunity": 0,
+                "ReligiousDisunity": 0,
+                "Population": 2500000,
+                "PopulationGrowth": 0.13807777777777774,
+                "AverageDevelopment": 0.01568627450980392,
+                "Health": 1,
+                "LiteracyPercent": 7.5,
+                "HigherEducation": 0.5,
+                "EducationEfficiency": 1,
+                "AdministrativeEfficiency": 25,
+                "AdministrativeStrain": 0,
+                "Corruption": 1,
+                "Overextension": 0.4079166666666666,
+                "Propaganda": 0,
+                "SocialSpending": 0,
+                "Prosperity": 1,
+                "PopulationHappiness": 1.105166666666666,
+                "Stability": 3.1972499999999995,
+                "AtWar": false,
+                "WarSupport": 0.2762916666666665,
+                "Absolutism": 3,
+                "PopulationControl": 0,
+                "BirthControl": 0,
+                "ConscriptionPercent": 0,
+                "Production": 43.13725490196079,
+                "ProductionEfficiency": 2.2,
+                "TradeEfficiency": 1.1500000000000001,
+                "LocalTrade": 5,
+                "TradePower": 7.300245098039216,
+                "TradeImprovements": 1,
+                "PossiblePublicDebt": 225,
+                "EffectiveDebt": 0,
+                "DailyBudget": 291.90039702462025,
+                "Budget": 250,
+                "Inflation": 0.1,
+                "Spies": 0,
+                "SpyQuality": 1,
+                "ArmyUpkeep": 0,
+                "SpyUpkeep": 0,
+                "SocialSpendingUpkeep": 0,
+                "HygieneUpkeep": 3.125,
+                "EducationUpkeep": 63.75,
+                "AgricultureSpending": 2.34375,
+                "PropagandaUpkeep": 0,
+                "PopulationControlUpkeep": 0,
+                "AdministrativeUpkeep": 94.39469666931006,
+                "ResearchUpkeep": 9.375,
+                "OverallIncome": 502.3888436939303,
+                "PassiveInvestmentIncome": 66.84491978609624,
+                "Levies": 0,
+                "LightInfantry": 0,
+                "HeavyInfantry": 0,
+                "Archers": 0,
+                "Crossbowmen": 0,
+                "LightCavalry": 0,
+                "HeavyCavalry": 0,
+                "EliteInfantry": 0,
+                "EliteCavalry": 0,
+                "HandCannoneers": 0,
+                "Musketeers": 0,
+                "Militia": 0,
+                "SiegeEquipment": 0,
+                "LargeSiegeEquipment": 0,
+                "FieldCannons": 0,
+                "EliteUnitsCap": 0,
+                "UnitUpkeep": 0,
+                "OverallNumbers": 0,
+                "SmallForts": 0,
+                "MediumForts": 0,
+                "BigForts": 0,
+                "HugeForts": 0,
+                "ExtraCityFortifications": 0,
+                "FortUpkeep": 0,
+                "IronShortage": 0,
+                "SulphurShortage": 0,
+                "CommanderFreedom": 0,
+                "ArmyWages": 1,
+                "MilitaryLoyalty": 1,
+                "MilitaryMorale": 0.7762916666666664,
+                "MilitaryDiscipline": 1,
+                "NavyImprovements": 0,
+                "NavyTech": 0,
+                "NavyQuality": 0.8,
+                "MerchantShips": 15,
+                "UpkeepForOneMerchantShip": 2.5,
+                "LightShips": 0,
+                "UpkeepForOneLightShip": 3.75,
+                "MediumShips": 0,
+                "UpkeepForOneMediumShip": 7.5,
+                "HeavyShips": 0,
+                "UpkeepForOneHeavyShip": 15,
+                "OverallShipCount": 0,
+                "TradeProtection": 0,
+                "NavalPower": 0,
+                "NavyUpkeep": 37.5,
+                "New_Levies": 0,
+                "New_Militia": 0,
+                "New_LightInfantry": 0,
+                "New_HeavyInfantry": 0,
+                "New_EliteInfantry": 0,
+                "New_Archers": 0,
+                "New_Crossbowmen": 0,
+                "New_HandCannoneers": 0,
+                "New_Musketeers": 0,
+                "New_MusketMilitia": 0,
+                "New_Riflemen": 0,
+                "New_LightCavalry": 0,
+                "New_HeavyCavalry": 0,
+                "New_EliteCavalry": 0,
+                "New_SiegeEquipment": 0,
+                "New_LargeSiegeEquipment": 0,
+                "New_RegimentalGuns": 0,
+                "New_FieldCannons": 0,
+                "New_SiegeGuns": 0,
+                "New_MerchantShips": 0,
+                "New_LightShips": 0,
+                "New_MediumShips": 0,
+                "New_HeavyShips": 0,
+                "NewTroopRecruitmentPenalty": 0,
+                "Workforces": {
+                    "Clergy": 0.0125,
+                    "Aristocracy": 0.02,
+                    "Burgousie": 0.005,
+                    "PopulationInMilitary": 0,
+                    "Bureaucrats": 0.005,
+                    "Intellectuals": 0.005,
+                    "Townsfolk": 0.01568627450980392,
+                    "Labourers": 0,
+                    "Slaves": 0.0504,
+                    "Merchants": 0.0012,
+                    "Sailors": 0.0012,
+                    "Farmers": 0.075,
+                    "Serfs": 0.8090137254901962
+                },
+                "SocietalClasses": {
+                    "High": 0.025,
+                    "Medium": 0.11438627450980393,
+                    "Lower": 0.8102137254901962,
+                    "Slaves": 0.0504
+                },
+                "CultureGroups": {
+                    "Celtic": {
+                        "Points": 0
+                    },
+                    "English": {
+                        "Points": 0
+                    },
+                    "French": {
+                        "Points": 0
+                    },
+                    "Caucasian": {
+                        "Points": 0
+                    },
+                    "Maghrebi": {
+                        "Points": 0
+                    },
+                    "Garjati": {
+                        "Points": 0
+                    },
+                    "Mandinka": {
+                        "Points": 0
+                    },
+                    "Akan": {
+                        "Points": 0
+                    },
+                    "Fang": {
+                        "Points": 0
+                    },
+                    "Malagasi": {
+                        "Points": 0
+                    },
+                    "EastBantu": {
+                        "Points": 0
+                    },
+                    "Araucanian": {
+                        "Points": 0
+                    },
+                    "Tehuelche": {
+                        "Points": 0
+                    },
+                    "Alacaluf": {
+                        "Points": 0
+                    },
+                    "Siberian": {
+                        "Points": 0
+                    },
+                    "Uralic": {
+                        "Points": 0
+                    },
+                    "Scandinavian": {
+                        "Points": 0
+                    },
+                    "Finnic": {
+                        "Points": 0
+                    },
+                    "Russian": {
+                        "Points": 0
+                    },
+                    "Eskimo": {
+                        "Points": 0
+                    },
+                    "Kutchin": {
+                        "Points": 0
+                    },
+                    "Chipewyan": {
+                        "Points": 0
+                    },
+                    "Kaskas": {
+                        "Points": 0
+                    },
+                    "Buryat": {
+                        "Points": 0
+                    },
+                    "Baltic": {
+                        "Points": 0
+                    },
+                    "Naskapis": {
+                        "Points": 0
+                    },
+                    "Tatar": {
+                        "Points": 0
+                    },
+                    "Cree": {
+                        "Points": 0
+                    },
+                    "Haida": {
+                        "Points": 0
+                    },
+                    "Altaic": {
+                        "Points": 0
+                    },
+                    "Ruthenian": {
+                        "Points": 0
+                    },
+                    "Germanic": {
+                        "Points": 0
+                    },
+                    "WestSlav": {
+                        "Points": 100
+                    },
+                    "Mongol": {
+                        "Points": 0
+                    },
+                    "Blackfeet": {
+                        "Points": 0
+                    },
+                    "Nogai": {
+                        "Points": 0
+                    },
+                    "Yakimas": {
+                        "Points": 0
+                    },
+                    "Jurchen": {
+                        "Points": 0
+                    },
+                    "Beothuk": {
+                        "Points": 0
+                    },
+                    "Ottawa": {
+                        "Points": 0
+                    },
+                    "Sioux": {
+                        "Points": 0
+                    },
+                    "Chinook": {
+                        "Points": 0
+                    },
+                    "Uyghur": {
+                        "Points": 0
+                    },
+                    "Mandan": {
+                        "Points": 0
+                    },
+                    "Magyar": {
+                        "Points": 0
+                    },
+                    "Cheyenne": {
+                        "Points": 0
+                    },
+                    "Romanian": {
+                        "Points": 0
+                    },
+                    "Abenaki": {
+                        "Points": 0
+                    },
+                    "Italian": {
+                        "Points": 0
+                    },
+                    "SouthSlav": {
+                        "Points": 0
+                    },
+                    "Japanese": {
+                        "Points": 0
+                    },
+                    "Potawatomi": {
+                        "Points": 0
+                    },
+                    "Shoshone": {
+                        "Points": 0
+                    },
+                    "Iroquoi": {
+                        "Points": 0
+                    },
+                    "Illinoi": {
+                        "Points": 0
+                    },
+                    "Iberian": {
+                        "Points": 0
+                    },
+                    "Uzbek": {
+                        "Points": 0
+                    },
+                    "Pawnee": {
+                        "Points": 0
+                    },
+                    "Kyrgyz": {
+                        "Points": 0
+                    },
+                    "Ute": {
+                        "Points": 0
+                    },
+                    "Korean": {
+                        "Points": 0
+                    },
+                    "Pomo": {
+                        "Points": 0
+                    },
+                    "HanChinese": {
+                        "Points": 0
+                    },
+                    "Turkish": {
+                        "Points": 0
+                    },
+                    "Greek": {
+                        "Points": 0
+                    },
+                    "Washo": {
+                        "Points": 0
+                    },
+                    "Shawnee": {
+                        "Points": 0
+                    },
+                    "Persian": {
+                        "Points": 0
+                    },
+                    "Wichita": {
+                        "Points": 0
+                    },
+                    "Powhatan": {
+                        "Points": 0
+                    },
+                    "Kurdish": {
+                        "Points": 0
+                    },
+                    "Afghan": {
+                        "Points": 0
+                    },
+                    "Kiowa": {
+                        "Points": 0
+                    },
+                    "Mohave": {
+                        "Points": 0
+                    },
+                    "Navaho": {
+                        "Points": 0
+                    },
+                    "Luisena": {
+                        "Points": 0
+                    },
+                    "Tunisian": {
+                        "Points": 0
+                    },
+                    "Cherokee": {
+                        "Points": 0
+                    },
+                    "Hindustani": {
+                        "Points": 0
+                    },
+                    "Arab": {
+                        "Points": 0
+                    },
+                    "Tibetan": {
+                        "Points": 0
+                    },
+                    "Apache": {
+                        "Points": 0
+                    },
+                    "Natchez": {
+                        "Points": 0
+                    },
+                    "Creek": {
+                        "Points": 0
+                    },
+                    "Choctaw": {
+                        "Points": 0
+                    },
+                    "Egyptian": {
+                        "Points": 0
+                    },
+                    "Taino": {
+                        "Points": 0
+                    },
+                    "SouthChinese": {
+                        "Points": 0
+                    },
+                    "Calusa": {
+                        "Points": 0
+                    },
+                    "Bengali": {
+                        "Points": 0
+                    },
+                    "Aryan": {
+                        "Points": 0
+                    },
+                    "Coahuiltec": {
+                        "Points": 0
+                    },
+                    "Burmese": {
+                        "Points": 0
+                    },
+                    "Polynesian": {
+                        "Points": 0
+                    },
+                    "Tuareg": {
+                        "Points": 0
+                    },
+                    "Aztec": {
+                        "Points": 0
+                    },
+                    "Tagalog": {
+                        "Points": 0
+                    },
+                    "Thai": {
+                        "Points": 0
+                    },
+                    "Vietnamese": {
+                        "Points": 0
+                    },
+                    "Sudanese": {
+                        "Points": 0
+                    },
+                    "Olmec": {
+                        "Points": 0
+                    },
+                    "Deccani": {
+                        "Points": 0
+                    },
+                    "Cushitic": {
+                        "Points": 0
+                    },
+                    "Fula": {
+                        "Points": 0
+                    },
+                    "Khmer": {
+                        "Points": 0
+                    },
+                    "Miskito": {
+                        "Points": 0
+                    },
+                    "Timote": {
+                        "Points": 0
+                    },
+                    "Mossi": {
+                        "Points": 0
+                    },
+                    "Hausa": {
+                        "Points": 0
+                    },
+                    "Indonesian": {
+                        "Points": 0
+                    },
+                    "Jukun": {
+                        "Points": 0
+                    },
+                    "Banda": {
+                        "Points": 0
+                    },
+                    "Yoruba": {
+                        "Points": 0
+                    },
+                    "Guaymi": {
+                        "Points": 0
+                    },
+                    "Sinhalese": {
+                        "Points": 0
+                    },
+                    "Chibcha": {
+                        "Points": 0
+                    },
+                    "Arawak": {
+                        "Points": 0
+                    },
+                    "Waica": {
+                        "Points": 0
+                    },
+                    "Zande": {
+                        "Points": 0
+                    },
+                    "Ganda": {
+                        "Points": 0
+                    },
+                    "Ngala": {
+                        "Points": 0
+                    },
+                    "Papuan": {
+                        "Points": 0
+                    },
+                    "Colorado": {
+                        "Points": 0
+                    },
+                    "Jivaro": {
+                        "Points": 0
+                    },
+                    "Kuba": {
+                        "Points": 0
+                    },
+                    "Tarariu": {
+                        "Points": 0
+                    },
+                    "Omagua": {
+                        "Points": 0
+                    },
+                    "Tapajo": {
+                        "Points": 0
+                    },
+                    "Kongo": {
+                        "Points": 0
+                    },
+                    "Caapor": {
+                        "Points": 0
+                    },
+                    "Inca": {
+                        "Points": 0
+                    },
+                    "Chokwe": {
+                        "Points": 0
+                    },
+                    "Conibo": {
+                        "Points": 0
+                    },
+                    "Xavante": {
+                        "Points": 0
+                    },
+                    "Amniape": {
+                        "Points": 0
+                    },
+                    "Ambundu": {
+                        "Points": 0
+                    },
+                    "Makua": {
+                        "Points": 0
+                    },
+                    "Aboriginal": {
+                        "Points": 0
+                    },
+                    "Siriono": {
+                        "Points": 0
+                    },
+                    "Tonga": {
+                        "Points": 0
+                    },
+                    "Guaitaca": {
+                        "Points": 0
+                    },
+                    "Shona": {
+                        "Points": 0
+                    },
+                    "Guarani": {
+                        "Points": 0
+                    },
+                    "Nama": {
+                        "Points": 0
+                    },
+                    "Mataco": {
+                        "Points": 0
+                    },
+                    "Zulu": {
+                        "Points": 0
+                    },
+                    "Atacama": {
+                        "Points": 0
+                    },
+                    "Puelche": {
+                        "Points": 0
+                    },
+                    "Charrua": {
+                        "Points": 0
+                    },
+                    "Kiwi": {
+                        "Points": 0
+                    }
+                },
+                "CultureRepresentedAtGovernmentLevel": "WestSlav",
+                "CultureRepresentedAtGovernmentLevelPercent": 1,
+                "PopulationStabilityImpact": 0,
+                "PopulationTechImpact": 0,
+                "MiningEfficiency": 1,
+                "FarmingEfficiency": 1.05,
+                "Coal": 0,
+                "EffectiveCoal": 1.5,
+                "MaxCoal": 0,
+                "Sulphur": 0,
+                "EffectiveSulphur": 2,
+                "MaxSulphur": 0,
+                "Cotton": 0,
+                "EffectiveCotton": 0,
+                "CottonInflation": 0,
+                "Gold": 0,
+                "EffectiveGold": 0,
+                "GoldInflation": 0,
+                "MaxGold": 0,
+                "Iron": 0,
+                "EffectiveIron": 1.2,
+                "MaxIron": 0,
+                "Tea": 0,
+                "EffectiveTea": 0,
+                "TeaInflation": 0,
+                "Silk": 0,
+                "EffectiveSilk": 0,
+                "SilkInflation": 0,
+                "Spice": 0,
+                "EffectiveSpice": 0,
+                "SpiceInflation": 0,
+                "Wool": 0.5,
+                "EffectiveWool": 0.5,
+                "WoolInflation": 0,
+                "Coffee": 0,
+                "EffectiveCoffee": 0,
+                "CoffeeInflation": 0,
+                "Fur": 0,
+                "EffectiveFur": 0,
+                "FurInflation": 0,
+                "MaxFur": 0,
+                "Diamond": 0,
+                "EffectiveDiamond": 0,
+                "DiamondInflation": 0,
+                "MaxDiamond": 0,
+                "Silver": 0,
+                "EffectiveSilver": 0,
+                "SilverInflation": 0,
+                "MaxSilver": 0,
+                "Copper": 0,
+                "EffectiveCopper": 0,
+                "MaxCopper": 0,
+                "Ivory": 0,
+                "EffectiveIvory": 0,
+                "IvoryInflation": 0,
+                "MaxIvory": 0,
+                "Cocoa": 0,
+                "EffectiveCocoa": 0,
+                "CocoaInflation": 0,
+                "Tobacco": 0,
+                "EffectiveTobacco": 0,
+                "TobaccoInflation": 0,
+                "Sugar": 0,
+                "EffectiveSugar": 0,
+                "SugarInflation": 0,
+                "ExoticFruit": 0,
+                "EffectiveExoticFruit": 0,
+                "ExoticFruitInflation": 0,
+                "ResourcePopulationGrowthBoost": 0.005,
+                "ResourceHappinessBoost": 0.5,
+                "ResourceBudgetBoost": 6.29013108448844,
+                "CoalDemand": 2.0229735683423264,
+                "CoalValue": 1.264358480213954,
+                "GoldDemand": 25.32899065666535,
+                "GoldValue": 253.28990656665349,
+                "IronDemand": 0.6711409395973155,
+                "IronValue": 0.5162622612287042,
+                "SulphurDemand": 0,
+                "SulphurValue": 0,
+                "CottonDemand": 0.26319252533228055,
+                "CottonValue": 2.6319252533228052,
+                "TeaDemand": 0.807996323529417,
+                "TeaValue": 8.07996323529417,
+                "SpiceDemand": 1.354096966911769,
+                "SpiceValue": 13.54096966911769,
+                "CopperDemand": 6.578990656665351,
+                "CopperValue": 65.7899065666535,
+                "SilkDemand": 0.03289906566653507,
+                "SilkValue": 0.32899065666535066,
+                "WoolDemand": 0.26319252533228055,
+                "WoolValue": 0.43865420888713424,
+                "CoffeeDemand": 0.807996323529417,
+                "CoffeeValue": 8.07996323529417,
+                "SilverDemand": 12.82899065666535,
+                "SilverValue": 128.28990656665349,
+                "DiamondDemand": 50.328990656665354,
+                "DiamondValue": 503.28990656665354,
+                "FurDemand": 0.03289906566653507,
+                "FurValue": 0.32899065666535066,
+                "IvoryDemand": 16.99565732333202,
+                "IvoryValue": 169.95657323332017,
+                "CocoaDemand": 0.807996323529417,
+                "CocoaValue": 8.07996323529417,
+                "TobaccoDemand": 0.807996323529417,
+                "TobaccoValue": 8.07996323529417,
+                "SugarDemand": 1.1078975183823565,
+                "SugarValue": 11.078975183823564,
+                "ExoticFruitDemand": 0.807996323529417,
+                "ExoticFruitValue": 8.07996323529417,
+                "Isolation": 1,
+                "ResearchSpending": 1,
+                "ResearchEffectiveness": 1,
+                "ResearchBoostFromTech": 1,
+                "ResearchPointGain": 4.237377742532382,
+                "ResearchPoints": 5,
+                "Technologies": {
+                    "Gunpowder": true,
+                    "VerticalLoom": true,
+                    "SaddleAndStirrup": true,
+                    "HorseCollar": true,
+                    "Explosives": true,
+                    "Firelance": true,
+                    "Cranes": true,
+                    "PromissoryNotes": true,
+                    "Bombards": true,
+                    "HandCannons": true,
+                    "PlateArmour": true,
+                    "SappersAndEngineers": true,
+                    "Workshops": true,
+                    "StandardizedPikes": true,
+                    "Galleons": false,
+                    "PrintingPress": false,
+                    "Muskets": false,
+                    "Limber": false,
+                    "Docks": false,
+                    "Gunports": false,
+                    "Matchlock": false,
+                    "StarForts": false,
+                    "TextileManufactories": false,
+                    "Reiters": false,
+                    "MiningCarts": false,
+                    "HumanAnatomy": false,
+                    "Mortars": false,
+                    "Metallurgy": false,
+                    "Experimentation": false,
+                    "Fluyt": false,
+                    "Bayonet": false,
+                    "SocketBayonet": false,
+                    "Flintlock": false,
+                    "FlyingShuttle": false,
+                    "LeadChamberProcess": false,
+                    "Gunlock": false,
+                    "SteamEngine": false,
+                    "PuddlingProcess": false,
+                    "Rifles": false,
+                    "ModernChemistry": false,
+                    "CottonGin": false,
+                    "SteamBoats": false,
+                    "HotAirBalloon": false,
+                    "PowerLoomAndSewingMachine": false,
+                    "Fulimnate": false,
+                    "PaperMachine": false,
+                    "FirstFactories": false,
+                    "LinearAssemblyProcess": false,
+                    "InterchangeableParts": false,
+                    "CannedFood": false,
+                    "Vaccines": false,
+                    "Morphine": false
+                },
+                "HighClassTax": 0.1,
+                "MediumClassTax": 0.1,
+                "LowerClassTax": 0.1,
+                "PublicDebtTaken": 0,
+                "PublicDebtLength": 0,
+                "InterestRate": 0.05,
+                "DebtHappinessEffect": 0,
+                "BudgetIncoming": 0,
+                "BudgetOutgoing": 0,
+                "Balance": 0,
+                "CulturalAdvance": 0,
+                "CulturalProsperity": 1,
+                "CulturalPowerGain": 6.595364583333333,
+                "CulturalPower": 6,
+                "CulturalAdvancements": {
+                    "DivineRightToRule": false,
+                    "Serfdom": false,
+                    "Feudalism": false,
+                    "Universities": false,
+                    "AristocratDuty": false,
+                    "Courthouses": false,
+                    "RenaissanceThought": false,
+                    "EarlyModernAdministration": false,
+                    "NationalSovereignity": false,
+                    "Newspapers": false,
+                    "ScientificRevolution": false,
+                    "PotatoPopulationBoom": false,
+                    "Constitution": false,
+                    "PublicEducation": false,
+                    "Nationalism": false,
+                    "Conscription": false,
+                    "Industrialisation": false
+                },
+                "FoodIncoming": 0,
+                "FoodOutgoing": 0,
+                "CoalIncoming": 0,
+                "CoalOutgoing": 0,
+                "SulphurIncoming": 0,
+                "SulphurOutgoing": 0,
+                "CottonIncoming": 0,
+                "CottonOutgoing": 0,
+                "GoldIncoming": 0,
+                "GoldOutgoing": 0,
+                "IronIncoming": 0,
+                "IronOutgoing": 0,
+                "TeaIncoming": 0,
+                "TeaOutgoing": 0,
+                "SilkIncoming": 0,
+                "SilkOutgoing": 0,
+                "SpiceIncoming": 0,
+                "SpiceOutgoing": 0,
+                "WoolIncoming": 0,
+                "WoolOutgoing": 0,
+                "CoffeeIncoming": 0,
+                "CoffeeOutgoing": 0,
+                "FurIncoming": 0,
+                "FurOutgoing": 0,
+                "DiamondIncoming": 0,
+                "DiamondOutgoing": 0,
+                "SilverIncoming": 0,
+                "SilverOutgoing": 0,
+                "CopperIncoming": 0,
+                "CopperOutgoing": 0,
+                "IvoryIncoming": 0,
+                "IvoryOutgoing": 0,
+                "CocoaIncoming": 0,
+                "CocoaOutgoing": 0,
+                "TobaccoIncoming": 0,
+                "TobaccoOutgoing": 0,
+                "SugarIncoming": 0,
+                "SugarOutgoing": 0,
+                "ExoticFruitIncoming": 0,
+                "ExoticFruitOutgoing": 0,
+                "TradePowerFromResourceTrade": 0,
+                "AgricultureSubsidies": 0,
+                "Fertility": 0.5,
+                "AgricultureInfrastructure": 1,
+                "StockingCapabilities": 1,
+                "AgricultureAdvancements": 1,
+                "AgricultureTechnology": 0.5,
+                "DailyFood": 2320.536029411765,
+                "FoodConsumption": 2500,
+                "FoodGain": -179.46397058823504,
+                "MaxFoodStock": 250,
+                "Food": 200,
+                "FoodPopulationBoost": 0.016,
+                "SurplusFood": 0,
+                "SellingCapability": 500,
+                "FoodSold": 0,
+                "Foodlost": 0,
+                "Casualties": 0,
+                "Pillaging": 0,
+                "Occupation": 0,
+                "Blockade": 0,
+                "WarExhaustion": 0,
+                "MinorBattles": 0,
+                "MajorBattles": 0,
+                "Fervor": 0,
+                "TradeInfluences": {
+                    "Alaska": {
+                        "TradingPoints": 0
+                    },
+                    "Cascadia": {
+                        "TradingPoints": 0
+                    },
+                    "CaliforniaAndWestMexico": {
+                        "TradingPoints": 0
+                    },
+                    "HudsonBay": {
+                        "TradingPoints": 0
+                    },
+                    "GreatLakes": {
+                        "TradingPoints": 0
+                    },
+                    "Louisiana": {
+                        "TradingPoints": 0
+                    },
+                    "GulfOfMexico": {
+                        "TradingPoints": 0
+                    },
+                    "LawrenceGulf": {
+                        "TradingPoints": 0
+                    },
+                    "EastCoast": {
+                        "TradingPoints": 0
+                    },
+                    "Carribean": {
+                        "TradingPoints": 0
+                    },
+                    "CentralAmerica": {
+                        "TradingPoints": 0
+                    },
+                    "GuyanaAndSuriname": {
+                        "TradingPoints": 0
+                    },
+                    "Amazon": {
+                        "TradingPoints": 0
+                    },
+                    "Peru": {
+                        "TradingPoints": 0
+                    },
+                    "RioGrande": {
+                        "TradingPoints": 0
+                    },
+                    "LaPlata": {
+                        "TradingPoints": 0
+                    },
+                    "Chile": {
+                        "TradingPoints": 0
+                    },
+                    "Patagonia": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernAnatolia": {
+                        "TradingPoints": 0
+                    },
+                    "NorthSea": {
+                        "TradingPoints": 0
+                    },
+                    "BritishIsles": {
+                        "TradingPoints": 0
+                    },
+                    "EnglishChannel": {
+                        "TradingPoints": 0
+                    },
+                    "France": {
+                        "TradingPoints": 0
+                    },
+                    "BayOfBiscay": {
+                        "TradingPoints": 0
+                    },
+                    "WestIberia": {
+                        "TradingPoints": 0
+                    },
+                    "Gibraltar": {
+                        "TradingPoints": 0
+                    },
+                    "WesternMediterranean": {
+                        "TradingPoints": 0
+                    },
+                    "Rhine": {
+                        "TradingPoints": 0
+                    },
+                    "CentralMediterranean": {
+                        "TradingPoints": 0
+                    },
+                    "Adriatic": {
+                        "TradingPoints": 0
+                    },
+                    "Germany": {
+                        "TradingPoints": 0
+                    },
+                    "WesternDanube": {
+                        "TradingPoints": 0
+                    },
+                    "Denmark": {
+                        "TradingPoints": 0
+                    },
+                    "Baltic": {
+                        "TradingPoints": 0
+                    },
+                    "NorthNordics": {
+                        "TradingPoints": 0
+                    },
+                    "BarentsSea": {
+                        "TradingPoints": 0
+                    },
+                    "Novgorod": {
+                        "TradingPoints": 0
+                    },
+                    "Poland": {
+                        "TradingPoints": 0
+                    },
+                    "Dniepr": {
+                        "TradingPoints": 0
+                    },
+                    "Crimea": {
+                        "TradingPoints": 0
+                    },
+                    "EasternDanube": {
+                        "TradingPoints": 0
+                    },
+                    "Greece": {
+                        "TradingPoints": 0
+                    },
+                    "EasternMediterranean": {
+                        "TradingPoints": 0
+                    },
+                    "Egypt": {
+                        "TradingPoints": 0
+                    },
+                    "RedSea": {
+                        "TradingPoints": 0
+                    },
+                    "WesternSahara": {
+                        "TradingPoints": 0
+                    },
+                    "CoteDIvoire": {
+                        "TradingPoints": 0
+                    },
+                    "Nigeria": {
+                        "TradingPoints": 0
+                    },
+                    "SouthNile": {
+                        "TradingPoints": 0
+                    },
+                    "Somalia": {
+                        "TradingPoints": 0
+                    },
+                    "Kongo": {
+                        "TradingPoints": 0
+                    },
+                    "EastAfrica": {
+                        "TradingPoints": 0
+                    },
+                    "Mozambique": {
+                        "TradingPoints": 0
+                    },
+                    "SouthAfrica": {
+                        "TradingPoints": 0
+                    },
+                    "Mesopotamia": {
+                        "TradingPoints": 0
+                    },
+                    "PersianGulf": {
+                        "TradingPoints": 0
+                    },
+                    "Caucasus": {
+                        "TradingPoints": 0
+                    },
+                    "DonRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Volga": {
+                        "TradingPoints": 0
+                    },
+                    "CentralAsia": {
+                        "TradingPoints": 0
+                    },
+                    "WestSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "EastSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "Iran": {
+                        "TradingPoints": 0
+                    },
+                    "Pakistan": {
+                        "TradingPoints": 0
+                    },
+                    "Tibet": {
+                        "TradingPoints": 0
+                    },
+                    "Mongolia": {
+                        "TradingPoints": 0
+                    },
+                    "Manchuria": {
+                        "TradingPoints": 0
+                    },
+                    "SeaOfJapan": {
+                        "TradingPoints": 0
+                    },
+                    "NorthChina": {
+                        "TradingPoints": 0
+                    },
+                    "YangtzeRiver": {
+                        "TradingPoints": 0
+                    },
+                    "SouthChina": {
+                        "TradingPoints": 0
+                    },
+                    "NorthIndia": {
+                        "TradingPoints": 0
+                    },
+                    "WestIndia": {
+                        "TradingPoints": 0
+                    },
+                    "EastIndia": {
+                        "TradingPoints": 0
+                    },
+                    "Burma": {
+                        "TradingPoints": 0
+                    },
+                    "SouthEastAsia": {
+                        "TradingPoints": 0
+                    },
+                    "NorthAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "SouthAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "CentralSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "EasternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "WesternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernNordics": {
+                        "TradingPoints": 0
+                    },
+                    "CentralCanada": {
+                        "TradingPoints": 0
+                    },
+                    "BalticSea": {
+                        "TradingPoints": 0
+                    },
+                    "Livonia": {
+                        "TradingPoints": 0
+                    },
+                    "Muscovy": {
+                        "TradingPoints": 0
+                    },
+                    "UralRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Vistula": {
+                        "TradingPoints": 0
+                    },
+                    "CentralEurope": {
+                        "TradingPoints": 0
+                    },
+                    "Romania": {
+                        "TradingPoints": 0
+                    },
+                    "TheRockies": {
+                        "TradingPoints": 0
+                    },
+                    "Mississippi": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernFrance": {
+                        "TradingPoints": 0
+                    },
+                    "CaspianSea": {
+                        "TradingPoints": 0
+                    },
+                    "GobiDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WestCoast": {
+                        "TradingPoints": 0
+                    },
+                    "Iberia": {
+                        "TradingPoints": 0
+                    },
+                    "YellowRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Afghanistan": {
+                        "TradingPoints": 0
+                    },
+                    "IndusRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Morocco": {
+                        "TradingPoints": 0
+                    },
+                    "Sichuan": {
+                        "TradingPoints": 0
+                    },
+                    "Sahara": {
+                        "TradingPoints": 0
+                    },
+                    "ArabianDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WesternMexico": {
+                        "TradingPoints": 0
+                    },
+                    "Ganges": {
+                        "TradingPoints": 0
+                    },
+                    "Caribbean": {
+                        "TradingPoints": 0
+                    },
+                    "Pacific": {
+                        "TradingPoints": 0
+                    },
+                    "SouthChinaSea": {
+                        "TradingPoints": 0
+                    },
+                    "CentralIndia": {
+                        "TradingPoints": 0
+                    },
+                    "Deccan": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernNile": {
+                        "TradingPoints": 0
+                    },
+                    "WesternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Guinea": {
+                        "TradingPoints": 0
+                    },
+                    "EasternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Venezuela": {
+                        "TradingPoints": 0
+                    },
+                    "Indonesia": {
+                        "TradingPoints": 0
+                    },
+                    "CongoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Gabon": {
+                        "TradingPoints": 0
+                    },
+                    "LakeVictoria": {
+                        "TradingPoints": 0
+                    },
+                    "LakeTanganyika": {
+                        "TradingPoints": 0
+                    },
+                    "SaoFranciscoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "Angola": {
+                        "TradingPoints": 0
+                    },
+                    "ParanaRiver": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "AustralianDesert": {
+                        "TradingPoints": 0
+                    }
+                },
+                "Size": 15000,
+                "KmSquared": 300000,
+                "PopulationDensityPerKmSquared": 8.333333333333334,
+                "Disease": 0.2833333333333334,
+                "MaxPopulation": 8823529.411764704,
+                "UnderPopulation": 0.07166666666666666,
+                "DetachedLand": 0,
+                "CoastalPixels": 1000,
+                "CoastalLandPercent": 0.06666666666666667,
+                "DevelopmentPixelCount": 60000,
+                "LandAdministration": 0.585,
+                "Climates": {
+                    "Ocean": {
+                        "Pixels": 0
+                    },
+                    "PolarDesert": {
+                        "Pixels": 0
+                    },
+                    "TaigaAndTundra": {
+                        "Pixels": 0
+                    },
+                    "MontaneForest": {
+                        "Pixels": 0
+                    },
+                    "Medditereanian": {
+                        "Pixels": 0
+                    },
+                    "Arid": {
+                        "Pixels": 0
+                    },
+                    "Steppe": {
+                        "Pixels": 0
+                    },
+                    "Moderate": {
+                        "Pixels": 15000
+                    },
+                    "SubTropical": {
+                        "Pixels": 0
+                    },
+                    "Tropical": {
+                        "Pixels": 0
+                    },
+                    "Savanna": {
+                        "Pixels": 0
+                    },
+                    "Mountainous": {
+                        "Pixels": 0
+                    },
+                    "Desert": {
+                        "Pixels": 0
+                    },
+                    "CoastalDesert": {
+                        "Pixels": 0
+                    }
+                },
+                "HabitableLand": 1,
+                "BureaucratWages": 0.75,
+                "AdministrationSize": 0.5,
+                "Nationalism": 0,
+                "ReligiousFervor": 1,
+                "AristocratLoyalty": 0.5,
+                "ClergyLoyalty": 0.5,
+                "BurgousieLoyalty": 0.5,
+                "UrbanLoyalty": 0.5,
+                "BureaucratLoyalty": 0.5,
+                "IntellectualsLoyalty": 0.5,
+                "WorkersLoyalty": 0.5,
+                "AristocratTax": 0.1,
+                "ClergyTax": 0.1,
+                "BurgousieTax": 0.1,
+                "UrbanTax": 0.1,
+                "BureaucratTax": 0.1,
+                "IntellectualsTax": 0.1,
+                "MilitaryTax": 0.1,
+                "WorkersTax": 0.1,
+                "ExternalTariffs": 0.1,
+                "InternalTariffs": 0.1,
+                "ExpectedSlavesSol": 0.25,
+                "ExpectedLabourersSol": 0.75,
+                "ExpectedSerfsSol": 0.75,
+                "ExpectedFarmersSol": 1.25,
+                "ExpectedTownsfolkSol": 1.5,
+                "ExpectedClergySol": 6,
+                "ExpectedBureaucratsSol": 2,
+                "ExpectedMerchantsSol": 1.75,
+                "ExpectedIntellectualsSol": 2,
+                "ExpectedSailorsSol": 0.75,
+                "ExpectedSoldiersSol": 1,
+                "ExpectedAristocracySol": 10,
+                "ExpectedBurgousieSol": 6,
+                "EstateInfluences": {
+                    "AristocratInfluence": 30,
+                    "ClergyInfluence": 20,
+                    "BurgousieInfluence": 15,
+                    "UrbanInfluence": 5,
+                    "BureaucratInfluence": 5,
+                    "IntellectualsInfluence": 2.5,
+                    "MilitaryInfluence": 2.5,
+                    "WorkersInfluence": 0.5
+                },
+                "GovernmentRepresentation": {
+                    "UnitaryRepresentation": 30,
+                    "AristocratRepresentation": 40,
+                    "ClergyRepresentation": 20,
+                    "BurgousieRepresentation": 10,
+                    "UrbanRepresentation": 0,
+                    "BureaucratRepresentation": 0,
+                    "IntellectualsRepresentation": 0,
+                    "MilitaryRepresentation": 0,
+                    "WorkersRepresentation": 0
+                },
+                "MilitaryControl": {
+                    "UnitaryControl": 35,
+                    "AristocratControl": 45,
+                    "ClergyControl": 5,
+                    "BurgousieControl": 5,
+                    "UrbanControl": 5,
+                    "BureaucratControl": 5,
+                    "IntellectualsControl": 0,
+                    "WorkersControl": 5
+                },
+                "OverallImprovements": 1,
+                "IrregularImprovements": 0,
+                "MeleeImprovements": 0,
+                "RangedImprovements": 0,
+                "CavalryImprovements": 0,
+                "FirearmImprovements": 0,
+                "SiegeImprovements": 0,
+                "ArtilleryImprovements": 0,
+                "MusketMilitia": 0,
+                "Riflemen": 0,
+                "SiegeGuns": 0,
+                "RegimentalGuns": 0,
+                "ProductionSectors": {
+                    "ConstructionSector": 2.5,
+                    "BasicArmamentsSector": 0.25,
+                    "HeavyArmamentsSector": 0.2,
+                    "ShipBuildingSector": 0.2,
+                    "BasicToolsSector": 4,
+                    "TextilesSector": 2,
+                    "BasicGoodsSector": 3,
+                    "LuxuryGoodsSector": 0.25,
+                    "AlcoholSector": 2.5,
+                    "ChemicalSector": 0,
+                    "ElectronicsSector": 0,
+                    "AutomotiveSector": 0,
+                    "AerospaceSector": 0,
+                    "HeavyIndustrySector": 0
+                },
+                "Forestry": 1,
+                "Reforestation": 0.1,
+                "ForestsCutDown": 0,
+                "Reforms": {
+                    "SlaveryAllowed": true,
+                    "SlaveryBanned": false,
+                    "SerfdomAllowed": true,
+                    "SerfdomBanned": false,
+                    "OpenFieldSystem": true,
+                    "Enclosure": false,
+                    "Mercantilism": true,
+                    "Protectionism": false,
+                    "FreeTrade": false,
+                    "Guilds": true,
+                    "GuildsBanned": false,
+                    "AntiMonopolyLaws": false,
+                    "NoVoting": true,
+                    "HighClassVoting": false,
+                    "WealthVoting": false,
+                    "UniversalSuffrage": false,
+                    "NoblePrivellege": true,
+                    "WealthPrivellege": false,
+                    "ClassEquality": false,
+                    "NobleOfficers": true,
+                    "WealthyOfficers": false,
+                    "MeritocraticOfficers": false,
+                    "NobleBureaucrats": true,
+                    "WealthyBureaucrats": false,
+                    "MeritocraticBureaucrats": false,
+                    "NobleResourceOwnership": true,
+                    "MixedResourceOwnership": false,
+                    "BurgousieResourceOwnership": false,
+                    "GovernmentResourceOwnership": false,
+                    "NobleLandOwnership": true,
+                    "MixedLandOwnership": false,
+                    "PrivateLandOwnership": false,
+                    "GovernmentLandOwnership": false,
+                    "NoArmyReserve": true,
+                    "NationalMilitia": false,
+                    "Conscripts": false,
+                    "ProffesionalReservists": false
+                },
+                "AdministrativeTech": 0,
+                "AdministrativePower": 23.4375,
+                "AdministrativeDemand": 16,
+                "IrregularQualityIC": 1,
+                "MeleeQualityIC": 1.3,
+                "RangedQualityIC": 1,
+                "CavalryQualityIC": 1.4,
+                "FirearmQualityIC": 1,
+                "SiegeQualityIC": 1,
+                "ArtilleryQualityIC": 1,
+                "NavyQualityIC": 1,
+                "BaseIronHarvest": 1.2,
+                "BaseCoalHarvest": 1.5,
+                "BaseSulphurHarvest": 2,
+                "PopInAgriculture": 0.8840137254901962,
+                "WoodIncoming": 0,
+                "WoodOutgoing": 0,
+                "EffectiveWood": 10,
+                "HousingIncoming": 0,
+                "HousingOutgoing": 0,
+                "EffectiveHousing": 8.757731280431639,
+                "BasicArmamentsIncoming": 0,
+                "BasicArmamentsOutgoing": 0,
+                "EffectiveBasicArmaments": 0.9727713311668464,
+                "HeavyArmamentsIncoming": 0,
+                "HeavyArmamentsOutgoing": 0,
+                "EffectiveHeavyArmaments": 0.5895583825253613,
+                "ShipBuildingIncoming": 0,
+                "ShipBuildingOutgoing": 0,
+                "EffectiveShipBuilding": 0.8136189741518769,
+                "BasicToolsIncoming": 0,
+                "BasicToolsOutgoing": 0,
+                "EffectiveBasicTools": 11.79116765050723,
+                "TextilesIncoming": 0,
+                "TextilesOutgoing": 0,
+                "EffectiveTextiles": 8.757731280431639,
+                "BasicGoodsIncoming": 0,
+                "BasicGoodsOutgoing": 0,
+                "EffectiveBasicGoods": 9.412858034049778,
+                "LuxuryGoodsIncoming": 0,
+                "LuxuryGoodsOutgoing": 0,
+                "EffectiveLuxuryGoods": 0.4478385313857087,
+                "AlcoholIncoming": 0,
+                "AlcoholOutgoing": 0,
+                "EffectiveAlcohol": 7.2624471739200525,
+                "ChemicalsIncoming": 0,
+                "ChemicalsOutgoing": 0,
+                "EffectiveChemicals": 0,
+                "ElectronicsIncoming": 0,
+                "ElectronicsOutgoing": 0,
+                "EffectiveElectronics": 0,
+                "MotorsIncoming": 0,
+                "MotorsOutgoing": 0,
+                "EffectiveMotors": 0,
+                "PlanesIncoming": 0,
+                "PlanesOutgoing": 0,
+                "EffectivePlanes": 0,
+                "HeavyIndustryIncoming": 0,
+                "HeavyIndustryOutgoing": 0,
+                "EffectiveHeavyIndustry": 0,
+                "WeavingEfficiency": 1.25,
+                "MetalWorkingEfficiency": 0,
+                "WeaponWorkingEfficiency": 1.2,
+                "ShipBuildingEfficiency": 1,
+                "ToolWorkingEfficiency": 1,
+                "Wood": 10,
+                "ForestsLeft": 11250,
+                "AverageExpectedSol": 1.0646397058823533,
+                "WoodDemand": 6.036340609510026,
+                "FoodDemand": 2790.0365076819335,
+                "NaturalFabricsDemand": 0.26319252533228055,
+                "LuxuryNaturalFabricsDemand": 0.03289906566653507,
+                "ValuableMaterialsDemand": 0.3289906566653507,
+                "LuxuryConsumables": 0,
+                "LuxuryConsumablesDemand": 4.039981617647085,
+                "FoodAdditions": 0,
+                "FoodAdditionsDemand": 2.4619944852941256,
+                "BasicToolsDemand": 11.678345834978288,
+                "HousingDemand": 7.057996323529417,
+                "BasicArmamentsDemand": 0,
+                "HeavyArmamentsDemand": 0,
+                "TextilesDemand": 9.163536526187661,
+                "ShipBuildingDemand": 1.8166666666666664,
+                "BasicGoodsDemand": 13.711994485294126,
+                "LuxuryGoodsDemand": 0.8079963235294169,
+                "AlcoholDemand": 14.115992647058833,
+                "HeavyIndustryDemand": 0,
+                "ChemicalsDemand": 0,
+                "ElectronicsDemand": 0,
+                "MotorsDemand": 0,
+                "PlanesDemand": 0,
+                "NaturalFabrics": 0.5,
+                "LuxuryNaturalFabrics": 0,
+                "ValuableMaterials": 0,
+                "CoalShortage": 0.25851725228959055,
+                "WoodShortage": 0,
+                "FoodShortage": 0.09659388955239145,
+                "NaturalFabricsShortage": 0,
+                "LuxuryNaturalFabricsShortage": 1,
+                "ValuableMaterialsShortage": 1,
+                "TotalSupply": 14.9,
+                "BasicTools": 11.79116765050723,
+                "BasicToolsShortage": 0,
+                "Housing": 8.757731280431639,
+                "HousingShortage": 0,
+                "BasicArmaments": 0.9727713311668464,
+                "BasicArmamentsShortage": 0,
+                "HeavyArmaments": 0.5895583825253613,
+                "HeavyArmamentsShortage": 0,
+                "Textiles": 8.757731280431639,
+                "TextilesShortage": 0.04428478509321243,
+                "ShipBuilding": 0.8136189741518769,
+                "ShipBuildingShortage": 0.5521363445035539,
+                "BasicGoods": 9.412858034049778,
+                "BasicGoodsShortage": 0.3135310808252655,
+                "LuxuryGoods": 0.4478385313857087,
+                "LuxuryGoodsShortage": 0.44574186992646114,
+                "Alcohol": 7.2624471739200525,
+                "AlcoholShortage": 0.48551636746330873,
+                "HeavyIndustry": 0,
+                "HeavyIndustryShortage": 0,
+                "Chemicals": 0,
+                "ChemicalsShortage": 0,
+                "Electronics": 0,
+                "ElectronicsShortage": 0,
+                "Motors": 0,
+                "MotorsShortage": 0,
+                "Planes": 0,
+                "PlanesShortage": 0,
+                "BudgetValue": null,
+                "FoodValue": 1.1068779764816097,
+                "WoodValue": 0.5976574860901016,
+                "HousingValue": 0.7968176161679044,
+                "BasicArmamentsValue": 0,
+                "HeavyArmamentsValue": 0,
+                "ShipBuildingValue": 1.9884292227545943,
+                "BasicToolsValue": 0.9821025300639955,
+                "TextilesValue": 1.0345241051093528,
+                "BasicGoodsValue": 1.4414169155278256,
+                "LuxuryGoodsValue": 1.4748804204875152,
+                "AlcoholValue": 1.917296289345453,
+                "ChemicalsValue": 0,
+                "ElectronicsValue": 0,
+                "MotorsValue": 0,
+                "PlanesValue": 0,
+                "HeavyIndustryValue": 0,
+                "LuxuryConsumablesValue": 40.39981617647084,
+                "FoodAdditionsValue": 24.619944852941256,
+                "OutgoingTradePowerFromResourceTrade": 0,
+                "ResourceTrade": 0,
+                "FoodTradeProfit": 0,
+                "MerchantShipsFullfilment": 1,
+                "ExternalTrade": 0,
+                "InternalTrade": 7.300245098039216,
+                "IrregularQuality": 0.5519886222222219,
+                "MeleeQuality": 0.8519886222222219,
+                "RangedQuality": 0.5519886222222219,
+                "CavalryQuality": 0.9519886222222218,
+                "FirearmQuality": 0.5519886222222219,
+                "SiegeQuality": 0.5519886222222219,
+                "ArtilleryQuality": 0.5519886222222219,
+                "EffectiveHealth": 0.05,
+                "PseudoPopulationGrowth": 0.19266666666666665,
+                "AristocratInfluenceMod": 2.3000000000000003,
+                "BurgousieInfluenceMod": 1.3,
+                "ClergyInfluenceMod": 1.1,
+                "UrbanInfluenceMod": 1,
+                "BureaucratInfluenceMod": 1,
+                "IntellectualsInfluenceMod": 1,
+                "MilitaryInfluenceMod": 1,
+                "WorkersInfluenceMod": 1.2,
+                "TotalInfluences": 126.10000000000001,
+                "EstateInfluencesReal": {
+                    "AristocratInfluence": 0.5471847739888978,
+                    "ClergyInfluence": 0.17446471054718476,
+                    "BurgousieInfluence": 0.15463917525773194,
+                    "UrbanInfluence": 0.03965107057890563,
+                    "BureaucratInfluence": 0.03965107057890563,
+                    "IntellectualsInfluence": 0.019825535289452814,
+                    "MilitaryInfluence": 0.019825535289452814,
+                    "WorkersInfluence": 0.004758128469468675
+                },
+                "ResourceOwners": 0.02,
+                "ResourceOwnersInfluence": 0.5471847739888978,
+                "LandOwners": 0.02,
+                "LandOwnersInfluence": 0.5471847739888978,
+                "SlavesWage": 0.004992167527371778,
+                "LabourersWage": 0,
+                "SlavesAndLabourersWageToOwner": 5.661117976039595,
+                "SerfsWage": 0.2905554688264226,
+                "FarmersWage": 0.5262717611415932,
+                "SerfsAndFarmersWageToOnwers": 1876.5377376125557,
+                "TownsfolkWage": 7.597938144329897,
+                "TownsfolkWageToBurgousie": 133.41419041843542,
+                "ClergyWage": 13.957176843774782,
+                "BureaucratsWage": 2.973830293417922,
+                "MerchantsWage": 1.5127312007277143,
+                "MerchantsWageToBurggousie": 2.032026986052153,
+                "IntellectualsWage": 1.189532117367169,
+                "SailorsWage": 1,
+                "SoldiersWage": 1.5,
+                "AristocracyWage": 37.6439771117719,
+                "BurgousieWage": 10.835697392359007,
+                "SlavesEffectiveWage": 0.004683967548708763,
+                "LabourersEffectiveWage": 0,
+                "SerfsEffectiveWage": 0.27261753128692046,
+                "FarmersEffectiveWage": 0.4937814761771025,
+                "TownsfolkEffectiveWage": 7.12886647132893,
+                "ClergyEffectiveWage": 13.095506721155326,
+                "BureaucratsEffectiveWage": 2.7902358070643443,
+                "MerchantsEffectiveWage": 1.4193401594153225,
+                "IntellectualsEffectiveWage": 1.1160943228257378,
+                "SailorsEffectiveWage": 0.9382632940555037,
+                "SoldiersEffectiveWage": 1.4073949410832556,
+                "AristocracyEffectiveWage": 35.31996196624109,
+                "BurgousieEffectiveWage": 10.166737128743394,
+                "NecessitiesCost": 1.1366817279952302,
+                "LuxuriesCost": 1.9955043090333562,
+                "SlavesSol": 0.004120737963273056,
+                "LabourersSol": 0,
+                "SerfsSol": 0.23983629240503146,
+                "FarmersSol": 0.43440609980419653,
+                "TownsfolkSol": 4.002842297161653,
+                "ClergySol": 6.9928835728513565,
+                "BureaucratsSol": 1.8286396935269529,
+                "MerchantsSol": 1.1416476176676438,
+                "IntellectualsSol": 0.9818881533304821,
+                "SailorsSol": 0.8254406408998253,
+                "SoldiersSol": 1.1356615527526281,
+                "AristocracySol": 18.130146040528775,
+                "BurgousieSol": 5.5251996499683935,
+                "TaxEfficiency": 0.7376288659793815,
+                "TariffEfficiency": 0.8304123711340207,
+                "SlavesTaxes": 0,
+                "LabourersTaxes": 0,
+                "SerfsTaxes": 43.14112793659723,
+                "FarmersTaxes": 7.243990669681492,
+                "TownsfolkTaxes": 21.106806736294807,
+                "ClergyTaxes": 26.559576737650463,
+                "BureaucratsTaxes": 2.6332564374258833,
+                "MerchantsTaxes": 0.32147705385027664,
+                "IntellectualsTaxes": 1.0750470542224249,
+                "SailorsTaxes": 0.21690149365991643,
+                "SoldiersTaxes": 0,
+                "AristocracyTaxes": 62.867245235752044,
+                "BurgousieTaxes": 8.44591882382686,
+                "TaxRevenue": 434.0283704474035,
+                "TariffsRevenue": 1.5155534604305643,
+                "OverallSpending": 210.48844666931006
+            }
         },
         "Religions": {
             "Pagan": {
-                "definingFeatures": "",
-                "Opinions": {
-                    "Protestant": {
-                        "Score": -75
-                    },
-                    "Orthodox": {
-                        "Score": -75
-                    },
-                    "Catholic": {
-                        "Score": -75
-                    },
-                    "Muslim": {
-                        "Score": -75
-                    },
-                    "Jewish": {
-                        "Score": -75
-                    },
-                    "Buddhism": {
-                        "Score": -50
-                    },
-                    "Hindu": {
-                        "Score": -75
-                    },
-                    "Shinto": {
-                        "Score": -50
-                    }
-                }
-            },
-            "Catholic": {
-                "definingFeatures": "",
-                "Opinions": {
-                    "Protestant": {
-                        "Score": -50
-                    },
-                    "Orthodox": {
-                        "Score": -50
-                    },
-                    "Pagan": {
-                        "Score": -75
-                    },
-                    "Muslim": {
-                        "Score": -100
-                    },
-                    "Jewish": {
-                        "Score": -75
-                    },
-                    "Buddhism": {
-                        "Score": 0
-                    },
-                    "Hindu": {
-                        "Score": -25
-                    },
-                    "Shinto": {
-                        "Score": 0
-                    }
-                }
-            },
-            "Protestant": {
-                "definingFeatures": "",
-                "Opinions": {
-                    "Catholic": {
-                        "Score": -50
-                    },
-                    "Orthodox": {
-                        "Score": -50
-                    },
-                    "Pagan": {
-                        "Score": -75
-                    },
-                    "Muslim": {
-                        "Score": -25
-                    },
-                    "Jewish": {
-                        "Score": -75
-                    },
-                    "Buddhism": {
-                        "Score": 0
-                    },
-                    "Hindu": {
-                        "Score": -25
-                    },
-                    "Shinto": {
-                        "Score": 0
-                    }
-                }
-            },
-            "Orthodox": {
-                "definingFeatures": "",
-                "Opinions": {
-                    "Protestant": {
-                        "Score": -50
-                    },
-                    "Catholic": {
-                        "Score": -50
-                    },
-                    "Pagan": {
-                        "Score": -75
-                    },
-                    "Muslim": {
-                        "Score": -75
-                    },
-                    "Jewish": {
-                        "Score": -40
-                    },
-                    "Buddhism": {
-                        "Score": 0
-                    },
-                    "Hindu": {
-                        "Score": -25
-                    },
-                    "Shinto": {
-                        "Score": 0
-                    }
-                }
-            },
-            "Muslim": {
-                "definingFeatures": "",
-                "Opinions": {
-                    "Protestant": {
-                        "Score": -25
-                    },
-                    "Orthodox": {
-                        "Score": -75
-                    },
-                    "Pagan": {
-                        "Score": -75
-                    },
-                    "Catholic": {
-                        "Score": -100
-                    },
-                    "Jewish": {
-                        "Score": -40
-                    },
-                    "Buddhism": {
-                        "Score": -25
-                    },
-                    "Hindu": {
-                        "Score": -40
-                    },
-                    "Shinto": {
-                        "Score": 0
-                    }
-                }
-            },
-            "Jewish": {
-                "definingFeatures": "",
-                "Opinions": {
-                    "Protestant": {
-                        "Score": -75
-                    },
-                    "Orthodox": {
-                        "Score": -40
-                    },
-                    "Pagan": {
-                        "Score": -75
-                    },
-                    "Muslim": {
-                        "Score": -75
-                    },
-                    "Catholic": {
-                        "Score": -75
-                    },
-                    "Buddhism": {
-                        "Score": 0
-                    },
-                    "Hindu": {
-                        "Score": 0
-                    },
-                    "Shinto": {
-                        "Score": 0
-                    }
-                }
-            },
-            "Buddhism": {
-                "definingFeatures": "",
-                "Opinions": {
-                    "Protestant": {
-                        "Score": 0
-                    },
-                    "Orthodox": {
-                        "Score": 0
-                    },
-                    "Pagan": {
-                        "Score": -50
-                    },
-                    "Muslim": {
-                        "Score": -25
-                    },
-                    "Jewish": {
-                        "Score": 0
-                    },
-                    "Catholic": {
-                        "Score": 0
-                    },
-                    "Hindu": {
-                        "Score": -50
-                    },
-                    "Shinto": {
-                        "Score": -25
-                    }
-                }
-            },
-            "Hindu": {
-                "definingFeatures": "",
-                "Opinions": {
-                    "Protestant": {
-                        "Score": -25
-                    },
-                    "Orthodox": {
-                        "Score": -25
-                    },
-                    "Pagan": {
-                        "Score": -75
-                    },
-                    "Muslim": {
-                        "Score": -40
-                    },
-                    "Jewish": {
-                        "Score": 0
-                    },
-                    "Buddhism": {
-                        "Score": -50
-                    },
-                    "Catholic": {
-                        "Score": -25
-                    },
-                    "Shinto": {
-                        "Score": 0
-                    }
-                }
-            },
-            "Shinto": {
-                "definingFeatures": "",
-                "Opinions": {
-                    "Protestant": {
-                        "Score": 0
-                    },
-                    "Orthodox": {
-                        "Score": 0
-                    },
-                    "Pagan": {
-                        "Score": -75
-                    },
-                    "Muslim": {
-                        "Score": 0
-                    },
-                    "Jewish": {
-                        "Score": 0
-                    },
-                    "Buddhism": {
-                        "Score": -25
-                    },
-                    "Hindu": {
-                        "Score": 0
-                    },
-                    "Catholic": {
-                        "Score": 0
-                    }
-                }
-            },
-            "Confucian": {
-                "definingFeatures": "",
+                "definingFeatures": "Anything not classified",
+                "Color": "ffffff",
                 "Opinions": {}
             }
         },
         "Cultures": {
+            "Celtic": {
+                "definingFeatures": "",
+                "Color": "93ff68",
+                "Opinions": {}
+            },
+            "English": {
+                "definingFeatures": "",
+                "Color": "ff476c",
+                "Opinions": {}
+            },
+            "French": {
+                "definingFeatures": "",
+                "Color": "96c5ff",
+                "Opinions": {}
+            },
+            "Caucasian": {
+                "definingFeatures": "",
+                "Color": "42ffa0",
+                "Opinions": {}
+            },
+            "Maghrebi": {
+                "definingFeatures": "",
+                "Color": "bca8ff",
+                "Opinions": {}
+            },
+            "Garjati": {
+                "definingFeatures": "",
+                "Color": "ff7797",
+                "Opinions": {}
+            },
+            "Mandinka": {
+                "definingFeatures": "",
+                "Color": "b54468",
+                "Opinions": {}
+            },
+            "Akan": {
+                "definingFeatures": "",
+                "Color": "8a6acc",
+                "Opinions": {}
+            },
+            "Fang": {
+                "definingFeatures": "",
+                "Color": "adceb9",
+                "Opinions": {}
+            },
+            "Malagasi": {
+                "definingFeatures": "",
+                "Color": "d85bff",
+                "Opinions": {}
+            },
+            "EastBantu": {
+                "definingFeatures": "",
+                "Color": "7c5e44",
+                "Opinions": {}
+            },
+            "Araucanian": {
+                "definingFeatures": "",
+                "Color": "99deff",
+                "Opinions": {}
+            },
+            "Tehuelche": {
+                "definingFeatures": "",
+                "Color": "d3bc89",
+                "Opinions": {}
+            },
+            "Alacaluf": {
+                "definingFeatures": "",
+                "Color": "936c00",
+                "Opinions": {}
+            },
+            "Siberian": {
+                "definingFeatures": "",
+                "Color": "7c1d12",
+                "Opinions": {}
+            },
+            "Uralic": {
+                "definingFeatures": "",
+                "Color": "7affe4",
+                "Opinions": {}
+            },
+            "Scandinavian": {
+                "definingFeatures": "",
+                "Color": "9870ff",
+                "Opinions": {}
+            },
+            "Finnic": {
+                "definingFeatures": "",
+                "Color": "2f717c",
+                "Opinions": {}
+            },
+            "Russian": {
+                "definingFeatures": "",
+                "Color": "20407c",
+                "Opinions": {}
+            },
+            "Eskimo": {
+                "definingFeatures": "",
+                "Color": "c83dff",
+                "Opinions": {}
+            },
+            "Kutchin": {
+                "definingFeatures": "",
+                "Color": "b8cc82",
+                "Opinions": {}
+            },
+            "Chipewyan": {
+                "definingFeatures": "",
+                "Color": "c6cc66",
+                "Opinions": {}
+            },
+            "Kaskas": {
+                "definingFeatures": "",
+                "Color": "cc9d72",
+                "Opinions": {}
+            },
+            "Buryat": {
+                "definingFeatures": "",
+                "Color": "7a3953",
+                "Opinions": {}
+            },
+            "Baltic": {
+                "definingFeatures": "",
+                "Color": "c4ffdf",
+                "Opinions": {}
+            },
+            "Naskapis": {
+                "definingFeatures": "",
+                "Color": "b2cc8c",
+                "Opinions": {}
+            },
+            "Tatar": {
+                "definingFeatures": "",
+                "Color": "1f7c7b",
+                "Opinions": {}
+            },
+            "Cree": {
+                "definingFeatures": "",
+                "Color": "a1cca6",
+                "Opinions": {}
+            },
+            "Haida": {
+                "definingFeatures": "",
+                "Color": "ff8cf7",
+                "Opinions": {}
+            },
+            "Altaic": {
+                "definingFeatures": "",
+                "Color": "5e747c",
+                "Opinions": {}
+            },
+            "Ruthenian": {
+                "definingFeatures": "",
+                "Color": "599bff",
+                "Opinions": {}
+            },
+            "Germanic": {
+                "definingFeatures": "",
+                "Color": 868989,
+                "Opinions": {}
+            },
+            "WestSlav": {
+                "definingFeatures": "",
+                "Color": "ffa0cf",
+                "Opinions": {}
+            },
+            "Mongol": {
+                "definingFeatures": "",
+                "Color": "337c26",
+                "Opinions": {}
+            },
+            "Blackfeet": {
+                "definingFeatures": "",
+                "Color": "ffbc82",
+                "Opinions": {}
+            },
+            "Nogai": {
+                "definingFeatures": "",
+                "Color": "395c7a",
+                "Opinions": {}
+            },
+            "Yakimas": {
+                "definingFeatures": "",
+                "Color": "d4a0a4",
+                "Opinions": {}
+            },
+            "Jurchen": {
+                "definingFeatures": "",
+                "Color": "7c362b",
+                "Opinions": {}
+            },
+            "Beothuk": {
+                "definingFeatures": "",
+                "Color": "8cd1ff",
+                "Opinions": {}
+            },
+            "Ottawa": {
+                "definingFeatures": "",
+                "Color": "7ad0ff",
+                "Opinions": {}
+            },
+            "Sioux": {
+                "definingFeatures": "",
+                "Color": "4f7c4f",
+                "Opinions": {}
+            },
+            "Chinook": {
+                "definingFeatures": "",
+                "Color": "7c3075",
+                "Opinions": {}
+            },
+            "Uyghur": {
+                "definingFeatures": "",
+                "Color": "ccd3ff",
+                "Opinions": {}
+            },
+            "Mandan": {
+                "definingFeatures": "",
+                "Color": "ffa987",
+                "Opinions": {}
+            },
+            "Magyar": {
+                "definingFeatures": "",
+                "Color": "587c22",
+                "Opinions": {}
+            },
+            "Cheyenne": {
+                "definingFeatures": "",
+                "Color": "ffe1db",
+                "Opinions": {}
+            },
+            "Romanian": {
+                "definingFeatures": "",
+                "Color": "ffaa60",
+                "Opinions": {}
+            },
+            "Abenaki": {
+                "definingFeatures": "",
+                "Color": "eabcff",
+                "Opinions": {}
+            },
+            "Italian": {
+                "definingFeatures": "",
+                "Color": "61ff3a",
+                "Opinions": {}
+            },
+            "SouthSlav": {
+                "definingFeatures": "",
+                "Color": "ffee91",
+                "Opinions": {}
+            },
+            "Japanese": {
+                "definingFeatures": "",
+                "Color": "ff3330",
+                "Opinions": {}
+            },
+            "Potawatomi": {
+                "definingFeatures": "",
+                "Color": "7cffb0",
+                "Opinions": {}
+            },
+            "Shoshone": {
+                "definingFeatures": "",
+                "Color": "bc8060",
+                "Opinions": {}
+            },
+            "Iroquoi": {
+                "definingFeatures": "",
+                "Color": "ddffe7",
+                "Opinions": {}
+            },
+            "Illinoi": {
+                "definingFeatures": "",
+                "Color": "8abf78",
+                "Opinions": {}
+            },
+            "Iberian": {
+                "definingFeatures": "",
+                "Color": "ff9e44",
+                "Opinions": {}
+            },
+            "Uzbek": {
+                "definingFeatures": "",
+                "Color": "447a5d",
+                "Opinions": {}
+            },
+            "Pawnee": {
+                "definingFeatures": "",
+                "Color": "ffc9a8",
+                "Opinions": {}
+            },
+            "Kyrgyz": {
+                "definingFeatures": "",
+                "Color": "ff597a",
+                "Opinions": {}
+            },
+            "Ute": {
+                "definingFeatures": "",
+                "Color": "bc8753",
+                "Opinions": {}
+            },
+            "Korean": {
+                "definingFeatures": "",
+                "Color": "7c680e",
+                "Opinions": {}
+            },
+            "Pomo": {
+                "definingFeatures": "",
+                "Color": "f0de72",
+                "Opinions": {}
+            },
+            "HanChinese": {
+                "definingFeatures": "",
+                "Color": "ffd3af",
+                "Opinions": {}
+            },
+            "Turkish": {
+                "definingFeatures": "",
+                "Color": "7c6d13",
+                "Opinions": {}
+            },
+            "Greek": {
+                "definingFeatures": "",
+                "Color": "3590ff",
+                "Opinions": {}
+            },
+            "Washo": {
+                "definingFeatures": "",
+                "Color": "bda382",
+                "Opinions": {}
+            },
+            "Shawnee": {
+                "definingFeatures": "",
+                "Color": "60ff68",
+                "Opinions": {}
+            },
+            "Persian": {
+                "definingFeatures": "",
+                "Color": "247c56",
+                "Opinions": {}
+            },
+            "Wichita": {
+                "definingFeatures": "",
+                "Color": "ff9996",
+                "Opinions": {}
+            },
+            "Powhatan": {
+                "definingFeatures": "",
+                "Color": "78c191",
+                "Opinions": {}
+            },
+            "Kurdish": {
+                "definingFeatures": "",
+                "Color": "7c3722",
+                "Opinions": {}
+            },
+            "Afghan": {
+                "definingFeatures": "",
+                "Color": "ff75ae",
+                "Opinions": {}
+            },
+            "Kiowa": {
+                "definingFeatures": "",
+                "Color": "ffcb72",
+                "Opinions": {}
+            },
+            "Mohave": {
+                "definingFeatures": "",
+                "Color": "79cc6e",
+                "Opinions": {}
+            },
+            "Navaho": {
+                "definingFeatures": "",
+                "Color": "51cc72",
+                "Opinions": {}
+            },
+            "Luisena": {
+                "definingFeatures": "",
+                "Color": "efd95d",
+                "Opinions": {}
+            },
+            "Tunisian": {
+                "definingFeatures": "",
+                "Color": "c596ff",
+                "Opinions": {}
+            },
+            "Cherokee": {
+                "definingFeatures": "",
+                "Color": "c2ff68",
+                "Opinions": {}
+            },
+            "Hindustani": {
+                "definingFeatures": "",
+                "Color": "7c5c1a",
+                "Opinions": {}
+            },
+            "Arab": {
+                "definingFeatures": "",
+                "Color": "207c12",
+                "Opinions": {}
+            },
+            "Tibetan": {
+                "definingFeatures": "",
+                "Color": "70227c",
+                "Opinions": {}
+            },
+            "Apache": {
+                "definingFeatures": "",
+                "Color": "accc90",
+                "Opinions": {}
+            },
+            "Natchez": {
+                "definingFeatures": "",
+                "Color": "fff38c",
+                "Opinions": {}
+            },
+            "Creek": {
+                "definingFeatures": "",
+                "Color": "dfff54",
+                "Opinions": {}
+            },
+            "Choctaw": {
+                "definingFeatures": "",
+                "Color": "fff659",
+                "Opinions": {}
+            },
+            "Egyptian": {
+                "definingFeatures": "",
+                "Color": "ff2348",
+                "Opinions": {}
+            },
+            "Taino": {
+                "definingFeatures": "",
+                "Color": "e26a9c",
+                "Opinions": {}
+            },
+            "SouthChinese": {
+                "definingFeatures": "",
+                "Color": "ff60af",
+                "Opinions": {}
+            },
+            "Calusa": {
+                "definingFeatures": "",
+                "Color": "adff84",
+                "Opinions": {}
+            },
+            "Bengali": {
+                "definingFeatures": "",
+                "Color": "52ff3f",
+                "Opinions": {}
+            },
+            "Aryan": {
+                "definingFeatures": "",
+                "Color": "288cff",
+                "Opinions": {}
+            },
+            "Coahuiltec": {
+                "definingFeatures": "",
+                "Color": "ffb5d3",
+                "Opinions": {}
+            },
+            "Burmese": {
+                "definingFeatures": "",
+                "Color": "ff5c47",
+                "Opinions": {}
+            },
+            "Polynesian": {
+                "definingFeatures": "",
+                "Color": "ff7ad5",
+                "Opinions": {}
+            },
+            "Tuareg": {
+                "definingFeatures": "",
+                "Color": "82e1ff",
+                "Opinions": {}
+            },
+            "Aztec": {
+                "definingFeatures": "",
+                "Color": "ffa993",
+                "Opinions": {}
+            },
+            "Tagalog": {
+                "definingFeatures": "",
+                "Color": "82ff4c",
+                "Opinions": {}
+            },
+            "Thai": {
+                "definingFeatures": "",
+                "Color": "597c35",
+                "Opinions": {}
+            },
+            "Vietnamese": {
+                "definingFeatures": "",
+                "Color": "e8ff59",
+                "Opinions": {}
+            },
+            "Sudanese": {
+                "definingFeatures": "",
+                "Color": "7c7856",
+                "Opinions": {}
+            },
+            "Olmec": {
+                "definingFeatures": "",
+                "Color": "c1ffa3",
+                "Opinions": {}
+            },
+            "Deccani": {
+                "definingFeatures": "",
+                "Color": "467c43",
+                "Opinions": {}
+            },
+            "Cushitic": {
+                "definingFeatures": "",
+                "Color": "fcff6d",
+                "Opinions": {}
+            },
+            "Fula": {
+                "definingFeatures": "",
+                "Color": "88cea6",
+                "Opinions": {}
+            },
+            "Khmer": {
+                "definingFeatures": "",
+                "Color": "4fe4ff",
+                "Opinions": {}
+            },
+            "Miskito": {
+                "definingFeatures": "",
+                "Color": "8fc1b8",
+                "Opinions": {}
+            },
+            "Timote": {
+                "definingFeatures": "",
+                "Color": "3dd8ff",
+                "Opinions": {}
+            },
+            "Mossi": {
+                "definingFeatures": "",
+                "Color": "f4be61",
+                "Opinions": {}
+            },
+            "Hausa": {
+                "definingFeatures": "",
+                "Color": "994f56",
+                "Opinions": {}
+            },
+            "Indonesian": {
+                "definingFeatures": "",
+                "Color": "4f257c",
+                "Opinions": {}
+            },
+            "Jukun": {
+                "definingFeatures": "",
+                "Color": "48a6b5",
+                "Opinions": {}
+            },
+            "Banda": {
+                "definingFeatures": "",
+                "Color": "617a70",
+                "Opinions": {}
+            },
+            "Yoruba": {
+                "definingFeatures": "",
+                "Color": "9486cc",
+                "Opinions": {}
+            },
+            "Guaymi": {
+                "definingFeatures": "",
+                "Color": "aca3ff",
+                "Opinions": {}
+            },
+            "Sinhalese": {
+                "definingFeatures": "",
+                "Color": "fff2aa",
+                "Opinions": {}
+            },
+            "Chibcha": {
+                "definingFeatures": "",
+                "Color": "96f6ff",
+                "Opinions": {}
+            },
+            "Arawak": {
+                "definingFeatures": "",
+                "Color": "8effb7",
+                "Opinions": {}
+            },
+            "Waica": {
+                "definingFeatures": "",
+                "Color": "61ff59",
+                "Opinions": {}
+            },
+            "Zande": {
+                "definingFeatures": "",
+                "Color": "82cea4",
+                "Opinions": {}
+            },
+            "Ganda": {
+                "definingFeatures": "",
+                "Color": "ffbba0",
+                "Opinions": {}
+            },
+            "Ngala": {
+                "definingFeatures": "",
+                "Color": "72b5a4",
+                "Opinions": {}
+            },
+            "Papuan": {
+                "definingFeatures": "",
+                "Color": "ffbe70",
+                "Opinions": {}
+            },
+            "Colorado": {
+                "definingFeatures": "",
+                "Color": "a6c1ba",
+                "Opinions": {}
+            },
+            "Jivaro": {
+                "definingFeatures": "",
+                "Color": "b7ff91",
+                "Opinions": {}
+            },
+            "Kuba": {
+                "definingFeatures": "",
+                "Color": "98b8a6",
+                "Opinions": {}
+            },
+            "Tarariu": {
+                "definingFeatures": "",
+                "Color": "b7edff",
+                "Opinions": {}
+            },
+            "Omagua": {
+                "definingFeatures": "",
+                "Color": "43ff3d",
+                "Opinions": {}
+            },
+            "Tapajo": {
+                "definingFeatures": "",
+                "Color": "acff7c",
+                "Opinions": {}
+            },
+            "Kongo": {
+                "definingFeatures": "",
+                "Color": "478a4b",
+                "Opinions": {}
+            },
+            "Caapor": {
+                "definingFeatures": "",
+                "Color": "a3ffec",
+                "Opinions": {}
+            },
+            "Inca": {
+                "definingFeatures": "",
+                "Color": "a9a9cc",
+                "Opinions": {}
+            },
+            "Chokwe": {
+                "definingFeatures": "",
+                "Color": "4cb6a5",
+                "Opinions": {}
+            },
+            "Conibo": {
+                "definingFeatures": "",
+                "Color": "8cffac",
+                "Opinions": {}
+            },
+            "Xavante": {
+                "definingFeatures": "",
+                "Color": "e2f1ff",
+                "Opinions": {}
+            },
+            "Amniape": {
+                "definingFeatures": "",
+                "Color": "ceffe5",
+                "Opinions": {}
+            },
+            "Ambundu": {
+                "definingFeatures": "",
+                "Color": "c6c939",
+                "Opinions": {}
+            },
+            "Makua": {
+                "definingFeatures": "",
+                "Color": "ffcfa8",
+                "Opinions": {}
+            },
+            "Aboriginal": {
+                "definingFeatures": "",
+                "Color": "7c330b",
+                "Opinions": {}
+            },
+            "Siriono": {
+                "definingFeatures": "",
+                "Color": "fff0b7",
+                "Opinions": {}
+            },
+            "Tonga": {
+                "definingFeatures": "",
+                "Color": "d6d98b",
+                "Opinions": {}
+            },
+            "Guaitaca": {
+                "definingFeatures": "",
+                "Color": "ded3ff",
+                "Opinions": {}
+            },
+            "Shona": {
+                "definingFeatures": "",
+                "Color": "3f777c",
+                "Opinions": {}
+            },
+            "Guarani": {
+                "definingFeatures": "",
+                "Color": "2e7c2e",
+                "Opinions": {}
+            },
+            "Nama": {
+                "definingFeatures": "",
+                "Color": "ffbf66",
+                "Opinions": {}
+            },
+            "Mataco": {
+                "definingFeatures": "",
+                "Color": "f7b983",
+                "Opinions": {}
+            },
+            "Zulu": {
+                "definingFeatures": "",
+                "Color": "ff6c4f",
+                "Opinions": {}
+            },
+            "Atacama": {
+                "definingFeatures": "",
+                "Color": "68b4cc",
+                "Opinions": {}
+            },
+            "Puelche": {
+                "definingFeatures": "",
+                "Color": "d6a653",
+                "Opinions": {}
+            },
+            "Charrua": {
+                "definingFeatures": "",
+                "Color": "d37769",
+                "Opinions": {}
+            },
+            "Kiwi": {
+                "definingFeatures": "",
+                "Color": "9b9eff",
+                "Opinions": {}
+            }
         },
         "ResourceTypes": [
             "Budget",
             "Food",
+            "Wood",
             "Sulphur",
             "Cotton",
             "Gold",
@@ -296,324 +2489,532 @@
             "Cocoa",
             "Tobacco",
             "Sugar",
-            "ExoticFruit"
+            "ExoticFruit",
+            "Housing",
+            "BasicArmaments",
+            "HeavyArmaments",
+            "ShipBuilding",
+            "BasicTools",
+            "Textiles",
+            "BasicGoods",
+            "LuxuryGoods",
+            "Alcohol",
+            "Chemicals",
+            "Electronics",
+            "Motors",
+            "Planes",
+            "HeavyIndustry"
         ],
-        "Trades": {
-            
-        },
+        "Trades": {},
         "TradeZones": {
             "Alaska": {
-				"Color": "none",
-				"Score": 1
-			},
+                "Color": "ff6c7a",
+                "Score": 0
+            },
             "Cascadia": {
-				"Color": "none",
-				"Score": 3
-			},
+                "Color": "ff006e",
+                "Score": 0
+            },
             "CaliforniaAndWestMexico": {
-				"Color": "none",
-				"Score": 4
-			},
+                "Color": "none",
+                "Score": 4
+            },
             "HudsonBay": {
-				"Color": "none",
-				"Score": 3
-			},
+                "Color": "ffeb63",
+                "Score": 0
+            },
             "GreatLakes": {
-				"Color": "none",
-				"Score": 7
-			},
+                "Color": "3dffff",
+                "Score": 0
+            },
             "Louisiana": {
-				"Color": "none",
-				"Score": 7
-			},
+                "Color": "none",
+                "Score": 7
+            },
             "GulfOfMexico": {
-				"Color": "none",
-				"Score": 8
-			},
+                "Color": "ffac54",
+                "Score": 0
+            },
             "LawrenceGulf": {
-				"Color": "none",
-				"Score": 4.5
-			},
+                "Color": "ff6a38",
+                "Score": 0
+            },
             "EastCoast": {
-				"Color": "none",
-				"Score": 7
-			},
+                "Color": "cc0000",
+                "Score": 0
+            },
             "Carribean": {
-				"Color": "none",
-				"Score": 8
-			},
+                "Color": "none",
+                "Score": 8
+            },
             "CentralAmerica": {
-				"Color": "none",
-				"Score": 6
-			},
+                "Color": "a0a0a0",
+                "Score": 0
+            },
             "GuyanaAndSuriname": {
-				"Color": "none",
-				"Score": 3
-			},
+                "Color": "none",
+                "Score": 3
+            },
             "Amazon": {
-				"Color": "none",
-				"Score": 3
-			},
+                "Color": "2d9600",
+                "Score": 0
+            },
             "Peru": {
-				"Color": "none",
-				"Score": 2
-			},
+                "Color": 9,
+                "Score": 0
+            },
             "RioGrande": {
-				"Color": "none",
-				"Score": 3
-			},
+                "Color": "none",
+                "Score": 3
+            },
             "LaPlata": {
-				"Color": "none",
-				"Score": 3
-			},
+                "Color": "none",
+                "Score": 3
+            },
             "Chile": {
-				"Color": "none",
-				"Score": 2
-			},
+                "Color": "ffe846",
+                "Score": 0
+            },
             "Patagonia": {
-				"Color": "none",
-				"Score": 2
-			},
+                "Color": "68d7ff",
+                "Score": 0
+            },
             "NorthernAnatolia": {
-				"Color": "none",
-				"Score": 10
-			},
+                "Color": "5b8f00",
+                "Score": 0
+            },
             "NorthSea": {
-				"Color": "none",
-				"Score": 4.5
-			},
+                "Color": "7382ff",
+                "Score": 0
+            },
             "BritishIsles": {
-				"Color": "none",
-				"Score": 8
-			},
+                "Color": 808080,
+                "Score": 0
+            },
             "EnglishChannel": {
-				"Color": "none",
-				"Score": 10
-			},
+                "Color": "ff4a00",
+                "Score": 0
+            },
             "France": {
-				"Color": "none",
-				"Score": 7
-			},
+                "Color": "00d5ff",
+                "Score": 0
+            },
             "BayOfBiscay": {
-				"Color": "none",
-				"Score": 7
-			},
+                "Color": "efff66",
+                "Score": 0
+            },
             "WestIberia": {
-				"Color": "none",
-				"Score": 7
-			},
+                "Color": "none",
+                "Score": 7
+            },
             "Gibraltar": {
-				"Color": "none",
-				"Score": 9
-			},
+                "Color": "none",
+                "Score": 9
+            },
             "WesternMediterranean": {
-				"Color": "none",
-				"Score": 7
-			},
+                "Color": "ffd846",
+                "Score": 0
+            },
             "Rhine": {
-				"Color": "none",
-				"Score": 7
-			},
+                "Color": "0094ff",
+                "Score": 0
+            },
             "CentralMediterranean": {
-				"Color": "none",
-				"Score": 8
-			},
+                "Color": "ff7d49",
+                "Score": 0
+            },
             "Adriatic": {
-				"Color": "none",
-				"Score": 10
-			},
+                "Color": "007f0e",
+                "Score": 0
+            },
             "Germany": {
-				"Color": "none",
-				"Score": 7
-			},
+                "Color": "none",
+                "Score": 7
+            },
             "WesternDanube": {
-				"Color": "none",
-				"Score": 7
-			},
+                "Color": 404040,
+                "Score": 0
+            },
             "Denmark": {
-				"Color": "none",
-				"Score": 8
-			},
+                "Color": "ff0000",
+                "Score": 0
+            },
             "Baltic": {
-				"Color": "none",
-				"Score": 7.5
-			},
+                "Color": "none",
+                "Score": 7.5
+            },
             "NorthNordics": {
-				"Color": "none",
-				"Score": 3
-			},
+                "Color": "none",
+                "Score": 3
+            },
             "BarentsSea": {
-				"Color": "none",
-				"Score": 3
-			},
+                "Color": "ff553e",
+                "Score": 0
+            },
             "Novgorod": {
-				"Color": "none",
-				"Score": 8
-			},
+                "Color": "00ff21",
+                "Score": 0
+            },
             "Poland": {
-				"Color": "none",
-				"Score": 6
-			},
+                "Color": "none",
+                "Score": 6
+            },
             "Dniepr": {
-				"Color": "none",
-				"Score": 8.5
-			},
+                "Color": "80ff65",
+                "Score": 0
+            },
             "Crimea": {
-				"Color": "none",
-				"Score": 7
-			},
+                "Color": "31aadb",
+                "Score": 0
+            },
             "EasternDanube": {
-				"Color": "none",
-				"Score": 8.5
-			},
+                "Color": "5d7c3d",
+                "Score": 0
+            },
             "Greece": {
-				"Color": "none",
-				"Score": 9.5
-			},
+                "Color": "0065ff",
+                "Score": 0
+            },
             "EasternMediterranean": {
-				"Color": "none",
-				"Score": 8
-			},
+                "Color": "80ff00",
+                "Score": 0
+            },
             "Egypt": {
-				"Color": "none",
-				"Score": 7
-			},
+                "Color": "ff1410",
+                "Score": 0
+            },
             "RedSea": {
-				"Color": "none",
-				"Score": 7
-			},
+                "Color": "2b6d0e",
+                "Score": 0
+            },
             "WesternSahara": {
-				"Color": "none",
-				"Score": 2
-			},
+                "Color": "fed800",
+                "Score": 0
+            },
             "CoteDIvoire": {
-				"Color": "none",
-				"Score": 7
-			},
+                "Color": "none",
+                "Score": 7
+            },
             "Nigeria": {
-				"Color": "none",
-				"Score": 8
-			},
+                "Color": "none",
+                "Score": 8
+            },
             "SouthNile": {
-				"Color": "none",
-				"Score": 3
-			},
+                "Color": "none",
+                "Score": 3
+            },
             "Somalia": {
-				"Color": "none",
-				"Score": 7
-			},
+                "Color": "529bae",
+                "Score": 0
+            },
             "Kongo": {
-				"Color": "none",
-				"Score": 3
-			},
+                "Color": "none",
+                "Score": 3
+            },
             "EastAfrica": {
-				"Color": "none",
-				"Score": 3
-			},
+                "Color": "0094d7",
+                "Score": 0
+            },
             "Mozambique": {
-				"Color": "none",
-				"Score": 4
-			},
+                "Color": "00ff69",
+                "Score": 0
+            },
             "SouthAfrica": {
-				"Color": "none",
-				"Score": 5
-			},
+                "Color": "8f00ff",
+                "Score": 0
+            },
             "Mesopotamia": {
-				"Color": "none",
-				"Score": 6.5
-			},
+                "Color": "7f3300",
+                "Score": 0
+            },
             "PersianGulf": {
-				"Color": "none",
-				"Score": 7
-			},
+                "Color": "ffc430",
+                "Score": 0
+            },
             "Caucasus": {
-				"Color": "none",
-				"Score": 6
-			},
+                "Color": "ff2f3e",
+                "Score": 0
+            },
             "DonRiver": {
-				"Color": "none",
-				"Score": 6
-			},
+                "Color": "ffd86d",
+                "Score": 0
+            },
             "Volga": {
-				"Color": "none",
-				"Score": 6
-			},
+                "Color": "db7a25",
+                "Score": 0
+            },
             "CentralAsia": {
-				"Color": "none",
-				"Score": 3
-			},
+                "Color": "9fffff",
+                "Score": 0
+            },
             "WestSiberia": {
-				"Color": "none",
-				"Score": 2
-			},
+                "Color": "none",
+                "Score": 2
+            },
             "EastSiberia": {
-				"Color": "none",
-				"Score": 2
-			},
+                "Color": "none",
+                "Score": 2
+            },
             "Iran": {
-				"Color": "none",
-				"Score": 5
-			},
+                "Color": "8ffd42",
+                "Score": 0
+            },
             "Pakistan": {
-				"Color": "none",
-				"Score": 7
-			},
+                "Color": "none",
+                "Score": 7
+            },
             "Tibet": {
-				"Color": "none",
-				"Score": 2
-			},
+                "Color": "b200ff",
+                "Score": 0
+            },
             "Mongolia": {
-				"Color": "none",
-				"Score": 3
-			},
+                "Color": "none",
+                "Score": 3
+            },
             "Manchuria": {
-				"Color": "none",
-				"Score": 6.5
-			},
+                "Color": "e8ff65",
+                "Score": 0
+            },
             "SeaOfJapan": {
-				"Color": "none",
-				"Score": 7.5
-			},
+                "Color": "00ffff",
+                "Score": 0
+            },
             "NorthChina": {
-				"Color": "none",
-				"Score": 7
-			},
+                "Color": "none",
+                "Score": 7
+            },
             "YangtzeRiver": {
-				"Color": "none",
-				"Score": 7
-			},
+                "Color": "3dfd00",
+                "Score": 0
+            },
             "SouthChina": {
-				"Color": "none",
-				"Score": 8
-			},
+                "Color": "none",
+                "Score": 8
+            },
             "NorthIndia": {
-				"Color": "none",
-				"Score": 7
-			},
+                "Color": "none",
+                "Score": 7
+            },
             "WestIndia": {
-				"Color": "none",
-				"Score": 7
-			},
+                "Color": "none",
+                "Score": 7
+            },
             "EastIndia": {
-				"Color": "none",
-				"Score": 7
-			},
+                "Color": "none",
+                "Score": 7
+            },
             "Burma": {
-				"Color": "none",
-				"Score": 6
-			},
+                "Color": "none",
+                "Score": 6
+            },
             "SouthEastAsia": {
-				"Color": "none",
-				"Score": 8
-			},
+                "Color": "ff3d3d",
+                "Score": 0
+            },
             "NorthAustralia": {
-				"Color": "none",
-				"Score": 5
-			},
+                "Color": "none",
+                "Score": 5
+            },
             "SouthAustralia": {
-				"Color": "none",
-				"Score": 6
-			}
+                "Color": "none",
+                "Score": 6
+            },
+            "CentralSiberia": {
+                "Color": "69a826",
+                "Score": 0
+            },
+            "EasternSiberia": {
+                "Color": "331b1b",
+                "Score": 0
+            },
+            "WesternSiberia": {
+                "Color": "264a00",
+                "Score": 0
+            },
+            "NorthernNordics": {
+                "Color": "ffd6e4",
+                "Score": 0
+            },
+            "CentralCanada": {
+                "Color": "a5a5a5",
+                "Score": 0
+            },
+            "BalticSea": {
+                "Color": "8f00c2",
+                "Score": 0
+            },
+            "Livonia": {
+                "Color": 801065,
+                "Score": 0
+            },
+            "Muscovy": {
+                "Color": "e1d869",
+                "Score": 0
+            },
+            "UralRiver": {
+                "Color": "dcff44",
+                "Score": 0
+            },
+            "Vistula": {
+                "Color": "ff7e70",
+                "Score": 0
+            },
+            "CentralEurope": {
+                "Color": "8080a3",
+                "Score": 0
+            },
+            "Romania": {
+                "Color": "d100dc",
+                "Score": 0
+            },
+            "TheRockies": {
+                "Color": "7f4618",
+                "Score": 0
+            },
+            "Mississippi": {
+                "Color": "00ba21",
+                "Score": 0
+            },
+            "SouthernFrance": {
+                "Color": "46a7ff",
+                "Score": 0
+            },
+            "CaspianSea": {
+                "Color": "3881ff",
+                "Score": 0
+            },
+            "GobiDesert": {
+                "Color": "e1e9cd",
+                "Score": 0
+            },
+            "WestCoast": {
+                "Color": "ffdb7b",
+                "Score": 0
+            },
+            "Iberia": {
+                "Color": "3a9112",
+                "Score": 0
+            },
+            "YellowRiver": {
+                "Color": "3aaa0e",
+                "Score": 0
+            },
+            "Afghanistan": {
+                "Color": "592b37",
+                "Score": 0
+            },
+            "IndusRiver": {
+                "Color": "267f00",
+                "Score": 0
+            },
+            "Morocco": {
+                "Color": "7f0001",
+                "Score": 0
+            },
+            "Sichuan": {
+                "Color": "c6d521",
+                "Score": 0
+            },
+            "Sahara": {
+                "Color": "b7a791",
+                "Score": 0
+            },
+            "ArabianDesert": {
+                "Color": "e2ceb1",
+                "Score": 0
+            },
+            "WesternMexico": {
+                "Color": "469b52",
+                "Score": 0
+            },
+            "Ganges": {
+                "Color": "db6525",
+                "Score": 0
+            },
+            "Caribbean": {
+                "Color": "3c02ff",
+                "Score": 0
+            },
+            "Pacific": {
+                "Color": "93ffff",
+                "Score": 0
+            },
+            "SouthChinaSea": {
+                "Color": "4d007f",
+                "Score": 0
+            },
+            "CentralIndia": {
+                "Color": "ec7f7f",
+                "Score": 0
+            },
+            "Deccan": {
+                "Color": "84ff55",
+                "Score": 0
+            },
+            "SouthernNile": {
+                "Color": "d9ff00",
+                "Score": 0
+            },
+            "WesternNiger": {
+                "Color": "b6ff4a",
+                "Score": 0
+            },
+            "Guinea": {
+                "Color": "ff8ca3",
+                "Score": 0
+            },
+            "EasternNiger": {
+                "Color": "3bd323",
+                "Score": 0
+            },
+            "Venezuela": {
+                "Color": "c3ff2b",
+                "Score": 0
+            },
+            "Indonesia": {
+                "Color": "fec605",
+                "Score": 0
+            },
+            "CongoRiver": {
+                "Color": "dd6a00",
+                "Score": 0
+            },
+            "Gabon": {
+                "Color": "107f00",
+                "Score": 0
+            },
+            "LakeVictoria": {
+                "Color": "9fa300",
+                "Score": 0
+            },
+            "LakeTanganyika": {
+                "Color": "b67871",
+                "Score": 0
+            },
+            "SaoFranciscoRiver": {
+                "Color": "6aff2b",
+                "Score": 0
+            },
+            "NorthernAustralia": {
+                "Color": "ff7400",
+                "Score": 0
+            },
+            "Angola": {
+                "Color": "a3ff27",
+                "Score": 0
+            },
+            "ParanaRiver": {
+                "Color": "2ba6ff",
+                "Score": 0
+            },
+            "SouthernAustralia": {
+                "Color": "b6c2ff",
+                "Score": 0
+            },
+            "AustralianDesert": {
+                "Color": "d8c5a9",
+                "Score": 0
+            }
         },
         "Climates": {
             "Ocean": {
@@ -685,92 +3086,15 @@
             "EliteCavalry": 0.0085,
             "HandCannoneers": 0.005,
             "Musketeers": 0.0035,
+            "MusketMilitia": 0.002,
+            "Riflemen": 0.01,
             "Militia": 0.00125,
             "SiegeEquipment": 0.1,
             "LargeSiegeEquipment": 0.2,
-            "Cannons": 0.1
+            "FieldCannons": 0.2,
+            "RegimentalGuns": 0.1,
+            "SiegeGuns": 0.4
         },
-        "AdvancesPrerequisites": {
-            "Explosives": [
-                "Gunpowder"
-            ],
-            "Firelance": [
-                "Explosives"
-            ],
-            "HandCannons": [
-                "Firelance"
-            ],
-            "Bombards": [
-                "Firelance"
-            ],
-            "Muskets": [
-                "HandCannons"
-            ],
-            "Limber": [
-                "Bombards"
-            ],
-            "Gunports": [
-                "Bombards"
-            ],
-            "EarlyModernAdministration": [
-                "Courthouses"
-            ],
-            "Galleons": [
-                "Gunports",
-                "Docks"
-            ],
-            "Matchlock": [
-                "Muskets"
-            ],
-            "Reiters": [
-                "Muskets"
-            ],
-            "StarForts": [
-                "Limber"
-            ],
-            "Mortars": [
-                "Limber"
-            ],
-            "TextileManufactories": [
-                "Workshops"
-            ],
-            "Fluyt": [
-                "Galleons"
-            ],
-            "NationalSovereignity": [
-                "RenaissanceThought"
-            ],
-            "Experimentation": [
-                "RenaissanceThought"
-            ],
-            "Metallurgy": [
-                "Workshops"
-            ],
-            "Newspapers": [
-                "PrintingPress"
-            ],
-            "Flintlock": [
-                "Matchlock"
-            ],
-            "ScientificRevolution": [
-                "Experimentation"
-            ],
-            "Bayonet": [
-                "Metallurgy"
-            ],
-            "SocketBayonet": [
-                "Bayonet"
-            ],
-            "FlyingShuttle": [
-                "Metallurgy",
-                "TextileManufactories"
-            ],
-            "Gunlock": [
-                "Flintlock"
-            ],
-            "Constitution": [
-                "EarlyModernAdministration"
-            ]
-        }
+        "AdvancesPrerequisites": {}
     }
 }
