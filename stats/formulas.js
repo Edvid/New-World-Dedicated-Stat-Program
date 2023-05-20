@@ -321,7 +321,7 @@ function evaluateNation(nationName) {
 
   n.FoodDemand = n.Production * (n.ProductionSectors.AlcoholSector / n.TotalSupply) + (n.AverageExpectedSol < 1 ? n.AverageExpectedSol * n.Population / 1000 : n.Population / 1000 + (n.AverageExpectedSol - 1) * 1.75 * n.Population / 1000);
 
-  n.NaturalFabricsDemand = (n.Production * (n.ProductionSectors.TextilesSector / n.TotalSupply) / 10) / n.ProductionEfficiency;
+  n.NaturalFabricsDemand = (n.Production * (n.ProductionSectors.TextilesSector / n.TotalSupply)) / n.ProductionEfficiency / 4;
   n.WoolDemand = n.NaturalFabricsDemand;
   n.CottonDemand = n.NaturalFabricsDemand;
 
@@ -330,11 +330,11 @@ function evaluateNation(nationName) {
   n.SilkDemand = n.LuxuryNaturalFabricsDemand;
 
   n.ValuableMaterialsDemand = (n.Production * (n.ProductionSectors.LuxuryGoodsSector / n.TotalSupply)) / n.ProductionEfficiency;
-  n.DiamondDemand = n.ValuableMaterialsDemand + n.Population / 50000;
-  n.GoldDemand = n.ValuableMaterialsDemand + n.Population / 100000;
-  n.SilverDemand = n.ValuableMaterialsDemand + n.Population / 200000;
-  n.CopperDemand = n.ValuableMaterialsDemand + n.Population / 400000;
-  n.IvoryDemand = n.ValuableMaterialsDemand + n.Population / 150000;
+  n.DiamondDemand = n.ValuableMaterialsDemand + n.Population / 1000000;
+  n.GoldDemand = n.ValuableMaterialsDemand + n.Population / 500000;
+  n.SilverDemand = n.ValuableMaterialsDemand + n.Population / 500000;
+  n.CopperDemand = n.ValuableMaterialsDemand + n.Population / 1000000;
+  n.IvoryDemand = n.ValuableMaterialsDemand + n.Population / 1000000;
   
 
   n.LuxuryConsumables = n.EffectiveTea + n.EffectiveCoffee + n.EffectiveTobacco + n.EffectiveExoticFruit + n.EffectiveCocoa;
@@ -375,9 +375,9 @@ function evaluateNation(nationName) {
   n.CoalShortage = min(1, max(0, 1 - (n.EffectiveCoal / (n.CoalDemand * 0.9))));
   n.WoodShortage = min(1, max(0, 1 - (n.EffectiveWood / (n.WoodDemand * 0.9))));
   n.FoodShortage = min(1, max(0, 1 - ((n.Food + n.DailyFood) / n.FoodDemand)));
-  n.NaturalFabricsShortage = min(1, max(0, 1 - (n.NaturalFabrics / n.NaturalFabricsDemand)));
-  n.LuxuryNaturalFabricsShortage = min(1, max(0, 1 - (n.LuxuryNaturalFabrics / n.LuxuryNaturalFabricsDemand)));
-  n.ValuableMaterialsShortage = min(1, max(0, 1 - (n.ValuableMaterials / n.ValuableMaterialsDemand)));
+  n.NaturalFabricsShortage = min(1, max(0, 1 - (n.NaturalFabrics / (n.NaturalFabricsDemand * 0.9))));
+  n.LuxuryNaturalFabricsShortage = min(1, max(0, 1 - (n.LuxuryNaturalFabrics / (n.LuxuryNaturalFabricsDemand * 0.9))));
+  n.ValuableMaterialsShortage = min(1, max(0, 1 - (n.ValuableMaterials / (n.ValuableMaterialsDemand * 0.9))));
 
   n.TotalSupply = n.ProductionSectors.ConstructionSector + n.ProductionSectors.BasicArmamentsSector + n.ProductionSectors.HeavyArmamentsSector + n.ProductionSectors.ShipBuildingSector + n.ProductionSectors.BasicToolsSector + n.ProductionSectors.TextilesSector + n.ProductionSectors.BasicGoodsSector + n.ProductionSectors.LuxuryGoodsSector + n.ProductionSectors.AlcoholSector + n.ProductionSectors.ChemicalSector + n.ProductionSectors.ElectronicsSector + n.ProductionSectors.AutomotiveSector + n.ProductionSectors.AerospaceSector + n.ProductionSectors.HeavyIndustrySector;
 
@@ -437,11 +437,49 @@ function evaluateNation(nationName) {
   n.EffectivePlanes = n.Planes + n.PlanesIncoming - n.PlanesOutgoing;
   n.PlanesShortage = (n.PlanesDemand == 0 ? 0 : min(1, max(0, 1 - (n.EffectivePlanes / (n.PlanesDemand * 0.9)))));
 
+  // resource base values
+  n.WoodBaseValue = 0.75;
+  n.SulphurBaseValue = 1;
+  n.CoalBaseValue = 1.25;
+  n.CottonBaseValue = 1.75;
+  n.GoldBaseValue = 6;
+  n.IronBaseValue = 1.75;
+  n.TeaBaseValue = 2.5;
+  n.SilkBaseValue = 4;
+  n.SpiceBaseValue = 2.5;
+  n.WoolBaseValue = 1;
+  n.CoffeeBaseValue = 2;
+  n.FurBaseValue = 3.5;
+  n.DiamondBaseValue = 7.5;
+  n.SilverBaseValue = 4;
+  n.CopperBaseValue = 1.5;
+  n.IvoryBaseValue = 4;
+  n.CocoaBaseValue = 2.25;
+  n.TobaccoBaseValue = 2;
+  n.SugarBaseValue = 2.75;
+  n.ExoticFruitBaseValue = 2;
+  
+  n.HousingBaseValue = 2;
+  n.TextilesBaseValue = 1.5;
+  n.BasicGoodsBaseValue = 1;
+  n.LuxuryGoodsBaseValue = 2;
+  n.AlcoholBaseValue = 1;
+  n.BasicToolsBaseValue = 1;
+  n.HeavyIndustryBaseValue = 5;
+  n.BasicArmamentsBaseValue = 2;
+  n.HeavyArmamentsBaseValue = 5;
+  n.ShipBuildingBaseValue = 10;
+  n.ChemicalsBaseValue = 5;
+  n.MotorsBaseValue = 7.5;
+  n.PlanesBaseValue = 10;
+  n.ElectronicsBaseValue = 10; 
+
   // resource and goods values
   for (const resourceIndex in gameStats.ResourceTypes) {
     const resource = gameStats.ResourceTypes[resourceIndex];
-    n[resource + "Value"] = n[resource + "Demand"] / (n["Effective" + resource] + 0.1);
+    n[resource + "Value"] = n[resource + "Demand"] / (isNaN(n["Effective" + resource]) ? 1 : (n["Effective" + resource] == 0 ? 1 : n["Effective" + resource])) * n[resource + "BaseValue"];
   }
+
   n.LuxuryConsumablesValue = n.LuxuryConsumablesDemand / (n.LuxuryConsumables + 0.1);
   n.FoodAdditionsValue = n.FoodAdditionsDemand / (n.FoodAdditions + 0.1);
 
