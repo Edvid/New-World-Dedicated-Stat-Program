@@ -328,7 +328,7 @@ let TableLayouts = {
         ["SlavesWage", "LabourersWage", "SerfsWage", "FarmersWage", "TownsfolkWage", "ClergyWage", "BureaucratsWage", "MerchantsWage", "IntellectualsWage", "SailorsWage", "SoldiersWage", "AristocracyWage", "BurgousieWage"],
       ["SlavesTaxes", "LabourersTaxes", "SerfsTaxes", "FarmersTaxes", "TownsfolkTaxes", "ClergyTaxes", "BureaucratsTaxes", "MerchantsTaxes", "IntellectualsTaxes", "SailorsTaxes", "SoldiersTaxes", "AristocracyTaxes", "BurgousieTaxes", "TaxRevenue"],
       ["ExpectedSlavesSol", "ExpectedLabourersSol", "ExpectedSerfsSol", "ExpectedFarmersSol", "ExpectedTownsfolkSol", "ExpectedClergySol", "ExpectedBureaucratsSol", "ExpectedMerchantsSol", "ExpectedIntellectualsSol", "ExpectedSailorsSol", "ExpectedSoldiersSol", "ExpectedAristocracySol", "ExpectedBurgousieSol", "AverageExpectedSol"],
-      ["SlavesSol", "LabourersSol", "SerfsSol", "FarmersSol", "TownsfolkSol", "ClergySol", "BureaucratsSol", "MerchantsSol", "IntellectualsSol", "SailorsSol", "SoldiersSol", "AristocracySol", "BurgousieSol"]
+      ["SlavesSol", "LabourersSol", "SerfsSol", "FarmersSol", "TownsfolkSol", "ClergySol", "BureaucratsSol", "MerchantsSol", "IntellectualsSol", "SailorsSol", "SoldiersSol", "AristocracySol", "BurgousieSol", "AverageSol"]
     ],
 	"Reforms": [
 		["Reforms.SlaveryAllowed", "Reforms.SlaveryBanned", "Reforms.SerfdomAllowed", "Reforms.SerfdomBanned"],
@@ -395,14 +395,12 @@ let TableLayouts = {
     ],
     "Resources": [
         ["MiningEfficiency", "BaseIronHarvest", "BaseCoalHarvest", "BaseSulphurHarvest", "Forestry", "Reforestation", "ForestsLeft"],
-        ["MaxCoal", "MaxSulphur", "MaxIron", "MaxCopper"],
-        ["Coal", "Sulphur", "Iron", "Copper", "Wood"],
-        ["EffectiveCoal", "EffectiveSulphur", "EffectiveIron", "EffectiveCopper"],
-        ["MaxGold", "MaxFur", "MaxDiamond", "MaxSilver", "MaxIvory"],
-        ["Gold", "Fur", "Diamond", "Silver", "Ivory", "Cotton", "Tea", "Silk", "Spice", "Wool", "Coffee", "Cocoa", "Tobacco", "Sugar", "ExoticFruit"],
-        ["EffectiveGold", "EffectiveFur", "EffectiveDiamond", "EffectiveSilver", "EffectiveIvory", "EffectiveCotton", "EffectiveTea", "EffectiveSilk", "EffectiveSpice", "EffectiveWool", "EffectiveCoffee", "EffectiveCocoa", "EffectiveTobacco", "EffectiveSugar", "EffectiveExoticFruit"],
-        ["GoldInflation", "FurInflation", "DiamondInflation", "SilverInflation", "IvoryInflation", "CottonInflation", "TeaInflation", "SilkInflation", "SpiceInflation", "WoolInflation", "CoffeeInflation", "CocoaInflation", "TobaccoInflation", "SugarInflation", "ExoticFruitInflation"],
-        ["ResourcePopulationGrowthBoost", "ResourceHappinessBoost", "ResourceBudgetBoost"]
+        ["MaxCoal", "MaxSulphur", "MaxIron", "MaxCopper", "MaxGold", "MaxFur", "MaxDiamond", "MaxSilver", "MaxIvory"],
+        ["Coal", "Sulphur", "Iron", "Copper", "Gold", "Fur", "Diamond", "Silver", "Ivory", "Wood"],
+        ["EffectiveCoal", "EffectiveSulphur", "EffectiveIron", "EffectiveCopper", "EffectiveGold", "EffectiveFur", "EffectiveDiamond", "EffectiveSilver", "EffectiveIvory"],
+        ["Cotton", "Tea", "Silk", "Spice", "Wool", "Coffee", "Cocoa", "Tobacco", "Sugar", "ExoticFruit"],
+        ["EffectiveCotton", "EffectiveTea", "EffectiveSilk", "EffectiveSpice", "EffectiveWool", "EffectiveCoffee", "EffectiveCocoa", "EffectiveTobacco", "EffectiveSugar", "EffectiveExoticFruit"],
+        ["ResourceBudgetBoost"]
     ],
     "Resource Prices": [
         ["CoalDemand", "GoldDemand", "IronDemand", "SulphurDemand", "CottonDemand", "TeaDemand", "SpiceDemand", "CopperDemand", "SilkDemand", "WoolDemand", "FoodDemand"],

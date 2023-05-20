@@ -257,11 +257,9 @@ class Nation {
   
   Cotton;
   EffectiveCotton;
-  CottonInflation;
   
   Gold;
   EffectiveGold;
-  GoldInflation;
   MaxGold;
   
   Iron;
@@ -270,37 +268,29 @@ class Nation {
   
   Tea;
   EffectiveTea;
-  TeaInflation;
   
   Silk;
   EffectiveSilk;
-  SilkInflation;
   
   Spice;
   EffectiveSpice;
-  SpiceInflation;
   
   Wool;
   EffectiveWool;
-  WoolInflation;
   
   Coffee;
   EffectiveCoffee;
-  CoffeeInflation;
   
   Fur;
   EffectiveFur;
-  FurInflation;
   MaxFur;
   
   Diamond;
   EffectiveDiamond;
-  DiamondInflation;
   MaxDiamond;
   
   Silver;
   EffectiveSilver;
-  SilverInflation;
   MaxSilver;
   
   Copper;
@@ -309,27 +299,20 @@ class Nation {
   
   Ivory;
   EffectiveIvory;
-  IvoryInflation;
   MaxIvory;
 
   Cocoa;
   EffectiveCocoa;
-  CocoaInflation;
 
   Tobacco;
   EffectiveTobacco;
-  TobaccoInflation;
 
   Sugar;
   EffectiveSugar;
-  SugarInflation;
 
   ExoticFruit;
   EffectiveExoticFruit;
-  ExoticFruitInflation;
 
-  ResourcePopulationGrowthBoost;
-  ResourceHappinessBoost;
   ResourceBudgetBoost;
   /* #endregion */
 
