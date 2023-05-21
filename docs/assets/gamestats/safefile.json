@@ -1711,7 +1711,6 @@
         "Religions": {
             "Pagan": {
                 "definingFeatures": "Anything not classified",
-                "Color": "ffffff",
                 "Opinions": {}
             }
         },
