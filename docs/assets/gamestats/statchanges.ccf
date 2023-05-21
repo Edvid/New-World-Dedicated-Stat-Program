@@ -307,7 +307,21 @@
 > religions > Pagan
 +> Color
 = "776544" Color
-< <
+<
++> Cath
+= "d8b400" Cath.Color
++> Orth
+= "b200ff" Orth.Color
++> Shin
+= "ff0000" Shin.Color
++> Budd
+= "4800ff" Budd.Color
++> Islm
+= "007f0e" Islm.Color
++> Hind
+= "4cff00" Hind.Color
+
+<
 
 > Cultures
 
