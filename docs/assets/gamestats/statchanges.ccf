@@ -304,7 +304,10 @@
 
 !suppress 999
 
-= "776544" religions.Pagan.Color
+> religions > Pagan
++> Color
+= "776544" Color
+< <
 
 > Cultures
 
@@ -369,7 +372,7 @@
 +> Kyrgyz
 +> Ute
 +> Korean
-+> Uzbek
++> Turkmeni
 +> Pomo
 +> HanChinese
 +> Turkish
@@ -523,7 +526,7 @@
 = "ff597a" cultures.Kyrgyz.Color
 = "bc8753" cultures.Ute.Color
 = "7c680e" cultures.Korean.Color
-= "447a5d" cultures.Uzbek.Color
+= "447a5d" cultures.Turkmeni.Color
 = "f0de72" cultures.Pomo.Color
 = "ffd3af" cultures.HanChinese.Color
 = "7c6d13" cultures.Turkish.Color
@@ -621,8 +624,6 @@
 =15000 test.climates.moderate
 = "WestSlav" test.cultrep
 =100 test.CultureGroups.WestSlav.Points
-
-> nations
 
 +> TestNA
 +> TestEU
