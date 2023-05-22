@@ -290,7 +290,7 @@ class MapCCFCalculations {
             
             let resourceData = null;
             
-            resourceData = await prepareData(`ResourcesForCode/${resourceName}.png`);
+            resourceData = await prepareData(`Code/Resources/${resourceName}.png`);
             
             self.progressText.innerText = "";
 
