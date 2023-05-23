@@ -1023,11 +1023,19 @@ class Formulas{
     }
   }
 
-  static advanceMap(imgArray, formula, options){
+  static async advanceMap(imgArray, formula, options){
 
     let newImgArray = new Uint8ClampedArray(imgArray.length);
 
+    let then = Date.now();
     for(let i = 0; i < newImgArray.length; i+=4){
+
+      let now = Date.now();
+      if (now - then > 2000) {
+        await new Promise(resolve => setTimeout(resolve));
+        console.log(`${i} out of ${newImgArray.length}. ${i / newImgArray.length * 100}%`);
+      }
+
       let newPixel = formula(imgArray, i, options);
 
       newImgArray[i] = newPixel[0];
@@ -1042,10 +1050,10 @@ class Formulas{
   static advancePopulationMap(imgArray, pixelIndex, options){
     function fetchFour(arr, index){
       return [
-        arr[i],
-        arr[i + 1],
-        arr[i + 2],
-        arr[i + 3]
+        arr[index],
+        arr[index + 1],
+        arr[index + 2],
+        arr[index + 3]
       ];
     }
     

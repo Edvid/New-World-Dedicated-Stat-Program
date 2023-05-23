@@ -86,7 +86,7 @@ class MapCCFCalculations {
     ];
 
     async mapCalculations(){
-        //await self.prepareCCF();
+        await self.prepareCCF();
         await self.prepareNewMaps();
     }
     
@@ -385,7 +385,7 @@ class MapCCFCalculations {
     async prepareNewMaps(){
         self.popData = await prepareData("Code/Population.png", self.progressText);
 
-        let newPopData = Formulas.advanceMap(self.popData, Formulas.advancePopulationMap, {mapCCFCalculationsInstance: self});
+        let newPopData = await Formulas.advanceMap(self.popData, Formulas.advancePopulationMap, {mapCCFCalculationsInstance: self});
 
         await self.addToImageOutput(newPopData, "Population map");
     }
