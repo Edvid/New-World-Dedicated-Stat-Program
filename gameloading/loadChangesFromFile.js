@@ -66,7 +66,7 @@ function errorsPresentAtCompletion(){
 }
 
 function refreshPageItems() {
-    evaluateNations();
+    Formulas.evaluateNations();
 
     if (typeof updateDropdownSelection === 'function') updateDropdownSelection();
     if (typeof createNationSheet === 'function') {
@@ -100,7 +100,7 @@ async function evaluteChangeCommand(changeCommandRaw) {
     else if (changeCommand.toLowerCase().startsWith("sync")) {
 
         if (changeCommand.includes("<")) {
-            evaluateNations();
+            Formulas.evaluateNations();
 
             let lastselection = correctAndSynonymCheck(currentSelection).split(/\./gi);
             if (lastselection[lastselection.length - 2] !== 'Nations') error("The current selection is not a nation. Cannot sync single nation.");
@@ -108,7 +108,7 @@ async function evaluteChangeCommand(changeCommandRaw) {
 
             syncNation(lastselection);
         } else {
-            evaluateNations();
+            Formulas.evaluateNations();
             syncNations();
         }
     }

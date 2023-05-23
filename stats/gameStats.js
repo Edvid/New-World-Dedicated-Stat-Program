@@ -1452,12 +1452,6 @@ class Stats{
 
 let gameStats = new Stats();
 
-function evaluateNations() {
-  for (const nationName in gameStats.Nations) {
-    evaluateNation(nationName);
-  }
-}
-
 function clearNewTroops(nationName){
   let n = gameStats.Nations[nationName];
   for (const unitName in gameStats.UnitUpkeepCosts) {

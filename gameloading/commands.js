@@ -198,7 +198,7 @@ function createStat(currentSelection, arg) {
         let newName = arg.slice(0, arg.indexOf('=')).trim();
         let oldName = arg.slice(arg.indexOf('=') + 1).trim();
         oldName = correctAndSynonymCheck(`${currentSelection}.${oldName}`).split(".").pop();
-        if (objectClass == "Nation") evaluateNation(oldName);
+        if (objectClass == "Nation") Formulas.evaluateNation(oldName);
 
         /* Copy all property values from old to new */
         (new Function(`
@@ -214,7 +214,7 @@ function createStat(currentSelection, arg) {
             (new Function(`gameStats${currentSelection}.${arg} = new ${objectClass}("${arg}");`))();
         else
             (new Function(`gameStats${currentSelection}.${arg} = {};`))();
-        if (objectClass == "Nation") evaluateNation(arg);
+        if (objectClass == "Nation") Formulas.evaluateNation(arg);
 
         PostStatCreate(currentSelection, arg);
     }
@@ -233,7 +233,7 @@ function renameStat(currentSelection, arg) {
     oldName = correctAndSynonymCheck(`${currentSelection}.${oldName}`).split(".").pop();
 
     if (/^\.Nations$/.test(currentSelection)) {
-        evaluateNation(oldName);
+        Formulas.evaluateNation(oldName);
     }
 
     //copy over all properties of selected object, as is, except the property with oldName name, it will now be newName named
@@ -307,7 +307,7 @@ Shorthands.PayDebt = function (parameter) {
 
     let natName = splitSelections[splitSelections.length - 1];
 
-    (new Function(`evaluateNation("${natName}")`))();
+    (new Function(`Formulas.evaluateNation("${natName}")`))();
 
 
     //EffectiveDebt formula isolated for Public Debt Taken 

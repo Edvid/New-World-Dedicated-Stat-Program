@@ -22,7 +22,7 @@ class MapCCFCalculations {
     
     constructor(){
         self = this;
-        document.querySelector("body").addEventListener("game load done", self.scanMaps);
+        document.querySelector("body").addEventListener("game load done", self.mapCalculations);
 
         self.progressText = document.querySelector(".progressText");
         self.progressText.innerText = "Loading...";
@@ -61,6 +61,7 @@ class MapCCFCalculations {
     cultureData;
     religionData;
     tradeZoneData;
+    popData;
 
     populationXDevelopmentData;
     populationXDevelopmentBonusData;
@@ -71,7 +72,12 @@ class MapCCFCalculations {
     religionColorProperties;
     tradeZoneColorProperties;
 
-    async scanMaps() {
+    async mapCalculations(){
+        //await self.prepareCCF();
+        await self.prepareNewMaps();
+    }
+    
+    async prepareCCF() {
         self.nationColorProperties = self.fillInColorProperties(gameStats.Nations);
         self.climateColorProperties = self.fillInColorProperties(gameStats.Climates);
         self.cultureColorProperties = self.fillInColorProperties(gameStats.Cultures);
@@ -80,13 +86,13 @@ class MapCCFCalculations {
 
         self.baseData = await prepareData("Blank.png", self.progressText)
         
-        self.nationData = await prepareData("Nations.png", self.progressText)
-        self.climateData = await prepareData("Climates.png", self.progressText)
-        self.coastData = await prepareData("CoastalLand.png", self.progressText)
-        self.developmentData = await prepareData("Development.png", self.progressText)
-        self.cultureData = await prepareData("Cultures.png", self.progressText)
-        self.religionData = await prepareData("Religions.png", self.progressText)
-        self.tradeZoneData = await prepareData("TradeZones.png", self.progressText)
+        self.nationData = await prepareData("Nations.png", self.progressText);
+        self.climateData = await prepareData("Climates.png", self.progressText);
+        self.coastData = await prepareData("CoastalLand.png", self.progressText);
+        self.developmentData = await prepareData("Development.png", self.progressText);
+        self.cultureData = await prepareData("Cultures.png", self.progressText);
+        self.religionData = await prepareData("Religions.png", self.progressText);
+        self.tradeZoneData = await prepareData("TradeZones.png", self.progressText);
 
         self.progressText.innerText = "reversing development map";
         await new Promise(resolve => setTimeout(resolve));
@@ -365,6 +371,16 @@ class MapCCFCalculations {
         self.copyToClipboardButton.disabled = false;
     }
 
+    
+
+    async prepareNewMaps(){
+        self.popData = await prepareData("Code/Population.png", self.progressText);
+
+        let newPopData = Formulas.advanceMap(self.popData);
+
+        self.addToImageOutput(newPopData);
+    }
+
     fillInColorProperties(searchObj){
         let ret = [];
 
@@ -583,7 +599,7 @@ class MapCCFCalculations {
 
                 let pixelRef = self.WIDTH * Math.floor(imgY) + Math.floor(imgX); 
 
-                let datum = [
+                let datum = new Uint8ClampedArray()[
                     pixelRef * 4,
                     pixelRef * 4 + 1,
                     pixelRef * 4 + 2,
@@ -594,7 +610,7 @@ class MapCCFCalculations {
         }
 
 
-        imageLink.appendChild(iamge);
+        imageLink.appendChild(canvasLink);
         self.ImageOutputContainer.appendChild(imageLink);
     }
 
