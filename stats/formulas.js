@@ -1023,12 +1023,13 @@ class Formulas{
     }
   }
 
-  static advanceMap(imgArray, formula){
+  static advanceMap(imgArray, formula, options){
 
     let newImgArray = new Uint8ClampedArray(imgArray.length);
 
     for(let i = 0; i < newImgArray.length; i+=4){
-      let newPixel = formula([imgArray[i], imgArray[i + 1], imgArray[i + 2], imgArray[i + 3]]);
+      let newPixel = formula(imgArray, i, options);
+
       newImgArray[i] = newPixel[0];
       newImgArray[i + 1] = newPixel[1];
       newImgArray[i + 2] = newPixel[2];
@@ -1038,8 +1039,19 @@ class Formulas{
     return newImgArray;
   }
 
-  static advancePopulationMap(pixel){
+  static advancePopulationMap(imgArray, pixelIndex, options){
+    function fetchFour(arr, index){
+      return [
+        arr[i],
+        arr[i + 1],
+        arr[i + 2],
+        arr[i + 3]
+      ];
+    }
+    
+    pixel = fetchFour(imgArray, pixelIndex);
     if(pixel[3] < 128) return pixel; //if transparent, don't modify the pixel at all
+
 
     let pixelPop = pixel[2];
     pixelPop *= 255;
@@ -1047,20 +1059,54 @@ class Formulas{
     pixelPop *= 255;
     pixelPop = pixel[0];
 
-    let n = null;//find nation
-    let TerrainScore = null; //find terrain score
-    let CoastalPixel = null; //find if is a coastal pixel
-    let FertilityScore = null; //find fertility score
-    let DevelopmentScore = null; //find developmentscore
+
+
+
+    let mapCCFCalculationsInstance = options.mapCCFCalculationsInstance;
+    
+    function fetchPropertyObject(dataName){
+      let color = fetchFour(mapCCFCalculationsInstance[`${dataName}Data`], pixelIndex);
+      let name;
+      mapCCFCalculationsInstance[`${dataName}ColorProperties`].forEach(colorNamePair => {
+        if(colorNamePair.color == color){
+          nationName = colorNamePair;
+          return;
+        }
+      });
+      
+      return name;
+    }
+
+    function fetchName(dataName){
+      return fetchPropertyObject(dataName).name;
+    }
+
+    function fetchScore(dataName){
+      return fetchPropertyObject(dataName).score;
+    } 
+    
+    let nationName = fetchName("nation");
+    let n = gameStats.Nations[nationName];
+
+    let climateName = fetchName("climate");
+    let climateScore = gameStats.Climates[climateName].ClimateScore;
+    
+    let coastName = fetchName("coast");
+    let isCoastalPixel = coastName == "coast";
+
+    let developmentScore = fetchFour(mapCCFCalculationsInstance.developmentData, pixelIndex)[0]; //reading red channel as shorthand for greyscale
+    developmentScore = (255 - developmentScore) / 255;
+
+    let fertilityScore = fetchScore("fertility");
 
     let PixelsDisease;
     let PixelsPopGrowth;
 
     if(n != null){   
-        PixelsDisease = (pixelPop / (20 * TerrainScore)) / 25 - n.EffectiveHealth - (CoastalPixel ? 0.1 : 0) - (0.5 - FertilityScore) / 2.5 - DevelopmentScore * 5;
+        PixelsDisease = (pixelPop / (20 * climateScore)) / 25 - n.EffectiveHealth - (isCoastalPixel ? 0.1 : 0) - (0.5 - fertilityScore) / 2.5 - developmentScore * 5;
         PixelsPopGrowth = (n.PseudoPopulationGrowth < 0 ? n.PseudoPopulationGrowth : n.PseudoPopulationGrowth * (1 - PixelsDisease));
     }else{
-        PixelsDisease = (pixelPop / (20 * TerrainScore)) / 25 - (CoastalPixel ? 0.1 : 0) - (0.5 - FertilityScore) / 2.5 - DevelopmentScore * 5;
+        PixelsDisease = (pixelPop / (20 * climateScore)) / 25 - (isCoastalPixel ? 0.1 : 0) - (0.5 - fertilityScore) / 2.5 - developmentScore * 5;
         PixelsPopGrowth = 0.1 * (1 - PixelsDisease);
     }
 

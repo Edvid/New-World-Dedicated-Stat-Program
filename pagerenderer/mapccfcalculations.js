@@ -71,6 +71,12 @@ class MapCCFCalculations {
     cultureColorProperties; 
     religionColorProperties;
     tradeZoneColorProperties;
+    coastColorProperties = [
+        { color: "00ffff", name: "coast"}
+    ];
+    fertilityColorProperties = [
+        { color: "ffffff", score: 0.05}
+    ];
 
     async mapCalculations(){
         //await self.prepareCCF();
@@ -116,10 +122,6 @@ class MapCCFCalculations {
 
         let popDevAdjustedReligion = await self.mapDataIterator(self.religionPopXDevBonusMerger);
 
-        const colorToCoastMap = [
-            { color: "00ffff", name: "coast"}
-        ];
-
         let climateDistribution = await self.findDistribution(
             self.nationData, self.climateData, "nation", "climate",
             self.nationColorProperties,
@@ -132,7 +134,7 @@ class MapCCFCalculations {
         let coastPixelCount = await self.findDistribution(
             self.nationData, self.coastData, "nation", "coast", 
             self.nationColorProperties,
-            colorToCoastMap, 
+            self.coastColorProperties, 
             {
                 unassignedPixelAssumption: "Noncoast",
                 canIgnoreTransparentInner: true
@@ -376,7 +378,7 @@ class MapCCFCalculations {
     async prepareNewMaps(){
         self.popData = await prepareData("Code/Population.png", self.progressText);
 
-        let newPopData = Formulas.advanceMap(self.popData, Formulas.advancePopulationMap);
+        let newPopData = Formulas.advanceMap(self.popData, Formulas.advancePopulationMap, {mapCCFCalculationsInstance: self});
 
         await self.addToImageOutput(newPopData, "Population map");
     }
