@@ -1047,8 +1047,6 @@ class Formulas{
     pixelPop *= 255;
     pixelPop = pixel[0];
 
-    debugger;
-
     let n = null;//find nation
     let TerrainScore = null; //find terrain score
     let CoastalPixel = null; //find if is a coastal pixel
@@ -1072,6 +1070,8 @@ class Formulas{
     newPixel[2] = newPixelPop % 256;
     newPixel[1] = Math.floor(newPixelPop / 256) % 256;
     newPixel[0] = Math.floor(newPixelPop / 65536) % 256;
+
+    return newPixel;
   }
 
 }
