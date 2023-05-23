@@ -376,7 +376,7 @@ class MapCCFCalculations {
     async prepareNewMaps(){
         self.popData = await prepareData("Code/Population.png", self.progressText);
 
-        let newPopData = Formulas.advanceMap(self.popData);
+        let newPopData = Formulas.advanceMap(self.popData, Formulas.advancePopulationMap);
 
         await self.addToImageOutput(newPopData, "Population map");
     }

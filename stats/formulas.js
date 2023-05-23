@@ -1023,8 +1023,55 @@ class Formulas{
     }
   }
 
-  static advanceMap(imgArray){
-    return imgArray;
+  static advanceMap(imgArray, formula){
+
+    let newImgArray = new Uint8ClampedArray(imgArray.length);
+
+    for(let i = 0; i < newImgArray.length; i+=4){
+      let newPixel = formula([imgArray[i], imgArray[i + 1], imgArray[i + 2], imgArray[i + 3]]);
+      newImgArray[i] = newPixel[0];
+      newImgArray[i + 1] = newPixel[1];
+      newImgArray[i + 2] = newPixel[2];
+      newImgArray[i + 3] = newPixel[3];
+    }
+
+    return newImgArray;
+  }
+
+  static advancePopulationMap(pixel){
+    if(pixel[3] < 128) return pixel; //if transparent, don't modify the pixel at all
+
+    let pixelPop = pixel[2];
+    pixelPop *= 255;
+    pixelPop = pixel[1];
+    pixelPop *= 255;
+    pixelPop = pixel[0];
+
+    debugger;
+
+    let n = null;//find nation
+    let TerrainScore = null; //find terrain score
+    let CoastalPixel = null; //find if is a coastal pixel
+    let FertilityScore = null; //find fertility score
+    let DevelopmentScore = null; //find developmentscore
+
+    let PixelsDisease;
+    let PixelsPopGrowth;
+
+    if(n != null){   
+        PixelsDisease = (pixelPop / (20 * TerrainScore)) / 25 - n.EffectiveHealth - (CoastalPixel ? 0.1 : 0) - (0.5 - FertilityScore) / 2.5 - DevelopmentScore * 5;
+        PixelsPopGrowth = (n.PseudoPopulationGrowth < 0 ? n.PseudoPopulationGrowth : n.PseudoPopulationGrowth * (1 - PixelsDisease));
+    }else{
+        PixelsDisease = (pixelPop / (20 * TerrainScore)) / 25 - (CoastalPixel ? 0.1 : 0) - (0.5 - FertilityScore) / 2.5 - DevelopmentScore * 5;
+        PixelsPopGrowth = 0.1 * (1 - PixelsDisease);
+    }
+
+    let newPixelPop = pixelPop * (1 + PixelsPopGrowth);
+    let newPixel = new Uint8ClampedArray(4);
+    newPixel[3] = 255;
+    newPixel[2] = newPixelPop % 256;
+    newPixel[1] = Math.floor(newPixelPop / 256) % 256;
+    newPixel[0] = Math.floor(newPixelPop / 65536) % 256;
   }
 
 }
