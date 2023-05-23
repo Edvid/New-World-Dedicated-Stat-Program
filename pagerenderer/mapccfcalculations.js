@@ -75,7 +75,14 @@ class MapCCFCalculations {
         { color: "00ffff", name: "coast"}
     ];
     fertilityColorProperties = [
-        { color: "ffffff", score: 0.05}
+        { color: "ffffff", score: 0.025 },
+        { color: "ff0000", score: 0.15 },
+        { color: "ff6a00", score: 0.35 },
+        { color: "ffd800", score: 0.55 },
+        { color: "00ff00", score: 0.7 },
+        { color: "00c900", score: 0.8 },
+        { color: "008000", score: 0.9 },
+        { color: "003e00", score: 1.0 },
     ];
 
     async mapCalculations(){
