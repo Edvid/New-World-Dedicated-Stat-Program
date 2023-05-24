@@ -1048,25 +1048,25 @@ class Formulas{
     return newImgArray;
   }
 
-  static advancePopulationMap(imgArray, pixelIndex, options){
-    function fetchFour(arr, index){
-      return [
-        arr[index],
-        arr[index + 1],
-        arr[index + 2],
-        arr[index + 3]
-      ];
-    }
-    
+  fetchFour(arr, index){
+    return [
+      arr[index],
+      arr[index + 1],
+      arr[index + 2],
+      arr[index + 3]
+    ];
+  }
+
+  static advancePopulationMap(imgArray, pixelIndex, options){ 
     let pixel = fetchFour(imgArray, pixelIndex);
     if(pixel[3] < 128) return pixel; //if transparent, don't modify the pixel at all
 
 
-    let pixelPop = pixel[2];
+    let pixelPop = pixel[0];
     pixelPop *= 255;
     pixelPop = pixel[1];
     pixelPop *= 255;
-    pixelPop = pixel[0];
+    pixelPop = pixel[2];
 
 
 
@@ -1133,6 +1133,28 @@ class Formulas{
     newPixel[0] = Math.floor(newPixelPop / 65536) % 256;
 
     return newPixel;
+  }
+
+  hexAsNumToHumanReadableMinMaxGradient = new MinMaxGradient([
+    {color: [255, 255, 255, 255], position: 0.0},
+    {color: [255, 0, 0, 255], position: 0.25},
+    {color: [255, 255, 0, 255], position: 0.5},
+    {color: [0, 255, 0, 255], position: 0.75},
+    {color: [0, 64, 0, 255], position: 1.0},
+  ]);
+
+
+  static PopulationMapHumanReadable(imgArray, pixelIndex, options){    
+    let pixel = fetchFour(imgArray, pixelIndex);
+    if(pixel[3] < 128) return pixel; //if transparent, don't modify the pixel at all
+
+    let pixelPop = pixel[0];
+    pixelPop *= 255;
+    pixelPop = pixel[1];
+    pixelPop *= 255;
+    pixelPop = pixel[2];
+
+    return hexAsNumToHumanReadableMinMaxGradient.colorAtPos(pixelPop / 16777216);
   }
 
 }

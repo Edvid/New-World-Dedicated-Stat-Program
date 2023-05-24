@@ -388,8 +388,14 @@ class MapCCFCalculations {
         self.popData = await prepareData("Code/Population.png", self.progressText);
 
         let newPopData = await Formulas.advanceMap(self.popData, Formulas.advancePopulationMap, {mapCCFCalculationsInstance: self});
-
         await self.addToImageOutput(newPopData, "Population map");
+        
+        let newFuturePopData = await Formulas.advanceMap(newPopData, Formulas.advancePopulationMap, {mapCCFCalculationsInstance: self});
+        await self.addToImageOutput(newFuturePopData, "Future Population map");
+
+        let playerReadablePopData = await Formulas.advanceMap(self.popData, Formulas.PopulationMapHumanReadable, {mapCCFCalculationsInstance: self});
+        await self.addToImageOutput(playerReadablePopData, "Player-readable populaiton map");
+
     }
 
     fillInColorProperties(searchObj){

@@ -868,3 +868,29 @@ function collapsibleNextSibling() {
         content.style.display = "block";
     }
 }
+
+class MinMaxGradient{
+    nodeList;
+    constructor(nodeList){
+        this.nodeList = nodeList.sort((a, b) => a.position - b.position);
+    }
+
+    colorAtPos(index){
+        let nodeBefore, nodeAfter;
+
+        for(let i = 0; i < this.nodeList.length; i++){
+            if(this.nodeList[i].position > index) {
+                nodeAfter = this.nodeList[Math.min(i, this.nodeList.length - 1)];
+                nodeBefore = this.nodeList[i];
+            }
+        }
+
+        let t = (index - nodeBefore.position) / (nodeAfter.position - nodeBefore.position);
+        return [
+            Math.lerp(nodeBefore.color[0], nodeAfter.color[0], t),
+            Math.lerp(nodeAfter.color[1], nodeAfter.color[1], t),
+            Math.lerp(nodeAfter.color[2], nodeAfter.color[2], t),
+            255
+        ]
+    }
+}
