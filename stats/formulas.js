@@ -1088,7 +1088,7 @@ class Formulas{
   }
 
   static advancePopulationMap(imgArray, pixelIndex, options){ 
-    let pixel = fetchFour(imgArray, pixelIndex);
+    let pixel = Formulas.fetchFour(imgArray, pixelIndex);
     if(pixel[3] < 128) return pixel; //if transparent, don't modify the pixel at all
 
 
@@ -1104,7 +1104,7 @@ class Formulas{
     let mapCCFCalculationsInstance = options.mapCCFCalculationsInstance;
     
     function fetchPropertyObject(dataName){
-      let color = rgbToHex(fetchFour(mapCCFCalculationsInstance[`${dataName}Data`], pixelIndex));
+      let color = rgbToHex(Formulas.fetchFour(mapCCFCalculationsInstance[`${dataName}Data`], pixelIndex));
       let pair;
       mapCCFCalculationsInstance[`${dataName}ColorProperties`].forEach(colorNamePair => {
         if(colorNamePair.color == color){
@@ -1139,7 +1139,7 @@ class Formulas{
     
     let isCoastalPixel = fetchBinary("coast", "coast")
 
-    let developmentScore = fetchFour(mapCCFCalculationsInstance.developmentData, pixelIndex)[0]; //reading red channel as shorthand for greyscale
+    let developmentScore = Formulas.fetchFour(mapCCFCalculationsInstance.developmentData, pixelIndex)[0]; //reading red channel as shorthand for greyscale
     developmentScore = (255 - developmentScore) / 255;
 
     let fertilityScore = fetchScore("fertility");
@@ -1175,7 +1175,7 @@ class Formulas{
 
 
   static PopulationMapHumanReadable(imgArray, pixelIndex, options){    
-    let pixel = fetchFour(imgArray, pixelIndex);
+    let pixel = Formulas.fetchFour(imgArray, pixelIndex);
     if(pixel[3] < 128) return pixel; //if transparent, don't modify the pixel at all
 
     let pixelPop = pixel[0];
