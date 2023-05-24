@@ -887,9 +887,9 @@ class MinMaxGradient{
 
         let t = (index - nodeBefore.position) / (nodeAfter.position - nodeBefore.position);
         return [
-            Math.lerp(nodeBefore.color[0], nodeAfter.color[0], t),
-            Math.lerp(nodeAfter.color[1], nodeAfter.color[1], t),
-            Math.lerp(nodeAfter.color[2], nodeAfter.color[2], t),
+            lerp(nodeBefore.color[0], nodeAfter.color[0], t),
+            lerp(nodeAfter.color[1], nodeAfter.color[1], t),
+            lerp(nodeAfter.color[2], nodeAfter.color[2], t),
             255
         ]
     }
