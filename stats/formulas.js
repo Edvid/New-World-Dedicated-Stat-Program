@@ -1094,9 +1094,9 @@ class Formulas{
 
     let pixelPop = pixel[0];
     pixelPop *= 255;
-    pixelPop = pixel[1];
+    pixelPop += pixel[1];
     pixelPop *= 255;
-    pixelPop = pixel[2];
+    pixelPop += pixel[2];
 
 
 
@@ -1173,6 +1173,8 @@ class Formulas{
     {color: [0, 64, 0, 255], position: 1.0},
   ]);
 
+  static maxPopInPixel = 50000;
+
 
   static PopulationMapHumanReadable(imgArray, pixelIndex, options){    
     let pixel = Formulas.fetchFour(imgArray, pixelIndex);
@@ -1180,11 +1182,13 @@ class Formulas{
 
     let pixelPop = pixel[0];
     pixelPop *= 255;
-    pixelPop = pixel[1];
+    pixelPop += pixel[1];
     pixelPop *= 255;
-    pixelPop = pixel[2];
+    pixelPop += pixel[2];
 
-    return Formulas.hexAsNumToHumanReadableMinMaxGradient.colorAtPos(pixelPop / 16777216);
+    let color = Formulas.hexAsNumToHumanReadableMinMaxGradient.colorAtPos(pixelPop / Formulas.maxPopInPixel);
+    
+    return color;
   }
 
 }

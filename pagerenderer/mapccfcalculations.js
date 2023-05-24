@@ -396,7 +396,7 @@ class MapCCFCalculations {
         await self.addToImageOutput(newFuturePopData, "Future Population map");
 
         let playerReadablePopData = await Formulas.advanceMap(self.popData, Formulas.PopulationMapHumanReadable, {mapCCFCalculationsInstance: self});
-        await self.addToImageOutput(playerReadablePopData, "Player-readable populaiton map");
+        await self.addToImageOutput(playerReadablePopData, "Player-readable population map");
 
     }
 
