@@ -1165,7 +1165,7 @@ class Formulas{
     return newPixel;
   }
 
-  hexAsNumToHumanReadableMinMaxGradient = new MinMaxGradient([
+  static hexAsNumToHumanReadableMinMaxGradient = new MinMaxGradient([
     {color: [255, 255, 255, 255], position: 0.0},
     {color: [255, 0, 0, 255], position: 0.25},
     {color: [255, 255, 0, 255], position: 0.5},
@@ -1184,7 +1184,7 @@ class Formulas{
     pixelPop *= 255;
     pixelPop = pixel[2];
 
-    return hexAsNumToHumanReadableMinMaxGradient.colorAtPos(pixelPop / 16777216);
+    return Formulas.hexAsNumToHumanReadableMinMaxGradient.colorAtPos(pixelPop / 16777216);
   }
 
 }
