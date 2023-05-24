@@ -1078,7 +1078,7 @@ class Formulas{
     return newImgArray;
   }
 
-  fetchFour(arr, index){
+  static fetchFour(arr, index){
     return [
       arr[index],
       arr[index + 1],
