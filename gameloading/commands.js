@@ -13,6 +13,13 @@ function syncNation(nationName) {
     // deforestation from forestry
     gameStats.Nations[nationName].ForestsCutDown += (gameStats.Nations[nationName].Forestry - gameStats.Nations[nationName].Reforestation) * 750 / gameStats.TimeDivide;
 
+    // SoL rise/fall
+  for (const EstateIndex in gameStats.Estates) {
+    const Estate = gameStats.Estates[EstateIndex];
+    gameStats.Nations[nationName]["Expected" + Estate + "Sol"] = (gameStats.Nations[nationName]["Expected" + Estate + "Sol"] > gameStats.Nations[nationName][Estate + "Sol"] * 1.05 ? gameStats.Nations[nationName]["Expected" + Estate + "Sol"] * 0.9 : gameStats.Nations[nationName]["Expected" + Estate + "Sol"] * max(1.05, gameStats.Nations[nationName][Estate + "Sol"] / gameStats.Nations[nationName]["Expected" + Estate + "Sol"] - 0.05));
+    debugger;
+  }
+
     /* #region  deal with automatic debt taking */
 
     //If budget is negative
