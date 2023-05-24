@@ -168,8 +168,7 @@ class MapCCFCalculations {
             self.cultureColorProperties,
             {
                 unassignedPixelAssumption: "Foreign",
-                adjustForAlpha: true,
-                canIgnoreTransparentInner: true
+                adjustForAlpha: true
             } 
         );
 
@@ -179,8 +178,7 @@ class MapCCFCalculations {
             self.religionColorProperties, 
             {
                 unassignedPixelAssumption: "Pagan",
-                adjustForAlpha: true,
-                canIgnoreTransparentInner: true
+                adjustForAlpha: true
             }
         );
 
