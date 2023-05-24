@@ -638,3 +638,21 @@
 =15000 test.climates.moderate
 = "WestSlav" test.cultrep
 =100 test.CultureGroups.WestSlav.Points
+
++> TestNA
++> TestEU
++> TestAS
++> TestAR
++> TestAF
++> TestAU
++> TestSA
+
+= "5eff91" TestNA.Color
+= "0094ff" TestEU.Color
+= "01ffff" TestAS.Color
+= "7f3300" TestAR.Color
+= "b6ff00" TestAF.Color
+= "b200ff" TestAU.Color
+= "01ff21" TestSA.Color
+
+<
