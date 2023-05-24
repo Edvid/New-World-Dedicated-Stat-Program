@@ -1034,6 +1034,7 @@ class Formulas{
       if (now - then > 2000) {
         await new Promise(resolve => setTimeout(resolve));
         console.log(`${i} out of ${newImgArray.length}. ${i / newImgArray.length * 100}%`);
+        then = now;
       }
 
       let newPixel = formula(imgArray, i, options);
@@ -1057,7 +1058,7 @@ class Formulas{
       ];
     }
     
-    pixel = fetchFour(imgArray, pixelIndex);
+    let pixel = fetchFour(imgArray, pixelIndex);
     if(pixel[3] < 128) return pixel; //if transparent, don't modify the pixel at all
 
 
@@ -1073,20 +1074,26 @@ class Formulas{
     let mapCCFCalculationsInstance = options.mapCCFCalculationsInstance;
     
     function fetchPropertyObject(dataName){
-      let color = fetchFour(mapCCFCalculationsInstance[`${dataName}Data`], pixelIndex);
-      let name;
+      let color = rgbToHex(fetchFour(mapCCFCalculationsInstance[`${dataName}Data`], pixelIndex));
+      let pair;
       mapCCFCalculationsInstance[`${dataName}ColorProperties`].forEach(colorNamePair => {
         if(colorNamePair.color == color){
-          nationName = colorNamePair;
+          pair = colorNamePair;
           return;
         }
       });
       
-      return name;
+      return pair;
     }
 
     function fetchName(dataName){
       return fetchPropertyObject(dataName).name;
+    }
+
+    function fetchBinary(dataName, isName){
+      let propertyPair = fetchPropertyObject(dataName);
+      let nullableName = propertyPair ? propertyPair.name : `not-${isName}`;
+      return nullableName == isName; 
     }
 
     function fetchScore(dataName){
@@ -1099,8 +1106,8 @@ class Formulas{
     let climateName = fetchName("climate");
     let climateScore = gameStats.Climates[climateName].ClimateScore;
     
-    let coastName = fetchName("coast");
-    let isCoastalPixel = coastName == "coast";
+    
+    let isCoastalPixel = fetchBinary("coast", "coast")
 
     let developmentScore = fetchFour(mapCCFCalculationsInstance.developmentData, pixelIndex)[0]; //reading red channel as shorthand for greyscale
     developmentScore = (255 - developmentScore) / 255;
