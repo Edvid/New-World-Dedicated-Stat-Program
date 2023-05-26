@@ -576,8 +576,8 @@ class Nation {
 
     this.AristocratLoyalty = 0.50; //Show in percent
     this.ClergyLoyalty = 0.50; //Show in percent
-      this.BurgousieLoyalty = 0.50; //Show in percent
-      this.UrbanLoyalty = 0.50; //Show in percent
+    this.BurgousieLoyalty = 0.50; //Show in percent
+    this.UrbanLoyalty = 0.50; //Show in percent
     this.BureaucratLoyalty = 0.50; //Show in percent
     this.IntellectualsLoyalty = 0.50; //Show in percent
     this.WorkersLoyalty = 0.50; //Show in percent
@@ -622,8 +622,8 @@ class Nation {
     this.GovernmentRepresentation = {
       UnitaryRepresentation: 30,
       AristocratRepresentation: 40,
-      ClergyRepresentation: 20,
-      BurgousieRepresentation: 10,
+      ClergyRepresentation: 15,
+      BurgousieRepresentation: 15,
       UrbanRepresentation: 0,
       BureaucratRepresentation: 0,
       IntellectualsRepresentation: 0,
