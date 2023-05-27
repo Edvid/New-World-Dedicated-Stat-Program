@@ -576,8 +576,8 @@ class Nation {
 
     this.AristocratLoyalty = 0.50; //Show in percent
     this.ClergyLoyalty = 0.50; //Show in percent
-      this.BurgousieLoyalty = 0.50; //Show in percent
-      this.UrbanLoyalty = 0.50; //Show in percent
+    this.BurgousieLoyalty = 0.50; //Show in percent
+    this.UrbanLoyalty = 0.50; //Show in percent
     this.BureaucratLoyalty = 0.50; //Show in percent
     this.IntellectualsLoyalty = 0.50; //Show in percent
     this.WorkersLoyalty = 0.50; //Show in percent
@@ -594,19 +594,19 @@ class Nation {
       this.ExternalTariffs = 0.1; //Show in percent
     this.InternalTariffs = 0.1; //Show in percent
 
-    this.ExpectedSlavesSol = 0.25;
-    this.ExpectedLabourersSol = 0.75;
-    this.ExpectedSerfsSol = 0.75;
-    this.ExpectedFarmersSol = 1.25;
-    this.ExpectedTownsfolkSol = 1.5;
-    this.ExpectedClergySol = 6;
-    this.ExpectedBureaucratsSol = 2;
-    this.ExpectedMerchantsSol = 1.75;
-    this.ExpectedIntellectualsSol = 2;
+    this.ExpectedSlavesSol = 0.05;
+    this.ExpectedLabourersSol = 0.25;
+    this.ExpectedSerfsSol = 0.25;
+    this.ExpectedFarmersSol = 0.5;
+    this.ExpectedTownsfolkSol = 3;
+    this.ExpectedClergySol = 5;
+    this.ExpectedBureaucratsSol = 1.5;
+    this.ExpectedMerchantsSol = 1;
+    this.ExpectedIntellectualsSol = 1;
     this.ExpectedSailorsSol = 0.75;
     this.ExpectedSoldiersSol = 1;
-    this.ExpectedAristocracySol = 10;
-    this.ExpectedBurgousieSol = 6;
+    this.ExpectedAristocracySol = 15;
+    this.ExpectedBurgousieSol = 5;
     
     this.EstateInfluences = {
       AristocratInfluence: 30,
@@ -622,8 +622,8 @@ class Nation {
     this.GovernmentRepresentation = {
       UnitaryRepresentation: 30,
       AristocratRepresentation: 40,
-      ClergyRepresentation: 20,
-      BurgousieRepresentation: 10,
+      ClergyRepresentation: 15,
+      BurgousieRepresentation: 15,
       UrbanRepresentation: 0,
       BureaucratRepresentation: 0,
       IntellectualsRepresentation: 0,
@@ -1047,6 +1047,21 @@ class Stats{
         "Motors",
         "Planes",
         "HeavyIndustry"
+    ];
+    this.Estates = [
+      "Slaves",
+      "Labourers",
+      "Serfs",
+      "Farmers",
+      "Townsfolk",
+      "Clergy",
+      "Bureaucrats",
+      "Merchants",
+      "Intellectuals",
+      "Sailors",
+      "Soldiers",
+      "Aristocracy",
+      "Burgousie"
     ];
     this.Trades = {};
     this.TradeZones = {
