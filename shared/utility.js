@@ -611,7 +611,7 @@ function getStatType(selection){
         if (foundStatType != null) return;
         for(let i = 0; i < StatTypes[statType].length; i++){
             const endCompare = StatTypes[statType][i];
-            const testString = endCompare + '$';
+            const testString = '^' +endCompare + '$';
             
             if(new RegExp(testString).test(selection)) {
                 foundStatType = statType.split(/Stats/)[0].replace(/([a-z])([A-Z])/, "$1 $2");
