@@ -119,7 +119,9 @@ class Nation {
   PopulationControl;
   BirthControl;
   ConscriptionPercent;
+  StateWorkerWage;
   Production;
+  ProductionGovernmentControl;
   ProductionEfficiency;
   TradeEfficiency;
   LocalTrade;
@@ -598,7 +600,7 @@ class Nation {
     this.ExpectedLabourersSol = 0.25;
     this.ExpectedSerfsSol = 0.25;
     this.ExpectedFarmersSol = 0.5;
-    this.ExpectedTownsfolkSol = 3;
+    this.ExpectedTownsfolkSol = 2.5;
     this.ExpectedClergySol = 5;
     this.ExpectedBureaucratsSol = 1.5;
     this.ExpectedMerchantsSol = 1;
@@ -606,7 +608,7 @@ class Nation {
     this.ExpectedSailorsSol = 0.75;
     this.ExpectedSoldiersSol = 1;
     this.ExpectedAristocracySol = 15;
-    this.ExpectedBurgousieSol = 5;
+    this.ExpectedBurgousieSol = 10;
     
     this.EstateInfluences = {
       AristocratInfluence: 30,
@@ -760,7 +762,9 @@ class Nation {
         AutomotiveSector: 0,
         AerospaceSector: 0,
         HeavyIndustrySector: 0
-     }
+    }
+    this.ProductionGovernmentControl = 0;
+    this.StateWorkerWage = 2;
     
     this.SocietalClasses = {};
     this.CultureGroups = {}

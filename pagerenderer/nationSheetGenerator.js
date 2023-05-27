@@ -259,7 +259,7 @@ let TableLayouts = {
     "Basic Stats": [
         ["AverageDevelopment", "Health", "EducationEfficiency", "Propaganda", "SocialSpending", "PopulationControl", "BirthControl"],
         ["Stability", "Absolutism", "Corruption", "Overextension", "Prosperity", "PopulationHappiness", "WarSupport"],
-        ["AdministrativeTech", "BureaucratWages", "AdministrativeEfficiency", "AdministrationSize", "AdministrativePower", "AdministrativeDemand", "AdministrativeStrain", "TaxEfficiency"]
+        ["AdministrativeTech", "BureaucratWages", "StateWorkerWage", "AdministrativeEfficiency", "AdministrationSize", "AdministrativePower", "AdministrativeDemand", "AdministrativeStrain", "TaxEfficiency"]
     ],
     "Budget Stats": [
         ["TradeEfficiency", "LocalTrade", "InternalTrade", "ExternalTrade", "TradePower"],
@@ -270,20 +270,20 @@ let TableLayouts = {
         ["InternalTariffs", "ExternalTariffs", "TariffEfficiency"]
     ],
     "Upkeeps and Income": [
-        ["TaxRevenue", "TariffsRevenue", "PassiveInvestmentIncome"],
+        ["TaxRevenue", "TariffsRevenue", "PassiveInvestmentIncome", "StateProductionRevenue"],
         ["OverallIncome", "OverallSpending"],
-        ["ArmyUpkeep", "NavyUpkeep", "FortUpkeep", "NewTroopRecruitmentPenalty"],
-        ["SpyUpkeep", "EducationUpkeep", "PopulationControlUpkeep"],
-        ["SocialSpendingUpkeep", "AgricultureSpending", "AdministrativeUpkeep"],
-        ["HygieneUpkeep", "ResearchUpkeep", "PropagandaUpkeep"]
+        ["ArmyUpkeep", "NavyUpkeep", "FortUpkeep", "NewTroopRecruitmentPenalty", "SpyUpkeep"],
+        ["EducationUpkeep", "PopulationControlUpkeep", "HygieneUpkeep", "ResearchUpkeep", "PropagandaUpkeep"],
+        ["SocialSpendingUpkeep", "AgricultureSpending", "AdministrativeUpkeep", "StateWorkersUpkeep"]
     ],
   "Production": [
-    ["Production", "ProductionEfficiency", "IronShortage", "CoalShortage", "WoodShortage", "NaturalFabricsShortage", "LuxuryNaturalFabricsShortage", "ValuableMaterialsShortage"],
+    ["Production", "ProductionEfficiency", "ProductionGovernmentControl", "IronShortage", "CoalShortage", "WoodShortage", "NaturalFabricsShortage", "LuxuryNaturalFabricsShortage", "ValuableMaterialsShortage"],
       ["Housing", "Textiles", "BasicGoods", "LuxuryGoods", "Alcohol", "BasicTools", "HeavyIndustry", "BasicArmaments", "HeavyArmaments", "ShipBuilding", "Chemicals", "Motors", "Planes", "Electronics"],
       ["EffectiveHousing", "EffectiveTextiles", "EffectiveBasicGoods", "EffectiveLuxuryGoods", "EffectiveAlcohol", "EffectiveBasicTools", "EffectiveHeavyIndustry", "EffectiveBasicArmaments", "EffectiveHeavyArmaments", "EffectiveShipBuilding", "EffectiveChemicals", "EffectiveMotors", "EffectivePlanes", "EffectiveElectronics"],
       ["HousingDemand", "TextilesDemand", "BasicGoodsDemand", "LuxuryGoodsDemand", "AlcoholDemand", "BasicToolsDemand", "HeavyIndustryDemand", "BasicArmamentsDemand", "HeavyArmamentsDemand", "ShipBuildingDemand", "ChemicalsDemand", "MotorsDemand", "PlanesDemand", "ElectronicsDemand"],
       ["HousingValue", "TextilesValue", "BasicGoodsValue", "LuxuryGoodsValue", "AlcoholValue", "BasicToolsValue", "HeavyIndustryValue", "BasicArmamentsValue", "HeavyArmamentsValue", "ShipBuildingValue", "ChemicalsValue", "MotorsValue", "PlanesValue", "ElectronicsValue"],
-      ["HousingShortage", "TextilesShortage", "BasicGoodsShortage", "LuxuryGoodsShortage", "AlcoholShortage", "BasicToolsShortage", "HeavyIndustryShortage", "BasicArmamentsShortage", "HeavyArmamentsShortage", "ShipBuildingShortage", "ChemicalsShortage", "MotorsShortage", "PlanesShortage", "ElectronicsShortage"]
+      ["HousingShortage", "TextilesShortage", "BasicGoodsShortage", "LuxuryGoodsShortage", "AlcoholShortage", "BasicToolsShortage", "HeavyIndustryShortage", "BasicArmamentsShortage", "HeavyArmamentsShortage", "ShipBuildingShortage", "ChemicalsShortage", "MotorsShortage", "PlanesShortage", "ElectronicsShortage"],
+      ["PopProductionRevenue", "StateProductionRevenue"]
     ],
     "Army": [
 		["OverallImprovements", "CommanderFreedom", "IronShortage", "SulphurShortage", "ArmyWages"],
