@@ -552,8 +552,8 @@ class Nation {
       }
     };
     this.Population = 2500000;
-    this.LiteracyPercent = 7.5;
-    this.HigherEducation = 0.5;
+    this.LiteracyPercent = 5;
+    this.HigherEducation = 0.25;
     this.Budget = 250.00;
     this.Food = 200.00;
     this.ResearchPoints = 5;
@@ -566,8 +566,8 @@ class Nation {
     this.DevelopmentPixelCount = 60000;
     this.CoastalPixels = 1000;
     this.Health = 1.00;
-    this.EducationEfficiency = 1;
-      this.BureaucratWages = 0.75;
+    this.EducationEfficiency = 2;
+      this.BureaucratsWages = 0.75;
     this.AdministrativeEfficiency = 25;
       this.AdministrationSize = 0.5;
     this.Propaganda = 0;
@@ -576,19 +576,19 @@ class Nation {
       this.Nationalism = 0;
       this.ReligiousFervor = 1;
 
-    this.AristocratLoyalty = 0.50; //Show in percent
+    this.AristocracyLoyalty = 0.50; //Show in percent
     this.ClergyLoyalty = 0.50; //Show in percent
     this.BurgousieLoyalty = 0.50; //Show in percent
     this.UrbanLoyalty = 0.50; //Show in percent
-    this.BureaucratLoyalty = 0.50; //Show in percent
+    this.BureaucratsLoyalty = 0.50; //Show in percent
     this.IntellectualsLoyalty = 0.50; //Show in percent
     this.WorkersLoyalty = 0.50; //Show in percent
 
-      this.AristocratTax = 0.1; //Show in percent
+      this.AristocracyTax = 0.1; //Show in percent
       this.ClergyTax = 0.1; //Show in percent
       this.BurgousieTax = 0.1; //Show in percent
       this.UrbanTax = 0.1; //Show in percent
-      this.BureaucratTax = 0.1; //Show in percent
+      this.BureaucratsTax = 0.1; //Show in percent
       this.IntellectualsTax = 0.1; //Show in percent
       this.MilitaryTax = 0.1; //Show in percent
       this.WorkersTax = 0.1; //Show in percent
@@ -611,11 +611,11 @@ class Nation {
     this.ExpectedBurgousieSol = 10;
     
     this.EstateInfluences = {
-      AristocratInfluence: 30,
+      AristocracyInfluence: 30,
       ClergyInfluence: 20,
         BurgousieInfluence: 15,
         UrbanInfluence: 5,
-      BureaucratInfluence: 5,
+      BureaucratsInfluence: 5,
       IntellectualsInfluence: 2.5,
       MilitaryInfluence: 2.5,
       WorkersInfluence: 0.5
@@ -623,11 +623,11 @@ class Nation {
     
     this.GovernmentRepresentation = {
       UnitaryRepresentation: 30,
-      AristocratRepresentation: 40,
+      AristocracyRepresentation: 40,
       ClergyRepresentation: 15,
       BurgousieRepresentation: 15,
       UrbanRepresentation: 0,
-      BureaucratRepresentation: 0,
+      BureaucratsRepresentation: 0,
       IntellectualsRepresentation: 0,
       MilitaryRepresentation: 0,
       WorkersRepresentation: 0
@@ -635,11 +635,11 @@ class Nation {
     
     this.MilitaryControl = {
       UnitaryControl: 35,
-      AristocratControl: 45,
+      AristocracyControl: 45,
       ClergyControl: 5,
         BurgousieControl: 5,
         UrbanControl: 5,
-      BureaucratControl: 5,
+      BureaucratsControl: 5,
       IntellectualsControl: 0,
       WorkersControl: 5
     };
@@ -869,7 +869,9 @@ class Nation {
     /* #endregion */
 
     /* #region Reforms */
-    
+
+    this.ReformPower = 0;
+
     this.Reforms = {
       SlaveryAllowed: true,
       SlaveryBanned: false,
@@ -879,7 +881,8 @@ class Nation {
       
       OpenFieldSystem: true,
       Enclosure: false,
-      
+
+      Isolationism: false,
       Mercantilism: true,
       Protectionism: false,
       FreeTrade: false,
@@ -915,10 +918,31 @@ class Nation {
       PrivateLandOwnership: false,
       GovernmentLandOwnership: false,
 
-      NoArmyReserve: true,
       NationalMilitia: false,
-      Conscripts: false,
-      ProffesionalReservists: false
+      FeudalLevies: true,
+      ProffesionalArmy: false,
+      MassConscription: false,
+
+      FeudalNobleArmies: true,
+      PrivateMercenariesOnly: false,
+      NoPrivateMilitaries: false,
+
+      StateMediaOnly: false,
+      ExtensiveCensorship: true,
+      LimitedCensorship: false,
+      FreeSpeech: false,
+
+      NoSocialMobility: true,
+      RestrictedSocialMobility: false,
+      UnrestrictedSocialMobility: false,
+
+      StateReligion: true,
+      RestrictiveReligionLaws: false,
+      FreedomOfReligion: false,
+
+      PrivateEducationOnly: true,
+      ReligiousSchools: false,
+      PublicEducation: false
     }
     
     /* #endregion */
@@ -938,7 +962,7 @@ class Nation {
       Serfdom: false,
       Feudalism: false,
       Universities: false,
-      AristocratDuty: false,
+      AristocracyDuty: false,
       Courthouses: false,
       RenaissanceThought: false,
       EarlyModernAdministration: false,
@@ -1064,6 +1088,16 @@ class Stats{
       "Intellectuals",
       "Sailors",
       "Soldiers",
+      "Aristocracy",
+      "Burgousie"
+    ];
+    this.EstatesGeneral = [
+      "Workers",
+      "Urban",
+      "Clergy",
+      "Bureaucrats",
+      "Intellectuals",
+      "Military",
       "Aristocracy",
       "Burgousie"
     ];

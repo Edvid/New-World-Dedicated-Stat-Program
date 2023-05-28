@@ -2,7 +2,7 @@ function evaluateNation(nationName) {
   let n = gameStats.Nations[nationName];
 
   n.AgricultureTechnology = 0 + n.Technologies.HorseCollar / 2 + n.CulturalAdvancements.PotatoPopulationBoom / 2 + n.Reforms.Enclosure / 2;
-  n.FarmingEfficiency = 1 + n.AgricultureSubsidies / 5 + n.Fertility - 0.5 + (n.AgricultureInfrastructure - 1) / 10 + (n.AgricultureAdvancements - 1) / 10 + n.AgricultureTechnology / 10;
+  n.FarmingEfficiency = 1 + n.AgricultureSubsidies / 5 + n.Fertility - 0.5 + (n.AgricultureInfrastructure - 1) / 10 + (n.AgricultureAdvancements - 1) / 10 + n.AgricultureTechnology / 10 + n.Reforms.Enclosure / 20;
 
   {
     let rels = []
@@ -100,29 +100,32 @@ function evaluateNation(nationName) {
   n.AverageDevelopment = n.DevelopmentPixelCount / n.Size / 255;
   n.Workforces.Townsfolk = n.AverageDevelopment;
 
+  n.Education = n.EducationEfficiency * (1 + n.Reforms.ReligiousSchools + n.Reforms.PublicEducation * 3);
+
   n.CultureRepresentedAtGovernmentLevelPercent =  cultureCalc.GovernmentRepresentationPercent;
   n.CulturalDisunity = cultureCalc.disunity * (1 + n.Nationalism * 0.2);
   n.ReligionRepresentedAtGovernmentLevelPercent = religionCalc.GovernmentRepresentationPercent;
-    n.ReligiousDisunity = religionCalc.disunity * (1 + n.ReligiousFervor * 0.2);
+  n.ReligiousDisunity = religionCalc.disunity * (1 + n.ReligiousFervor * 0.2 + n.Reforms.StateReligion / 2 - n.Reforms.FreedomOfReligion / 2);
     n.OverallNumbers = n.Riflemen + n.MusketMilitia + n.Musketeers + n.Levies + n.LightInfantry + n.HeavyInfantry + n.Archers + n.Crossbowmen + n.LightCavalry + n.HeavyCavalry + n.EliteInfantry + n.Militia + n.EliteCavalry + n.HandCannoneers + (n.SiegeEquipment + n.LargeSiegeEquipment) * 10 + n.RegimentalGuns * 3 + n.FieldCannons * 6 + n.SiegeGuns * 10;
   n.OverallShipCount = n.LightShips + n.MediumShips + n.HeavyShips;
-  n.AdministrativeTech = (n.CulturalAdvancements.EarlyModernAdministration == true ? 1 : 0) + (n.CulturalAdvancements.NationalSovereignity == true ? 1 : 0) + (n.CulturalAdvancements.Constitution == true ? 1 : 0)	
+  n.AdministrativeTech = n.CulturalAdvancements.EarlyModernAdministration + n.CulturalAdvancements.NationalSovereignity + n.CulturalAdvancements.Constitution + n.Reforms.WealthyBureaucrats / 2 + n.Reforms.MeritocraticOfficers;
   n.AdministrativePower = n.AdministrativeEfficiency * (1 + n.AdministrationSize / 2 + n.AdministrativeTech / 10) * 0.75;
   n.AdministrativeDemand = (
-    0 + n.Population / 1000000 + n.Health * 2 + n.EducationEfficiency * 2 + n.SocialSpending * 4 + n.Propaganda * 2 + n.PopulationControl * 2 + n.BirthControl * 4 +
+    0 + n.Population / 1000000 + n.Health * 2 + n.Education * 2 + n.SocialSpending * 4 + n.Propaganda * 2 + n.PopulationControl * 2 + n.BirthControl * 4 +
     (n.HighClassTax + n.MediumClassTax + n.LowerClassTax) / 3 * 75 + n.OverallNumbers / 5000 + n.OverallShipCount / 25 + n.AgricultureSubsidies * 4 + (n.AgricultureInfrastructure - 1) * 4 + n.Size / 7500 +
     (n.ResearchSpending - 1) * 10 + (1 - n.CultureRepresentedAtGovernmentLevelPercent) * 10 + (n.Population / 1000 * n.Workforces.Townsfolk / 2) * n.ProductionGovernmentControl
   );
   n.AdministrativeStrain = max(0, n.AdministrativeDemand - n.AdministrativePower);
-  
 
-	n.IrregularQualityIC = n.OverallImprovements + n.IrregularImprovements + n.Technologies.Metallurgy / 10;
-	n.MeleeQualityIC = n.OverallImprovements + n.MeleeImprovements + n.Technologies.PlateArmour / 5 + n.Technologies.StandardizedPikes / 10 + n.Technologies.Metallurgy / 10;
-	n.RangedQualityIC = n.OverallImprovements + n.RangedImprovements + n.Technologies.Metallurgy / 10;
-	n.CavalryQualityIC = n.OverallImprovements + n.CavalryImprovements + n.Technologies.SaddleAndStirrup / 5 + n.Technologies.PlateArmour / 5 + n.Technologies.Reiters / 10 + n.Technologies.Metallurgy / 10;
-	n.FirearmQualityIC = n.OverallImprovements + n.FirearmImprovements + n.Technologies.Matchlock / 5 + n.Technologies.SocketBayonet / 5 + n.Technologies.Flintlock / 5 + n.Technologies.Metallurgy / 10 + n.Technologies.Bayonet / 20;
-	n.SiegeQualityIC = n.OverallImprovements + n.SiegeImprovements + n.Technologies.Metallurgy / 10;
-	n.ArtilleryQualityIC = n.OverallImprovements + n.ArtilleryImprovements + n.Technologies.Limber / 5 + n.Technologies.Mortars / 5 + n.Technologies.Metallurgy / 10;
+  n.RealOverallImprovements = n.OverallImprovements + n.Reforms.WealthyOfficers / 5 + n.Reforms.MeritocraticOfficers / 2 - n.Reforms.NationalMilitia / 4 + n.Reforms.ProffesionalArmy / 2 + n.Reforms.MassConscription / 4;
+
+	n.IrregularQualityIC = n.RealOverallImprovements + n.IrregularImprovements + n.Technologies.Metallurgy / 10;
+	n.MeleeQualityIC = n.RealOverallImprovements + n.MeleeImprovements + n.Technologies.PlateArmour / 5 + n.Technologies.StandardizedPikes / 10 + n.Technologies.Metallurgy / 10;
+	n.RangedQualityIC = n.RealOverallImprovements + n.RangedImprovements + n.Technologies.Metallurgy / 10;
+	n.CavalryQualityIC = n.RealOverallImprovements + n.CavalryImprovements + n.Technologies.SaddleAndStirrup / 5 + n.Technologies.PlateArmour / 5 + n.Technologies.Reiters / 10 + n.Technologies.Metallurgy / 10;
+	n.FirearmQualityIC = n.RealOverallImprovements + n.FirearmImprovements + n.Technologies.Matchlock / 5 + n.Technologies.SocketBayonet / 5 + n.Technologies.Flintlock / 5 + n.Technologies.Metallurgy / 10 + n.Technologies.Bayonet / 20;
+	n.SiegeQualityIC = n.RealOverallImprovements + n.SiegeImprovements + n.Technologies.Metallurgy / 10;
+	n.ArtilleryQualityIC = n.RealOverallImprovements + n.ArtilleryImprovements + n.Technologies.Limber / 5 + n.Technologies.Mortars / 5 + n.Technologies.Metallurgy / 10;
   
   n.FortUpkeep = (
     n.SmallForts * 2 +
@@ -131,7 +134,7 @@ function evaluateNation(nationName) {
     n.HugeForts * 16 +
 
     n.ExtraCityFortifications * 5
-  ) * n.OverallImprovements / gameStats.TimeDivide;
+  ) * n.RealOverallImprovements / gameStats.TimeDivide;
 
   n.UnitUpkeep = function(){
     let uu = 0.0;
@@ -143,7 +146,7 @@ function evaluateNation(nationName) {
   }();
 
 
-  n.NavyTech = 0 + n.Technologies.Galleons / 4 + n.Technologies.Docks / 2 + n.Technologies.Gunports / 2 + n.Technologies.Gunlock / 4;
+  n.NavyTech = 0 + n.Reforms.WealthyOfficers / 5 + n.Reforms.MeritocraticOfficers / 2 + n.Technologies.Galleons / 4 + n.Technologies.Docks / 2 + n.Technologies.Gunports / 2 + n.Technologies.Gunlock / 4;
   n.NavyQualityIC = 1 + n.NavyImprovements + n.NavyTech;
 
   n.UpkeepForOneMerchantShip = ((1 + n.Technologies.Gunports) * (n.NavyQualityIC)) / gameStats.TimeDivide;
@@ -290,7 +293,7 @@ function evaluateNation(nationName) {
   n.EffectiveSulphur += n.BaseSulphurHarvest;
   n.EffectiveCotton *= (1 + n.Technologies.CottonGin);
 
-  n.ProductionEfficiency = n.TradeImprovements + n.Technologies.Workshops + n.Technologies.Cranes / 5 + n.Technologies.SteamEngine / 4 + n.Technologies.FirstFactories / 2 + n.Technologies.LinearAssemblyProcess / 4 + n.Technologies.InterchangeableParts / 2;
+  n.ProductionEfficiency = n.TradeImprovements + n.Reforms.GuildsBanned / 5 + n.Reforms.AntiMonopolyLaws / 2 + n.Technologies.Workshops + n.Technologies.Cranes / 5 + n.Technologies.SteamEngine / 4 + n.Technologies.FirstFactories / 2 + n.Technologies.LinearAssemblyProcess / 4 + n.Technologies.InterchangeableParts / 2;
   n.WeavingEfficiency = 1 + n.Technologies.VerticalLoom / 4 + n.Technologies.TextileManufactories / 2 + n.Technologies.FlyingShuttle / 2 + n.Technologies.PowerLoomAndSewingMachine;
   n.MetalWorkingEfficiency = n.Technologies.Metallurgy / 4 + n.Technologies.LeadChamberProcess / 5 + n.Technologies.PuddlingProcess / 4;
   n.WeaponWorkingEfficiency = 1 + n.MetalWorkingEfficiency + n.Technologies.StandardizedPikes / 5 + n.Technologies.Flintlock / 5;
@@ -736,10 +739,13 @@ function evaluateNation(nationName) {
 
   n.TradeProtection = (n.LightShips * 2 + n.MediumShips * 3.5 + n.HeavyShips * 2) / n.MerchantShips;
   n.MerchantShipsFullfilment = min(n.MerchantShips / (n.ResourceTrade + pseudoTradePower / 2 + (n.LocalTrade * n.Population / 2000000 * (1 + n.AverageDevelopment) + n.FoodTradeProfit) / 4), 1);
-  n.TradeEfficiency = (1 * n.TradeImprovements + n.Technologies.Cranes / 10 + n.Technologies.PromissoryNotes / 20 + n.TradeProtection + n.Technologies.Fluyt / 5) * (1 - n.Blockade) * max(n.MerchantShipsFullfilment, 0.1);
+  n.TradeEfficiency = max(0, (n.TradeImprovements + n.Reforms.GuildsBanned / 10 + n.Reforms.AntiMonopolyLaws / 5 - n.Corruption / 4 + n.CoastalLandPercent / 2 + n.Technologies.Cranes / 10 + n.Technologies.PromissoryNotes / 20 + n.TradeProtection + n.Technologies.Fluyt / 5) * (1 - n.Blockade) * max(n.MerchantShipsFullfilment, 0.1));
 
-    n.ExternalTrade = n.TradePowerFromResourceTrade - n.OutgoingTradePowerFromResourceTrade + pseudoTradePower * n.TradeEfficiency;
-    n.InternalTrade = (n.LocalTrade * n.Population / 2000000 * (1 + n.AverageDevelopment)) * n.TradeEfficiency + n.FoodTradeProfit;
+  n.ExternalTradeEff = n.Reforms.Isolationism * 0.25 + n.Reforms.Mercantilism * 0.75 + n.Reforms.Protectionism + n.Reforms.FreeTrade * 1.25;
+  n.InternalTradeEff = n.Reforms.Isolationism * 1.25 + n.Reforms.Mercantilism + n.Reforms.Protectionism * 0.75 + n.Reforms.FreeTrade * 0.5;
+
+    n.ExternalTrade = n.TradePowerFromResourceTrade - n.OutgoingTradePowerFromResourceTrade + pseudoTradePower * n.TradeEfficiency * n.ExternalTradeEff;
+    n.InternalTrade = (n.LocalTrade * n.Population / 2000000 * (1 + n.AverageDevelopment)) * n.TradeEfficiency * n.InternalTradeEff + n.FoodTradeProfit;
     n.TradePower = n.ExternalTrade + n.InternalTrade;
 
   n.Prosperity = 1 + n.SocialSpending / 2.5 + (n.FutureFood < 0 ? n.FutureFood / (n.Population / 10000) : 0) + (n.Budget < 0 ? n.Budget / n.OverallIncome : 0) - (n.Pillaging) * 3;
@@ -785,7 +791,7 @@ function evaluateNation(nationName) {
   
   n.PopulationStabilityImpact = (n.Population > n.AdministrativeEfficiency * 500000 * (n.CulturalAdvancements.Constitution == true ? 1.5 : 1) ? (n.AdministrativeEfficiency * 500000 * (n.CulturalAdvancements.Constitution == true ? 1.5 : 1) - n.Population) / 50000000 : 0) * 10;
   n.Fervor = clamp(1, -1, 0 + n.MinorBattles / 20 + n.MajorBattles / 10 + n.Pillaging - (n.Casualties / (n.OverallNumbers + n.Casualties + 0.0000001)));
-  n.WarSupport = clamp(1, 0, n.PopulationHappiness / 10 * 2.5 + n.Propaganda / 10 * (1 + n.CulturalAdvancements.Newspapers / 2) + n.Fervor);
+  n.WarSupport = clamp(1, 0, n.PopulationHappiness / 10 * 2.5 + n.Propaganda / 10 * (1 + n.CulturalAdvancements.Newspapers / 2) + n.Fervor + n.Nationalism / 10);
   let WarStatus = n.AtWar;
   if(WarStatus == false) WarStatus = "false";
   WarStatus = WarStatus.toLowerCase();
@@ -809,8 +815,8 @@ function evaluateNation(nationName) {
         return n.Population + n.Population * n.PopulationGrowth / gameStats.TimeDivide;
     })();
 
-  n.FutureLiteracyPercent = ((n.LiteracyPercent > n.EducationEfficiency * 3) ? n.EducationEfficiency * 3 : n.LiteracyPercent) + n.EducationEfficiency / 10 / gameStats.TimeDivide;
-  n.FutureHigherEducation = n.HigherEducation + (n.EducationEfficiency >= 3 ? n.EducationEfficiency / 30 : 0) + (n.HigherEducation > n.EducationEfficiency / 3 ? -0.25 : 0);
+  n.FutureLiteracyPercent = ((n.LiteracyPercent > n.Education * 3) ? n.Education * 3 : n.LiteracyPercent) + n.Education / 10 / gameStats.TimeDivide;
+  n.FutureHigherEducation = n.HigherEducation + (n.Education >= 3 ? n.Education / 30 : 0) + (n.HigherEducation > n.Education / 3 ? -0.25 : 0);
 
 
   n.NewTroopRecruitmentPenalty = (function () {
@@ -896,33 +902,33 @@ function evaluateNation(nationName) {
 
   n.ResourceBudgetBoost += n.OutgoingTradePowerFromResourceTrade;
 
-  n.AristocratInfluenceMod = 1 + n.Reforms.SlaveryAllowed / 10 + n.Reforms.SerfdomAllowed / 5 + n.Reforms.Enclosure / 10 + n.Reforms.HighClassVoting / 5 + n.Reforms.WealthVoting / 10 + n.Reforms.NoblePrivellege / 5 + n.Reforms.WealthPrivellege / 10 + n.Reforms.NobleOfficers / 5 + n.Reforms.WealthyOfficers / 10 + n.Reforms.NobleBureaucrats / 5 + n.Reforms.WealthyBureaucrats / 10 + n.Reforms.NobleResourceOwnership / 5 + n.Reforms.MixedResourceOwnership / 10 + n.Reforms.NobleLandOwnership / 5 + n.Reforms.MixedLandOwnership / 10;
-  n.BurgousieInfluenceMod = 1 + n.Reforms.SlaveryAllowed / 10 + n.Reforms.Enclosure / 5 + n.Reforms.WealthVoting / 10 + n.Reforms.WealthPrivellege / 10 + n.Reforms.WealthyOfficers / 10 + n.Reforms.WealthyBureaucrats / 10 + n.Reforms.BurgousieResourceOwnership / 5 + n.Reforms.MixedResourceOwnership / 10 + n.Reforms.PrivateLandOwnership / 5 + n.Reforms.MixedLandOwnership / 10 + n.Reforms.Guilds / 5 + n.Reforms.GuildsBanned / 10;
-  n.ClergyInfluenceMod = 1 + n.ReligiousFervor / 10 + n.Reforms.WealthVoting / 10 + n.Reforms.WealthPrivellege / 10 + n.Reforms.WealthyOfficers / 10 + n.Reforms.WealthyBureaucrats / 10;
-  n.UrbanInfluenceMod = 1 + n.Reforms.Enclosure / 10 + n.Reforms.GuildsBanned / 10 + n.Reforms.AntiMonopolyLaws / 5 + n.Reforms.WealthVoting / 20 + n.Reforms.WealthPrivellege / 20 + n.Reforms.WealthyOfficers / 20 + n.Reforms.WealthyBureaucrats / 20;
-  n.BureaucratInfluenceMod = 1 + n.Reforms.MeritocraticBureaucrats / 10 + n.Reforms.GovernmentResourceOwnership / 4 + n.Reforms.GovernmentResourceOwnership / 4;
+  n.AristocracyInfluenceMod = 1 + n.Reforms.SlaveryAllowed / 10 + n.Reforms.SerfdomAllowed / 5 + n.Reforms.Enclosure / 10 + n.Reforms.HighClassVoting / 5 + n.Reforms.WealthVoting / 10 + n.Reforms.NoblePrivellege / 5 + n.Reforms.WealthPrivellege / 10 + n.Reforms.NobleOfficers / 5 + n.Reforms.WealthyOfficers / 10 + n.Reforms.NobleBureaucrats / 5 + n.Reforms.WealthyBureaucrats / 10 + n.Reforms.NobleResourceOwnership / 5 + n.Reforms.MixedResourceOwnership / 10 + n.Reforms.NobleLandOwnership / 5 + n.Reforms.MixedLandOwnership / 10 + n.Reforms.FeudalLevies / 10 + n.Reforms.FeudalNobleArmies / 10 + n.Reforms.PrivateMercenariesOnly / 5 + n.Reforms.NoSocialMobility / 5 + n.Reforms.RestrictedSocialMobility / 10;
+  n.BurgousieInfluenceMod = 1 + n.Reforms.SlaveryAllowed / 10 + n.Reforms.Enclosure / 5 + n.Reforms.WealthVoting / 10 + n.Reforms.WealthPrivellege / 10 + n.Reforms.WealthyOfficers / 10 + n.Reforms.WealthyBureaucrats / 10 + n.Reforms.BurgousieResourceOwnership / 5 + n.Reforms.MixedResourceOwnership / 10 + n.Reforms.PrivateLandOwnership / 5 + n.Reforms.MixedLandOwnership / 10 + n.Reforms.Guilds / 5 + n.Reforms.GuildsBanned / 10 + n.Reforms.FeudalNobleArmies / 5 + n.Reforms.PrivateMercenariesOnly / 5 + n.Reforms.NoSocialMobility / 10 + n.Reforms.RestrictedSocialMobility / 5;
+  n.ClergyInfluenceMod = 1 + n.ReligiousFervor / 10 + n.Reforms.WealthVoting / 10 + n.Reforms.WealthPrivellege / 10 + n.Reforms.WealthyOfficers / 10 + n.Reforms.WealthyBureaucrats / 10 + n.Reforms.NoSocialMobility / 5 + n.Reforms.RestrictedSocialMobility / 10 + n.Reforms.StateReligion / 5 + n.Reforms.RestrictiveReligionLaws / 10 + n.Reforms.ReligiousSchools / 5;
+  n.UrbanInfluenceMod = 1 + n.Reforms.Enclosure / 10 + n.Reforms.GuildsBanned / 10 + n.Reforms.AntiMonopolyLaws / 5 + n.Reforms.WealthVoting / 20 + n.Reforms.WealthPrivellege / 20 + n.Reforms.WealthyOfficers / 20 + n.Reforms.WealthyBureaucrats / 20 + n.Reforms.RestrictedSocialMobility / 20;
+  n.BureaucratsInfluenceMod = 1 + n.Reforms.MeritocraticBureaucrats / 10 + n.Reforms.GovernmentResourceOwnership / 4 + n.Reforms.GovernmentResourceOwnership / 4 + n.Reforms.RestrictedSocialMobility / 20;
   n.IntellectualsInfluenceMod = 1 + n.Reforms.MeritocraticBureaucrats / 5 + n.Reforms.MeritocraticOfficers / 5;
-  n.MilitaryInfluenceMod = 1 + n.Reforms.MeritocraticOfficers / 10 + n.Reforms.ProffesionalReservists / 10 + n.Reforms.GovernmentResourceOwnership / 5 + n.Reforms.GovernmentResourceOwnership / 5;
-  n.WorkersInfluenceMod = 1 + n.Reforms.OpenFieldSystem / 5 + n.Reforms.SlaveryBanned / 10 + n.Reforms.SerfdomBanned / 5 + n.Reforms.NationalMilitia / 10;
+  n.MilitaryInfluenceMod = 1 + n.Reforms.MeritocraticOfficers / 10 + n.Reforms.ProffesionalArmy / 5 + n.Reforms.MassConscription / 10 + n.Reforms.GovernmentResourceOwnership / 5 + n.Reforms.GovernmentResourceOwnership / 5 + n.Reforms.RestrictedSocialMobility / 20;
+  n.WorkersInfluenceMod = 1 + n.Reforms.OpenFieldSystem / 5 + n.Reforms.SlaveryBanned / 10 + n.Reforms.SerfdomBanned / 5 + n.Reforms.NationalMilitia / 5 + n.Reforms.UniversalSuffrage / 5;
 
-  n.TotalInfluences = n.EstateInfluences.AristocratInfluence * n.AristocratInfluenceMod + n.EstateInfluences.ClergyInfluence * n.ClergyInfluenceMod + n.EstateInfluences.BurgousieInfluence * n.BurgousieInfluenceMod + n.EstateInfluences.UrbanInfluence * n.UrbanInfluenceMod + n.EstateInfluences.BureaucratInfluence * n.BureaucratInfluenceMod + n.EstateInfluences.IntellectualsInfluence * n.IntellectualsInfluenceMod + n.EstateInfluences.MilitaryInfluence * n.MilitaryInfluenceMod + n.EstateInfluences.WorkersInfluence * n.WorkersInfluenceMod;
+  n.TotalInfluences = n.EstateInfluences.AristocracyInfluence * n.AristocracyInfluenceMod + n.EstateInfluences.ClergyInfluence * n.ClergyInfluenceMod + n.EstateInfluences.BurgousieInfluence * n.BurgousieInfluenceMod + n.EstateInfluences.UrbanInfluence * n.UrbanInfluenceMod + n.EstateInfluences.BureaucratsInfluence * n.BureaucratsInfluenceMod + n.EstateInfluences.IntellectualsInfluence * n.IntellectualsInfluenceMod + n.EstateInfluences.MilitaryInfluence * n.MilitaryInfluenceMod + n.EstateInfluences.WorkersInfluence * n.WorkersInfluenceMod;
 
   n.EstateInfluencesReal = {
-    AristocratInfluence: n.EstateInfluences.AristocratInfluence * n.AristocratInfluenceMod / n.TotalInfluences,
+    AristocracyInfluence: n.EstateInfluences.AristocracyInfluence * n.AristocracyInfluenceMod / n.TotalInfluences,
     ClergyInfluence: n.EstateInfluences.ClergyInfluence * n.ClergyInfluenceMod / n.TotalInfluences,
     BurgousieInfluence: n.EstateInfluences.BurgousieInfluence * n.BurgousieInfluenceMod / n.TotalInfluences,
     UrbanInfluence: n.EstateInfluences.UrbanInfluence * n.UrbanInfluenceMod / n.TotalInfluences,
-    BureaucratInfluence: n.EstateInfluences.BureaucratInfluence * n.BureaucratInfluenceMod / n.TotalInfluences,
+    BureaucratsInfluence: n.EstateInfluences.BureaucratsInfluence * n.BureaucratsInfluenceMod / n.TotalInfluences,
     IntellectualsInfluence: n.EstateInfluences.IntellectualsInfluence * n.IntellectualsInfluenceMod / n.TotalInfluences,
     MilitaryInfluence: n.EstateInfluences.MilitaryInfluence * n.MilitaryInfluenceMod / n.TotalInfluences,
     WorkersInfluence: n.EstateInfluences.WorkersInfluence * n.WorkersInfluenceMod / n.TotalInfluences
   };
 
     n.ResourceOwners = (n.Reforms.NobleResourceOwnership == 1 ? n.Workforces.Aristocracy : 0) + (n.Reforms.MixedResourceOwnership == 1 ? n.Workforces.Aristocracy + n.Workforces.Burgousie : 0) + (n.Reforms.BurgousieResourceOwnership == 1 ? n.Workforces.Burgousie : 0)
-    n.ResourceOwnersInfluence = (n.Reforms.NobleResourceOwnership == 1 ? n.EstateInfluencesReal.AristocratInfluence : 0) + (n.Reforms.MixedResourceOwnership == 1 ? (n.EstateInfluencesReal.AristocratInfluence + n.EstateInfluencesReal.BurgousieInfluence) / 2 : 0) + (n.Reforms.BurgousieResourceOwnership == 1 ? n.EstateInfluencesReal.BurgousieInfluence : 0)
+    n.ResourceOwnersInfluence = (n.Reforms.NobleResourceOwnership == 1 ? n.EstateInfluencesReal.AristocracyInfluence : 0) + (n.Reforms.MixedResourceOwnership == 1 ? (n.EstateInfluencesReal.AristocracyInfluence + n.EstateInfluencesReal.BurgousieInfluence) / 2 : 0) + (n.Reforms.BurgousieResourceOwnership == 1 ? n.EstateInfluencesReal.BurgousieInfluence : 0)
 
     n.LandOwners = (n.Reforms.NobleLandOwnership == 1 ? n.Workforces.Aristocracy : 0) + (n.Reforms.MixedLandOwnership == 1 ? n.Workforces.Aristocracy + n.Workforces.Burgousie : 0) + (n.Reforms.PrivateLandOwnership == 1 ? n.Workforces.Burgousie : 0)
-    n.LandOwnersInfluence = (n.Reforms.NobleLandOwnership == 1 ? n.EstateInfluencesReal.AristocratInfluence : 0) + (n.Reforms.MixedLandOwnership == 1 ? (n.EstateInfluencesReal.AristocratInfluence + n.EstateInfluencesReal.BurgousieInfluence) / 2 : 0) + (n.Reforms.PrivateLandOwnership == 1 ? n.EstateInfluencesReal.BurgousieInfluence : 0)
+    n.LandOwnersInfluence = (n.Reforms.NobleLandOwnership == 1 ? n.EstateInfluencesReal.AristocracyInfluence : 0) + (n.Reforms.MixedLandOwnership == 1 ? (n.EstateInfluencesReal.AristocracyInfluence + n.EstateInfluencesReal.BurgousieInfluence) / 2 : 0) + (n.Reforms.PrivateLandOwnership == 1 ? n.EstateInfluencesReal.BurgousieInfluence : 0)
 
     n.SlavesWage = (n.Workforces.Slaves > 0 ? n.ResourceBudgetBoost / (n.Population / 1000 * n.Workforces.Slaves) * 0.1 : 0);
     n.LabourersWage = (n.Workforces.Labourers > 0 ? n.ResourceBudgetBoost / (n.Population / 1000 * n.Workforces.Labourers) * (1 - n.ResourceOwnersInfluence) : 0);
@@ -933,7 +939,7 @@ function evaluateNation(nationName) {
     n.TownsfolkWage = ((n.PopProductionRevenue * 5 / (n.Population / 1000 * n.Workforces.Townsfolk)) * (1 - n.EstateInfluencesReal.BurgousieInfluence * 4)) * (1 - n.ProductionGovernmentControl) + n.ProductionGovernmentControl * n.StateWorkerWage;
       n.TownsfolkWageToBurgousie = (n.Population * n.Workforces.Townsfolk / 1000 * n.TownsfolkWage / (1 - n.EstateInfluencesReal.BurgousieInfluence * 4) * n.EstateInfluencesReal.BurgousieInfluence * 4) * (1 - n.ProductionGovernmentControl);
     n.ClergyWage = n.Population / (n.Population / 1000 * n.Workforces.Clergy) * n.EstateInfluencesReal.ClergyInfluence / 1000;
-    n.BureaucratsWage = n.BureaucratWages * 100 * n.EstateInfluencesReal.BureaucratInfluence;
+    n.BureaucratsWage = n.BureaucratsWages * 100 * n.EstateInfluencesReal.BureaucratsInfluence;
     n.MerchantsWage = (n.InternalTrade * (1 - n.InternalTariffs) + n.ExternalTrade * (1 - n.ExternalTariffs)) / (n.Population / 1000 * n.Workforces.Merchants) * (1 - n.EstateInfluencesReal.BurgousieInfluence * 2);
         n.MerchantsWageToBurggousie = n.Population * n.Workforces.Merchants / 1000 * n.MerchantsWage / (1 - n.EstateInfluencesReal.BurgousieInfluence * 2) * n.EstateInfluencesReal.BurgousieInfluence * 2;
     n.IntellectualsWage = 60 * n.EstateInfluencesReal.IntellectualsInfluence;
@@ -942,36 +948,28 @@ function evaluateNation(nationName) {
     n.AristocracyWage = (n.Reforms.NobleLandOwnership == 1 ? n.SerfsAndFarmersWageToOnwers / (n.Population * n.Workforces.Aristocracy / 1000) : 0) + (n.Reforms.MixedLandOwnership == 1 ? n.SerfsAndFarmersWageToOnwers / (n.Population * n.Workforces.Aristocracy / 1000) : 0) + (n.Reforms.NobleResourceOwnership == 1 ? n.SlavesAndLabourersWageToOwner / (n.Population * n.Workforces.Aristocracy / 1000) : 0) + (n.Reforms.MixedResourceOwnership == 1 ? n.SlavesAndLabourersWageToOwner / (n.Population * n.Workforces.Aristocracy / 1000) : 0);
     n.BurgousieWage = (n.TownsfolkWageToBurgousie + n.MerchantsWageToBurggousie) / (n.Population * n.Workforces.Burgousie / 1000) + (n.Reforms.MixedResourceOwnership == 1 ? n.SlavesAndLabourersWageToOwner / (n.Population * n.Workforces.Aristocracy / 1000) : 0) + (n.Reforms.BurgousieResourceOwnership == 1 ? n.SlavesAndLabourersWageToOwner / (n.Population * n.Workforces.Aristocracy / 1000) : 0) + (n.Reforms.MixedLandOwnership == 1 ? n.SerfsAndFarmersWageToOnwers / (n.Population * n.Workforces.Aristocracy / 1000) : 0) + (n.Reforms.PrivateLandOwnership == 1 ? n.SerfsAndFarmersWageToOnwers / (n.Population * n.Workforces.Aristocracy / 1000) : 0);
 
-  n.SlavesEffectiveWage = n.SlavesWage * (1 - n.WorkersTax * n.TaxEfficiency);
-  n.LabourersEffectiveWage = n.LabourersWage * (1 - n.WorkersTax * n.TaxEfficiency);
-  n.SerfsEffectiveWage = n.SerfsWage * (1 - n.WorkersTax * n.TaxEfficiency);
-  n.FarmersEffectiveWage = n.FarmersWage * (1 - n.WorkersTax * n.TaxEfficiency);
-  n.TownsfolkEffectiveWage = n.TownsfolkWage * (1 - n.UrbanTax * n.TaxEfficiency);
-  n.ClergyEffectiveWage = n.ClergyWage * (1 - n.ClergyTax * n.TaxEfficiency);
-  n.BureaucratsEffectiveWage = n.BureaucratsWage * (1 - n.BureaucratTax * n.TaxEfficiency);
-  n.MerchantsEffectiveWage = n.MerchantsWage * (1 - n.UrbanTax * n.TaxEfficiency);
-  n.IntellectualsEffectiveWage = n.IntellectualsWage * (1 - n.IntellectualsTax * n.TaxEfficiency);
-  n.SailorsEffectiveWage = n.SailorsWage * (1 - n.MilitaryTax * n.TaxEfficiency);
-  n.SoldiersEffectiveWage = n.SoldiersWage * (1 - n.MilitaryTax * n.TaxEfficiency);
-  n.AristocracyEffectiveWage = n.AristocracyWage * (1 - n.AristocratTax * n.TaxEfficiency);
-  n.BurgousieEffectiveWage = n.BurgousieWage * (1 - n.BurgousieTax * n.TaxEfficiency);
+  n.SlavesEffectiveWage = n.SlavesWage * (1 - n.WorkersTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.WorkersInfluence));
+  n.LabourersEffectiveWage = n.LabourersWage * (1 - n.WorkersTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.WorkersInfluence));
+  n.SerfsEffectiveWage = n.SerfsWage * (1 - n.WorkersTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.WorkersInfluence));
+  n.FarmersEffectiveWage = n.FarmersWage * (1 - n.WorkersTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.WorkersInfluence));
+  n.TownsfolkEffectiveWage = n.TownsfolkWage * (1 - n.UrbanTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.UrbanInfluence));
+  n.ClergyEffectiveWage = n.ClergyWage * (1 - n.ClergyTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.ClergyInfluence));
+  n.BureaucratsEffectiveWage = n.BureaucratsWage * (1 - n.BureaucratsTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.BureaucratsInfluence));
+  n.MerchantsEffectiveWage = n.MerchantsWage * (1 - n.UrbanTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.UrbanInfluence));
+  n.IntellectualsEffectiveWage = n.IntellectualsWage * (1 - n.IntellectualsTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.IntellectualsInfluence));
+  n.SailorsEffectiveWage = n.SailorsWage * (1 - n.MilitaryTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.MilitaryInfluence));
+  n.SoldiersEffectiveWage = n.SoldiersWage * (1 - n.MilitaryTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.MilitaryInfluence));
+  n.AristocracyEffectiveWage = n.AristocracyWage * (1 - n.AristocracyTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.AristocracyInfluence));
+  n.BurgousieEffectiveWage = n.BurgousieWage * (1 - n.BurgousieTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.BurgousieInfluence));
 
   n.NecessitiesCost = (0.5 * n.HousingValue + 0.5 * n.TextilesValue + n.BasicGoodsValue + n.AlcoholValue + 0.5 * n.BasicToolsValue) / 200 + (n.CoalValue * 0.005 > n.WoodValue * 0.01 ? 0.01 * n.WoodValue : 0.005 * n.CoalValue) + (n.FoodAdditions > 0 ? 0.1 * n.FoodAdditionsValue + 0.9 * n.FoodValue : n.FoodValue);
   n.LuxuriesCost = (n.HousingValue + n.TextilesValue + 1.5 * n.BasicGoodsValue + n.LuxuryGoodsValue + 2 * n.AlcoholValue) / 200 + (n.CoalValue * 0.01 > n.WoodValue * 0.02 ? n.WoodValue * 0.02 : 0.01 * n.CoalValue) + (n.FoodAdditions > 0 ? n.FoodAdditionsValue + 1.25 * n.FoodValue : 1.75 * n.FoodValue) + (n.LuxuryConsumables > 0 ? 0.025 * n.LuxuryConsumablesValue : 0);
 
-  n.SlavesSol = (n.SlavesEffectiveWage < n.NecessitiesCost ? n.SlavesEffectiveWage / n.NecessitiesCost : 1 + (n.SlavesEffectiveWage - n.NecessitiesCost) / n.LuxuriesCost);
-  n.LabourersSol = (n.LabourersEffectiveWage < n.NecessitiesCost ? n.LabourersEffectiveWage / n.NecessitiesCost : 1 + (n.LabourersEffectiveWage - n.NecessitiesCost) / n.LuxuriesCost);
-  n.SerfsSol = (n.SerfsEffectiveWage < n.NecessitiesCost ? n.SerfsEffectiveWage / n.NecessitiesCost : 1 + (n.SerfsEffectiveWage - n.NecessitiesCost) / n.LuxuriesCost);
-  n.FarmersSol = (n.FarmersEffectiveWage < n.NecessitiesCost ? n.FarmersEffectiveWage / n.NecessitiesCost : 1 + (n.FarmersEffectiveWage - n.NecessitiesCost) / n.LuxuriesCost);
-  n.TownsfolkSol = (n.TownsfolkEffectiveWage < n.NecessitiesCost ? n.TownsfolkEffectiveWage / n.NecessitiesCost : 1 + (n.TownsfolkEffectiveWage - n.NecessitiesCost) / n.LuxuriesCost);
-  n.ClergySol = (n.ClergyEffectiveWage < n.NecessitiesCost ? n.ClergyEffectiveWage / n.NecessitiesCost : 1 + (n.ClergyEffectiveWage - n.NecessitiesCost) / n.LuxuriesCost);
-  n.BureaucratsSol = (n.BureaucratsEffectiveWage < n.NecessitiesCost ? n.BureaucratsEffectiveWage / n.NecessitiesCost : 1 + (n.BureaucratsEffectiveWage - n.NecessitiesCost) / n.LuxuriesCost);
-  n.MerchantsSol = (n.MerchantsEffectiveWage < n.NecessitiesCost ? n.MerchantsEffectiveWage / n.NecessitiesCost : 1 + (n.MerchantsEffectiveWage - n.NecessitiesCost) / n.LuxuriesCost);
-  n.IntellectualsSol = (n.IntellectualsEffectiveWage < n.NecessitiesCost ? n.IntellectualsEffectiveWage / n.NecessitiesCost : 1 + (n.IntellectualsEffectiveWage - n.NecessitiesCost) / n.LuxuriesCost);
-  n.SailorsSol = (n.SailorsEffectiveWage < n.NecessitiesCost ? n.SailorsEffectiveWage / n.NecessitiesCost : 1 + (n.SailorsEffectiveWage - n.NecessitiesCost) / n.LuxuriesCost);
-  n.SoldiersSol = (n.SoldiersEffectiveWage < n.NecessitiesCost ? n.SoldiersEffectiveWage / n.NecessitiesCost : 1 + (n.SoldiersEffectiveWage - n.NecessitiesCost) / n.LuxuriesCost);
-  n.AristocracySol = (n.AristocracyEffectiveWage < n.NecessitiesCost ? n.AristocracyEffectiveWage / n.NecessitiesCost : 1 + (n.AristocracyEffectiveWage - n.NecessitiesCost) / n.LuxuriesCost);
-  n.BurgousieSol = (n.BurgousieEffectiveWage < n.NecessitiesCost ? n.BurgousieEffectiveWage / n.NecessitiesCost : 1 + (n.BurgousieEffectiveWage - n.NecessitiesCost) / n.LuxuriesCost);
+  // SoL
+  for (const EstateIndex in gameStats.Estates) {
+    const Estate = gameStats.Estates[EstateIndex];
+    n[Estate + "Sol"] = (n[Estate + "EffectiveWage"] < n.NecessitiesCost ? n[Estate + "EffectiveWage"] / n.NecessitiesCost : 1 + (n[Estate + "EffectiveWage"] - n.NecessitiesCost) / n.LuxuriesCost);
+  }
 
   n.AverageSol = (isNaN(n.Workforces.Slaves) ? 0 : n.Workforces.Slaves) * n.SlavesSol + (isNaN(n.Workforces.Labourers) ? 0 : n.Workforces.Labourers) * n.LabourersSol + (isNaN(n.Workforces.Serfs) ? 0 : n.Workforces.Serfs) * n.SerfsSol + (isNaN(n.Workforces.Farmers) ? 0 : n.Workforces.Farmers) * n.FarmersSol + (isNaN(n.Workforces.Townsfolk) ? 0 : n.Workforces.Townsfolk) * n.TownsfolkSol + (isNaN(n.Workforces.Clergy) ? 0 : n.Workforces.Clergy) * n.ClergySol + (isNaN(n.Workforces.Bureaucrats) ? 0 : n.Workforces.Bureaucrats) * n.BureaucratsSol + (isNaN(n.Workforces.Merchants) ? 0 : n.Workforces.Merchants) * n.MerchantsSol + (isNaN(n.Workforces.Intellectuals) ? 0 : n.Workforces.Intellectuals) * n.IntellectualsSol + (isNaN(n.Workforces.Sailors) ? 0 : n.Workforces.Sailors) * n.SailorsSol + (isNaN(n.Workforces.Soldiers) ? 0 : n.Workforces.Soldiers) * n.SoldiersSol + (isNaN(n.Workforces.Aristocracy) ? 0 : n.Workforces.Aristocracy) * n.AristocracySol + (isNaN(n.Workforces.Burgousie) ? 0 : n.Workforces.Burgousie) * n.BurgousieSol;
 
@@ -984,23 +982,78 @@ function evaluateNation(nationName) {
   n.ExpectedWorkersSol = n.ExpectedFarmersSol * n.Workforces.Farmers / (n.Workforces.Farmers + n.Workforces.Labourers + n.Workforces.Serfs) + n.ExpectedLabourersSol * n.Workforces.Labourers / (n.Workforces.Farmers + n.Workforces.Labourers + n.Workforces.Serfs) + n.ExpectedSerfsSol * n.Workforces.Serfs / (n.Workforces.Farmers + n.Workforces.Labourers + n.Workforces.Serfs);
   n.WorkersSol = n.FarmersSol * n.Workforces.Farmers / (n.Workforces.Farmers + n.Workforces.Labourers + n.Workforces.Serfs) + n.LabourersSol * n.Workforces.Labourers / (n.Workforces.Farmers + n.Workforces.Labourers + n.Workforces.Serfs) + n.SerfsSol * n.Workforces.Serfs / (n.Workforces.Farmers + n.Workforces.Labourers + n.Workforces.Serfs);
 
-  n.AristocratLoyalty = (n.AristocracySol / n.ExpectedAristocracySol) / 2 - (n.AristocracySol < n.AverageSol * 10 ? ((n.AverageSol * 10) / n.AristocracySol - 1) / 4 : 0) + (n.GovernmentRepresentation.AristocratRepresentation / 100 - n.EstateInfluencesReal.AristocratInfluence * 0.8);
-  n.ClergyLoyalty = (n.ClergySol / n.ExpectedClergySol) / 2 - (n.ClergySol < n.AverageSol * 5 ? ((n.AverageSol * 5) / n.ClergySol - 1) / 4 : 0) + (n.GovernmentRepresentation.ClergyRepresentation / 100 - n.EstateInfluencesReal.ClergyInfluence * 0.8);
-  n.BurgousieLoyalty = (n.BurgousieSol / n.ExpectedBurgousieSol) / 2 - (n.BurgousieSol < n.AverageSol * 7.5 ? ((n.AverageSol * 7.5) / n.BurgousieSol - 1) / 4 : 0) + (n.GovernmentRepresentation.BurgousieRepresentation / 100 - n.EstateInfluencesReal.BurgousieInfluence * 0.8);
-  n.UrbanLoyalty = (n.UrbanSol / n.ExpectedUrbanSol) / 2 - (n.UrbanSol < n.AverageSol * 2 ? ((n.AverageSol * 2) / n.UrbanSol - 1) / 4 : 0) + (n.GovernmentRepresentation.UrbanRepresentation / 100 - n.EstateInfluencesReal.UrbanInfluence * 0.8);
-  n.BureaucratLoyalty = (n.BureaucratsSol / n.ExpectedBureaucratsSol) / 2 - (n.BureaucratsSol < n.AverageSol * 2 ? ((n.AverageSol * 2) / n.BureaucratsSol - 1) / 4 : 0) + (n.GovernmentRepresentation.BureaucratRepresentation / 100 - n.EstateInfluencesReal.BureaucratInfluence * 0.8);
-  n.IntellectualsLoyalty = (n.IntellectualsSol / n.ExpectedIntellectualsSol) / 2 - (n.IntellectualsSol < n.AverageSol * 1.5 ? ((n.AverageSol * 1.5) / n.IntellectualsSol - 1) / 4 : 0) + (n.GovernmentRepresentation.IntellectualsRepresentation / 100 - n.EstateInfluencesReal.IntellectualsInfluence * 0.8);
-  n.WorkersLoyalty = (n.WorkersSol / n.ExpectedWorkersSol) / 2 - (n.WorkersSol < n.AverageSol * 0.5 ? ((n.AverageSol * 0.5) / n.WorkersSol - 1) / 4 : 0) + (n.GovernmentRepresentation.WorkersRepresentation / 100 - n.EstateInfluencesReal.WorkersInfluence * 0.8);
-  n.MilitaryLoyalty = 0.5 + (n.MilitarySol / n.ExpectedMilitarySol) / 2 - (n.MilitarySol < n.AverageSol * 1 ? ((n.AverageSol * 1) / n.MilitarySol - 1) / 4 : 0) + (n.GovernmentRepresentation.MilitaryRepresentation / 100 - n.EstateInfluencesReal.MilitaryInfluence * 0.8);
+  n.Sols = {
+    SlavesSol: n.SlavesSol,
+    LabourersSol: n.LabourersSol,
+    SerfsSol: n.SerfsSol,
+    FarmersSol: n.FarmersSol,
+    TownsfolkSol: n.TownsfolkSol,
+    ClergySol: n.ClergySol,
+    MerchantsSol: n.MerchantsSol,
+    SailorsSol: n.SailorsSol,
+    SoldiersSol: n.SoldiersSol,
+    AristocracySol: n.AristocracySol,
+    BurgousieSol: n.BurgousieSol
+  }
+  n.SolsSorted = Object.keys(n.Sols).sort(function (a, b) { return n.Sols[a] - n.Sols[b] });
+  n.SolsSorted.reverse();
+  n.LiteracyLeft = n.LiteracyPercent / 100 - n.Workforces.Intellectuals - n.Workforces.Bureaucrats;
+  for (const SolIndex in n.SolsSorted) {
+    Estate = n.SolsSorted[SolIndex];
+    Estate = Estate.substring(0, Estate.length - 3);
+
+    if (n.LiteracyLeft > (isNaN(n.Workforces[Estate]) ? 0 : n.Workforces[Estate])) {
+      n[Estate + "Literacy"] = 1;
+      n.LiteracyLeft -= (isNaN(n.Workforces[Estate]) ? 0 : n.Workforces[Estate]);
+    }
+    else {
+      if (n.LiteracyLeft > 0) {
+        n[Estate + "Literacy"] = (isNaN(n.Workforces[Estate]) ? 0 : n.LiteracyLeft / n.Workforces[Estate]);
+        n.LiteracyLeft = 0;
+      }
+      else {
+        n[Estate + "Literacy"] = 0;
+      }
+    }
+  }
+  n.IntellectualsLiteracy = 1;
+  n.BureaucratsLiteracy = 1;
 
 
-  n.Stability = n.PopulationHappiness + n.AdministrativeEfficiency / 10 - n.Overextension - n.CulturalDisunity - n.ReligiousDisunity + (n.Propaganda / 1.75 * (1 + n.CulturalAdvancements.Newspapers / 2)) + n.PopulationControl + (n.AristocratLoyalty - 0.5) * 10 + (n.ClergyLoyalty - 0.5) * 7.5 + (n.BurgousieLoyalty - 0.5) * 7.5 + n.PopulationStabilityImpact + WarStabilityModifier * 100 + (n.MilitaryLoyalty - 1) * 7.5;
+  // PoliticalAwareness
+  for (const EstateIndex in gameStats.Estates) {
+    const Estate = gameStats.Estates[EstateIndex];
+    n[Estate + "PoliticalAwareness"] = max(0, n[Estate + "Literacy"] * (1 - n.Reforms.StateMediaOnly * 0.4 - n.Reforms.ExtensiveCensorship * 0.2 - n.Reforms.LimitedCensorship * 0.1));
+  }
+
+  n.UrbanPoliticalAwareness = n.TownsfolkPoliticalAwareness * n.Workforces.Townsfolk / (n.Workforces.Townsfolk + n.Workforces.Merchants) + n.MerchantsPoliticalAwareness * n.Workforces.Merchants / (n.Workforces.Townsfolk + n.Workforces.Merchants);
+
+  n.MilitaryPoliticalAwareness = n.SoldiersPoliticalAwareness * n.Workforces.PopulationInMilitary / (n.Workforces.PopulationInMilitary + n.Workforces.Sailors) + n.SailorsPoliticalAwareness * n.Workforces.Sailors / (n.Workforces.PopulationInMilitary + n.Workforces.Sailors);
+
+  n.WorkersPoliticalAwareness = n.FarmersPoliticalAwareness * n.Workforces.Farmers / (n.Workforces.Farmers + n.Workforces.Labourers + n.Workforces.Serfs) + n.LabourersPoliticalAwareness * n.Workforces.Labourers / (n.Workforces.Farmers + n.Workforces.Labourers + n.Workforces.Serfs) + n.SerfsPoliticalAwareness * n.Workforces.Serfs / (n.Workforces.Farmers + n.Workforces.Labourers + n.Workforces.Serfs);
+
+  n.AverageSolMods = {
+    Workers: 0.5,
+    Urban: 2,
+    Clergy: 5,
+    Bureaucrats: 2,
+    Intellectuls: 1.5,
+    Military: 1,
+    Aristocracy: 10,
+    Burgousie: 7.5
+  }
+  // Loyalties
+  for (const EstateIndex in gameStats.EstatesGeneral) {
+    const Estate = gameStats.EstatesGeneral[EstateIndex];
+    n[Estate + "Loyalty"] = (n[Estate + "Sol"] / n["Expected" + Estate + "Sol"]) / 2 - (n[Estate + "Sol"] < n.AverageSol * n.AverageSolMods[Estate] ? ((n.AverageSol * n.AverageSolMods[Estate]) / n[Estate + "Sol"] - 1) / 4 : 0) + (n.GovernmentRepresentation[Estate + "Representation"] / 100 - n.EstateInfluencesReal[Estate + "Influence"] * n[Estate + "PoliticalAwareness"]);
+    debugger;
+  }
+
+  n.Stability = n.PopulationHappiness + n.AdministrativeEfficiency / 10 - n.Overextension - n.CulturalDisunity - n.ReligiousDisunity + (n.Propaganda / 1.75 * (1 + n.CulturalAdvancements.Newspapers / 2)) + n.PopulationControl + (n.AristocracyLoyalty - 0.5) * 10 + (n.ClergyLoyalty - 0.5) * 7.5 + (n.BurgousieLoyalty - 0.5) * 7.5 + n.PopulationStabilityImpact + WarStabilityModifier * 100 + (n.MilitaryLoyalty - 1) * 7.5;
 
   n.Corruption = (n.Stability < 1 ? 0.5 : 0) + (n.Stability < -1 ? 0.5 : 0) + n.AdministrativeStrain / n.AdministrativePower * 10 + n.Absolutism / 3;
 
-  debugger;
-
-    n.TaxEfficiency = (1 - n.EstateInfluencesReal.AristocratInfluence / 4 - n.EstateInfluencesReal.ClergyInfluence / 4 - n.AdministrativeStrain / n.AdministrativePower) * (1 - n.Occupation) * (1 - n.Corruption / 10)
+    n.TaxEfficiency = (1 - n.EstateInfluencesReal.AristocracyInfluence / 4 - n.EstateInfluencesReal.ClergyInfluence / 4 - n.AdministrativeStrain / n.AdministrativePower) * (1 - n.Occupation) * (1 - n.Corruption / 10)
     n.TariffEfficiency = (1 - n.EstateInfluencesReal.BurgousieInfluence / 2 - n.AdministrativeStrain / n.AdministrativePower) * (1 - n.Occupation) * (1 - n.Corruption / 10)
 
     n.SlavesTaxes = 0;
@@ -1009,12 +1062,12 @@ function evaluateNation(nationName) {
   n.FarmersTaxes = n.FarmersWage * n.Workforces.Farmers * n.Population / 1000 * n.WorkersTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.WorkersInfluence);
   n.TownsfolkTaxes = n.TownsfolkWage * n.Workforces.Townsfolk * n.Population / 1000 * n.UrbanTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.UrbanInfluence);
   n.ClergyTaxes = n.ClergyWage * n.Workforces.Clergy * n.Population / 1000 * n.ClergyTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.ClergyInfluence);
-  n.BureaucratsTaxes = n.BureaucratsWage * n.Workforces.Bureaucrats * n.Population / 1000 * n.BureaucratTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.BureaucratInfluence);
+  n.BureaucratsTaxes = n.BureaucratsWage * n.Workforces.Bureaucrats * n.Population / 1000 * n.BureaucratsTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.BureaucratsInfluence);
   n.MerchantsTaxes = n.MerchantsWage * n.Workforces.Merchants * n.Population / 1000 * n.UrbanTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.UrbanInfluence);
   n.IntellectualsTaxes = n.IntellectualsWage * n.Workforces.Intellectuals * n.Population / 1000 * n.IntellectualsTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.IntellectualsInfluence);
   n.SailorsTaxes = n.SailorsWage * n.Workforces.Sailors * n.Population / 1000 * n.MilitaryTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.MilitaryInfluence);
   n.SoldiersTaxes = n.SoldiersWage * n.Workforces.PopulationInMilitary * n.Population / 1000 * n.MilitaryTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.MilitaryInfluence);
-  n.AristocracyTaxes = n.AristocracyWage * n.Workforces.Aristocracy * n.Population / 1000 * n.AristocratTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.AristocratInfluence);
+  n.AristocracyTaxes = n.AristocracyWage * n.Workforces.Aristocracy * n.Population / 1000 * n.AristocracyTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.AristocracyInfluence);
   n.BurgousieTaxes = n.BurgousieWage * n.Workforces.Burgousie * n.Population / 1000 * n.BurgousieTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.BurgousieInfluence);
 
     n.TaxRevenue = (n.LabourersTaxes + n.SerfsTaxes + n.FarmersTaxes + n.TownsfolkTaxes + n.ClergyTaxes + n.BureaucratsTaxes + n.MerchantsTaxes + n.IntellectualsTaxes + n.SailorsTaxes + n.SoldiersTaxes + n.AristocracyTaxes + n.BurgousieTaxes) / gameStats.TimeDivide;
@@ -1023,7 +1076,7 @@ function evaluateNation(nationName) {
   n.SpyUpkeep = n.Spies / 200 * n.SpyQuality / gameStats.TimeDivide;
   n.SocialSpendingUpkeep = n.SocialSpending * n.Population / 1000000 / gameStats.TimeDivide * 3;
   n.HygieneUpkeep = n.Health * n.Population / 2000000 / gameStats.TimeDivide;
-  n.EducationUpkeep = n.EducationEfficiency * n.Population / 500000 * (1.1 - n.AdministrativeEfficiency / 100) * 6 / gameStats.TimeDivide;
+  n.EducationUpkeep = n.Education * n.Population / 500000 * (1.1 - n.AdministrativeEfficiency / 100) * 6 / gameStats.TimeDivide;
   n.PropagandaUpkeep = n.Propaganda * (100 - n.AdministrativeEfficiency) / 100 * n.Population / 1000000 / gameStats.TimeDivide;
   n.PopulationControlUpkeep = n.PopulationControl * n.Population / 800000 / gameStats.TimeDivide;
   n.AdministrativeUpkeep = (n.LandAdministration + n.BureaucratsWage / 1000 * n.Population * n.Workforces.Bureaucrats) / gameStats.TimeDivide;
@@ -1040,13 +1093,13 @@ function evaluateNation(nationName) {
 
   n.EliteUnitsCap = ((n.OverallNumbers - n.Militia - n.Levies - n.EliteCavalry - n.EliteInfantry) * 0.025);
 
-  n.IrregularQuality = (n.OverallImprovements + n.IrregularImprovements + n.Technologies.Metallurgy / 10 - n.Corruption / 5) * (1 - n.IronShortage);
-  n.MeleeQuality = (n.OverallImprovements + n.MeleeImprovements + n.Technologies.PlateArmour / 5 + n.Technologies.StandardizedPikes / 10 + n.Technologies.Metallurgy / 10 - n.Corruption / 5) * (1 - n.IronShortage);
-  n.RangedQuality = (n.OverallImprovements + n.RangedImprovements + n.Technologies.Metallurgy / 10 - n.Corruption / 5) * (1 - n.IronShortage);
-  n.CavalryQuality = (n.OverallImprovements + n.CavalryImprovements + n.Technologies.SaddleAndStirrup / 5 + n.Technologies.PlateArmour / 5 + n.Technologies.Reiters / 10 + n.Technologies.Metallurgy / 10 - n.Corruption / 5) * (1 - n.IronShortage) * (n.Technologies.Reiters == 1 ? (1 - n.SulphurShortage) : 1);
-  n.FirearmQuality = (n.OverallImprovements + n.FirearmImprovements + n.Technologies.Matchlock / 5 + n.Technologies.SocketBayonet / 5 + n.Technologies.Flintlock / 5 + n.Technologies.Metallurgy / 10 + n.Technologies.Bayonet / 20 - n.Corruption / 5) * (1 - n.IronShortage) * (1 - n.SulphurShortage);
-  n.SiegeQuality = (n.OverallImprovements + n.SiegeImprovements + n.Technologies.Metallurgy / 10 - n.Corruption / 5) * (1 - n.IronShortage);
-  n.ArtilleryQuality = (n.OverallImprovements + n.ArtilleryImprovements + n.Technologies.Limber / 5 + n.Technologies.Mortars / 5 + n.Technologies.Metallurgy / 10 - n.Corruption / 5) * (1 - n.IronShortage) * (1 - n.SulphurShortage);
+  n.IrregularQuality = (n.RealOverallImprovements + n.IrregularImprovements + n.Technologies.Metallurgy / 10 - n.Corruption / 5) * (1 - n.IronShortage);
+  n.MeleeQuality = (n.RealOverallImprovements + n.MeleeImprovements + n.Technologies.PlateArmour / 5 + n.Technologies.StandardizedPikes / 10 + n.Technologies.Metallurgy / 10 - n.Corruption / 5) * (1 - n.IronShortage);
+  n.RangedQuality = (n.RealOverallImprovements + n.RangedImprovements + n.Technologies.Metallurgy / 10 - n.Corruption / 5) * (1 - n.IronShortage);
+  n.CavalryQuality = (n.RealOverallImprovements + n.CavalryImprovements + n.Technologies.SaddleAndStirrup / 5 + n.Technologies.PlateArmour / 5 + n.Technologies.Reiters / 10 + n.Technologies.Metallurgy / 10 - n.Corruption / 5) * (1 - n.IronShortage) * (n.Technologies.Reiters == 1 ? (1 - n.SulphurShortage) : 1);
+  n.FirearmQuality = (n.RealOverallImprovements + n.FirearmImprovements + n.Technologies.Matchlock / 5 + n.Technologies.SocketBayonet / 5 + n.Technologies.Flintlock / 5 + n.Technologies.Metallurgy / 10 + n.Technologies.Bayonet / 20 - n.Corruption / 5) * (1 - n.IronShortage) * (1 - n.SulphurShortage);
+  n.SiegeQuality = (n.RealOverallImprovements + n.SiegeImprovements + n.Technologies.Metallurgy / 10 - n.Corruption / 5) * (1 - n.IronShortage);
+  n.ArtilleryQuality = (n.RealOverallImprovements + n.ArtilleryImprovements + n.Technologies.Limber / 5 + n.Technologies.Mortars / 5 + n.Technologies.Metallurgy / 10 - n.Corruption / 5) * (1 - n.IronShortage) * (1 - n.SulphurShortage);
 
 
   n.CulturalAdvance = (function () {
@@ -1067,23 +1120,23 @@ function evaluateNation(nationName) {
   n.NavyQuality = (1 + n.NavyImprovements + n.NavyTech - n.Corruption / 5) * (1 - n.IronShortage) * (n.Technologies.Gunports == 1 ? (1 - n.SulphurShortage) : 1);
   
   n.NavalPower = (n.LightShips*0.5 + n.MediumShips + 2*n.HeavyShips) * n.NavyQuality;
-  
+
+  n.Manpower = n.Population * (n.Reforms.NationalMilitia * 0.02 + n.Reforms.FeudalLevies * 0.005 + n.Reforms.ProffesionalArmy * 0.025 + n.Reforms.MassConscription * 0.075 + n.Nationalism * 0.005) - n.OverallNumbers - n.Casualties;
 
   n.PopulationTechImpact = (n.Population > 20000000? (n.Population - 20000000) / 250000000 : 0);
   
 
-  n.ResearchBoostFromTech = 
-  1 + 
-  n.CulturalAdvancements.Universities / 10 + 
-  n.CulturalAdvancements.RenaissanceThought / 5 + 
-  n.Technologies.Experimentation / 5 +
-  n.CulturalAdvancements.ScientificRevolution / 5;
-  n.ResearchPointGain = max(1, (n.ResearchSpending * n.ResearchEffectiveness * n.ResearchBoostFromTech * n.LiteracyPercent / n.Isolation / gameStats.TimeDivide * 2 / 10 + n.ResearchSpending * n.ResearchEffectiveness * n.HigherEducation / n.Isolation / gameStats.TimeDivide * 5 / 10) * (1 - (n.EstateInfluencesReal.AristocratInfluence > 0.5 ? n.EstateInfluencesReal.AristocratInfluence - 0.5 : 0) / 1.5 - (n.EstateInfluencesReal.ClergyInfluence > 0.5? n.EstateInfluencesReal.ClergyInfluence - 0.5 : 0) / 1.5) * (1 - n.PopulationTechImpact));
+  n.ResearchBoostFromTech = 1 - n.Reforms.StateMediaOnly / 4 - n.Reforms.ExtensiveCensorship / 10 - n.Reforms.LimitedCensorship / 20 + n.Reforms.RestrictedSocialMobility / 20 + n.Reforms.UnrestrictedSocialMobility / 10 - n.Reforms.Guilds / 10 + n.Reforms.AntiMonopolyLaws / 10 - n.Reforms.Isolationism / 10 + n.Reforms.Protectionism / 20 + n.Reforms.FreeTrade / 10 + n.CulturalAdvancements.Universities / 10 + n.CulturalAdvancements.RenaissanceThought / 5 + n.Technologies.Experimentation / 5 + n.CulturalAdvancements.ScientificRevolution / 5;
+  n.ResearchPointGain = max(1, (n.ResearchSpending * n.ResearchEffectiveness * n.ResearchBoostFromTech * n.LiteracyPercent / n.Isolation / gameStats.TimeDivide * 2 / 10 + n.ResearchSpending * n.ResearchEffectiveness * n.HigherEducation / n.Isolation / gameStats.TimeDivide * 5 / 10) * (1 - (n.EstateInfluencesReal.AristocracyInfluence > 0.5 ? n.EstateInfluencesReal.AristocracyInfluence - 0.5 : 0) / 1.5 - (n.EstateInfluencesReal.ClergyInfluence > 0.5? n.EstateInfluencesReal.ClergyInfluence - 0.5 : 0) / 1.5) * (1 - n.PopulationTechImpact));
   n.FutureResearchPoints = min(5 + (n.CulturalAdvancements.Universities == true ? 2.5 : 0) + (n.CulturalAdvancements.ScientificRevolution == true ? 2.5 : 0), n.ResearchPoints + n.ResearchPointGain);
+  n.ReformPowerGain = n.GovernmentRepresentation.UnitaryRepresentation;
 
-  // Stability Alert
+  // Alerts
   if (n.Stability < -2) {
     alert(nationName + " has stabiity below -2");
+  }
+  if (n.Manpower < 0) {
+    alert(nationName + " has run out of manpower");
   }
   if (n.ResearchPoints < 0) {
     alert(nationName + " is below Research Point treshold");

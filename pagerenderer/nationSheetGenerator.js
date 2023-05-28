@@ -259,7 +259,7 @@ let TableLayouts = {
     "Basic Stats": [
         ["AverageDevelopment", "Health", "EducationEfficiency", "Propaganda", "SocialSpending", "PopulationControl", "BirthControl"],
         ["Stability", "Absolutism", "Corruption", "Overextension", "Prosperity", "PopulationHappiness", "WarSupport"],
-        ["AdministrativeTech", "BureaucratWages", "StateWorkerWage", "AdministrativeEfficiency", "AdministrationSize", "AdministrativePower", "AdministrativeDemand", "AdministrativeStrain", "TaxEfficiency"]
+        ["AdministrativeTech", "BureaucratsWages", "StateWorkerWage", "AdministrativeEfficiency", "AdministrationSize", "AdministrativePower", "AdministrativeDemand", "AdministrativeStrain", "TaxEfficiency"]
     ],
     "Budget Stats": [
         ["TradeEfficiency", "LocalTrade", "InternalTrade", "ExternalTrade", "TradePower"],
@@ -295,7 +295,7 @@ let TableLayouts = {
         ["CavalryImprovements", "CavalryQuality", "LightCavalry", "HeavyCavalry", "EliteCavalry"],
         ["SiegeImprovements", "SiegeQuality", "SiegeEquipment", "LargeSiegeEquipment"],
         ["ArtilleryImprovements", "ArtilleryQuality", "RegimentalGuns", "FieldCannons", "SiegeGuns"],
-        ["OverallNumbers", "UnitUpkeep", "EliteUnitsCap", "Spies", "SpyQuality"]
+        ["Manpower", "OverallNumbers", "UnitUpkeep", "EliteUnitsCap", "Spies", "SpyQuality"]
     ],
     "Debt Stats": [
         ["PossiblePublicDebt", "PublicDebtLength", "InterestRate"],
@@ -323,17 +323,20 @@ let TableLayouts = {
         ["MaxPopulation", "DetachedLand", "LandAdministration", "Overextension", "CoastalLandPercent", "AverageDevelopment", "HabitableLand"]
     ],
     "Estates": [
-        ["AristocratLoyalty", "ClergyLoyalty", "BurgousieLoyalty", "UrbanLoyalty", "BureaucratLoyalty", "IntellectualsLoyalty", "WorkersLoyalty", "MilitaryLoyalty"],
-        ["AristocratTax", "ClergyTax", "BurgousieTax", "UrbanTax", "BureaucratTax", "IntellectualsTax", "WorkersTax", "MilitaryTax"],
+        ["AristocracyLoyalty", "ClergyLoyalty", "BurgousieLoyalty", "UrbanLoyalty", "BureaucratsLoyalty", "IntellectualsLoyalty", "WorkersLoyalty", "MilitaryLoyalty"],
+        ["AristocracyTax", "ClergyTax", "BurgousieTax", "UrbanTax", "BureaucratsTax", "IntellectualsTax", "WorkersTax", "MilitaryTax"],
         ["SlavesWage", "LabourersWage", "SerfsWage", "FarmersWage", "TownsfolkWage", "ClergyWage", "BureaucratsWage", "MerchantsWage", "IntellectualsWage", "SailorsWage", "SoldiersWage", "AristocracyWage", "BurgousieWage"],
       ["SlavesTaxes", "LabourersTaxes", "SerfsTaxes", "FarmersTaxes", "TownsfolkTaxes", "ClergyTaxes", "BureaucratsTaxes", "MerchantsTaxes", "IntellectualsTaxes", "SailorsTaxes", "SoldiersTaxes", "AristocracyTaxes", "BurgousieTaxes", "TaxRevenue"],
       ["ExpectedSlavesSol", "ExpectedLabourersSol", "ExpectedSerfsSol", "ExpectedFarmersSol", "ExpectedTownsfolkSol", "ExpectedClergySol", "ExpectedBureaucratsSol", "ExpectedMerchantsSol", "ExpectedIntellectualsSol", "ExpectedSailorsSol", "ExpectedSoldiersSol", "ExpectedAristocracySol", "ExpectedBurgousieSol", "AverageExpectedSol"],
-      ["SlavesSol", "LabourersSol", "SerfsSol", "FarmersSol", "TownsfolkSol", "ClergySol", "BureaucratsSol", "MerchantsSol", "IntellectualsSol", "SailorsSol", "SoldiersSol", "AristocracySol", "BurgousieSol", "AverageSol"]
+      ["SlavesSol", "LabourersSol", "SerfsSol", "FarmersSol", "TownsfolkSol", "ClergySol", "BureaucratsSol", "MerchantsSol", "IntellectualsSol", "SailorsSol", "SoldiersSol", "AristocracySol", "BurgousieSol", "AverageSol"],
+      ["SlavesLiteracy", "LabourersLiteracy", "SerfsLiteracy", "FarmersLiteracy", "TownsfolkLiteracy", "ClergyLiteracy", "BureaucratsLiteracy", "MerchantsLiteracy", "IntellectualsLiteracy", "SailorsLiteracy", "SoldiersLiteracy", "AristocracyLiteracy", "BurgousieLiteracy"],
+      ["AristocracyPoliticalAwareness", "ClergyPoliticalAwareness", "BurgousiePoliticalAwareness", "UrbanPoliticalAwareness", "BureaucratsPoliticalAwareness", "IntellectualsPoliticalAwareness", "WorkersPoliticalAwareness", "MilitaryPoliticalAwareness"]
     ],
-	"Reforms": [
+  "Reforms": [
+        ["ReformPower", "ReformPowerGain"],
 		["Reforms.SlaveryAllowed", "Reforms.SlaveryBanned", "Reforms.SerfdomAllowed", "Reforms.SerfdomBanned"],
 		["Reforms.OpenFieldSystem", "Reforms.Enclosure"],
-		["Reforms.Mercantilism", "Reforms.Protectionism", "Reforms.FreeTrade"],
+        ["Reforms.Isolationism",  "Reforms.Mercantilism", "Reforms.Protectionism", "Reforms.FreeTrade"],
 		["Reforms.Guilds", "Reforms.GuildsBanned", "Reforms.AntiMonopolyLaws"],
 		["Reforms.NoVoting", "Reforms.HighClassVoting", "Reforms.WealthVoting", "Reforms.UniversalSuffrage"],
 		["Reforms.NoblePrivellege", "Reforms.WealthPrivellege", "Reforms.ClassEquality"],
@@ -341,7 +344,12 @@ let TableLayouts = {
 		["Reforms.NobleBureaucrats", "Reforms.WealthyBureaucrats", "Reforms.MeritocraticBureaucrats"],
         ["Reforms.NobleResourceOwnership", "Reforms.MixedResourceOwnership", "Reforms.BurgousieResourceOwnership", "Reforms.GovernmentResourceOwnership"],
         ["Reforms.NobleLandOwnership", "Reforms.MixedLandOwnership", "Reforms.PrivateLandOwnership", "Reforms.GovernmentLandOwnership"],
-		["Reforms.NoArmyReserve", "Reforms.NationalMilitia", "Reforms.Conscripts", "Reforms.ProffesionalReservists"]
+        ["Reforms.NationalMilitia", "Reforms.FeudalLevies", "Reforms.ProffesionalArmy", "Reforms.MassConscription"],
+        ["Reforms.FeudalNobleArmies", "Reforms.PrivateMercenariesOnly", "Reforms.NoPrivateMilitaries"],
+        ["Reforms.StateMediaOnly", "Reforms.ExtensiveCensorship", "Reforms.LimitedCensorship", "Reforms.FreeSpeech"],
+        ["Reforms.NoSocialMobility", "Reforms.RestrictedSocialMobility", "Reforms.UnrestrictedSocialMobility"],
+        ["Reforms.StateReligion", "Reforms.RestrictiveReligionLaws", "Reforms.FreedomOfReligion"],
+        ["Reforms.PrivateEducationOnly", "Reforms.ReligiousSchools", "Reforms.PublicEducation"]
 	],
     "Trade Influence - Americas": [
         [ti("Alaska"), ti("Cascadia"), ti("CaliforniaAndWestMexico"), ti("HudsonBay"), ti("GreatLakes"), ti("Louisiana"), ti("GulfOfMexico"), ti("LawrenceGulf"), ti("EastCoast"), ti("Carribean"), ti("CentralAmerica")],
@@ -383,7 +391,7 @@ let TableLayouts = {
     ],
     "Cultural Advancements": [
         ["CulturalAdvancements.DivineRightToRule", "CulturalAdvancements.Serfdom", "CulturalAdvancements.Feudalism"],
-        ["CulturalAdvancements.Universities", "CulturalAdvancements.AristocratDuty"],
+        ["CulturalAdvancements.Universities", "CulturalAdvancements.AristocracyDuty"],
         ["CulturalAdvancements.Courthouses"],
         ["CulturalAdvancements.RenaissanceThought", "CulturalAdvancements.EarlyModernAdministration"],
         ["CulturalAdvancements.NationalSovereignity", "CulturalAdvancements.Newspapers"],
