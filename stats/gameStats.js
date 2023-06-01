@@ -634,14 +634,15 @@ class Nation {
     };
     
     this.MilitaryControl = {
-      UnitaryControl: 35,
-      AristocracyControl: 45,
+      UnitaryControl: 30,
+      AristocracyControl: 40,
       ClergyControl: 5,
-        BurgousieControl: 5,
-        UrbanControl: 5,
+      BurgousieControl: 5,
+      UrbanControl: 5,
       BureaucratsControl: 5,
       IntellectualsControl: 0,
-      WorkersControl: 5
+      WorkersControl: 5,
+      Independent: 10
     };
 
     this.PopulationControl = 0;

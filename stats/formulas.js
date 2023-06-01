@@ -110,8 +110,8 @@ function evaluateNation(nationName) {
   n.ReligiousDisunity = religionCalc.disunity * (1 + n.ReligiousFervor * 0.2 + n.Reforms.StateReligion / 2 - n.Reforms.FreedomOfReligion / 2);
     n.OverallNumbers = n.Riflemen + n.MusketMilitia + n.Musketeers + n.Levies + n.LightInfantry + n.HeavyInfantry + n.Archers + n.Crossbowmen + n.LightCavalry + n.HeavyCavalry + n.EliteInfantry + n.Militia + n.EliteCavalry + n.HandCannoneers + (n.SiegeEquipment + n.LargeSiegeEquipment) * 10 + n.RegimentalGuns * 3 + n.FieldCannons * 6 + n.SiegeGuns * 10;
   n.OverallShipCount = n.LightShips + n.MediumShips + n.HeavyShips;
-  n.AdministrativeTech = n.CulturalAdvancements.EarlyModernAdministration + n.CulturalAdvancements.NationalSovereignity + n.CulturalAdvancements.Constitution + n.Reforms.WealthyBureaucrats / 2 + n.Reforms.MeritocraticOfficers;
-  n.AdministrativePower = n.AdministrativeEfficiency * (1 + n.AdministrationSize / 2 + n.AdministrativeTech / 10) * 0.75;
+  n.AdministrativeTech = 0 - n.Reforms.NobleBureaucrats * 0.8 - n.Reforms.ClergyBureaucrats * 0.5 + n.Reforms.MeritocraticBureaucrats + n.CulturalAdvancements.EarlyModernAdministration + n.CulturalAdvancements.NationalSovereignity + n.CulturalAdvancements.Constitution + n.Reforms.WealthyBureaucrats / 2 + n.Reforms.MeritocraticOfficers;
+  n.AdministrativePower = n.AdministrativeEfficiency * (1 + n.AdministrationSize / 2 + n.AdministrativeTech * 0.4) * 0.75;
   n.AdministrativeDemand = (
     0 + n.Population / 1000000 + n.Health * 2 + n.Education * 2 + n.SocialSpending * 4 + n.PropagandaReal * 2 + n.PopulationControlReal * 2 + n.BirthControl * 4 +
     (n.HighClassTax + n.MediumClassTax + n.LowerClassTax) / 3 * 75 + n.OverallNumbers / 5000 + n.OverallShipCount / 25 + n.AgricultureSubsidies * 4 + (n.AgricultureInfrastructure - 1) * 4 + n.Size / 7500 +
@@ -908,7 +908,7 @@ function evaluateNation(nationName) {
   n.BurgousieInfluenceMod = 1 + n.Reforms.SlaveryAllowed / 10 + n.Reforms.Enclosure / 5 + n.Reforms.WealthVoting / 10 + n.Reforms.WealthPrivellege / 10 + n.Reforms.WealthyOfficers / 10 + n.Reforms.WealthyBureaucrats / 10 + n.Reforms.BurgousieResourceOwnership / 5 + n.Reforms.MixedResourceOwnership / 10 + n.Reforms.PrivateLandOwnership / 5 + n.Reforms.MixedLandOwnership / 10 + n.Reforms.Guilds / 5 + n.Reforms.GuildsBanned / 10 + n.Reforms.FeudalNobleArmies / 5 + n.Reforms.PrivateMercenariesOnly / 5 + n.Reforms.NoSocialMobility / 10 + n.Reforms.RestrictedSocialMobility / 5 + n.Reforms.RegionalPolice / 10;
   n.ClergyInfluenceMod = 1 + n.ReligiousFervor / 10 + n.Reforms.WealthVoting / 10 + n.Reforms.WealthPrivellege / 10 + n.Reforms.WealthyOfficers / 10 + n.Reforms.ClergyBureaucrats / 5 + n.Reforms.WealthyBureaucrats / 10 + n.Reforms.NoSocialMobility / 5 + n.Reforms.RestrictedSocialMobility / 10 + n.Reforms.StateReligion / 5 + n.Reforms.RestrictiveReligionLaws / 10 + n.Reforms.ReligiousSchools / 5 + n.Reforms.RegionalPolice / 10;
   n.UrbanInfluenceMod = 1 + n.Reforms.Enclosure / 10 + n.Reforms.GuildsBanned / 10 + n.Reforms.AntiMonopolyLaws / 5 + n.Reforms.WealthVoting / 20 + n.Reforms.WealthPrivellege / 20 + n.Reforms.WealthyOfficers / 20 + n.Reforms.WealthyBureaucrats / 20 + n.Reforms.RestrictedSocialMobility / 20 + n.Reforms.CommunityPolicing / 5;
-  n.BureaucratsInfluenceMod = 1 + n.Reforms.MeritocraticBureaucrats / 10 + n.Reforms.GovernmentResourceOwnership / 4 + n.Reforms.GovernmentResourceOwnership / 4 + n.Reforms.RestrictedSocialMobility / 20 + n.Reforms.RegionalPolice / 10 + n.Reforms.StatePolice / 5 + n.Reforms.SecretPolice / 4;
+  n.BureaucratsInfluenceMod = 1 + n.Reforms.MeritocraticBureaucrats / 10 + n.Reforms.GovernmentResourceOwnership / 4 + n.Reforms.GovernmentLandOwnership / 2 + n.Reforms.RestrictedSocialMobility / 20 + n.Reforms.RegionalPolice / 10 + n.Reforms.StatePolice / 5 + n.Reforms.SecretPolice * 0.4 + n.Reforms.StateMediaOnly * 0.4 + n.Reforms.ExtensiveCensorship / 5 + n.Reforms.LimitedCensorship / 10;
   n.IntellectualsInfluenceMod = 1 + n.Reforms.MeritocraticBureaucrats / 5 + n.Reforms.MeritocraticOfficers / 5;
   n.MilitaryInfluenceMod = 1 + n.Reforms.MeritocraticOfficers / 10 + n.Reforms.ProffesionalArmy / 5 + n.Reforms.MassConscription / 10 + n.Reforms.GovernmentResourceOwnership / 5 + n.Reforms.GovernmentResourceOwnership / 5 + n.Reforms.RestrictedSocialMobility / 20 + n.Reforms.RegionalPolice / 20 + n.Reforms.StatePolice / 10 + n.Reforms.SecretPolice / 4;
   n.WorkersInfluenceMod = 1 + n.Reforms.OpenFieldSystem / 5 + n.Reforms.SlaveryBanned / 10 + n.Reforms.SerfdomBanned / 5 + n.Reforms.NationalMilitia / 5 + n.Reforms.UniversalSuffrage / 5 + n.Reforms.CommunityPolicing / 5;
@@ -1034,20 +1034,32 @@ function evaluateNation(nationName) {
 
   n.WorkersPoliticalAwareness = n.FarmersPoliticalAwareness * n.Workforces.Farmers / (n.Workforces.Farmers + n.Workforces.Labourers + n.Workforces.Serfs) + n.LabourersPoliticalAwareness * n.Workforces.Labourers / (n.Workforces.Farmers + n.Workforces.Labourers + n.Workforces.Serfs) + n.SerfsPoliticalAwareness * n.Workforces.Serfs / (n.Workforces.Farmers + n.Workforces.Labourers + n.Workforces.Serfs);
 
+  n.BureaucratsPoliticalAwareness = 1;
+
   n.AverageSolMods = {
     Workers: 0.5,
     Urban: 2,
     Clergy: 5,
     Bureaucrats: 2,
-    Intellectuls: 1.5,
+    Intellectuals: 1.5,
     Military: 1,
     Aristocracy: 10,
     Burgousie: 7.5
   }
+  n.EstateNumbers = {
+    Workers: n.Workforces.Farmers + n.Workforces.Labourers + isNaN(n.Workforces.Serfs ? 0 : n.Workforces.Serfs),
+    Urban: isNaN(n.Workforces.Merchants ? 0 : n.Workforces.Merchants) + n.Workforces.Townsfolk,
+    Clergy: n.Workforces.Clergy,
+    Bureaucrats: n.Workforces.Bureaucrats,
+    Intellectuals: n.Workforces.Intellectuals,
+    Military: isNaN(n.Workforces.Soldiers ? 0 : n.Workforces.Soldiers) + isNaN(n.Workforces.Sailors ? 0 : n.Workforces.Sailors),
+    Aristocracy: n.Workforces.Aristocracy,
+    Burgousie: n.Workforces.Burgousie
+  }
   // Loyalties
   for (const EstateIndex in gameStats.EstatesGeneral) {
     const Estate = gameStats.EstatesGeneral[EstateIndex];
-    n[Estate + "Loyalty"] = (n[Estate + "Sol"] / n["Expected" + Estate + "Sol"]) / 2 - (n[Estate + "Sol"] < n.AverageSol * n.AverageSolMods[Estate] ? ((n.AverageSol * n.AverageSolMods[Estate]) / n[Estate + "Sol"] - 1) / 4 : 0) + (n.GovernmentRepresentation[Estate + "Representation"] / 100 - n.EstateInfluencesReal[Estate + "Influence"] * n[Estate + "PoliticalAwareness"]);
+    n[Estate + "Loyalty"] = (n[Estate + "Sol"] / n["Expected" + Estate + "Sol"]) / 2 - (n[Estate + "Sol"] < n.AverageSol * n.AverageSolMods[Estate] ? ((n.AverageSol * n.AverageSolMods[Estate]) / n[Estate + "Sol"] - 1) / 4 : 0) + (n.GovernmentRepresentation[Estate + "Representation"] / 100 - max(n.EstateInfluencesReal[Estate + "Influence"], n.EstateNumbers[Estate] * n[Estate + "PoliticalAwareness"]));
     debugger;
   }
 
@@ -1130,10 +1142,69 @@ function evaluateNation(nationName) {
 
   n.ResearchBoostFromTech = 1 - n.Reforms.StateMediaOnly / 4 - n.Reforms.ExtensiveCensorship / 10 - n.Reforms.LimitedCensorship / 20 + n.Reforms.RestrictedSocialMobility / 20 + n.Reforms.UnrestrictedSocialMobility / 10 - n.Reforms.Guilds / 10 + n.Reforms.AntiMonopolyLaws / 10 - n.Reforms.Isolationism / 10 + n.Reforms.Protectionism / 20 + n.Reforms.FreeTrade / 10 + n.CulturalAdvancements.Universities / 10 + n.CulturalAdvancements.RenaissanceThought / 5 + n.Technologies.Experimentation / 5 + n.CulturalAdvancements.ScientificRevolution / 5;
   n.ResearchPointGain = max(1, (n.ResearchSpending * n.ResearchEffectiveness * n.ResearchBoostFromTech * n.LiteracyPercent / n.Isolation / gameStats.TimeDivide * 2 / 10 + n.ResearchSpending * n.ResearchEffectiveness * n.HigherEducation / n.Isolation / gameStats.TimeDivide * 5 / 10) * (1 - (n.EstateInfluencesReal.AristocracyInfluence > 0.5 ? n.EstateInfluencesReal.AristocracyInfluence - 0.5 : 0) / 1.5 - (n.EstateInfluencesReal.ClergyInfluence > 0.5? n.EstateInfluencesReal.ClergyInfluence - 0.5 : 0) / 1.5) * (1 - n.PopulationTechImpact));
+
   n.FutureResearchPoints = min(5 + (n.CulturalAdvancements.Universities == true ? 2.5 : 0) + (n.CulturalAdvancements.ScientificRevolution == true ? 2.5 : 0), n.ResearchPoints + n.ResearchPointGain);
-  n.ReformPowerGain = n.GovernmentRepresentation.UnitaryRepresentation;
+  n.ReformPowerGain = n.GovernmentRepresentation.UnitaryRepresentation / gameStats.TimeDivide / 2.5;
+
+  n.SlaveryReformAdvanceCost = max(25, (n.GovernmentRepresentation.AristocracyRepresentation + n.GovernmentRepresentation.BurgousieRepresentation - n.GovernmentRepresentation.IntellectualsRepresentation) * 2);
+  n.SlaveryReformRegressionCost = max(25, (0 - n.GovernmentRepresentation.AristocracyRepresentation - n.GovernmentRepresentation.BurgousieRepresentation + n.GovernmentRepresentation.IntellectualsRepresentation) * 2);
+
+  n.SerfdomReformAdvanceCost = max(25, (n.GovernmentRepresentation.ClergyRepresentation + n.GovernmentRepresentation.AristocracyRepresentation - n.GovernmentRepresentation.BurgousieRepresentation - n.GovernmentRepresentation.IntellectualsRepresentation - n.GovernmentRepresentation.WorkersRepresentation) * 2);
+  n.SerfdomReformRegressionCost = max(25, (0 - n.GovernmentRepresentation.ClergyRepresentation - n.GovernmentRepresentation.AristocracyRepresentation + n.GovernmentRepresentation.BurgousieRepresentation + n.GovernmentRepresentation.IntellectualsRepresentation + n.GovernmentRepresentation.WorkersRepresentation) * 2);
+
+  n.EnclosureReformAdvanceCost = max(25, (n.GovernmentRepresentation.WorkersRepresentation));
+  n.EnclosureReformRegressionCost = max(25, (0 - n.GovernmentRepresentation.WorkersRepresentation + n.GovernmentRepresentation.AristocracyRepresentation + n.GovernmentRepresentation.BurgousieRepresentation));
+
+  n.TradeReformAdvanceCost = max(25, (n.GovernmentRepresentation.WorkersRepresentation + n.GovernmentRepresentation.UrbanRepresentation + n.GovernmentRepresentation.AristocracyRepresentation - n.GovernmentRepresentation.BurgousieRepresentation) * (n.Reforms.Mercantilism ? 1 : 1) * (n.Reforms.Protectionism ? 2 : 1));
+  n.TradeReformRegressionCost = max(25, (0 - n.GovernmentRepresentation.WorkersRepresentation - n.GovernmentRepresentation.UrbanRepresentation - n.GovernmentRepresentation.AristocracyRepresentation + n.GovernmentRepresentation.BurgousieRepresentation) * (n.Reforms.Mercantilism ? 2 : 1) * (n.Reforms.Protectionism ? 1 : 1));
+
+  n.AntitrustReformAdvanceCost = max(25, (n.GovernmentRepresentation.BurgousieRepresentation - n.GovernmentRepresentation.WorkersRepresentation - n.GovernmentRepresentation.UrbanRepresentation) * (n.Reforms.Guilds ? 2 : 1) * (n.Reforms.GuildsBanned ? 3 : 1));
+  n.AntitrustReformRegressionCost = max(25, (0 - n.GovernmentRepresentation.BurgousieRepresentation + n.GovernmentRepresentation.WorkersRepresentation + n.GovernmentRepresentation.UrbanRepresentation));
+
+  n.SuffrageReformAdvanceCost = max(25, ((n.Reforms.NoVoting ? n.GovernmentRepresentation.UnitaryRepresentation : 0) + (n.Reforms.HighClassVoting ? n.GovernmentRepresentation.UnitaryRepresentation + n.GovernmentRepresentation.AristocracyRepresentation : 0) + (n.Reforms.WealthVoting ? n.GovernmentRepresentation.UnitaryRepresentation + n.GovernmentRepresentation.AristocracyRepresentation + n.GovernmentRepresentation.BurgousieRepresentation + n.GovernmentRepresentation.ClergyRepresentation + (n.AverageDevelopment < 0.1 ? n.GovernmentRepresentation.UrbanRepresentation : 0) : 0)));
+  n.SuffrageReformRegressionCost = max(25, ((n.Reforms.HighClassVoting ? n.GovernmentRepresentation.AristocracyRepresentation : 0) + (n.Reforms.WealthVoting ? 0 - n.GovernmentRepresentation.AristocracyRepresentation + n.GovernmentRepresentation.BurgousieRepresentation + n.GovernmentRepresentation.ClergyRepresentation + (n.AverageDevelopment < 0.1 ? n.GovernmentRepresentation.UrbanRepresentation : 0) : 0) + (n.Reforms.UniversalSuffrage ? n.GovernmentRepresentation.IntellectualsRepresentation + n.GovernmentRepresentation.WorkersRepresentation + (n.AverageDevelopment > 0.1 ? n.GovernmentRepresentation.UrbanRepresentation : 0) : 0)));
+
+  n.PrivellegeReformAdvanceCost = max(25, ((n.Reforms.NoblePrivellege ? n.GovernmentRepresentation.AristocracyRepresentation : 0) + (n.Reforms.WealthPrivellege ? n.GovernmentRepresentation.AristocracyRepresentation + n.GovernmentRepresentation.BurgousieRepresentation + n.GovernmentRepresentation.ClergyRepresentation + (n.AverageDevelopment < 0.1 ? n.GovernmentRepresentation.UrbanRepresentation : 0) : 0)));
+  n.PrivellegeReformRegressionCost = max(25, ((n.Reforms.WealthPrivellege ? n.GovernmentRepresentation.BurgousieRepresentation + n.GovernmentRepresentation.ClergyRepresentation + (n.AverageDevelopment < 0.1 ? n.GovernmentRepresentation.UrbanRepresentation : 0) : 0) + (n.Reforms.ClassEquality ? n.GovernmentRepresentation.IntellectualsRepresentation + n.GovernmentRepresentation.WorkersRepresentation + (n.AverageDevelopment > 0.1 ? n.GovernmentRepresentation.UrbanRepresentation : 0) : 0)));
+  
+  n.OfficersReformAdvanceCost = max(25, ((n.Reforms.NobleOfficers ? n.GovernmentRepresentation.AristocracyRepresentation : 0) + (n.Reforms.WealthyOfficers ? n.GovernmentRepresentation.AristocracyRepresentation + n.GovernmentRepresentation.BurgousieRepresentation + n.GovernmentRepresentation.ClergyRepresentation + (n.AverageDevelopment < 0.1 ? n.GovernmentRepresentation.UrbanRepresentation : 0) : 0) + n.GovernmentRepresentation.MilitaryRepresentation));
+  n.OfficersReformRegressionCost = max(25, ((n.Reforms.WealthyOfficers ? n.GovernmentRepresentation.BurgousieRepresentation + n.GovernmentRepresentation.ClergyRepresentation + (n.AverageDevelopment < 0.1 ? n.GovernmentRepresentation.UrbanRepresentation : 0) : 0) + (n.Reforms.MeritocraticOfficers ? n.GovernmentRepresentation.IntellectualsRepresentation + n.GovernmentRepresentation.WorkersRepresentation + (n.AverageDevelopment > 0.1 ? n.GovernmentRepresentation.UrbanRepresentation : 0) : 0) + n.GovernmentRepresentation.MilitaryRepresentation));
+
+  n.BureaucratsReformAdvanceCost = max(25, (n.GovernmentRepresentation.BureaucratsRepresentation + (n.Reforms.NobleBureaucrats ? n.GovernmentRepresentation.AristocracyRepresentation : 0) + (n.Reforms.ClergyBureaucrats ? n.GovernmentRepresentation.AristocracyRepresentation + n.GovernmentRepresentation.ClergyRepresentation : 0) + (n.Reforms.WealthyBureaucrats ? n.GovernmentRepresentation.AristocracyRepresentation + n.GovernmentRepresentation.BurgousieRepresentation + n.GovernmentRepresentation.ClergyRepresentation + (n.AverageDevelopment < 0.1 ? n.GovernmentRepresentation.UrbanRepresentation : 0) : 0)));
+  n.BureaucratsReformRegressionCost = max(25, ((n.Reforms.ClergyBureaucrats ? n.GovernmentRepresentation.ClergyRepresentation : 0) + (n.Reforms.WealthyBureaucrats ? n.GovernmentRepresentation.AristocracyRepresentation + n.GovernmentRepresentation.BurgousieRepresentation + n.GovernmentRepresentation.UrbanRepresentation : 0) + (n.Reforms.MeritocraticBureaucrats ? n.GovernmentRepresentation.IntellectualsRepresentation + n.GovernmentRepresentation.WorkersRepresentation + (n.AverageDevelopment > 0.1 ? n.GovernmentRepresentation.UrbanRepresentation : 0) : 0)));
+
+  n.ResourceReformAdvanceCost = max(25, ((n.Reforms.NobleResourceOwnership || n.Reforms.MixedResourceOwnership ? n.GovernmentRepresentation.AristocracyRepresentation + n.GovernmentRepresentation.ClergyRepresentation : 0) + (n.Reforms.BurgousieResourceOwnership ? 100 - n.GovernmentRepresentation.BureaucratsRepresentation - n.GovernmentRepresentation.MilitaryRepresentation - n.GovernmentRepresentation.UnitaryRepresentation : 0)));
+  n.ResourceReformRegressionCost = max(25, ((n.Reforms.MixedResourceOwnership || n.Reforms.BurgousieResourceOwnership ? 100 - n.GovernmentRepresentation.AristocracyRepresentation - n.GovernmentRepresentation.ClergyRepresentation : 0) + (n.Reforms.GovernmentResourceOwnership ? n.GovernmentRepresentation.BureaucratsRepresentation + n.GovernmentRepresentation.MilitaryRepresentation + n.GovernmentRepresentation.UnitaryRepresentation : 0)));
+  
+  n.LandReformAdvanceCost = max(25, ((n.Reforms.NobleLandOwnership || n.Reforms.MixedLandOwnership ? n.GovernmentRepresentation.AristocracyRepresentation + n.GovernmentRepresentation.ClergyRepresentation : 0) + (n.Reforms.PrivateLandOwnership ? 100 - n.GovernmentRepresentation.BureaucratsRepresentation - n.GovernmentRepresentation.MilitaryRepresentation - n.GovernmentRepresentation.UnitaryRepresentation : 0)));
+  n.LandReformRegressionCost = max(25, ((n.Reforms.MixedLandOwnership || n.Reforms.PrivateLandOwnership ? 100 - n.GovernmentRepresentation.AristocracyRepresentation - n.GovernmentRepresentation.ClergyRepresentation : 0) + (n.Reforms.GovernmentLandOwnership ? n.GovernmentRepresentation.BureaucratsRepresentation + n.GovernmentRepresentation.MilitaryRepresentation + n.GovernmentRepresentation.UnitaryRepresentation : 0)));
+
+  n.ArmyReformAdvanceCost = max(25, (n.Reforms.NationalMilitia ? n.GovernmentRepresentation.Workers + n.GovernmentRepresentation.UrbanRepresentation : 0) + (n.Reforms.FeudalLevies ? n.GovernmentRepresentation.AristocracyRepresentation + n.GovernmentRepresentation.ClergyRepresentation : 0) + (n.Reforms.ProffesionalArmy ? n.GovernmentRepresentation.MilitaryRepresentation + n.GovernmentRepresentation.WorkersRepresentation + n.GovernmentRepresentation.UrbanRepresentation : 0));
+  n.ArmyReformRegressionCost = max(25, (n.Reforms.FeudalLevies ? n.GovernmentRepresentation.AristocracyRepresentation + n.GovernmentRepresentation.ClergyRepresentation + n.GovernmentRepresentation.MilitaryRepresentation + n.GovernmentRepresentation.BurgousieRepresentation : 0) + (n.Reforms.ProffesionalArmy ? n.GovernmentRepresentation.BurgousieRepresentation + n.GovernmentRepresentation.MilitaryRepresentation + n.GovernmentRepresentation.WorkersRepresentation + n.GovernmentRepresentation.UrbanRepresentation + n.GovernmentRepresentation.IntellectualsRepresentation + n.GovernmentRepresentation.UnitaryRepresentation : 0) + (n.Reforms.MassConscription ? n.GovernmentRepresentation.UnitaryRepresentation : 0));
+
+  n.PrivateArmiesReformAdvanceCost = max(25, (n.Reforms.FeudalNobleArmies ? n.GovernmentRepresentation.AristocracyRepresentation + n.GovernmentRepresentation.ClergyRepresentation : 0) + (n.Reforms.PrivateMercenariesOnly ? n.GovernmentRepresentation.AristocracyRepresentation + n.GovernmentRepresentation.ClergyRepresentation + n.GovernmentRepresentation.BurgousieRepresentation : 0));
+  n.PrivateArmiesReformRegressionCost = max(25, (n.Reforms.PrivateMercenariesOnly ? n.GovernmentRepresentation.BurgousieRepresentation + n.GovernmentRepresentation.MilitaryRepresentation + n.GovernmentRepresentation.BureaucratsRepresentation : 0) + (n.Reforms.NoPrivateMilitaries ? n.GovernmentRepresentation.BureaucratsRepresentation + n.GovernmentRepresentation.MilitaryRepresentation + n.GovernmentRepresentation.UnitaryRepresentation : 0));
+
+  n.CensorshipReformAdvanceCost = max(25, (n.Reforms.StateMediaOnly || n.Reforms.ExtensiveCensorship ? n.GovernmentRepresentation.BureaucratsRepresentation + n.GovernmentRepresentation.UnitaryRepresentation : 0) + (n.Reforms.LimitedCensorship ? n.GovernmentRepresentation.BureaucratsRepresentation + n.GovernmentRepresentation.UnitaryRepresentation + n.GovernmentRepresentation.AristocracyRepresentation + n.GovernmentRepresentation.BurgousieRepresentation : 0));
+  n.CensorshipReformRegressionCost = max(25, (n.Reforms.ExtensiveCensorship ? 100 - n.GovernmentRepresentation.BureaucratsRepresentation - n.GovernmentRepresentation.UnitaryRepresentation : 0) + (n.Reforms.LimitedCensorship ? n.GovernmentRepresentation.WorkersRepresentation + n.GovernmentRepresentation + n.IntellectualsRepresentation + n.GovernmentRepresentation.UrbanRepresentation : 0));
+
+  n.SocialReformAdvanceCost = max(25, ((n.Reforms.NoSocialMobility ? n.GovernmentRepresentation.AristocracyRepresentation + n.GovernmentRepresentation.ClergyRepresentation : 0) + (n.Reforms.RestrictedSocialMobility ? n.GovernmentRepresentation.AristocracyRepresentation + n.GovernmentRepresentation.ClergyRepresentation + n.GovernmentRepresentation.BurgousieRepresentation + n.GovernmentRepresentation.BureaucratsRepresentation + n.GovernmentRepresentation.UrbanRepresentation : 0)) * 1.4);
+  n.SocialReformRegressionCost = max(25, (n.Reforms.RestrictedSocialMobility ? 100 - n.GovernmentRepresentation.UnitaryRepresentation - n.GovernmentRepresentation.AristocracyRepresentation - n.GovernmentRepresentation.ClergyRepresentation : 0) + (n.Reforms.UnrestrictedSocialMobility ? n.GovernmentRepresentation.WorkersRepresentation + n.GovernmentRepresentation.IntellectualsRepresentation : 0));
+  
+  n.ReligiousReformAdvanceCost = max(25, (n.GovernmentRepresentation.ClergyRepresentation + n.GovernmentRepresentation.AristocracyRepresentation - n.GovernmentRepresentation.IntellectualsRepresentation) * 1.75);
+  n.ReligiousReformRegressionCost = max(25, (0 - n.GovernmentRepresentation.ClergyRepresentation - n.GovernmentRepresentation.AristocracyRepresentation + n.GovernmentRepresentation.IntellectualsRepresentation));
+
+  n.EducationReformAdvanceCost = max(25, (n.Reforms.PrivateEducationOnly ? n.GovernmentRepresentation.AristocracyRepresentation + n.GovernmentRepresentation.BurgousieRepresentation + (n.AverageDevelopment > 0.1 ? n.GovernmentRepresentation.UrbanRepresentation : 0) - n.GovernmentRepresentation.ClergyRepresentation : 0) + (n.Reforms.ReligiousSchools ? n.GovernmentRepresentation.AristocracyRepresentation + n.GovernmentRepresentation.BurgousieRepresentation + (n.AverageDevelopment > 0.1 ? n.GovernmentRepresentation.UrbanRepresentation : 0) + n.GovernmentRepresentation.ClergyRepresentation : 0));
+  n.EducationReformRegressionCost = max(25, (n.Reforms.ReligiousSchools ? 100 - n.GovernmentRepresentation.UnitaryRepresentation - n.GovernmentRepresentation.AristocracyRepresentation - n.GovernmentRepresentation.BurgousieRepresentation - (n.AverageDevelopment > 0.1 ? n.GovernmentRepresentation.UrbanRepresentation : 0) : 0) + (n.Reforms.PublicEducation ? 100 - n.GovernmentRepresentation.UnitaryRepresentation - n.GovernmentRepresentation.AristocracyRepresentation - n.GovernmentRepresentation.BurgousieRepresentation - (n.AverageDevelopment > 0.1 ? n.GovernmentRepresentation.UrbanRepresentation : 0) - n.GovernmentRepresentation.ClergyRepresentation : 0));
+
+  n.PoliceReformAdvanceCost = max(25, (n.Reforms.CommunityPolicing ? n.GovernmentRepresentation.UrbanRepresentation + n.GovernmentRepresentation.WorkersRepresentation + n.GovernmentRepresentation.IntellectualsRepresentation : 0) + (n.Reforms.RegionalPolice ? n.GovernmentRepresentation.AristocracyRepresentation + n.GovernmentRepresentation.ClergyRepresentation + n.GovernmentRepresentation.BurgousieRepresentation : 0) + (n.Reforms.StatePolice ? 100 - n.GovernmentRepresentation.MilitaryRepresentation - n.GovernmentRepresentation.BureaucratsRepresentation - n.GovernmentRepresentation.UnitaryRepresentation : 0));
+  n.PoliceReformRegressionCost = max(25, (n.Reforms.RegionalPolice ? n.GovernmentRepresentation.AristocracyRepresentation + n.GovernmentRepresentation.ClergyRepresentation + n.GovernmentRepresentation.BurgousieRepresentation + n.GovernmentRepresentation.UnitaryRepresentation : 0) + (n.Reforms.StatePolice ? 100 - n.GovernmentRepresentation.AristocracyRepresentation - n.GovernmentRepresentation.BurgousieRepresentation - n.GovernmentRepresentation.ClergyRepresentation : 0) + (n.Reforms.SecretPolice ? n.GovernmentRepresentation.UnitaryRepresentation + n.GovernmentRepresentation.BureaucratsRepresentation + n.GovernmentRepresentation.MilitaryRepresentation : 0));
+  
 
   // Alerts
+  if (n.GovernmentRepresentation.WorkersRepresentation + n.GovernmentRepresentation.MilitaryRepresentation + n.GovernmentRepresentation.IntellectualsRepresentation + n.GovernmentRepresentation.BureaucratsRepresentation + n.GovernmentRepresentation.UrbanRepresentation + n.GovernmentRepresentation.BurgousieRepresentation + n.GovernmentRepresentation.ClergyRepresentation + n.GovernmentRepresentation.AristocracyRepresentation + n.GovernmentRepresentation.UnitaryRepresentation != 100) {
+    alert(nationName + " has incorrect government representation");
+  }
   if (n.Stability < -2) {
     alert(nationName + " has stabiity below -2");
   }
@@ -1145,6 +1216,9 @@ function evaluateNation(nationName) {
   }
   if (n.CulturalPower < 0) {
     alert(nationName + " is below Cultural Power treshold");
+  }
+  if (n.ReformPower < 0) {
+    alert(nationName + " is below Reform Power treshold");
   }
   if (n.Budget < 0) {
     alert(nationName + " is below 0 budget");
