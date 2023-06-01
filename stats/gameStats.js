@@ -904,7 +904,8 @@ class Nation {
       WealthyOfficers: false,
       MeritocraticOfficers: false,
       
-      NobleBureaucrats: true,
+      NobleBureaucrats: false,
+      ClergyBureaucrats: true,
       WealthyBureaucrats: false,
       MeritocraticBureaucrats: false,
       
@@ -942,7 +943,12 @@ class Nation {
 
       PrivateEducationOnly: true,
       ReligiousSchools: false,
-      PublicEducation: false
+      PublicEducation: false,
+
+      CommunityPolicing: true,
+      RegionalPolice: false,
+      StatePolice: false,
+      SecretPolice: false
     }
     
     /* #endregion */
