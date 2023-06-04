@@ -119,7 +119,9 @@ class Nation {
   PopulationControl;
   BirthControl;
   ConscriptionPercent;
-  StateWorkerWage;
+  StateFarmerWage;
+  StateLabourerWage;
+  StateFactoryWorkerWage;
   Production;
   ProductionGovernmentControl;
   ProductionEfficiency;
@@ -498,7 +500,7 @@ class Nation {
   SurplusFood;
   SellingCapability;
   FoodSold;
-  Foodlost;
+  FoodLost;
   TradeProfit;
   /* #endregion */
 
@@ -567,7 +569,7 @@ class Nation {
     this.CoastalPixels = 1000;
     this.Health = 1.00;
     this.EducationEfficiency = 2;
-      this.BureaucratsWages = 0.75;
+      this.BureaucratsWages = 3;
     this.AdministrativeEfficiency = 25;
       this.AdministrationSize = 0.5;
     this.Propaganda = 0;
@@ -765,7 +767,9 @@ class Nation {
         HeavyIndustrySector: 0
     }
     this.ProductionGovernmentControl = 0;
-    this.StateWorkerWage = 2;
+    this.StateFarmerWage = 0.75;
+    this.StateLabourerWage = 0.5;
+    this.StateFactoryWorkerWage = 2;
     
     this.SocietalClasses = {};
     this.CultureGroups = {}

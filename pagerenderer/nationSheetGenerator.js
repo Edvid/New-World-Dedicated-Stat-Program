@@ -259,7 +259,8 @@ let TableLayouts = {
     "Basic Stats": [
         ["AverageDevelopment", "Health", "EducationEfficiency", "Propaganda", "SocialSpending", "PopulationControl", "BirthControl"],
         ["Stability", "Absolutism", "Corruption", "Overextension", "Prosperity", "PopulationHappiness", "WarSupport"],
-        ["AdministrativeTech", "BureaucratsWages", "StateWorkerWage", "AdministrativeEfficiency", "AdministrationSize", "AdministrativePower", "AdministrativeDemand", "AdministrativeStrain", "TaxEfficiency"]
+        ["AdministrativeTech", "AdministrativeEfficiency", "AdministrationSize", "AdministrativePower", "AdministrativeDemand", "AdministrativeStrain", "TaxEfficiency"],
+        ["BureaucratsWages", "StateFactoryWorkerWage", "StateLabourerWage", "StateFarmerWage"]
     ],
     "Budget Stats": [
         ["TradeEfficiency", "LocalTrade", "InternalTrade", "ExternalTrade", "TradePower"],
@@ -270,7 +271,7 @@ let TableLayouts = {
         ["InternalTariffs", "ExternalTariffs", "TariffEfficiency"]
     ],
     "Upkeeps and Income": [
-        ["TaxRevenue", "TariffsRevenue", "PassiveInvestmentIncome", "StateProductionRevenue"],
+        ["TaxRevenue", "TariffsRevenue", "PassiveInvestmentIncome", "StateProductionRevenue", "StateResourceRevenue", "StateAgricultureRevenue"],
         ["OverallIncome", "OverallSpending"],
         ["ArmyUpkeep", "NavyUpkeep", "FortUpkeep", "NewTroopRecruitmentPenalty", "SpyUpkeep"],
         ["EducationUpkeep", "PopulationControlUpkeep", "HygieneUpkeep", "ResearchUpkeep", "PropagandaUpkeep"],
@@ -313,7 +314,7 @@ let TableLayouts = {
     "Agriculture": [
         ["Fertility", "AgricultureSubsidies", "AgricultureInfrastructure", "AgricultureAdvancements", "AgricultureTechnology", "FarmingEfficiency", "AgricultureSpending"],
         ["PopInAgriculture", "DailyFood", "FoodConsumption", "FoodGain", "StockingCapabilities", "MaxFoodStock", "SellingCapability"],
-        ["Food", "FutureFood", "SurplusFood", "FoodSold", "Foodlost", "FoodTradeProfit", "FoodPopulationBoost"]
+        ["Food", "FutureFood", "SurplusFood", "FoodSold", "FoodLost", "FoodTradeProfit", "FoodPopulationBoost"]
     ],
     "War Stats": [
         ["Casualties", "Pillaging", "Occupation", "Blockade", "MinorBattles", "MajorBattles", "WarExhaustion", "Fervor"]
