@@ -268,7 +268,8 @@ let TableLayouts = {
         ["Inflation", "DailyBudget", "Budget"],
         ["BudgetIncoming", "BudgetOutgoing", "Balance"],
         ["HighClassTax", "MediumClassTax", "LowerClassTax"],
-        ["InternalTariffs", "ExternalTariffs", "TariffEfficiency"]
+        ["InternalTariffs", "ExternalTariffs", "TariffEfficiency"],
+        ["Gdp", "GdpPerKCapita", "DebtToGdpRatio"]
     ],
     "Upkeeps and Income": [
         ["TaxRevenue", "TariffsRevenue", "PassiveInvestmentIncome", "StateProductionRevenue", "StateResourceRevenue", "StateAgricultureRevenue"],
@@ -300,7 +301,7 @@ let TableLayouts = {
     ],
     "Debt Stats": [
         ["PossiblePublicDebt", "PublicDebtLength", "InterestRate"],
-        ["PublicDebtTaken", "EffectiveDebt", "DebtHappinessEffect"]
+        ["PublicDebtTaken", "EffectiveDebt", "DebtToGdpRatio"]
     ],
     "Fortifications": [
         ["SmallForts", "MediumForts", "BigForts", "HugeForts", "ExtraCityFortifications"]

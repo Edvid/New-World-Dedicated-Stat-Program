@@ -606,7 +606,7 @@ class Nation {
     this.ExpectedClergySol = 5;
     this.ExpectedBureaucratsSol = 1.5;
     this.ExpectedMerchantsSol = 1;
-    this.ExpectedIntellectualsSol = 1;
+    this.ExpectedIntellectualsSol = 2;
     this.ExpectedSailorsSol = 0.75;
     this.ExpectedSoldiersSol = 1;
     this.ExpectedAristocracySol = 15;
