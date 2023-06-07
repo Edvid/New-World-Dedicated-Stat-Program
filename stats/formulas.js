@@ -1,8 +1,55 @@
 function evaluateNation(nationName) {
   let n = gameStats.Nations[nationName];
 
+  n.EstateCount = 0;
+  for (const EstateIndex in gameStats.EstatesGeneral) {
+    const Estate = gameStats.EstatesGeneral[EstateIndex];
+    if (n.GovernmentRepresentation[Estate + "Representation"] > 50) {
+      n.GovernmentDominatedBy = Estate;
+    }
+    else {
+      n.EstateCount++;
+    }
+  }
+  if (n.EstateCount == 8) {
+    if (n.GovernmentRepresentation.UnitaryRepresentation > 50) {
+      n.GovernmentDominatedBy = "Unitary";
+    }
+    else {
+      n.GovernmentDominatedBy = "none";
+    }
+  }
+
+  if (n.GovernmentDominatedBy == "none" || n.GovernmentDominatedBy == "Unitary") {
+    n.GovernmentEffects = "none";
+  }
+  if (n.GovernmentDominatedBy == "Workers") {
+    n.GovernmentEffects = "+CulturalDisunity, +ReligiousDisunity, +FarmingEff";
+  }
+  if (n.GovernmentDominatedBy == "Urban") {
+    n.GovernmentEffects = "-Adm, +CulturalDisunity, +TradeEff, +ProductionEff";
+  }
+  if (n.GovernmentDominatedBy == "Clergy") {
+    n.GovernmentEffects = "+ReligiousDisunity, -Tech, -CulturalDisunity";
+  }
+  if (n.GovernmentDominatedBy == "Bureaucrats") {
+    n.GovernmentEffects = "-Tech, +Adm, +PopulationControl";
+  }
+  if (n.GovernmentDominatedBy == "Intellectuals") {
+    n.GovernmentEffects = "-PopulationControl, +Tech, +Education";
+  }
+  if (n.GovernmentDominatedBy == "Military") {
+    n.GovernmentEffects = "-Adm, +WarSupport, +Morale, +PopulationControl";
+  }
+  if (n.GovernmentDominatedBy == "Aristocracy") {
+    n.GovernmentEffects = "-FarmingEff, +Adm";
+  }
+  if (n.GovernmentDominatedBy == "Burgousie") {
+    n.GovernmentEffects = "-Corruption, -Adm, +TradeEff, +ProductionEff";
+  }
+
   n.AgricultureTechnology = 0 + n.Technologies.HorseCollar / 2 + n.CulturalAdvancements.PotatoPopulationBoom / 2 + n.Reforms.Enclosure / 2;
-  n.FarmingEfficiency = 1 + n.AgricultureSubsidies / 5 + n.Fertility - 0.5 + (n.AgricultureInfrastructure - 1) / 10 + (n.AgricultureAdvancements - 1) / 10 + n.AgricultureTechnology / 10 + n.Reforms.Enclosure / 20;
+  n.FarmingEfficiency = (1 + n.AgricultureSubsidies / 5 + n.Fertility - 0.5 + (n.AgricultureInfrastructure - 1) / 10 + (n.AgricultureAdvancements - 1) / 10 + n.AgricultureTechnology / 10 + n.Reforms.Enclosure / 20) * (n.GovernmentDominatedBy == "Aristocracy" ? 0.9 : 1) * (n.GovernmentDominatedBy == "Workers" ? 1.1 : 1);
 
   {
     let rels = []
@@ -100,22 +147,25 @@ function evaluateNation(nationName) {
   n.AverageDevelopment = n.DevelopmentPixelCount / n.Size / 255;
   n.Workforces.Townsfolk = n.AverageDevelopment;
 
-  n.Education = n.EducationEfficiency * (1 + n.Reforms.ReligiousSchools + n.Reforms.PublicEducation * 3);
+  n.Education = n.EducationEfficiency * (1 + n.Reforms.ReligiousSchools + n.Reforms.PublicEducation * 3) * (n.GovernmentDominatedBy == "Intellectuals" ? 1.2 : 1);
   n.PropagandaReal = n.Propaganda * (n.Reforms.StateMediaOnly * 2 + n.Reforms.ExtensiveCensorship * 1.5 + n.Reforms.LimitedCensorship + n.Reforms.FreeSpeech * 0.75);
-  n.PopulationControlReal = n.PopulationControl * (n.Reforms.CommunityPolicing * 0.5 + n.Reforms.RegionalPolice * 0.75 + n.Reforms.StatePolice * 1.25 + n.Reforms.SecretPolice * 2);
+  n.PopulationControlReal = n.PopulationControl * (n.Reforms.CommunityPolicing * 0.5 + n.Reforms.RegionalPolice * 0.75 + n.Reforms.StatePolice * 1.25 + n.Reforms.SecretPolice * 2) * (n.GovernmentDominatedBy == "Military" || n.GovernmentDominatedBy == "Bureaucrats" ? 1.2 : 1) * (n.GovernmentDominatedBy == "Intellectuals" ? 0.8 : 1);
 
-  n.CultureRepresentedAtGovernmentLevelPercent =  cultureCalc.GovernmentRepresentationPercent;
-  n.CulturalDisunity = cultureCalc.disunity * (1 + n.Nationalism * 0.2);
+  n.ResourcesAdmDemand = (n.Reforms.GovernmentResourceOwnership ? n.Coal + n.Sulphur + n.Iron + n.Copper + n.Gold + n.Fur + n.Diamond + n.Silver + n.Ivory + n.Forestry + n.Reforestation * 5 + n.Cotton + n.Tea + n.Silk + n.Spice + n.Wool + n.Coffee + n.Cocoa + n.Tobacco + n.Sugar + n.ExoticFruit : 0) / 2;
+  n.AgricultureAdmDemand = (n.Reforms.GovernmentLandOwnership ? (n.Population / 1000 * n.Workforces.PopInAgriculture / 25) : 0);
+
+  n.CultureRepresentedAtGovernmentLevelPercent = cultureCalc.GovernmentRepresentationPercent;
+  n.CulturalDisunity = cultureCalc.disunity * (1 + n.Nationalism * 0.2) * (n.GovernmentDominatedBy == "Workers" || n.GovernmentDominatedBy == "Urban" ? 1.2 : 1) * (n.GovernmentDominatedBy == "Clergy" ? 0.8 : 1);
   n.ReligionRepresentedAtGovernmentLevelPercent = religionCalc.GovernmentRepresentationPercent;
-  n.ReligiousDisunity = religionCalc.disunity * (1 + n.ReligiousFervor * 0.2 + n.Reforms.StateReligion / 2 - n.Reforms.FreedomOfReligion / 2);
+  n.ReligiousDisunity = religionCalc.disunity * (1 + n.ReligiousFervor * 0.2 + n.Reforms.StateReligion / 2 - n.Reforms.FreedomOfReligion / 2) * (n.GovernmentDominatedBy == "Workers" || n.GovernmentDominatedBy == "Clergy" ? 1.2 : 1);
     n.OverallNumbers = n.Riflemen + n.MusketMilitia + n.Musketeers + n.Levies + n.LightInfantry + n.HeavyInfantry + n.Archers + n.Crossbowmen + n.LightCavalry + n.HeavyCavalry + n.EliteInfantry + n.Militia + n.EliteCavalry + n.HandCannoneers + (n.SiegeEquipment + n.LargeSiegeEquipment) * 10 + n.RegimentalGuns * 3 + n.FieldCannons * 6 + n.SiegeGuns * 10;
   n.OverallShipCount = n.LightShips + n.MediumShips + n.HeavyShips;
   n.AdministrativeTech = 0 - n.Reforms.NobleBureaucrats * 0.8 - n.Reforms.ClergyBureaucrats * 0.5 + n.Reforms.MeritocraticBureaucrats + n.CulturalAdvancements.EarlyModernAdministration + n.CulturalAdvancements.NationalSovereignity + n.CulturalAdvancements.Constitution + n.Reforms.WealthyBureaucrats / 2 + n.Reforms.MeritocraticOfficers;
-  n.AdministrativePower = n.AdministrativeEfficiency * (1 + n.AdministrationSize / 2 + n.AdministrativeTech * 0.4) * 0.75;
+  n.AdministrativePower = (n.AdministrativeEfficiency * (1 + n.AdministrationSize / 2 + n.AdministrativeTech * 0.4) * 0.75) * (n.GovernmentDominatedBy == "Bureaucrats" || n.GovernmentDominatedBy == "Aristocracy" ? 1.1 : 1) * (n.GovernmentDominatedBy == "Urban" || n.GovernmentDominatedBy == "Military" || n.GovernmentDominatedBy == "Burgousie" ? 0.9 : 1);
   n.AdministrativeDemand = (
     0 + n.Population / 1000000 + n.Health * 2 + n.Education * 2 + n.SocialSpending * 4 + n.PropagandaReal * 2 + n.PopulationControlReal * 2 + n.BirthControl * 4 +
     (n.HighClassTax + n.MediumClassTax + n.LowerClassTax) / 3 * 75 + n.OverallNumbers / 5000 + n.OverallShipCount / 25 + n.AgricultureSubsidies * 4 + (n.AgricultureInfrastructure - 1) * 4 + n.Size / 7500 +
-    (n.ResearchSpending - 1) * 10 + (1 - n.CultureRepresentedAtGovernmentLevelPercent) * 10 + (n.Population / 1000 * n.Workforces.Townsfolk / 2) * n.ProductionGovernmentControl
+    (n.ResearchSpending - 1) * 10 + (1 - n.CultureRepresentedAtGovernmentLevelPercent) * 10 + (n.Population / 1000 * n.Workforces.Townsfolk / 20) * n.ProductionGovernmentControl + n.ResourcesAdmDemand + n.AgricultureAdmDemand
   );
   n.AdministrativeStrain = max(0, n.AdministrativeDemand - n.AdministrativePower);
 
@@ -305,7 +355,7 @@ function evaluateNation(nationName) {
   n.EffectiveSulphur += n.BaseSulphurHarvest;
   n.EffectiveCotton *= (1 + n.Technologies.CottonGin);
 
-  n.ProductionEfficiency = n.TradeImprovements + n.Reforms.GuildsBanned / 5 + n.Reforms.AntiMonopolyLaws / 2 + n.Technologies.Workshops + n.Technologies.Cranes / 5 + n.Technologies.SteamEngine / 4 + n.Technologies.FirstFactories / 2 + n.Technologies.LinearAssemblyProcess / 4 + n.Technologies.InterchangeableParts / 2;
+  n.ProductionEfficiency = (n.TradeImprovements + n.Reforms.GuildsBanned / 5 + n.Reforms.AntiMonopolyLaws / 2 + n.Technologies.Workshops + n.Technologies.Cranes / 5 + n.Technologies.SteamEngine / 4 + n.Technologies.FirstFactories / 2 + n.Technologies.LinearAssemblyProcess / 4 + n.Technologies.InterchangeableParts / 2) * (n.GovernmentDominatedBy == "Burgousie" || n.GovernmentDominatedBy == "Urban" ? 1.1 : 1);
   n.WeavingEfficiency = 1 + n.Technologies.VerticalLoom / 4 + n.Technologies.TextileManufactories / 2 + n.Technologies.FlyingShuttle / 2 + n.Technologies.PowerLoomAndSewingMachine;
   n.MetalWorkingEfficiency = n.Technologies.Metallurgy / 4 + n.Technologies.LeadChamberProcess / 5 + n.Technologies.PuddlingProcess / 4;
   n.WeaponWorkingEfficiency = 1 + n.MetalWorkingEfficiency + n.Technologies.StandardizedPikes / 5 + n.Technologies.Flintlock / 5;
@@ -760,7 +810,7 @@ function evaluateNation(nationName) {
 
   n.TradeProtection = (n.LightShips * 2 + n.MediumShips * 3.5 + n.HeavyShips * 2) / n.MerchantShips;
   n.MerchantShipsFullfilment = min(n.MerchantShips / (n.ResourceTrade + pseudoTradePower / 2 + (n.LocalTrade * n.Population / 2000000 * (1 + n.AverageDevelopment) + n.FoodTradeProfit) / 4), 1);
-  n.TradeEfficiency = max(0, (n.TradeImprovements + n.Reforms.GuildsBanned / 10 + n.Reforms.AntiMonopolyLaws / 5 - n.Corruption / 4 + n.CoastalLandPercent / 2 + n.Technologies.Cranes / 10 + n.Technologies.PromissoryNotes / 20 + n.TradeProtection + n.Technologies.Fluyt / 5) * (1 - n.Blockade) * max(n.MerchantShipsFullfilment, 0.1));
+  n.TradeEfficiency = max(0, (n.TradeImprovements + n.Reforms.GuildsBanned / 10 + n.Reforms.AntiMonopolyLaws / 5 - n.Corruption / 4 + n.CoastalLandPercent / 2 + n.Technologies.Cranes / 10 + n.Technologies.PromissoryNotes / 20 + n.TradeProtection + n.Technologies.Fluyt / 5) * (1 - n.Blockade) * max(n.MerchantShipsFullfilment, 0.1)) * (n.GovernmentDominatedBy == "Burgousie" || n.GovernmentDominatedBy == "Urban" ? 1.1 : 1);
 
   n.ExternalTradeEff = n.Reforms.Isolationism * 0.25 + n.Reforms.Mercantilism * 0.75 + n.Reforms.Protectionism + n.Reforms.FreeTrade * 1.25;
   n.InternalTradeEff = n.Reforms.Isolationism * 1.25 + n.Reforms.Mercantilism + n.Reforms.Protectionism * 0.75 + n.Reforms.FreeTrade * 0.5;
@@ -1093,7 +1143,7 @@ function evaluateNation(nationName) {
   n.Manpower = n.Population * (n.Reforms.NationalMilitia * 0.02 + n.Reforms.FeudalLevies * 0.005 + n.Reforms.ProffesionalArmy * 0.025 + n.Reforms.MassConscription * 0.075 + n.Nationalism * 0.005) - n.OverallNumbers - n.Casualties;
 
   n.Fervor = clamp(1, -1, 0 + n.MinorBattles / 20 + n.MajorBattles / 10 + n.Pillaging - n.Casualties / (n.Manpower + n.Casualties));
-  n.WarSupport = clamp(1, 0, n.PopulationHappiness / 4 + n.PropagandaReal / 10 * (1 + n.CulturalAdvancements.Newspapers * n.LiteracyPercent / 50) + n.Fervor + n.Nationalism / 10);
+  n.WarSupport = clamp(1, 0, (n.PopulationHappiness / 4 + n.PropagandaReal / 10 * (1 + n.CulturalAdvancements.Newspapers * n.LiteracyPercent / 50) + n.Fervor + n.Nationalism / 10) * (n.GovernmentDominatedBy == "Military" ? 1.25 : 1));
 
   let WarStatus = n.AtWar;
   if (WarStatus == false) WarStatus = "false";
@@ -1102,9 +1152,8 @@ function evaluateNation(nationName) {
   let WarStabilityModifier = ((WarStatus == 'offensive' && n.WarSupport < 0.75) ? (n.WarSupport - 0.75) : 0) + max(-0.075, ((WarStatus == 'defensive' && n.WarSupport < 0.4 && n.Fervor < 0) ? (n.Fervor) : 0));
 
   n.MilitaryMorale = clamp(0, 1,
-    n.MilitaryLoyalty + n.Fervor - (n.MilitaryDiscipline > 1 ? n.MilitaryDiscipline - 1 : 0) * 2 +
-    (n.WarSupport < 0.5 ? n.WarSupport - 0.5 : 0) +
-    (n.WarSupport > 0.75 ? n.WarSupport - 0.75 : 0)
+    ( n.MilitaryLoyalty + n.Fervor - (n.MilitaryDiscipline > 1 ? n.MilitaryDiscipline - 1 : 0) * 2 + (n.WarSupport < 0.5 ? n.WarSupport - 0.5 : 0) + (n.WarSupport > 0.75 ? n.WarSupport - 0.75 : 0)
+    ) * (n.GovernmentDominatedBy == "Military" ? 1.25 : 1)
   );
 
   n.PopulationStabilityImpact = min(0, n.AdministrativePower * 750000 - n.Population) / n.Population * 10;
@@ -1121,7 +1170,7 @@ function evaluateNation(nationName) {
 
   n.Stability = n.PopulationHappiness + n.AdministrativeEfficiency / 10 - n.Overextension - n.CulturalDisunity - n.ReligiousDisunity + (n.PropagandaReal * 0.5 * (1 + n.CulturalAdvancements.Newspapers * n.LiteracyPercent / 50)) + n.PopulationControlReal * 1.5 + n.PopulationStabilityImpact + WarStabilityModifier * 7.5 + n.LoyaltiesStabilityImpact;
 
-  n.Corruption = (n.Stability < 1 ? 0.5 : 0) + (n.Stability < -1 ? 0.5 : 0) + n.AdministrativeStrain / n.AdministrativePower * 10 + n.Absolutism / 3;
+  n.Corruption = ((n.Stability < 1 ? 0.5 : 0) + (n.Stability < -1 ? 0.5 : 0) + n.AdministrativeStrain / n.AdministrativePower * 10 + n.Absolutism / 3) * (n.GovernmentDominatedBy == "Burgousie" || n.GovernmentDominatedBy == "Aristocracy"  ? 1.2 : 1);
 
     n.TaxEfficiency = (1 - n.EstateInfluencesReal.AristocracyInfluence / 4 - n.EstateInfluencesReal.ClergyInfluence / 4 - n.AdministrativeStrain / n.AdministrativePower) * (1 - n.Occupation) * (1 - n.Corruption / 10)
     n.TariffEfficiency = (1 - n.EstateInfluencesReal.BurgousieInfluence / 2 - n.AdministrativeStrain / n.AdministrativePower) * (1 - n.Occupation) * (1 - n.Corruption / 10)
@@ -1197,7 +1246,7 @@ function evaluateNation(nationName) {
   n.PopulationTechImpact = (n.Population > 20000000? (n.Population - 20000000) / 250000000 : 0);
   
 
-  n.ResearchBoostFromTech = 1 - n.Reforms.StateMediaOnly / 4 - n.Reforms.ExtensiveCensorship / 10 - n.Reforms.LimitedCensorship / 20 + n.Reforms.RestrictedSocialMobility / 20 + n.Reforms.UnrestrictedSocialMobility / 10 - n.Reforms.Guilds / 10 + n.Reforms.AntiMonopolyLaws / 10 - n.Reforms.Isolationism / 10 + n.Reforms.Protectionism / 20 + n.Reforms.FreeTrade / 10 + n.CulturalAdvancements.Universities / 10 + n.CulturalAdvancements.RenaissanceThought / 5 + n.Technologies.Experimentation / 5 + n.CulturalAdvancements.ScientificRevolution / 5;
+  n.ResearchBoostFromTech = (1 - n.Reforms.StateMediaOnly / 4 - n.Reforms.ExtensiveCensorship / 10 - n.Reforms.LimitedCensorship / 20 + n.Reforms.RestrictedSocialMobility / 20 + n.Reforms.UnrestrictedSocialMobility / 10 - n.Reforms.Guilds / 10 + n.Reforms.AntiMonopolyLaws / 10 - n.Reforms.Isolationism / 10 + n.Reforms.Protectionism / 20 + n.Reforms.FreeTrade / 10 + n.CulturalAdvancements.Universities / 10 + n.CulturalAdvancements.RenaissanceThought / 5 + n.Technologies.Experimentation / 5 + n.CulturalAdvancements.ScientificRevolution / 5) * (n.GovernmentDominatedBy == "Clergy" || n.GovernmentDominatedBy == "Bureaucrats" ? 0.95 : 1) * (n.GovernmentDominatedBy == "Intellectuals" ? 1.05 : 1);
   n.ResearchPointGain = max(1, (n.ResearchSpending * n.ResearchEffectiveness * n.ResearchBoostFromTech * n.LiteracyPercent / n.Isolation / gameStats.TimeDivide * 2 / 10 + n.ResearchSpending * n.ResearchEffectiveness * n.HigherEducation / n.Isolation / gameStats.TimeDivide * 5 / 10) * (1 - (n.EstateInfluencesReal.AristocracyInfluence > 0.5 ? n.EstateInfluencesReal.AristocracyInfluence - 0.5 : 0) / 1.5 - (n.EstateInfluencesReal.ClergyInfluence > 0.5? n.EstateInfluencesReal.ClergyInfluence - 0.5 : 0) / 1.5) * (1 - n.PopulationTechImpact));
 
   n.FutureResearchPoints = min(5 + (n.CulturalAdvancements.Universities == true ? 2.5 : 0) + (n.CulturalAdvancements.ScientificRevolution == true ? 2.5 : 0), n.ResearchPoints + n.ResearchPointGain);

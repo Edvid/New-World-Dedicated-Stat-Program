@@ -242,6 +242,8 @@ let TableLayouts = {
     "Flag and Government": [
         ["Flag"],
         ["GovernmentName"],
+        ["GovernmentDominatedBy"],
+        ["GovernmentEffects"],
         ["CapitalName"]
     ],
     "Turn Based Stats": [
