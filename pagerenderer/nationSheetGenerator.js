@@ -273,9 +273,9 @@ let TableLayouts = {
         ["InternalTariffs", "ExternalTariffs", "TariffEfficiency"],
         ["Gdp", "GdpPerKCapita", "DebtToGdpRatio"]
     ],
-    "Upkeeps and Income": [
-        ["TaxRevenue", "TariffsRevenue", "PassiveInvestmentIncome", "StateProductionRevenue", "StateResourceRevenue", "StateAgricultureRevenue"],
+  "Upkeeps and Income": [
         ["OverallIncome", "OverallSpending"],
+        ["TaxRevenue", "TariffsRevenue", "PassiveInvestmentIncome", "StateProductionRevenue", "StateResourceRevenue", "StateAgricultureRevenue"],
         ["ArmyUpkeep", "NavyUpkeep", "FortUpkeep", "NewTroopRecruitmentPenalty", "SpyUpkeep"],
         ["EducationUpkeep", "PopulationControlUpkeep", "HygieneUpkeep", "ResearchUpkeep", "PropagandaUpkeep"],
         ["SocialSpendingUpkeep", "AgricultureSpending", "AdministrativeUpkeep", "StateWorkersUpkeep"]
@@ -317,7 +317,8 @@ let TableLayouts = {
     "Agriculture": [
         ["Fertility", "AgricultureSubsidies", "AgricultureInfrastructure", "AgricultureAdvancements", "AgricultureTechnology", "FarmingEfficiency", "AgricultureSpending"],
         ["PopInAgriculture", "DailyFood", "FoodConsumption", "FoodGain", "StockingCapabilities", "MaxFoodStock", "SellingCapability"],
-        ["Food", "FutureFood", "SurplusFood", "FoodSold", "FoodLost", "FoodTradeProfit", "FoodPopulationBoost"]
+        ["Food", "FutureFood", "SurplusFood", "FoodSold", "FoodLost", "FoodTradeProfit", "FoodPopulationBoost"],
+        ["FoodRationing"]
     ],
     "War Stats": [
         ["Casualties", "Pillaging", "Occupation", "Blockade", "MinorBattles", "MajorBattles", "WarExhaustion", "Fervor"]

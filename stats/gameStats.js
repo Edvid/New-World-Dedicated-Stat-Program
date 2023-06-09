@@ -551,6 +551,36 @@ class Nation {
     this.ReligionGroups = {
       Pagan: {
         Points: 100
+      },
+      Sunni: {
+        Points: 0
+      },
+      Shia: {
+        Points: 0
+      },
+      Judaism: {
+        Points: 0
+      },
+      Catholic: {
+        Points: 0
+      },
+      Orthodox: {
+        Points: 0
+      },
+      Protestant: {
+        Points: 0
+      },
+      Hindu: {
+        Points: 0
+      },
+      Buddhism: {
+        Points: 0
+      },
+      Shinto: {
+        Points: 0
+      },
+      Confucianism: {
+        Points: 0
       }
     };
     this.Population = 2500000;
@@ -573,7 +603,7 @@ class Nation {
     this.AdministrativeEfficiency = 25;
       this.AdministrationSize = 0.5;
     this.Propaganda = 0;
-    this.SocialSpending = 0;
+    this.SocialSpending = 0.5;
     this.AtWar = false;
       this.Nationalism = 0;
       this.ReligiousFervor = 1;
@@ -598,19 +628,19 @@ class Nation {
       this.ExternalTariffs = 0.1; //Show in percent
     this.InternalTariffs = 0.1; //Show in percent
 
-    this.ExpectedSlavesSol = 0.05;
+    this.ExpectedSlavesSol = 0.02;
     this.ExpectedLabourersSol = 0.25;
     this.ExpectedSerfsSol = 0.25;
     this.ExpectedFarmersSol = 0.5;
     this.ExpectedTownsfolkSol = 2.5;
-    this.ExpectedClergySol = 5;
+    this.ExpectedClergySol = 6;
     this.ExpectedBureaucratsSol = 1.5;
     this.ExpectedMerchantsSol = 1;
-    this.ExpectedIntellectualsSol = 2;
+    this.ExpectedIntellectualsSol = 1.5;
     this.ExpectedSailorsSol = 0.75;
     this.ExpectedSoldiersSol = 1;
-    this.ExpectedAristocracySol = 15;
-    this.ExpectedBurgousieSol = 10;
+    this.ExpectedAristocracySol = 17.5;
+    this.ExpectedBurgousieSol = 12;
     
     this.EstateInfluences = {
       AristocracyInfluence: 30,
@@ -621,6 +651,26 @@ class Nation {
       IntellectualsInfluence: 2.5,
       MilitaryInfluence: 2.5,
       WorkersInfluence: 0.5
+    };
+    this.ExpectedInfluences = {
+      AristocracyInfluence: 0.5,
+      ClergyInfluence: 0.225,
+      BurgousieInfluence: 0.175,
+      UrbanInfluence: 0.05,
+      BureaucratsInfluence: 0.05,
+      IntellectualsInfluence: 0.015,
+      MilitaryInfluence: 0.015,
+      WorkersInfluence: 0.005
+    };
+    this.InfluenceChangeLoyaltyEffect = {
+      Aristocracy: 0,
+      Clergy: 0,
+      Burgousie: 0,
+      Urban: 0,
+      Bureaucrats: 0,
+      Intellectuals: 0,
+      Military: 0,
+      Workers: 0
     };
     
     this.GovernmentRepresentation = {
@@ -709,9 +759,10 @@ class Nation {
     /* #region  Agriculture */
     this.AgricultureSubsidies = 0.00;
     this.Fertility = 0.50;
-    this.AgricultureInfrastructure = 1.00;
+    this.AgricultureInfrastructure = 1.10;
     this.StockingCapabilities = 1.00;
-    this.AgricultureAdvancements = 1.00;
+    this.AgricultureAdvancements = 1.10;
+    this.FoodRationing = false;
     /* #endregion */
 
     /* #region  Recruitments / New Troops */
@@ -1041,11 +1092,403 @@ class Stats{
       return 20 / s.TimeSpeed;
     })();
     this.Nations = {};
-    this.Religions = { //For Opinions not mentioned, they are Undesired
-      Pagan: {
-        definingFeatures: "Anything not classified",
-        Opinions: []
-      }
+    this.Religions = {
+      "Pagan": {
+        "definingFeatures": "",
+        "Color": 776544,
+        "Opinions": {
+          "Sunni": {
+            "Score": -75
+          },
+          "Shia": {
+            "Score": -75
+          },
+          "Judaism": {
+            "Score": -75
+          },
+          "Catholic": {
+            "Score": -75
+          },
+          "Orthodox": {
+            "Score": -75
+          },
+          "Protestant": {
+            "Score": -75
+          },
+          "Hindu": {
+            "Score": -75
+          },
+          "Buddhism": {
+            "Score": -75
+          },
+          "Shinto": {
+            "Score": -75
+          },
+          "Confucianism": {
+            "Score": -75
+          }
+        }
+      },
+      "Sunni": {
+        "definingFeatures": "",
+        "Color": '008C00',
+        "Opinions": {
+          "Pagan": {
+            "Score": -75
+          },
+          "Shia": {
+            "Score": -100
+          },
+          "Judaism": {
+            "Score": -100
+          },
+          "Catholic": {
+            "Score": -100
+          },
+          "Orthodox": {
+            "Score": -100
+          },
+          "Protestant": {
+            "Score": 0
+          },
+          "Hindu": {
+            "Score": -25
+          },
+          "Buddhism": {
+            "Score": 0
+          },
+          "Shinto": {
+            "Score": -25
+          },
+          "Confucianism": {
+            "Score": 0
+          }
+        }
+      },
+      "Shia": {
+        "definingFeatures": "",
+        "Color": '00C900',
+        "Opinions": {
+          "Pagan": {
+            "Score": -75
+          },
+          "Sunni": {
+            "Score": -75
+          },
+          "Judaism": {
+            "Score": -100
+          },
+          "Catholic": {
+            "Score": -100
+          },
+          "Orthodox": {
+            "Score": -100
+          },
+          "Protestant": {
+            "Score": 0
+          },
+          "Hindu": {
+            "Score": -25
+          },
+          "Buddhism": {
+            "Score": 0
+          },
+          "Shinto": {
+            "Score": -25
+          },
+          "Confucianism": {
+            "Score": 0
+          }
+        }
+      },
+      "Judaism": {
+        "definingFeatures": "",
+        "Color": '00C9BE',
+        "Opinions": {
+          "Pagan": {
+            "Score": -75
+          },
+          "Sunni": {
+            "Score": -100
+          },
+          "Shia": {
+            "Score": -100
+          },
+          "Catholic": {
+            "Score": -100
+          },
+          "Orthodox": {
+            "Score": -50
+          },
+          "Protestant": {
+            "Score": -75
+          },
+          "Hindu": {
+            "Score": 0
+          },
+          "Buddhism": {
+            "Score": 0
+          },
+          "Shinto": {
+            "Score": -25
+          },
+          "Confucianism": {
+            "Score": 0
+          }
+        }
+      },
+      "Catholic": {
+        "definingFeatures": "",
+        "Color": 'FFD800',
+        "Opinions": {
+          "Pagan": {
+            "Score": -75
+          },
+          "Sunni": {
+            "Score": -100
+          },
+          "Shia": {
+            "Score": -100
+          },
+          "Judaism": {
+            "Score": -100
+          },
+          "Orthodox": {
+            "Score": -100
+          },
+          "Protestant": {
+            "Score": -100
+          },
+          "Hindu": {
+            "Score": 0
+          },
+          "Buddhism": {
+            "Score": -25
+          },
+          "Shinto": {
+            "Score": -25
+          },
+          "Confucianism": {
+            "Score": 0
+          }
+        }
+      },
+      "Orthodox": {
+        "definingFeatures": "",
+        "Color": 'FF15DD',
+        "Opinions": {
+          "Pagan": {
+            "Score": -75
+          },
+          "Sunni": {
+            "Score": -100
+          },
+          "Shia": {
+            "Score": -100
+          },
+          "Judaism": {
+            "Score": -50
+          },
+          "Catholic": {
+            "Score": -100
+          },
+          "Protestant": {
+            "Score": -75
+          },
+          "Hindu": {
+            "Score": 0
+          },
+          "Buddhism": {
+            "Score": -25
+          },
+          "Shinto": {
+            "Score": -25
+          },
+          "Confucianism": {
+            "Score": 0
+          }
+        }
+      },
+      "Protestant": {
+        "definingFeatures": "",
+        "Color": '0015DD',
+        "Opinions": {
+          "Pagan": {
+            "Score": -75
+          },
+          "Sunni": {
+            "Score": 0
+          },
+          "Shia": {
+            "Score": 0
+          },
+          "Judaism": {
+            "Score": -75
+          },
+          "Catholic": {
+            "Score": -100
+          },
+          "Orthodox": {
+            "Score": -75
+          },
+          "Hindu": {
+            "Score": 0
+          },
+          "Buddhism": {
+            "Score": -25
+          },
+          "Shinto": {
+            "Score": -25
+          },
+          "Confucianism": {
+            "Score": 0
+          }
+        }
+      },
+      "Hindu": {
+        "definingFeatures": "",
+        "Color": 'B6FF00',
+        "Opinions": {
+          "Pagan": {
+            "Score": -75
+          },
+          "Sunni": {
+            "Score": -25
+          },
+          "Shia": {
+            "Score": -25
+          },
+          "Judaism": {
+            "Score": 0
+          },
+          "Catholic": {
+            "Score": 0
+          },
+          "Orthodox": {
+            "Score": 0
+          },
+          "Protestant": {
+            "Score": 0
+          },
+          "Buddhism": {
+            "Score": 25
+          },
+          "Shinto": {
+            "Score": -25
+          },
+          "Confucianism": {
+            "Score": 0
+          }
+        }
+      },
+      "Buddhism": {
+        "definingFeatures": "",
+        "Color": '57007F',
+        "Opinions": {
+          "Pagan": {
+            "Score": -50
+          },
+          "Sunni": {
+            "Score": -25
+          },
+          "Shia": {
+            "Score": -25
+          },
+          "Judaism": {
+            "Score": -25
+          },
+          "Catholic": {
+            "Score": -25
+          },
+          "Orthodox": {
+            "Score": -25
+          },
+          "Protestant": {
+            "Score": -25
+          },
+          "Hindu": {
+            "Score": -25
+          },
+          "Shinto": {
+            "Score": 50
+          },
+          "Confucianism": {
+            "Score": -25
+          }
+        }
+      },
+      "Shinto": {
+        "definingFeatures": "",
+        "Color": 'FF0000',
+        "Opinions": {
+          "Pagan": {
+            "Score": -75
+          },
+          "Sunni": {
+            "Score": -25
+          },
+          "Shia": {
+            "Score": -25
+          },
+          "Judaism": {
+            "Score": -25
+          },
+          "Catholic": {
+            "Score": -25
+          },
+          "Orthodox": {
+            "Score": -25
+          },
+          "Protestant": {
+            "Score": -25
+          },
+          "Hindu": {
+            "Score": -25
+          },
+          "Buddhism": {
+            "Score": 50
+          },
+          "Confucianism": {
+            "Score": 0
+          }
+        }
+      },
+      "Confucianism": {
+        "definingFeatures": "",
+        "Color": '808080',
+        "Opinions": {
+          "Pagan": {
+            "Score": -50
+          },
+          "Sunni": {
+            "Score": 0
+          },
+          "Shia": {
+            "Score": 0
+          },
+          "Judaism": {
+            "Score": 0
+          },
+          "Catholic": {
+            "Score": 0
+          },
+          "Orthodox": {
+            "Score": 0
+          },
+          "Protestant": {
+            "Score": 0
+          },
+          "Hindu": {
+            "Score": 0
+          },
+          "Buddhism": {
+            "Score": 0
+          },
+          "Shinto": {
+            "Score": 0
+          }
+        }
+      },
     };
     this.Cultures = { //For Opinions not mentioned, they are neutral towards them.
     }; 
