@@ -17,8 +17,18 @@ function syncNation(nationName) {
   for (const EstateIndex in gameStats.Estates) {
     const Estate = gameStats.Estates[EstateIndex];
     gameStats.Nations[nationName]["Expected" + Estate + "Sol"] = (gameStats.Nations[nationName]["Expected" + Estate + "Sol"] > gameStats.Nations[nationName][Estate + "Sol"] * 1.05 ? gameStats.Nations[nationName]["Expected" + Estate + "Sol"] * 0.9 : gameStats.Nations[nationName]["Expected" + Estate + "Sol"] * max(1.05, gameStats.Nations[nationName][Estate + "Sol"] / gameStats.Nations[nationName]["Expected" + Estate + "Sol"] - 0.05));
-    debugger;
   }
+
+  // Influence Change check
+  for (const EstateIndex in gameStats.EstatesGeneral) {
+    const Estate = gameStats.EstatesGeneral[EstateIndex];
+    gameStats.Nations[nationName].InfluenceChangeLoyaltyEffect[Estate] = (gameStats.Nations[nationName].EstateInfluencesReal[Estate + "Influence"] - gameStats.Nations[nationName].ExpectedInfluences[Estate + "Influence"]) * 1.5;
+    gameStats.Nations[nationName].ExpectedInfluences[Estate + "Influence"] = gameStats.Nations[nationName].EstateInfluencesReal[Estate + "Influence"];
+  }
+  debugger;
+
+    // Reform Power
+    gameStats.Nations[nationName].ReformPower += gameStats.Nations[nationName].ReformPowerGain;
 
     /* #region  deal with automatic debt taking */
 

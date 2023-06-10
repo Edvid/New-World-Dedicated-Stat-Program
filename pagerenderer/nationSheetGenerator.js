@@ -242,6 +242,8 @@ let TableLayouts = {
     "Flag and Government": [
         ["Flag"],
         ["GovernmentName"],
+        ["GovernmentDominatedBy"],
+        ["GovernmentEffects"],
         ["CapitalName"]
     ],
     "Turn Based Stats": [
@@ -259,7 +261,8 @@ let TableLayouts = {
     "Basic Stats": [
         ["AverageDevelopment", "Health", "EducationEfficiency", "Propaganda", "SocialSpending", "PopulationControl", "BirthControl"],
         ["Stability", "Absolutism", "Corruption", "Overextension", "Prosperity", "PopulationHappiness", "WarSupport"],
-        ["AdministrativeTech", "BureaucratWages", "AdministrativeEfficiency", "AdministrationSize", "AdministrativePower", "AdministrativeDemand", "AdministrativeStrain", "TaxEfficiency"]
+        ["AdministrativeTech", "AdministrativeEfficiency", "AdministrationSize", "AdministrativePower", "AdministrativeDemand", "AdministrativeStrain", "TaxEfficiency"],
+        ["BureaucratsWages", "StateFactoryWorkerWage", "StateLabourerWage", "StateFarmerWage"]
     ],
     "Budget Stats": [
         ["TradeEfficiency", "LocalTrade", "InternalTrade", "ExternalTrade", "TradePower"],
@@ -267,23 +270,24 @@ let TableLayouts = {
         ["Inflation", "DailyBudget", "Budget"],
         ["BudgetIncoming", "BudgetOutgoing", "Balance"],
         ["HighClassTax", "MediumClassTax", "LowerClassTax"],
-        ["InternalTariffs", "ExternalTariffs", "TariffEfficiency"]
+        ["InternalTariffs", "ExternalTariffs", "TariffEfficiency"],
+        ["Gdp", "GdpPerKCapita", "DebtToGdpRatio"]
     ],
-    "Upkeeps and Income": [
-        ["TaxRevenue", "TariffsRevenue", "PassiveInvestmentIncome"],
+  "Upkeeps and Income": [
         ["OverallIncome", "OverallSpending"],
-        ["ArmyUpkeep", "NavyUpkeep", "FortUpkeep", "NewTroopRecruitmentPenalty"],
-        ["SpyUpkeep", "EducationUpkeep", "PopulationControlUpkeep"],
-        ["SocialSpendingUpkeep", "AgricultureSpending", "AdministrativeUpkeep"],
-        ["HygieneUpkeep", "ResearchUpkeep", "PropagandaUpkeep"]
+        ["TaxRevenue", "TariffsRevenue", "PassiveInvestmentIncome", "StateProductionRevenue", "StateResourceRevenue", "StateAgricultureRevenue"],
+        ["ArmyUpkeep", "NavyUpkeep", "FortUpkeep", "NewTroopRecruitmentPenalty", "SpyUpkeep"],
+        ["EducationUpkeep", "PopulationControlUpkeep", "HygieneUpkeep", "ResearchUpkeep", "PropagandaUpkeep"],
+        ["SocialSpendingUpkeep", "AgricultureSpending", "AdministrativeUpkeep", "StateWorkersUpkeep"]
     ],
   "Production": [
-    ["Production", "ProductionEfficiency", "IronShortage", "CoalShortage", "WoodShortage", "NaturalFabricsShortage", "LuxuryNaturalFabricsShortage", "ValuableMaterialsShortage"],
+    ["Production", "ProductionEfficiency", "ProductionGovernmentControl", "IronShortage", "CoalShortage", "WoodShortage", "NaturalFabricsShortage", "LuxuryNaturalFabricsShortage", "ValuableMaterialsShortage"],
       ["Housing", "Textiles", "BasicGoods", "LuxuryGoods", "Alcohol", "BasicTools", "HeavyIndustry", "BasicArmaments", "HeavyArmaments", "ShipBuilding", "Chemicals", "Motors", "Planes", "Electronics"],
       ["EffectiveHousing", "EffectiveTextiles", "EffectiveBasicGoods", "EffectiveLuxuryGoods", "EffectiveAlcohol", "EffectiveBasicTools", "EffectiveHeavyIndustry", "EffectiveBasicArmaments", "EffectiveHeavyArmaments", "EffectiveShipBuilding", "EffectiveChemicals", "EffectiveMotors", "EffectivePlanes", "EffectiveElectronics"],
       ["HousingDemand", "TextilesDemand", "BasicGoodsDemand", "LuxuryGoodsDemand", "AlcoholDemand", "BasicToolsDemand", "HeavyIndustryDemand", "BasicArmamentsDemand", "HeavyArmamentsDemand", "ShipBuildingDemand", "ChemicalsDemand", "MotorsDemand", "PlanesDemand", "ElectronicsDemand"],
       ["HousingValue", "TextilesValue", "BasicGoodsValue", "LuxuryGoodsValue", "AlcoholValue", "BasicToolsValue", "HeavyIndustryValue", "BasicArmamentsValue", "HeavyArmamentsValue", "ShipBuildingValue", "ChemicalsValue", "MotorsValue", "PlanesValue", "ElectronicsValue"],
-      ["HousingShortage", "TextilesShortage", "BasicGoodsShortage", "LuxuryGoodsShortage", "AlcoholShortage", "BasicToolsShortage", "HeavyIndustryShortage", "BasicArmamentsShortage", "HeavyArmamentsShortage", "ShipBuildingShortage", "ChemicalsShortage", "MotorsShortage", "PlanesShortage", "ElectronicsShortage"]
+      ["HousingShortage", "TextilesShortage", "BasicGoodsShortage", "LuxuryGoodsShortage", "AlcoholShortage", "BasicToolsShortage", "HeavyIndustryShortage", "BasicArmamentsShortage", "HeavyArmamentsShortage", "ShipBuildingShortage", "ChemicalsShortage", "MotorsShortage", "PlanesShortage", "ElectronicsShortage"],
+      ["PopProductionRevenue", "StateProductionRevenue"]
     ],
     "Army": [
 		["OverallImprovements", "CommanderFreedom", "IronShortage", "SulphurShortage", "ArmyWages"],
@@ -295,11 +299,11 @@ let TableLayouts = {
         ["CavalryImprovements", "CavalryQuality", "LightCavalry", "HeavyCavalry", "EliteCavalry"],
         ["SiegeImprovements", "SiegeQuality", "SiegeEquipment", "LargeSiegeEquipment"],
         ["ArtilleryImprovements", "ArtilleryQuality", "RegimentalGuns", "FieldCannons", "SiegeGuns"],
-        ["OverallNumbers", "UnitUpkeep", "EliteUnitsCap", "Spies", "SpyQuality"]
+        ["Manpower", "OverallNumbers", "UnitUpkeep", "EliteUnitsCap", "Spies", "SpyQuality"]
     ],
     "Debt Stats": [
         ["PossiblePublicDebt", "PublicDebtLength", "InterestRate"],
-        ["PublicDebtTaken", "EffectiveDebt", "DebtHappinessEffect"]
+        ["PublicDebtTaken", "EffectiveDebt", "DebtToGdpRatio"]
     ],
     "Fortifications": [
         ["SmallForts", "MediumForts", "BigForts", "HugeForts", "ExtraCityFortifications"]
@@ -313,7 +317,8 @@ let TableLayouts = {
     "Agriculture": [
         ["Fertility", "AgricultureSubsidies", "AgricultureInfrastructure", "AgricultureAdvancements", "AgricultureTechnology", "FarmingEfficiency", "AgricultureSpending"],
         ["PopInAgriculture", "DailyFood", "FoodConsumption", "FoodGain", "StockingCapabilities", "MaxFoodStock", "SellingCapability"],
-        ["Food", "FutureFood", "SurplusFood", "FoodSold", "Foodlost", "FoodTradeProfit", "FoodPopulationBoost"]
+        ["Food", "FutureFood", "SurplusFood", "FoodSold", "FoodLost", "FoodTradeProfit", "FoodPopulationBoost"],
+        ["FoodRationing"]
     ],
     "War Stats": [
         ["Casualties", "Pillaging", "Occupation", "Blockade", "MinorBattles", "MajorBattles", "WarExhaustion", "Fervor"]
@@ -323,25 +328,35 @@ let TableLayouts = {
         ["MaxPopulation", "DetachedLand", "LandAdministration", "Overextension", "CoastalLandPercent", "AverageDevelopment", "HabitableLand"]
     ],
     "Estates": [
-        ["AristocratLoyalty", "ClergyLoyalty", "BurgousieLoyalty", "UrbanLoyalty", "BureaucratLoyalty", "IntellectualsLoyalty", "WorkersLoyalty", "MilitaryLoyalty"],
-        ["AristocratTax", "ClergyTax", "BurgousieTax", "UrbanTax", "BureaucratTax", "IntellectualsTax", "WorkersTax", "MilitaryTax"],
+        ["AristocracyLoyalty", "ClergyLoyalty", "BurgousieLoyalty", "UrbanLoyalty", "BureaucratsLoyalty", "IntellectualsLoyalty", "WorkersLoyalty", "MilitaryLoyalty"],
+        ["AristocracyTax", "ClergyTax", "BurgousieTax", "UrbanTax", "BureaucratsTax", "IntellectualsTax", "WorkersTax", "MilitaryTax"],
         ["SlavesWage", "LabourersWage", "SerfsWage", "FarmersWage", "TownsfolkWage", "ClergyWage", "BureaucratsWage", "MerchantsWage", "IntellectualsWage", "SailorsWage", "SoldiersWage", "AristocracyWage", "BurgousieWage"],
       ["SlavesTaxes", "LabourersTaxes", "SerfsTaxes", "FarmersTaxes", "TownsfolkTaxes", "ClergyTaxes", "BureaucratsTaxes", "MerchantsTaxes", "IntellectualsTaxes", "SailorsTaxes", "SoldiersTaxes", "AristocracyTaxes", "BurgousieTaxes", "TaxRevenue"],
       ["ExpectedSlavesSol", "ExpectedLabourersSol", "ExpectedSerfsSol", "ExpectedFarmersSol", "ExpectedTownsfolkSol", "ExpectedClergySol", "ExpectedBureaucratsSol", "ExpectedMerchantsSol", "ExpectedIntellectualsSol", "ExpectedSailorsSol", "ExpectedSoldiersSol", "ExpectedAristocracySol", "ExpectedBurgousieSol", "AverageExpectedSol"],
-      ["SlavesSol", "LabourersSol", "SerfsSol", "FarmersSol", "TownsfolkSol", "ClergySol", "BureaucratsSol", "MerchantsSol", "IntellectualsSol", "SailorsSol", "SoldiersSol", "AristocracySol", "BurgousieSol", "AverageSol"]
+      ["SlavesSol", "LabourersSol", "SerfsSol", "FarmersSol", "TownsfolkSol", "ClergySol", "BureaucratsSol", "MerchantsSol", "IntellectualsSol", "SailorsSol", "SoldiersSol", "AristocracySol", "BurgousieSol", "AverageSol"],
+      ["SlavesLiteracy", "LabourersLiteracy", "SerfsLiteracy", "FarmersLiteracy", "TownsfolkLiteracy", "ClergyLiteracy", "BureaucratsLiteracy", "MerchantsLiteracy", "IntellectualsLiteracy", "SailorsLiteracy", "SoldiersLiteracy", "AristocracyLiteracy", "BurgousieLiteracy"],
+      ["AristocracyPoliticalAwareness", "ClergyPoliticalAwareness", "BurgousiePoliticalAwareness", "UrbanPoliticalAwareness", "BureaucratsPoliticalAwareness", "IntellectualsPoliticalAwareness", "WorkersPoliticalAwareness", "MilitaryPoliticalAwareness"]
     ],
-	"Reforms": [
-		["Reforms.SlaveryAllowed", "Reforms.SlaveryBanned", "Reforms.SerfdomAllowed", "Reforms.SerfdomBanned"],
-		["Reforms.OpenFieldSystem", "Reforms.Enclosure"],
-		["Reforms.Mercantilism", "Reforms.Protectionism", "Reforms.FreeTrade"],
-		["Reforms.Guilds", "Reforms.GuildsBanned", "Reforms.AntiMonopolyLaws"],
-		["Reforms.NoVoting", "Reforms.HighClassVoting", "Reforms.WealthVoting", "Reforms.UniversalSuffrage"],
-		["Reforms.NoblePrivellege", "Reforms.WealthPrivellege", "Reforms.ClassEquality"],
-		["Reforms.NobleOfficers", "Reforms.WealthyOfficers", "Reforms.MeritocraticOfficers"],
-		["Reforms.NobleBureaucrats", "Reforms.WealthyBureaucrats", "Reforms.MeritocraticBureaucrats"],
-        ["Reforms.NobleResourceOwnership", "Reforms.MixedResourceOwnership", "Reforms.BurgousieResourceOwnership", "Reforms.GovernmentResourceOwnership"],
-        ["Reforms.NobleLandOwnership", "Reforms.MixedLandOwnership", "Reforms.PrivateLandOwnership", "Reforms.GovernmentLandOwnership"],
-		["Reforms.NoArmyReserve", "Reforms.NationalMilitia", "Reforms.Conscripts", "Reforms.ProffesionalReservists"]
+  "Reforms": [
+        ["ReformPower", "ReformPowerGain"],
+        ["SlaveryReformRegressionCost", "SlaveryReformAdvanceCost", "Reforms.SlaveryAllowed", "Reforms.SlaveryBanned"],
+        ["SerfdomReformRegressionCost", "SerfdomReformAdvanceCost", "Reforms.SerfdomAllowed", "Reforms.SerfdomBanned"],
+        ["EnclosureReformRegressionCost", "EnclosureReformAdvanceCost", "Reforms.OpenFieldSystem", "Reforms.Enclosure"],
+        ["TradeReformRegressionCost", "TradeReformAdvanceCost", "Reforms.Isolationism",  "Reforms.Mercantilism", "Reforms.Protectionism", "Reforms.FreeTrade"],
+        ["AntitrustReformRegressionCost", "AntitrustReformAdvanceCost", "Reforms.Guilds", "Reforms.GuildsBanned", "Reforms.AntiMonopolyLaws"],
+        ["SuffrageReformRegressionCost", "SuffrageReformAdvanceCost", "Reforms.NoVoting", "Reforms.HighClassVoting", "Reforms.WealthVoting", "Reforms.UniversalSuffrage"],
+        ["PrivellegeReformRegressionCost", "PrivellegeReformAdvanceCost", "Reforms.NoblePrivellege", "Reforms.WealthPrivellege", "Reforms.ClassEquality"],
+        ["OfficersReformRegressionCost", "OfficersReformAdvanceCost", "Reforms.NobleOfficers", "Reforms.WealthyOfficers", "Reforms.MeritocraticOfficers"],
+        ["BureaucratsReformRegressionCost", "BureaucratsReformAdvanceCost", "Reforms.NobleBureaucrats", "Reforms.ClergyBureaucrats", "Reforms.WealthyBureaucrats", "Reforms.MeritocraticBureaucrats"],
+        ["ResourceReformRegressionCost", "ResourceReformAdvanceCost", "Reforms.NobleResourceOwnership", "Reforms.MixedResourceOwnership", "Reforms.BurgousieResourceOwnership", "Reforms.GovernmentResourceOwnership"],
+        ["LandReformRegressionCost", "LandReformAdvanceCost", "Reforms.NobleLandOwnership", "Reforms.MixedLandOwnership", "Reforms.PrivateLandOwnership", "Reforms.GovernmentLandOwnership"],
+        ["ArmyReformRegressionCost", "ArmyReformAdvanceCost", "Reforms.NationalMilitia", "Reforms.FeudalLevies", "Reforms.ProffesionalArmy", "Reforms.MassConscription"],
+        ["PrivateArmiesReformRegressionCost", "PrivateArmiesReformAdvanceCost", "Reforms.FeudalNobleArmies", "Reforms.PrivateMercenariesOnly", "Reforms.NoPrivateMilitaries"],
+        ["CensorshipReformRegressionCost", "CensorshipReformAdvanceCost", "Reforms.StateMediaOnly", "Reforms.ExtensiveCensorship", "Reforms.LimitedCensorship", "Reforms.FreeSpeech"],
+        ["SocialReformRegressionCost", "SocialReformAdvanceCost", "Reforms.NoSocialMobility", "Reforms.RestrictedSocialMobility", "Reforms.UnrestrictedSocialMobility"],
+        ["ReligiousReformRegressionCost", "ReligiousReformAdvanceCost", "Reforms.StateReligion", "Reforms.RestrictiveReligionLaws", "Reforms.FreedomOfReligion"],
+        ["EducationReformRegressionCost", "EducationReformAdvanceCost", "Reforms.PrivateEducationOnly", "Reforms.ReligiousSchools", "Reforms.PublicEducation"],
+        ["PoliceReformRegressionCost", "PoliceReformAdvanceCost", "Reforms.CommunityPolicing", "Reforms.RegionalPolice", "Reforms.StatePolice", "Reforms.SecretPolice"]
 	],
     "Trade Influence - Americas": [
         [ti("Alaska"), ti("Cascadia"), ti("CaliforniaAndWestMexico"), ti("HudsonBay"), ti("GreatLakes"), ti("Louisiana"), ti("GulfOfMexico"), ti("LawrenceGulf"), ti("EastCoast"), ti("Carribean"), ti("CentralAmerica")],
@@ -383,7 +398,7 @@ let TableLayouts = {
     ],
     "Cultural Advancements": [
         ["CulturalAdvancements.DivineRightToRule", "CulturalAdvancements.Serfdom", "CulturalAdvancements.Feudalism"],
-        ["CulturalAdvancements.Universities", "CulturalAdvancements.AristocratDuty"],
+        ["CulturalAdvancements.Universities", "CulturalAdvancements.AristocracyDuty"],
         ["CulturalAdvancements.Courthouses"],
         ["CulturalAdvancements.RenaissanceThought", "CulturalAdvancements.EarlyModernAdministration"],
         ["CulturalAdvancements.NationalSovereignity", "CulturalAdvancements.Newspapers"],
