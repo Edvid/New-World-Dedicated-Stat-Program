@@ -290,7 +290,7 @@ let TableLayouts = {
       ["PopProductionRevenue", "StateProductionRevenue"]
     ],
     "Army": [
-      ["OverallImprovements", "CommanderFreedom", "SoldiersWage", "BasicArmamentsStockpiled", "HeavyArmamentsStockpiled", "BasicArmamentsShortage", "HeavyArmamentsShortage", "IronShortage", "SulphurShortage"],
+      ["OverallImprovements", "CommanderFreedom", "SoldiersWage", "BasicArmamentsStockpiled", "HeavyArmamentsStockpiled", "BasicArmamentsArmyShortage", "HeavyArmamentsShortage", "IronShortage", "SulphurShortage"],
 		["MilitaryLoyalty", "MilitaryMorale", "MilitaryDiscipline"],
         ["IrregularImprovements", "IrregularQuality", "Levies", "Militia"],
         ["MeleeImprovements", "MeleeQuality", "LightInfantry", "HeavyInfantry", "EliteInfantry"],
@@ -300,6 +300,10 @@ let TableLayouts = {
         ["SiegeImprovements", "SiegeQuality", "SiegeEquipment", "LargeSiegeEquipment"],
         ["ArtilleryImprovements", "ArtilleryQuality", "RegimentalGuns", "FieldCannons", "SiegeGuns"],
         ["Manpower", "OverallNumbers", "UnitUpkeep", "EliteUnitsCap", "Spies", "SpyQuality"]
+    ],
+    "Private Armies": [
+      ["AristocracyLevies", "AristocracyMilitia", "AristocracyLightInfantry", "AristocracyHeavyInfantry", "AristocracyEliteInfantry", "AristocracyArchers", "AristocracyCrossbowmen", "AristocracyMusketeers", "AristocracyMusketMilitia", "AristocracyRiflemen", "AristocracyLightCavalry", "AristocracyHeavyCavalry", "AristocracyEliteCavalry"],
+      ["BurgousieLevies", "BurgousieMilitia", "BurgousieLightInfantry", "BurgousieHeavyInfantry", "BurgousieEliteInfantry", "BurgousieArchers", "BurgousieCrossbowmen", "BurgousieMusketeers", "BurgousieMusketMilitia", "BurgousieRiflemen", "BurgousieLightCavalry", "BurgousieHeavyCavalry", "BurgousieEliteCavalry"]
     ],
     "Debt Stats": [
         ["PossiblePublicDebt", "PublicDebtLength", "InterestRate"],

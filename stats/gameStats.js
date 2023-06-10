@@ -642,7 +642,9 @@ class Nation {
     this.ExpectedSailorsSol = 0.75;
     this.ExpectedSoldiersSol = 1;
     this.ExpectedAristocracySol = 17.5;
-    this.ExpectedBurgousieSol = 12;
+    this.ExpectedBurgousieSol = 10;
+
+    this.ExpectedPrivateBasicArmaments = 2.5;
     
     this.EstateInfluences = {
       AristocracyInfluence: 30,
@@ -808,7 +810,7 @@ class Nation {
 
     this.ProductionSectors = {
         ConstructionSector: 2.5,
-        BasicArmamentsSector: 1.5,
+        BasicArmamentsSector: 2,
         HeavyArmamentsSector: 0.25,
         ShipBuildingSector: 0.2,
         BasicToolsSector: 4,

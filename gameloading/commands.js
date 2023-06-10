@@ -19,11 +19,14 @@ function syncNation(nationName) {
     gameStats.Nations[nationName]["Expected" + Estate + "Sol"] = (gameStats.Nations[nationName]["Expected" + Estate + "Sol"] > gameStats.Nations[nationName][Estate + "Sol"] * 1.05 ? gameStats.Nations[nationName]["Expected" + Estate + "Sol"] * 0.9 : gameStats.Nations[nationName]["Expected" + Estate + "Sol"] * max(1.05, gameStats.Nations[nationName][Estate + "Sol"] / gameStats.Nations[nationName]["Expected" + Estate + "Sol"] - 0.05));
   }
 
-   // weapons stockpiled
+  // weapons stockpiled
   gameStats.Nations[nationName].BasicArmamentsStockpiled += (gameStats.Nations[nationName].EffectiveBasicArmaments - gameStats.Nations[nationName].BasicArmamentsStockpiled) - gameStats.Nations[nationName].BasicArmamentsDemand;
   gameStats.Nations[nationName].BasicArmamentsStockpiled = max(0, gameStats.Nations[nationName].BasicArmamentsStockpiled);
   gameStats.Nations[nationName].HeavyArmamentsStockpiled += (gameStats.Nations[nationName].EffectiveHeavyArmaments - gameStats.Nations[nationName].HeavyArmamentsStockpiled) - gameStats.Nations[nationName].HeavyArmamentsDemand;
   gameStats.Nations[nationName].HeavyArmamentsStockpiled = max(0, gameStats.Nations[nationName].HeavyArmamentsStockpiled);
+
+  // Expected Weapons for private militaries
+  gameStats.Nations[nationName].ExpectedPrivateBasicArmaments = n.AristocracyBasicArmaments + n.BurgousieBasicArmaments;
 
   // Influence Change check
   for (const EstateIndex in gameStats.EstatesGeneral) {
