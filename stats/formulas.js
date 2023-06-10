@@ -1020,7 +1020,7 @@ function evaluateNation(nationName) {
 
 
   n.NecessitiesCost = (0.5 * n.HousingValue + 0.5 * n.TextilesValue + n.BasicGoodsValue + n.AlcoholValue * (1 - n.ReligionGroups.Sunni.Points - n.ReligionGroups.Shia.Points) + n.CoffeeValue * 0.5 * (n.ReligionGroups.Sunni.Points - n.ReligionGroups.Shia.Points) + 0.5 * n.BasicToolsValue) / 200 + (n.CoalValue * 0.005 > n.WoodValue * 0.01 ? 0.01 * n.WoodValue : 0.005 * n.CoalValue) + (n.FoodAdditions > 0 ? 0.1 * n.FoodAdditionsValue + 0.9 * n.FoodValue : n.FoodValue);
-  n.LuxuriesCost = (n.HousingValue + n.TextilesValue + 1.5 * n.BasicGoodsValue + n.LuxuryGoodsValue + 2 * n.AlcoholValue * (1 - n.ReligionGroups.Sunni.Points - n.ReligionGroups.Shia.Points) + n.CoffeeValue * (n.ReligionGroups.Sunni - n.ReligionGroups.Shia)) / 200 + (n.CoalValue * 0.01 > n.WoodValue * 0.02 ? n.WoodValue * 0.02 : 0.01 * n.CoalValue) + (n.FoodAdditions > 0 ? n.FoodAdditionsValue + 1.25 * n.FoodValue : 1.75 * n.FoodValue) + (n.LuxuryConsumables > 0 ? 0.025 * n.LuxuryConsumablesValue : 0);
+  n.LuxuriesCost = (n.HousingValue + n.TextilesValue + 1.5 * n.BasicGoodsValue + n.LuxuryGoodsValue + 2 * n.AlcoholValue * (1 - n.ReligionGroups.Sunni.Points - n.ReligionGroups.Shia.Points) + n.CoffeeValue * (n.ReligionGroups.Sunni.Points - n.ReligionGroups.Shia.Points)) / 200 + (n.CoalValue * 0.01 > n.WoodValue * 0.02 ? n.WoodValue * 0.02 : 0.01 * n.CoalValue) + (n.FoodAdditions > 0 ? n.FoodAdditionsValue + 1.25 * n.FoodValue : 1.75 * n.FoodValue) + (n.LuxuryConsumables > 0 ? 0.025 * n.LuxuryConsumablesValue : 0);
 
   // SoL
   for (const EstateIndex in gameStats.Estates) {
