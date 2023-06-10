@@ -402,7 +402,7 @@ let TableLayouts = {
     ],
     "Cultural Advancements": [
         ["CulturalAdvancements.DivineRightToRule", "CulturalAdvancements.Serfdom", "CulturalAdvancements.Feudalism"],
-        ["CulturalAdvancements.Universities", "CulturalAdvancements.AristocracyDuty"],
+        ["CulturalAdvancements.Universities", "CulturalAdvancements.NobleDuty"],
         ["CulturalAdvancements.Courthouses"],
         ["CulturalAdvancements.RenaissanceThought", "CulturalAdvancements.EarlyModernAdministration"],
         ["CulturalAdvancements.NationalSovereignity", "CulturalAdvancements.Newspapers"],

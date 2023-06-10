@@ -1031,7 +1031,7 @@ class Nation {
       Serfdom: false,
       Feudalism: false,
       Universities: false,
-      AristocracyDuty: false,
+      NobleDuty: false,
       Courthouses: false,
       RenaissanceThought: false,
       EarlyModernAdministration: false,
