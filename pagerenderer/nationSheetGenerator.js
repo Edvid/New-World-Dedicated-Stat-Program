@@ -290,7 +290,7 @@ let TableLayouts = {
       ["PopProductionRevenue", "StateProductionRevenue"]
     ],
     "Army": [
-		["OverallImprovements", "CommanderFreedom", "IronShortage", "SulphurShortage", "ArmyWages"],
+      ["OverallImprovements", "CommanderFreedom", "SoldiersWage", "BasicArmamentsStockpiled", "HeavyArmamentsStockpiled", "BasicArmamentsShortage", "HeavyArmamentsShortage", "IronShortage", "SulphurShortage"],
 		["MilitaryLoyalty", "MilitaryMorale", "MilitaryDiscipline"],
         ["IrregularImprovements", "IrregularQuality", "Levies", "Militia"],
         ["MeleeImprovements", "MeleeQuality", "LightInfantry", "HeavyInfantry", "EliteInfantry"],
@@ -311,7 +311,7 @@ let TableLayouts = {
     "Navy": [
         ["UpkeepForOneMerchantShip", "UpkeepForOneLightShip", "UpkeepForOneMediumShip", "UpkeepForOneHeavyShip"],
         ["MerchantShips", "LightShips", "MediumShips", "HeavyShips"],
-        ["NavyImprovements", "NavyTech", "NavyQuality"],
+        ["NavyImprovements", "NavyTech", "NavyQuality", "SailorsWage"],
         ["OverallShipCount", "MerchantShipsFullfilment", "TradeProtection", "NavalPower"]
     ],
     "Agriculture": [

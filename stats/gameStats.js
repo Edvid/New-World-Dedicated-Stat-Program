@@ -180,6 +180,8 @@ class Nation {
   IronShortage;
   SulphurShortage;
   CommanderFreedom;
+  BasicArmamentsStockpiled;
+  HeavyArmamentsStockpiled;
   ArmyWages;
   TrainingQuality;
   ArmyTech;
@@ -743,7 +745,10 @@ class Nation {
 
 
     this.CommanderFreedom = 0;
-    this.ArmyWages = 1.00;
+    this.BasicArmamentsStockpiled = 0;
+    this.HeavyArmamentsStockpiled = 0;
+    this.SailorsWage = 1.00;
+    this.SoldiersWage = 1.50;
     this.MilitaryDiscipline = 1.00; //Show In Percent
     /* #endregion */
 
@@ -803,8 +808,8 @@ class Nation {
 
     this.ProductionSectors = {
         ConstructionSector: 2.5,
-        BasicArmamentsSector: 0.25,
-        HeavyArmamentsSector: 0.2,
+        BasicArmamentsSector: 1.5,
+        HeavyArmamentsSector: 0.25,
         ShipBuildingSector: 0.2,
         BasicToolsSector: 4,
         TextilesSector: 2,

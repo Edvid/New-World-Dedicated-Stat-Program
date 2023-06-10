@@ -224,7 +224,8 @@ function evaluateNation(nationName) {
     n.MerchantShips * n.UpkeepForOneMerchantShip +
     n.LightShips * n.UpkeepForOneLightShip +
     n.MediumShips * n.UpkeepForOneMediumShip +
-    n.HeavyShips * n.UpkeepForOneHeavyShip
+    n.HeavyShips * n.UpkeepForOneHeavyShip +
+    n.Workforces.Sailors * n.Population / 1000 * n.SailorsWage
    );
 
   n.BaseIronHarvest = (
@@ -451,8 +452,8 @@ function evaluateNation(nationName) {
 
   n.BasicToolsDemand = (n.Production * (n.ProductionSectors.AerospaceSector / n.TotalSupply) + n.Production * (n.ProductionSectors.AutomotiveSector / n.TotalSupply) + n.Production * (n.ProductionSectors.ElectronicsSector / n.TotalSupply) + n.Production * (n.ProductionSectors.ChemicalSector / n.TotalSupply) / 4 + n.Production * (n.ProductionSectors.HeavyIndustrySector / n.TotalSupply) / 10 + n.Production * (n.ProductionSectors.LuxuryGoodsSector / n.TotalSupply) / 4 + n.Production * (n.ProductionSectors.BasicGoodsSector / n.TotalSupply) / 4 + n.Production * (n.ProductionSectors.ShipBuildingSector / n.TotalSupply) + n.Production * (n.ProductionSectors.TextilesSector / n.TotalSupply) / 4 + n.Production * (n.ProductionSectors.HeavyArmamentsSector / n.TotalSupply) / 4 + n.Production * (n.ProductionSectors.BasicArmamentsSector / n.TotalSupply) / 4 + n.Production * (n.ProductionSectors.ConstructionSector / n.TotalSupply)) / n.ProductionEfficiency + (min(n.AverageExpectedSol, 1) * n.Population / 1000) / 200;
   n.HousingDemand = ((min(n.AverageExpectedSol, 1) * 0.5 + n.LuxuriesDemand * 1) * n.Population / 1000) / 200;
-  n.BasicArmamentsDemand = 0; // define once weapon stockpile implemented
-  n.HeavyArmamentsDemand = 0; // define once weapon stockpile implemented
+  n.BasicArmamentsDemand = ((n.Levies * 0.1 + n.Militia * 0.2) * n.IrregularQualityIC + (n.LightInfantry * 0.5 + n.HeavyInfantry * 0.85 + n.EliteInfantry * 1) * n.MeleeQualityIC + (n.Archers * 0.5 + n.Crossbowmen * 0.7) * n.RangedQualityIC + (n.HandCannoneers * 0.75 + n.Musketeers * 0.8 + n.MusketMilitia * 0.7 + n.Riflemen * 1.25) * n.FirearmQualityIC + (n.LightCavalry * 1 + n.HeavyCavalry * 1.25 + n.EliteCavalry * 1.5) * n.CavalryQualityIC) / 1000;
+  n.HeavyArmamentsDemand = (n.RegimentalGuns * 0.05 + n.FieldCannons * 0.1 + n.SiegeGuns * 0.2) * n.ArtilleryQualityIC;
   n.TextilesDemand = (n.Production * (n.ProductionSectors.BasicGoodsSector / n.TotalSupply) / 2 + n.Production * (n.ProductionSectors.ShipBuildingSector / n.TotalSupply) / 2) / n.ProductionEfficiency + ((min(n.AverageExpectedSol, 1) * 0.5 + n.LuxuriesDemand * 1) * n.Population / 1000) / 200;
   n.ShipBuildingDemand = n.CoastalLandPercent * n.Population / 100000 + n.NavyUpkeep / 100 * gameStats.TimeDivide;
   n.BasicGoodsDemand = ((min(n.AverageExpectedSol, 1) * 1 + n.LuxuriesDemand * 1.5) * n.Population / 1000) / 200;
@@ -488,11 +489,11 @@ function evaluateNation(nationName) {
   n.HousingShortage = min(1, max(0, 1 - (n.EffectiveHousing / (n.HousingDemand * 0.9))));
 
   n.BasicArmaments = n.Production * (n.ProductionSectors.BasicArmamentsSector / n.TotalSupply) * (1.1 - n.BasicToolsShortage) * (1.1 - n.WoodShortage) * (1.1 - n.IronShortage) * (1.1 - n.CoalShortage) * n.WeaponWorkingEfficiency;
-  n.EffectiveBasicArmaments = n.BasicArmaments + n.BasicArmamentsIncoming - n.BasicArmamentsOutgoing;
+  n.EffectiveBasicArmaments = n.BasicArmaments + n.BasicArmamentsIncoming - n.BasicArmamentsOutgoing + n.BasicArmamentsStockpiled;
   n.BasicArmamentsShortage = min(1, max(0, 1 - (n.EffectiveBasicArmaments / (n.BasicArmamentsDemand * 0.9))));
 
   n.HeavyArmaments = n.Production * (n.ProductionSectors.HeavyArmamentsSector / n.TotalSupply) * (1.1 - n.BasicToolsShortage) * (1.1 - n.IronShortage) * (1.1 - n.CoalShortage) * (1 + n.MetalWorkingEfficiency);
-  n.EffectiveHeavyArmaments = n.HeavyArmaments + n.HeavyArmamentsIncoming - n.HeavyArmamentsOutgoing;
+  n.EffectiveHeavyArmaments = n.HeavyArmaments + n.HeavyArmamentsIncoming - n.HeavyArmamentsOutgoing + n.HeavyArmamentsStockpiled;
   n.HeavyArmamentsShortage = min(1, max(0, 1 - (n.EffectiveHeavyArmaments / (n.HeavyArmamentsDemand * 0.9))));
 
   n.Textiles = n.Production * (n.ProductionSectors.TextilesSector / n.TotalSupply) * (1.1 - n.BasicToolsShortage) * (1.1 - n.NaturalFabricsShortage) * n.WeavingEfficiency;
@@ -853,8 +854,8 @@ function evaluateNation(nationName) {
 
   n.LandAdministration = ((n.Size - n.DetachedLand) / 25000 + n.DetachedLand / 10000) * (1 - n.AdministrativeEfficiency / 1000);
   n.Overextension = n.UnderPopulation / 4 + n.LandAdministration / 1.5;
-  
-  n.ArmyUpkeep = n.UnitUpkeep * (1 + n.ArmyWages - 1) / gameStats.TimeDivide;
+
+  n.ArmyUpkeep = (n.UnitUpkeep + n.OverallNumbers / 1000 * n.SoldiersWage) / gameStats.TimeDivide;
 
   n.FutureLiteracyPercent = ((n.LiteracyPercent > n.Education * 3) ? n.Education * 3 : n.LiteracyPercent) + n.Education / 10 / gameStats.TimeDivide;
   n.FutureHigherEducation = n.HigherEducation + (n.Education >= 3 ? n.Education / 30 : 0) + (n.HigherEducation > n.Education / 3 ? -0.25 : 0);
@@ -984,8 +985,8 @@ function evaluateNation(nationName) {
     n.MerchantsWage = (n.InternalTrade * (1 - n.InternalTariffs) + n.ExternalTrade * (1 - n.ExternalTariffs)) / (n.Population / 1000 * n.Workforces.Merchants) * (1 - n.EstateInfluencesReal.BurgousieInfluence * 2);
     n.MerchantsWageToBurggousie = n.Population * n.Workforces.Merchants / 1000 * n.MerchantsWage / (1 - n.EstateInfluencesReal.BurgousieInfluence * 2) * n.EstateInfluencesReal.BurgousieInfluence * 2;
     n.IntellectualsWage = n.Education * (1 + n.LiteracyPercent / 50 + n.EstateInfluencesReal.IntellectualsInfluence * 10);
-    n.SailorsWage = 1 * n.ArmyWages;
-    n.SoldiersWage = 1.5 * n.ArmyWages;
+ //   n.SailorsWage = 1 * n.ArmyWages;
+ //   n.SoldiersWage = 1.5 * n.ArmyWages;
     n.AristocracyWage = (n.Reforms.NobleLandOwnership == 1 ? n.SerfsAndFarmersWageToOnwers / (n.Population * n.Workforces.Aristocracy / 1000) : 0) + (n.Reforms.MixedLandOwnership == 1 ? n.SerfsAndFarmersWageToOnwers / (n.Population * n.Workforces.Aristocracy / 1000) : 0) + (n.Reforms.NobleResourceOwnership == 1 ? n.SlavesAndLabourersWageToOwner / (n.Population * n.Workforces.Aristocracy / 1000) : 0) + (n.Reforms.MixedResourceOwnership == 1 ? n.SlavesAndLabourersWageToOwner / (n.Population * n.Workforces.Aristocracy / 1000) : 0);
     n.BurgousieWage = (n.TownsfolkWageToBurgousie + n.MerchantsWageToBurggousie) / (n.Population * n.Workforces.Burgousie / 1000) + (n.Reforms.MixedResourceOwnership == 1 ? n.SlavesAndLabourersWageToOwner / (n.Population * n.Workforces.Aristocracy / 1000) : 0) + (n.Reforms.BurgousieResourceOwnership == 1 ? n.SlavesAndLabourersWageToOwner / (n.Population * n.Workforces.Aristocracy / 1000) : 0) + (n.Reforms.MixedLandOwnership == 1 ? n.SerfsAndFarmersWageToOnwers / (n.Population * n.Workforces.Aristocracy / 1000) : 0) + (n.Reforms.PrivateLandOwnership == 1 ? n.SerfsAndFarmersWageToOnwers / (n.Population * n.Workforces.Aristocracy / 1000) : 0);
 
@@ -1214,13 +1215,13 @@ function evaluateNation(nationName) {
 
   n.EliteUnitsCap = ((n.OverallNumbers - n.Militia - n.Levies - n.EliteCavalry - n.EliteInfantry) * 0.025);
 
-  n.IrregularQuality = (n.RealOverallImprovements + n.IrregularImprovements + n.Technologies.Metallurgy / 10 - n.Corruption / 5) * (1 - n.IronShortage);
-  n.MeleeQuality = (n.RealOverallImprovements + n.MeleeImprovements + n.Technologies.PlateArmour / 5 + n.Technologies.StandardizedPikes / 10 + n.Technologies.Metallurgy / 10 - n.Corruption / 5) * (1 - n.IronShortage);
-  n.RangedQuality = (n.RealOverallImprovements + n.RangedImprovements + n.Technologies.Metallurgy / 10 - n.Corruption / 5) * (1 - n.IronShortage);
-  n.CavalryQuality = (n.RealOverallImprovements + n.CavalryImprovements + n.Technologies.SaddleAndStirrup / 5 + n.Technologies.PlateArmour / 5 + n.Technologies.Reiters / 10 + n.Technologies.Metallurgy / 10 - n.Corruption / 5) * (1 - n.IronShortage) * (n.Technologies.Reiters == 1 ? (1 - n.SulphurShortage) : 1);
-  n.FirearmQuality = (n.RealOverallImprovements + n.FirearmImprovements + n.Technologies.Matchlock / 5 + n.Technologies.SocketBayonet / 5 + n.Technologies.Flintlock / 5 + n.Technologies.Metallurgy / 10 + n.Technologies.Bayonet / 20 - n.Corruption / 5) * (1 - n.IronShortage) * (1 - n.SulphurShortage);
-  n.SiegeQuality = (n.RealOverallImprovements + n.SiegeImprovements + n.Technologies.Metallurgy / 10 - n.Corruption / 5) * (1 - n.IronShortage);
-  n.ArtilleryQuality = (n.RealOverallImprovements + n.ArtilleryImprovements + n.Technologies.Limber / 5 + n.Technologies.Mortars / 5 + n.Technologies.Metallurgy / 10 - n.Corruption / 5) * (1 - n.IronShortage) * (1 - n.SulphurShortage);
+  n.IrregularQuality = (n.RealOverallImprovements + n.IrregularImprovements + n.Technologies.Metallurgy / 10 - n.Corruption / 5) * max(0.1, 1 - n.IronShortage) * max(0.1, 1 - n.BasicArmamentsShortage);
+  n.MeleeQuality = (n.RealOverallImprovements + n.MeleeImprovements + n.Technologies.PlateArmour / 5 + n.Technologies.StandardizedPikes / 10 + n.Technologies.Metallurgy / 10 - n.Corruption / 5) * max(0.1, 1 - n.IronShortage) * max(0.1, 1 - n.BasicArmamentsShortage);
+  n.RangedQuality = (n.RealOverallImprovements + n.RangedImprovements + n.Technologies.Metallurgy / 10 - n.Corruption / 5) * max(0.1, 1 - n.IronShortage) * max(0.1, 1 - n.BasicArmamentsShortage);
+  n.CavalryQuality = (n.RealOverallImprovements + n.CavalryImprovements + n.Technologies.SaddleAndStirrup / 5 + n.Technologies.PlateArmour / 5 + n.Technologies.Reiters / 10 + n.Technologies.Metallurgy / 10 - n.Corruption / 5) * max(0.1, 1 - n.IronShortage) * (n.Technologies.Reiters == 1 ? max(0.1, 1 - n.SulphurShortage) : 1) * max(0.1, 1 - n.BasicArmamentsShortage);
+  n.FirearmQuality = (n.RealOverallImprovements + n.FirearmImprovements + n.Technologies.Matchlock / 5 + n.Technologies.SocketBayonet / 5 + n.Technologies.Flintlock / 5 + n.Technologies.Metallurgy / 10 + n.Technologies.Bayonet / 20 - n.Corruption / 5) * max(0.1, 1 - n.IronShortage) * max(0.1, 1 - n.SulphurShortage) * max(0.1, 1 - n.BasicArmamentsShortage);
+  n.SiegeQuality = (n.RealOverallImprovements + n.SiegeImprovements + n.Technologies.Metallurgy / 10 - n.Corruption / 5) * max(0.1, 1 - n.IronShortage) * max(0.1, 1 - n.BasicArmamentsShortage);
+  n.ArtilleryQuality = (n.RealOverallImprovements + n.ArtilleryImprovements + n.Technologies.Limber / 5 + n.Technologies.Mortars / 5 + n.Technologies.Metallurgy / 10 - n.Corruption / 5) * max(0.1, 1 - n.IronShortage) * max(0.1, 1 - n.SulphurShortage) * max(0.1, 1 - n.HeavyArmamentsShortage);
 
 
   n.CulturalAdvance = (function () {
