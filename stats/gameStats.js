@@ -988,8 +988,8 @@ class Nation {
       MassConscription: false,
 
       FeudalNobleArmies: true,
-      PrivateMercenariesOnly: false,
-      NoPrivateMilitaries: false,
+      Mercenaries: true,
+      ReligiousOrders: true,
 
       StateMediaOnly: false,
       ExtensiveCensorship: true,
@@ -1011,7 +1011,11 @@ class Nation {
       CommunityPolicing: true,
       RegionalPolice: false,
       StatePolice: false,
-      SecretPolice: false
+      SecretPolice: false,
+
+      NoWeaponLaws: false,
+      LimitedWeaponOwnership: true,
+      WeaponOwnershipForbidden: false
     }
     
     /* #endregion */

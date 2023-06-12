@@ -26,7 +26,7 @@ function syncNation(nationName) {
   gameStats.Nations[nationName].HeavyArmamentsStockpiled = max(0, gameStats.Nations[nationName].HeavyArmamentsStockpiled);
 
   // Expected Weapons for private militaries
-  gameStats.Nations[nationName].ExpectedPrivateBasicArmaments = n.AristocracyBasicArmaments + n.BurgousieBasicArmaments;
+  gameStats.Nations[nationName].ExpectedPrivateBasicArmaments = n.AristocracyBasicArmaments + n.BurgousieBasicArmaments + n.ClergyBasicArmaments + n.PopulaceBasicArmaments;
 
   // Influence Change check
   for (const EstateIndex in gameStats.EstatesGeneral) {
