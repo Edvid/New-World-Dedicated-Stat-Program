@@ -299,7 +299,7 @@ let TableLayouts = {
         ["CavalryImprovements", "CavalryQuality", "LightCavalry", "HeavyCavalry", "EliteCavalry"],
         ["SiegeImprovements", "SiegeQuality", "SiegeEquipment", "LargeSiegeEquipment"],
         ["ArtilleryImprovements", "ArtilleryQuality", "RegimentalGuns", "FieldCannons", "SiegeGuns"],
-        ["Manpower", "OverallNumbers", "UnitUpkeep", "EliteUnitsCap", "Spies", "SpyQuality"]
+        ["Manpower", "OverallNumbers", "UnitUpkeep", "ArmyWages", "EliteUnitsCap", "Spies", "SpyQuality"]
     ],
     "Private Armies": [
       ["AristocracyLevies", "AristocracyMilitia", "AristocracyLightInfantry", "AristocracyHeavyInfantry", "AristocracyEliteInfantry", "AristocracyArchers", "AristocracyCrossbowmen", "AristocracyMusketeers", "AristocracyMusketMilitia", "AristocracyRiflemen", "AristocracyLightCavalry", "AristocracyHeavyCavalry", "AristocracyEliteCavalry"],
