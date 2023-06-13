@@ -685,4 +685,4 @@ class MapCCFCalculations {
 
 }
 
-new MapCCFCalculations();
+let mapCCFCalculations = new MapCCFCalculations();

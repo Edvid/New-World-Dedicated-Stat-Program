@@ -1475,7 +1475,7 @@ class Formulas{
       let now = Date.now();
       if (now - then > 2000) {
         await new Promise(resolve => setTimeout(resolve));
-        console.log(`${i} out of ${newImgArray.length}. ${i / newImgArray.length * 100}%`);
+        mapCCFCalculations.reportProgress(i/4);
         then = now;
       }
 
