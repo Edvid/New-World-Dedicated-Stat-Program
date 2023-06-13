@@ -1058,7 +1058,7 @@ class Formulas{
     n.SolsSorted.reverse();
     n.LiteracyLeft = n.LiteracyPercent / 100 - n.Workforces.Intellectuals - n.Workforces.Bureaucrats;
     for (const SolIndex in n.SolsSorted) {
-      Estate = n.SolsSorted[SolIndex];
+      let Estate = n.SolsSorted[SolIndex];
       Estate = Estate.substring(0, Estate.length - 3);
 
       if (n.LiteracyLeft > (isNaN(n.Workforces[Estate]) ? 0 : n.Workforces[Estate])) {
