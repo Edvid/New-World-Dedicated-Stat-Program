@@ -276,7 +276,7 @@ let TableLayouts = {
   "Upkeeps and Income": [
         ["OverallIncome", "OverallSpending"],
         ["TaxRevenue", "TariffsRevenue", "PassiveInvestmentIncome", "StateProductionRevenue", "StateResourceRevenue", "StateAgricultureRevenue"],
-        ["ArmyUpkeep", "NavyUpkeep", "FortUpkeep", "NewTroopRecruitmentPenalty", "SpyUpkeep"],
+        ["ArmyUpkeep", "NavyUpkeep", "FortUpkeep", "TroopRecruitmentCost", "SpyUpkeep"],
         ["EducationUpkeep", "PopulationControlUpkeep", "HygieneUpkeep", "ResearchUpkeep", "PropagandaUpkeep"],
         ["SocialSpendingUpkeep", "AgricultureSpending", "AdministrativeUpkeep", "StateWorkersUpkeep"]
     ],
@@ -419,7 +419,7 @@ let TableLayouts = {
         ["MiningEfficiency", "BaseIronHarvest", "BaseCoalHarvest", "BaseSulphurHarvest", "Forestry", "Reforestation", "ForestsLeft"],
         ["MaxCoal", "MaxSulphur", "MaxIron", "MaxCopper", "MaxGold", "MaxFur", "MaxDiamond", "MaxSilver", "MaxIvory"],
         ["Coal", "Sulphur", "Iron", "Copper", "Gold", "Fur", "Diamond", "Silver", "Ivory", "Wood"],
-        ["EffectiveCoal", "EffectiveSulphur", "EffectiveIron", "EffectiveCopper", "EffectiveGold", "EffectiveFur", "EffectiveDiamond", "EffectiveSilver", "EffectiveIvory"],
+        ["EffectiveCoal", "EffectiveSulphur", "EffectiveIron", "EffectiveCopper", "EffectiveGold", "EffectiveFur", "EffectiveDiamond", "EffectiveSilver", "EffectiveIvory", "EffectiveWood"],
         ["Cotton", "Tea", "Silk", "Spice", "Wool", "Coffee", "Cocoa", "Tobacco", "Sugar", "ExoticFruit"],
         ["EffectiveCotton", "EffectiveTea", "EffectiveSilk", "EffectiveSpice", "EffectiveWool", "EffectiveCoffee", "EffectiveCocoa", "EffectiveTobacco", "EffectiveSugar", "EffectiveExoticFruit"],
         ["ResourceBudgetBoost"]

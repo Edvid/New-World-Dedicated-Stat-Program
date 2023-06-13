@@ -220,14 +220,6 @@ function evaluateNation(nationName) {
   n.UpkeepForOneMediumShip = ((3 + n.Technologies.Gunports * 5) * (n.NavyQualityIC)) / gameStats.TimeDivide;
   n.UpkeepForOneHeavyShip = ((6 + n.Technologies.Gunports * 15) * (n.NavyQualityIC)) / gameStats.TimeDivide;
 
-  n.NavyUpkeep = (
-    n.MerchantShips * n.UpkeepForOneMerchantShip +
-    n.LightShips * n.UpkeepForOneLightShip +
-    n.MediumShips * n.UpkeepForOneMediumShip +
-    n.HeavyShips * n.UpkeepForOneHeavyShip +
-    n.Workforces.Sailors * n.Population / 1000 * n.SailorsWage
-   );
-
   n.BaseIronHarvest = (
     n.Climates.TaigaAndTundra.Pixels * 0.1 +
     n.Climates.MontaneForest.Pixels * 0.75 +
@@ -288,8 +280,14 @@ function evaluateNation(nationName) {
 
     n.PopInAgriculture = n.Workforces.Farmers + n.Workforces.Serfs;
     n.AgricultureSpending = (n.Workforces.Farmers * n.Population / 1000 * n.AgricultureInfrastructure / 100 * (1 + n.AgricultureSubsidies / 10) * n.StockingCapabilities) / 2 / gameStats.TimeDivide;
-    n.DailyFood = (n.Workforces.Farmers + n.Workforces.Serfs) * n.Population / 1000 * n.FarmingEfficiency * (1 - n.Pillaging) + n.FoodIncoming - n.FoodOutgoing;
-  
+
+  n.NavyUpkeep = (
+    n.MerchantShips * n.UpkeepForOneMerchantShip +
+    n.LightShips * n.UpkeepForOneLightShip +
+    n.MediumShips * n.UpkeepForOneMediumShip +
+    n.HeavyShips * n.UpkeepForOneHeavyShip +
+    n.Workforces.Sailors * n.Population / 1000 * n.SailorsWage
+  );
   
  let GatheringEffectiveness = function (name) {
     switch (name) {
@@ -350,8 +348,9 @@ function evaluateNation(nationName) {
       }
       return er;
     })();
+  }
 
-    }
+  n.DailyFood = (n.Workforces.Farmers + n.Workforces.Serfs) * n.Population / 1000 * n.FarmingEfficiency * (1 - n.Pillaging) + n.FoodIncoming - n.FoodOutgoing;
 
   n.EffectiveIron += n.BaseIronHarvest;
   n.EffectiveCoal += n.BaseCoalHarvest;
@@ -367,6 +366,7 @@ function evaluateNation(nationName) {
   n.Production = n.Population / 1000 * n.Workforces.Townsfolk * n.ProductionEfficiency / 2;
 
   n.Wood = n.Forestry * 10;
+  n.EffectiveWood = n.Wood + n.WoodIncoming - n.WoodOutgoing;
 
   n.ForestsLeft = (
     n.Climates.TaigaAndTundra.Pixels * 0.85 +
@@ -412,6 +412,8 @@ function evaluateNation(nationName) {
   (isNaN(n.Workforces.Aristocracy) ? 0 : n.Workforces.Aristocracy) * (n.ExpectedAristocracySol > 1 ? (n.ExpectedAristocracySol - 1) : 0) +
     (isNaN(n.Workforces.Burgousie) ? 0 : n.Workforces.Burgousie) * (n.ExpectedBurgousieSol > 1 ? (n.ExpectedBurgousieSol - 1) : 0)
   );
+
+  n.TotalSupply = n.ProductionSectors.ConstructionSector + n.ProductionSectors.BasicArmamentsSector + n.ProductionSectors.HeavyArmamentsSector + n.ProductionSectors.ShipBuildingSector + n.ProductionSectors.BasicToolsSector + n.ProductionSectors.TextilesSector + n.ProductionSectors.BasicGoodsSector + n.ProductionSectors.LuxuryGoodsSector + n.ProductionSectors.AlcoholSector + n.ProductionSectors.ChemicalSector + n.ProductionSectors.ElectronicsSector + n.ProductionSectors.AutomotiveSector + n.ProductionSectors.AerospaceSector + n.ProductionSectors.HeavyIndustrySector;
 
   n.SulphurDemand = (n.HandCannoneers * 0.5 + n.MusketMilitia * 0.75 + (n.Musketeers + n.Riflemen) + n.RegimentalGuns * 10 + n.FieldCannons * 20 + n.SiegeGuns * 50) / 5000 + n.Health;
   n.CoalDemand = (n.Production * (n.ProductionSectors.HeavyIndustrySector / n.TotalSupply) / 10 + n.Production * (n.ProductionSectors.HeavyArmamentsSector / n.TotalSupply) / 6 + n.Production * (n.ProductionSectors.BasicArmamentsSector / n.TotalSupply) / 8 + n.Production * (n.ProductionSectors.BasicToolsSector / n.TotalSupply) / 10) / n.ProductionEfficiency + ((min(n.AverageExpectedSol, 1) * 0.005 + n.LuxuriesDemand * 0.01) * n.Population / 1000) / 10;
@@ -465,18 +467,31 @@ function evaluateNation(nationName) {
     HeavyCavalry: 1.5 * n.CavalryQualityIC,
     EliteCavalry: 1.6 * n.CavalryQualityIC
   }
+  n.UnitsArmamentsDemandsAll = {
+    Levies: 0.2 * n.IrregularQualityIC,
+    Militia: 0.3 * n.IrregularQualityIC,
+    LightInfantry: 0.6 * n.MeleeQualityIC,
+    HeavyInfantry: 0.95 * n.MeleeQualityIC,
+    EliteInfantry: 1.1 * n.MeleeQualityIC,
+    Archers: 0.5 * n.RangedQualityIC,
+    Crossbowmen: 0.75 * n.RangedQualityIC,
+    HandCannoneers: 0.75 * n.FirearmQualityIC,
+    Musketeers: 0.85 * n.FirearmQualityIC,
+    MusketMilitia: 0.75 * n.FirearmQualityIC,
+    Riflemen: 1.5 * n.FirearmQualityIC,
+    LightCavalry: 1.2 * n.CavalryQualityIC,
+    HeavyCavalry: 1.5 * n.CavalryQualityIC,
+    EliteCavalry: 1.6 * n.CavalryQualityIC
+  }
 
   n.ArmyBasicArmamentsDemand = 0;
-  for (const UnitIndex in n.UnitsArmamentsDemands) {
+  for (const UnitIndex in n.UnitsArmamentsDemandsAll) {
     const Unit = UnitIndex;
-    const Cost = n.UnitsArmamentsDemands[Unit];
+    const Cost = n.UnitsArmamentsDemandsAll[Unit];
     n.ArmyBasicArmamentsDemand += n[Unit] / 1000 * Cost;
   }
-  n.ArmyBasicArmamentsDemand += n.HandCannoneers * 0.75 * n.FirearmQualityIC;
 
   //n.ArmyBasicArmamentsDemand = ((n.Levies * 0.15 + n.Militia * 0.25) * n.IrregularQualityIC + (n.LightInfantry * 0.5 + n.HeavyInfantry * 0.85 + n.EliteInfantry * 1) * n.MeleeQualityIC + (n.Archers * 0.5 + n.Crossbowmen * 0.7) * n.RangedQualityIC + (n.HandCannoneers * 0.75 + n.Musketeers * 0.8 + n.MusketMilitia * 0.7 + n.Riflemen * 1.25) * n.FirearmQualityIC + (n.LightCavalry * 1 + n.HeavyCavalry * 1.25 + n.EliteCavalry * 1.5) * n.CavalryQualityIC) / 1000;
-
-  n.UnitUpkeep = (n.ArmyBasicArmamentsDemand * n.BasicArmamentsValue + (n.RegimentalGuns * 0.05 + n.FieldCannons * 0.1 + n.SiegeGuns * 0.2) * n.ArtilleryQualityIC * n.HeavyArmamentsValue) / gameStats.TimeDivide;
 
   n.BasicToolsDemand = (n.Production * (n.ProductionSectors.AerospaceSector / n.TotalSupply) + n.Production * (n.ProductionSectors.AutomotiveSector / n.TotalSupply) + n.Production * (n.ProductionSectors.ElectronicsSector / n.TotalSupply) + n.Production * (n.ProductionSectors.ChemicalSector / n.TotalSupply) / 4 + n.Production * (n.ProductionSectors.HeavyIndustrySector / n.TotalSupply) / 10 + n.Production * (n.ProductionSectors.LuxuryGoodsSector / n.TotalSupply) / 4 + n.Production * (n.ProductionSectors.BasicGoodsSector / n.TotalSupply) / 4 + n.Production * (n.ProductionSectors.ShipBuildingSector / n.TotalSupply) + n.Production * (n.ProductionSectors.TextilesSector / n.TotalSupply) / 4 + n.Production * (n.ProductionSectors.HeavyArmamentsSector / n.TotalSupply) / 4 + n.Production * (n.ProductionSectors.BasicArmamentsSector / n.TotalSupply) / 4 + n.Production * (n.ProductionSectors.ConstructionSector / n.TotalSupply)) / n.ProductionEfficiency + (min(n.AverageExpectedSol, 1) * n.Population / 1000) / 200;
   n.HousingDemand = ((min(n.AverageExpectedSol, 1) * 0.5 + n.LuxuriesDemand * 1) * n.Population / 1000) / 200;
@@ -505,8 +520,6 @@ function evaluateNation(nationName) {
   n.NaturalFabricsShortage = min(1, max(0, 1 - (n.NaturalFabrics / (n.NaturalFabricsDemand * 0.9))));
   n.LuxuryNaturalFabricsShortage = min(1, max(0, 1 - (n.LuxuryNaturalFabrics / (n.LuxuryNaturalFabricsDemand * 0.9))));
   n.ValuableMaterialsShortage = min(1, max(0, 1 - (n.ValuableMaterials / (n.ValuableMaterialsDemand * 0.9))));
-
-  n.TotalSupply = n.ProductionSectors.ConstructionSector + n.ProductionSectors.BasicArmamentsSector + n.ProductionSectors.HeavyArmamentsSector + n.ProductionSectors.ShipBuildingSector + n.ProductionSectors.BasicToolsSector + n.ProductionSectors.TextilesSector + n.ProductionSectors.BasicGoodsSector + n.ProductionSectors.LuxuryGoodsSector + n.ProductionSectors.AlcoholSector + n.ProductionSectors.ChemicalSector + n.ProductionSectors.ElectronicsSector + n.ProductionSectors.AutomotiveSector + n.ProductionSectors.AerospaceSector + n.ProductionSectors.HeavyIndustrySector;
 
   n.BasicTools = n.Production * (n.ProductionSectors.BasicToolsSector / n.TotalSupply) * (1.1 - n.WoodShortage) * (1.1 - n.IronShortage) * (1.1 - n.CoalShortage) * n.ToolWorkingEfficiency;
   n.EffectiveBasicTools = n.BasicTools + n.BasicToolsIncoming - n.BasicToolsOutgoing;
@@ -607,6 +620,10 @@ function evaluateNation(nationName) {
     const resource = gameStats.ResourceTypes[resourceIndex];
     n[resource + "Value"] = n[resource + "Demand"] / (isNaN(n["Effective" + resource]) ? 1 : (n["Effective" + resource] == 0 ? 1 : n["Effective" + resource])) * n[resource + "BaseValue"];
   }
+
+  n.UnitUpkeep = (n.ArmyBasicArmamentsDemand * n.BasicArmamentsValue + (n.RegimentalGuns * 0.05 + n.FieldCannons * 0.1 + n.SiegeGuns * 0.2) * n.ArtilleryQualityIC * n.HeavyArmamentsValue) / gameStats.TimeDivide;
+  n.UnitUpkeep += n.SiegeEquipment * 0.1;
+  n.UnitUpkeep += n.LargeSiegeEquipment * 0.2;
 
   n.LuxuryConsumablesValue = n.LuxuryConsumablesDemand / (n.LuxuryConsumables + 0.1);
   n.FoodAdditionsValue = n.FoodAdditionsDemand / (n.FoodAdditions + 0.1);
@@ -781,7 +798,7 @@ function evaluateNation(nationName) {
     })();
 
   n.Food = max(0, n.Food);
-  n.FoodConsumption = n.Population / 1000;
+  n.FoodConsumption = n.Population / 1000 + n.Production * (n.ProductionSectors.AlcoholSector / n.TotalSupply);
   n.FoodGain = n.DailyFood + n.Food - n.FoodConsumption;
   if (n.FoodGain > 0 && n.FoodRationing == false) {
     n.FoodConsumption += min(n.FoodGain, max(0, n.FoodDemand - n.Population / 1000));
@@ -891,17 +908,36 @@ function evaluateNation(nationName) {
   n.FutureHigherEducation = n.HigherEducation + (n.Education >= 3 ? n.Education / 30 : 0) + (n.HigherEducation > n.Education / 3 ? -0.25 : 0);
 
 
-  n.NewTroopRecruitmentPenalty = (function () {
+  n.TroopRecruitmentCost = (function () {
     let ntrp = 0;
-    for (const unitName in gameStats.UnitUpkeepCosts) {
-      const cost = gameStats.UnitUpkeepCosts[unitName];
-      ntrp += n["New_" + unitName] * cost * n[unitType(unitName) + 'QualityIC'];
+    let nm = 0;
+    let ns = 0;
+    for (const unitName in n.UnitsArmamentsDemandsAll) {
+      const cost = n.UnitsArmamentsDemandsAll[unitName];
+      ntrp += n["New_" + unitName] * cost / 1000 * n.BasicArmamentsValue;
+      nm += n["New_" + unitName];
     }
-    ntrp += n.New_MerchantShips * n.UpkeepForOneMerchantShip;
-    ntrp += n.New_LightShips * n.UpkeepForOneLightShip;
-    ntrp += n.New_MediumShips * n.UpkeepForOneMediumShip;
-    ntrp += n.New_HeavyShips * n.UpkeepForOneHeavyShip;
+    ntrp += n.New_SiegeEquipment * 0.1;
+    ntrp += n.New_LargeSiegeEquipment * 0.2;
+    nm += (n.New_SiegeEquipment + n.New_LargeSiegeEquipment) * 10;
+    ntrp += n.New_RegimentalGuns * 0.05 * n.HeavyArmamentsValue;
+    nm += n.New_RegimentalGuns * 3;
+    ntrp += n.New_FieldCannons * 0.1 * n.HeavyArmamentsValue;
+    nm += n.New_FieldCannons * 6;
+    ntrp += n.New_SiegeGuns * 0.2 * n.HeavyArmamentsValue;
+    nm += n.New_SiegeGuns * 10;
 
+    ntrp += n.New_MerchantShips * n.UpkeepForOneMerchantShip;
+    ns += n.New_MerchantShips * 200;
+    ntrp += n.New_LightShips * n.UpkeepForOneLightShip;
+    ns += n.New_LightShips * 400;
+    ntrp += n.New_MediumShips * n.UpkeepForOneMediumShip;
+    ns += n.New_MediumShips * 900;
+    ntrp += n.New_HeavyShips * n.UpkeepForOneHeavyShip;
+    ns += n.New_HeavyShips * 1600;
+
+    ntrp += ns * n.SailorsWage / 1000;
+    ntrp += nm * n.SoldiersWage / 1000;
     ntrp /= 2;
     return ntrp;
   })();
@@ -1123,7 +1159,6 @@ function evaluateNation(nationName) {
   n.SoldiersEffectiveWage = n.SoldiersWage * (1 - n.MilitaryTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.MilitaryInfluence)) + (n.ExpectedSoldiersSol < n.AverageExpectedSol ? n.SocialSpending / 10 : 0);
   n.AristocracyEffectiveWage = n.AristocracyWage * (1 - n.AristocracyTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.AristocracyInfluence)) + (n.ExpectedAristocracySol < n.AverageExpectedSol ? n.SocialSpending / 10 : 0) - (n.AristocracyBasicArmaments * n.BasicArmamentsValue) / (n.Population * n.Workforces.Aristocracy / 1000);
   n.BurgousieEffectiveWage = n.BurgousieWage * (1 - n.BurgousieTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.BurgousieInfluence)) + (n.ExpectedBurgousieSol < n.AverageExpectedSol ? n.SocialSpending / 10 : 0) - (n.BurgousieBasicArmaments * n.BasicArmamentsValue) / (n.Population * n.Workforces.Burgousie / 1000);
-  debugger;
 
   // n.SocialSpendingUpkeep
   n.SocialSpendingUpkeep = 0;
@@ -1317,7 +1352,7 @@ function evaluateNation(nationName) {
   n.StateResourceRevenue = (n.Reforms.GovernmentResourceOwnership ? n.ResourceBudgetBoost : 0);
 
   n.OverallIncome = n.PassiveInvestmentIncome + n.TariffsRevenue + n.TaxRevenue + n.BudgetIncoming + n.StateProductionRevenue + n.StateAgricultureRevenue + n.StateResourceRevenue;
-    n.OverallSpending = n.ArmyUpkeep + n.NavyUpkeep + n.FortUpkeep + n.EducationUpkeep + n.HygieneUpkeep + n.AgricultureSpending + n.SocialSpendingUpkeep + n.SpyUpkeep + n.PopulationControlUpkeep + n.PropagandaUpkeep + n.AdministrativeUpkeep + n.StateWorkersUpkeep + n.ResearchUpkeep + n.NewTroopRecruitmentPenalty + n.BudgetOutgoing;
+    n.OverallSpending = n.ArmyUpkeep + n.NavyUpkeep + n.FortUpkeep + n.EducationUpkeep + n.HygieneUpkeep + n.AgricultureSpending + n.SocialSpendingUpkeep + n.SpyUpkeep + n.PopulationControlUpkeep + n.PropagandaUpkeep + n.AdministrativeUpkeep + n.StateWorkersUpkeep + n.ResearchUpkeep + n.TroopRecruitmentCost + n.BudgetOutgoing;
     n.DailyBudget = n.OverallIncome - n.OverallSpending;
     n.FutureBudget = n.Budget + n.DailyBudget;
 
