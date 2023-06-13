@@ -290,7 +290,7 @@ let TableLayouts = {
       ["PopProductionRevenue", "StateProductionRevenue"]
     ],
     "Army": [
-		["OverallImprovements", "CommanderFreedom", "IronShortage", "SulphurShortage", "ArmyWages"],
+      ["OverallImprovements", "CommanderFreedom", "SoldiersWage", "BasicArmamentsStockpiled", "HeavyArmamentsStockpiled", "BasicArmamentsArmyShortage", "HeavyArmamentsShortage", "IronShortage", "SulphurShortage"],
 		["MilitaryLoyalty", "MilitaryMorale", "MilitaryDiscipline"],
         ["IrregularImprovements", "IrregularQuality", "Levies", "Militia"],
         ["MeleeImprovements", "MeleeQuality", "LightInfantry", "HeavyInfantry", "EliteInfantry"],
@@ -300,6 +300,12 @@ let TableLayouts = {
         ["SiegeImprovements", "SiegeQuality", "SiegeEquipment", "LargeSiegeEquipment"],
         ["ArtilleryImprovements", "ArtilleryQuality", "RegimentalGuns", "FieldCannons", "SiegeGuns"],
         ["Manpower", "OverallNumbers", "UnitUpkeep", "EliteUnitsCap", "Spies", "SpyQuality"]
+    ],
+    "Private Armies": [
+      ["AristocracyLevies", "AristocracyMilitia", "AristocracyLightInfantry", "AristocracyHeavyInfantry", "AristocracyEliteInfantry", "AristocracyArchers", "AristocracyCrossbowmen", "AristocracyMusketeers", "AristocracyMusketMilitia", "AristocracyRiflemen", "AristocracyLightCavalry", "AristocracyHeavyCavalry", "AristocracyEliteCavalry"],
+      ["BurgousieLevies", "BurgousieMilitia", "BurgousieLightInfantry", "BurgousieHeavyInfantry", "BurgousieEliteInfantry", "BurgousieArchers", "BurgousieCrossbowmen", "BurgousieMusketeers", "BurgousieMusketMilitia", "BurgousieRiflemen", "BurgousieLightCavalry", "BurgousieHeavyCavalry", "BurgousieEliteCavalry"],
+      ["ClergyLevies", "ClergyMilitia", "ClergyLightInfantry", "ClergyHeavyInfantry", "ClergyEliteInfantry", "ClergyArchers", "ClergyCrossbowmen", "ClergyMusketeers", "ClergyMusketMilitia", "ClergyRiflemen", "ClergyLightCavalry", "ClergyHeavyCavalry", "ClergyEliteCavalry"],
+      ["PopulaceMilitia", "PopulaceMusketMilitia"]
     ],
     "Debt Stats": [
         ["PossiblePublicDebt", "PublicDebtLength", "InterestRate"],
@@ -311,7 +317,7 @@ let TableLayouts = {
     "Navy": [
         ["UpkeepForOneMerchantShip", "UpkeepForOneLightShip", "UpkeepForOneMediumShip", "UpkeepForOneHeavyShip"],
         ["MerchantShips", "LightShips", "MediumShips", "HeavyShips"],
-        ["NavyImprovements", "NavyTech", "NavyQuality"],
+        ["NavyImprovements", "NavyTech", "NavyQuality", "SailorsWage"],
         ["OverallShipCount", "MerchantShipsFullfilment", "TradeProtection", "NavalPower"]
     ],
     "Agriculture": [
@@ -351,12 +357,13 @@ let TableLayouts = {
         ["ResourceReformRegressionCost", "ResourceReformAdvanceCost", "Reforms.NobleResourceOwnership", "Reforms.MixedResourceOwnership", "Reforms.BurgousieResourceOwnership", "Reforms.GovernmentResourceOwnership"],
         ["LandReformRegressionCost", "LandReformAdvanceCost", "Reforms.NobleLandOwnership", "Reforms.MixedLandOwnership", "Reforms.PrivateLandOwnership", "Reforms.GovernmentLandOwnership"],
         ["ArmyReformRegressionCost", "ArmyReformAdvanceCost", "Reforms.NationalMilitia", "Reforms.FeudalLevies", "Reforms.ProffesionalArmy", "Reforms.MassConscription"],
-        ["PrivateArmiesReformRegressionCost", "PrivateArmiesReformAdvanceCost", "Reforms.FeudalNobleArmies", "Reforms.PrivateMercenariesOnly", "Reforms.NoPrivateMilitaries"],
         ["CensorshipReformRegressionCost", "CensorshipReformAdvanceCost", "Reforms.StateMediaOnly", "Reforms.ExtensiveCensorship", "Reforms.LimitedCensorship", "Reforms.FreeSpeech"],
         ["SocialReformRegressionCost", "SocialReformAdvanceCost", "Reforms.NoSocialMobility", "Reforms.RestrictedSocialMobility", "Reforms.UnrestrictedSocialMobility"],
         ["ReligiousReformRegressionCost", "ReligiousReformAdvanceCost", "Reforms.StateReligion", "Reforms.RestrictiveReligionLaws", "Reforms.FreedomOfReligion"],
         ["EducationReformRegressionCost", "EducationReformAdvanceCost", "Reforms.PrivateEducationOnly", "Reforms.ReligiousSchools", "Reforms.PublicEducation"],
-        ["PoliceReformRegressionCost", "PoliceReformAdvanceCost", "Reforms.CommunityPolicing", "Reforms.RegionalPolice", "Reforms.StatePolice", "Reforms.SecretPolice"]
+        ["PoliceReformRegressionCost", "PoliceReformAdvanceCost", "Reforms.CommunityPolicing", "Reforms.RegionalPolice", "Reforms.StatePolice", "Reforms.SecretPolice"],
+        ["WeaponReformRegressionCost", "WeaponReformAdvanceCost", "Reforms.NoWeaponLaws", "Reforms.LimitedWeaponOwnership", "Reforms.WeaponOwnershipForbidden"],
+        ["FeudalArmiesChangeCost", "Reforms.FeudalNobleArmies", "MercenariesChangeCost", "Reforms.Mercenaries", "ReligiousOrdersChangeCost", "Reforms.ReligiousOrders"]
 	],
     "Trade Influence - Americas": [
         [ti("Alaska"), ti("Cascadia"), ti("CaliforniaAndWestMexico"), ti("HudsonBay"), ti("GreatLakes"), ti("Louisiana"), ti("GulfOfMexico"), ti("LawrenceGulf"), ti("EastCoast"), ti("Carribean"), ti("CentralAmerica")],
@@ -398,7 +405,7 @@ let TableLayouts = {
     ],
     "Cultural Advancements": [
         ["CulturalAdvancements.DivineRightToRule", "CulturalAdvancements.Serfdom", "CulturalAdvancements.Feudalism"],
-        ["CulturalAdvancements.Universities", "CulturalAdvancements.AristocracyDuty"],
+        ["CulturalAdvancements.Universities", "CulturalAdvancements.NobleDuty"],
         ["CulturalAdvancements.Courthouses"],
         ["CulturalAdvancements.RenaissanceThought", "CulturalAdvancements.EarlyModernAdministration"],
         ["CulturalAdvancements.NationalSovereignity", "CulturalAdvancements.Newspapers"],

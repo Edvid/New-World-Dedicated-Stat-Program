@@ -180,6 +180,8 @@ class Nation {
   IronShortage;
   SulphurShortage;
   CommanderFreedom;
+  BasicArmamentsStockpiled;
+  HeavyArmamentsStockpiled;
   ArmyWages;
   TrainingQuality;
   ArmyTech;
@@ -640,7 +642,9 @@ class Nation {
     this.ExpectedSailorsSol = 0.75;
     this.ExpectedSoldiersSol = 1;
     this.ExpectedAristocracySol = 17.5;
-    this.ExpectedBurgousieSol = 12;
+    this.ExpectedBurgousieSol = 10;
+
+    this.ExpectedPrivateBasicArmaments = 2.5;
     
     this.EstateInfluences = {
       AristocracyInfluence: 30,
@@ -743,7 +747,10 @@ class Nation {
 
 
     this.CommanderFreedom = 0;
-    this.ArmyWages = 1.00;
+    this.BasicArmamentsStockpiled = 0;
+    this.HeavyArmamentsStockpiled = 0;
+    this.SailorsWage = 1.00;
+    this.SoldiersWage = 1.50;
     this.MilitaryDiscipline = 1.00; //Show In Percent
     /* #endregion */
 
@@ -803,8 +810,8 @@ class Nation {
 
     this.ProductionSectors = {
         ConstructionSector: 2.5,
-        BasicArmamentsSector: 0.25,
-        HeavyArmamentsSector: 0.2,
+        BasicArmamentsSector: 2,
+        HeavyArmamentsSector: 0.25,
         ShipBuildingSector: 0.2,
         BasicToolsSector: 4,
         TextilesSector: 2,
@@ -981,8 +988,8 @@ class Nation {
       MassConscription: false,
 
       FeudalNobleArmies: true,
-      PrivateMercenariesOnly: false,
-      NoPrivateMilitaries: false,
+      Mercenaries: true,
+      ReligiousOrders: true,
 
       StateMediaOnly: false,
       ExtensiveCensorship: true,
@@ -1004,7 +1011,11 @@ class Nation {
       CommunityPolicing: true,
       RegionalPolice: false,
       StatePolice: false,
-      SecretPolice: false
+      SecretPolice: false,
+
+      NoWeaponLaws: false,
+      LimitedWeaponOwnership: true,
+      WeaponOwnershipForbidden: false
     }
     
     /* #endregion */
@@ -1024,7 +1035,7 @@ class Nation {
       Serfdom: false,
       Feudalism: false,
       Universities: false,
-      AristocracyDuty: false,
+      NobleDuty: false,
       Courthouses: false,
       RenaissanceThought: false,
       EarlyModernAdministration: false,
