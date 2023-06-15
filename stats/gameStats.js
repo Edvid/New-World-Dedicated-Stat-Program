@@ -1889,7 +1889,7 @@ class Stats{
         Color: "103c6d"
       },
       PolarDesert: {
-          ClimateScore: 0,
+          ClimateScore: 0.001,
           Color: "808080"
       },
       TaigaAndTundra: {
