@@ -1681,13 +1681,10 @@ class Formulas{
         }
       });
 
-      if (typeof pair === 'undefined') console.log(mapCCFCalculationsInstance[`${dataName}ColorProperties`]);
-
       return pair;
     }
 
     function fetchName(dataName) {
-      console.log(fetchPropertyObject(dataName));
       return fetchPropertyObject(dataName).name;
     }
 
@@ -1696,10 +1693,6 @@ class Formulas{
       let nullableName = propertyPair ? propertyPair.name : `not-${isName}`;
       return nullableName == isName; 
     }
-
-    function fetchScore(dataName){
-      return fetchPropertyObject(dataName).score;
-    } 
     
     let nationName = fetchName("nation");
     let n = gameStats.Nations[nationName];
@@ -1713,7 +1706,8 @@ class Formulas{
     let developmentScore = Formulas.fetchFour(mapCCFCalculationsInstance.developmentData, pixelIndex)[0]; //reading red channel as shorthand for greyscale
     developmentScore = (255 - developmentScore) / 255;
 
-    let fertilityScore = fetchScore("fertility");
+    let fertilityName = fetchName("fertility");
+    let fertilityScore = gameStats.Fertility[fertilityName].Score;
 
     let PixelsDisease;
     let PixelsPopGrowth;
@@ -1733,8 +1727,7 @@ class Formulas{
     newPixel[1] = Math.floor(newPixelPop / 256) % 256;
     newPixel[0] = Math.floor(newPixelPop / 65536) % 256;
 
-    if(pixelPop > 0 /*&& pixelpop!='undefined'*/) debugger;
-
+    
     return newPixel;
   }
 
