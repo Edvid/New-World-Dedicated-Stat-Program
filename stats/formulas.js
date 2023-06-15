@@ -1587,11 +1587,23 @@ class Formulas{
   }
 
   static fetchFour(arr, index){
+
+    
+    if(typeof arr != 'function')
+    {
+      return [
+        arr[index],
+        arr[index + 1],
+        arr[index + 2],
+        arr[index + 3]
+      ];
+    }
+
     return [
-      arr[index],
-      arr[index + 1],
-      arr[index + 2],
-      arr[index + 3]
+      arr(index),
+      arr(index + 1),
+      arr(index + 2),
+      arr(index + 3)
     ];
   }
 
@@ -1683,18 +1695,26 @@ class Formulas{
 
   static maxPopInPixel = 50000;
 
+  static RBGAsNum(imgArr, pIndex){
+    let pixel = Formulas.fetchFour(imgArr, pIndex);
+    if(pixel[3] < 128) return; //if transparent, abort
 
-  static PopulationMapHumanReadable(imgArray, pixelIndex, options){    
-    let pixel = Formulas.fetchFour(imgArray, pixelIndex);
-    if(pixel[3] < 128) return pixel; //if transparent, don't modify the pixel at all
+    let pixelVal = pixel[0];
+    pixelVal *= 255;
+    pixelVal += pixel[1];
+    pixelVal *= 255;
+    pixelVal += pixel[2];
 
-    let pixelPop = pixel[0];
-    pixelPop *= 255;
-    pixelPop += pixel[1];
-    pixelPop *= 255;
-    pixelPop += pixel[2];
+    return pixelVal;
+  }
 
-    let color = Formulas.hexAsNumToHumanReadableMinMaxGradient.colorAtPos(pixelPop / Formulas.maxPopInPixel);
+
+  static PopulationMapHumanReadable(imgArray, pixelIndex, options){
+    let pixelPop = Formulas.RBGAsNum(imgArray, pixelIndex);
+    //if no return value of RBGAsNum was given, color is just the color it was previously
+    let color = pixelPop == null ? 
+      Formulas.fetchFour(imgArray, pixelIndex) : 
+      Formulas.hexAsNumToHumanReadableMinMaxGradient.colorAtPos(pixelPop / Formulas.maxPopInPixel);
     
     return color;
   }
