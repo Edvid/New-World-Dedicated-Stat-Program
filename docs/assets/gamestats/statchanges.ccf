@@ -630,10 +630,26 @@
 
 = "5eff91" TestNA.Color
 = "0094ff" TestEU.Color
-= "01ffff" TestAS.Color
+= "00ffff" TestAS.Color
 = "7f3300" TestAR.Color
 = "b6ff00" TestAF.Color
 = "b200ff" TestAU.Color
-= "01ff21" TestSA.Color
+= "00ff21" TestSA.Color
+
+= 100000 TestNA.Climates.Moderate
+= 100000 TestEU.Climates.Moderate
+= 100000 TestAS.Climates.Moderate
+= 100000 TestAR.Climates.Moderate
+= 100000 TestAF.Climates.Moderate
+= 100000 TestAU.Climates.Moderate
+= 100000 TestSA.Climates.Moderate
+
+= 1.5 TestNA.AgrAdv
+= 1.5 TestEU.AgrAdv
+= 1.5 TestAS.AgrAdv
+= 1.5 TestAR.AgrAdv
+= 1.5 TestAF.AgrAdv
+= 1.5 TestAU.AgrAdv
+= 1.5 TestSA.AgrAdv
 
 <

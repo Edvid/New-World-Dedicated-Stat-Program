@@ -1314,6 +1314,8 @@ class Formulas{
 
     n.PopulationGrowth = (n.PseudoPopulationGrowth < 0 ? n.PseudoPopulationGrowth : n.PseudoPopulationGrowth * (1 - n.Disease));
 
+    debugger;
+
     n.FuturePopulation = (function () {
       return n.Population + n.Population * n.PopulationGrowth;
     })();
@@ -1678,11 +1680,14 @@ class Formulas{
           return;
         }
       });
-      
+
+      if (typeof pair === 'undefined') console.log(mapCCFCalculationsInstance[`${dataName}ColorProperties`]);
+
       return pair;
     }
 
-    function fetchName(dataName){
+    function fetchName(dataName) {
+      console.log(fetchPropertyObject(dataName));
       return fetchPropertyObject(dataName).name;
     }
 
@@ -1728,7 +1733,7 @@ class Formulas{
     newPixel[1] = Math.floor(newPixelPop / 256) % 256;
     newPixel[0] = Math.floor(newPixelPop / 65536) % 256;
 
-    if(pixelPop > 0) debugger;
+    if(pixelPop > 0 /*&& pixelpop!='undefined'*/) debugger;
 
     return newPixel;
   }
