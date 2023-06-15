@@ -420,18 +420,23 @@ class MapCCFCalculations {
             <... > Nations
             `.trimIndents());
 
+            
         Object.keys(nationFertilityDistribution).forEach(nationKey => {
             let total = 0;
             Object.keys(nationFertilityDistribution[nationKey]).forEach(FertilityKey => {
-                
+
+                let fertilityColor = gameStats.Fertility[FertilityKey].Color;
                 let fertilityMultiplier = 0;
 
                 self.fertilityColorProperties.forEach(colorNamePair => {
-                    if(colorNamePair.color == FertilityKey){
+                    if(colorNamePair.color == fertilityColor){
                         fertilityMultiplier = colorNamePair.score;
                         return;
                     }
                   });
+
+                  
+                if(fertilityMultiplier > 0) debugger;
 
                 total += nationFertilityDistribution[nationKey][FertilityKey] * fertilityMultiplier;
             });
