@@ -430,13 +430,10 @@ class MapCCFCalculations {
 
                 self.fertilityColorProperties.forEach(colorNamePair => {
                     if(colorNamePair.color == fertilityColor){
-                        fertilityMultiplier = colorNamePair.score;
+                        fertilityMultiplier = gameStats.Fertility[FertilityKey].Score;
                         return;
                     }
                   });
-
-                  
-                if(fertilityMultiplier > 0) debugger;
 
                 total += nationFertilityDistribution[nationKey][FertilityKey] * fertilityMultiplier;
             });
