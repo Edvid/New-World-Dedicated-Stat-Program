@@ -236,7 +236,7 @@ class Nation {
   New_MediumShips;
   New_HeavyShips;
 
-  NewTroopRecruitmentPenalty;
+  TroopRecruitmentCost;
   /* #endregion */
 
   /* #region  Population */
@@ -1521,6 +1521,7 @@ class Stats{
       "Silver",
       "Copper",
       "Coal",
+      "Wood",
       "Ivory",
       "Cocoa",
       "Tobacco",
