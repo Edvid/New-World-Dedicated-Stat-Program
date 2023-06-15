@@ -1728,7 +1728,7 @@ class Formulas{
     newPixel[1] = Math.floor(newPixelPop / 256) % 256;
     newPixel[0] = Math.floor(newPixelPop / 65536) % 256;
 
-    //debugger;
+    if(pixelPop > 0) debugger;
 
     return newPixel;
   }
