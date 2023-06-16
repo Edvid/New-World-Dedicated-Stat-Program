@@ -115,6 +115,8 @@ class MapCCFCalculations {
 
         self.populationXDevelopmentBonusData = await self.mapDataIterator(self.populationXDevelopmentBonusMerger);
 
+        //debugger;
+
         self.progressText.innerText = "adjusting culture map data for population and development";
         await new Promise(resolve => setTimeout(resolve));
 
@@ -706,7 +708,7 @@ class MapCCFCalculations {
     }
 
     populationXDevelopmentMerger(mapIndex){
-        let pixelPop = self.popData[mapIndex];
+        let pixelPop = Formulas.RBGAsNum(self.popData, mapIndex);
         let pixelDev = self.developmentData[mapIndex];
         let ret = pixelPop * pixelDev / 10000;
 
@@ -716,7 +718,7 @@ class MapCCFCalculations {
     }
 
     populationXDevelopmentBonusMerger(mapIndex){
-        let pixelPop = self.popData[mapIndex];
+        let pixelPop = Formulas.RBGAsNum(self.popData, mapIndex);
         let pixelDev = self.developmentData[mapIndex];
         let ret = pixelPop * (128 + pixelDev / 2) / 10000;
         ret = ret % 256;
