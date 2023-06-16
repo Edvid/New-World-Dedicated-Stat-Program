@@ -175,8 +175,10 @@ class Nation {
   MediumForts;
   BigForts;
   HugeForts;
-  ExtraCityFortifications;
-  FortUpkeep;
+  CityFortifications;
+  SupplyDepots;
+  NavalBases;
+  BuildingsUpkeep;
   IronShortage;
   SulphurShortage;
   CommanderFreedom;
@@ -743,7 +745,9 @@ class Nation {
     this.MediumForts = 0;
     this.BigForts = 0;
     this.HugeForts = 0;
-    this.ExtraCityFortifications = 0;
+    this.CityFortifications = 0;
+    this.SupplyDepots = 0;
+    this.NavalBases = 0;
 
 
     this.CommanderFreedom = 0;

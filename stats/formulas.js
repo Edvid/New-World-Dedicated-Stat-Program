@@ -192,16 +192,19 @@ function evaluateNation(nationName) {
 	n.FirearmQualityIC = n.RealOverallImprovements + n.FirearmImprovements + n.Technologies.Matchlock / 5 + n.Technologies.SocketBayonet / 5 + n.Technologies.Flintlock / 5 + n.Technologies.Metallurgy / 10 + n.Technologies.Bayonet / 20;
 	n.SiegeQualityIC = n.RealOverallImprovements + n.SiegeImprovements + n.Technologies.Metallurgy / 10;
 	n.ArtilleryQualityIC = n.RealOverallImprovements + n.ArtilleryImprovements + n.Technologies.Limber / 5 + n.Technologies.Mortars / 5 + n.Technologies.Metallurgy / 10;
-  
-  n.FortUpkeep = (
-    n.SmallForts * 2 +
-    n.MediumForts * 4 +
-    n.BigForts * 8 +
-    n.HugeForts * 16 +
 
-    n.ExtraCityFortifications * 5
-  ) * n.RealOverallImprovements / gameStats.TimeDivide;
-  /*
+  n.SmallFortUpkeep = 3 * n.RealOverallImprovements / gameStats.TimeDivide;
+  n.MediumFortUpkeep = 6 * n.RealOverallImprovements / gameStats.TimeDivide;
+  n.BigFortUpkeep = 12 * n.RealOverallImprovements / gameStats.TimeDivide;
+  n.HugeFortUpkeep = 24 * n.RealOverallImprovements / gameStats.TimeDivide;
+  n.CityFortificationUpkeep = 10 * n.RealOverallImprovements / gameStats.TimeDivide;
+  n.SupplyDepotUpkeep = 2 / gameStats.TimeDivide;
+  n.NavalBaseUpkeep = 2 / gameStats.TimeDivide;
+
+  n.BuildingsUpkeep = ((n.SmallForts * 3 + n.MediumForts * 6 + n.BigForts * 12 + n.HugeForts * 24 + n.CityFortifications * 10) * n.RealOverallImprovements + (n.SupplyDepots + n.NavalBases) * 2) / gameStats.TimeDivide;
+
+
+/*
   n.UnitUpkeep = function(){
     let uu = 0.0;
     Object.keys(gameStats.UnitUpkeepCosts).forEach(unitName => {
@@ -267,7 +270,7 @@ function evaluateNation(nationName) {
 
   n.CoastalLandPercent = n.CoastalPixels / n.Size;
 
-    n.ConscriptionPercent = (n.OverallNumbers + n.SmallForts * 100 + n.MediumForts * 250 + n.BigForts * 400 + n.HugeForts * 800 + n.ExtraCityFortifications * 250) / n.Population;
+    n.ConscriptionPercent = (n.OverallNumbers + n.SmallForts * 100 + n.MediumForts * 250 + n.BigForts * 400 + n.HugeForts * 800 + n.CityFortifications * 250) / n.Population;
     n.Workforces.PopulationInMilitary = n.ConscriptionPercent;
     n.Workforces.Bureaucrats = n.AdministrationSize / 100;
     n.Workforces.Intellectuals = n.HigherEducation / 100;
@@ -1352,7 +1355,7 @@ function evaluateNation(nationName) {
   n.StateResourceRevenue = (n.Reforms.GovernmentResourceOwnership ? n.ResourceBudgetBoost : 0);
 
   n.OverallIncome = n.PassiveInvestmentIncome + n.TariffsRevenue + n.TaxRevenue + n.BudgetIncoming + n.StateProductionRevenue + n.StateAgricultureRevenue + n.StateResourceRevenue;
-    n.OverallSpending = n.ArmyUpkeep + n.NavyUpkeep + n.FortUpkeep + n.EducationUpkeep + n.HygieneUpkeep + n.AgricultureSpending + n.SocialSpendingUpkeep + n.SpyUpkeep + n.PopulationControlUpkeep + n.PropagandaUpkeep + n.AdministrativeUpkeep + n.StateWorkersUpkeep + n.ResearchUpkeep + n.TroopRecruitmentCost + n.BudgetOutgoing;
+    n.OverallSpending = n.ArmyUpkeep + n.NavyUpkeep + n.BuildingsUpkeep + n.EducationUpkeep + n.HygieneUpkeep + n.AgricultureSpending + n.SocialSpendingUpkeep + n.SpyUpkeep + n.PopulationControlUpkeep + n.PropagandaUpkeep + n.AdministrativeUpkeep + n.StateWorkersUpkeep + n.ResearchUpkeep + n.TroopRecruitmentCost + n.BudgetOutgoing;
     n.DailyBudget = n.OverallIncome - n.OverallSpending;
     n.FutureBudget = n.Budget + n.DailyBudget;
 

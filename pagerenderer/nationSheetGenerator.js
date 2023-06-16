@@ -276,7 +276,7 @@ let TableLayouts = {
   "Upkeeps and Income": [
         ["OverallIncome", "OverallSpending"],
         ["TaxRevenue", "TariffsRevenue", "PassiveInvestmentIncome", "StateProductionRevenue", "StateResourceRevenue", "StateAgricultureRevenue"],
-        ["ArmyUpkeep", "NavyUpkeep", "FortUpkeep", "TroopRecruitmentCost", "SpyUpkeep"],
+        ["ArmyUpkeep", "NavyUpkeep", "BuildingsUpkeep", "TroopRecruitmentCost", "SpyUpkeep"],
         ["EducationUpkeep", "PopulationControlUpkeep", "HygieneUpkeep", "ResearchUpkeep", "PropagandaUpkeep"],
         ["SocialSpendingUpkeep", "AgricultureSpending", "AdministrativeUpkeep", "StateWorkersUpkeep"]
     ],
@@ -311,8 +311,9 @@ let TableLayouts = {
         ["PossiblePublicDebt", "PublicDebtLength", "InterestRate"],
         ["PublicDebtTaken", "EffectiveDebt", "DebtToGdpRatio"]
     ],
-    "Fortifications": [
-        ["SmallForts", "MediumForts", "BigForts", "HugeForts", "ExtraCityFortifications"]
+    "Buildings": [
+      ["SmallForts", "MediumForts", "BigForts", "HugeForts", "CityFortifications", "SupplyDepots", "NavalBases"],
+      ["SmallFortUpkeep", "MediumFortUpkeep", "BigFortUpkeep", "HugeFortUpkeep", "CityFortificationUpkeep", "SupplyDepotUpkeep", "NavalBaseUpkeep"]
     ],
     "Navy": [
         ["UpkeepForOneMerchantShip", "UpkeepForOneLightShip", "UpkeepForOneMediumShip", "UpkeepForOneHeavyShip"],
