@@ -195,7 +195,9 @@ class Nation {
   /* #endregion */
 
   /* #region  Navy */
-  NavyImprovements;
+  LightShipImprovements;
+  MediumShipImprovements;
+  HeavyShipImprovements;
   NavyTech;
   NavyQuality;
   MerchantShips;
@@ -756,7 +758,9 @@ class Nation {
     /* #endregion */
 
     /* #region  Navy */
-    this.NavyImprovements = 0;
+    this.LightShipImprovements = 0;
+    this.MediumShipImprovements = 0;
+    this.HeavyShipImprovements = 0;
 
     this.MerchantShips = 15;
     this.LightShips = 0;
@@ -810,15 +814,15 @@ class Nation {
      };
 
     this.ProductionSectors = {
-        ConstructionSector: 2.5,
-        BasicArmamentsSector: 2,
-        HeavyArmamentsSector: 0.25,
-        ShipBuildingSector: 0.2,
-        BasicToolsSector: 4,
-        TextilesSector: 2,
-        BasicGoodsSector: 3,
-        LuxuryGoodsSector: 0.25,
-        AlcoholSector: 2.5,
+        ConstructionSector: 25,
+        BasicArmamentsSector: 20,
+        HeavyArmamentsSector: 5,
+        ShipBuildingSector: 5,
+        BasicToolsSector: 40,
+        TextilesSector: 20,
+        BasicGoodsSector: 30,
+        LuxuryGoodsSector: 5,
+        AlcoholSector: 25,
         ChemicalSector: 0,
         ElectronicsSector: 0,
         AutomotiveSector: 0,

@@ -269,7 +269,6 @@ let TableLayouts = {
         ["TradeImprovements", "ProductionEfficiency", "Production"],
         ["Inflation", "DailyBudget", "Budget"],
         ["BudgetIncoming", "BudgetOutgoing", "Balance"],
-        ["HighClassTax", "MediumClassTax", "LowerClassTax"],
         ["InternalTariffs", "ExternalTariffs", "TariffEfficiency"],
         ["Gdp", "GdpPerKCapita", "DebtToGdpRatio"]
     ],
@@ -316,10 +315,13 @@ let TableLayouts = {
       ["SmallFortUpkeep", "MediumFortUpkeep", "BigFortUpkeep", "HugeFortUpkeep", "CityFortificationUpkeep", "SupplyDepotUpkeep", "NavalBaseUpkeep"]
     ],
     "Navy": [
-        ["UpkeepForOneMerchantShip", "UpkeepForOneLightShip", "UpkeepForOneMediumShip", "UpkeepForOneHeavyShip"],
-        ["MerchantShips", "LightShips", "MediumShips", "HeavyShips"],
-        ["NavyImprovements", "NavyTech", "NavyQuality", "SailorsWage"],
-        ["OverallShipCount", "MerchantShipsFullfilment", "TradeProtection", "NavalPower"]
+      ["ShipBuildingShortage", "IronShortage", "SulphurShortage"],
+      ["LightShipImprovements", "MediumShipImprovements", "HeavyShipImprovements", "NavyTech"],
+      ["LightShipQuality", "MediumShipQuality", "HeavyShipQuality", "SailorsWage"],
+      ["UpkeepForOneLightShip", "UpkeepForOneMediumShip", "UpkeepForOneHeavyShip", "UpkeepForOneMerchantShip"],
+      ["LightShipConstructionCost", "MediumShipConstructionCost", "HeavyShipConstructionCost", "MerchantShipConstructionCost"],
+      ["LightShips", "MediumShips", "HeavyShips", "MerchantShips"],
+      ["OverallShipCount", "MerchantShipsFullfilment", "TradeProtection", "NavalPower"]
     ],
     "Agriculture": [
         ["Fertility", "AgricultureSubsidies", "AgricultureInfrastructure", "AgricultureAdvancements", "AgricultureTechnology", "FarmingEfficiency", "AgricultureSpending"],
