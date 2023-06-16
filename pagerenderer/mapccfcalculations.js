@@ -98,6 +98,7 @@ class MapCCFCalculations {
         self.religionData = await prepareData("Religions.png", self.progressText);
         self.tradeZoneData = await prepareData("TradeZones.png", self.progressText);
         self.fertilityData = await prepareData("Fertility.png", self.progressText);
+        self.popData = await prepareData("Code/Population.png", self.progressText);
 
         self.progressText.innerText = "reversing development map";
         await new Promise(resolve => setTimeout(resolve));
@@ -453,7 +454,6 @@ class MapCCFCalculations {
     }
 
     async prepareNewMaps(){
-        self.popData = await prepareData("Code/Population.png", self.progressText);
 
         self.newPopData = await Formulas.advanceMap(self.popData, Formulas.advancePopulationMap, {mapCCFCalculationsInstance: self});
         await self.addToImageOutput(self.newPopData, "Population map");
@@ -706,11 +706,9 @@ class MapCCFCalculations {
     }
 
     populationXDevelopmentMerger(mapIndex){
-        let foundZoneColor = rgbToHex([self.climateData[mapIndex], self.climateData[mapIndex+1], self.climateData[mapIndex+2]]);
-        let climateObject = self.climateColorProperties.find(element => element.color == foundZoneColor);
-        let climateScore = climateObject ? gameStats.Climates[climateObject.name].ClimateScore : 0;
-        if(climateScore > 1) error(`climateScore is not allowed to be bigger than 1. ${climateObject.name} was ${climateScore}. Fix this immedietly`);
-        let ret = climateScore * self.developmentData[mapIndex];
+        let pixelPop = self.popData[mapIndex];
+        let pixelDev = self.developmentData[mapIndex];
+        let ret = pixelPop * pixelDev / 10000;
 
         ret = ret % 256;
         
@@ -718,11 +716,9 @@ class MapCCFCalculations {
     }
 
     populationXDevelopmentBonusMerger(mapIndex){
-        let foundZoneColor = rgbToHex([self.climateData[mapIndex], self.climateData[mapIndex+1], self.climateData[mapIndex+2]]);
-        let climateObject = self.climateColorProperties.find(element => element.color == foundZoneColor);
-        let climateScore = climateObject ? gameStats.Climates[climateObject.name].ClimateScore : 0;
-        if(climateScore > 1) error(`climateScore is not allowed to be bigger than 1. ${climateObject.name} was ${climateScore}. Fix this immedietly`);
-        let ret = climateScore * (128 + self.developmentData[mapIndex] / 2);
+        let pixelPop = self.popData[mapIndex];
+        let pixelDev = self.developmentData[mapIndex];
+        let ret = pixelPop * (128 + pixelDev / 2) / 10000;
         ret = ret % 256;
         
         return [ret, ret, ret, 255];
