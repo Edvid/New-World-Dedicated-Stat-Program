@@ -333,8 +333,8 @@ let TableLayouts = {
         ["Casualties", "Pillaging", "Occupation", "Blockade", "MinorBattles", "MajorBattles", "WarExhaustion", "Fervor"]
     ],
     "Land Stats": [
-        ["Size", "KmSquared", "PopulationDensityPerKmSquared", "Disease", "UnderPopulation"],
-        ["MaxPopulation", "DetachedLand", "LandAdministration", "Overextension", "CoastalLandPercent", "AverageDevelopment", "HabitableLand"]
+        ["Size", "PopulationDensityPerKmSquared", "Disease", "UnderPopulation", "MaxPopulation"],
+        ["LandAdministration", "Overextension", "CoastalLandPercent", "AverageDevelopment", "HabitableLand"]
     ],
     "Estates": [
         ["AristocracyLoyalty", "ClergyLoyalty", "BurgousieLoyalty", "UrbanLoyalty", "BureaucratsLoyalty", "IntellectualsLoyalty", "WorkersLoyalty", "MilitaryLoyalty"],
@@ -502,6 +502,7 @@ function createNationSheet(nationName) {
 
     AddNextStatTable();
 
+    AddNextStatTable();
 
     createBreaker();
 	
@@ -522,17 +523,17 @@ function createNationSheet(nationName) {
 
   //  AddNextStatTable();
 
-    AddNextStatTable().classList.add("tradeinfluences");
-
-    AddNextStatTable().classList.add("tradeinfluences");
-
-    AddNextStatTable().classList.add("tradeinfluences");
-
-    AddNextStatTable().classList.add("tradeinfluences");
-
     AddNextStatTable();
 
     AddNextStatTable();
+
+    AddNextStatTable().classList.add("tradeinfluences");
+
+    AddNextStatTable().classList.add("tradeinfluences");
+
+    AddNextStatTable().classList.add("tradeinfluences");
+
+    AddNextStatTable().classList.add("tradeinfluences");
 
     AddNextStatTable();
 

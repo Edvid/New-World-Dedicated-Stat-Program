@@ -160,7 +160,7 @@ function evaluateNation(nationName) {
   n.ReligiousDisunity = religionCalc.disunity * (1 + n.ReligiousFervor * 0.2 + n.Reforms.StateReligion / 2 - n.Reforms.FreedomOfReligion / 2) * (n.GovernmentDominatedBy == "Workers" || n.GovernmentDominatedBy == "Clergy" ? 1.2 : 1);
     n.OverallNumbers = n.Riflemen + n.MusketMilitia + n.Musketeers + n.Levies + n.LightInfantry + n.HeavyInfantry + n.Archers + n.Crossbowmen + n.LightCavalry + n.HeavyCavalry + n.EliteInfantry + n.Militia + n.EliteCavalry + n.HandCannoneers + (n.SiegeEquipment + n.LargeSiegeEquipment) * 10 + n.RegimentalGuns * 3 + n.FieldCannons * 6 + n.SiegeGuns * 10;
   n.OverallShipCount = n.LightShips + n.MediumShips + n.HeavyShips;
-  n.AdministrativeTech = 0 - n.Reforms.NobleBureaucrats * 0.8 - n.Reforms.ClergyBureaucrats * 0.5 + n.Reforms.MeritocraticBureaucrats + n.CulturalAdvancements.EarlyModernAdministration + n.CulturalAdvancements.NationalSovereignity + n.CulturalAdvancements.Constitution + n.Reforms.WealthyBureaucrats / 2 + n.Reforms.MeritocraticOfficers;
+  n.AdministrativeTech = 0 - n.Reforms.NobleBureaucrats * 0.5 - n.Reforms.ClergyBureaucrats * 0.25 + n.Reforms.MeritocraticBureaucrats + n.CulturalAdvancements.EarlyModernAdministration + n.CulturalAdvancements.NationalSovereignity + n.CulturalAdvancements.Constitution + n.Reforms.WealthyBureaucrats / 2 + n.Reforms.MeritocraticOfficers;
   n.AdministrativePower = (n.AdministrativeEfficiency * (1 + n.AdministrationSize / 2 + n.AdministrativeTech * 0.4) * 0.75) * (n.GovernmentDominatedBy == "Bureaucrats" || n.GovernmentDominatedBy == "Aristocracy" ? 1.1 : 1) * (n.GovernmentDominatedBy == "Urban" || n.GovernmentDominatedBy == "Military" || n.GovernmentDominatedBy == "Burgousie" ? 0.9 : 1);
   n.AdministrativeDemand = (
     0 + n.Population / 1000000 + n.Health * 2 + n.Education * 2 + n.SocialSpending * 4 + n.PropagandaReal * 2 + n.PopulationControlReal * 2 + n.BirthControl * 4 +
@@ -886,8 +886,8 @@ function evaluateNation(nationName) {
   n.Disease = n.PopulationDensityPerKmSquared / 25 - n.EffectiveHealth;
   n.UnderPopulation = n.Disease < 0.5 ? (1 - n.Disease) / 10 : 0;
 
-  n.LandAdministration = ((n.Size - n.DetachedLand) / 25000 + n.DetachedLand / 10000) * (1 - n.AdministrativeEfficiency / 1000);
-  n.Overextension = n.UnderPopulation / 4 + n.LandAdministration / 1.5;
+  n.LandAdministration = (n.Size / 5000) * (n.AdministrativeDemand / n.AdministrativePower);
+  n.Overextension = n.UnderPopulation / 4 + n.LandAdministration / 2;
 
   n.ArmyWages = (n.OverallNumbers / 1000 * n.SoldiersWage) / gameStats.TimeDivide;
   n.ArmyUpkeep = n.UnitUpkeep + n.ArmyWages;
@@ -1350,7 +1350,7 @@ function evaluateNation(nationName) {
   n.EducationUpkeep = n.Education * n.Population / 500000 * (1.1 - n.AdministrativeEfficiency / 100) * 6 / gameStats.TimeDivide;
   n.PropagandaUpkeep = n.PropagandaReal * (100 - n.AdministrativeEfficiency) / 100 * n.Population / 1000000 / gameStats.TimeDivide;
   n.PopulationControlUpkeep = n.PopulationControlReal * n.Population / 800000 / gameStats.TimeDivide;
-  n.AdministrativeUpkeep = (n.LandAdministration + n.BureaucratsWage / 1000 * n.Population * n.Workforces.Bureaucrats) / gameStats.TimeDivide;
+  n.AdministrativeUpkeep = (n.LandAdministration * n.Size / 1000 + n.BureaucratsWage / 1000 * n.Population * n.Workforces.Bureaucrats) / gameStats.TimeDivide;
   n.StateWorkersUpkeep = (n.Workforces.Townsfolk * n.ProductionGovernmentControl / 1000 * n.StateFactoryWorkerWage + (n.Reforms.GovernmentResourceOwnership ? n.Workforces.Labourers * n.Population / 1000 * n.StateLabourerWage + n.Workforces.Slaves * n.Population / 1000 * n.StateLabourerWage * 0.05 : 0) + (n.Reforms.GovernmentLandOwnership ? n.Workforces.Farmers * n.Population / 1000 * n.StateFarmerWage + n.Workforces.Serfs * n.Population / 1000 * n.StateFarmerWage * 0.5 : 0)) / gameStats.TimeDivide;
   n.ResearchUpkeep = n.ResearchSpending * n.Population / 500000 / gameStats.TimeDivide * n.LiteracyPercent / 10;
   n.Balance = n.BudgetIncoming - n.BudgetOutgoing;
