@@ -396,9 +396,6 @@ class Nation {
   /* #endregion */
 
   /* #region  Economy */
-  HighClassTax;
-  MediumClassTax;
-  LowerClassTax;
   EffectiveTax;
   PossiblePublicDebt;
   PublicDebtTaken;
@@ -1025,9 +1022,6 @@ class Nation {
     /* #endregion */
 
     /* #region  Economy */
-    this.HighClassTax = 0.1; //As Percentage
-    this.MediumClassTax = 0.1; //As Percentage
-    this.LowerClassTax = 0.1; //As Percentage
     this.PublicDebtTaken = 0.00;
     this.BudgetIncoming = 0;
     this.BudgetOutgoing = 0;
