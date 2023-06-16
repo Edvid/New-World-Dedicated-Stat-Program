@@ -269,14 +269,13 @@ let TableLayouts = {
         ["TradeImprovements", "ProductionEfficiency", "Production"],
         ["Inflation", "DailyBudget", "Budget"],
         ["BudgetIncoming", "BudgetOutgoing", "Balance"],
-        ["HighClassTax", "MediumClassTax", "LowerClassTax"],
         ["InternalTariffs", "ExternalTariffs", "TariffEfficiency"],
         ["Gdp", "GdpPerKCapita", "DebtToGdpRatio"]
     ],
   "Upkeeps and Income": [
         ["OverallIncome", "OverallSpending"],
         ["TaxRevenue", "TariffsRevenue", "PassiveInvestmentIncome", "StateProductionRevenue", "StateResourceRevenue", "StateAgricultureRevenue"],
-        ["ArmyUpkeep", "NavyUpkeep", "FortUpkeep", "TroopRecruitmentCost", "SpyUpkeep"],
+        ["ArmyUpkeep", "NavyUpkeep", "BuildingsUpkeep", "TroopRecruitmentCost", "SpyUpkeep"],
         ["EducationUpkeep", "PopulationControlUpkeep", "HygieneUpkeep", "ResearchUpkeep", "PropagandaUpkeep"],
         ["SocialSpendingUpkeep", "AgricultureSpending", "AdministrativeUpkeep", "StateWorkersUpkeep"]
     ],
@@ -311,14 +310,18 @@ let TableLayouts = {
         ["PossiblePublicDebt", "PublicDebtLength", "InterestRate"],
         ["PublicDebtTaken", "EffectiveDebt", "DebtToGdpRatio"]
     ],
-    "Fortifications": [
-        ["SmallForts", "MediumForts", "BigForts", "HugeForts", "ExtraCityFortifications"]
+    "Buildings": [
+      ["SmallForts", "MediumForts", "BigForts", "HugeForts", "CityFortifications", "SupplyDepots", "NavalBases"],
+      ["SmallFortUpkeep", "MediumFortUpkeep", "BigFortUpkeep", "HugeFortUpkeep", "CityFortificationUpkeep", "SupplyDepotUpkeep", "NavalBaseUpkeep"]
     ],
     "Navy": [
-        ["UpkeepForOneMerchantShip", "UpkeepForOneLightShip", "UpkeepForOneMediumShip", "UpkeepForOneHeavyShip"],
-        ["MerchantShips", "LightShips", "MediumShips", "HeavyShips"],
-        ["NavyImprovements", "NavyTech", "NavyQuality", "SailorsWage"],
-        ["OverallShipCount", "MerchantShipsFullfilment", "TradeProtection", "NavalPower"]
+      ["ShipBuildingShortage", "IronShortage", "SulphurShortage"],
+      ["LightShipImprovements", "MediumShipImprovements", "HeavyShipImprovements", "NavyTech"],
+      ["LightShipQuality", "MediumShipQuality", "HeavyShipQuality", "SailorsWage"],
+      ["UpkeepForOneLightShip", "UpkeepForOneMediumShip", "UpkeepForOneHeavyShip", "UpkeepForOneMerchantShip"],
+      ["LightShipConstructionCost", "MediumShipConstructionCost", "HeavyShipConstructionCost", "MerchantShipConstructionCost"],
+      ["LightShips", "MediumShips", "HeavyShips", "MerchantShips"],
+      ["OverallShipCount", "MerchantShipsFullfilment", "TradeProtection", "NavalPower"]
     ],
     "Agriculture": [
         ["Fertility", "AgricultureSubsidies", "AgricultureInfrastructure", "AgricultureAdvancements", "AgricultureTechnology", "FarmingEfficiency", "AgricultureSpending"],
@@ -330,8 +333,8 @@ let TableLayouts = {
         ["Casualties", "Pillaging", "Occupation", "Blockade", "MinorBattles", "MajorBattles", "WarExhaustion", "Fervor"]
     ],
     "Land Stats": [
-        ["Size", "KmSquared", "PopulationDensityPerKmSquared", "Disease", "UnderPopulation"],
-        ["MaxPopulation", "DetachedLand", "LandAdministration", "Overextension", "CoastalLandPercent", "AverageDevelopment", "HabitableLand"]
+        ["Size", "PopulationDensityPerKmSquared", "Disease", "UnderPopulation", "MaxPopulation"],
+        ["LandAdministration", "Overextension", "CoastalLandPercent", "AverageDevelopment", "HabitableLand"]
     ],
     "Estates": [
         ["AristocracyLoyalty", "ClergyLoyalty", "BurgousieLoyalty", "UrbanLoyalty", "BureaucratsLoyalty", "IntellectualsLoyalty", "WorkersLoyalty", "MilitaryLoyalty"],
@@ -499,6 +502,7 @@ function createNationSheet(nationName) {
 
     AddNextStatTable();
 
+    AddNextStatTable();
 
     createBreaker();
 	
@@ -519,17 +523,17 @@ function createNationSheet(nationName) {
 
   //  AddNextStatTable();
 
-    AddNextStatTable().classList.add("tradeinfluences");
-
-    AddNextStatTable().classList.add("tradeinfluences");
-
-    AddNextStatTable().classList.add("tradeinfluences");
-
-    AddNextStatTable().classList.add("tradeinfluences");
-
     AddNextStatTable();
 
     AddNextStatTable();
+
+    AddNextStatTable().classList.add("tradeinfluences");
+
+    AddNextStatTable().classList.add("tradeinfluences");
+
+    AddNextStatTable().classList.add("tradeinfluences");
+
+    AddNextStatTable().classList.add("tradeinfluences");
 
     AddNextStatTable();
 

@@ -175,8 +175,10 @@ class Nation {
   MediumForts;
   BigForts;
   HugeForts;
-  ExtraCityFortifications;
-  FortUpkeep;
+  CityFortifications;
+  SupplyDepots;
+  NavalBases;
+  BuildingsUpkeep;
   IronShortage;
   SulphurShortage;
   CommanderFreedom;
@@ -193,7 +195,9 @@ class Nation {
   /* #endregion */
 
   /* #region  Navy */
-  NavyImprovements;
+  LightShipImprovements;
+  MediumShipImprovements;
+  HeavyShipImprovements;
   NavyTech;
   NavyQuality;
   MerchantShips;
@@ -394,9 +398,6 @@ class Nation {
   /* #endregion */
 
   /* #region  Economy */
-  HighClassTax;
-  MediumClassTax;
-  LowerClassTax;
   EffectiveTax;
   PossiblePublicDebt;
   PublicDebtTaken;
@@ -690,15 +691,14 @@ class Nation {
     };
     
     this.MilitaryControl = {
-      UnitaryControl: 30,
-      AristocracyControl: 40,
-      ClergyControl: 5,
-      BurgousieControl: 5,
+      AristocracyControl: 45,
+      ClergyControl: 15,
+      BurgousieControl: 10,
       UrbanControl: 5,
       BureaucratsControl: 5,
       IntellectualsControl: 0,
       WorkersControl: 5,
-      Independent: 10
+      Independent: 15
     };
 
     this.PopulationControl = 0;
@@ -743,7 +743,9 @@ class Nation {
     this.MediumForts = 0;
     this.BigForts = 0;
     this.HugeForts = 0;
-    this.ExtraCityFortifications = 0;
+    this.CityFortifications = 0;
+    this.SupplyDepots = 0;
+    this.NavalBases = 0;
 
 
     this.CommanderFreedom = 0;
@@ -755,7 +757,9 @@ class Nation {
     /* #endregion */
 
     /* #region  Navy */
-    this.NavyImprovements = 0;
+    this.LightShipImprovements = 0;
+    this.MediumShipImprovements = 0;
+    this.HeavyShipImprovements = 0;
 
     this.MerchantShips = 15;
     this.LightShips = 0;
@@ -809,15 +813,15 @@ class Nation {
      };
 
     this.ProductionSectors = {
-        ConstructionSector: 2.5,
-        BasicArmamentsSector: 2,
-        HeavyArmamentsSector: 0.25,
-        ShipBuildingSector: 0.2,
-        BasicToolsSector: 4,
-        TextilesSector: 2,
-        BasicGoodsSector: 3,
-        LuxuryGoodsSector: 0.25,
-        AlcoholSector: 2.5,
+        ConstructionSector: 25,
+        BasicArmamentsSector: 20,
+        HeavyArmamentsSector: 5,
+        ShipBuildingSector: 5,
+        BasicToolsSector: 40,
+        TextilesSector: 20,
+        BasicGoodsSector: 30,
+        LuxuryGoodsSector: 5,
+        AlcoholSector: 25,
         ChemicalSector: 0,
         ElectronicsSector: 0,
         AutomotiveSector: 0,
@@ -1021,9 +1025,6 @@ class Nation {
     /* #endregion */
 
     /* #region  Economy */
-    this.HighClassTax = 0.1; //As Percentage
-    this.MediumClassTax = 0.1; //As Percentage
-    this.LowerClassTax = 0.1; //As Percentage
     this.PublicDebtTaken = 0.00;
     this.BudgetIncoming = 0;
     this.BudgetOutgoing = 0;
