@@ -120,10 +120,6 @@ class MapCCFCalculations {
         self.progressText.innerText = "adjusting culture map data for population and development";
         await new Promise(resolve => setTimeout(resolve));
 
-        let popDevAdjustedCulture = await self.mapDataIterator(self.culturePopXDevBonusMerger);
-
-        let popDevAdjustedReligion = await self.mapDataIterator(self.religionPopXDevBonusMerger);
-
         let climateDistribution = await self.findDistribution(
             self.nationData, self.climateData, "nation", "climate",
             self.nationColorProperties,
@@ -154,22 +150,22 @@ class MapCCFCalculations {
         );
     
         let cultureDistribution = await self.findDistribution(
-            self.nationData, popDevAdjustedCulture, "nation", "popdev-adjusted-culture", 
+            self.nationData, self.cultureData, "nation", "popdev-adjusted-culture", 
             self.nationColorProperties,
             self.cultureColorProperties,
             {
                 unassignedPixelAssumption: "Foreign",
-                adjustForAlpha: true
+                alphaAdjuster: self.populationXDevelopmentBonusData
             } 
         );
 
         let religionDistribution = await self.findDistribution(
-            self.nationData, popDevAdjustedReligion, "nation", "popdev-adjusted-religion", 
+            self.nationData, self.religionData, "nation", "popdev-adjusted-religion", 
             self.nationColorProperties,
             self.religionColorProperties, 
             {
                 unassignedPixelAssumption: "Pagan",
-                adjustForAlpha: true
+                alphaAdjuster: self.populationXDevelopmentBonusData
             }
         );
 
@@ -180,7 +176,7 @@ class MapCCFCalculations {
             0,
             {
                 canIgnoreTransparentInner: true,
-                valueMode: "greyScale",
+                valueMode: "RGBAsNum",
                 unassignedPixelAssumption: 0
             }
         );
@@ -551,7 +547,7 @@ class MapCCFCalculations {
                 ret[OuterNameOfPixel] += InnerPixelValue;
             }
             else if(options.valueMode == "RGBAsNum"){
-                const InnerPixelValue = isInnerDataEmpty ? options.unassignedPixelAssumption : Formulas.RBGAsNum(innerDataset, i*4);
+                const InnerPixelValue = isInnerDataEmpty ? options.unassignedPixelAssumption : Formulas.FetchedRGBAsNum(innerDataset, i*4);
 
                 if(typeof ret[OuterNameOfPixel] === 'undefined') ret[OuterNameOfPixel] = 0;
                 
@@ -576,6 +572,10 @@ class MapCCFCalculations {
                 
                 if(!options.adjustForAlpha)
                     ret[OuterNameOfPixel][InnerNameOfPixel]++;
+                else if(options.alphaAdjuster){
+                    let multiplier = Formulas.FetchedRGBAsNum(options.alphaAdjuster, i*4);
+                    ret[OuterNameOfPixel][InnerNameOfPixel] += multiplier;
+                }
                 else {
                     let alpha = getInnerDataPoint(i*4+3);
                     ret[OuterNameOfPixel][InnerNameOfPixel] += alpha;
@@ -708,42 +708,19 @@ class MapCCFCalculations {
     }
 
     populationXDevelopmentMerger(mapIndex){
-        let pixelPop = Formulas.RBGAsNum(self.popData, mapIndex);
+        let pixelPop = Formulas.FetchedRGBAsNum(self.popData, mapIndex);
         let pixelDev = self.developmentData[mapIndex];
-        let ret = pixelPop * pixelDev / 10000;
-
-        ret = ret % 256;
+        let ret = pixelPop * pixelDev;
         
-        return [ret, ret, ret, 255];
+        return Formulas.NumAsRGB(ret);
     }
 
     populationXDevelopmentBonusMerger(mapIndex){
-        let pixelPop = Formulas.RBGAsNum(self.popData, mapIndex);
+        let pixelPop = Formulas.FetchedRGBAsNum(self.popData, mapIndex);
         let pixelDev = self.developmentData[mapIndex];
-        let ret = pixelPop * (128 + pixelDev / 2) / 10000;
-        ret = ret % 256;
+        let ret = pixelPop * (128 + pixelDev / 2);
         
-        return [ret, ret, ret, 255];
-    }
-
-    culturePopXDevBonusMerger(mapIndex){
-        let ret = [];
-        ret[0] = self.cultureData[mapIndex];
-        ret[1] = self.cultureData[mapIndex+1];
-        ret[2] = self.cultureData[mapIndex+2];
-        ret[3] = self.populationXDevelopmentBonusData[mapIndex];
-        
-        return ret;
-    }
-
-    religionPopXDevBonusMerger(mapIndex){
-        let ret = [];
-        ret[0] = self.religionData[mapIndex];
-        ret[1] = self.religionData[mapIndex+1];
-        ret[2] = self.religionData[mapIndex+2];
-        ret[3] = self.populationXDevelopmentBonusData[mapIndex];
-        
-        return ret;
+        return Formulas.NumAsRGB(ret);
     }
 
     reportProgress(i){
