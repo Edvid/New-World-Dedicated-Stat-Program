@@ -1385,9 +1385,9 @@ function evaluateNation(nationName) {
     }
     return ca;
   })();
-  n.CulturalPowerGain = (n.LiteracyPercent / 3 + n.PopulationHappiness / 8) * (n.CulturalProsperity + n.CulturalAdvancements.RenaissanceThought / 10) / gameStats.TimeDivide;
+  n.CulturalPowerGain = 2 * n.Prosperity * (n.CulturalProsperity - n.Reforms.StateMediaOnly * 0.5 - n.Reforms.ExtensiveCensorship * 0.25 + n.Reforms.FreeSpeech * 0.25 + n.CulturalAdvancements.RenaissanceThought / 10) / gameStats.TimeDivide;
   n.CulturalPower = n.CulturalPower;
-  n.FutureCulturalPower = min(6, (n.CulturalPower + n.CulturalPowerGain));
+  n.FutureCulturalPower = min(n.LiteracyPercent, (n.CulturalPower + n.CulturalPowerGain));
   n.FuturePublicDebtLength = n.EffectiveDebt > 0 ? n.PublicDebtLength + 1 : 0;
 
   n.MaxPopulation = n.Population / n.Disease;
