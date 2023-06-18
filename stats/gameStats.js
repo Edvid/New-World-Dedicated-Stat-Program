@@ -101,6 +101,7 @@ class Nation {
   PopulationGrowth;
   AverageDevelopment;
   Health;
+  Alcoholism;
   LiteracyPercent;
   HigherEducation;
   EducationEfficiency;
@@ -601,6 +602,7 @@ class Nation {
     this.DevelopmentPixelCount = 60000;
     this.CoastalPixels = 1000;
     this.Health = 1.00;
+    this.Alcoholism = 0.00;
     this.EducationEfficiency = 2;
       this.BureaucratsWages = 3;
     this.AdministrativeEfficiency = 25;

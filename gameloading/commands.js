@@ -28,6 +28,15 @@ function syncNation(nationName) {
   // Expected Weapons for private militaries
   gameStats.Nations[nationName].ExpectedPrivateBasicArmaments = n.AristocracyBasicArmaments + n.BurgousieBasicArmaments + n.ClergyBasicArmaments + n.PopulaceBasicArmaments;
 
+  // Alcoholism
+  if (gameStats.Nations[nationName].EffectiveAlcohol > gameStats.Nations[nationName].AlcoholDemand * 0.75) {
+    gameStats.Nations[nationName].Alcoholism += 0.1;
+  }
+  else {
+    gameStats.Nations[nationName].Alcoholism -= 0.05;
+  }
+  gameStats.Nations[nationName].Alcoholism = clamp(0, 1, gameStats.Nations[nationName].Alcoholism);
+
   // Influence Change check
   for (const EstateIndex in gameStats.EstatesGeneral) {
     const Estate = gameStats.EstatesGeneral[EstateIndex];

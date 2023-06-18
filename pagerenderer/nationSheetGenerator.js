@@ -259,7 +259,7 @@ let TableLayouts = {
         ["ReligiousFervor", "Nationalism", "AtWar"]
     ],
     "Basic Stats": [
-        ["AverageDevelopment", "Health", "EducationEfficiency", "Propaganda", "SocialSpending", "PopulationControl", "BirthControl"],
+        ["AverageDevelopment", "Health", "Alcoholism", "EducationEfficiency", "Propaganda", "SocialSpending", "PopulationControl", "BirthControl"],
         ["Stability", "Absolutism", "Corruption", "Overextension", "Prosperity", "PopulationHappiness", "WarSupport"],
         ["AdministrativeTech", "AdministrativeEfficiency", "AdministrationSize", "AdministrativePower", "AdministrativeDemand", "AdministrativeStrain", "TaxEfficiency"],
         ["BureaucratsWages", "StateFactoryWorkerWage", "StateLabourerWage", "StateFarmerWage"]
