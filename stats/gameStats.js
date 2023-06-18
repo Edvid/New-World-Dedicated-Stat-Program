@@ -926,7 +926,7 @@ class Nation {
       SteamBoats: false,
       HotAirBalloon: false,
       PowerLoomAndSewingMachine: false,
-      Fulimnate: false,
+      Fulminate: false,
       PaperMachine: false,
       FirstFactories: false,
       LinearAssemblyProcess: false,
