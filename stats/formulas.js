@@ -797,7 +797,7 @@ function evaluateNation(nationName) {
   }
 
   n.MaxFoodStock = (function () {
-    return max(100, 1000 * n.Population / 10000000) * (n.StockingCapabilities * (n.Technologies.CannedFood ? 2 : 1);
+    return max(100, 1000 * n.Population / 10000000) * (n.StockingCapabilities * (n.Technologies.CannedFood ? 2 : 1));
   })();
   n.FutureFood = min(n.MaxFoodStock, n.FoodGain);
   n.FoodPopulationBoost = (function () {
