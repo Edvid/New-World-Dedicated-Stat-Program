@@ -706,7 +706,7 @@ class Nation {
     this.PopulationControl = 0;
     this.BirthControl = 0;
     this.LocalTrade = 5;
-    this.TradeImprovements = 1;
+    this.TradeImprovements = 0.5;
     this.Spies = 0;
     this.SpyQuality = 1;
     /* #endregion */
@@ -882,6 +882,9 @@ class Nation {
     this.ResearchEffectiveness = 1.0;
 
     this.Technologies = {
+      IronWorking: true,
+      Wheel: true,
+      Paper: true,
       Gunpowder: true,
       VerticalLoom: true,
       SaddleAndStirrup: true,
@@ -1034,12 +1037,13 @@ class Nation {
 
     this.CulturalProsperity = 1.0;
     this.CulturalAdvancements = {
-      DivineRightToRule: false,
-      Serfdom: false,
-      Feudalism: false,
-      Universities: false,
-      NobleDuty: false,
-      Courthouses: false,
+      Currency: true,
+      DivineRightToRule: true,
+      Serfdom: true,
+      Feudalism: true,
+      Universities: true,
+      NobleDuty: true,
+      Courthouses: true,
       RenaissanceThought: false,
       EarlyModernAdministration: false,
       NationalSovereignity: false,
