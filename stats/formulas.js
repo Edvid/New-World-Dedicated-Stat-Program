@@ -50,8 +50,8 @@ static evaluateNation(nationName) {
     n.GovernmentEffects = "-Corruption, -Adm, +TradeEff, +ProductionEff";
   }
 
-  n.AgricultureTechnology = 0 + n.Technologies.HorseCollar + n.CulturalAdvancements.PotatoPopulationBoom + n.Reforms.Enclosure;
-  n.FarmingEfficiency = (1 + n.AgricultureSubsidies / 10 + (n.AgricultureInfrastructure + n.AgricultureAdvancements - 2) * 0.75 + n.AgricultureTechnology / 20) * (n.GovernmentDominatedBy == "Aristocracy" ? 0.9 : 1) * (n.GovernmentDominatedBy == "Workers" ? 1.1 : 1);
+  n.AgricultureTechnology = 0 + n.Technologies.HorseCollar + n.CulturalAdvancements.PotatoPopulationBoom + n.Reforms.Enclosure + n.Technologies.CannedFood;
+  n.FarmingEfficiency = (1 - n.Alcoholism * (1 - n.ReligionGroups.Sunni.Points - n.ReligionGroups.Shia.Points) / 2 + n.AgricultureSubsidies / 10 + (n.AgricultureInfrastructure + n.AgricultureAdvancements - 2) * 0.75 + n.AgricultureTechnology / 20) * (n.GovernmentDominatedBy == "Aristocracy" ? 0.9 : 1) * (n.GovernmentDominatedBy == "Workers" ? 1.1 : 1);
 
   {
     let rels = []
@@ -149,7 +149,7 @@ static evaluateNation(nationName) {
   n.AverageDevelopment = n.DevelopmentPixelCount / n.Size / 255;
   n.Workforces.Townsfolk = n.AverageDevelopment;
 
-  n.Education = n.EducationEfficiency * (1 + n.Reforms.ReligiousSchools + n.Reforms.PublicEducation * 3) * (n.GovernmentDominatedBy == "Intellectuals" ? 1.2 : 1);
+  n.Education = n.EducationEfficiency * (0.5 + n.Technologies.Paper * 0.5 + n.Reforms.ReligiousSchools + n.Reforms.PublicEducation * 3 - n.Alcoholism * (1 - n.ReligionGroups.Sunni.Points - n.ReligionGroups.Shia.Points)) * (n.GovernmentDominatedBy == "Intellectuals" ? 1.2 : 1);
   n.PropagandaReal = n.Propaganda * (n.Reforms.StateMediaOnly * 2 + n.Reforms.ExtensiveCensorship * 1.5 + n.Reforms.LimitedCensorship + n.Reforms.FreeSpeech * 0.75);
   n.PopulationControlReal = n.PopulationControl * (n.Reforms.CommunityPolicing * 0.5 + n.Reforms.RegionalPolice * 0.75 + n.Reforms.StatePolice * 1.25 + n.Reforms.SecretPolice * 2) * (n.GovernmentDominatedBy == "Military" || n.GovernmentDominatedBy == "Bureaucrats" ? 1.2 : 1) * (n.GovernmentDominatedBy == "Intellectuals" ? 0.8 : 1);
 
@@ -162,7 +162,7 @@ static evaluateNation(nationName) {
   n.ReligiousDisunity = religionCalc.disunity * (1 + n.ReligiousFervor * 0.2 + n.Reforms.StateReligion / 2 - n.Reforms.FreedomOfReligion / 2) * (n.GovernmentDominatedBy == "Workers" || n.GovernmentDominatedBy == "Clergy" ? 1.2 : 1);
     n.OverallNumbers = n.Riflemen + n.MusketMilitia + n.Musketeers + n.Levies + n.LightInfantry + n.HeavyInfantry + n.Archers + n.Crossbowmen + n.LightCavalry + n.HeavyCavalry + n.EliteInfantry + n.Militia + n.EliteCavalry + n.HandCannoneers + (n.SiegeEquipment + n.LargeSiegeEquipment) * 10 + n.RegimentalGuns * 3 + n.FieldCannons * 6 + n.SiegeGuns * 10;
   n.OverallShipCount = n.LightShips + n.MediumShips + n.HeavyShips;
-  n.AdministrativeTech = 0 - n.Reforms.NobleBureaucrats * 0.5 - n.Reforms.ClergyBureaucrats * 0.25 + n.Reforms.MeritocraticBureaucrats + n.CulturalAdvancements.EarlyModernAdministration + n.CulturalAdvancements.NationalSovereignity + n.CulturalAdvancements.Constitution + n.Reforms.WealthyBureaucrats / 2 + n.Reforms.MeritocraticOfficers;
+  n.AdministrativeTech = -0.75 - n.Alcoholism * (1 - n.ReligionGroups.Sunni.Points - n.ReligionGroups.Shia.Points) - n.Reforms.NobleBureaucrats * 0.5 - n.Reforms.ClergyBureaucrats * 0.25 + n.Reforms.MeritocraticBureaucrats + n.Technologies.Paper * 0.5 + n.CulturalAdvancements.Currency * 0.5 + n.CulturalAdvancements.EarlyModernAdministration + n.CulturalAdvancements.NationalSovereignity + n.CulturalAdvancements.Constitution + n.Reforms.WealthyBureaucrats / 2 + n.Reforms.MeritocraticOfficers + n.Technologies.PaperMachine / 5;
   n.AdministrativePower = (n.AdministrativeEfficiency * (1 + n.AdministrationSize / 2 + n.AdministrativeTech * 0.4) * 0.75) * (n.GovernmentDominatedBy == "Bureaucrats" || n.GovernmentDominatedBy == "Aristocracy" ? 1.1 : 1) * (n.GovernmentDominatedBy == "Urban" || n.GovernmentDominatedBy == "Military" || n.GovernmentDominatedBy == "Burgousie" ? 0.9 : 1);
   n.AdministrativeDemand = (
     0 + n.Population / 1000000 + n.Health * 2 + n.Education * 2 + n.SocialSpending * 4 + n.PropagandaReal * 2 + n.PopulationControlReal * 2 + n.BirthControl * 4 +
@@ -184,15 +184,15 @@ static evaluateNation(nationName) {
     Independent: n.MilitaryControl.Independent / n.MilitaryControlTotal
   }
 
-  n.RealOverallImprovements = n.OverallImprovements + n.MilitaryControlReal.Independent + n.Reforms.WealthyOfficers / 5 + n.Reforms.MeritocraticOfficers / 2 - n.Reforms.NationalMilitia / 4 + n.Reforms.ProffesionalArmy / 2 + n.Reforms.MassConscription / 4;
+  n.RealOverallImprovements = n.OverallImprovements - n.Alcoholism * (1 - n.ReligionGroups.Sunni.Points - n.ReligionGroups.Shia.Points) / 2 + n.MilitaryControlReal.Independent + n.Reforms.WealthyOfficers / 5 + n.Reforms.MeritocraticOfficers / 2 - n.Reforms.NationalMilitia * 0.2 + n.Reforms.ProffesionalArmy * 0.4 + n.Reforms.MassConscription * 0.2 + n.Technologies.Morphine / 10;
 
   n.IrregularQualityIC = n.RealOverallImprovements + n.IrregularImprovements + n.Technologies.Metallurgy / 10;
   n.MeleeQualityIC = n.RealOverallImprovements + n.MeleeImprovements + n.Technologies.PlateArmour / 5 + n.Technologies.StandardizedPikes / 10 + n.Technologies.Metallurgy / 10;
   n.RangedQualityIC = n.RealOverallImprovements + n.RangedImprovements + n.Technologies.Metallurgy / 10;
   n.CavalryQualityIC = n.RealOverallImprovements + n.CavalryImprovements + n.Technologies.SaddleAndStirrup / 5 + n.Technologies.PlateArmour / 5 + n.Technologies.Reiters / 10 + n.Technologies.Metallurgy / 10;
-  n.FirearmQualityIC = n.RealOverallImprovements + n.FirearmImprovements + n.Technologies.Matchlock / 5 + n.Technologies.SocketBayonet / 5 + n.Technologies.Flintlock / 5 + n.Technologies.Metallurgy / 10 + n.Technologies.Bayonet / 20;
+  n.FirearmQualityIC = n.RealOverallImprovements + n.FirearmImprovements + n.Technologies.Matchlock / 5 + n.Technologies.SocketBayonet / 5 + n.Technologies.Flintlock / 5 + n.Technologies.Metallurgy / 10 + n.Technologies.Bayonet / 20 + n.Technologies.Fulminate / 20;
   n.SiegeQualityIC = n.RealOverallImprovements + n.SiegeImprovements + n.Technologies.Metallurgy / 10;
-  n.ArtilleryQualityIC = n.RealOverallImprovements + n.ArtilleryImprovements + n.Technologies.Limber / 5 + n.Technologies.Mortars / 5 + n.Technologies.Metallurgy / 10;
+  n.ArtilleryQualityIC = n.RealOverallImprovements + n.ArtilleryImprovements + n.Technologies.Limber / 5 + n.Technologies.Mortars / 5 + n.Technologies.Metallurgy / 10 + n.Technologies.Fulminate / 20;
 
   n.SmallFortUpkeep = 3 * n.RealOverallImprovements / gameStats.TimeDivide;
   n.MediumFortUpkeep = 6 * n.RealOverallImprovements / gameStats.TimeDivide;
@@ -216,7 +216,7 @@ static evaluateNation(nationName) {
   }();
   */
 
-  n.NavyTech = 0 + n.Reforms.WealthyOfficers / 5 + n.Reforms.MeritocraticOfficers / 2 + n.Technologies.Docks / 2 + n.Technologies.Gunports / 2 + n.Technologies.Gunlock / 4;
+  n.NavyTech = 0 - n.Alcoholism * (1 - n.ReligionGroups.Sunni.Points - n.ReligionGroups.Shia.Points) / 2 + n.Reforms.WealthyOfficers / 5 + n.Reforms.MeritocraticOfficers / 2 + n.Technologies.Docks / 2 + n.Technologies.Gunports / 2 + n.Technologies.Gunlock / 4 + n.Technologies.SteamBoats / 10 + n.Technologies.Fulminate / 20;
   n.LightShipQualityIC = 1 + n.LightShipImprovements + n.NavyTech;
   n.MediumShipQualityIC = 1 + n.MediumShipImprovements + n.NavyTech + n.Technologies.Galleons / 6;
   n.HeavyShipQualityIC = 1 + n.HeavyShipImprovements + n.NavyTech + n.Technologies.Galleons / 4;
@@ -234,7 +234,7 @@ static evaluateNation(nationName) {
     n.Climates.Mountainous.Pixels * 1 +
     n.Climates.Desert.Pixels * 0.05 +
     n.Climates.CoastalDesert.Pixels * 0.2
-  ) / 2750 * n.MiningEfficiency;
+  ) / 2750 * n.MiningEfficiency * n.Technologies.IronWorking;
 
   n.BaseCoalHarvest = (
     n.Climates.TaigaAndTundra.Pixels * 0.1 +
@@ -350,9 +350,9 @@ let GatheringEffectiveness = function (name) {
   n.EffectiveSulphur += n.BaseSulphurHarvest;
   n.EffectiveCotton *= (1 + n.Technologies.CottonGin);
 
-  n.ProductionEfficiency = (n.TradeImprovements + n.Reforms.GuildsBanned / 5 + n.Reforms.AntiMonopolyLaws / 2 + n.Technologies.Workshops + n.Technologies.Cranes / 5 + n.Technologies.SteamEngine / 4 + n.Technologies.FirstFactories / 2 + n.Technologies.LinearAssemblyProcess / 4 + n.Technologies.InterchangeableParts / 2) * (n.GovernmentDominatedBy == "Burgousie" || n.GovernmentDominatedBy == "Urban" ? 1.1 : 1);
+  n.ProductionEfficiency = (-0.25 + n.TradeImprovements + n.Technologies.IronWorking / 4 - n.Alcoholism * (1 - n.ReligionGroups.Sunni.Points - n.ReligionGroups.Shia.Points) + n.Technologies.Wheel / 4 + n.CulturalAdvancements.Currency / 4 + n.Reforms.GuildsBanned / 5 + n.Reforms.AntiMonopolyLaws / 2 + n.Technologies.Workshops + n.Technologies.Cranes / 5 + n.Technologies.SteamEngine / 4 + n.Technologies.FirstFactories / 2 + n.Technologies.LinearAssemblyProcess / 4 + n.Technologies.InterchangeableParts / 2) * (n.GovernmentDominatedBy == "Burgousie" || n.GovernmentDominatedBy == "Urban" ? 1.1 : 1);
   n.WeavingEfficiency = 1 + n.Technologies.VerticalLoom / 4 + n.Technologies.TextileManufactories / 2 + n.Technologies.FlyingShuttle / 2 + n.Technologies.PowerLoomAndSewingMachine;
-  n.MetalWorkingEfficiency = n.Technologies.Metallurgy / 4 + n.Technologies.LeadChamberProcess / 5 + n.Technologies.PuddlingProcess / 4;
+  n.MetalWorkingEfficiency = n.Technologies.IronWorking / 2 + n.Technologies.Metallurgy / 4 + n.Technologies.LeadChamberProcess / 5 + n.Technologies.PuddlingProcess / 4;
   n.WeaponWorkingEfficiency = 1 + n.MetalWorkingEfficiency + n.Technologies.StandardizedPikes / 5 + n.Technologies.Flintlock / 5;
   n.ShipBuildingEfficiency = 1 + n.Technologies.Docks / 4;
   n.ToolWorkingEfficiency = 1 + n.MetalWorkingEfficiency + n.Technologies.PaperMachine / 10;
@@ -408,9 +408,9 @@ let GatheringEffectiveness = function (name) {
 
   n.TotalSupply = n.ProductionSectors.ConstructionSector + n.ProductionSectors.BasicArmamentsSector + n.ProductionSectors.HeavyArmamentsSector + n.ProductionSectors.ShipBuildingSector + n.ProductionSectors.BasicToolsSector + n.ProductionSectors.TextilesSector + n.ProductionSectors.BasicGoodsSector + n.ProductionSectors.LuxuryGoodsSector + n.ProductionSectors.AlcoholSector + n.ProductionSectors.ChemicalSector + n.ProductionSectors.ElectronicsSector + n.ProductionSectors.AutomotiveSector + n.ProductionSectors.AerospaceSector + n.ProductionSectors.HeavyIndustrySector;
 
-  n.SulphurDemand = (n.HandCannoneers * 0.5 + n.MusketMilitia * 0.75 + (n.Musketeers + n.Riflemen) + n.RegimentalGuns * 10 + (n.FieldCannons + n.MerchantShips * 2 + n.LightShips * 8 + n.MediumShips * 16 + n.HeavyShips * 32) * 20 + n.SiegeGuns * 50) / 5000 + n.Health;
-  n.CoalDemand = (n.Production * (n.ProductionSectors.HeavyIndustrySector / n.TotalSupply) / 10 + n.Production * (n.ProductionSectors.HeavyArmamentsSector / n.TotalSupply) / 6 + n.Production * (n.ProductionSectors.BasicArmamentsSector / n.TotalSupply) / 8 + n.Production * (n.ProductionSectors.BasicToolsSector / n.TotalSupply) / 10) / n.ProductionEfficiency + ((min(n.AverageExpectedSol, 1) * 0.005 + n.LuxuriesDemand * 0.01) * n.Population / 1000) / 10;
-  n.IronDemand = (n.Production * (n.ProductionSectors.HeavyIndustrySector / n.TotalSupply) / 10 + n.Production * (n.ProductionSectors.LuxuryGoodsSector / n.TotalSupply) / 10 + n.Production * (n.ProductionSectors.ShipBuildingSector / n.TotalSupply) / 10 + n.Production * (n.ProductionSectors.HeavyArmamentsSector / n.TotalSupply) / 5 + n.Production * (n.ProductionSectors.BasicArmamentsSector / n.TotalSupply) / 10 + n.Production * (n.ProductionSectors.BasicToolsSector / n.TotalSupply) / 10) / n.ProductionEfficiency;
+  n.SulphurDemand = (n.HandCannoneers * 0.5 + n.MusketMilitia * 0.75 + (n.Musketeers + n.Riflemen) + n.RegimentalGuns * 10 + (n.FieldCannons + n.MerchantShips * 2 + n.LightShips * 8 + n.MediumShips * 16 + n.HeavyShips * 32) * 20 + n.SiegeGuns * 50) / 5000 * (n.Technologies.Fulminate ? 0.9 : 1) + n.Health;
+  n.CoalDemand = (n.Production * (n.ProductionSectors.HeavyIndustrySector / n.TotalSupply) / 10 + n.Production * (n.ProductionSectors.HeavyArmamentsSector / n.TotalSupply) / 6 + n.Production * (n.ProductionSectors.BasicArmamentsSector / n.TotalSupply) / 8 + n.Production * (n.ProductionSectors.BasicToolsSector / n.TotalSupply) / 10) / n.ProductionEfficiency + ((min(n.AverageExpectedSol, 1) * 0.005 + n.LuxuriesDemand * 0.01) * n.Population / 1000) / 10 + (n.Technologies.SteamBoats ? n.LightShips * 0.01 + n.MediumShips * 0.025 + n.HeavyShips * 0.05 : 0);
+  n.IronDemand = (n.Technologies.IronWorking ? (n.Production * (n.ProductionSectors.HeavyIndustrySector / n.TotalSupply) / 10 + n.Production * (n.ProductionSectors.LuxuryGoodsSector / n.TotalSupply) / 10 + n.Production * (n.ProductionSectors.ShipBuildingSector / n.TotalSupply) / 10 + n.Production * (n.ProductionSectors.HeavyArmamentsSector / n.TotalSupply) / 5 + n.Production * (n.ProductionSectors.BasicArmamentsSector / n.TotalSupply) / 10 + n.Production * (n.ProductionSectors.BasicToolsSector / n.TotalSupply) / 10) / n.ProductionEfficiency : 0);
   n.WoodDemand = (n.Production * (n.ProductionSectors.LuxuryGoodsSector / n.TotalSupply) / 10 + n.Production * (n.ProductionSectors.BasicGoodsSector / n.TotalSupply) / 8 + n.Production * (n.ProductionSectors.ShipBuildingSector / n.TotalSupply) / 2 + n.Production * (n.ProductionSectors.BasicArmamentsSector / n.TotalSupply) / 10 + n.Production * (n.ProductionSectors.ConstructionSector / n.TotalSupply) / 2 + n.Production * (n.ProductionSectors.BasicToolsSector / n.TotalSupply) / 6) / n.ProductionEfficiency + ((min(n.AverageExpectedSol, 1) * 0.01 + n.LuxuriesDemand * 0.02) * n.Population / 1000) / 10;
 
   n.FoodDemand = n.Production * (n.ProductionSectors.AlcoholSector / n.TotalSupply) + ((min(n.AverageExpectedSol, 1) + n.LuxuriesDemand * 1.75) * n.Population / 1000);
@@ -494,9 +494,9 @@ let GatheringEffectiveness = function (name) {
   n.ShipBuildingDemand = n.CoastalPopulationPercent * n.Population / 500000 + ((n.LightShips + n.MerchantShips / 5) * n.LightShipQualityIC + n.MediumShips * n.MediumShipQualityIC * 2 + n.HeavyShips * n.HeavyShipQualityIC * 4) / 400 + ((n.New_LightShips + n.New_MerchantShips / 5) * n.LightShipQualityIC + n.New_MediumShips * n.MediumShipQualityIC * 2 + n.New_HeavyShips * n.HeavyShipQualityIC * 4) / 50;
   n.BasicGoodsDemand = ((min(n.AverageExpectedSol, 1) * 1 + n.LuxuriesDemand * 1.5) * n.Population / 1000) / 200;
   n.LuxuryGoodsDemand = n.LuxuriesDemand * n.Population / 1000 / 200;
-  n.AlcoholDemand = ((min(n.AverageExpectedSol, 1) * 1 + n.LuxuriesDemand * 2) * n.Population * (1 - n.ReligionGroups.Sunni.Points - n.ReligionGroups.Shia.Points) / 1000) / 200;
+  n.AlcoholDemand = ((min(n.AverageExpectedSol, 1) * 1 + n.LuxuriesDemand * 2) * n.Population * (1 - n.ReligionGroups.Sunni.Points - n.ReligionGroups.Shia.Points) / 1000) / 200 * (0.5 + n.Alcoholism);
   n.HeavyIndustryDemand = 0; // define once we reach Industrial Revolution
-  n.ChemicalsDemand = 0; // define once we reach Industrial Revolution
+  n.ChemicalsDemand = (n.Technologies.Morphine ? n.OverallNumbers / 50000 : 0);
   n.ElectronicsDemand = 0; // define once we reach Industrial Revolution
   n.MotorsDemand = 0; // define once we reach Industrial Revolution
   n.PlanesDemand = 0; // define once we reach Industrial Revolution
@@ -505,7 +505,7 @@ let GatheringEffectiveness = function (name) {
   n.LuxuryNaturalFabrics = n.EffectiveFur + n.EffectiveSilk;
   n.ValuableMaterials = n.EffectiveDiamond + n.EffectiveGold + n.EffectiveSilver + n.EffectiveCopper + n.EffectiveIvory;
 
-  n.IronShortage = min(1, max(0, 1 - (n.EffectiveIron / (n.IronDemand * 0.9))));
+  n.IronShortage = (n.Technologies.IronWorking ? min(1, max(0, 1 - (n.EffectiveIron / (n.IronDemand * 0.9)))) : 0);
   n.SulphurShortage = min(1, max(0, 1 - (n.EffectiveSulphur / (n.SulphurDemand * 0.9))));
   n.CoalShortage = min(1, max(0, 1 - (n.EffectiveCoal / (n.CoalDemand * 0.9))));
   n.WoodShortage = min(1, max(0, 1 - (n.EffectiveWood / (n.WoodDemand * 0.9))));
@@ -527,7 +527,7 @@ let GatheringEffectiveness = function (name) {
   n.BasicArmamentsShortage = min(1, max(0, 1 - (n.EffectiveBasicArmaments / (n.BasicArmamentsDemand * 0.9))));
   n.BasicArmamentsArmyShortage = min(1, max(0, 1 - (n.EffectiveBasicArmaments / n.ArmyBasicArmamentsDemand)));
 
-  n.HeavyArmaments = n.Production * (n.ProductionSectors.HeavyArmamentsSector / n.TotalSupply) * (1.1 - n.BasicToolsShortage) * (1.1 - n.IronShortage) * (1.1 - n.CoalShortage) * (1 + n.MetalWorkingEfficiency);
+  n.HeavyArmaments = n.Production * (n.ProductionSectors.HeavyArmamentsSector / n.TotalSupply) * (1.1 - n.BasicToolsShortage) * (1.1 - n.IronShortage) * (1.1 - n.CoalShortage) * (0.5 + n.MetalWorkingEfficiency);
   n.EffectiveHeavyArmaments = n.HeavyArmaments + n.HeavyArmamentsIncoming - n.HeavyArmamentsOutgoing + n.HeavyArmamentsStockpiled;
   n.HeavyArmamentsShortage = min(1, max(0, 1 - (n.EffectiveHeavyArmaments / (n.HeavyArmamentsDemand * 0.9))));
 
@@ -551,7 +551,7 @@ let GatheringEffectiveness = function (name) {
   n.EffectiveAlcohol = n.Alcohol + n.AlcoholIncoming - n.AlcoholOutgoing;
   n.AlcoholShortage = min(1, max(0, 1 - (n.EffectiveAlcohol / (n.AlcoholDemand * 0.9))));
 
-  n.HeavyIndustry = n.Production * (n.ProductionSectors.HeavyIndustrySector / n.TotalSupply) * (1.1 - n.BasicToolsShortage) * (1.1 - n.IronShortage) * (1.1 - n.CoalShortage) * (1 + n.MetalWorkingEfficiency);
+  n.HeavyIndustry = n.Production * (n.ProductionSectors.HeavyIndustrySector / n.TotalSupply) * (1.1 - n.BasicToolsShortage) * (1.1 - n.IronShortage) * (1.1 - n.CoalShortage) * (0.5 + n.MetalWorkingEfficiency);
   n.EffectiveHeavyIndustry = n.HeavyIndustry + n.HeavyIndustryIncoming - n.HeavyIndustryOutgoing;
   n.HeavyIndustryShortage = (n.HeavyIndustryDemand == 0 ? 0 : min(1, max(0, 1 - (n.EffectiveHeavyIndustry / (n.HeavyIndustryDemand * 0.9)))));
 
@@ -799,7 +799,7 @@ let GatheringEffectiveness = function (name) {
   }
 
   n.MaxFoodStock = (function () {
-    return max(100, 1000 * n.Population / 10000000) * n.StockingCapabilities;
+    return max(100, 1000 * n.Population / 10000000) * (n.StockingCapabilities * (n.Technologies.CannedFood ? 2 : 1));
   })();
   n.FutureFood = min(n.MaxFoodStock, n.FoodGain);
   n.FoodPopulationBoost = (function () {
@@ -852,7 +852,7 @@ let GatheringEffectiveness = function (name) {
 
   n.TradeProtection = (n.LightShips * 2 + n.MediumShips * 3.5 + n.HeavyShips * 2) / n.MerchantShips;
   n.MerchantShipsFullfilment = min(n.MerchantShips / (n.ResourceTrade + pseudoTradePower / 2 + (n.LocalTrade * n.Population / 2000000 * (1 + n.AverageDevelopment) + n.FoodTradeProfit) / 4), 1);
-  n.TradeEfficiency = max(0, (n.TradeImprovements + n.Reforms.GuildsBanned / 10 + n.Reforms.AntiMonopolyLaws / 5 - n.Corruption / 4 + n.CoastalPopulationPercent / 2 + n.Technologies.Cranes / 10 + n.Technologies.PromissoryNotes / 20 + n.TradeProtection + n.Technologies.Fluyt / 5) * (1 - n.Blockade) * max(n.MerchantShipsFullfilment, 0.1)) * (n.GovernmentDominatedBy == "Burgousie" || n.GovernmentDominatedBy == "Urban" ? 1.1 : 1);
+  n.TradeEfficiency = max(0, (n.TradeImprovements + n.Technologies.Wheel / 4 + n.CulturalAdvancements.Currency / 4 + n.Reforms.GuildsBanned / 10 + n.Reforms.AntiMonopolyLaws / 5 - n.Corruption / 4 + n.CoastalPopulationPercent / 2 + n.Technologies.Cranes / 10 + n.Technologies.PromissoryNotes / 20 + n.TradeProtection + n.Technologies.Fluyt / 5) * (1 - n.Blockade) * max(n.MerchantShipsFullfilment, 0.1)) * (n.GovernmentDominatedBy == "Burgousie" || n.GovernmentDominatedBy == "Urban" ? 1.1 : 1);
 
   n.ExternalTradeEff = n.Reforms.Isolationism * 0.25 + n.Reforms.Mercantilism * 0.75 + n.Reforms.Protectionism + n.Reforms.FreeTrade * 1.25;
   n.InternalTradeEff = n.Reforms.Isolationism * 1.25 + n.Reforms.Mercantilism + n.Reforms.Protectionism * 0.75 + n.Reforms.FreeTrade * 0.5;
@@ -883,7 +883,7 @@ let GatheringEffectiveness = function (name) {
   
   n.WarExhaustion = (n.Casualties / n.Population * 500) + (n.Pillaging * 20) + (n.Occupation * 5);
 
-  n.EffectiveHealth = n.Health / 20 + (n.Technologies.HumanAnatomy ? 0.15 : 0) + (n.CulturalAdvancements.PotatoPopulationBoom == true ? 0.2 : 0);
+  n.EffectiveHealth = n.Health / 20 + (n.Technologies.HumanAnatomy ? 0.15 : 0) + (n.CulturalAdvancements.PotatoPopulationBoom ? 0.2 : 0) + (n.Technologies.ModernChemistry ? 0.05 : 0) + (n.Technologies.Vaccines ? 0.15 : 0) + (n.Technologies.Morphine ? 0.05 : 0);
 
   n.Disease = n.PopulationDensityPerKmSquared / 25 - n.EffectiveHealth;
   n.UnderPopulation = n.Disease < 0.5 ? (1 - n.Disease) / 10 : 0;
@@ -1185,8 +1185,8 @@ let GatheringEffectiveness = function (name) {
   n.SocialSpendingUpkeep = n.SocialSpendingUpkeep / gameStats.TimeDivide;
 
 
-  n.NecessitiesCost = (0.5 * n.HousingValue + 0.5 * n.TextilesValue + n.BasicGoodsValue + n.AlcoholValue * (1 - n.ReligionGroups.Sunni.Points - n.ReligionGroups.Shia.Points) + n.CoffeeValue * 0.5 * (n.ReligionGroups.Sunni.Points - n.ReligionGroups.Shia.Points) + 0.5 * n.BasicToolsValue) / 200 + (n.CoalValue * 0.005 > n.WoodValue * 0.01 ? 0.01 * n.WoodValue : 0.005 * n.CoalValue) + (n.FoodAdditions > 0 ? 0.1 * n.FoodAdditionsValue + 0.9 * n.FoodValue : n.FoodValue);
-  n.LuxuriesCost = (n.HousingValue + n.TextilesValue + 1.5 * n.BasicGoodsValue + n.LuxuryGoodsValue + 2 * n.AlcoholValue * (1 - n.ReligionGroups.Sunni.Points - n.ReligionGroups.Shia.Points) + n.CoffeeValue * (n.ReligionGroups.Sunni.Points - n.ReligionGroups.Shia.Points)) / 200 + (n.CoalValue * 0.01 > n.WoodValue * 0.02 ? n.WoodValue * 0.02 : 0.01 * n.CoalValue) + (n.FoodAdditions > 0 ? n.FoodAdditionsValue + 1.25 * n.FoodValue : 1.75 * n.FoodValue) + (n.LuxuryConsumables > 0 ? 0.025 * n.LuxuryConsumablesValue : 0);
+  n.NecessitiesCost = (0.5 * n.HousingValue + 0.5 * n.TextilesValue + n.BasicGoodsValue + n.AlcoholValue * (0.5 + n.Alcoholism) * (1 - n.ReligionGroups.Sunni.Points - n.ReligionGroups.Shia.Points) + n.CoffeeValue * 0.5 * (n.ReligionGroups.Sunni.Points - n.ReligionGroups.Shia.Points) + 0.5 * n.BasicToolsValue) / 200 + (n.CoalValue * 0.005 > n.WoodValue * 0.01 ? 0.01 * n.WoodValue : 0.005 * n.CoalValue) + (n.FoodAdditions > 0 ? 0.1 * n.FoodAdditionsValue + 0.9 * n.FoodValue : n.FoodValue);
+  n.LuxuriesCost = (n.HousingValue + n.TextilesValue + 1.5 * n.BasicGoodsValue + n.LuxuryGoodsValue + 2 * n.AlcoholValue * (0.5 + n.Alcoholism) * (1 - n.ReligionGroups.Sunni.Points - n.ReligionGroups.Shia.Points) + n.CoffeeValue * (n.ReligionGroups.Sunni.Points - n.ReligionGroups.Shia.Points)) / 200 + (n.CoalValue * 0.01 > n.WoodValue * 0.02 ? n.WoodValue * 0.02 : 0.01 * n.CoalValue) + (n.FoodAdditions > 0 ? n.FoodAdditionsValue + 1.25 * n.FoodValue : 1.75 * n.FoodValue) + (n.LuxuryConsumables > 0 ? 0.025 * n.LuxuryConsumablesValue : 0);
 
   // SoL
   for (const EstateIndex in gameStats.Estates) {
@@ -1246,16 +1246,16 @@ let GatheringEffectiveness = function (name) {
   // PoliticalAwareness
   for (const EstateIndex in gameStats.Estates) {
     const Estate = gameStats.Estates[EstateIndex];
-    n[Estate + "PoliticalAwareness"] = max(0, n[Estate + "Literacy"] * (1 - n.Reforms.StateMediaOnly * 0.4 - n.Reforms.ExtensiveCensorship * 0.2 - n.Reforms.LimitedCensorship * 0.1));
+    n[Estate + "PoliticalAwareness"] = max(0, n[Estate + "Literacy"] * (1 - n.Reforms.StateMediaOnly * 0.4 - n.Reforms.ExtensiveCensorship * 0.2 - n.Reforms.LimitedCensorship * 0.1) - n.Alcoholism * (1 - n.ReligionGroups.Sunni.Points - n.ReligionGroups.Shia.Points) / 2);
   }
 
-  n.UrbanPoliticalAwareness = n.TownsfolkPoliticalAwareness * n.Workforces.Townsfolk / (n.Workforces.Townsfolk + n.Workforces.Merchants) + n.MerchantsPoliticalAwareness * n.Workforces.Merchants / (n.Workforces.Townsfolk + n.Workforces.Merchants);
+  n.UrbanPoliticalAwareness = n.TownsfolkPoliticalAwareness * n.Workforces.Townsfolk / (n.Workforces.Townsfolk + n.Workforces.Merchants) + n.MerchantsPoliticalAwareness * n.Workforces.Merchants / (n.Workforces.Townsfolk + n.Workforces.Merchants) - n.Alcoholism * (1 - n.ReligionGroups.Sunni.Points - n.ReligionGroups.Shia.Points) / 2;
 
-  n.MilitaryPoliticalAwareness = n.SoldiersPoliticalAwareness * n.Workforces.PopulationInMilitary / (n.Workforces.PopulationInMilitary + n.Workforces.Sailors) + n.SailorsPoliticalAwareness * n.Workforces.Sailors / (n.Workforces.PopulationInMilitary + n.Workforces.Sailors);
+  n.MilitaryPoliticalAwareness = n.SoldiersPoliticalAwareness * n.Workforces.PopulationInMilitary / (n.Workforces.PopulationInMilitary + n.Workforces.Sailors) + n.SailorsPoliticalAwareness * n.Workforces.Sailors / (n.Workforces.PopulationInMilitary + n.Workforces.Sailors) - n.Alcoholism * (1 - n.ReligionGroups.Sunni.Points - n.ReligionGroups.Shia.Points) / 2;
 
-  n.WorkersPoliticalAwareness = n.FarmersPoliticalAwareness * n.Workforces.Farmers / (n.Workforces.Farmers + n.Workforces.Labourers + n.Workforces.Serfs) + n.LabourersPoliticalAwareness * n.Workforces.Labourers / (n.Workforces.Farmers + n.Workforces.Labourers + n.Workforces.Serfs) + n.SerfsPoliticalAwareness * n.Workforces.Serfs / (n.Workforces.Farmers + n.Workforces.Labourers + n.Workforces.Serfs);
+  n.WorkersPoliticalAwareness = n.FarmersPoliticalAwareness * n.Workforces.Farmers / (n.Workforces.Farmers + n.Workforces.Labourers + n.Workforces.Serfs) + n.LabourersPoliticalAwareness * n.Workforces.Labourers / (n.Workforces.Farmers + n.Workforces.Labourers + n.Workforces.Serfs) + n.SerfsPoliticalAwareness * n.Workforces.Serfs / (n.Workforces.Farmers + n.Workforces.Labourers + n.Workforces.Serfs) - n.Alcoholism * (1 - n.ReligionGroups.Sunni.Points - n.ReligionGroups.Shia.Points) / 2;
 
-  n.BureaucratsPoliticalAwareness = 1;
+  n.BureaucratsPoliticalAwareness = 1 - n.Alcoholism * (1 - n.ReligionGroups.Sunni.Points - n.ReligionGroups.Shia.Points) / 2;
 
   n.AverageSolMods = {
     Workers: 0.5,
@@ -1288,7 +1288,7 @@ let GatheringEffectiveness = function (name) {
   }
   n.AverageTax = n.AverageTax / (1 - n.Workforces.Slaves);
 
-  n.PopulationHappiness = (5 * (0.25 + n.Prosperity) - n.AverageTax * 25 - n.Absolutism / 2 - n.PopulationControlReal - n.DebtToGdpRatio * 10 * n.PublicDebtLength - n.WarExhaustion / 2 - n.Disease);
+  n.PopulationHappiness = (5 * (0.25 + n.Prosperity) - n.AverageTax * 25 - n.Absolutism / 2 - n.PopulationControlReal - n.DebtToGdpRatio * 10 * n.PublicDebtLength - n.WarExhaustion / 2 - n.Disease + n.Alcoholism * (1 - n.ReligionGroups.Sunni.Points - n.ReligionGroups.Shia.Points) / 2);
 
   n.Manpower = n.Population * (n.Reforms.NationalMilitia * 0.02 + n.Reforms.FeudalLevies * 0.005 + n.Reforms.ProffesionalArmy * 0.025 + n.Reforms.MassConscription * 0.075 + n.Nationalism * 0.005) - n.OverallNumbers - n.Casualties;
 
@@ -1389,9 +1389,9 @@ let GatheringEffectiveness = function (name) {
     }
     return ca;
   })();
-  n.CulturalPowerGain = (n.LiteracyPercent / 3 + n.PopulationHappiness / 8) * (n.CulturalProsperity + n.CulturalAdvancements.RenaissanceThought / 10) / gameStats.TimeDivide;
+  n.CulturalPowerGain = 2 * n.Prosperity * (n.CulturalProsperity - n.Reforms.StateMediaOnly * 0.5 - n.Reforms.ExtensiveCensorship * 0.25 + n.Reforms.FreeSpeech * 0.25 + n.CulturalAdvancements.RenaissanceThought / 10) / gameStats.TimeDivide;
   n.CulturalPower = n.CulturalPower;
-  n.FutureCulturalPower = min(6, (n.CulturalPower + n.CulturalPowerGain));
+  n.FutureCulturalPower = min(n.LiteracyPercent, (n.CulturalPower + n.CulturalPowerGain));
   n.FuturePublicDebtLength = n.EffectiveDebt > 0 ? n.PublicDebtLength + 1 : 0;
 
   n.MaxPopulation = n.Population / n.Disease;

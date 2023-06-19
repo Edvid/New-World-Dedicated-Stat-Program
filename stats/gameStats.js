@@ -101,6 +101,7 @@ class Nation {
   PopulationGrowth;
   AverageDevelopment;
   Health;
+  Alcoholism;
   LiteracyPercent;
   HigherEducation;
   EducationEfficiency;
@@ -601,6 +602,7 @@ class Nation {
     this.DevelopmentPixelCount = 60000;
     this.coastalPopulation = 1000;
     this.Health = 1.00;
+    this.Alcoholism = 0.00;
     this.EducationEfficiency = 2;
       this.BureaucratsWages = 3;
     this.AdministrativeEfficiency = 25;
@@ -704,7 +706,7 @@ class Nation {
     this.PopulationControl = 0;
     this.BirthControl = 0;
     this.LocalTrade = 5;
-    this.TradeImprovements = 1;
+    this.TradeImprovements = 0.5;
     this.Spies = 0;
     this.SpyQuality = 1;
     /* #endregion */
@@ -880,6 +882,9 @@ class Nation {
     this.ResearchEffectiveness = 1.0;
 
     this.Technologies = {
+      IronWorking: true,
+      Wheel: true,
+      Paper: true,
       Gunpowder: true,
       VerticalLoom: true,
       SaddleAndStirrup: true,
@@ -924,7 +929,7 @@ class Nation {
       SteamBoats: false,
       HotAirBalloon: false,
       PowerLoomAndSewingMachine: false,
-      Fulimnate: false,
+      Fulminate: false,
       PaperMachine: false,
       FirstFactories: false,
       LinearAssemblyProcess: false,
@@ -1032,12 +1037,13 @@ class Nation {
 
     this.CulturalProsperity = 1.0;
     this.CulturalAdvancements = {
-      DivineRightToRule: false,
-      Serfdom: false,
-      Feudalism: false,
-      Universities: false,
-      NobleDuty: false,
-      Courthouses: false,
+      Currency: true,
+      DivineRightToRule: true,
+      Serfdom: true,
+      Feudalism: true,
+      Universities: true,
+      NobleDuty: true,
+      Courthouses: true,
       RenaissanceThought: false,
       EarlyModernAdministration: false,
       NationalSovereignity: false,

@@ -259,7 +259,7 @@ let TableLayouts = {
         ["ReligiousFervor", "Nationalism", "AtWar"]
     ],
     "Basic Stats": [
-        ["AverageDevelopment", "Health", "EducationEfficiency", "Propaganda", "SocialSpending", "PopulationControl", "BirthControl"],
+        ["AverageDevelopment", "Health", "Alcoholism", "EducationEfficiency", "Propaganda", "SocialSpending", "PopulationControl", "BirthControl"],
         ["Stability", "Absolutism", "Corruption", "Overextension", "Prosperity", "PopulationHappiness", "WarSupport"],
         ["AdministrativeTech", "AdministrativeEfficiency", "AdministrationSize", "AdministrativePower", "AdministrativeDemand", "AdministrativeStrain", "TaxEfficiency"],
         ["BureaucratsWages", "StateFactoryWorkerWage", "StateLabourerWage", "StateFarmerWage"]
@@ -389,6 +389,7 @@ let TableLayouts = {
         ["Isolation", "ResearchSpending", "ResearchEffectiveness", "ResearchBoostFromTech", "ResearchPointGain", "ResearchPoints", "FutureResearchPoints"]
     ],
     "Technologies": [
+        ["Technologies.IronWorking", "Technologies.Wheel", "Technologies.Paper"],
         ["Technologies.Gunpowder", "Technologies.VerticalLoom", "Technologies.SaddleAndStirrup", "Technologies.HorseCollar" ],
         ["Technologies.Explosives", "Technologies.Firelance"],
         ["Technologies.Cranes", "Technologies.PromissoryNotes", "Technologies.Bombards", "Technologies.HandCannons", "Technologies.PlateArmour", "Technologies.SappersAndEngineers"],
@@ -407,6 +408,7 @@ let TableLayouts = {
         ["CulturalAdvance", "CulturalProsperity", "CulturalPowerGain", "CulturalPower", "FutureCulturalPower"]
     ],
     "Cultural Advancements": [
+        ["CulturalAdvancements.Currency"],
         ["CulturalAdvancements.DivineRightToRule", "CulturalAdvancements.Serfdom", "CulturalAdvancements.Feudalism"],
         ["CulturalAdvancements.Universities", "CulturalAdvancements.NobleDuty"],
         ["CulturalAdvancements.Courthouses"],
