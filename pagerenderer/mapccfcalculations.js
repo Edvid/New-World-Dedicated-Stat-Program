@@ -136,6 +136,7 @@ class MapCCFCalculations {
             {
                 canIgnoreTransparentInner: true,
                 valueMode: "RGBAsNum",
+                unassignedPixelAssumption: 0,
                 Adjuster: self.coastData,
                 AdjusterMapping: (e) => {return e == 0x00ff00}
             }
@@ -282,8 +283,7 @@ class MapCCFCalculations {
         `.trimIndents());
         
         Object.keys(coastPopCount).forEach(nationKey => {
-            
-            self.addToTextOutput( `= ${coastPopCount[nationKey].coast} ${nationKey}.coastalPopulation\n`);
+            self.addToTextOutput( `= ${coastPopCount[nationKey]} ${nationKey}.coastalPopulation\n`);
         });
 
         self.addToTextOutput( 
@@ -568,7 +568,10 @@ class MapCCFCalculations {
 
                 if(typeof ret[OuterNameOfPixel] === 'undefined') ret[OuterNameOfPixel] = 0;
                 
-                ret[OuterNameOfPixel] += InnerPixelValue * adjustments();
+                let mult = adjustments();
+                ret[OuterNameOfPixel] += InnerPixelValue * mult;
+
+                if(isNaN(ret[OuterNameOfPixel])) debugger;
             }
             else{
                 let foundInnerObject = 
