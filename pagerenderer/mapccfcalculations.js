@@ -146,6 +146,7 @@ class MapCCFCalculations {
             0,
             {
                 canIgnoreTransparentInner: true,
+                unassignedPixelAssumption: 0,
                 valueMode: "greyScale" 
             }
         );
@@ -561,6 +562,8 @@ class MapCCFCalculations {
                 
                 let mult = adjustments();
                 ret[OuterNameOfPixel] += InnerPixelValue * mult;
+
+                if(isNaN(ret[OuterNameOfPixel])) debugger;
             }
             else if(options.valueMode == "RGBAsNum"){
                 const InnerPixelValue = isInnerDataEmpty ? options.unassignedPixelAssumption : Formulas.FetchedRGBAsNum(innerDataset, i*4);
@@ -587,8 +590,8 @@ class MapCCFCalculations {
                 if(typeof ret[OuterNameOfPixel] === 'undefined') ret[OuterNameOfPixel] = {};
                 if(typeof ret[OuterNameOfPixel][InnerNameOfPixel] === 'undefined') ret[OuterNameOfPixel][InnerNameOfPixel] = 0;
                 
-                let add = adjustments();
-                ret[OuterNameOfPixel][InnerNameOfPixel] += add;
+                let mult = adjustments();
+                ret[OuterNameOfPixel][InnerNameOfPixel] += 1 * mult;
 
             } 
         }
