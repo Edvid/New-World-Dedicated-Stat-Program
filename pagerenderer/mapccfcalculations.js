@@ -115,8 +115,6 @@ class MapCCFCalculations {
 
         self.populationXDevelopmentBonusData = await self.mapDataIterator(self.populationXDevelopmentBonusMerger);
 
-        //debugger;
-
         self.progressText.innerText = "adjusting culture map data for population and development";
         await new Promise(resolve => setTimeout(resolve));
 
@@ -561,17 +559,16 @@ class MapCCFCalculations {
                 
                 if(typeof ret[OuterNameOfPixel] === 'undefined') ret[OuterNameOfPixel] = 0;
                 
-                ret[OuterNameOfPixel] += InnerPixelValue * adjustments();
+                let mult = adjustments();
+                ret[OuterNameOfPixel] += InnerPixelValue * mult;
             }
             else if(options.valueMode == "RGBAsNum"){
                 const InnerPixelValue = isInnerDataEmpty ? options.unassignedPixelAssumption : Formulas.FetchedRGBAsNum(innerDataset, i*4);
 
                 if(typeof ret[OuterNameOfPixel] === 'undefined') ret[OuterNameOfPixel] = 0;
-                
+
                 let mult = adjustments();
                 ret[OuterNameOfPixel] += InnerPixelValue * mult;
-
-                if(isNaN(ret[OuterNameOfPixel])) debugger;
             }
             else{
                 let foundInnerObject = 
@@ -590,7 +587,8 @@ class MapCCFCalculations {
                 if(typeof ret[OuterNameOfPixel] === 'undefined') ret[OuterNameOfPixel] = {};
                 if(typeof ret[OuterNameOfPixel][InnerNameOfPixel] === 'undefined') ret[OuterNameOfPixel][InnerNameOfPixel] = 0;
                 
-                ret[OuterNameOfPixel][InnerNameOfPixel] += adjustments();
+                let add = adjustments();
+                ret[OuterNameOfPixel][InnerNameOfPixel] += add;
 
             } 
         }

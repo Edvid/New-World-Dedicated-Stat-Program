@@ -14,36 +14,35 @@ function syncNation(nationName) {
     gameStats.Nations[nationName].ForestsCutDown += (gameStats.Nations[nationName].Forestry - gameStats.Nations[nationName].Reforestation) * 750 / gameStats.TimeDivide;
 
     // SoL rise/fall
-  for (const EstateIndex in gameStats.Estates) {
-    const Estate = gameStats.Estates[EstateIndex];
-    gameStats.Nations[nationName]["Expected" + Estate + "Sol"] = (gameStats.Nations[nationName]["Expected" + Estate + "Sol"] > gameStats.Nations[nationName][Estate + "Sol"] * 1.05 ? gameStats.Nations[nationName]["Expected" + Estate + "Sol"] * 0.9 : gameStats.Nations[nationName]["Expected" + Estate + "Sol"] * max(1.05, gameStats.Nations[nationName][Estate + "Sol"] / gameStats.Nations[nationName]["Expected" + Estate + "Sol"] - 0.05));
-  }
+    for (const EstateIndex in gameStats.Estates) {
+        const Estate = gameStats.Estates[EstateIndex];
+        gameStats.Nations[nationName]["Expected" + Estate + "Sol"] = (gameStats.Nations[nationName]["Expected" + Estate + "Sol"] > gameStats.Nations[nationName][Estate + "Sol"] * 1.05 ? gameStats.Nations[nationName]["Expected" + Estate + "Sol"] * 0.9 : gameStats.Nations[nationName]["Expected" + Estate + "Sol"] * max(1.05, gameStats.Nations[nationName][Estate + "Sol"] / gameStats.Nations[nationName]["Expected" + Estate + "Sol"] - 0.05));
+    }
 
-  // weapons stockpiled
-  gameStats.Nations[nationName].BasicArmamentsStockpiled += (gameStats.Nations[nationName].EffectiveBasicArmaments - gameStats.Nations[nationName].BasicArmamentsStockpiled) - gameStats.Nations[nationName].BasicArmamentsDemand;
-  gameStats.Nations[nationName].BasicArmamentsStockpiled = max(0, gameStats.Nations[nationName].BasicArmamentsStockpiled);
-  gameStats.Nations[nationName].HeavyArmamentsStockpiled += (gameStats.Nations[nationName].EffectiveHeavyArmaments - gameStats.Nations[nationName].HeavyArmamentsStockpiled) - gameStats.Nations[nationName].HeavyArmamentsDemand;
-  gameStats.Nations[nationName].HeavyArmamentsStockpiled = max(0, gameStats.Nations[nationName].HeavyArmamentsStockpiled);
+    // weapons stockpiled
+    gameStats.Nations[nationName].BasicArmamentsStockpiled += (gameStats.Nations[nationName].EffectiveBasicArmaments - gameStats.Nations[nationName].BasicArmamentsStockpiled) - gameStats.Nations[nationName].BasicArmamentsDemand;
+    gameStats.Nations[nationName].BasicArmamentsStockpiled = max(0, gameStats.Nations[nationName].BasicArmamentsStockpiled);
+    gameStats.Nations[nationName].HeavyArmamentsStockpiled += (gameStats.Nations[nationName].EffectiveHeavyArmaments - gameStats.Nations[nationName].HeavyArmamentsStockpiled) - gameStats.Nations[nationName].HeavyArmamentsDemand;
+    gameStats.Nations[nationName].HeavyArmamentsStockpiled = max(0, gameStats.Nations[nationName].HeavyArmamentsStockpiled);
 
-  // Expected Weapons for private militaries
-  gameStats.Nations[nationName].ExpectedPrivateBasicArmaments = n.AristocracyBasicArmaments + n.BurgousieBasicArmaments + n.ClergyBasicArmaments + n.PopulaceBasicArmaments;
+    // Expected Weapons for private militaries
+    gameStats.Nations[nationName].ExpectedPrivateBasicArmaments = n.AristocracyBasicArmaments + n.BurgousieBasicArmaments + n.ClergyBasicArmaments + n.PopulaceBasicArmaments;
 
-  // Alcoholism
-  if (gameStats.Nations[nationName].EffectiveAlcohol > gameStats.Nations[nationName].AlcoholDemand * 0.75) {
-    gameStats.Nations[nationName].Alcoholism += 0.1;
-  }
-  else {
-    gameStats.Nations[nationName].Alcoholism -= 0.05;
-  }
-  gameStats.Nations[nationName].Alcoholism = clamp(0, 1, gameStats.Nations[nationName].Alcoholism);
+    // Alcoholism
+    if (gameStats.Nations[nationName].EffectiveAlcohol > gameStats.Nations[nationName].AlcoholDemand * 0.75) {
+        gameStats.Nations[nationName].Alcoholism += 0.1;
+    }
+    else {
+        gameStats.Nations[nationName].Alcoholism -= 0.05;
+    }
+    gameStats.Nations[nationName].Alcoholism = clamp(0, 1, gameStats.Nations[nationName].Alcoholism);
 
-  // Influence Change check
-  for (const EstateIndex in gameStats.EstatesGeneral) {
-    const Estate = gameStats.EstatesGeneral[EstateIndex];
-    gameStats.Nations[nationName].InfluenceChangeLoyaltyEffect[Estate] = (gameStats.Nations[nationName].EstateInfluencesReal[Estate + "Influence"] - gameStats.Nations[nationName].ExpectedInfluences[Estate + "Influence"]) * 1.5;
-    gameStats.Nations[nationName].ExpectedInfluences[Estate + "Influence"] = gameStats.Nations[nationName].EstateInfluencesReal[Estate + "Influence"];
-  }
-  debugger;
+    // Influence Change check
+    for (const EstateIndex in gameStats.EstatesGeneral) {
+        const Estate = gameStats.EstatesGeneral[EstateIndex];
+        gameStats.Nations[nationName].InfluenceChangeLoyaltyEffect[Estate] = (gameStats.Nations[nationName].EstateInfluencesReal[Estate + "Influence"] - gameStats.Nations[nationName].ExpectedInfluences[Estate + "Influence"]) * 1.5;
+        gameStats.Nations[nationName].ExpectedInfluences[Estate + "Influence"] = gameStats.Nations[nationName].EstateInfluencesReal[Estate + "Influence"];
+    }
 
     // Reform Power
     gameStats.Nations[nationName].ReformPower += gameStats.Nations[nationName].ReformPowerGain;
