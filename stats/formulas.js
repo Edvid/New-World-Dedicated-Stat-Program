@@ -266,7 +266,7 @@ class Formulas{
       n.Climates.CoastalDesert.Pixels * 0.2
     ) / 1750 * n.MiningEfficiency;
 
-    n.CoastalLandPercent = n.CoastalPixels / n.Size;
+    n.CoastalPopulationPercent = n.coastalPopulation / n.Population;
 
       n.ConscriptionPercent = (n.OverallNumbers + n.SmallForts * 100 + n.MediumForts * 250 + n.BigForts * 400 + n.HugeForts * 800 + n.CityFortifications * 250) / n.Population;
       n.Workforces.PopulationInMilitary = n.ConscriptionPercent;
@@ -491,7 +491,7 @@ class Formulas{
     n.BasicArmamentsDemand = n.ExpectedPrivateBasicArmaments + n.ArmyBasicArmamentsDemand;
     n.HeavyArmamentsDemand = (n.RegimentalGuns * 0.05 + n.FieldCannons * 0.1 + n.SiegeGuns * 0.2) * n.ArtilleryQualityIC + (n.Technologies.Gunports ? (n.MerchantShips * 0.1 + n.LightShips * 0.8) * n.LightShipQualityIC + (n.MediumShips * 1.6 * n.MediumShipQualityIC) + (n.HeavyShips * 3.2 * n.HeavyShipQualityIC) : 0) / 4 + (n.Technologies.Gunports ? (n.New_MerchantShips * 0.1 + n.New_LightShips * 0.8) * n.LightShipQualityIC + (n.New_MediumShips * 1.6 * n.MediumShipQualityIC) + (n.New_HeavyShips * 3.2 * n.HeavyShipQualityIC) : 0) * 2;
     n.TextilesDemand = (n.Production * (n.ProductionSectors.BasicGoodsSector / n.TotalSupply) / 2 + n.Production * (n.ProductionSectors.ShipBuildingSector / n.TotalSupply) / 2) / n.ProductionEfficiency + ((min(n.AverageExpectedSol, 1) * 0.5 + n.LuxuriesDemand * 1) * n.Population / 1000) / 200;
-    n.ShipBuildingDemand = n.CoastalLandPercent * n.Population / 500000 + ((n.LightShips + n.MerchantShips / 5) * n.LightShipQualityIC + n.MediumShips * n.MediumShipQualityIC * 2 + n.HeavyShips * n.HeavyShipQualityIC * 4) / 400 + ((n.New_LightShips + n.New_MerchantShips / 5) * n.LightShipQualityIC + n.New_MediumShips * n.MediumShipQualityIC * 2 + n.New_HeavyShips * n.HeavyShipQualityIC * 4) / 50;
+    n.ShipBuildingDemand = n.CoastalPopulationPercent * n.Population / 500000 + ((n.LightShips + n.MerchantShips / 5) * n.LightShipQualityIC + n.MediumShips * n.MediumShipQualityIC * 2 + n.HeavyShips * n.HeavyShipQualityIC * 4) / 400 + ((n.New_LightShips + n.New_MerchantShips / 5) * n.LightShipQualityIC + n.New_MediumShips * n.MediumShipQualityIC * 2 + n.New_HeavyShips * n.HeavyShipQualityIC * 4) / 50;
     n.BasicGoodsDemand = ((min(n.AverageExpectedSol, 1) * 1 + n.LuxuriesDemand * 1.5) * n.Population / 1000) / 200;
     n.LuxuryGoodsDemand = n.LuxuriesDemand * n.Population / 1000 / 200;
     n.AlcoholDemand = ((min(n.AverageExpectedSol, 1) * 1 + n.LuxuriesDemand * 2) * n.Population * (1 - n.ReligionGroups.Sunni.Points - n.ReligionGroups.Shia.Points) / 1000) / 200;
@@ -852,7 +852,7 @@ class Formulas{
 
     n.TradeProtection = (n.LightShips * 2 + n.MediumShips * 3.5 + n.HeavyShips * 2) / n.MerchantShips;
     n.MerchantShipsFullfilment = min(n.MerchantShips / (n.ResourceTrade + pseudoTradePower / 2 + (n.LocalTrade * n.Population / 2000000 * (1 + n.AverageDevelopment) + n.FoodTradeProfit) / 4), 1);
-    n.TradeEfficiency = max(0, (n.TradeImprovements + n.Reforms.GuildsBanned / 10 + n.Reforms.AntiMonopolyLaws / 5 - n.Corruption / 4 + n.CoastalLandPercent / 2 + n.Technologies.Cranes / 10 + n.Technologies.PromissoryNotes / 20 + n.TradeProtection + n.Technologies.Fluyt / 5) * (1 - n.Blockade) * max(n.MerchantShipsFullfilment, 0.1)) * (n.GovernmentDominatedBy == "Burgousie" || n.GovernmentDominatedBy == "Urban" ? 1.1 : 1);
+    n.TradeEfficiency = max(0, (n.TradeImprovements + n.Reforms.GuildsBanned / 10 + n.Reforms.AntiMonopolyLaws / 5 - n.Corruption / 4 + n.CoastalPopulationPercent / 2 + n.Technologies.Cranes / 10 + n.Technologies.PromissoryNotes / 20 + n.TradeProtection + n.Technologies.Fluyt / 5) * (1 - n.Blockade) * max(n.MerchantShipsFullfilment, 0.1)) * (n.GovernmentDominatedBy == "Burgousie" || n.GovernmentDominatedBy == "Urban" ? 1.1 : 1);
 
     n.ExternalTradeEff = n.Reforms.Isolationism * 0.25 + n.Reforms.Mercantilism * 0.75 + n.Reforms.Protectionism + n.Reforms.FreeTrade * 1.25;
     n.InternalTradeEff = n.Reforms.Isolationism * 1.25 + n.Reforms.Mercantilism + n.Reforms.Protectionism * 0.75 + n.Reforms.FreeTrade * 0.5;
@@ -1732,14 +1732,7 @@ class Formulas{
     }
 
     let newPixelPop = pixelPop * (1 + PixelsPopGrowth);
-    let newPixel = new Uint8ClampedArray(4);
-    newPixel[3] = 255;
-    newPixel[2] = newPixelPop % 256;
-    newPixel[1] = Math.floor(newPixelPop / 256) % 256;
-    newPixel[0] = Math.floor(newPixelPop / 65536) % 256;
-
-    
-    return newPixel;
+    return Formulas.NumAsRGB(newPixelPop);
   }
 
   static hexAsNumToHumanReadableMinMaxGradient = new MinMaxGradient([
@@ -1752,7 +1745,7 @@ class Formulas{
 
   static maxPopInPixel = 50000;
 
-  static RBGAsNum(imgArr, pIndex){
+  static FetchedRGBAsNum(imgArr, pIndex){
     let pixel = Formulas.fetchFour(imgArr, pIndex);
     if(pixel[3] < 128) return; //if transparent, abort
 
@@ -1765,9 +1758,17 @@ class Formulas{
     return pixelVal;
   }
 
+  static NumAsRGB(num){
+    let ret = new Uint8ClampedArray(4);
+    ret[3] = 255;
+    ret[2] = num % 256;
+    ret[1] = Math.floor(num / 256) % 256;
+    ret[0] = Math.floor(num / 65536) % 256;
+    return ret;
+  }
 
   static PopulationMapHumanReadable(imgArray, pixelIndex, options){
-    let pixelPop = Formulas.RBGAsNum(imgArray, pixelIndex);
+    let pixelPop = Formulas.FetchedRGBAsNum(imgArray, pixelIndex);
     //if no return value of RBGAsNum was given, color is just the color it was previously
     let color = pixelPop == null ? 
       Formulas.fetchFour(imgArray, pixelIndex) : 

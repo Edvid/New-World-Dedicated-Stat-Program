@@ -129,13 +129,15 @@ class MapCCFCalculations {
             }
         );
 
-        let coastPixelCount = await self.findDistribution(
-            self.nationData, self.coastData, "nation", "coast", 
+        let coastPopCount = await self.findDistribution(
+            self.nationData, self.popData, "nation", "coastal population", 
             self.nationColorProperties,
             self.coastColorProperties, 
             {
-                unassignedPixelAssumption: "Noncoast",
-                canIgnoreTransparentInner: true
+                canIgnoreTransparentInner: true,
+                valueMode: "RGBAsNum",
+                Adjuster: self.coastData,
+                AdjusterMapping: (e) => {return e == 0x00ff00}
             }
         );
         
@@ -155,7 +157,7 @@ class MapCCFCalculations {
             self.cultureColorProperties,
             {
                 unassignedPixelAssumption: "Foreign",
-                alphaAdjuster: self.populationXDevelopmentBonusData
+                Adjuster: self.populationXDevelopmentBonusData
             } 
         );
 
@@ -165,7 +167,7 @@ class MapCCFCalculations {
             self.religionColorProperties, 
             {
                 unassignedPixelAssumption: "Pagan",
-                alphaAdjuster: self.populationXDevelopmentBonusData
+                Adjuster: self.populationXDevelopmentBonusData
             }
         );
 
@@ -279,9 +281,9 @@ class MapCCFCalculations {
         <... > Nations
         `.trimIndents());
         
-        Object.keys(coastPixelCount).forEach(nationKey => {
+        Object.keys(coastPopCount).forEach(nationKey => {
             
-            self.addToTextOutput( `= ${coastPixelCount[nationKey].coast} ${nationKey}.CoastalPixels\n`);
+            self.addToTextOutput( `= ${coastPopCount[nationKey].coast} ${nationKey}.coastalPopulation\n`);
         });
 
         self.addToTextOutput( 
@@ -538,20 +540,35 @@ class MapCCFCalculations {
 
             const OuterNameOfPixel = foundOuterObject.name;
 
+
+            function adjustments(){   
+                if(!options.adjustForAlpha && !options.Adjuster)
+                return 1;
+                else if(options.Adjuster){
+                    let rawMultiplier = Formulas.FetchedRGBAsNum(options.Adjuster, i*4);
+                    let multiplier = options.AdjusterMapping ? options.AdjusterMapping(rawMultiplier) : rawMultiplier;
+                    return multiplier;
+                }
+                else if(options.adjustForAlpha){
+                    let alpha = getInnerDataPoint(i*4+3);
+                    return alpha;
+                }
+            }
+
             if(options.valueMode == "greyScale"){
                 const innerGreyScale = getInnerDataPoint(i*4);
                 const InnerPixelValue = isInnerDataEmpty ? options.unassignedPixelAssumption : innerGreyScale;
                 
                 if(typeof ret[OuterNameOfPixel] === 'undefined') ret[OuterNameOfPixel] = 0;
                 
-                ret[OuterNameOfPixel] += InnerPixelValue;
+                ret[OuterNameOfPixel] += InnerPixelValue * adjustments();
             }
             else if(options.valueMode == "RGBAsNum"){
                 const InnerPixelValue = isInnerDataEmpty ? options.unassignedPixelAssumption : Formulas.FetchedRGBAsNum(innerDataset, i*4);
 
                 if(typeof ret[OuterNameOfPixel] === 'undefined') ret[OuterNameOfPixel] = 0;
                 
-                ret[OuterNameOfPixel] += InnerPixelValue;
+                ret[OuterNameOfPixel] += InnerPixelValue * adjustments();
             }
             else{
                 let foundInnerObject = 
@@ -570,18 +587,9 @@ class MapCCFCalculations {
                 if(typeof ret[OuterNameOfPixel] === 'undefined') ret[OuterNameOfPixel] = {};
                 if(typeof ret[OuterNameOfPixel][InnerNameOfPixel] === 'undefined') ret[OuterNameOfPixel][InnerNameOfPixel] = 0;
                 
-                if(!options.adjustForAlpha)
-                    ret[OuterNameOfPixel][InnerNameOfPixel]++;
-                else if(options.alphaAdjuster){
-                    let multiplier = Formulas.FetchedRGBAsNum(options.alphaAdjuster, i*4);
-                    ret[OuterNameOfPixel][InnerNameOfPixel] += multiplier;
-                }
-                else {
-                    let alpha = getInnerDataPoint(i*4+3);
-                    ret[OuterNameOfPixel][InnerNameOfPixel] += alpha;
-                }
+                ret[OuterNameOfPixel][InnerNameOfPixel] += adjustments();
 
-            }
+            } 
         }
 
         return ret;

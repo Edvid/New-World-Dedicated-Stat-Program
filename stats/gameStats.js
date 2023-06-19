@@ -530,8 +530,8 @@ class Nation {
   MaxPopulation;
   UnderPopulation;
   DetachedLand;
-  CoastalPixels;
-  CoastalLandPercent;
+  coastalPopulation;
+  CoastalPopulationPercent;
   DevelopmentPixelCount;
   AverageDevelopment;
   LandAdministration;
@@ -599,7 +599,7 @@ class Nation {
     /* #region  Most Stats */
     this.ReligiousDisunity = 0.00;
     this.DevelopmentPixelCount = 60000;
-    this.CoastalPixels = 1000;
+    this.coastalPopulation = 1000;
     this.Health = 1.00;
     this.EducationEfficiency = 2;
       this.BureaucratsWages = 3;

@@ -213,7 +213,7 @@ The stats of type `Derived`, `Turn Based`, and `Constant` will usually not be mo
 
 `!suppress` as is will make the following line not throw a warning if it otherwise would have. You can put this line above a line modifying one of these types of stats if so desired
 
-`!suppress 999` (or any other number) will make the following number of lines not throw a warning if it otherwise would have. This technique is applied by the mapccfcalculations page for admins to suppress several changes to religionGroups, cultureGroups, Climate Sizes, DevelopmentPixelCount, CoastalPixels, maxResources, and TradeZones. The page first uses `!suppress 99999` to suppress the next many many unspecified amount of lines, and then at the end using `!suppress 0` to effectively turn off the suppression again.
+`!suppress 999` (or any other number) will make the following number of lines not throw a warning if it otherwise would have. This technique is applied by the mapccfcalculations page for admins to suppress several changes to religionGroups, cultureGroups, Climate Sizes, DevelopmentPixelCount, coastalPopulation, maxResources, and TradeZones. The page first uses `!suppress 99999` to suppress the next many many unspecified amount of lines, and then at the end using `!suppress 0` to effectively turn off the suppression again.
 
 ## Structure
 

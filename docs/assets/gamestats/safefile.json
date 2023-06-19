@@ -1273,8 +1273,8 @@
                 "MaxPopulation": 8823529.411764704,
                 "UnderPopulation": 0.07166666666666666,
                 "DetachedLand": 0,
-                "CoastalPixels": 1000,
-                "CoastalLandPercent": 0.06666666666666667,
+                "coastalPopulation": 1000,
+                "CoastalPopulationPercent": 0.06666666666666667,
                 "DevelopmentPixelCount": 60000,
                 "LandAdministration": 0.585,
                 "Climates": {

@@ -334,7 +334,7 @@ let TableLayouts = {
     ],
     "Land Stats": [
         ["Size", "PopulationDensityPerKmSquared", "Disease", "UnderPopulation", "MaxPopulation"],
-        ["LandAdministration", "Overextension", "CoastalLandPercent", "AverageDevelopment", "HabitableLand"]
+        ["LandAdministration", "Overextension", "CoastalPopulationPercent", "AverageDevelopment", "HabitableLand"]
     ],
     "Estates": [
         ["AristocracyLoyalty", "ClergyLoyalty", "BurgousieLoyalty", "UrbanLoyalty", "BureaucratsLoyalty", "IntellectualsLoyalty", "WorkersLoyalty", "MilitaryLoyalty"],
