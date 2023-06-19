@@ -1709,7 +1709,7 @@ class Formulas{
     let n = gameStats.Nations[nationName];
 
     let climateName = fetchName("climate");
-    let climateScore = gameStats.Climates[climateName].ClimateScore;
+    let climateScore = gameStats.Climates[climateName].ClimateScore + (n.Technologies.Vaccines ? (climateName == "SubTropical" || climateName == "Tropical" || climateName == "Savanna" ? 0.1 : 0) : 0);
     
     
     let isCoastalPixel = fetchBinary("coast", "coast")
