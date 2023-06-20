@@ -184,7 +184,7 @@ static evaluateNation(nationName) {
     Independent: n.MilitaryControl.Independent / n.MilitaryControlTotal
   }
 
-  n.RealOverallImprovements = n.OverallImprovements - n.Alcoholism * (1 - n.ReligionGroups.Sunni.Points - n.ReligionGroups.Shia.Points) / 2 + n.MilitaryControlReal.Independent + n.Reforms.WealthyOfficers / 5 + n.Reforms.MeritocraticOfficers / 2 - n.Reforms.NationalMilitia * 0.2 + n.Reforms.ProffesionalArmy * 0.4 + n.Reforms.MassConscription * 0.2 + n.Technologies.Morphine / 10;
+  n.RealOverallImprovements = n.OverallImprovements - n.Alcoholism * (1 - n.ReligionGroups.Sunni.Points - n.ReligionGroups.Shia.Points) / 2 + n.MilitaryControlReal.Independent + n.Reforms.WealthyOfficers / 5 + n.Reforms.MeritocraticOfficers / 2 - n.Reforms.NationalMilitia * 0.2 + n.Reforms.ProffesionalArmy * 0.4 + n.Reforms.MassConscription * 0.2 + n.Technologies.Morphine / 10 + n.Technologies.IronWorking / 4;
 
   n.IrregularQualityIC = n.RealOverallImprovements + n.IrregularImprovements + n.Technologies.Metallurgy / 10;
   n.MeleeQualityIC = n.RealOverallImprovements + n.MeleeImprovements + n.Technologies.PlateArmour / 5 + n.Technologies.StandardizedPikes / 10 + n.Technologies.Metallurgy / 10;
@@ -1012,7 +1012,7 @@ let GatheringEffectiveness = function (name) {
 
       rbb += min(n["Effective" + resource], n[resource + "Demand"]) * n[resource + "Value"];
     }
-    return (rbb * 10);
+    return (rbb * 5);
   })();
 
   n.ResourceBudgetBoost += n.OutgoingTradePowerFromResourceTrade;
@@ -1372,14 +1372,13 @@ let GatheringEffectiveness = function (name) {
 
   n.EliteUnitsCap = ((n.OverallNumbers - n.Militia - n.Levies - n.EliteCavalry - n.EliteInfantry) * 0.025);
 
-  n.IrregularQuality = (n.RealOverallImprovements + n.IrregularImprovements + n.Technologies.Metallurgy / 10 - n.Corruption / 5) * max(0.1, 1 - n.IronShortage) * max(0.1, 1 - n.BasicArmamentsArmyShortage);
-  n.MeleeQuality = (n.RealOverallImprovements + n.MeleeImprovements + n.Technologies.PlateArmour / 5 + n.Technologies.StandardizedPikes / 10 + n.Technologies.Metallurgy / 10 - n.Corruption / 5) * max(0.1, 1 - n.IronShortage) * max(0.1, 1 - n.BasicArmamentsArmyShortage);
-  n.RangedQuality = (n.RealOverallImprovements + n.RangedImprovements + n.Technologies.Metallurgy / 10 - n.Corruption / 5) * max(0.1, 1 - n.IronShortage) * max(0.1, 1 - n.BasicArmamentsArmyShortage);
-  n.CavalryQuality = (n.RealOverallImprovements + n.CavalryImprovements + n.Technologies.SaddleAndStirrup / 5 + n.Technologies.PlateArmour / 5 + n.Technologies.Reiters / 10 + n.Technologies.Metallurgy / 10 - n.Corruption / 5) * max(0.1, 1 - n.IronShortage) * (n.Technologies.Reiters == 1 ? max(0.1, 1 - n.SulphurShortage) : 1) * max(0.1, 1 - n.BasicArmamentsArmyShortage);
-  n.FirearmQuality = (n.RealOverallImprovements + n.FirearmImprovements + n.Technologies.Matchlock / 5 + n.Technologies.SocketBayonet / 5 + n.Technologies.Flintlock / 5 + n.Technologies.Metallurgy / 10 + n.Technologies.Bayonet / 20 - n.Corruption / 5) * max(0.1, 1 - n.IronShortage) * max(0.1, 1 - n.SulphurShortage) * max(0.1, 1 - n.BasicArmamentsArmyShortage);
-  n.SiegeQuality = (n.RealOverallImprovements + n.SiegeImprovements + n.Technologies.Metallurgy / 10 - n.Corruption / 5) * max(0.1, 1 - n.IronShortage) * max(0.1, 1 - n.BasicArmamentsArmyShortage);
-  n.ArtilleryQuality = (n.RealOverallImprovements + n.ArtilleryImprovements + n.Technologies.Limber / 5 + n.Technologies.Mortars / 5 + n.Technologies.Metallurgy / 10 - n.Corruption / 5) * max(0.1, 1 - n.IronShortage) * max(0.1, 1 - n.SulphurShortage) * max(0.1, 1 - n.HeavyArmamentsShortage);
-
+    n.IrregularQuality = (n.IrregularQualityIC - n.Corruption / 5) * max(0.1, 1 - n.IronShortage) * max(0.1, 1 - n.BasicArmamentsArmyShortage);
+    n.MeleeQuality = (n.MeleeQualityIC - n.Corruption / 5) * max(0.1, 1 - n.IronShortage) * max(0.1, 1 - n.BasicArmamentsArmyShortage);
+    n.RangedQuality = (n.RangedQualityIC - n.Corruption / 5) * max(0.1, 1 - n.IronShortage) * max(0.1, 1 - n.BasicArmamentsArmyShortage);
+    n.CavalryQuality = (n.CavalryQualityIC - n.Corruption / 5) * max(0.1, 1 - n.IronShortage) * (n.Technologies.Reiters == 1 ? max(0.1, 1 - n.SulphurShortage) : 1) * max(0.1, 1 - n.BasicArmamentsArmyShortage);
+    n.FirearmQuality = (n.FirearmQualityIC - n.Corruption / 5) * max(0.1, 1 - n.IronShortage) * max(0.1, 1 - n.SulphurShortage) * max(0.1, 1 - n.BasicArmamentsArmyShortage);
+    n.SiegeQuality = (n.SiegeQualityIC - n.Corruption / 5) * max(0.1, 1 - n.IronShortage) * max(0.1, 1 - n.BasicArmamentsArmyShortage);
+    n.ArtilleryQuality = (n.ArtilleryQualityIC - n.Corruption / 5) * max(0.1, 1 - n.IronShortage) * max(0.1, 1 - n.SulphurShortage) * max(0.1, 1 - n.HeavyArmamentsShortage);
 
   n.CulturalAdvance = (function () {
     let ca = 0;
