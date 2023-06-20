@@ -721,7 +721,7 @@ class MapCCFCalculations {
 
     populationXDevelopmentMerger(mapIndex){
         let pixelPop = Formulas.FetchedRGBAsNum(self.popData, mapIndex);
-        let pixelDev = self.developmentData[mapIndex];
+        let pixelDev = self.developmentData[mapIndex] / 255;
         let ret = pixelPop * pixelDev;
         
         return Formulas.NumAsRGB(ret);
@@ -729,8 +729,8 @@ class MapCCFCalculations {
 
     populationXDevelopmentBonusMerger(mapIndex){
         let pixelPop = Formulas.FetchedRGBAsNum(self.popData, mapIndex);
-        let pixelDev = self.developmentData[mapIndex];
-        let ret = pixelPop * (128 + pixelDev / 2);
+        let pixelDev = self.developmentData[mapIndex] / 255;
+        let ret = pixelPop * (0.5 + pixelDev / 2);
         
         return Formulas.NumAsRGB(ret);
     }
