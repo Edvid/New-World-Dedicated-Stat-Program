@@ -635,7 +635,8 @@ class Nation {
 
     this.ExpectedSlavesSol = 0.02;
     this.ExpectedLabourersSol = 0.25;
-    this.ExpectedSerfsSol = 0.25;
+      this.ExpectedSerfsSol = 0.25;
+      this.ExpectedUnemployedSol = 0.05;
     this.ExpectedFarmersSol = 0.5;
     this.ExpectedTownsfolkSol = 2.5;
     this.ExpectedClergySol = 6;
@@ -771,7 +772,7 @@ class Nation {
 
     /* #region  Agriculture */
     this.AgricultureSubsidies = 0.00;
-    this.Fertility = 0.50;
+    this.Fertility = 2500;
     this.AgricultureInfrastructure = 1.10;
     this.StockingCapabilities = 1.00;
     this.AgricultureAdvancements = 1.10;
@@ -1551,6 +1552,7 @@ class Stats{
         "HeavyIndustry"
     ];
     this.Estates = [
+      "Unemployed",
       "Slaves",
       "Labourers",
       "Serfs",

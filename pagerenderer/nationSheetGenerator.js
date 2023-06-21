@@ -324,7 +324,7 @@ let TableLayouts = {
       ["OverallShipCount", "MerchantShipsFullfilment", "TradeProtection", "NavalPower"]
     ],
     "Agriculture": [
-        ["Fertility", "AgricultureSubsidies", "AgricultureInfrastructure", "AgricultureAdvancements", "AgricultureTechnology", "FarmingEfficiency", "AgricultureSpending"],
+        ["ArableLand", "AgricultureSubsidies", "AgricultureInfrastructure", "AgricultureAdvancements", "AgricultureTechnology", "FarmingEfficiency", "AgricultureSpending"],
         ["PopInAgriculture", "DailyFood", "FoodConsumption", "FoodGain", "StockingCapabilities", "MaxFoodStock", "SellingCapability"],
         ["Food", "FutureFood", "SurplusFood", "FoodSold", "FoodLost", "FoodTradeProfit", "FoodPopulationBoost"],
         ["FoodRationing"]
@@ -339,11 +339,11 @@ let TableLayouts = {
     "Estates": [
         ["AristocracyLoyalty", "ClergyLoyalty", "BurgousieLoyalty", "UrbanLoyalty", "BureaucratsLoyalty", "IntellectualsLoyalty", "WorkersLoyalty", "MilitaryLoyalty"],
         ["AristocracyTax", "ClergyTax", "BurgousieTax", "UrbanTax", "BureaucratsTax", "IntellectualsTax", "WorkersTax", "MilitaryTax"],
-        ["SlavesWage", "LabourersWage", "SerfsWage", "FarmersWage", "TownsfolkWage", "ClergyWage", "BureaucratsWage", "MerchantsWage", "IntellectualsWage", "SailorsWage", "SoldiersWage", "AristocracyWage", "BurgousieWage"],
-      ["SlavesTaxes", "LabourersTaxes", "SerfsTaxes", "FarmersTaxes", "TownsfolkTaxes", "ClergyTaxes", "BureaucratsTaxes", "MerchantsTaxes", "IntellectualsTaxes", "SailorsTaxes", "SoldiersTaxes", "AristocracyTaxes", "BurgousieTaxes", "TaxRevenue"],
-      ["ExpectedSlavesSol", "ExpectedLabourersSol", "ExpectedSerfsSol", "ExpectedFarmersSol", "ExpectedTownsfolkSol", "ExpectedClergySol", "ExpectedBureaucratsSol", "ExpectedMerchantsSol", "ExpectedIntellectualsSol", "ExpectedSailorsSol", "ExpectedSoldiersSol", "ExpectedAristocracySol", "ExpectedBurgousieSol", "AverageExpectedSol"],
-      ["SlavesSol", "LabourersSol", "SerfsSol", "FarmersSol", "TownsfolkSol", "ClergySol", "BureaucratsSol", "MerchantsSol", "IntellectualsSol", "SailorsSol", "SoldiersSol", "AristocracySol", "BurgousieSol", "AverageSol"],
-      ["SlavesLiteracy", "LabourersLiteracy", "SerfsLiteracy", "FarmersLiteracy", "TownsfolkLiteracy", "ClergyLiteracy", "BureaucratsLiteracy", "MerchantsLiteracy", "IntellectualsLiteracy", "SailorsLiteracy", "SoldiersLiteracy", "AristocracyLiteracy", "BurgousieLiteracy"],
+        ["UnemployedWage", "SlavesWage", "LabourersWage", "SerfsWage", "FarmersWage", "TownsfolkWage", "ClergyWage", "BureaucratsWage", "MerchantsWage", "IntellectualsWage", "SailorsWage", "SoldiersWage", "AristocracyWage", "BurgousieWage"],
+        ["UnemployedTaxes", "SlavesTaxes", "LabourersTaxes", "SerfsTaxes", "FarmersTaxes", "TownsfolkTaxes", "ClergyTaxes", "BureaucratsTaxes", "MerchantsTaxes", "IntellectualsTaxes", "SailorsTaxes", "SoldiersTaxes", "AristocracyTaxes", "BurgousieTaxes", "TaxRevenue"],
+        ["ExpectedUnemployedSol", "ExpectedSlavesSol", "ExpectedLabourersSol", "ExpectedSerfsSol", "ExpectedFarmersSol", "ExpectedTownsfolkSol", "ExpectedClergySol", "ExpectedBureaucratsSol", "ExpectedMerchantsSol", "ExpectedIntellectualsSol", "ExpectedSailorsSol", "ExpectedSoldiersSol", "ExpectedAristocracySol", "ExpectedBurgousieSol", "AverageExpectedSol"],
+        ["UnemployedSol", "SlavesSol", "LabourersSol", "SerfsSol", "FarmersSol", "TownsfolkSol", "ClergySol", "BureaucratsSol", "MerchantsSol", "IntellectualsSol", "SailorsSol", "SoldiersSol", "AristocracySol", "BurgousieSol", "AverageSol"],
+        ["UnemployedLiteracy", "SlavesLiteracy", "LabourersLiteracy", "SerfsLiteracy", "FarmersLiteracy", "TownsfolkLiteracy", "ClergyLiteracy", "BureaucratsLiteracy", "MerchantsLiteracy", "IntellectualsLiteracy", "SailorsLiteracy", "SoldiersLiteracy", "AristocracyLiteracy", "BurgousieLiteracy"],
       ["AristocracyPoliticalAwareness", "ClergyPoliticalAwareness", "BurgousiePoliticalAwareness", "UrbanPoliticalAwareness", "BureaucratsPoliticalAwareness", "IntellectualsPoliticalAwareness", "WorkersPoliticalAwareness", "MilitaryPoliticalAwareness"]
     ],
   "Reforms": [
