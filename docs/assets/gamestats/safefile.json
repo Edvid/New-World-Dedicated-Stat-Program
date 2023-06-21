@@ -3074,14 +3074,14 @@
             }
         },
         "Fertility": {
-            "bad": { "Color": "ffffff", "Score": 0.025 },
-            "lessbad": { "Color": "ff0000", "Score": 0.15 },
-            "stillkindabad": { "Color": "ff6a00", "Score": 0.35 },
-            "yeahitsbad": { "Color": "ffd800", "Score": 0.55 },
-            "heyitsstartingtolooklikesomething": { "Color": "00ff00", "Score": 0.7 },
-            "yeahthisisgood": { "Color": "00c900", "Score": 0.8 },
-            "ohwowyeah": { "Color": "008000", "Score": 0.9 },
-            "perfect": { "Color": "003e00", "Score": 1.0 }
+            "Infertile": { "Color": "ffffff", "Score": 0.025 },
+            "BarelyFertile": { "Color": "ff0000", "Score": 0.15 },
+            "LowFertility": { "Color": "ff6a00", "Score": 0.35 },
+            "AverageFertility": { "Color": "ffd800", "Score": 0.55 },
+            "GoodFertility": { "Color": "00ff00", "Score": 0.7 },
+            "HighFertility": { "Color": "00c900", "Score": 0.8 },
+            "AmazingFertility": { "Color": "008000", "Score": 0.9 },
+            "TopFertility": { "Color": "003e00", "Score": 1.0 }
         },
         "UnitUpkeepCosts": {
             "Levies": 0.00075,
