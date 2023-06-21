@@ -375,9 +375,9 @@ let TableLayouts = {
     "Trade Influence - Europe": [
         [ti("Iberia"), ti("WesternMediterranean"), ti("BayOfBiscay"), ti("SouthernFrance"), ti("France"), ti("EnglishChannel"), ti("BritishIsles"), ti("NorthSea"), ti("Rhine"), ti("Denmark")],
         [ti("CentralEurope"), ti("WesternDanube"), ti("EasternDanube"), ti("Adriatic"), ti("CentralMediterranean"), ti("Greece"), ti("Romania"), ti("Vistula"), ti("BalticSea"), ti("NorthernNordics")],
-        [ti("BarentsSea"), ti("Novgorod"), ti("Livonia"), ti("Dniepr"), ti("Muscovy"), ti("DonRiver"), ti("Crimea"), ti("Caucasus"), ti("Volga"), ti("Ura River")]
+        [ti("BarentsSea"), ti("Novgorod"), ti("Livonia"), ti("Dniepr"), ti("Muscovy"), ti("DonRiver"), ti("Crimea"), ti("Caucasus"), ti("Volga"), ti("UralRiver")]
     ],
-    "Trade Influence - Africa": [
+   "Trade Influence - Africa": [
         [ti("Morocco"), ti("WesternSahara"), ti("Sahara"), ti("Egypt"), ti("RedSea"), ti("SouthernNile"), ti("Somalia"), ti("Guinea"), ti("WesternNiger")],
         [ti("EasternNiger"), ti("Gabon"), ti("CongoRiver"), ti("LakeVictoria"), ti("LakeTanganyika"), ti("EastAfrica"), ti("Angola"), ti("Mozambique"), ti("SouthAfrica")]
     ],
