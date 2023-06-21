@@ -256,7 +256,7 @@ let TableLayouts = {
         ["ReligionRepresentedAtGovernmentLevel", "CultureRepresentedAtGovernmentLevel", "PopulationStabilityImpact"],
         ["ReligionRepresentedAtGovernmentLevelPercent", "CultureRepresentedAtGovernmentLevelPercent", "PopulationTechImpact"],
         ["ReligiousDisunity", "CulturalDisunity", "PopulationGrowth"],
-        ["ReligiousFervor", "Nationalism", "AtWar"]
+        ["ReligiousFervor", "Nationalism"]
     ],
     "Basic Stats": [
         ["AverageDevelopment", "Health", "Alcoholism", "EducationEfficiency", "Propaganda", "SocialSpending", "PopulationControl", "BirthControl"],
@@ -265,19 +265,25 @@ let TableLayouts = {
         ["BureaucratsWages", "StateFactoryWorkerWage", "StateLabourerWage", "StateFarmerWage"]
     ],
     "Budget Stats": [
-        ["TradeEfficiency", "LocalTrade", "InternalTrade", "ExternalTrade", "TradePower"],
+        ["TradeEfficiency", "LocalTrade", "TradePower"],
         ["TradeImprovements", "ProductionEfficiency", "Production"],
         ["Inflation", "DailyBudget", "Budget"],
         ["BudgetIncoming", "BudgetOutgoing", "Balance"],
         ["InternalTariffs", "ExternalTariffs", "TariffEfficiency"],
         ["Gdp", "GdpPerKCapita", "DebtToGdpRatio"]
     ],
-  "Upkeeps and Income": [
-        ["OverallIncome", "OverallSpending"],
-        ["TaxRevenue", "TariffsRevenue", "PassiveInvestmentIncome", "StateProductionRevenue", "StateResourceRevenue", "StateAgricultureRevenue"],
-        ["ArmyUpkeep", "NavyUpkeep", "BuildingsUpkeep", "TroopRecruitmentCost", "SpyUpkeep"],
-        ["EducationUpkeep", "PopulationControlUpkeep", "HygieneUpkeep", "ResearchUpkeep", "PropagandaUpkeep"],
-        ["SocialSpendingUpkeep", "AgricultureSpending", "AdministrativeUpkeep", "StateWorkersUpkeep"]
+    "Debt Stats": [
+        ["PossiblePublicDebt", "PublicDebtLength", "InterestRate"],
+        ["PublicDebtTaken", "EffectiveDebt", "DebtToGdpRatio"]
+    ],
+    "Upkeeps and Income": [
+      ["OverallIncome", "OverallSpending"],
+        ["TaxRevenue", "TariffsRevenue", "PassiveInvestmentIncome"],
+        ["StateProductionRevenue", "StateResourceRevenue", "StateAgricultureRevenue"],
+        ["SocialSpendingUpkeep", "AgricultureSpending", "EducationUpkeep", "PopulationControlUpkeep"],
+        ["ResearchUpkeep", "PropagandaUpkeep", "AdministrativeUpkeep", "StateWorkersUpkeep"],
+        ["ArmyUpkeep", "BuildingsUpkeep", "TroopRecruitmentCost", "SpyUpkeep"],
+        ["HealthUpkeep", "NavyUpkeep"]
     ],
   "Production": [
     ["Production", "ProductionEfficiency", "ProductionGovernmentControl", "IronShortage", "CoalShortage", "WoodShortage", "NaturalFabricsShortage", "LuxuryNaturalFabricsShortage", "ValuableMaterialsShortage"],
@@ -306,10 +312,6 @@ let TableLayouts = {
       ["ClergyLevies", "ClergyMilitia", "ClergyLightInfantry", "ClergyHeavyInfantry", "ClergyEliteInfantry", "ClergyArchers", "ClergyCrossbowmen", "ClergyMusketeers", "ClergyMusketMilitia", "ClergyRiflemen", "ClergyLightCavalry", "ClergyHeavyCavalry", "ClergyEliteCavalry"],
       ["PopulaceMilitia", "PopulaceMusketMilitia"]
     ],
-    "Debt Stats": [
-        ["PossiblePublicDebt", "PublicDebtLength", "InterestRate"],
-        ["PublicDebtTaken", "EffectiveDebt", "DebtToGdpRatio"]
-    ],
     "Buildings": [
       ["SmallForts", "MediumForts", "BigForts", "HugeForts", "CityFortifications", "SupplyDepots", "NavalBases"],
       ["SmallFortUpkeep", "MediumFortUpkeep", "BigFortUpkeep", "HugeFortUpkeep", "CityFortificationUpkeep", "SupplyDepotUpkeep", "NavalBaseUpkeep"]
@@ -330,7 +332,7 @@ let TableLayouts = {
         ["FoodRationing"]
     ],
     "War Stats": [
-        ["Casualties", "Pillaging", "Occupation", "Blockade", "MinorBattles", "MajorBattles", "WarExhaustion", "Fervor"]
+        ["AtWar", "Casualties", "Pillaging", "Occupation", "Blockade", "MinorBattles", "MajorBattles", "WarExhaustion", "Fervor"]
     ],
     "Land Stats": [
         ["Size", "PopulationDensityPerKmSquared", "Disease", "UnderPopulation", "MaxPopulation"],

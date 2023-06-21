@@ -140,7 +140,7 @@ class Nation {
   ArmyUpkeep;
   SpyUpkeep;
   SocialSpendingUpkeep;
-  HygieneUpkeep;
+  HealthUpkeep;
   EducationUpkeep;
   AgricultureSpending;
   PropagandaUpkeep;

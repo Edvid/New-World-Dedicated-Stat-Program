@@ -914,7 +914,7 @@ let StatTypes = {
         "SocialSpendingUpkeep",
         "AgricultureSpending",
         "AdministrativeUpkeep",
-        "HygieneUpkeep",
+        "HealthUpkeep",
         "ResearchUpkeep",
         "PropagandaUpkeep",
         "EliteUnitsCap",
