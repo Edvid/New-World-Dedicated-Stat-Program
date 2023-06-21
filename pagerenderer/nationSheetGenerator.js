@@ -369,21 +369,23 @@ let TableLayouts = {
         ["FeudalArmiesChangeCost", "Reforms.FeudalNobleArmies", "MercenariesChangeCost", "Reforms.Mercenaries", "ReligiousOrdersChangeCost", "Reforms.ReligiousOrders"]
 	],
     "Trade Influence - Americas": [
-        [ti("Alaska"), ti("Cascadia"), ti("CaliforniaAndWestMexico"), ti("HudsonBay"), ti("GreatLakes"), ti("Louisiana"), ti("GulfOfMexico"), ti("LawrenceGulf"), ti("EastCoast"), ti("Carribean"), ti("CentralAmerica")],
-        [ti("GuyanaAndSuriname"), ti("Amazon"), ti("Peru"), ti("RioGrande"), ti("LaPlata"), ti("Chile"), ti("Patagonia")]
+        [ti("Alaska"), ti("CentralCanada"), ti("HudsonBay"), ti("LawrenceGulf"), ti("Cascadia"), ti("WestCoast"), ti("TheRockies"), ti("Mississippi"), ti("EastCoast"), ti("Caribbean")],
+        [ti("GulfOfMexico"), ti("WesternMexico"), ti("CentralAmerica"), ti("Venezuela"), ti("Amazon"), ti("Peru"), ti("SaoFranciscoRiver"), ti("ParanaRiver"), ti("Chile"), ti("Patagonia")]
     ],
     "Trade Influence - Europe": [
-        [ti("NorthSea"), ti("BritishIsles"), ti("EnglishChannel"), ti("France"), ti("BayOfBiscay"), ti("WestIberia"), ti("Gibraltar"), ti("WesternMediterranean"), ti("Rhine")],
-        [ti("CentralMediterranean"), ti("Adriatic"), ti("Germany"), ti("WesternDanube"), ti("Denmark"), ti("Baltic"), ti("NorthNordics"), ti("BarentsSea")],
-        [ti("Novgorod"), ti("Poland"), ti("Dniepr"), ti("Crimea"), ti("EasternDanube"), ti("Greece"), ti("NorthernAnatolia"), ti("EasternMediterranean")]
+        [ti("Iberia"), ti("WesternMediterranean"), ti("BayOfBiscay"), ti("SouthernFrance"), ti("France"), ti("EnglishChannel"), ti("BritishIsles"), ti("NorthSea"), ti("Rhine"), ti("Denmark")],
+        [ti("CentralEurope"), ti("WesternDanube"), ti("EasternDanube"), ti("Adriatic"), ti("CentralMediterranean"), ti("Greece"), ti("Romania"), ti("Vistula"), ti("BalticSea"), ti("NorthernNordics")],
+        [ti("BarentsSea"), ti("Novgorod"), ti("Livonia"), ti("Dniepr"), ti("Muscovy"), ti("DonRiver"), ti("Crimea"), ti("Caucasus"), ti("Volga"), ti("Ura River")]
     ],
     "Trade Influence - Africa": [
-        [ti("Egypt"), ti("RedSea"), ti("WesternSahara"), ti("CoteDIvoire"), ti("Nigeria"), ti("SouthNile"), ti("Somalia"), ti("Kongo"), ti("EastAfrica"), ti("Mozambique"), ti("SouthAfrica")]
+        [ti("Morocco"), ti("WesternSahara"), ti("Sahara"), ti("Egypt"), ti("RedSea"), ti("SouthernNile"), ti("Somalia"), ti("Guinea"), ti("WesternNiger")],
+        [ti("EasternNiger"), ti("Gabon"), ti("CongoRiver"), ti("LakeVictoria"), ti("LakeTanganyika"), ti("EastAfrica"), ti("Angola"), ti("Mozambique"), ti("SouthAfrica")]
     ],
     "Trade Influence - Asia": [
-        [ti("Mesopotamia"), ti("PersianGulf"), ti("Caucasus"), ti("DonRiver"), ti("Volga"), ti("CentralAsia"), ti("WestSiberia"), ti("EastSiberia")],
-        [ti("Iran"), ti("Pakistan"), ti("Tibet"), ti("Mongolia"), ti("Manchuria"), ti("SeaOfJapan"), ti("NorthChina"), ti("YangtzeRiver")],
-        [ti("SouthChina"), ti("NorthIndia"), ti("WestIndia"), ti("EastIndia"), ti("Burma"), ti("SouthEastAsia"), ti("NorthAustralia"), ti("SouthAustralia")]
+        [ti("ArabianDesert"), ti("EasternMediterranean"), ti("NorthernAnatolia"), ti("Mesopotamia"), ti("PersianGulf"), ti("Iran"), ti("CaspianSea"), ti("Afghanistan")],
+        [ti("WesternSiberia"), ti("CentralSiberia"), ti("EasternSiberia"), ti("CentralAsia"), ti("GobiDesert"), ti("Manchuria"), ti("SeaOfJapan"), ti("YellowRiver")],
+        [ti("YangtzeRiver"), ti("SouthChinaSea"), ti("Sichuan"), ti("Tibet"), ti("IndusRiver"), ti("Ganges"), ti("CentralIndia"), ti("Deccan")],
+        [ti("SouthEastAsia"), ti("Indonesia"), ti("Pacific"), ti("NorthernAustralia"), ti("AustralianDesert"), ti("SouthernAustralia")]
     ],
     "Tech Stats": [
         ["Isolation", "ResearchSpending", "ResearchEffectiveness", "ResearchBoostFromTech", "ResearchPointGain", "ResearchPoints", "FutureResearchPoints"]
