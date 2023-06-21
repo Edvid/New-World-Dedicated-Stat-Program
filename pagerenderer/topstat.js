@@ -1,19 +1,19 @@
 const TopStats = [
-    {name: "AdministrativeEfficiency", displayName: "AdmEfficiency"},
-    {name: "DailyBudget"},
-    {name: "Stability"},
-    {name: "Population", displayName: "PopulationSize"},
-    {name: "Size", displayName: "Area", map: true},
-    {name: "OverallNumbers", displayName: "ArmySize"},
-    {name: "OverallShipCount", displayName: "NavySize"},
-    {name: "ArmyQuality"},
-    {name: "NavyQuality"},
-    {name: "LiteracyPercent", displayName: "Literacy"},
-    {name: "TradePower"},
-    {name: "TradeProtection"},
-    {name: "OverallIncome"},
-    {name: "Production"},
-    {name: "ResearchPointGain"},
+  { name: "Population", displayName: "Population" },
+  { name: "DailyBudget", displayName: "Income" },
+  { name: "Budget", displayName: "Budget" },
+  { name: "LiteracyPercent", displayName: "Literacy" },
+  { name: "Gdp", displayName: "GDP" },
+  { name: "GdpPerKCapita", displayName: "GDP per K Capita" },
+  { name: "DebtToGdpRatio", displayName: "Debt to GDP Ratio" },
+  { name: "Stability", displayName: "Stability" },
+  { name: "WarSupport", displayName: "War Support" },
+  { name: "AverageDevelopment", displayName: "Development" },
+  { name: "AdministrativeEfficiency", displayName: "Administrative Efficiency" },
+  { name: "OverallNumbers", displayName: "Army" },
+  { name: "NavalPower", displayName: "Navy" },
+  { name: "DailyFood", displayName: "Daily Food" },
+  { name: "Size", displayName: "Size" }
 ];
 
 document.querySelector("body").addEventListener("game load done", populateTopStatTable);
@@ -55,6 +55,7 @@ function populateTopStatTable(){
         
         TopStatTitle.style.borderBottom = "5px black solid";
         TopStatTitle.style.borderTop = "5px black solid";
+        TopStatTitle.style.padding = "4px";
         if (c != 0) TopStatTitle.style.borderLeft = "5px black solid";
         rows[0].appendChild(TopStatTitle);
     }
@@ -98,6 +99,13 @@ function populateTopStatTable(){
             flagElement.style.border = "1px black solid";
             nameElement.style.border = "1px black solid";
             valueElement.style.border = "1px black solid";
+
+            flagElement.style.padding = "2px";
+            nameElement.style.padding = "2px";
+            valueElement.style.padding = "2px";
+
+            nameElement.style.textAlign = "center";
+            valueElement.style.textAlign = "center";
             
             if (c != 0) flagElement.style.borderLeft = "5px solid black";
 
