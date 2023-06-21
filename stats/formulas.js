@@ -44,10 +44,10 @@ static evaluateNation(nationName) {
     n.GovernmentEffects = "-Adm, +WarSupport, +Morale, +PopulationControl";
   }
   if (n.GovernmentDominatedBy == "Aristocracy") {
-    n.GovernmentEffects = "-FarmingEff, +Adm";
+      n.GovernmentEffects = "+Corruption, -FarmingEff, +Adm";
   }
   if (n.GovernmentDominatedBy == "Burgousie") {
-    n.GovernmentEffects = "-Corruption, -Adm, +TradeEff, +ProductionEff";
+    n.GovernmentEffects = "+Corruption, -Adm, +TradeEff, +ProductionEff";
   }
 
   n.AgricultureTechnology = 0 + n.Technologies.HorseCollar + n.CulturalAdvancements.PotatoPopulationBoom + n.Reforms.Enclosure + n.Technologies.CannedFood;
