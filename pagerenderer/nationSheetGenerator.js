@@ -277,13 +277,13 @@ let TableLayouts = {
         ["PublicDebtTaken", "EffectiveDebt", "DebtToGdpRatio"]
     ],
     "Upkeeps and Income": [
-      ["OverallIncome", "OverallSpending"],
+        ["OverallIncome", "OverallSpending"],
         ["TaxRevenue", "TariffsRevenue", "PassiveInvestmentIncome"],
         ["StateProductionRevenue", "StateResourceRevenue", "StateAgricultureRevenue"],
         ["SocialSpendingUpkeep", "AgricultureSpending", "EducationUpkeep", "PopulationControlUpkeep"],
         ["ResearchUpkeep", "PropagandaUpkeep", "AdministrativeUpkeep", "StateWorkersUpkeep"],
-        ["ArmyUpkeep", "BuildingsUpkeep", "TroopRecruitmentCost", "SpyUpkeep"],
-        ["HealthUpkeep", "NavyUpkeep"]
+        ["ArmyUpkeep", "TroopRecruitmentCost", "BuildingsUpkeep", "ConstructionCost"],
+        ["HealthUpkeep", "NavyUpkeep", "SpyUpkeep"]
     ],
   "Production": [
     ["Production", "ProductionEfficiency", "ProductionGovernmentControl", "IronShortage", "CoalShortage", "WoodShortage", "NaturalFabricsShortage", "LuxuryNaturalFabricsShortage", "ValuableMaterialsShortage"],
@@ -314,7 +314,8 @@ let TableLayouts = {
     ],
     "Buildings": [
       ["SmallForts", "MediumForts", "BigForts", "HugeForts", "CityFortifications", "SupplyDepots", "NavalBases"],
-      ["SmallFortUpkeep", "MediumFortUpkeep", "BigFortUpkeep", "HugeFortUpkeep", "CityFortificationUpkeep", "SupplyDepotUpkeep", "NavalBaseUpkeep"]
+        ["SmallFortUpkeep", "MediumFortUpkeep", "BigFortUpkeep", "HugeFortUpkeep", "CityFortificationUpkeep", "SupplyDepotUpkeep", "NavalBaseUpkeep"],
+        ["SmallFortConstructionCost", "MediumFortConstructionCost", "BigFortConstructionCost", "HugeFortConstructionCost", "CityFortificationConstructionCost", "SupplyDepotConstructionCost", "NavalBaseConstructionCost"]
     ],
     "Navy": [
       ["ShipBuildingShortage", "IronShortage", "SulphurShortage"],

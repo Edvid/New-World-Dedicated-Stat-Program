@@ -239,7 +239,15 @@ class Nation {
   New_MerchantShips
   New_LightShips;
   New_MediumShips;
-  New_HeavyShips;
+    New_HeavyShips;
+
+    New_SmallForts;
+    New_MediumForts;
+    New_BigForts;
+    New_HugeForts;
+    New_CityFortifications;
+    New_SupplyDepots;
+    New_NavalBases;
 
   TroopRecruitmentCost;
   /* #endregion */
@@ -804,7 +812,15 @@ class Nation {
     this.New_MerchantShips = 0;
     this.New_LightShips = 0;
     this.New_MediumShips = 0;
-    this.New_HeavyShips = 0;
+      this.New_HeavyShips = 0;
+
+      this.New_SmallForts = 0;
+      this.New_MediumForts = 0;
+      this.New_BigForts = 0;
+      this.New_HugeForts = 0;
+      this.New_CityFortifications = 0;
+      this.New_SupplyDepots = 0;
+      this.New_NavalBases = 0;
 
 
     /* #endregion */

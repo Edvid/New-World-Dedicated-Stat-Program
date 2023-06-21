@@ -194,16 +194,6 @@ static evaluateNation(nationName) {
   n.SiegeQualityIC = n.RealOverallImprovements + n.SiegeImprovements + n.Technologies.Metallurgy / 10;
   n.ArtilleryQualityIC = n.RealOverallImprovements + n.ArtilleryImprovements + n.Technologies.Limber / 5 + n.Technologies.Mortars / 5 + n.Technologies.Metallurgy / 10 + n.Technologies.Fulminate / 20;
 
-  n.SmallFortUpkeep = 3 * n.RealOverallImprovements / gameStats.TimeDivide;
-  n.MediumFortUpkeep = 6 * n.RealOverallImprovements / gameStats.TimeDivide;
-  n.BigFortUpkeep = 12 * n.RealOverallImprovements / gameStats.TimeDivide;
-  n.HugeFortUpkeep = 24 * n.RealOverallImprovements / gameStats.TimeDivide;
-  n.CityFortificationUpkeep = 10 * n.RealOverallImprovements / gameStats.TimeDivide;
-  n.SupplyDepotUpkeep = 2 / gameStats.TimeDivide;
-  n.NavalBaseUpkeep = 2 / gameStats.TimeDivide;
-
-  n.BuildingsUpkeep = ((n.SmallForts * 3 + n.MediumForts * 6 + n.BigForts * 12 + n.HugeForts * 24 + n.CityFortifications * 10) * n.RealOverallImprovements + (n.SupplyDepots + n.NavalBases) * 2) / gameStats.TimeDivide;
-
   n.NavyTech = 0 - n.Alcoholism * (1 - n.ReligionGroups.Sunni.Points - n.ReligionGroups.Shia.Points) / 2 + n.Reforms.WealthyOfficers / 5 + n.Reforms.MeritocraticOfficers / 2 + n.Technologies.Docks / 2 + n.Technologies.Gunports / 2 + n.Technologies.Gunlock / 4 + n.Technologies.SteamBoats / 10 + n.Technologies.Fulminate / 20;
   n.LightShipQualityIC = 1 + n.LightShipImprovements + n.NavyTech;
   n.MediumShipQualityIC = 1 + n.MediumShipImprovements + n.NavyTech + n.Technologies.Galleons / 6;
@@ -489,9 +479,9 @@ static evaluateNation(nationName) {
   //n.ArmyBasicArmamentsDemand = ((n.Levies * 0.15 + n.Militia * 0.25) * n.IrregularQualityIC + (n.LightInfantry * 0.5 + n.HeavyInfantry * 0.85 + n.EliteInfantry * 1) * n.MeleeQualityIC + (n.Archers * 0.5 + n.Crossbowmen * 0.7) * n.RangedQualityIC + (n.HandCannoneers * 0.75 + n.Musketeers * 0.8 + n.MusketMilitia * 0.7 + n.Riflemen * 1.25) * n.FirearmQualityIC + (n.LightCavalry * 1 + n.HeavyCavalry * 1.25 + n.EliteCavalry * 1.5) * n.CavalryQualityIC) / 1000;
 
   n.BasicToolsDemand = (n.Production * (n.ProductionSectors.AerospaceSector / n.TotalSupply) + n.Production * (n.ProductionSectors.AutomotiveSector / n.TotalSupply) + n.Production * (n.ProductionSectors.ElectronicsSector / n.TotalSupply) + n.Production * (n.ProductionSectors.ChemicalSector / n.TotalSupply) / 4 + n.Production * (n.ProductionSectors.HeavyIndustrySector / n.TotalSupply) / 10 + n.Production * (n.ProductionSectors.LuxuryGoodsSector / n.TotalSupply) / 4 + n.Production * (n.ProductionSectors.BasicGoodsSector / n.TotalSupply) / 4 + n.Production * (n.ProductionSectors.ShipBuildingSector / n.TotalSupply) + n.Production * (n.ProductionSectors.TextilesSector / n.TotalSupply) / 4 + n.Production * (n.ProductionSectors.HeavyArmamentsSector / n.TotalSupply) / 4 + n.Production * (n.ProductionSectors.BasicArmamentsSector / n.TotalSupply) / 4 + n.Production * (n.ProductionSectors.ConstructionSector / n.TotalSupply)) / n.ProductionEfficiency + (min(n.AverageExpectedSol, 1) * n.Population / 1000) / 200;
-  n.HousingDemand = ((min(n.AverageExpectedSol, 1) * 0.5 + n.LuxuriesDemand * 1) * n.Population / 1000) / 200;
-  n.BasicArmamentsDemand = n.ExpectedPrivateBasicArmaments + n.ArmyBasicArmamentsDemand;
-  n.HeavyArmamentsDemand = (n.RegimentalGuns * 0.05 + n.FieldCannons * 0.1 + n.SiegeGuns * 0.2) * n.ArtilleryQualityIC + (n.Technologies.Gunports ? (n.MerchantShips * 0.1 + n.LightShips * 0.8) * n.LightShipQualityIC + (n.MediumShips * 1.6 * n.MediumShipQualityIC) + (n.HeavyShips * 3.2 * n.HeavyShipQualityIC) : 0) / 4 + (n.Technologies.Gunports ? (n.New_MerchantShips * 0.1 + n.New_LightShips * 0.8) * n.LightShipQualityIC + (n.New_MediumShips * 1.6 * n.MediumShipQualityIC) + (n.New_HeavyShips * 3.2 * n.HeavyShipQualityIC) : 0) * 2;
+  n.HousingDemand = ((min(n.AverageExpectedSol, 1) * 0.5 + n.LuxuriesDemand * 1) * n.Population / 1000) / 200 + n.RealOverallImprovements * (n.SmallForts * 1 + n.MediumForts * 2 + n.BigForts * 4 + n.HugeForts * 8 + n.CityFortifications * 3) + 0.75 * n.SupplyDepots + n.NavalBases * 1.25;
+    n.BasicArmamentsDemand = n.ExpectedPrivateBasicArmaments + n.ArmyBasicArmamentsDemand + n.RealOverallImprovements * (n.SmallForts * 0.5 + n.MediumForts * 1 + n.BigForts * 2 + n.HugeForts * 4 + n.CityFortifications * 2);
+    n.HeavyArmamentsDemand = (n.RegimentalGuns * 0.05 + n.FieldCannons * 0.1 + n.SiegeGuns * 0.2) * n.ArtilleryQualityIC + (n.Technologies.Gunports ? (n.MerchantShips * 0.1 + n.LightShips * 0.8) * n.LightShipQualityIC + (n.MediumShips * 1.6 * n.MediumShipQualityIC) + (n.HeavyShips * 3.2 * n.HeavyShipQualityIC) : 0) / 4 + (n.Technologies.Gunports ? (n.New_MerchantShips * 0.1 + n.New_LightShips * 0.8) * n.LightShipQualityIC + (n.New_MediumShips * 1.6 * n.MediumShipQualityIC) + (n.New_HeavyShips * 3.2 * n.HeavyShipQualityIC) : 0) * 2 + n.RealOverallImprovements * (n.SmallForts * 0.5 + n.MediumForts * 1 + n.BigForts * 2 + n.HugeForts * 4 + n.CityFortifications * 2);
   n.TextilesDemand = (n.Production * (n.ProductionSectors.BasicGoodsSector / n.TotalSupply) / 2 + n.Production * (n.ProductionSectors.ShipBuildingSector / n.TotalSupply) / 2) / n.ProductionEfficiency + ((min(n.AverageExpectedSol, 1) * 0.5 + n.LuxuriesDemand * 1) * n.Population / 1000) / 200;
   n.ShipBuildingDemand = n.CoastalPopulationPercent * n.Population / 500000 + ((n.LightShips + n.MerchantShips / 5) * n.LightShipQualityIC + n.MediumShips * n.MediumShipQualityIC * 2 + n.HeavyShips * n.HeavyShipQualityIC * 4) / 400 + ((n.New_LightShips + n.New_MerchantShips / 5) * n.LightShipQualityIC + n.New_MediumShips * n.MediumShipQualityIC * 2 + n.New_HeavyShips * n.HeavyShipQualityIC * 4) / 50;
   n.BasicGoodsDemand = ((min(n.AverageExpectedSol, 1) * 1 + n.LuxuriesDemand * 1.5) * n.Population / 1000) / 200;
@@ -582,6 +572,32 @@ static evaluateNation(nationName) {
   n.UnitUpkeep = (n.ArmyBasicArmamentsDemand * n.BasicArmamentsValue + (n.RegimentalGuns * 0.05 + n.FieldCannons * 0.1 + n.SiegeGuns * 0.2) * n.ArtilleryQualityIC * n.HeavyArmamentsValue) / gameStats.TimeDivide;
   n.UnitUpkeep += n.SiegeEquipment * 0.1;
   n.UnitUpkeep += n.LargeSiegeEquipment * 0.2;
+
+    n.SmallFortUpkeep = 1 * n.RealOverallImprovements * n.HousingValue + 0.5 * (n.HeavyArmamentsValue + n.BasicArmamentsValue);
+    n.MediumFortUpkeep = 2 * n.RealOverallImprovements * n.HousingValue + 1 * (n.HeavyArmamentsValue + n.BasicArmamentsValue);
+    n.BigFortUpkeep = 4 * n.RealOverallImprovements * n.HousingValue + 2 * (n.HeavyArmamentsValue + n.BasicArmamentsValue);
+    n.HugeFortUpkeep = 8 * n.RealOverallImprovements * n.HousingValue + 4 * (n.HeavyArmamentsValue + n.BasicArmamentsValue);
+    n.CityFortificationUpkeep = 3 * n.RealOverallImprovements * n.HousingValue + 2 * (n.HeavyArmamentsValue + n.BasicArmamentsValue);
+    n.SupplyDepotUpkeep = 0.75 * n.HousingValue;
+    n.NavalBaseUpkeep = 1.25 * n.HousingValue;
+
+    n.SmallFortConstructionCost = n.SmallFortUpkeep * 5;
+    n.MediumFortConstructionCost = n.MediumFortUpkeep * 5;
+    n.BigFortConstructionCost = n.BigFortUpkeep * 5;
+    n.HugeFortConstructionCost = n.HugeFortUpkeep * 5;
+    n.CityFortificationConstructionCost = n.CityFortificationUpkeep * 5;
+    n.SupplyDepotConstructionCost = n.SupplyDepotUpkeep * 5;
+    n.NavalBaseConstructionCost = n.NavalBaseUpkeep * 5;
+
+    n.SmallFortUpkeep = n.SmallFortUpkeep / gameStats.TimeDivide;
+    n.MediumFortUpkeep = n.MediumFortUpkeep / gameStats.TimeDivide;
+    n.BigFortUpkeep = n.BigFortUpkeep / gameStats.TimeDivide;
+    n.HugeFortUpkeep = n.HugeFortUpkeep / gameStats.TimeDivide;
+    n.CityFortificationUpkeep = n.CityFortificationUpkeep / gameStats.TimeDivide;
+    n.SupplyDepotUpkeep = n.SupplyDepotUpkeep / gameStats.TimeDivide;
+    n.NavalBaseUpkeep = n.NavalBaseUpkeep / gameStats.TimeDivide;
+
+    n.BuildingsUpkeep = n.SmallForts * n.SmallFortUpkeep + n.MediumForts * n.MediumFortUpkeep + n.BigForts * n.BigFortUpkeep + n.HugeForts * n.HugeFortUpkeep + n.CityFortifications * n.CityFortificationUpkeep + n.NavalBases * n.NavalBaseUpkeep + n.SupplyDepots * n.SupplyDepotUpkeep;
 
   n.LuxuryConsumablesValue = n.LuxuryConsumablesDemand / (n.LuxuryConsumables + 0.1);
   n.FoodAdditionsValue = n.FoodAdditionsDemand / (n.FoodAdditions + 0.1);
@@ -875,10 +891,10 @@ static evaluateNation(nationName) {
   n.UpkeepForOneMediumShip = ((0.02 * n.ShipBuildingValue + n.Technologies.Gunports * 1.6 * n.HeavyArmamentsValue) * (n.MediumShipQualityIC)) / gameStats.TimeDivide / 4;
   n.UpkeepForOneHeavyShip = ((0.04 * n.ShipBuildingValue + n.Technologies.Gunports * 3.2 * n.HeavyArmamentsValue) * (n.HeavyShipQualityIC)) / gameStats.TimeDivide / 4;
 
-  n.MerchantShipConstructionCost = ((0.002 * n.ShipBuildingValue + n.Technologies.Gunports * 0.1 * n.HeavyArmamentsValue) * (n.LightShipQualityIC)) / gameStats.TimeDivide * 2;
-  n.LightShipConstructionCost = ((0.01 * n.ShipBuildingValue + n.Technologies.Gunports * 0.8 * n.HeavyArmamentsValue) * (n.LightShipQualityIC)) / gameStats.TimeDivide * 2;
-  n.MediumShipConstructionCost = ((0.02 * n.ShipBuildingValue + n.Technologies.Gunports * 1.6 * n.HeavyArmamentsValue) * (n.MediumShipQualityIC)) / gameStats.TimeDivide * 2;
-  n.HeavyShipConstructionCost = ((0.04 * n.ShipBuildingValue + n.Technologies.Gunports * 3.2 * n.HeavyArmamentsValue) * (n.HeavyShipQualityIC)) / gameStats.TimeDivide * 2;
+  n.MerchantShipConstructionCost = ((0.002 * n.ShipBuildingValue + n.Technologies.Gunports * 0.1 * n.HeavyArmamentsValue) * (n.LightShipQualityIC)) * 2;
+  n.LightShipConstructionCost = ((0.01 * n.ShipBuildingValue + n.Technologies.Gunports * 0.8 * n.HeavyArmamentsValue) * (n.LightShipQualityIC)) * 2;
+  n.MediumShipConstructionCost = ((0.02 * n.ShipBuildingValue + n.Technologies.Gunports * 1.6 * n.HeavyArmamentsValue) * (n.MediumShipQualityIC)) * 2;
+  n.HeavyShipConstructionCost = ((0.04 * n.ShipBuildingValue + n.Technologies.Gunports * 3.2 * n.HeavyArmamentsValue) * (n.HeavyShipQualityIC)) * 2;
 
   n.NavyUpkeep = (
     n.MerchantShips * n.UpkeepForOneMerchantShip +
@@ -921,7 +937,9 @@ static evaluateNation(nationName) {
     ntrp /= 2;
     return ntrp;
   })();
-  
+
+    n.ConstructionCost = n.New_SmallForts * n.SmallFortConstructionCost + n.New_MediumForts * n.MediumFortConstructionCost + n.New_BigForts * n.BigFortConstructionCost + n.New_HugeForts * n.HugeFortConstructionCost + n.New_CityFortifications * n.CityFortificationConstructionCost + n.New_SupplyDepots * n.SupplyDepotConstructionCost + n.New_NavalBases * n.NavalBaseConstructionCost;
+
   function unitType(unitName) {
     if(~[
       "Levies",
@@ -1337,7 +1355,7 @@ static evaluateNation(nationName) {
   n.StateResourceRevenue = (n.Reforms.GovernmentResourceOwnership ? n.ResourceBudgetBoost : 0);
 
   n.OverallIncome = n.PassiveInvestmentIncome + n.TariffsRevenue + n.TaxRevenue + n.BudgetIncoming + n.StateProductionRevenue + n.StateAgricultureRevenue + n.StateResourceRevenue;
-    n.OverallSpending = n.ArmyUpkeep + n.NavyUpkeep + n.BuildingsUpkeep + n.EducationUpkeep + n.HealthUpkeep + n.AgricultureSpending + n.SocialSpendingUpkeep + n.SpyUpkeep + n.PopulationControlUpkeep + n.PropagandaUpkeep + n.AdministrativeUpkeep + n.StateWorkersUpkeep + n.ResearchUpkeep + n.TroopRecruitmentCost + n.BudgetOutgoing;
+    n.OverallSpending = n.ArmyUpkeep + n.NavyUpkeep + n.BuildingsUpkeep + n.EducationUpkeep + n.HealthUpkeep + n.AgricultureSpending + n.SocialSpendingUpkeep + n.SpyUpkeep + n.PopulationControlUpkeep + n.PropagandaUpkeep + n.AdministrativeUpkeep + n.StateWorkersUpkeep + n.ResearchUpkeep + n.TroopRecruitmentCost + n.ConstructionCost + n.BudgetOutgoing;
     n.DailyBudget = n.OverallIncome - n.OverallSpending;
     n.FutureBudget = n.Budget + n.DailyBudget;
 

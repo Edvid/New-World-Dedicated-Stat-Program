@@ -24,7 +24,14 @@ function PostStatChange(selection, change){
       /MerchantShips$/.test(selection) ||
       /LightShips$/.test(selection) ||
       /MediumShips$/.test(selection) ||
-      /HeavyShips$/.test(selection)
+        /HeavyShips$/.test(selection) ||
+        /SmallForts$/.test(selection) ||
+        /MediumForts$/.test(selection) ||
+        /BigForts$/.test(selection) ||
+        /HugeForts$/.test(selection) ||
+        /CityFortifications$/.test(selection) ||
+        /SupplyDepots$/.test(selection) ||
+        /NavalBases$/.test(selection)
     ){
         //elite exceed check
         if(/Elite/.test(selection)){
