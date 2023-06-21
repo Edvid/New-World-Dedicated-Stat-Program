@@ -905,7 +905,15 @@ let GatheringEffectiveness = function (name) {
   n.LandAdministration = (n.Size / 5000) * (n.AdministrativeDemand / n.AdministrativePower);
   n.Overextension = n.UnderPopulation / 4 + n.LandAdministration / 2;
 
-  n.ArmyWages = (n.OverallNumbers / 1000 * n.SoldiersWage) / gameStats.TimeDivide;
+  n.LevyWage = n.ArmyWage / 4;
+  n.MilitiaWage = n.ArmyWage / 2;
+  n.EliteWage = n.ArmyWage * 2;
+
+  n.Militias = n.Militia + n.MusketMilitia;
+  n.Elites = n.EliteCavalry + n.EliteInfantry;
+  n.Proffesionals = n.OverallNumbers - n.Levies - n.Militias - n.Elites;
+
+  n.ArmyWages = (n.Levies * n.LevyWage + n.Militias * n.MilitiaWage + n.Proffesionals * n.ArmyWage + n.Elites * n.EliteWage) / 1000 / gameStats.TimeDivide;
   n.ArmyUpkeep = n.UnitUpkeep + n.ArmyWages;
 
   n.FutureLiteracyPercent = ((n.LiteracyPercent > n.Education * 3) ? n.Education * 3 : n.LiteracyPercent) + n.Education / 10 / gameStats.TimeDivide;
@@ -958,7 +966,7 @@ let GatheringEffectiveness = function (name) {
     ns += n.New_HeavyShips * 1600;
 
     ntrp += ns * n.SailorsWage / 1000;
-    ntrp += nm * n.SoldiersWage / 1000;
+    ntrp += nm * n.ArmyWage / 1000;
     ntrp /= 2;
     return ntrp;
   })();
@@ -1073,11 +1081,11 @@ let GatheringEffectiveness = function (name) {
     n.MerchantsWage = (n.InternalTrade * (1 - n.InternalTariffs) + n.ExternalTrade * (1 - n.ExternalTariffs)) / (n.Population / 1000 * n.Workforces.Merchants) * (1 - n.EstateInfluencesReal.BurgousieInfluence * 2);
     n.MerchantsWageToBurggousie = n.Population * n.Workforces.Merchants / 1000 * n.MerchantsWage / (1 - n.EstateInfluencesReal.BurgousieInfluence * 2) * n.EstateInfluencesReal.BurgousieInfluence * 2;
     n.IntellectualsWage = n.Education * (1 + n.LiteracyPercent / 50 + n.EstateInfluencesReal.IntellectualsInfluence * 10);
-//   n.SailorsWage = 1 * n.ArmyWages;
-//   n.SoldiersWage = 1.5 * n.ArmyWages;
+  //   n.SailorsWage = 1 * n.ArmyWages;
+    n.SoldiersWage = (isNaN(n.ArmyWages / n.OverallNumbers * 1000) ? n.ArmyWage : (n.ArmyWages / n.OverallNumbers * 1000));
     n.AristocracyWage = (n.Reforms.NobleLandOwnership == 1 ? n.SerfsAndFarmersWageToOnwers / (n.Population * n.Workforces.Aristocracy / 1000) : 0) + (n.Reforms.MixedLandOwnership == 1 ? n.SerfsAndFarmersWageToOnwers / (n.Population * n.Workforces.Aristocracy / 1000) : 0) + (n.Reforms.NobleResourceOwnership == 1 ? n.SlavesAndLabourersWageToOwner / (n.Population * n.Workforces.Aristocracy / 1000) : 0) + (n.Reforms.MixedResourceOwnership == 1 ? n.SlavesAndLabourersWageToOwner / (n.Population * n.Workforces.Aristocracy / 1000) : 0);
     n.BurgousieWage = (n.TownsfolkWageToBurgousie + n.MerchantsWageToBurggousie) / (n.Population * n.Workforces.Burgousie / 1000) + (n.Reforms.MixedResourceOwnership == 1 ? n.SlavesAndLabourersWageToOwner / (n.Population * n.Workforces.Aristocracy / 1000) : 0) + (n.Reforms.BurgousieResourceOwnership == 1 ? n.SlavesAndLabourersWageToOwner / (n.Population * n.Workforces.Aristocracy / 1000) : 0) + (n.Reforms.MixedLandOwnership == 1 ? n.SerfsAndFarmersWageToOnwers / (n.Population * n.Workforces.Aristocracy / 1000) : 0) + (n.Reforms.PrivateLandOwnership == 1 ? n.SerfsAndFarmersWageToOnwers / (n.Population * n.Workforces.Aristocracy / 1000) : 0);
-
+  debugger;
   // GDP
   n.Gdp = n.ResourceBudgetBoost + n.DailyFood * n.FoodValue + n.ProductionRevenue + n.TradePower;
   n.GdpPerKCapita = n.Gdp / n.Population * 1000;

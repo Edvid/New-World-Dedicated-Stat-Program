@@ -122,6 +122,7 @@ let StatTypes = {
         "ProductionGovernmentControl",
         "OverallImprovements",
         "SoldiersWage",
+        "ArmyWage",
         "IrregularImprovements",
         "MeleeImprovements",
         "RangedImprovements",

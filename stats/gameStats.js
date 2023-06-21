@@ -755,7 +755,7 @@ class Nation {
     this.BasicArmamentsStockpiled = 0;
     this.HeavyArmamentsStockpiled = 0;
     this.SailorsWage = 1.00;
-    this.SoldiersWage = 1.50;
+    this.ArmyWage = 1.50;
     this.MilitaryDiscipline = 1.00; //Show In Percent
     /* #endregion */
 

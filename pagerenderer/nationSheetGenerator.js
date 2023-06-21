@@ -289,7 +289,7 @@ let TableLayouts = {
       ["PopProductionRevenue", "StateProductionRevenue"]
     ],
     "Army": [
-      ["OverallImprovements", "CommanderFreedom", "SoldiersWage", "BasicArmamentsStockpiled", "HeavyArmamentsStockpiled", "BasicArmamentsArmyShortage", "HeavyArmamentsShortage", "IronShortage", "SulphurShortage"],
+      ["OverallImprovements", "CommanderFreedom", "ArmyWage", "BasicArmamentsStockpiled", "HeavyArmamentsStockpiled", "BasicArmamentsArmyShortage", "HeavyArmamentsShortage", "IronShortage", "SulphurShortage"],
 		["MilitaryLoyalty", "MilitaryMorale", "MilitaryDiscipline"],
         ["IrregularImprovements", "IrregularQuality", "Levies", "Militia"],
         ["MeleeImprovements", "MeleeQuality", "LightInfantry", "HeavyInfantry", "EliteInfantry"],
