@@ -588,6 +588,7 @@ class Nation {
       }
     };
     this.Population = 2500000;
+    this.FuturePopulation = 2500000;
     this.LiteracyPercent = 5;
     this.HigherEducation = 0.25;
     this.Budget = 250.00;
@@ -845,6 +846,43 @@ class Nation {
     this.Forestry = 1;
     this.Reforestation = 0.1;
     this.ForestsCutDown = 0;
+
+    // resource base values
+    this.WoodBaseValue = 0.75;
+    this.SulphurBaseValue = 1;
+    this.CoalBaseValue = 1.25;
+    this.CottonBaseValue = 1.75;
+    this.GoldBaseValue = 6;
+    this.IronBaseValue = 1.75;
+    this.TeaBaseValue = 2.5;
+    this.SilkBaseValue = 4;
+    this.SpiceBaseValue = 2.5;
+    this.WoolBaseValue = 1;
+    this.CoffeeBaseValue = 2;
+    this.FurBaseValue = 3.5;
+    this.DiamondBaseValue = 7.5;
+    this.SilverBaseValue = 4;
+    this.CopperBaseValue = 1.5;
+    this.IvoryBaseValue = 4;
+    this.CocoaBaseValue = 2.25;
+    this.TobaccoBaseValue = 2;
+    this.SugarBaseValue = 2.75;
+    this.ExoticFruitBaseValue = 2;
+
+    this.HousingBaseValue = 2;
+    this.TextilesBaseValue = 1.5;
+    this.BasicGoodsBaseValue = 1;
+    this.LuxuryGoodsBaseValue = 2;
+    this.AlcoholBaseValue = 1;
+    this.BasicToolsBaseValue = 1;
+    this.HeavyIndustryBaseValue = 5;
+    this.BasicArmamentsBaseValue = 2;
+    this.HeavyArmamentsBaseValue = 5;
+    this.ShipBuildingBaseValue = 10;
+    this.ChemicalsBaseValue = 5;
+    this.MotorsBaseValue = 7.5;
+    this.PlanesBaseValue = 10;
+    this.ElectronicsBaseValue = 10; 
 
     this.Coal = 0.00;
     this.Sulphur = 0.00;

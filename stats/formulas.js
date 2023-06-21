@@ -144,7 +144,7 @@ static evaluateNation(nationName) {
     return s;
   })();
 
-  n.Size += (n.Size <= 0 ? 1 : 0);
+  n.Size += (n.Size <= 0 ? 10000 : 0);
 
   n.AverageDevelopment = n.DevelopmentPixelCount / n.Size / 255;
   n.Workforces.Townsfolk = n.AverageDevelopment;
@@ -203,18 +203,6 @@ static evaluateNation(nationName) {
   n.NavalBaseUpkeep = 2 / gameStats.TimeDivide;
 
   n.BuildingsUpkeep = ((n.SmallForts * 3 + n.MediumForts * 6 + n.BigForts * 12 + n.HugeForts * 24 + n.CityFortifications * 10) * n.RealOverallImprovements + (n.SupplyDepots + n.NavalBases) * 2) / gameStats.TimeDivide;
-
-
-/*
-  n.UnitUpkeep = function(){
-    let uu = 0.0;
-    Object.keys(gameStats.UnitUpkeepCosts).forEach(unitName => {
-      uu += gameStats.UnitUpkeepCosts[unitName] * n[unitName] * n[unitType(unitName) + 'QualityIC']; 
-    });
-
-    return uu;
-  }();
-  */
 
   n.NavyTech = 0 - n.Alcoholism * (1 - n.ReligionGroups.Sunni.Points - n.ReligionGroups.Shia.Points) / 2 + n.Reforms.WealthyOfficers / 5 + n.Reforms.MeritocraticOfficers / 2 + n.Technologies.Docks / 2 + n.Technologies.Gunports / 2 + n.Technologies.Gunlock / 4 + n.Technologies.SteamBoats / 10 + n.Technologies.Fulminate / 20;
   n.LightShipQualityIC = 1 + n.LightShipImprovements + n.NavyTech;
@@ -294,7 +282,7 @@ static evaluateNation(nationName) {
     n.PopInAgriculture = n.Workforces.Farmers + n.Workforces.Serfs;
     n.AgricultureSpending = (n.Workforces.Farmers * n.Population / 1000 * n.AgricultureInfrastructure / 100 * (1 + n.AgricultureSubsidies / 10) * n.StockingCapabilities) / 2 / gameStats.TimeDivide;
   
-let GatheringEffectiveness = function (name) {
+  let GatheringEffectiveness = function (name) {
     switch (name) {
       case "Food":
         return "Farming"
@@ -373,7 +361,7 @@ let GatheringEffectiveness = function (name) {
   n.Wood = n.Forestry * 10;
   n.EffectiveWood = n.Wood + n.WoodIncoming - n.WoodOutgoing;
 
-  n.ForestsLeft = (
+  n.ForestsLeft = max((
     n.Climates.TaigaAndTundra.Pixels * 0.85 +
     n.Climates.MontaneForest.Pixels * 0.8 +
     n.Climates.Medditereanian.Pixels * 0.65 +
@@ -384,7 +372,7 @@ let GatheringEffectiveness = function (name) {
     n.Climates.Tropical.Pixels * 1 +
     n.Climates.Savanna.Pixels * 0.45 +
     n.Climates.CoastalDesert.Pixels * 0.15
-  ) - n.ForestsCutDown;
+  ) - n.ForestsCutDown, 0);
 
   n.AverageExpectedSol = (
     (isNaN(n.Workforces.Slaves) ? 0 : n.Workforces.Slaves) * n.ExpectedSlavesSol +
@@ -584,43 +572,6 @@ let GatheringEffectiveness = function (name) {
   n.Planes = n.Production * (n.ProductionSectors.AerospaceSector / n.TotalSupply) * (1.1 - n.BasicToolsShortage) * (1.1 - n.HeavyIndustryShortage);
   n.EffectivePlanes = n.Planes + n.PlanesIncoming - n.PlanesOutgoing;
   n.PlanesShortage = (n.PlanesDemand == 0 ? 0 : min(1, max(0, 1 - (n.EffectivePlanes / (n.PlanesDemand * 0.9)))));
-
-  // resource base values
-  n.WoodBaseValue = 0.75;
-  n.SulphurBaseValue = 1;
-  n.CoalBaseValue = 1.25;
-  n.CottonBaseValue = 1.75;
-  n.GoldBaseValue = 6;
-  n.IronBaseValue = 1.75;
-  n.TeaBaseValue = 2.5;
-  n.SilkBaseValue = 4;
-  n.SpiceBaseValue = 2.5;
-  n.WoolBaseValue = 1;
-  n.CoffeeBaseValue = 2;
-  n.FurBaseValue = 3.5;
-  n.DiamondBaseValue = 7.5;
-  n.SilverBaseValue = 4;
-  n.CopperBaseValue = 1.5;
-  n.IvoryBaseValue = 4;
-  n.CocoaBaseValue = 2.25;
-  n.TobaccoBaseValue = 2;
-  n.SugarBaseValue = 2.75;
-  n.ExoticFruitBaseValue = 2;
-  
-  n.HousingBaseValue = 2;
-  n.TextilesBaseValue = 1.5;
-  n.BasicGoodsBaseValue = 1;
-  n.LuxuryGoodsBaseValue = 2;
-  n.AlcoholBaseValue = 1;
-  n.BasicToolsBaseValue = 1;
-  n.HeavyIndustryBaseValue = 5;
-  n.BasicArmamentsBaseValue = 2;
-  n.HeavyArmamentsBaseValue = 5;
-  n.ShipBuildingBaseValue = 10;
-  n.ChemicalsBaseValue = 5;
-  n.MotorsBaseValue = 7.5;
-  n.PlanesBaseValue = 10;
-  n.ElectronicsBaseValue = 10; 
 
   // resource and goods values
   for (const resourceIndex in gameStats.ResourceTypes) {
@@ -1085,7 +1036,7 @@ let GatheringEffectiveness = function (name) {
     n.SoldiersWage = (isNaN(n.ArmyWages / n.OverallNumbers * 1000) ? n.ArmyWage : (n.ArmyWages / n.OverallNumbers * 1000));
     n.AristocracyWage = (n.Reforms.NobleLandOwnership == 1 ? n.SerfsAndFarmersWageToOnwers / (n.Population * n.Workforces.Aristocracy / 1000) : 0) + (n.Reforms.MixedLandOwnership == 1 ? n.SerfsAndFarmersWageToOnwers / (n.Population * n.Workforces.Aristocracy / 1000) : 0) + (n.Reforms.NobleResourceOwnership == 1 ? n.SlavesAndLabourersWageToOwner / (n.Population * n.Workforces.Aristocracy / 1000) : 0) + (n.Reforms.MixedResourceOwnership == 1 ? n.SlavesAndLabourersWageToOwner / (n.Population * n.Workforces.Aristocracy / 1000) : 0);
     n.BurgousieWage = (n.TownsfolkWageToBurgousie + n.MerchantsWageToBurggousie) / (n.Population * n.Workforces.Burgousie / 1000) + (n.Reforms.MixedResourceOwnership == 1 ? n.SlavesAndLabourersWageToOwner / (n.Population * n.Workforces.Aristocracy / 1000) : 0) + (n.Reforms.BurgousieResourceOwnership == 1 ? n.SlavesAndLabourersWageToOwner / (n.Population * n.Workforces.Aristocracy / 1000) : 0) + (n.Reforms.MixedLandOwnership == 1 ? n.SerfsAndFarmersWageToOnwers / (n.Population * n.Workforces.Aristocracy / 1000) : 0) + (n.Reforms.PrivateLandOwnership == 1 ? n.SerfsAndFarmersWageToOnwers / (n.Population * n.Workforces.Aristocracy / 1000) : 0);
-  debugger;
+
   // GDP
   n.Gdp = n.ResourceBudgetBoost + n.DailyFood * n.FoodValue + n.ProductionRevenue + n.TradePower;
   n.GdpPerKCapita = n.Gdp / n.Population * 1000;
@@ -1351,10 +1302,6 @@ let GatheringEffectiveness = function (name) {
   n.PseudoPopulationGrowth = (n.FutureFood < 0 ? n.FutureFood * 1000 / n.Population : (0.1 + PopulationGrowthModifier) - n.BirthControl / 20) / gameStats.TimeDivide;
 
   n.PopulationGrowth = (n.PseudoPopulationGrowth < 0 ? n.PseudoPopulationGrowth : n.PseudoPopulationGrowth * (1 - n.Disease));
-
-  n.FuturePopulation = (function () {
-    return n.Population + n.Population * n.PopulationGrowth;
-  })();
 
     n.SlavesTaxes = 0;
   n.LabourersTaxes = n.LabourersWage * n.Workforces.Labourers * n.Population / 1000 * n.WorkersTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.WorkersInfluence);
