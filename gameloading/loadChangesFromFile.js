@@ -45,6 +45,7 @@ async function loadChangesFromContent(changes, skip) {
             
     }
 
+    Formulas.evaluateNations();
     document.querySelector("body").dispatchEvent(new Event("game load done"));
 
     errorsPresentAtCompletion();
@@ -66,8 +67,6 @@ function errorsPresentAtCompletion(){
 }
 
 function refreshPageItems() {
-    Formulas.evaluateNations();
-
     if (typeof updateDropdownSelection === 'function') updateDropdownSelection();
     if (typeof createNationSheet === 'function') {
         currentNationName = Object.keys(gameStats.Nations)[currentNationID];
