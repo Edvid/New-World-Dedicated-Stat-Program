@@ -1220,6 +1220,7 @@ function ValueTypeFix(statName, statValue) {
         }
         //percentages
         else if (~[
+            "Alcoholism",
             "FoodPopulationBoost",
             "TradeProtection",
             "MerchantShipsFullfilment",
