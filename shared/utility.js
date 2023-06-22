@@ -523,6 +523,8 @@ let StatTypes = {
         "HeavyShips"
     ],
     DerivedStats: [
+        "Wood",
+        "EffectiveWood",
         "ArableLand",
         "ArmyWages",
         "SmallFortConstructionCost",
@@ -1218,6 +1220,9 @@ function ValueTypeFix(statName, statValue) {
         }
         //percentages
         else if (~[
+            "FoodPopulationBoost",
+            "TradeProtection",
+            "MerchantShipsFullfilment",
             "ResearchEffectiveness",
             "TaxEfficiency",
             "IronShortage",

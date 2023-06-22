@@ -246,7 +246,7 @@ static evaluateNation(nationName) {
 
     n.CoastalPopulationPercent = n.coastalPopulation / n.Population;
 
-    n.ArableLand = n.Fertility;
+    n.ArableLand = n.Fertility * (1 - n.Pillaging);
     n.MaxPopInAgriculture = n.ArableLand * 1000 / n.Population;
 
     n.ConscriptionPercent = (n.OverallNumbers + n.SmallForts * 100 + n.MediumForts * 250 + n.BigForts * 400 + n.HugeForts * 800 + n.CityFortifications * 250) / n.Population;
@@ -333,7 +333,7 @@ static evaluateNation(nationName) {
     })();
   }
 
-  n.DailyFood = (n.Workforces.Farmers + n.Workforces.Serfs) * n.Population / 1000 * n.FarmingEfficiency * (1 - n.Pillaging) + n.FoodIncoming - n.FoodOutgoing;
+  n.DailyFood = (n.Workforces.Farmers + n.Workforces.Serfs) * n.Population / 1000 * n.FarmingEfficiency + n.FoodIncoming - n.FoodOutgoing;
 
   n.EffectiveIron += n.BaseIronHarvest;
   n.EffectiveCoal += n.BaseCoalHarvest;
