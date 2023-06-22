@@ -1,25 +1,55 @@
 {
-    "Lines": 623,
-    "Hash": 1261349857,
+    "Lines": 1,
+    "Hash": 0,
     "State": {
         "TimeSpeed": 50,
         "TimeDivide": 0.4,
         "Nations": {
             "Test": {
-                "FuturePopulation": 3362986.111111111,
-                "FutureLiteracyPercent": 3.25,
+                "FuturePopulation": 2500000,
+                "FutureLiteracyPercent": 5.5,
                 "FutureHigherEducation": 0.25,
-                "FutureBudget": 541.9003970246202,
-                "FutureFood": 20.536029411764957,
-                "FutureResearchPoints": 5,
+                "FutureBudget": 242.156270260812,
+                "FutureFood": 0,
+                "FutureResearchPoints": 7.5,
                 "FuturePublicDebtLength": 0,
-                "FutureCulturalPower": 6,
+                "FutureCulturalPower": 5,
                 "GovernmentName": "Test",
                 "Flag": "",
                 "Color": false,
                 "ReligionGroups": {
                     "Pagan": {
                         "Points": 100
+                    },
+                    "Sunni": {
+                        "Points": 0
+                    },
+                    "Shia": {
+                        "Points": 0
+                    },
+                    "Judaism": {
+                        "Points": 0
+                    },
+                    "Catholic": {
+                        "Points": 0
+                    },
+                    "Orthodox": {
+                        "Points": 0
+                    },
+                    "Protestant": {
+                        "Points": 0
+                    },
+                    "Hindu": {
+                        "Points": 0
+                    },
+                    "Buddhism": {
+                        "Points": 0
+                    },
+                    "Shinto": {
+                        "Points": 0
+                    },
+                    "Confucianism": {
+                        "Points": 0
                     }
                 },
                 "ReligionRepresentedAtGovernmentLevel": "Pagan",
@@ -27,51 +57,57 @@
                 "CulturalDisunity": 0,
                 "ReligiousDisunity": 0,
                 "Population": 2500000,
-                "PopulationGrowth": 0.13807777777777774,
+                "PopulationGrowth": 0,
                 "AverageDevelopment": 0.01568627450980392,
                 "Health": 1,
-                "LiteracyPercent": 7.5,
-                "HigherEducation": 0.5,
-                "EducationEfficiency": 1,
+                "Alcoholism": 0,
+                "LiteracyPercent": 5,
+                "HigherEducation": 0.25,
+                "EducationEfficiency": 2,
                 "AdministrativeEfficiency": 25,
                 "AdministrativeStrain": 0,
-                "Corruption": 1,
-                "Overextension": 0.4079166666666666,
+                "Corruption": 2,
+                "Overextension": 1.3235166666666665,
                 "Propaganda": 0,
-                "SocialSpending": 0,
-                "Prosperity": 1,
-                "PopulationHappiness": 1.105166666666666,
-                "Stability": 3.1972499999999995,
+                "SocialSpending": 0.5,
+                "Prosperity": 0.890222760891485,
+                "PopulationHappiness": 1.4177804711240907,
+                "Stability": 2.972539036577351,
                 "AtWar": false,
-                "WarSupport": 0.2762916666666665,
+                "WarSupport": 0.35444511778102267,
                 "Absolutism": 3,
                 "PopulationControl": 0,
                 "BirthControl": 0,
                 "ConscriptionPercent": 0,
+                "StateFarmerWage": 0.75,
+                "StateLabourerWage": 0.5,
+                "StateFactoryWorkerWage": 2,
                 "Production": 43.13725490196079,
+                "ProductionGovernmentControl": 0,
                 "ProductionEfficiency": 2.2,
-                "TradeEfficiency": 1.1500000000000001,
+                "TradeEfficiency": 0.6502,
                 "LocalTrade": 5,
-                "TradePower": 7.300245098039216,
-                "TradeImprovements": 1,
-                "PossiblePublicDebt": 225,
+                "TradePower": 4.1274950980392155,
+                "TradeImprovements": 0.5,
+                "PossiblePublicDebt": 955.557102095578,
                 "EffectiveDebt": 0,
-                "DailyBudget": 291.90039702462025,
+                "DailyBudget": -7.8437297391880065,
                 "Budget": 250,
                 "Inflation": 0.1,
                 "Spies": 0,
                 "SpyQuality": 1,
                 "ArmyUpkeep": 0,
                 "SpyUpkeep": 0,
-                "SocialSpendingUpkeep": 0,
-                "HygieneUpkeep": 3.125,
-                "EducationUpkeep": 63.75,
-                "AgricultureSpending": 2.34375,
+                "SocialSpendingUpkeep": 278.81421886936596,
+                "HealthUpkeep": 3.125,
+                "EducationUpkeep": 127.5,
+                "AgricultureSpending": 2.5781250000000004,
                 "PropagandaUpkeep": 0,
                 "PopulationControlUpkeep": 0,
-                "AdministrativeUpkeep": 94.39469666931006,
-                "ResearchUpkeep": 9.375,
-                "OverallIncome": 502.3888436939303,
+                "AdministrativeUpkeep": 198.19173913043477,
+                "ProductionRevenue": 98.23236266406217,
+                "ResearchUpkeep": 6.25,
+                "OverallIncome": 611.6175000868426,
                 "PassiveInvestmentIncome": 66.84491978609624,
                 "Levies": 0,
                 "LightInfantry": 0,
@@ -95,30 +131,35 @@
                 "MediumForts": 0,
                 "BigForts": 0,
                 "HugeForts": 0,
-                "ExtraCityFortifications": 0,
-                "FortUpkeep": 0,
+                "CityFortifications": 0,
+                "SupplyDepots": 0,
+                "NavalBases": 0,
+                "BuildingsUpkeep": 0,
                 "IronShortage": 0,
                 "SulphurShortage": 0,
                 "CommanderFreedom": 0,
-                "ArmyWages": 1,
-                "MilitaryLoyalty": 1,
-                "MilitaryMorale": 0.7762916666666664,
+                "BasicArmamentsStockpiled": 0,
+                "HeavyArmamentsStockpiled": 0,
+                "ArmyWages": 0,
+                "MilitaryLoyalty": 0.5252997205292446,
+                "MilitaryMorale": 0.37974483831026723,
                 "MilitaryDiscipline": 1,
-                "NavyImprovements": 0,
+                "LightShipImprovements": 0,
+                "MediumShipImprovements": 0,
+                "HeavyShipImprovements": 0,
                 "NavyTech": 0,
-                "NavyQuality": 0.8,
                 "MerchantShips": 15,
-                "UpkeepForOneMerchantShip": 2.5,
+                "UpkeepForOneMerchantShip": 0.00014312174865452115,
                 "LightShips": 0,
-                "UpkeepForOneLightShip": 3.75,
+                "UpkeepForOneLightShip": 0.0007156087432726059,
                 "MediumShips": 0,
-                "UpkeepForOneMediumShip": 7.5,
+                "UpkeepForOneMediumShip": 0.0014312174865452117,
                 "HeavyShips": 0,
-                "UpkeepForOneHeavyShip": 15,
+                "UpkeepForOneHeavyShip": 0.0028624349730904234,
                 "OverallShipCount": 0,
                 "TradeProtection": 0,
                 "NavalPower": 0,
-                "NavyUpkeep": 37.5,
+                "NavyUpkeep": 3.002146826229817,
                 "New_Levies": 0,
                 "New_Militia": 0,
                 "New_LightInfantry": 0,
@@ -142,27 +183,35 @@
                 "New_LightShips": 0,
                 "New_MediumShips": 0,
                 "New_HeavyShips": 0,
-                "NewTroopRecruitmentPenalty": 0,
+                "New_SmallForts": 0,
+                "New_MediumForts": 0,
+                "New_BigForts": 0,
+                "New_HugeForts": 0,
+                "New_CityFortifications": 0,
+                "New_SupplyDepots": 0,
+                "New_NavalBases": 0,
+                "TroopRecruitmentCost": 0,
                 "Workforces": {
                     "Clergy": 0.0125,
                     "Aristocracy": 0.02,
                     "Burgousie": 0.005,
+                    "Townsfolk": 0.01568627450980392,
                     "PopulationInMilitary": 0,
                     "Bureaucrats": 0.005,
-                    "Intellectuals": 0.005,
-                    "Townsfolk": 0.01568627450980392,
+                    "Intellectuals": 0.0025,
                     "Labourers": 0,
-                    "Slaves": 0.0504,
+                    "Slaves": 0.0459082251082251,
                     "Merchants": 0.0012,
                     "Sailors": 0.0012,
                     "Farmers": 0.075,
-                    "Serfs": 0.8090137254901962
+                    "Serfs": 0.8160055003819712,
+                    "Unemployed": 0
                 },
                 "SocietalClasses": {
                     "High": 0.025,
-                    "Medium": 0.11438627450980393,
-                    "Lower": 0.8102137254901962,
-                    "Slaves": 0.0504
+                    "Medium": 0.03688627450980392,
+                    "Lower": 0.8922055003819712,
+                    "Slaves": 0.0459082251082251
                 },
                 "CultureGroups": {
                     "Celtic": {
@@ -346,6 +395,9 @@
                         "Points": 0
                     },
                     "Korean": {
+                        "Points": 0
+                    },
+                    "Turkmeni": {
                         "Points": 0
                     },
                     "Pomo": {
@@ -621,117 +673,103 @@
                 "PopulationStabilityImpact": 0,
                 "PopulationTechImpact": 0,
                 "MiningEfficiency": 1,
-                "FarmingEfficiency": 1.05,
+                "FarmingEfficiency": 1.2000000000000002,
                 "Coal": 0,
-                "EffectiveCoal": 1.5,
+                "EffectiveCoal": 1.3333333333333333,
                 "MaxCoal": 0,
                 "Sulphur": 0,
-                "EffectiveSulphur": 2,
+                "EffectiveSulphur": 1.7142857142857142,
                 "MaxSulphur": 0,
                 "Cotton": 0,
                 "EffectiveCotton": 0,
-                "CottonInflation": 0,
                 "Gold": 0,
                 "EffectiveGold": 0,
-                "GoldInflation": 0,
                 "MaxGold": 0,
                 "Iron": 0,
-                "EffectiveIron": 1.2,
+                "EffectiveIron": 1.0909090909090908,
                 "MaxIron": 0,
                 "Tea": 0,
                 "EffectiveTea": 0,
-                "TeaInflation": 0,
                 "Silk": 0,
                 "EffectiveSilk": 0,
-                "SilkInflation": 0,
                 "Spice": 0,
                 "EffectiveSpice": 0,
-                "SpiceInflation": 0,
                 "Wool": 0.5,
                 "EffectiveWool": 0.5,
-                "WoolInflation": 0,
                 "Coffee": 0,
                 "EffectiveCoffee": 0,
-                "CoffeeInflation": 0,
                 "Fur": 0,
                 "EffectiveFur": 0,
-                "FurInflation": 0,
                 "MaxFur": 0,
                 "Diamond": 0,
                 "EffectiveDiamond": 0,
-                "DiamondInflation": 0,
                 "MaxDiamond": 0,
                 "Silver": 0,
                 "EffectiveSilver": 0,
-                "SilverInflation": 0,
                 "MaxSilver": 0,
                 "Copper": 0,
                 "EffectiveCopper": 0,
                 "MaxCopper": 0,
                 "Ivory": 0,
                 "EffectiveIvory": 0,
-                "IvoryInflation": 0,
                 "MaxIvory": 0,
                 "Cocoa": 0,
                 "EffectiveCocoa": 0,
-                "CocoaInflation": 0,
                 "Tobacco": 0,
                 "EffectiveTobacco": 0,
-                "TobaccoInflation": 0,
                 "Sugar": 0,
                 "EffectiveSugar": 0,
-                "SugarInflation": 0,
                 "ExoticFruit": 0,
                 "EffectiveExoticFruit": 0,
-                "ExoticFruitInflation": 0,
-                "ResourcePopulationGrowthBoost": 0.005,
-                "ResourceHappinessBoost": 0.5,
-                "ResourceBudgetBoost": 6.29013108448844,
-                "CoalDemand": 2.0229735683423264,
-                "CoalValue": 1.264358480213954,
-                "GoldDemand": 25.32899065666535,
-                "GoldValue": 253.28990656665349,
-                "IronDemand": 0.6711409395973155,
-                "IronValue": 0.5162622612287042,
-                "SulphurDemand": 0,
-                "SulphurValue": 0,
-                "CottonDemand": 0.26319252533228055,
-                "CottonValue": 2.6319252533228052,
-                "TeaDemand": 0.807996323529417,
-                "TeaValue": 8.07996323529417,
-                "SpiceDemand": 1.354096966911769,
-                "SpiceValue": 13.54096966911769,
-                "CopperDemand": 6.578990656665351,
-                "CopperValue": 65.7899065666535,
-                "SilkDemand": 0.03289906566653507,
-                "SilkValue": 0.32899065666535066,
-                "WoolDemand": 0.26319252533228055,
-                "WoolValue": 0.43865420888713424,
-                "CoffeeDemand": 0.807996323529417,
-                "CoffeeValue": 8.07996323529417,
-                "SilverDemand": 12.82899065666535,
-                "SilverValue": 128.28990656665349,
-                "DiamondDemand": 50.328990656665354,
-                "DiamondValue": 503.28990656665354,
-                "FurDemand": 0.03289906566653507,
-                "FurValue": 0.32899065666535066,
-                "IvoryDemand": 16.99565732333202,
-                "IvoryValue": 169.95657323332017,
-                "CocoaDemand": 0.807996323529417,
-                "CocoaValue": 8.07996323529417,
-                "TobaccoDemand": 0.807996323529417,
-                "TobaccoValue": 8.07996323529417,
-                "SugarDemand": 1.1078975183823565,
-                "SugarValue": 11.078975183823564,
-                "ExoticFruitDemand": 0.807996323529417,
-                "ExoticFruitValue": 8.07996323529417,
+                "ResourceBudgetBoost": 31.317270317615314,
+                "CoalDemand": 2.94609205988456,
+                "CoalValue": 2.7619613061417754,
+                "GoldDemand": 5.560224089635854,
+                "GoldValue": 33.36134453781513,
+                "IronDemand": 0.8963585434173669,
+                "IronValue": 1.4379084967320261,
+                "SulphurDemand": 1.12,
+                "SulphurValue": 0.6533333333333334,
+                "CottonDemand": 0.5602240896358543,
+                "CottonValue": 0.9803921568627452,
+                "TeaDemand": 5.809742647058825,
+                "TeaValue": 14.524356617647063,
+                "SpiceDemand": 5.322402526610644,
+                "SpiceValue": 13.306006316526611,
+                "CopperDemand": 3.060224089635854,
+                "CopperValue": 4.590336134453781,
+                "SilkDemand": 0.05602240896358543,
+                "SilkValue": 0.22408963585434172,
+                "WoolDemand": 0.5602240896358543,
+                "WoolValue": 1.1204481792717087,
+                "CoffeeDemand": 5.809742647058825,
+                "CoffeeValue": 11.61948529411765,
+                "SilverDemand": 5.560224089635854,
+                "SilverValue": 22.240896358543417,
+                "DiamondDemand": 3.060224089635854,
+                "DiamondValue": 22.951680672268907,
+                "FurDemand": 0.05602240896358543,
+                "FurValue": 0.196078431372549,
+                "IvoryDemand": 3.060224089635854,
+                "IvoryValue": 12.240896358543417,
+                "CocoaDemand": 5.809742647058825,
+                "CocoaValue": 13.071920955882357,
+                "TobaccoDemand": 5.809742647058825,
+                "TobaccoValue": 11.61948529411765,
+                "SugarDemand": 4.3546929763178,
+                "SugarValue": 11.97540568487395,
+                "ExoticFruitDemand": 5.809742647058825,
+                "ExoticFruitValue": 11.61948529411765,
                 "Isolation": 1,
                 "ResearchSpending": 1,
                 "ResearchEffectiveness": 1,
-                "ResearchBoostFromTech": 1,
-                "ResearchPointGain": 4.237377742532382,
+                "ResearchBoostFromTech": 0.9,
+                "ResearchPointGain": 2.5625,
                 "ResearchPoints": 5,
                 "Technologies": {
+                    "IronWorking": true,
+                    "Wheel": true,
+                    "Paper": true,
                     "Gunpowder": true,
                     "VerticalLoom": true,
                     "SaddleAndStirrup": true,
@@ -776,7 +814,7 @@
                     "SteamBoats": false,
                     "HotAirBalloon": false,
                     "PowerLoomAndSewingMachine": false,
-                    "Fulimnate": false,
+                    "Fulminate": false,
                     "PaperMachine": false,
                     "FirstFactories": false,
                     "LinearAssemblyProcess": false,
@@ -785,27 +823,24 @@
                     "Vaccines": false,
                     "Morphine": false
                 },
-                "HighClassTax": 0.1,
-                "MediumClassTax": 0.1,
-                "LowerClassTax": 0.1,
                 "PublicDebtTaken": 0,
                 "PublicDebtLength": 0,
                 "InterestRate": 0.05,
-                "DebtHappinessEffect": 0,
                 "BudgetIncoming": 0,
                 "BudgetOutgoing": 0,
                 "Balance": 0,
-                "CulturalAdvance": 0,
+                "CulturalAdvance": 7,
                 "CulturalProsperity": 1,
-                "CulturalPowerGain": 6.595364583333333,
+                "CulturalPowerGain": 3.3383353533430684,
                 "CulturalPower": 6,
                 "CulturalAdvancements": {
-                    "DivineRightToRule": false,
-                    "Serfdom": false,
-                    "Feudalism": false,
-                    "Universities": false,
-                    "AristocratDuty": false,
-                    "Courthouses": false,
+                    "Currency": true,
+                    "DivineRightToRule": true,
+                    "Serfdom": true,
+                    "Feudalism": true,
+                    "Universities": true,
+                    "NobleDuty": true,
+                    "Courthouses": true,
                     "RenaissanceThought": false,
                     "EarlyModernAdministration": false,
                     "NationalSovereignity": false,
@@ -860,21 +895,21 @@
                 "ExoticFruitOutgoing": 0,
                 "TradePowerFromResourceTrade": 0,
                 "AgricultureSubsidies": 0,
-                "Fertility": 0.5,
-                "AgricultureInfrastructure": 1,
+                "Fertility": 2500,
+                "AgricultureInfrastructure": 1.1,
                 "StockingCapabilities": 1,
-                "AgricultureAdvancements": 1,
-                "AgricultureTechnology": 0.5,
-                "DailyFood": 2320.536029411765,
-                "FoodConsumption": 2500,
-                "FoodGain": -179.46397058823504,
+                "AgricultureAdvancements": 1.1,
+                "AgricultureTechnology": 1,
+                "DailyFood": 2673.0165011459135,
+                "FoodConsumption": 2873.0165011459135,
+                "FoodGain": 0,
                 "MaxFoodStock": 250,
                 "Food": 200,
-                "FoodPopulationBoost": 0.016,
+                "FoodPopulationBoost": 0,
                 "SurplusFood": 0,
-                "SellingCapability": 500,
+                "SellingCapability": 25,
                 "FoodSold": 0,
-                "Foodlost": 0,
+                "FoodLost": 0,
                 "Casualties": 0,
                 "Pillaging": 0,
                 "Occupation": 0,
@@ -1274,9 +1309,9 @@
                 "UnderPopulation": 0.07166666666666666,
                 "DetachedLand": 0,
                 "coastalPopulation": 1000,
-                "CoastalPopulationPercent": 0.06666666666666667,
+                "CoastalPopulationPercent": 0.0004,
                 "DevelopmentPixelCount": 60000,
-                "LandAdministration": 0.585,
+                "LandAdministration": 2.6111999999999997,
                 "Climates": {
                     "Ocean": {
                         "Pixels": 0
@@ -1322,70 +1357,92 @@
                     }
                 },
                 "HabitableLand": 1,
-                "BureaucratWages": 0.75,
+                "BureaucratsWages": 3,
                 "AdministrationSize": 0.5,
                 "Nationalism": 0,
                 "ReligiousFervor": 1,
-                "AristocratLoyalty": 0.5,
-                "ClergyLoyalty": 0.5,
-                "BurgousieLoyalty": 0.5,
-                "UrbanLoyalty": 0.5,
-                "BureaucratLoyalty": 0.5,
-                "IntellectualsLoyalty": 0.5,
-                "WorkersLoyalty": 0.5,
-                "AristocratTax": 0.1,
+                "AristocracyLoyalty": 0.5992863155516084,
+                "ClergyLoyalty": 0.5456544682537057,
+                "BurgousieLoyalty": 0.5166460515504161,
+                "UrbanLoyalty": 0.32203166167873293,
+                "BureaucratsLoyalty": 0.47860616477011775,
+                "IntellectualsLoyalty": 0.4384119865417247,
+                "WorkersLoyalty": 0.5175039713846861,
+                "AristocracyTax": 0.1,
                 "ClergyTax": 0.1,
                 "BurgousieTax": 0.1,
                 "UrbanTax": 0.1,
-                "BureaucratTax": 0.1,
+                "BureaucratsTax": 0.1,
                 "IntellectualsTax": 0.1,
                 "MilitaryTax": 0.1,
                 "WorkersTax": 0.1,
                 "ExternalTariffs": 0.1,
                 "InternalTariffs": 0.1,
-                "ExpectedSlavesSol": 0.25,
-                "ExpectedLabourersSol": 0.75,
-                "ExpectedSerfsSol": 0.75,
-                "ExpectedFarmersSol": 1.25,
-                "ExpectedTownsfolkSol": 1.5,
+                "ExpectedSlavesSol": 0.02,
+                "ExpectedLabourersSol": 0.25,
+                "ExpectedSerfsSol": 0.25,
+                "ExpectedUnemployedSol": 0.05,
+                "ExpectedFarmersSol": 0.5,
+                "ExpectedTownsfolkSol": 2.5,
                 "ExpectedClergySol": 6,
-                "ExpectedBureaucratsSol": 2,
-                "ExpectedMerchantsSol": 1.75,
-                "ExpectedIntellectualsSol": 2,
+                "ExpectedBureaucratsSol": 1.5,
+                "ExpectedMerchantsSol": 1,
+                "ExpectedIntellectualsSol": 1.5,
                 "ExpectedSailorsSol": 0.75,
                 "ExpectedSoldiersSol": 1,
-                "ExpectedAristocracySol": 10,
-                "ExpectedBurgousieSol": 6,
+                "ExpectedAristocracySol": 17.5,
+                "ExpectedBurgousieSol": 10,
+                "ExpectedPrivateBasicArmaments": 2.5,
                 "EstateInfluences": {
-                    "AristocratInfluence": 30,
+                    "AristocracyInfluence": 30,
                     "ClergyInfluence": 20,
                     "BurgousieInfluence": 15,
                     "UrbanInfluence": 5,
-                    "BureaucratInfluence": 5,
+                    "BureaucratsInfluence": 5,
                     "IntellectualsInfluence": 2.5,
                     "MilitaryInfluence": 2.5,
                     "WorkersInfluence": 0.5
                 },
+                "ExpectedInfluences": {
+                    "AristocracyInfluence": 0.5,
+                    "ClergyInfluence": 0.225,
+                    "BurgousieInfluence": 0.175,
+                    "UrbanInfluence": 0.05,
+                    "BureaucratsInfluence": 0.05,
+                    "IntellectualsInfluence": 0.015,
+                    "MilitaryInfluence": 0.015,
+                    "WorkersInfluence": 0.005
+                },
+                "InfluenceChangeLoyaltyEffect": {
+                    "Aristocracy": 0,
+                    "Clergy": 0,
+                    "Burgousie": 0,
+                    "Urban": 0,
+                    "Bureaucrats": 0,
+                    "Intellectuals": 0,
+                    "Military": 0,
+                    "Workers": 0
+                },
                 "GovernmentRepresentation": {
                     "UnitaryRepresentation": 30,
-                    "AristocratRepresentation": 40,
-                    "ClergyRepresentation": 20,
-                    "BurgousieRepresentation": 10,
+                    "AristocracyRepresentation": 40,
+                    "ClergyRepresentation": 15,
+                    "BurgousieRepresentation": 15,
                     "UrbanRepresentation": 0,
-                    "BureaucratRepresentation": 0,
+                    "BureaucratsRepresentation": 0,
                     "IntellectualsRepresentation": 0,
                     "MilitaryRepresentation": 0,
                     "WorkersRepresentation": 0
                 },
                 "MilitaryControl": {
-                    "UnitaryControl": 35,
-                    "AristocratControl": 45,
-                    "ClergyControl": 5,
-                    "BurgousieControl": 5,
+                    "AristocracyControl": 45,
+                    "ClergyControl": 15,
+                    "BurgousieControl": 10,
                     "UrbanControl": 5,
-                    "BureaucratControl": 5,
+                    "BureaucratsControl": 5,
                     "IntellectualsControl": 0,
-                    "WorkersControl": 5
+                    "WorkersControl": 5,
+                    "Independent": 15
                 },
                 "OverallImprovements": 1,
                 "IrregularImprovements": 0,
@@ -1399,16 +1456,19 @@
                 "Riflemen": 0,
                 "SiegeGuns": 0,
                 "RegimentalGuns": 0,
+                "SailorsWage": 1,
+                "ArmyWage": 1.5,
+                "FoodRationing": false,
                 "ProductionSectors": {
-                    "ConstructionSector": 2.5,
-                    "BasicArmamentsSector": 0.25,
-                    "HeavyArmamentsSector": 0.2,
-                    "ShipBuildingSector": 0.2,
-                    "BasicToolsSector": 4,
-                    "TextilesSector": 2,
-                    "BasicGoodsSector": 3,
-                    "LuxuryGoodsSector": 0.25,
-                    "AlcoholSector": 2.5,
+                    "ConstructionSector": 25,
+                    "BasicArmamentsSector": 20,
+                    "HeavyArmamentsSector": 5,
+                    "ShipBuildingSector": 5,
+                    "BasicToolsSector": 40,
+                    "TextilesSector": 20,
+                    "BasicGoodsSector": 30,
+                    "LuxuryGoodsSector": 5,
+                    "AlcoholSector": 25,
                     "ChemicalSector": 0,
                     "ElectronicsSector": 0,
                     "AutomotiveSector": 0,
@@ -1418,6 +1478,41 @@
                 "Forestry": 1,
                 "Reforestation": 0.1,
                 "ForestsCutDown": 0,
+                "WoodBaseValue": 0.75,
+                "SulphurBaseValue": 1,
+                "CoalBaseValue": 1.25,
+                "CottonBaseValue": 1.75,
+                "GoldBaseValue": 6,
+                "IronBaseValue": 1.75,
+                "TeaBaseValue": 2.5,
+                "SilkBaseValue": 4,
+                "SpiceBaseValue": 2.5,
+                "WoolBaseValue": 1,
+                "CoffeeBaseValue": 2,
+                "FurBaseValue": 3.5,
+                "DiamondBaseValue": 7.5,
+                "SilverBaseValue": 4,
+                "CopperBaseValue": 1.5,
+                "IvoryBaseValue": 4,
+                "CocoaBaseValue": 2.25,
+                "TobaccoBaseValue": 2,
+                "SugarBaseValue": 2.75,
+                "ExoticFruitBaseValue": 2,
+                "HousingBaseValue": 2,
+                "TextilesBaseValue": 1.5,
+                "BasicGoodsBaseValue": 1,
+                "LuxuryGoodsBaseValue": 2,
+                "AlcoholBaseValue": 1,
+                "BasicToolsBaseValue": 1,
+                "HeavyIndustryBaseValue": 5,
+                "BasicArmamentsBaseValue": 2,
+                "HeavyArmamentsBaseValue": 5,
+                "ShipBuildingBaseValue": 10,
+                "ChemicalsBaseValue": 5,
+                "MotorsBaseValue": 7.5,
+                "PlanesBaseValue": 10,
+                "ElectronicsBaseValue": 10,
+                "ReformPower": 0,
                 "Reforms": {
                     "SlaveryAllowed": true,
                     "SlaveryBanned": false,
@@ -1425,6 +1520,7 @@
                     "SerfdomBanned": false,
                     "OpenFieldSystem": true,
                     "Enclosure": false,
+                    "Isolationism": false,
                     "Mercantilism": true,
                     "Protectionism": false,
                     "FreeTrade": false,
@@ -1441,7 +1537,8 @@
                     "NobleOfficers": true,
                     "WealthyOfficers": false,
                     "MeritocraticOfficers": false,
-                    "NobleBureaucrats": true,
+                    "NobleBureaucrats": false,
+                    "ClergyBureaucrats": true,
                     "WealthyBureaucrats": false,
                     "MeritocraticBureaucrats": false,
                     "NobleResourceOwnership": true,
@@ -1452,56 +1549,102 @@
                     "MixedLandOwnership": false,
                     "PrivateLandOwnership": false,
                     "GovernmentLandOwnership": false,
-                    "NoArmyReserve": true,
                     "NationalMilitia": false,
-                    "Conscripts": false,
-                    "ProffesionalReservists": false
+                    "FeudalLevies": true,
+                    "ProffesionalArmy": false,
+                    "MassConscription": false,
+                    "FeudalNobleArmies": true,
+                    "Mercenaries": true,
+                    "ReligiousOrders": true,
+                    "StateMediaOnly": false,
+                    "ExtensiveCensorship": true,
+                    "LimitedCensorship": false,
+                    "FreeSpeech": false,
+                    "NoSocialMobility": true,
+                    "RestrictedSocialMobility": false,
+                    "UnrestrictedSocialMobility": false,
+                    "StateReligion": true,
+                    "RestrictiveReligionLaws": false,
+                    "FreedomOfReligion": false,
+                    "PrivateEducationOnly": true,
+                    "ReligiousSchools": false,
+                    "PublicEducation": false,
+                    "CommunityPolicing": true,
+                    "RegionalPolice": false,
+                    "StatePolice": false,
+                    "SecretPolice": false,
+                    "NoWeaponLaws": false,
+                    "LimitedWeaponOwnership": true,
+                    "WeaponOwnershipForbidden": false
                 },
+                "EstateCount": 8,
+                "GovernmentDominatedBy": "none",
+                "GovernmentEffects": "none",
+                "Education": 2,
+                "PropagandaReal": 0,
+                "PopulationControlReal": 0,
+                "ResourcesAdmDemand": 0,
+                "AgricultureAdmDemand": 0,
                 "AdministrativeTech": 0,
                 "AdministrativePower": 23.4375,
-                "AdministrativeDemand": 16,
-                "IrregularQualityIC": 1,
-                "MeleeQualityIC": 1.3,
-                "RangedQualityIC": 1,
-                "CavalryQualityIC": 1.4,
-                "FirearmQualityIC": 1,
-                "SiegeQualityIC": 1,
-                "ArtilleryQualityIC": 1,
-                "NavyQualityIC": 1,
-                "BaseIronHarvest": 1.2,
-                "BaseCoalHarvest": 1.5,
-                "BaseSulphurHarvest": 2,
-                "PopInAgriculture": 0.8840137254901962,
+                "AdministrativeDemand": 20.4,
+                "MilitaryControlTotal": 100,
+                "MilitaryControlReal": {
+                    "Aristocracy": 0.45,
+                    "Clergy": 0.15,
+                    "Burgousie": 0.1,
+                    "Urban": 0.05,
+                    "Bureaucrats": 0.05,
+                    "Workers": 0.05,
+                    "Independent": 0.15
+                },
+                "RealOverallImprovements": 1.4,
+                "IrregularQualityIC": 1.4,
+                "MeleeQualityIC": 1.7,
+                "RangedQualityIC": 1.4,
+                "CavalryQualityIC": 1.7999999999999998,
+                "FirearmQualityIC": 1.4,
+                "SiegeQualityIC": 1.4,
+                "ArtilleryQualityIC": 1.4,
+                "LightShipQualityIC": 1,
+                "MediumShipQualityIC": 1,
+                "HeavyShipQualityIC": 1,
+                "BaseIronHarvest": 1.0909090909090908,
+                "BaseCoalHarvest": 1.3333333333333333,
+                "BaseSulphurHarvest": 1.7142857142857142,
+                "ArableLand": 2500,
+                "MaxPopInAgriculture": 1,
+                "PopInAgriculture": 0.8910055003819711,
                 "WoodIncoming": 0,
                 "WoodOutgoing": 0,
                 "EffectiveWood": 10,
                 "HousingIncoming": 0,
                 "HousingOutgoing": 0,
-                "EffectiveHousing": 8.757731280431639,
+                "EffectiveHousing": 6.014396654807651,
                 "BasicArmamentsIncoming": 0,
                 "BasicArmamentsOutgoing": 0,
-                "EffectiveBasicArmaments": 0.9727713311668464,
+                "EffectiveBasicArmaments": 5.424284799538844,
                 "HeavyArmamentsIncoming": 0,
                 "HeavyArmamentsOutgoing": 0,
-                "EffectiveHeavyArmaments": 0.5895583825253613,
+                "EffectiveHeavyArmaments": 0.7251717646442306,
                 "ShipBuildingIncoming": 0,
                 "ShipBuildingOutgoing": 0,
-                "EffectiveShipBuilding": 0.8136189741518769,
+                "EffectiveShipBuilding": 0.8297131715924484,
                 "BasicToolsIncoming": 0,
                 "BasicToolsOutgoing": 0,
-                "EffectiveBasicTools": 11.79116765050723,
+                "EffectiveBasicTools": 10.788719460804494,
                 "TextilesIncoming": 0,
                 "TextilesOutgoing": 0,
-                "EffectiveTextiles": 8.757731280431639,
+                "EffectiveTextiles": 5.968833043786381,
                 "BasicGoodsIncoming": 0,
                 "BasicGoodsOutgoing": 0,
-                "EffectiveBasicGoods": 9.412858034049778,
+                "EffectiveBasicGoods": 5.526828055044704,
                 "LuxuryGoodsIncoming": 0,
                 "LuxuryGoodsOutgoing": 0,
-                "EffectiveLuxuryGoods": 0.4478385313857087,
+                "EffectiveLuxuryGoods": 0.615108748787146,
                 "AlcoholIncoming": 0,
                 "AlcoholOutgoing": 0,
-                "EffectiveAlcohol": 7.2624471739200525,
+                "EffectiveAlcohol": 5.082056878751079,
                 "ChemicalsIncoming": 0,
                 "ChemicalsOutgoing": 0,
                 "EffectiveChemicals": 0,
@@ -1518,31 +1661,66 @@
                 "HeavyIndustryOutgoing": 0,
                 "EffectiveHeavyIndustry": 0,
                 "WeavingEfficiency": 1.25,
-                "MetalWorkingEfficiency": 0,
-                "WeaponWorkingEfficiency": 1.2,
+                "MetalWorkingEfficiency": 0.5,
+                "WeaponWorkingEfficiency": 1.7,
                 "ShipBuildingEfficiency": 1,
-                "ToolWorkingEfficiency": 1,
+                "ToolWorkingEfficiency": 1.5,
                 "Wood": 10,
                 "ForestsLeft": 11250,
-                "AverageExpectedSol": 1.0646397058823533,
-                "WoodDemand": 6.036340609510026,
-                "FoodDemand": 2790.0365076819335,
-                "NaturalFabricsDemand": 0.26319252533228055,
-                "LuxuryNaturalFabricsDemand": 0.03289906566653507,
-                "ValuableMaterialsDemand": 0.3289906566653507,
+                "AverageExpectedSol": 0.7699852258721671,
+                "LuxuriesDemand": 0.4647794117647059,
+                "TotalSupply": 175,
+                "WoodDemand": 7.376777957304134,
+                "FoodDemand": 3964.535456137,
+                "NaturalFabricsDemand": 0.5602240896358543,
+                "LuxuryNaturalFabricsDemand": 0.05602240896358543,
+                "ValuableMaterialsDemand": 0.5602240896358543,
                 "LuxuryConsumables": 0,
-                "LuxuryConsumablesDemand": 4.039981617647085,
+                "LuxuryConsumablesDemand": 29.048713235294123,
                 "FoodAdditions": 0,
-                "FoodAdditionsDemand": 2.4619944852941256,
-                "BasicToolsDemand": 11.678345834978288,
-                "HousingDemand": 7.057996323529417,
-                "BasicArmamentsDemand": 0,
+                "FoodAdditionsDemand": 9.677095502928443,
+                "FoodAdditionsFoodBoost": 1,
+                "UnitsArmamentsDemands": {
+                    "Levies": 0.27999999999999997,
+                    "Militia": 0.42,
+                    "LightInfantry": 1.02,
+                    "HeavyInfantry": 1.615,
+                    "EliteInfantry": 1.87,
+                    "Archers": 0.7,
+                    "Crossbowmen": 1.0499999999999998,
+                    "Musketeers": 1.19,
+                    "MusketMilitia": 1.0499999999999998,
+                    "Riflemen": 2.0999999999999996,
+                    "LightCavalry": 2.1599999999999997,
+                    "HeavyCavalry": 2.6999999999999997,
+                    "EliteCavalry": 2.88
+                },
+                "UnitsArmamentsDemandsAll": {
+                    "Levies": 0.27999999999999997,
+                    "Militia": 0.42,
+                    "LightInfantry": 1.02,
+                    "HeavyInfantry": 1.615,
+                    "EliteInfantry": 1.87,
+                    "Archers": 0.7,
+                    "Crossbowmen": 1.0499999999999998,
+                    "HandCannoneers": 1.0499999999999998,
+                    "Musketeers": 1.19,
+                    "MusketMilitia": 1.0499999999999998,
+                    "Riflemen": 2.0999999999999996,
+                    "LightCavalry": 2.1599999999999997,
+                    "HeavyCavalry": 2.6999999999999997,
+                    "EliteCavalry": 2.88
+                },
+                "ArmyBasicArmamentsDemand": 0,
+                "BasicToolsDemand": 15.227056219760632,
+                "HousingDemand": 10.622150308759867,
+                "BasicArmamentsDemand": 2.5,
                 "HeavyArmamentsDemand": 0,
-                "TextilesDemand": 9.163536526187661,
-                "ShipBuildingDemand": 1.8166666666666664,
-                "BasicGoodsDemand": 13.711994485294126,
-                "LuxuryGoodsDemand": 0.8079963235294169,
-                "AlcoholDemand": 14.115992647058833,
+                "TextilesDemand": 12.582934622485357,
+                "ShipBuildingDemand": 0.0095,
+                "BasicGoodsDemand": 18.33942929399032,
+                "LuxuryGoodsDemand": 5.809742647058824,
+                "AlcoholDemand": 10.622150308759867,
                 "HeavyIndustryDemand": 0,
                 "ChemicalsDemand": 0,
                 "ElectronicsDemand": 0,
@@ -1551,31 +1729,31 @@
                 "NaturalFabrics": 0.5,
                 "LuxuryNaturalFabrics": 0,
                 "ValuableMaterials": 0,
-                "CoalShortage": 0.25851725228959055,
+                "CoalShortage": 0.49713673185775065,
                 "WoodShortage": 0,
-                "FoodShortage": 0.09659388955239145,
-                "NaturalFabricsShortage": 0,
+                "FoodShortage": 0.2753207701299387,
+                "NaturalFabricsShortage": 0.008333333333333304,
                 "LuxuryNaturalFabricsShortage": 1,
                 "ValuableMaterialsShortage": 1,
-                "TotalSupply": 14.9,
-                "BasicTools": 11.79116765050723,
-                "BasicToolsShortage": 0,
-                "Housing": 8.757731280431639,
-                "HousingShortage": 0,
-                "BasicArmaments": 0.9727713311668464,
+                "BasicTools": 10.788719460804494,
+                "BasicToolsShortage": 0.21275222902217727,
+                "Housing": 6.014396654807651,
+                "HousingShortage": 0.37087475176516516,
+                "BasicArmaments": 5.424284799538844,
                 "BasicArmamentsShortage": 0,
-                "HeavyArmaments": 0.5895583825253613,
+                "BasicArmamentsArmyShortage": 0,
+                "HeavyArmaments": 0.7251717646442306,
                 "HeavyArmamentsShortage": 0,
-                "Textiles": 8.757731280431639,
-                "TextilesShortage": 0.04428478509321243,
-                "ShipBuilding": 0.8136189741518769,
-                "ShipBuildingShortage": 0.5521363445035539,
-                "BasicGoods": 9.412858034049778,
-                "BasicGoodsShortage": 0.3135310808252655,
-                "LuxuryGoods": 0.4478385313857087,
-                "LuxuryGoodsShortage": 0.44574186992646114,
-                "Alcohol": 7.2624471739200525,
-                "AlcoholShortage": 0.48551636746330873,
+                "Textiles": 5.968833043786381,
+                "TextilesShortage": 0.4729340241928196,
+                "ShipBuilding": 0.8297131715924484,
+                "ShipBuildingShortage": 0,
+                "BasicGoods": 5.526828055044704,
+                "BasicGoodsShortage": 0.6651520632011645,
+                "LuxuryGoods": 0.615108748787146,
+                "LuxuryGoodsShortage": 0.8823606815587521,
+                "Alcohol": 5.082056878751079,
+                "AlcoholShortage": 0.4684004932012461,
                 "HeavyIndustry": 0,
                 "HeavyIndustryShortage": 0,
                 "Chemicals": 0,
@@ -1587,131 +1765,778 @@
                 "Planes": 0,
                 "PlanesShortage": 0,
                 "BudgetValue": null,
-                "FoodValue": 1.1068779764816097,
-                "WoodValue": 0.5976574860901016,
-                "HousingValue": 0.7968176161679044,
-                "BasicArmamentsValue": 0,
+                "FoodValue": 1.3799208791720237,
+                "WoodValue": 0.55325834679781,
+                "HousingValue": 3.5322413596612305,
+                "BasicArmamentsValue": 0.9217805083584631,
                 "HeavyArmamentsValue": 0,
-                "ShipBuildingValue": 1.9884292227545943,
-                "BasicToolsValue": 0.9821025300639955,
-                "TextilesValue": 1.0345241051093528,
-                "BasicGoodsValue": 1.4414169155278256,
-                "LuxuryGoodsValue": 1.4748804204875152,
-                "AlcoholValue": 1.917296289345453,
+                "ShipBuildingValue": 0.11449739892361693,
+                "BasicToolsValue": 1.4113867985056663,
+                "TextilesValue": 3.1621594699112063,
+                "BasicGoodsValue": 3.3182558080942473,
+                "LuxuryGoodsValue": 18.89013173203701,
+                "AlcoholValue": 2.0901281827782836,
                 "ChemicalsValue": 0,
                 "ElectronicsValue": 0,
                 "MotorsValue": 0,
                 "PlanesValue": 0,
                 "HeavyIndustryValue": 0,
-                "LuxuryConsumablesValue": 40.39981617647084,
-                "FoodAdditionsValue": 24.619944852941256,
+                "SmallFortUpkeep": 13.515070394262384,
+                "MediumFortUpkeep": 27.03014078852477,
+                "BigFortUpkeep": 54.06028157704954,
+                "HugeFortUpkeep": 108.12056315409907,
+                "CityFortificationUpkeep": 41.69743681823523,
+                "SupplyDepotUpkeep": 6.622952549364807,
+                "NavalBaseUpkeep": 11.038254248941346,
+                "SmallFortConstructionCost": 27.03014078852477,
+                "MediumFortConstructionCost": 54.06028157704954,
+                "BigFortConstructionCost": 108.12056315409907,
+                "HugeFortConstructionCost": 216.24112630819815,
+                "CityFortificationConstructionCost": 83.39487363647046,
+                "SupplyDepotConstructionCost": 13.245905098729613,
+                "NavalBaseConstructionCost": 22.076508497882692,
+                "LuxuryConsumablesValue": 290.4871323529412,
+                "FoodAdditionsValue": 96.77095502928442,
                 "OutgoingTradePowerFromResourceTrade": 0,
                 "ResourceTrade": 0,
+                "PopProductionRevenue": 98.23236266406217,
+                "StateProductionRevenue": 0,
                 "FoodTradeProfit": 0,
+                "AgricultureRevenue": 3688.5512803025954,
                 "MerchantShipsFullfilment": 1,
+                "ExternalTradeEff": 0.75,
+                "InternalTradeEff": 1,
                 "ExternalTrade": 0,
-                "InternalTrade": 7.300245098039216,
-                "IrregularQuality": 0.5519886222222219,
-                "MeleeQuality": 0.8519886222222219,
-                "RangedQuality": 0.5519886222222219,
-                "CavalryQuality": 0.9519886222222218,
-                "FirearmQuality": 0.5519886222222219,
-                "SiegeQuality": 0.5519886222222219,
-                "ArtilleryQuality": 0.5519886222222219,
+                "InternalTrade": 4.1274950980392155,
                 "EffectiveHealth": 0.05,
-                "PseudoPopulationGrowth": 0.19266666666666665,
-                "AristocratInfluenceMod": 2.3000000000000003,
-                "BurgousieInfluenceMod": 1.3,
-                "ClergyInfluenceMod": 1.1,
-                "UrbanInfluenceMod": 1,
-                "BureaucratInfluenceMod": 1,
-                "IntellectualsInfluenceMod": 1,
+                "LevyWage": 0.375,
+                "MilitiaWage": 0.75,
+                "EliteWage": 3,
+                "Militias": 0,
+                "Elites": 0,
+                "Proffesionals": 0,
+                "MerchantShipConstructionCost": 0.0004579895956944677,
+                "LightShipConstructionCost": 0.002289947978472339,
+                "MediumShipConstructionCost": 0.004579895956944678,
+                "HeavyShipConstructionCost": 0.009159791913889355,
+                "ConstructionCost": 0,
+                "AristocracyInfluenceMod": 2.8000000000000007,
+                "BurgousieInfluenceMod": 2,
+                "ClergyInfluenceMod": 2,
+                "UrbanInfluenceMod": 1.3,
+                "BureaucratsInfluenceMod": 1.2,
+                "IntellectualsInfluenceMod": 1.1,
                 "MilitaryInfluenceMod": 1,
-                "WorkersInfluenceMod": 1.2,
-                "TotalInfluences": 126.10000000000001,
+                "WorkersInfluenceMod": 1.5,
+                "TotalInfluences": 172.50000000000003,
                 "EstateInfluencesReal": {
-                    "AristocratInfluence": 0.5471847739888978,
-                    "ClergyInfluence": 0.17446471054718476,
-                    "BurgousieInfluence": 0.15463917525773194,
-                    "UrbanInfluence": 0.03965107057890563,
-                    "BureaucratInfluence": 0.03965107057890563,
-                    "IntellectualsInfluence": 0.019825535289452814,
-                    "MilitaryInfluence": 0.019825535289452814,
-                    "WorkersInfluence": 0.004758128469468675
+                    "AristocracyInfluence": 0.4869565217391305,
+                    "ClergyInfluence": 0.23188405797101447,
+                    "BurgousieInfluence": 0.17391304347826084,
+                    "UrbanInfluence": 0.03768115942028985,
+                    "BureaucratsInfluence": 0.03478260869565217,
+                    "IntellectualsInfluence": 0.015942028985507242,
+                    "MilitaryInfluence": 0.014492753623188404,
+                    "WorkersInfluence": 0.004347826086956521
                 },
                 "ResourceOwners": 0.02,
-                "ResourceOwnersInfluence": 0.5471847739888978,
+                "ResourceOwnersInfluence": 0.4869565217391305,
                 "LandOwners": 0.02,
-                "LandOwnersInfluence": 0.5471847739888978,
-                "SlavesWage": 0.004992167527371778,
+                "LandOwnersInfluence": 0.4869565217391305,
+                "UnemployedWage": 0,
+                "SlavesWage": 0.013643424568816271,
                 "LabourersWage": 0,
-                "SlavesAndLabourersWageToOwner": 5.661117976039595,
-                "SerfsWage": 0.2905554688264226,
-                "FarmersWage": 0.5262717611415932,
-                "SerfsAndFarmersWageToOnwers": 1876.5377376125557,
-                "TownsfolkWage": 7.597938144329897,
-                "TownsfolkWageToBurgousie": 133.41419041843542,
-                "ClergyWage": 13.957176843774782,
-                "BureaucratsWage": 2.973830293417922,
-                "MerchantsWage": 1.5127312007277143,
-                "MerchantsWageToBurggousie": 2.032026986052153,
-                "IntellectualsWage": 1.189532117367169,
-                "SailorsWage": 1,
+                "SlavesAndLabourersWageToOwner": 14.092771642926895,
+                "SerfsWage": 0.4139762637516071,
+                "FarmersWage": 0.8495512890902545,
+                "SerfsAndFarmersWageToOnwers": 2684.7431429759504,
+                "TownsfolkWage": 3.811842768594588,
+                "TownsfolkWageToBurgousie": 341.67778317934665,
+                "ClergyWage": 18.550724637681157,
+                "BureaucratsWage": 3.208695652173913,
+                "MerchantsWage": 0.8075533887468032,
+                "MerchantsWageToBurggousie": 1.2920854219948845,
+                "IntellectualsWage": 2.518840579710145,
                 "SoldiersWage": 1.5,
-                "AristocracyWage": 37.6439771117719,
-                "BurgousieWage": 10.835697392359007,
-                "SlavesEffectiveWage": 0.004683967548708763,
-                "LabourersEffectiveWage": 0,
-                "SerfsEffectiveWage": 0.27261753128692046,
-                "FarmersEffectiveWage": 0.4937814761771025,
-                "TownsfolkEffectiveWage": 7.12886647132893,
-                "ClergyEffectiveWage": 13.095506721155326,
-                "BureaucratsEffectiveWage": 2.7902358070643443,
-                "MerchantsEffectiveWage": 1.4193401594153225,
-                "IntellectualsEffectiveWage": 1.1160943228257378,
-                "SailorsEffectiveWage": 0.9382632940555037,
-                "SoldiersEffectiveWage": 1.4073949410832556,
-                "AristocracyEffectiveWage": 35.31996196624109,
-                "BurgousieEffectiveWage": 10.166737128743394,
-                "NecessitiesCost": 1.1366817279952302,
-                "LuxuriesCost": 1.9955043090333562,
-                "SlavesSol": 0.004120737963273056,
-                "LabourersSol": 0,
-                "SerfsSol": 0.23983629240503146,
-                "FarmersSol": 0.43440609980419653,
-                "TownsfolkSol": 4.002842297161653,
-                "ClergySol": 6.9928835728513565,
-                "BureaucratsSol": 1.8286396935269529,
-                "MerchantsSol": 1.1416476176676438,
-                "IntellectualsSol": 0.9818881533304821,
-                "SailorsSol": 0.8254406408998253,
-                "SoldiersSol": 1.1356615527526281,
-                "AristocracySol": 18.130146040528775,
-                "BurgousieSol": 5.5251996499683935,
-                "TaxEfficiency": 0.7376288659793815,
-                "TariffEfficiency": 0.8304123711340207,
+                "AristocracyWage": 53.97671829237754,
+                "BurgousieWage": 27.437589488107324,
+                "Gdp": 3822.228408382312,
+                "GdpPerKCapita": 1.5288913633529246,
+                "DebtToGdpRatio": 0,
+                "EstateNumbers": {
+                    "Workers": 0.8910055003819711,
+                    "Urban": 0.01688627450980392,
+                    "Clergy": 0.0125,
+                    "Bureaucrats": 0.005,
+                    "Intellectuals": 0.0025,
+                    "Military": 0.0012,
+                    "Aristocracy": 0.02,
+                    "Burgousie": 0.005
+                },
+                "GeneralPopulace": [
+                    "Labourers",
+                    "Serfs",
+                    "Unemployed",
+                    "Farmers",
+                    "Townsfolk",
+                    "Merchants",
+                    "Intellectuals"
+                ],
+                "TaxEfficiency": 0.6562318840579711,
+                "TariffEfficiency": 0.7304347826086958,
+                "AristocracyArmiesBudget": 387.7942051462468,
+                "BurgousieArmiesBudget": 32.437731426264556,
+                "ClergyArmiesBudget": 55.04891494601365,
+                "PopulaceArmiesBudget": 65.71567814621424,
+                "LabourersWeaponContribution": 0,
+                "SerfsWeaponContribution": 0.7206849261088175,
+                "UnemployedWeaponContribution": 0,
+                "FarmersWeaponContribution": 0.13593390034061142,
+                "TownsfolkWeaponContribution": 0.1278635965325048,
+                "MerchantsWeaponContribution": 0.0020722617776589235,
+                "IntellectualsWeaponContribution": 0.01344531524040734,
+                "TotalPrivateArmyBudgets": 752.0513618640167,
+                "AvailableWeapons": 5.424284799538844,
+                "AristocracyBasicArmaments": 4.159054074686406,
+                "BurgousieBasicArmaments": 0.2746511258691236,
+                "ClergyBasicArmaments": 0.4891179261121087,
+                "PopulaceBasicArmaments": 0.5014616728712057,
+                "PrivateArmySetup": {
+                    "Levies": 0.35,
+                    "Militia": 0.2,
+                    "LightInfantry": 0.1,
+                    "HeavyInfantry": 0.2,
+                    "EliteInfantry": 0.01,
+                    "Archers": 0.04,
+                    "Crossbowmen": 0.04,
+                    "Musketeers": 0,
+                    "MusketMilitia": 0,
+                    "Riflemen": 0,
+                    "LightCavalry": 0.05,
+                    "HeavyCavalry": 0.05,
+                    "EliteCavalry": 0.01
+                },
+                "AristocracyLevies": 5198.817593358008,
+                "AristocracyMilitia": 1980.50194032686,
+                "AristocracyLightInfantry": 407.7503994790594,
+                "AristocracyHeavyInfantry": 515.053136184075,
+                "AristocracyEliteInfantry": 22.240930880675965,
+                "AristocracyArchers": 237.66023283922323,
+                "AristocracyCrossbowmen": 158.44015522614882,
+                "AristocracyMusketeers": 0,
+                "AristocracyMusketMilitia": 0,
+                "AristocracyRiflemen": 0,
+                "AristocracyLightCavalry": 96.27439987700015,
+                "AristocracyHeavyCavalry": 77.0195199016001,
+                "AristocracyEliteCavalry": 14.44115998155002,
+                "BurgousieLevies": 343.3139073364045,
+                "BurgousieMilitia": 130.7862504138684,
+                "BurgousieLightInfantry": 26.926580967561137,
+                "BurgousieHeavyInfantry": 34.01252332744565,
+                "BurgousieEliteInfantry": 1.4687225982306074,
+                "BurgousieArchers": 15.694350049664205,
+                "BurgousieCrossbowmen": 10.462900033109472,
+                "BurgousieMusketeers": 0,
+                "BurgousieMusketMilitia": 0,
+                "BurgousieRiflemen": 0,
+                "BurgousieLightCavalry": 6.357664950674159,
+                "BurgousieHeavyCavalry": 5.086131960539327,
+                "BurgousieEliteCavalry": 0.9536497426011237,
+                "ClergyLevies": 611.397407640136,
+                "ClergyMilitia": 232.9132981486232,
+                "ClergyLightInfantry": 47.95273785412831,
+                "ClergyHeavyInfantry": 60.57187939468838,
+                "ClergyEliteInfantry": 2.615603882952453,
+                "ClergyArchers": 27.949595777834787,
+                "ClergyCrossbowmen": 18.633063851889858,
+                "ClergyMusketeers": 0,
+                "ClergyMusketMilitia": 0,
+                "ClergyRiflemen": 0,
+                "ClergyLightCavalry": 11.322174215558073,
+                "ClergyHeavyCavalry": 9.057739372446457,
+                "ClergyEliteCavalry": 1.6983261323337109,
+                "MilitiaBalance": 1,
+                "PopulaceMilitia": 1193.956363979061,
+                "PopulaceMusketMilitia": 0,
+                "SlavesEffectiveWage": 0.012751992265319081,
+                "LabourersEffectiveWage": 0.05,
+                "SerfsEffectiveWage": 0.43676463959114165,
+                "UnemployedEffectiveWage": 0.05,
+                "FarmersEffectiveWage": 0.8437083038566037,
+                "TownsfolkEffectiveWage": 3.5696161207308554,
+                "ClergyEffectiveWage": 17.615652782724368,
+                "BureaucratsEffectiveWage": 3.0054548072655543,
+                "MerchantsEffectiveWage": 0.7562367520956916,
+                "IntellectualsEffectiveWage": 2.355186968270814,
+                "SailorsEffectiveWage": 0.9853278722957363,
+                "SoldiersEffectiveWage": 1.4029918084436044,
+                "AristocracyEffectiveWage": 52.08277979376973,
+                "BurgousieEffectiveWage": 25.92993169665765,
+                "NecessitiesCost": 1.427534531207614,
+                "LuxuriesCost": 2.589186927769643,
+                "UnemployedSol": 0.03502542243773453,
+                "SlavesSol": 0.008932878320310481,
+                "LabourersSol": 0.03502542243773453,
+                "SerfsSol": 0.3059573201508921,
+                "FarmersSol": 0.5910247951360404,
+                "TownsfolkSol": 1.827318246724062,
+                "ClergySol": 7.2522014451314245,
+                "BureaucratsSol": 1.6094269436997273,
+                "MerchantsSol": 0.5297502341018384,
+                "IntellectualsSol": 1.3582794378860437,
+                "SailorsSol": 0.690230499336646,
+                "SoldiersSol": 0.9828076153483672,
+                "AristocracySol": 20.564151479088903,
+                "BurgousieSol": 10.463355813617017,
+                "AverageSol": 0.890222760891485,
+                "ExpectedUrbanSol": 2.3934045517882026,
+                "UrbanSol": 1.7351083507968907,
+                "ExpectedMilitarySol": 0.75,
+                "MilitarySol": 0.690230499336646,
+                "ExpectedWorkersSol": 0.2710436411357303,
+                "WorkersSol": 0.329952750723117,
+                "Sols": {
+                    "SlavesSol": 0.008932878320310481,
+                    "LabourersSol": 0.03502542243773453,
+                    "SerfsSol": 0.3059573201508921,
+                    "UnemployedSol": 0.03502542243773453,
+                    "FarmersSol": 0.5910247951360404,
+                    "TownsfolkSol": 1.827318246724062,
+                    "ClergySol": 7.2522014451314245,
+                    "MerchantsSol": 0.5297502341018384,
+                    "SailorsSol": 0.690230499336646,
+                    "SoldiersSol": 0.9828076153483672,
+                    "AristocracySol": 20.564151479088903,
+                    "BurgousieSol": 10.463355813617017
+                },
+                "SolsSorted": [
+                    "AristocracySol",
+                    "BurgousieSol",
+                    "ClergySol",
+                    "TownsfolkSol",
+                    "SoldiersSol",
+                    "SailorsSol",
+                    "FarmersSol",
+                    "MerchantsSol",
+                    "SerfsSol",
+                    "UnemployedSol",
+                    "LabourersSol",
+                    "SlavesSol"
+                ],
+                "LiteracyLeft": 0,
+                "AristocracyLiteracy": 1,
+                "BurgousieLiteracy": 1,
+                "ClergyLiteracy": 1,
+                "TownsfolkLiteracy": 0.3187500000000001,
+                "SoldiersLiteracy": 0,
+                "SailorsLiteracy": 0,
+                "FarmersLiteracy": 0,
+                "SerfsLiteracy": 0,
+                "MerchantsLiteracy": 0,
+                "UnemployedLiteracy": 0,
+                "LabourersLiteracy": 0,
+                "SlavesLiteracy": 0,
+                "IntellectualsLiteracy": 1,
+                "BureaucratsLiteracy": 1,
+                "UnemployedPoliticalAwareness": 0,
+                "SlavesPoliticalAwareness": 0,
+                "LabourersPoliticalAwareness": 0,
+                "SerfsPoliticalAwareness": 0,
+                "FarmersPoliticalAwareness": 0,
+                "TownsfolkPoliticalAwareness": 0.25500000000000006,
+                "ClergyPoliticalAwareness": 0.8,
+                "BureaucratsPoliticalAwareness": 1,
+                "MerchantsPoliticalAwareness": 0,
+                "IntellectualsPoliticalAwareness": 0.8,
+                "SailorsPoliticalAwareness": 0,
+                "SoldiersPoliticalAwareness": 0,
+                "AristocracyPoliticalAwareness": 0.8,
+                "BurgousiePoliticalAwareness": 0.8,
+                "UrbanPoliticalAwareness": 0.2368787738039945,
+                "MilitaryPoliticalAwareness": 0,
+                "WorkersPoliticalAwareness": 0,
+                "AverageSolMods": {
+                    "Workers": 0.5,
+                    "Urban": 2,
+                    "Clergy": 5,
+                    "Bureaucrats": 2,
+                    "Intellectuals": 1.5,
+                    "Military": 1,
+                    "Aristocracy": 10,
+                    "Burgousie": 7.5
+                },
+                "AverageTax": 0.10000000000000002,
+                "Manpower": 12500,
+                "LoyaltiesStabilityImpact": 0.8373574832021782,
+                "PseudoPopulationGrowth": 0.7260358328039718,
                 "SlavesTaxes": 0,
                 "LabourersTaxes": 0,
-                "SerfsTaxes": 43.14112793659723,
-                "FarmersTaxes": 7.243990669681492,
-                "TownsfolkTaxes": 21.106806736294807,
-                "ClergyTaxes": 26.559576737650463,
-                "BureaucratsTaxes": 2.6332564374258833,
-                "MerchantsTaxes": 0.32147705385027664,
-                "IntellectualsTaxes": 1.0750470542224249,
-                "SailorsTaxes": 0.21690149365991643,
+                "SerfsTaxes": 55.17895980563517,
+                "UnemployedTaxes": 0,
+                "FarmersTaxes": 10.407725972036317,
+                "TownsfolkTaxes": 9.439980868506238,
+                "ClergyTaxes": 29.220995467399682,
+                "BureaucratsTaxes": 2.540510561354484,
+                "MerchantsTaxes": 0.15299203265148256,
+                "IntellectualsTaxes": 1.016620141305109,
+                "SailorsTaxes": 0.19401638311279146,
                 "SoldiersTaxes": 0,
-                "AristocracyTaxes": 62.867245235752044,
-                "BurgousieTaxes": 8.44591882382686,
-                "TaxRevenue": 434.0283704474035,
-                "TariffsRevenue": 1.5155534604305643,
-                "OverallSpending": 210.48844666931006
+                "AristocracyTaxes": 90.86318995113577,
+                "BurgousieTaxes": 18.592554338696043,
+                "TaxRevenue": 544.0188638045827,
+                "TariffsRevenue": 0.753716496163683,
+                "StateWorkersUpkeep": 0,
+                "StateAgricultureRevenue": 0,
+                "StateResourceRevenue": 0,
+                "OverallSpending": 619.4612298260306,
+                "IrregularQuality": 0.9999999999999999,
+                "MeleeQuality": 1.2999999999999998,
+                "RangedQuality": 0.9999999999999999,
+                "CavalryQuality": 1.4,
+                "FirearmQuality": 0.9999999999999999,
+                "SiegeQuality": 0.9999999999999999,
+                "ArtilleryQuality": 0.9999999999999999,
+                "LightShipQuality": 0.6,
+                "MediumShipQuality": 0.6,
+                "HeavyShipQuality": 0.6,
+                "ReformPowerGain": 30,
+                "SlaveryReformAdvanceCost": 110,
+                "SlaveryReformRegressionCost": 25,
+                "SerfdomReformAdvanceCost": 80,
+                "SerfdomReformRegressionCost": 25,
+                "EnclosureReformAdvanceCost": 25,
+                "EnclosureReformRegressionCost": 55,
+                "TradeReformAdvanceCost": 25,
+                "TradeReformRegressionCost": 25,
+                "AntitrustReformAdvanceCost": 30,
+                "AntitrustReformRegressionCost": 25,
+                "SuffrageReformAdvanceCost": 30,
+                "SuffrageReformRegressionCost": 25,
+                "PrivellegeReformAdvanceCost": 40,
+                "PrivellegeReformRegressionCost": 25,
+                "OfficersReformAdvanceCost": 40,
+                "OfficersReformRegressionCost": 25,
+                "BureaucratsReformAdvanceCost": 55,
+                "BureaucratsReformRegressionCost": 25,
+                "ResourceReformAdvanceCost": 55,
+                "ResourceReformRegressionCost": 25,
+                "LandReformAdvanceCost": 55,
+                "LandReformRegressionCost": 25,
+                "ArmyReformAdvanceCost": 55,
+                "ArmyReformRegressionCost": 70,
+                "CensorshipReformAdvanceCost": 30,
+                "CensorshipReformRegressionCost": 70,
+                "SocialReformAdvanceCost": 77,
+                "SocialReformRegressionCost": 25,
+                "ReligiousReformAdvanceCost": 96.25,
+                "ReligiousReformRegressionCost": 25,
+                "EducationReformAdvanceCost": 40,
+                "EducationReformRegressionCost": 25,
+                "PoliceReformAdvanceCost": 25,
+                "PoliceReformRegressionCost": 25,
+                "WeaponReformAdvanceCost": 70,
+                "WeaponReformRegressionCost": 100,
+                "FeudalArmiesChangeCost": 82.5,
+                "MercenariesChangeCost": 82.5,
+                "ReligiousOrdersChangeCost": 25
             }
         },
         "Religions": {
             "Pagan": {
-                "definingFeatures": "Anything not classified",
-                "Opinions": {}
+                "definingFeatures": "",
+                "Color": 776544,
+                "Opinions": {
+                    "Sunni": {
+                        "Score": -75
+                    },
+                    "Shia": {
+                        "Score": -75
+                    },
+                    "Judaism": {
+                        "Score": -75
+                    },
+                    "Catholic": {
+                        "Score": -75
+                    },
+                    "Orthodox": {
+                        "Score": -75
+                    },
+                    "Protestant": {
+                        "Score": -75
+                    },
+                    "Hindu": {
+                        "Score": -75
+                    },
+                    "Buddhism": {
+                        "Score": -75
+                    },
+                    "Shinto": {
+                        "Score": -75
+                    },
+                    "Confucianism": {
+                        "Score": -75
+                    }
+                }
+            },
+            "Sunni": {
+                "definingFeatures": "",
+                "Color": "008C00",
+                "Opinions": {
+                    "Pagan": {
+                        "Score": -75
+                    },
+                    "Shia": {
+                        "Score": -100
+                    },
+                    "Judaism": {
+                        "Score": -100
+                    },
+                    "Catholic": {
+                        "Score": -100
+                    },
+                    "Orthodox": {
+                        "Score": -100
+                    },
+                    "Protestant": {
+                        "Score": 0
+                    },
+                    "Hindu": {
+                        "Score": -25
+                    },
+                    "Buddhism": {
+                        "Score": 0
+                    },
+                    "Shinto": {
+                        "Score": -25
+                    },
+                    "Confucianism": {
+                        "Score": 0
+                    }
+                }
+            },
+            "Shia": {
+                "definingFeatures": "",
+                "Color": "00C900",
+                "Opinions": {
+                    "Pagan": {
+                        "Score": -75
+                    },
+                    "Sunni": {
+                        "Score": -75
+                    },
+                    "Judaism": {
+                        "Score": -100
+                    },
+                    "Catholic": {
+                        "Score": -100
+                    },
+                    "Orthodox": {
+                        "Score": -100
+                    },
+                    "Protestant": {
+                        "Score": 0
+                    },
+                    "Hindu": {
+                        "Score": -25
+                    },
+                    "Buddhism": {
+                        "Score": 0
+                    },
+                    "Shinto": {
+                        "Score": -25
+                    },
+                    "Confucianism": {
+                        "Score": 0
+                    }
+                }
+            },
+            "Judaism": {
+                "definingFeatures": "",
+                "Color": "00C9BE",
+                "Opinions": {
+                    "Pagan": {
+                        "Score": -75
+                    },
+                    "Sunni": {
+                        "Score": -100
+                    },
+                    "Shia": {
+                        "Score": -100
+                    },
+                    "Catholic": {
+                        "Score": -100
+                    },
+                    "Orthodox": {
+                        "Score": -50
+                    },
+                    "Protestant": {
+                        "Score": -75
+                    },
+                    "Hindu": {
+                        "Score": 0
+                    },
+                    "Buddhism": {
+                        "Score": 0
+                    },
+                    "Shinto": {
+                        "Score": -25
+                    },
+                    "Confucianism": {
+                        "Score": 0
+                    }
+                }
+            },
+            "Catholic": {
+                "definingFeatures": "",
+                "Color": "FFD800",
+                "Opinions": {
+                    "Pagan": {
+                        "Score": -75
+                    },
+                    "Sunni": {
+                        "Score": -100
+                    },
+                    "Shia": {
+                        "Score": -100
+                    },
+                    "Judaism": {
+                        "Score": -100
+                    },
+                    "Orthodox": {
+                        "Score": -100
+                    },
+                    "Protestant": {
+                        "Score": -100
+                    },
+                    "Hindu": {
+                        "Score": 0
+                    },
+                    "Buddhism": {
+                        "Score": -25
+                    },
+                    "Shinto": {
+                        "Score": -25
+                    },
+                    "Confucianism": {
+                        "Score": 0
+                    }
+                }
+            },
+            "Orthodox": {
+                "definingFeatures": "",
+                "Color": "FF15DD",
+                "Opinions": {
+                    "Pagan": {
+                        "Score": -75
+                    },
+                    "Sunni": {
+                        "Score": -100
+                    },
+                    "Shia": {
+                        "Score": -100
+                    },
+                    "Judaism": {
+                        "Score": -50
+                    },
+                    "Catholic": {
+                        "Score": -100
+                    },
+                    "Protestant": {
+                        "Score": -75
+                    },
+                    "Hindu": {
+                        "Score": 0
+                    },
+                    "Buddhism": {
+                        "Score": -25
+                    },
+                    "Shinto": {
+                        "Score": -25
+                    },
+                    "Confucianism": {
+                        "Score": 0
+                    }
+                }
+            },
+            "Protestant": {
+                "definingFeatures": "",
+                "Color": "0015DD",
+                "Opinions": {
+                    "Pagan": {
+                        "Score": -75
+                    },
+                    "Sunni": {
+                        "Score": 0
+                    },
+                    "Shia": {
+                        "Score": 0
+                    },
+                    "Judaism": {
+                        "Score": -75
+                    },
+                    "Catholic": {
+                        "Score": -100
+                    },
+                    "Orthodox": {
+                        "Score": -75
+                    },
+                    "Hindu": {
+                        "Score": 0
+                    },
+                    "Buddhism": {
+                        "Score": -25
+                    },
+                    "Shinto": {
+                        "Score": -25
+                    },
+                    "Confucianism": {
+                        "Score": 0
+                    }
+                }
+            },
+            "Hindu": {
+                "definingFeatures": "",
+                "Color": "B6FF00",
+                "Opinions": {
+                    "Pagan": {
+                        "Score": -75
+                    },
+                    "Sunni": {
+                        "Score": -25
+                    },
+                    "Shia": {
+                        "Score": -25
+                    },
+                    "Judaism": {
+                        "Score": 0
+                    },
+                    "Catholic": {
+                        "Score": 0
+                    },
+                    "Orthodox": {
+                        "Score": 0
+                    },
+                    "Protestant": {
+                        "Score": 0
+                    },
+                    "Buddhism": {
+                        "Score": 25
+                    },
+                    "Shinto": {
+                        "Score": -25
+                    },
+                    "Confucianism": {
+                        "Score": 0
+                    }
+                }
+            },
+            "Buddhism": {
+                "definingFeatures": "",
+                "Color": "57007F",
+                "Opinions": {
+                    "Pagan": {
+                        "Score": -50
+                    },
+                    "Sunni": {
+                        "Score": -25
+                    },
+                    "Shia": {
+                        "Score": -25
+                    },
+                    "Judaism": {
+                        "Score": -25
+                    },
+                    "Catholic": {
+                        "Score": -25
+                    },
+                    "Orthodox": {
+                        "Score": -25
+                    },
+                    "Protestant": {
+                        "Score": -25
+                    },
+                    "Hindu": {
+                        "Score": -25
+                    },
+                    "Shinto": {
+                        "Score": 50
+                    },
+                    "Confucianism": {
+                        "Score": -25
+                    }
+                }
+            },
+            "Shinto": {
+                "definingFeatures": "",
+                "Color": "FF0000",
+                "Opinions": {
+                    "Pagan": {
+                        "Score": -75
+                    },
+                    "Sunni": {
+                        "Score": -25
+                    },
+                    "Shia": {
+                        "Score": -25
+                    },
+                    "Judaism": {
+                        "Score": -25
+                    },
+                    "Catholic": {
+                        "Score": -25
+                    },
+                    "Orthodox": {
+                        "Score": -25
+                    },
+                    "Protestant": {
+                        "Score": -25
+                    },
+                    "Hindu": {
+                        "Score": -25
+                    },
+                    "Buddhism": {
+                        "Score": 50
+                    },
+                    "Confucianism": {
+                        "Score": 0
+                    }
+                }
+            },
+            "Confucianism": {
+                "definingFeatures": "",
+                "Color": "808080",
+                "Opinions": {
+                    "Pagan": {
+                        "Score": -50
+                    },
+                    "Sunni": {
+                        "Score": 0
+                    },
+                    "Shia": {
+                        "Score": 0
+                    },
+                    "Judaism": {
+                        "Score": 0
+                    },
+                    "Catholic": {
+                        "Score": 0
+                    },
+                    "Orthodox": {
+                        "Score": 0
+                    },
+                    "Protestant": {
+                        "Score": 0
+                    },
+                    "Hindu": {
+                        "Score": 0
+                    },
+                    "Buddhism": {
+                        "Score": 0
+                    },
+                    "Shinto": {
+                        "Score": 0
+                    }
+                }
             }
         },
         "Cultures": {
@@ -1997,7 +2822,7 @@
             },
             "Uzbek": {
                 "definingFeatures": "",
-                "Color": "447a5d",
+                "Color": 776727,
                 "Opinions": {}
             },
             "Pawnee": {
@@ -2018,6 +2843,11 @@
             "Korean": {
                 "definingFeatures": "",
                 "Color": "7c680e",
+                "Opinions": {}
+            },
+            "Turkmeni": {
+                "definingFeatures": "",
+                "Color": "447a5d",
                 "Opinions": {}
             },
             "Pomo": {
@@ -2484,6 +3314,7 @@
             "Silver",
             "Copper",
             "Coal",
+            "Wood",
             "Ivory",
             "Cocoa",
             "Tobacco",
@@ -2559,7 +3390,7 @@
                 "Score": 0
             },
             "Peru": {
-                "Color": 9,
+                "Color": "9e0000",
                 "Score": 0
             },
             "RioGrande": {
@@ -3021,7 +3852,7 @@
                 "Color": "103c6d"
             },
             "PolarDesert": {
-                "ClimateScore": 0,
+                "ClimateScore": 0.001,
                 "Color": "808080"
             },
             "TaigaAndTundra": {
@@ -3074,14 +3905,38 @@
             }
         },
         "Fertility": {
-            "Infertile": { "Color": "ffffff", "Score": 0.025 },
-            "BarelyFertile": { "Color": "ff0000", "Score": 0.15 },
-            "LowFertility": { "Color": "ff6a00", "Score": 0.35 },
-            "AverageFertility": { "Color": "ffd800", "Score": 0.55 },
-            "GoodFertility": { "Color": "00ff00", "Score": 0.7 },
-            "HighFertility": { "Color": "00c900", "Score": 0.8 },
-            "AmazingFertility": { "Color": "008000", "Score": 0.9 },
-            "TopFertility": { "Color": "003e00", "Score": 1.0 }
+            "Infertile": {
+                "Color": "ffffff",
+                "Score": 0.025
+            },
+            "BarelyFertile": {
+                "Color": "ff0000",
+                "Score": 0.15
+            },
+            "LowFertility": {
+                "Color": "ff6a00",
+                "Score": 0.35
+            },
+            "AverageFertility": {
+                "Color": "ffd800",
+                "Score": 0.55
+            },
+            "GoodFertility": {
+                "Color": "00ff00",
+                "Score": 0.7
+            },
+            "HighFertility": {
+                "Color": "00c900",
+                "Score": 0.8
+            },
+            "AmazingFertility": {
+                "Color": "008000",
+                "Score": 0.9
+            },
+            "TopFertility": {
+                "Color": "003e00",
+                "Score": 1
+            }
         },
         "UnitUpkeepCosts": {
             "Levies": 0.00075,
@@ -3104,6 +3959,32 @@
             "RegimentalGuns": 0.1,
             "SiegeGuns": 0.4
         },
+        "Estates": [
+            "Unemployed",
+            "Slaves",
+            "Labourers",
+            "Serfs",
+            "Farmers",
+            "Townsfolk",
+            "Clergy",
+            "Bureaucrats",
+            "Merchants",
+            "Intellectuals",
+            "Sailors",
+            "Soldiers",
+            "Aristocracy",
+            "Burgousie"
+        ],
+        "EstatesGeneral": [
+            "Workers",
+            "Urban",
+            "Clergy",
+            "Bureaucrats",
+            "Intellectuals",
+            "Military",
+            "Aristocracy",
+            "Burgousie"
+        ],
         "AdvancesPrerequisites": {}
     }
 }
