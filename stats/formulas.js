@@ -150,7 +150,7 @@ static evaluateNation(nationName) {
   n.Workforces.Townsfolk = n.AverageDevelopment;
 
   n.Education = n.EducationEfficiency * (0.5 + n.Technologies.Paper * 0.5 + n.Reforms.ReligiousSchools + n.Reforms.PublicEducation * 3 - n.Alcoholism * (1 - n.ReligionGroups.Sunni.Points - n.ReligionGroups.Shia.Points)) * (n.GovernmentDominatedBy == "Intellectuals" ? 1.2 : 1);
-  n.PropagandaReal = n.Propaganda * (n.Reforms.StateMediaOnly * 2 + n.Reforms.ExtensiveCensorship * 1.5 + n.Reforms.LimitedCensorship + n.Reforms.FreeSpeech * 0.75);
+  n.PropagandaReal = n.Propaganda * (n.Reforms.StateMediaOnly * 2 + n.Reforms.ExtensiveCensorship * 1.5 + n.Reforms.LimitedCensorship + n.Reforms.FreeSpeech * 0.5);
   n.PopulationControlReal = n.PopulationControl * (n.Reforms.CommunityPolicing * 0.5 + n.Reforms.RegionalPolice * 0.75 + n.Reforms.StatePolice * 1.25 + n.Reforms.SecretPolice * 2) * (n.GovernmentDominatedBy == "Military" || n.GovernmentDominatedBy == "Bureaucrats" ? 1.2 : 1) * (n.GovernmentDominatedBy == "Intellectuals" ? 0.8 : 1);
 
   n.ResourcesAdmDemand = (n.Reforms.GovernmentResourceOwnership ? n.Coal + n.Sulphur + n.Iron + n.Copper + n.Gold + n.Fur + n.Diamond + n.Silver + n.Ivory + n.Forestry + n.Reforestation * 5 + n.Cotton + n.Tea + n.Silk + n.Spice + n.Wool + n.Coffee + n.Cocoa + n.Tobacco + n.Sugar + n.ExoticFruit : 0) / 2;
@@ -1241,14 +1241,14 @@ static evaluateNation(nationName) {
   // PoliticalAwareness
   for (const EstateIndex in gameStats.Estates) {
     const Estate = gameStats.Estates[EstateIndex];
-    n[Estate + "PoliticalAwareness"] = max(0, n[Estate + "Literacy"] * (1 - n.Reforms.StateMediaOnly * 0.4 - n.Reforms.ExtensiveCensorship * 0.2 - n.Reforms.LimitedCensorship * 0.1) - n.Alcoholism * (1 - n.ReligionGroups.Sunni.Points - n.ReligionGroups.Shia.Points) / 2);
+      n[Estate + "PoliticalAwareness"] = max(0, n[Estate + "Literacy"] * (1 - n.Reforms.StateMediaOnly * 0.4 - n.Reforms.ExtensiveCensorship * 0.2 - n.Reforms.LimitedCensorship * 0.1 - n.PropagandaReal / 10) - n.Alcoholism * (1 - n.ReligionGroups.Sunni.Points - n.ReligionGroups.Shia.Points) / 2);
   }
 
-  n.UrbanPoliticalAwareness = n.TownsfolkPoliticalAwareness * n.Workforces.Townsfolk / (n.Workforces.Townsfolk + n.Workforces.Merchants) + n.MerchantsPoliticalAwareness * n.Workforces.Merchants / (n.Workforces.Townsfolk + n.Workforces.Merchants) - n.Alcoholism * (1 - n.ReligionGroups.Sunni.Points - n.ReligionGroups.Shia.Points) / 2;
+  n.UrbanPoliticalAwareness = n.TownsfolkPoliticalAwareness * n.Workforces.Townsfolk / (n.Workforces.Townsfolk + n.Workforces.Merchants) + n.MerchantsPoliticalAwareness * n.Workforces.Merchants / (n.Workforces.Townsfolk + n.Workforces.Merchants);
 
-  n.MilitaryPoliticalAwareness = n.SoldiersPoliticalAwareness * n.Workforces.PopulationInMilitary / (n.Workforces.PopulationInMilitary + n.Workforces.Sailors) + n.SailorsPoliticalAwareness * n.Workforces.Sailors / (n.Workforces.PopulationInMilitary + n.Workforces.Sailors) - n.Alcoholism * (1 - n.ReligionGroups.Sunni.Points - n.ReligionGroups.Shia.Points) / 2;
+  n.MilitaryPoliticalAwareness = n.SoldiersPoliticalAwareness * n.Workforces.PopulationInMilitary / (n.Workforces.PopulationInMilitary + n.Workforces.Sailors) + n.SailorsPoliticalAwareness * n.Workforces.Sailors / (n.Workforces.PopulationInMilitary + n.Workforces.Sailors);
 
-    n.WorkersPoliticalAwareness = n.FarmersPoliticalAwareness * n.Workforces.Farmers / (n.Workforces.Farmers + n.Workforces.Labourers + n.Workforces.Serfs + n.Workforces.Unemployed) + n.LabourersPoliticalAwareness * n.Workforces.Labourers / (n.Workforces.Farmers + n.Workforces.Labourers + n.Workforces.Serfs + n.Workforces.Unemployed) + n.SerfsPoliticalAwareness * n.Workforces.Serfs / (n.Workforces.Farmers + n.Workforces.Labourers + n.Workforces.Serfs + n.Workforces.Unemployed) + n.UnemployedPoliticalAwareness * n.Workforces.Unemployed / (n.Workforces.Farmers + n.Workforces.Labourers + n.Workforces.Serfs + n.Workforces.Unemployed) - n.Alcoholism * (1 - n.ReligionGroups.Sunni.Points - n.ReligionGroups.Shia.Points) / 2;
+    n.WorkersPoliticalAwareness = n.FarmersPoliticalAwareness * n.Workforces.Farmers / (n.Workforces.Farmers + n.Workforces.Labourers + n.Workforces.Serfs + n.Workforces.Unemployed) + n.LabourersPoliticalAwareness * n.Workforces.Labourers / (n.Workforces.Farmers + n.Workforces.Labourers + n.Workforces.Serfs + n.Workforces.Unemployed) + n.SerfsPoliticalAwareness * n.Workforces.Serfs / (n.Workforces.Farmers + n.Workforces.Labourers + n.Workforces.Serfs + n.Workforces.Unemployed) + n.UnemployedPoliticalAwareness * n.Workforces.Unemployed / (n.Workforces.Farmers + n.Workforces.Labourers + n.Workforces.Serfs + n.Workforces.Unemployed);
 
   n.BureaucratsPoliticalAwareness = 1 - n.Alcoholism * (1 - n.ReligionGroups.Sunni.Points - n.ReligionGroups.Shia.Points) / 2;
 
