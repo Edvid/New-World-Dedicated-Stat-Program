@@ -4,6 +4,52 @@ let Synonyms = {
         "admeff",
         "admineff"
     ],
+    AdministrativeSize: [
+        "AdmSize"
+    ],
+    PopulationControl: [
+        "PopControl"
+    ],
+    TradeImprovements: [
+        "TradeImprov"
+    ],
+    OverallImprovements: [
+        "OverallImprov"
+    ],
+    IrregularImprovements: [
+        "IrregularImprov"
+    ],
+    RangedImprovements: [
+        "RangedImprov"
+    ],
+    FirearmImprovements: [
+        "FirearmImprov"
+    ],
+    CavalryImprovements: [
+        "CavalryImprov",
+        "CavImprov",
+    ],
+    SiegeImprovements: [
+        "SiegeImprov"
+    ],
+    ArtilleryImprovements: [
+        "ArtilleryImprov"
+    ],
+    LightShipImprovements: [
+        "LightShipImprov"
+    ],
+    MediumShipImprovements: [
+        "MediumShipImprov"
+    ],
+    HeavyShipImprovements: [
+        "HeavyShipImprov"
+    ],
+    OverallImprovements: [
+        "OverallImprov"
+    ],
+    OverallImprovements: [
+        "OverallImprov"
+    ],
 	
     Prosperity: [
         "pros",
