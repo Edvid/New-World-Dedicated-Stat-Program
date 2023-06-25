@@ -50998,11 +50998,11 @@
         "Trades": {},
         "TradeZones": {
             "Alaska": {
-                "Color": "none",
+                "Color": "ff6c7a",
                 "Score": 1
             },
             "Cascadia": {
-                "Color": "none",
+                "Color": "ff006e",
                 "Score": 3
             },
             "CaliforniaAndWestMexico": {
@@ -51010,11 +51010,11 @@
                 "Score": 4
             },
             "HudsonBay": {
-                "Color": "none",
+                "Color": "ffeb63",
                 "Score": 3
             },
             "GreatLakes": {
-                "Color": "none",
+                "Color": "3dffff",
                 "Score": 7
             },
             "Louisiana": {
@@ -51022,15 +51022,15 @@
                 "Score": 7
             },
             "GulfOfMexico": {
-                "Color": "none",
+                "Color": "ffac54",
                 "Score": 8
             },
             "LawrenceGulf": {
-                "Color": "none",
+                "Color": "ff6a38",
                 "Score": 4.5
             },
             "EastCoast": {
-                "Color": "none",
+                "Color": "cc0000",
                 "Score": 7
             },
             "Carribean": {
@@ -51038,7 +51038,7 @@
                 "Score": 8
             },
             "CentralAmerica": {
-                "Color": "none",
+                "Color": "a0a0a0",
                 "Score": 6
             },
             "GuyanaAndSuriname": {
@@ -51046,11 +51046,11 @@
                 "Score": 3
             },
             "Amazon": {
-                "Color": "none",
+                "Color": "2d9600",
                 "Score": 3
             },
             "Peru": {
-                "Color": "none",
+                "Color": "9e0000",
                 "Score": 2
             },
             "RioGrande": {
@@ -51062,35 +51062,35 @@
                 "Score": 3
             },
             "Chile": {
-                "Color": "none",
+                "Color": "ffe846",
                 "Score": 2
             },
             "Patagonia": {
-                "Color": "none",
+                "Color": "68d7ff",
                 "Score": 2
             },
             "NorthernAnatolia": {
-                "Color": "none",
+                "Color": "5b8f00",
                 "Score": 10
             },
             "NorthSea": {
-                "Color": "none",
+                "Color": "7382ff",
                 "Score": 4.5
             },
             "BritishIsles": {
-                "Color": "none",
+                "Color": 808080,
                 "Score": 8
             },
             "EnglishChannel": {
-                "Color": "none",
+                "Color": "ff4a00",
                 "Score": 10
             },
             "France": {
-                "Color": "none",
+                "Color": "00d5ff",
                 "Score": 7
             },
             "BayOfBiscay": {
-                "Color": "none",
+                "Color": "efff66",
                 "Score": 7
             },
             "WestIberia": {
@@ -51102,19 +51102,19 @@
                 "Score": 9
             },
             "WesternMediterranean": {
-                "Color": "none",
+                "Color": "ffd846",
                 "Score": 7
             },
             "Rhine": {
-                "Color": "none",
+                "Color": "0094ff",
                 "Score": 7
             },
             "CentralMediterranean": {
-                "Color": "none",
+                "Color": "ff7d49",
                 "Score": 8
             },
             "Adriatic": {
-                "Color": "none",
+                "Color": "007f0e",
                 "Score": 10
             },
             "Germany": {
@@ -51122,11 +51122,11 @@
                 "Score": 7
             },
             "WesternDanube": {
-                "Color": "none",
+                "Color": "404040",
                 "Score": 7
             },
             "Denmark": {
-                "Color": "none",
+                "Color": "ff0000",
                 "Score": 8
             },
             "Baltic": {
@@ -51138,11 +51138,11 @@
                 "Score": 3
             },
             "BarentsSea": {
-                "Color": "none",
+                "Color": "ff553e",
                 "Score": 3
             },
             "Novgorod": {
-                "Color": "none",
+                "Color": "00ff21",
                 "Score": 8
             },
             "Poland": {
@@ -51150,35 +51150,35 @@
                 "Score": 6
             },
             "Dniepr": {
-                "Color": "none",
+                "Color": "80ff65",
                 "Score": 8.5
             },
             "Crimea": {
-                "Color": "none",
+                "Color": "31aadb",
                 "Score": 7
             },
             "EasternDanube": {
-                "Color": "none",
+                "Color": "5d7c3d",
                 "Score": 8.5
             },
             "Greece": {
-                "Color": "none",
+                "Color": "0065ff",
                 "Score": 9.5
             },
             "EasternMediterranean": {
-                "Color": "none",
+                "Color": "80ff00",
                 "Score": 8
             },
             "Egypt": {
-                "Color": "none",
+                "Color": "ff1410",
                 "Score": 7
             },
             "RedSea": {
-                "Color": "none",
+                "Color": "2b6d0e",
                 "Score": 7
             },
             "WesternSahara": {
-                "Color": "none",
+                "Color": "fed800",
                 "Score": 2
             },
             "CoteDIvoire": {
@@ -51194,7 +51194,7 @@
                 "Score": 3
             },
             "Somalia": {
-                "Color": "none",
+                "Color": "529bae",
                 "Score": 7
             },
             "Kongo": {
@@ -51202,39 +51202,39 @@
                 "Score": 3
             },
             "EastAfrica": {
-                "Color": "none",
+                "Color": "0094d7",
                 "Score": 3
             },
             "Mozambique": {
-                "Color": "none",
+                "Color": "00ff69",
                 "Score": 4
             },
             "SouthAfrica": {
-                "Color": "none",
+                "Color": "8f00ff",
                 "Score": 5
             },
             "Mesopotamia": {
-                "Color": "none",
+                "Color": "7f3300",
                 "Score": 6.5
             },
             "PersianGulf": {
-                "Color": "none",
+                "Color": "ffc430",
                 "Score": 7
             },
             "Caucasus": {
-                "Color": "none",
+                "Color": "ff2f3e",
                 "Score": 6
             },
             "DonRiver": {
-                "Color": "none",
+                "Color": "ffd86d",
                 "Score": 6
             },
             "Volga": {
-                "Color": "none",
+                "Color": "db7a25",
                 "Score": 6
             },
             "CentralAsia": {
-                "Color": "none",
+                "Color": "9fffff",
                 "Score": 3
             },
             "WestSiberia": {
@@ -51246,7 +51246,7 @@
                 "Score": 2
             },
             "Iran": {
-                "Color": "none",
+                "Color": "8ffd42",
                 "Score": 5
             },
             "Pakistan": {
@@ -51254,7 +51254,7 @@
                 "Score": 7
             },
             "Tibet": {
-                "Color": "none",
+                "Color": "b200ff",
                 "Score": 2
             },
             "Mongolia": {
@@ -51262,11 +51262,11 @@
                 "Score": 3
             },
             "Manchuria": {
-                "Color": "none",
+                "Color": "e8ff65",
                 "Score": 6.5
             },
             "SeaOfJapan": {
-                "Color": "none",
+                "Color": "00ffff",
                 "Score": 7.5
             },
             "NorthChina": {
@@ -51274,7 +51274,7 @@
                 "Score": 7
             },
             "YangtzeRiver": {
-                "Color": "none",
+                "Color": "3dfd00",
                 "Score": 7
             },
             "SouthChina": {
@@ -51298,7 +51298,7 @@
                 "Score": 6
             },
             "SouthEastAsia": {
-                "Color": "none",
+                "Color": "ff3d3d",
                 "Score": 8
             },
             "NorthAustralia": {
@@ -51308,6 +51308,202 @@
             "SouthAustralia": {
                 "Color": "none",
                 "Score": 6
+            },
+            "CentralSiberia": {
+                "Color": "69a826",
+                "Score": 0
+            },
+            "EasternSiberia": {
+                "Color": "331b1b",
+                "Score": 0
+            },
+            "WesternSiberia": {
+                "Color": "264a00",
+                "Score": 0
+            },
+            "NorthernNordics": {
+                "Color": "ffd6e4",
+                "Score": 0
+            },
+            "CentralCanada": {
+                "Color": "a5a5a5",
+                "Score": 0
+            },
+            "BalticSea": {
+                "Color": "8f00c2",
+                "Score": 0
+            },
+            "Livonia": {
+                "Color": 801065,
+                "Score": 0
+            },
+            "Muscovy": {
+                "Color": "e1d869",
+                "Score": 0
+            },
+            "UralRiver": {
+                "Color": "dcff44",
+                "Score": 0
+            },
+            "Vistula": {
+                "Color": "ff7e70",
+                "Score": 0
+            },
+            "CentralEurope": {
+                "Color": "8080a3",
+                "Score": 0
+            },
+            "Romania": {
+                "Color": "d100dc",
+                "Score": 0
+            },
+            "TheRockies": {
+                "Color": "7f4618",
+                "Score": 0
+            },
+            "Mississippi": {
+                "Color": "00ba21",
+                "Score": 0
+            },
+            "SouthernFrance": {
+                "Color": "46a7ff",
+                "Score": 0
+            },
+            "CaspianSea": {
+                "Color": "3881ff",
+                "Score": 0
+            },
+            "GobiDesert": {
+                "Color": "e1e9cd",
+                "Score": 0
+            },
+            "WestCoast": {
+                "Color": "ffdb7b",
+                "Score": 0
+            },
+            "Iberia": {
+                "Color": "3a9112",
+                "Score": 0
+            },
+            "YellowRiver": {
+                "Color": "3aaa0e",
+                "Score": 0
+            },
+            "Afghanistan": {
+                "Color": "592b37",
+                "Score": 0
+            },
+            "IndusRiver": {
+                "Color": "267f00",
+                "Score": 0
+            },
+            "Morocco": {
+                "Color": "7f0001",
+                "Score": 0
+            },
+            "Sichuan": {
+                "Color": "c6d521",
+                "Score": 0
+            },
+            "Sahara": {
+                "Color": "b7a791",
+                "Score": 0
+            },
+            "ArabianDesert": {
+                "Color": "e2ceb1",
+                "Score": 0
+            },
+            "WesternMexico": {
+                "Color": "469b52",
+                "Score": 0
+            },
+            "Ganges": {
+                "Color": "db6525",
+                "Score": 0
+            },
+            "Caribbean": {
+                "Color": "3c02ff",
+                "Score": 0
+            },
+            "Pacific": {
+                "Color": "93ffff",
+                "Score": 0
+            },
+            "SouthChinaSea": {
+                "Color": "4d007f",
+                "Score": 0
+            },
+            "CentralIndia": {
+                "Color": "ec7f7f",
+                "Score": 0
+            },
+            "Deccan": {
+                "Color": "84ff55",
+                "Score": 0
+            },
+            "SouthernNile": {
+                "Color": "d9ff00",
+                "Score": 0
+            },
+            "WesternNiger": {
+                "Color": "b6ff4a",
+                "Score": 0
+            },
+            "Guinea": {
+                "Color": "ff8ca3",
+                "Score": 0
+            },
+            "EasternNiger": {
+                "Color": "3bd323",
+                "Score": 0
+            },
+            "Venezuela": {
+                "Color": "c3ff2b",
+                "Score": 0
+            },
+            "Indonesia": {
+                "Color": "fec605",
+                "Score": 0
+            },
+            "CongoRiver": {
+                "Color": "dd6a00",
+                "Score": 0
+            },
+            "Gabon": {
+                "Color": "107f00",
+                "Score": 0
+            },
+            "LakeVictoria": {
+                "Color": "9fa300",
+                "Score": 0
+            },
+            "LakeTanganyika": {
+                "Color": "b67871",
+                "Score": 0
+            },
+            "SaoFranciscoRiver": {
+                "Color": "6aff2b",
+                "Score": 0
+            },
+            "NorthernAustralia": {
+                "Color": "ff7400",
+                "Score": 0
+            },
+            "Angola": {
+                "Color": "a3ff27",
+                "Score": 0
+            },
+            "ParanaRiver": {
+                "Color": "2ba6ff",
+                "Score": 0
+            },
+            "SouthernAustralia": {
+                "Color": "b6c2ff",
+                "Score": 0
+            },
+            "AustralianDesert": {
+                "Color": "d8c5a9",
+                "Score": 0
             }
         },
         "Climates": {
