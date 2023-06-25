@@ -50919,6 +50919,41 @@
                 "definingFeatures": "",
                 "Color": "9b9eff",
                 "Opinions": {}
+            },
+            "Danish": {
+                "definingFeatures": "",
+                "Color": "6BB5FF",
+                "Opinions": {}
+            },
+            "Usian": {
+                "definingFeatures": "",
+                "Color": "F0BFFF",
+                "Opinions": {}
+            },
+            "Aquitan": {
+                "definingFeatures": "",
+                "Color": "84FFBD",
+                "Opinions": {}
+            },
+            "Israeli": {
+                "definingFeatures": "",
+                "Color": "00FFFF",
+                "Opinions": {}
+            },
+            "GrecoBactrian": {
+                "definingFeatures": "",
+                "Color": "5171FF",
+                "Opinions": {}
+            },
+            "Xyndara": {
+                "definingFeatures": "",
+                "Color": "FFB7D0",
+                "Opinions": {}
+            },
+            "Dutch": {
+                "definingFeatures": "",
+                "Color": "FFC551",
+                "Opinions": {}
             }
         },
         "ResourceTypes": [
