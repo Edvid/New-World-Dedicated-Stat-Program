@@ -719,6 +719,153 @@
                     },
                     "SouthAustralia": {
                         "TradingPoints": 0
+                    },
+                    "CentralSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "EasternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "WesternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernNordics": {
+                        "TradingPoints": 0
+                    },
+                    "CentralCanada": {
+                        "TradingPoints": 0
+                    },
+                    "BalticSea": {
+                        "TradingPoints": 0
+                    },
+                    "Livonia": {
+                        "TradingPoints": 0
+                    },
+                    "Muscovy": {
+                        "TradingPoints": 0
+                    },
+                    "UralRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Vistula": {
+                        "TradingPoints": 0
+                    },
+                    "CentralEurope": {
+                        "TradingPoints": 0
+                    },
+                    "Romania": {
+                        "TradingPoints": 0
+                    },
+                    "TheRockies": {
+                        "TradingPoints": 0
+                    },
+                    "Mississippi": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernFrance": {
+                        "TradingPoints": 0
+                    },
+                    "CaspianSea": {
+                        "TradingPoints": 0
+                    },
+                    "GobiDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WestCoast": {
+                        "TradingPoints": 0
+                    },
+                    "Iberia": {
+                        "TradingPoints": 0
+                    },
+                    "YellowRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Afghanistan": {
+                        "TradingPoints": 0
+                    },
+                    "IndusRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Morocco": {
+                        "TradingPoints": 0
+                    },
+                    "Sichuan": {
+                        "TradingPoints": 0
+                    },
+                    "Sahara": {
+                        "TradingPoints": 0
+                    },
+                    "ArabianDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WesternMexico": {
+                        "TradingPoints": 0
+                    },
+                    "Ganges": {
+                        "TradingPoints": 0
+                    },
+                    "Caribbean": {
+                        "TradingPoints": 0
+                    },
+                    "Pacific": {
+                        "TradingPoints": 0
+                    },
+                    "SouthChinaSea": {
+                        "TradingPoints": 0
+                    },
+                    "CentralIndia": {
+                        "TradingPoints": 0
+                    },
+                    "Deccan": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernNile": {
+                        "TradingPoints": 0
+                    },
+                    "WesternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Guinea": {
+                        "TradingPoints": 0
+                    },
+                    "EasternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Venezuela": {
+                        "TradingPoints": 0
+                    },
+                    "Indonesia": {
+                        "TradingPoints": 0
+                    },
+                    "CongoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Gabon": {
+                        "TradingPoints": 0
+                    },
+                    "LakeVictoria": {
+                        "TradingPoints": 0
+                    },
+                    "LakeTanganyika": {
+                        "TradingPoints": 0
+                    },
+                    "SaoFranciscoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "Angola": {
+                        "TradingPoints": 0
+                    },
+                    "ParanaRiver": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "AustralianDesert": {
+                        "TradingPoints": 0
                     }
                 },
                 "Size": 10000,
@@ -2273,6 +2420,153 @@
                         "TradingPoints": 0
                     },
                     "SouthAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "CentralSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "EasternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "WesternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernNordics": {
+                        "TradingPoints": 0
+                    },
+                    "CentralCanada": {
+                        "TradingPoints": 0
+                    },
+                    "BalticSea": {
+                        "TradingPoints": 0
+                    },
+                    "Livonia": {
+                        "TradingPoints": 0
+                    },
+                    "Muscovy": {
+                        "TradingPoints": 0
+                    },
+                    "UralRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Vistula": {
+                        "TradingPoints": 0
+                    },
+                    "CentralEurope": {
+                        "TradingPoints": 0
+                    },
+                    "Romania": {
+                        "TradingPoints": 0
+                    },
+                    "TheRockies": {
+                        "TradingPoints": 0
+                    },
+                    "Mississippi": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernFrance": {
+                        "TradingPoints": 0
+                    },
+                    "CaspianSea": {
+                        "TradingPoints": 0
+                    },
+                    "GobiDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WestCoast": {
+                        "TradingPoints": 0
+                    },
+                    "Iberia": {
+                        "TradingPoints": 0
+                    },
+                    "YellowRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Afghanistan": {
+                        "TradingPoints": 0
+                    },
+                    "IndusRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Morocco": {
+                        "TradingPoints": 0
+                    },
+                    "Sichuan": {
+                        "TradingPoints": 0
+                    },
+                    "Sahara": {
+                        "TradingPoints": 0
+                    },
+                    "ArabianDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WesternMexico": {
+                        "TradingPoints": 0
+                    },
+                    "Ganges": {
+                        "TradingPoints": 0
+                    },
+                    "Caribbean": {
+                        "TradingPoints": 0
+                    },
+                    "Pacific": {
+                        "TradingPoints": 0
+                    },
+                    "SouthChinaSea": {
+                        "TradingPoints": 0
+                    },
+                    "CentralIndia": {
+                        "TradingPoints": 0
+                    },
+                    "Deccan": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernNile": {
+                        "TradingPoints": 0
+                    },
+                    "WesternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Guinea": {
+                        "TradingPoints": 0
+                    },
+                    "EasternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Venezuela": {
+                        "TradingPoints": 0
+                    },
+                    "Indonesia": {
+                        "TradingPoints": 0
+                    },
+                    "CongoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Gabon": {
+                        "TradingPoints": 0
+                    },
+                    "LakeVictoria": {
+                        "TradingPoints": 0
+                    },
+                    "LakeTanganyika": {
+                        "TradingPoints": 0
+                    },
+                    "SaoFranciscoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "Angola": {
+                        "TradingPoints": 0
+                    },
+                    "ParanaRiver": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "AustralianDesert": {
                         "TradingPoints": 0
                     }
                 },
@@ -3829,6 +4123,153 @@
                     },
                     "SouthAustralia": {
                         "TradingPoints": 0
+                    },
+                    "CentralSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "EasternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "WesternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernNordics": {
+                        "TradingPoints": 0
+                    },
+                    "CentralCanada": {
+                        "TradingPoints": 0
+                    },
+                    "BalticSea": {
+                        "TradingPoints": 0
+                    },
+                    "Livonia": {
+                        "TradingPoints": 0
+                    },
+                    "Muscovy": {
+                        "TradingPoints": 0
+                    },
+                    "UralRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Vistula": {
+                        "TradingPoints": 0
+                    },
+                    "CentralEurope": {
+                        "TradingPoints": 0
+                    },
+                    "Romania": {
+                        "TradingPoints": 0
+                    },
+                    "TheRockies": {
+                        "TradingPoints": 0
+                    },
+                    "Mississippi": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernFrance": {
+                        "TradingPoints": 0
+                    },
+                    "CaspianSea": {
+                        "TradingPoints": 0
+                    },
+                    "GobiDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WestCoast": {
+                        "TradingPoints": 0
+                    },
+                    "Iberia": {
+                        "TradingPoints": 0
+                    },
+                    "YellowRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Afghanistan": {
+                        "TradingPoints": 0
+                    },
+                    "IndusRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Morocco": {
+                        "TradingPoints": 0
+                    },
+                    "Sichuan": {
+                        "TradingPoints": 0
+                    },
+                    "Sahara": {
+                        "TradingPoints": 0
+                    },
+                    "ArabianDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WesternMexico": {
+                        "TradingPoints": 0
+                    },
+                    "Ganges": {
+                        "TradingPoints": 0
+                    },
+                    "Caribbean": {
+                        "TradingPoints": 0
+                    },
+                    "Pacific": {
+                        "TradingPoints": 0
+                    },
+                    "SouthChinaSea": {
+                        "TradingPoints": 0
+                    },
+                    "CentralIndia": {
+                        "TradingPoints": 0
+                    },
+                    "Deccan": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernNile": {
+                        "TradingPoints": 0
+                    },
+                    "WesternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Guinea": {
+                        "TradingPoints": 0
+                    },
+                    "EasternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Venezuela": {
+                        "TradingPoints": 0
+                    },
+                    "Indonesia": {
+                        "TradingPoints": 0
+                    },
+                    "CongoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Gabon": {
+                        "TradingPoints": 0
+                    },
+                    "LakeVictoria": {
+                        "TradingPoints": 0
+                    },
+                    "LakeTanganyika": {
+                        "TradingPoints": 0
+                    },
+                    "SaoFranciscoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "Angola": {
+                        "TradingPoints": 0
+                    },
+                    "ParanaRiver": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "AustralianDesert": {
+                        "TradingPoints": 0
                     }
                 },
                 "Size": 10000,
@@ -5383,6 +5824,153 @@
                         "TradingPoints": 0
                     },
                     "SouthAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "CentralSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "EasternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "WesternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernNordics": {
+                        "TradingPoints": 0
+                    },
+                    "CentralCanada": {
+                        "TradingPoints": 0
+                    },
+                    "BalticSea": {
+                        "TradingPoints": 0
+                    },
+                    "Livonia": {
+                        "TradingPoints": 0
+                    },
+                    "Muscovy": {
+                        "TradingPoints": 0
+                    },
+                    "UralRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Vistula": {
+                        "TradingPoints": 0
+                    },
+                    "CentralEurope": {
+                        "TradingPoints": 0
+                    },
+                    "Romania": {
+                        "TradingPoints": 0
+                    },
+                    "TheRockies": {
+                        "TradingPoints": 0
+                    },
+                    "Mississippi": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernFrance": {
+                        "TradingPoints": 0
+                    },
+                    "CaspianSea": {
+                        "TradingPoints": 0
+                    },
+                    "GobiDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WestCoast": {
+                        "TradingPoints": 0
+                    },
+                    "Iberia": {
+                        "TradingPoints": 0
+                    },
+                    "YellowRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Afghanistan": {
+                        "TradingPoints": 0
+                    },
+                    "IndusRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Morocco": {
+                        "TradingPoints": 0
+                    },
+                    "Sichuan": {
+                        "TradingPoints": 0
+                    },
+                    "Sahara": {
+                        "TradingPoints": 0
+                    },
+                    "ArabianDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WesternMexico": {
+                        "TradingPoints": 0
+                    },
+                    "Ganges": {
+                        "TradingPoints": 0
+                    },
+                    "Caribbean": {
+                        "TradingPoints": 0
+                    },
+                    "Pacific": {
+                        "TradingPoints": 0
+                    },
+                    "SouthChinaSea": {
+                        "TradingPoints": 0
+                    },
+                    "CentralIndia": {
+                        "TradingPoints": 0
+                    },
+                    "Deccan": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernNile": {
+                        "TradingPoints": 0
+                    },
+                    "WesternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Guinea": {
+                        "TradingPoints": 0
+                    },
+                    "EasternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Venezuela": {
+                        "TradingPoints": 0
+                    },
+                    "Indonesia": {
+                        "TradingPoints": 0
+                    },
+                    "CongoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Gabon": {
+                        "TradingPoints": 0
+                    },
+                    "LakeVictoria": {
+                        "TradingPoints": 0
+                    },
+                    "LakeTanganyika": {
+                        "TradingPoints": 0
+                    },
+                    "SaoFranciscoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "Angola": {
+                        "TradingPoints": 0
+                    },
+                    "ParanaRiver": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "AustralianDesert": {
                         "TradingPoints": 0
                     }
                 },
@@ -6939,6 +7527,153 @@
                     },
                     "SouthAustralia": {
                         "TradingPoints": 0
+                    },
+                    "CentralSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "EasternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "WesternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernNordics": {
+                        "TradingPoints": 0
+                    },
+                    "CentralCanada": {
+                        "TradingPoints": 0
+                    },
+                    "BalticSea": {
+                        "TradingPoints": 0
+                    },
+                    "Livonia": {
+                        "TradingPoints": 0
+                    },
+                    "Muscovy": {
+                        "TradingPoints": 0
+                    },
+                    "UralRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Vistula": {
+                        "TradingPoints": 0
+                    },
+                    "CentralEurope": {
+                        "TradingPoints": 0
+                    },
+                    "Romania": {
+                        "TradingPoints": 0
+                    },
+                    "TheRockies": {
+                        "TradingPoints": 0
+                    },
+                    "Mississippi": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernFrance": {
+                        "TradingPoints": 0
+                    },
+                    "CaspianSea": {
+                        "TradingPoints": 0
+                    },
+                    "GobiDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WestCoast": {
+                        "TradingPoints": 0
+                    },
+                    "Iberia": {
+                        "TradingPoints": 0
+                    },
+                    "YellowRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Afghanistan": {
+                        "TradingPoints": 0
+                    },
+                    "IndusRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Morocco": {
+                        "TradingPoints": 0
+                    },
+                    "Sichuan": {
+                        "TradingPoints": 0
+                    },
+                    "Sahara": {
+                        "TradingPoints": 0
+                    },
+                    "ArabianDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WesternMexico": {
+                        "TradingPoints": 0
+                    },
+                    "Ganges": {
+                        "TradingPoints": 0
+                    },
+                    "Caribbean": {
+                        "TradingPoints": 0
+                    },
+                    "Pacific": {
+                        "TradingPoints": 0
+                    },
+                    "SouthChinaSea": {
+                        "TradingPoints": 0
+                    },
+                    "CentralIndia": {
+                        "TradingPoints": 0
+                    },
+                    "Deccan": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernNile": {
+                        "TradingPoints": 0
+                    },
+                    "WesternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Guinea": {
+                        "TradingPoints": 0
+                    },
+                    "EasternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Venezuela": {
+                        "TradingPoints": 0
+                    },
+                    "Indonesia": {
+                        "TradingPoints": 0
+                    },
+                    "CongoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Gabon": {
+                        "TradingPoints": 0
+                    },
+                    "LakeVictoria": {
+                        "TradingPoints": 0
+                    },
+                    "LakeTanganyika": {
+                        "TradingPoints": 0
+                    },
+                    "SaoFranciscoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "Angola": {
+                        "TradingPoints": 0
+                    },
+                    "ParanaRiver": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "AustralianDesert": {
+                        "TradingPoints": 0
                     }
                 },
                 "Size": 10000,
@@ -8493,6 +9228,153 @@
                         "TradingPoints": 0
                     },
                     "SouthAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "CentralSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "EasternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "WesternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernNordics": {
+                        "TradingPoints": 0
+                    },
+                    "CentralCanada": {
+                        "TradingPoints": 0
+                    },
+                    "BalticSea": {
+                        "TradingPoints": 0
+                    },
+                    "Livonia": {
+                        "TradingPoints": 0
+                    },
+                    "Muscovy": {
+                        "TradingPoints": 0
+                    },
+                    "UralRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Vistula": {
+                        "TradingPoints": 0
+                    },
+                    "CentralEurope": {
+                        "TradingPoints": 0
+                    },
+                    "Romania": {
+                        "TradingPoints": 0
+                    },
+                    "TheRockies": {
+                        "TradingPoints": 0
+                    },
+                    "Mississippi": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernFrance": {
+                        "TradingPoints": 0
+                    },
+                    "CaspianSea": {
+                        "TradingPoints": 0
+                    },
+                    "GobiDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WestCoast": {
+                        "TradingPoints": 0
+                    },
+                    "Iberia": {
+                        "TradingPoints": 0
+                    },
+                    "YellowRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Afghanistan": {
+                        "TradingPoints": 0
+                    },
+                    "IndusRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Morocco": {
+                        "TradingPoints": 0
+                    },
+                    "Sichuan": {
+                        "TradingPoints": 0
+                    },
+                    "Sahara": {
+                        "TradingPoints": 0
+                    },
+                    "ArabianDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WesternMexico": {
+                        "TradingPoints": 0
+                    },
+                    "Ganges": {
+                        "TradingPoints": 0
+                    },
+                    "Caribbean": {
+                        "TradingPoints": 0
+                    },
+                    "Pacific": {
+                        "TradingPoints": 0
+                    },
+                    "SouthChinaSea": {
+                        "TradingPoints": 0
+                    },
+                    "CentralIndia": {
+                        "TradingPoints": 0
+                    },
+                    "Deccan": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernNile": {
+                        "TradingPoints": 0
+                    },
+                    "WesternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Guinea": {
+                        "TradingPoints": 0
+                    },
+                    "EasternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Venezuela": {
+                        "TradingPoints": 0
+                    },
+                    "Indonesia": {
+                        "TradingPoints": 0
+                    },
+                    "CongoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Gabon": {
+                        "TradingPoints": 0
+                    },
+                    "LakeVictoria": {
+                        "TradingPoints": 0
+                    },
+                    "LakeTanganyika": {
+                        "TradingPoints": 0
+                    },
+                    "SaoFranciscoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "Angola": {
+                        "TradingPoints": 0
+                    },
+                    "ParanaRiver": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "AustralianDesert": {
                         "TradingPoints": 0
                     }
                 },
@@ -10049,6 +10931,153 @@
                     },
                     "SouthAustralia": {
                         "TradingPoints": 0
+                    },
+                    "CentralSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "EasternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "WesternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernNordics": {
+                        "TradingPoints": 0
+                    },
+                    "CentralCanada": {
+                        "TradingPoints": 0
+                    },
+                    "BalticSea": {
+                        "TradingPoints": 0
+                    },
+                    "Livonia": {
+                        "TradingPoints": 0
+                    },
+                    "Muscovy": {
+                        "TradingPoints": 0
+                    },
+                    "UralRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Vistula": {
+                        "TradingPoints": 0
+                    },
+                    "CentralEurope": {
+                        "TradingPoints": 0
+                    },
+                    "Romania": {
+                        "TradingPoints": 0
+                    },
+                    "TheRockies": {
+                        "TradingPoints": 0
+                    },
+                    "Mississippi": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernFrance": {
+                        "TradingPoints": 0
+                    },
+                    "CaspianSea": {
+                        "TradingPoints": 0
+                    },
+                    "GobiDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WestCoast": {
+                        "TradingPoints": 0
+                    },
+                    "Iberia": {
+                        "TradingPoints": 0
+                    },
+                    "YellowRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Afghanistan": {
+                        "TradingPoints": 0
+                    },
+                    "IndusRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Morocco": {
+                        "TradingPoints": 0
+                    },
+                    "Sichuan": {
+                        "TradingPoints": 0
+                    },
+                    "Sahara": {
+                        "TradingPoints": 0
+                    },
+                    "ArabianDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WesternMexico": {
+                        "TradingPoints": 0
+                    },
+                    "Ganges": {
+                        "TradingPoints": 0
+                    },
+                    "Caribbean": {
+                        "TradingPoints": 0
+                    },
+                    "Pacific": {
+                        "TradingPoints": 0
+                    },
+                    "SouthChinaSea": {
+                        "TradingPoints": 0
+                    },
+                    "CentralIndia": {
+                        "TradingPoints": 0
+                    },
+                    "Deccan": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernNile": {
+                        "TradingPoints": 0
+                    },
+                    "WesternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Guinea": {
+                        "TradingPoints": 0
+                    },
+                    "EasternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Venezuela": {
+                        "TradingPoints": 0
+                    },
+                    "Indonesia": {
+                        "TradingPoints": 0
+                    },
+                    "CongoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Gabon": {
+                        "TradingPoints": 0
+                    },
+                    "LakeVictoria": {
+                        "TradingPoints": 0
+                    },
+                    "LakeTanganyika": {
+                        "TradingPoints": 0
+                    },
+                    "SaoFranciscoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "Angola": {
+                        "TradingPoints": 0
+                    },
+                    "ParanaRiver": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "AustralianDesert": {
+                        "TradingPoints": 0
                     }
                 },
                 "Size": 10000,
@@ -11603,6 +12632,153 @@
                         "TradingPoints": 0
                     },
                     "SouthAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "CentralSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "EasternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "WesternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernNordics": {
+                        "TradingPoints": 0
+                    },
+                    "CentralCanada": {
+                        "TradingPoints": 0
+                    },
+                    "BalticSea": {
+                        "TradingPoints": 0
+                    },
+                    "Livonia": {
+                        "TradingPoints": 0
+                    },
+                    "Muscovy": {
+                        "TradingPoints": 0
+                    },
+                    "UralRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Vistula": {
+                        "TradingPoints": 0
+                    },
+                    "CentralEurope": {
+                        "TradingPoints": 0
+                    },
+                    "Romania": {
+                        "TradingPoints": 0
+                    },
+                    "TheRockies": {
+                        "TradingPoints": 0
+                    },
+                    "Mississippi": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernFrance": {
+                        "TradingPoints": 0
+                    },
+                    "CaspianSea": {
+                        "TradingPoints": 0
+                    },
+                    "GobiDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WestCoast": {
+                        "TradingPoints": 0
+                    },
+                    "Iberia": {
+                        "TradingPoints": 0
+                    },
+                    "YellowRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Afghanistan": {
+                        "TradingPoints": 0
+                    },
+                    "IndusRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Morocco": {
+                        "TradingPoints": 0
+                    },
+                    "Sichuan": {
+                        "TradingPoints": 0
+                    },
+                    "Sahara": {
+                        "TradingPoints": 0
+                    },
+                    "ArabianDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WesternMexico": {
+                        "TradingPoints": 0
+                    },
+                    "Ganges": {
+                        "TradingPoints": 0
+                    },
+                    "Caribbean": {
+                        "TradingPoints": 0
+                    },
+                    "Pacific": {
+                        "TradingPoints": 0
+                    },
+                    "SouthChinaSea": {
+                        "TradingPoints": 0
+                    },
+                    "CentralIndia": {
+                        "TradingPoints": 0
+                    },
+                    "Deccan": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernNile": {
+                        "TradingPoints": 0
+                    },
+                    "WesternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Guinea": {
+                        "TradingPoints": 0
+                    },
+                    "EasternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Venezuela": {
+                        "TradingPoints": 0
+                    },
+                    "Indonesia": {
+                        "TradingPoints": 0
+                    },
+                    "CongoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Gabon": {
+                        "TradingPoints": 0
+                    },
+                    "LakeVictoria": {
+                        "TradingPoints": 0
+                    },
+                    "LakeTanganyika": {
+                        "TradingPoints": 0
+                    },
+                    "SaoFranciscoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "Angola": {
+                        "TradingPoints": 0
+                    },
+                    "ParanaRiver": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "AustralianDesert": {
                         "TradingPoints": 0
                     }
                 },
@@ -13159,6 +14335,153 @@
                     },
                     "SouthAustralia": {
                         "TradingPoints": 0
+                    },
+                    "CentralSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "EasternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "WesternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernNordics": {
+                        "TradingPoints": 0
+                    },
+                    "CentralCanada": {
+                        "TradingPoints": 0
+                    },
+                    "BalticSea": {
+                        "TradingPoints": 0
+                    },
+                    "Livonia": {
+                        "TradingPoints": 0
+                    },
+                    "Muscovy": {
+                        "TradingPoints": 0
+                    },
+                    "UralRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Vistula": {
+                        "TradingPoints": 0
+                    },
+                    "CentralEurope": {
+                        "TradingPoints": 0
+                    },
+                    "Romania": {
+                        "TradingPoints": 0
+                    },
+                    "TheRockies": {
+                        "TradingPoints": 0
+                    },
+                    "Mississippi": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernFrance": {
+                        "TradingPoints": 0
+                    },
+                    "CaspianSea": {
+                        "TradingPoints": 0
+                    },
+                    "GobiDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WestCoast": {
+                        "TradingPoints": 0
+                    },
+                    "Iberia": {
+                        "TradingPoints": 0
+                    },
+                    "YellowRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Afghanistan": {
+                        "TradingPoints": 0
+                    },
+                    "IndusRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Morocco": {
+                        "TradingPoints": 0
+                    },
+                    "Sichuan": {
+                        "TradingPoints": 0
+                    },
+                    "Sahara": {
+                        "TradingPoints": 0
+                    },
+                    "ArabianDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WesternMexico": {
+                        "TradingPoints": 0
+                    },
+                    "Ganges": {
+                        "TradingPoints": 0
+                    },
+                    "Caribbean": {
+                        "TradingPoints": 0
+                    },
+                    "Pacific": {
+                        "TradingPoints": 0
+                    },
+                    "SouthChinaSea": {
+                        "TradingPoints": 0
+                    },
+                    "CentralIndia": {
+                        "TradingPoints": 0
+                    },
+                    "Deccan": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernNile": {
+                        "TradingPoints": 0
+                    },
+                    "WesternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Guinea": {
+                        "TradingPoints": 0
+                    },
+                    "EasternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Venezuela": {
+                        "TradingPoints": 0
+                    },
+                    "Indonesia": {
+                        "TradingPoints": 0
+                    },
+                    "CongoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Gabon": {
+                        "TradingPoints": 0
+                    },
+                    "LakeVictoria": {
+                        "TradingPoints": 0
+                    },
+                    "LakeTanganyika": {
+                        "TradingPoints": 0
+                    },
+                    "SaoFranciscoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "Angola": {
+                        "TradingPoints": 0
+                    },
+                    "ParanaRiver": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "AustralianDesert": {
+                        "TradingPoints": 0
                     }
                 },
                 "Size": 10000,
@@ -14713,6 +16036,153 @@
                         "TradingPoints": 0
                     },
                     "SouthAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "CentralSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "EasternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "WesternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernNordics": {
+                        "TradingPoints": 0
+                    },
+                    "CentralCanada": {
+                        "TradingPoints": 0
+                    },
+                    "BalticSea": {
+                        "TradingPoints": 0
+                    },
+                    "Livonia": {
+                        "TradingPoints": 0
+                    },
+                    "Muscovy": {
+                        "TradingPoints": 0
+                    },
+                    "UralRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Vistula": {
+                        "TradingPoints": 0
+                    },
+                    "CentralEurope": {
+                        "TradingPoints": 0
+                    },
+                    "Romania": {
+                        "TradingPoints": 0
+                    },
+                    "TheRockies": {
+                        "TradingPoints": 0
+                    },
+                    "Mississippi": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernFrance": {
+                        "TradingPoints": 0
+                    },
+                    "CaspianSea": {
+                        "TradingPoints": 0
+                    },
+                    "GobiDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WestCoast": {
+                        "TradingPoints": 0
+                    },
+                    "Iberia": {
+                        "TradingPoints": 0
+                    },
+                    "YellowRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Afghanistan": {
+                        "TradingPoints": 0
+                    },
+                    "IndusRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Morocco": {
+                        "TradingPoints": 0
+                    },
+                    "Sichuan": {
+                        "TradingPoints": 0
+                    },
+                    "Sahara": {
+                        "TradingPoints": 0
+                    },
+                    "ArabianDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WesternMexico": {
+                        "TradingPoints": 0
+                    },
+                    "Ganges": {
+                        "TradingPoints": 0
+                    },
+                    "Caribbean": {
+                        "TradingPoints": 0
+                    },
+                    "Pacific": {
+                        "TradingPoints": 0
+                    },
+                    "SouthChinaSea": {
+                        "TradingPoints": 0
+                    },
+                    "CentralIndia": {
+                        "TradingPoints": 0
+                    },
+                    "Deccan": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernNile": {
+                        "TradingPoints": 0
+                    },
+                    "WesternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Guinea": {
+                        "TradingPoints": 0
+                    },
+                    "EasternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Venezuela": {
+                        "TradingPoints": 0
+                    },
+                    "Indonesia": {
+                        "TradingPoints": 0
+                    },
+                    "CongoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Gabon": {
+                        "TradingPoints": 0
+                    },
+                    "LakeVictoria": {
+                        "TradingPoints": 0
+                    },
+                    "LakeTanganyika": {
+                        "TradingPoints": 0
+                    },
+                    "SaoFranciscoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "Angola": {
+                        "TradingPoints": 0
+                    },
+                    "ParanaRiver": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "AustralianDesert": {
                         "TradingPoints": 0
                     }
                 },
@@ -16269,6 +17739,153 @@
                     },
                     "SouthAustralia": {
                         "TradingPoints": 0
+                    },
+                    "CentralSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "EasternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "WesternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernNordics": {
+                        "TradingPoints": 0
+                    },
+                    "CentralCanada": {
+                        "TradingPoints": 0
+                    },
+                    "BalticSea": {
+                        "TradingPoints": 0
+                    },
+                    "Livonia": {
+                        "TradingPoints": 0
+                    },
+                    "Muscovy": {
+                        "TradingPoints": 0
+                    },
+                    "UralRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Vistula": {
+                        "TradingPoints": 0
+                    },
+                    "CentralEurope": {
+                        "TradingPoints": 0
+                    },
+                    "Romania": {
+                        "TradingPoints": 0
+                    },
+                    "TheRockies": {
+                        "TradingPoints": 0
+                    },
+                    "Mississippi": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernFrance": {
+                        "TradingPoints": 0
+                    },
+                    "CaspianSea": {
+                        "TradingPoints": 0
+                    },
+                    "GobiDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WestCoast": {
+                        "TradingPoints": 0
+                    },
+                    "Iberia": {
+                        "TradingPoints": 0
+                    },
+                    "YellowRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Afghanistan": {
+                        "TradingPoints": 0
+                    },
+                    "IndusRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Morocco": {
+                        "TradingPoints": 0
+                    },
+                    "Sichuan": {
+                        "TradingPoints": 0
+                    },
+                    "Sahara": {
+                        "TradingPoints": 0
+                    },
+                    "ArabianDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WesternMexico": {
+                        "TradingPoints": 0
+                    },
+                    "Ganges": {
+                        "TradingPoints": 0
+                    },
+                    "Caribbean": {
+                        "TradingPoints": 0
+                    },
+                    "Pacific": {
+                        "TradingPoints": 0
+                    },
+                    "SouthChinaSea": {
+                        "TradingPoints": 0
+                    },
+                    "CentralIndia": {
+                        "TradingPoints": 0
+                    },
+                    "Deccan": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernNile": {
+                        "TradingPoints": 0
+                    },
+                    "WesternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Guinea": {
+                        "TradingPoints": 0
+                    },
+                    "EasternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Venezuela": {
+                        "TradingPoints": 0
+                    },
+                    "Indonesia": {
+                        "TradingPoints": 0
+                    },
+                    "CongoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Gabon": {
+                        "TradingPoints": 0
+                    },
+                    "LakeVictoria": {
+                        "TradingPoints": 0
+                    },
+                    "LakeTanganyika": {
+                        "TradingPoints": 0
+                    },
+                    "SaoFranciscoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "Angola": {
+                        "TradingPoints": 0
+                    },
+                    "ParanaRiver": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "AustralianDesert": {
+                        "TradingPoints": 0
                     }
                 },
                 "Size": 10000,
@@ -17823,6 +19440,153 @@
                         "TradingPoints": 0
                     },
                     "SouthAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "CentralSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "EasternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "WesternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernNordics": {
+                        "TradingPoints": 0
+                    },
+                    "CentralCanada": {
+                        "TradingPoints": 0
+                    },
+                    "BalticSea": {
+                        "TradingPoints": 0
+                    },
+                    "Livonia": {
+                        "TradingPoints": 0
+                    },
+                    "Muscovy": {
+                        "TradingPoints": 0
+                    },
+                    "UralRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Vistula": {
+                        "TradingPoints": 0
+                    },
+                    "CentralEurope": {
+                        "TradingPoints": 0
+                    },
+                    "Romania": {
+                        "TradingPoints": 0
+                    },
+                    "TheRockies": {
+                        "TradingPoints": 0
+                    },
+                    "Mississippi": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernFrance": {
+                        "TradingPoints": 0
+                    },
+                    "CaspianSea": {
+                        "TradingPoints": 0
+                    },
+                    "GobiDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WestCoast": {
+                        "TradingPoints": 0
+                    },
+                    "Iberia": {
+                        "TradingPoints": 0
+                    },
+                    "YellowRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Afghanistan": {
+                        "TradingPoints": 0
+                    },
+                    "IndusRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Morocco": {
+                        "TradingPoints": 0
+                    },
+                    "Sichuan": {
+                        "TradingPoints": 0
+                    },
+                    "Sahara": {
+                        "TradingPoints": 0
+                    },
+                    "ArabianDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WesternMexico": {
+                        "TradingPoints": 0
+                    },
+                    "Ganges": {
+                        "TradingPoints": 0
+                    },
+                    "Caribbean": {
+                        "TradingPoints": 0
+                    },
+                    "Pacific": {
+                        "TradingPoints": 0
+                    },
+                    "SouthChinaSea": {
+                        "TradingPoints": 0
+                    },
+                    "CentralIndia": {
+                        "TradingPoints": 0
+                    },
+                    "Deccan": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernNile": {
+                        "TradingPoints": 0
+                    },
+                    "WesternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Guinea": {
+                        "TradingPoints": 0
+                    },
+                    "EasternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Venezuela": {
+                        "TradingPoints": 0
+                    },
+                    "Indonesia": {
+                        "TradingPoints": 0
+                    },
+                    "CongoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Gabon": {
+                        "TradingPoints": 0
+                    },
+                    "LakeVictoria": {
+                        "TradingPoints": 0
+                    },
+                    "LakeTanganyika": {
+                        "TradingPoints": 0
+                    },
+                    "SaoFranciscoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "Angola": {
+                        "TradingPoints": 0
+                    },
+                    "ParanaRiver": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "AustralianDesert": {
                         "TradingPoints": 0
                     }
                 },
@@ -19379,6 +21143,153 @@
                     },
                     "SouthAustralia": {
                         "TradingPoints": 0
+                    },
+                    "CentralSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "EasternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "WesternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernNordics": {
+                        "TradingPoints": 0
+                    },
+                    "CentralCanada": {
+                        "TradingPoints": 0
+                    },
+                    "BalticSea": {
+                        "TradingPoints": 0
+                    },
+                    "Livonia": {
+                        "TradingPoints": 0
+                    },
+                    "Muscovy": {
+                        "TradingPoints": 0
+                    },
+                    "UralRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Vistula": {
+                        "TradingPoints": 0
+                    },
+                    "CentralEurope": {
+                        "TradingPoints": 0
+                    },
+                    "Romania": {
+                        "TradingPoints": 0
+                    },
+                    "TheRockies": {
+                        "TradingPoints": 0
+                    },
+                    "Mississippi": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernFrance": {
+                        "TradingPoints": 0
+                    },
+                    "CaspianSea": {
+                        "TradingPoints": 0
+                    },
+                    "GobiDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WestCoast": {
+                        "TradingPoints": 0
+                    },
+                    "Iberia": {
+                        "TradingPoints": 0
+                    },
+                    "YellowRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Afghanistan": {
+                        "TradingPoints": 0
+                    },
+                    "IndusRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Morocco": {
+                        "TradingPoints": 0
+                    },
+                    "Sichuan": {
+                        "TradingPoints": 0
+                    },
+                    "Sahara": {
+                        "TradingPoints": 0
+                    },
+                    "ArabianDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WesternMexico": {
+                        "TradingPoints": 0
+                    },
+                    "Ganges": {
+                        "TradingPoints": 0
+                    },
+                    "Caribbean": {
+                        "TradingPoints": 0
+                    },
+                    "Pacific": {
+                        "TradingPoints": 0
+                    },
+                    "SouthChinaSea": {
+                        "TradingPoints": 0
+                    },
+                    "CentralIndia": {
+                        "TradingPoints": 0
+                    },
+                    "Deccan": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernNile": {
+                        "TradingPoints": 0
+                    },
+                    "WesternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Guinea": {
+                        "TradingPoints": 0
+                    },
+                    "EasternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Venezuela": {
+                        "TradingPoints": 0
+                    },
+                    "Indonesia": {
+                        "TradingPoints": 0
+                    },
+                    "CongoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Gabon": {
+                        "TradingPoints": 0
+                    },
+                    "LakeVictoria": {
+                        "TradingPoints": 0
+                    },
+                    "LakeTanganyika": {
+                        "TradingPoints": 0
+                    },
+                    "SaoFranciscoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "Angola": {
+                        "TradingPoints": 0
+                    },
+                    "ParanaRiver": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "AustralianDesert": {
+                        "TradingPoints": 0
                     }
                 },
                 "Size": 10000,
@@ -20933,6 +22844,153 @@
                         "TradingPoints": 0
                     },
                     "SouthAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "CentralSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "EasternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "WesternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernNordics": {
+                        "TradingPoints": 0
+                    },
+                    "CentralCanada": {
+                        "TradingPoints": 0
+                    },
+                    "BalticSea": {
+                        "TradingPoints": 0
+                    },
+                    "Livonia": {
+                        "TradingPoints": 0
+                    },
+                    "Muscovy": {
+                        "TradingPoints": 0
+                    },
+                    "UralRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Vistula": {
+                        "TradingPoints": 0
+                    },
+                    "CentralEurope": {
+                        "TradingPoints": 0
+                    },
+                    "Romania": {
+                        "TradingPoints": 0
+                    },
+                    "TheRockies": {
+                        "TradingPoints": 0
+                    },
+                    "Mississippi": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernFrance": {
+                        "TradingPoints": 0
+                    },
+                    "CaspianSea": {
+                        "TradingPoints": 0
+                    },
+                    "GobiDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WestCoast": {
+                        "TradingPoints": 0
+                    },
+                    "Iberia": {
+                        "TradingPoints": 0
+                    },
+                    "YellowRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Afghanistan": {
+                        "TradingPoints": 0
+                    },
+                    "IndusRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Morocco": {
+                        "TradingPoints": 0
+                    },
+                    "Sichuan": {
+                        "TradingPoints": 0
+                    },
+                    "Sahara": {
+                        "TradingPoints": 0
+                    },
+                    "ArabianDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WesternMexico": {
+                        "TradingPoints": 0
+                    },
+                    "Ganges": {
+                        "TradingPoints": 0
+                    },
+                    "Caribbean": {
+                        "TradingPoints": 0
+                    },
+                    "Pacific": {
+                        "TradingPoints": 0
+                    },
+                    "SouthChinaSea": {
+                        "TradingPoints": 0
+                    },
+                    "CentralIndia": {
+                        "TradingPoints": 0
+                    },
+                    "Deccan": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernNile": {
+                        "TradingPoints": 0
+                    },
+                    "WesternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Guinea": {
+                        "TradingPoints": 0
+                    },
+                    "EasternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Venezuela": {
+                        "TradingPoints": 0
+                    },
+                    "Indonesia": {
+                        "TradingPoints": 0
+                    },
+                    "CongoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Gabon": {
+                        "TradingPoints": 0
+                    },
+                    "LakeVictoria": {
+                        "TradingPoints": 0
+                    },
+                    "LakeTanganyika": {
+                        "TradingPoints": 0
+                    },
+                    "SaoFranciscoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "Angola": {
+                        "TradingPoints": 0
+                    },
+                    "ParanaRiver": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "AustralianDesert": {
                         "TradingPoints": 0
                     }
                 },
@@ -22489,6 +24547,153 @@
                     },
                     "SouthAustralia": {
                         "TradingPoints": 0
+                    },
+                    "CentralSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "EasternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "WesternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernNordics": {
+                        "TradingPoints": 0
+                    },
+                    "CentralCanada": {
+                        "TradingPoints": 0
+                    },
+                    "BalticSea": {
+                        "TradingPoints": 0
+                    },
+                    "Livonia": {
+                        "TradingPoints": 0
+                    },
+                    "Muscovy": {
+                        "TradingPoints": 0
+                    },
+                    "UralRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Vistula": {
+                        "TradingPoints": 0
+                    },
+                    "CentralEurope": {
+                        "TradingPoints": 0
+                    },
+                    "Romania": {
+                        "TradingPoints": 0
+                    },
+                    "TheRockies": {
+                        "TradingPoints": 0
+                    },
+                    "Mississippi": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernFrance": {
+                        "TradingPoints": 0
+                    },
+                    "CaspianSea": {
+                        "TradingPoints": 0
+                    },
+                    "GobiDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WestCoast": {
+                        "TradingPoints": 0
+                    },
+                    "Iberia": {
+                        "TradingPoints": 0
+                    },
+                    "YellowRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Afghanistan": {
+                        "TradingPoints": 0
+                    },
+                    "IndusRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Morocco": {
+                        "TradingPoints": 0
+                    },
+                    "Sichuan": {
+                        "TradingPoints": 0
+                    },
+                    "Sahara": {
+                        "TradingPoints": 0
+                    },
+                    "ArabianDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WesternMexico": {
+                        "TradingPoints": 0
+                    },
+                    "Ganges": {
+                        "TradingPoints": 0
+                    },
+                    "Caribbean": {
+                        "TradingPoints": 0
+                    },
+                    "Pacific": {
+                        "TradingPoints": 0
+                    },
+                    "SouthChinaSea": {
+                        "TradingPoints": 0
+                    },
+                    "CentralIndia": {
+                        "TradingPoints": 0
+                    },
+                    "Deccan": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernNile": {
+                        "TradingPoints": 0
+                    },
+                    "WesternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Guinea": {
+                        "TradingPoints": 0
+                    },
+                    "EasternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Venezuela": {
+                        "TradingPoints": 0
+                    },
+                    "Indonesia": {
+                        "TradingPoints": 0
+                    },
+                    "CongoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Gabon": {
+                        "TradingPoints": 0
+                    },
+                    "LakeVictoria": {
+                        "TradingPoints": 0
+                    },
+                    "LakeTanganyika": {
+                        "TradingPoints": 0
+                    },
+                    "SaoFranciscoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "Angola": {
+                        "TradingPoints": 0
+                    },
+                    "ParanaRiver": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "AustralianDesert": {
+                        "TradingPoints": 0
                     }
                 },
                 "Size": 10000,
@@ -24043,6 +26248,153 @@
                         "TradingPoints": 0
                     },
                     "SouthAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "CentralSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "EasternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "WesternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernNordics": {
+                        "TradingPoints": 0
+                    },
+                    "CentralCanada": {
+                        "TradingPoints": 0
+                    },
+                    "BalticSea": {
+                        "TradingPoints": 0
+                    },
+                    "Livonia": {
+                        "TradingPoints": 0
+                    },
+                    "Muscovy": {
+                        "TradingPoints": 0
+                    },
+                    "UralRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Vistula": {
+                        "TradingPoints": 0
+                    },
+                    "CentralEurope": {
+                        "TradingPoints": 0
+                    },
+                    "Romania": {
+                        "TradingPoints": 0
+                    },
+                    "TheRockies": {
+                        "TradingPoints": 0
+                    },
+                    "Mississippi": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernFrance": {
+                        "TradingPoints": 0
+                    },
+                    "CaspianSea": {
+                        "TradingPoints": 0
+                    },
+                    "GobiDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WestCoast": {
+                        "TradingPoints": 0
+                    },
+                    "Iberia": {
+                        "TradingPoints": 0
+                    },
+                    "YellowRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Afghanistan": {
+                        "TradingPoints": 0
+                    },
+                    "IndusRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Morocco": {
+                        "TradingPoints": 0
+                    },
+                    "Sichuan": {
+                        "TradingPoints": 0
+                    },
+                    "Sahara": {
+                        "TradingPoints": 0
+                    },
+                    "ArabianDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WesternMexico": {
+                        "TradingPoints": 0
+                    },
+                    "Ganges": {
+                        "TradingPoints": 0
+                    },
+                    "Caribbean": {
+                        "TradingPoints": 0
+                    },
+                    "Pacific": {
+                        "TradingPoints": 0
+                    },
+                    "SouthChinaSea": {
+                        "TradingPoints": 0
+                    },
+                    "CentralIndia": {
+                        "TradingPoints": 0
+                    },
+                    "Deccan": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernNile": {
+                        "TradingPoints": 0
+                    },
+                    "WesternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Guinea": {
+                        "TradingPoints": 0
+                    },
+                    "EasternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Venezuela": {
+                        "TradingPoints": 0
+                    },
+                    "Indonesia": {
+                        "TradingPoints": 0
+                    },
+                    "CongoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Gabon": {
+                        "TradingPoints": 0
+                    },
+                    "LakeVictoria": {
+                        "TradingPoints": 0
+                    },
+                    "LakeTanganyika": {
+                        "TradingPoints": 0
+                    },
+                    "SaoFranciscoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "Angola": {
+                        "TradingPoints": 0
+                    },
+                    "ParanaRiver": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "AustralianDesert": {
                         "TradingPoints": 0
                     }
                 },
@@ -25599,6 +27951,153 @@
                     },
                     "SouthAustralia": {
                         "TradingPoints": 0
+                    },
+                    "CentralSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "EasternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "WesternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernNordics": {
+                        "TradingPoints": 0
+                    },
+                    "CentralCanada": {
+                        "TradingPoints": 0
+                    },
+                    "BalticSea": {
+                        "TradingPoints": 0
+                    },
+                    "Livonia": {
+                        "TradingPoints": 0
+                    },
+                    "Muscovy": {
+                        "TradingPoints": 0
+                    },
+                    "UralRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Vistula": {
+                        "TradingPoints": 0
+                    },
+                    "CentralEurope": {
+                        "TradingPoints": 0
+                    },
+                    "Romania": {
+                        "TradingPoints": 0
+                    },
+                    "TheRockies": {
+                        "TradingPoints": 0
+                    },
+                    "Mississippi": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernFrance": {
+                        "TradingPoints": 0
+                    },
+                    "CaspianSea": {
+                        "TradingPoints": 0
+                    },
+                    "GobiDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WestCoast": {
+                        "TradingPoints": 0
+                    },
+                    "Iberia": {
+                        "TradingPoints": 0
+                    },
+                    "YellowRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Afghanistan": {
+                        "TradingPoints": 0
+                    },
+                    "IndusRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Morocco": {
+                        "TradingPoints": 0
+                    },
+                    "Sichuan": {
+                        "TradingPoints": 0
+                    },
+                    "Sahara": {
+                        "TradingPoints": 0
+                    },
+                    "ArabianDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WesternMexico": {
+                        "TradingPoints": 0
+                    },
+                    "Ganges": {
+                        "TradingPoints": 0
+                    },
+                    "Caribbean": {
+                        "TradingPoints": 0
+                    },
+                    "Pacific": {
+                        "TradingPoints": 0
+                    },
+                    "SouthChinaSea": {
+                        "TradingPoints": 0
+                    },
+                    "CentralIndia": {
+                        "TradingPoints": 0
+                    },
+                    "Deccan": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernNile": {
+                        "TradingPoints": 0
+                    },
+                    "WesternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Guinea": {
+                        "TradingPoints": 0
+                    },
+                    "EasternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Venezuela": {
+                        "TradingPoints": 0
+                    },
+                    "Indonesia": {
+                        "TradingPoints": 0
+                    },
+                    "CongoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Gabon": {
+                        "TradingPoints": 0
+                    },
+                    "LakeVictoria": {
+                        "TradingPoints": 0
+                    },
+                    "LakeTanganyika": {
+                        "TradingPoints": 0
+                    },
+                    "SaoFranciscoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "Angola": {
+                        "TradingPoints": 0
+                    },
+                    "ParanaRiver": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "AustralianDesert": {
+                        "TradingPoints": 0
                     }
                 },
                 "Size": 10000,
@@ -27153,6 +29652,153 @@
                         "TradingPoints": 0
                     },
                     "SouthAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "CentralSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "EasternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "WesternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernNordics": {
+                        "TradingPoints": 0
+                    },
+                    "CentralCanada": {
+                        "TradingPoints": 0
+                    },
+                    "BalticSea": {
+                        "TradingPoints": 0
+                    },
+                    "Livonia": {
+                        "TradingPoints": 0
+                    },
+                    "Muscovy": {
+                        "TradingPoints": 0
+                    },
+                    "UralRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Vistula": {
+                        "TradingPoints": 0
+                    },
+                    "CentralEurope": {
+                        "TradingPoints": 0
+                    },
+                    "Romania": {
+                        "TradingPoints": 0
+                    },
+                    "TheRockies": {
+                        "TradingPoints": 0
+                    },
+                    "Mississippi": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernFrance": {
+                        "TradingPoints": 0
+                    },
+                    "CaspianSea": {
+                        "TradingPoints": 0
+                    },
+                    "GobiDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WestCoast": {
+                        "TradingPoints": 0
+                    },
+                    "Iberia": {
+                        "TradingPoints": 0
+                    },
+                    "YellowRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Afghanistan": {
+                        "TradingPoints": 0
+                    },
+                    "IndusRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Morocco": {
+                        "TradingPoints": 0
+                    },
+                    "Sichuan": {
+                        "TradingPoints": 0
+                    },
+                    "Sahara": {
+                        "TradingPoints": 0
+                    },
+                    "ArabianDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WesternMexico": {
+                        "TradingPoints": 0
+                    },
+                    "Ganges": {
+                        "TradingPoints": 0
+                    },
+                    "Caribbean": {
+                        "TradingPoints": 0
+                    },
+                    "Pacific": {
+                        "TradingPoints": 0
+                    },
+                    "SouthChinaSea": {
+                        "TradingPoints": 0
+                    },
+                    "CentralIndia": {
+                        "TradingPoints": 0
+                    },
+                    "Deccan": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernNile": {
+                        "TradingPoints": 0
+                    },
+                    "WesternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Guinea": {
+                        "TradingPoints": 0
+                    },
+                    "EasternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Venezuela": {
+                        "TradingPoints": 0
+                    },
+                    "Indonesia": {
+                        "TradingPoints": 0
+                    },
+                    "CongoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Gabon": {
+                        "TradingPoints": 0
+                    },
+                    "LakeVictoria": {
+                        "TradingPoints": 0
+                    },
+                    "LakeTanganyika": {
+                        "TradingPoints": 0
+                    },
+                    "SaoFranciscoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "Angola": {
+                        "TradingPoints": 0
+                    },
+                    "ParanaRiver": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "AustralianDesert": {
                         "TradingPoints": 0
                     }
                 },
@@ -28709,6 +31355,153 @@
                     },
                     "SouthAustralia": {
                         "TradingPoints": 0
+                    },
+                    "CentralSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "EasternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "WesternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernNordics": {
+                        "TradingPoints": 0
+                    },
+                    "CentralCanada": {
+                        "TradingPoints": 0
+                    },
+                    "BalticSea": {
+                        "TradingPoints": 0
+                    },
+                    "Livonia": {
+                        "TradingPoints": 0
+                    },
+                    "Muscovy": {
+                        "TradingPoints": 0
+                    },
+                    "UralRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Vistula": {
+                        "TradingPoints": 0
+                    },
+                    "CentralEurope": {
+                        "TradingPoints": 0
+                    },
+                    "Romania": {
+                        "TradingPoints": 0
+                    },
+                    "TheRockies": {
+                        "TradingPoints": 0
+                    },
+                    "Mississippi": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernFrance": {
+                        "TradingPoints": 0
+                    },
+                    "CaspianSea": {
+                        "TradingPoints": 0
+                    },
+                    "GobiDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WestCoast": {
+                        "TradingPoints": 0
+                    },
+                    "Iberia": {
+                        "TradingPoints": 0
+                    },
+                    "YellowRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Afghanistan": {
+                        "TradingPoints": 0
+                    },
+                    "IndusRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Morocco": {
+                        "TradingPoints": 0
+                    },
+                    "Sichuan": {
+                        "TradingPoints": 0
+                    },
+                    "Sahara": {
+                        "TradingPoints": 0
+                    },
+                    "ArabianDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WesternMexico": {
+                        "TradingPoints": 0
+                    },
+                    "Ganges": {
+                        "TradingPoints": 0
+                    },
+                    "Caribbean": {
+                        "TradingPoints": 0
+                    },
+                    "Pacific": {
+                        "TradingPoints": 0
+                    },
+                    "SouthChinaSea": {
+                        "TradingPoints": 0
+                    },
+                    "CentralIndia": {
+                        "TradingPoints": 0
+                    },
+                    "Deccan": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernNile": {
+                        "TradingPoints": 0
+                    },
+                    "WesternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Guinea": {
+                        "TradingPoints": 0
+                    },
+                    "EasternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Venezuela": {
+                        "TradingPoints": 0
+                    },
+                    "Indonesia": {
+                        "TradingPoints": 0
+                    },
+                    "CongoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Gabon": {
+                        "TradingPoints": 0
+                    },
+                    "LakeVictoria": {
+                        "TradingPoints": 0
+                    },
+                    "LakeTanganyika": {
+                        "TradingPoints": 0
+                    },
+                    "SaoFranciscoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "Angola": {
+                        "TradingPoints": 0
+                    },
+                    "ParanaRiver": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "AustralianDesert": {
+                        "TradingPoints": 0
                     }
                 },
                 "Size": 10000,
@@ -30263,6 +33056,153 @@
                         "TradingPoints": 0
                     },
                     "SouthAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "CentralSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "EasternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "WesternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernNordics": {
+                        "TradingPoints": 0
+                    },
+                    "CentralCanada": {
+                        "TradingPoints": 0
+                    },
+                    "BalticSea": {
+                        "TradingPoints": 0
+                    },
+                    "Livonia": {
+                        "TradingPoints": 0
+                    },
+                    "Muscovy": {
+                        "TradingPoints": 0
+                    },
+                    "UralRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Vistula": {
+                        "TradingPoints": 0
+                    },
+                    "CentralEurope": {
+                        "TradingPoints": 0
+                    },
+                    "Romania": {
+                        "TradingPoints": 0
+                    },
+                    "TheRockies": {
+                        "TradingPoints": 0
+                    },
+                    "Mississippi": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernFrance": {
+                        "TradingPoints": 0
+                    },
+                    "CaspianSea": {
+                        "TradingPoints": 0
+                    },
+                    "GobiDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WestCoast": {
+                        "TradingPoints": 0
+                    },
+                    "Iberia": {
+                        "TradingPoints": 0
+                    },
+                    "YellowRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Afghanistan": {
+                        "TradingPoints": 0
+                    },
+                    "IndusRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Morocco": {
+                        "TradingPoints": 0
+                    },
+                    "Sichuan": {
+                        "TradingPoints": 0
+                    },
+                    "Sahara": {
+                        "TradingPoints": 0
+                    },
+                    "ArabianDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WesternMexico": {
+                        "TradingPoints": 0
+                    },
+                    "Ganges": {
+                        "TradingPoints": 0
+                    },
+                    "Caribbean": {
+                        "TradingPoints": 0
+                    },
+                    "Pacific": {
+                        "TradingPoints": 0
+                    },
+                    "SouthChinaSea": {
+                        "TradingPoints": 0
+                    },
+                    "CentralIndia": {
+                        "TradingPoints": 0
+                    },
+                    "Deccan": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernNile": {
+                        "TradingPoints": 0
+                    },
+                    "WesternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Guinea": {
+                        "TradingPoints": 0
+                    },
+                    "EasternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Venezuela": {
+                        "TradingPoints": 0
+                    },
+                    "Indonesia": {
+                        "TradingPoints": 0
+                    },
+                    "CongoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Gabon": {
+                        "TradingPoints": 0
+                    },
+                    "LakeVictoria": {
+                        "TradingPoints": 0
+                    },
+                    "LakeTanganyika": {
+                        "TradingPoints": 0
+                    },
+                    "SaoFranciscoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "Angola": {
+                        "TradingPoints": 0
+                    },
+                    "ParanaRiver": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "AustralianDesert": {
                         "TradingPoints": 0
                     }
                 },
@@ -31819,6 +34759,153 @@
                     },
                     "SouthAustralia": {
                         "TradingPoints": 0
+                    },
+                    "CentralSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "EasternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "WesternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernNordics": {
+                        "TradingPoints": 0
+                    },
+                    "CentralCanada": {
+                        "TradingPoints": 0
+                    },
+                    "BalticSea": {
+                        "TradingPoints": 0
+                    },
+                    "Livonia": {
+                        "TradingPoints": 0
+                    },
+                    "Muscovy": {
+                        "TradingPoints": 0
+                    },
+                    "UralRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Vistula": {
+                        "TradingPoints": 0
+                    },
+                    "CentralEurope": {
+                        "TradingPoints": 0
+                    },
+                    "Romania": {
+                        "TradingPoints": 0
+                    },
+                    "TheRockies": {
+                        "TradingPoints": 0
+                    },
+                    "Mississippi": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernFrance": {
+                        "TradingPoints": 0
+                    },
+                    "CaspianSea": {
+                        "TradingPoints": 0
+                    },
+                    "GobiDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WestCoast": {
+                        "TradingPoints": 0
+                    },
+                    "Iberia": {
+                        "TradingPoints": 0
+                    },
+                    "YellowRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Afghanistan": {
+                        "TradingPoints": 0
+                    },
+                    "IndusRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Morocco": {
+                        "TradingPoints": 0
+                    },
+                    "Sichuan": {
+                        "TradingPoints": 0
+                    },
+                    "Sahara": {
+                        "TradingPoints": 0
+                    },
+                    "ArabianDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WesternMexico": {
+                        "TradingPoints": 0
+                    },
+                    "Ganges": {
+                        "TradingPoints": 0
+                    },
+                    "Caribbean": {
+                        "TradingPoints": 0
+                    },
+                    "Pacific": {
+                        "TradingPoints": 0
+                    },
+                    "SouthChinaSea": {
+                        "TradingPoints": 0
+                    },
+                    "CentralIndia": {
+                        "TradingPoints": 0
+                    },
+                    "Deccan": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernNile": {
+                        "TradingPoints": 0
+                    },
+                    "WesternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Guinea": {
+                        "TradingPoints": 0
+                    },
+                    "EasternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Venezuela": {
+                        "TradingPoints": 0
+                    },
+                    "Indonesia": {
+                        "TradingPoints": 0
+                    },
+                    "CongoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Gabon": {
+                        "TradingPoints": 0
+                    },
+                    "LakeVictoria": {
+                        "TradingPoints": 0
+                    },
+                    "LakeTanganyika": {
+                        "TradingPoints": 0
+                    },
+                    "SaoFranciscoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "Angola": {
+                        "TradingPoints": 0
+                    },
+                    "ParanaRiver": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "AustralianDesert": {
+                        "TradingPoints": 0
                     }
                 },
                 "Size": 10000,
@@ -33373,6 +36460,153 @@
                         "TradingPoints": 0
                     },
                     "SouthAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "CentralSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "EasternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "WesternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernNordics": {
+                        "TradingPoints": 0
+                    },
+                    "CentralCanada": {
+                        "TradingPoints": 0
+                    },
+                    "BalticSea": {
+                        "TradingPoints": 0
+                    },
+                    "Livonia": {
+                        "TradingPoints": 0
+                    },
+                    "Muscovy": {
+                        "TradingPoints": 0
+                    },
+                    "UralRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Vistula": {
+                        "TradingPoints": 0
+                    },
+                    "CentralEurope": {
+                        "TradingPoints": 0
+                    },
+                    "Romania": {
+                        "TradingPoints": 0
+                    },
+                    "TheRockies": {
+                        "TradingPoints": 0
+                    },
+                    "Mississippi": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernFrance": {
+                        "TradingPoints": 0
+                    },
+                    "CaspianSea": {
+                        "TradingPoints": 0
+                    },
+                    "GobiDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WestCoast": {
+                        "TradingPoints": 0
+                    },
+                    "Iberia": {
+                        "TradingPoints": 0
+                    },
+                    "YellowRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Afghanistan": {
+                        "TradingPoints": 0
+                    },
+                    "IndusRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Morocco": {
+                        "TradingPoints": 0
+                    },
+                    "Sichuan": {
+                        "TradingPoints": 0
+                    },
+                    "Sahara": {
+                        "TradingPoints": 0
+                    },
+                    "ArabianDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WesternMexico": {
+                        "TradingPoints": 0
+                    },
+                    "Ganges": {
+                        "TradingPoints": 0
+                    },
+                    "Caribbean": {
+                        "TradingPoints": 0
+                    },
+                    "Pacific": {
+                        "TradingPoints": 0
+                    },
+                    "SouthChinaSea": {
+                        "TradingPoints": 0
+                    },
+                    "CentralIndia": {
+                        "TradingPoints": 0
+                    },
+                    "Deccan": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernNile": {
+                        "TradingPoints": 0
+                    },
+                    "WesternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Guinea": {
+                        "TradingPoints": 0
+                    },
+                    "EasternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Venezuela": {
+                        "TradingPoints": 0
+                    },
+                    "Indonesia": {
+                        "TradingPoints": 0
+                    },
+                    "CongoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Gabon": {
+                        "TradingPoints": 0
+                    },
+                    "LakeVictoria": {
+                        "TradingPoints": 0
+                    },
+                    "LakeTanganyika": {
+                        "TradingPoints": 0
+                    },
+                    "SaoFranciscoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "Angola": {
+                        "TradingPoints": 0
+                    },
+                    "ParanaRiver": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "AustralianDesert": {
                         "TradingPoints": 0
                     }
                 },
@@ -34929,6 +38163,153 @@
                     },
                     "SouthAustralia": {
                         "TradingPoints": 0
+                    },
+                    "CentralSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "EasternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "WesternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernNordics": {
+                        "TradingPoints": 0
+                    },
+                    "CentralCanada": {
+                        "TradingPoints": 0
+                    },
+                    "BalticSea": {
+                        "TradingPoints": 0
+                    },
+                    "Livonia": {
+                        "TradingPoints": 0
+                    },
+                    "Muscovy": {
+                        "TradingPoints": 0
+                    },
+                    "UralRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Vistula": {
+                        "TradingPoints": 0
+                    },
+                    "CentralEurope": {
+                        "TradingPoints": 0
+                    },
+                    "Romania": {
+                        "TradingPoints": 0
+                    },
+                    "TheRockies": {
+                        "TradingPoints": 0
+                    },
+                    "Mississippi": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernFrance": {
+                        "TradingPoints": 0
+                    },
+                    "CaspianSea": {
+                        "TradingPoints": 0
+                    },
+                    "GobiDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WestCoast": {
+                        "TradingPoints": 0
+                    },
+                    "Iberia": {
+                        "TradingPoints": 0
+                    },
+                    "YellowRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Afghanistan": {
+                        "TradingPoints": 0
+                    },
+                    "IndusRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Morocco": {
+                        "TradingPoints": 0
+                    },
+                    "Sichuan": {
+                        "TradingPoints": 0
+                    },
+                    "Sahara": {
+                        "TradingPoints": 0
+                    },
+                    "ArabianDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WesternMexico": {
+                        "TradingPoints": 0
+                    },
+                    "Ganges": {
+                        "TradingPoints": 0
+                    },
+                    "Caribbean": {
+                        "TradingPoints": 0
+                    },
+                    "Pacific": {
+                        "TradingPoints": 0
+                    },
+                    "SouthChinaSea": {
+                        "TradingPoints": 0
+                    },
+                    "CentralIndia": {
+                        "TradingPoints": 0
+                    },
+                    "Deccan": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernNile": {
+                        "TradingPoints": 0
+                    },
+                    "WesternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Guinea": {
+                        "TradingPoints": 0
+                    },
+                    "EasternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Venezuela": {
+                        "TradingPoints": 0
+                    },
+                    "Indonesia": {
+                        "TradingPoints": 0
+                    },
+                    "CongoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Gabon": {
+                        "TradingPoints": 0
+                    },
+                    "LakeVictoria": {
+                        "TradingPoints": 0
+                    },
+                    "LakeTanganyika": {
+                        "TradingPoints": 0
+                    },
+                    "SaoFranciscoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "Angola": {
+                        "TradingPoints": 0
+                    },
+                    "ParanaRiver": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "AustralianDesert": {
+                        "TradingPoints": 0
                     }
                 },
                 "Size": 10000,
@@ -36483,6 +39864,153 @@
                         "TradingPoints": 0
                     },
                     "SouthAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "CentralSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "EasternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "WesternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernNordics": {
+                        "TradingPoints": 0
+                    },
+                    "CentralCanada": {
+                        "TradingPoints": 0
+                    },
+                    "BalticSea": {
+                        "TradingPoints": 0
+                    },
+                    "Livonia": {
+                        "TradingPoints": 0
+                    },
+                    "Muscovy": {
+                        "TradingPoints": 0
+                    },
+                    "UralRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Vistula": {
+                        "TradingPoints": 0
+                    },
+                    "CentralEurope": {
+                        "TradingPoints": 0
+                    },
+                    "Romania": {
+                        "TradingPoints": 0
+                    },
+                    "TheRockies": {
+                        "TradingPoints": 0
+                    },
+                    "Mississippi": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernFrance": {
+                        "TradingPoints": 0
+                    },
+                    "CaspianSea": {
+                        "TradingPoints": 0
+                    },
+                    "GobiDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WestCoast": {
+                        "TradingPoints": 0
+                    },
+                    "Iberia": {
+                        "TradingPoints": 0
+                    },
+                    "YellowRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Afghanistan": {
+                        "TradingPoints": 0
+                    },
+                    "IndusRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Morocco": {
+                        "TradingPoints": 0
+                    },
+                    "Sichuan": {
+                        "TradingPoints": 0
+                    },
+                    "Sahara": {
+                        "TradingPoints": 0
+                    },
+                    "ArabianDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WesternMexico": {
+                        "TradingPoints": 0
+                    },
+                    "Ganges": {
+                        "TradingPoints": 0
+                    },
+                    "Caribbean": {
+                        "TradingPoints": 0
+                    },
+                    "Pacific": {
+                        "TradingPoints": 0
+                    },
+                    "SouthChinaSea": {
+                        "TradingPoints": 0
+                    },
+                    "CentralIndia": {
+                        "TradingPoints": 0
+                    },
+                    "Deccan": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernNile": {
+                        "TradingPoints": 0
+                    },
+                    "WesternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Guinea": {
+                        "TradingPoints": 0
+                    },
+                    "EasternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Venezuela": {
+                        "TradingPoints": 0
+                    },
+                    "Indonesia": {
+                        "TradingPoints": 0
+                    },
+                    "CongoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Gabon": {
+                        "TradingPoints": 0
+                    },
+                    "LakeVictoria": {
+                        "TradingPoints": 0
+                    },
+                    "LakeTanganyika": {
+                        "TradingPoints": 0
+                    },
+                    "SaoFranciscoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "Angola": {
+                        "TradingPoints": 0
+                    },
+                    "ParanaRiver": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "AustralianDesert": {
                         "TradingPoints": 0
                     }
                 },
@@ -38039,6 +41567,153 @@
                     },
                     "SouthAustralia": {
                         "TradingPoints": 0
+                    },
+                    "CentralSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "EasternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "WesternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernNordics": {
+                        "TradingPoints": 0
+                    },
+                    "CentralCanada": {
+                        "TradingPoints": 0
+                    },
+                    "BalticSea": {
+                        "TradingPoints": 0
+                    },
+                    "Livonia": {
+                        "TradingPoints": 0
+                    },
+                    "Muscovy": {
+                        "TradingPoints": 0
+                    },
+                    "UralRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Vistula": {
+                        "TradingPoints": 0
+                    },
+                    "CentralEurope": {
+                        "TradingPoints": 0
+                    },
+                    "Romania": {
+                        "TradingPoints": 0
+                    },
+                    "TheRockies": {
+                        "TradingPoints": 0
+                    },
+                    "Mississippi": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernFrance": {
+                        "TradingPoints": 0
+                    },
+                    "CaspianSea": {
+                        "TradingPoints": 0
+                    },
+                    "GobiDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WestCoast": {
+                        "TradingPoints": 0
+                    },
+                    "Iberia": {
+                        "TradingPoints": 0
+                    },
+                    "YellowRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Afghanistan": {
+                        "TradingPoints": 0
+                    },
+                    "IndusRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Morocco": {
+                        "TradingPoints": 0
+                    },
+                    "Sichuan": {
+                        "TradingPoints": 0
+                    },
+                    "Sahara": {
+                        "TradingPoints": 0
+                    },
+                    "ArabianDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WesternMexico": {
+                        "TradingPoints": 0
+                    },
+                    "Ganges": {
+                        "TradingPoints": 0
+                    },
+                    "Caribbean": {
+                        "TradingPoints": 0
+                    },
+                    "Pacific": {
+                        "TradingPoints": 0
+                    },
+                    "SouthChinaSea": {
+                        "TradingPoints": 0
+                    },
+                    "CentralIndia": {
+                        "TradingPoints": 0
+                    },
+                    "Deccan": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernNile": {
+                        "TradingPoints": 0
+                    },
+                    "WesternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Guinea": {
+                        "TradingPoints": 0
+                    },
+                    "EasternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Venezuela": {
+                        "TradingPoints": 0
+                    },
+                    "Indonesia": {
+                        "TradingPoints": 0
+                    },
+                    "CongoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Gabon": {
+                        "TradingPoints": 0
+                    },
+                    "LakeVictoria": {
+                        "TradingPoints": 0
+                    },
+                    "LakeTanganyika": {
+                        "TradingPoints": 0
+                    },
+                    "SaoFranciscoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "Angola": {
+                        "TradingPoints": 0
+                    },
+                    "ParanaRiver": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "AustralianDesert": {
+                        "TradingPoints": 0
                     }
                 },
                 "Size": 10000,
@@ -39593,6 +43268,153 @@
                         "TradingPoints": 0
                     },
                     "SouthAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "CentralSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "EasternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "WesternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernNordics": {
+                        "TradingPoints": 0
+                    },
+                    "CentralCanada": {
+                        "TradingPoints": 0
+                    },
+                    "BalticSea": {
+                        "TradingPoints": 0
+                    },
+                    "Livonia": {
+                        "TradingPoints": 0
+                    },
+                    "Muscovy": {
+                        "TradingPoints": 0
+                    },
+                    "UralRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Vistula": {
+                        "TradingPoints": 0
+                    },
+                    "CentralEurope": {
+                        "TradingPoints": 0
+                    },
+                    "Romania": {
+                        "TradingPoints": 0
+                    },
+                    "TheRockies": {
+                        "TradingPoints": 0
+                    },
+                    "Mississippi": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernFrance": {
+                        "TradingPoints": 0
+                    },
+                    "CaspianSea": {
+                        "TradingPoints": 0
+                    },
+                    "GobiDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WestCoast": {
+                        "TradingPoints": 0
+                    },
+                    "Iberia": {
+                        "TradingPoints": 0
+                    },
+                    "YellowRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Afghanistan": {
+                        "TradingPoints": 0
+                    },
+                    "IndusRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Morocco": {
+                        "TradingPoints": 0
+                    },
+                    "Sichuan": {
+                        "TradingPoints": 0
+                    },
+                    "Sahara": {
+                        "TradingPoints": 0
+                    },
+                    "ArabianDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WesternMexico": {
+                        "TradingPoints": 0
+                    },
+                    "Ganges": {
+                        "TradingPoints": 0
+                    },
+                    "Caribbean": {
+                        "TradingPoints": 0
+                    },
+                    "Pacific": {
+                        "TradingPoints": 0
+                    },
+                    "SouthChinaSea": {
+                        "TradingPoints": 0
+                    },
+                    "CentralIndia": {
+                        "TradingPoints": 0
+                    },
+                    "Deccan": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernNile": {
+                        "TradingPoints": 0
+                    },
+                    "WesternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Guinea": {
+                        "TradingPoints": 0
+                    },
+                    "EasternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Venezuela": {
+                        "TradingPoints": 0
+                    },
+                    "Indonesia": {
+                        "TradingPoints": 0
+                    },
+                    "CongoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Gabon": {
+                        "TradingPoints": 0
+                    },
+                    "LakeVictoria": {
+                        "TradingPoints": 0
+                    },
+                    "LakeTanganyika": {
+                        "TradingPoints": 0
+                    },
+                    "SaoFranciscoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "Angola": {
+                        "TradingPoints": 0
+                    },
+                    "ParanaRiver": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "AustralianDesert": {
                         "TradingPoints": 0
                     }
                 },
@@ -41149,6 +44971,153 @@
                     },
                     "SouthAustralia": {
                         "TradingPoints": 0
+                    },
+                    "CentralSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "EasternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "WesternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernNordics": {
+                        "TradingPoints": 0
+                    },
+                    "CentralCanada": {
+                        "TradingPoints": 0
+                    },
+                    "BalticSea": {
+                        "TradingPoints": 0
+                    },
+                    "Livonia": {
+                        "TradingPoints": 0
+                    },
+                    "Muscovy": {
+                        "TradingPoints": 0
+                    },
+                    "UralRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Vistula": {
+                        "TradingPoints": 0
+                    },
+                    "CentralEurope": {
+                        "TradingPoints": 0
+                    },
+                    "Romania": {
+                        "TradingPoints": 0
+                    },
+                    "TheRockies": {
+                        "TradingPoints": 0
+                    },
+                    "Mississippi": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernFrance": {
+                        "TradingPoints": 0
+                    },
+                    "CaspianSea": {
+                        "TradingPoints": 0
+                    },
+                    "GobiDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WestCoast": {
+                        "TradingPoints": 0
+                    },
+                    "Iberia": {
+                        "TradingPoints": 0
+                    },
+                    "YellowRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Afghanistan": {
+                        "TradingPoints": 0
+                    },
+                    "IndusRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Morocco": {
+                        "TradingPoints": 0
+                    },
+                    "Sichuan": {
+                        "TradingPoints": 0
+                    },
+                    "Sahara": {
+                        "TradingPoints": 0
+                    },
+                    "ArabianDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WesternMexico": {
+                        "TradingPoints": 0
+                    },
+                    "Ganges": {
+                        "TradingPoints": 0
+                    },
+                    "Caribbean": {
+                        "TradingPoints": 0
+                    },
+                    "Pacific": {
+                        "TradingPoints": 0
+                    },
+                    "SouthChinaSea": {
+                        "TradingPoints": 0
+                    },
+                    "CentralIndia": {
+                        "TradingPoints": 0
+                    },
+                    "Deccan": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernNile": {
+                        "TradingPoints": 0
+                    },
+                    "WesternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Guinea": {
+                        "TradingPoints": 0
+                    },
+                    "EasternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Venezuela": {
+                        "TradingPoints": 0
+                    },
+                    "Indonesia": {
+                        "TradingPoints": 0
+                    },
+                    "CongoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Gabon": {
+                        "TradingPoints": 0
+                    },
+                    "LakeVictoria": {
+                        "TradingPoints": 0
+                    },
+                    "LakeTanganyika": {
+                        "TradingPoints": 0
+                    },
+                    "SaoFranciscoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "Angola": {
+                        "TradingPoints": 0
+                    },
+                    "ParanaRiver": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "AustralianDesert": {
+                        "TradingPoints": 0
                     }
                 },
                 "Size": 10000,
@@ -42703,6 +46672,153 @@
                         "TradingPoints": 0
                     },
                     "SouthAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "CentralSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "EasternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "WesternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernNordics": {
+                        "TradingPoints": 0
+                    },
+                    "CentralCanada": {
+                        "TradingPoints": 0
+                    },
+                    "BalticSea": {
+                        "TradingPoints": 0
+                    },
+                    "Livonia": {
+                        "TradingPoints": 0
+                    },
+                    "Muscovy": {
+                        "TradingPoints": 0
+                    },
+                    "UralRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Vistula": {
+                        "TradingPoints": 0
+                    },
+                    "CentralEurope": {
+                        "TradingPoints": 0
+                    },
+                    "Romania": {
+                        "TradingPoints": 0
+                    },
+                    "TheRockies": {
+                        "TradingPoints": 0
+                    },
+                    "Mississippi": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernFrance": {
+                        "TradingPoints": 0
+                    },
+                    "CaspianSea": {
+                        "TradingPoints": 0
+                    },
+                    "GobiDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WestCoast": {
+                        "TradingPoints": 0
+                    },
+                    "Iberia": {
+                        "TradingPoints": 0
+                    },
+                    "YellowRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Afghanistan": {
+                        "TradingPoints": 0
+                    },
+                    "IndusRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Morocco": {
+                        "TradingPoints": 0
+                    },
+                    "Sichuan": {
+                        "TradingPoints": 0
+                    },
+                    "Sahara": {
+                        "TradingPoints": 0
+                    },
+                    "ArabianDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WesternMexico": {
+                        "TradingPoints": 0
+                    },
+                    "Ganges": {
+                        "TradingPoints": 0
+                    },
+                    "Caribbean": {
+                        "TradingPoints": 0
+                    },
+                    "Pacific": {
+                        "TradingPoints": 0
+                    },
+                    "SouthChinaSea": {
+                        "TradingPoints": 0
+                    },
+                    "CentralIndia": {
+                        "TradingPoints": 0
+                    },
+                    "Deccan": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernNile": {
+                        "TradingPoints": 0
+                    },
+                    "WesternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Guinea": {
+                        "TradingPoints": 0
+                    },
+                    "EasternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Venezuela": {
+                        "TradingPoints": 0
+                    },
+                    "Indonesia": {
+                        "TradingPoints": 0
+                    },
+                    "CongoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Gabon": {
+                        "TradingPoints": 0
+                    },
+                    "LakeVictoria": {
+                        "TradingPoints": 0
+                    },
+                    "LakeTanganyika": {
+                        "TradingPoints": 0
+                    },
+                    "SaoFranciscoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "Angola": {
+                        "TradingPoints": 0
+                    },
+                    "ParanaRiver": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "AustralianDesert": {
                         "TradingPoints": 0
                     }
                 },
@@ -44259,6 +48375,153 @@
                     },
                     "SouthAustralia": {
                         "TradingPoints": 0
+                    },
+                    "CentralSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "EasternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "WesternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernNordics": {
+                        "TradingPoints": 0
+                    },
+                    "CentralCanada": {
+                        "TradingPoints": 0
+                    },
+                    "BalticSea": {
+                        "TradingPoints": 0
+                    },
+                    "Livonia": {
+                        "TradingPoints": 0
+                    },
+                    "Muscovy": {
+                        "TradingPoints": 0
+                    },
+                    "UralRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Vistula": {
+                        "TradingPoints": 0
+                    },
+                    "CentralEurope": {
+                        "TradingPoints": 0
+                    },
+                    "Romania": {
+                        "TradingPoints": 0
+                    },
+                    "TheRockies": {
+                        "TradingPoints": 0
+                    },
+                    "Mississippi": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernFrance": {
+                        "TradingPoints": 0
+                    },
+                    "CaspianSea": {
+                        "TradingPoints": 0
+                    },
+                    "GobiDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WestCoast": {
+                        "TradingPoints": 0
+                    },
+                    "Iberia": {
+                        "TradingPoints": 0
+                    },
+                    "YellowRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Afghanistan": {
+                        "TradingPoints": 0
+                    },
+                    "IndusRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Morocco": {
+                        "TradingPoints": 0
+                    },
+                    "Sichuan": {
+                        "TradingPoints": 0
+                    },
+                    "Sahara": {
+                        "TradingPoints": 0
+                    },
+                    "ArabianDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WesternMexico": {
+                        "TradingPoints": 0
+                    },
+                    "Ganges": {
+                        "TradingPoints": 0
+                    },
+                    "Caribbean": {
+                        "TradingPoints": 0
+                    },
+                    "Pacific": {
+                        "TradingPoints": 0
+                    },
+                    "SouthChinaSea": {
+                        "TradingPoints": 0
+                    },
+                    "CentralIndia": {
+                        "TradingPoints": 0
+                    },
+                    "Deccan": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernNile": {
+                        "TradingPoints": 0
+                    },
+                    "WesternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Guinea": {
+                        "TradingPoints": 0
+                    },
+                    "EasternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Venezuela": {
+                        "TradingPoints": 0
+                    },
+                    "Indonesia": {
+                        "TradingPoints": 0
+                    },
+                    "CongoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Gabon": {
+                        "TradingPoints": 0
+                    },
+                    "LakeVictoria": {
+                        "TradingPoints": 0
+                    },
+                    "LakeTanganyika": {
+                        "TradingPoints": 0
+                    },
+                    "SaoFranciscoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "Angola": {
+                        "TradingPoints": 0
+                    },
+                    "ParanaRiver": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "AustralianDesert": {
+                        "TradingPoints": 0
                     }
                 },
                 "Size": 10000,
@@ -45813,6 +50076,153 @@
                         "TradingPoints": 0
                     },
                     "SouthAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "CentralSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "EasternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "WesternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernNordics": {
+                        "TradingPoints": 0
+                    },
+                    "CentralCanada": {
+                        "TradingPoints": 0
+                    },
+                    "BalticSea": {
+                        "TradingPoints": 0
+                    },
+                    "Livonia": {
+                        "TradingPoints": 0
+                    },
+                    "Muscovy": {
+                        "TradingPoints": 0
+                    },
+                    "UralRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Vistula": {
+                        "TradingPoints": 0
+                    },
+                    "CentralEurope": {
+                        "TradingPoints": 0
+                    },
+                    "Romania": {
+                        "TradingPoints": 0
+                    },
+                    "TheRockies": {
+                        "TradingPoints": 0
+                    },
+                    "Mississippi": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernFrance": {
+                        "TradingPoints": 0
+                    },
+                    "CaspianSea": {
+                        "TradingPoints": 0
+                    },
+                    "GobiDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WestCoast": {
+                        "TradingPoints": 0
+                    },
+                    "Iberia": {
+                        "TradingPoints": 0
+                    },
+                    "YellowRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Afghanistan": {
+                        "TradingPoints": 0
+                    },
+                    "IndusRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Morocco": {
+                        "TradingPoints": 0
+                    },
+                    "Sichuan": {
+                        "TradingPoints": 0
+                    },
+                    "Sahara": {
+                        "TradingPoints": 0
+                    },
+                    "ArabianDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WesternMexico": {
+                        "TradingPoints": 0
+                    },
+                    "Ganges": {
+                        "TradingPoints": 0
+                    },
+                    "Caribbean": {
+                        "TradingPoints": 0
+                    },
+                    "Pacific": {
+                        "TradingPoints": 0
+                    },
+                    "SouthChinaSea": {
+                        "TradingPoints": 0
+                    },
+                    "CentralIndia": {
+                        "TradingPoints": 0
+                    },
+                    "Deccan": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernNile": {
+                        "TradingPoints": 0
+                    },
+                    "WesternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Guinea": {
+                        "TradingPoints": 0
+                    },
+                    "EasternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Venezuela": {
+                        "TradingPoints": 0
+                    },
+                    "Indonesia": {
+                        "TradingPoints": 0
+                    },
+                    "CongoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Gabon": {
+                        "TradingPoints": 0
+                    },
+                    "LakeVictoria": {
+                        "TradingPoints": 0
+                    },
+                    "LakeTanganyika": {
+                        "TradingPoints": 0
+                    },
+                    "SaoFranciscoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "Angola": {
+                        "TradingPoints": 0
+                    },
+                    "ParanaRiver": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "AustralianDesert": {
                         "TradingPoints": 0
                     }
                 },
@@ -47369,6 +51779,153 @@
                     },
                     "SouthAustralia": {
                         "TradingPoints": 0
+                    },
+                    "CentralSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "EasternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "WesternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernNordics": {
+                        "TradingPoints": 0
+                    },
+                    "CentralCanada": {
+                        "TradingPoints": 0
+                    },
+                    "BalticSea": {
+                        "TradingPoints": 0
+                    },
+                    "Livonia": {
+                        "TradingPoints": 0
+                    },
+                    "Muscovy": {
+                        "TradingPoints": 0
+                    },
+                    "UralRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Vistula": {
+                        "TradingPoints": 0
+                    },
+                    "CentralEurope": {
+                        "TradingPoints": 0
+                    },
+                    "Romania": {
+                        "TradingPoints": 0
+                    },
+                    "TheRockies": {
+                        "TradingPoints": 0
+                    },
+                    "Mississippi": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernFrance": {
+                        "TradingPoints": 0
+                    },
+                    "CaspianSea": {
+                        "TradingPoints": 0
+                    },
+                    "GobiDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WestCoast": {
+                        "TradingPoints": 0
+                    },
+                    "Iberia": {
+                        "TradingPoints": 0
+                    },
+                    "YellowRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Afghanistan": {
+                        "TradingPoints": 0
+                    },
+                    "IndusRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Morocco": {
+                        "TradingPoints": 0
+                    },
+                    "Sichuan": {
+                        "TradingPoints": 0
+                    },
+                    "Sahara": {
+                        "TradingPoints": 0
+                    },
+                    "ArabianDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WesternMexico": {
+                        "TradingPoints": 0
+                    },
+                    "Ganges": {
+                        "TradingPoints": 0
+                    },
+                    "Caribbean": {
+                        "TradingPoints": 0
+                    },
+                    "Pacific": {
+                        "TradingPoints": 0
+                    },
+                    "SouthChinaSea": {
+                        "TradingPoints": 0
+                    },
+                    "CentralIndia": {
+                        "TradingPoints": 0
+                    },
+                    "Deccan": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernNile": {
+                        "TradingPoints": 0
+                    },
+                    "WesternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Guinea": {
+                        "TradingPoints": 0
+                    },
+                    "EasternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Venezuela": {
+                        "TradingPoints": 0
+                    },
+                    "Indonesia": {
+                        "TradingPoints": 0
+                    },
+                    "CongoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Gabon": {
+                        "TradingPoints": 0
+                    },
+                    "LakeVictoria": {
+                        "TradingPoints": 0
+                    },
+                    "LakeTanganyika": {
+                        "TradingPoints": 0
+                    },
+                    "SaoFranciscoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "Angola": {
+                        "TradingPoints": 0
+                    },
+                    "ParanaRiver": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "AustralianDesert": {
+                        "TradingPoints": 0
                     }
                 },
                 "Size": 10000,
@@ -48923,6 +53480,153 @@
                         "TradingPoints": 0
                     },
                     "SouthAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "CentralSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "EasternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "WesternSiberia": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernNordics": {
+                        "TradingPoints": 0
+                    },
+                    "CentralCanada": {
+                        "TradingPoints": 0
+                    },
+                    "BalticSea": {
+                        "TradingPoints": 0
+                    },
+                    "Livonia": {
+                        "TradingPoints": 0
+                    },
+                    "Muscovy": {
+                        "TradingPoints": 0
+                    },
+                    "UralRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Vistula": {
+                        "TradingPoints": 0
+                    },
+                    "CentralEurope": {
+                        "TradingPoints": 0
+                    },
+                    "Romania": {
+                        "TradingPoints": 0
+                    },
+                    "TheRockies": {
+                        "TradingPoints": 0
+                    },
+                    "Mississippi": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernFrance": {
+                        "TradingPoints": 0
+                    },
+                    "CaspianSea": {
+                        "TradingPoints": 0
+                    },
+                    "GobiDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WestCoast": {
+                        "TradingPoints": 0
+                    },
+                    "Iberia": {
+                        "TradingPoints": 0
+                    },
+                    "YellowRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Afghanistan": {
+                        "TradingPoints": 0
+                    },
+                    "IndusRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Morocco": {
+                        "TradingPoints": 0
+                    },
+                    "Sichuan": {
+                        "TradingPoints": 0
+                    },
+                    "Sahara": {
+                        "TradingPoints": 0
+                    },
+                    "ArabianDesert": {
+                        "TradingPoints": 0
+                    },
+                    "WesternMexico": {
+                        "TradingPoints": 0
+                    },
+                    "Ganges": {
+                        "TradingPoints": 0
+                    },
+                    "Caribbean": {
+                        "TradingPoints": 0
+                    },
+                    "Pacific": {
+                        "TradingPoints": 0
+                    },
+                    "SouthChinaSea": {
+                        "TradingPoints": 0
+                    },
+                    "CentralIndia": {
+                        "TradingPoints": 0
+                    },
+                    "Deccan": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernNile": {
+                        "TradingPoints": 0
+                    },
+                    "WesternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Guinea": {
+                        "TradingPoints": 0
+                    },
+                    "EasternNiger": {
+                        "TradingPoints": 0
+                    },
+                    "Venezuela": {
+                        "TradingPoints": 0
+                    },
+                    "Indonesia": {
+                        "TradingPoints": 0
+                    },
+                    "CongoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "Gabon": {
+                        "TradingPoints": 0
+                    },
+                    "LakeVictoria": {
+                        "TradingPoints": 0
+                    },
+                    "LakeTanganyika": {
+                        "TradingPoints": 0
+                    },
+                    "SaoFranciscoRiver": {
+                        "TradingPoints": 0
+                    },
+                    "NorthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "Angola": {
+                        "TradingPoints": 0
+                    },
+                    "ParanaRiver": {
+                        "TradingPoints": 0
+                    },
+                    "SouthernAustralia": {
+                        "TradingPoints": 0
+                    },
+                    "AustralianDesert": {
                         "TradingPoints": 0
                     }
                 },
