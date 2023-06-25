@@ -1634,316 +1634,512 @@ class Stats{
     this.Trades = {};
     this.TradeZones = {
       Alaska: {
-        Color: "none",
+        Color: "ff6c7a",
         Score: 1
       },
       Cascadia: {
-        Color: "none",
-        Score: 3
+          Color: "ff006e",
+          Score: 3
       },
       CaliforniaAndWestMexico: {
-        Color: "none",
-        Score: 4
+          Color: "none",
+          Score: 4
       },
       HudsonBay: {
-        Color: "none",
-        Score: 3
+          Color: "ffeb63",
+          Score: 3
       },
       GreatLakes: {
-        Color: "none",
-        Score: 7
+          Color: "3dffff",
+          Score: 7
       },
       Louisiana: {
-        Color: "none",
-        Score: 7
+          Color: "none",
+          Score: 7
       },
       GulfOfMexico: {
-        Color: "none",
-        Score: 8
+          Color: "ffac54",
+          Score: 8
       },
       LawrenceGulf: {
-        Color: "none",
-        Score: 4.5
+          Color: "ff6a38",
+          Score: 4.5
       },
       EastCoast: {
-        Color: "none",
-        Score: 7
+          Color: "cc0000",
+          Score: 7
       },
       Carribean: {
-        Color: "none",
-        Score: 8
+          Color: "none",
+          Score: 8
       },
       CentralAmerica: {
-        Color: "none",
-        Score: 6
+          Color: "a0a0a0",
+          Score: 6
       },
       GuyanaAndSuriname: {
-        Color: "none",
-        Score: 3
+          Color: "none",
+          Score: 3
       },
       Amazon: {
-        Color: "none",
-        Score: 3
+          Color: "2d9600",
+          Score: 3
       },
       Peru: {
-        Color: "none",
-        Score: 2
+          Color: "9e0000",
+          Score: 2
       },
       RioGrande: {
-        Color: "none",
-        Score: 3
+          Color: "none",
+          Score: 3
       },
       LaPlata: {
-        Color: "none",
-        Score: 3
+          Color: "none",
+          Score: 3
       },
       Chile: {
-        Color: "none",
-        Score: 2
+          Color: "ffe846",
+          Score: 2
       },
       Patagonia: {
-        Color: "none",
-        Score: 2
+          Color: "68d7ff",
+          Score: 2
       },
       NorthernAnatolia: {
-        Color: "none",
-        Score: 10
+          Color: "5b8f00",
+          Score: 10
       },
       NorthSea: {
-        Color: "none",
-        Score: 4.5
+          Color: "7382ff",
+          Score: 4.5
       },
       BritishIsles: {
-        Color: "none",
-        Score: 8
+          Color: 808080,
+          Score: 8
       },
       EnglishChannel: {
-        Color: "none",
-        Score: 10
+          Color: "ff4a00",
+          Score: 10
       },
       France: {
-        Color: "none",
-        Score: 7
+          Color: "00d5ff",
+          Score: 7
       },
       BayOfBiscay: {
-        Color: "none",
-        Score: 7
+          Color: "efff66",
+          Score: 7
       },
       WestIberia: {
-        Color: "none",
-        Score: 7
+          Color: "none",
+          Score: 7
       },
       Gibraltar: {
-        Color: "none",
-        Score: 9
+          Color: "none",
+          Score: 9
       },
       WesternMediterranean: {
-        Color: "none",
-        Score: 7
+          Color: "ffd846",
+          Score: 7
       },
       Rhine: {
-        Color: "none",
-        Score: 7
+          Color: "0094ff",
+          Score: 7
       },
       CentralMediterranean: {
-        Color: "none",
-        Score: 8
+          Color: "ff7d49",
+          Score: 8
       },
       Adriatic: {
-        Color: "none",
-        Score: 10
+          Color: "007f0e",
+          Score: 10
       },
       Germany: {
-        Color: "none",
-        Score: 7
+          Color: "none",
+          Score: 7
       },
       WesternDanube: {
-        Color: "none",
-        Score: 7
+          Color: "404040",
+          Score: 7
       },
       Denmark: {
-        Color: "none",
-        Score: 8
+          Color: "ff0000",
+          Score: 8
       },
       Baltic: {
-        Color: "none",
-        Score: 7.5
+          Color: "none",
+          Score: 7.5
       },
       NorthNordics: {
-        Color: "none",
-        Score: 3
+          Color: "none",
+          Score: 3
       },
       BarentsSea: {
-        Color: "none",
-        Score: 3
+          Color: "ff553e",
+          Score: 3
       },
       Novgorod: {
-        Color: "none",
-        Score: 8
+          Color: "00ff21",
+          Score: 8
       },
       Poland: {
-        Color: "none",
-        Score: 6
+          Color: "none",
+          Score: 6
       },
       Dniepr: {
-        Color: "none",
-        Score: 8.5
+          Color: "80ff65",
+          Score: 8.5
       },
       Crimea: {
-        Color: "none",
-        Score: 7
+          Color: "31aadb",
+          Score: 7
       },
       EasternDanube: {
-        Color: "none",
-        Score: 8.5
+          Color: "5d7c3d",
+          Score: 8.5
       },
       Greece: {
-        Color: "none",
-        Score: 9.5
+          Color: "0065ff",
+          Score: 9.5
       },
       EasternMediterranean: {
-        Color: "none",
-        Score: 8
+          Color: "80ff00",
+          Score: 8
       },
       Egypt: {
-        Color: "none",
-        Score: 7
+          Color: "ff1410",
+          Score: 7
       },
       RedSea: {
-        Color: "none",
-        Score: 7
+          Color: "2b6d0e",
+          Score: 7
       },
       WesternSahara: {
-        Color: "none",
-        Score: 2
+          Color: "fed800",
+          Score: 2
       },
       CoteDIvoire: {
-        Color: "none",
-        Score: 7
+          Color: "none",
+          Score: 7
       },
       Nigeria: {
-        Color: "none",
-        Score: 8
+          Color: "none",
+          Score: 8
       },
       SouthNile: {
-        Color: "none",
-        Score: 3
+          Color: "none",
+          Score: 3
       },
       Somalia: {
-        Color: "none",
-        Score: 7
+          Color: "529bae",
+          Score: 7
       },
       Kongo: {
-        Color: "none",
-        Score: 3
+          Color: "none",
+          Score: 3
       },
       EastAfrica: {
-        Color: "none",
-        Score: 3
+          Color: "0094d7",
+          Score: 3
       },
       Mozambique: {
-        Color: "none",
-        Score: 4
+          Color: "00ff69",
+          Score: 4
       },
       SouthAfrica: {
-        Color: "none",
-        Score: 5
+          Color: "8f00ff",
+          Score: 5
       },
       Mesopotamia: {
-        Color: "none",
-        Score: 6.5
+          Color: "7f3300",
+          Score: 6.5
       },
       PersianGulf: {
-        Color: "none",
-        Score: 7
+          Color: "ffc430",
+          Score: 7
       },
       Caucasus: {
-        Color: "none",
-        Score: 6
+          Color: "ff2f3e",
+          Score: 6
       },
       DonRiver: {
-        Color: "none",
-        Score: 6
+          Color: "ffd86d",
+          Score: 6
       },
       Volga: {
-        Color: "none",
-        Score: 6
+          Color: "db7a25",
+          Score: 6
       },
       CentralAsia: {
-        Color: "none",
-        Score: 3
+          Color: "9fffff",
+          Score: 3
       },
       WestSiberia: {
-        Color: "none",
-        Score: 2
+          Color: "none",
+          Score: 2
       },
       EastSiberia: {
-        Color: "none",
-        Score: 2
+          Color: "none",
+          Score: 2
       },
       Iran: {
-        Color: "none",
-        Score: 5
+          Color: "8ffd42",
+          Score: 5
       },
       Pakistan: {
-        Color: "none",
-        Score: 7
+          Color: "none",
+          Score: 7
       },
       Tibet: {
-        Color: "none",
-        Score: 2
+          Color: "b200ff",
+          Score: 2
       },
       Mongolia: {
-        Color: "none",
-        Score: 3
+          Color: "none",
+          Score: 3
       },
       Manchuria: {
-        Color: "none",
-        Score: 6.5
+          Color: "e8ff65",
+          Score: 6.5
       },
       SeaOfJapan: {
-        Color: "none",
-        Score: 7.5
+          Color: "00ffff",
+          Score: 7.5
       },
       NorthChina: {
-        Color: "none",
-        Score: 7
+          Color: "none",
+          Score: 7
       },
       YangtzeRiver: {
-        Color: "none",
-        Score: 7
+          Color: "3dfd00",
+          Score: 7
       },
       SouthChina: {
-        Color: "none",
-        Score: 8
+          Color: "none",
+          Score: 8
       },
       NorthIndia: {
-        Color: "none",
-        Score: 7
+          Color: "none",
+          Score: 7
       },
       WestIndia: {
-        Color: "none",
-        Score: 7
+          Color: "none",
+          Score: 7
       },
       EastIndia: {
-        Color: "none",
-        Score: 7
+          Color: "none",
+          Score: 7
       },
       Burma: {
-        Color: "none",
-        Score: 6
+          Color: "none",
+          Score: 6
       },
       SouthEastAsia: {
-        Color: "none",
-        Score: 8
+          Color: "ff3d3d",
+          Score: 8
       },
       NorthAustralia: {
-        Color: "none",
-        Score: 5
+          Color: "none",
+          Score: 5
       },
       SouthAustralia: {
-        Color: "none",
-        Score: 6
+          Color: "none",
+          Score: 6
+      },
+      CentralSiberia: {
+          Color: "69a826",
+          Score: 0
+      },
+      EasternSiberia: {
+          Color: "331b1b",
+          Score: 0
+      },
+      WesternSiberia: {
+          Color: "264a00",
+          Score: 0
+      },
+      NorthernNordics: {
+          Color: "ffd6e4",
+          Score: 0
+      },
+      CentralCanada: {
+          Color: "a5a5a5",
+          Score: 0
+      },
+      BalticSea: {
+          Color: "8f00c2",
+          Score: 0
+      },
+      Livonia: {
+          Color: 801065,
+          Score: 0
+      },
+      Muscovy: {
+          Color: "e1d869",
+          Score: 0
+      },
+      UralRiver: {
+          Color: "dcff44",
+          Score: 0
+      },
+      Vistula: {
+          Color: "ff7e70",
+          Score: 0
+      },
+      CentralEurope: {
+          Color: "8080a3",
+          Score: 0
+      },
+      Romania: {
+          Color: "d100dc",
+          Score: 0
+      },
+      TheRockies: {
+          Color: "7f4618",
+          Score: 0
+      },
+      Mississippi: {
+          Color: "00ba21",
+          Score: 0
+      },
+      SouthernFrance: {
+          Color: "46a7ff",
+          Score: 0
+      },
+      CaspianSea: {
+          Color: "3881ff",
+          Score: 0
+      },
+      GobiDesert: {
+          Color: "e1e9cd",
+          Score: 0
+      },
+      WestCoast: {
+          Color: "ffdb7b",
+          Score: 0
+      },
+      Iberia: {
+          Color: "3a9112",
+          Score: 0
+      },
+      YellowRiver: {
+          Color: "3aaa0e",
+          Score: 0
+      },
+      Afghanistan: {
+          Color: "592b37",
+          Score: 0
+      },
+      IndusRiver: {
+          Color: "267f00",
+          Score: 0
+      },
+      Morocco: {
+          Color: "7f0001",
+          Score: 0
+      },
+      Sichuan: {
+          Color: "c6d521",
+          Score: 0
+      },
+      Sahara: {
+          Color: "b7a791",
+          Score: 0
+      },
+      ArabianDesert: {
+          Color: "e2ceb1",
+          Score: 0
+      },
+      WesternMexico: {
+          Color: "469b52",
+          Score: 0
+      },
+      Ganges: {
+          Color: "db6525",
+          Score: 0
+      },
+      Caribbean: {
+          Color: "3c02ff",
+          Score: 0
+      },
+      Pacific: {
+          Color: "93ffff",
+          Score: 0
+      },
+      SouthChinaSea: {
+          Color: "4d007f",
+          Score: 0
+      },
+      CentralIndia: {
+          Color: "ec7f7f",
+          Score: 0
+      },
+      Deccan: {
+          Color: "84ff55",
+          Score: 0
+      },
+      SouthernNile: {
+          Color: "d9ff00",
+          Score: 0
+      },
+      WesternNiger: {
+          Color: "b6ff4a",
+          Score: 0
+      },
+      Guinea: {
+          Color: "ff8ca3",
+          Score: 0
+      },
+      EasternNiger: {
+          Color: "3bd323",
+          Score: 0
+      },
+      Venezuela: {
+          Color: "c3ff2b",
+          Score: 0
+      },
+      Indonesia: {
+          Color: "fec605",
+          Score: 0
+      },
+      CongoRiver: {
+          Color: "dd6a00",
+          Score: 0
+      },
+      Gabon: {
+          Color: "107f00",
+          Score: 0
+      },
+      LakeVictoria: {
+          Color: "9fa300",
+          Score: 0
+      },
+      LakeTanganyika: {
+          Color: "b67871",
+          Score: 0
+      },
+      SaoFranciscoRiver: {
+          Color: "6aff2b",
+          Score: 0
+      },
+      NorthernAustralia: {
+          Color: "ff7400",
+          Score: 0
+      },
+      Angola: {
+          Color: "a3ff27",
+          Score: 0
+      },
+      ParanaRiver: {
+          Color: "2ba6ff",
+          Score: 0
+      },
+      SouthernAustralia: {
+          Color: "b6c2ff",
+          Score: 0
+      },
+      AustralianDesert: {
+          Color: "d8c5a9",
+          Score: 0
       }
   };
 
