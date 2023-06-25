@@ -530,7 +530,7 @@ class MapCCFCalculations {
             outerCol = rgbToHex([getOuterDataPoint(i*4), getOuterDataPoint(i*4+1), getOuterDataPoint(i*4+2)]);
             innerCol = rgbToHex([getInnerDataPoint(i*4), getInnerDataPoint(i*4+1), getInnerDataPoint(i*4+2)]);
 
-            let foundOuterObject = colorToOuterNameMapping.find(element => element.color == outerCol);
+            let foundOuterObject = colorToOuterNameMapping.find(element => element.color.toLowerCase() == outerCol.toLowerCase());
 
             if(typeof foundOuterObject === 'undefined') {
                 foundOuterObject = await self.PromptName(outerCol, getOuterDataPoint, outerName);
@@ -578,7 +578,7 @@ class MapCCFCalculations {
                     isInnerDataEmpty ? 
                         { color: innerCol, name: options.unassignedPixelAssumption} : 
                         !options.unnamedGroup ? 
-                            colorToInnerNameMapping.find(element => element.color == innerCol):
+                            colorToInnerNameMapping.find(element => element.color.toLowerCase() == innerCol.toLowerCase()):
                             {color: innerCol, name: "Col" + innerCol};
                 if(typeof foundInnerObject === 'undefined'){
                     foundInnerObject = await self.PromptName(innerCol, getInnerDataPoint, innerName);
