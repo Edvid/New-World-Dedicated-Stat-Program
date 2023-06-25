@@ -50165,39 +50165,759 @@
             }
         },
         "Cultures": {
-            "Danish": {
+            "Celtic": {
                 "definingFeatures": "",
-                "Color": "6BB5FF",
+                "Color": "93ff68",
                 "Opinions": {}
             },
-            "Usian": {
+            "English": {
                 "definingFeatures": "",
-                "Color": "F0BFFF",
+                "Color": "ff476c",
                 "Opinions": {}
             },
-            "Aquitan": {
+            "French": {
                 "definingFeatures": "",
-                "Color": "84FFBD",
+                "Color": "96c5ff",
                 "Opinions": {}
             },
-            "Israeli": {
+            "Caucasian": {
                 "definingFeatures": "",
-                "Color": "00FFFF",
+                "Color": "42ffa0",
                 "Opinions": {}
             },
-            "GrecoBactrian": {
+            "Maghrebi": {
                 "definingFeatures": "",
-                "Color": "5171FF",
+                "Color": "bca8ff",
                 "Opinions": {}
             },
-            "Xyndara": {
+            "Garjati": {
                 "definingFeatures": "",
-                "Color": "FFB7D0",
+                "Color": "ff7797",
                 "Opinions": {}
             },
-            "Dutch": {
+            "Mandinka": {
                 "definingFeatures": "",
-                "Color": "FFC551",
+                "Color": "b54468",
+                "Opinions": {}
+            },
+            "Akan": {
+                "definingFeatures": "",
+                "Color": "8a6acc",
+                "Opinions": {}
+            },
+            "Fang": {
+                "definingFeatures": "",
+                "Color": "adceb9",
+                "Opinions": {}
+            },
+            "Malagasi": {
+                "definingFeatures": "",
+                "Color": "d85bff",
+                "Opinions": {}
+            },
+            "EastBantu": {
+                "definingFeatures": "",
+                "Color": "7c5e44",
+                "Opinions": {}
+            },
+            "Araucanian": {
+                "definingFeatures": "",
+                "Color": "99deff",
+                "Opinions": {}
+            },
+            "Tehuelche": {
+                "definingFeatures": "",
+                "Color": "d3bc89",
+                "Opinions": {}
+            },
+            "Alacaluf": {
+                "definingFeatures": "",
+                "Color": "936c00",
+                "Opinions": {}
+            },
+            "Siberian": {
+                "definingFeatures": "",
+                "Color": "7c1d12",
+                "Opinions": {}
+            },
+            "Uralic": {
+                "definingFeatures": "",
+                "Color": "7affe4",
+                "Opinions": {}
+            },
+            "Scandinavian": {
+                "definingFeatures": "",
+                "Color": "9870ff",
+                "Opinions": {}
+            },
+            "Finnic": {
+                "definingFeatures": "",
+                "Color": "2f717c",
+                "Opinions": {}
+            },
+            "Russian": {
+                "definingFeatures": "",
+                "Color": "20407c",
+                "Opinions": {}
+            },
+            "Eskimo": {
+                "definingFeatures": "",
+                "Color": "c83dff",
+                "Opinions": {}
+            },
+            "Kutchin": {
+                "definingFeatures": "",
+                "Color": "b8cc82",
+                "Opinions": {}
+            },
+            "Chipewyan": {
+                "definingFeatures": "",
+                "Color": "c6cc66",
+                "Opinions": {}
+            },
+            "Kaskas": {
+                "definingFeatures": "",
+                "Color": "cc9d72",
+                "Opinions": {}
+            },
+            "Buryat": {
+                "definingFeatures": "",
+                "Color": "7a3953",
+                "Opinions": {}
+            },
+            "Baltic": {
+                "definingFeatures": "",
+                "Color": "c4ffdf",
+                "Opinions": {}
+            },
+            "Naskapis": {
+                "definingFeatures": "",
+                "Color": "b2cc8c",
+                "Opinions": {}
+            },
+            "Tatar": {
+                "definingFeatures": "",
+                "Color": "1f7c7b",
+                "Opinions": {}
+            },
+            "Cree": {
+                "definingFeatures": "",
+                "Color": "a1cca6",
+                "Opinions": {}
+            },
+            "Haida": {
+                "definingFeatures": "",
+                "Color": "ff8cf7",
+                "Opinions": {}
+            },
+            "Altaic": {
+                "definingFeatures": "",
+                "Color": "5e747c",
+                "Opinions": {}
+            },
+            "Ruthenian": {
+                "definingFeatures": "",
+                "Color": "599bff",
+                "Opinions": {}
+            },
+            "Germanic": {
+                "definingFeatures": "",
+                "Color": 868989,
+                "Opinions": {}
+            },
+            "WestSlav": {
+                "definingFeatures": "",
+                "Color": "ffa0cf",
+                "Opinions": {}
+            },
+            "Mongol": {
+                "definingFeatures": "",
+                "Color": "337c26",
+                "Opinions": {}
+            },
+            "Blackfeet": {
+                "definingFeatures": "",
+                "Color": "ffbc82",
+                "Opinions": {}
+            },
+            "Nogai": {
+                "definingFeatures": "",
+                "Color": "395c7a",
+                "Opinions": {}
+            },
+            "Yakimas": {
+                "definingFeatures": "",
+                "Color": "d4a0a4",
+                "Opinions": {}
+            },
+            "Jurchen": {
+                "definingFeatures": "",
+                "Color": "7c362b",
+                "Opinions": {}
+            },
+            "Beothuk": {
+                "definingFeatures": "",
+                "Color": "8cd1ff",
+                "Opinions": {}
+            },
+            "Ottawa": {
+                "definingFeatures": "",
+                "Color": "7ad0ff",
+                "Opinions": {}
+            },
+            "Sioux": {
+                "definingFeatures": "",
+                "Color": "4f7c4f",
+                "Opinions": {}
+            },
+            "Chinook": {
+                "definingFeatures": "",
+                "Color": "7c3075",
+                "Opinions": {}
+            },
+            "Uyghur": {
+                "definingFeatures": "",
+                "Color": "ccd3ff",
+                "Opinions": {}
+            },
+            "Mandan": {
+                "definingFeatures": "",
+                "Color": "ffa987",
+                "Opinions": {}
+            },
+            "Magyar": {
+                "definingFeatures": "",
+                "Color": "587c22",
+                "Opinions": {}
+            },
+            "Cheyenne": {
+                "definingFeatures": "",
+                "Color": "ffe1db",
+                "Opinions": {}
+            },
+            "Romanian": {
+                "definingFeatures": "",
+                "Color": "ffaa60",
+                "Opinions": {}
+            },
+            "Abenaki": {
+                "definingFeatures": "",
+                "Color": "eabcff",
+                "Opinions": {}
+            },
+            "Italian": {
+                "definingFeatures": "",
+                "Color": "61ff3a",
+                "Opinions": {}
+            },
+            "SouthSlav": {
+                "definingFeatures": "",
+                "Color": "ffee91",
+                "Opinions": {}
+            },
+            "Japanese": {
+                "definingFeatures": "",
+                "Color": "ff3330",
+                "Opinions": {}
+            },
+            "Potawatomi": {
+                "definingFeatures": "",
+                "Color": "7cffb0",
+                "Opinions": {}
+            },
+            "Shoshone": {
+                "definingFeatures": "",
+                "Color": "bc8060",
+                "Opinions": {}
+            },
+            "Iroquoi": {
+                "definingFeatures": "",
+                "Color": "ddffe7",
+                "Opinions": {}
+            },
+            "Illinoi": {
+                "definingFeatures": "",
+                "Color": "8abf78",
+                "Opinions": {}
+            },
+            "Iberian": {
+                "definingFeatures": "",
+                "Color": "ff9e44",
+                "Opinions": {}
+            },
+            "Uzbek": {
+                "definingFeatures": "",
+                "Color": 776727,
+                "Opinions": {}
+            },
+            "Pawnee": {
+                "definingFeatures": "",
+                "Color": "ffc9a8",
+                "Opinions": {}
+            },
+            "Kyrgyz": {
+                "definingFeatures": "",
+                "Color": "ff597a",
+                "Opinions": {}
+            },
+            "Ute": {
+                "definingFeatures": "",
+                "Color": "bc8753",
+                "Opinions": {}
+            },
+            "Korean": {
+                "definingFeatures": "",
+                "Color": "7c680e",
+                "Opinions": {}
+            },
+            "Turkmeni": {
+                "definingFeatures": "",
+                "Color": "447a5d",
+                "Opinions": {}
+            },
+            "Pomo": {
+                "definingFeatures": "",
+                "Color": "f0de72",
+                "Opinions": {}
+            },
+            "HanChinese": {
+                "definingFeatures": "",
+                "Color": "ffd3af",
+                "Opinions": {}
+            },
+            "Turkish": {
+                "definingFeatures": "",
+                "Color": "7c6d13",
+                "Opinions": {}
+            },
+            "Greek": {
+                "definingFeatures": "",
+                "Color": "3590ff",
+                "Opinions": {}
+            },
+            "Washo": {
+                "definingFeatures": "",
+                "Color": "bda382",
+                "Opinions": {}
+            },
+            "Shawnee": {
+                "definingFeatures": "",
+                "Color": "60ff68",
+                "Opinions": {}
+            },
+            "Persian": {
+                "definingFeatures": "",
+                "Color": "247c56",
+                "Opinions": {}
+            },
+            "Wichita": {
+                "definingFeatures": "",
+                "Color": "ff9996",
+                "Opinions": {}
+            },
+            "Powhatan": {
+                "definingFeatures": "",
+                "Color": "78c191",
+                "Opinions": {}
+            },
+            "Kurdish": {
+                "definingFeatures": "",
+                "Color": "7c3722",
+                "Opinions": {}
+            },
+            "Afghan": {
+                "definingFeatures": "",
+                "Color": "ff75ae",
+                "Opinions": {}
+            },
+            "Kiowa": {
+                "definingFeatures": "",
+                "Color": "ffcb72",
+                "Opinions": {}
+            },
+            "Mohave": {
+                "definingFeatures": "",
+                "Color": "79cc6e",
+                "Opinions": {}
+            },
+            "Navaho": {
+                "definingFeatures": "",
+                "Color": "51cc72",
+                "Opinions": {}
+            },
+            "Luisena": {
+                "definingFeatures": "",
+                "Color": "efd95d",
+                "Opinions": {}
+            },
+            "Tunisian": {
+                "definingFeatures": "",
+                "Color": "c596ff",
+                "Opinions": {}
+            },
+            "Cherokee": {
+                "definingFeatures": "",
+                "Color": "c2ff68",
+                "Opinions": {}
+            },
+            "Hindustani": {
+                "definingFeatures": "",
+                "Color": "7c5c1a",
+                "Opinions": {}
+            },
+            "Arab": {
+                "definingFeatures": "",
+                "Color": "207c12",
+                "Opinions": {}
+            },
+            "Tibetan": {
+                "definingFeatures": "",
+                "Color": "70227c",
+                "Opinions": {}
+            },
+            "Apache": {
+                "definingFeatures": "",
+                "Color": "accc90",
+                "Opinions": {}
+            },
+            "Natchez": {
+                "definingFeatures": "",
+                "Color": "fff38c",
+                "Opinions": {}
+            },
+            "Creek": {
+                "definingFeatures": "",
+                "Color": "dfff54",
+                "Opinions": {}
+            },
+            "Choctaw": {
+                "definingFeatures": "",
+                "Color": "fff659",
+                "Opinions": {}
+            },
+            "Egyptian": {
+                "definingFeatures": "",
+                "Color": "ff2348",
+                "Opinions": {}
+            },
+            "Taino": {
+                "definingFeatures": "",
+                "Color": "e26a9c",
+                "Opinions": {}
+            },
+            "SouthChinese": {
+                "definingFeatures": "",
+                "Color": "ff60af",
+                "Opinions": {}
+            },
+            "Calusa": {
+                "definingFeatures": "",
+                "Color": "adff84",
+                "Opinions": {}
+            },
+            "Bengali": {
+                "definingFeatures": "",
+                "Color": "52ff3f",
+                "Opinions": {}
+            },
+            "Aryan": {
+                "definingFeatures": "",
+                "Color": "288cff",
+                "Opinions": {}
+            },
+            "Coahuiltec": {
+                "definingFeatures": "",
+                "Color": "ffb5d3",
+                "Opinions": {}
+            },
+            "Burmese": {
+                "definingFeatures": "",
+                "Color": "ff5c47",
+                "Opinions": {}
+            },
+            "Polynesian": {
+                "definingFeatures": "",
+                "Color": "ff7ad5",
+                "Opinions": {}
+            },
+            "Tuareg": {
+                "definingFeatures": "",
+                "Color": "82e1ff",
+                "Opinions": {}
+            },
+            "Aztec": {
+                "definingFeatures": "",
+                "Color": "ffa993",
+                "Opinions": {}
+            },
+            "Tagalog": {
+                "definingFeatures": "",
+                "Color": "82ff4c",
+                "Opinions": {}
+            },
+            "Thai": {
+                "definingFeatures": "",
+                "Color": "597c35",
+                "Opinions": {}
+            },
+            "Vietnamese": {
+                "definingFeatures": "",
+                "Color": "e8ff59",
+                "Opinions": {}
+            },
+            "Sudanese": {
+                "definingFeatures": "",
+                "Color": "7c7856",
+                "Opinions": {}
+            },
+            "Olmec": {
+                "definingFeatures": "",
+                "Color": "c1ffa3",
+                "Opinions": {}
+            },
+            "Deccani": {
+                "definingFeatures": "",
+                "Color": "467c43",
+                "Opinions": {}
+            },
+            "Cushitic": {
+                "definingFeatures": "",
+                "Color": "fcff6d",
+                "Opinions": {}
+            },
+            "Fula": {
+                "definingFeatures": "",
+                "Color": "88cea6",
+                "Opinions": {}
+            },
+            "Khmer": {
+                "definingFeatures": "",
+                "Color": "4fe4ff",
+                "Opinions": {}
+            },
+            "Miskito": {
+                "definingFeatures": "",
+                "Color": "8fc1b8",
+                "Opinions": {}
+            },
+            "Timote": {
+                "definingFeatures": "",
+                "Color": "3dd8ff",
+                "Opinions": {}
+            },
+            "Mossi": {
+                "definingFeatures": "",
+                "Color": "f4be61",
+                "Opinions": {}
+            },
+            "Hausa": {
+                "definingFeatures": "",
+                "Color": "994f56",
+                "Opinions": {}
+            },
+            "Indonesian": {
+                "definingFeatures": "",
+                "Color": "4f257c",
+                "Opinions": {}
+            },
+            "Jukun": {
+                "definingFeatures": "",
+                "Color": "48a6b5",
+                "Opinions": {}
+            },
+            "Banda": {
+                "definingFeatures": "",
+                "Color": "617a70",
+                "Opinions": {}
+            },
+            "Yoruba": {
+                "definingFeatures": "",
+                "Color": "9486cc",
+                "Opinions": {}
+            },
+            "Guaymi": {
+                "definingFeatures": "",
+                "Color": "aca3ff",
+                "Opinions": {}
+            },
+            "Sinhalese": {
+                "definingFeatures": "",
+                "Color": "fff2aa",
+                "Opinions": {}
+            },
+            "Chibcha": {
+                "definingFeatures": "",
+                "Color": "96f6ff",
+                "Opinions": {}
+            },
+            "Arawak": {
+                "definingFeatures": "",
+                "Color": "8effb7",
+                "Opinions": {}
+            },
+            "Waica": {
+                "definingFeatures": "",
+                "Color": "61ff59",
+                "Opinions": {}
+            },
+            "Zande": {
+                "definingFeatures": "",
+                "Color": "82cea4",
+                "Opinions": {}
+            },
+            "Ganda": {
+                "definingFeatures": "",
+                "Color": "ffbba0",
+                "Opinions": {}
+            },
+            "Ngala": {
+                "definingFeatures": "",
+                "Color": "72b5a4",
+                "Opinions": {}
+            },
+            "Papuan": {
+                "definingFeatures": "",
+                "Color": "ffbe70",
+                "Opinions": {}
+            },
+            "Colorado": {
+                "definingFeatures": "",
+                "Color": "a6c1ba",
+                "Opinions": {}
+            },
+            "Jivaro": {
+                "definingFeatures": "",
+                "Color": "b7ff91",
+                "Opinions": {}
+            },
+            "Kuba": {
+                "definingFeatures": "",
+                "Color": "98b8a6",
+                "Opinions": {}
+            },
+            "Tarariu": {
+                "definingFeatures": "",
+                "Color": "b7edff",
+                "Opinions": {}
+            },
+            "Omagua": {
+                "definingFeatures": "",
+                "Color": "43ff3d",
+                "Opinions": {}
+            },
+            "Tapajo": {
+                "definingFeatures": "",
+                "Color": "acff7c",
+                "Opinions": {}
+            },
+            "Kongo": {
+                "definingFeatures": "",
+                "Color": "478a4b",
+                "Opinions": {}
+            },
+            "Caapor": {
+                "definingFeatures": "",
+                "Color": "a3ffec",
+                "Opinions": {}
+            },
+            "Inca": {
+                "definingFeatures": "",
+                "Color": "a9a9cc",
+                "Opinions": {}
+            },
+            "Chokwe": {
+                "definingFeatures": "",
+                "Color": "4cb6a5",
+                "Opinions": {}
+            },
+            "Conibo": {
+                "definingFeatures": "",
+                "Color": "8cffac",
+                "Opinions": {}
+            },
+            "Xavante": {
+                "definingFeatures": "",
+                "Color": "e2f1ff",
+                "Opinions": {}
+            },
+            "Amniape": {
+                "definingFeatures": "",
+                "Color": "ceffe5",
+                "Opinions": {}
+            },
+            "Ambundu": {
+                "definingFeatures": "",
+                "Color": "c6c939",
+                "Opinions": {}
+            },
+            "Makua": {
+                "definingFeatures": "",
+                "Color": "ffcfa8",
+                "Opinions": {}
+            },
+            "Aboriginal": {
+                "definingFeatures": "",
+                "Color": "7c330b",
+                "Opinions": {}
+            },
+            "Siriono": {
+                "definingFeatures": "",
+                "Color": "fff0b7",
+                "Opinions": {}
+            },
+            "Tonga": {
+                "definingFeatures": "",
+                "Color": "d6d98b",
+                "Opinions": {}
+            },
+            "Guaitaca": {
+                "definingFeatures": "",
+                "Color": "ded3ff",
+                "Opinions": {}
+            },
+            "Shona": {
+                "definingFeatures": "",
+                "Color": "3f777c",
+                "Opinions": {}
+            },
+            "Guarani": {
+                "definingFeatures": "",
+                "Color": "2e7c2e",
+                "Opinions": {}
+            },
+            "Nama": {
+                "definingFeatures": "",
+                "Color": "ffbf66",
+                "Opinions": {}
+            },
+            "Mataco": {
+                "definingFeatures": "",
+                "Color": "f7b983",
+                "Opinions": {}
+            },
+            "Zulu": {
+                "definingFeatures": "",
+                "Color": "ff6c4f",
+                "Opinions": {}
+            },
+            "Atacama": {
+                "definingFeatures": "",
+                "Color": "68b4cc",
+                "Opinions": {}
+            },
+            "Puelche": {
+                "definingFeatures": "",
+                "Color": "d6a653",
+                "Opinions": {}
+            },
+            "Charrua": {
+                "definingFeatures": "",
+                "Color": "d37769",
+                "Opinions": {}
+            },
+            "Kiwi": {
+                "definingFeatures": "",
+                "Color": "9b9eff",
                 "Opinions": {}
             }
         },
