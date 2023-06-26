@@ -258,6 +258,7 @@
 > ReligionGroups
 +> Orthodox
 = 100 Orthodox.Points
+= 0 Pagan.Points
 < <
 > DanskEmpire
 > ReligionGroups
@@ -268,6 +269,7 @@
 > ReligionGroups
 +> Catholic
 = 100 Catholic.Points
+= 0 Pagan.Points
 < <
 > EarldomOfManx
 > ReligionGroups
@@ -278,31 +280,37 @@
 > ReligionGroups
 +> Catholic
 = 100 Catholic.Points
+= 0 Pagan.Points
 < <
 > KingdomOfPrussia
 > ReligionGroups
 +> Catholic
 = 100 Catholic.Points
+= 0 Pagan.Points
 < <
 > DutchRepublic
 > ReligionGroups
 +> Catholic
 = 100 Catholic.Points
+= 0 Pagan.Points
 < <
 > RoyaumeDuSoleil
 > ReligionGroups
 +> Catholic
 = 100 Catholic.Points
+= 0 Pagan.Points
 < <
 > MongolOvog
 > ReligionGroups
 +> Buddhism
 = 100 Buddhism.Points
+= 0 Pagan.Points
 < <
 > Guyenne
 > ReligionGroups
 +> Catholic
 = 100 Catholic.Points
+= 0 Pagan.Points
 < <
 > DynastyOfUsia
 > ReligionGroups
@@ -313,21 +321,25 @@
 > ReligionGroups
 +> Catholic
 = 100 Catholic.Points
+= 0 Pagan.Points
 < <
 > RepublicOfVenice
 > ReligionGroups
 +> Catholic
 = 100 Catholic.Points
+= 0 Pagan.Points
 < <
 > UnifiedBalhae
 > ReligionGroups
 +> Buddhism
 = 100 Buddhism.Points
+= 0 Pagan.Points
 < <
 > MinorWeizhong
 > ReligionGroups
 +> Confucianism
 = 100 Confucianism.Points
+= 0 Pagan.Points
 < <
 > AsaranEmpire
 > ReligionGroups
@@ -338,6 +350,7 @@
 > ReligionGroups
 +> Catholic
 = 100 Catholic.Points
+= 0 Pagan.Points
 < <
 > GrecoBactria
 > ReligionGroups
@@ -348,21 +361,25 @@
 > ReligionGroups
 +> Shinto
 = 100 Shinto.Points
+= 0 Pagan.Points
 < <
 > RegencyOfValencia
 > ReligionGroups
 +> Catholic
 = 100 Catholic.Points
+= 0 Pagan.Points
 < <
 > KingdomOfRum
 > ReligionGroups
 +> Judaism
 = 100 Judaism.Points
+= 0 Pagan.Points
 < <
 > KingdomOfIsrael
 > ReligionGroups
 +> Judaism
 = 100 Judaism.Points
+= 0 Pagan.Points
 < <
 > Magnavallis
 > ReligionGroups
@@ -373,28 +390,32 @@
 > ReligionGroups
 +> Confucianism
 = 100 Confucianism.Points
+= 0 Pagan.Points
 < <
 > AkilanIrisianEmpire
 > ReligionGroups
 +> Shia
-= 99.78980541567081 Shia.Points
+= 100 Shia.Points
 +> Pagan
-= 0.2101945843291853 Pagan.Points
+= 0 Pagan.Points
 < <
 > GuptaDynasty
 > ReligionGroups
 +> Hindu
 = 100 Hindu.Points
+= 0 Pagan.Points
 < <
 > Kwangtung
 > ReligionGroups
 +> Buddhism
 = 100 Buddhism.Points
+= 0 Pagan.Points
 < <
 > AztecEmpire
 > ReligionGroups
 +> Pagan
 = 100 Pagan.Points
+= 0 Pagan.Points
 < <
 > MayanEmpire
 > ReligionGroups
