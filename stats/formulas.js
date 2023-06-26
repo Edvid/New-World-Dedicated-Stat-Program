@@ -566,7 +566,11 @@ static evaluateNation(nationName) {
   // resource and goods values
   for (const resourceIndex in gameStats.ResourceTypes) {
     const resource = gameStats.ResourceTypes[resourceIndex];
-    n[resource + "Value"] = n[resource + "Demand"] / (isNaN(n["Effective" + resource]) ? 1 : (n["Effective" + resource] == 0 ? 1 : n["Effective" + resource])) * n[resource + "BaseValue"];
+    const resourceDemand = n[resource + "Demand"];
+    const effectiveResource = n["Effective" + resource];
+    const resourceBaseValue = n[resource + "BaseValue"];
+    n[resource + "Value"] = resourceDemand / (isNaN(effectiveResource) ? 1 : (effectiveResource == 0 ? 1 : effectiveResource)) * resourceBaseValue;
+    
   }
 
   n.UnitUpkeep = (n.ArmyBasicArmamentsDemand * n.BasicArmamentsValue + (n.RegimentalGuns * 0.05 + n.FieldCannons * 0.1 + n.SiegeGuns * 0.2) * n.ArtilleryQualityIC * n.HeavyArmamentsValue) / gameStats.TimeDivide;
