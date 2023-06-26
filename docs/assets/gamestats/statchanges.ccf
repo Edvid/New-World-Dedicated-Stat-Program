@@ -1102,6 +1102,23 @@
 =0.25 SocialSpending
 =7.0 ExpectedAristocracySol
 <
-=1000000 mongolovog.pop
+> mongolovog
+=1000000 pop
+=0.02 ExpectedSlavesSol
+=0.10 ExpectedLabourersSol
+=0.25 ExpectedSerfsSol
+=0.05 ExpectedUnemployedSol
+=0.50 ExpectedFarmersSol
+=2.00 ExpectedTownsfolkSol
+=6.50 ExpectedClergySol
+=1.50 ExpectedBureaucratsSol
+=0.50 ExpectedMerchantsSol
+=1.25 ExpectedIntellectualsSol
+=0.75 ExpectedSailorsSol
+=1.00 ExpectedSoldiersSol
+=16.00 ExpectedAristocracySol
+=10.00 ExpectedBurgousieSol
+<
+
 !suppress 0
 <...
