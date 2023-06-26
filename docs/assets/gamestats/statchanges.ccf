@@ -124,11 +124,11 @@
 +> CultureGroups
 > CultureGroups
 +> Mongol
-= 54.32833722418636 Mongol.Points
+= 54.10382981729555 Mongol.Points
 +> Jurchen
-= 4.087592523703936 Jurchen.Points
+= 4.1076858319425185 Jurchen.Points
 +> HanChinese
-= 41.584070252109704 HanChinese.Points
+= 41.788484350761934 HanChinese.Points
 < <
 > AsaranEmpire
 +> CultureGroups
@@ -202,27 +202,27 @@
 +> CultureGroups
 > CultureGroups
 +> Bengali
-= 96.80210211772322 Bengali.Points
+= 96.5901544880417 Bengali.Points
 +> Garjati
-= 3.197897882276784 Garjati.Points
+= 3.4098455119583018 Garjati.Points
 < <
 > Kwangtung
 +> CultureGroups
 > CultureGroups
 +> SouthChinese
-= 90.0417490842869 SouthChinese.Points
+= 89.9943018209278 SouthChinese.Points
 +> HanChinese
-= 9.9582509157131 HanChinese.Points
+= 10.005698179072192 HanChinese.Points
 < <
 > AztecEmpire
 +> CultureGroups
 > CultureGroups
 +> Coahuiltec
-= 1.108562214547827 Coahuiltec.Points
+= 1.1258979748609248 Coahuiltec.Points
 +> Aztec
-= 92.84494258749018 Aztec.Points
+= 93.7207182110568 Aztec.Points
 +> Olmec
-= 6.046495197961991 Olmec.Points
+= 5.153383814082272 Olmec.Points
 < <
 > MayanEmpire
 +> CultureGroups
@@ -234,9 +234,9 @@
 +> CultureGroups
 > CultureGroups
 +> Tagalog
-= 82.63317147968311 Tagalog.Points
+= 83.12635966163317 Tagalog.Points
 +> Indonesian
-= 17.366828520316894 Indonesian.Points
+= 16.87364033836683 Indonesian.Points
 < <
 > KokwapaConfederation
 +> CultureGroups
@@ -248,11 +248,11 @@
 +> CultureGroups
 > CultureGroups
 +> Inca
-= 98.4837303815406 Inca.Points
+= 98.55562371755548 Inca.Points
 +> Conibo
-= 0.08047913157402209 Conibo.Points
+= 0.0848969461073622 Conibo.Points
 +> Siriono
-= 1.4357904868853775 Siriono.Points
+= 1.3594793363371622 Siriono.Points
 < <
 > KingdomOfNovgorod
 > ReligionGroups
@@ -550,20 +550,20 @@
 
 <... > Nations
 = 1321550 KingdomOfNovgorod.coastalPopulation
-= 2055230 DanskEmpire.coastalPopulation
-= 2807450 CrownOfSweden.coastalPopulation
+= 1916530 DanskEmpire.coastalPopulation
+= 2806350 CrownOfSweden.coastalPopulation
 = 1775920 EarldomOfManx.coastalPopulation
 = 1171510 KingdomOfLivonia.coastalPopulation
 = 1624085 KingdomOfPrussia.coastalPopulation
 = 665500 DutchRepublic.coastalPopulation
 = 1460475 RoyaumeDuSoleil.coastalPopulation
-= 418380 MongolOvog.coastalPopulation
+= 417780 MongolOvog.coastalPopulation
 = 1302280 Guyenne.coastalPopulation
 = 1014710 DynastyOfUsia.coastalPopulation
 = 1430290 MontenegrinEmpire.coastalPopulation
 = 1364470 RepublicOfVenice.coastalPopulation
 = 1265780 UnifiedBalhae.coastalPopulation
-= 1174235 MinorWeizhong.coastalPopulation
+= 1165885 MinorWeizhong.coastalPopulation
 = 1191430 AsaranEmpire.coastalPopulation
 = 1213075 CrownOfLeon.coastalPopulation
 = 405715 GrecoBactria.coastalPopulation
@@ -574,13 +574,13 @@
 = 1772435 Magnavallis.coastalPopulation
 = 1807610 Zhao.coastalPopulation
 = 91785 AkilanIrisianEmpire.coastalPopulation
-= 1435960 GuptaDynasty.coastalPopulation
-= 1394070 Kwangtung.coastalPopulation
-= 660440 AztecEmpire.coastalPopulation
-= 778540 MayanEmpire.coastalPopulation
-= 1344570 Sugbo.coastalPopulation
-= 578830 KokwapaConfederation.coastalPopulation
-= 470490 Kuntisuyu.coastalPopulation
+= 1344960 GuptaDynasty.coastalPopulation
+= 1385970 Kwangtung.coastalPopulation
+= 648590 AztecEmpire.coastalPopulation
+= 702840 MayanEmpire.coastalPopulation
+= 956220 Sugbo.coastalPopulation
+= 516950 KokwapaConfederation.coastalPopulation
+= 437740 Kuntisuyu.coastalPopulation
 
 <... > Nations
 = 1.85 KingdomOfNovgorod.MaxFur
@@ -667,18 +667,18 @@
 = 0.30 Kuntisuyu.MaxSilver
 
 <... > TradeZones
-= 10.30 CentralSiberia.Score
-= 7.70 EasternSiberia.Score
-= 44.90 WesternSiberia.Score
-= 6.50 NorthSea.Score
-= 9.70 Alaska.Score
-= 0.30 NorthernNordics.Score
+= 9.65 CentralSiberia.Score
+= 7.25 EasternSiberia.Score
+= 44.85 WesternSiberia.Score
+= 5.20 NorthSea.Score
+= 8.20 Alaska.Score
+= 0.25 NorthernNordics.Score
 = 0.65 HudsonBay.Score
 = 0.35 BarentsSea.Score
 = 7.35 CentralCanada.Score
-= 7.30 BalticSea.Score
+= 7.20 BalticSea.Score
 = 8.65 Novgorod.Score
-= 6.35 Denmark.Score
+= 6.10 Denmark.Score
 = 14.15 LawrenceGulf.Score
 = 33.50 Volga.Score
 = 9.45 Livonia.Score
@@ -686,12 +686,12 @@
 = 9.65 Muscovy.Score
 = 19.45 Dniepr.Score
 = 11.25 UralRiver.Score
-= 51.45 Manchuria.Score
+= 46.65 Manchuria.Score
 = 9.00 Vistula.Score
 = 12.50 CentralEurope.Score
 = 8.45 DonRiver.Score
-= 13.30 Cascadia.Score
-= 20.15 SeaOfJapan.Score
+= 12.95 Cascadia.Score
+= 19.65 SeaOfJapan.Score
 = 6.00 Rhine.Score
 = 2.65 EnglishChannel.Score
 = 16.75 GreatLakes.Score
@@ -716,17 +716,17 @@
 = 4.90 WesternMediterranean.Score
 = 6.20 Iberia.Score
 = 3.20 NorthernAnatolia.Score
-= 22.35 YellowRiver.Score
+= 21.20 YellowRiver.Score
 = 8.45 Mesopotamia.Score
 = 2.55 EasternMediterranean.Score
 = 15.00 GulfOfMexico.Score
 = 7.25 Afghanistan.Score
 = 15.25 IndusRiver.Score
 = 3.75 Morocco.Score
-= 5.10 Tibet.Score
+= 5.05 Tibet.Score
 = 11.60 Iran.Score
-= 7.30 Sichuan.Score
-= 7.60 Sahara.Score
+= 7.10 Sichuan.Score
+= 7.50 Sahara.Score
 = 0.20 ArabianDesert.Score
 = 21.65 YangtzeRiver.Score
 = 8.25 WesternMexico.Score
@@ -737,52 +737,52 @@
 = 6.05 Caribbean.Score
 = 0.40 WesternSahara.Score
 = 22.10 SouthEastAsia.Score
-= 2.05 Pacific.Score
+= 2.00 Pacific.Score
 = 10.05 SouthChinaSea.Score
 = 12.05 CentralIndia.Score
 = 7.95 Deccan.Score
-= 22.15 SouthernNile.Score
+= 19.10 SouthernNile.Score
 = 10.50 Somalia.Score
-= 20.80 WesternNiger.Score
-= 6.90 Guinea.Score
-= 5.35 CentralAmerica.Score
-= 23.05 EasternNiger.Score
-= 13.85 Venezuela.Score
+= 17.20 WesternNiger.Score
+= 6.20 Guinea.Score
+= 5.10 CentralAmerica.Score
+= 18.80 EasternNiger.Score
+= 11.85 Venezuela.Score
 = 8.30 Indonesia.Score
-= 30.70 CongoRiver.Score
-= 8.65 Gabon.Score
-= 5.55 LakeVictoria.Score
-= 67.90 Amazon.Score
-= 4.65 Peru.Score
-= 12.70 EastAfrica.Score
-= 10.75 LakeTanganyika.Score
-= 20.30 SaoFranciscoRiver.Score
+= 24.35 CongoRiver.Score
+= 6.70 Gabon.Score
+= 4.40 LakeVictoria.Score
+= 55.15 Amazon.Score
+= 4.30 Peru.Score
+= 10.75 EastAfrica.Score
+= 8.25 LakeTanganyika.Score
+= 15.45 SaoFranciscoRiver.Score
 = 20.90 NorthernAustralia.Score
-= 12.95 Angola.Score
-= 41.70 Mozambique.Score
-= 64.10 ParanaRiver.Score
+= 11.30 Angola.Score
+= 35.55 Mozambique.Score
+= 58.60 ParanaRiver.Score
 = 4.35 Chile.Score
 = 30.05 SouthernAustralia.Score
-= 12.70 SouthAfrica.Score
+= 12.40 SouthAfrica.Score
 = 0.00 AustralianDesert.Score
 = 18.60 Patagonia.Score
 
 <... > Nations
 = 2438300 KingdomOfNovgorod.Population
-= 2825735 DanskEmpire.Population
-= 3654850 CrownOfSweden.Population
+= 2639685 DanskEmpire.Population
+= 3653750 CrownOfSweden.Population
 = 3633955 EarldomOfManx.Population
 = 3650725 KingdomOfLivonia.Population
 = 3704675 KingdomOfPrussia.Population
 = 1372750 DutchRepublic.Population
 = 3198730 RoyaumeDuSoleil.Population
-= 2366605 MongolOvog.Population
+= 2358455 MongolOvog.Population
 = 3583740 Guyenne.Population
 = 2890935 DynastyOfUsia.Population
 = 2949335 MontenegrinEmpire.Population
 = 2649450 RepublicOfVenice.Population
 = 2774835 UnifiedBalhae.Population
-= 3361465 MinorWeizhong.Population
+= 3344765 MinorWeizhong.Population
 = 2382815 AsaranEmpire.Population
 = 2808100 CrownOfLeon.Population
 = 1176795 GrecoBactria.Population
@@ -793,47 +793,47 @@
 = 3367115 Magnavallis.Population
 = 3369035 Zhao.Population
 = 2007765 AkilanIrisianEmpire.Population
-= 2715180 GuptaDynasty.Population
-= 2858825 Kwangtung.Population
-= 1893390 AztecEmpire.Population
-= 2392170 MayanEmpire.Population
-= 1931305 Sugbo.Population
-= 2853805 KokwapaConfederation.Population
-= 1476440 Kuntisuyu.Population
+= 2549730 GuptaDynasty.Population
+= 2845575 Kwangtung.Population
+= 1864890 AztecEmpire.Population
+= 2232670 MayanEmpire.Population
+= 1405205 Sugbo.Population
+= 2556795 KokwapaConfederation.Population
+= 1398590 Kuntisuyu.Population
 
 <... > Nations
-= 0 KingdomOfNovgorod.Future Population
-= 0 DanskEmpire.Future Population
-= 0 CrownOfSweden.Future Population
-= 29415 EarldomOfManx.Future Population
-= 0 KingdomOfLivonia.Future Population
-= 44451 KingdomOfPrussia.Future Population
-= 5491 DutchRepublic.Future Population
-= 2302758 RoyaumeDuSoleil.Future Population
+= 11168728 KingdomOfNovgorod.Future Population
+= 12835787 DanskEmpire.Future Population
+= 16379764 CrownOfSweden.Future Population
+= 17650361 EarldomOfManx.Future Population
+= 15593130 KingdomOfLivonia.Future Population
+= 15638433 KingdomOfPrussia.Future Population
+= 6460339 DutchRepublic.Future Population
+= 14159901 RoyaumeDuSoleil.Future Population
 = 0 MongolOvog.Future Population
-= 1390275 Guyenne.Future Population
-= 1368794 DynastyOfUsia.Future Population
-= 1780181 MontenegrinEmpire.Future Population
-= 6864991 RepublicOfVenice.Future Population
-= 364870 UnifiedBalhae.Future Population
-= 1440574 MinorWeizhong.Future Population
-= 7559183 AsaranEmpire.Future Population
-= 1946414 CrownOfLeon.Future Population
-= 911168 GrecoBactria.Future Population
-= 1457528 AshikagaShogunate.Future Population
-= 2019359 RegencyOfValencia.Future Population
-= 5574143 KingdomOfRum.Future Population
-= 2061012 KingdomOfIsrael.Future Population
-= 40369 Magnavallis.Future Population
-= 5567279 Zhao.Future Population
+= 15487399 Guyenne.Future Population
+= 13748881 DynastyOfUsia.Future Population
+= 12609000 MontenegrinEmpire.Future Population
+= 11192400 RepublicOfVenice.Future Population
+= 11732727 UnifiedBalhae.Future Population
+= 14320685 MinorWeizhong.Future Population
+= 10950915 AsaranEmpire.Future Population
+= 12077560 CrownOfLeon.Future Population
+= 4833217 GrecoBactria.Future Population
+= 11480244 AshikagaShogunate.Future Population
+= 12473215 RegencyOfValencia.Future Population
+= 9353719 KingdomOfRum.Future Population
+= 9358746 KingdomOfIsrael.Future Population
+= 16704081 Magnavallis.Future Population
+= 14958914 Zhao.Future Population
 = 0 AkilanIrisianEmpire.Future Population
-= 4739491 GuptaDynasty.Future Population
-= 317424 Kwangtung.Future Population
-= 6762152 AztecEmpire.Future Population
-= 2174869 MayanEmpire.Future Population
-= 6059099 Sugbo.Future Population
-= 931399 KokwapaConfederation.Future Population
-= 0 Kuntisuyu.Future Population
+= 11580905 GuptaDynasty.Future Population
+= 12719024 Kwangtung.Future Population
+= 8141451 AztecEmpire.Future Population
+= 10661481 MayanEmpire.Future Population
+= 7219316 Sugbo.Future Population
+= 12330163 KokwapaConfederation.Future Population
+= 1232660 Kuntisuyu.Future Population
 
 <... > Nations
 = 2333.35 KingdomOfNovgorod.Fertility
