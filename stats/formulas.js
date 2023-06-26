@@ -1292,7 +1292,7 @@ static evaluateNation(nationName) {
 
     n.PopulationHappiness = (5 * (0.25 + n.Prosperity) - n.AverageTax * 25 - n.Absolutism / 2 - n.PopulationControlReal - n.DebtToGdpRatio * 10 * n.PublicDebtLength - n.WarExhaustion / 2 - n.Disease + n.Alcoholism * (1 - n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100) / 2);
 
-  n.Manpower = n.Population * (n.Reforms.NationalMilitia * 0.02 + n.Reforms.FeudalLevies * 0.005 + n.Reforms.ProffesionalArmy * 0.025 + n.Reforms.MassConscription * 0.075 + n.Nationalism * 0.005) - n.OverallNumbers - n.Casualties;
+    n.Manpower = n.Population * (n.Reforms.NationalMilitia * 0.02 + n.Reforms.FeudalLevies * 0.005 + n.Reforms.ProffesionalArmy * 0.025 + n.Reforms.MassConscription * 0.075 + n.Nationalism * 0.005 + n.ReligiousFervor * 0.005) - n.OverallNumbers - n.Casualties;
 
   n.Fervor = clamp(1, -1, 0 + n.MinorBattles / 20 + n.MajorBattles / 10 + n.Pillaging - n.Casualties / (n.Manpower + n.Casualties));
   n.WarSupport = clamp(1, 0, (n.PopulationHappiness / 4 + n.PropagandaReal / 10 * (1 + n.CulturalAdvancements.Newspapers * n.LiteracyPercent / 50) + n.Fervor + n.Nationalism / 10) * (n.GovernmentDominatedBy == "Military" ? 1.25 : 1));
@@ -1315,8 +1315,6 @@ static evaluateNation(nationName) {
     for (const EstateIndex in gameStats.EstatesGeneral) {
       const Estate = gameStats.EstatesGeneral[EstateIndex];
       n.LoyaltiesStabilityImpact += (n[Estate + "Loyalty"] - 0.5) * (1 + n.EstateNumbers[Estate] * (n[Estate + "PoliticalAwareness"] + 0.5) + n.EstateInfluencesReal[Estate + "Influence"] * 4) * 5;
-      console.log(Estate);
-      console.log(n.LoyaltiesStabilityImpact);
     }
 
 
@@ -1356,7 +1354,7 @@ static evaluateNation(nationName) {
   n.ResearchUpkeep = n.ResearchSpending * n.Population / 500000 / gameStats.TimeDivide * n.LiteracyPercent / 10;
   n.Balance = n.BudgetIncoming - n.BudgetOutgoing;
   n.PassiveInvestmentIncome = (n.Budget / (10 - n.AdministrativeEfficiency / 10 + 1) / gameStats.TimeDivide) / (1 + n.Inflation);
-    debugger;
+
 
   n.StateAgricultureRevenue = (n.Reforms.GovernmentLandOwnership ? n.AgricultureRevenue : 0);
   n.StateResourceRevenue = (n.Reforms.GovernmentResourceOwnership ? n.ResourceBudgetBoost : 0);
@@ -1607,6 +1605,7 @@ static evaluateNation(nationName) {
     alert(nationName + "'s Police reforms are incorrect");
   }
 
+    console.log(n.PseudoPopulationGrowth);
 }
 
 static evaluateNations() {
@@ -1722,8 +1721,8 @@ static evaluateNations() {
 
     let PixelsDisease;
     let PixelsPopGrowth;
-
-    PixelsDisease = (pixelPop / (20 * climateScore)) / 25 - effectiveHealth - (isCoastalPixel ? 0.1 : 0) - (0.5 - fertilityScore) / 2.5 - developmentScore * 5;
+    
+    PixelsDisease = (pixelPop / (20 * climateScore)) / 25 - effectiveHealth - (isCoastalPixel ? 0.1 : 0) + (0.5 - fertilityScore) / 2.5 - developmentScore * 5;
     PixelsPopGrowth = (pseudoPopulationGrowth < 0 ? pseudoPopulationGrowth : pseudoPopulationGrowth * (1 - PixelsDisease));
 
     let newPixelPop = pixelPop * (1 + PixelsPopGrowth);
