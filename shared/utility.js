@@ -1412,28 +1412,31 @@ function lerp(a, b, t){
 
 async function prepareData(path, progressTextElement){
     
-    const WIDTH = 8192 * 3;
-    const HEIGHT = 3365 * 3;
+    const WIDTH = 8192;
+    const HEIGHT = 3365;
+
+    const BIGWIDTH = WIDTH * 3;
+    const BIGHEIGHT = HEIGHT * 3;
     
     let tempCanvas = document.createElement("canvas");
-    tempCanvas.width = WIDTH;
-    tempCanvas.height = HEIGHT;    
+    tempCanvas.width = BIGWIDTH;
+    tempCanvas.height = BIGHEIGHT;    
 
-    tempCanvas.style.width = `${WIDTH}px`;
-    tempCanvas.style.height = `${HEIGHT}px`;
+    tempCanvas.style.width = `${BIGWIDTH}px`;
+    tempCanvas.style.height = `${BIGHEIGHT}px`;
 
     let ctx = tempCanvas.getContext("2d");
 
     if(progressTextElement != null) progressTextElement.innerText = `Loading ${path}`;
 
-    let Img = new Image(WIDTH, HEIGHT);
+    let Img = new Image(BIGWIDTH, BIGHEIGHT);
     Img.src = `./docs/assets/images/world/${path}`;
     let done = false;
     Img.onload = function () {
 
 
-        ctx.clearRect(0, 0, WIDTH, HEIGHT);
-        ctx.drawImage(Img, 0, 0, WIDTH, HEIGHT);
+        ctx.clearRect(0, 0, BIGWIDTH, BIGHEIGHT);
+        ctx.drawImage(Img, 0, 0, BIGWIDTH, BIGHEIGHT);
         
         done = true;
     }
@@ -1442,10 +1445,22 @@ async function prepareData(path, progressTextElement){
         await new Promise(resolve => setTimeout(resolve));
     }
 
-    let bigdata = ctx.getImageData(0, 0, WIDTH, HEIGHT).data
+    let bigdata = await ctx.getImageData(0, 0, BIGWIDTH, BIGHEIGHT).data;
+    let realdata = new Uint8ClampedArray(WIDTH * HEIGHT);
 
     //work on bigdata
-    let realdata = bigdata;
+    for (let y = 0; y < WIDTH; y++) {
+        for (let x = 0; x < HEIGHT; x++) {
+            let realPixelIndex = x + y*WIDTH;
+            let bigPixelIndex = x*3 + 1 + (y*3+1)*BIGWIDTH;
+
+
+            realdata[realPixelIndex*4] = 255/*bigdata[realPixelIndex*4];*/
+            realdata[realPixelIndex*4 + 1] = 0/*bigdata[realPixelIndex*4 + 1];*/
+            realdata[realPixelIndex*4 + 2] = 255/*bigdata[realPixelIndex*4 + 2];*/
+            realdata[realPixelIndex*4 + 3] = 255/*bigdata[realPixelIndex*4 + 3]*/;
+        }      
+    }
     return realdata;
 }
 

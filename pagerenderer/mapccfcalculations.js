@@ -90,6 +90,8 @@ class MapCCFCalculations {
         self.fertilityColorProperties = self.fillInColorProperties(gameStats.Fertility);
 
         self.baseData = await prepareData("Blank.png", self.progressText)
+
+        self.promptMap(self.baseData, "just as test, dw");
         
         self.nationData = await prepareData("Nations.png", self.progressText);
         self.climateData = await prepareData("Climates.png", self.progressText);
