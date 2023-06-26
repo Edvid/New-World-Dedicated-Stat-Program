@@ -7,6 +7,7 @@ class MapCCFCalculations {
     WIDTH = 8192;
     HEIGHT = 3365;
     
+    tmpcond;
     progressText;
     PromptMissingInfoContainer;
     PromptedMissingInfoCanvas;
@@ -361,7 +362,7 @@ class MapCCFCalculations {
         await self.prepareNewMaps();
 
         let nationPopDistribution = await self.findDistribution(
-            self.nationData, self.newPopData, "nation", "population", 
+            self.nationData, self.popData, "nation", "population", 
             self.nationColorProperties,
             0,
             {
@@ -371,7 +372,7 @@ class MapCCFCalculations {
         );
 
         let nationFuturePopDistribution = await self.findDistribution(
-            self.nationData, self.newFuturePopData, "nation", "future population", 
+            self.nationData, self.newPopData, "nation", "future population", 
             self.nationColorProperties,
             0,
             {
