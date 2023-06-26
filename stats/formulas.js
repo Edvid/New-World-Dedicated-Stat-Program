@@ -1685,7 +1685,8 @@ static evaluateNations() {
     }
 
     function fetchName(dataName) {
-      return fetchPropertyObject(dataName).name;
+      let pair = fetchPropertyObject(dataName);
+      return typeof pair !== 'undefined' ? pair.name : null;
     }
 
     function fetchBinary(dataName, isName){
@@ -1696,9 +1697,12 @@ static evaluateNations() {
     
     let nationName = fetchName("nation");
     let n = gameStats.Nations[nationName];
+    let hasVaccine = typeof n !== 'undefined' ? n.Technologies.Vaccines : false;
+    let pseudoPopulationGrowth = typeof n !== 'undefined' ? n.PseudoPopulationGrowth : 0.1;
+    let effectiveHealth = typeof n !== 'undefined' ? n.EffectiveHealth : 0;
 
     let climateName = fetchName("climate");
-    let climateScore = gameStats.Climates[climateName].ClimateScore + (n.Technologies.Vaccines ? (climateName == "SubTropical" || climateName == "Tropical" || climateName == "Savanna" ? 0.1 : 0) : 0);
+    let climateScore = gameStats.Climates[climateName].ClimateScore + (hasVaccine ? (climateName == "SubTropical" || climateName == "Tropical" || climateName == "Savanna" ? 0.1 : 0) : 0);
     
     
     let isCoastalPixel = fetchBinary("coast", "coast")
@@ -1712,13 +1716,8 @@ static evaluateNations() {
     let PixelsDisease;
     let PixelsPopGrowth;
 
-    if(n != null){   
-        PixelsDisease = (pixelPop / (20 * climateScore)) / 25 - n.EffectiveHealth - (isCoastalPixel ? 0.1 : 0) - (0.5 - fertilityScore) / 2.5 - developmentScore * 5;
-        PixelsPopGrowth = (n.PseudoPopulationGrowth < 0 ? n.PseudoPopulationGrowth : n.PseudoPopulationGrowth * (1 - PixelsDisease));
-    }else{
-        PixelsDisease = (pixelPop / (20 * climateScore)) / 25 - (isCoastalPixel ? 0.1 : 0) - (0.5 - fertilityScore) / 2.5 - developmentScore * 5;
-        PixelsPopGrowth = 0.1 * (1 - PixelsDisease);
-    }
+    PixelsDisease = (pixelPop / (20 * climateScore)) / 25 - effectiveHealth - (isCoastalPixel ? 0.1 : 0) - (0.5 - fertilityScore) / 2.5 - developmentScore * 5;
+    PixelsPopGrowth = (pseudoPopulationGrowth < 0 ? pseudoPopulationGrowth : pseudoPopulationGrowth * (1 - PixelsDisease));
 
     let newPixelPop = pixelPop * (1 + PixelsPopGrowth);
     return Formulas.NumAsRGB(newPixelPop);
