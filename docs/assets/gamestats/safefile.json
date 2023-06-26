@@ -237,6 +237,7 @@
                     }
                 },
                 "CultureRepresentedAtGovernmentLevelPercent": 0,
+                "CultureRepresentedAtGovernmentLevel": "Russian",
                 "PopulationStabilityImpact": 0,
                 "PopulationTechImpact": 0,
                 "MiningEfficiency": 1,
@@ -1939,6 +1940,7 @@
                     }
                 },
                 "CultureRepresentedAtGovernmentLevelPercent": 0,
+                "CultureRepresentedAtGovernmentLevel": "French",
                 "PopulationStabilityImpact": 0,
                 "PopulationTechImpact": 0,
                 "MiningEfficiency": 1,
@@ -3641,6 +3643,7 @@
                     }
                 },
                 "CultureRepresentedAtGovernmentLevelPercent": 0,
+                "CultureRepresentedAtGovernmentLevel": "Iberian",
                 "PopulationStabilityImpact": 0,
                 "PopulationTechImpact": 0,
                 "MiningEfficiency": 1,
@@ -5343,6 +5346,7 @@
                     }
                 },
                 "CultureRepresentedAtGovernmentLevelPercent": 0,
+                "CultureRepresentedAtGovernmentLevel": "Persian",
                 "PopulationStabilityImpact": 0,
                 "PopulationTechImpact": 0,
                 "MiningEfficiency": 1,
@@ -6141,7 +6145,7 @@
                     "TextilesSector": 20,
                     "BasicGoodsSector": 30,
                     "LuxuryGoodsSector": 5,
-                    "AlcoholSector": 25,
+                    "AlcoholSector": 0,
                     "ChemicalSector": 0,
                     "ElectronicsSector": 0,
                     "AutomotiveSector": 0,
@@ -7045,6 +7049,7 @@
                     }
                 },
                 "CultureRepresentedAtGovernmentLevelPercent": 0,
+                "CultureRepresentedAtGovernmentLevel": "Israeli",
                 "PopulationStabilityImpact": 0,
                 "PopulationTechImpact": 0,
                 "MiningEfficiency": 1,
@@ -8747,6 +8752,7 @@
                     }
                 },
                 "CultureRepresentedAtGovernmentLevelPercent": 0,
+                "CultureRepresentedAtGovernmentLevel": "Iberian",
                 "PopulationStabilityImpact": 0,
                 "PopulationTechImpact": 0,
                 "MiningEfficiency": 1,
@@ -10449,6 +10455,7 @@
                     }
                 },
                 "CultureRepresentedAtGovernmentLevelPercent": 0,
+                "CultureRepresentedAtGovernmentLevel": "Japanese",
                 "PopulationStabilityImpact": 0,
                 "PopulationTechImpact": 0,
                 "MiningEfficiency": 1,
@@ -12151,6 +12158,7 @@
                     }
                 },
                 "CultureRepresentedAtGovernmentLevelPercent": 0,
+                "CultureRepresentedAtGovernmentLevel": "Germanic",
                 "PopulationStabilityImpact": 0,
                 "PopulationTechImpact": 0,
                 "MiningEfficiency": 1,
@@ -13853,6 +13861,7 @@
                     }
                 },
                 "CultureRepresentedAtGovernmentLevelPercent": 0,
+                "CultureRepresentedAtGovernmentLevel": "Tagalog",
                 "PopulationStabilityImpact": 0,
                 "PopulationTechImpact": 0,
                 "MiningEfficiency": 1,
@@ -15555,6 +15564,7 @@
                     }
                 },
                 "CultureRepresentedAtGovernmentLevelPercent": 0,
+                "CultureRepresentedAtGovernmentLevel": "Bengali",
                 "PopulationStabilityImpact": 0,
                 "PopulationTechImpact": 0,
                 "MiningEfficiency": 1,
@@ -17257,6 +17267,7 @@
                     }
                 },
                 "CultureRepresentedAtGovernmentLevelPercent": 0,
+                "CultureRepresentedAtGovernmentLevel": "Turkish",
                 "PopulationStabilityImpact": 0,
                 "PopulationTechImpact": 0,
                 "MiningEfficiency": 1,
@@ -18959,6 +18970,7 @@
                     }
                 },
                 "CultureRepresentedAtGovernmentLevelPercent": 0,
+                "CultureRepresentedAtGovernmentLevel": "Mongol",
                 "PopulationStabilityImpact": 0,
                 "PopulationTechImpact": 0,
                 "MiningEfficiency": 1,
@@ -20661,6 +20673,7 @@
                     }
                 },
                 "CultureRepresentedAtGovernmentLevelPercent": 0,
+                "CultureRepresentedAtGovernmentLevel": "HanChinese",
                 "PopulationStabilityImpact": 0,
                 "PopulationTechImpact": 0,
                 "MiningEfficiency": 1,
@@ -22363,6 +22376,7 @@
                     }
                 },
                 "CultureRepresentedAtGovernmentLevelPercent": 0,
+                "CultureRepresentedAtGovernmentLevel": "Aztec",
                 "PopulationStabilityImpact": 0,
                 "PopulationTechImpact": 0,
                 "MiningEfficiency": 1,
@@ -24065,6 +24079,7 @@
                     }
                 },
                 "CultureRepresentedAtGovernmentLevelPercent": 0,
+                "CultureRepresentedAtGovernmentLevel": "GrecoBactrian",
                 "PopulationStabilityImpact": 0,
                 "PopulationTechImpact": 0,
                 "MiningEfficiency": 1,
@@ -25767,6 +25782,7 @@
                     }
                 },
                 "CultureRepresentedAtGovernmentLevelPercent": 0,
+                "CultureRepresentedAtGovernmentLevel": "English",
                 "PopulationStabilityImpact": 0,
                 "PopulationTechImpact": 0,
                 "MiningEfficiency": 1,
@@ -27469,6 +27485,7 @@
                     }
                 },
                 "CultureRepresentedAtGovernmentLevelPercent": 0,
+                "CultureRepresentedAtGovernmentLevel": "Usian",
                 "PopulationStabilityImpact": 0,
                 "PopulationTechImpact": 0,
                 "MiningEfficiency": 1,
@@ -29171,6 +29188,7 @@
                     }
                 },
                 "CultureRepresentedAtGovernmentLevelPercent": 0,
+                "CultureRepresentedAtGovernmentLevel": "Aquitan",
                 "PopulationStabilityImpact": 0,
                 "PopulationTechImpact": 0,
                 "MiningEfficiency": 1,
@@ -30873,6 +30891,7 @@
                     }
                 },
                 "CultureRepresentedAtGovernmentLevelPercent": 0,
+                "CultureRepresentedAtGovernmentLevel": "WestSlav",
                 "PopulationStabilityImpact": 0,
                 "PopulationTechImpact": 0,
                 "MiningEfficiency": 1,
@@ -32575,6 +32594,7 @@
                     }
                 },
                 "CultureRepresentedAtGovernmentLevelPercent": 0,
+                "CultureRepresentedAtGovernmentLevel": "Olmec",
                 "PopulationStabilityImpact": 0,
                 "PopulationTechImpact": 0,
                 "MiningEfficiency": 1,
@@ -34277,6 +34297,7 @@
                     }
                 },
                 "CultureRepresentedAtGovernmentLevelPercent": 0,
+                "CultureRepresentedAtGovernmentLevel": "Inca",
                 "PopulationStabilityImpact": 0,
                 "PopulationTechImpact": 0,
                 "MiningEfficiency": 1,
@@ -35979,6 +36000,7 @@
                     }
                 },
                 "CultureRepresentedAtGovernmentLevelPercent": 0,
+                "CultureRepresentedAtGovernmentLevel": "Dutch",
                 "PopulationStabilityImpact": 0,
                 "PopulationTechImpact": 0,
                 "MiningEfficiency": 1,
@@ -37681,6 +37703,7 @@
                     }
                 },
                 "CultureRepresentedAtGovernmentLevelPercent": 0,
+                "CultureRepresentedAtGovernmentLevel": "Italian",
                 "PopulationStabilityImpact": 0,
                 "PopulationTechImpact": 0,
                 "MiningEfficiency": 1,
@@ -39383,6 +39406,7 @@
                     }
                 },
                 "CultureRepresentedAtGovernmentLevelPercent": 0,
+                "CultureRepresentedAtGovernmentLevel": "Tarariu",
                 "PopulationStabilityImpact": 0,
                 "PopulationTechImpact": 0,
                 "MiningEfficiency": 1,
@@ -41085,6 +41109,7 @@
                     }
                 },
                 "CultureRepresentedAtGovernmentLevelPercent": 0,
+                "CultureRepresentedAtGovernmentLevel": "Korean",
                 "PopulationStabilityImpact": 0,
                 "PopulationTechImpact": 0,
                 "MiningEfficiency": 1,
@@ -42787,6 +42812,7 @@
                     }
                 },
                 "CultureRepresentedAtGovernmentLevelPercent": 0,
+                "CultureRepresentedAtGovernmentLevel": "Xyndara",
                 "PopulationStabilityImpact": 0,
                 "PopulationTechImpact": 0,
                 "MiningEfficiency": 1,
@@ -44489,6 +44515,7 @@
                     }
                 },
                 "CultureRepresentedAtGovernmentLevelPercent": 0,
+                "CultureRepresentedAtGovernmentLevel": "HanChinese",
                 "PopulationStabilityImpact": 0,
                 "PopulationTechImpact": 0,
                 "MiningEfficiency": 1,
@@ -46191,6 +46218,7 @@
                     }
                 },
                 "CultureRepresentedAtGovernmentLevelPercent": 0,
+                "CultureRepresentedAtGovernmentLevel": "Scandinavian",
                 "PopulationStabilityImpact": 0,
                 "PopulationTechImpact": 0,
                 "MiningEfficiency": 1,
@@ -47893,6 +47921,7 @@
                     }
                 },
                 "CultureRepresentedAtGovernmentLevelPercent": 0,
+                "CultureRepresentedAtGovernmentLevel": "SouthChinese",
                 "PopulationStabilityImpact": 0,
                 "PopulationTechImpact": 0,
                 "MiningEfficiency": 1,
@@ -49595,6 +49624,7 @@
                     }
                 },
                 "CultureRepresentedAtGovernmentLevelPercent": 0,
+                "CultureRepresentedAtGovernmentLevel": "Danish",
                 "PopulationStabilityImpact": 0,
                 "PopulationTechImpact": 0,
                 "MiningEfficiency": 1,
@@ -51297,6 +51327,7 @@
                     }
                 },
                 "CultureRepresentedAtGovernmentLevelPercent": 0,
+                "CultureRepresentedAtGovernmentLevel": "Greek",
                 "PopulationStabilityImpact": 0,
                 "PopulationTechImpact": 0,
                 "MiningEfficiency": 1,
@@ -52999,6 +53030,7 @@
                     }
                 },
                 "CultureRepresentedAtGovernmentLevelPercent": 0,
+                "CultureRepresentedAtGovernmentLevel": "SouthSlav",
                 "PopulationStabilityImpact": 0,
                 "PopulationTechImpact": 0,
                 "MiningEfficiency": 1,
