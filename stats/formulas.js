@@ -1714,7 +1714,7 @@ static evaluateNations() {
     let isCoastalPixel = fetchBinary("coast", "coast")
 
     let developmentScore = Formulas.fetchFour(mapCCFCalculationsInstance.developmentData, pixelIndex)[0]; //reading red channel as shorthand for greyscale
-    developmentScore = (255 - developmentScore) / 255;
+    developmentScore = developmentScore / 255;
 
     let fertilityName = fetchName("fertility");
     let fertilityScore = gameStats.Fertility[fertilityName].Score;
@@ -1724,6 +1724,8 @@ static evaluateNations() {
     
     PixelsDisease = (pixelPop / (20 * climateScore)) / 25 - effectiveHealth - (isCoastalPixel ? 0.1 : 0) + (0.5 - fertilityScore) / 2.5 - developmentScore * 5;
     PixelsPopGrowth = (pseudoPopulationGrowth < 0 ? pseudoPopulationGrowth : pseudoPopulationGrowth * (1 - PixelsDisease));
+
+    if(typeof n !== 'undefined') debugger;
 
     let newPixelPop = pixelPop * (1 + PixelsPopGrowth);
     return Formulas.NumAsRGB(newPixelPop);
