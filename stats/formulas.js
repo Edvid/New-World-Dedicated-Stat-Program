@@ -859,6 +859,9 @@ static evaluateNation(nationName) {
 
     return hl;
   })();
+  
+  n.HabitableLand += (n.HabitableLand <= 0 ? 1.00 : 0);
+
   n.PopulationDensityPerKmSquared = n.Population / (n.KmSquared * n.HabitableLand);
 
   n.SocietalClasses.High = n.Workforces.Aristocracy + n.Workforces.Burgousie;
