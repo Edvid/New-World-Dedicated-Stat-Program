@@ -1412,12 +1412,17 @@ function lerp(a, b, t){
 
 async function prepareData(path, progressTextElement){
     
-    const WIDTH = 8192;
-    const HEIGHT = 3365;
+    const WIDTH = 8192 * 3;
+    const HEIGHT = 3365 * 3;
     
     let tempCanvas = document.createElement("canvas");
     tempCanvas.width = WIDTH;
     tempCanvas.height = HEIGHT;    
+
+    tempCanvas.style.width = `${WIDTH}px`;
+    tempCanvas.style.height = `${HEIGHT}px`;
+
+    let ctx = tempCanvas.getContext("2d");
 
     if(progressTextElement != null) progressTextElement.innerText = `Loading ${path}`;
 
@@ -1425,8 +1430,10 @@ async function prepareData(path, progressTextElement){
     Img.src = `./docs/assets/images/world/${path}`;
     let done = false;
     Img.onload = function () {
-        tempCanvas.getContext("2d").clearRect(0, 0, WIDTH, HEIGHT);
-        tempCanvas.getContext("2d").drawImage(Img, 0, 0, WIDTH, HEIGHT);
+
+
+        ctx.clearRect(0, 0, WIDTH, HEIGHT);
+        ctx.drawImage(Img, 0, 0, WIDTH, HEIGHT);
         
         done = true;
     }
@@ -1435,7 +1442,11 @@ async function prepareData(path, progressTextElement){
         await new Promise(resolve => setTimeout(resolve));
     }
 
-    return tempCanvas.getContext("2d").getImageData(0, 0, WIDTH, HEIGHT).data; 
+    let bigdata = ctx.getImageData(0, 0, WIDTH, HEIGHT).data
+
+    //work on bigdata
+    let realdata = bigdata;
+    return realdata;
 }
 
 /* #region  Taken from https://www.w3schools.com/howto/howto_js_collapsible.asp */
