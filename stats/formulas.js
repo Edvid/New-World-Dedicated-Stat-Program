@@ -1725,8 +1725,6 @@ static evaluateNations() {
     PixelsDisease = (pixelPop / (20 * climateScore)) / 25 - effectiveHealth - (isCoastalPixel ? 0.1 : 0) + (0.5 - fertilityScore) / 2.5 - developmentScore * 5;
     PixelsPopGrowth = (pseudoPopulationGrowth < 0 ? pseudoPopulationGrowth : pseudoPopulationGrowth * (1 - PixelsDisease));
 
-    if(typeof n !== 'undefined') debugger;
-
     let newPixelPop = pixelPop * (1 + PixelsPopGrowth);
     return Formulas.NumAsRGB(newPixelPop);
   }
