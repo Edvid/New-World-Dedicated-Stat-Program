@@ -614,7 +614,7 @@ class Nation {
     this.Alcoholism = 0.00;
     this.EducationEfficiency = 2;
       this.BureaucratsWages = 3;
-    this.AdministrativeEfficiency = 25;
+    this.AdministrativeEfficiency = 27.5;
       this.AdministrationSize = 0.5;
     this.Propaganda = 0;
     this.SocialSpending = 0.5;
@@ -773,7 +773,7 @@ class Nation {
     this.MediumShipImprovements = 0;
     this.HeavyShipImprovements = 0;
 
-    this.MerchantShips = 15;
+    this.MerchantShips = 10;
     this.LightShips = 0;
     this.MediumShips = 0;
     this.HeavyShips = 0;

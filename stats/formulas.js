@@ -212,7 +212,9 @@ static evaluateNation(nationName) {
     n.Climates.Mountainous.Pixels * 1 +
     n.Climates.Desert.Pixels * 0.05 +
     n.Climates.CoastalDesert.Pixels * 0.2
-  ) / 2750 * n.MiningEfficiency * n.Technologies.IronWorking;
+    ) / 2750 * n.MiningEfficiency * n.Technologies.IronWorking;
+
+    n.BaseIronHarvest = min(n.BaseIronHarvest, n.Population * 0.03 / 20000);
 
   n.BaseCoalHarvest = (
     n.Climates.TaigaAndTundra.Pixels * 0.1 +
@@ -227,7 +229,9 @@ static evaluateNation(nationName) {
     n.Climates.Mountainous.Pixels * 1 +
     n.Climates.Desert.Pixels * 0.05 +
     n.Climates.CoastalDesert.Pixels * 0.2
-  ) / 2250 * n.MiningEfficiency * (n.Technologies.IronWorking ? 1 : 0.5);
+    ) / 2250 * n.MiningEfficiency * (n.Technologies.IronWorking ? 1 : 0.5);
+
+    n.BaseCoalHarvest = min(n.BaseCoalHarvest, n.Population * 0.03 / 20000);
 
   n.BaseSulphurHarvest = (
     n.Climates.TaigaAndTundra.Pixels * 0.1 +
@@ -242,7 +246,9 @@ static evaluateNation(nationName) {
     n.Climates.Mountainous.Pixels * 1 +
     n.Climates.Desert.Pixels * 0.05 +
     n.Climates.CoastalDesert.Pixels * 0.2
-  ) / 1750 * n.MiningEfficiency * (n.Technologies.IronWorking ? 1 : 0.5);
+    ) / 1750 * n.MiningEfficiency * (n.Technologies.IronWorking ? 1 : 0.5);
+
+    n.BaseSulphurHarvest = min(n.BaseSulphurHarvest, n.Population * 0.02 / 20000);
 
     n.CoastalPopulationPercent = n.coastalPopulation / n.Population;
 
