@@ -168,7 +168,8 @@ static evaluateNation(nationName) {
     0 + n.Population / 1000000 + n.Health * 2 + n.Education * 2 + n.SocialSpending * 4 + n.PropagandaReal * 2 + n.PopulationControlReal * 2 + n.BirthControl * 4 +
     (n.AristocracyTax + n.ClergyTax + n.BurgousieTax + n.UrbanTax + n.BureaucratsTax + n.IntellectualsTax + n.WorkersTax + n.MilitaryTax) / 8 * 75 + n.OverallNumbers / 5000 + n.OverallShipCount / 25 + n.AgricultureSubsidies * 4 + (n.AgricultureInfrastructure - 1) * 4 + n.Size / 7500 +
     (n.ResearchSpending - 1) * 10 + (1 - n.CultureRepresentedAtGovernmentLevelPercent) * 10 + (n.Population / 1000 * n.Workforces.Townsfolk / 20) * n.ProductionGovernmentControl + n.ResourcesAdmDemand + n.AgricultureAdmDemand
-  );
+    );
+    
   n.AdministrativeStrain = max(0, n.AdministrativeDemand - n.AdministrativePower);
   n.Absolutism = n.GovernmentRepresentation.UnitaryRepresentation / 10;
   n.Corruption = ((n.Stability < 1 ? 0.5 : 0) + (n.Stability < -1 ? 0.5 : 0) + n.AdministrativeStrain / n.AdministrativePower * 10 + n.Absolutism / 2.5) * (n.GovernmentDominatedBy == "Burgousie" || n.GovernmentDominatedBy == "Aristocracy" ? 1.2 : 1);
@@ -1180,7 +1181,7 @@ static evaluateNation(nationName) {
   n.SoldiersEffectiveWage = n.SoldiersWage * (1 - n.MilitaryTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.MilitaryInfluence)) + (n.ExpectedSoldiersSol < n.AverageExpectedSol ? n.SocialSpending / 10 : 0);
   n.AristocracyEffectiveWage = n.AristocracyWage * (1 - n.AristocracyTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.AristocracyInfluence)) + (n.ExpectedAristocracySol < n.AverageExpectedSol ? n.SocialSpending / 10 : 0) - (n.AristocracyBasicArmaments * n.BasicArmamentsValue) / (n.Population * n.Workforces.Aristocracy / 1000);
   n.BurgousieEffectiveWage = n.BurgousieWage * (1 - n.BurgousieTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.BurgousieInfluence)) + (n.ExpectedBurgousieSol < n.AverageExpectedSol ? n.SocialSpending / 10 : 0) - (n.BurgousieBasicArmaments * n.BasicArmamentsValue) / (n.Population * n.Workforces.Burgousie / 1000);
-
+  
   // n.SocialSpendingUpkeep
   n.SocialSpendingUpkeep = 0;
   for (const EstateIndex in gameStats.Estates) {
@@ -1278,10 +1279,10 @@ static evaluateNation(nationName) {
 
   // Loyalties
   for (const EstateIndex in gameStats.EstatesGeneral) {
-    const Estate = gameStats.EstatesGeneral[EstateIndex];
-      n[Estate + "Loyalty"] = (n[Estate + "Sol"] / n["Expected" + Estate + "Sol"]) / 2 - (n[Estate + "Sol"] < n.AverageSol * n.AverageSolMods[Estate] ? ((n.AverageSol * n.AverageSolMods[Estate]) / n[Estate + "Sol"] - 1) / 4 : 0) + (n.GovernmentRepresentation[Estate + "Representation"] / 100 - max(n.EstateInfluencesReal[Estate + "Influence"] * 0.9, n.EstateNumbers[Estate] * n[Estate + "PoliticalAwareness"] * 0.9)) + n.InfluenceChangeLoyaltyEffect[Estate];
+      const Estate = gameStats.EstatesGeneral[EstateIndex];
+      n[Estate + "Loyalty"] = (n[Estate + "Sol"] / n["Expected" + Estate + "Sol"]) / 2 - (n[Estate + "Sol"] < n.AverageSol * n.AverageSolMods[Estate] ? ((n.AverageSol * n.AverageSolMods[Estate]) / n[Estate + "Sol"] - 1) / 4 : 0) + (n.GovernmentRepresentation[Estate + "Representation"] / 100 - max(n.EstateInfluencesReal[Estate + "Influence"] * 0.9, n.EstateNumbers[Estate] * n[Estate + "PoliticalAwareness"] * 0.9)) + n.InfluenceChangeLoyaltyEffect[Estate] - (n[Estate + "Tax"] > n.AverageTax ? n[Estate + "Tax"] / n.AverageTax / 25 : 0);
   }
-
+ 
   n.AristocracyLoyalty += n.CulturalAdvancements.NobleDuty * 0.05;
 
     n.MilitaryLoyalty = n.MilitaryControlReal.Aristocracy * n.AristocracyLoyalty + n.MilitaryControlReal.Clergy * n.ClergyLoyalty + n.MilitaryControlReal.Burgousie * n.BurgousieLoyalty + n.MilitaryControlReal.Urban * n.UrbanLoyalty + n.MilitaryControlReal.Bureaucrats * n.BureaucratsLoyalty + n.MilitaryControlReal.Workers * n.WorkersLoyalty + n.MilitaryControlReal.Independent * n.MilitaryLoyalty;
