@@ -10,11 +10,13 @@
 <
 = "Persian" cultrep
 = "Shia" relrep
+> religiongroups
+=0 pagan
 
 <... > Nations
 +> Bavaria
 > Bavaria
-= "https://en.wikipedia.org/wiki/Flag_of_Bavaria#/media/File:Flag_of_Bavaria_(lozengy).svg" Flag
+= "https://en.wikipedia.org/wiki/Flag_of_Bavaria/media/File:Flag_of_Bavaria_(lozengy).svg" Flag
 = "6BDAFF" color
 > CultureGroups
 +> Germanic
@@ -22,6 +24,8 @@
 <
 = "Germanic" cultrep
 = "Catholic" relrep
+> religiongroups
+=0 pagan
 
 <... > Nations
 +> SeleucidEmpire
@@ -29,11 +33,13 @@
 = "https://media.discordapp.net/attachments/1122502700492398662/1122877447201886228/seleucid_flag.PNG?width=1628&height=1230" Flag
 = "FAFFA3" color
 > CultureGroups
-+> Persian
-=100 Persian
++> Arab
+=100 Arab
 <
-= "Persian" cultrep
+= "Arab" cultrep
 = "Sunni" relrep
+> religiongroups
+=0 pagan
 
 <... > Nations
 +> MapucheConfederation
@@ -70,22 +76,21 @@
 =0 researchpoints
 =0.01 ExpectedSlavesSol
 =0.05 ExpectedLabourersSol
-=0.15 ExpectedSerfsSol
+=0.1 ExpectedSerfsSol
 =0.02 ExpectedUnemployedSol
 =0.25 ExpectedFarmersSol
-=1.25 ExpectedTownsfolkSol
+=1.00 ExpectedTownsfolkSol
 =4.50 ExpectedClergySol
 =1.00 ExpectedBureaucratsSol
-=0.40 ExpectedMerchantsSol
+=0.30 ExpectedMerchantsSol
 =0.75 ExpectedIntellectualsSol
 =0.5 ExpectedSailorsSol
 =0.75 ExpectedSoldiersSol
-=7.50 ExpectedAristocracySol
+=6.50 ExpectedAristocracySol
 =5.00 ExpectedBurgousieSol
 =0 merchantships
 =2 BureaucratsWages
 =0.25 SocialSpending
-=7.0 ExpectedAristocracySol
 
 <... > Nations
 +> KingdomOfLaos
@@ -98,6 +103,8 @@
 <
 = "SouthChinese" cultrep
 = "Buddhism" relrep
+> religiongroups
+=0 pagan
 
 <... > Cultures
 +> Nanyang
@@ -114,6 +121,8 @@
 <
 = "Nanyang" cultrep
 = "Confucian" relrep
+> religiongroups
+=0 pagan
 
 <... > Nations
 +> BojacaConfederation
@@ -150,22 +159,21 @@
 =0 researchpoints
 =0.01 ExpectedSlavesSol
 =0.05 ExpectedLabourersSol
-=0.15 ExpectedSerfsSol
-=0.02 ExpectedUnemployedSol
-=0.25 ExpectedFarmersSol
+=0.1 ExpectedSerfsSol
+=0.01 ExpectedUnemployedSol
+=0.2 ExpectedFarmersSol
 =1.25 ExpectedTownsfolkSol
-=4.50 ExpectedClergySol
+=4.00 ExpectedClergySol
 =1.00 ExpectedBureaucratsSol
-=0.40 ExpectedMerchantsSol
-=0.75 ExpectedIntellectualsSol
+=0.25 ExpectedMerchantsSol
+=0.5 ExpectedIntellectualsSol
 =0.5 ExpectedSailorsSol
 =0.75 ExpectedSoldiersSol
-=7.50 ExpectedAristocracySol
-=5.00 ExpectedBurgousieSol
+=5.00 ExpectedAristocracySol
+=4.00 ExpectedBurgousieSol
 =0 merchantships
 =2 BureaucratsWages
 =0.25 SocialSpending
-=7.0 ExpectedAristocracySol
 
 <... > Nations
 +> CelticEmpire
@@ -214,7 +222,7 @@
 =0 researchpoints
 =0.01 ExpectedSlavesSol
 =0.05 ExpectedLabourersSol
-=0.15 ExpectedSerfsSol
+=0.1 ExpectedSerfsSol
 =0.02 ExpectedUnemployedSol
 =0.25 ExpectedFarmersSol
 =1.25 ExpectedTownsfolkSol
@@ -224,12 +232,12 @@
 =0.75 ExpectedIntellectualsSol
 =0.5 ExpectedSailorsSol
 =0.75 ExpectedSoldiersSol
-=7.50 ExpectedAristocracySol
+=6.50 ExpectedAristocracySol
 =5.00 ExpectedBurgousieSol
 =0 merchantships
 =2 BureaucratsWages
 =0.25 SocialSpending
-=7.0 ExpectedAristocracySol
+=0.75 administration size
 
 <... > Nations
 !suppress 99999
@@ -1088,7 +1096,7 @@
 = 1.70 KingdomOfLaos.MaxCopper
 = 0.90 BojacaConfederation.MaxCopper
 = 2.00 Sugbo.MaxCopper
-= 0.15 AbbulKamil.MaxDiamonds
+= 0.15 AbbulKamil.MaxDiamond
 = 2.00 CrownOfSweden.MaxSilver
 = 0.95 DynastyOfUsia.MaxSilver
 = 2.00 RegencyOfValencia.MaxSilver
