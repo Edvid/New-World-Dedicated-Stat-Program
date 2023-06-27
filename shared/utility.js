@@ -1446,19 +1446,19 @@ async function prepareData(path, progressTextElement){
     }
 
     let bigdata = await ctx.getImageData(0, 0, BIGWIDTH, BIGHEIGHT).data;
-    let realdata = new Uint8ClampedArray(WIDTH * HEIGHT);
+    let realdata = new Uint8ClampedArray(WIDTH * HEIGHT * 4);
 
     //work on bigdata
-    for (let y = 0; y < WIDTH; y++) {
-        for (let x = 0; x < HEIGHT; x++) {
+    for (let y = 0; y < HEIGHT; y++) {
+        for (let x = 0; x < WIDTH; x++) {
             let realPixelIndex = x + y*WIDTH;
             let bigPixelIndex = x*3 + 1 + (y*3+1)*BIGWIDTH;
 
 
-            realdata[realPixelIndex*4] = 255/*bigdata[realPixelIndex*4];*/
-            realdata[realPixelIndex*4 + 1] = 0/*bigdata[realPixelIndex*4 + 1];*/
-            realdata[realPixelIndex*4 + 2] = 255/*bigdata[realPixelIndex*4 + 2];*/
-            realdata[realPixelIndex*4 + 3] = 255/*bigdata[realPixelIndex*4 + 3]*/;
+            realdata[realPixelIndex*4] = bigdata[bigPixelIndex*4];
+            realdata[realPixelIndex*4 + 1] = bigdata[bigPixelIndex*4 + 1];
+            realdata[realPixelIndex*4 + 2] = bigdata[bigPixelIndex*4 + 2];
+            realdata[realPixelIndex*4 + 3] = bigdata[bigPixelIndex*4 + 3];
         }      
     }
     return realdata;
