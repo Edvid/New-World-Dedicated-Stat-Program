@@ -6,7 +6,7 @@ let mappedResources = [
   "Sulphur",
   "Coal",
   "Copper",
-  "Diamonds",
+  "Diamond",
   "Silver"
 ];
 
@@ -19,7 +19,7 @@ let mappedResourcesMultipliers = [
   //x2
   2, //coal
   2, //copper
-  2, //diamonds
+  2, //diamond
   2 //silver
 ];
 
