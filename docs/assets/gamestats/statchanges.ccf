@@ -1,1 +1,232 @@
 
+<... > Nations
++> QuasimidEmirate
+> QuasimidEmirate
+= "https://en.m.wikipedia.org/wiki/File:Safavid_Flag.svg" Flag
+= "1B7C28" color
+> CultureGroups
++> Persian
+=100 Persian
+<
+= "Persian" cultrep
+= "Shia" relrep
+
+<... > Nations
++> Bavaria
+> Bavaria
+= "https://en.wikipedia.org/wiki/Flag_of_Bavaria#/media/File:Flag_of_Bavaria_(lozengy).svg" Flag
+= "6BDAFF" color
+> CultureGroups
++> Germanic
+=100 Germanic
+<
+= "Germanic" cultrep
+= "Catholic" relrep
+
+<... > Nations
++> SeleucidEmpire
+> SeleucidEmpire
+= "https://media.discordapp.net/attachments/1122502700492398662/1122877447201886228/seleucid_flag.PNG?width=1628&height=1230" Flag
+= "FAFFA3" color
+> CultureGroups
++> Persian
+=100 Persian
+<
+= "Persian" cultrep
+= "Sunni" relrep
+
+<... > Nations
++> MapucheConfederation
+> MapucheConfederation
+= "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Ancient_mapuche_flag.svg/1280px-Ancient_mapuche_flag.svg.png" Flag
+= "617C45" color
+> CultureGroups
++> Puelche
+=100 Puelche
+<
+= "Puelche" cultrep
+= "Pagan" relrep
+="false" Technologies.IronWorking
+="false" Technologies.Wheel
+="false" Technologies.Paper
+="false" Technologies.Gunpowder
+="false" Technologies.VerticalLoom
+="false" Technologies.SaddleAndStirrup
+="false" Technologies.HorseCollar
+="false" Technologies.Explosives
+="false" Technologies.Firelance
+="false" Technologies.Cranes
+="false" Technologies.PromissoryNotes
+="false" Technologies.Bombards
+="false" Technologies.HandCannons
+="false" Technologies.PlateArmour
+="false" Technologies.SappersAndEngineers
+="false" Technologies.Workshops
+="false" Technologies.StandardizedPikes
+="false" CulturalAdvancements.Currency
+="false" CulturalAdvancements.Universities
+="false" CulturalAdvancements.Courthouses
+=4 isolation
+=0 researchpoints
+=0.01 ExpectedSlavesSol
+=0.05 ExpectedLabourersSol
+=0.15 ExpectedSerfsSol
+=0.02 ExpectedUnemployedSol
+=0.25 ExpectedFarmersSol
+=1.25 ExpectedTownsfolkSol
+=4.50 ExpectedClergySol
+=1.00 ExpectedBureaucratsSol
+=0.40 ExpectedMerchantsSol
+=0.75 ExpectedIntellectualsSol
+=0.5 ExpectedSailorsSol
+=0.75 ExpectedSoldiersSol
+=7.50 ExpectedAristocracySol
+=5.00 ExpectedBurgousieSol
+=0 merchantships
+=2 BureaucratsWages
+=0.25 SocialSpending
+=7.0 ExpectedAristocracySol
+
+<... > Nations
++> KingdomOfLaos
+> KingdomOfLaos
+= "https://images.app.goo.gl/UazptdHc8gHG6Gi66" Flag
+= "63B9FF" color
+> CultureGroups
++> SouthChinese
+=100 SouthChinese
+<
+= "SouthChinese" cultrep
+= "Buddhism" relrep
+
+<... > Cultures
++> Nanyang
+="F8A0FF" Nanyang.color
+
+<... > Nations
++> NanyangDynasty
+> NanyangDynasty
+= "" Flag
+= "F8A0FF" color
+> CultureGroups
++> Nanyang
+=100 Nanyang
+<
+= "Nanyang" cultrep
+= "Confucian" relrep
+
+<... > Nations
++> BojacaConfederation
+> BojacaConfederation
+= "https://cdn.discordapp.com/attachments/763572190070571060/1123139982761144381/FzLUQoWXsAAJm57.png" Flag
+= "316F7C" color
+> CultureGroups
++> Chibcha
+=100 Chibcha
+<
+= "Chibcha" cultrep
+= "Pagan" relrep
+="false" Technologies.IronWorking
+="false" Technologies.Wheel
+="false" Technologies.Paper
+="false" Technologies.Gunpowder
+="false" Technologies.VerticalLoom
+="false" Technologies.SaddleAndStirrup
+="false" Technologies.HorseCollar
+="false" Technologies.Explosives
+="false" Technologies.Firelance
+="false" Technologies.Cranes
+="false" Technologies.PromissoryNotes
+="false" Technologies.Bombards
+="false" Technologies.HandCannons
+="false" Technologies.PlateArmour
+="false" Technologies.SappersAndEngineers
+="false" Technologies.Workshops
+="false" Technologies.StandardizedPikes
+="false" CulturalAdvancements.Currency
+="false" CulturalAdvancements.Universities
+="false" CulturalAdvancements.Courthouses
+=4 isolation
+=0 researchpoints
+=0.01 ExpectedSlavesSol
+=0.05 ExpectedLabourersSol
+=0.15 ExpectedSerfsSol
+=0.02 ExpectedUnemployedSol
+=0.25 ExpectedFarmersSol
+=1.25 ExpectedTownsfolkSol
+=4.50 ExpectedClergySol
+=1.00 ExpectedBureaucratsSol
+=0.40 ExpectedMerchantsSol
+=0.75 ExpectedIntellectualsSol
+=0.5 ExpectedSailorsSol
+=0.75 ExpectedSoldiersSol
+=7.50 ExpectedAristocracySol
+=5.00 ExpectedBurgousieSol
+=0 merchantships
+=2 BureaucratsWages
+=0.25 SocialSpending
+=7.0 ExpectedAristocracySol
+
+<... > Nations
++> CelticEmpire
+> CelticEmpire
+= "" Flag
+= "44FF47" color
+> CultureGroups
++> Celtic
+=100 Celtic
+<
+= "Celtic" cultrep
+= "Pagan" relrep
+
+<... > Nations
++> AbbulKamil
+> AbbulKamil
+= "https://external-preview.redd.it/kQ2bi2VC83FOPyoUc_5FFug50hIi52_rElsjuG-4x_4.png?auto=webp&s=3fafc4799355c1ca1d5843aa7629b17bf30812af" Flag
+= "527C34" color
+> CultureGroups
++> Akan
+=100 Akan
+<
+= "Akan" cultrep
+= "Pagan" relrep
+="false" Technologies.IronWorking
+="false" Technologies.Wheel
+="false" Technologies.Paper
+="false" Technologies.Gunpowder
+="false" Technologies.VerticalLoom
+="false" Technologies.SaddleAndStirrup
+="false" Technologies.HorseCollar
+="false" Technologies.Explosives
+="false" Technologies.Firelance
+="false" Technologies.Cranes
+="false" Technologies.PromissoryNotes
+="false" Technologies.Bombards
+="false" Technologies.HandCannons
+="false" Technologies.PlateArmour
+="false" Technologies.SappersAndEngineers
+="false" Technologies.Workshops
+="false" Technologies.StandardizedPikes
+="false" CulturalAdvancements.Currency
+="false" CulturalAdvancements.Universities
+="false" CulturalAdvancements.Courthouses
+=4 isolation
+=0 researchpoints
+=0.01 ExpectedSlavesSol
+=0.05 ExpectedLabourersSol
+=0.15 ExpectedSerfsSol
+=0.02 ExpectedUnemployedSol
+=0.25 ExpectedFarmersSol
+=1.25 ExpectedTownsfolkSol
+=4.50 ExpectedClergySol
+=1.00 ExpectedBureaucratsSol
+=0.40 ExpectedMerchantsSol
+=0.75 ExpectedIntellectualsSol
+=0.5 ExpectedSailorsSol
+=0.75 ExpectedSoldiersSol
+=7.50 ExpectedAristocracySol
+=5.00 ExpectedBurgousieSol
+=0 merchantships
+=2 BureaucratsWages
+=0.25 SocialSpending
+=7.0 ExpectedAristocracySol
