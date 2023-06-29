@@ -1351,7 +1351,7 @@ static evaluateNation(nationName) {
     n.TaxRevenue = (n.LabourersTaxes + n.SerfsTaxes + n.FarmersTaxes + n.TownsfolkTaxes + n.ClergyTaxes + n.BureaucratsTaxes + n.MerchantsTaxes + n.IntellectualsTaxes + n.SailorsTaxes + n.SoldiersTaxes + n.AristocracyTaxes + n.BurgousieTaxes) / gameStats.TimeDivide;
     n.TariffsRevenue = (n.InternalTrade * n.InternalTariffs + n.ExternalTrade * n.ExternalTariffs) * n.TariffEfficiency / gameStats.TimeDivide;
 
-  n.SpyUpkeep = n.Spies / 200 * n.SpyQuality / gameStats.TimeDivide;
+  n.SpyUpkeep = n.Spies / 10 * n.SpyQuality / gameStats.TimeDivide;
   n.HealthUpkeep = n.Health * n.Population / 2000000 / gameStats.TimeDivide;
   n.EducationUpkeep = n.Education * n.Population / 500000 * (1.1 - n.AdministrativeEfficiency / 100) * 6 / gameStats.TimeDivide;
   n.PropagandaUpkeep = n.PropagandaReal * (100 - n.AdministrativeEfficiency) / 100 * n.Population / 1000000 / gameStats.TimeDivide;
