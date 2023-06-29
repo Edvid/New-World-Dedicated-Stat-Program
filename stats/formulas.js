@@ -576,7 +576,7 @@ static evaluateNation(nationName) {
     const resourceDemand = n[resource + "Demand"];
     const effectiveResource = n["Effective" + resource];
     const resourceBaseValue = n[resource + "BaseValue"];
-    n[resource + "Value"] = resourceDemand / (isNaN(effectiveResource) ? 1 : (effectiveResource == 0 ? 1 : effectiveResource)) * resourceBaseValue;
+      n[resource + "Value"] = resourceDemand / (isNaN(effectiveResource) ? 1 : (effectiveResource == 0 ? 1 : (effectiveResource + Math.sqrt(effectiveResource)))) * resourceBaseValue;
     
   }
 
@@ -1267,8 +1267,8 @@ static evaluateNation(nationName) {
     n.BureaucratsPoliticalAwareness = 1 - n.Alcoholism * (1 - n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100) / 2;
 
   n.AverageSolMods = {
-    Workers: 0.5,
-    Urban: 2,
+    Workers: 0.3,
+    Urban: 1.75,
     Clergy: 5,
     Bureaucrats: 2,
     Intellectuals: 1.5,
@@ -1281,6 +1281,7 @@ static evaluateNation(nationName) {
   for (const EstateIndex in gameStats.EstatesGeneral) {
       const Estate = gameStats.EstatesGeneral[EstateIndex];
       n[Estate + "Loyalty"] = (n[Estate + "Sol"] / n["Expected" + Estate + "Sol"]) / 2 - (n[Estate + "Sol"] < n.AverageSol * n.AverageSolMods[Estate] ? ((n.AverageSol * n.AverageSolMods[Estate]) / n[Estate + "Sol"] - 1) / 4 : 0) + (n.GovernmentRepresentation[Estate + "Representation"] / 100 - max(n.EstateInfluencesReal[Estate + "Influence"] * 0.9, n.EstateNumbers[Estate] * n[Estate + "PoliticalAwareness"] * 0.9)) + n.InfluenceChangeLoyaltyEffect[Estate] - (n[Estate + "Tax"] > n.AverageTax ? n[Estate + "Tax"] / n.AverageTax / 25 : 0);
+      n[Estate + "Loyalty"] = clamp(0, 1, n[Estate + "Loyalty"]);
   }
  
   n.AristocracyLoyalty += n.CulturalAdvancements.NobleDuty * 0.05;
@@ -1323,10 +1324,10 @@ static evaluateNation(nationName) {
       const Estate = gameStats.EstatesGeneral[EstateIndex];
       n.LoyaltiesStabilityImpact += (n[Estate + "Loyalty"] - 0.5) * (1 + n.EstateNumbers[Estate] * (n[Estate + "PoliticalAwareness"] + 0.5) + n.EstateInfluencesReal[Estate + "Influence"] * 4) * 5;
     }
+    n.LoyaltiesStabilityImpact = n.LoyaltiesStabilityImpact * 0.6;
 
-
-  n.Stability = n.PopulationHappiness + n.AdministrativeEfficiency / 10 - n.Overextension - n.CulturalDisunity - n.ReligiousDisunity + (n.PropagandaReal * 0.5 * (1 + n.CulturalAdvancements.Newspapers * n.LiteracyPercent / 50)) + n.PopulationControlReal * 1.5 + n.PopulationStabilityImpact + WarStabilityModifier * 7.5 + n.LoyaltiesStabilityImpact - (n.Workforces.Slaves * 10);
-
+    n.Stability = n.PopulationHappiness + n.AdministrativeEfficiency / 10 - n.Overextension - n.CulturalDisunity - n.ReligiousDisunity + (n.PropagandaReal * 0.5 * (1 + n.CulturalAdvancements.Newspapers * n.LiteracyPercent / 50)) + n.PopulationControlReal * 1.5 + n.PopulationStabilityImpact + WarStabilityModifier * 7.5 + n.LoyaltiesStabilityImpact - (n.Workforces.Slaves * 10);
+    if (n.Stability < -4) debugger;
   let PopulationGrowthModifier = n.FoodPopulationBoost + n.Prosperity / 10 + n.Stability / 100 + n.UnderPopulation;
 
   n.PseudoPopulationGrowth = (n.FutureFood < 0 ? n.FutureFood * 1000 / n.Population : (0.1 + PopulationGrowthModifier) - n.BirthControl / 20) / gameStats.TimeDivide;
