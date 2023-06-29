@@ -26,7 +26,7 @@ function syncNation(nationName) {
     gameStats.Nations[nationName].HeavyArmamentsStockpiled = max(0, gameStats.Nations[nationName].HeavyArmamentsStockpiled);
 
     // Expected Weapons for private militaries
-    gameStats.Nations[nationName].ExpectedPrivateBasicArmaments = n.AristocracyBasicArmaments + n.BurgousieBasicArmaments + n.ClergyBasicArmaments + n.PopulaceBasicArmaments;
+    gameStats.Nations[nationName].ExpectedPrivateBasicArmaments = gameStats.Nations[nationName].AristocracyBasicArmaments + gameStats.Nations[nationName].BurgousieBasicArmaments + gameStats.Nations[nationName].ClergyBasicArmaments + gameStats.Nations[nationName].PopulaceBasicArmaments;
 
     // Alcoholism
     if (gameStats.Nations[nationName].EffectiveAlcohol > gameStats.Nations[nationName].AlcoholDemand * 0.75) {
