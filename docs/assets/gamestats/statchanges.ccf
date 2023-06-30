@@ -1,0 +1,467 @@
+
+<... > Nations
++> HaidaNation
+> HaidaNation
+= "https://en.wikipedia.org/wiki/Haida_people#/media/File:Flag_of_Haida.svg" Flag
+= "7B56FF" color
+> CultureGroups
++> Haida
+=100 Haida
+<
+= "Haida" cultrep
+= "Pagan" relrep
+="false" Technologies.IronWorking
+="false" Technologies.Wheel
+="false" Technologies.Paper
+="false" Technologies.Gunpowder
+="false" Technologies.VerticalLoom
+="false" Technologies.SaddleAndStirrup
+="false" Technologies.HorseCollar
+="false" Technologies.Explosives
+="false" Technologies.Firelance
+="false" Technologies.Cranes
+="false" Technologies.PromissoryNotes
+="false" Technologies.Bombards
+="false" Technologies.HandCannons
+="false" Technologies.PlateArmour
+="false" Technologies.SappersAndEngineers
+="false" Technologies.Workshops
+="false" Technologies.StandardizedPikes
+="false" CulturalAdvancements.Currency
+="false" CulturalAdvancements.Universities
+="false" CulturalAdvancements.Courthouses
+=4 isolation
+=0 researchpoints
+=0.01 ExpectedSlavesSol
+=0.05 ExpectedLabourersSol
+=0.1 ExpectedSerfsSol
+=0.02 ExpectedUnemployedSol
+=0.25 ExpectedFarmersSol
+=1.00 ExpectedTownsfolkSol
+=6.00 ExpectedClergySol
+=1.00 ExpectedBureaucratsSol
+=0.30 ExpectedMerchantsSol
+=0.75 ExpectedIntellectualsSol
+=0.5 ExpectedSailorsSol
+=0.75 ExpectedSoldiersSol
+=10 ExpectedAristocracySol
+=5.00 ExpectedBurgousieSol
+=0 merchantships
+=2 BureaucratsWages
+=0.25 SocialSpending
+
+<... > Nations
++> TainoKingdoms
+> TainoKingdoms
+= "" Flag
+= "7C492B" color
+> CultureGroups
++> Taino
+=100 Taino
+<
+= "Taino" cultrep
+= "Pagan" relrep
+="false" Technologies.IronWorking
+="false" Technologies.Wheel
+="false" Technologies.Paper
+="false" Technologies.Gunpowder
+="false" Technologies.VerticalLoom
+="false" Technologies.SaddleAndStirrup
+="false" Technologies.HorseCollar
+="false" Technologies.Explosives
+="false" Technologies.Firelance
+="false" Technologies.Cranes
+="false" Technologies.PromissoryNotes
+="false" Technologies.Bombards
+="false" Technologies.HandCannons
+="false" Technologies.PlateArmour
+="false" Technologies.SappersAndEngineers
+="false" Technologies.Workshops
+="false" Technologies.StandardizedPikes
+="false" CulturalAdvancements.Currency
+="false" CulturalAdvancements.Universities
+="false" CulturalAdvancements.Courthouses
+=4 isolation
+=0 researchpoints
+=0.01 ExpectedSlavesSol
+=0.05 ExpectedLabourersSol
+=0.1 ExpectedSerfsSol
+=0.02 ExpectedUnemployedSol
+=0.25 ExpectedFarmersSol
+=1.00 ExpectedTownsfolkSol
+=6.00 ExpectedClergySol
+=1.00 ExpectedBureaucratsSol
+=0.30 ExpectedMerchantsSol
+=0.75 ExpectedIntellectualsSol
+=0.5 ExpectedSailorsSol
+=0.75 ExpectedSoldiersSol
+=10 ExpectedAristocracySol
+=5.00 ExpectedBurgousieSol
+=0 merchantships
+=2 BureaucratsWages
+=0.25 SocialSpending
+
+<... > Nations
++> AyyupidKurdistan
+> AyyupidKurdistan
+= "https://commons.m.wikimedia.org/wiki/File:Saladin%27s_Standard.svg" Flag
+= "157C23" color
+> ReligionGroups
+=0 pagan
++> Sunni
+=100 Sunni
+<
+> CultureGroups
++> Kurdish
+=100 Kurdish
+<
+= "Kurdish" cultrep
+= "Sunni" relrep
+
+<... > Nations
++> EmirateOfCarthage
+> EmirateOfCarthage
+= "https://i.redd.it/xayvobt506641.png" Flag
+= "FF5171" color
+> ReligionGroups
+=0 pagan
++> Sunni
+=100 Sunni
+<
+> CultureGroups
++> Tunisian
+=100 Tunisian
+<
+= "Tunisian" cultrep
+= "Sunni" relrep
+
+<... > Nations
++> OakConfederation
+> OakConfederation
+= "" Flag
+= "84FF8E" color
+> CultureGroups
++> Cherokee
+=100 Cherokee
+<
+= "Cherokee" cultrep
+= "pagan" relrep
+="false" Technologies.IronWorking
+="false" Technologies.Wheel
+="false" Technologies.Paper
+="false" Technologies.Gunpowder
+="false" Technologies.VerticalLoom
+="false" Technologies.SaddleAndStirrup
+="false" Technologies.HorseCollar
+="false" Technologies.Explosives
+="false" Technologies.Firelance
+="false" Technologies.Cranes
+="false" Technologies.PromissoryNotes
+="false" Technologies.Bombards
+="false" Technologies.HandCannons
+="false" Technologies.PlateArmour
+="false" Technologies.SappersAndEngineers
+="false" Technologies.Workshops
+="false" Technologies.StandardizedPikes
+="false" CulturalAdvancements.Currency
+="false" CulturalAdvancements.Universities
+="false" CulturalAdvancements.Courthouses
+=4 isolation
+=0 researchpoints
+=0.01 ExpectedSlavesSol
+=0.05 ExpectedLabourersSol
+=0.1 ExpectedSerfsSol
+=0.02 ExpectedUnemployedSol
+=0.25 ExpectedFarmersSol
+=1.00 ExpectedTownsfolkSol
+=6.00 ExpectedClergySol
+=1.00 ExpectedBureaucratsSol
+=0.30 ExpectedMerchantsSol
+=0.75 ExpectedIntellectualsSol
+=0.5 ExpectedSailorsSol
+=0.75 ExpectedSoldiersSol
+=10 ExpectedAristocracySol
+=5.00 ExpectedBurgousieSol
+=0 merchantships
+=2 BureaucratsWages
+=0.25 SocialSpending
+
+<... > Nations
++> AmaniTribes
+> AmaniTribes
+= "" Flag
+= "9EFFCC" color
+> CultureGroups
++> Arawak
+=100 Arawak
+<
+= "Arawak" cultrep
+= "pagan" relrep
+="false" Technologies.IronWorking
+="false" Technologies.Wheel
+="false" Technologies.Paper
+="false" Technologies.Gunpowder
+="false" Technologies.VerticalLoom
+="false" Technologies.SaddleAndStirrup
+="false" Technologies.HorseCollar
+="false" Technologies.Explosives
+="false" Technologies.Firelance
+="false" Technologies.Cranes
+="false" Technologies.PromissoryNotes
+="false" Technologies.Bombards
+="false" Technologies.HandCannons
+="false" Technologies.PlateArmour
+="false" Technologies.SappersAndEngineers
+="false" Technologies.Workshops
+="false" Technologies.StandardizedPikes
+="false" CulturalAdvancements.Currency
+="false" CulturalAdvancements.Universities
+="false" CulturalAdvancements.Courthouses
+=4 isolation
+=0 researchpoints
+=0.01 ExpectedSlavesSol
+=0.05 ExpectedLabourersSol
+=0.1 ExpectedSerfsSol
+=0.02 ExpectedUnemployedSol
+=0.25 ExpectedFarmersSol
+=1.00 ExpectedTownsfolkSol
+=6.00 ExpectedClergySol
+=1.00 ExpectedBureaucratsSol
+=0.30 ExpectedMerchantsSol
+=0.75 ExpectedIntellectualsSol
+=0.5 ExpectedSailorsSol
+=0.75 ExpectedSoldiersSol
+=10 ExpectedAristocracySol
+=5.00 ExpectedBurgousieSol
+=0 merchantships
+=2 BureaucratsWages
+=0.25 SocialSpending
+
+<... > Nations
++> EmpireOfChola
+> EmpireOfChola
+= "https://www.bing.com/images/search?view=detailV2&ccid=QohTunXJ&id=8E9DF94737344ACF8A554573184E6D69801F1E72&thid=OIP.QohTunXJzDJH0Hl3CeSEVwHaEK&mediaurl=https%3a%2f%2fchanakyaforum.com%2fwp-content%2fuploads%2f2022%2f05%2fSlide1-2.jpg&cdnurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.428853ba75c9cc3247d0797709e48457%3frik%3dch4fgGltThhzRQ%26pid%3dImgRaw%26r%3d0&exph=720&expw=1280&q=chola+empire+flag&simid=608025545520540245&FORM=IRPRST&ck=354076821F42E178C4C5CF553502D01C&selectedIndex=1&ajaxhist=0&ajaxserp=0" Flag
+= "FF975B" color
+> ReligionGroups
+=0 pagan
++> Hindu
+=100 Hindu
+<
+> CultureGroups
++> Deccan
+=100 Deccan
+<
+= "Deccan" cultrep
+= "Hindu" relrep
+
+<... > Nations
++> BoNi
+> BoNi
+= "https://media.discordapp.net/attachments/1121052525106319373/1123714883071004702/1920px-Lanfang_Republic_Reconstructed_Flag.png?width=926&height=617" Flag
+= "7C661C" color
+> ReligionGroups
+=0 pagan
++> Confucian
+=100 Confucian
+<
+> CultureGroups
++> Indonesian
+=100 Indonesian
+<
+= "Indonesian" cultrep
+= "Confucian" relrep
+
+<... > Nations
++> SultunateOfMogadishu
+> SultunateOfMogadishu
+= "https://upload.wikimedia.org/wikipedia/commons/0/04/Muzzaffar_%28Mogadishu_area%29_flag_according_to_1576_Portuguese_map.svg" Flag
+= "7797FF" color
+> ReligionGroups
+=0 pagan
++> Sunni
+=100 Sunni
+<
+> CultureGroups
++> Cushitic
+=100 Cushitic
+<
+= "Cushitic" cultrep
+= "Sunni" relrep
+
+<... > Nations
++> Pomo
+> Pomo
+= "https://www.pictorem.com/276449/Pomo%20Indian%20Flag.html" Flag
+= "FFDB89" color
+> CultureGroups
++> Pomo
+=100 Pomo
+<
+= "Pomo" cultrep
+= "pagan" relrep
+="false" Technologies.IronWorking
+="false" Technologies.Wheel
+="false" Technologies.Paper
+="false" Technologies.Gunpowder
+="false" Technologies.VerticalLoom
+="false" Technologies.SaddleAndStirrup
+="false" Technologies.HorseCollar
+="false" Technologies.Explosives
+="false" Technologies.Firelance
+="false" Technologies.Cranes
+="false" Technologies.PromissoryNotes
+="false" Technologies.Bombards
+="false" Technologies.HandCannons
+="false" Technologies.PlateArmour
+="false" Technologies.SappersAndEngineers
+="false" Technologies.Workshops
+="false" Technologies.StandardizedPikes
+="false" CulturalAdvancements.Currency
+="false" CulturalAdvancements.Universities
+="false" CulturalAdvancements.Courthouses
+=4 isolation
+=0 researchpoints
+=0.01 ExpectedSlavesSol
+=0.05 ExpectedLabourersSol
+=0.1 ExpectedSerfsSol
+=0.02 ExpectedUnemployedSol
+=0.25 ExpectedFarmersSol
+=1.00 ExpectedTownsfolkSol
+=6.00 ExpectedClergySol
+=1.00 ExpectedBureaucratsSol
+=0.30 ExpectedMerchantsSol
+=0.75 ExpectedIntellectualsSol
+=0.5 ExpectedSailorsSol
+=0.75 ExpectedSoldiersSol
+=10 ExpectedAristocracySol
+=5.00 ExpectedBurgousieSol
+=0 merchantships
+=2 BureaucratsWages
+=0.25 SocialSpending
+
+<... > Nations
++> Natchez
+> Natchez
+= "" Flag
+= "657C49" color
+> CultureGroups
++> natchez
+=100 natchez
+<
+= "natchez" cultrep
+= "pagan" relrep
+
+<... > Nations
++> Madagascar
+> Madagascar
+= "https://i.redd.it/5xx9f1yyszc71.jpg" Flag
+= "4B7C2E" color
+> CultureGroups
++> Malagasi
+=100 Malagasi
+<
+= "Malagasi" cultrep
+= "Pagan" relrep
+="false" Technologies.IronWorking
+="false" Technologies.Wheel
+="false" Technologies.Paper
+="false" Technologies.Gunpowder
+="false" Technologies.VerticalLoom
+="false" Technologies.SaddleAndStirrup
+="false" Technologies.HorseCollar
+="false" Technologies.Explosives
+="false" Technologies.Firelance
+="false" Technologies.Cranes
+="false" Technologies.PromissoryNotes
+="false" Technologies.Bombards
+="false" Technologies.HandCannons
+="false" Technologies.PlateArmour
+="false" Technologies.SappersAndEngineers
+="false" Technologies.Workshops
+="false" Technologies.StandardizedPikes
+="false" CulturalAdvancements.Currency
+="false" CulturalAdvancements.Universities
+="false" CulturalAdvancements.Courthouses
+=4 isolation
+=0 researchpoints
+=0.01 ExpectedSlavesSol
+=0.05 ExpectedLabourersSol
+=0.1 ExpectedSerfsSol
+=0.02 ExpectedUnemployedSol
+=0.25 ExpectedFarmersSol
+=1.00 ExpectedTownsfolkSol
+=6.00 ExpectedClergySol
+=1.00 ExpectedBureaucratsSol
+=0.30 ExpectedMerchantsSol
+=0.75 ExpectedIntellectualsSol
+=0.5 ExpectedSailorsSol
+=0.75 ExpectedSoldiersSol
+=10 ExpectedAristocracySol
+=5.00 ExpectedBurgousieSol
+=0 merchantships
+=2 BureaucratsWages
+=0.25 SocialSpending
+
+<... > Nations
++> MaliEmpire
+> MaliEmpire
+= "https://media.discordapp.net/attachments/1121059087761809428/1124007950491590746/IMG_3423.png" Flag
+= "7C1A1A" color
+> CultureGroups
++> Mandinka
+=100 Mandinka
+<
+= "Mandinka" cultrep
+= "pagan" relrep
+="false" Technologies.Gunpowder
+="false" Technologies.VerticalLoom
+="false" Technologies.SaddleAndStirrup
+="false" Technologies.HorseCollar
+="false" Technologies.Explosives
+="false" Technologies.Firelance
+="false" Technologies.Cranes
+="false" Technologies.PromissoryNotes
+="false" Technologies.Bombards
+="false" Technologies.HandCannons
+="false" Technologies.PlateArmour
+="false" Technologies.SappersAndEngineers
+="false" Technologies.Workshops
+="false" Technologies.StandardizedPikes
+="false" CulturalAdvancements.Universities
+="false" CulturalAdvancements.Courthouses
+=3 isolation
+=0 researchpoints
+=0.01 ExpectedSlavesSol
+=0.05 ExpectedLabourersSol
+=0.1 ExpectedSerfsSol
+=0.02 ExpectedUnemployedSol
+=0.25 ExpectedFarmersSol
+=1.00 ExpectedTownsfolkSol
+=6.00 ExpectedClergySol
+=1.00 ExpectedBureaucratsSol
+=0.30 ExpectedMerchantsSol
+=0.75 ExpectedIntellectualsSol
+=0.5 ExpectedSailorsSol
+=0.75 ExpectedSoldiersSol
+=10 ExpectedAristocracySol
+=5.00 ExpectedBurgousieSol
+=0 merchantships
+=2 BureaucratsWages
+=0.25 SocialSpending
+
+<... > Nations
++> OrderOfHashishin
+> OrderOfHashishin
+= "https://cdn.discordapp.com/attachments/869819548591861771/1124190878513238107/1200px-Shiite_Calligraphy_symbolising_Ali_as_Tiger_of_God.png" Flag
+= "DAFF7C" color
+> ReligionGroups
+=0 pagan
++> sunni
+=100 sunni
+<
+> CultureGroups
++> Caucasian
+=100 Caucasian
+<
+= "Caucasian" cultrep
+= "sunni" relrep
