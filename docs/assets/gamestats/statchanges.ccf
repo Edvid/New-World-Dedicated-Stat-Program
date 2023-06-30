@@ -1,0 +1,1868 @@
+
+!suppress 99999
+<... > Nations
++> Byrerwond
+> Byrerwond
+= "" Flag
+= "FFAD96" color
+> CultureGroups
++> Ottawa
+=100 Ottawa
+<
+= "Ottawa" cultrep
+= "Pagan" relrep
+="false" Technologies.IronWorking
+="false" Technologies.Wheel
+="false" Technologies.Paper
+="false" Technologies.Gunpowder
+="false" Technologies.VerticalLoom
+="false" Technologies.SaddleAndStirrup
+="false" Technologies.HorseCollar
+="false" Technologies.Explosives
+="false" Technologies.Firelance
+="false" Technologies.Cranes
+="false" Technologies.PromissoryNotes
+="false" Technologies.Bombards
+="false" Technologies.HandCannons
+="false" Technologies.PlateArmour
+="false" Technologies.SappersAndEngineers
+="false" Technologies.Workshops
+="false" Technologies.StandardizedPikes
+="false" CulturalAdvancements.Currency
+="false" CulturalAdvancements.Universities
+="false" CulturalAdvancements.Courthouses
+=4 isolation
+=0 researchpoints
+=0.01 ExpectedSlavesSol
+=0.05 ExpectedLabourersSol
+=0.1 ExpectedSerfsSol
+=0.02 ExpectedUnemployedSol
+=0.25 ExpectedFarmersSol
+=1.00 ExpectedTownsfolkSol
+=6.00 ExpectedClergySol
+=1.00 ExpectedBureaucratsSol
+=0.30 ExpectedMerchantsSol
+=0.75 ExpectedIntellectualsSol
+=0.5 ExpectedSailorsSol
+=0.75 ExpectedSoldiersSol
+=10 ExpectedAristocracySol
+=5.00 ExpectedBurgousieSol
+=0 merchantships
+=2 BureaucratsWages
+=0.25 SocialSpending
+
+<... > Nations
++> HaidaNation
+> HaidaNation
+= "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Flag_of_Haida.svg/1920px-Flag_of_Haida.svg.png" Flag
+= "7B56FF" color
+> CultureGroups
++> Haida
+=100 Haida
+<
+= "Haida" cultrep
+= "Pagan" relrep
+="false" Technologies.IronWorking
+="false" Technologies.Wheel
+="false" Technologies.Paper
+="false" Technologies.Gunpowder
+="false" Technologies.VerticalLoom
+="false" Technologies.SaddleAndStirrup
+="false" Technologies.HorseCollar
+="false" Technologies.Explosives
+="false" Technologies.Firelance
+="false" Technologies.Cranes
+="false" Technologies.PromissoryNotes
+="false" Technologies.Bombards
+="false" Technologies.HandCannons
+="false" Technologies.PlateArmour
+="false" Technologies.SappersAndEngineers
+="false" Technologies.Workshops
+="false" Technologies.StandardizedPikes
+="false" CulturalAdvancements.Currency
+="false" CulturalAdvancements.Universities
+="false" CulturalAdvancements.Courthouses
+=4 isolation
+=0 researchpoints
+=0.01 ExpectedSlavesSol
+=0.05 ExpectedLabourersSol
+=0.1 ExpectedSerfsSol
+=0.02 ExpectedUnemployedSol
+=0.25 ExpectedFarmersSol
+=1.00 ExpectedTownsfolkSol
+=6.00 ExpectedClergySol
+=1.00 ExpectedBureaucratsSol
+=0.30 ExpectedMerchantsSol
+=0.75 ExpectedIntellectualsSol
+=0.5 ExpectedSailorsSol
+=0.75 ExpectedSoldiersSol
+=10 ExpectedAristocracySol
+=5.00 ExpectedBurgousieSol
+=0 merchantships
+=2 BureaucratsWages
+=0.25 SocialSpending
+
+<... > Nations
++> TainoKingdoms
+> TainoKingdoms
+= "" Flag
+= "7C492B" color
+> CultureGroups
++> Taino
+=100 Taino
+<
+= "Taino" cultrep
+= "Pagan" relrep
+="false" Technologies.IronWorking
+="false" Technologies.Wheel
+="false" Technologies.Paper
+="false" Technologies.Gunpowder
+="false" Technologies.VerticalLoom
+="false" Technologies.SaddleAndStirrup
+="false" Technologies.HorseCollar
+="false" Technologies.Explosives
+="false" Technologies.Firelance
+="false" Technologies.Cranes
+="false" Technologies.PromissoryNotes
+="false" Technologies.Bombards
+="false" Technologies.HandCannons
+="false" Technologies.PlateArmour
+="false" Technologies.SappersAndEngineers
+="false" Technologies.Workshops
+="false" Technologies.StandardizedPikes
+="false" CulturalAdvancements.Currency
+="false" CulturalAdvancements.Universities
+="false" CulturalAdvancements.Courthouses
+=4 isolation
+=0 researchpoints
+=0.01 ExpectedSlavesSol
+=0.05 ExpectedLabourersSol
+=0.1 ExpectedSerfsSol
+=0.02 ExpectedUnemployedSol
+=0.25 ExpectedFarmersSol
+=1.00 ExpectedTownsfolkSol
+=6.00 ExpectedClergySol
+=1.00 ExpectedBureaucratsSol
+=0.30 ExpectedMerchantsSol
+=0.75 ExpectedIntellectualsSol
+=0.5 ExpectedSailorsSol
+=0.75 ExpectedSoldiersSol
+=10 ExpectedAristocracySol
+=5.00 ExpectedBurgousieSol
+=0 merchantships
+=2 BureaucratsWages
+=0.25 SocialSpending
+
+<... > Nations
++> EmirateOfCarthage
+> EmirateOfCarthage
+= "https://i.redd.it/xayvobt506641.png" Flag
+= "FF5171" color
+> ReligionGroups
+=0 pagan
++> Sunni
+=100 Sunni
+<
+> CultureGroups
++> Tunisian
+=100 Tunisian
+<
+= "Tunisian" cultrep
+= "Sunni" relrep
+
+<... > Nations
++> AmaniTribes
+> AmaniTribes
+= "" Flag
+= "9EFFCC" color
+> CultureGroups
++> Arawak
+=100 Arawak
+<
+= "Arawak" cultrep
+= "pagan" relrep
+="false" Technologies.IronWorking
+="false" Technologies.Wheel
+="false" Technologies.Paper
+="false" Technologies.Gunpowder
+="false" Technologies.VerticalLoom
+="false" Technologies.SaddleAndStirrup
+="false" Technologies.HorseCollar
+="false" Technologies.Explosives
+="false" Technologies.Firelance
+="false" Technologies.Cranes
+="false" Technologies.PromissoryNotes
+="false" Technologies.Bombards
+="false" Technologies.HandCannons
+="false" Technologies.PlateArmour
+="false" Technologies.SappersAndEngineers
+="false" Technologies.Workshops
+="false" Technologies.StandardizedPikes
+="false" CulturalAdvancements.Currency
+="false" CulturalAdvancements.Universities
+="false" CulturalAdvancements.Courthouses
+=4 isolation
+=0 researchpoints
+=0.01 ExpectedSlavesSol
+=0.05 ExpectedLabourersSol
+=0.1 ExpectedSerfsSol
+=0.02 ExpectedUnemployedSol
+=0.25 ExpectedFarmersSol
+=1.00 ExpectedTownsfolkSol
+=6.00 ExpectedClergySol
+=1.00 ExpectedBureaucratsSol
+=0.30 ExpectedMerchantsSol
+=0.75 ExpectedIntellectualsSol
+=0.5 ExpectedSailorsSol
+=0.75 ExpectedSoldiersSol
+=10 ExpectedAristocracySol
+=5.00 ExpectedBurgousieSol
+=0 merchantships
+=2 BureaucratsWages
+=0.25 SocialSpending
+
+<... > Nations
++> EmpireOfChola
+> EmpireOfChola
+= "https://www.bing.com/images/search?view=detailV2&ccid=QohTunXJ&id=8E9DF94737344ACF8A554573184E6D69801F1E72&thid=OIP.QohTunXJzDJH0Hl3CeSEVwHaEK&mediaurl=https%3a%2f%2fchanakyaforum.com%2fwp-content%2fuploads%2f2022%2f05%2fSlide1-2.jpg&cdnurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.428853ba75c9cc3247d0797709e48457%3frik%3dch4fgGltThhzRQ%26pid%3dImgRaw%26r%3d0&exph=720&expw=1280&q=chola+empire+flag&simid=608025545520540245&FORM=IRPRST&ck=354076821F42E178C4C5CF553502D01C&selectedIndex=1&ajaxhist=0&ajaxserp=0" Flag
+= "FF975B" color
+> ReligionGroups
+=0 pagan
++> Hindu
+=100 Hindu
+<
+> CultureGroups
++> Deccan
+=100 Deccan
+<
+= "Deccan" cultrep
+= "Hindu" relrep
+
+<... > Nations
++> BoNi
+> BoNi
+= "https://media.discordapp.net/attachments/1121052525106319373/1123714883071004702/1920px-Lanfang_Republic_Reconstructed_Flag.png?width=926&height=617" Flag
+= "7C661C" color
+> ReligionGroups
+=0 pagan
++> Confucianism
+=100 Confucianism
+<
+> CultureGroups
++> Indonesian
+=100 Indonesian
+<
+= "Indonesian" cultrep
+= "Confucianism" relrep
+
+<... > Nations
++> SultunateOfMogadishu
+> SultunateOfMogadishu
+= "https://upload.wikimedia.org/wikipedia/commons/0/04/Muzzaffar_%28Mogadishu_area%29_flag_according_to_1576_Portuguese_map.svg" Flag
+= "7797FF" color
+> ReligionGroups
+=0 pagan
++> Sunni
+=100 Sunni
+<
+> CultureGroups
++> Cushitic
+=100 Cushitic
+<
+= "Cushitic" cultrep
+= "Sunni" relrep
+
+<... > Nations
++> Pomo
+> Pomo
+= "https://www.pictorem.com/276449/Pomo%20Indian%20Flag.html" Flag
+= "FFDB89" color
+> CultureGroups
++> Pomo
+=100 Pomo
+<
+= "Pomo" cultrep
+= "pagan" relrep
+="false" Technologies.IronWorking
+="false" Technologies.Wheel
+="false" Technologies.Paper
+="false" Technologies.Gunpowder
+="false" Technologies.VerticalLoom
+="false" Technologies.SaddleAndStirrup
+="false" Technologies.HorseCollar
+="false" Technologies.Explosives
+="false" Technologies.Firelance
+="false" Technologies.Cranes
+="false" Technologies.PromissoryNotes
+="false" Technologies.Bombards
+="false" Technologies.HandCannons
+="false" Technologies.PlateArmour
+="false" Technologies.SappersAndEngineers
+="false" Technologies.Workshops
+="false" Technologies.StandardizedPikes
+="false" CulturalAdvancements.Currency
+="false" CulturalAdvancements.Universities
+="false" CulturalAdvancements.Courthouses
+=4 isolation
+=0 researchpoints
+=0.01 ExpectedSlavesSol
+=0.05 ExpectedLabourersSol
+=0.1 ExpectedSerfsSol
+=0.02 ExpectedUnemployedSol
+=0.25 ExpectedFarmersSol
+=1.00 ExpectedTownsfolkSol
+=6.00 ExpectedClergySol
+=1.00 ExpectedBureaucratsSol
+=0.30 ExpectedMerchantsSol
+=0.75 ExpectedIntellectualsSol
+=0.5 ExpectedSailorsSol
+=0.75 ExpectedSoldiersSol
+=10 ExpectedAristocracySol
+=5.00 ExpectedBurgousieSol
+=0 merchantships
+=2 BureaucratsWages
+=0.25 SocialSpending
+
+<... > Nations
++> Natchez
+> Natchez
+= "" Flag
+= "657C49" color
+> CultureGroups
++> natchez
+=100 natchez
+<
+= "natchez" cultrep
+= "pagan" relrep
+
+<... > Nations
++> Madagascar
+> Madagascar
+= "https://i.redd.it/5xx9f1yyszc71.jpg" Flag
+= "4B7C2E" color
+> CultureGroups
++> Malagasi
+=100 Malagasi
+<
+= "Malagasi" cultrep
+= "Pagan" relrep
+="false" Technologies.IronWorking
+="false" Technologies.Wheel
+="false" Technologies.Paper
+="false" Technologies.Gunpowder
+="false" Technologies.VerticalLoom
+="false" Technologies.SaddleAndStirrup
+="false" Technologies.HorseCollar
+="false" Technologies.Explosives
+="false" Technologies.Firelance
+="false" Technologies.Cranes
+="false" Technologies.PromissoryNotes
+="false" Technologies.Bombards
+="false" Technologies.HandCannons
+="false" Technologies.PlateArmour
+="false" Technologies.SappersAndEngineers
+="false" Technologies.Workshops
+="false" Technologies.StandardizedPikes
+="false" CulturalAdvancements.Currency
+="false" CulturalAdvancements.Universities
+="false" CulturalAdvancements.Courthouses
+=4 isolation
+=0 researchpoints
+=0.01 ExpectedSlavesSol
+=0.05 ExpectedLabourersSol
+=0.1 ExpectedSerfsSol
+=0.02 ExpectedUnemployedSol
+=0.25 ExpectedFarmersSol
+=1.00 ExpectedTownsfolkSol
+=6.00 ExpectedClergySol
+=1.00 ExpectedBureaucratsSol
+=0.30 ExpectedMerchantsSol
+=0.75 ExpectedIntellectualsSol
+=0.5 ExpectedSailorsSol
+=0.75 ExpectedSoldiersSol
+=10 ExpectedAristocracySol
+=5.00 ExpectedBurgousieSol
+=0 merchantships
+=2 BureaucratsWages
+=0.25 SocialSpending
+
+<... > Nations
++> MaliEmpire
+> MaliEmpire
+= "https://media.discordapp.net/attachments/1121059087761809428/1124007950491590746/IMG_3423.png" Flag
+= "7C1A1A" color
+> CultureGroups
++> Mandinka
+=100 Mandinka
+<
+= "Mandinka" cultrep
+= "pagan" relrep
+="false" Technologies.Gunpowder
+="false" Technologies.VerticalLoom
+="false" Technologies.SaddleAndStirrup
+="false" Technologies.HorseCollar
+="false" Technologies.Explosives
+="false" Technologies.Firelance
+="false" Technologies.Cranes
+="false" Technologies.PromissoryNotes
+="false" Technologies.Bombards
+="false" Technologies.HandCannons
+="false" Technologies.PlateArmour
+="false" Technologies.SappersAndEngineers
+="false" Technologies.Workshops
+="false" Technologies.StandardizedPikes
+="false" CulturalAdvancements.Universities
+="false" CulturalAdvancements.Courthouses
+=3 isolation
+=0 researchpoints
+=0.01 ExpectedSlavesSol
+=0.05 ExpectedLabourersSol
+=0.1 ExpectedSerfsSol
+=0.02 ExpectedUnemployedSol
+=0.25 ExpectedFarmersSol
+=1.00 ExpectedTownsfolkSol
+=6.00 ExpectedClergySol
+=1.00 ExpectedBureaucratsSol
+=0.30 ExpectedMerchantsSol
+=0.75 ExpectedIntellectualsSol
+=0.5 ExpectedSailorsSol
+=0.75 ExpectedSoldiersSol
+=10 ExpectedAristocracySol
+=5.00 ExpectedBurgousieSol
+=0 merchantships
+=2 BureaucratsWages
+=0.25 SocialSpending
+
+<... > Nations
++> OrderOfHashishin
+> OrderOfHashishin
+= "https://cdn.discordapp.com/attachments/869819548591861771/1124190878513238107/1200px-Shiite_Calligraphy_symbolising_Ali_as_Tiger_of_God.png" Flag
+= "DAFF7C" color
+> ReligionGroups
+=0 pagan
++> shia
+=100 shia
+<
+> CultureGroups
++> Caucasian
+=100 Caucasian
+<
+= "Caucasian" cultrep
+= "shia" relrep
+
+<... > Nations
+
+> KingdomOfNovgorod
++> CultureGroups
+> CultureGroups
++> Finnic
+= 20.384066506591765 Finnic.Points
++> Russian
+= 61.24539676786766 Russian.Points
++> Baltic
+= 3.328889205299299 Baltic.Points
++> Ruthenian
+= 15.041647520241277 Ruthenian.Points
+< <
+> DanskEmpire
++> CultureGroups
+> CultureGroups
++> Danish
+= 100 Danish.Points
+< <
+> CrownOfSweden
++> CultureGroups
+> CultureGroups
++> Scandinavian
+= 100 Scandinavian.Points
+< <
+> EarldomOfManx
++> CultureGroups
+> CultureGroups
++> Celtic
+= 38.54536865280932 Celtic.Points
++> English
+= 61.45463134719068 English.Points
+< <
+> CelticEmpire
++> CultureGroups
+> CultureGroups
++> Celtic
+= 100 Celtic.Points
+< <
+> KingdomOfLivonia
++> CultureGroups
+> CultureGroups
++> Baltic
+= 19.53822974949204 Baltic.Points
++> Ruthenian
+= 4.923935222532344 Ruthenian.Points
++> WestSlav
+= 75.53783502797562 WestSlav.Points
+< <
+> KingdomOfPrussia
++> CultureGroups
+> CultureGroups
++> Baltic
+= 4.838599118245162 Baltic.Points
++> Germanic
+= 48.12907394487252 Germanic.Points
++> WestSlav
+= 47.03232693688231 WestSlav.Points
+< <
+> DutchRepublic
++> CultureGroups
+> CultureGroups
++> Dutch
+= 100 Dutch.Points
+< <
+> RoyaumeDuSoleil
++> CultureGroups
+> CultureGroups
++> Germanic
+= 8.51025475700631 Germanic.Points
++> French
+= 89.07463553407425 French.Points
++> English
+= 0.007813499758827409 English.Points
++> Italian
+= 2.407296209160621 Italian.Points
+< <
+> HaidaNation
++> CultureGroups
+> CultureGroups
++> Haida
+= 23.954919198966355 Haida.Points
++> Kaskas
+= 0.0634436184361675 Kaskas.Points
++> Chinook
+= 53.36788656871197 Chinook.Points
++> Yakimas
+= 22.61375061388551 Yakimas.Points
+< <
+> Bavaria
++> CultureGroups
+> CultureGroups
++> Germanic
+= 73.28102281862525 Germanic.Points
++> WestSlav
+= 25.65314951181266 WestSlav.Points
++> French
+= 1.0658276695620943 French.Points
+< <
+> MongolOvog
++> CultureGroups
+> CultureGroups
++> Mongol
+= 100 Mongol.Points
+< <
+> Guyenne
++> CultureGroups
+> CultureGroups
++> Aquitan
+= 100 Aquitan.Points
+< <
+> DynastyOfUsia
++> CultureGroups
+> CultureGroups
++> Usian
+= 100 Usian.Points
+< <
+> Byrerwond
++> CultureGroups
+> CultureGroups
++> Naskapis
+= 6.776364145193085 Naskapis.Points
++> Ottawa
+= 41.107338690580534 Ottawa.Points
++> Abenaki
+= 17.42730145843008 Abenaki.Points
++> Iroquoi
+= 31.694636909649503 Iroquoi.Points
++> Potawatomi
+= 2.9943587961468006 Potawatomi.Points
+< <
+> MontenegrinEmpire
++> CultureGroups
+> CultureGroups
++> Magyar
+= 40.41237306091007 Magyar.Points
++> Germanic
+= 1.9340333938337624 Germanic.Points
++> SouthSlav
+= 55.22144959384164 SouthSlav.Points
++> Romanian
+= 2.4321439514145284 Romanian.Points
+< <
+> RepublicOfVenice
++> CultureGroups
+> CultureGroups
++> Italian
+= 90.28325203444781 Italian.Points
++> Germanic
+= 0.06371540846022083 Germanic.Points
++> SouthSlav
+= 9.653032557091969 SouthSlav.Points
+< <
+> UnifiedBalhae
++> CultureGroups
+> CultureGroups
++> Jurchen
+= 27.2086471503709 Jurchen.Points
++> Korean
+= 72.7913528496291 Korean.Points
+< <
+> MinorWeizhong
++> CultureGroups
+> CultureGroups
++> Mongol
+= 54.10382981729555 Mongol.Points
++> Jurchen
+= 4.1076858319425185 Jurchen.Points
++> HanChinese
+= 41.788484350761934 HanChinese.Points
+< <
+> OrderOfHashishin
++> CultureGroups
+> CultureGroups
++> Caucasian
+= 75.07489996581747 Caucasian.Points
++> Tatar
+= 0.05132671624368867 Tatar.Points
++> Persian
+= 24.873773317938845 Persian.Points
+< <
+> AsaranEmpire
++> CultureGroups
+> CultureGroups
++> SouthSlav
+= 52.70149081813993 SouthSlav.Points
++> Greek
+= 47.29850918186007 Greek.Points
+< <
+> CrownOfLeon
++> CultureGroups
+> CultureGroups
++> Iberian
+= 100 Iberian.Points
+< <
+> GrecoBactria
++> CultureGroups
+> CultureGroups
++> GrecoBactrian
+= 100 GrecoBactrian.Points
+< <
+> AshikagaShogunate
++> CultureGroups
+> CultureGroups
++> Japanese
+= 100 Japanese.Points
+< <
+> RegencyOfValencia
++> CultureGroups
+> CultureGroups
++> Iberian
+= 99.25651589882786 Iberian.Points
++> French
+= 0.04477565315182418 French.Points
++> Maghrebi
+= 0.6987084480203261 Maghrebi.Points
+< <
+> Pomo
++> CultureGroups
+> CultureGroups
++> Chinook
+= 4.4198150662613935 Chinook.Points
++> Pomo
+= 79.15238543883302 Pomo.Points
++> Washo
+= 3.964312776328023 Washo.Points
++> Luisena
+= 12.463486718577556 Luisena.Points
+< <
+> KingdomOfRum
++> CultureGroups
+> CultureGroups
++> Turkish
+= 89.60224775103751 Turkish.Points
++> Greek
+= 10.397752248962483 Greek.Points
+< <
+> KingdomOfIsrael
++> CultureGroups
+> CultureGroups
++> Israeli
+= 100 Israeli.Points
+< <
+> Magnavallis
++> CultureGroups
+> CultureGroups
++> Xyndara
+= 100 Xyndara.Points
+< <
+> Zhao
++> CultureGroups
+> CultureGroups
++> HanChinese
+= 100 HanChinese.Points
+< <
+> AkilanIrisianEmpire
++> CultureGroups
+> CultureGroups
++> Persian
+= 100 Persian.Points
+< <
+> EmirateOfCarthage
++> CultureGroups
+> CultureGroups
++> Tunisian
+= 44.17644283425829 Tunisian.Points
++> Maghrebi
+= 55.82355716574171 Maghrebi.Points
+< <
+> SeleucidEmpire
++> CultureGroups
+> CultureGroups
++> Kurdish
+= 13.550184986864206 Kurdish.Points
++> Arab
+= 65.01683717701326 Arab.Points
++> Persian
+= 21.432977836122532 Persian.Points
+< <
+> Natchez
++> CultureGroups
+> CultureGroups
++> Wichita
+= 5.792946112388683 Wichita.Points
++> Natchez
+= 71.3400946023122 Natchez.Points
++> Choctaw
+= 22.86695928529911 Choctaw.Points
+< <
+> QuasimidEmirate
++> CultureGroups
+> CultureGroups
++> Persian
+= 99.25604538606233 Persian.Points
++> Arab
+= 0.7439546139376757 Arab.Points
+< <
+> KingdomOfLaos
++> CultureGroups
+> CultureGroups
++> Tibetan
+= 18.729340693828032 Tibetan.Points
++> SouthChinese
+= 55.20635558115402 SouthChinese.Points
++> Burmese
+= 25.71607905758092 Burmese.Points
++> Bengali
+= 0.010340925897646477 Bengali.Points
++> Thai
+= 0.3378837415393791 Thai.Points
+< <
+> TainoKingdoms
++> CultureGroups
+> CultureGroups
++> Creek
+= 0.49015630968931034 Creek.Points
++> Calusa
+= 39.86145188032404 Calusa.Points
++> Taino
+= 59.33797785908104 Taino.Points
++> Miskito
+= 0.022920695182321923 Miskito.Points
++> Timote
+= 0.2874932557232818 Timote.Points
+< <
+> GuptaDynasty
++> CultureGroups
+> CultureGroups
++> Bengali
+= 96.5901544880417 Bengali.Points
++> Garjati
+= 3.4098455119583018 Garjati.Points
+< <
+> Kwangtung
++> CultureGroups
+> CultureGroups
++> SouthChinese
+= 89.9943018209278 SouthChinese.Points
++> HanChinese
+= 10.005698179072192 HanChinese.Points
+< <
+> AztecEmpire
++> CultureGroups
+> CultureGroups
++> Coahuiltec
+= 1.1258979748609248 Coahuiltec.Points
++> Aztec
+= 93.7207182110568 Aztec.Points
++> Olmec
+= 5.153383814082272 Olmec.Points
+< <
+> MayanEmpire
++> CultureGroups
+> CultureGroups
++> Olmec
+= 100 Olmec.Points
+< <
+> Sugbo
++> CultureGroups
+> CultureGroups
++> Tagalog
+= 83.12635966163317 Tagalog.Points
++> Indonesian
+= 16.87364033836683 Indonesian.Points
+< <
+> NanyangDynasty
++> CultureGroups
+> CultureGroups
++> Nanyang
+= 100 Nanyang.Points
+< <
+> EmpireOfChola
++> CultureGroups
+> CultureGroups
++> Deccani
+= 84.51380148928918 Deccani.Points
++> Sinhalese
+= 15.486198510710821 Sinhalese.Points
+< <
+> MaliEmpire
++> CultureGroups
+> CultureGroups
++> Mossi
+= 17.26909553091213 Mossi.Points
++> Mandinka
+= 63.416718328502256 Mandinka.Points
++> Fula
+= 19.31418614058562 Fula.Points
+< <
+> BojacaConfederation
++> CultureGroups
+> CultureGroups
++> Timote
+= 14.300120356170448 Timote.Points
++> Chibcha
+= 69.94985377838486 Chibcha.Points
++> Guaymi
+= 15.592868733195646 Guaymi.Points
++> Colorado
+= 0.15715713224903644 Colorado.Points
+< <
+> AbbulKamil
++> CultureGroups
+> CultureGroups
++> Mossi
+= 10.957954688394201 Mossi.Points
++> Mandinka
+= 20.794823244418936 Mandinka.Points
++> Akan
+= 68.24722206718687 Akan.Points
+< <
+> AmaniTribes
++> CultureGroups
+> CultureGroups
++> Arawak
+= 99.50877494004979 Arawak.Points
++> Tapajo
+= 0.4912250599502133 Tapajo.Points
+< <
+> SultunateOfMogadishu
++> CultureGroups
+> CultureGroups
++> Cushitic
+= 100 Cushitic.Points
+< <
+> BoNi
++> CultureGroups
+> CultureGroups
++> Indonesian
+= 100 Indonesian.Points
+< <
+> KokwapaConfederation
++> CultureGroups
+> CultureGroups
++> Tarariu
+= 100 Tarariu.Points
+< <
+> Kuntisuyu
++> CultureGroups
+> CultureGroups
++> Inca
+= 98.55562371755548 Inca.Points
++> Conibo
+= 0.0848969461073622 Conibo.Points
++> Siriono
+= 1.3594793363371622 Siriono.Points
+< <
+> Madagascar
++> CultureGroups
+> CultureGroups
++> Malagasi
+= 100 Malagasi.Points
+< <
+> MapucheConfederation
++> CultureGroups
+> CultureGroups
++> Puelche
+= 83.7933894858128 Puelche.Points
++> Tehuelche
+= 16.2066105141872 Tehuelche.Points
+< <
+> KingdomOfNovgorod
+> ReligionGroups
++> Orthodox
+= 100 Orthodox.Points
+< <
+> DanskEmpire
+> ReligionGroups
++> Pagan
+= 100 Pagan.Points
+< <
+> CrownOfSweden
+> ReligionGroups
++> Catholic
+= 100 Catholic.Points
+< <
+> EarldomOfManx
+> ReligionGroups
++> Pagan
+= 100 Pagan.Points
+< <
+> CelticEmpire
+> ReligionGroups
++> Pagan
+= 100 Pagan.Points
+< <
+> KingdomOfLivonia
+> ReligionGroups
++> Catholic
+= 100 Catholic.Points
+< <
+> KingdomOfPrussia
+> ReligionGroups
++> Catholic
+= 100 Catholic.Points
+< <
+> DutchRepublic
+> ReligionGroups
++> Catholic
+= 100 Catholic.Points
+< <
+> RoyaumeDuSoleil
+> ReligionGroups
++> Catholic
+= 100 Catholic.Points
+< <
+> HaidaNation
+> ReligionGroups
++> Pagan
+= 100 Pagan.Points
+< <
+> Bavaria
+> ReligionGroups
++> Catholic
+= 100 Catholic.Points
+< <
+> MongolOvog
+> ReligionGroups
++> Buddhism
+= 100 Buddhism.Points
+< <
+> Guyenne
+> ReligionGroups
++> Catholic
+= 100 Catholic.Points
+< <
+> DynastyOfUsia
+> ReligionGroups
++> Pagan
+= 100 Pagan.Points
+< <
+> Byrerwond
+> ReligionGroups
++> Pagan
+= 100 Pagan.Points
+< <
+> MontenegrinEmpire
+> ReligionGroups
++> Catholic
+= 100 Catholic.Points
+< <
+> RepublicOfVenice
+> ReligionGroups
++> Catholic
+= 99.99059086409947 Catholic.Points
++> Pagan
+= 0.009409135900520985 Pagan.Points
+< <
+> UnifiedBalhae
+> ReligionGroups
++> Buddhism
+= 100 Buddhism.Points
+< <
+> MinorWeizhong
+> ReligionGroups
++> Confucianism
+= 100 Confucianism.Points
+< <
+> OrderOfHashishin
+> ReligionGroups
++> Shia
+= 100 Shia.Points
+< <
+> AsaranEmpire
+> ReligionGroups
++> Pagan
+= 100 Pagan.Points
+< <
+> CrownOfLeon
+> ReligionGroups
++> Catholic
+= 100 Catholic.Points
+< <
+> GrecoBactria
+> ReligionGroups
++> Pagan
+= 100 Pagan.Points
+< <
+> AshikagaShogunate
+> ReligionGroups
++> Shinto
+= 100 Shinto.Points
+< <
+> RegencyOfValencia
+> ReligionGroups
++> Catholic
+= 100 Catholic.Points
+< <
+> Pomo
+> ReligionGroups
++> Pagan
+= 100 Pagan.Points
+< <
+> KingdomOfRum
+> ReligionGroups
++> Judaism
+= 100 Judaism.Points
+< <
+> KingdomOfIsrael
+> ReligionGroups
++> Judaism
+= 100 Judaism.Points
+< <
+> Magnavallis
+> ReligionGroups
++> Pagan
+= 100 Pagan.Points
+< <
+> Zhao
+> ReligionGroups
++> Confucianism
+= 100 Confucianism.Points
+< <
+> AkilanIrisianEmpire
+> ReligionGroups
++> Shia
+= 99.78980541567081 Shia.Points
++> Pagan
+= 0.2101945843291853 Pagan.Points
+< <
+> EmirateOfCarthage
+> ReligionGroups
++> Sunni
+= 100 Sunni.Points
+< <
+> SeleucidEmpire
+> ReligionGroups
++> Sunni
+= 100 Sunni.Points
+< <
+> Natchez
+> ReligionGroups
++> Pagan
+= 100 Pagan.Points
+< <
+> QuasimidEmirate
+> ReligionGroups
++> Shia
+= 100 Shia.Points
+< <
+> KingdomOfLaos
+> ReligionGroups
++> Buddhism
+= 100 Buddhism.Points
+< <
+> TainoKingdoms
+> ReligionGroups
++> Pagan
+= 100 Pagan.Points
+< <
+> GuptaDynasty
+> ReligionGroups
++> Hindu
+= 100 Hindu.Points
+< <
+> Kwangtung
+> ReligionGroups
++> Buddhism
+= 100 Buddhism.Points
+< <
+> AztecEmpire
+> ReligionGroups
++> Pagan
+= 100 Pagan.Points
+< <
+> MayanEmpire
+> ReligionGroups
++> Pagan
+= 100 Pagan.Points
+< <
+> Sugbo
+> ReligionGroups
++> Pagan
+= 100 Pagan.Points
+< <
+> NanyangDynasty
+> ReligionGroups
++> Confucianism
+= 100 Confucianism.Points
+< <
+> EmpireOfChola
+> ReligionGroups
++> Hindu
+= 100 Hindu.Points
+< <
+> MaliEmpire
+> ReligionGroups
++> Pagan
+= 100 Pagan.Points
+< <
+> BojacaConfederation
+> ReligionGroups
++> Pagan
+= 100 Pagan.Points
+< <
+> AbbulKamil
+> ReligionGroups
++> Pagan
+= 100 Pagan.Points
+< <
+> AmaniTribes
+> ReligionGroups
++> Pagan
+= 100 Pagan.Points
+< <
+> SultunateOfMogadishu
+> ReligionGroups
++> Sunni
+= 100 Sunni.Points
+< <
+> BoNi
+> ReligionGroups
++> Confucianism
+= 100 Confucianism.Points
+< <
+> KokwapaConfederation
+> ReligionGroups
++> Pagan
+= 100 Pagan.Points
+< <
+> Kuntisuyu
+> ReligionGroups
++> Pagan
+= 100 Pagan.Points
+< <
+> Madagascar
+> ReligionGroups
++> Pagan
+= 100 Pagan.Points
+< <
+> MapucheConfederation
+> ReligionGroups
++> Pagan
+= 100 Pagan.Points
+< <
+
+<... > Nations
+= 6421 KingdomOfNovgorod.TaigaAndTundra
+= 8469 KingdomOfNovgorod.Moderate
+= 3721 DanskEmpire.MontaneForest
+= 3601 DanskEmpire.Mountainous
+= 155 DanskEmpire.TaigaAndTundra
+= 7815 DanskEmpire.Moderate
+= 791 CrownOfSweden.TaigaAndTundra
+= 14448 CrownOfSweden.Moderate
+= 22 CrownOfSweden.MontaneForest
+= 14171 EarldomOfManx.Moderate
+= 1073 EarldomOfManx.Mountainous
+= 6138 CelticEmpire.Moderate
+= 14421 KingdomOfLivonia.Moderate
+= 535 KingdomOfLivonia.Mountainous
+= 14732 KingdomOfPrussia.Moderate
+= 255 KingdomOfPrussia.Mountainous
+= 5491 DutchRepublic.Moderate
+= 10774 RoyaumeDuSoleil.Moderate
+= 2858 RoyaumeDuSoleil.Mountainous
+= 1220 RoyaumeDuSoleil.Medditereanian
+= 2323 HaidaNation.MontaneForest
+= 8845 HaidaNation.Mountainous
+= 2506 HaidaNation.Medditereanian
+= 1798 HaidaNation.Steppe
+= 13341 Bavaria.Moderate
+= 2168 Bavaria.Mountainous
+= 6885 MongolOvog.Mountainous
+= 163 MongolOvog.MontaneForest
+= 9247 MongolOvog.Steppe
+= 13537 Guyenne.Moderate
+= 933 Guyenne.Mountainous
+= 559 Guyenne.Medditereanian
+= 13576 DynastyOfUsia.Steppe
+= 1043 DynastyOfUsia.Moderate
+= 597 DynastyOfUsia.Mountainous
+= 15348 Byrerwond.Moderate
+= 42 Byrerwond.Mountainous
+= 9795 MontenegrinEmpire.Moderate
+= 3996 MontenegrinEmpire.Mountainous
+= 314 MontenegrinEmpire.Steppe
+= 471 MontenegrinEmpire.Medditereanian
+= 6226 RepublicOfVenice.Mountainous
+= 3162 RepublicOfVenice.Moderate
+= 6186 RepublicOfVenice.Medditereanian
+= 8923 UnifiedBalhae.Moderate
+= 6401 UnifiedBalhae.Mountainous
+= 12185 MinorWeizhong.Moderate
+= 3119 MinorWeizhong.Mountainous
+= 334 MinorWeizhong.MontaneForest
+= 1203 OrderOfHashishin.Moderate
+= 9354 OrderOfHashishin.Mountainous
+= 1460 OrderOfHashishin.Steppe
+= 2956 OrderOfHashishin.Arid
+= 2688 AsaranEmpire.Steppe
+= 5934 AsaranEmpire.Mountainous
+= 236 AsaranEmpire.Moderate
+= 6087 AsaranEmpire.Medditereanian
+= 11622 CrownOfLeon.Medditereanian
+= 3622 CrownOfLeon.Mountainous
+= 6 CrownOfLeon.Moderate
+= 1611 GrecoBactria.CoastalDesert
+= 3266 GrecoBactria.Desert
+= 8410 GrecoBactria.Mountainous
+= 1723 GrecoBactria.Arid
+= 6458 AshikagaShogunate.Mountainous
+= 8596 AshikagaShogunate.Moderate
+= 3296 RegencyOfValencia.Mountainous
+= 11806 RegencyOfValencia.Medditereanian
+= 1 RegencyOfValencia.Moderate
+= 8344 Pomo.Mountainous
+= 6246 Pomo.Medditereanian
+= 137 Pomo.Desert
+= 5571 KingdomOfRum.Medditereanian
+= 6494 KingdomOfRum.Mountainous
+= 3138 KingdomOfRum.Arid
+= 1976 KingdomOfIsrael.Mountainous
+= 2334 KingdomOfIsrael.Arid
+= 6160 KingdomOfIsrael.Medditereanian
+= 2859 KingdomOfIsrael.Desert
+= 1952 KingdomOfIsrael.CoastalDesert
+= 1 KingdomOfIsrael.Steppe
+= 1819 Magnavallis.Mountainous
+= 12850 Magnavallis.Moderate
+= 12755 Zhao.Moderate
+= 2121 Zhao.Mountainous
+= 9048 AkilanIrisianEmpire.Arid
+= 6057 AkilanIrisianEmpire.Mountainous
+= 7104 EmirateOfCarthage.Medditereanian
+= 3977 EmirateOfCarthage.Mountainous
+= 2422 EmirateOfCarthage.Desert
+= 2162 EmirateOfCarthage.CoastalDesert
+= 13760 SeleucidEmpire.Arid
+= 1309 SeleucidEmpire.Mountainous
+= 718 SeleucidEmpire.Desert
+= 1 SeleucidEmpire.CoastalDesert
+= 15271 Natchez.Moderate
+= 749 Natchez.Mountainous
+= 7491 QuasimidEmirate.Mountainous
+= 7994 QuasimidEmirate.Arid
+= 12100 KingdomOfLaos.Mountainous
+= 2020 KingdomOfLaos.Moderate
+= 648 KingdomOfLaos.Tropical
+= 231 KingdomOfLaos.SubTropical
+= 1990 TainoKingdoms.Moderate
+= 9096 TainoKingdoms.SubTropical
+= 781 TainoKingdoms.Tropical
+= 2221 TainoKingdoms.Mountainous
+= 11534 GuptaDynasty.SubTropical
+= 3309 GuptaDynasty.Tropical
+= 322 GuptaDynasty.Mountainous
+= 3821 Kwangtung.Mountainous
+= 7723 Kwangtung.Moderate
+= 2966 Kwangtung.SubTropical
+= 265 Kwangtung.Tropical
+= 4015 AztecEmpire.SubTropical
+= 8387 AztecEmpire.Mountainous
+= 2013 AztecEmpire.Savanna
+= 570 AztecEmpire.Tropical
+= 8465 MayanEmpire.SubTropical
+= 3190 MayanEmpire.Tropical
+= 3592 MayanEmpire.Mountainous
+= 10522 Sugbo.Tropical
+= 4153 Sugbo.Mountainous
+= 4195 NanyangDynasty.SubTropical
+= 3633 NanyangDynasty.Mountainous
+= 7773 NanyangDynasty.Tropical
+= 2393 EmpireOfChola.Savanna
+= 8227 EmpireOfChola.SubTropical
+= 2119 EmpireOfChola.Mountainous
+= 2606 EmpireOfChola.Tropical
+= 7881 MaliEmpire.Savanna
+= 6797 MaliEmpire.SubTropical
+= 1682 BojacaConfederation.SubTropical
+= 5266 BojacaConfederation.Tropical
+= 8231 BojacaConfederation.Mountainous
+= 11939 AbbulKamil.SubTropical
+= 3235 AbbulKamil.Tropical
+= 13997 AmaniTribes.Tropical
+= 531 AmaniTribes.Mountainous
+= 15247 SultunateOfMogadishu.Savanna
+= 40 SultunateOfMogadishu.Mountainous
+= 209 SultunateOfMogadishu.Desert
+= 13127 BoNi.Tropical
+= 2784 BoNi.Mountainous
+= 14714 KokwapaConfederation.SubTropical
+= 587 KokwapaConfederation.Mountainous
+= 55 KokwapaConfederation.Tropical
+= 11170 Kuntisuyu.Mountainous
+= 1557 Kuntisuyu.MontaneForest
+= 1514 Kuntisuyu.Arid
+= 258 Kuntisuyu.Savanna
+= 106 Kuntisuyu.Desert
+= 9638 Madagascar.SubTropical
+= 1719 Madagascar.Mountainous
+= 323 Madagascar.Tropical
+= 2883 Madagascar.Savanna
+= 9325 MapucheConfederation.Savanna
+= 4560 MapucheConfederation.Moderate
+= 793 MapucheConfederation.Desert
+= 109 MapucheConfederation.Mountainous
+= 313 MapucheConfederation.CoastalDesert
+
+<... > Nations
+= 55187 KingdomOfNovgorod.DevelopmentPixelCount
+= 65192 DanskEmpire.DevelopmentPixelCount
+= 73932 CrownOfSweden.DevelopmentPixelCount
+= 73001 EarldomOfManx.DevelopmentPixelCount
+= 30690 CelticEmpire.DevelopmentPixelCount
+= 73175 KingdomOfLivonia.DevelopmentPixelCount
+= 74170 KingdomOfPrussia.DevelopmentPixelCount
+= 27455 DutchRepublic.DevelopmentPixelCount
+= 65686 RoyaumeDuSoleil.DevelopmentPixelCount
+= 50825 HaidaNation.DevelopmentPixelCount
+= 71041 Bavaria.DevelopmentPixelCount
+= 60820 MongolOvog.DevelopmentPixelCount
+= 72346 Guyenne.DevelopmentPixelCount
+= 74289 DynastyOfUsia.DevelopmentPixelCount
+= 76824 Byrerwond.DevelopmentPixelCount
+= 60892 MontenegrinEmpire.DevelopmentPixelCount
+= 59192 RepublicOfVenice.DevelopmentPixelCount
+= 57417 UnifiedBalhae.DevelopmentPixelCount
+= 68831 MinorWeizhong.DevelopmentPixelCount
+= 46803 OrderOfHashishin.DevelopmentPixelCount
+= 56923 AsaranEmpire.DevelopmentPixelCount
+= 65384 CrownOfLeon.DevelopmentPixelCount
+= 28657 GrecoBactria.DevelopmentPixelCount
+= 55896 AshikagaShogunate.DevelopmentPixelCount
+= 65627 RegencyOfValencia.DevelopmentPixelCount
+= 47918 Pomo.DevelopmentPixelCount
+= 56533 KingdomOfRum.DevelopmentPixelCount
+= 50331 KingdomOfIsrael.DevelopmentPixelCount
+= 67888 Magnavallis.DevelopmentPixelCount
+= 68017 Zhao.DevelopmentPixelCount
+= 57354 AkilanIrisianEmpire.DevelopmentPixelCount
+= 47798 EmirateOfCarthage.DevelopmentPixelCount
+= 71420 SeleucidEmpire.DevelopmentPixelCount
+= 77848 Natchez.DevelopmentPixelCount
+= 54952 QuasimidEmirate.DevelopmentPixelCount
+= 36751 KingdomOfLaos.DevelopmentPixelCount
+= 61434 TainoKingdoms.DevelopmentPixelCount
+= 64932 GuptaDynasty.DevelopmentPixelCount
+= 61617 Kwangtung.DevelopmentPixelCount
+= 48054 AztecEmpire.DevelopmentPixelCount
+= 55889 MayanEmpire.DevelopmentPixelCount
+= 29348 Sugbo.DevelopmentPixelCount
+= 43787 NanyangDynasty.DevelopmentPixelCount
+= 62550 EmpireOfChola.DevelopmentPixelCount
+= 73390 MaliEmpire.DevelopmentPixelCount
+= 35402 BojacaConfederation.DevelopmentPixelCount
+= 66165 AbbulKamil.DevelopmentPixelCount
+= 29056 AmaniTribes.DevelopmentPixelCount
+= 76315 SultunateOfMogadishu.DevelopmentPixelCount
+= 31822 BoNi.DevelopmentPixelCount
+= 74854 KokwapaConfederation.DevelopmentPixelCount
+= 38985 Kuntisuyu.DevelopmentPixelCount
+= 66689 Madagascar.DevelopmentPixelCount
+= 70269 MapucheConfederation.DevelopmentPixelCount
+
+<... > Nations
+= 1321550 KingdomOfNovgorod.coastalPopulation
+= 1916530 DanskEmpire.coastalPopulation
+= 2806350 CrownOfSweden.coastalPopulation
+= 1775920 EarldomOfManx.coastalPopulation
+= 940750 CelticEmpire.coastalPopulation
+= 1171510 KingdomOfLivonia.coastalPopulation
+= 1624085 KingdomOfPrussia.coastalPopulation
+= 665500 DutchRepublic.coastalPopulation
+= 1460475 RoyaumeDuSoleil.coastalPopulation
+= 940865 HaidaNation.coastalPopulation
+= 1356700 Bavaria.coastalPopulation
+= 237830 MongolOvog.coastalPopulation
+= 1302280 Guyenne.coastalPopulation
+= 1014710 DynastyOfUsia.coastalPopulation
+= 2609000 Byrerwond.coastalPopulation
+= 1430290 MontenegrinEmpire.coastalPopulation
+= 1364720 RepublicOfVenice.coastalPopulation
+= 1265780 UnifiedBalhae.coastalPopulation
+= 1165885 MinorWeizhong.coastalPopulation
+= 555275 OrderOfHashishin.coastalPopulation
+= 1191430 AsaranEmpire.coastalPopulation
+= 1213075 CrownOfLeon.coastalPopulation
+= 405715 GrecoBactria.coastalPopulation
+= 1507770 AshikagaShogunate.coastalPopulation
+= 1227710 RegencyOfValencia.coastalPopulation
+= 1009105 Pomo.coastalPopulation
+= 981675 KingdomOfRum.coastalPopulation
+= 1089870 KingdomOfIsrael.coastalPopulation
+= 1772435 Magnavallis.coastalPopulation
+= 1807610 Zhao.coastalPopulation
+= 91785 AkilanIrisianEmpire.coastalPopulation
+= 481050 EmirateOfCarthage.coastalPopulation
+= 933105 SeleucidEmpire.coastalPopulation
+= 1921655 Natchez.coastalPopulation
+= 209565 QuasimidEmirate.coastalPopulation
+= 797590 KingdomOfLaos.coastalPopulation
+= 1712535 TainoKingdoms.coastalPopulation
+= 1344960 GuptaDynasty.coastalPopulation
+= 1385970 Kwangtung.coastalPopulation
+= 648590 AztecEmpire.coastalPopulation
+= 702840 MayanEmpire.coastalPopulation
+= 956220 Sugbo.coastalPopulation
+= 899680 NanyangDynasty.coastalPopulation
+= 1103740 EmpireOfChola.coastalPopulation
+= 990140 MaliEmpire.coastalPopulation
+= 676490 BojacaConfederation.coastalPopulation
+= 791570 AbbulKamil.coastalPopulation
+= 494950 AmaniTribes.coastalPopulation
+= 684505 SultunateOfMogadishu.coastalPopulation
+= 512810 BoNi.coastalPopulation
+= 516950 KokwapaConfederation.coastalPopulation
+= 437740 Kuntisuyu.coastalPopulation
+= 716820 Madagascar.coastalPopulation
+= 1058035 MapucheConfederation.coastalPopulation
+
+<... > Nations
+= 1.85 KingdomOfNovgorod.MaxFur
+= 0.45 MongolOvog.MaxFur
+= 0.95 HaidaNation.MaxFur
+= 1.45 Byrerwond.MaxFur
+= 1.30 RoyaumeDuSoleil.MaxGold
+= 0.50 MontenegrinEmpire.MaxGold
+= 1.50 RepublicOfVenice.MaxGold
+= 2.00 KingdomOfRum.MaxGold
+= 2.00 Pomo.MaxGold
+= 2.00 AshikagaShogunate.MaxGold
+= 0.20 EmirateOfCarthage.MaxGold
+= 0.10 GuptaDynasty.MaxGold
+= 5.50 AztecEmpire.MaxGold
+= 4.00 Sugbo.MaxGold
+= 2.15 MaliEmpire.MaxGold
+= 3.25 AbbulKamil.MaxGold
+= 3.00 NanyangDynasty.MaxGold
+= 0.75 BojacaConfederation.MaxGold
+= 2.00 BoNi.MaxGold
+= 0.80 Kuntisuyu.MaxGold
+= 2.00 KingdomOfNovgorod.MaxIron
+= 2.00 CrownOfSweden.MaxIron
+= 2.00 EarldomOfManx.MaxIron
+= 1.75 KingdomOfPrussia.MaxIron
+= 1.00 KingdomOfLivonia.MaxIron
+= 4.10 Bavaria.MaxIron
+= 2.15 RoyaumeDuSoleil.MaxIron
+= 1.80 MontenegrinEmpire.MaxIron
+= 0.70 HaidaNation.MaxIron
+= 2.00 RepublicOfVenice.MaxIron
+= 2.00 Byrerwond.MaxIron
+= 2.00 CrownOfLeon.MaxIron
+= 0.80 UnifiedBalhae.MaxIron
+= 3.00 AshikagaShogunate.MaxIron
+= 1.00 OrderOfHashishin.MaxIron
+= 1.00 MinorWeizhong.MaxIron
+= 3.00 RegencyOfValencia.MaxIron
+= 0.20 Pomo.MaxIron
+= 1.85 Magnavallis.MaxIron
+= 2.00 Zhao.MaxIron
+= 0.55 EmirateOfCarthage.MaxIron
+= 0.05 Natchez.MaxIron
+= 1.80 QuasimidEmirate.MaxIron
+= 0.25 KingdomOfIsrael.MaxIron
+= 4.00 Kwangtung.MaxIron
+= 2.10 AztecEmpire.MaxIron
+= 0.95 MayanEmpire.MaxIron
+= 0.60 MaliEmpire.MaxIron
+= 2.00 NanyangDynasty.MaxIron
+= 3.00 Sugbo.MaxIron
+= 1.95 AbbulKamil.MaxIron
+= 3.00 Kuntisuyu.MaxIron
+= 1.25 MapucheConfederation.MaxIron
+= 0.85 KingdomOfLaos.MaxIvory
+= 0.05 GuptaDynasty.MaxIvory
+= 3.90 NanyangDynasty.MaxIvory
+= 2.20 EmpireOfChola.MaxIvory
+= 1.90 AbbulKamil.MaxIvory
+= 2.10 EarldomOfManx.MaxSulphur
+= 1.65 KingdomOfPrussia.MaxSulphur
+= 2.35 KingdomOfLivonia.MaxSulphur
+= 0.85 DutchRepublic.MaxSulphur
+= 4.90 RoyaumeDuSoleil.MaxSulphur
+= 0.40 Bavaria.MaxSulphur
+= 1.60 MontenegrinEmpire.MaxSulphur
+= 2.25 HaidaNation.MaxSulphur
+= 4.00 RepublicOfVenice.MaxSulphur
+= 6.10 AshikagaShogunate.MaxSulphur
+= 1.00 CrownOfLeon.MaxSulphur
+= 2.70 KingdomOfRum.MaxSulphur
+= 3.00 RegencyOfValencia.MaxSulphur
+= 4.00 EmirateOfCarthage.MaxSulphur
+= 3.50 Natchez.MaxSulphur
+= 3.15 SeleucidEmpire.MaxSulphur
+= 3.00 KingdomOfIsrael.MaxSulphur
+= 1.05 Pomo.MaxSulphur
+= 2.00 AkilanIrisianEmpire.MaxSulphur
+= 0.25 QuasimidEmirate.MaxSulphur
+= 4.00 TainoKingdoms.MaxSulphur
+= 2.25 AztecEmpire.MaxSulphur
+= 7.00 Sugbo.MaxSulphur
+= 2.00 EmpireOfChola.MaxSulphur
+= 3.00 BoNi.MaxSulphur
+= 1.55 KokwapaConfederation.MaxSulphur
+= 5.25 Kuntisuyu.MaxSulphur
+= 1.55 KingdomOfNovgorod.MaxCoal
+= 4.00 EarldomOfManx.MaxCoal
+= 2.35 KingdomOfPrussia.MaxCoal
+= 0.35 DutchRepublic.MaxCoal
+= 2.65 RoyaumeDuSoleil.MaxCoal
+= 3.80 Bavaria.MaxCoal
+= 0.50 KingdomOfLivonia.MaxCoal
+= 2.40 MontenegrinEmpire.MaxCoal
+= 0.15 RepublicOfVenice.MaxCoal
+= 0.40 Guyenne.MaxCoal
+= 0.05 MinorWeizhong.MaxCoal
+= 2.15 AsaranEmpire.MaxCoal
+= 3.25 CrownOfLeon.MaxCoal
+= 2.75 RegencyOfValencia.MaxCoal
+= 2.75 KingdomOfRum.MaxCoal
+= 2.00 UnifiedBalhae.MaxCoal
+= 1.00 Magnavallis.MaxCoal
+= 2.00 AkilanIrisianEmpire.MaxCoal
+= 2.00 AshikagaShogunate.MaxCoal
+= 2.00 Natchez.MaxCoal
+= 1.40 KingdomOfLaos.MaxCoal
+= 2.40 GuptaDynasty.MaxCoal
+= 2.00 AztecEmpire.MaxCoal
+= 2.00 Sugbo.MaxCoal
+= 2.00 BojacaConfederation.MaxCoal
+= 4.00 BoNi.MaxCoal
+= 3.20 Madagascar.MaxCoal
+= 0.00 KingdomOfPrussia.MaxCopper
+= 1.85 Bavaria.MaxCopper
+= 2.00 Byrerwond.MaxCopper
+= 1.95 AsaranEmpire.MaxCopper
+= 0.65 AshikagaShogunate.MaxCopper
+= 0.00 KingdomOfRum.MaxCopper
+= 2.00 RegencyOfValencia.MaxCopper
+= 2.00 QuasimidEmirate.MaxCopper
+= 1.70 KingdomOfLaos.MaxCopper
+= 0.90 BojacaConfederation.MaxCopper
+= 2.00 Sugbo.MaxCopper
+= 0.40 MaliEmpire.MaxDiamond
+= 0.15 AbbulKamil.MaxDiamond
+= 2.00 BoNi.MaxDiamond
+= 2.00 CrownOfSweden.MaxSilver
+= 0.95 DynastyOfUsia.MaxSilver
+= 2.00 RegencyOfValencia.MaxSilver
+= 0.15 Pomo.MaxSilver
+= 2.00 UnifiedBalhae.MaxSilver
+= 0.30 Kuntisuyu.MaxSilver
+
+<... > TradeZones
+= 2.55 CentralSiberia.Score
+= 3.45 EasternSiberia.Score
+= 43.50 WesternSiberia.Score
+= 5.20 NorthSea.Score
+= 8.20 Alaska.Score
+= 0.25 NorthernNordics.Score
+= 0.65 HudsonBay.Score
+= 0.35 BarentsSea.Score
+= 7.35 CentralCanada.Score
+= 7.20 BalticSea.Score
+= 8.65 Novgorod.Score
+= 6.10 Denmark.Score
+= 14.15 LawrenceGulf.Score
+= 33.50 Volga.Score
+= 9.45 Livonia.Score
+= 7.75 BritishIsles.Score
+= 9.65 Muscovy.Score
+= 19.45 Dniepr.Score
+= 11.25 UralRiver.Score
+= 40.15 Manchuria.Score
+= 9.00 Vistula.Score
+= 12.50 CentralEurope.Score
+= 8.45 DonRiver.Score
+= 12.95 Cascadia.Score
+= 19.65 SeaOfJapan.Score
+= 6.00 Rhine.Score
+= 2.65 EnglishChannel.Score
+= 16.75 GreatLakes.Score
+= 8.85 Romania.Score
+= 17.20 CentralAsia.Score
+= 7.00 France.Score
+= 3.60 WesternDanube.Score
+= 8.95 EasternDanube.Score
+= 9.55 TheRockies.Score
+= 69.30 Mississippi.Score
+= 3.15 SouthernFrance.Score
+= 3.70 CaspianSea.Score
+= 6.25 GobiDesert.Score
+= 3.55 Crimea.Score
+= 1.60 BayOfBiscay.Score
+= 3.45 Adriatic.Score
+= 18.65 EastCoast.Score
+= 3.95 CentralMediterranean.Score
+= 8.05 WestCoast.Score
+= 2.65 Caucasus.Score
+= 5.90 Greece.Score
+= 4.90 WesternMediterranean.Score
+= 6.20 Iberia.Score
+= 3.20 NorthernAnatolia.Score
+= 21.20 YellowRiver.Score
+= 8.45 Mesopotamia.Score
+= 2.55 EasternMediterranean.Score
+= 15.00 GulfOfMexico.Score
+= 7.25 Afghanistan.Score
+= 15.25 IndusRiver.Score
+= 3.75 Morocco.Score
+= 5.05 Tibet.Score
+= 11.60 Iran.Score
+= 7.10 Sichuan.Score
+= 7.50 Sahara.Score
+= 0.20 ArabianDesert.Score
+= 21.65 YangtzeRiver.Score
+= 8.25 WesternMexico.Score
+= 3.50 Egypt.Score
+= 20.85 Ganges.Score
+= 1.85 RedSea.Score
+= 3.20 PersianGulf.Score
+= 6.05 Caribbean.Score
+= 0.40 WesternSahara.Score
+= 22.10 SouthEastAsia.Score
+= 2.00 Pacific.Score
+= 10.05 SouthChinaSea.Score
+= 12.05 CentralIndia.Score
+= 7.95 Deccan.Score
+= 19.10 SouthernNile.Score
+= 10.50 Somalia.Score
+= 17.20 WesternNiger.Score
+= 6.20 Guinea.Score
+= 5.10 CentralAmerica.Score
+= 18.80 EasternNiger.Score
+= 11.85 Venezuela.Score
+= 8.30 Indonesia.Score
+= 24.35 CongoRiver.Score
+= 6.70 Gabon.Score
+= 4.40 LakeVictoria.Score
+= 55.15 Amazon.Score
+= 4.30 Peru.Score
+= 10.75 EastAfrica.Score
+= 8.25 LakeTanganyika.Score
+= 15.45 SaoFranciscoRiver.Score
+= 20.90 NorthernAustralia.Score
+= 11.30 Angola.Score
+= 35.55 Mozambique.Score
+= 58.60 ParanaRiver.Score
+= 4.35 Chile.Score
+= 30.05 SouthernAustralia.Score
+= 12.40 SouthAfrica.Score
+= 0.00 AustralianDesert.Score
+= 18.60 Patagonia.Score
+
+<... > Nations
+= 2438300 KingdomOfNovgorod.Population
+= 2639685 DanskEmpire.Population
+= 3653750 CrownOfSweden.Population
+= 3633955 EarldomOfManx.Population
+= 1534500 CelticEmpire.Population
+= 3650725 KingdomOfLivonia.Population
+= 3704675 KingdomOfPrussia.Population
+= 1372750 DutchRepublic.Population
+= 3198730 RoyaumeDuSoleil.Population
+= 1864535 HaidaNation.Population
+= 3519530 Bavaria.Population
+= 1173575 MongolOvog.Population
+= 3583740 Guyenne.Population
+= 2890935 DynastyOfUsia.Population
+= 3840570 Byrerwond.Population
+= 2949335 MontenegrinEmpire.Population
+= 2649700 RepublicOfVenice.Population
+= 2774835 UnifiedBalhae.Population
+= 3344765 MinorWeizhong.Population
+= 1860980 OrderOfHashishin.Population
+= 2382815 AsaranEmpire.Population
+= 2808100 CrownOfLeon.Population
+= 1176795 GrecoBactria.Population
+= 2697930 AshikagaShogunate.Population
+= 2818700 RegencyOfValencia.Population
+= 2053500 Pomo.Population
+= 2267525 KingdomOfRum.Population
+= 2081930 KingdomOfIsrael.Population
+= 3367115 Magnavallis.Population
+= 3369035 Zhao.Population
+= 2007765 AkilanIrisianEmpire.Population
+= 2084205 EmirateOfCarthage.Population
+= 2388935 SeleucidEmpire.Population
+= 3881415 Natchez.Population
+= 1955745 QuasimidEmirate.Population
+= 1642190 KingdomOfLaos.Population
+= 2492625 TainoKingdoms.Population
+= 2549730 GuptaDynasty.Population
+= 2845575 Kwangtung.Population
+= 1864890 AztecEmpire.Population
+= 2232670 MayanEmpire.Population
+= 1405205 Sugbo.Population
+= 1883155 NanyangDynasty.Population
+= 2398690 EmpireOfChola.Population
+= 2455855 MaliEmpire.Population
+= 1512175 BojacaConfederation.Population
+= 2353130 AbbulKamil.Population
+= 1444835 AmaniTribes.Population
+= 1201457 SultunateOfMogadishu.Population
+= 1549340 BoNi.Population
+= 2556795 KokwapaConfederation.Population
+= 1398590 Kuntisuyu.Population
+= 2292570 Madagascar.Population
+= 2723990 MapucheConfederation.Population
+
+<... > Nations
+= 3387687 KingdomOfNovgorod.Future Population
+= 3900674 DanskEmpire.Future Population
+= 5321128 CrownOfSweden.Future Population
+= 5260938 EarldomOfManx.Future Population
+= 1626812 CelticEmpire.Future Population
+= 5164708 KingdomOfLivonia.Future Population
+= 5315508 KingdomOfPrussia.Future Population
+= 2038395 DutchRepublic.Future Population
+= 4796314 RoyaumeDuSoleil.Future Population
+= 1973469 HaidaNation.Future Population
+= 3725335 Bavaria.Future Population
+= 1004693 MongolOvog.Future Population
+= 5343441 Guyenne.Future Population
+= 4202550 DynastyOfUsia.Future Population
+= 4061452 Byrerwond.Future Population
+= 4306397 MontenegrinEmpire.Future Population
+= 3923975 RepublicOfVenice.Future Population
+= 3929506 UnifiedBalhae.Future Population
+= 4848280 MinorWeizhong.Future Population
+= 1958666 OrderOfHashishin.Future Population
+= 3466809 AsaranEmpire.Future Population
+= 4123092 CrownOfLeon.Future Population
+= 1626263 GrecoBactria.Future Population
+= 3966140 AshikagaShogunate.Future Population
+= 4150425 RegencyOfValencia.Future Population
+= 2193733 Pomo.Future Population
+= 3254510 KingdomOfRum.Future Population
+= 3079330 KingdomOfIsrael.Future Population
+= 4663400 Magnavallis.Future Population
+= 5262523 Zhao.Future Population
+= 2708418 AkilanIrisianEmpire.Future Population
+= 2201520 EmirateOfCarthage.Future Population
+= 2539711 SeleucidEmpire.Future Population
+= 4123528 Natchez.Future Population
+= 2043881 QuasimidEmirate.Future Population
+= 1724801 KingdomOfLaos.Future Population
+= 2651438 TainoKingdoms.Future Population
+= 4028791 GuptaDynasty.Future Population
+= 4092393 Kwangtung.Future Population
+= 2621563 AztecEmpire.Future Population
+= 3141573 MayanEmpire.Future Population
+= 2168811 Sugbo.Future Population
+= 2006303 NanyangDynasty.Future Population
+= 2566447 EmpireOfChola.Future Population
+= 2596838 MaliEmpire.Future Population
+= 1608391 BojacaConfederation.Future Population
+= 2499683 AbbulKamil.Future Population
+= 1539023 AmaniTribes.Future Population
+= 2634526 SultunateOfMogadishu.Future Population
+= 1646303 BoNi.Future Population
+= 3606572 KokwapaConfederation.Future Population
+= 1815412 Kuntisuyu.Future Population
+= 2429243 Madagascar.Future Population
+= 2871975 MapucheConfederation.Future Population
+
+<... > Nations
+= 2333.35 KingdomOfNovgorod.Fertility
+= 3975.3 DanskEmpire.Fertility
+= 4394.599999999999 CrownOfSweden.Fertility
+= 6317.6 EarldomOfManx.Fertility
+= 2858.6 CelticEmpire.Fertility
+= 5286.049999999999 KingdomOfLivonia.Fertility
+= 6465.949999999999 KingdomOfPrussia.Fertility
+= 2282 DutchRepublic.Fertility
+= 8175.1 RoyaumeDuSoleil.Fertility
+= 5265.399999999999 HaidaNation.Fertility
+= 7552.55 Bavaria.Fertility
+= 735.3249999999999 MongolOvog.Fertility
+= 7782.5250000000015 Guyenne.Fertility
+= 6565.9 DynastyOfUsia.Fertility
+= 5928.525 Byrerwond.Fertility
+= 7143.325 MontenegrinEmpire.Fertility
+= 8275.875 RepublicOfVenice.Fertility
+= 5209.35 UnifiedBalhae.Fertility
+= 7468.150000000001 MinorWeizhong.Fertility
+= 4032.1499999999996 OrderOfHashishin.Fertility
+= 8140.55 AsaranEmpire.Fertility
+= 7095 CrownOfLeon.Fertility
+= 3040.9 GrecoBactria.Fertility
+= 6352.725 AshikagaShogunate.Fertility
+= 7187.675000000001 RegencyOfValencia.Fertility
+= 9045.375000000002 Pomo.Fertility
+= 6533.925 KingdomOfRum.Fertility
+= 5951.500000000001 KingdomOfIsrael.Fertility
+= 5878.7 Magnavallis.Fertility
+= 10249.925 Zhao.Fertility
+= 2992.95 AkilanIrisianEmpire.Fertility
+= 5958.700000000001 EmirateOfCarthage.Fertility
+= 7624.85 SeleucidEmpire.Fertility
+= 8931.824999999999 Natchez.Fertility
+= 2382.2999999999997 QuasimidEmirate.Fertility
+= 3448.9249999999993 KingdomOfLaos.Fertility
+= 6514.974999999999 TainoKingdoms.Fertility
+= 11040.3 GuptaDynasty.Fertility
+= 5310.3 Kwangtung.Fertility
+= 7293.55 AztecEmpire.Fertility
+= 6641.5 MayanEmpire.Fertility
+= 6428.250000000001 Sugbo.Fertility
+= 6459.625 NanyangDynasty.Fertility
+= 9228.025 EmpireOfChola.Fertility
+= 4182.574999999999 MaliEmpire.Fertility
+= 6127.400000000001 BojacaConfederation.Fertility
+= 4798.975 AbbulKamil.Fertility
+= 3755.775 AmaniTribes.Fertility
+= 893.2 SultunateOfMogadishu.Fertility
+= 4352.849999999999 BoNi.Fertility
+= 5994.725 KokwapaConfederation.Fertility
+= 2340.675 Kuntisuyu.Fertility
+= 4877.725 Madagascar.Fertility
+= 3787.4500000000003 MapucheConfederation.Fertility
+!suppress 0
+<...
