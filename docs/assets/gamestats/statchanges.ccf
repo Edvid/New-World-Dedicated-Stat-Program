@@ -102,23 +102,6 @@
 =0.25 SocialSpending
 
 <... > Nations
-+> AyyupidKurdistan
-> AyyupidKurdistan
-= "https://commons.m.wikimedia.org/wiki/File:Saladin%27s_Standard.svg" Flag
-= "157C23" color
-> ReligionGroups
-=0 pagan
-+> Sunni
-=100 Sunni
-<
-> CultureGroups
-+> Kurdish
-=100 Kurdish
-<
-= "Kurdish" cultrep
-= "Sunni" relrep
-
-<... > Nations
 +> EmirateOfCarthage
 > EmirateOfCarthage
 = "https://i.redd.it/xayvobt506641.png" Flag
