@@ -439,7 +439,7 @@ static evaluateNation(nationName) {
   n.CocoaDemand = n.LuxuryConsumablesDemand * 0.2;
 
   n.FoodAdditions = n.EffectiveSugar + n.EffectiveSpice;
-  n.FoodAdditionsDemand = ((min(n.AverageExpectedSol, 1) * 0.1 + n.LuxuriesDemand * 1.5) * n.Population / 1000) / 200;
+  n.FoodAdditionsDemand = ((min(n.AverageExpectedSol, 1) * 0.04 + n.LuxuriesDemand / 5 * 0.75) * n.Population / 1000) / 200;
   n.SugarDemand = n.FoodAdditionsDemand * 0.45;
   n.SpiceDemand = n.FoodAdditionsDemand * 0.55;
   n.FoodAdditionsFoodBoost = 1 + (n.FoodAdditions / (n.Population / 2000000)) / 100;
@@ -1193,9 +1193,9 @@ static evaluateNation(nationName) {
   n.SocialSpendingUpkeep = n.SocialSpendingUpkeep / gameStats.TimeDivide;
 
 
-    n.NecessitiesCost = (0.5 * n.HousingValue + 0.5 * n.TextilesValue + n.BasicGoodsValue + n.AlcoholValue * (0.5 + n.Alcoholism) * (1 - n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100) + n.CoffeeValue * 0.5 * (n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100) + 0.5 * n.BasicToolsValue) / 200 + (n.CoalValue * 0.005 > n.WoodValue * 0.01 ? 0.01 * n.WoodValue : 0.005 * n.CoalValue) + (n.FoodAdditions > 0 ? 0.1 * n.FoodAdditionsValue + 0.9 * n.FoodValue : n.FoodValue);
-    n.LuxuriesCost = (n.HousingValue + n.TextilesValue + 1.5 * n.BasicGoodsValue + n.LuxuryGoodsValue + 2 * n.AlcoholValue * (0.5 + n.Alcoholism) * (1 - n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100) + n.CoffeeValue * (n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100)) / 200 + (n.CoalValue * 0.01 > n.WoodValue * 0.02 ? n.WoodValue * 0.02 : 0.01 * n.CoalValue) + (n.FoodAdditions > 0 ? n.FoodAdditionsValue + 1.25 * n.FoodValue : 1.75 * n.FoodValue) + (n.LuxuryConsumables > 0 ? 0.025 * n.LuxuryConsumablesValue : 0);
-
+    n.NecessitiesCost = (0.5 * n.HousingValue + 0.5 * n.TextilesValue + n.BasicGoodsValue + n.AlcoholValue * (0.5 + n.Alcoholism) * (1 - n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100) + n.CoffeeValue * 0.5 * (n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100) + 0.5 * n.BasicToolsValue) / 200 + (n.CoalValue * 0.005 > n.WoodValue * 0.01 ? 0.01 * n.WoodValue : 0.005 * n.CoalValue) + (n.FoodAdditionsValue / 5 < n.FoodValue ? 0.04 * n.FoodAdditionsValue + 0.8 * n.FoodValue : n.FoodValue);
+    n.LuxuriesCost = (n.HousingValue + n.TextilesValue + 1.5 * n.BasicGoodsValue + n.LuxuryGoodsValue + 2 * n.AlcoholValue * (0.5 + n.Alcoholism) * (1 - n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100) + n.CoffeeValue * (n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100)) / 200 + (n.CoalValue * 0.01 > n.WoodValue * 0.02 ? n.WoodValue * 0.02 : 0.01 * n.CoalValue) + (n.FoodAdditionsValue / 5 < n.FoodValue ? n.FoodAdditionsValue / 5 * 0.75 + 0.5 * n.FoodValue : 1.25 * n.FoodValue) + (n.LuxuryConsumablesValue / 20 < n.FoodValue ? 0.025 * n.LuxuryConsumablesValue : 0.5 * n.FoodValue);
+    if (nationName =="AshikagaShogunate") debugger;
   // SoL
   for (const EstateIndex in gameStats.Estates) {
     const Estate = gameStats.Estates[EstateIndex];
@@ -1327,7 +1327,7 @@ static evaluateNation(nationName) {
     n.LoyaltiesStabilityImpact = n.LoyaltiesStabilityImpact * 0.6;
 
     n.Stability = n.PopulationHappiness + n.AdministrativeEfficiency / 10 - n.Overextension - n.CulturalDisunity - n.ReligiousDisunity + (n.PropagandaReal * 0.5 * (1 + n.CulturalAdvancements.Newspapers * n.LiteracyPercent / 50)) + n.PopulationControlReal * 1.5 + n.PopulationStabilityImpact + WarStabilityModifier * 7.5 + n.LoyaltiesStabilityImpact - (n.Workforces.Slaves * 10);
-    if (n.Stability < -4) debugger;
+
   let PopulationGrowthModifier = n.FoodPopulationBoost + n.Prosperity / 10 + n.Stability / 100 + n.UnderPopulation;
 
   n.PseudoPopulationGrowth = (n.FutureFood < 0 ? n.FutureFood * 1000 / n.Population : (0.1 + PopulationGrowthModifier) - n.BirthControl / 20) / gameStats.TimeDivide;
