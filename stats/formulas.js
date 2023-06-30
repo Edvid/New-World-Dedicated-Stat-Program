@@ -168,7 +168,8 @@ static evaluateNation(nationName) {
     0 + n.Population / 1000000 + n.Health * 2 + n.Education * 2 + n.SocialSpending * 4 + n.PropagandaReal * 2 + n.PopulationControlReal * 2 + n.BirthControl * 4 +
     (n.AristocracyTax + n.ClergyTax + n.BurgousieTax + n.UrbanTax + n.BureaucratsTax + n.IntellectualsTax + n.WorkersTax + n.MilitaryTax) / 8 * 75 + n.OverallNumbers / 5000 + n.OverallShipCount / 25 + n.AgricultureSubsidies * 4 + (n.AgricultureInfrastructure - 1) * 4 + n.Size / 7500 +
     (n.ResearchSpending - 1) * 10 + (1 - n.CultureRepresentedAtGovernmentLevelPercent) * 10 + (n.Population / 1000 * n.Workforces.Townsfolk / 20) * n.ProductionGovernmentControl + n.ResourcesAdmDemand + n.AgricultureAdmDemand
-  );
+    );
+    
   n.AdministrativeStrain = max(0, n.AdministrativeDemand - n.AdministrativePower);
   n.Absolutism = n.GovernmentRepresentation.UnitaryRepresentation / 10;
   n.Corruption = ((n.Stability < 1 ? 0.5 : 0) + (n.Stability < -1 ? 0.5 : 0) + n.AdministrativeStrain / n.AdministrativePower * 10 + n.Absolutism / 2.5) * (n.GovernmentDominatedBy == "Burgousie" || n.GovernmentDominatedBy == "Aristocracy" ? 1.2 : 1);
@@ -438,7 +439,7 @@ static evaluateNation(nationName) {
   n.CocoaDemand = n.LuxuryConsumablesDemand * 0.2;
 
   n.FoodAdditions = n.EffectiveSugar + n.EffectiveSpice;
-  n.FoodAdditionsDemand = ((min(n.AverageExpectedSol, 1) * 0.1 + n.LuxuriesDemand * 1.5) * n.Population / 1000) / 200;
+  n.FoodAdditionsDemand = ((min(n.AverageExpectedSol, 1) * 0.04 + n.LuxuriesDemand / 5 * 0.75) * n.Population / 1000) / 200;
   n.SugarDemand = n.FoodAdditionsDemand * 0.45;
   n.SpiceDemand = n.FoodAdditionsDemand * 0.55;
   n.FoodAdditionsFoodBoost = 1 + (n.FoodAdditions / (n.Population / 2000000)) / 100;
@@ -575,7 +576,7 @@ static evaluateNation(nationName) {
     const resourceDemand = n[resource + "Demand"];
     const effectiveResource = n["Effective" + resource];
     const resourceBaseValue = n[resource + "BaseValue"];
-    n[resource + "Value"] = resourceDemand / (isNaN(effectiveResource) ? 1 : (effectiveResource == 0 ? 1 : effectiveResource)) * resourceBaseValue;
+      n[resource + "Value"] = resourceDemand / (isNaN(effectiveResource) ? 1 : (effectiveResource == 0 ? 1 : (effectiveResource + Math.sqrt(effectiveResource)))) * resourceBaseValue;
     
   }
 
@@ -1180,7 +1181,7 @@ static evaluateNation(nationName) {
   n.SoldiersEffectiveWage = n.SoldiersWage * (1 - n.MilitaryTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.MilitaryInfluence)) + (n.ExpectedSoldiersSol < n.AverageExpectedSol ? n.SocialSpending / 10 : 0);
   n.AristocracyEffectiveWage = n.AristocracyWage * (1 - n.AristocracyTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.AristocracyInfluence)) + (n.ExpectedAristocracySol < n.AverageExpectedSol ? n.SocialSpending / 10 : 0) - (n.AristocracyBasicArmaments * n.BasicArmamentsValue) / (n.Population * n.Workforces.Aristocracy / 1000);
   n.BurgousieEffectiveWage = n.BurgousieWage * (1 - n.BurgousieTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.BurgousieInfluence)) + (n.ExpectedBurgousieSol < n.AverageExpectedSol ? n.SocialSpending / 10 : 0) - (n.BurgousieBasicArmaments * n.BasicArmamentsValue) / (n.Population * n.Workforces.Burgousie / 1000);
-
+  
   // n.SocialSpendingUpkeep
   n.SocialSpendingUpkeep = 0;
   for (const EstateIndex in gameStats.Estates) {
@@ -1192,9 +1193,9 @@ static evaluateNation(nationName) {
   n.SocialSpendingUpkeep = n.SocialSpendingUpkeep / gameStats.TimeDivide;
 
 
-    n.NecessitiesCost = (0.5 * n.HousingValue + 0.5 * n.TextilesValue + n.BasicGoodsValue + n.AlcoholValue * (0.5 + n.Alcoholism) * (1 - n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100) + n.CoffeeValue * 0.5 * (n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100) + 0.5 * n.BasicToolsValue) / 200 + (n.CoalValue * 0.005 > n.WoodValue * 0.01 ? 0.01 * n.WoodValue : 0.005 * n.CoalValue) + (n.FoodAdditions > 0 ? 0.1 * n.FoodAdditionsValue + 0.9 * n.FoodValue : n.FoodValue);
-    n.LuxuriesCost = (n.HousingValue + n.TextilesValue + 1.5 * n.BasicGoodsValue + n.LuxuryGoodsValue + 2 * n.AlcoholValue * (0.5 + n.Alcoholism) * (1 - n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100) + n.CoffeeValue * (n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100)) / 200 + (n.CoalValue * 0.01 > n.WoodValue * 0.02 ? n.WoodValue * 0.02 : 0.01 * n.CoalValue) + (n.FoodAdditions > 0 ? n.FoodAdditionsValue + 1.25 * n.FoodValue : 1.75 * n.FoodValue) + (n.LuxuryConsumables > 0 ? 0.025 * n.LuxuryConsumablesValue : 0);
-
+    n.NecessitiesCost = (0.5 * n.HousingValue + 0.5 * n.TextilesValue + n.BasicGoodsValue + n.AlcoholValue * (0.5 + n.Alcoholism) * (1 - n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100) + n.CoffeeValue * 0.5 * (n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100) + 0.5 * n.BasicToolsValue) / 200 + (n.CoalValue * 0.005 > n.WoodValue * 0.01 ? 0.01 * n.WoodValue : 0.005 * n.CoalValue) + (n.FoodAdditionsValue / 5 < n.FoodValue ? 0.04 * n.FoodAdditionsValue + 0.8 * n.FoodValue : n.FoodValue);
+    n.LuxuriesCost = (n.HousingValue + n.TextilesValue + 1.5 * n.BasicGoodsValue + n.LuxuryGoodsValue + 2 * n.AlcoholValue * (0.5 + n.Alcoholism) * (1 - n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100) + n.CoffeeValue * (n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100)) / 200 + (n.CoalValue * 0.01 > n.WoodValue * 0.02 ? n.WoodValue * 0.02 : 0.01 * n.CoalValue) + (n.FoodAdditionsValue / 5 < n.FoodValue ? n.FoodAdditionsValue / 5 * 0.75 + 0.5 * n.FoodValue : 1.25 * n.FoodValue) + (n.LuxuryConsumablesValue / 20 < n.FoodValue ? 0.025 * n.LuxuryConsumablesValue : 0.5 * n.FoodValue);
+    if (nationName =="AshikagaShogunate") debugger;
   // SoL
   for (const EstateIndex in gameStats.Estates) {
     const Estate = gameStats.Estates[EstateIndex];
@@ -1266,8 +1267,8 @@ static evaluateNation(nationName) {
     n.BureaucratsPoliticalAwareness = 1 - n.Alcoholism * (1 - n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100) / 2;
 
   n.AverageSolMods = {
-    Workers: 0.5,
-    Urban: 2,
+    Workers: 0.3,
+    Urban: 1.75,
     Clergy: 5,
     Bureaucrats: 2,
     Intellectuals: 1.5,
@@ -1278,10 +1279,11 @@ static evaluateNation(nationName) {
 
   // Loyalties
   for (const EstateIndex in gameStats.EstatesGeneral) {
-    const Estate = gameStats.EstatesGeneral[EstateIndex];
-      n[Estate + "Loyalty"] = (n[Estate + "Sol"] / n["Expected" + Estate + "Sol"]) / 2 - (n[Estate + "Sol"] < n.AverageSol * n.AverageSolMods[Estate] ? ((n.AverageSol * n.AverageSolMods[Estate]) / n[Estate + "Sol"] - 1) / 4 : 0) + (n.GovernmentRepresentation[Estate + "Representation"] / 100 - max(n.EstateInfluencesReal[Estate + "Influence"] * 0.9, n.EstateNumbers[Estate] * n[Estate + "PoliticalAwareness"] * 0.9)) + n.InfluenceChangeLoyaltyEffect[Estate];
+      const Estate = gameStats.EstatesGeneral[EstateIndex];
+      n[Estate + "Loyalty"] = (n[Estate + "Sol"] / n["Expected" + Estate + "Sol"]) / 2 - (n[Estate + "Sol"] < n.AverageSol * n.AverageSolMods[Estate] ? ((n.AverageSol * n.AverageSolMods[Estate]) / n[Estate + "Sol"] - 1) / 4 : 0) + (n.GovernmentRepresentation[Estate + "Representation"] / 100 - max(n.EstateInfluencesReal[Estate + "Influence"] * 0.9, n.EstateNumbers[Estate] * n[Estate + "PoliticalAwareness"] * 0.9)) + n.InfluenceChangeLoyaltyEffect[Estate] - (n[Estate + "Tax"] > n.AverageTax ? n[Estate + "Tax"] / n.AverageTax / 25 : 0);
+      n[Estate + "Loyalty"] = clamp(0, 1, n[Estate + "Loyalty"]);
   }
-
+ 
   n.AristocracyLoyalty += n.CulturalAdvancements.NobleDuty * 0.05;
 
     n.MilitaryLoyalty = n.MilitaryControlReal.Aristocracy * n.AristocracyLoyalty + n.MilitaryControlReal.Clergy * n.ClergyLoyalty + n.MilitaryControlReal.Burgousie * n.BurgousieLoyalty + n.MilitaryControlReal.Urban * n.UrbanLoyalty + n.MilitaryControlReal.Bureaucrats * n.BureaucratsLoyalty + n.MilitaryControlReal.Workers * n.WorkersLoyalty + n.MilitaryControlReal.Independent * n.MilitaryLoyalty;
@@ -1322,9 +1324,9 @@ static evaluateNation(nationName) {
       const Estate = gameStats.EstatesGeneral[EstateIndex];
       n.LoyaltiesStabilityImpact += (n[Estate + "Loyalty"] - 0.5) * (1 + n.EstateNumbers[Estate] * (n[Estate + "PoliticalAwareness"] + 0.5) + n.EstateInfluencesReal[Estate + "Influence"] * 4) * 5;
     }
+    n.LoyaltiesStabilityImpact = n.LoyaltiesStabilityImpact * 0.6;
 
-
-  n.Stability = n.PopulationHappiness + n.AdministrativeEfficiency / 10 - n.Overextension - n.CulturalDisunity - n.ReligiousDisunity + (n.PropagandaReal * 0.5 * (1 + n.CulturalAdvancements.Newspapers * n.LiteracyPercent / 50)) + n.PopulationControlReal * 1.5 + n.PopulationStabilityImpact + WarStabilityModifier * 7.5 + n.LoyaltiesStabilityImpact - (n.Workforces.Slaves * 10);
+    n.Stability = n.PopulationHappiness + n.AdministrativeEfficiency / 10 - n.Overextension - n.CulturalDisunity - n.ReligiousDisunity + (n.PropagandaReal * 0.5 * (1 + n.CulturalAdvancements.Newspapers * n.LiteracyPercent / 50)) + n.PopulationControlReal * 1.5 + n.PopulationStabilityImpact + WarStabilityModifier * 7.5 + n.LoyaltiesStabilityImpact - (n.Workforces.Slaves * 10);
 
   let PopulationGrowthModifier = n.FoodPopulationBoost + n.Prosperity / 10 + n.Stability / 100 + n.UnderPopulation;
 
@@ -1350,7 +1352,7 @@ static evaluateNation(nationName) {
     n.TaxRevenue = (n.LabourersTaxes + n.SerfsTaxes + n.FarmersTaxes + n.TownsfolkTaxes + n.ClergyTaxes + n.BureaucratsTaxes + n.MerchantsTaxes + n.IntellectualsTaxes + n.SailorsTaxes + n.SoldiersTaxes + n.AristocracyTaxes + n.BurgousieTaxes) / gameStats.TimeDivide;
     n.TariffsRevenue = (n.InternalTrade * n.InternalTariffs + n.ExternalTrade * n.ExternalTariffs) * n.TariffEfficiency / gameStats.TimeDivide;
 
-  n.SpyUpkeep = n.Spies / 200 * n.SpyQuality / gameStats.TimeDivide;
+  n.SpyUpkeep = n.Spies / 10 * n.SpyQuality / gameStats.TimeDivide;
   n.HealthUpkeep = n.Health * n.Population / 2000000 / gameStats.TimeDivide;
   n.EducationUpkeep = n.Education * n.Population / 500000 * (1.1 - n.AdministrativeEfficiency / 100) * 6 / gameStats.TimeDivide;
   n.PropagandaUpkeep = n.PropagandaReal * (100 - n.AdministrativeEfficiency) / 100 * n.Population / 1000000 / gameStats.TimeDivide;

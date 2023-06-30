@@ -16,7 +16,7 @@ function syncNation(nationName) {
     // SoL rise/fall
     for (const EstateIndex in gameStats.Estates) {
         const Estate = gameStats.Estates[EstateIndex];
-        gameStats.Nations[nationName]["Expected" + Estate + "Sol"] = (gameStats.Nations[nationName]["Expected" + Estate + "Sol"] > gameStats.Nations[nationName][Estate + "Sol"] * 1.05 ? gameStats.Nations[nationName]["Expected" + Estate + "Sol"] * 0.9 : gameStats.Nations[nationName]["Expected" + Estate + "Sol"] * max(1.05, gameStats.Nations[nationName][Estate + "Sol"] / gameStats.Nations[nationName]["Expected" + Estate + "Sol"] - 0.05));
+        gameStats.Nations[nationName]["Expected" + Estate + "Sol"] = (gameStats.Nations[nationName]["Expected" + Estate + "Sol"] > gameStats.Nations[nationName][Estate + "Sol"] * 1.05 ? gameStats.Nations[nationName]["Expected" + Estate + "Sol"] * 0.9 : gameStats.Nations[nationName]["Expected" + Estate + "Sol"] * max(1.025, gameStats.Nations[nationName][Estate + "Sol"] / gameStats.Nations[nationName]["Expected" + Estate + "Sol"] - 0.1));
     }
 
     // weapons stockpiled
@@ -26,7 +26,7 @@ function syncNation(nationName) {
     gameStats.Nations[nationName].HeavyArmamentsStockpiled = max(0, gameStats.Nations[nationName].HeavyArmamentsStockpiled);
 
     // Expected Weapons for private militaries
-    gameStats.Nations[nationName].ExpectedPrivateBasicArmaments = n.AristocracyBasicArmaments + n.BurgousieBasicArmaments + n.ClergyBasicArmaments + n.PopulaceBasicArmaments;
+    gameStats.Nations[nationName].ExpectedPrivateBasicArmaments = gameStats.Nations[nationName].AristocracyBasicArmaments + gameStats.Nations[nationName].BurgousieBasicArmaments + gameStats.Nations[nationName].ClergyBasicArmaments + gameStats.Nations[nationName].PopulaceBasicArmaments;
 
     // Alcoholism
     if (gameStats.Nations[nationName].EffectiveAlcohol > gameStats.Nations[nationName].AlcoholDemand * 0.75) {
