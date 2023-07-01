@@ -232,10 +232,10 @@
 =100 Hindu
 <
 > CultureGroups
-+> Deccan
-=100 Deccan
++> Deccani
+=100 Deccani
 <
-= "Deccan" cultrep
+= "Deccani" cultrep
 = "Hindu" relrep
 
 <... > Nations
