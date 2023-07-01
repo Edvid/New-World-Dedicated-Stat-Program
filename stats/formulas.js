@@ -278,7 +278,7 @@ static evaluateNation(nationName) {
     }
     
     n.PopInAgriculture = n.Workforces.Farmers + n.Workforces.Serfs;
-    n.AgricultureSpending = (n.Workforces.Farmers * n.Population / 1000 * n.AgricultureInfrastructure / 100 * (1 + n.AgricultureSubsidies / 10) * n.StockingCapabilities) / 2 / gameStats.TimeDivide;
+    n.AgricultureSpending = (n.PopInAgriculture * n.Population / 1000 * (-2 + n.AgricultureInfrastructure + n.AgricultureSubsidies + n.StockingCapabilities)) / 100 / gameStats.TimeDivide;
   
   let GatheringEffectiveness = function (name) {
     switch (name) {
