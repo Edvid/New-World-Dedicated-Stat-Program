@@ -1866,3 +1866,142 @@
 = 3787.4500000000003 MapucheConfederation.Fertility
 !suppress 0
 <...
+
+<... > Nations
+> Aztec Empire
++0.10 ReligiousFervor 
++3.5 ProductionSectors.Basic Goods Sector
++3.5 ProductionSectors.Construction Sector
++4.5 ProductionSectors.TextilesSector
++3.5 GovernmentRepresentation.Burgousie Representation
+-2 GovernmentRepresentation.unitary Representation
+-1.5 GovernmentRepresentation.aristocracy Representation
++2.5 AdmEff
++0.4 AdmSize
++1.5 ProductionSectors.Luxury Goods Sector
++2.5 LocalTrade
++1.5 TradeInfluences.Gulf Of Mexico
++1.5 TradeInfluences.Western Mexico
++0.10 SocialSpending
++1.0 AgrSubsidies
++1.0 AgrInf
++1.0 AgrAdv
++0.2 StockCap
+=20% Internal Tariffs
+=20% ExternalTariffs
+=15% AristocracyTax
+=15% WorkersTax
+=15% BurgousieTax
+=15% UrbanTax
+=15% IntellectualsTax
+=15% BureaucratsTax
+=15% ClergyTax
+
+<... > Nations
+> Mayan Empire
++0.5 SocialSpending
++0.25 LocalTrade
++0.5 ProductionSectors.Basic Goods Sector
++0.5 ProductionSectors.textiles Sector
+=12.5% aristocracytax
+=8.5% clergytax
+=12% Burgousietax
+=11% urbantax
+=12.5% bureaucratstax
+=7% intellectualstax
+=13% workerstax
+=11% militarytax
++0.2 AgrInf
++0.2 AgrAdv
++1000 levies
++300 light infantry 
++50 heavy infantry 
++100 archers
++50 crossbowmen
+=12% internaltariffs
++0.5 TradeInfluences.Gulf Of Mexico
++0.5 TradeInfluences.Caribbean
++0.25 ProductionSectors.Luxury Goods Sector
+
+<... > Nations
+> Kokwapa Confederation
++0.3 AgrSubsidies
++0.2 AgrAdv
++0.2 StockCap
+
+<... > Nations
+> Natchez
++0.1 StockCap
++0.35 AdmEff
++0.25 LocalTrade
++0.25 TradeInfluences.Mississippi
++1.0 EstateInfluences.Urban Influence
++0.25 SocialSpending
++5.0 GovernmentRepresentation.UnitaryRepresentation
+-2.5 GovernmentRepresentation.AristocracyRepresentation
+-2.5 GovernmentRepresentation.BurgousieRepresentation
+
+
+<... > Cultures > Russian > Opinions 
++> Finnic
++15 Finnic.Score
+<... > Cultures > Russian > Opinions 
++> Baltic
++15 Baltic.Score
+<... > Cultures > Russian > Opinions 
++> Ruthenian
++15 Ruthenian.Score
+<... > Cultures > Finnic > Opinions 
++> Baltic
++15 Baltic.Score
+<... > Cultures > Ruthenian > Opinions 
++> Baltic
++15 Baltic.Score
+<... > Cultures > Ruthenian > Opinions 
++> Finnic
++15 Finnic.Score
+
+<... > Nations
+> Kingdom Of Novgorod
++4.60 AdmEff
++0.5 AdmSize
++1.60 LocalTrade
++1 SocialSpending
++1 Health
+=12% aristocracytax
+=9% clergytax
+=12% burgousietax
+=10% urbantax
+=10% bureaucratstax
+=10% intellectualstax
+=16% workerstax
+=8% militarytax
+=15% InternalTariffs
+=20% ExternalTariffs
++0.5 Coal
++0.5 Iron
++0.3 Fur
++0.15 AgrAdv
++0.1 AgrInf
++5 Merchant Ships
++5 Light Ships
++26 TradeInfluences.Novgorod
++15 TradeInfluences.Poland
++10 TradeInfluences.Germany
++10 TradeInfluences.Baltic Sea
++8 TradeInfluences.Denmark
++8 TradeInfluences.North Nordics
++15 TradeInfluences.Livonia
++4 TradeInfluences.Muscovy
++3 TradeInfluences.Dniepr
++4 TradeInfluences.Barents Sea
++0.2 TradeImprov
++0.25 EduEff
++0.25 AgrSubsidies
+trade TreatyOfGoteborg1, KingdomOfNovgorod > CrownOfSweden, 20 budget
+trade TreatyOfGoteborg2, CrownOfSweden > KingdomOfNovgorod, 0.5 silver
++0.05 OverallImprov
++0.1 MeleeImprovements
++0.05 LightShipimprov
++0.05 MediumShipimprov
++0.05 HeavyShipimprov
