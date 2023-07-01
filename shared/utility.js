@@ -1434,6 +1434,7 @@ async function prepareData(path, progressTextElement){
     let done = false;
     Img.onload = function () {
 
+        ctx.imageSmoothingEnabled = false;
 
         ctx.clearRect(0, 0, BIGWIDTH, BIGHEIGHT);
         ctx.drawImage(Img, 0, 0, BIGWIDTH, BIGHEIGHT);
