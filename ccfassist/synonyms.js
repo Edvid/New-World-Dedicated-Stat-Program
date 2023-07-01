@@ -4,7 +4,7 @@ let Synonyms = {
         "admeff",
         "admineff"
     ],
-    AdministrativeSize: [
+    AdministrationSize: [
         "AdmSize"
     ],
     PopulationControl: [
