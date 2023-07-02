@@ -2005,3 +2005,59 @@ trade TreatyOfGoteborg2, CrownOfSweden > KingdomOfNovgorod, 0.5 silver
 +0.05 LightShipimprov
 +0.05 MediumShipimprov
 +0.05 HeavyShipimprov
+
+<... > Nations > Regency Of Valencia
++3 AdmEff
++0.2 AdmSize
++3 LocalTrade
++0.25 TradeImprov
++0.25 SocialSpending
++0.25 Health
++0.1 AgrAdv
++0.05 AgrInf
++0.1 StockCap
++2.5 EstateInfluences.BureaucratsInfluence
++2.5 EstateInfluences.BurgousieInfluence
++2.5 EstateInfluences.UrbanInfluence
++5 GovernmentRepresentation.UnitaryRepresentation
++2.5 GovernmentRepresentation.AristocracyRepresentation
+-5 GovernmentRepresentation.BurgousieRepresentation
+-2.5 GovernmentRepresentation.ClergyRepresentation
+= 15% AristocracyTax
+= 15% ClergyTax
+= 15% BurgousieTax
+= 15% UrbanTax
+= 15% BureaucratsTax
+= 15% IntellectualsTax
+= 15% WorkersTax
+=15% InternalTariffs
+=20% ExternalTariffs
++6 TradeInfluences.Iberia
++6 TradeInfluences.WesternMediterranean
++6 TradeInfluences.CentralMediterranean
++6 TradeInfluences.Morocco
++5% ProductionGovernmentControl
++2.5 ProductionSectors.TextilesSector
++2.5 ProductionSectors.BasicGoodsSector
++2.5 ProductionSectors.HeavyArmamentsSector
++2.5 ProductionSectors.BasicArmamentsSector
++5 ProductionSectors.ShipBuildingSector
++2 iron
++2 silver
++2 copper
++2 coal
++2 sulphur
++1 Wool
++0.1 MiningEff
++0.05 OverallImprov
++128 Handcannoneers
++384 Crossbowmen
++576 light Infantry
++256 heavy infantry
++200 light cavalry
++100 heavy cavalry
++64 siege equipment
++0.10 LightShipImprovements
++0.05 MediumShipImprovements
++0.05 HeavyShipImprovements
++10 MerchantShips
