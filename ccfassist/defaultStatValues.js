@@ -47,8 +47,6 @@ let defaultStatValues = {
     CulturalProsperity: 0.05,
     CommanderFreedom: 0.5,
     ArmyWages: 0.05,
-    TrainingQuality: 0.05,
-    MilitaryTactics: 0.05,
     MilitaryDiscipline: 0.005,
     NavyImprovements: 0.05,
     TradeInfluences: 0.5

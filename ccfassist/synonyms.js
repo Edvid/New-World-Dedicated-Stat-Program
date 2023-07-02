@@ -307,16 +307,6 @@ let Synonyms = {
 		"wages"
 	],
 	
-	TrainingQuality: [
-		"training",
-		"armytraining"
-	],
-	
-	MilitaryTactics: [
-		"tactics",
-		"armytactics"
-	],
-	
 	MilitaryDiscipline: [
 		"discipline",
 		"discipline"
