@@ -243,8 +243,7 @@ let TableLayouts = {
         ["Flag"],
         ["GovernmentName"],
         ["GovernmentDominatedBy"],
-        ["GovernmentEffects"],
-        ["CapitalName"]
+        ["GovernmentEffects"]
     ],
     "Turn Based Stats": [
         ["FuturePopulation", "FutureLiteracyPercent", "FutureHigherEducation", "FutureBudget", "FutureFood"],

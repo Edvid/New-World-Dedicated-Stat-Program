@@ -2032,10 +2032,10 @@ trade TreatyOfGoteborg2, CrownOfSweden > KingdomOfNovgorod, 0.5 silver
 = 15% WorkersTax
 =15% InternalTariffs
 =20% ExternalTariffs
-+6 TradeInfluences.Iberia
-+6 TradeInfluences.WesternMediterranean
-+6 TradeInfluences.CentralMediterranean
-+6 TradeInfluences.Morocco
++7 TradeInfluences.Iberia
++7 TradeInfluences.WesternMediterranean
++7 TradeInfluences.CentralMediterranean
++7 TradeInfluences.Morocco
 +5% ProductionGovernmentControl
 +2.5 ProductionSectors.TextilesSector
 +2.5 ProductionSectors.BasicGoodsSector
@@ -2061,3 +2061,87 @@ trade TreatyOfGoteborg2, CrownOfSweden > KingdomOfNovgorod, 0.5 silver
 +0.05 MediumShipImprovements
 +0.05 HeavyShipImprovements
 +10 MerchantShips
+
+<... > Nations > KingdomOfPrussia
++0.05 AdmSize
++1 AdmEff
+= 20% AristocracyTax
+= 20% ClergyTax
+= 20% BurgousieTax
+= 20% UrbanTax
+= 20% BureaucratsTax
+= 20% IntellectualsTax
+= 20% WorkersTax
+="https://cdn.discordapp.com/attachments/1122446378661052446/1124295057898479666/image0.png" flag
++1 TradeInfluences.CentralEurope
++0.5 LocalTrade
+
+<... > Nations > EarldomOfManx
++0.5 Health
++0.5 EduEff
++0.5 Propaganda
++2.5 AdmEff
++0.1 AdmSize
++1 LocalTrade
++0.2 TradeImprov
+=15% AristocracyTax
+=15% ClergyTax
+=15% BurgousieTax
+=20% InternalTariffs
+=20% ExternalTariffs
++0.1 OverallImprovements
++0.25 ArmyWage
++500 HeavyInf
++500 LightCav
++500 Crossbowmen
++5 LightShips
++5 MerchantShips
++5 ProductionSectors.ShipBuildingSector
++0.05 LightShipImprovements
++0.05 MediumShipImprovements
++0.05 HeavyShipImprovements
++0.05 AgrAdv
++0.05 AgrInf
++2.5 EstateInfluences.BurgousieInfluence
++2.5 TradeInfluences.NorthSea
++2.5 TradeInfluences.BritishIsles
++2.5 TradeInfluences.EnglishChannel
++2.5 TradeInfluences.France
++2.5 TradeInfluences.Rhine
++1 Coal
++0.5 Sulphur
++1 Iron
++1 Wool
+
+<... > Nations > Dynasty Of Usia
++0.25 AdmEff
+="https://cdn.discordapp.com/attachments/1122448589877170246/1123295595059224576/Untitled2_20220925174611.png" flag
+= 15% AristocracyTax
+= 15% ClergyTax
+= 15% BurgousieTax
+= 15% UrbanTax
+= 15% BureaucratsTax
+= 15% IntellectualsTax
+= 15% WorkersTax
+
+<... > Nations > Kingdom Of Livonia
++1.25 AdmEff
+
+<... > Nations > Guyenne
+="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Flag_of_Aquitaine.svg/1280px-Flag_of_Aquitaine.svg.png" flag
++1 LocalTrade
++1 Supply Depots
++ 1000 light inf
++ 250 heavy inf
++ 250 light cav
++ 125 heavy cav
++ 1000 hand cannoneers
++0.5% military discipline
++0.05 Firearm improvements
++0.25 AdmEff
++2.5 tradeinfluence.france
++2.5 tradeinfluence.bayofbiscay
++5 tradeinfluence.southernfrance
++ 2 light ships
++ 1 medium ships
++ 2 merchant ships
