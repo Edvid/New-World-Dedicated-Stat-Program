@@ -1883,9 +1883,9 @@
 +1.5 TradeInfluences.Gulf Of Mexico
 +1.5 TradeInfluences.Western Mexico
 +0.10 SocialSpending
-+1.0 AgrSubsidies
-+1.0 AgrInf
-+1.0 AgrAdv
++0.1 AgrSubsidies
++0.1 AgrInf
++0.1 AgrAdv
 +0.2 StockCap
 =20% Internal Tariffs
 =20% ExternalTariffs
