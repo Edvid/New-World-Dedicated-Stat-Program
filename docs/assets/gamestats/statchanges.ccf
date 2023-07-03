@@ -2145,3 +2145,184 @@ trade TreatyOfGoteborg2, CrownOfSweden > KingdomOfNovgorod, 0.5 silver
 + 2 light ships
 + 1 medium ships
 + 2 merchant ships
+
+<... > Nations > EarldomOfManx
++0.5 Health
++0.5 EduEff
++0.5 Propaganda
++2.5 AdmEff
++0.1 AdmSize
++1 LocalTrade
++0.2 TradeImprov
+=15% AristocracyTax
+=15% ClergyTax
+=15% BurgousieTax
+=20% InternalTariffs
+=20% ExternalTariffs
++0.1 OverallImprovements
++0.25 ArmyWage
++500 HeavyInf
++500 LightCav
++500 HeavyCav
++500 Crossbowmen
++5 MerchantShips
++5 ProductionSectors.ShipBuildingSector
++0.05 LightShipImprovements
++0.05 MediumShipImprovements
++0.05 HeavyShipImprovements
++0.05 AgrAdv
++0.05 AgrInf
++2.5 EstateInfluences.BurgousieInfluence
++1 Coal
++0.5 Sulphur
++1 Iron
++1 Wool
++0.5 Gold
++2.5 TradeInfluences.Adriatic
++2.5 TradeInfluences.Western Danube
++2.5 TradeInfluences.Eastern Danube
++2.5 TradeInfluences.Greece
++2.5 TradeInfluences.Romania
+
+<... > Nations
+> Dutch Republic
+=10% clergytax
+=14% burgousietax
+=9% urbantax
+=9% bureaucratstax
+=10% intellectualstax
+=15% workerstax
+=10% militarytax
+=12% aristocracytax
++0.75 AdmEff
++0.2 AdmSize
++0.05 AgrAdv
++0.2 AgrInf
++6 TradeInfluences.North sea
++7 TradeInfluences.Denmark
++7 TradeInfluences.English channel
++5 TradeInfluences.British isles
++7 TradeInfluences.Rhine
++10 merchant ships
++2 light ships
++1 medium ship
++1 TradeImprov
++1.75 LocalTrade
++0.55 Coal
++0.55 Sulphur
++5 EstateInfluences.UrbanInfluence
++0.05 OverallImprov
++600 levies
++400 light infantry 
++200 heavy infantry 
++300 light cavalry
++100 heavy cavalry
+
+<...> Nations > OrderOfHashishin
++1.25 AdmEff
++0.25 LocalTrade
++5 TradeInfluences.CaspianSea
++0.5 Health
++0.05 SpyQuality
++0.1 MeleeImprovements 
++1% Discipline
++800 Lightinfantry
++200 Archers
++50 Spies
+
+<...> Nations > CrownOfSweden
+=15% WorkersTax
++1.25 AdmEff
++0.5 Iron
++1 Silver
++0.05 MiningEff
++0.1 OverallImprovements
++0.1 AgrAdv
++0.1 StockCap
++0.5 EduEff
++0.5 TradeImprov
++0.5 LocalTrade
++0.5 Health
++0.25 SocialSpending
++0.05 MeleeImprovements
++0.05 RangedImprov
++5 TradeInfluences.Germany
++5 TradeInfluences.Denmark
++5 TradeInfluences.Poland
++5 TradeInfluences.Baltic
++5 TradeInfluences.NorthNordics
++200 HeavyInfantry
++500 LightCav
+
+<... > Nations
+> Dansk Empire
+=15% AristocracyTax
+=15% Clergy Tax
+=15% Burgousie Tax
+=15% Urban Tax
+=15% Workers Tax
+=0% Military Tax
++0.25 AdmEff
++7 Light ships
++5 Medium ships
++1 Heavy ships
++0.1 StockCap
++0.5 health
+
+<... > Nations
+> Asaran Empire
+=15% aristocracy tax
+=15% clergy tax
+=15% burgousie tax
+=15% urban tax
+=15% bureaucrat stax
+=15% intellectuals tax
+=15% workers tax
+=15% military tax
++0.25 EduEff
++0.25 SocialSpending
++2.15 AdmEff
++0.4 AdmSize
++0.75 LocalTrade
++0.2 AgrSubsidies
++1 TradeImprov
++0.2 AgrInf
++0.2 StockCap
++1 ReligiousFervor
++0.2 CulturalProsperity
++15 GovernmentRepresentation.clergyRepresentation
+-7.5 GovernmentRepresentation.unitaryRepresentation
+-7.5 GovernmentRepresentation.aristocracy Representation
++15 EstateInfluences.clergyInfluence
++0.75 Propaganda
++700 Militia
++350 light infantry
++480 heavy infantry
++40 light cavalry
++100 archers
++150 crossbowmen
+
+<... > Nations
+> Celtic Empire
++0.5 AdmEff
++0.1 AgrSubsidies
++0.1 MiningEff
++0.5 Coal
++0.5 Iron
++0.3 AgrInf
++0.2 StockCap
++0.2 AgrAdv
+
+<... > Nations
+> Abbul Kamil
++0.05 AgrAdv
+
+<... > Nations
+> Sultunate Of Mogadishu
++0.25 AgrSubsidies
++0.25 AgrInf
++1 TradeImprov
++0.75 cotton
++ 2 Small Fort
++0.25 City Fortifications
+
