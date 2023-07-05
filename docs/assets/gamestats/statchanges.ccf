@@ -2461,7 +2461,6 @@ trade TreatyOfGoteborg2, CrownOfSweden > KingdomOfNovgorod, 0.5 silver
 +5 EstateInfluences.clergyInfluence
 +7.5 EstateInfluences.IntellectualsInfluence
 +5 EstateInfluences.BureaucratsInfluence
-+0.15 Bureaucrats
 +1.5% Discipline
 +5 MilitaryControl.workersControl
 -5 MilitaryControl.aristocracyControl 
@@ -2504,9 +2503,9 @@ trade TreatyOfGoteborg2, CrownOfSweden > KingdomOfNovgorod, 0.5 silver
 +0.25 AdmEff
 =23% aristocracy tax
 =20% clergy tax
-=21% bourgeoisie tax
+=21% burgousie tax
 =13% urban tax
-=15% bureaucrat tax
+=15% Bureaucrats tax
 =10% intellectuals tax
 =17% workers tax
 =11% military tax
