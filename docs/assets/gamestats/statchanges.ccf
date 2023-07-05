@@ -334,6 +334,45 @@
 <
 = "natchez" cultrep
 = "pagan" relrep
+="false" Technologies.IronWorking
+="false" Technologies.Wheel
+="false" Technologies.Paper
+="false" Technologies.Gunpowder
+="false" Technologies.VerticalLoom
+="false" Technologies.SaddleAndStirrup
+="false" Technologies.HorseCollar
+="false" Technologies.Explosives
+="false" Technologies.Firelance
+="false" Technologies.Cranes
+="false" Technologies.PromissoryNotes
+="false" Technologies.Bombards
+="false" Technologies.HandCannons
+="false" Technologies.PlateArmour
+="false" Technologies.SappersAndEngineers
+="false" Technologies.Workshops
+="false" Technologies.StandardizedPikes
+="false" CulturalAdvancements.Currency
+="false" CulturalAdvancements.Universities
+="false" CulturalAdvancements.Courthouses
+=4 isolation
+=0 researchpoints
+=0.01 ExpectedSlavesSol
+=0.05 ExpectedLabourersSol
+=0.1 ExpectedSerfsSol
+=0.02 ExpectedUnemployedSol
+=0.25 ExpectedFarmersSol
+=1.00 ExpectedTownsfolkSol
+=6.00 ExpectedClergySol
+=1.00 ExpectedBureaucratsSol
+=0.30 ExpectedMerchantsSol
+=0.75 ExpectedIntellectualsSol
+=0.5 ExpectedSailorsSol
+=0.75 ExpectedSoldiersSol
+=10 ExpectedAristocracySol
+=5.00 ExpectedBurgousieSol
+=0 merchantships
+=2 BureaucratsWages
+=0.25 SocialSpending
 
 <... > Nations
 +> Madagascar
@@ -2471,3 +2510,237 @@ trade TreatyOfGoteborg2, CrownOfSweden > KingdomOfNovgorod, 0.5 silver
 <... > Cultures > Jurchen > Opinions 
 +> Korean
 =25 Korean.Score
+
+<... > Nations
++> KingdomOfZemlyertsy
+> KingdomOfZemlyertsy
+= "https://cdn.discordapp.com/attachments/1121052525106319373/1124415977602416740/Untitled_4.png" Flag
+= "2F6DB5" color
+> ReligionGroups
+=0 pagan
++> Orthodox
+=100 Orthodox
+<
+> CultureGroups
++> Ruthenian
+=100 Ruthenian
+<
+= "Ruthenian" cultrep
+= "Orthodox" relrep
+
+<... > Nations
++> KingdomOfAlvania
+> KingdomOfAlvania
+= "https://www.deviantart.com/romanianpatriot/art/Flag-of-Iasi-County-867533992" Flag
+= "E0B50B" color
+> ReligionGroups
+=0 pagan
++> Orthodox
+=100 Orthodox
+<
+> CultureGroups
++> Romanian
+=100 Romanian
+<
+= "Romanian" cultrep
+= "Orthodox" relrep
+
+<... > Nations
++> TsardomOfRuthenia
+> TsardomOfRuthenia
+= "https://i.pinimg.com/736x/ab/1b/2f/ab1b2f7ad8a09b4437dd8d9d949a73d2.jpg" Flag
+= "357A6D" color
+> ReligionGroups
+=0 pagan
++> Orthodox
+=100 Orthodox
+<
+> CultureGroups
++> Tatar
+=100 Tatar
+<
+= "Tatar" cultrep
+= "Orthodox" relrep
+
+<... > Nations
++> ZuluEmpire
+> ZuluEmpire
+= "" Flag
+= "954F4A" color
+> CultureGroups
++> Zulu
+=100 Zulu
+<
+= "Zulu" cultrep
+= "Pagan" relrep
+="false" Technologies.IronWorking
+="false" Technologies.Wheel
+="false" Technologies.Paper
+="false" Technologies.Gunpowder
+="false" Technologies.VerticalLoom
+="false" Technologies.SaddleAndStirrup
+="false" Technologies.HorseCollar
+="false" Technologies.Explosives
+="false" Technologies.Firelance
+="false" Technologies.Cranes
+="false" Technologies.PromissoryNotes
+="false" Technologies.Bombards
+="false" Technologies.HandCannons
+="false" Technologies.PlateArmour
+="false" Technologies.SappersAndEngineers
+="false" Technologies.Workshops
+="false" Technologies.StandardizedPikes
+="false" CulturalAdvancements.Currency
+="false" CulturalAdvancements.Universities
+="false" CulturalAdvancements.Courthouses
+=4 isolation
+=0 researchpoints
+=0.01 ExpectedSlavesSol
+=0.05 ExpectedLabourersSol
+=0.1 ExpectedSerfsSol
+=0.02 ExpectedUnemployedSol
+=0.25 ExpectedFarmersSol
+=1.00 ExpectedTownsfolkSol
+=6.00 ExpectedClergySol
+=1.00 ExpectedBureaucratsSol
+=0.30 ExpectedMerchantsSol
+=0.75 ExpectedIntellectualsSol
+=0.5 ExpectedSailorsSol
+=0.75 ExpectedSoldiersSol
+=10 ExpectedAristocracySol
+=5.00 ExpectedBurgousieSol
+=0 merchantships
+=2 BureaucratsWages
+=0.25 SocialSpending
+
+<... > Nations
++> KingdomOfPerindostra
+> KingdomOfPerindostra
+= "https://flagmakerjr.stg7.net/" Flag
+= "888CFF" color
+> CultureGroups
++> Aboriginal
+=100 Aboriginal
+<
+= "Aboriginal" cultrep
+= "Pagan" relrep
+="false" Technologies.IronWorking
+="false" Technologies.Wheel
+="false" Technologies.Paper
+="false" Technologies.Gunpowder
+="false" Technologies.VerticalLoom
+="false" Technologies.SaddleAndStirrup
+="false" Technologies.HorseCollar
+="false" Technologies.Explosives
+="false" Technologies.Firelance
+="false" Technologies.Cranes
+="false" Technologies.PromissoryNotes
+="false" Technologies.Bombards
+="false" Technologies.HandCannons
+="false" Technologies.PlateArmour
+="false" Technologies.SappersAndEngineers
+="false" Technologies.Workshops
+="false" Technologies.StandardizedPikes
+="false" CulturalAdvancements.Currency
+="false" CulturalAdvancements.Universities
+="false" CulturalAdvancements.Courthouses
+=4 isolation
+=0 researchpoints
+=0.01 ExpectedSlavesSol
+=0.05 ExpectedLabourersSol
+=0.1 ExpectedSerfsSol
+=0.02 ExpectedUnemployedSol
+=0.25 ExpectedFarmersSol
+=1.00 ExpectedTownsfolkSol
+=6.00 ExpectedClergySol
+=1.00 ExpectedBureaucratsSol
+=0.30 ExpectedMerchantsSol
+=0.75 ExpectedIntellectualsSol
+=0.5 ExpectedSailorsSol
+=0.75 ExpectedSoldiersSol
+=10 ExpectedAristocracySol
+=5.00 ExpectedBurgousieSol
+=0 merchantships
+=2 BureaucratsWages
+=0.25 SocialSpending
+
+<... > Nations
++> MajapahitKingdom
+> MajapahitKingdom
+= "https://preview.redd.it/gwrggz1sd5481.png?width=1080&crop=smart&auto=webp&v=enabled&s=bc6664ba5d394ff5d7f0d420d7c76564fff4cd9f" Flag
+= "B7404E" color
+> ReligionGroups
+=0 pagan
++> Hindu
+=100 Hindu
+<
+> CultureGroups
++> Indonesian
+=100 Indonesian
+<
+= "Indonesian" cultrep
+= "Hindu" relrep
+
+<... > Nations
++> KeraitesKhanate
+> KeraitesKhanate
+= "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Mongol_Empire_c.1207.png/800px-Mongol_Empire_c.1207.png" Flag
+= "3C759E" color
+> CultureGroups
++> Mongol
+=100 Mongol
+<
+= "Mongol" cultrep
+= "Pagan" relrep
+
+<... > Nations
++> SonghaiEmpire
+> SonghaiEmpire
+= "https://preview.redd.it/flag-of-the-songhai-empire-v0-k614s8xn9w8a1.png?auto=webp&s=a4032117c42d1e324220be741c04e4dddafb02ee" Flag
+= "9E8D58" color
+> ReligionGroups
+=0 pagan
++> Sunni
+=100 Sunni
+<
+> CultureGroups
++> Mossi
+=100 Mossi
+<
+= "Mossi" cultrep
+= "Sunni" relrep
+="false" Technologies.Gunpowder
+="false" Technologies.VerticalLoom
+="false" Technologies.SaddleAndStirrup
+="false" Technologies.HorseCollar
+="false" Technologies.Explosives
+="false" Technologies.Firelance
+="false" Technologies.Cranes
+="false" Technologies.PromissoryNotes
+="false" Technologies.Bombards
+="false" Technologies.HandCannons
+="false" Technologies.PlateArmour
+="false" Technologies.SappersAndEngineers
+="false" Technologies.Workshops
+="false" Technologies.StandardizedPikes
+="false" CulturalAdvancements.Universities
+="false" CulturalAdvancements.Courthouses
+=4 isolation
+=0 researchpoints
+=0.01 ExpectedSlavesSol
+=0.05 ExpectedLabourersSol
+=0.1 ExpectedSerfsSol
+=0.02 ExpectedUnemployedSol
+=0.25 ExpectedFarmersSol
+=1.00 ExpectedTownsfolkSol
+=6.00 ExpectedClergySol
+=1.00 ExpectedBureaucratsSol
+=0.30 ExpectedMerchantsSol
+=0.75 ExpectedIntellectualsSol
+=0.5 ExpectedSailorsSol
+=0.75 ExpectedSoldiersSol
+=10 ExpectedAristocracySol
+=5.00 ExpectedBurgousieSol
+=0 merchantships
+=2 BureaucratsWages
+=0.25 SocialSpending
