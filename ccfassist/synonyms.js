@@ -16,6 +16,9 @@ let Synonyms = {
     OverallImprovements: [
         "OverallImprov"
     ],
+    MeleeImprovements: [
+        "MeleeImprov"
+    ],
     IrregularImprovements: [
         "IrregularImprov"
     ],

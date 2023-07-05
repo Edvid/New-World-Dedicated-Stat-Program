@@ -2326,3 +2326,148 @@ trade TreatyOfGoteborg2, CrownOfSweden > KingdomOfNovgorod, 0.5 silver
 + 2 Small Fort
 +0.25 City Fortifications
 
+<... > nations > Ashikaga Shogunate
++5.75 AdmEff
++0.55 AdmSize
++1 Health
++0.75 SocialSpending
++0.25 Propaganda
++0.75 EduEff
++1 ReligiousFervor
++0.15 CulturalProsperity
++7.5 GovernmentRepresentation.AristocracyRepresentation
+-2.5 GovernmentRepresentation.UnitaryRepresentation
+-5 GovernmentRepresentation.ClergyRepresentation
++10 EstateInfluences.AristocracyInfluence
++5 EstateInfluences.ClergyInfluence
++2.5 EstateInfluences.BurgousieInfluence
++2.5 EstateInfluences.UrbanInfluence
++2.5 EstateInfluences.BureaucratsInfluence
++10 MilitaryControl.AristocracyControl
+-7.5 MilitaryControl.BurgousieControl
++5 MilitaryControl.ClergyControl
+-2.5 MilitaryControl.BureaucratsControl
+-5 MilitaryControl.Independent	
++0.75 ExoticFruits
++0.5 Spice
++0.5 Sugar
++5 LocalTrade
++0.5 TradeImprov
++0.1 AgrAdv
++0.25 AgrInfra
++0.2 AgrSubsidies
++0.1 StockCap
++0.05 MiningEff
++2 Coal
++2 Sulphur
++2 Iron
++2 Gold
++0.1 Copper
++0.75 Wool
++0.5 Cotton
++0.5 Silk
++1 Tea
++0.25 Forestry
++0.1 Reforestation
++35 MerchantShips
++12.5 TradeInfluences.Yellow River 
++15 TradeInfluences.Sea of Japan
++12.5 TradeInfluences.Yangtze River
++12.5 TradeInfluences.Manchuria
++12.5 TradeInfluences.South China Sea
++0.5% Discipline
++0.1 OverallImprov
++0.2 MeleeImprov
++0.15 RangedImprov
++0.1 CavalryImprov
++2.5 ProductionSectors.BasicArmamentsSector
++2.5 ProductionSectors.ShipBuildingSector
+=20% InternalTariffs
+=20% ExternalTariffs
+=20% BurgousieTax
+=20% UrbanTax
+=20% AristocracyTax
++0.2 ArmyWage
++0.15 HeavyShipImprovements
++0.05 Medium Ship Improvements
++0.1 LightShipImprovements
++0.05 ResearchSpending
+
+<... > Nations
+> Mayan Empire
++0.5 Tobacco
+
+<... > Nations
+> Kingdom Of Laos
++0.55 AgrInf
++0.2 AgrSubsidies
++0.05 AgrAdv
++2.5 EstateInfluences.burgousieInfluence
++2.25 AdmEff
++0.2 AdmSize
++1.85 LocalTrade
++0.50 Health
++0.2 TradeImprov
++0.15 Tea
++0.05 ResearchSpending
++0.50 EduEff
++0.1 Cultural Prosperity
++0.5 SocialSpending
++0.1 StockCap
++0.5 copper
++0.35 Exotic Fruit
++0.15 coal 
+=18.5% AristocracyTax
+=14.5% ClergyTax
+=14.5% BurgousieTax
+=13.8% Urbantax
+=12.1% IntellectualsTax
+=11.5% MilitaryTax
++0.5 Forestry
++0.05 IrregularImprov
++100 Levies
++15% ProductionGovernmentControl
+
+<... > Nations
+> Unified Balhae
+
++0.5 AdmSize
++3.25 AdmEff
++0.75 SocialSpending
++3.5 ReligiousFervor
++0.5 EduEff
++1.25 Propaganda
++20 GovernmentRepresentation.unitaryRepresentation
+-15 GovernmentRepresentation.aristocracyRepresentation
+-5 GovernmentRepresentation.clergyRepresentation
++0.1 MeleeImprov
++0.1 RangedImprov
++0.1 CavalryImprov
++0.1 overallImprov
++0.05 FirearmImprov 
++3.0 LocalTrade
++0.20 TradeImprov
++5 TradeInfluences.Manchuria
++27 TradeInfluences.Sea of Japan
++30 Merchant Ships
++17 TradeInfluences.Yellow River
++17 TradeInfluences.Yangtze River
++16 TradeInfluences.South China Sea
++15 TradeInfluences.Indonesia
++15 TradeInfluences.South East Asia
++10 EstateInfluences.burgousieInfluence
++5 EstateInfluences.clergyInfluence
++7.5 EstateInfluences.IntellectualsInfluence
++5 EstateInfluences.BureaucratsInfluence
++0.15 Bureaucrats
++1.5% Discipline
++5 MilitaryControl.workersControl
+-5 MilitaryControl.aristocracyControl 
++5 EstateInfluences.workersInfluence
+
+<... > Cultures > Korean > Opinions 
++> Jurchen
+=25 Jurchen.Score
+<... > Cultures > Jurchen > Opinions 
++> Korean
+=25 Korean.Score
