@@ -2380,13 +2380,15 @@ trade TreatyOfGoteborg2, CrownOfSweden > KingdomOfNovgorod, 0.5 silver
 +0.2 MeleeImprov
 +0.15 RangedImprov
 +0.1 CavalryImprov
++0.05 ArtilleryImprov
++0.05 FirearmImprov
 +2.5 ProductionSectors.BasicArmamentsSector
 +2.5 ProductionSectors.ShipBuildingSector
 =20% InternalTariffs
 =20% ExternalTariffs
 =20% BurgousieTax
 =20% UrbanTax
-=20% AristocracyTax
+=30% AristocracyTax
 +0.2 ArmyWage
 +0.15 HeavyShipImprovements
 +0.05 Medium Ship Improvements
