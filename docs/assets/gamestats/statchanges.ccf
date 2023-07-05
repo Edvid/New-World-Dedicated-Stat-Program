@@ -2481,8 +2481,8 @@ trade TreatyOfGoteborg2, CrownOfSweden > KingdomOfNovgorod, 0.5 silver
 +0.15 TradeImprov
 +5 TradeInfluences.Western Mexico
 +5 TradeInfluences.Gulf Of Mexico
-+3 LightShips
-+5 MerchantShips
++1 LightShips
++1 MerchantShips
 +0.15 SpyQuality
 +50 Spies
 +5 ProductionSectors.ShipBuildingSector
@@ -2511,6 +2511,6 @@ trade TreatyOfGoteborg2, CrownOfSweden > KingdomOfNovgorod, 0.5 silver
 =11% military tax
 =20% ExternalTariffs
 =20% InternalTariffs
-+4 merchant ships
++1 merchant ships
 +1 light ship
 +2.5 ProductionSectors.ShipBuildingSector
