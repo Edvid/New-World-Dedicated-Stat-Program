@@ -2473,3 +2473,45 @@ trade TreatyOfGoteborg2, CrownOfSweden > KingdomOfNovgorod, 0.5 silver
 <... > Cultures > Jurchen > Opinions 
 +> Korean
 =25 Korean.Score
+
+<... > nations > AztecEmpire
++0.1 AdmSize
++1 AdmEff
++0.1 CulturalProsperity
++1.5 LocalTrade
++0.15 TradeImprov
++5 TradeInfluences.Western Mexico
++5 TradeInfluences.Gulf Of Mexico
++3 LightShips
++5 MerchantShips
++0.15 SpyQuality
++50 Spies
++5 ProductionSectors.ShipBuildingSector
++1.5 Gold
++1.5 Iron
++1.5 Coal
++1.5 Sulphur
++1 Cocoa
++5 ProductionSectors.BasicGoodsSector
++0.5% Discipline
++0.05 OverallImprov
++0.1 AgrAdv
++0.05 AgrInfra
+
+<... > nations > MayanEmpire
++0.05 AdmSize
++0.25 EduEff
++0.25 AdmEff
+=23% aristocracy tax
+=20% clergy tax
+=21% bourgeoisie tax
+=13% urban tax
+=15% bureaucrat tax
+=10% intellectuals tax
+=17% workers tax
+=11% military tax
+=20% ExternalTariffs
+=20% InternalTariffs
++4 merchant ships
++1 light ship
++2.5 ProductionSectors.ShipBuildingSector
