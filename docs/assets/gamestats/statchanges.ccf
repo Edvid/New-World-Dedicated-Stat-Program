@@ -334,6 +334,45 @@
 <
 = "natchez" cultrep
 = "pagan" relrep
+="false" Technologies.IronWorking
+="false" Technologies.Wheel
+="false" Technologies.Paper
+="false" Technologies.Gunpowder
+="false" Technologies.VerticalLoom
+="false" Technologies.SaddleAndStirrup
+="false" Technologies.HorseCollar
+="false" Technologies.Explosives
+="false" Technologies.Firelance
+="false" Technologies.Cranes
+="false" Technologies.PromissoryNotes
+="false" Technologies.Bombards
+="false" Technologies.HandCannons
+="false" Technologies.PlateArmour
+="false" Technologies.SappersAndEngineers
+="false" Technologies.Workshops
+="false" Technologies.StandardizedPikes
+="false" CulturalAdvancements.Currency
+="false" CulturalAdvancements.Universities
+="false" CulturalAdvancements.Courthouses
+=4 isolation
+=0 researchpoints
+=0.01 ExpectedSlavesSol
+=0.05 ExpectedLabourersSol
+=0.1 ExpectedSerfsSol
+=0.02 ExpectedUnemployedSol
+=0.25 ExpectedFarmersSol
+=1.00 ExpectedTownsfolkSol
+=6.00 ExpectedClergySol
+=1.00 ExpectedBureaucratsSol
+=0.30 ExpectedMerchantsSol
+=0.75 ExpectedIntellectualsSol
+=0.5 ExpectedSailorsSol
+=0.75 ExpectedSoldiersSol
+=10 ExpectedAristocracySol
+=5.00 ExpectedBurgousieSol
+=0 merchantships
+=2 BureaucratsWages
+=0.25 SocialSpending
 
 <... > Nations
 +> Madagascar
