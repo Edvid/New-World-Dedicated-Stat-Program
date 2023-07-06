@@ -4392,3 +4392,231 @@ trade TreatyOfGoteborg2, CrownOfSweden > KingdomOfNovgorod, 0.5 silver
 = 3787.4500000000003 MapucheConfederation.Fertility
 !suppress 0
 <...
+
+<... > nations > Crown Of Leon
++7.25 Adm
++0.75 EduEff
++0.75 Health
++0.15 CulturalProsperity
++0.5 ReligiousFervor
++6.25 LocalTrade
++0.35 TradeImprov
++0.4 AdmSize
+=20% WorkersTax
+=20% IntellectualsTax
+=20% BureaucratsTax
+=20% BurgousieTax
+=20% UrbanTax
+=18% AristocracyTax
+=18% ClergyTax
+=16% MilitaryTax
+=22% ExternalTariffs
+=16% InternalTariffs
++0.05 ResearchSpending
++0.05 ResearchEffectiveness
++0.20 AgrAdv
++0.2 AgrInfra
++0.1 AgrSubsidies
++0.15 StockCap
++2.5 ProductionSectors.LuxuryGoodsSector
++2.5 ProductionSectors.AlcoholSector
++2.5 ProductionSectors.ShipBuildingSector
++5 ProductionSectors.TextilesSector
++25 TradeInfluences.Iberia
++25 TradeInfluences.BayOfBiscay
++22.5 TradeInfluences.Morocco
++20 TradeInfluences.EnglishChannel
++15 TradeInfluences.WesternMediterranean
++10 TradeInfluences.SouthernFrance
++0.05 MiningEff
++2 Coal
++1 Sulphur
++2 Iron
++2 Wool
++0.25 Silk
++0.75 ExoticFruit
++5 LightShips
++2 MediumShips
++7 MerchantShips
++2.5 GovernmentRepresentation.UrbanRepresentation
+-2.5 GovernmentRepresentation.BurgousieRepresentation
++5 EstateInfluences.AristocracyInfluence
++2.5 EstateInfluences.ClergyInfluence
++2.5 EstateInfluences.BureaucratsInfluence
++0.10 MediumShipImprov
++0.10 LightShipImprov
+
+<... > Nations > KingdomOfNovgorod
+=.75 SocialSpending
++0.1 Reforestation
++0.25 ReligiousFervor
++1 Coal
++1 Iron
++0.1 OverallImprov
++0.75 Fur
++0.75 Wool
+=10% ClergyTax
+=11% UrbanTax
+=12% IntellectualsTax
+=18% Workerstax
++0.05 agradv
++2.5 ProductionSectors.TextilesSector
++2.5 ProductionSectors.BasicGoodsSector
++5 ProductionSectors.AlcoholSector
++2.5 ProductionSectors.BasicArmamentsSector
++2.5 ProductionSectors.HeavyArmamentsSector
++5% Production Government Control
++0.5 AdmEff
++0.1 AdmSize
++0.05 TradeImprov
+
+<... > Nations > KingdomOfPrussia
+=15% WorkersTax
+=15% IntellectualsTax
+=15% BureaucratsTax
+=15% BurgousieTax
+=15% UrbanTax
+=15% AristocracyTax
+=15% ClergyTax
+=15% MilitaryTax
++0.1 TradeImprov
++5 TradeInfluences.CentralEurope
++5 TradeInfluences.Rhine
++5 TradeInfluences.BalticSea
++5 TradeInfluences.Vistula
++5 TradeInfluences.WesternDanube
++5 TradeInfluences.France
++5 TradeInfluences.EnglishChannel
++0.75 Coal
++0.75 Iron
++0.75 Sulphur
+
+<... > nations > Bavaria
++0.05 CulturalProsperity
++1.25 AdmEff
++2.5 EstateInfluences.AristocracyInfluence
++2.5 GovernmentRepresentation.AristocracyRepresentation
++2.5 GovernmentRepresentation.UnitaryRepresentation
+-2.5 GovernmentRepresentation.ClergyRepresentation
+-2.5 GovernmentRepresentation.BurgousieRepresentation
++5 TradeInfluences.CentralEurope
++2.5 TradeInfluences.BalticSea
++2.5 TradeInfluences.Rhine
++2.5 TradeInfluences.France
+=16% WorkersTax
+=10% IntellectualsTax
+=10% BureaucratsTax
+=13% BurgousieTax
+=10% UrbanTax
+=13% AristocracyTax
+=9% ClergyTax
+=8% MilitaryTax
++0.05 MiningEff
++0.75 Coal
++0.75 iron
++0.5 Copper
++0.5 Sulphur
++500 Heavy Infantry
++100 Crossbowmen
++100 Heavy Cavalry
++0.05 OverallImprov
++0.5% Discipline
++0.05 IrregularImprov
+
+<... > nations > Magnavallis
++0.5 Health
++0.5 EduEff
++0.5 Propaganda
++2.5 AdmEff
++0.1 AdmSize
++1 LocalTrade
++0.2 TradeImprov
+=15% AristocracyTax
+=15% ClergyTax
+=15% BurgousieTax
+=20% InternalTariffs
+=20% ExternalTariffs
++0.1 OverallImprovements
++250 LightInf
++250 Crossbowmen
++2.5 ProductionSectors.ShipBuildingSector
++0.05 LightShipImprovements
++0.05 AgrAdv
++0.05 AgrInf
++2.5 TradeInfluences.EastCoast
++1 Coal
++1 Iron
+
+<... > nations > Bojaca Confederation
++0.5 Health
++0.5 EduEff
++0.5 Propaganda
++2.5 AdmEff
++0.1 AdmSize
++1 LocalTrade
++0.2 TradeImprov
+=15% AristocracyTax
+=15% ClergyTax
+=15% BurgousieTax
+=20% InternalTariffs
+=20% ExternalTariffs
++0.1 OverallImprovements
++250 LightInf
++250 Crossbowmen
++2.5 ProductionSectors.ShipBuildingSector
++0.05 LightShipImprovements
++0.05 AgrAdv
++0.05 AgrInf
++1 Coal
++0.75 Gold
++0.75 Copper
+
+<... > nations > Madagascar
++0.5 Health
++0.5 EduEff
++0.5 Propaganda
++2.5 AdmEff
++0.1 AdmSize
++1 LocalTrade
++0.2 TradeImprov
+=15% AristocracyTax
+=15% ClergyTax
+=15% BurgousieTax
+=20% InternalTariffs
+=20% ExternalTariffs
++0.1 OverallImprovements
++250 LightInf
++250 Crossbowmen
++2.5 ProductionSectors.ShipBuildingSector
++0.05 LightShipImprovements
++0.05 AgrAdv
++0.05 AgrInf
++2.5 TradeInfluences.Mozambique
++1 Coal
+
+<... > nations > MongolOvog
++0.5 Health
++0.5 EduEff
++0.5 Propaganda
++2.5 AdmEff
++0.1 AdmSize
++1 LocalTrade
++0.2 TradeImprov
+=15% AristocracyTax
+=15% ClergyTax
+=15% BurgousieTax
+=20% InternalTariffs
+=20% ExternalTariffs
++0.1 OverallImprovements
++0.1 CavalryImprovements
++0.25 ArmyWage
++500 HeavyCav
++500 LightCav
++0.05 AgrAdv
++0.05 AgrInf
++2.5 TradeInfluences.Central Siberia
++2.5 TradeInfluences.Gobi Desert
++1 Coal
++0.5 Sulphur
++1 Iron
++1 Wool
