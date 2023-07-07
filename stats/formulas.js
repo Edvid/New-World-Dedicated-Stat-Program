@@ -102,7 +102,6 @@ static evaluateNation(nationName) {
         let opinionScore;
         //If the social behaviour group to be had an opinion about, isn't recorded by the social behaviour group we are currently checking Opinions for. Treat the opinion as the default distrust
           let opinionobj;
-          console.log(nationName);
         if (OpinionatedSocialBehaviourGroup.Opinions === undefined || OpinionatedSocialBehaviourGroup.Opinions[nameOfSocialBehaviourGroupToBeHadAnOpinionAbout] === undefined) 
           opinionScore = Opinion.DefaultDistrust;
         else {
@@ -1196,7 +1195,6 @@ static evaluateNation(nationName) {
 
     n.NecessitiesCost = (0.5 * n.HousingValue + 0.5 * n.TextilesValue + n.BasicGoodsValue + n.AlcoholValue * (0.5 + n.Alcoholism) * (1 - n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100) + n.CoffeeValue * 0.5 * (n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100) + 0.5 * n.BasicToolsValue) / 200 + (n.CoalValue * 0.005 > n.WoodValue * 0.01 ? 0.01 * n.WoodValue : 0.005 * n.CoalValue) + (n.FoodAdditionsValue / 2 < n.FoodValue ? 0.1 * n.FoodAdditionsValue + 0.8 * n.FoodValue : n.FoodValue);
     n.LuxuriesCost = (n.HousingValue + n.TextilesValue + 1.5 * n.BasicGoodsValue + n.LuxuryGoodsValue + 2 * n.AlcoholValue * (0.5 + n.Alcoholism) * (1 - n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100) + n.CoffeeValue * (n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100)) / 200 + (n.CoalValue * 0.01 > n.WoodValue * 0.02 ? n.WoodValue * 0.02 : 0.01 * n.CoalValue) + (n.FoodAdditionsValue / 2 < n.FoodValue ? n.FoodAdditionsValue / 2 * 0.75 + 0.5 * n.FoodValue : 1.25 * n.FoodValue) + (n.LuxuryConsumablesValue / 10 < n.FoodValue ? 0.05 * n.LuxuryConsumablesValue : 0.5 * n.FoodValue);
-    if (n.GovernmentName == "AshikagaShogunate") { debugger; }
 
     // SoL
   for (const EstateIndex in gameStats.Estates) {
@@ -1277,7 +1275,15 @@ static evaluateNation(nationName) {
     Military: 1,
     Aristocracy: 10,
     Burgousie: 7.5
-  }
+    }
+
+    // AverageTax
+    n.AverageTax = 0;
+    for (const EstateIndex in gameStats.EstatesGeneral) {
+        const Estate = gameStats.EstatesGeneral[EstateIndex];
+        n.AverageTax += n[Estate + "Tax"] * n.EstateNumbers[Estate];
+    }
+    n.AverageTax = n.AverageTax / (1 - n.Workforces.Slaves);
 
   // Loyalties
   for (const EstateIndex in gameStats.EstatesGeneral) {
@@ -1291,14 +1297,6 @@ static evaluateNation(nationName) {
     n.MilitaryLoyalty = n.MilitaryControlReal.Aristocracy * n.AristocracyLoyalty + n.MilitaryControlReal.Clergy * n.ClergyLoyalty + n.MilitaryControlReal.Burgousie * n.BurgousieLoyalty + n.MilitaryControlReal.Urban * n.UrbanLoyalty + n.MilitaryControlReal.Bureaucrats * n.BureaucratsLoyalty + n.MilitaryControlReal.Workers * n.WorkersLoyalty + n.MilitaryControlReal.Independent * n.MilitaryLoyalty;
     if (n.Workforces.PopulationInMilitary + n.Workforces.Sailors == 0) n.MilitaryLoyalty = 0.5;
   n.Prosperity = n.AverageSol * (1 + (n.FutureFood < 0 ? n.FutureFood / (n.Population / 1000) : 0) - n.Pillaging);
-
-  // AverageTax
-  n.AverageTax = 0;
-  for (const EstateIndex in gameStats.EstatesGeneral) {
-    const Estate = gameStats.EstatesGeneral[EstateIndex];
-    n.AverageTax += n[Estate + "Tax"] * n.EstateNumbers[Estate];
-  }
-  n.AverageTax = n.AverageTax / (1 - n.Workforces.Slaves);
 
     n.PopulationHappiness = (5 * (0.25 + n.Prosperity) - n.AverageTax * 25 - n.Absolutism / 2 - n.PopulationControlReal - n.DebtToGdpRatio * 10 * n.PublicDebtLength - n.WarExhaustion / 2 - n.Disease + n.Alcoholism * (1 - n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100) / 2);
 
@@ -1324,7 +1322,7 @@ static evaluateNation(nationName) {
   n.LoyaltiesStabilityImpact = 0;
     for (const EstateIndex in gameStats.EstatesGeneral) {
       const Estate = gameStats.EstatesGeneral[EstateIndex];
-      n.LoyaltiesStabilityImpact += (n[Estate + "Loyalty"] - 0.5) * (1 + n.EstateNumbers[Estate] * (n[Estate + "PoliticalAwareness"] + 0.5) + n.EstateInfluencesReal[Estate + "Influence"] * 4) * 5;
+        n.LoyaltiesStabilityImpact += (n[Estate + "Loyalty"] - 0.5) * (1 + n.EstateNumbers[Estate] * (n[Estate + "PoliticalAwareness"] + 0.5) + n.EstateInfluencesReal[Estate + "Influence"] * 4) * 5;
     }
     n.LoyaltiesStabilityImpact = n.LoyaltiesStabilityImpact * 0.6;
 
@@ -1615,7 +1613,6 @@ static evaluateNation(nationName) {
     alert(nationName + "'s Police reforms are incorrect");
   }
 
-    console.log(n.PseudoPopulationGrowth);
 }
 
 static evaluateNations() {
