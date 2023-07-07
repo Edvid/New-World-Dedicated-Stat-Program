@@ -610,10 +610,12 @@ static evaluateNation(nationName) {
 
     n.BuildingsUpkeep = n.SmallForts * n.SmallFortUpkeep + n.MediumForts * n.MediumFortUpkeep + n.BigForts * n.BigFortUpkeep + n.HugeForts * n.HugeFortUpkeep + n.CityFortifications * n.CityFortificationUpkeep + n.NavalBases * n.NavalBaseUpkeep + n.SupplyDepots * n.SupplyDepotUpkeep;
 
-  n.LuxuryConsumablesValue = n.LuxuryConsumablesDemand / (n.LuxuryConsumables + 0.1);
-  n.FoodAdditionsValue = n.FoodAdditionsDemand / (n.FoodAdditions + 0.1);
+    n.LuxuryConsumablesValue = (n.EffectiveTea / n.LuxuryConsumables) * n.TeaValue + (n.EffectiveCoffee / n.LuxuryConsumables) * n.CoffeeValue + (n.EffectiveTobacco / n.LuxuryConsumables) * n.TobaccoValue + (n.EffectiveExoticFruit / n.LuxuryConsumables) * n.ExoticFruitValue + (n.EffectiveCocoa / n.LuxuryConsumables) * n.CocoaValue;
+    n.FoodAdditionsValue = (n.EffectiveSugar / n.FoodAdditions) * n.SugarValue + (n.EffectiveSpice / n.FoodAdditions) * n.SpiceValue;
 
-  n.FoodValue = n.FoodDemand / ((n.FoodRationing ? min(n.Food + n.DailyFood, n.Population / 1000) : n.Food + n.DailyFood) * n.FoodAdditionsFoodBoost);
+    n.FoodSupply = ((n.FoodRationing ? min(n.Food + n.DailyFood, n.Population / 1000) : n.Food + n.DailyFood) * n.FoodAdditionsFoodBoost)
+    n.FoodValue = n.FoodDemand / n.FoodSupply;
+    n.FoodValue = n.FoodDemand / (isNaN(n.FoodSupply) ? 1 : (n.FoodSupply == 0 ? 1 : (n.FoodSupply + Math.sqrt(n.FoodSupply))));
 
   n.TradePowerFromResourceTrade = (function () {
     let num = 0;
