@@ -385,7 +385,6 @@
 <
 = "Malagasi" cultrep
 = "Pagan" relrep
-="false" Technologies.IronWorking
 ="false" Technologies.Wheel
 ="false" Technologies.Paper
 ="false" Technologies.Gunpowder
@@ -2616,7 +2615,6 @@ trade TreatyOfGoteborg2, CrownOfSweden > KingdomOfNovgorod, 0.5 silver
 <
 = "Zulu" cultrep
 = "Pagan" relrep
-="false" Technologies.IronWorking
 ="false" Technologies.Wheel
 ="false" Technologies.Paper
 ="false" Technologies.Gunpowder
