@@ -4620,3 +4620,199 @@ trade TreatyOfGoteborg2, CrownOfSweden > KingdomOfNovgorod, 0.5 silver
 +0.5 Sulphur
 +1 Iron
 +1 Wool
+
+<... > nations > Guyenne
++5 TradeInfluences.Rhine
++5 TradeInfluences.EnglishChannel
++2.5 TradeInfluences.BritishIsles
++0.5 LocalTrade
++0.5 EduEff
++0.25 AdmEff
++2.5 GovernmentRepresentation.UnitaryRepresentation
++2.5 GovernmentRepresentation.AristocracyRepresentation
+-2.5 GovernmentRepresentation.ClergyRepresentation
+-2.5 GovernmentRepresentation.BurgousieRepresentation
+
+<... > nations > Kwangtung
++0.05 AgrSubsidies
++0.05 AgrInfra
++0.25 EduEff
++0.25 AdmEff
+=20% AristocracyTax
+=24% BurgousieTax
++0.25 Health
++0.25 SocialSpending
++2.5 ProductionSectors.BasicGoodsSector
++2.5 ProductionSectors.ConstructionSector
+
+<... > nations > Empire Of Chola
++0.05 AgrInfra
++0.75 Sugar
++0.05 StockCap
++0.5 ExoticFruits
++0.25 Health
++1 Tea
++0.15 AdmSize
++1.25 LocalTrade
++0.5 AdmEff
++0.05 TradeImprov
++1.25 health
++0.5 Spices
+="https://cdn.discordapp.com/attachments/1123712994782752798/1124713032572993596/Naam_Tamilar_flag.png" flag
++0.05 CulturalProsperity
++0.05 ResearchSpending
+
+<... > nations > ZuluEmpire
+="https://cdn.discordapp.com/attachments/1124806554126917682/1125010291042824192/Zulu-Flag-Large-res-for-vid.webp" flag
++0.25 CommanderFreedom
++0.05 MeleeImprov
++0.05 RangedImprov
++0.5% Discipline
++1.25 AdmEff
++0.05 AdmSize
++0.5 EduEff
+-0.5 Isolation
++0.1 CulturalProsperity
++0.5 Coal
++0.5 Gold
++0.05 iron
++0.15 Silver
+
+
+<... > Nations
+> Minor Weizhong
++0.80 AdmSize
++7 AdmEff
++6 LocalTrade
++0.35 TradeImprov
++0.5 health
++0.05 ResearchSpending
++0.5 EduEff
++0.5 SocialSpending
++1.2 wool
++1.2 cotton
++1 iron
++0.5 silk
++0.5 forestry 
++0.25 AgrSubsidies
++0.35 AgrInf
++0.1 AgrAdv
++10% ProductionGovernmentControl
++5 ProductionSectors.Basictoolssector
++20 EstateInfluences.BurgousieInfluence 
++10 EstateInfluences.UrbanInfluence
+
+<... > Nations > Seleucid Empire
+=12.5% Aristocracy tax
+=15% Clergy tax
+=8% InternalTariffs
+=12% ExternalTariffs
++5 TradeInfluences.Mesopotamia
++.5 AdmEff
++.5 LocalTrade
++100 Light Cavalry
+
+<... > Nations
+> Kingdom Of Rum
++0.5 Silk
++0.3 AgrInf
++0.5 health
++0.2 AgrAdv
++5 GovernmentRepresentation.clergyRepresentation
++5 GovernmentRepresentation.BurgousieRepresentation
+-10 GovernmentRepresentation.aristocracyRepresentation 
++2.5 AdmEff
++15 Merchant Ships
+=15% ExternalTariffs
++10 TradeInfluences.Northern Anatolia
++10 TradeInfluences.greece
++10 TradeInfluences.crimea
++10 TradeInfluences.romania
++10 TradeInfluences.Eastern Mediterranean
+=15% AristocracyTax
+=15% ClergyTax
+=15% BurgousieTax
+=15% Urbantax
+=15% IntellectualsTax
+=15% MilitaryTax
++0.5 sulphur
++0.5 gold
++0.5 coal
++0.01 copper
++0.05 SpyQuality
++10 spies
++0.1 MiningEff
++0.05 irregularImprov
++0.15 cavalryImprov
++0.05 meleeImprov
++0.2 rangedImprov
++1 LocalTrade
+
+<... > Nations > Quasimid Emirate
+=15% AristocracyTax
+=15% ClergyTax
+=15% WorkersTax
+=20% UrbanTax
+=20% InternalTariffs
+=20% ExternalTariffs
++1.25 religious fervor
++10 GovernmentRepresentation.unitaryRepresentation
+-5 GovernmentRepresentation.aristocracyRepresentation
+-2.5 GovernmentRepresentation.clergyRepresentation
+-2.5 GovernmentRepresentation.burgousieRepresentation
++3.25 AdmEff
++.15 AdmSize
++.75 Social Spending
++.75 EduEff
++.75 Health
++4.5 LocalTrade
++.2 TradeImprov
++.35 AgriInf
++.1 AgrAdv
++.15 AgrSubsidies
++.15 StockCap
++.25 Forestry
++.1 MiningEff
++.5 Iron
++.5 Sulphur
++.5 Copper
++1 Silk
++.25 Cotton
++.5 Spice
++.75 Tea
++.5 Sugar
++1 Merchant Ships
++5 EstateInfluences.UrbanInfluence
++5 EstateInfluences.IntellectualsInfluence
++27 TradeInfluences.Iran
++27 TradeInfluences.Persian Gulf
++15 TradeInfluences.Indus River
++15 TradeInfluences.Afghanistan
++10 TradeInfluences.Central Asia
++12 TradeInfluences.Mesopotamia
++.20 State Labourer Wage
++.05 State Farmer Wage
+
+<... > Nations >  Majapahit Kingdom
++2.25 AdmEff
++.35 AdmSize
++1 SocialSpending
++1.5 LocalTrade
++.15 TradeImprov
++.5 AgriInf
++.45 AgriAdv
++.9 StockCap
++.3 AgrSubsidies
++1.5 Health
++2 Sugar
++1 Spice
++1 Forestry
++15 ProductionSectors.Basicgoodssector
++5 ProductionSectors.Alcoholsector
++12.5 ProductionSectors.Luxurygoodssector
++7.5 ProductionSectors.Textilessector
++2.5 ProductionSectors.Basictoolssector
++2.5 ProductionSectors.Basicarmamentssector
++20 TradeInfluences.Indonesia 
+=8% InternalTariffs
+=12% ExternalTariffs
