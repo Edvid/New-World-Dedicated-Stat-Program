@@ -329,10 +329,10 @@
 = "" Flag
 = "657C49" color
 > CultureGroups
-+> natchez
-=100 natchez
++> Natchez
+=100 Natchez
 <
-= "natchez" cultrep
+= "Natchez" cultrep
 = "pagan" relrep
 ="false" Technologies.IronWorking
 ="false" Technologies.Wheel
