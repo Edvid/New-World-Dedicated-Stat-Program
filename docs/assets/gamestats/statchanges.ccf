@@ -1,4 +1,5 @@
 
+
 <... > Nations >  Akilan Irisian Empire
 +0.85 LocalTrade
 +2 TradeInfluences.Caspian Sea
@@ -221,12 +222,12 @@
 =20% IntellectualsTax
 =20% WorkersTax
 =12% MilitaryTax
-<... > Cultures > Greco Bactrian> Opinions 
+<... > Cultures > GrecoBactrian > Opinions 
 +> Afghan
 +10 Afghan.Score
 <... > Cultures > Afghan > Opinions 
-+> Greco Bactrian
-+10 Greco Bactrian.Score
++> GrecoBactrian
++10 GrecoBactrian.Score
 
 <... > Nations > Natchez
 +0.1 AgrAdv
