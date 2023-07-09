@@ -224,10 +224,10 @@
 =12% MilitaryTax
 <... > Cultures > GrecoBactrian > Opinions 
 +> Afghan
-+10 Afghan.Score
+=10 Afghan.Score
 <... > Cultures > Afghan > Opinions 
 +> GrecoBactrian
-+10 GrecoBactrian.Score
+=10 GrecoBactrian.Score
 
 <... > Nations > Natchez
 +0.1 AgrAdv
@@ -359,39 +359,40 @@
 
 <... > Cultures > Germanic > Opinions
 +> French
-+15 French.Score
+=15 French.Score
 <... > Cultures > Germanic > Opinions
 +> English
-+10 English.Score
+=10 English.Score
 <... > Cultures > Germanic > Opinions
 +>Italian
-+10 Italian.Score
+=10 Italian.Score
 
 <... > Cultures > French > Opinions
 +> Germanic
-+10 Germanic.Score
+=10 Germanic.Score
 <... > Cultures > French > Opinions
 +> English
-+10 English.Score
+=10 English.Score
 <... > Cultures > French > Opinions
 +>Italian
-+10 Italian.Score
+=10 Italian.Score
 
 <... > Cultures > English > Opinions
-+> English +10 French.Score
++> French 
+=10 French.Score
 <... > Cultures > English > Opinions
 +> Germanic
-+10 Germanic.Score
+=10 Germanic.Score
 <... > Cultures > English > Opinions
 +>Italian
-+10 Italian.Score
+=10 Italian.Score
 
 <... > Cultures > Italian > Opinions
 +> Germanic
-+10 Germanic.Score
+=10 Germanic.Score
 <... > Cultures > Italian > Opinions
 +> English
-+10 English.Score
+=10 English.Score
 <... > Cultures > Italian > Opinions
 +> French
-+10 French.Score
+=10 French.Score
