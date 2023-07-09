@@ -1,1 +1,396 @@
 
+<... > Nations >  Akilan Irisian Empire
++0.85 LocalTrade
++2 TradeInfluences.Caspian Sea
++2 TradeInfluences.Iran
++2 TradeInfluences.Persian Gulf
++2 TradeInfluences.Mesopotamia
++25 Merchant ships
+=5% ExternalTariffs
+=15% InternalTariffs
++0.25 coal
++1000 Light Infantry
++800 Archers
++200 Light Cavalry
++3.5 AdmEff
++0.15 AdmSize
+-15 GovernmentRepresentation.unitaryRepresentation
++5 GovernmentRepresentation.clergyRepresentation
++5 GovernmentRepresentation.aristocracyRepresentation
++5 GovernmentRepresentation.burgousieRepresentation
+=5% MilitaryTax
+=12% BurgousieTax
+=12% AristocracyTax
+
+<... > Nations >  Dynasty Of Usia
++0.1 AgrAdv
++1000 light Cavalry
+<... > Nations > Mali Empire  
++0.1 AgrAdv
++0.5 gold 
++0.5 iron
++1 localtrade
+
+<... > Nations > Order Of Hashishin
++0.1 AgrSubsidies
++0.15 AgrInf
++0.05 StockCap
++0.15 health
++0.15 SocialSpending
++1 TradeInfluences.Iran
++2 TradeInfluences.Caspian Sea
++1 TradeInfluences.Iran
++1 TradeInfluences.Crimea
++1 TradeInfluences.Caucasus
++0.35 localtrade
++0.01 TradeImprov
++0.15 Iron
++0.15 Tea
++1 ProductionSectors.Ship Building Sector
+
+<... > Nations > Byrerwond
++0.5 Fur
++0.1 AgrInf
++1.5 localtrade
++0.1 TradeImprov
+=17% WorkersTax
+=15% AristocracyTax
+=15% BurgousieTax
+=13% UrbanTax
+=12% ClergyTax
+=11% MilitaryTax
+=10% IntellectualsTax
++1 AdmEff
++5 ProductionSectors.Basic Goods Sector
+
+<... > Nations > Sugbo 
++1 exotic fruits 
++0.25 AgrSubsidies
++0.35 AgrInf
++0.15 AgrAdv
++0.2 StockCap
++4 AdmEff
++0.25 AdmSize
++0.5 social spending
++6.5 localtrade
++0.2 TradeImprov
++300 light infantry
++200 levies
++100 archers
++40 heavy infantry
++20 crossbowmen
++20 hand cannoneers
++10 elite infantry
++2 light ships
++1 health
++23% aristocracy tax
+=14% clergytax
+=18% Burgousietax
+=14% urbantax
+=18% bureaucratstax
+=13% intellectualstax
+=13% workerstax
+=12% militarytax 
+=15% external tariffs
+=12% internal tariffs
++5 EstateInfluences.AristocracyInfluence
++5 EstateInfluences.BureaucratsInfluence
++5 EstateInfluences.BurgousieInfluence
++10 ProductionSectors.ship building sector
++12 TradeInfluences.South China Sea
++12 TradeInfluences.Indonesia
++5 TradeInfluences.Northern Australia
++5 TradeInfluences.Pacific
++10 TradeInfluences.Yangtze River
++5 TradeInfluences.Manchuria
++5 TradeInfluences.Sea of Japan
++5 TradeInfluences.Yellow River
+
+<... > Nations > Kingdom Of Israel
++1.5 ReligiousFervor
++50 Spies
++9.5 AdmEff
++0.5 EduEff
++0.15 SpyQuality
++0.12 AdmSize
++2.85 localtrade
++0.2 TradeImprov
++0.05 ResearchEffectiveness
++0.1 CulturalProsperity
+=15% AristocracyTax
+=15% ClergyTax
+=15% BurgousieTax
+=20% InternalTariffs
+=20% ExternalTariffs
++3 LightShips
++5 MerchantShips
++500 Debt
++500 budget
++15 TradeInfluences.Egypt
++15 TradeInfluences.RedSea
++15 TradeInfluences.EasternMediterranean
++10 TradeInfluences.CentralMediterranean
++10 TradeInfluences.Greece
++10 TradeInfluences.NorthernAnatolia
++10 TradeInfluences.Mesopotamia
+=500 HeavyCav
+=500 LightCav
+=500 HeavyInf
+=500 Crossbowmen
++0.1 RangedImprovements
++0.15 MeleeImprovements
++0.15 CavalryImprovements
++0.75% discipline
++0.24 iron
++0.26 exotic fruits
++1 wool
++1 cotton 
+
+<... > Nations > Earldom Of Manx
++0.05 AgrInf
++0.25 LocalTrade
++0.5 Propaganda
++2.5 EstateInfluences.UrbanInfluence
++2.5 EstateInfluences.BurgousieInfluence
++2.5 EstateInfluences.IntellectualsInfluence
++3 TradeInfluences.EnglishChannel
++3 TradeInfluences.France
++.5 EduEff
++0.05 ResearchEfficiency
++0.05 CulturalProsperity
++2 Coal
++1 Sulphur
++0.05 SpyQuality
+
+<... > Nations >  Greco Bactria
+=0.5 Health
+=0.65 SocialSpending
+=0.25 EduEff
+
++400 Debt
++400 budget
++.5 ReligiousFervor
++4.5 AdmEff
++.55 AdmSize
++2.5 LocalTrade
++.05 TradeImprov
++0.5 Propaganda
++.2 CulturalProsperity
++0.2 AgrAdv
++0.55 AgrSubsidies
++0.4 AgrInf
++0.1 StockCap
++.75 Spice
++.55 Wool
++.25 Exotic Fruit
++.25 Cotton
++.25 Silk
++.1 LightshipImprovements
++0.45 overallImprov
++0.3 MeleeImprovements
++0.3 RangedImprovements
++0.25 CavalryImprovements
++3 light ships
++3 Merchant ships
++150 light inf
++80 heavy inf
++200 light cav
++100 heavy cav
++100 archers
++50 crossbowmen 
++30 TradeInfluences.Indus River
++25 TradeInfluences.Afghanistan
++25 TradeInfluences.Central Asia
++5 TradeInfluences.Mesopotamia
++5 TradeInfluences.Caspian Sea
++5 TradeInfluences.Iran
++2.5 ProductionSectors.Luxurygoodssector
++5 EstateInfluences.UrbanInfluence
++5 EstateInfluences.WorkersInfluence
++5 EstateInfluences.AristocracyInfluence
++2.5 GovernmentRepresentation.clergyRepresentation
++2.5 GovernmentRepresentation.burgousieRepresentation
+-5 GovernmentRepresentation.unitaryRepresentation
+=20% Internal Tariffs
+=20% External Tariffs 
+=20% AristocracyTax
+=20% ClergyTax
+=20% BurgousieTax
+=20% UrbanTax
+=20% BureaucratsTax
+=20% IntellectualsTax
+=20% WorkersTax
+=12% MilitaryTax
+<... > Cultures > Greco Bactrian> Opinions 
++> Afghan
++10 Afghan.Score
+<... > Cultures > Afghan > Opinions 
++> Greco Bactrian
++10 Greco Bactrian.Score
+
+<... > Nations > Natchez
++0.1 AgrAdv
++0.25 AgrInf
++0.1 AgrSubsidies
++12 TradeInfluences.Caribbean
++12 TradeInfluences.Gulf Of Mexico
++35 TradeInfluences.Mississippi
++0.4 TradeImprov
++4.5 Localtrade
++0.75 EduEff
++1 health
++5 ProductionSectors.Basic Goods Sector
++5.5 AdmEff
++0.5 AdmSize
+=15% AristocracyTax
+=12.5% ClergyTax
+=12.5% BurgousieTax
+=10% UrbanTax
+=18% ExternalTariffs
+=24% InternalTariffs
++0.15 CulturalProsperity
++0.5 tea
++0.5 Tobacco
++ 500 Light Infantry
+
+<... > Nations > Royaume Du Soleil
++11 AdmEff
++0.5 EduEff
++0.4 CulturalProsperity
++0.1 ResearchEffectiveness
++0.65 AdmSize
++2 propaganda 
++30 EstateInfluences.clergyInfluence
+-30 EstateInfluences.AristocracyInfluence
++20 GovernmentRepresentation.clergyRepresentation
+-20 GovernmentRepresentation.AristocracyRepresentation
+=4 BureaucratsWages
++0.3 TradeImprov
++3.40 LocalTrade
++25 TradeInfluences.Southern France
++25 TradeInfluences.France
++25 TradeInfluences.Rhine
++23 TradeInfluences.English Channel
++5 EstateInfluences.BureaucratsInfluence
++0.05 OverallImprov
++0.1 SpyQuality
++0.1 CulturalProsperity
+=8% BureaucratsTax
+=32.5% BurgousieTax
+=23.5% AristocracyTax
+=35% ClergyTax
+=17.5% UrbanTax
+=5% IntellectualsTax
+=8% WorkersTax
+=12% MilitaryTax
+=30% InternalTariffs
+=30% ExternalTariffs
++1.4 coal 
++1.4 Sulphur 
++1.4 Iron 
++1 gold 
++0.1 MiningEff
+
++0.5 Forestry
++0.05 Reforestation
++5 ProductionSectors.Ship Building Sector
++0.25 localtrade
++0.05 TradeImprov
++5 TradeInfluences.CentralMediterranean
++1 TradeInfluences.Adriatic
++5 TradeInfluences.Greece
++5 TradeInfluences.Western Mediterranean
++5 TradeInfluences.Morocco
++5 TradeInfluences.Iberia
++1 City Fortifications
++10 ProductionSectors.Ship Building Sector
++0.25 Localtrade
++15 MerchantShips
++10 LightShips
++5 MediumShips
++1 HeavyShips
+
++4 TradeInfluences.CentralEurope
++5 TradeInfluences.BritishIsles
++2 TradeInfluences.NorthSea
++1 NavalBases
++5 TradeInfluences.Central Mediterranean
++1 TradeInfluences.Adriatic
++0.5 TradeInfluences.Greece
++5 TradeInfluences.WesternMediterranean
++5 TradeInfluences.Morocco
++5 TradeInfluences.Iberia
++4 TradeInfluences.CentralEurope
++5 TradeInfluences.BritishIsles
++2TradeInfluences.NorthSea
++0.1 AgrInf 
++0.85 Cotton 
++0.1 Culturalprosperity
++0.5 wool
+=2000 HeavyCavalry 
+=1000 LightCavalry
++0.75 AdmEff 
++0.1 AdmSize 
++0.05 SpyQuality 
++5 EstateInfluences.AristocracyInfluence 
++120 Spies
+=20 SiegeEquipment
+=8000 Archers 
++0.05 RangedImprov
+=2 ArmyWage
++4 SupplyDepots
++5 ProductionSectors.Basic Armaments Sector
++0.05 OverallImprov
+=4000 HeavyInf
+=8000 Militia
+=1.5 SailorsWage
++250 EliteInf
++0.05 RangedImprov
++0.05 LightShipImprovements
++1000 Budget
++1000 PublicDebtTaken
++0.05 OverallImprov
++0.25 LocalTrade 
++0.05 TradeImprovements
++1.5 propaganda
++0.2 AgrAdv
++1 SmallFort
+
+<... > Cultures > Germanic > Opinions
++> French
++15 French.Score
+<... > Cultures > Germanic > Opinions
++> English
++10 English.Score
+<... > Cultures > Germanic > Opinions
++>Italian
++10 Italian.Score
+
+<... > Cultures > French > Opinions
++> Germanic
++10 Germanic.Score
+<... > Cultures > French > Opinions
++> English
++10 English.Score
+<... > Cultures > French > Opinions
++>Italian
++10 Italian.Score
+
+<... > Cultures > English > Opinions
++> English +10 French.Score
+<... > Cultures > English > Opinions
++> Germanic
++10 Germanic.Score
+<... > Cultures > English > Opinions
++>Italian
++10 Italian.Score
+
+<... > Cultures > Italian > Opinions
++> Germanic
++10 Germanic.Score
+<... > Cultures > Italian > Opinions
++> English
++10 English.Score
+<... > Cultures > Italian > Opinions
++> French
++10 French.Score
