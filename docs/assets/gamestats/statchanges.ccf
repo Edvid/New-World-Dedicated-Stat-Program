@@ -400,6 +400,14 @@
 <... > nations > NanyangDynasty
 ="Thai" CultRep
 
+<... > nations > CrownOfSweden
++2.5 TradeInfluences.Baltic Sea
++2.5 TradeInfluences.Denmark
++2.5 TradeInfluences.North Sea
++2.5 TradeInfluences.Livonia
++2.5 TradeInfluences.Northern Nordics
+
+
 <...
 sync
 
