@@ -1465,7 +1465,8 @@ async function prepareData(path, progressTextElement){
     Img.src = `./docs/assets/images/world/${path}`;
     let done = false;
     Img.onload = function () {
-        tempCanvas.getContext("2d").clearRect(0, 0, WIDTH, HEIGHT);
+	    tempCanvas.getContext("2d").imageSmoothingEnabled = false;
+	    tempCanvas.getContext("2d").clearRect(0, 0, WIDTH, HEIGHT);
         tempCanvas.getContext("2d").drawImage(Img, 0, 0, WIDTH, HEIGHT);
         
         done = true;
