@@ -523,8 +523,10 @@ static evaluateNation(nationName) {
 
   n.BasicArmaments = n.Production * (n.ProductionSectors.BasicArmamentsSector / n.TotalSupply) * (1.1 - n.BasicToolsShortage) * (1.1 - n.WoodShortage) * (1.1 - n.IronShortage) * (1.1 - n.CoalShortage) * n.WeaponWorkingEfficiency;
   n.EffectiveBasicArmaments = n.BasicArmaments + n.BasicArmamentsIncoming - n.BasicArmamentsOutgoing + n.BasicArmamentsStockpiled;
-  n.BasicArmamentsShortage = min(1, max(0, 1 - (n.EffectiveBasicArmaments / (n.BasicArmamentsDemand * 0.9))));
-  n.BasicArmamentsArmyShortage = min(1, max(0, 1 - (n.EffectiveBasicArmaments / n.ArmyBasicArmamentsDemand)));
+  n.PrivateBasicArmamentsOverDemand = (n.BasicArmamentsDemand > n.EffectiveBasicArmaments ? min(n.ExpectedPrivateBasicArmaments / n.EffectiveBasicArmaments, 0.35) : 0);
+  n.BasicArmamentsShortage = min(1, max(0, 1 - (n.EffectiveBasicArmaments / (n.BasicArmamentsDemand * 0.9)) + n.PrivateBasicArmamentsOverDemand));
+  n.BasicArmamentsArmyShortage = min(1, max(0, 1 - (n.EffectiveBasicArmaments / n.ArmyBasicArmamentsDemand) + n.PrivateBasicArmamentsOverDemand));
+  n.BasicArmamentsDemand = n.BasicArmamentsDemand * (1 + n.PrivateBasicArmamentsOverDemand);
 
   n.HeavyArmaments = n.Production * (n.ProductionSectors.HeavyArmamentsSector / n.TotalSupply) * (1.1 - n.BasicToolsShortage) * (1.1 - n.IronShortage) * (1.1 - n.CoalShortage) * (0.5 + n.MetalWorkingEfficiency);
   n.EffectiveHeavyArmaments = n.HeavyArmaments + n.HeavyArmamentsIncoming - n.HeavyArmamentsOutgoing + n.HeavyArmamentsStockpiled;
@@ -1124,7 +1126,7 @@ static evaluateNation(nationName) {
 
   n.TotalPrivateArmyBudgets = n.AristocracyArmiesBudget * (1 + n.EstateInfluencesReal.AristocracyInfluence) + n.BurgousieArmiesBudget * (1 + n.EstateInfluencesReal.BurgousieInfluence) + n.ClergyArmiesBudget * (1 + n.EstateInfluencesReal.ClergyInfluence) + n.PopulaceArmiesBudget * (1 + n.EstateInfluencesReal.WorkersInfluence + n.EstateInfluencesReal.UrbanInfluence + n.EstateInfluencesReal.IntellectualsInfluence);
 
-  n.AvailableWeapons = max((n.EffectiveBasicArmaments - n.BasicArmamentsStockpiled - n.ArmyBasicArmamentsDemand) * clamp(0, 1, n.TotalPrivateArmyBudgets / ((n.EffectiveBasicArmaments - n.BasicArmamentsStockpiled - n.ArmyBasicArmamentsDemand) * n.BasicArmamentsValue)), 0);
+  n.AvailableWeapons = max(n.EffectiveBasicArmaments * clamp(0.35, 1, n.TotalPrivateArmyBudgets / ((n.EffectiveBasicArmaments - n.BasicArmamentsStockpiled - n.ArmyBasicArmamentsDemand) * n.BasicArmamentsValue)), 0);
 
   n.AristocracyBasicArmaments = (n.AristocracyArmiesBudget * (1 + n.EstateInfluencesReal.AristocracyInfluence) / n.TotalPrivateArmyBudgets) * n.AvailableWeapons;
   n.BurgousieBasicArmaments = (n.BurgousieArmiesBudget * (1 + n.EstateInfluencesReal.BurgousieInfluence) / n.TotalPrivateArmyBudgets) * n.AvailableWeapons;
