@@ -407,6 +407,10 @@
 +2.5 TradeInfluences.Livonia
 +2.5 TradeInfluences.Northern Nordics
 
+<...
+-0.9 DutchRepublic.TradeImprov
+-0.9 AsaranEmpire.TradeImprov
+-0.9 SultunateOfMogadishu.TradeImprov
 
 <...
 sync
@@ -2188,3 +2192,6 @@ sync
 = 5074.099999999999 MapucheConfederation.Fertility
 !suppress 0
 <...
+
+<... > nations > NanyangDynasty
+="Thai" CulRep
