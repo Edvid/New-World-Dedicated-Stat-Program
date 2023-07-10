@@ -361,8 +361,14 @@ class MapCCFCalculations {
 
         await self.prepareNewMaps();
 
+        
+        const URLParamSetup = new URLSearchParams(window.location.search).get('setup');
+        let isSetup = URLParamSetup != null;
+
+        console.log(isSetup);
+
         let nationPopDistribution = await self.findDistribution(
-            self.nationData, self.popData, "nation", "population", 
+            self.nationData, isSetup ? self.popData : self.newPopData, "nation", "population", 
             self.nationColorProperties,
             0,
             {
@@ -372,7 +378,7 @@ class MapCCFCalculations {
         );
 
         let nationFuturePopDistribution = await self.findDistribution(
-            self.nationData, self.newPopData, "nation", "future population", 
+            self.nationData, isSetup ? self.newPopData : self.newFuturePopData, "nation", "future population", 
             self.nationColorProperties,
             0,
             {

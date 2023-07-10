@@ -4,7 +4,7 @@ let Synonyms = {
         "admeff",
         "admineff"
     ],
-    AdministrativeSize: [
+    AdministrationSize: [
         "AdmSize"
     ],
     PopulationControl: [
@@ -15,6 +15,9 @@ let Synonyms = {
     ],
     OverallImprovements: [
         "OverallImprov"
+    ],
+    MeleeImprovements: [
+        "MeleeImprov"
     ],
     IrregularImprovements: [
         "IrregularImprov"
@@ -305,16 +308,6 @@ let Synonyms = {
 	
 	ArmyWages: [
 		"wages"
-	],
-	
-	TrainingQuality: [
-		"training",
-		"armytraining"
-	],
-	
-	MilitaryTactics: [
-		"tactics",
-		"armytactics"
 	],
 	
 	MilitaryDiscipline: [

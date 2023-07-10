@@ -243,8 +243,7 @@ let TableLayouts = {
         ["Flag"],
         ["GovernmentName"],
         ["GovernmentDominatedBy"],
-        ["GovernmentEffects"],
-        ["CapitalName"]
+        ["GovernmentEffects"]
     ],
     "Turn Based Stats": [
         ["FuturePopulation", "FutureLiteracyPercent", "FutureHigherEducation", "FutureBudget", "FutureFood"],
@@ -391,7 +390,7 @@ let TableLayouts = {
         [ti("SouthEastAsia"), ti("Indonesia"), ti("Pacific"), ti("NorthernAustralia"), ti("AustralianDesert"), ti("SouthernAustralia")]
     ],
     "Tech Stats": [
-        ["Isolation", "ResearchSpending", "ResearchEffectiveness", "ResearchBoostFromTech", "ResearchPointGain", "ResearchPoints", "FutureResearchPoints"]
+        ["Isolation", "ResearchSpending", "ResearchEffectiveness", "ResearchBoostFromTech", "ResearchEfficiency", "ResearchPointGain", "ResearchPoints", "FutureResearchPoints"]
     ],
     "Technologies": [
         ["Technologies.IronWorking", "Technologies.Wheel", "Technologies.Paper"],

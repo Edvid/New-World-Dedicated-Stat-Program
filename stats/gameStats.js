@@ -186,10 +186,7 @@ class Nation {
   BasicArmamentsStockpiled;
   HeavyArmamentsStockpiled;
   ArmyWages;
-  TrainingQuality;
   ArmyTech;
-  MilitaryTactics;
-  ArmyQuality;
   MilitaryLoyalty;
   MilitaryMorale;
   MilitaryDiscipline;
