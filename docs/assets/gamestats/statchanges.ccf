@@ -23,6 +23,79 @@
 =12% BurgousieTax
 =12% AristocracyTax
 
+<... > nations > RepublicOfVenice
+-0.5 Health
+-0.5 EduEff
+-0.5 Propaganda
+-2.5 AdmEff
+-0.1 AdmSize
+-1 LocalTrade
+-0.2 TradeImprov
+=15% AristocracyTax
+=15% ClergyTax
+=15% BurgousieTax
+=20% InternalTariffs
+=20% ExternalTariffs
+-0.1 OverallImprovements
+-250 HeavyInf
+-250 HeavyCav
+-250 LightCav
+-250 Crossbowmen
+-5 MerchantShips
+-3 LightShips
+-2.5 ProductionSectors.ShipBuildingSector
+-0.05 LightShipImprovements
+-0.05 AgrAdv
+-0.05 AgrInf
+-2.5 TradeInfluences.Western Mediterranean
+-2.5 TradeInfluences.Southern France
+-2.5 TradeInfluences.Central Mediterranean
+-2.5 TradeInfluences.Adriatic
+-2.5 TradeInfluences.Greece
+-0.5 Wool
+
+<... > nations > Amani Tribes
+-0.5 Health
+-0.5 EduEff
+-0.5 Propaganda
+-2.5 AdmEff
+-0.1 AdmSize
+-1 LocalTrade
+-0.2 TradeImprov
+=17.5% AristocracyTax
+=17.5% ClergyTax
+=17.5% BurgousieTax
+=20% InternalTariffs
+=20% ExternalTariffs
+-0.1 OverallImprovements
+-250 LightInf
+-250 Crossbowmen
+-2 MerchantShips
+-2.5 ProductionSectors.ShipBuildingSector
+-0.05 LightShipImprovements
+-0.05 AgrAdv
+-0.05 AgrInf
+-2.5 TradeInfluences.Venezuela
+
+<... > nations > Amani Tribes
+-0.5 Health
+-0.5 EduEff
+-0.5 Propaganda
+-2.5 AdmEff
+-1 LocalTrade
+-0.2 TradeImprov
+-0.1 OverallImprovements
+-250 LightInf
+-250 Crossbowmen
+-2 MerchantShips
+-2.5 ProductionSectors.ShipBuildingSector
+-0.05 LightShipImprovements
+-0.05 AgrAdv
+-0.05 AgrInf
+-2.5 TradeInfluences.West Coast
+-0.5 Sulphur
+=1.5 BureaucratsWages
+
 <... > Nations >  Dynasty Of Usia
 +0.1 AgrAdv
 +1000 light Cavalry
