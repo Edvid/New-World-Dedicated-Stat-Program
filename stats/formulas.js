@@ -1332,14 +1332,14 @@ static evaluateNation(nationName) {
         n.AristocracyLoyalty -= (n.AristocracyBasicArmaments / max(n.ArmyBasicArmamentsDemand, 10) - 1) / 5;
     }
 
-    if (n.ClergyBasicArmaments > n.ArmyBasicArmamentsDemand) {
+    if (n.ClergyBasicArmaments > max(n.ArmyBasicArmamentsDemand, 10)) {
         n.ClergyLoyalty -= (n.ClergyBasicArmaments / max(n.ArmyBasicArmamentsDemand, 10) - 1) / 5;
     }
 
-    if (n.BurgousieBasicArmaments > n.ArmyBasicArmamentsDemand) {
+    if (n.BurgousieBasicArmaments > max(n.ArmyBasicArmamentsDemand, 10)) {
         n.BurgousieLoyalty -= (n.BurgousieBasicArmaments / max(n.ArmyBasicArmamentsDemand, 10) - 1) / 5;
     }
-
+    if (nationName == "KingdomOfNovgorod") debugger;
     n.AristocracyCallupCost = 20 * (n.AristocracyBasicArmaments / max(n.ArmyBasicArmamentsDemand, 10));
     n.ClergyCallupCost = 20 * (n.ClergyBasicArmaments / max(n.ArmyBasicArmamentsDemand, 10));
     n.BurgousieCallupCost = 20 * (n.BurgousieBasicArmaments / max(n.ArmyBasicArmamentsDemand, 10));
