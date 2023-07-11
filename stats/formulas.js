@@ -307,6 +307,36 @@ static evaluateNation(nationName) {
         return "None"
       case "Ivory":
         return "None"
+      case "Housing":
+        return "None"
+      case "Textiles":
+        return "None"
+      case "BasicGoods":
+        return "None"
+      case "LuxuryGoods":
+        return "None"
+      case "Alcohol":
+        return "None"
+      case "BasicTools":
+        return "None"
+      case "HeavyIndustry":
+        return "None"
+      case "BasicArmaments":
+        return "None"
+      case "HeavyArmaments":
+        return "None"
+      case "ShipBuilding":
+        return "None"
+      case "Chemicals":
+        return "None"
+      case "Motors":
+        return "None"
+      case "Planes":
+        return "None"
+      case "Electronics":
+        return "None"
+      case "Wood":
+        return "None"
       default:
         return "Mining"
     }
@@ -332,12 +362,13 @@ static evaluateNation(nationName) {
 
     n["Effective" + resource] = (function () {
 
-      let er = n[resource] * (GatheringEffectiveness(resource) == "Farming" ? n.FarmingEfficiency : n.MiningEfficiency) + n[resource + "Incoming"] - n[resource + "Outgoing"];
+      let er = n[resource] * (GatheringEffectiveness(resource) == "Farming" ? n.FarmingEfficiency : (GatheringEffectiveness(resource) == "Mining" ? n.MiningEfficiency : 1)) + n[resource + "Incoming"] - n[resource + "Outgoing"];
       if(er < 0){
         lazyerror(`It seems the effective resource ${resource} in ${nationName} is negative: ${er}. Is an impossible trade taking place?`);
       }
       return er;
-    })();
+      })();
+      if (n.MiningEfficiency>1) debugger;
   }
 
   n.DailyFood = (n.Workforces.Farmers + n.Workforces.Serfs) * n.Population / 1000 * n.FarmingEfficiency + n.FoodIncoming - n.FoodOutgoing;

@@ -2284,3 +2284,31 @@ sync
 
 <... > nations > NanyangDynasty
 ="Thai" CulRep
+
+trade SoleilRussianArmsDeal1, Kingdom Of Novgorod > Royaume Du Soleil, 10 BasicArmaments
+trade SoleilRussianArmsDeal2, Royaume Du Soleil > Kingdom Of Novgorod, 150 Budget
+
+trade SoleilAsaranArmsDeal1, AsaranEmpire > Royaume Du Soleil, 17 BasicArmaments
+trade SoleilAsaranArmsDeal2, Royaume Du Soleil > AsaranEmpire, 175 Budget
+
+trade SoleilBavarianArmsDeal1, Bavaria > Royaume Du Soleil, 8 BasicArmaments
+trade SoleilBavarianArmsDeal2, Bavaria > Royaume Du Soleil, 3 HeavyArmaments
+trade SoleilBavarianArmsDeal3, Royaume Du Soleil > Bavaria, 150 Budget
+
+<... > Nations > Royaume Du Soleil
++1000 LightCav
++4000 Archers
+-0.5 Propaganda
+=3.0 BureaucratsWages
+-8.5% Aristocracy Tax
+-12.5% BurgousieTax
+-7.5% UrbanTax
+-3% BureaucratsTax
+-2% MilitaryTax
+-15% ClergyTax
++40 Spies
++1 Forestry
++1.5 Coal
++2 Sulphur
++1.6 Iron
++1 Gold
