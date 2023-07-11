@@ -361,14 +361,9 @@ static evaluateNation(nationName) {
     //the things below do not apply to Budget or Food
 
     n["Effective" + resource] = (function () {
-
       let er = n[resource] * (GatheringEffectiveness(resource) == "Farming" ? n.FarmingEfficiency : (GatheringEffectiveness(resource) == "Mining" ? n.MiningEfficiency : 1)) + n[resource + "Incoming"] - n[resource + "Outgoing"];
-      if(er < 0){
-        lazyerror(`It seems the effective resource ${resource} in ${nationName} is negative: ${er}. Is an impossible trade taking place?`);
-      }
       return er;
       })();
-      if (n.MiningEfficiency>1) debugger;
   }
 
   n.DailyFood = (n.Workforces.Farmers + n.Workforces.Serfs) * n.Population / 1000 * n.FarmingEfficiency + n.FoodIncoming - n.FoodOutgoing;
@@ -1505,6 +1500,15 @@ static evaluateNation(nationName) {
   n.FeudalArmiesChangeCost = max(25, (n.Reforms.FeudalNobleArmies ? n.GovernmentRepresentation.AristocracyRepresentation + n.GovernmentRepresentation.ClergyRepresentation : 100 - n.GovernmentRepresentation.UnitaryRepresentation - n.GovernmentRepresentation.AristocracyRepresentation) * 1.5);
   n.MercenariesChangeCost = max(25, (n.Reforms.Mercenaries ? n.GovernmentRepresentation.AristocracyRepresentation + n.GovernmentRepresentation.BurgousieRepresentation + (n.AverageDevelopment > 0.1 ? n.GovernmentRepresentation.UrbanRepresentation : 0) : 100 - n.GovernmentRepresentation.UnitaryRepresentation - n.GovernmentRepresentation.AristocracyRepresentation - n.GovernmentRepresentation.BurgousieRepresentation - (n.AverageDevelopment > 0.1 ? n.GovernmentRepresentation.UrbanRepresentation : 0)) * 1.5);
   n.ReligiousOrdersChangeCost = max(25, (n.Reforms.ReligiousOrders ? n.GovernmentRepresentation.ClergyRepresentation + n.ReligiousFervor * 10 : 100 - n.GovernmentRepresentation.UnitaryRepresentation - n.GovernmentRepresentation.ClergyRepresentation));
+
+  // effective resources error
+    for (const resourceIndex in gameStats.ResourceTypes) { //in, out, effective resources
+        const resource = gameStats.ResourceTypes[resourceIndex];
+            let er = n["Effective"+resource];
+            if (er < 0) {
+                lazyerror(`It seems the effective resource ${resource} in ${nationName} is negative: ${er}. Is an impossible trade taking place?`);
+            }
+    }
 
   // Alerts
   if (n.GovernmentRepresentation.WorkersRepresentation + n.GovernmentRepresentation.MilitaryRepresentation + n.GovernmentRepresentation.IntellectualsRepresentation + n.GovernmentRepresentation.BureaucratsRepresentation + n.GovernmentRepresentation.UrbanRepresentation + n.GovernmentRepresentation.BurgousieRepresentation + n.GovernmentRepresentation.ClergyRepresentation + n.GovernmentRepresentation.AristocracyRepresentation + n.GovernmentRepresentation.UnitaryRepresentation != 100) {
