@@ -1152,7 +1152,7 @@ static evaluateNation(nationName) {
 
   n.TotalPrivateArmyBudgets = n.AristocracyArmiesBudget * (1 + n.EstateInfluencesReal.AristocracyInfluence) + n.BurgousieArmiesBudget * (1 + n.EstateInfluencesReal.BurgousieInfluence) + n.ClergyArmiesBudget * (1 + n.EstateInfluencesReal.ClergyInfluence) + n.PopulaceArmiesBudget * (1 + n.EstateInfluencesReal.WorkersInfluence + n.EstateInfluencesReal.UrbanInfluence + n.EstateInfluencesReal.IntellectualsInfluence);
 
-    n.AvailableWeapons = clamp(n.EffectiveBasicArmaments * 0.35 * clamp(0, 1, n.TotalPrivateArmyBudgets / ((n.EffectiveBasicArmaments - n.BasicArmamentsStockpiled - n.ArmyBasicArmamentsDemand) * n.BasicArmamentsValue)), n.EffectiveBasicArmaments * clamp(0, 1, n.TotalPrivateArmyBudgets / ((n.EffectiveBasicArmaments - n.BasicArmamentsStockpiled - n.ArmyBasicArmamentsDemand) * n.BasicArmamentsValue)), (n.EffectiveBasicArmaments - n.BasicArmamentsStockpiled - n.ArmyBasicArmamentsDemand) * clamp(0, 1, n.TotalPrivateArmyBudgets / ((n.EffectiveBasicArmaments - n.BasicArmamentsStockpiled - n.ArmyBasicArmamentsDemand) * n.BasicArmamentsValue)));
+    n.AvailableWeapons = clamp(n.EffectiveBasicArmaments * 0.35 * clamp(0, 1, n.TotalPrivateArmyBudgets / (n.EffectiveBasicArmaments * n.BasicArmamentsValue)), n.EffectiveBasicArmaments * clamp(0, 1, n.TotalPrivateArmyBudgets / (n.EffectiveBasicArmaments * n.BasicArmamentsValue)), (n.EffectiveBasicArmaments - n.BasicArmamentsStockpiled - n.ArmyBasicArmamentsDemand) * clamp(0, 1, n.TotalPrivateArmyBudgets / (n.EffectiveBasicArmaments * n.BasicArmamentsValue)));
 
   n.AristocracyBasicArmaments = (n.AristocracyArmiesBudget * (1 + n.EstateInfluencesReal.AristocracyInfluence) / n.TotalPrivateArmyBudgets) * n.AvailableWeapons;
   n.BurgousieBasicArmaments = (n.BurgousieArmiesBudget * (1 + n.EstateInfluencesReal.BurgousieInfluence) / n.TotalPrivateArmyBudgets) * n.AvailableWeapons;
@@ -1200,7 +1200,7 @@ static evaluateNation(nationName) {
   n.MilitiaBalance = (1 - n.Technologies.Muskets * 0.05 - n.Technologies.Matchlock * 0.15 - n.Technologies.Bayonet * 0.05 - n.Technologies.SocketBayonet * 0.15 - n.Technologies.Flintlock * 0.40);
   n.PopulaceMilitia = n.MilitiaBalance * n.PopulaceBasicArmaments / n.UnitsArmamentsDemands.Militia * 1000;
   n.PopulaceMusketMilitia = (1 - n.MilitiaBalance) * n.PopulaceBasicArmaments / n.UnitsArmamentsDemands.MusketMilitia * 1000;
-
+    if (nationName == "DutchRepublic") debugger;
   n.SlavesEffectiveWage = n.SlavesWage * (1 - n.WorkersTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.WorkersInfluence));
   n.LabourersEffectiveWage = n.LabourersWage * (1 - n.WorkersTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.WorkersInfluence)) + (n.ExpectedLabourersSol < n.AverageExpectedSol ? n.SocialSpending / 10 : 0) - (n.PopulaceBasicArmaments * n.BasicArmamentsValue * n.LabourersWeaponContribution) / max(1, n.Population * n.Workforces.Labourers / 1000);
     n.SerfsEffectiveWage = n.SerfsWage * (1 - n.WorkersTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.WorkersInfluence)) + (n.ExpectedSerfsSol < n.AverageExpectedSol ? n.SocialSpending / 10 : 0) - (n.PopulaceBasicArmaments * n.BasicArmamentsValue * n.SerfsWeaponContribution) / max(1, n.Population * n.Workforces.Serfs / 1000);
