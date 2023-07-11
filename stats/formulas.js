@@ -1152,13 +1152,13 @@ static evaluateNation(nationName) {
 
   n.TotalPrivateArmyBudgets = n.AristocracyArmiesBudget * (1 + n.EstateInfluencesReal.AristocracyInfluence) + n.BurgousieArmiesBudget * (1 + n.EstateInfluencesReal.BurgousieInfluence) + n.ClergyArmiesBudget * (1 + n.EstateInfluencesReal.ClergyInfluence) + n.PopulaceArmiesBudget * (1 + n.EstateInfluencesReal.WorkersInfluence + n.EstateInfluencesReal.UrbanInfluence + n.EstateInfluencesReal.IntellectualsInfluence);
 
-  n.AvailableWeapons = max(n.EffectiveBasicArmaments * clamp(0.35, 1, n.TotalPrivateArmyBudgets / ((n.EffectiveBasicArmaments - n.BasicArmamentsStockpiled - n.ArmyBasicArmamentsDemand) * n.BasicArmamentsValue)), 0);
+    n.AvailableWeapons = clamp(n.EffectiveBasicArmaments * 0.35 * clamp(0, 1, n.TotalPrivateArmyBudgets / ((n.EffectiveBasicArmaments - n.BasicArmamentsStockpiled - n.ArmyBasicArmamentsDemand) * n.BasicArmamentsValue)), n.EffectiveBasicArmaments * clamp(0, 1, n.TotalPrivateArmyBudgets / ((n.EffectiveBasicArmaments - n.BasicArmamentsStockpiled - n.ArmyBasicArmamentsDemand) * n.BasicArmamentsValue)), (n.EffectiveBasicArmaments - n.BasicArmamentsStockpiled - n.ArmyBasicArmamentsDemand) * clamp(0, 1, n.TotalPrivateArmyBudgets / ((n.EffectiveBasicArmaments - n.BasicArmamentsStockpiled - n.ArmyBasicArmamentsDemand) * n.BasicArmamentsValue)));
 
   n.AristocracyBasicArmaments = (n.AristocracyArmiesBudget * (1 + n.EstateInfluencesReal.AristocracyInfluence) / n.TotalPrivateArmyBudgets) * n.AvailableWeapons;
   n.BurgousieBasicArmaments = (n.BurgousieArmiesBudget * (1 + n.EstateInfluencesReal.BurgousieInfluence) / n.TotalPrivateArmyBudgets) * n.AvailableWeapons;
   n.ClergyBasicArmaments = (n.ClergyArmiesBudget * (1 + n.EstateInfluencesReal.ClergyInfluence) / n.TotalPrivateArmyBudgets) * n.AvailableWeapons;
   n.PopulaceBasicArmaments = (n.PopulaceArmiesBudget * (1 + n.EstateInfluencesReal.WorkersInfluence + n.EstateInfluencesReal.UrbanInfluence + n.EstateInfluencesReal.IntellectualsInfluence) / n.TotalPrivateArmyBudgets) * n.AvailableWeapons;
-
+    if (nationName == "RoyaumeDuSoleil") debugger;
   n.PrivateArmySetup = {
     Levies: 0.50 - (n.Technologies.StandardizedPikes ? 0.15 : 0) - (n.Technologies.Matchlock ? 0.10 : 0) - (n.Technologies.Metallurgy ? 0.15 : 0) - (n.Technologies.Bayonet ? 0.05 : 0) - (n.Technologies.SocketBayonet ? 0.05 : 0),
     Militia: 0.15 + (n.Technologies.StandardizedPikes ? 0.05 : 0) - (n.Technologies.Bayonet ? 0.05 : 0) - (n.Technologies.SocketBayonet ? 0.15 : 0),
