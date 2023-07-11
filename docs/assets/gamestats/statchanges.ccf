@@ -95,6 +95,11 @@
 -2.5 TradeInfluences.West Coast
 -0.5 Sulphur
 =1.5 BureaucratsWages
+<...
+
+trade DutchSwedishTrade1, CrownOfSweden > DutchRepublic, 0.5 Silver
+trade DutchSwedishTrade2, DutchRepublic > CrownOfSweden, 0.5 Coal
+trade DutchSwedishTrade3, DutchRepublic > CrownOfSweden, 25 Budget
 
 <... > Nations >  Dynasty Of Usia
 +0.1 AgrAdv
