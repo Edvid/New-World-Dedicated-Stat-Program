@@ -100,6 +100,17 @@
 trade DutchSwedishTrade1, CrownOfSweden > DutchRepublic, 0.5 Silver
 trade DutchSwedishTrade2, DutchRepublic > CrownOfSweden, 0.5 Coal
 trade DutchSwedishTrade3, DutchRepublic > CrownOfSweden, 25 Budget
+="true" Aztec Empire.Technologies.Paper
+="true" Mayan Empire.Technologies.Paper
+="true" Kokwapa Confederation.Technologies.Paper
+="true" Magnavallis.Technologies.Paper
+="true" Mapuche Confederation.Technologies.Paper
+="true" Bojaca Confederation.Technologies.Paper
+="true" Haida Nation.Technologies.Paper
+="true" Taino Kingdoms.Technologies.Paper
+="true" Amani Tribes.Technologies.Paper
+="true" Pomo.Technologies.Paper
+="true" Natchez.Technologies.Paper
 
 <... > Nations >  Dynasty Of Usia
 +0.1 AgrAdv
