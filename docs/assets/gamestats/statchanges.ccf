@@ -110,7 +110,7 @@
 <... > Nations > Kingdom Of Israel
 +1.5 ReligiousFervor
 +50 Spies
-+9.5 AdmEff
++6 AdmEff
 +0.5 EduEff
 +0.15 SpyQuality
 +0.12 AdmSize
@@ -255,18 +255,18 @@
 + 500 Light Infantry
 
 <... > Nations > Royaume Du Soleil
-+11 AdmEff
++5.75 AdmEff
 +0.5 EduEff
 +0.4 CulturalProsperity
 +0.1 ResearchEffectiveness
-+0.65 AdmSize
++0.6 AdmSize
 +2 propaganda 
-+30 EstateInfluences.clergyInfluence
--30 EstateInfluences.AristocracyInfluence
++10 EstateInfluences.clergyInfluence
+-5 EstateInfluences.AristocracyInfluence
 +20 GovernmentRepresentation.clergyRepresentation
 -20 GovernmentRepresentation.AristocracyRepresentation
 =4 BureaucratsWages
-+0.3 TradeImprov
++0.45 TradeImprov
 +3.40 LocalTrade
 +25 TradeInfluences.Southern France
 +25 TradeInfluences.France
