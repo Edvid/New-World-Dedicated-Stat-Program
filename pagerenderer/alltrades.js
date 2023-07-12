@@ -32,3 +32,4 @@ function loadAllTrades(){
     }
 }
 
+document.querySelector("body").addEventListener("game load done", loadAllTrades);
