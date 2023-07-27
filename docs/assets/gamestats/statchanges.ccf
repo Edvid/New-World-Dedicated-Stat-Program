@@ -1,0 +1,432 @@
+
+!suppress 432
+<... > Cultures > GrecoBactrian > Opinions 
++> Hindustani
++10 Hindustani.Score
+<... > Cultures > Hindustani > Opinions 
++> GrecoBactrian
++10 Greco Bactrian.Score
+
+<... > Nations > GrecoBactria
++.5 SocialSpending
++.05 ResearchSpending
++.25 EduEff
++.1 CulturalProsperity
++.5 AdmEff
++.05 TradeImprov
++1.5 LocalTrade
++.5 Health
++.05 AgrSubsidies
++1 Spice
++.75 Exotic Fruit
++.5 Silk
++0.05 overallImprov
++2.5 GovernmentRepresentation.unitaryRepresentation
+-2.5 GovernmentRepresentation.aristocracyRepresentation
++2.5 ProductionSectors.Basictoolssector
++2.5 ProductionSectors.Basicgoodssector
++5 ProductionSectors.Luxurygoodssector
++30 TradeInfluences.Afghanistan
++30 TradeInfluences.Indus River
++30 TradeInfluences.Central Asia
++25 TradeInfluences.Iran
++20 TradeInfluences.Persian Gulf
+
+<... > Nations > Earldom Of Manx
++.5 AdmEff
++.05 AdmSize
++.1 TradeImprov
++.25 LocalTrade
++4 Merchant Ships
++.25 Forestry
++2.5 ProductionSectors.Constructionsector
++2.5 ProductionSectors.Shipbuildingsector
++5 TradeInfluences.France
++5 TradeInfluences.Southern France
++5 TradeInfluences.Rhine
++10 TradeInfluences.English Channel
++5 TradeInfluences.Bay of Biscay
++5 TradeInfluences.Iberia
++5 TradeInfluences.Central Europe
++5 TradeInfluences.North Sea
+
+<... > Nations > Crown of Sweden
++.5 AdmEff
+-.25 SocialSpending
++.5 LocalTrade
++.05 TradeImprov
++.05 AgrAdv
++.1 AgrInf
++.05 Lightship Improvements
++.05 Mediumship Improvements
++.05 Heavyship Improvements
++5 Light Ships 
++5 TradeInfluences.Germany
++5 TradeInfluences.Denmark
++5 TradeInfluences.Poland
++5 TradeInfluences.Baltic
++5 TradeInfluences.Northern Nordics
+=12% InternalTariffs
+=15% ExternalTariffs
+=10% AristocracyTax
+=9% BurgousieTax
+=8% ClergyTax
+=10% UrbanTax
+=9% IntellectualsTax
+=10% BureaucratsTax
+=16% WorkersTax
+=10% MilitaryTax
+
+<... > Nations > Kingdom of Laos
++.5 AdmEff
++.5 LocalTrade
++.5 Health
++.5 EduEff
++.3 AgrInf
++.1 AgrAdv
++.1 StockCap
++.1 MiningEff
++.05 Reforestation
++.25 Ivory
++.25 Spices
++.5 Tea
++.5 Wool
++.05 SpyQuality
++.05 MeleeImprov
++.05 RangedImprov
++200 Light Infantry
++5 TradeInfluences.South East Asia
+<... > Cultures > South Chinese > Opinions 
++> Tibetan
++5 Tibetan.Score
+<... > Cultures > Tibetan > Opinions 
++> SouthChinese
++5 SouthChinese.Score
+<... > Cultures > South Chinese > Opinions 
++> Burmese
++5 Burmese.Score
+<... > Cultures > Burmese > Opinions 
++> SouthChinese
++5 SouthChinese.Score
+<... > Cultures > South Chinese > Opinions 
++> Bengali
++5 Bengali.Score
+<... > Cultures > Bengali > Opinions 
++> SouthChinese
++5 SouthChinese.Score
+<... > Cultures > South Chinese > Opinions 
++> Thai
++5 Thai.Score
+<... > Cultures > Thai > Opinions 
++> SouthChinese
++5 SouthChinese.Score
+
+<... > Nations > Republic of Venice
+="true" reforms.Enclosure
+="false" reforms.Open field system
+-25 ReformPower
++100 Budget
+=5% IntellectualsTax
+=12.5% BureaucratsTax
+=10% BurgousieTax
+=17.5% AristocracyTax
+=17.5% ClergyTax
+=15% UrbanTax
+=15% WorkersTax
+=12.5% MilitaryTax
++.2 AdmSize
++.5 AdmEff
++.5 Propaganda
++.5 LocalTrade
++.05 TradeImprov
++.5 Health
++.1 CulturalProsperity
++1 Bureaucrats Wages
++1 EduEff
++.1 ResearchEffectiveness
++.05  AgrAdv
++.1 AgrInf
++.1 StockCap
++.5 Forestry
++.05 Reforestation
++.05 OverallImprov
++.05 MeleeImprov
++.05 RangedImprov
++.05 LightshipImprov
++.05 SpyQuality
++500 Heavy Infantry
++475 Light Infantry
++25 Elite Infantry
++250 Hand cannoneers
++250 Crossbowmen 
++69 Spies
++5 Merchant Ships
++15 Light Ships
++5 TradeInfluences.Western Mediterranean
++5 TradeInfluences.Eastern Mediterranean
++10 TradeInfluences.Central Mediterranean
++5  TradeInfluences.Adriatic
++5 TradeInfluences.English Channel
++5 TradeInfluences.British Isles
++5 TradeInfluences.Central Europe
++5  TradeInfluences.Western Danube
++5 ProductionSectors.Shipbuildingsector
++5 ProductionSectors.Basicarmamentssector
++5 ProductionSectors.Heavyarmamentssector
++5 ProductionSectors.Luxurygoodssector 
+
+<... > Nations > Kingdom of Prussia
++1 Army Wage
++2.5 AdmEff
++.25 AdmSize
++2.5 LocalTrade
++.5 Health
++.15 MiningEff
++.05 EduEff
++.05 TradeImprov
++.1 StockCap
++.1 AgrAdv
++.1 OverallImprov
++.1 RangedImprov
++.1 CavalryImprov
++.5 Sulphur
++.5 Iron
++.5 Coal
++10 TradeInfluences.Central Europe
++10 TradeInfluences.Vistula
++5 TradeInfluences.Livonia
++5 TradeInfluences.Baltic Sea
++5 TradeInfluences.Denmark
++5 TradeInfluences.Western Danube
++5 TradeInfluences.Rhine 
+
+<... > Nations > Bavaria
++2 LocalTrade
++.15 TradeImprov
++1 Health
++.05 AgrAdv
++.1 AgrInf
++3.0% Discipline
++.3 OverallImprov
++.25 IrregularImprov
++.1 MeleeImprov
++.1 RangedImprov
++.1 CavalryImprov
++15 Elite Infantry
++2 Heavy Ships
++5 Merchant Ships
++15 EstateInfluences.BurgousieInfluence 
++15 TradeInfluences.Western Danube
++15 TradeInfluences.Central Europe
++5 TradeInfluences.British Isles
++5 TradeInfluences.Novgorod
++5 TradeInfluences.Barents Sea
++5 TradeInfluences.Livonia
++5 TradeInfluences.Dniepr
++5 TradeInfluences.Muscovy
+<...
+trade DutchBavariaTrade1, Bavaria > DutchRepublic, 1 BasicArmaments
+trade DutchBavariaTrade2, Bavaria > DutchRepublic, 1 HeavyArmaments
+trade DutchBavariaTrade3, DutchRepublic > Bavaria, 34 budget
+
+<... > Nations > Mayan Empire
+="true" CulturalAdvancements.Currency
+-2.5 Cultural Power
++.75 AdmEff
++.1 AdmSize
++1.25 LocalTrade
++.1 TradeImprov
++.5 ReligiousFervor
+-.5 Isolation
++.5 Cocoa
++3 Merchant Ships
++5 TradeInfluences.Gulf of Mexico
++5 TradeInfluences.Caribbean
++5 TradeInfluences.Central America
++5 ProductionSectors.Shipbuildingsector
+
+<... > Nations > Aztec Empire
+="true" CulturalAdvancements.Currency
+-2.5 Cultural Power
++2.5 AdmEff
++.35 AdmSize
++.25 TradeImprov
++2.5 LocalTrade
++.5 SocialSpending
++.5 Bureaucrats Wages
++.5 Sailors Wage
++.5 Health
++.75 EduEff
++.15 MiningEff
++.25 CulturalProsperity
++1.0 ReligiousFervor
++.5 Propaganda
+-1.0 Isolation
++.05 AgrAdv
++.1 AgrInf
++.1 AgrSub
++.05 Reforestation
++.25 Iron
++.25 Coal
++.25 Sulphur
++.25 Gold
++.75 Cocoa
++.25 Sugar
++.25 Exotic Fruits
++5 TradeInfluences.Caribbean
++5 TradeInfluences.Central America
++10 TradeInfluences.Western Mexico
++10 TradeInfluences.Gulf of Mexico
++5 TradeInfluences.Louisiana 
+
+<... > Nations > Kingdom Of Novgorod
+="true" reforms.Enclosure
+="false" reforms.Open field system
+-25 ReformPower
+
++1.75 AdmEff
++1 LocalTrade
++.15 TradeImprov
++.5 Propaganda
++.05 AgrAdv
++.5 Iron
++.5 Coal
++.5 Fur
++.5 Wool
++.1 OverallImprov
++.05 IrregularImprov
++.05 LightshipImprov
++.05 MediumshipImprov
++.05 HeavyshipImprov
+
++300 Heavy Infantry
++100 Light Infantry
++100 Light Cavalry
+
++5 ProductionSectors.Basicgoodssector
++5 ProductionSectors.Basictoolssector
+
++5 EstateInfluences.UrbanInfluence
++5 EstateInfluences.BurgousieInfluence
++5 EstateInfluences.ClergyInfluence
+
++5 TradeInfluences.Central Europe
++10 TradeInfluences.Novgorod
+
+trade TreatyOfNarva1, KingdomOfNovgorod > DutchRepublic, .5 iron, 3 basic armaments
+trade TreatyOfNarva2, DutchRepublic >  KingdomOfNovgorod, .5 sulphur, 120 budget 
+
+
+<... > Nations >  Majapahit Kingdom
+=30% AristocracyTax
+=20% ClergyTax
+=20% BurgousieTax
+=20% UrbanTax
+=10% BureaucratsTax
+=10% IntellectualsTax 
+=10% WorkersTax
+=10% MilitaryTax
+-1 SocialSpending
++0.2 AgrAdv
++0.3 AgrInf
++0.3 AgrSubsidies
++0.05 Reforestation
++1 Forestry
++2.5 EstateInfluences.ClergyInfluence
++1.5 Gold
++0.25 MiningEff
++3 Coal
++3 Sulphur
++2 Local Trade
++0.2 TradeImprov
++1.5 AdmEff
++0.15 AdmSize
++2.5 EstateInfluences.AristocracyInfluence 
++2.5  EstateInfluences.BurgousieInfluence 
++16 TradeInfluences.Indonesia
++10 TradeInfluences.NorthAustralia
+
+<... > Nations >  Order Of Hashishin
++5 GovernmentRepresentation.ClergyRepresentation
+-5 GovernmentRepresentation.AristocracyRepresentation
++10  EstateInfluences.ClergyInfluence 
++0.5 ReligiousFervor
++5 MilitaryControl.ClergyControl
+-5 MilitaryControl.AristocracyControl
++0.05 OverallImprov
++0.05 MeleeImprov
++0.25 CommanderFreedom
+=15% AristocracyTax
+=15% BurgousieTax
+=15% UrbanTax
+=15% BureaucratsTax
+=15% IntellectualsTax 
+=15% WorkersTax
++50 Spies
++0.05 SpyQuality
++0.1 AgrSubsidies
++0.1 AgrInf
++0.1 StockCap
++0.25 SocialSpending
++0.25 Tea
++3 TradeInfluences.Caucasus
++3 TradeInfluences.CaspianSea
++3 TradeInfluences.Crimea
+
+<... > Nations >  Kingdom Of Alvania
++2.5 LocalTrade
++0.15 TradeImprov
++7 TradeInfluences.Romania
++7 TradeInfluences.EasternDanube
++7 TradeInfluences.Greece
++0.25 AdmSize
++1 Health
++0.25 SocialSpending
++1 AdmEff
+
+<... > Nations >  Kingdom Of Zemlyertsy
++0.05 AgrAdv
++3 TradeInfluences.Crimea
++3 TradeInfluences.Romania
++0.5 EduEff
+
+<... > Nations >  Asaran Empire
++0.75 AdmEff
++0.1 AdmSize
++1200 Militia
++0.05 ResearchEffectiveness
++4 SupplyDepots
++3 SmallForts
++4 NavalBases
++15 MerchantShips
++5 TradeInfluences.Livonia
++5 TradeInfluences.Greece
++3 TradeInfluences.CentralEurope
++2 TradeInfluences.France
++2 TradeInfluences.SouthernFrance
++4 TradeInfluences.Vistula
++4 TradeInfluences.Adriatic
++3 TradeInfluences.Western Mediterranean
++5 TradeInfluences.Adriatic
++5 TradeInfluences.EasternMediterranean
++3 TradeInfluences.EasternDanube
++2 TradeInfluences.Morocco
++1 LocalTrade
++0.05 TradeImprov
++0.5 Silk
++0.25 Spice
++5 ProductionSectors.TextilesSector
++0.5 Cotton
++0.1 MiningEff
++0.75 Coal
++0.05 OverallImprov
++0.05 MeleeImprov
++0.05 CavalryImprov
++0.5 ArmyWage
++750 LightInfantry
++500 HeavyInfantry
++350 LightCav
++200 HeavyCav
++200 Archers
++350 Crossbowmen
+
