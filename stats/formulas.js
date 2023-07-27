@@ -1424,13 +1424,13 @@ static evaluateNation(nationName) {
 
   n.EliteUnitsCap = ((n.OverallNumbers - n.Militia - n.Levies - n.EliteCavalry - n.EliteInfantry) * 0.025);
 
-    n.IrregularQuality = (n.IrregularQualityIC - n.Corruption / 5) * max(0.1, 1 - n.IronShortage) * max(0.1, 1 - n.BasicArmamentsArmyShortage);
-    n.MeleeQuality = (n.MeleeQualityIC - n.Corruption / 5) * max(0.1, 1 - n.IronShortage) * max(0.1, 1 - n.BasicArmamentsArmyShortage);
-    n.RangedQuality = (n.RangedQualityIC - n.Corruption / 5) * max(0.1, 1 - n.IronShortage) * max(0.1, 1 - n.BasicArmamentsArmyShortage);
-    n.CavalryQuality = (n.CavalryQualityIC - n.Corruption / 5) * max(0.1, 1 - n.IronShortage) * (n.Technologies.Reiters == 1 ? max(0.1, 1 - n.SulphurShortage) : 1) * max(0.1, 1 - n.BasicArmamentsArmyShortage);
-    n.FirearmQuality = (n.FirearmQualityIC - n.Corruption / 5) * max(0.1, 1 - n.IronShortage) * max(0.1, 1 - n.SulphurShortage) * max(0.1, 1 - n.BasicArmamentsArmyShortage);
-    n.SiegeQuality = (n.SiegeQualityIC - n.Corruption / 5) * max(0.1, 1 - n.IronShortage) * max(0.1, 1 - n.BasicArmamentsArmyShortage);
-    n.ArtilleryQuality = (n.ArtilleryQualityIC - n.Corruption / 5) * max(0.1, 1 - n.IronShortage) * max(0.1, 1 - n.SulphurShortage) * max(0.1, 1 - n.HeavyArmamentsShortage);
+    n.IrregularQuality = (n.IrregularQualityIC - n.Corruption / 5) - n.IronShortage - n.BasicArmamentsArmyShortage;
+    n.MeleeQuality = (n.MeleeQualityIC - n.Corruption / 5)  - n.IronShortage - n.BasicArmamentsArmyShortage;
+    n.RangedQuality = (n.RangedQualityIC - n.Corruption / 5) - n.IronShortage - n.BasicArmamentsArmyShortage;
+    n.CavalryQuality = (n.CavalryQualityIC - n.Corruption / 5) - n.IronShortage - (n.Technologies.Reiters == 1 ? n.SulphurShortage : 0) - n.BasicArmamentsArmyShortage;
+    n.FirearmQuality = (n.FirearmQualityIC - n.Corruption / 5) - n.IronShortage - n.SulphurShortage - n.BasicArmamentsArmyShortage;
+    n.SiegeQuality = (n.SiegeQualityIC - n.Corruption / 5)  - n.IronShortage - n.BasicArmamentsArmyShortage;
+    n.ArtilleryQuality = (n.ArtilleryQualityIC - n.Corruption / 5) - n.IronShortage - n.SulphurShortage - n.HeavyArmamentsShortage;
 
   n.CulturalAdvance = (function () {
     let ca = 0;
@@ -1447,9 +1447,9 @@ static evaluateNation(nationName) {
 
   n.MaxPopulation = n.Population / n.Disease;
 
-  n.LightShipQuality = (1 + n.LightShipImprovements + n.NavyTech - n.Corruption / 5) * max(0.1, 1 - n.IronShortage) * (n.Technologies.Gunports == 1 ? max(0.1, 1 - n.SulphurShortage) : 1) * max(0.1, 1 - n.ShipBuildingShortage);
-  n.MediumShipQuality = (1 + n.MediumShipImprovements + n.NavyTech + n.Technologies.Galleons / 6 - n.Corruption / 5) * max(0.1, 1 - n.IronShortage) * (n.Technologies.Gunports == 1 ? max(0.1, 1 - n.SulphurShortage) : 1) * max(0.1, 1 - n.ShipBuildingShortage);
-  n.HeavyShipQuality = (1 + n.HeavyShipImprovements + n.NavyTech + n.Technologies.Galleons / 4 - n.Corruption / 5) * max(0.1, 1 - n.IronShortage) * (n.Technologies.Gunports == 1 ? max(0.1, 1 - n.SulphurShortage) : 1) * max(0.1, 1 - n.ShipBuildingShortage);
+  n.LightShipQuality = (1 + n.LightShipImprovements + n.NavyTech - n.Corruption / 5) - n.IronShortage - (n.Technologies.Gunports == 1 ? n.SulphurShortage : 0) - n.ShipBuildingShortage;
+  n.MediumShipQuality = (1 + n.MediumShipImprovements + n.NavyTech + n.Technologies.Galleons / 6 - n.Corruption / 5) - n.IronShortage - (n.Technologies.Gunports == 1 ? n.SulphurShortage : 0) - n.ShipBuildingShortage;
+  n.HeavyShipQuality = (1 + n.HeavyShipImprovements + n.NavyTech + n.Technologies.Galleons / 4 - n.Corruption / 5) - n.IronShortage - (n.Technologies.Gunports == 1 ? n.SulphurShortage : 0) - n.ShipBuildingShortage;
   
   n.NavalPower = (n.LightShips * 0.5 * n.LightShipQuality + n.MediumShips * n.MediumShipQuality + 2 * n.HeavyShips * n.HeavyShipQuality);
 
