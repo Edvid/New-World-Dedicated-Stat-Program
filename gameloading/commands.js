@@ -27,6 +27,52 @@ function syncNation(nationName) {
     gameStats.Nations[nationName].HeavyArmamentsStockpiled += (gameStats.Nations[nationName].EffectiveHeavyArmaments - gameStats.Nations[nationName].HeavyArmamentsStockpiled) - gameStats.Nations[nationName].HeavyArmamentsDemand;
     gameStats.Nations[nationName].HeavyArmamentsStockpiled = max(0, gameStats.Nations[nationName].HeavyArmamentsStockpiled);
 
+    // Private Armies Casualties Clear
+    gameStats.Nations[nationName].AristocracyLeviesCasualties = 0;
+    gameStats.Nations[nationName].AristocracyMilitiaCasualties = 0;
+    gameStats.Nations[nationName].AristocracyLightInfantryCasualties = 0;
+    gameStats.Nations[nationName].AristocracyHeavyInfantryCasualties = 0;
+    gameStats.Nations[nationName].AristocracyEliteInfantryCasualties = 0;
+    gameStats.Nations[nationName].AristocracyArchersCasualties = 0;
+    gameStats.Nations[nationName].AristocracyCrossbowmenCasualties = 0;
+    gameStats.Nations[nationName].AristocracyMusketeersCasualties = 0;
+    gameStats.Nations[nationName].AristocracyMusketMilitiaCasualties = 0;
+    gameStats.Nations[nationName].AristocracyRiflemenCasualties = 0;
+    gameStats.Nations[nationName].AristocracyLightCavalryCasualties = 0;
+    gameStats.Nations[nationName].AristocracyHeavyCavalryCasualties = 0;
+    gameStats.Nations[nationName].AristocracyEliteCavalryCasualties = 0;
+
+    gameStats.Nations[nationName].ClergyLeviesCasualties = 0;
+    gameStats.Nations[nationName].ClergyMilitiaCasualties = 0;
+    gameStats.Nations[nationName].ClergyLightInfantryCasualties = 0;
+    gameStats.Nations[nationName].ClergyHeavyInfantryCasualties = 0;
+    gameStats.Nations[nationName].ClergyEliteInfantryCasualties = 0;
+    gameStats.Nations[nationName].ClergyArchersCasualties = 0;
+    gameStats.Nations[nationName].ClergyCrossbowmenCasualties = 0;
+    gameStats.Nations[nationName].ClergyMusketeersCasualties = 0;
+    gameStats.Nations[nationName].ClergyMusketMilitiaCasualties = 0;
+    gameStats.Nations[nationName].ClergyRiflemenCasualties = 0;
+    gameStats.Nations[nationName].ClergyLightCavalryCasualties = 0;
+    gameStats.Nations[nationName].ClergyHeavyCavalryCasualties = 0;
+    gameStats.Nations[nationName].ClergyEliteCavalryCasualties = 0;
+
+    gameStats.Nations[nationName].BurgousieLeviesCasualties = 0;
+    gameStats.Nations[nationName].BurgousieMilitiaCasualties = 0;
+    gameStats.Nations[nationName].BurgousieLightInfantryCasualties = 0;
+    gameStats.Nations[nationName].BurgousieHeavyInfantryCasualties = 0;
+    gameStats.Nations[nationName].BurgousieEliteInfantryCasualties = 0;
+    gameStats.Nations[nationName].BurgousieArchersCasualties = 0;
+    gameStats.Nations[nationName].BurgousieCrossbowmenCasualties = 0;
+    gameStats.Nations[nationName].BurgousieMusketeersCasualties = 0;
+    gameStats.Nations[nationName].BurgousieMusketMilitiaCasualties = 0;
+    gameStats.Nations[nationName].BurgousieRiflemenCasualties = 0;
+    gameStats.Nations[nationName].BurgousieLightCavalryCasualties = 0;
+    gameStats.Nations[nationName].BurgousieHeavyCavalryCasualties = 0;
+    gameStats.Nations[nationName].BurgousieEliteCavalryCasualties = 0;
+
+    gameStats.Nations[nationName].PopulaceMilitiaCasualties = 0;
+    gameStats.Nations[nationName].PopulaceMusketMilitiaCasualties = 0;
+
     // Expected Weapons for private militaries
     gameStats.Nations[nationName].ExpectedPrivateBasicArmaments = gameStats.Nations[nationName].AristocracyBasicArmaments + gameStats.Nations[nationName].BurgousieBasicArmaments + gameStats.Nations[nationName].ClergyBasicArmaments + gameStats.Nations[nationName].PopulaceBasicArmaments;
 

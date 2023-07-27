@@ -1182,25 +1182,25 @@ static evaluateNation(nationName) {
   for (const UnitIndex in n.PrivateArmySetup) {
     const Amount = n.PrivateArmySetup[UnitIndex];
     const Cost = n.UnitsArmamentsDemands[UnitIndex];
-    n["Aristocracy" + UnitIndex] = n.AristocracyBasicArmaments * Amount / Cost * 1000;
+      n["Aristocracy" + UnitIndex] = n.AristocracyBasicArmaments * Amount / Cost * 1000 - (n["Aristocracy" + UnitIndex + "Casualties"] != null ? n["Aristocracy" + UnitIndex + "Casualties"] : 0);
   }
 
   for (const UnitIndex in n.PrivateArmySetup) {
     const Amount = n.PrivateArmySetup[UnitIndex];
     const Cost = n.UnitsArmamentsDemands[UnitIndex];
-    n["Burgousie" + UnitIndex] = n.BurgousieBasicArmaments * Amount / Cost * 1000;
+      n["Burgousie" + UnitIndex] = n.BurgousieBasicArmaments * Amount / Cost * 1000 - (n["Burgousie" + UnitIndex + "Casualties"] != null ? n["Aristocracy" + UnitIndex + "Casualties"] : 0);
   }
 
   for (const UnitIndex in n.PrivateArmySetup) {
     const Amount = n.PrivateArmySetup[UnitIndex];
     const Cost = n.UnitsArmamentsDemands[UnitIndex];
-    n["Clergy" + UnitIndex] = n.ClergyBasicArmaments * Amount / Cost * 1000;
+      n["Clergy" + UnitIndex] = n.ClergyBasicArmaments * Amount / Cost * 1000 - (n["Clergy" + UnitIndex + "Casualties"] != null ? n["Aristocracy" + UnitIndex + "Casualties"] : 0);
   }
 
-  n.MilitiaBalance = (1 - n.Technologies.Muskets * 0.05 - n.Technologies.Matchlock * 0.15 - n.Technologies.Bayonet * 0.05 - n.Technologies.SocketBayonet * 0.15 - n.Technologies.Flintlock * 0.40);
-  n.PopulaceMilitia = n.MilitiaBalance * n.PopulaceBasicArmaments / n.UnitsArmamentsDemands.Militia * 1000;
-  n.PopulaceMusketMilitia = (1 - n.MilitiaBalance) * n.PopulaceBasicArmaments / n.UnitsArmamentsDemands.MusketMilitia * 1000;
-    if (nationName == "DutchRepublic") debugger;
+    n.MilitiaBalance = (1 - n.Technologies.Muskets * 0.05 - n.Technologies.Matchlock * 0.15 - n.Technologies.Bayonet * 0.05 - n.Technologies.SocketBayonet * 0.15 - n.Technologies.Flintlock * 0.40);
+    n.PopulaceMilitia = n.MilitiaBalance * n.PopulaceBasicArmaments / n.UnitsArmamentsDemands.Militia * 1000 - (n.PopulaceMilitiaCasualties != null ? n.PopulaceMilitiaCasualties : 0);
+    n.PopulaceMusketMilitia = (1 - n.MilitiaBalance) * n.PopulaceBasicArmaments / n.UnitsArmamentsDemands.MusketMilitia * 1000 - (n.PopulaceMusketMilitiaCasualties != null ? n.PopulaceMusketMilitiaCasualties : 0);
+
   n.SlavesEffectiveWage = n.SlavesWage * (1 - n.WorkersTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.WorkersInfluence));
   n.LabourersEffectiveWage = n.LabourersWage * (1 - n.WorkersTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.WorkersInfluence)) + (n.ExpectedLabourersSol < n.AverageExpectedSol ? n.SocialSpending / 10 : 0) - (n.PopulaceBasicArmaments * n.BasicArmamentsValue * n.LabourersWeaponContribution) / max(1, n.Population * n.Workforces.Labourers / 1000);
     n.SerfsEffectiveWage = n.SerfsWage * (1 - n.WorkersTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.WorkersInfluence)) + (n.ExpectedSerfsSol < n.AverageExpectedSol ? n.SocialSpending / 10 : 0) - (n.PopulaceBasicArmaments * n.BasicArmamentsValue * n.SerfsWeaponContribution) / max(1, n.Population * n.Workforces.Serfs / 1000);
