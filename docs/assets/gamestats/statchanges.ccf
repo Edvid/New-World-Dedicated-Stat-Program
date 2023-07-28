@@ -2,10 +2,10 @@
 !suppress 432
 <... > Cultures > GrecoBactrian > Opinions 
 +> Hindustani
-+10 Hindustani.Score
+=10 Hindustani.Score
 <... > Cultures > Hindustani > Opinions 
 +> GrecoBactrian
-+10 Greco Bactrian.Score
+=10 Greco Bactrian.Score
 
 <... > Nations > GrecoBactria
 +.5 SocialSpending
