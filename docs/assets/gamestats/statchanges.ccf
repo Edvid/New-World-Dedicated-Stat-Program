@@ -469,3 +469,31 @@ trade TreatyOfNarva2, DutchRepublic >  KingdomOfNovgorod, .5 sulphur, 120 budget
 +0.25 cotton
 +0.75 wool
 +0.05 reforestation
+
+<... > nations > RegencyOfValencia
+-2.5 EstateInfluences.AristocracyInfluence
++10 EstateInfluences.BurgousieInfluence
++5 EstateInfluences.BureaucratsInfluence
++2.5 EstateInfluences.IntellectualsInfluence
++2.5 EstateInfluences.UrbanInfluence
+-5 GovernmentRepresentation.AristocracyRepresentation
+-5 GovernmentRepresentation.UnitaryRepresentation
++7.5 GovernmentRepresentation.BurgousieRepresentation
++2.5 GovernmentRepresentation.UrbanRepresentation
++5 admeff
++0.05 MiningEff
++0.4 AdmSize
++3 LocalTrade
++0.25 TradeImprov
++0.5 Propaganda
++2.25 EduEff
++0.05 ResearchSpending
++0.1 CulturalProsperity
++2 NavalBases
++3 MerchantShips
++12.5 TradeInfluences.CentralMediterranean
++12.5 TradeInfluences.Iberia
++12.5 TradeInfluences.Morocco
++15 TradeInfluences.WesternMediterranean
++2.5 ProductionSectors.ShipBuildingSector
++2.5 ProductionSectors.BasicGoodsSector
