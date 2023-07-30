@@ -542,3 +542,43 @@ trade TreatyOfNarva2, DutchRepublic >  KingdomOfNovgorod, .5 sulphur, 120 budget
 +0.1 CulturalProsperity
 +0.05 ResearchSpending
 -0.5 EduEff
++0.1 SiegeImprovements
++0.15 MeleeImprovements
++0.1 RangedImprovements
++0.1 FirearmImprovements
++0.15 CavalryImprovements
++0.1 ArtilleryImprovements
+
+<... > Nations > EarldomOfManx
++1.5 AdmEff
++0.1 TradeImprov
++0.5 Wool
++10 TradeInfluences.NorthSea
++10 TradeInfluences.BritishIsles
++2.5 TradeInfluences.EnglishChannel
++7.5 TradeInfluences.BayOfBiscay
++5 TradeInfluences.WesternMediterranean
++5 TradeInfluences.Morocco
++5 TradeInfluences.Iberia
+="false" Reforms.OpenFieldSystem
+="true" Reforms.Enclosure
+-25 ReformPower
++1 LocalTrade
++2.5 ProductionSectors.ShipBuildingSector
++5 ProductionSectors.HeavyArmamentsSector
++0.15 AdmSize
+-0.25 SocialSpending
++5 spies
++0.05 SpyQuality
+!suppress 2
++200 budget
++200 debt
++3 Medium Ships
++10 Light Ships 
++1 Heavy Ship
+=30% Internal Tariffs
+=30% External Tariffs
+=12% Workers Tax
++5 EstateInfluences.AristocracyInfluence
++5 GovernmentRepresentation.AristocracyRepresentation
+-5 GovernmentRepresentation.UnitaryRepresentation
