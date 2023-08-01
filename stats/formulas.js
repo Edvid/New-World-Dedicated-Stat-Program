@@ -162,7 +162,7 @@ static evaluateNation(nationName) {
   n.ReligiousDisunity = religionCalc.disunity * (1 + n.ReligiousFervor * 0.2 + n.Reforms.StateReligion / 2 - n.Reforms.FreedomOfReligion / 2) * (n.GovernmentDominatedBy == "Workers" || n.GovernmentDominatedBy == "Clergy" ? 1.2 : 1);
     n.OverallNumbers = n.Riflemen + n.MusketMilitia + n.Musketeers + n.Levies + n.LightInfantry + n.HeavyInfantry + n.Archers + n.Crossbowmen + n.LightCavalry + n.HeavyCavalry + n.EliteInfantry + n.Militia + n.EliteCavalry + n.HandCannoneers + (n.SiegeEquipment + n.LargeSiegeEquipment) * 10 + n.RegimentalGuns * 3 + n.FieldCannons * 6 + n.SiegeGuns * 10;
   n.OverallShipCount = n.LightShips + n.MediumShips + n.HeavyShips;
-  n.AdministrativeTech = -0.75 - n.Alcoholism * (1 - n.ReligionGroups.Sunni.Points - n.ReligionGroups.Shia.Points) - n.Reforms.NobleBureaucrats * 0.5 - n.Reforms.ClergyBureaucrats * 0.25 + n.Reforms.MeritocraticBureaucrats + n.Technologies.Paper * 0.5 + n.CulturalAdvancements.Currency * 0.5 + n.CulturalAdvancements.EarlyModernAdministration + n.CulturalAdvancements.NationalSovereignity + n.CulturalAdvancements.Constitution + n.Reforms.WealthyBureaucrats / 2 + n.Reforms.MeritocraticOfficers + n.Technologies.PaperMachine / 5;
+    n.AdministrativeTech = -0.75 - n.Alcoholism * (1 - n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100) - n.Reforms.NobleBureaucrats * 0.5 - n.Reforms.ClergyBureaucrats * 0.25 + n.Reforms.MeritocraticBureaucrats + n.Technologies.Paper * 0.5 + n.CulturalAdvancements.Currency * 0.5 + n.CulturalAdvancements.EarlyModernAdministration + n.CulturalAdvancements.NationalSovereignity + n.CulturalAdvancements.Constitution + n.Reforms.WealthyBureaucrats / 2 + n.Reforms.MeritocraticOfficers + n.Technologies.PaperMachine / 5;
   n.AdministrativePower = (n.AdministrativeEfficiency * (1 + n.AdministrationSize / 2 + n.AdministrativeTech * 0.4) * 0.75) * (n.GovernmentDominatedBy == "Bureaucrats" || n.GovernmentDominatedBy == "Aristocracy" ? 1.1 : 1) * (n.GovernmentDominatedBy == "Urban" || n.GovernmentDominatedBy == "Military" || n.GovernmentDominatedBy == "Burgousie" ? 0.9 : 1);
   n.AdministrativeDemand = (
     0 + n.Population / 1250000 + n.Health * 2 + n.Education * 2 + n.SocialSpending * 4 + n.PropagandaReal * 2 + n.PopulationControlReal * 2 + n.BirthControl * 4 +
@@ -368,9 +368,9 @@ static evaluateNation(nationName) {
 
   n.DailyFood = (n.Workforces.Farmers + n.Workforces.Serfs) * n.Population / 1000 * n.FarmingEfficiency + n.FoodIncoming - n.FoodOutgoing;
 
-  n.EffectiveIron += n.BaseIronHarvest;
-  n.EffectiveCoal += n.BaseCoalHarvest;
-  n.EffectiveSulphur += n.BaseSulphurHarvest;
+    n.EffectiveIron += n.BaseIronHarvest * n.MiningEfficiency;
+    n.EffectiveCoal += n.BaseCoalHarvest * n.MiningEfficiency;
+    n.EffectiveSulphur += n.BaseSulphurHarvest * n.MiningEfficiency;
   n.EffectiveCotton *= (1 + n.Technologies.CottonGin);
 
     n.ProductionEfficiency = (-0.25 + n.TradeImprovements + n.Technologies.IronWorking / 4 - n.Alcoholism * (1 - n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100) + n.Technologies.Wheel / 4 + n.CulturalAdvancements.Currency / 4 + n.Reforms.GuildsBanned / 5 + n.Reforms.AntiMonopolyLaws / 2 + n.Technologies.Workshops + n.Technologies.Cranes / 5 + n.Technologies.SteamEngine / 4 + n.Technologies.FirstFactories / 2 + n.Technologies.LinearAssemblyProcess / 4 + n.Technologies.InterchangeableParts / 2) * (n.GovernmentDominatedBy == "Burgousie" || n.GovernmentDominatedBy == "Urban" ? 1.1 : 1);
@@ -381,7 +381,13 @@ static evaluateNation(nationName) {
   n.ToolWorkingEfficiency = 1 + n.MetalWorkingEfficiency + n.Technologies.PaperMachine / 10;
   n.Production = n.Population / 1000 * n.Workforces.Townsfolk * n.ProductionEfficiency / 2;
 
-  n.Wood = n.Forestry * 10;
+    n.Wood = n.Forestry * 10;
+    if (n.ForestsLeft < n.Forestry * 750) {
+        n.Wood = n.Wood * (n.Forestry * 750 / n.ForestsLeft);
+        if (n.ForestsLeft == 0) {
+            n.Wood = 0;
+        }
+    }
   n.EffectiveWood = n.Wood + n.WoodIncoming - n.WoodOutgoing;
 
   n.ForestsLeft = max((

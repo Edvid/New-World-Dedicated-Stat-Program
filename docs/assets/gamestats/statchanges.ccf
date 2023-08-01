@@ -3047,6 +3047,8 @@ trade TreatyOfNarva2, DutchRepublic >  KingdomOfNovgorod, .5 sulphur, 120 budget
 =15% WorkersTax
 
 <... > nations > SonghaiEmpire
+=0 Alcoholism
+=0 ProductionSectors.AlcoholSector
 +0.5 health
 +0.5 EduEff
 +0.5 Propaganda
@@ -3093,3 +3095,666 @@ trade TreatyOfNarva2, DutchRepublic >  KingdomOfNovgorod, .5 sulphur, 120 budget
 =25% AristocracyTax
 =30% BurgousieTax
 =15% WorkersTax
+
+<... > nations > Emirate Of Carthage
++0.5 health
++0.5 EduEff
++0.5 Propaganda
++2.5 AdmEff
++0.1 AdmSize
++0.5 BureaucratsWages
++1.5 LocalTrade
++0.1 TradeImprov
++0.1 OverallImprovements
++0.05 IrregularImprovements
++0.1 MeleeImprovements
++0.05 RangedImprovements
++0.05 FirearmImprovements
++0.1 CavalryImprovements
++1000 HeavyInfantry
++500 lightInfantry
++500 LightCav
++500 HeavyCav
++1000 Crossbowmen
++1 CityFortifications
++0.05 LightShipImprovements
++0.05 MediumShipImprovements
++0.05 HeavyShipImprovements
++5 MerchantShips
++7 LightShips
++2 MediumShips
++5 ProductionSectors.ShipBuildingSector
++0.05 AgrSubsidies
++0.05 AgrInfra
++0.05 AgrAdv
++0.1 StockCap
+-2.5 EstateInfluences.AristocracyInfluence
++5 EstateInfluences.BurgousieInfluence
++2.5 EstateInfluences.UrbanInfluence
++2.5 EstateInfluences.IntellectualsInfluence
+-5 MilitaryControl.AristocracyControl
++5 MilitaryControl.BurgousieControl
++7.5 TradeInfluences.Morocco
++7.5 TradeInfluences.Iberia
++7.5 TradeInfluences.Western Mediterranean
++7.5 TradeInfluences.Sahara
++7.5 TradeInfluences.Central Mediterranean
++7.5 TradeInfluences.Southern France
++7.5 TradeInfluences.Adriatic
++7.5 TradeInfluences.Greece
++0.05 ResearchSpending
++0.05 MiningEff
++1 Sulphur
++0.5 Gold
++0.1 Reforestation
+-25 ReformPower
+="false" Reforms.OpenFieldSystem
+="true" Reforms.Enclosure
+=25% AristocracyTax
+=30% BurgousieTax
+=15% WorkersTax
+=0 Alcoholism
+=0 ProductionSectors.AlcoholSector
+<... > Cultures > Tunisian > Opinions 
++> Maghrebi
+= 10 Maghrebi.Score
+<... > Cultures > Maghrebi > Opinions 
++> Tunisian
+= 10 Tunisian.Score
+
+<... > nations > Sultunate Of Mogadishu
++0.5 health
+=0 Alcoholism
+=0 ProductionSectors.AlcoholSector
++0.5 EduEff
++0.5 Propaganda
++2.5 AdmEff
++0.1 AdmSize
++0.5 BureaucratsWages
++1.5 LocalTrade
++0.1 TradeImprov
++0.1 OverallImprovements
++0.05 IrregularImprovements
++0.1 MeleeImprovements
++0.05 RangedImprovements
++0.05 FirearmImprovements
++0.1 CavalryImprovements
++0.05 LightShipImprovements
++0.05 MediumShipImprovements
++0.05 HeavyShipImprovements
++5 MerchantShips
++2 LightShips
++0.05 AgrSubsidies
++0.05 AgrInfra
++0.05 AgrAdv
++0.1 StockCap
+-2.5 EstateInfluences.AristocracyInfluence
++5 EstateInfluences.BurgousieInfluence
++2.5 EstateInfluences.UrbanInfluence
++2.5 EstateInfluences.IntellectualsInfluence
+-5 MilitaryControl.AristocracyControl
++5 MilitaryControl.BurgousieControl
++7.5 TradeInfluences.Somalia
++7.5 TradeInfluences.East Africa
++0.05 ResearchSpending
++0.05 MiningEff
++1 Coffee
++0.1 Reforestation
+-25 ReformPower
+="false" Reforms.OpenFieldSystem
+="true" Reforms.Enclosure
+=25% AristocracyTax
+=30% BurgousieTax
+=15% WorkersTax
+
+<... > nations > Madagascar
++0.5 health
++0.5 EduEff
++0.5 Propaganda
++2.5 AdmEff
++0.1 AdmSize
++0.5 BureaucratsWages
++1.5 LocalTrade
++0.1 TradeImprov
++0.1 OverallImprovements
++0.05 IrregularImprovements
++0.1 MeleeImprovements
++0.05 RangedImprovements
++0.05 FirearmImprovements
++0.1 CavalryImprovements
++0.05 LightShipImprovements
++0.05 MediumShipImprovements
++0.05 HeavyShipImprovements
++5 MerchantShips
++2 LightShips
++0.05 AgrSubsidies
++0.05 AgrInfra
++0.05 AgrAdv
++0.1 StockCap
+-2.5 EstateInfluences.AristocracyInfluence
++5 EstateInfluences.BurgousieInfluence
++2.5 EstateInfluences.UrbanInfluence
++2.5 EstateInfluences.IntellectualsInfluence
+-5 MilitaryControl.AristocracyControl
++5 MilitaryControl.BurgousieControl
++7.5 TradeInfluences.Mozambique
++0.05 ResearchSpending
++0.05 MiningEff
++1 Coal
+-25 ReformPower
+="false" Reforms.OpenFieldSystem
+="true" Reforms.Enclosure
+=25% AristocracyTax
+=30% BurgousieTax
+=15% WorkersTax
+-1 ResearchPoints
+="true" Technologies.Wheel
+-2.5 CulturalPower
+="true" CulturalAdvancements.Currency
+
+<... > nations > Zhao
++0.5 health
++0.5 EduEff
++0.5 Propaganda
++2.5 AdmEff
++0.2 AdmSize
++0.5 BureaucratsWages
++1.5 LocalTrade
++0.1 TradeImprov
++0.1 OverallImprovements
++0.05 IrregularImprovements
++0.1 MeleeImprovements
++0.05 RangedImprovements
++0.05 FirearmImprovements
++0.1 CavalryImprovements
++1250 HeavyInf
++250 LightInf
++250 LightCav
++250 HeavyCav
++750 Crossbowmen
++2 CityFortifications
++0.05 LightShipImprovements
++0.05 MediumShipImprovements
++0.05 HeavyShipImprovements
++5 ProductionSectors.ShipBuildingSector
++2 LightShips
++5 MerchantShips
++0.05 AgrSubsidies
++0.05 AgrInfra
++0.05 AgrAdv
++0.1 StockCap
+-2.5 EstateInfluences.AristocracyInfluence
++5 EstateInfluences.BurgousieInfluence
++2.5 EstateInfluences.UrbanInfluence
++2.5 EstateInfluences.IntellectualsInfluence
+-5 MilitaryControl.AristocracyControl
++5 MilitaryControl.BurgousieControl
++12.5 TradeInfluences.Yangtze River
++7.5 TradeInfluences.Yellow River
++7.5 TradeInfluences.South China Sea
++7.5 TradeInfluences.Sea Of Japan
++7.5 TradeInfluences.Manchuria
++0.05 ResearchSpending
++0.05 MiningEff
++1 Iron
++1 Silk
++1 Tea
++1 Forestry
++0.5 Spice
++0.1 Reforestation
+=25% AristocracyTax
+=25% BurgousieTax
+=20% IntellectualsTax
+=20% WorkersTax
+
+<... > nations > Quasimid Emirate
++0.5 health
++0.5 EduEff
++0.5 Propaganda
++2.5 AdmEff
++0.2 AdmSize
+-0.25 SocialSpending
++0.5 BureaucratsWages
++1.5 LocalTrade
++0.1 TradeImprov
++0.1 OverallImprovements
++0.05 IrregularImprovements
++0.1 MeleeImprovements
++0.05 RangedImprovements
++0.05 FirearmImprovements
++0.1 CavalryImprovements
++500 HeavyInf
++500 LightInf
++500 LightCav
++500 CrossBowmen
++0.05 LightShipImprovements
++0.05 MediumShipImprovements
++0.05 HeavyShipImprovements
++4 MerchantShips
++5 LightShips
++0.05 AgrSubsidies
++0.05 AgrInfra
++0.05 AgrAdv
++0.1 StockCap
+-2.5 EstateInfluences.AristocracyInfluence
++5 EstateInfluences.BurgousieInfluence
++2.5 EstateInfluences.UrbanInfluence
++2.5 EstateInfluences.IntellectualsInfluence
+-5 MilitaryControl.AristocracyControl
++5 MilitaryControl.BurgousieControl
++7.5 TradeInfluences.Persian Gulf
++7.5 TradeInfluences.Mesopotamia
++7.5 TradeInfluences.Iran
++7.5 TradeInfluences.Indus River
++0.05 ResearchSpending
++0.05 MiningEff
+-0.25 Sulphur
++1.3 Iron
++1.5 Copper
+=0 Forestry
+=0.25 Reforestation
+=0 Alcoholism
+=0 ProductionSectors.AlcoholSector
+=25% AristocracyTax
+=25% BurgousieTax
+=20% IntellectualsTax
+=20% WorkersTax
+-25 ReformPower
+="True" Reforms.Enclosure
+="false" Reforms.OpenFieldSystem
+
+<...
+trade CholaQuasimidWoodTrade1, QuasimidEmirate > EmpireOfChola, 50 budget
+trade CholaQuasimidWoodTrade2, EmpireOfChola > QuasimidEmirate, 10 Wood
+
+<... > nations > Nanyang Dynasty
+=25% AristocracyTax
+=25% BurgousieTax
+=20% IntellectualsTax
+=20% WorkersTax
++0.5 health
++0.5 EduEff
++0.5 Propaganda
++2.5 AdmEff
++0.1 AdmSize
++0.5 BureaucratsWages
++1.5 LocalTrade
++0.1 TradeImprov
++0.1 OverallImprovements
++0.05 IrregularImprovements
++0.1 MeleeImprovements
++0.05 RangedImprovements
++0.05 FirearmImprovements
++0.1 CavalryImprovements
++250 heavyInf
++500 LightInf
++250 CrossBowmen
++1 CityFortifications
++0.05 LightShipImprovements
++0.05 MediumShipImprovements
++0.05 HeavyShipImprovements
++5 MerchantShips
++7 LightShips
++0.05 AgrSubsidies
++0.05 AgrInfra
++0.05 AgrAdv
++0.1 StockCap
+-2.5 EstateInfluences.AristocracyInfluence
++5 EstateInfluences.BurgousieInfluence
++2.5 EstateInfluences.UrbanInfluence
++2.5 EstateInfluences.IntellectualsInfluence
+-5 MilitaryControl.AristocracyControl
++5 MilitaryControl.BurgousieControl
++10 TradeInfluences.South East Asia
++7.5 TradeInfluences.Indonesia
++7.5 TradeInfluences.Ganges
++7.5 TradeInfluences.South China Sea
++0.05 ResearchSpending
++0.05 MiningEff
++1 Iron
++0.5 Copper
++1.5 Gold
++1.5 Ivory
++0.5 Forestry
++0.1 Reforestation
++0.5 Spice
++0.5 Tea
++0.5 Silk
++0.5 ExoticFruit
+
+<... > nations > SeleucidEmpire
++0.5 health
++0.5 EduEff
++0.5 Propaganda
++2.5 AdmEff
++0.1 AdmSize
++0.5 BureaucratsWages
++1.5 LocalTrade
++0.1 TradeImprov
++0.1 OverallImprovements
++0.05 IrregularImprovements
++0.1 MeleeImprovements
++0.05 RangedImprovements
++0.05 FirearmImprovements
++0.1 CavalryImprovements
++150 LightCav
++250 HeavyCav
++500 HeavyInf
++500 Crossbowmen
++0.05 LightShipImprovements
++0.05 MediumShipImprovements
++0.05 HeavyShipImprovements
++5 MerchantShips
++5 LightShips
++0.05 AgrSubsidies
++0.05 AgrInfra
++0.05 AgrAdv
++0.1 StockCap
+-2.5 EstateInfluences.AristocracyInfluence
++5 EstateInfluences.BurgousieInfluence
++2.5 EstateInfluences.UrbanInfluence
++2.5 EstateInfluences.IntellectualsInfluence
+-5 MilitaryControl.AristocracyControl
++5 MilitaryControl.BurgousieControl
++7.5 TradeInfluences.Mesopotamia
++7.5 TradeInfluences.Eastern Mediterranean
++7.5 TradeInfluences.Persian Gulf
++7.5 TradeInfluences.Caucasus
++7.5 TradeInfluences.Iran
++7.5 TradeInfluences.Caspian Sea
++0.05 ResearchSpending
++0.05 MiningEff
++1 Sulphur
++0.15 Iron
++0.25 Copper
+-0.25 Forestry
++0.1 Reforestation
+=22.5% AristocracyTax
+=22.5% BurgousieTax
+=15% IntellectualsTax
+=12.5% WorkersTax
++0.25 SocialSpending
+
+<... > nations > EmpireOfChola
+=25% AristocracyTax
+=25% BurgousieTax
+=20% IntellectualsTax
+=20% WorkersTax
++0.5 health
++0.5 EduEff
++0.5 Propaganda
++2.5 AdmEff
++0.2 AdmSize
++0.5 BureaucratsWages
++1.5 LocalTrade
++0.1 TradeImprov
++0.1 OverallImprovements
++0.05 IrregularImprovements
++0.1 MeleeImprovements
++0.05 RangedImprovements
++0.05 FirearmImprovements
++0.1 CavalryImprovements
++1000 HeavyInf
++1000 Crossbowmen
++500 LightCav
++500 HeavyCav
++0.05 LightShipImprovements
++0.05 MediumShipImprovements
++0.05 HeavyShipImprovements
++7.5 ProductionSectors.ShipBuildingSector
++15 merchantShips
++10 LightShips
++0.05 AgrSubsidies
++0.05 AgrInfra
++0.05 AgrAdv
++0.1 StockCap
+-2.5 EstateInfluences.AristocracyInfluence
++5 EstateInfluences.BurgousieInfluence
++2.5 EstateInfluences.UrbanInfluence
++2.5 EstateInfluences.IntellectualsInfluence
+-5 MilitaryControl.AristocracyControl
++5 MilitaryControl.BurgousieControl
++10 TradeInfluences.Deccan
++7.5 TradeInfluences.Central India
++7.5 TradeInfluences.Indus River
++7.5 TradeInfluences.Ganges
++7.5 TradeInfluences.South East Asia
++7.5 TradeInfluences.Persian Gulf
++7.5 TradeInfluences.Indonesia
++0.05 ResearchSpending
++0.05 MiningEff
++1 Forestry
++1 Sulphur
++1 Ivory
++1 Spices
++1 Tea
++1 Silk
++1 ExoticFruit
++0.1 Reforestation
+
+<... > nations > BoNi
+=25% AristocracyTax
+=25% BurgousieTax
+=20% IntellectualsTax
+=20% WorkersTax
++0.5 health
++0.5 EduEff
++0.5 Propaganda
++2.5 AdmEff
++0.2 AdmSize
++0.5 BureaucratsWages
++1.5 LocalTrade
++0.1 TradeImprov
++0.1 OverallImprovements
++0.05 IrregularImprovements
++0.1 MeleeImprovements
++0.05 RangedImprovements
++0.05 FirearmImprovements
++0.1 CavalryImprovements
++250 LightInf
++0.05 LightShipImprovements
++0.05 MediumShipImprovements
++0.05 HeavyShipImprovements
++2 lightShips
++0.15 AgrSubsidies
++0.15 AgrInfra
++0.05 AgrAdv
++0.1 StockCap
+-2.5 EstateInfluences.AristocracyInfluence
++5 EstateInfluences.BurgousieInfluence
++2.5 EstateInfluences.UrbanInfluence
++2.5 EstateInfluences.IntellectualsInfluence
+-5 MilitaryControl.AristocracyControl
++5 MilitaryControl.BurgousieControl
++7.5 TradeInfluences.Northern Australia
++7.5 TradeInfluences.Indonesia
++7.5 TradeInfluences.South East Asia
++7.5 TradeInfluences.South China Sea
++0.05 ResearchSpending
++0.05 MiningEff
++1 Coal
++1 Sulphur
++1 Gold
++1 Diamond
++1 Tea
++1 Spice
+
+<... > nations > Keraites Khanate
++0.5 health
++0.5 Propaganda
++2.5 AdmEff
++0.1 AdmSize
++1.5 LocalTrade
++0.1 TradeImprov
++0.1 OverallImprovements
++0.05 IrregularImprovements
++0.05 MeleeImprovements
++0.05 RangedImprovements
++0.05 FirearmImprovements
++0.15 CavalryImprovements
++750 Light Cav
++750 Heavy Cav
++0.15 AgrSubsidies
++0.15 AgrInfra
++0.05 AgrAdv
++0.1 StockCap
+-2.5 EstateInfluences.AristocracyInfluence
++5 EstateInfluences.BurgousieInfluence
++2.5 EstateInfluences.UrbanInfluence
++2.5 EstateInfluences.IntellectualsInfluence
+-5 MilitaryControl.AristocracyControl
++5 MilitaryControl.BurgousieControl
++7.5 TradeInfluences.Gobi Desert
++7.5 TradeInfluences.Yellow River
++0.05 ResearchSpending
++0.05 MiningEff
++1 Coal
+="true" Reforms.Enclosure
+="false" Reforms.OpenFieldSystem
+-25 ReformPower
+
+<... > nations > Kingdom Of Perindostra
++0.5 health
++0.5 EduEff
++0.5 Propaganda
++2.5 AdmEff
++0.1 AdmSize
++0.5 BureaucratsWages
++1.5 LocalTrade
++0.1 TradeImprov
++0.1 OverallImprovements
++0.05 IrregularImprovements
++0.1 MeleeImprovements
++0.05 RangedImprovements
++0.05 FirearmImprovements
++0.1 CavalryImprovements
++0.05 LightShipImprovements
++0.05 MediumShipImprovements
++0.05 HeavyShipImprovements
++5 MerchantShips
++3 LightShips
++0.05 AgrSubsidies
++0.05 AgrInfra
++0.05 AgrAdv
++0.1 StockCap
+-2.5 EstateInfluences.AristocracyInfluence
++5 EstateInfluences.BurgousieInfluence
++2.5 EstateInfluences.UrbanInfluence
++2.5 EstateInfluences.IntellectualsInfluence
+-5 MilitaryControl.AristocracyControl
++5 MilitaryControl.BurgousieControl
++7.5 TradeInfluences.SouthernAustralia
++0.05 ResearchSpending
++0.05 MiningEff
+-2.5 CulturalPower
+="true" CulturalAdvancements.Currency
+-1 ResearchPoints
+="true" Technologies.IronWorking
+=25% AristocracyTax
+=25% BurgousieTax
+=20% IntellectualsTax
+=20% WorkersTax
+
+<... > nations > Minor Weizhong
++0.5 health
++0.5 EduEff
++0.5 Propaganda
++2.5 AdmEff
++0.1 AdmSize
++0.5 BureaucratsWages
++1.5 LocalTrade
++0.1 TradeImprov
++0.1 OverallImprovements
++0.05 IrregularImprovements
++0.1 MeleeImprovements
++0.05 RangedImprovements
++0.05 FirearmImprovements
++0.1 CavalryImprovements
++500 LightCav
++500 HeavyCav
++0.05 LightShipImprovements
++0.05 MediumShipImprovements
++0.05 HeavyShipImprovements
++5 MerchantShips
++3 LightShips
++0.05 AgrSubsidies
++0.05 AgrInfra
++0.05 AgrAdv
++0.1 StockCap
+-2.5 EstateInfluences.AristocracyInfluence
++5 EstateInfluences.BurgousieInfluence
++2.5 EstateInfluences.UrbanInfluence
++2.5 EstateInfluences.IntellectualsInfluence
+-5 MilitaryControl.AristocracyControl
++5 MilitaryControl.BurgousieControl
++7.5 TradeInfluences.Yellow River
++7.5 TradeInfluences.Manchuria
++7.5 TradeInfluences.Sea Of Japan
++0.05 ResearchSpending
++0.05 MiningEff
++0.5 Tea
++0.5 Silk
+-0.75 SocialSpending
+=25% AristocracyTax
+=25% BurgousieTax
+=20% IntellectualsTax
+=20% WorkersTax
+
+<... > nations > Unified Balhae
+-1 SocialSpending
++0.5 health
++0.5 EduEff
++0.5 Propaganda
++2.5 AdmEff
++0.1 AdmSize
++0.5 BureaucratsWages
++1.5 LocalTrade
++0.1 TradeImprov
++0.1 OverallImprovements
++0.05 IrregularImprovements
++0.1 MeleeImprovements
++0.05 RangedImprovements
++0.05 FirearmImprovements
++0.1 CavalryImprovements
++500 HeavyInfantry
++500 LightCav
++500 HeavyCav
++500 CrossBowmen
++0.05 LightShipImprovements
++0.05 MediumShipImprovements
++0.05 HeavyShipImprovements
++10 LightShips
++0.05 AgrSubsidies
++0.05 AgrInfra
++0.05 AgrAdv
++0.1 StockCap
+-2.5 EstateInfluences.AristocracyInfluence
++5 EstateInfluences.BurgousieInfluence
++2.5 EstateInfluences.UrbanInfluence
++2.5 EstateInfluences.IntellectualsInfluence
+-5 MilitaryControl.AristocracyControl
++5 MilitaryControl.BurgousieControl
++7.5 TradeInfluences.Sea Of Japan
++7.5 TradeInfluences.Manchuria
++7.5 TradeInfluences.Yellow River
++0.05 ResearchSpending
++0.05 MiningEff
++1 Coal
++1 Iron
++0.4 Gold
++1 Silver
++1 Tea
++1 Silk
+=17.5% AristocracyTax
+=17.5% BurgousieTax
+=10% IntellectualsTax
+=10% WorkersTax
+
+<...
+trade ZhaoKeraiteTrade1, KeraitesKhanate > Zhao, 30 budget
+trade ZhaoKeraiteTrade2, KeraitesKhanate > Zhao, 0.5 Coal
+trade ZhaoKeraiteTrade3, Zhao > KeraitesKhanate, 5 BasicArmaments
+trade ZhaoKeraiteTrade4, Zhao > KeraitesKhanate, 5 Wood
+
+<... > Nations > GrecoBactria
++1000 ForestsLeft
