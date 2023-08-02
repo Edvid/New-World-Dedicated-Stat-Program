@@ -98,28 +98,28 @@
 +5 TradeInfluences.South East Asia
 <... > Cultures > South Chinese > Opinions 
 +> Tibetan
-+5 Tibetan.Score
+=5 Tibetan.Score
 <... > Cultures > Tibetan > Opinions 
 +> SouthChinese
-+5 SouthChinese.Score
+=5 SouthChinese.Score
 <... > Cultures > South Chinese > Opinions 
 +> Burmese
-+5 Burmese.Score
+=5 Burmese.Score
 <... > Cultures > Burmese > Opinions 
 +> SouthChinese
-+5 SouthChinese.Score
+=5 SouthChinese.Score
 <... > Cultures > South Chinese > Opinions 
 +> Bengali
-+5 Bengali.Score
+=5 Bengali.Score
 <... > Cultures > Bengali > Opinions 
 +> SouthChinese
-+5 SouthChinese.Score
+=5 SouthChinese.Score
 <... > Cultures > South Chinese > Opinions 
 +> Thai
-+5 Thai.Score
+=5 Thai.Score
 <... > Cultures > Thai > Opinions 
 +> SouthChinese
-+5 SouthChinese.Score
+=5 SouthChinese.Score
 
 <... > Nations > Republic of Venice
 ="true" reforms.Enclosure
