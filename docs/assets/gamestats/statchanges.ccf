@@ -185,7 +185,7 @@
 +.05 EduEff
 +.05 TradeImprov
 +.1 StockCap
-+.1 AgrAdv
++.05 AgrAdv
 +.1 OverallImprov
 +.1 RangedImprov
 +.1 CavalryImprov
@@ -3758,3 +3758,237 @@ trade ZhaoKeraiteTrade4, Zhao > KeraitesKhanate, 5 Wood
 
 <... > Nations > GrecoBactria
 +1000 ForestsLeft
+
+<... > nations > AshikagaShogunate
++6000 Militia
++4000 Light Infantry
++4000 Heavy Infantry
++150 Elite Infantry
++2000 Archers
++2000 Crossbowmen
++2000 Light Cavalry
++1000 Heavy Cavalry
++50 Elite Cavalry
++2 SupplyDepots
++2 NavalBases
++15 Light Ships
++10 Medium Ships
++10 Heavy Ships
+
++0.25 TradeImprov
++4.5 LocalTrade
++0.75 Health
++1.25 AdmEff
++0.45 AdmSize
+-0.25 SocialSpending
++0.25 Propaganda
++0.1 CulturalProsperity
++0.5 BureaucratsWages
++0.2 AgrInfra
+
++0.05 CavalryImprovements
++0.05 FirearmImprovements
++0.05 ArtilleryImprovements
++0.05 RangedImprovements
++0.05 MeleeImprovements
++0.05 OverallImprovements
++0.5% Discipline
+
++12.5 TradeInfluences.Yellow River 
++12.5 TradeInfluences.Sea of Japan
++12.5 TradeInfluences.Manchuria
++12.5 TradeInfluences.Yangtze River
++12.5 TradeInfluences.South China Sea
+
++5 EstateInfluences.BurgousieInfluence
++5 EstateInfluences.BureaucratsInfluence
++5 EstateInfluences.ClergyInfluence
+-2.5 EstateInfluences.AristocracyInfluence
++7.5 GovernmentRepresentation.BurgousieRepresentation
++2.5 GovernmentRepresentation.UrbanRepresentation
+-7.5 GovernmentRepresentation.UnitaryRepresentation
+-2.5 GovernmentRepresentation.AristocracyRepresentation
+
++5% ProductionGovernmentControl
++5 ProductionSectors.BasicArmamentsSector
++2.5 ProductionSectors.ConstructionSector
++5 ProductionSectors.BasicGoodsSector
++5 ProductionSectors.TextilesSector
++5 ProductionSectors.HeavyArmamentsSector
++7.5 ProductionSectors.ShipBuildingSector
++2.5 ProductionSectors.LuxuryGoodsSector
+
+-25 ReformPower
+="true" reforms.Enclosure
+="false" reforms.Open field system
+
++4 Sulphur
++1 Iron
++1.35 Copper
++0.5 Forestry
++0.15 Reforestation
++2.5 Tea
++0.5 spice
++0.5 Sugar
++0.25 ExoticFruit
++0.1 Cotton
++0.75 Wool
++0.5 Silk
+
+<...> Nations > kingdom of rum 
++5 ProductionSectors.Basic goods sector 
++5 ProductionSectors.luxury goods sector 
++0.5 localtrade 
++5 heavy ship
++10 medium ship
++0.07 heavyshipimprov
++0.05 mediumshipimprov 
+=1000 heavy infantry 
+=300 light cav
+=500 crossbowmen 
+=500 archers 
+=2000 light infantry 
++0.05 meleeimprov
+
+<...> Nations > Republic Of Venice 
++5 ProductionSectors.Alcohol Sector 
++0.25 health 
++16 TradeInfluences.Adriatic 
++18 TradeInfluences.Eastern Mediterranean 
++20 tradeinfluences.Central Mediterranean 
++6 tradeinfluences. Western Mediterranean 
++8 TradeInfluences.Western Danube 
++3.25 propaganda 
++3.65 localtrade 
++6 medium ships 
++2 heavy ships 
++1 AdmEff
++0.2 AdmSize
++13 EstateInfluences.workersInfluence
++5 EstateInfluences.urbanInfluence
++8 EstateInfluences.BurgousieInfluence
+-1 EstateInfluences.AristocracyInfluence 
++10 EstateInfluences.BureaucratsInfluence
++0.5 gold 
++0.15 AgrInf
++0.05 TradeImprov
++0.5 iron 
++0.5 coal 
++1.5% Discipline
++0.05 OverallImprov
++0.05 rangedimprov 
++0.05 Meleeimprov 
++5 ProductionSectors.Basic Armaments Sector
++5 productionsectors. Heavy armaments sector
++1000 Crossbowmen 
++2500 heavy infantry
+
+<...> Nations > DynastyOfUsia
++0.05 AdmSize
++0.5 AdmEff
++0.25 EduEff
++1000 LightCav
++1 NavalBases
++2 SmallForts
+
+<...> Nations > BojacaConfederation
++2.5 ProductionSectors.BasicArmamentsSector
++0.05 RangedImprov
++0.75 AdmEff
++0.1 MiningEff
++0.5 Gold
++0.05 AdmSize
++0.05 OverallImprov
+
+<... > Nations > Dutch Republic
++5 LightShips
++2 MediumShips
++5 ProductionSectors.ShipBuildingSector
++0.05 OverallImprovements
+=13% AristocracyTax
+=11% ClergyTax
+=10% UrbanTax
+=11% BureaucratsTax
+=11%IntellectualsTax
+=16% WorkersTax
+=9% MilitaryTax
++400 budget
+
+<... > Nations > Crown Of Sweden
++0.5 AdmEff
++0.5 LocalTrade
++5 TradeInfluences.BalticSea
++4 TradeInfluences.Livonia
++3 TradeInfluences.Denmark
++3 TradeInfluences.CentralEurope
+
+<... > Nations > Zulu Empire
+-1 Research Points
+="true" Technologies.Wheel
+
+<... > Nations > Gupta Dynasty
++0.1 AgrInf
++0.25 AdmEff
++0.5 BureaucratsWages
+="true" Reforms.RegionalPolice
+="false" Reforms.CommunityPolicing
+-25 ReformPower
++0.25 Silk
++0.25 ExoticFruit
++0.25 Tea
++0.25 Spices
++0.25 Tobacco
++0.05 AgrAdv
++0.5 LocalTrade
++0.25 Gold
++0.5 EduEff
++0.5 Health
+
+<...> Nations >  KingdomOfIsrael
++1 NavalBases
++2 SupplyDepots
+-550 budget
+=0 debt
++500 HeavyCav
++500 LightCav
++500 HeavyInf
++500 Crossbowmen
++2 AdmEff
++0.1 AdmSize
+="true" Reforms.Enclosure
+="false" Reforms.Open Field System
+-25 ReformPower
++5 ProductionSectors.ShipBuildingSector
++3 LocalTrade
++7.5 GovernmentRepresentation.BurgousieRepresentation
++2.5 GovernmentRepresentation.UrbanRepresentation
+-5 GovernmentRepresentation.AristocracyRepresentation
+-5 GovernmentRepresentation.UnitaryRepresentation
++10 EstateInfluences.BurgousieInfluence
++5 EstateInfluences.UrbanInfluence
++2.5 EstateInfluences.ClergyInfluence
+-2.5 EstateInfluences.AristocracyInfluence
++0.5 ReligiousFervor
++1 Propaganda
++1 Health
++0.1 AgrInfra
++0.1 AgrAdv
++0.1 Tradeimprovements
++0.75 gold
++3 LightShips
++2 MediumShips
+
++10 TradeInfluences.CentralMediterranean
++10 TradeInfluences.CentralMediterranean
++20 TradeInfluences.Adriatic
++20 TradeInfluences.Greece
++10 TradeInfluences.NorthernAnatolia
++10 TradeInfluences.Romania
++20 TradeInfluences.EasternMediterranean
++10 TradeInfluences.Egypt
++10 TradeInfluences.RedSea
++10 TradeInfluences.Somalia
+trade TreatyOfZion1, KingdomOfIsrael > KingdomOfRum, 10 budget
+trade TreatyOfZion2, KingdomOfRum > KingdomOfIsrael, 2 coal
+trade TreatyOfJerusalem1, KingdomOfIsrael > Asaran Empire, 15 budget
+trade TreatyOfJerusalem2, Asaran Empire > KingdomOfIsrael, 5 Wood
