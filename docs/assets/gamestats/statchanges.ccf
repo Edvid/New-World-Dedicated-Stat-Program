@@ -3992,3 +3992,127 @@ trade TreatyOfZion1, KingdomOfIsrael > KingdomOfRum, 10 budget
 trade TreatyOfZion2, KingdomOfRum > KingdomOfIsrael, 2 coal
 trade TreatyOfJerusalem1, KingdomOfIsrael > Asaran Empire, 15 budget
 trade TreatyOfJerusalem2, Asaran Empire > KingdomOfIsrael, 5 Wood
+
+<... > nations > Akilan Irisian Empire
++0.05 OverallImprovements
+
+<... > Cultures > Hindustani > Opinions 
++> GrecoBactrian
+=25 GrecoBactrian.Score
++> Uzbek
+=5 Uzbek.Score
++> Afghan
+=5 Afghan.Score
+<... > Cultures > Uzbek > Opinions 
++> GrecoBactrian
+=15 GrecoBactrian.Score
++> Hindustani
+=5 Hindustani.Score
++> Afghan
+=5 Afghan.Score
+<... > Cultures > Afghan > Opinions 
++> GrecoBactrian
+=25 GrecoBactrian.Score
++> Hindustani
+=5 Hindustani.Score
++> Uzbek
+=5 Uzbek.Score
+
+<... > nations > GrecoBactria
++0.25 BureaucratsWages
++0.1 StateFarmerWage
++5 TradeInfluences.Iran
++5 TradeInfluences.PersianGulf
++5 TradeInfluences.Indus River
++5 TradeInfluences.Afghanistan
++5 TradeInfluences.Central Asia
++0.1 Forestry
++0.1 Reforestation
++0.25 AdmEff
++0.2 AdmSize
++0.25 EduEff
++5 GovernmentRepresentation.UnitaryRepresentation
+-2.5 GovernmentRepresentation.AristocracyRepresentation
+-2.5 GovernmentRepresentation.BurgousieRepresentation
++5 EstateInfluences.AristocracyInfluence
++2.5 EstateInfluences.BureaucratsInfluence
++2.5 EstateInfluences.BurgousieInfluence
++0.1 AgrInfra
++0.05 AgrSubsidies
++0.25 Wool
++0.25 Cotton
++0.25 Spices
++0.25 ExoticFruit
++0.25 Silk
++2.5 ProductionSectors.LuxuryGoodsSector
++2.5 ProductionSectors.BasicGoodsSector
++1.5 LocalTrade
++0.05 CulturalProsperity
+-440 budget
+=0 debt
+
+<... > nations > Sugbo
++2 Coal
++2 Sulphur
++2 iron
++2 Copper
++2 Gold
++1 Ivory
++4 ExoticFruit
++0.05 MiningEff
+
++2.5 ProductionSectors.BasicToolsSector
++2.5 ProductionSectors.ShipBuildingSector
++2.5 ProductionSectors.BasicToolsSector
++2.5 ProductionSectors.ConstructionSector
+
++3 LocalTrade
++1.75 AdmEff
++0.45 AdmSize
++0.2 TradeImprov
++0.2 AgrInfra
++0.05 AgrSubsidies
++0.05 StockCap
++0.25 EduEff
+-155 budget
++2.5% ProductionGovernmentControl
+
++2.5 EstateInfluences.BurgousieInfluence
++2.5 EstateInfluences.AristocracyInfluence
+
++20 TradeInfluences.SouthChinaSea
++20 TradeInfluences.SouthEastAsia
++20 TradeInfluences.Indonesia
++20 TradeInfluences.Yangtze River
++20 TradeInfluences.Sea Of Japan
++7.5 TradeInfluences.Pacific
++7.5 TradeInfluences.NorthernAustralia
++7.5 TradeInfluences.Manchuria
++7.5 TradeInfluences.Yellow River
+
+<... > Cultures > Papuan > Opinions 
++> Tagalog
+=10 Tagalog.Score
+<... > Cultures > Polynesian > Opinions 
++> Tagalog
+=10 Tagalog.Score
+<... > Cultures > Vietnamese > Opinions 
++> Tagalog
+=10 Tagalog.Score
+<... > Cultures > Indonesian > Opinions 
++> Tagalog
+=10 Tagalog.Score
+<... > Cultures > SouthChinese > Opinions 
++> Tagalog
+=10 Tagalog.Score
+
+<...
+trade TreatyOfTwoHarbours1, Sugbo > Kwangtung, 1.5 Gold
+trade TreatyOfTwoHarbours2, Sugbo > Kwangtung, 1 Iron
+trade TreatyOfTwoHarbours3, Sugbo > Kwangtung, .3 Sulphur
+trade TreatyOfTwoHarbours4, Sugbo > Kwangtung, .2 Ivory
+trade TreatyOfTwoHarbours5, Sugbo > Kwangtung, 0.5 BasicTools
+trade TreatyOfTwoHarbours6, Sugbo > Kwangtung, 0.25 BasicArmaments
+
+<... > nations > kwangtung
++155 budget
