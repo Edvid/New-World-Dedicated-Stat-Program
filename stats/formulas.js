@@ -1086,6 +1086,8 @@ static evaluateNation(nationName) {
     n.LandOwners = (n.Reforms.NobleLandOwnership == 1 ? n.Workforces.Aristocracy : 0) + (n.Reforms.MixedLandOwnership == 1 ? n.Workforces.Aristocracy + n.Workforces.Burgousie : 0) + (n.Reforms.PrivateLandOwnership == 1 ? n.Workforces.Burgousie : 0)
     n.LandOwnersInfluence = (n.Reforms.NobleLandOwnership == 1 ? n.EstateInfluencesReal.AristocracyInfluence : 0) + (n.Reforms.MixedLandOwnership == 1 ? (n.EstateInfluencesReal.AristocracyInfluence + n.EstateInfluencesReal.BurgousieInfluence) / 2 : 0) + (n.Reforms.PrivateLandOwnership == 1 ? n.EstateInfluencesReal.BurgousieInfluence : 0)
 
+    n.BurgousieProductionShareMaxed = min(n.EstateInfluencesReal.BurgousieInfluence * 4, 0.5) + (n.EstateInfluencesReal.BurgousieInfluence > 0.15 ? min((n.EstateInfluencesReal.BurgousieInfluence - 0.15) * 2, 0.3) : 0) + (n.EstateInfluencesReal.BurgousieInfluence > 0.30 ? min((n.EstateInfluencesReal.BurgousieInfluence - 0.30), 0.15) : 0);
+
     n.UnemployedWage = 0;
     n.SlavesWage = (n.Reforms.GovernmentResourceOwnership ? n.StateLabourerWage * 0.05 : (n.Workforces.Slaves > 0 ? n.ResourceBudgetBoost / (n.Population / 1000 * n.Workforces.Slaves) * 0.05 : 0));
     n.LabourersWage = (n.Reforms.GovernmentResourceOwnership ? n.StateLabourerWage : (n.Workforces.Labourers > 0 ? n.ResourceBudgetBoost / (n.Population / 1000 * n.Workforces.Labourers) * (1 - n.ResourceOwnersInfluence) : 0));
@@ -1093,12 +1095,12 @@ static evaluateNation(nationName) {
     n.SerfsWage = (n.Reforms.GovernmentLandOwnership ? n.StateFarmerWage * 0.5 : n.AgricultureRevenue / ((n.Workforces.Farmers + n.Workforces.Serfs) * n.Population / 1000) * 0.25);
     n.FarmersWage = (n.Reforms.GovernmentLandOwnership ? n.StateFarmerWage : n.AgricultureRevenue / ((n.Workforces.Farmers + n.Workforces.Serfs) * n.Population / 1000) * (1 - n.LandOwnersInfluence));
       n.SerfsAndFarmersWageToOnwers = (n.Reforms.GovernmentLandOwnership ? 0 : n.Population * n.Workforces.Serfs / 1000 * n.SerfsWage / 0.25 * 0.75 + n.Population * n.Workforces.Farmers / 1000 * n.FarmersWage / (1 - n.LandOwnersInfluence) * n.LandOwnersInfluence);
-    n.TownsfolkWage = ((n.PopProductionRevenue * 5 / (n.Population / 1000 * n.Workforces.Townsfolk)) * (1 - n.EstateInfluencesReal.BurgousieInfluence * 4)) * (1 - n.ProductionGovernmentControl) + n.ProductionGovernmentControl * n.StateFactoryWorkerWage;
-      n.TownsfolkWageToBurgousie = (n.Population * n.Workforces.Townsfolk / 1000 * n.TownsfolkWage / (1 - n.EstateInfluencesReal.BurgousieInfluence * 4) * n.EstateInfluencesReal.BurgousieInfluence * 4) * (1 - n.ProductionGovernmentControl);
+    n.TownsfolkWage = ((n.PopProductionRevenue * 5 / (n.Population / 1000 * n.Workforces.Townsfolk)) * (1 - n.BurgousieProductionShareMaxed)) * (1 - n.ProductionGovernmentControl) + n.ProductionGovernmentControl * n.StateFactoryWorkerWage;
+        n.TownsfolkWageToBurgousie = (n.Population * n.Workforces.Townsfolk / 1000 * n.TownsfolkWage / (1 - n.BurgousieProductionShareMaxed) * n.EstateInfluencesReal.BurgousieInfluence * 4) * (1 - n.ProductionGovernmentControl);
     n.ClergyWage = n.Population / (n.Population / 1000 * n.Workforces.Clergy) * n.EstateInfluencesReal.ClergyInfluence / 1000;
     n.BureaucratsWage = n.BureaucratsWages * (1 + n.EstateInfluencesReal.BureaucratsInfluence * 2);
-    n.MerchantsWage = n.MerchantShips > 0 ? ((n.InternalTrade * (1 - n.InternalTariffs) + n.ExternalTrade * (1 - n.ExternalTariffs)) / (n.Population / 1000 * n.Workforces.Merchants) * (1 - n.EstateInfluencesReal.BurgousieInfluence * 2)) : 0.5;
-    n.MerchantsWageToBurggousie = n.Population * n.Workforces.Merchants / 1000 * n.MerchantsWage / (1 - n.EstateInfluencesReal.BurgousieInfluence * 2) * n.EstateInfluencesReal.BurgousieInfluence * 2;
+    n.MerchantsWage = n.MerchantShips > 0 ? ((n.InternalTrade * (1 - n.InternalTariffs) + n.ExternalTrade * (1 - n.ExternalTariffs)) / (n.Population / 1000 * n.Workforces.Merchants) * (1 - n.BurgousieProductionShareMaxed / 2)) : 0.5;
+        n.MerchantsWageToBurggousie = n.Population * n.Workforces.Merchants / 1000 * n.MerchantsWage / (1 - n.BurgousieProductionShareMaxed / 2) * n.EstateInfluencesReal.BurgousieInfluence * 2;
     n.IntellectualsWage = n.Education * (1 + n.LiteracyPercent / 50 + n.EstateInfluencesReal.IntellectualsInfluence * 10);
   //   n.SailorsWage = 1 * n.ArmyWages;
     n.SoldiersWage = (isNaN(n.ArmyWages / n.OverallNumbers * 1000) ? n.ArmyWage : (n.ArmyWages / n.OverallNumbers * 1000));
