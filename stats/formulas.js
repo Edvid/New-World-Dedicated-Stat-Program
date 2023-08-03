@@ -1546,7 +1546,7 @@ static evaluateNation(nationName) {
   if (n.GovernmentRepresentation.WorkersRepresentation + n.GovernmentRepresentation.MilitaryRepresentation + n.GovernmentRepresentation.IntellectualsRepresentation + n.GovernmentRepresentation.BureaucratsRepresentation + n.GovernmentRepresentation.UrbanRepresentation + n.GovernmentRepresentation.BurgousieRepresentation + n.GovernmentRepresentation.ClergyRepresentation + n.GovernmentRepresentation.AristocracyRepresentation + n.GovernmentRepresentation.UnitaryRepresentation != 100) {
     alert(nationName + " has incorrect government representation");
   }
-  if (n.Stability < -2) {
+  if (n.Stability < -2 && gameStats.ShowPopUps == "true") {
     alert(nationName + " has stabiity below -2");
   }
   if (n.Manpower < 0) {
@@ -1688,6 +1688,11 @@ static evaluateNation(nationName) {
 
 static evaluateNations() {
   var self = this;
+    if (confirm("Do you want to show Pop ups?")) {
+        gameStats.ShowPopUps = "true";
+    } else {
+        gameStats.ShowPopUps = "false";
+    } 
   for (const nationName in gameStats.Nations) {
     self.evaluateNation(nationName);
   }
