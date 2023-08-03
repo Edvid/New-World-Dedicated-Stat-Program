@@ -1458,7 +1458,11 @@ static evaluateNation(nationName) {
   n.LightShipQuality = (1 + n.LightShipImprovements + n.NavyTech - n.Corruption / 5) - n.IronShortage - (n.Technologies.Gunports == 1 ? n.SulphurShortage : 0) - n.ShipBuildingShortage;
   n.MediumShipQuality = (1 + n.MediumShipImprovements + n.NavyTech + n.Technologies.Galleons / 6 - n.Corruption / 5) - n.IronShortage - (n.Technologies.Gunports == 1 ? n.SulphurShortage : 0) - n.ShipBuildingShortage;
   n.HeavyShipQuality = (1 + n.HeavyShipImprovements + n.NavyTech + n.Technologies.Galleons / 4 - n.Corruption / 5) - n.IronShortage - (n.Technologies.Gunports == 1 ? n.SulphurShortage : 0) - n.ShipBuildingShortage;
-  
+
+    n.LightShipQuality = max(0, n.LightShipQuality);
+    n.MediumShipQuality = max(0, n.MediumShipQuality);
+    n.HeavyShipQuality = max(0, n.HeavyShipQuality);
+
   n.NavalPower = (n.LightShips * 0.5 * n.LightShipQuality + n.MediumShips * n.MediumShipQuality + 2 * n.HeavyShips * n.HeavyShipQuality);
 
   n.PopulationTechImpact = (n.Population > 20000000? (n.Population - 20000000) / 250000000 : 0);
