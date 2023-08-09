@@ -14,3 +14,17 @@
 <- Dutch Swedish Trade 1
 <- Dutch Swedish Trade 2
 <- Dutch Swedish Trade 3
+
+<... > nations > CrownOfLeon
++0.1 CavalryImprovements
+-0.1 AdmSize
+-0.25 SocialSpending
+=21% AristocracyTax
+=22% ClergyTax
+=21% WorkersTax
+-5 CulturalPower
+="true" EarlyModernAdministration
+-7.5 ResearchPoints
+="true" Docks
+="true" Gunports
+="true" Galleons
