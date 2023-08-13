@@ -28,3 +28,75 @@
 ="true" Docks
 ="true" Gunports
 ="true" Galleons
+
+<... > Nations > DutchRepublic
+="defensive" AtWar
+-10 Spies
+-540 levies
++1000 AristocracyleviesCasualties
++50 BurgousieleviesCasualties
++50 ClergyleviesCasualties
++600 AristocracyMilitiaCasualties
++20 ClergyMilitiaCasualties
++20 BurgousieMilitiaCasualties
+-100 HeavyInf
++155 AristocracyHeavyInfantryCasualties
++10 ClergyHeavyInfantryCasualties
++10 BurgousieHeavyInfantryCasualties
+-150 light infantry
++80 AristocracylightinfantryCasualties
++10 ClergyLightInfantryCasualties
++10 BurgousieLightInfantryCasualties
++20 AristocracyArchersCasualties
++10 AristocracyCrossbowmenCasualties
++790 Casualties
+
+<... > Nations > Royaume Du Soleil
+="offensive" AtWar
+-50 Archers
+-450 Militia
++450 casualties
++1 minorbattles
++1% pillaging
+-460 militia
+-275 HeavyCav
+-100 LightCav
+-135 HeavyInf
++970 Casualties
+
+<... > Nations > Guyenne
+="defensive" AtWar
+=10% Blockade
+=50% Occupation
+-50 HandCannoneers
++908 AristocracyleviesCasualties
++50 AristocracylightinfantryCasualties
++80 AristocracyheavyinfantryCasualties
++5 AristocracyarchersCasualties
++5 AristocracycrossbowmenCasualties
+-1 minorbattles
+
+<... > Nations > RepublicOfItaly
+="offensive" AtWar
+-5 Spies
+-2 MerchantShips
+-5 TradeInfluences.WesternMediterranean
+-5 TradeInfluences.CentralMediterranean
++20% Blockade
++1% Pillaging
++1% Occupation
+
+<... > Nations > KingdomOfPrussia
+="defensive" AtWar
+-950 Levies
++950 Casualties
+=5% occupation
+
+<... > Nations > Dansk Empire
+="offensive" AtWar
+-50 LightInf
+-50 LightCav
++100 Casualties
+
+<... > Nations > DutchRepublic
+="false" AtWar
