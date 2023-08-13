@@ -75,6 +75,9 @@
 +5 AristocracyarchersCasualties
 +5 AristocracycrossbowmenCasualties
 -1 minorbattles
++5 EstateInfluences.AristocracyInfluence
++1 EstateInfluences.ClergyInfluence
++1 EstateInfluences.BurgousieInfluence
 
 <... > Nations > RepublicOfItaly
 ="offensive" AtWar
@@ -85,9 +88,17 @@
 +20% Blockade
 +1% Pillaging
 +1% Occupation
++22 EstateInfluences.AristocracyInfluence
++3 EstateInfluences.ClergyInfluence
++2 EstateInfluences.BurgousieInfluence
 
 <... > Nations > KingdomOfPrussia
 ="defensive" AtWar
++2000 lightinfantry
++2000 heavyinfantry
++2000 archers
++1500 lightcavalry
++3000 levies
 -950 Levies
 +950 Casualties
 =5% occupation
@@ -97,6 +108,9 @@
 -50 LightInf
 -50 LightCav
 +100 Casualties
++7 EstateInfluences.AristocracyInfluence
++1 EstateInfluences.ClergyInfluence
++1 EstateInfluences.BurgousieInfluence
 
 <... > Nations > DutchRepublic
 ="false" AtWar
