@@ -103,6 +103,10 @@
 -950 Levies
 +950 Casualties
 =5% occupation
++1000 lightinf
++1000 heavyinf
++2000 archers
++1000 lightcav
 
 <... > Nations > Dansk Empire
 ="offensive" AtWar
