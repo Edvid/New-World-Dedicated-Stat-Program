@@ -15,6 +15,8 @@
 <- Dutch Swedish Trade 1
 <- Dutch Swedish Trade 2
 <- Dutch Swedish Trade 3
+<- Dutch Sweden Arms Deal 1
+<- Dutch Sweden Arms Deal 2
 
 <... > nations > CrownOfLeon
 +0.1 CavalryImprovements
@@ -79,6 +81,12 @@
 +5 EstateInfluences.AristocracyInfluence
 +1 EstateInfluences.ClergyInfluence
 +1 EstateInfluences.BurgousieInfluence
++7500 Militia
++2500 Light Infantry
++1000 Heavy Infantry
++1000 Light Cavalry
++2500 Hand Cannoneers
+Trade TreatyofBordeaux, CrownOfLeon > Guyenne, 30 BasicArmaments
 
 <... > Nations > RepublicOfItaly
 ="offensive" AtWar
@@ -124,6 +132,7 @@
 -120 budget
 +0.02 OverallImprov
 +0.1 AdmSize
++1 AdmEff
 +0.5 localtrade
 +5 TradeInfluences.Livonia
 ="true" CulturalAdvancements.Early Modern Administration
@@ -234,3 +243,149 @@ pay debt 220
 =11% BurgousieTax
 -5 Cultural Power
 -7 Research Points 
+
+<...> Nations > Crown of Sweden
+-7.5 Research points
+="true" Technologies.Muskets
+="true" Technologies.limber
+="true" Technologies.Printing press
+-500 light cavalry
+-200 heavy infantry
++1.15 iron
++1 silver
++1 discipline 
+="true" CulturalAdvancements.Early modern administration
+-5 Cultural Power
++0.2 AgrInf
++1.75 localtrade
++0.75 health
++0.05 OverallImprov
+=10% workerstax
+=23% aristocracytax
++0.25 Forestry
++0.05 Reforestation
++5 ProductionSectors.basic armaments sector
++12 ProductionSectors.ship building sector
+
+<...> Nations > GrecoBactria
++0.2 LightShipImprov
++0.2 MediumShipImprov
++0.2 HeavyShipImprov
++0.2 SiegeImprov
++0.2 ArtilleryImprov
++0.05 FirearmImprov
+="true" Technologies.Muskets
+="true" Technologies.Limber
+="true" Technologies.PrintingPress
+-7.5 ResearchPoints
+="true" EarlyModernAdministration
+-5 CulturalPower
++2 Spices
++8 TradeInfluences.Deccan
++8 TradeInfluences.Ganges
++8 TradeInfluences.IndusRiver
++12 TradeInfluences.CentralIndia
++8 TradeInfluences.Afghanistan
+-0.5 EstateInfluences.BurgousieInfluence
+-1.5 EstateInfluences.AristocracyInfluence
++2 EstateInfluences.WorkersInfluence
++3500 Debt
++3500 Budget
++4.75 AdmEff
++0.5 EduEff
++0.25 AdmSize
++1.25 ExoticFruit
++0.1 AgrInf
++1 LocalTrade
++0.5 Propaganda
++0.5 ReligiousFervor
++0.5 Wool
++1 Silk
++0.5 Cotton
++0.25 SocialSpending
++0.05 CulturalProsperity
+="false" Reforms.OpenFieldSystem
+="true" Reforms.Enclosure
+-25 ReformPower
+<... > Cultures > Greco Bactrian > Opinions
++15 Afghan.Score
+<... > Cultures > Greco Bactrian > Opinions
++15 Hindustani.Score
+<... > Cultures > Hindustani > Opinions
++15 Greco Bactrian.Score
+<... > Cultures > Hindustani > Opinions
++15 Afghan.Score
+<... > Cultures > Afghan > Opinions
++15 Hindustani.Score
+<... > Cultures > Afghan > Opinions
++15 Greco Bactrian.Score
+
+<...> Nations > KingdomOfRum
+="true" Technologies.Muskets
+="true" Technologies.limber
+="true" Technologies.Printing press
+-7.5 Research points
++0.75 AdmEff
++0.5 LocalTrade
++0.25 ArtilleryImprovements
++0.05 LightShipImprovements
++0.05 HeavyShipImprovements
++0.25 Propaganda
++0.25 Tea
++0.25 Spices
++0.25 LocalTrade
++2.5 MilitaryControl.BurgousieControl
++2.5 EstateInfluences.BurgousieInfluence
+="true" CulturalAdvancements.EarlyModernAdministration
+-5 Cultural Power
++0.05 FirearmImprovements
+
+<...> Nations > Bavaria 
+="true" CulturalAdvancements.Early Modern Administration
+-5 Cultural Power
+="true" Technologies.muskets
+-2.5 research points
++4 supply depots
++1 small fort 
++500 Militia
++200 Light Infantry
++200 Light Cav
++300 Musketeers
++500 Militia
++400 Light Infantry
++400 Light Cav
++400 Musketeers
++100 Heavy Infantry
++100 Heavy Infantry
++100 Musketeers
+
+<...> Nations > Kingdom Of Alvania 
+="false" Reforms.OpenFieldSystem
+="true" Reforms.Enclosure
+-25 Reform Power
++0.75 localtrade 
++5 TradeInfluences.Romania
++5 TradeInfluences.Crimea
++5 TradeInfluences.Northern Anatolia
+-5 cultural power
+="true" CulturalAdvancements.Early Modern Administration
++1 admeff
+-7 research points
+="true" Technologies.Limber
+="true" Technologies.muskets
+="true" Technologies.Docks
++0.5 Forestry
++0.05 Reforestation
+
+<...> Nations > Kingdom of Laos
++0.1 StockCap
+-7 research points
+-5 Cultural Power
+="true" Technologies.Limber
+="true" Technologies.docks
+="true" Technologies.Printing Press
++2 admeff 
++0.5 EduEff
++10 TradeInfluences.Southeast Asia
++0.05 Reforestation
++0.75 Exotic fruit
