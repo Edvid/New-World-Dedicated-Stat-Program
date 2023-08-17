@@ -253,7 +253,7 @@ pay debt 220
 -200 heavy infantry
 +1.15 iron
 +1 silver
-+1 discipline 
++0.01 discipline 
 ="true" CulturalAdvancements.Early modern administration
 -5 Cultural Power
 +0.2 AgrInf
