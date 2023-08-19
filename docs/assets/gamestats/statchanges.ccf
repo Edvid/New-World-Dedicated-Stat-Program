@@ -76,6 +76,29 @@
 -1 HeavyShips
 -4 MediumShips
 -7 LightShips
++12000 Levies
++1.41 EstateInfluences.ClergyInfluence
+="true" Technologies.Docks
++11 LightShips
++2 MediumShips
++1 HeavyShips
+pay debt 1150
+=22.5% AristocracyTax
+=22.5% BurgousieTax
+=25% ClergyTax
+=35% ExternalTariffs
+="true" CulturalAdvancements.EarlyModernAdministration
+="true" Technologies.PrintingPress
++2 AdmEff
++0.5 EduEff
+=2.75 BureaucratsWages
+="false" Reforms.ClergyBureaucrats
+="true" Reforms.WealthyBureaucrats
+-55 ReformPower
+Trade DutchTribute1, DutchRepublic > RoyaumeDuSoleil, 0.15 Coal
+Trade DutchTribute2, DutchRepublic > RoyaumeDuSoleil, 0.05 Sulphur
+Trade DutchTribute3, DutchRepublic > RoyaumeDuSoleil, 0.25 Iron
+Trade DutchTribute4, DutchRepublic > RoyaumeDuSoleil, 60 budget
 
 <... > Nations > Guyenne
 ="defensive" AtWar
@@ -260,6 +283,7 @@ pay debt 220
 -7 Research Points 
 -2 HeavyShips
 -5 MediumShips
++8500 levies
 
 <...> Nations > Crown of Sweden
 -7.5 Research points
