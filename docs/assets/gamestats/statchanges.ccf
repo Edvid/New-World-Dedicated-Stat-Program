@@ -66,6 +66,16 @@
 -100 LightCav
 -135 HeavyInf
 +970 Casualties
+-5 TradeInfluences.EnglishChannel
+-2.5 TradeInfluences.NorthSea
+-2.5 TradeInfluences.BritishIsles
++15% Occupation
++5% Pillaging
+-3 MerchantShips
++10% Blockade
+-1 HeavyShips
+-4 MediumShips
+-7 LightShips
 
 <... > Nations > Guyenne
 ="defensive" AtWar
@@ -87,6 +97,7 @@
 +1000 Light Cavalry
 +2500 Hand Cannoneers
 Trade TreatyofBordeaux, CrownOfLeon > Guyenne, 30 BasicArmaments
+=0 Coal
 
 <... > Nations > RepublicOfItaly
 ="offensive" AtWar
@@ -207,6 +218,9 @@ pay debt 220
 -5 cultural power
 ="true" CulturalAdvancements.Early Modern Administration
 +12 TradeInfluences.North Sea 
+-1 HeavyShips
+-3 MediumShips
+-1 LightShips
 
 <...> Nations > Republic Of Italy 
 +3.25 AdmEff
@@ -243,6 +257,8 @@ pay debt 220
 =11% BurgousieTax
 -5 Cultural Power
 -7 Research Points 
+-2 HeavyShips
+-5 MediumShips
 
 <...> Nations > Crown of Sweden
 -7.5 Research points
@@ -339,6 +355,8 @@ pay debt 220
 ="true" CulturalAdvancements.EarlyModernAdministration
 -5 Cultural Power
 +0.05 FirearmImprovements
+-5 HeavyShips
+-10 MediumShips
 
 <...> Nations > Bavaria 
 ="true" CulturalAdvancements.Early Modern Administration
@@ -358,6 +376,9 @@ pay debt 220
 +100 Heavy Infantry
 +100 Heavy Infantry
 +100 Musketeers
++18.5 EstateInfluences.AristocracyInfluence
++2.5 EstateInfluences.BurgousieInfluence
++1.5 EstateInfluences.ClergyInfluence
 
 <...> Nations > Kingdom Of Alvania 
 ="false" Reforms.OpenFieldSystem
