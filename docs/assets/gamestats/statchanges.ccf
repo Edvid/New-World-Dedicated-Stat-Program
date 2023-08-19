@@ -221,6 +221,7 @@ pay debt 220
 -1 HeavyShips
 -3 MediumShips
 -1 LightShips
+="offensive" AtWar
 
 <...> Nations > Republic Of Italy 
 +3.25 AdmEff
@@ -379,6 +380,7 @@ pay debt 220
 +18.5 EstateInfluences.AristocracyInfluence
 +2.5 EstateInfluences.BurgousieInfluence
 +1.5 EstateInfluences.ClergyInfluence
+="offensive" AtWar
 
 <...> Nations > Kingdom Of Alvania 
 ="false" Reforms.OpenFieldSystem
