@@ -95,6 +95,7 @@ pay debt 1150
 ="false" Reforms.ClergyBureaucrats
 ="true" Reforms.WealthyBureaucrats
 -55 ReformPower
+-18 spies
 Trade DutchTribute1, DutchRepublic > RoyaumeDuSoleil, 0.15 Coal
 Trade DutchTribute2, DutchRepublic > RoyaumeDuSoleil, 0.05 Sulphur
 Trade DutchTribute3, DutchRepublic > RoyaumeDuSoleil, 0.25 Iron
