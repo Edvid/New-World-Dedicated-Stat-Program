@@ -934,3 +934,139 @@ pay debt 220
 +0.75 Wool
 +0.1 Reforestation
 +0.05 MiningEff
+
+<...> Nations > Byrerwond
++4.35 localtrade
++0.05 TradeImprov
++10 ProductionSectors.basic goods sector
++35 ProductionSectors.construction sector 
++10 ProductionSectors.basic tools sector
++10 ProductionSectors.shipbuilding sector
++47 TradeInfluences.Great Lakes
++10 ProductionSectors.Luxury Goods Sector
++2.85 admeff
++0.25 admsize
++27 TradeInfluences.East Coast
++27 TradeInfluences.Lawrence Gulf
+-2 research points
+="true" Technologies.iron working
+="true" Technologies.wheel
++7 TradeInfluences.Mississippi
++13 EstateInfluences.bureaucratsInfluence 
++0.1 StockCap
++0.5 health
++7% ProductionGovernmentControl
++3 TradeInfluences.Hudson Bay
+
+<... > Cultures > polynesian > Opinions
++5 tagalog.Score
+<...> Nations >  Sugbo
+
++4.25 LocalTrade
++35 ProductionSectors.ship building sector
++5 ProductionSectors.luxury goods sector
++10 ProductionSectors.textiles sector
++10 ProductionSectors.basic tools sector
+=20% ProductionGovernmentControl
++22 TradeInfluences.south china sea
++27 TradeInfluences.Indonesia
++27 TradeInfluences.Pacific
++27 TradeInfluences.South East Asia
++10 TradeInfluences.sea of japan
++10 TradeInfluences.yangtze river
++10 TradeInfluences.yellow river
++4 TradeInfluences.manchuria
++4 TradeInfluences.Northern Australia
++4 TradeInfluences.Ganges 
++5 TradeInfluences.sichuan 
++0.5 edueff
+="true" Reforms.Regional Police
+="False" Reforms.CommunityPolicing
+-25 reform power
++2 AdmEff
++0.1 AdmSize
++0.1 OverallImprov
++0.12 firearmImprov
++0.12 meleeImprov
++5 ProductionSectors.basic armaments sector 
++10 ProductionSectors.Construction sector
++0.05 ResearchSpending
+=30 light ships
+=20 med ships
+=18 heavy ships
++0.1 LightShipImprov
++0.1 mediumshipimprov
++0.1 heavyshipimprov
++0.1 artilleryimprov
+=8000 light infantry
+=5500 levies
+=4250 archers
+=4000 heavy infantry
+=1250 crossbowmen
+=750 hand cannoneers
+=10 elite infantry
+
+<...> Nations >  Asaran Empire
+trade TreatyofJerusalem1, AsaranEmpire > KingdomofIsrael 5 wood
+trade TreatyofJerusalem2, KingdomofIsrael > AsaranEmpire 15 budget
+trade TreatyofBerlin1, AsaranEmpire > KingdomOfPrussia 0.25 iron
+trade TreatyofBerlin2, KingdomOfPrussia > AsaranEmpire 10 budget
+trade TreatyofPelven1 AsaranEmpire > CrownOfSweden 0.5 coal
+trade TreatyofPelven2, CrownOfSweden > AsaranEmpire 20 budget
++2% discipline 
++0.85 localtrade
++10 ProductionSectors.construction sector
++5 ProductionSectors.alcohol sector
++5 TradeInfluences.Eastern Mediterranean 
++5 TradeInfluences.Central Mediterranean 
++1 TradeInfluences.Western Mediterranean 
++5 TradeInfluences.Adriatic
++10 TradeInfluences.Greece
++4 TradeInfluences.Morocco 
++4 TradeInfluences.Iberia 
++5 TradeInfluences.Southern France
++5 TradeInfluences.Egypt
++3 TradeInfluences.Central Europe
+=11% InternalTariffs
+=15% ExternalTariffs
++3 light ships
+="True" Technologies.Muskets
+-2.5 research points
++300 Musketeers
+=10% ProductionGovernmentControl
++200 Hand Cannons
++0.07 Firearmimprov
++0.07 cavalryimprov
++10 Bombards
++10 Field Cannons
++545 budget
+-8 Merchant Ships
++300 Debt
++2400 Militia
++15 ProductionSectors.Heavy Armaments Sector
++15ProductionSectors.Basic Armaments Sector
++5 ProductionSectors.Construction Sector
++0.75 propaganda 
++1 ReligiousFervor
++87 Elite Infantry
+
+<...> Nations >  KingdomOfPrussia
+="True" Technologies.Muskets
+="True" Technologies.Limber
+
+<...> Nations >  Celtic Empire
++0.5 AdmEff
++0.5 localtrade
+=275 Militia
+=175 Light Cav
+=500 Light Infantry
+=200 Archers
+=100 Crossbowmen
+=24 Elite Infantry
++1 Supply Depots
+=25% AristocracyTax
+=25% BurgousieTax
+=20% ClergyTax
++0.25 propaganda 
+trade TreatyofLimerick1, Celtic Empire > Crown of Sweden, 3.5 basicarmaments 
+trade TreatyofLimerick2, Crown of Sweden > Celtic Empire, 70 budget
