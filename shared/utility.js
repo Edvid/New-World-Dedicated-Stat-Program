@@ -523,6 +523,9 @@ let StatTypes = {
         "HeavyShips"
     ],
     DerivedStats: [
+        "AristocracyCallupCost",
+        "BurgousieCallupCost",
+        "ClergyCallupCost",
         "ResearchEfficiency",
         "Wood",
         "EffectiveWood",
@@ -1182,6 +1185,8 @@ function ValueTypeFix(statName, statValue) {
             "EliteCavalry",
             "HandCannoneers",
             "Musketeers",
+            "MusketMilitia",
+            "Riflemen",
             "Militia",
             "SiegeEquipment",
             "LargeSiegeEquipment",

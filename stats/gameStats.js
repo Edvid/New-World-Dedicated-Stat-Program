@@ -2248,5 +2248,13 @@ function clearNewTroops(nationName){
   n.New_LightShips = 0;
   n.New_MediumShips = 0;
   n.New_HeavyShips = 0;
+
+    n.New_SmallForts = 0;
+    n.New_MediumForts = 0;
+    n.New_BigForts = 0;
+    n.New_HugeForts;
+    n.New_CityFortifications = 0;
+    n.New_SupplyDepots = 0;
+    n.New_NavalBases = 0;
 }
 

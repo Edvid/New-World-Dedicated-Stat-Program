@@ -3,6 +3,7 @@ const TopStats = [
   { name: "DailyBudget", displayName: "Income" },
   { name: "Budget", displayName: "Budget" },
   { name: "LiteracyPercent", displayName: "Literacy" },
+  { name: "AverageSol", displayName: "Standard of Living" },
   { name: "Gdp", displayName: "GDP" },
   { name: "GdpPerKCapita", displayName: "GDP per K Capita" },
   { name: "DebtToGdpRatio", displayName: "Debt to GDP Ratio" },
