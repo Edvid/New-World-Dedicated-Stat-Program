@@ -51,7 +51,24 @@ static evaluateNation(nationName) {
   }
 
   n.AgricultureTechnology = 0 + n.Technologies.HorseCollar + n.CulturalAdvancements.PotatoPopulationBoom + n.Reforms.Enclosure + n.Technologies.CannedFood;
-    n.FarmingEfficiency = (1 - n.Alcoholism * (1 - n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100) / 2 + n.AgricultureSubsidies / 10 + (n.AgricultureInfrastructure + n.AgricultureAdvancements - 2) * 0.75 + n.AgricultureTechnology / 20) * (n.GovernmentDominatedBy == "Aristocracy" ? 0.9 : 1) * (n.GovernmentDominatedBy == "Workers" ? 1.1 : 1);
+  n.FarmingEfficiency = (1 - n.Alcoholism * (1 - n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100) / 2 + n.AgricultureSubsidies / 10 + (n.AgricultureInfrastructure + n.AgricultureAdvancements - 2) * 0.75 + n.AgricultureTechnology / 20) * (n.GovernmentDominatedBy == "Aristocracy" ? 0.9 : 1) * (n.GovernmentDominatedBy == "Workers" ? 1.1 : 1);
+
+    n.MaxResources = [
+        "Coal",
+        "Sulphur",
+        "Iron",
+        "Copper",
+        "Gold",
+        "Fur",
+        "Diamond",
+        "Silver",
+        "Ivory"
+    ]
+
+    for (const resourceIndex in n.MaxResources) {
+        const resource = n.MaxResources[resourceIndex];
+        if (n[resource] > n["Max" + resource]) { n[resource] = n["Max" + resource] }
+    }
 
   {
     let rels = []
