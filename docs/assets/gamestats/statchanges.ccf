@@ -285,3 +285,33 @@ trade Treatyofballs2, kingdomofengland > Republic of Italy, 85 budget
 +100 musketeers
 -5 CulturalPower
 ="true" EarlyModernAdministration
+-550 LightCavalry
+-550 LightInfantry
+-670 HeavyInfantry
+-300 Archers
+-300 HandCannoneers
++2370 casualties
++1 MajorBattle
+-1 HeavyShips
+-5 MediumShips
+-7 LightShips
+-100 HeavyInf
+-200 LightInf
+-100 Archers
+-50 LightCav
+
+<... > Nations > KingdomOfPrussia
+-1 MajorBattle
++2235 casualties
+=10% occupation
+=360 lightinf
+=540 heavyinf
+=2000 archers
+=445 lightcav
+
+<... > Nations > CrownOfSweden
+-2 HeavyShips
+-2 LightShips
+
+<... > Nations > KingdomOfNovgorod
+-4 MediumShips
