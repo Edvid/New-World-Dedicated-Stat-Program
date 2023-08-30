@@ -72,3 +72,214 @@
 +600 lightcav
 +300 heavycav
 +192 siegeeq
+
+trade TreatyofAztecMayanTrade1, Mayan Empire > Aztec Empire, 2 budget
+trade TreatyofAztecMayanTrade2, Aztec Empire > Mayan Empire, 1 coal
+trade TreatyofAztecMayanTrade3, Mayan Empire > Aztec Empire, 16 budget
+trade TreatyofAztecMayanTrade4, Aztec Empire > Mayan Empire, 0.25 gold
+
+
+<...> Nations > Mayan Empire
+-1 research points
++5 siege equipment
+="true" Technologies.Wheel
++0.25 socialspending
++5 ProductionSectors.construction sector
++0.05 ResearchSpending
++1 admeff
+-3 cultural power
+="true" CulturalAdvancements.Courthouses
++1 cotton
++1 tobacco
++1 spices
++1 Cocoa
++1 exotic fruit 
++1 sugar
++1 wool
++1 iron
++0.2 StockCap
++0.5 localtrade
++5 TradeInfluences.Caribbean
++5 TradeInfluences.Central America
++0.4 TradeInfluences.Mississippi
++5 TradeInfluences.Gulf Of Mexico
+
+<...> Nations > Kingdom Of Novgorod 
++ 3 Merchant Ships
++0.32 FirearmImprov
++0.2 MeleeImprov
++0.25 cavImprov
++0.1 rangedImprov
++0.1 ArtilleryImprov
++0.5% Discipline
++0.2 AgrInf 
++0.75 health
++0.5 Propaganda
++0.5 ReligiousFervor
+=0.5 SocialSpending
++0.5 admeff
++0.85 localtrade
++5 TradeInfluences.Novgorod
++0.85 Forestry
++0.1 Reforestation
+=8 LightShips
++ 4 Medium Ships
+
+<...> Nations > Kingdom Of Alvania 
+=1500 Light Infantry
+=5000 Heavy Infantry
+=2000 Musketeers
+=2500 Light Cav
+=1000 Heavy Cav
+=12 Field Cannons
+=6 SiegeGuns
+
+<...> Nations > Kingdom Of Rum 
++10 Field Cannons
++20 regimental guns
++0.75 silk
++1 cotton
++1 wool
++10 ProductionSectors.Textiles sector
++0.5 copper
+
+<...> Nations > Dutch Republic
+="true" Technologies.limber 
+="true" Technologies.Gunports
+-5 research points
+-3 small forts
+
+<...> Nations > Crown of Sweden
++2 Heavyships
++8 ProductionSectors.Basic armaments sector
++8 ProductionSectors.heavy armaments sector
+
+trade TreatyofPleven1, CrownofSweden > AsaranEmpire, 20 budget
+trade TreatyofPleven2, AsaranEmpire > CrownofSweden, 0.5 coal
+
+<...> Nations > EmpireOfChola
++1 Naval Bases
++5 LightShips
++3 MediumShips
+
+<...> Nations > Bavaria
+-2 HeavyShips
+="true" Technologies.PrintingPress
+="true" Technologies.Limber
++0.5 EduEff
++1 AdmEff
+-5 ResearchPoints
+=18% aristocracytax
+=15% clergytax
+=13% BurgousieTax
+=10% urbantax
+=10% bureaucratstax
+=10% intellectualstax
+=15% workerstax
+=10% militarytax
+=30% InternalTariffs
+=30% ExternalTariffs
++4 FieldCannons
++0.2 AdmSize
+="false" Reforms.ClergyBureaucrats
+="true" Reforms.WealthyBureaucrats
++0.5 Coal
++0.5 Sulphur
++0.5 Iron
++0.5 Copper
++8 TradeInfluence.CentralEurope
++7 TradeInfluence.Rhine
++0.75 LocalTrade
++0.5% MilitaryDiscipline
++0.5 FirearmImprov
++2.75 Propaganda
+
+<... > nations > AsaranEmpire
+-480 budget
+
+<... > nations > EmirateOfCarthage
++480 budget
+
+<...> Nations > Crown Of Leon
++1.85 silk
++0.65 AgrInf
++0.2 AgrSubsidies
++1 exotic fruit
++6.5 localtrade
+-25 Reform Power
+="true" Reforms.Enclosure
+="false" Reforms.Open Field System
++1.5 wool
++4.25 AdmEff
++1500 Heavy Infantry
++45 TradeInfluences.Iberia
++45 TradeInfluences.Bay Of Biscay
++8 TradeInfluences.English Channel
++24 TradeInfluences.Western Mediterranean
++1 naval bases
++0.22 AdmSize
++0.2 socialspending
++0.06 TradeImprov
++2 health
++0.2 ResearchSpending
+=30% AristocracyTax
+=31% ClergyTax
+=29% BurgousieTax
+=30% UrbanTax
+=30% BureaucratsTax
+=29% IntellectualsTax
+=28% WorkersTax
++1 Propaganda
++1 EduEff
++0.1 CulturalProsperity
++0.5 sugar 
+
+
+trade Treatyofballs1, Republic of Italy > kingdomofengland, 12 BasicArmaments
+trade Treatyofballs2, kingdomofengland > Republic of Italy, 85 budget
+
+<...> Nations > Republic Of Italy 
++20 ProductionSectors.Basic Armaments sector
++8 ProductionSectors.Basic tools sector
++8 ProductionSectors.textiles sector
++8 ProductionSectors.Basic goods sector
++8 ProductionSectors.construction sector
++15 ProductionSectors.ship building sector
++4.15 localtrade
++0.3 CulturalProsperity
++1.5 Forestry
++0.15 Reforestation
++0.5 health
++15 TradeInfluences.Adriatic
++6 TradeInfluences.Eastern Mediterranean
++7 TradeInfluences.Greece
++9 TradeInfluences.Eastern Danube
++5 TradeInfluences.central Mediterranean
++0.25 FirearmImprov
++0.1 meleeImprov
++0.1 ArtilleryImprov
++1.1% Discipline
+!suppress 2
++2000 Debt
++2010 budget
+=30% AristocracyTax
++2.1 silk
++5% ProductionGovernmentControl
++ 2 heavy ships
++ 5 medium ships
++0.1 admsize
++2 AdmEff
++0.11 TradeImprov
++2.35 EduEff
++0.1 ResearchSpending
++0.10 ResearchEffectiveness 
+
+<... > Nations > DanskEmpire
+-7.5 ResearchPoints
+="true" PrintingPress
+="true" muskets
+="true" Gunports
+-200 handCannoneers
++100 musketeers
+-5 CulturalPower
+="true" EarlyModernAdministration
