@@ -194,6 +194,7 @@ trade TreatyofPleven2, AsaranEmpire > CrownofSweden, 0.5 coal
 +0.5 FirearmImprov
 +2.75 Propaganda
 
+!suppress 7
 <... > nations > AsaranEmpire
 -480 budget
 
@@ -206,6 +207,7 @@ trade TreatyofPleven2, AsaranEmpire > CrownofSweden, 0.5 coal
 +0.2 AgrSubsidies
 +1 exotic fruit
 +6.5 localtrade
+!suppress 2
 -25 Reform Power
 ="true" Reforms.Enclosure
 ="false" Reforms.Open Field System
