@@ -291,7 +291,7 @@ trade Treatyofballs2, kingdomofengland > Republic of Italy, 85 budget
 -300 Archers
 -300 HandCannoneers
 +2370 casualties
-+1 MajorBattle
++1 MajorBattles
 -1 HeavyShips
 -5 MediumShips
 -7 LightShips
@@ -301,7 +301,7 @@ trade Treatyofballs2, kingdomofengland > Republic of Italy, 85 budget
 -50 LightCav
 
 <... > Nations > KingdomOfPrussia
--1 MajorBattle
+-1 MajorBattles
 +2235 casualties
 =10% occupation
 =360 lightinf
@@ -315,3 +315,40 @@ trade Treatyofballs2, kingdomofengland > Republic of Italy, 85 budget
 
 <... > Nations > KingdomOfNovgorod
 -4 MediumShips
+
+<... > Nations > KingdomOfEngland
+="https://cdn.discordapp.com/attachments/1122448414542680138/1128848960946196620/eajpnpm8f4201.jpg" flag
++10 TradeInfluences.North Sea
++10 TradeInfluences.British Isles
++5 TradeInfluences.Bay of Biscay
++1.5 LocalTrade
++0.05 TradeImprov
+-2.5 EstateInfluences.AristocracyInfluence
+-5 GovernmentRepresentation.AristocracyRepresentation
++5 GovernmentRepresentation.BurgousieRepresentation
++7.5 ProductionSectors.ShipbuildingSector
++0.5 Propaganda
+-2.5 ProductionSectors.HeavyArmamentsSector
++5 ProductionSectors.BasicArmamentsSector
++6.5 EstateInfluences.BurgousieInfluence
++2.5 EstateInfluences.UrbanInfluence
++1.25 Wool
++0.25 Health
++1 Medium Ships
++4 Light Ships
+
+trade Treatyofshitsvile1, CelticEmpire > kingdomofengland, 2 Wood
+trade Treatyofshitsvile2, kingdomofengland > CelticEmpire, 5.5 budget
+
+<... > Cultures > Celtic > Opinions
++> English
+=15 English
+
+<... > Nations > Royaume Du Soleil
++24 LightShips
++8 MediumShips
++4 HeavyShips
++0.25 Propaganda
++0.25 ReligiousFervor
++0.75 Forestry
++0.1 Reforestation
