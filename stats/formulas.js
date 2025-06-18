@@ -398,6 +398,20 @@ static evaluateNation(nationName) {
   n.ToolWorkingEfficiency = 1 + n.MetalWorkingEfficiency + n.Technologies.PaperMachine / 10;
   n.Production = n.Population / 1000 * n.Workforces.Townsfolk * n.ProductionEfficiency / 2;
 
+
+  n.ForestsLeft = max((
+    n.Climates.TaigaAndTundra.Pixels * 0.95 +
+    n.Climates.MontaneForest.Pixels * 0.9 +
+    n.Climates.Medditereanian.Pixels * 0.7 +
+    n.Climates.Arid.Pixels * 0.35 +
+    n.Climates.Steppe.Pixels * 0.3 +
+    n.Climates.Moderate.Pixels * 0.8 +
+    n.Climates.SubTropical.Pixels * 0.95 +
+    n.Climates.Tropical.Pixels * 1.05 +
+    n.Climates.Savanna.Pixels * 0.45 +
+    n.Climates.CoastalDesert.Pixels * 0.2
+  ) - n.ForestsCutDown, 0);
+
     n.Wood = n.Forestry * 10;
     if (n.ForestsLeft < n.Forestry * 750) {
         n.Wood = n.Wood * (n.Forestry * 750 / n.ForestsLeft);
@@ -405,20 +419,7 @@ static evaluateNation(nationName) {
             n.Wood = 0;
         }
     }
-  n.EffectiveWood = n.Wood + n.WoodIncoming - n.WoodOutgoing;
-
-  n.ForestsLeft = max((
-    n.Climates.TaigaAndTundra.Pixels * 0.85 +
-    n.Climates.MontaneForest.Pixels * 0.8 +
-    n.Climates.Medditereanian.Pixels * 0.65 +
-    n.Climates.Arid.Pixels * 0.2 +
-    n.Climates.Steppe.Pixels * 0.2 +
-    n.Climates.Moderate.Pixels * 0.75 +
-    n.Climates.SubTropical.Pixels * 0.9 +
-    n.Climates.Tropical.Pixels * 1 +
-    n.Climates.Savanna.Pixels * 0.45 +
-    n.Climates.CoastalDesert.Pixels * 0.15
-  ) - n.ForestsCutDown, 0);
+    n.EffectiveWood = n.Wood + n.WoodIncoming - n.WoodOutgoing;
 
   n.AverageExpectedSol = (
     (isNaN(n.Workforces.Slaves) ? 0 : n.Workforces.Slaves) * n.ExpectedSlavesSol +
