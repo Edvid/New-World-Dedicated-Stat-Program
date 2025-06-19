@@ -1067,9 +1067,9 @@ static evaluateNation(nationName) {
     for (const resourceIndex in budgetBoostingResources) {
       const resource = budgetBoostingResources[resourceIndex];
 
-      rbb += min(n["Effective" + resource] + n[resource+"Outgoing"] - n[resource+"Incoming"], n[resource + "Demand"]) * n[resource + "Value"];
+        rbb += min(n["Effective" + resource] + n[resource + "Outgoing"] - n[resource + "Incoming"], n[resource + "Demand"]) * n[resource + "Value"];
     }
-    return (rbb * 5);
+    return (rbb);
   })();
 
   n.AristocracyInfluenceMod = 1 + n.Reforms.LimitedWeaponOwnership / 10 + n.Reforms.SlaveryAllowed / 10 + n.Reforms.SerfdomAllowed / 5 + n.Reforms.Enclosure / 10 + n.Reforms.HighClassVoting / 5 + n.Reforms.WealthVoting / 10 + n.Reforms.NoblePrivellege / 5 + n.Reforms.WealthPrivellege / 10 + n.Reforms.NobleOfficers / 5 + n.Reforms.WealthyOfficers / 10 + n.Reforms.NobleBureaucrats / 5 + n.Reforms.WealthyBureaucrats / 10 + n.Reforms.NobleResourceOwnership / 5 + n.Reforms.MixedResourceOwnership / 10 - n.Reforms.GovernmentResourceOwnership / 4 + n.Reforms.NobleLandOwnership / 5 + n.Reforms.MixedLandOwnership / 10 - n.Reforms.GovernmentLandOwnership / 2 + n.Reforms.FeudalLevies / 10 + n.Reforms.FeudalNobleArmies / 10 + n.Reforms.Mercenaries / 5 + n.Reforms.NoSocialMobility / 5 + n.Reforms.RestrictedSocialMobility / 10 + n.Reforms.RegionalPolice / 5;
@@ -1151,7 +1151,7 @@ static evaluateNation(nationName) {
     "Intellectuals"
   ];
 
-  n.TaxEfficiency = (1 - n.EstateInfluencesReal.AristocracyInfluence / 4 - n.EstateInfluencesReal.ClergyInfluence / 4 - n.AdministrativeStrain / n.AdministrativePower) * (1 - n.Occupation) * (1 - n.Corruption / 10)
+  n.TaxEfficiency = (1 - n.EstateInfluencesReal.AristocracyInfluence / 4 - n.EstateInfluencesReal.ClergyInfluence / 4 - n.AdministrativeStrain / n.AdministrativePower * 2) * (1 - n.Occupation) * (1 - n.Corruption / 10)
   n.TariffEfficiency = (1 - n.EstateInfluencesReal.BurgousieInfluence / 2 - n.AdministrativeStrain / n.AdministrativePower - n.Reforms.Protectionism * 0.1 - n.Reforms.FreeTrade * 0.5) * (1 - n.Occupation) * (1 - n.Corruption / 10)
 
   n.AristocracyArmiesBudget = (n.Reforms.FeudalNobleArmies || n.Reforms.Mercenaries ? n.AristocracyWage * (1 - n.AristocracyTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.AristocracyInfluence)) * 0.1 : 0) * n.Workforces.Aristocracy * n.Population / 1000 * (n.Reforms.FeudalNobleArmies ? (1 + n.EstateInfluencesReal.AristocracyInfluence) : 1);
@@ -1249,7 +1249,7 @@ static evaluateNation(nationName) {
   n.SocialSpendingUpkeep = n.SocialSpendingUpkeep / gameStats.TimeDivide;
 
 
-    n.NecessitiesCost = (0.5 * n.HousingValue + 0.5 * n.TextilesValue + n.BasicGoodsValue + n.AlcoholValue * (0.5 + n.Alcoholism) * (1 - n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100) + n.CoffeeValue * 0.5 * (n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100) + 0.5 * n.BasicToolsValue) / 200 + (n.CoalValue * 0.005 > n.WoodValue * 0.01 ? 0.01 * n.WoodValue : 0.005 * n.CoalValue) + (n.FoodAdditionsValue / 2 < n.FoodValue ? 0.1 * n.FoodAdditionsValue + 0.8 * n.FoodValue : n.FoodValue);
+    n.NecessitiesCost = (0.5 * n.HousingValue + 0.5 * n.TextilesValue + n.BasicGoodsValue + n.AlcoholValue * (0.5 + n.Alcoholism) * (1 - n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100) + n.CoffeeValue * 0.5 * (n.ReligionGroups.Sunni.Points / 100 + n.ReligionGroups.Shia.Points / 100) + 0.5 * n.BasicToolsValue) / 200 + (n.CoalValue * 0.005 > n.WoodValue * 0.01 ? 0.01 * n.WoodValue : 0.005 * n.CoalValue) + (n.FoodAdditionsValue / 2 < n.FoodValue ? 0.1 * n.FoodAdditionsValue + 0.8 * n.FoodValue : n.FoodValue);
     n.LuxuriesCost = (n.HousingValue + n.TextilesValue + 1.5 * n.BasicGoodsValue + n.LuxuryGoodsValue + 2 * n.AlcoholValue * (0.5 + n.Alcoholism) * (1 - n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100) + n.CoffeeValue * (n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100)) / 200 + (n.CoalValue * 0.01 > n.WoodValue * 0.02 ? n.WoodValue * 0.02 : 0.01 * n.CoalValue) + (n.FoodAdditionsValue / 2 < n.FoodValue ? n.FoodAdditionsValue / 2 * 0.75 + 0.5 * n.FoodValue : 1.25 * n.FoodValue) + (n.LuxuryConsumablesValue / 10 < n.FoodValue ? 0.05 * n.LuxuryConsumablesValue : 0.5 * n.FoodValue);
 
     // SoL
@@ -1377,7 +1377,7 @@ static evaluateNation(nationName) {
 
     n.PopulationHappiness = (5 * (0.25 + n.Prosperity) - n.AverageTax * 25 - n.Absolutism / 2 - n.PopulationControlReal - n.DebtToGdpRatio * 10 * n.PublicDebtLength - n.WarExhaustion / 2 - n.Disease + n.Alcoholism * (1 - n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100) / 2);
 
-    n.Manpower = n.Population * (n.Reforms.NationalMilitia * 0.02 + n.Reforms.FeudalLevies * 0.005 + n.Reforms.ProffesionalArmy * 0.025 + n.Reforms.MassConscription * 0.075 + n.Nationalism * 0.005 + n.ReligiousFervor * 0.005) - n.OverallNumbers - n.Casualties - (n.LightShips * 100 + n.MediumShips * 200 + n.HeavyShips * 500);
+    n.Manpower = n.Population * (n.Reforms.NationalMilitia * 0.01 + n.Reforms.FeudalLevies * 0.0035 + n.Reforms.ProffesionalArmy * 0.02 + n.Reforms.MassConscription * 0.05 + n.Nationalism * 0.0025 + n.ReligiousFervor * 0.0025) - n.OverallNumbers - n.Casualties - (n.LightShips * 100 + n.MediumShips * 200 + n.HeavyShips * 500);
 
   n.Fervor = clamp(1, -1, 0 + n.MinorBattles / 20 + n.MajorBattles / 10 + n.Pillaging - n.Casualties / (n.Manpower + n.Casualties));
   n.WarSupport = clamp(1, 0, (n.PopulationHappiness / 4 + n.PropagandaReal / 10 * (1 + n.CulturalAdvancements.Newspapers * n.LiteracyPercent / 50) + n.Fervor + n.Nationalism / 10) * (n.GovernmentDominatedBy == "Military" ? 1.25 : 1));
@@ -1451,13 +1451,13 @@ static evaluateNation(nationName) {
 
   n.EliteUnitsCap = ((n.OverallNumbers - n.Militia - n.Levies - n.EliteCavalry - n.EliteInfantry) * 0.025);
 
-    n.IrregularQuality = (n.IrregularQualityIC - n.Corruption / 5) - n.IronShortage - n.BasicArmamentsArmyShortage;
-    n.MeleeQuality = (n.MeleeQualityIC - n.Corruption / 5)  - n.IronShortage - n.BasicArmamentsArmyShortage;
-    n.RangedQuality = (n.RangedQualityIC - n.Corruption / 5) - n.IronShortage - n.BasicArmamentsArmyShortage;
-    n.CavalryQuality = (n.CavalryQualityIC - n.Corruption / 5) - n.IronShortage - (n.Technologies.Reiters == 1 ? n.SulphurShortage : 0) - n.BasicArmamentsArmyShortage;
-    n.FirearmQuality = (n.FirearmQualityIC - n.Corruption / 5) - n.IronShortage - n.SulphurShortage - n.BasicArmamentsArmyShortage;
-    n.SiegeQuality = (n.SiegeQualityIC - n.Corruption / 5)  - n.IronShortage - n.BasicArmamentsArmyShortage;
-    n.ArtilleryQuality = (n.ArtilleryQualityIC - n.Corruption / 5) - n.IronShortage - n.SulphurShortage - n.HeavyArmamentsShortage;
+    n.IrregularQuality = (n.IrregularQualityIC - n.Corruption / 5) - n.BasicArmamentsArmyShortage;
+    n.MeleeQuality = (n.MeleeQualityIC - n.Corruption / 5) - n.BasicArmamentsArmyShortage;
+    n.RangedQuality = (n.RangedQualityIC - n.Corruption / 5) - n.BasicArmamentsArmyShortage;
+    n.CavalryQuality = (n.CavalryQualityIC - n.Corruption / 5) - (n.Technologies.Reiters == 1 ? n.SulphurShortage / 4 : 0) - n.BasicArmamentsArmyShortage;
+    n.FirearmQuality = (n.FirearmQualityIC - n.Corruption / 5) - n.SulphurShortage - n.BasicArmamentsArmyShortage;
+    n.SiegeQuality = (n.SiegeQualityIC - n.Corruption / 5) - n.BasicArmamentsArmyShortage;
+    n.ArtilleryQuality = (n.ArtilleryQualityIC - n.Corruption / 5) - n.SulphurShortage - n.HeavyArmamentsShortage;
 
   n.CulturalAdvance = (function () {
     let ca = 0;
@@ -1474,9 +1474,9 @@ static evaluateNation(nationName) {
 
   n.MaxPopulation = n.Population / n.Disease;
 
-  n.LightShipQuality = (1 + n.LightShipImprovements + n.NavyTech - n.Corruption / 5) - n.IronShortage - (n.Technologies.Gunports == 1 ? n.SulphurShortage : 0) - n.ShipBuildingShortage;
-  n.MediumShipQuality = (1 + n.MediumShipImprovements + n.NavyTech + n.Technologies.Galleons / 6 - n.Corruption / 5) - n.IronShortage - (n.Technologies.Gunports == 1 ? n.SulphurShortage : 0) - n.ShipBuildingShortage;
-  n.HeavyShipQuality = (1 + n.HeavyShipImprovements + n.NavyTech + n.Technologies.Galleons / 4 - n.Corruption / 5) - n.IronShortage - (n.Technologies.Gunports == 1 ? n.SulphurShortage : 0) - n.ShipBuildingShortage;
+  n.LightShipQuality = (1 + n.LightShipImprovements + n.NavyTech - n.Corruption / 5) - (n.Technologies.Gunports == 1 ? n.SulphurShortage / 2 : 0) - n.ShipBuildingShortage;
+  n.MediumShipQuality = (1 + n.MediumShipImprovements + n.NavyTech + n.Technologies.Galleons / 6 - n.Corruption / 5) - (n.Technologies.Gunports == 1 ? n.SulphurShortage / 2 : 0) - n.ShipBuildingShortage;
+  n.HeavyShipQuality = (1 + n.HeavyShipImprovements + n.NavyTech + n.Technologies.Galleons / 4 - n.Corruption / 5) - (n.Technologies.Gunports == 1 ? n.SulphurShortage / 2 : 0) - n.ShipBuildingShortage;
 
     n.LightShipQuality = max(0, n.LightShipQuality);
     n.MediumShipQuality = max(0, n.MediumShipQuality);

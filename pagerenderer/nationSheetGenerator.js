@@ -294,7 +294,7 @@ let TableLayouts = {
       ["PopProductionRevenue", "StateProductionRevenue"]
     ],
     "Army": [
-      ["OverallImprovements", "CommanderFreedom", "ArmyWage", "BasicArmamentsStockpiled", "HeavyArmamentsStockpiled", "BasicArmamentsArmyShortage", "HeavyArmamentsShortage", "IronShortage", "SulphurShortage"],
+      ["OverallImprovements", "CommanderFreedom", "ArmyWage", "BasicArmamentsStockpiled", "HeavyArmamentsStockpiled", "BasicArmamentsArmyShortage", "HeavyArmamentsShortage", "SulphurShortage"],
 		["MilitaryLoyalty", "MilitaryMorale", "MilitaryDiscipline"],
         ["IrregularImprovements", "IrregularQuality", "Levies", "Militia"],
         ["MeleeImprovements", "MeleeQuality", "LightInfantry", "HeavyInfantry", "EliteInfantry"],
@@ -317,7 +317,7 @@ let TableLayouts = {
         ["SmallFortConstructionCost", "MediumFortConstructionCost", "BigFortConstructionCost", "HugeFortConstructionCost", "CityFortificationConstructionCost", "SupplyDepotConstructionCost", "NavalBaseConstructionCost"]
     ],
     "Navy": [
-      ["ShipBuildingShortage", "IronShortage", "SulphurShortage"],
+      ["ShipBuildingShortage", "SulphurShortage"],
       ["LightShipImprovements", "MediumShipImprovements", "HeavyShipImprovements", "NavyTech"],
       ["LightShipQuality", "MediumShipQuality", "HeavyShipQuality", "SailorsWage"],
       ["UpkeepForOneLightShip", "UpkeepForOneMediumShip", "UpkeepForOneHeavyShip", "UpkeepForOneMerchantShip"],
