@@ -614,7 +614,7 @@ class Nation {
     this.AdministrativeEfficiency = 27.5;
       this.AdministrationSize = 0.5;
     this.Propaganda = 0;
-    this.SocialSpending = 0.5;
+    this.SocialSpending = 0.25;
     this.AtWar = false;
       this.Nationalism = 0;
       this.ReligiousFervor = 1;
