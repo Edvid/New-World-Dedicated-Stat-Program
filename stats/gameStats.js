@@ -1158,7 +1158,7 @@ class Stats{
   constructor(){
     let s = this;
 
-    this.TimeSpeed = 50;
+    this.TimeSpeed = 25;
     this.TimeDivide = (function () {
       return 20 / s.TimeSpeed;
     })();

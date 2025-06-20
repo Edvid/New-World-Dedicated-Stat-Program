@@ -271,7 +271,7 @@ static evaluateNation(nationName) {
     n.CoastalPopulationPercent = n.coastalPopulation / n.Population;
 
     n.ArableLand = n.Fertility * (1 - n.Pillaging);
-    n.MaxPopInAgriculture = n.ArableLand * 1000 / n.Population;
+    n.MaxPopInAgriculture = n.ArableLand * 1000 / n.Population * (1 + n.AgricultureSubsidies / 2 + ( n.AgricultureInfrastructure - 1) / 4);
 
     n.ConscriptionPercent = (n.OverallNumbers + n.SmallForts * 100 + n.MediumForts * 250 + n.BigForts * 400 + n.HugeForts * 800 + n.CityFortifications * 250) / n.Population;
     n.Workforces.PopulationInMilitary = n.ConscriptionPercent;
@@ -279,7 +279,7 @@ static evaluateNation(nationName) {
     n.Workforces.Intellectuals = n.HigherEducation / 100;
     n.Workforces.Labourers = (n.Reforms.SlaveryBanned ? (n.BaseIronHarvest + n.BaseCoalHarvest + n.BaseSulphurHarvest + n.Coal + n.Sulphur + n.Cotton + n.Gold + n.Iron + n.Tea + n.Silk + n.Spice + n.Wool + n.Coffee + n.Fur + n.Diamond + n.Silver + n.Copper + n.Ivory + n.Cocoa + n.Tobacco + n.Sugar + n.ExoticFruit + n.Forestry + n.Reforestation) * 20000 / n.Population : (n.BaseIronHarvest + n.BaseCoalHarvest + n.BaseSulphurHarvest + n.Coal + n.Sulphur + n.Cotton + n.Gold + n.Iron + n.Tea + n.Silk + n.Spice + n.Wool + n.Coffee + n.Fur + n.Diamond + n.Silver + n.Copper + n.Ivory + n.Cocoa + n.Tobacco + n.Sugar + n.ExoticFruit + n.Forestry + n.Reforestation) * 20000 / n.Population * 0.2);
   n.Workforces.Slaves = (n.Reforms.SlaveryAllowed ? (n.BaseIronHarvest + n.BaseCoalHarvest + n.BaseSulphurHarvest + n.Coal + n.Sulphur + n.Cotton + n.Gold + n.Iron + n.Tea + n.Silk + n.Spice + n.Wool + n.Coffee + n.Fur + n.Diamond + n.Silver + n.Copper + n.Ivory + n.Cocoa + n.Tobacco + n.Sugar + n.ExoticFruit + n.Forestry + n.Reforestation) * 20000 / n.Population * 0.8 : 0);
-  n.Workforces.Merchants = (n.MerchantShips * 200) / n.Population;
+  n.Workforces.Merchants = ((n.MerchantShips + n.LocalTrade) * 500) / n.Population;
   n.Workforces.Sailors = (n.MerchantShips * 200 + n.LightShips * 400 + n.MediumShips * 900 + n.HeavyShips * 1600) / n.Population;
 
     if (1 - n.Workforces.PopulationInMilitary - n.Workforces.Townsfolk - n.Workforces.Sailors - n.Workforces.Merchants - n.Workforces.Intellectuals - n.Workforces.Bureaucrats - n.Workforces.Clergy - n.Workforces.Burgousie - n.Workforces.Aristocracy - n.Workforces.Labourers - n.Workforces.Slaves < n.MaxPopInAgriculture) {
