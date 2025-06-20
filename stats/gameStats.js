@@ -55,7 +55,7 @@ class Opinion {
 
   static UndesiredImage = "https://static.wikia.nocookie.net/spore/images/7/73/Hostile.png/";
   static SkepticalImage = "https://static.wikia.nocookie.net/spore/images/1/19/Annoyed.png/";
-  static NeutralImage = "https://static.wikia.nocookie.net/spore/images/4/46/Curious_Neutral.png";
+  static NeutralImage = "https://s3.getstickerpack.com/storage/uploads/sticker-pack/emoticons-cooee/sticker_22.webp?7f8d87115eaaf992bd4a839badf97c3d&d=200x200";
   static FondImage = "https://static.wikia.nocookie.net/spore/images/b/b8/Friend.png";
   static ObsessedImage = "https://static.wikia.nocookie.net/spore/images/a/ae/Ally.png";
 }
