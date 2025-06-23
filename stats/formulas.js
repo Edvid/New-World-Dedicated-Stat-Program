@@ -500,14 +500,14 @@ static evaluateNation(nationName) {
     LightInfantry: 0.6 * n.MeleeQualityIC,
     HeavyInfantry: 0.95 * n.MeleeQualityIC,
     EliteInfantry: 1.1 * n.MeleeQualityIC,
-    Archers: 0.5 * n.RangedQualityIC,
-    Crossbowmen: 0.75 * n.RangedQualityIC,
-    Musketeers: 0.85 * n.FirearmQualityIC,
-    MusketMilitia: 0.75 * n.FirearmQualityIC,
-    Riflemen: 1.5 * n.FirearmQualityIC,
-    LightCavalry: 1.2 * n.CavalryQualityIC,
-    HeavyCavalry: 1.5 * n.CavalryQualityIC,
-    EliteCavalry: 1.6 * n.CavalryQualityIC
+    Archers: 0.6 * n.RangedQualityIC,
+    Crossbowmen: 0.8 * n.RangedQualityIC,
+    Musketeers: 0.95 * n.FirearmQualityIC,
+    MusketMilitia: 0.9 * n.FirearmQualityIC,
+    Riflemen: 2 * n.FirearmQualityIC,
+    LightCavalry: 1.4 * n.CavalryQualityIC,
+    HeavyCavalry: 1.8 * n.CavalryQualityIC,
+    EliteCavalry: 2.2 * n.CavalryQualityIC
   }
   n.UnitsArmamentsDemandsAll = {
     Levies: 0.2 * n.IrregularQualityIC,
@@ -515,22 +515,22 @@ static evaluateNation(nationName) {
     LightInfantry: 0.6 * n.MeleeQualityIC,
     HeavyInfantry: 0.95 * n.MeleeQualityIC,
     EliteInfantry: 1.1 * n.MeleeQualityIC,
-    Archers: 0.5 * n.RangedQualityIC,
-    Crossbowmen: 0.75 * n.RangedQualityIC,
-    HandCannoneers: 0.75 * n.FirearmQualityIC,
-    Musketeers: 0.85 * n.FirearmQualityIC,
-    MusketMilitia: 0.75 * n.FirearmQualityIC,
-    Riflemen: 1.5 * n.FirearmQualityIC,
-    LightCavalry: 1.2 * n.CavalryQualityIC,
-    HeavyCavalry: 1.5 * n.CavalryQualityIC,
-    EliteCavalry: 1.6 * n.CavalryQualityIC
+    Archers: 0.6 * n.RangedQualityIC,
+    Crossbowmen: 0.8 * n.RangedQualityIC,
+    HandCannoneers: 0.85 * n.FirearmQualityIC,
+    Musketeers: 0.95 * n.FirearmQualityIC,
+    MusketMilitia: 0.9 * n.FirearmQualityIC,
+    Riflemen: 2 * n.FirearmQualityIC,
+    LightCavalry: 1.4 * n.CavalryQualityIC,
+    HeavyCavalry: 1.8 * n.CavalryQualityIC,
+    EliteCavalry: 2.2 * n.CavalryQualityIC
   }
 
   n.ArmyBasicArmamentsDemand = 0;
   for (const UnitIndex in n.UnitsArmamentsDemandsAll) {
     const Unit = UnitIndex;
     const Cost = n.UnitsArmamentsDemandsAll[Unit];
-    n.ArmyBasicArmamentsDemand += n[Unit] / 1000 * Cost;
+    n.ArmyBasicArmamentsDemand += n[Unit] / 1000 * Cost * 1.5;
   }
 
   //n.ArmyBasicArmamentsDemand = ((n.Levies * 0.15 + n.Militia * 0.25) * n.IrregularQualityIC + (n.LightInfantry * 0.5 + n.HeavyInfantry * 0.85 + n.EliteInfantry * 1) * n.MeleeQualityIC + (n.Archers * 0.5 + n.Crossbowmen * 0.7) * n.RangedQualityIC + (n.HandCannoneers * 0.75 + n.Musketeers * 0.8 + n.MusketMilitia * 0.7 + n.Riflemen * 1.25) * n.FirearmQualityIC + (n.LightCavalry * 1 + n.HeavyCavalry * 1.25 + n.EliteCavalry * 1.5) * n.CavalryQualityIC) / 1000;
