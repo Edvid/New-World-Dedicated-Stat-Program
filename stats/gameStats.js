@@ -600,7 +600,7 @@ class Nation {
     this.Food = 200.00;
     this.ResearchPoints = 5;
     this.PublicDebtLength = 0;
-    this.CulturalPower = 6.00;
+    this.CulturalPower = 1.50;
     /* #endregion */
 
     /* #region  Most Stats */
@@ -610,14 +610,14 @@ class Nation {
     this.Health = 1.00;
     this.Alcoholism = 0.00;
     this.EducationEfficiency = 2;
-      this.BureaucratsWages = 3;
-    this.AdministrativeEfficiency = 27.5;
-      this.AdministrationSize = 0.5;
+    this.BureaucratsWages = 3;
+    this.AdministrativeEfficiency = 25.0;
+    this.AdministrationSize = 0.5;
     this.Propaganda = 0;
     this.SocialSpending = 0.25;
     this.AtWar = false;
-      this.Nationalism = 0;
-      this.ReligiousFervor = 1;
+    this.Nationalism = 0;
+    this.ReligiousFervor = 1;
 
     this.AristocracyLoyalty = 0.50; //Show in percent
     this.ClergyLoyalty = 0.50; //Show in percent
@@ -627,27 +627,27 @@ class Nation {
     this.IntellectualsLoyalty = 0.50; //Show in percent
     this.WorkersLoyalty = 0.50; //Show in percent
 
-      this.AristocracyTax = 0.1; //Show in percent
-      this.ClergyTax = 0.1; //Show in percent
-      this.BurgousieTax = 0.1; //Show in percent
-      this.UrbanTax = 0.1; //Show in percent
-      this.BureaucratsTax = 0.1; //Show in percent
-      this.IntellectualsTax = 0.1; //Show in percent
-      this.MilitaryTax = 0.1; //Show in percent
-      this.WorkersTax = 0.1; //Show in percent
+      this.AristocracyTax = 0.125; //Show in percent
+      this.ClergyTax = 0.125; //Show in percent
+      this.BurgousieTax = 0.125; //Show in percent
+      this.UrbanTax = 0.125; //Show in percent
+      this.BureaucratsTax = 0.125; //Show in percent
+      this.IntellectualsTax = 0.125; //Show in percent
+      this.MilitaryTax = 0.125; //Show in percent
+      this.WorkersTax = 0.125; //Show in percent
 
-      this.ExternalTariffs = 0.1; //Show in percent
-    this.InternalTariffs = 0.1; //Show in percent
+      this.ExternalTariffs = 0.125; //Show in percent
+    this.InternalTariffs = 0.125; //Show in percent
 
-    this.ExpectedSlavesSol = 0.02;
-    this.ExpectedLabourersSol = 0.25;
-      this.ExpectedSerfsSol = 0.25;
-      this.ExpectedUnemployedSol = 0.05;
+    this.ExpectedSlavesSol = 0.01;
+    this.ExpectedLabourersSol = 0.2;
+    this.ExpectedSerfsSol = 0.25;
+    this.ExpectedUnemployedSol = 0.02;
     this.ExpectedFarmersSol = 0.5;
-    this.ExpectedTownsfolkSol = 2.5;
-    this.ExpectedClergySol = 6;
-    this.ExpectedBureaucratsSol = 1.5;
-    this.ExpectedMerchantsSol = 1;
+    this.ExpectedTownsfolkSol = 2;
+    this.ExpectedClergySol = 10;
+    this.ExpectedBureaucratsSol = 2.25;
+    this.ExpectedMerchantsSol = 0.5;
     this.ExpectedIntellectualsSol = 1.5;
     this.ExpectedSailorsSol = 0.75;
     this.ExpectedSoldiersSol = 1;
@@ -943,14 +943,14 @@ class Nation {
       HorseCollar: true,
       Explosives: true,
       Firelance: true,
-      Cranes: true,
-      PromissoryNotes: true,
-      Bombards: true,
-      HandCannons: true,
-      PlateArmour: true,
-      SappersAndEngineers: true,
-      Workshops: true,
-      StandardizedPikes: true,
+      Cranes: false,
+      PromissoryNotes: false,
+      Bombards: false,
+      HandCannons: false,
+      PlateArmour: false,
+      SappersAndEngineers: false,
+      Workshops: false,
+      StandardizedPikes: false,
       Galleons: false,
       PrintingPress: false,
       Muskets: false,
@@ -1095,7 +1095,7 @@ class Nation {
       Feudalism: true,
       Universities: true,
       NobleDuty: true,
-      Courthouses: true,
+      Courthouses: false,
       RenaissanceThought: false,
       EarlyModernAdministration: false,
       NationalSovereignity: false,

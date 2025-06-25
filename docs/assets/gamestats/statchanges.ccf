@@ -1,2 +1,22 @@
 
 !suppress 1
+<... > Nations
++> TestNation
+> TestNation
+= "IMGLINK" Flag
+> ReligionGroups
+=0 pagan
++> Catholic
+=100 Catholic
+<
+> CultureGroups
++> English
+=100 English
+<
+= "English" cultrep
+= "Catholic" relrep
+=1500 Climates.Moderate
+=1500 Climates.Medditereanian
+=1500 Climates.Arid
+=1500 Climates.Steppe
+=1500 Climates.Mountainous
