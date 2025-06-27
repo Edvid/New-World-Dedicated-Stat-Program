@@ -412,9 +412,11 @@ static evaluateNation(nationName) {
     n.Climates.CoastalDesert.Pixels * 0.2
   ) - n.ForestsCutDown, 0);
 
+    n.MaxForestry = n.ForestsLeft / 2000 * (1 + n.Reforestation);
+
     n.Wood = n.Forestry * 10;
-    if (n.ForestsLeft < n.Forestry * 750) {
-        n.Wood = n.Wood * (n.Forestry * 750 / n.ForestsLeft);
+    if (n.MaxForestry < n.Forestry) {
+        n.Wood = MaxForestry * 10;
         if (n.ForestsLeft == 0) {
             n.Wood = 0;
         }

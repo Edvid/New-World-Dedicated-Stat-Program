@@ -974,6 +974,7 @@ let StatTypes = {
         "ResearchPointGain",
         "CulturalAdvance",
         "CulturalPowerGain",
+        "MaxForestry",
         "MaxCoal",
         "MaxSulphur",
         "MaxIron",

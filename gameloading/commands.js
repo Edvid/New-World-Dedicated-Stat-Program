@@ -13,7 +13,7 @@ function syncNation(nationName) {
     /* #endregion */
 
     // deforestation from forestry
-    gameStats.Nations[nationName].ForestsCutDown += (gameStats.Nations[nationName].Forestry - gameStats.Nations[nationName].Reforestation) * 750 / gameStats.TimeDivide;
+    // gameStats.Nations[nationName].ForestsCutDown += (gameStats.Nations[nationName].Forestry - gameStats.Nations[nationName].Reforestation) * 750 / gameStats.TimeDivide;
 
     // SoL rise/fall
     for (const EstateIndex in gameStats.Estates) {

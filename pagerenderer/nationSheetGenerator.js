@@ -425,7 +425,7 @@ let TableLayouts = {
         ["CulturalAdvancements.Nationalism", "CulturalAdvancements.Conscription", "CulturalAdvancements.Industrialisation"]
     ],
     "Resources": [
-        ["MiningEfficiency", "BaseIronHarvest", "BaseCoalHarvest", "BaseSulphurHarvest", "Forestry", "Reforestation", "ForestsLeft"],
+        ["MiningEfficiency", "BaseIronHarvest", "BaseCoalHarvest", "BaseSulphurHarvest", "Forestry", "Reforestation", "MaxForestry"],
         ["MaxCoal", "MaxSulphur", "MaxIron", "MaxCopper", "MaxGold", "MaxFur", "MaxDiamond", "MaxSilver", "MaxIvory"],
         ["Coal", "Sulphur", "Iron", "Copper", "Gold", "Fur", "Diamond", "Silver", "Ivory", "Wood"],
         ["EffectiveCoal", "EffectiveSulphur", "EffectiveIron", "EffectiveCopper", "EffectiveGold", "EffectiveFur", "EffectiveDiamond", "EffectiveSilver", "EffectiveIvory", "EffectiveWood"],
