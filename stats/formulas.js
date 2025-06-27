@@ -839,6 +839,7 @@ static evaluateNation(nationName) {
   n.Food = max(0, n.Food);
   n.FoodConsumption = n.Population / 1000 + n.Production * (n.ProductionSectors.AlcoholSector / n.TotalSupply);
   n.FoodGain = n.DailyFood + n.Food - n.FoodConsumption;
+  n.FoodPopulationBoost = n.FoodGain / (n.Population / 1000) / 10;
   if (n.FoodGain > 0 && n.FoodRationing == false) {
     n.FoodConsumption += min(n.FoodGain, max(0, n.FoodDemand - n.Population / 1000));
     n.FoodGain = n.FoodGain - min(n.FoodGain, max(0, n.FoodDemand - n.Population / 1000));
@@ -848,9 +849,6 @@ static evaluateNation(nationName) {
     return max(100, 1000 * n.Population / 10000000) * (n.StockingCapabilities * (n.Technologies.CannedFood ? 2 : 1));
   })();
   n.FutureFood = min(n.MaxFoodStock, n.FoodGain);
-  n.FoodPopulationBoost = (function () {
-        return n.FutureFood > n.MaxFoodStock ? (n.FutureFood * 100) / n.Population : 0;
-  })();
   n.SurplusFood = (function () {
     return n.FoodGain > n.MaxFoodStock ? n.FoodGain - n.MaxFoodStock : 0;
   })();
