@@ -731,8 +731,6 @@
 = "8ee6ff" cultures.Jewish.Color
 = "3574e0" cultures.GrecoBactrian.Color
 
-= "3574e0" nations.GrecoBactria.Color
-= "3574e0" cultures.GrecoBactrian.Color
 <... > Nations
 !suppress 99999
 
@@ -922,9 +920,9 @@
 +> CultureGroups
 > CultureGroups
 +> Iberian
-= 99.72882336457891 Iberian.Points
+= 99.72388657260403 Iberian.Points
 +> French
-= 0.2711766354210921 French.Points
+= 0.2761134273959743 French.Points
 < <
 > RegnumThessalonicae
 +> CultureGroups
@@ -1303,9 +1301,9 @@
 = 5015 KingdomOfGeorgia.Mountainous
 = 816 KingdomOfGeorgia.Moderate
 = 1638 KingdomOfGeorgia.Arid
-= 4979 CrownOfAragon.Medditereanian
+= 4798 CrownOfAragon.Medditereanian
 = 65 CrownOfAragon.Moderate
-= 2438 CrownOfAragon.Mountainous
+= 2623 CrownOfAragon.Mountainous
 = 1579 RegnumThessalonicae.Steppe
 = 2625 RegnumThessalonicae.Mountainous
 = 66 RegnumThessalonicae.Moderate
@@ -1381,7 +1379,7 @@
 = 38999 SerbianEmpire.DevelopmentPixelCount
 = 32701 RomanumImperium.DevelopmentPixelCount
 = 25977 KingdomOfGeorgia.DevelopmentPixelCount
-= 48948 CrownOfAragon.DevelopmentPixelCount
+= 49098 CrownOfAragon.DevelopmentPixelCount
 = 39292 RegnumThessalonicae.DevelopmentPixelCount
 = 39690 KingdomOfAphrodisia.DevelopmentPixelCount
 = 33491 DivineQiziqPrincipality.DevelopmentPixelCount
@@ -1422,7 +1420,7 @@
 = 704676 SerbianEmpire.coastalPopulation
 = 586808 RomanumImperium.coastalPopulation
 = 297612 KingdomOfGeorgia.coastalPopulation
-= 470352 CrownOfAragon.coastalPopulation
+= 526332 CrownOfAragon.coastalPopulation
 = 494388 RegnumThessalonicae.coastalPopulation
 = 909090 KingdomOfAphrodisia.coastalPopulation
 = 621672 DivineQiziqPrincipality.coastalPopulation
@@ -1463,7 +1461,7 @@
 = 1.90 VenetianRepublic.MaxIron
 = 0.40 SerbianEmpire.MaxIron
 = 0.10 RomanumImperium.MaxIron
-= 0.60 CrownOfAragon.MaxIron
+= 0.55 CrownOfAragon.MaxIron
 = 0.30 KingdomOfGeorgia.MaxIron
 = 1.95 XanmaiMandate.MaxIron
 = 0.30 ExarchateOfAfrica.MaxIron
@@ -1500,7 +1498,7 @@
 = 1.80 SerbianEmpire.MaxCoal
 = 0.40 KingdomOfRomania.MaxCoal
 = 0.95 RegnumThessalonicae.MaxCoal
-= 1.75 CrownOfAragon.MaxCoal
+= 2.00 CrownOfAragon.MaxCoal
 = 0.10 TheOgalalaRiverLakotaSiouxChiefdom.MaxCoal
 = 0.80 DivineQiziqPrincipality.MaxCoal
 = 0.40 XanmaiMandate.MaxCoal
@@ -1513,7 +1511,7 @@
 = 1.95 RegnumThessalonicae.MaxCopper
 = 0.75 FritsanEmpire.MaxSilver
 = 1.00 KingdomOfSweden.MaxSilver
-= 0.55 CrownOfAragon.MaxSilver
+= 0.75 CrownOfAragon.MaxSilver
 = 2.00 KyumatsuDynasty.MaxSilver
 
 <... > TradeZones
@@ -1627,19 +1625,19 @@
 = 2124509 AngloCrownConfederacy.Population
 = 1651679 GrandDuchyOfHolland.Population
 = 1859971 KyivanRus.Population
-= 1289760 CumanKipchakConfederation.Population
+= 1285668 CumanKipchakConfederation.Population
 = 2125354 TheKingdomOfFrance.Population
 = 1324801 HolyRomanDominionOfTheDanube.Population
 = 578023 Khamag.Population
 = 2054982 KingdomOfHungary.Population
 = 1504425 KingdomOfRomania.Population
 = 2026730 GrandDucatAquitania.Population
-= 2114195 TheOgalalaRiverLakotaSiouxChiefdom.Population
+= 2141041 TheOgalalaRiverLakotaSiouxChiefdom.Population
 = 1373171 VenetianRepublic.Population
 = 1532908 SerbianEmpire.Population
 = 1350547 RomanumImperium.Population
 = 944334 KingdomOfGeorgia.Population
-= 1460239 CrownOfAragon.Population
+= 1435846 CrownOfAragon.Population
 = 1410270 RegnumThessalonicae.Population
 = 1359791 KingdomOfAphrodisia.Population
 = 1285940 DivineQiziqPrincipality.Population
@@ -1656,7 +1654,7 @@
 = 1222227 Sangkhom.Population
 = 1269580 Garmoni.Population
 = 851143 Srivijaya.Population
-= 1704895 Lutruwita.Population
+= 1687824 Lutruwita.Population
 
 <... > Nations
 = 1551137 FritsanEmpire.Future Population
@@ -1668,19 +1666,19 @@
 = 2370330 AngloCrownConfederacy.Future Population
 = 1845655 GrandDuchyOfHolland.Future Population
 = 2108369 KyivanRus.Future Population
-= 1424581 CumanKipchakConfederation.Future Population
+= 1414644 CumanKipchakConfederation.Future Population
 = 2392134 TheKingdomOfFrance.Future Population
 = 1486246 HolyRomanDominionOfTheDanube.Future Population
 = 651225 Khamag.Future Population
 = 2303197 KingdomOfHungary.Future Population
 = 1706252 KingdomOfRomania.Future Population
 = 2270985 GrandDucatAquitania.Future Population
-= 2378660 TheOgalalaRiverLakotaSiouxChiefdom.Future Population
+= 2434188 TheOgalalaRiverLakotaSiouxChiefdom.Future Population
 = 1552323 VenetianRepublic.Future Population
 = 1714873 SerbianEmpire.Future Population
 = 1501283 RomanumImperium.Future Population
 = 1039060 KingdomOfGeorgia.Future Population
-= 1627957 CrownOfAragon.Future Population
+= 1602891 CrownOfAragon.Future Population
 = 1584677 RegnumThessalonicae.Future Population
 = 1522379 KingdomOfAphrodisia.Future Population
 = 1435122 DivineQiziqPrincipality.Future Population
@@ -1697,7 +1695,7 @@
 = 1380907 Sangkhom.Future Population
 = 1436415 Garmoni.Future Population
 = 962803 Srivijaya.Future Population
-= 1879347 Lutruwita.Future Population
+= 1846102 Lutruwita.Future Population
 
 <... > Nations
 = 1129.975 FritsanEmpire.Fertility
@@ -1721,7 +1719,7 @@
 = 3277.8999999999996 SerbianEmpire.Fertility
 = 3532.375 RomanumImperium.Fertility
 = 1945.975 KingdomOfGeorgia.Fertility
-= 3369.25 CrownOfAragon.Fertility
+= 3420.0999999999995 CrownOfAragon.Fertility
 = 4607.325 RegnumThessalonicae.Fertility
 = 3534.9249999999997 KingdomOfAphrodisia.Fertility
 = 3693.6250000000005 DivineQiziqPrincipality.Fertility
