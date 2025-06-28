@@ -102,7 +102,8 @@ static evaluateNation(nationName) {
     let socialGroupRepresentedAtGovernmentLevelPercent;
     for (const OpinionatedSocialBehaviourGroupName in socialBehaviourGroup) {
     
-      const OpinionatedSocialBehaviourGroup = socialBehaviourWorldwideGroups[OpinionatedSocialBehaviourGroupName];
+        const OpinionatedSocialBehaviourGroup = socialBehaviourWorldwideGroups[OpinionatedSocialBehaviourGroupName];
+        
       const Points = socialBehaviourGroup[OpinionatedSocialBehaviourGroupName].Points;
       //if the social behaviour is listed, but no one is actually here. Skip
       if(Points == 0) continue;
@@ -134,7 +135,7 @@ static evaluateNation(nationName) {
         }else {
           socialBehaviourGroupDisunityFactor *= 1 / 53;
         }
-        SocialBehaviourDisunity += socialBehaviourGroupDisunityFactor;
+          SocialBehaviourDisunity += socialBehaviourGroupDisunityFactor;
       }
     }
     return {
@@ -416,7 +417,7 @@ static evaluateNation(nationName) {
 
     n.Wood = n.Forestry * 10;
     if (n.MaxForestry < n.Forestry) {
-        n.Wood = MaxForestry * 10;
+        n.Wood = n.MaxForestry * 10;
         if (n.ForestsLeft == 0) {
             n.Wood = 0;
         }
