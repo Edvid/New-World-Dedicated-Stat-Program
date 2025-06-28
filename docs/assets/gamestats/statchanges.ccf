@@ -272,6 +272,29 @@
 <
 = "Sioux" cultrep
 = "Pagan" relrep
+=7.5 isolation
+="false" technologies.Iron Working
+="false" technologies.Wheel
+="false" technologies.Paper
+="false" technologies.Gunpowder
+="false" technologies.Vertical Loom
+="false" technologies.Saddle And Stirrup
+="false" technologies.Horse Collar
+="false" technologies.Explosives
+="false" technologies.Firelance
+!suppress 11
+=0 ResearchPoints
+=0.1 ExpectedSlavesSol
+=0.2 ExpectedSerfsSol
+=0.4 ExpectedFarmersSol
+=1.25 ExpectedTownsfolkSol
+=8 ExpectedClergySol
+=1.75 ExpectedBureaucratsSol
+=0.1 ExpectedMerchantsSol
+=1 ExpectedIntellectualsSol
+=12.5 ExpectedAristocracySol
+=5 ExpectedBurgousieSol
+=0 SocialSpending
 
 <... > Nations
 +> KingdomOfHungary
@@ -355,6 +378,28 @@
 <
 = "Aboriginal" cultrep
 = "Pagan" relrep
+=7.5 isolation
+="false" technologies.Iron Working
+="false" technologies.Wheel
+="false" technologies.Paper
+="false" technologies.Gunpowder
+="false" technologies.Vertical Loom
+="false" technologies.Saddle And Stirrup
+="false" technologies.Horse Collar
+="false" technologies.Explosives
+="false" technologies.Firelance
+!suppress 11
+=0 ResearchPoints
+=0.1 Expected Labourers Sol
+=0.2 Expected Serfs Sol
+=0.4 Expected Farmers Sol
+=1.4 Expected Townsfolk Sol
+=9 Expected Clergy Sol
+=2 Expected Bureaucrats Sol
+=0.25 Expected Merchants Sol
+=1.25 Expected Intellectuals Sol
+=14 Expected Aristocracy Sol
+=6 Expected Burgousie Sol
 
 <... > Cultures
 +> Jewish
