@@ -856,7 +856,6 @@ let StatTypes = {
         "TaxRevenue",
         "GovernmentDominatedBy",
         "GovernmentEffects",
-        "Alcoholism",
         "TaxEfficiency",
         "AdministrativeTech",
         "AdministrativePower",
@@ -1120,7 +1119,8 @@ let StatTypes = {
         "BasicArmamentsStockpiled",
         "HeavyArmamentsStockpiled",
         "ReformPower",
-        "ForestsLeft"
+        "ForestsLeft",
+        "Alcoholism",
     ],
     WarStats: [
         "AtWar",
