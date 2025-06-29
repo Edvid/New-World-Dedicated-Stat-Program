@@ -132,7 +132,7 @@ class Nation {
   TradeImprovements;
   PossiblePublicDebt;
   EffectiveDebt;
-  DailyBudget;
+  BudgetPerTurn;
   Budget;
   Inflation;
   Spies;
@@ -499,7 +499,7 @@ class Nation {
   AgricultureTechnology;
   FarmingEfficiency;
   AgricultureSpending;
-  DailyFood;
+  FoodPerTurn;
   FoodConsumption;
   FoodGain;
   MaxFoodStock;

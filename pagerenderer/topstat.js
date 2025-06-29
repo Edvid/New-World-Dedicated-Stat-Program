@@ -1,6 +1,6 @@
 const TopStats = [
   { name: "Population", displayName: "Population" },
-  { name: "DailyBudget", displayName: "Income" },
+  { name: "BudgetPerTurn", displayName: "Income" },
   { name: "Budget", displayName: "Budget" },
   { name: "LiteracyPercent", displayName: "Literacy" },
   { name: "AverageSol", displayName: "Standard of Living" },
@@ -13,7 +13,7 @@ const TopStats = [
   { name: "AdministrativeEfficiency", displayName: "Administrative Efficiency" },
   { name: "OverallNumbers", displayName: "Army" },
   { name: "NavalPower", displayName: "Navy" },
-  { name: "DailyFood", displayName: "Daily Food" },
+  { name: "FoodPerTurn", displayName: "Daily Food" },
   { name: "Size", displayName: "Size" }
 ];
 

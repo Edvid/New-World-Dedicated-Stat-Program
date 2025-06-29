@@ -266,7 +266,7 @@ let TableLayouts = {
     "Budget Stats": [
         ["TradeEfficiency", "LocalTrade", "TradePower"],
         ["TradeImprovements", "ProductionEfficiency", "Production"],
-        ["Inflation", "DailyBudget", "Budget"],
+        ["Inflation", "BudgetPerTurn", "Budget"],
         ["BudgetIncoming", "BudgetOutgoing", "Balance"],
         ["InternalTariffs", "ExternalTariffs", "TariffEfficiency"],
         ["Gdp", "GdpPerKCapita", "DebtToGdpRatio"]
@@ -327,7 +327,7 @@ let TableLayouts = {
     ],
     "Agriculture": [
         ["ArableLand", "AgricultureSubsidies", "AgricultureInfrastructure", "AgricultureAdvancements", "AgricultureTechnology", "FarmingEfficiency", "AgricultureSpending"],
-        ["PopInAgriculture", "DailyFood", "FoodConsumption", "FoodGain", "StockingCapabilities", "MaxFoodStock", "SellingCapability"],
+        ["PopInAgriculture", "FoodPerTurn", "FoodConsumption", "FoodGain", "StockingCapabilities", "MaxFoodStock", "SellingCapability"],
         ["Food", "FutureFood", "SurplusFood", "FoodSold", "FoodLost", "FoodTradeProfit", "FoodPopulationBoost"],
         ["FoodRationing"]
     ],

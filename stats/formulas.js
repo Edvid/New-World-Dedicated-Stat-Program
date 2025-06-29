@@ -384,7 +384,7 @@ static evaluateNation(nationName) {
       })();
   }
 
-  n.DailyFood = (n.Workforces.Farmers + n.Workforces.Serfs) * n.Population / 1000 * n.FarmingEfficiency + n.FoodIncoming - n.FoodOutgoing;
+    n.FoodPerTurn = (n.Workforces.Farmers + n.Workforces.Serfs) * n.Population / 1000 * n.FarmingEfficiency + n.FoodIncoming - n.FoodOutgoing;
 
     n.EffectiveIron += n.BaseIronHarvest * n.MiningEfficiency;
     n.EffectiveCoal += n.BaseCoalHarvest * n.MiningEfficiency;
@@ -561,7 +561,7 @@ static evaluateNation(nationName) {
   n.SulphurShortage = min(1, max(0, 1 - (n.EffectiveSulphur / (n.SulphurDemand * 0.9))));
   n.CoalShortage = min(1, max(0, 1 - (n.EffectiveCoal / (n.CoalDemand * 0.9))));
   n.WoodShortage = min(1, max(0, 1 - (n.EffectiveWood / (n.WoodDemand * 0.9))));
-  n.FoodShortage = min(1, max(0, 1 - ((n.Food + n.DailyFood) / n.FoodDemand)));
+  n.FoodShortage = min(1, max(0, 1 - ((n.Food + n.FoodPerTurn) / n.FoodDemand)));
   n.NaturalFabricsShortage = min(1, max(0, 1 - (n.NaturalFabrics / (n.NaturalFabricsDemand * 0.9))));
   n.LuxuryNaturalFabricsShortage = min(1, max(0, 1 - (n.LuxuryNaturalFabrics / (n.LuxuryNaturalFabricsDemand * 0.9))));
   n.ValuableMaterialsShortage = min(1, max(0, 1 - (n.ValuableMaterials / (n.ValuableMaterialsDemand * 0.9))));
@@ -668,7 +668,7 @@ static evaluateNation(nationName) {
     n.LuxuryConsumablesValue = (n.EffectiveTea / n.LuxuryConsumables) * n.TeaValue + (n.EffectiveCoffee / n.LuxuryConsumables) * n.CoffeeValue + (n.EffectiveTobacco / n.LuxuryConsumables) * n.TobaccoValue + (n.EffectiveExoticFruit / n.LuxuryConsumables) * n.ExoticFruitValue + (n.EffectiveCocoa / n.LuxuryConsumables) * n.CocoaValue;
     n.FoodAdditionsValue = (n.EffectiveSugar / n.FoodAdditions) * n.SugarValue + (n.EffectiveSpice / n.FoodAdditions) * n.SpiceValue;
 
-    n.FoodSupply = ((n.FoodRationing ? min(n.Food + n.DailyFood, n.Population / 1000) : n.Food + n.DailyFood) * n.FoodAdditionsFoodBoost)
+    n.FoodSupply = ((n.FoodRationing ? min(n.Food + n.FoodPerTurn, n.Population / 1000) : n.Food + n.FoodPerTurn) * n.FoodAdditionsFoodBoost)
     n.FoodValue = n.FoodDemand / n.FoodSupply;
     n.FoodValue = n.FoodDemand / (isNaN(n.FoodSupply) ? 1 : (n.FoodSupply == 0 ? 1 : (n.FoodSupply + Math.sqrt(n.FoodSupply)))) * 0.5;
 
@@ -841,7 +841,7 @@ static evaluateNation(nationName) {
 
   n.Food = max(0, n.Food);
   n.FoodConsumption = n.Population / 1000 + n.Production * (n.ProductionSectors.AlcoholSector / n.TotalSupply);
-  n.FoodGain = n.DailyFood + n.Food - n.FoodConsumption;
+  n.FoodGain = n.FoodPerTurn + n.Food - n.FoodConsumption;
   n.FoodPopulationBoost = n.FoodGain / (n.Population / 1000) / 10;
   if (n.FoodGain > 0 && n.FoodRationing == false) {
     n.FoodConsumption += min(n.FoodGain, max(0, n.FoodDemand - n.Population / 1000));
@@ -895,7 +895,7 @@ static evaluateNation(nationName) {
   n.FoodSold = min(n.SellingCapability, n.SurplusFood);
   n.FoodLost = n.SurplusFood - n.FoodSold;
   n.FoodTradeProfit = n.FoodSold * n.FoodValue;
-  n.AgricultureRevenue = (n.DailyFood - n.FoodLost) * n.FoodValue;
+  n.AgricultureRevenue = (n.FoodPerTurn - n.FoodLost) * n.FoodValue;
 
   n.TradeProtection = (n.LightShips * 2 + n.MediumShips * 3.5 + n.HeavyShips * 2) / max(n.MerchantShips, 1);
   n.MerchantShipsFullfilment = min(n.MerchantShips / (n.ResourceTrade + pseudoTradePower / 2 + (n.LocalTrade * n.Population / 2000000 * (1 + n.AverageDevelopment) + n.FoodTradeProfit) / 4), 1);
@@ -1123,7 +1123,7 @@ static evaluateNation(nationName) {
     n.BurgousieWage = (n.TownsfolkWageToBurgousie + n.MerchantsWageToBurggousie) / (n.Population * n.Workforces.Burgousie / 1000) + (n.Reforms.MixedResourceOwnership == 1 ? n.SlavesAndLabourersWageToOwner / (n.Population * n.Workforces.Aristocracy / 1000) : 0) + (n.Reforms.BurgousieResourceOwnership == 1 ? n.SlavesAndLabourersWageToOwner / (n.Population * n.Workforces.Aristocracy / 1000) : 0) + (n.Reforms.MixedLandOwnership == 1 ? n.SerfsAndFarmersWageToOnwers / (n.Population * n.Workforces.Aristocracy / 1000) : 0) + (n.Reforms.PrivateLandOwnership == 1 ? n.SerfsAndFarmersWageToOnwers / (n.Population * n.Workforces.Aristocracy / 1000) : 0);
 
   // GDP
-  n.Gdp = n.ResourceBudgetBoost + n.DailyFood * n.FoodValue + n.ProductionRevenue + n.TradePower;
+  n.Gdp = n.ResourceBudgetBoost + n.FoodPerTurn * n.FoodValue + n.ProductionRevenue + n.TradePower;
   n.GdpPerKCapita = n.Gdp / n.Population * 1000;
 
   n.InterestRate = 0.05 + n.PublicDebtLength * 0.02 / gameStats.TimeDivide;
@@ -1446,8 +1446,8 @@ static evaluateNation(nationName) {
 
   n.OverallIncome = n.PassiveInvestmentIncome + n.TariffsRevenue + n.TaxRevenue + n.BudgetIncoming + n.StateProductionRevenue + n.StateAgricultureRevenue + n.StateResourceRevenue;
     n.OverallSpending = n.ArmyUpkeep + n.NavyUpkeep + n.BuildingsUpkeep + n.EducationUpkeep + n.HealthUpkeep + n.AgricultureSpending + n.SocialSpendingUpkeep + n.SpyUpkeep + n.PopulationControlUpkeep + n.PropagandaUpkeep + n.AdministrativeUpkeep + n.StateWorkersUpkeep + n.ResearchUpkeep + n.TroopRecruitmentCost + n.ConstructionCost + n.BudgetOutgoing;
-    n.DailyBudget = n.OverallIncome - n.OverallSpending;
-    n.FutureBudget = n.Budget + n.DailyBudget;
+    n.BudgetPerTurn = n.OverallIncome - n.OverallSpending;
+    n.FutureBudget = n.Budget + n.BudgetPerTurn;
 
 
   n.EliteUnitsCap = ((n.OverallNumbers - n.Militia - n.Levies - n.EliteCavalry - n.EliteInfantry) * 0.025);
