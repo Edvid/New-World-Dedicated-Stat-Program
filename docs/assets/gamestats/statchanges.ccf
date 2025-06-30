@@ -720,6 +720,33 @@
 = "Japanese" cultrep
 = "Shinto" relrep
 
+<... > Nations
++> KingdomOfPoland
+> KingdomOfPoland
+= "IMGLINK" Flag
+> CultureGroups
++> WestSlav
+=100 WestSlav
+<
+= "WestSlav" cultrep
+= "Pagan" relrep
+
+<... > Nations
++> KingdomOfGermany
+> KingdomOfGermany
+= "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Flag_of_Germany_%281867%E2%80%931918%29.svg/1920px-Flag_of_Germany_%281867%E2%80%931918%29.svg.png" Flag
+> ReligionGroups
+=0 pagan
++> Catholic
+=100 Catholic
+<
+> CultureGroups
++> Germanic
+=100 Germanic
+<
+= "Germanic" cultrep
+= "Catholic" relrep
+
 <...
 = "76437c" nations.FritsanEmpire.Color
 = "cebf33" nations.KingdomOfScotland.Color
@@ -770,6 +797,8 @@
 = "38a8f3" nations.RoyalTaiKingdom.Color
 = "3574e0" cultures.GrecoBactrian.Color
 = "38a8f3" cultures.Tai.Color
+= "2f423a" nations.KingdomOfGermany.Color
+= "ff849b" nations.KingdomOfPoland.Color
 
 <... > Nations
 !suppress 99999
@@ -822,6 +851,16 @@
 +> Russian
 = 100 Russian.Points
 < <
+> KingdomOfGermany
++> CultureGroups
+> CultureGroups
++> Germanic
+= 99.78537126496126 Germanic.Points
++> Scandinavian
+= 0.027842542747620505 Scandinavian.Points
++> WestSlav
+= 0.1867861922911234 WestSlav.Points
+< <
 > AngloCrownConfederacy
 +> CultureGroups
 > CultureGroups
@@ -831,6 +870,16 @@
 = 80.98432842796166 English.Points
 +> French
 = 3.3204208165003273 French.Points
+< <
+> KingdomOfPoland
++> CultureGroups
+> CultureGroups
++> WestSlav
+= 97.98414614940417 WestSlav.Points
++> Germanic
+= 1.9977480204113773 Germanic.Points
++> Ruthenian
+= 0.018105830184454483 Ruthenian.Points
 < <
 > GrandDuchyOfHolland
 +> CultureGroups
@@ -1138,10 +1187,20 @@
 +> Orthodox
 = 100 Orthodox.Points
 < <
+> KingdomOfGermany
+> ReligionGroups
++> Catholic
+= 100 Catholic.Points
+< <
 > AngloCrownConfederacy
 > ReligionGroups
 +> Catholic
 = 100 Catholic.Points
+< <
+> KingdomOfPoland
+> ReligionGroups
++> Pagan
+= 100 Pagan.Points
 < <
 > GrandDuchyOfHolland
 > ReligionGroups
@@ -1331,7 +1390,11 @@
 = 7552 KingdomOfLithuania.Moderate
 = 7449 DuchyOfMoscow.Moderate
 = 51 DuchyOfMoscow.Steppe
+= 7138 KingdomOfGermany.Moderate
+= 10 KingdomOfGermany.Mountainous
 = 7543 AngloCrownConfederacy.Moderate
+= 7221 KingdomOfPoland.Moderate
+= 281 KingdomOfPoland.Mountainous
 = 5859 GrandDuchyOfHolland.Moderate
 = 3244 KyivanRus.Moderate
 = 4271 KyivanRus.Steppe
@@ -1431,7 +1494,9 @@
 = 37100 QaraUlys.DevelopmentPixelCount
 = 40345 KingdomOfLithuania.DevelopmentPixelCount
 = 37053 DuchyOfMoscow.DevelopmentPixelCount
+= 43417 KingdomOfGermany.DevelopmentPixelCount
 = 44324 AngloCrownConfederacy.DevelopmentPixelCount
+= 43547 KingdomOfPoland.DevelopmentPixelCount
 = 44796 GrandDuchyOfHolland.DevelopmentPixelCount
 = 46895 KyivanRus.DevelopmentPixelCount
 = 37780 CumanKipchakConfederation.DevelopmentPixelCount
@@ -1474,7 +1539,9 @@
 = 492340 QaraUlys.coastalPopulation
 = 769415 KingdomOfLithuania.coastalPopulation
 = 608566 DuchyOfMoscow.coastalPopulation
+= 888006 KingdomOfGermany.coastalPopulation
 = 914833 AngloCrownConfederacy.coastalPopulation
+= 635020 KingdomOfPoland.coastalPopulation
 = 713415 GrandDuchyOfHolland.coastalPopulation
 = 533646 KyivanRus.coastalPopulation
 = 440717 CumanKipchakConfederation.coastalPopulation
@@ -1525,6 +1592,8 @@
 = 0.00 KingdomOfScotland.MaxIron
 = 1.35 AngloCrownConfederacy.MaxIron
 = 0.75 DuchyOfMoscow.MaxIron
+= 0.55 KingdomOfGermany.MaxIron
+= 0.70 KingdomOfPoland.MaxIron
 = 1.00 TheKingdomOfFrance.MaxIron
 = 1.95 KyivanRus.MaxIron
 = 2.50 HolyRomanDominionOfTheDanube.MaxIron
@@ -1544,6 +1613,7 @@
 = 1.25 Garmoni.MaxIvory
 = 0.45 Srivijaya.MaxIvory
 = 2.10 AngloCrownConfederacy.MaxSulphur
+= 2.10 KingdomOfPoland.MaxSulphur
 = 2.10 GrandDuchyOfHolland.MaxSulphur
 = 1.95 KingdomOfHungary.MaxSulphur
 = 0.30 VenetianRepublic.MaxSulphur
@@ -1563,8 +1633,10 @@
 = 2.00 KingdomOfScotland.MaxCoal
 = 2.25 DuchyOfMoscow.MaxCoal
 = 1.80 AngloCrownConfederacy.MaxCoal
+= 1.95 KingdomOfGermany.MaxCoal
 = 1.65 GrandDuchyOfHolland.MaxCoal
 = 0.10 TheKingdomOfFrance.MaxCoal
+= 0.20 KingdomOfPoland.MaxCoal
 = 0.85 KyivanRus.MaxCoal
 = 2.05 HolyRomanDominionOfTheDanube.MaxCoal
 = 0.85 KingdomOfHungary.MaxCoal
@@ -1581,6 +1653,7 @@
 = 2.00 TairaShogunate.MaxCoal
 = 0.15 KosalaKingdom.MaxCoal
 = 0.55 Srivijaya.MaxCoal
+= 0.15 KingdomOfGermany.MaxCopper
 = 0.05 HolyRomanDominionOfTheDanube.MaxCopper
 = 1.15 ShowaShogunate.MaxCopper
 = 1.95 RegnumThessalonicae.MaxCopper
@@ -1697,7 +1770,9 @@
 = 1459558 QaraUlys.Population
 = 2085231 KingdomOfLithuania.Population
 = 2089769 DuchyOfMoscow.Population
+= 2017596 KingdomOfGermany.Population
 = 2124509 AngloCrownConfederacy.Population
+= 1930911 KingdomOfPoland.Population
 = 1651679 GrandDuchyOfHolland.Population
 = 1859971 KyivanRus.Population
 = 1285668 CumanKipchakConfederation.Population
@@ -1740,7 +1815,9 @@
 = 1653383 QaraUlys.Future Population
 = 2283617 KingdomOfLithuania.Future Population
 = 2311475 DuchyOfMoscow.Future Population
+= 2258072 KingdomOfGermany.Future Population
 = 2370330 AngloCrownConfederacy.Future Population
+= 2036736 KingdomOfPoland.Future Population
 = 1845655 GrandDuchyOfHolland.Future Population
 = 2108369 KyivanRus.Future Population
 = 1414644 CumanKipchakConfederation.Future Population
@@ -1783,7 +1860,9 @@
 = 2824.5750000000007 QaraUlys.Fertility
 = 1820.975 KingdomOfLithuania.Fertility
 = 3282.9500000000003 DuchyOfMoscow.Fertility
+= 3733.225 KingdomOfGermany.Fertility
 = 3657.975 AngloCrownConfederacy.Fertility
+= 3041.85 KingdomOfPoland.Fertility
 = 2471.775 GrandDuchyOfHolland.Fertility
 = 5865.8 KyivanRus.Fertility
 = 1218.7 CumanKipchakConfederation.Fertility
