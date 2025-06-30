@@ -705,22 +705,6 @@
 = "Buddhism" relrep
 
 <... > Nations
-+> Grishland
-> Grishland
-= "IMGLINK" Flag
-> ReligionGroups
-=0 pagan
-+> Catholic
-=100 Catholic
-<
-> CultureGroups
-+> Germanic
-=100 Germanic
-<
-= "Germanic" cultrep
-= "Catholic" relrep
-
-<... > Nations
 +> ShowaShogunate
 > ShowaShogunate
 = "https://preview.redd.it/mwepla52leq81.png?width=640&crop=smart&auto=webp&s=0900d9206cfccdd8a7a3ce070e659c967a4947aa" Flag
@@ -781,7 +765,6 @@
 = "6da52c" cultures.GrecoRoman.Color
 = "8ee6ff" cultures.Jewish.Color
 = "3574e0" cultures.GrecoBactrian.Color
-= "2f423a" nations.Grishland.Color
 = "c6ba80" nations.ShowaShogunate.Color
 = "3574e0" nations.GrecoBactria.Color
 = "38a8f3" nations.RoyalTaiKingdom.Color
@@ -838,16 +821,6 @@
 > CultureGroups
 +> Russian
 = 100 Russian.Points
-< <
-> Grishland
-+> CultureGroups
-> CultureGroups
-+> Germanic
-= 99.68909516151083 Germanic.Points
-+> Scandinavian
-= 0.026508838192765175 Scandinavian.Points
-+> WestSlav
-= 0.28439600029639805 WestSlav.Points
 < <
 > AngloCrownConfederacy
 +> CultureGroups
@@ -1165,11 +1138,6 @@
 +> Orthodox
 = 100 Orthodox.Points
 < <
-> Grishland
-> ReligionGroups
-+> Catholic
-= 100 Catholic.Points
-< <
 > AngloCrownConfederacy
 > ReligionGroups
 +> Catholic
@@ -1363,8 +1331,6 @@
 = 7552 KingdomOfLithuania.Moderate
 = 7449 DuchyOfMoscow.Moderate
 = 51 DuchyOfMoscow.Steppe
-= 7497 Grishland.Moderate
-= 10 Grishland.Mountainous
 = 7543 AngloCrownConfederacy.Moderate
 = 5859 GrandDuchyOfHolland.Moderate
 = 3244 KyivanRus.Moderate
@@ -1465,7 +1431,6 @@
 = 37100 QaraUlys.DevelopmentPixelCount
 = 40345 KingdomOfLithuania.DevelopmentPixelCount
 = 37053 DuchyOfMoscow.DevelopmentPixelCount
-= 45744 Grishland.DevelopmentPixelCount
 = 44324 AngloCrownConfederacy.DevelopmentPixelCount
 = 44796 GrandDuchyOfHolland.DevelopmentPixelCount
 = 46895 KyivanRus.DevelopmentPixelCount
@@ -1509,7 +1474,6 @@
 = 492340 QaraUlys.coastalPopulation
 = 769415 KingdomOfLithuania.coastalPopulation
 = 608566 DuchyOfMoscow.coastalPopulation
-= 940839 Grishland.coastalPopulation
 = 914833 AngloCrownConfederacy.coastalPopulation
 = 713415 GrandDuchyOfHolland.coastalPopulation
 = 533646 KyivanRus.coastalPopulation
@@ -1561,7 +1525,6 @@
 = 0.00 KingdomOfScotland.MaxIron
 = 1.35 AngloCrownConfederacy.MaxIron
 = 0.75 DuchyOfMoscow.MaxIron
-= 0.55 Grishland.MaxIron
 = 1.00 TheKingdomOfFrance.MaxIron
 = 1.95 KyivanRus.MaxIron
 = 2.50 HolyRomanDominionOfTheDanube.MaxIron
@@ -1600,7 +1563,6 @@
 = 2.00 KingdomOfScotland.MaxCoal
 = 2.25 DuchyOfMoscow.MaxCoal
 = 1.80 AngloCrownConfederacy.MaxCoal
-= 1.90 Grishland.MaxCoal
 = 1.65 GrandDuchyOfHolland.MaxCoal
 = 0.10 TheKingdomOfFrance.MaxCoal
 = 0.85 KyivanRus.MaxCoal
@@ -1619,7 +1581,6 @@
 = 2.00 TairaShogunate.MaxCoal
 = 0.15 KosalaKingdom.MaxCoal
 = 0.55 Srivijaya.MaxCoal
-= 0.10 Grishland.MaxCopper
 = 0.05 HolyRomanDominionOfTheDanube.MaxCopper
 = 1.15 ShowaShogunate.MaxCopper
 = 1.95 RegnumThessalonicae.MaxCopper
@@ -1736,7 +1697,6 @@
 = 1459558 QaraUlys.Population
 = 2085231 KingdomOfLithuania.Population
 = 2089769 DuchyOfMoscow.Population
-= 2112478 Grishland.Population
 = 2124509 AngloCrownConfederacy.Population
 = 1651679 GrandDuchyOfHolland.Population
 = 1859971 KyivanRus.Population
@@ -1780,7 +1740,6 @@
 = 1653383 QaraUlys.Future Population
 = 2283617 KingdomOfLithuania.Future Population
 = 2311475 DuchyOfMoscow.Future Population
-= 2357693 Grishland.Future Population
 = 2370330 AngloCrownConfederacy.Future Population
 = 1845655 GrandDuchyOfHolland.Future Population
 = 2108369 KyivanRus.Future Population
@@ -1824,7 +1783,6 @@
 = 2824.5750000000007 QaraUlys.Fertility
 = 1820.975 KingdomOfLithuania.Fertility
 = 3282.9500000000003 DuchyOfMoscow.Fertility
-= 3564.65 Grishland.Fertility
 = 3657.975 AngloCrownConfederacy.Fertility
 = 2471.775 GrandDuchyOfHolland.Fertility
 = 5865.8 KyivanRus.Fertility
