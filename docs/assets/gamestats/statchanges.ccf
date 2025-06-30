@@ -685,6 +685,57 @@
 = "Indonesian " cultrep
 = "Buddhism" relrep
 
+<... > Cultures
++> Tai
+
+<... > Nations
++> RoyalTaiKingdom
+> RoyalTaiKingdom
+= "https://imgur.com/a/7Zs9a2h" Flag
+> ReligionGroups
+=0 pagan
++> Buddhism
+=100 Buddhism
+<
+> CultureGroups
++> Tai
+=100 Tai
+<
+= "Tai" cultrep
+= "Buddhism" relrep
+
+<... > Nations
++> Grishland
+> Grishland
+= "IMGLINK" Flag
+> ReligionGroups
+=0 pagan
++> Catholic
+=100 Catholic
+<
+> CultureGroups
++> Germanic
+=100 Germanic
+<
+= "Germanic" cultrep
+= "Catholic" relrep
+
+<... > Nations
++> ShowaShogunate
+> ShowaShogunate
+= "https://preview.redd.it/mwepla52leq81.png?width=640&crop=smart&auto=webp&s=0900d9206cfccdd8a7a3ce070e659c967a4947aa" Flag
+> ReligionGroups
+=0 pagan
++> Shinto
+=100 Shinto
+<
+> CultureGroups
++> Japanese
+=100 Japanese
+<
+= "Japanese" cultrep
+= "Shinto" relrep
+
 <...
 = "76437c" nations.FritsanEmpire.Color
 = "cebf33" nations.KingdomOfScotland.Color
@@ -730,6 +781,12 @@
 = "6da52c" cultures.GrecoRoman.Color
 = "8ee6ff" cultures.Jewish.Color
 = "3574e0" cultures.GrecoBactrian.Color
+= "2f423a" nations.Grishland.Color
+= "c6ba80" nations.ShowaShogunate.Color
+= "3574e0" nations.GrecoBactria.Color
+= "38a8f3" nations.RoyalTaiKingdom.Color
+= "3574e0" cultures.GrecoBactrian.Color
+= "38a8f3" cultures.Tai.Color
 
 <... > Nations
 !suppress 99999
@@ -781,6 +838,16 @@
 > CultureGroups
 +> Russian
 = 100 Russian.Points
+< <
+> Grishland
++> CultureGroups
+> CultureGroups
++> Germanic
+= 99.68909516151083 Germanic.Points
++> Scandinavian
+= 0.026508838192765175 Scandinavian.Points
++> WestSlav
+= 0.28439600029639805 WestSlav.Points
 < <
 > AngloCrownConfederacy
 +> CultureGroups
@@ -924,6 +991,12 @@
 +> French
 = 0.2761134273959743 French.Points
 < <
+> ShowaShogunate
++> CultureGroups
+> CultureGroups
++> Japanese
+= 100 Japanese.Points
+< <
 > RegnumThessalonicae
 +> CultureGroups
 > CultureGroups
@@ -1014,6 +1087,12 @@
 +> Garjati
 = 0.3439763388484667 Garjati.Points
 < <
+> RoyalTaiKingdom
++> CultureGroups
+> CultureGroups
++> Tai
+= 100 Tai.Points
+< <
 > KwangtungConfederacy
 +> CultureGroups
 > CultureGroups
@@ -1085,6 +1164,11 @@
 > ReligionGroups
 +> Orthodox
 = 100 Orthodox.Points
+< <
+> Grishland
+> ReligionGroups
++> Catholic
+= 100 Catholic.Points
 < <
 > AngloCrownConfederacy
 > ReligionGroups
@@ -1166,6 +1250,11 @@
 +> Catholic
 = 100 Catholic.Points
 < <
+> ShowaShogunate
+> ReligionGroups
++> Shinto
+= 100 Shinto.Points
+< <
 > RegnumThessalonicae
 > ReligionGroups
 +> Orthodox
@@ -1225,6 +1314,11 @@
 +> Hindu
 = 100 Hindu.Points
 < <
+> RoyalTaiKingdom
+> ReligionGroups
++> Buddhism
+= 100 Buddhism.Points
+< <
 > KwangtungConfederacy
 > ReligionGroups
 +> Confucianism
@@ -1269,6 +1363,8 @@
 = 7552 KingdomOfLithuania.Moderate
 = 7449 DuchyOfMoscow.Moderate
 = 51 DuchyOfMoscow.Steppe
+= 7497 Grishland.Moderate
+= 10 Grishland.Mountainous
 = 7543 AngloCrownConfederacy.Moderate
 = 5859 GrandDuchyOfHolland.Moderate
 = 3244 KyivanRus.Moderate
@@ -1304,6 +1400,8 @@
 = 4798 CrownOfAragon.Medditereanian
 = 65 CrownOfAragon.Moderate
 = 2623 CrownOfAragon.Mountainous
+= 4399 ShowaShogunate.Moderate
+= 3123 ShowaShogunate.Mountainous
 = 1579 RegnumThessalonicae.Steppe
 = 2625 RegnumThessalonicae.Mountainous
 = 66 RegnumThessalonicae.Moderate
@@ -1338,6 +1436,9 @@
 = 272 GrecoBactria.Savanna
 = 7462 KosalaKingdom.SubTropical
 = 37 KosalaKingdom.Mountainous
+= 2697 RoyalTaiKingdom.SubTropical
+= 1698 RoyalTaiKingdom.Mountainous
+= 3057 RoyalTaiKingdom.Tropical
 = 1537 KwangtungConfederacy.Mountainous
 = 2774 KwangtungConfederacy.Moderate
 = 2869 KwangtungConfederacy.SubTropical
@@ -1364,6 +1465,7 @@
 = 37100 QaraUlys.DevelopmentPixelCount
 = 40345 KingdomOfLithuania.DevelopmentPixelCount
 = 37053 DuchyOfMoscow.DevelopmentPixelCount
+= 45744 Grishland.DevelopmentPixelCount
 = 44324 AngloCrownConfederacy.DevelopmentPixelCount
 = 44796 GrandDuchyOfHolland.DevelopmentPixelCount
 = 46895 KyivanRus.DevelopmentPixelCount
@@ -1380,6 +1482,7 @@
 = 32701 RomanumImperium.DevelopmentPixelCount
 = 25977 KingdomOfGeorgia.DevelopmentPixelCount
 = 49098 CrownOfAragon.DevelopmentPixelCount
+= 45150 ShowaShogunate.DevelopmentPixelCount
 = 39292 RegnumThessalonicae.DevelopmentPixelCount
 = 39690 KingdomOfAphrodisia.DevelopmentPixelCount
 = 33491 DivineQiziqPrincipality.DevelopmentPixelCount
@@ -1391,6 +1494,7 @@
 = 48890 TairaShogunate.DevelopmentPixelCount
 = 36183 GrecoBactria.DevelopmentPixelCount
 = 37085 KosalaKingdom.DevelopmentPixelCount
+= 28500 RoyalTaiKingdom.DevelopmentPixelCount
 = 32605 KwangtungConfederacy.DevelopmentPixelCount
 = 45435 TondoKingdom.DevelopmentPixelCount
 = 35775 Sangkhom.DevelopmentPixelCount
@@ -1405,6 +1509,7 @@
 = 492340 QaraUlys.coastalPopulation
 = 769415 KingdomOfLithuania.coastalPopulation
 = 608566 DuchyOfMoscow.coastalPopulation
+= 940839 Grishland.coastalPopulation
 = 914833 AngloCrownConfederacy.coastalPopulation
 = 713415 GrandDuchyOfHolland.coastalPopulation
 = 533646 KyivanRus.coastalPopulation
@@ -1421,6 +1526,7 @@
 = 586808 RomanumImperium.coastalPopulation
 = 297612 KingdomOfGeorgia.coastalPopulation
 = 526332 CrownOfAragon.coastalPopulation
+= 713645 ShowaShogunate.coastalPopulation
 = 494388 RegnumThessalonicae.coastalPopulation
 = 909090 KingdomOfAphrodisia.coastalPopulation
 = 621672 DivineQiziqPrincipality.coastalPopulation
@@ -1432,6 +1538,7 @@
 = 751429 TairaShogunate.coastalPopulation
 = 706158 GrecoBactria.coastalPopulation
 = 622250 KosalaKingdom.coastalPopulation
+= 463896 RoyalTaiKingdom.coastalPopulation
 = 781620 KwangtungConfederacy.coastalPopulation
 = 499690 TondoKingdom.coastalPopulation
 = 577270 Sangkhom.coastalPopulation
@@ -1454,6 +1561,7 @@
 = 0.00 KingdomOfScotland.MaxIron
 = 1.35 AngloCrownConfederacy.MaxIron
 = 0.75 DuchyOfMoscow.MaxIron
+= 0.55 Grishland.MaxIron
 = 1.00 TheKingdomOfFrance.MaxIron
 = 1.95 KyivanRus.MaxIron
 = 2.50 HolyRomanDominionOfTheDanube.MaxIron
@@ -1462,11 +1570,13 @@
 = 0.40 SerbianEmpire.MaxIron
 = 0.10 RomanumImperium.MaxIron
 = 0.55 CrownOfAragon.MaxIron
+= 3.00 ShowaShogunate.MaxIron
 = 0.30 KingdomOfGeorgia.MaxIron
 = 1.95 XanmaiMandate.MaxIron
 = 0.30 ExarchateOfAfrica.MaxIron
 = 3.15 KwangtungConfederacy.MaxIron
 = 1.10 Sangkhom.MaxIron
+= 1.25 RoyalTaiKingdom.MaxIvory
 = 3.80 Sangkhom.MaxIvory
 = 1.25 Garmoni.MaxIvory
 = 0.45 Srivijaya.MaxIvory
@@ -1475,6 +1585,7 @@
 = 1.95 KingdomOfHungary.MaxSulphur
 = 0.30 VenetianRepublic.MaxSulphur
 = 1.10 RomanumImperium.MaxSulphur
+= 4.00 ShowaShogunate.MaxSulphur
 = 0.90 KingdomOfAphrodisia.MaxSulphur
 = 0.00 TheOgalalaRiverLakotaSiouxChiefdom.MaxSulphur
 = 1.55 DivineQiziqPrincipality.MaxSulphur
@@ -1489,6 +1600,7 @@
 = 2.00 KingdomOfScotland.MaxCoal
 = 2.25 DuchyOfMoscow.MaxCoal
 = 1.80 AngloCrownConfederacy.MaxCoal
+= 1.90 Grishland.MaxCoal
 = 1.65 GrandDuchyOfHolland.MaxCoal
 = 0.10 TheKingdomOfFrance.MaxCoal
 = 0.85 KyivanRus.MaxCoal
@@ -1507,7 +1619,9 @@
 = 2.00 TairaShogunate.MaxCoal
 = 0.15 KosalaKingdom.MaxCoal
 = 0.55 Srivijaya.MaxCoal
+= 0.10 Grishland.MaxCopper
 = 0.05 HolyRomanDominionOfTheDanube.MaxCopper
+= 1.15 ShowaShogunate.MaxCopper
 = 1.95 RegnumThessalonicae.MaxCopper
 = 0.75 FritsanEmpire.MaxSilver
 = 1.00 KingdomOfSweden.MaxSilver
@@ -1622,6 +1736,7 @@
 = 1459558 QaraUlys.Population
 = 2085231 KingdomOfLithuania.Population
 = 2089769 DuchyOfMoscow.Population
+= 2112478 Grishland.Population
 = 2124509 AngloCrownConfederacy.Population
 = 1651679 GrandDuchyOfHolland.Population
 = 1859971 KyivanRus.Population
@@ -1638,6 +1753,7 @@
 = 1350547 RomanumImperium.Population
 = 944334 KingdomOfGeorgia.Population
 = 1435846 CrownOfAragon.Population
+= 1544270 ShowaShogunate.Population
 = 1410270 RegnumThessalonicae.Population
 = 1359791 KingdomOfAphrodisia.Population
 = 1285940 DivineQiziqPrincipality.Population
@@ -1649,6 +1765,7 @@
 = 1487867 TairaShogunate.Population
 = 1478955 GrecoBactria.Population
 = 1628867 KosalaKingdom.Population
+= 1098830 RoyalTaiKingdom.Population
 = 1561437 KwangtungConfederacy.Population
 = 834461 TondoKingdom.Population
 = 1222227 Sangkhom.Population
@@ -1663,6 +1780,7 @@
 = 1653383 QaraUlys.Future Population
 = 2283617 KingdomOfLithuania.Future Population
 = 2311475 DuchyOfMoscow.Future Population
+= 2357693 Grishland.Future Population
 = 2370330 AngloCrownConfederacy.Future Population
 = 1845655 GrandDuchyOfHolland.Future Population
 = 2108369 KyivanRus.Future Population
@@ -1679,6 +1797,7 @@
 = 1501283 RomanumImperium.Future Population
 = 1039060 KingdomOfGeorgia.Future Population
 = 1602891 CrownOfAragon.Future Population
+= 1729064 ShowaShogunate.Future Population
 = 1584677 RegnumThessalonicae.Future Population
 = 1522379 KingdomOfAphrodisia.Future Population
 = 1435122 DivineQiziqPrincipality.Future Population
@@ -1690,6 +1809,7 @@
 = 1668233 TairaShogunate.Future Population
 = 1632775 GrecoBactria.Future Population
 = 1843996 KosalaKingdom.Future Population
+= 1241563 RoyalTaiKingdom.Future Population
 = 1730707 KwangtungConfederacy.Future Population
 = 957467 TondoKingdom.Future Population
 = 1380907 Sangkhom.Future Population
@@ -1704,6 +1824,7 @@
 = 2824.5750000000007 QaraUlys.Fertility
 = 1820.975 KingdomOfLithuania.Fertility
 = 3282.9500000000003 DuchyOfMoscow.Fertility
+= 3564.65 Grishland.Fertility
 = 3657.975 AngloCrownConfederacy.Fertility
 = 2471.775 GrandDuchyOfHolland.Fertility
 = 5865.8 KyivanRus.Fertility
@@ -1720,6 +1841,7 @@
 = 3532.375 RomanumImperium.Fertility
 = 1945.975 KingdomOfGeorgia.Fertility
 = 3420.0999999999995 CrownOfAragon.Fertility
+= 3219.8 ShowaShogunate.Fertility
 = 4607.325 RegnumThessalonicae.Fertility
 = 3534.9249999999997 KingdomOfAphrodisia.Fertility
 = 3693.6250000000005 DivineQiziqPrincipality.Fertility
@@ -1731,6 +1853,7 @@
 = 3090.9999999999995 TairaShogunate.Fertility
 = 2406.225 GrecoBactria.Fertility
 = 5780.199999999999 KosalaKingdom.Fertility
+= 4483.2 RoyalTaiKingdom.Fertility
 = 2901.125 KwangtungConfederacy.Fertility
 = 3544.2 TondoKingdom.Fertility
 = 4032.275 Sangkhom.Fertility
