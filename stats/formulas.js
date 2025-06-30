@@ -171,6 +171,88 @@ static evaluateNation(nationName) {
   n.PropagandaReal = n.Propaganda * (n.Reforms.StateMediaOnly * 2 + n.Reforms.ExtensiveCensorship * 1.5 + n.Reforms.LimitedCensorship + n.Reforms.FreeSpeech * 0.5);
   n.PopulationControlReal = n.PopulationControl * (n.Reforms.CommunityPolicing * 0.5 + n.Reforms.RegionalPolice * 0.75 + n.Reforms.StatePolice * 1.25 + n.Reforms.SecretPolice * 2) * (n.GovernmentDominatedBy == "Military" || n.GovernmentDominatedBy == "Bureaucrats" ? 1.2 : 1) * (n.GovernmentDominatedBy == "Intellectuals" ? 0.8 : 1);
 
+    n.OverallNumbers = n.Riflemen + n.MusketMilitia + n.Musketeers + n.Levies + n.LightInfantry + n.HeavyInfantry + n.Archers + n.Crossbowmen + n.LightCavalry + n.HeavyCavalry + n.EliteInfantry + n.Militia + n.EliteCavalry + n.HandCannoneers + (n.SiegeEquipment + n.LargeSiegeEquipment) * 10 + n.RegimentalGuns * 3 + n.FieldCannons * 6 + n.SiegeGuns * 10;
+    n.OverallShipCount = n.LightShips + n.MediumShips + n.HeavyShips;
+
+    n.BaseIronHarvest = (
+        n.Climates.TaigaAndTundra.Pixels * 0.1 +
+        n.Climates.MontaneForest.Pixels * 0.75 +
+        n.Climates.Medditereanian.Pixels * 0.2 +
+        n.Climates.Arid.Pixels * 0.2 +
+        n.Climates.Steppe.Pixels * 0.1 +
+        n.Climates.Moderate.Pixels * 0.2 +
+        n.Climates.SubTropical.Pixels * 0.2 +
+        n.Climates.Tropical.Pixels * 0.1 +
+        n.Climates.Savanna.Pixels * 0.2 +
+        n.Climates.Mountainous.Pixels * 1 +
+        n.Climates.Desert.Pixels * 0.05 +
+        n.Climates.CoastalDesert.Pixels * 0.2
+    ) / 2750 * n.MiningEfficiency * n.Technologies.IronWorking;
+
+    n.BaseIronHarvest = min(n.BaseIronHarvest, n.Population * 0.03 / 20000);
+
+    n.BaseCoalHarvest = (
+        n.Climates.TaigaAndTundra.Pixels * 0.1 +
+        n.Climates.MontaneForest.Pixels * 0.75 +
+        n.Climates.Medditereanian.Pixels * 0.2 +
+        n.Climates.Arid.Pixels * 0.2 +
+        n.Climates.Steppe.Pixels * 0.1 +
+        n.Climates.Moderate.Pixels * 0.2 +
+        n.Climates.SubTropical.Pixels * 0.2 +
+        n.Climates.Tropical.Pixels * 0.1 +
+        n.Climates.Savanna.Pixels * 0.2 +
+        n.Climates.Mountainous.Pixels * 1 +
+        n.Climates.Desert.Pixels * 0.05 +
+        n.Climates.CoastalDesert.Pixels * 0.2
+    ) / 2250 * n.MiningEfficiency * (n.Technologies.IronWorking ? 1 : 0.5);
+
+    n.BaseCoalHarvest = min(n.BaseCoalHarvest, n.Population * 0.03 / 20000);
+
+    n.BaseSulphurHarvest = (
+        n.Climates.TaigaAndTundra.Pixels * 0.1 +
+        n.Climates.MontaneForest.Pixels * 0.75 +
+        n.Climates.Medditereanian.Pixels * 0.2 +
+        n.Climates.Arid.Pixels * 0.2 +
+        n.Climates.Steppe.Pixels * 0.1 +
+        n.Climates.Moderate.Pixels * 0.2 +
+        n.Climates.SubTropical.Pixels * 0.2 +
+        n.Climates.Tropical.Pixels * 0.1 +
+        n.Climates.Savanna.Pixels * 0.2 +
+        n.Climates.Mountainous.Pixels * 1 +
+        n.Climates.Desert.Pixels * 0.05 +
+        n.Climates.CoastalDesert.Pixels * 0.2
+    ) / 1750 * n.MiningEfficiency * (n.Technologies.IronWorking ? 1 : 0.5);
+
+    n.BaseSulphurHarvest = min(n.BaseSulphurHarvest, n.Population * 0.02 / 20000);
+
+    n.CoastalPopulationPercent = n.coastalPopulation / n.Population;
+
+    n.ArableLand = n.Fertility * (1 - n.Pillaging);
+    n.MaxPopInAgriculture = n.ArableLand * 1000 / n.Population * (1 + n.AgricultureSubsidies / 2 + (n.AgricultureInfrastructure - 1) / 4);
+
+    n.ConscriptionPercent = (n.OverallNumbers + n.SmallForts * 100 + n.MediumForts * 250 + n.BigForts * 400 + n.HugeForts * 800 + n.CityFortifications * 250) / n.Population;
+    n.Workforces.PopulationInMilitary = n.ConscriptionPercent;
+    n.Workforces.Bureaucrats = n.AdministrationSize / 100;
+    n.Workforces.Intellectuals = n.HigherEducation / 100;
+    n.Workforces.Labourers = (n.Reforms.SlaveryBanned ? (n.BaseIronHarvest + n.BaseCoalHarvest + n.BaseSulphurHarvest + n.Coal + n.Sulphur + n.Cotton + n.Gold + n.Iron + n.Tea + n.Silk + n.Spice + n.Wool + n.Coffee + n.Fur + n.Diamond + n.Silver + n.Copper + n.Ivory + n.Cocoa + n.Tobacco + n.Sugar + n.ExoticFruit + n.Forestry + n.Reforestation) * 20000 / n.Population : (n.BaseIronHarvest + n.BaseCoalHarvest + n.BaseSulphurHarvest + n.Coal + n.Sulphur + n.Cotton + n.Gold + n.Iron + n.Tea + n.Silk + n.Spice + n.Wool + n.Coffee + n.Fur + n.Diamond + n.Silver + n.Copper + n.Ivory + n.Cocoa + n.Tobacco + n.Sugar + n.ExoticFruit + n.Forestry + n.Reforestation) * 20000 / n.Population * 0.2);
+    n.Workforces.Slaves = (n.Reforms.SlaveryAllowed ? (n.BaseIronHarvest + n.BaseCoalHarvest + n.BaseSulphurHarvest + n.Coal + n.Sulphur + n.Cotton + n.Gold + n.Iron + n.Tea + n.Silk + n.Spice + n.Wool + n.Coffee + n.Fur + n.Diamond + n.Silver + n.Copper + n.Ivory + n.Cocoa + n.Tobacco + n.Sugar + n.ExoticFruit + n.Forestry + n.Reforestation) * 20000 / n.Population * 0.8 : 0);
+    n.Workforces.Merchants = ((n.MerchantShips + n.LocalTrade) * 500) / n.Population;
+    n.Workforces.Sailors = (n.MerchantShips * 200 + n.LightShips * 400 + n.MediumShips * 900 + n.HeavyShips * 1600) / n.Population;
+
+    if (1 - n.Workforces.PopulationInMilitary - n.Workforces.Townsfolk - n.Workforces.Sailors - n.Workforces.Merchants - n.Workforces.Intellectuals - n.Workforces.Bureaucrats - n.Workforces.Clergy - n.Workforces.Burgousie - n.Workforces.Aristocracy - n.Workforces.Labourers - n.Workforces.Slaves < n.MaxPopInAgriculture) {
+        n.Workforces.Farmers = max(n.Reforms.SerfdomBanned ? 1 - n.Workforces.PopulationInMilitary - n.Workforces.Townsfolk - n.Workforces.Sailors - n.Workforces.Merchants - n.Workforces.Intellectuals - n.Workforces.Bureaucrats - n.Workforces.Clergy - n.Workforces.Burgousie - n.Workforces.Aristocracy - n.Workforces.Labourers - n.Workforces.Slaves : min(0.075, 1 - n.Workforces.PopulationInMilitary - n.Workforces.Townsfolk - n.Workforces.Sailors - n.Workforces.Merchants - n.Workforces.Intellectuals - n.Workforces.Bureaucrats - n.Workforces.Clergy - n.Workforces.Burgousie - n.Workforces.Aristocracy - n.Workforces.Labourers - n.Workforces.Slaves), 0);
+        n.Workforces.Serfs = max(n.Reforms.SerfdomAllowed ? 1 - n.Workforces.PopulationInMilitary - n.Workforces.Townsfolk - n.Workforces.Sailors - n.Workforces.Merchants - n.Workforces.Intellectuals - n.Workforces.Bureaucrats - n.Workforces.Clergy - n.Workforces.Burgousie - n.Workforces.Aristocracy - n.Workforces.Labourers - n.Workforces.Slaves - n.Workforces.Farmers : 0, 0);
+        n.Workforces.Unemployed = 0;
+    }
+    else {
+        n.Workforces.Farmers = max(n.Reforms.SerfdomBanned ? n.MaxPopInAgriculture : min(0.075, 1 - n.Workforces.PopulationInMilitary - n.Workforces.Townsfolk - n.Workforces.Sailors - n.Workforces.Merchants - n.Workforces.Intellectuals - n.Workforces.Bureaucrats - n.Workforces.Clergy - n.Workforces.Burgousie - n.Workforces.Aristocracy - n.Workforces.Labourers - n.Workforces.Slaves), 0);
+        n.Workforces.Serfs = max(n.Reforms.SerfdomAllowed ? n.MaxPopInAgriculture - n.Workforces.Farmers : 0, 0);
+        n.Workforces.Unemployed = 1 - n.Workforces.PopulationInMilitary - n.Workforces.Townsfolk - n.Workforces.Sailors - n.Workforces.Merchants - n.Workforces.Intellectuals - n.Workforces.Bureaucrats - n.Workforces.Clergy - n.Workforces.Burgousie - n.Workforces.Aristocracy - n.Workforces.Labourers - n.Workforces.Slaves - n.MaxPopInAgriculture;
+    }
+
+    n.PopInAgriculture = n.Workforces.Farmers + n.Workforces.Serfs;
+    debugger;
+
   n.ResourcesAdmDemand = (n.Reforms.GovernmentResourceOwnership ? n.Coal + n.Sulphur + n.Iron + n.Copper + n.Gold + n.Fur + n.Diamond + n.Silver + n.Ivory + n.Forestry + n.Reforestation * 5 + n.Cotton + n.Tea + n.Silk + n.Spice + n.Wool + n.Coffee + n.Cocoa + n.Tobacco + n.Sugar + n.ExoticFruit : 0) / 2;
   n.AgricultureAdmDemand = (n.Reforms.GovernmentLandOwnership ? (n.Population / 1000 * n.Workforces.PopInAgriculture / 25) : 0);
 
@@ -178,9 +260,8 @@ static evaluateNation(nationName) {
   n.CulturalDisunity = cultureCalc.disunity * (1 + n.Nationalism * 0.2) * (n.GovernmentDominatedBy == "Workers" || n.GovernmentDominatedBy == "Urban" ? 1.2 : 1) * (n.GovernmentDominatedBy == "Clergy" ? 0.8 : 1);
   n.ReligionRepresentedAtGovernmentLevelPercent = religionCalc.GovernmentRepresentationPercent;
   n.ReligiousDisunity = religionCalc.disunity * (1 + n.ReligiousFervor * 0.2 + n.Reforms.StateReligion / 2 - n.Reforms.FreedomOfReligion / 2) * (n.GovernmentDominatedBy == "Workers" || n.GovernmentDominatedBy == "Clergy" ? 1.2 : 1);
-    n.OverallNumbers = n.Riflemen + n.MusketMilitia + n.Musketeers + n.Levies + n.LightInfantry + n.HeavyInfantry + n.Archers + n.Crossbowmen + n.LightCavalry + n.HeavyCavalry + n.EliteInfantry + n.Militia + n.EliteCavalry + n.HandCannoneers + (n.SiegeEquipment + n.LargeSiegeEquipment) * 10 + n.RegimentalGuns * 3 + n.FieldCannons * 6 + n.SiegeGuns * 10;
-  n.OverallShipCount = n.LightShips + n.MediumShips + n.HeavyShips;
-    n.AdministrativeTech = -0.75 - n.Alcoholism * (1 - n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100) - n.Reforms.NobleBureaucrats * 0.5 - n.Reforms.ClergyBureaucrats * 0.25 + n.Reforms.MeritocraticBureaucrats + n.Technologies.Paper * 0.5 + n.CulturalAdvancements.Currency * 0.5 + n.CulturalAdvancements.EarlyModernAdministration + n.CulturalAdvancements.NationalSovereignity + n.CulturalAdvancements.Constitution + n.Reforms.WealthyBureaucrats / 2 + n.Reforms.MeritocraticOfficers + n.Technologies.PaperMachine / 5;
+
+  n.AdministrativeTech = -0.75 - n.Alcoholism * (1 - n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100) - n.Reforms.NobleBureaucrats * 0.5 - n.Reforms.ClergyBureaucrats * 0.25 + n.Reforms.MeritocraticBureaucrats + n.Technologies.Paper * 0.5 + n.CulturalAdvancements.Currency * 0.5 + n.CulturalAdvancements.EarlyModernAdministration + n.CulturalAdvancements.NationalSovereignity + n.CulturalAdvancements.Constitution + n.Reforms.WealthyBureaucrats / 2 + n.Reforms.MeritocraticOfficers + n.Technologies.PaperMachine / 5;
   n.AdministrativePower = (n.AdministrativeEfficiency * (1 + n.AdministrationSize / 2 + n.AdministrativeTech * 0.4) * 0.75) * (n.GovernmentDominatedBy == "Bureaucrats" || n.GovernmentDominatedBy == "Aristocracy" ? 1.1 : 1) * (n.GovernmentDominatedBy == "Urban" || n.GovernmentDominatedBy == "Military" || n.GovernmentDominatedBy == "Burgousie" ? 0.9 : 1);
   n.AdministrativeDemand = (
     0 + n.Population / 1250000 + n.Health * 2 + n.Education * 2 + n.SocialSpending * 4 + n.PropagandaReal * 2 + n.PopulationControlReal * 2 + n.BirthControl * 4 +
@@ -218,84 +299,7 @@ static evaluateNation(nationName) {
   n.MediumShipQualityIC = 1 + n.MediumShipImprovements + n.NavyTech + n.Technologies.Galleons / 6;
   n.HeavyShipQualityIC = 1 + n.HeavyShipImprovements + n.NavyTech + n.Technologies.Galleons / 4;
 
-  n.BaseIronHarvest = (
-    n.Climates.TaigaAndTundra.Pixels * 0.1 +
-    n.Climates.MontaneForest.Pixels * 0.75 +
-    n.Climates.Medditereanian.Pixels * 0.2 +
-    n.Climates.Arid.Pixels * 0.2 +
-    n.Climates.Steppe.Pixels * 0.1 +
-    n.Climates.Moderate.Pixels * 0.2 +
-    n.Climates.SubTropical.Pixels * 0.2 +
-    n.Climates.Tropical.Pixels * 0.1 +
-    n.Climates.Savanna.Pixels * 0.2 +
-    n.Climates.Mountainous.Pixels * 1 +
-    n.Climates.Desert.Pixels * 0.05 +
-    n.Climates.CoastalDesert.Pixels * 0.2
-    ) / 2750 * n.MiningEfficiency * n.Technologies.IronWorking;
-
-    n.BaseIronHarvest = min(n.BaseIronHarvest, n.Population * 0.03 / 20000);
-
-  n.BaseCoalHarvest = (
-    n.Climates.TaigaAndTundra.Pixels * 0.1 +
-    n.Climates.MontaneForest.Pixels * 0.75 +
-    n.Climates.Medditereanian.Pixels * 0.2 +
-    n.Climates.Arid.Pixels * 0.2 +
-    n.Climates.Steppe.Pixels * 0.1 +
-    n.Climates.Moderate.Pixels * 0.2 +
-    n.Climates.SubTropical.Pixels * 0.2 +
-    n.Climates.Tropical.Pixels * 0.1 +
-    n.Climates.Savanna.Pixels * 0.2 +
-    n.Climates.Mountainous.Pixels * 1 +
-    n.Climates.Desert.Pixels * 0.05 +
-    n.Climates.CoastalDesert.Pixels * 0.2
-    ) / 2250 * n.MiningEfficiency * (n.Technologies.IronWorking ? 1 : 0.5);
-
-    n.BaseCoalHarvest = min(n.BaseCoalHarvest, n.Population * 0.03 / 20000);
-
-  n.BaseSulphurHarvest = (
-    n.Climates.TaigaAndTundra.Pixels * 0.1 +
-    n.Climates.MontaneForest.Pixels * 0.75 +
-    n.Climates.Medditereanian.Pixels * 0.2 +
-    n.Climates.Arid.Pixels * 0.2 +
-    n.Climates.Steppe.Pixels * 0.1 +
-    n.Climates.Moderate.Pixels * 0.2 +
-    n.Climates.SubTropical.Pixels * 0.2 +
-    n.Climates.Tropical.Pixels * 0.1 +
-    n.Climates.Savanna.Pixels * 0.2 +
-    n.Climates.Mountainous.Pixels * 1 +
-    n.Climates.Desert.Pixels * 0.05 +
-    n.Climates.CoastalDesert.Pixels * 0.2
-    ) / 1750 * n.MiningEfficiency * (n.Technologies.IronWorking ? 1 : 0.5);
-
-    n.BaseSulphurHarvest = min(n.BaseSulphurHarvest, n.Population * 0.02 / 20000);
-
-    n.CoastalPopulationPercent = n.coastalPopulation / n.Population;
-
-    n.ArableLand = n.Fertility * (1 - n.Pillaging);
-    n.MaxPopInAgriculture = n.ArableLand * 1000 / n.Population * (1 + n.AgricultureSubsidies / 2 + ( n.AgricultureInfrastructure - 1) / 4);
-
-    n.ConscriptionPercent = (n.OverallNumbers + n.SmallForts * 100 + n.MediumForts * 250 + n.BigForts * 400 + n.HugeForts * 800 + n.CityFortifications * 250) / n.Population;
-    n.Workforces.PopulationInMilitary = n.ConscriptionPercent;
-    n.Workforces.Bureaucrats = n.AdministrationSize / 100;
-    n.Workforces.Intellectuals = n.HigherEducation / 100;
-    n.Workforces.Labourers = (n.Reforms.SlaveryBanned ? (n.BaseIronHarvest + n.BaseCoalHarvest + n.BaseSulphurHarvest + n.Coal + n.Sulphur + n.Cotton + n.Gold + n.Iron + n.Tea + n.Silk + n.Spice + n.Wool + n.Coffee + n.Fur + n.Diamond + n.Silver + n.Copper + n.Ivory + n.Cocoa + n.Tobacco + n.Sugar + n.ExoticFruit + n.Forestry + n.Reforestation) * 20000 / n.Population : (n.BaseIronHarvest + n.BaseCoalHarvest + n.BaseSulphurHarvest + n.Coal + n.Sulphur + n.Cotton + n.Gold + n.Iron + n.Tea + n.Silk + n.Spice + n.Wool + n.Coffee + n.Fur + n.Diamond + n.Silver + n.Copper + n.Ivory + n.Cocoa + n.Tobacco + n.Sugar + n.ExoticFruit + n.Forestry + n.Reforestation) * 20000 / n.Population * 0.2);
-  n.Workforces.Slaves = (n.Reforms.SlaveryAllowed ? (n.BaseIronHarvest + n.BaseCoalHarvest + n.BaseSulphurHarvest + n.Coal + n.Sulphur + n.Cotton + n.Gold + n.Iron + n.Tea + n.Silk + n.Spice + n.Wool + n.Coffee + n.Fur + n.Diamond + n.Silver + n.Copper + n.Ivory + n.Cocoa + n.Tobacco + n.Sugar + n.ExoticFruit + n.Forestry + n.Reforestation) * 20000 / n.Population * 0.8 : 0);
-  n.Workforces.Merchants = ((n.MerchantShips + n.LocalTrade) * 500) / n.Population;
-  n.Workforces.Sailors = (n.MerchantShips * 200 + n.LightShips * 400 + n.MediumShips * 900 + n.HeavyShips * 1600) / n.Population;
-
-    if (1 - n.Workforces.PopulationInMilitary - n.Workforces.Townsfolk - n.Workforces.Sailors - n.Workforces.Merchants - n.Workforces.Intellectuals - n.Workforces.Bureaucrats - n.Workforces.Clergy - n.Workforces.Burgousie - n.Workforces.Aristocracy - n.Workforces.Labourers - n.Workforces.Slaves < n.MaxPopInAgriculture) {
-        n.Workforces.Farmers = max(n.Reforms.SerfdomBanned ? 1 - n.Workforces.PopulationInMilitary - n.Workforces.Townsfolk - n.Workforces.Sailors - n.Workforces.Merchants - n.Workforces.Intellectuals - n.Workforces.Bureaucrats - n.Workforces.Clergy - n.Workforces.Burgousie - n.Workforces.Aristocracy - n.Workforces.Labourers - n.Workforces.Slaves : min(0.075, 1 - n.Workforces.PopulationInMilitary - n.Workforces.Townsfolk - n.Workforces.Sailors - n.Workforces.Merchants - n.Workforces.Intellectuals - n.Workforces.Bureaucrats - n.Workforces.Clergy - n.Workforces.Burgousie - n.Workforces.Aristocracy - n.Workforces.Labourers - n.Workforces.Slaves), 0);
-        n.Workforces.Serfs = max(n.Reforms.SerfdomAllowed ? 1 - n.Workforces.PopulationInMilitary - n.Workforces.Townsfolk - n.Workforces.Sailors - n.Workforces.Merchants - n.Workforces.Intellectuals - n.Workforces.Bureaucrats - n.Workforces.Clergy - n.Workforces.Burgousie - n.Workforces.Aristocracy - n.Workforces.Labourers - n.Workforces.Slaves - n.Workforces.Farmers : 0, 0);
-        n.Workforces.Unemployed = 0;
-    }
-    else {
-        n.Workforces.Farmers = max(n.Reforms.SerfdomBanned ? n.MaxPopInAgriculture : min(0.075, 1 - n.Workforces.PopulationInMilitary - n.Workforces.Townsfolk - n.Workforces.Sailors - n.Workforces.Merchants - n.Workforces.Intellectuals - n.Workforces.Bureaucrats - n.Workforces.Clergy - n.Workforces.Burgousie - n.Workforces.Aristocracy - n.Workforces.Labourers - n.Workforces.Slaves), 0);
-        n.Workforces.Serfs = max(n.Reforms.SerfdomAllowed ? n.MaxPopInAgriculture - n.Workforces.Farmers : 0, 0);
-        n.Workforces.Unemployed = 1 - n.Workforces.PopulationInMilitary - n.Workforces.Townsfolk - n.Workforces.Sailors - n.Workforces.Merchants - n.Workforces.Intellectuals - n.Workforces.Bureaucrats - n.Workforces.Clergy - n.Workforces.Burgousie - n.Workforces.Aristocracy - n.Workforces.Labourers - n.Workforces.Slaves - n.MaxPopInAgriculture;
-    }
-    
-    n.PopInAgriculture = n.Workforces.Farmers + n.Workforces.Serfs;
-    n.AgricultureSpending = (n.PopInAgriculture * n.Population / 1000 * (-2 + n.AgricultureInfrastructure + n.AgricultureSubsidies + n.StockingCapabilities)) / 100 / gameStats.TimeDivide;
+  n.AgricultureSpending = (n.PopInAgriculture * n.Population / 1000 * (-2 + n.AgricultureInfrastructure + n.AgricultureSubsidies + n.StockingCapabilities)) / 100 / gameStats.TimeDivide;
   
   let GatheringEffectiveness = function (name) {
     switch (name) {
