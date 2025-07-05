@@ -452,22 +452,6 @@
 = "Japan" cultrep
 = "Shinto" relrep
 
-<... > Nations
-+> PersianEmpire
-> PersianEmpire
-= "https://static.wixstatic.com/media/fbe150_6e468b54722442ba91afc6391b1055eb~mv2.png/v1/fill/w_570,h_427,al_c/achaemind.png" Flag
-> ReligionGroups
-=0 pagan
-+> Shia
-=100 Shia
-<
-> CultureGroups
-+> Persian
-=100 Persian
-<
-= "Persian" cultrep
-= "Shia" relrep
-
 <... > Cultures
 +> Occitan
 
@@ -635,23 +619,7 @@
 = "Orthodox" relrep
 
 <... > Cultures
-+> GrecoRoman
-
-<... > Nations
-+> ExarchateOfAfrica
-> ExarchateOfAfrica
-= "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Red_flag_with_Chi_Rho_attributed_to_the_Byzantine_Empire.png/1200px-Red_flag_with_Chi_Rho_attributed_to_the_Byzantine_Empire.png?20201113164701" Flag
-> ReligionGroups
-=0 pagan
-+> Catholic
-=100 Catholic
-<
-> CultureGroups
-+> GrecoRoman
-=100 GrecoRoman
-<
-= "GrecoRoman" cultrep
-= "Catholic" relrep
++> Roman
 
 <... > Nations
 +> RomanumImperium
@@ -663,10 +631,10 @@
 =100 Catholic
 <
 > CultureGroups
-+> Italian
-=100 Italian
++> Roman
+=100 Roman
 <
-= "Italian" cultrep
+= "Roman" cultrep
 = "Catholic" relrep
 
 <... > Nations
@@ -775,8 +743,6 @@
 = "7f3300" nations.DivineQiziqPrincipality.Color
 = "5b7f00" nations.XanmaiMandate.Color
 = "ba6cff" nations.KyumatsuDynasty.Color
-= "6da52c" nations.ExarchateOfAfrica.Color
-= "2c7c52" nations.PersianEmpire.Color
 = "ffeec4" nations.HolyKingdomOfJerusalem.Color
 = "ff495f" nations.TairaShogunate.Color
 = "3574e0" nations.GrecoBactria.Color
@@ -789,7 +755,6 @@
 = "7c522c" nations.Lutruwita.Color
 = "76437c" cultures.Fritsan.Color
 = "39797c" cultures.Occitan.Color
-= "6da52c" cultures.GrecoRoman.Color
 = "8ee6ff" cultures.Jewish.Color
 = "3574e0" cultures.GrecoBactrian.Color
 = "c6ba80" nations.ShowaShogunate.Color
@@ -799,6 +764,51 @@
 = "38a8f3" cultures.Tai.Color
 = "2f423a" nations.KingdomOfGermany.Color
 = "ff849b" nations.KingdomOfPoland.Color
+
+<... > Nations
++> Sumeria
+> Sumeria
+= "https://cdn.discordapp.com/attachments/1390939076777218098/1390939255877926995/proposal_flag_of_sumer__no_2_by_resistance_pencil_daj2zhq-fullview.jpg?ex=686a14a1&is=6868c321&hm=a7dd00f530f9b9a89ab4f903f1b6b0b0bd8788b62ff1154642fd6a05a64a046c&" Flag
+> CultureGroups
++> Arab
+=100 Arab
+<
+= "Arab" cultrep
+= "Pagan" relrep
+
+<... > Nations
++> KingdomOfPortugal
+> KingdomOfPortugal
+= "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Flag_of_the_Kingdom_of_Portugal_(1385%E2%80%931485).svg/1280px-Flag_of_the_Kingdom_of_Portugal_(1385%E2%80%931485).svg.png" Flag
+> ReligionGroups
+=0 pagan
++> Catholic
+=100 Catholic
+<
+> CultureGroups
++> Iberian
+=100 Iberian
+<
+= "Iberian" cultrep
+= "Catholic" relrep
+
+<... > Nations
++> Alexandria
+> Alexandria
+= "https://static.wikia.nocookie.net/sine-roma-pedia/images/6/6c/Flag_of_Ptolemaic_Kingdom.png" Flag
+> CultureGroups
++> Egyptian
+=100 Egyptian
+<
+= "Egyptian" cultrep
+= "Pagan" relrep
+
+<...
+
+= "237714" nations.KingdomOfPortugal.Color
+= "61797c" nations.Sumeria.Color
+= "ea614f" nations.Alexandria.Color
+= "7f1800" cultures.Roman.Color
 
 <... > Nations
 !suppress 99999
@@ -992,10 +1002,14 @@
 > RomanumImperium
 +> CultureGroups
 > CultureGroups
-+> Italian
-= 95.92148277588525 Italian.Points
-+> SouthSlav
-= 4.0785172241147425 SouthSlav.Points
++> Roman
+= 100 Roman.Points
+< <
+> KingdomOfPortugal
++> CultureGroups
+> CultureGroups
++> Iberian
+= 100 Iberian.Points
 < <
 > KingdomOfGeorgia
 +> CultureGroups
@@ -1031,13 +1045,13 @@
 +> CultureGroups
 > CultureGroups
 +> SouthSlav
-= 16.950128356933394 SouthSlav.Points
+= 16.958924048980446 SouthSlav.Points
 +> Italian
-= 18.75413857329719 Italian.Points
+= 18.76387039502885 Italian.Points
 +> Greek
-= 58.77491706543757 Greek.Points
+= 58.80541630766821 Greek.Points
 +> Egyptian
-= 5.520816004331842 Egyptian.Points
+= 5.471789248322498 Egyptian.Points
 < <
 > DivineQiziqPrincipality
 +> CultureGroups
@@ -1061,22 +1075,6 @@
 +> Japanese
 = 8.642359065850464 Japanese.Points
 < <
-> ExarchateOfAfrica
-+> CultureGroups
-> CultureGroups
-+> GrecoRoman
-= 99.9574766575926 GrecoRoman.Points
-+> Italian
-= 0.0025441315970240927 Italian.Points
-+> Tunisian
-= 0.039979210810378606 Tunisian.Points
-< <
-> PersianEmpire
-+> CultureGroups
-> CultureGroups
-+> Persian
-= 100 Persian.Points
-< <
 > HolyKingdomOfJerusalem
 +> CultureGroups
 > CultureGroups
@@ -1091,11 +1089,27 @@
 +> Japanese
 = 100 Japanese.Points
 < <
+> Sumeria
++> CultureGroups
+> CultureGroups
++> Kurdish
+= 1.3758749037462217 Kurdish.Points
++> Arab
+= 86.0077791113293 Arab.Points
++> Persian
+= 12.616345984924482 Persian.Points
+< <
 > GrecoBactria
 +> CultureGroups
 > CultureGroups
 +> GrecoBactrian
 = 100 GrecoBactrian.Points
+< <
+> Alexandria
++> CultureGroups
+> CultureGroups
++> Egyptian
+= 100 Egyptian.Points
 < <
 > KosalaKingdom
 +> CultureGroups
@@ -1267,6 +1281,11 @@
 +> Catholic
 = 100 Catholic.Points
 < <
+> KingdomOfPortugal
+> ReligionGroups
++> Catholic
+= 100 Catholic.Points
+< <
 > KingdomOfGeorgia
 > ReligionGroups
 +> Orthodox
@@ -1307,18 +1326,6 @@
 +> Shinto
 = 100 Shinto.Points
 < <
-> ExarchateOfAfrica
-> ReligionGroups
-+> Catholic
-= 99.9574766575926 Catholic.Points
-+> Pagan
-= 0.042523342407402694 Pagan.Points
-< <
-> PersianEmpire
-> ReligionGroups
-+> Shia
-= 100 Shia.Points
-< <
 > HolyKingdomOfJerusalem
 > ReligionGroups
 +> Judaism
@@ -1331,7 +1338,17 @@
 +> Shinto
 = 100 Shinto.Points
 < <
+> Sumeria
+> ReligionGroups
++> Pagan
+= 100 Pagan.Points
+< <
 > GrecoBactria
+> ReligionGroups
++> Pagan
+= 100 Pagan.Points
+< <
+> Alexandria
 > ReligionGroups
 +> Pagan
 = 100 Pagan.Points
@@ -1423,6 +1440,8 @@
 = 3182 RomanumImperium.Mountainous
 = 4218 RomanumImperium.Medditereanian
 = 135 RomanumImperium.Moderate
+= 6096 KingdomOfPortugal.Medditereanian
+= 1414 KingdomOfPortugal.Mountainous
 = 5015 KingdomOfGeorgia.Mountainous
 = 816 KingdomOfGeorgia.Moderate
 = 1638 KingdomOfGeorgia.Arid
@@ -1437,7 +1456,7 @@
 = 3276 RegnumThessalonicae.Medditereanian
 = 3134 KingdomOfAphrodisia.Mountainous
 = 4360 KingdomOfAphrodisia.Medditereanian
-= 67 KingdomOfAphrodisia.CoastalDesert
+= 60 KingdomOfAphrodisia.CoastalDesert
 = 3420 DivineQiziqPrincipality.Medditereanian
 = 3229 DivineQiziqPrincipality.Mountainous
 = 786 DivineQiziqPrincipality.Arid
@@ -1446,12 +1465,6 @@
 = 89 XanmaiMandate.MontaneForest
 = 2172 KyumatsuDynasty.Mountainous
 = 5283 KyumatsuDynasty.Moderate
-= 4289 ExarchateOfAfrica.Medditereanian
-= 1320 ExarchateOfAfrica.Mountainous
-= 1161 ExarchateOfAfrica.Desert
-= 728 ExarchateOfAfrica.CoastalDesert
-= 3640 PersianEmpire.Arid
-= 3850 PersianEmpire.Mountainous
 = 1115 HolyKingdomOfJerusalem.Mountainous
 = 2465 HolyKingdomOfJerusalem.Medditereanian
 = 1933 HolyKingdomOfJerusalem.Arid
@@ -1459,10 +1472,16 @@
 = 328 HolyKingdomOfJerusalem.CoastalDesert
 = 4129 TairaShogunate.Moderate
 = 3412 TairaShogunate.Mountainous
+= 6952 Sumeria.Arid
+= 534 Sumeria.Mountainous
 = 826 GrecoBactria.Arid
 = 5935 GrecoBactria.SubTropical
 = 505 GrecoBactria.Mountainous
 = 272 GrecoBactria.Savanna
+= 4777 Alexandria.Medditereanian
+= 498 Alexandria.CoastalDesert
+= 2262 Alexandria.Desert
+= 63 Alexandria.Mountainous
 = 7462 KosalaKingdom.SubTropical
 = 37 KosalaKingdom.Mountainous
 = 2697 RoyalTaiKingdom.SubTropical
@@ -1510,19 +1529,20 @@
 = 40138 VenetianRepublic.DevelopmentPixelCount
 = 38999 SerbianEmpire.DevelopmentPixelCount
 = 32701 RomanumImperium.DevelopmentPixelCount
+= 68268 KingdomOfPortugal.DevelopmentPixelCount
 = 25977 KingdomOfGeorgia.DevelopmentPixelCount
 = 49098 CrownOfAragon.DevelopmentPixelCount
 = 45150 ShowaShogunate.DevelopmentPixelCount
 = 39292 RegnumThessalonicae.DevelopmentPixelCount
-= 39690 KingdomOfAphrodisia.DevelopmentPixelCount
+= 39674 KingdomOfAphrodisia.DevelopmentPixelCount
 = 33491 DivineQiziqPrincipality.DevelopmentPixelCount
 = 34741 XanmaiMandate.DevelopmentPixelCount
 = 34237 KyumatsuDynasty.DevelopmentPixelCount
-= 38259 ExarchateOfAfrica.DevelopmentPixelCount
-= 28562 PersianEmpire.DevelopmentPixelCount
 = 46915 HolyKingdomOfJerusalem.DevelopmentPixelCount
 = 48890 TairaShogunate.DevelopmentPixelCount
+= 49916 Sumeria.DevelopmentPixelCount
 = 36183 GrecoBactria.DevelopmentPixelCount
+= 43352 Alexandria.DevelopmentPixelCount
 = 37085 KosalaKingdom.DevelopmentPixelCount
 = 28500 RoyalTaiKingdom.DevelopmentPixelCount
 = 32605 KwangtungConfederacy.DevelopmentPixelCount
@@ -1555,19 +1575,20 @@
 = 629689 VenetianRepublic.coastalPopulation
 = 704676 SerbianEmpire.coastalPopulation
 = 586808 RomanumImperium.coastalPopulation
+= 672967 KingdomOfPortugal.coastalPopulation
 = 297612 KingdomOfGeorgia.coastalPopulation
 = 526332 CrownOfAragon.coastalPopulation
 = 713645 ShowaShogunate.coastalPopulation
 = 494388 RegnumThessalonicae.coastalPopulation
-= 909090 KingdomOfAphrodisia.coastalPopulation
+= 909000 KingdomOfAphrodisia.coastalPopulation
 = 621672 DivineQiziqPrincipality.coastalPopulation
 = 486998 XanmaiMandate.coastalPopulation
 = 904151 KyumatsuDynasty.coastalPopulation
-= 363515 ExarchateOfAfrica.coastalPopulation
-= 152829 PersianEmpire.coastalPopulation
 = 450383 HolyKingdomOfJerusalem.coastalPopulation
 = 751429 TairaShogunate.coastalPopulation
+= 613665 Sumeria.coastalPopulation
 = 706158 GrecoBactria.coastalPopulation
+= 545751 Alexandria.coastalPopulation
 = 622250 KosalaKingdom.coastalPopulation
 = 463896 RoyalTaiKingdom.coastalPopulation
 = 781620 KwangtungConfederacy.coastalPopulation
@@ -1605,7 +1626,8 @@
 = 3.00 ShowaShogunate.MaxIron
 = 0.30 KingdomOfGeorgia.MaxIron
 = 1.95 XanmaiMandate.MaxIron
-= 0.30 ExarchateOfAfrica.MaxIron
+= 1.00 KingdomOfPortugal.MaxIron
+= 0.45 Alexandria.MaxIron
 = 3.15 KwangtungConfederacy.MaxIron
 = 1.10 Sangkhom.MaxIron
 = 1.25 RoyalTaiKingdom.MaxIvory
@@ -1621,9 +1643,10 @@
 = 4.00 ShowaShogunate.MaxSulphur
 = 0.90 KingdomOfAphrodisia.MaxSulphur
 = 0.00 TheOgalalaRiverLakotaSiouxChiefdom.MaxSulphur
+= 1.70 KingdomOfPortugal.MaxSulphur
 = 1.55 DivineQiziqPrincipality.MaxSulphur
-= 4.00 ExarchateOfAfrica.MaxSulphur
 = 1.95 HolyKingdomOfJerusalem.MaxSulphur
+= 1.90 Sumeria.MaxSulphur
 = 0.85 KyumatsuDynasty.MaxSulphur
 = 1.25 TairaShogunate.MaxSulphur
 = 0.45 GrecoBactria.MaxSulphur
@@ -1643,13 +1666,13 @@
 = 0.25 VenetianRepublic.MaxCoal
 = 1.80 SerbianEmpire.MaxCoal
 = 0.40 KingdomOfRomania.MaxCoal
+= 2.40 KingdomOfPortugal.MaxCoal
 = 0.95 RegnumThessalonicae.MaxCoal
 = 2.00 CrownOfAragon.MaxCoal
 = 0.10 TheOgalalaRiverLakotaSiouxChiefdom.MaxCoal
 = 0.80 DivineQiziqPrincipality.MaxCoal
 = 0.40 XanmaiMandate.MaxCoal
 = 2.00 KyumatsuDynasty.MaxCoal
-= 0.70 PersianEmpire.MaxCoal
 = 2.00 TairaShogunate.MaxCoal
 = 0.15 KosalaKingdom.MaxCoal
 = 0.55 Srivijaya.MaxCoal
@@ -1772,7 +1795,7 @@
 = 2089769 DuchyOfMoscow.Population
 = 2017596 KingdomOfGermany.Population
 = 2124509 AngloCrownConfederacy.Population
-= 1930911 KingdomOfPoland.Population
+= 2043442 KingdomOfPoland.Population
 = 1651679 GrandDuchyOfHolland.Population
 = 1859971 KyivanRus.Population
 = 1285668 CumanKipchakConfederation.Population
@@ -1786,19 +1809,20 @@
 = 1373171 VenetianRepublic.Population
 = 1532908 SerbianEmpire.Population
 = 1350547 RomanumImperium.Population
+= 1632526 KingdomOfPortugal.Population
 = 944334 KingdomOfGeorgia.Population
 = 1435846 CrownOfAragon.Population
 = 1544270 ShowaShogunate.Population
 = 1410270 RegnumThessalonicae.Population
-= 1359791 KingdomOfAphrodisia.Population
+= 1359107 KingdomOfAphrodisia.Population
 = 1285940 DivineQiziqPrincipality.Population
 = 1824689 XanmaiMandate.Population
 = 1690121 KyumatsuDynasty.Population
-= 1211739 ExarchateOfAfrica.Population
-= 915446 PersianEmpire.Population
 = 1104970 HolyKingdomOfJerusalem.Population
 = 1487867 TairaShogunate.Population
+= 1359430 Sumeria.Population
 = 1478955 GrecoBactria.Population
+= 1209836 Alexandria.Population
 = 1628867 KosalaKingdom.Population
 = 1098830 RoyalTaiKingdom.Population
 = 1561437 KwangtungConfederacy.Population
@@ -1817,7 +1841,7 @@
 = 2311475 DuchyOfMoscow.Future Population
 = 2258072 KingdomOfGermany.Future Population
 = 2370330 AngloCrownConfederacy.Future Population
-= 2036736 KingdomOfPoland.Future Population
+= 2264300 KingdomOfPoland.Future Population
 = 1845655 GrandDuchyOfHolland.Future Population
 = 2108369 KyivanRus.Future Population
 = 1414644 CumanKipchakConfederation.Future Population
@@ -1831,19 +1855,20 @@
 = 1552323 VenetianRepublic.Future Population
 = 1714873 SerbianEmpire.Future Population
 = 1501283 RomanumImperium.Future Population
+= 1838745 KingdomOfPortugal.Future Population
 = 1039060 KingdomOfGeorgia.Future Population
 = 1602891 CrownOfAragon.Future Population
 = 1729064 ShowaShogunate.Future Population
 = 1584677 RegnumThessalonicae.Future Population
-= 1522379 KingdomOfAphrodisia.Future Population
+= 1521645 KingdomOfAphrodisia.Future Population
 = 1435122 DivineQiziqPrincipality.Future Population
 = 2055147 XanmaiMandate.Future Population
 = 1880579 KyumatsuDynasty.Future Population
-= 1350880 ExarchateOfAfrica.Future Population
-= 1002362 PersianEmpire.Future Population
 = 1250104 HolyKingdomOfJerusalem.Future Population
 = 1668233 TairaShogunate.Future Population
+= 1533529 Sumeria.Future Population
 = 1632775 GrecoBactria.Future Population
+= 1351900 Alexandria.Future Population
 = 1843996 KosalaKingdom.Future Population
 = 1241563 RoyalTaiKingdom.Future Population
 = 1730707 KwangtungConfederacy.Future Population
@@ -1876,19 +1901,20 @@
 = 4107.825 VenetianRepublic.Fertility
 = 3277.8999999999996 SerbianEmpire.Fertility
 = 3532.375 RomanumImperium.Fertility
+= 3519.15 KingdomOfPortugal.Fertility
 = 1945.975 KingdomOfGeorgia.Fertility
 = 3420.0999999999995 CrownOfAragon.Fertility
 = 3219.8 ShowaShogunate.Fertility
 = 4607.325 RegnumThessalonicae.Fertility
-= 3534.9249999999997 KingdomOfAphrodisia.Fertility
+= 3533.875 KingdomOfAphrodisia.Fertility
 = 3693.6250000000005 DivineQiziqPrincipality.Fertility
 = 5245.750000000001 XanmaiMandate.Fertility
 = 3054.4500000000003 KyumatsuDynasty.Fertility
-= 3033.575 ExarchateOfAfrica.Fertility
-= 1988.6000000000001 PersianEmpire.Fertility
 = 3483.85 HolyKingdomOfJerusalem.Fertility
 = 3090.9999999999995 TairaShogunate.Fertility
+= 4387.599999999999 Sumeria.Fertility
 = 2406.225 GrecoBactria.Fertility
+= 2588.1 Alexandria.Fertility
 = 5780.199999999999 KosalaKingdom.Fertility
 = 4483.2 RoyalTaiKingdom.Fertility
 = 2901.125 KwangtungConfederacy.Fertility
