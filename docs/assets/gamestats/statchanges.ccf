@@ -602,22 +602,6 @@
 = "Deccani" cultrep
 = "Buddhism" relrep
 
-<... > Nations
-+> KingdomOfGeorgia
-> KingdomOfGeorgia
-= "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Flag_of_Georgia.svg/1920px-Flag_of_Georgia.svg.png" Flag
-> ReligionGroups
-=0 pagan
-+> Orthodox
-=100 Orthodox
-<
-> CultureGroups
-+> Caucasian
-=100 Caucasian
-<
-= "Caucasian" cultrep
-= "Orthodox" relrep
-
 <... > Cultures
 +> Roman
 
@@ -736,7 +720,6 @@
 = "5f5293" nations.VenetianRepublic.Color
 = "1d327c" nations.SerbianEmpire.Color
 = "7f1800" nations.RomanumImperium.Color
-= "961f29" nations.KingdomOfGeorgia.Color
 = "ffb349" nations.CrownOfAragon.Color
 = "66f5fa" nations.RegnumThessalonicae.Color
 = "ff7cc2" nations.KingdomOfAphrodisia.Color
@@ -1011,14 +994,6 @@
 +> Iberian
 = 100 Iberian.Points
 < <
-> KingdomOfGeorgia
-+> CultureGroups
-> CultureGroups
-+> Caucasian
-= 96.14103778842939 Caucasian.Points
-+> Persian
-= 3.8589622115706166 Persian.Points
-< <
 > CrownOfAragon
 +> CultureGroups
 > CultureGroups
@@ -1286,11 +1261,6 @@
 +> Catholic
 = 100 Catholic.Points
 < <
-> KingdomOfGeorgia
-> ReligionGroups
-+> Orthodox
-= 100 Orthodox.Points
-< <
 > CrownOfAragon
 > ReligionGroups
 +> Catholic
@@ -1442,9 +1412,6 @@
 = 135 RomanumImperium.Moderate
 = 6096 KingdomOfPortugal.Medditereanian
 = 1414 KingdomOfPortugal.Mountainous
-= 5015 KingdomOfGeorgia.Mountainous
-= 816 KingdomOfGeorgia.Moderate
-= 1638 KingdomOfGeorgia.Arid
 = 4798 CrownOfAragon.Medditereanian
 = 65 CrownOfAragon.Moderate
 = 2623 CrownOfAragon.Mountainous
@@ -1530,7 +1497,6 @@
 = 38999 SerbianEmpire.DevelopmentPixelCount
 = 32701 RomanumImperium.DevelopmentPixelCount
 = 68268 KingdomOfPortugal.DevelopmentPixelCount
-= 25977 KingdomOfGeorgia.DevelopmentPixelCount
 = 49098 CrownOfAragon.DevelopmentPixelCount
 = 45150 ShowaShogunate.DevelopmentPixelCount
 = 39292 RegnumThessalonicae.DevelopmentPixelCount
@@ -1576,7 +1542,6 @@
 = 704676 SerbianEmpire.coastalPopulation
 = 586808 RomanumImperium.coastalPopulation
 = 672967 KingdomOfPortugal.coastalPopulation
-= 297612 KingdomOfGeorgia.coastalPopulation
 = 526332 CrownOfAragon.coastalPopulation
 = 713645 ShowaShogunate.coastalPopulation
 = 494388 RegnumThessalonicae.coastalPopulation
@@ -1624,7 +1589,6 @@
 = 0.10 RomanumImperium.MaxIron
 = 0.55 CrownOfAragon.MaxIron
 = 3.00 ShowaShogunate.MaxIron
-= 0.30 KingdomOfGeorgia.MaxIron
 = 1.95 XanmaiMandate.MaxIron
 = 1.00 KingdomOfPortugal.MaxIron
 = 0.45 Alexandria.MaxIron
@@ -1810,7 +1774,6 @@
 = 1532908 SerbianEmpire.Population
 = 1350547 RomanumImperium.Population
 = 1632526 KingdomOfPortugal.Population
-= 944334 KingdomOfGeorgia.Population
 = 1435846 CrownOfAragon.Population
 = 1544270 ShowaShogunate.Population
 = 1410270 RegnumThessalonicae.Population
@@ -1856,7 +1819,6 @@
 = 1714873 SerbianEmpire.Future Population
 = 1501283 RomanumImperium.Future Population
 = 1838745 KingdomOfPortugal.Future Population
-= 1039060 KingdomOfGeorgia.Future Population
 = 1602891 CrownOfAragon.Future Population
 = 1729064 ShowaShogunate.Future Population
 = 1584677 RegnumThessalonicae.Future Population
@@ -1902,7 +1864,6 @@
 = 3277.8999999999996 SerbianEmpire.Fertility
 = 3532.375 RomanumImperium.Fertility
 = 3519.15 KingdomOfPortugal.Fertility
-= 1945.975 KingdomOfGeorgia.Fertility
 = 3420.0999999999995 CrownOfAragon.Fertility
 = 3219.8 ShowaShogunate.Fertility
 = 4607.325 RegnumThessalonicae.Fertility
@@ -1923,5 +1884,2400 @@
 = 4618.900000000001 Garmoni.Fertility
 = 1910.35 Srivijaya.Fertility
 = 2462.15 Lutruwita.Fertility
+!suppress 0
+<...
+
+
+<...> Nations > The Ogalala River Lakota Sioux Chiefdom
++0.75 AdmEff
++0.15 AdmSize
+
+<...> Nations > The Ogalala River Lakota Sioux Chiefdom
++0.25 LocalTrade
++0.1 AgrInf
++0.05 AgrAdv
++0.1 StockCap
+
+<...> Nations > The Ogalala River Lakota Sioux Chiefdom
++0.35 Fur
+
+<... > Nations > Greco Bactria
++300 PublicDebtTaken
+!suppress 1
++300 Budget
+
+<... > Nations > Greco Bactria
++0.5 AdmEff
++0.15 AdmSize
++2.5 GovernmentRepresentation.Clergy Representation
++2.5 GovernmentRepresentation.Burgousie Representation
+-5 GovernmentRepresentation.Unitary Representation
++2.5 EstateInfluences.UrbanInfluence
+
+<... > Nations > Greco Bactria
++0.25 AdmEff
++0.05 AdmSize
+
+<... > Nations > Greco Bactria
++0.25 LocalTrade
++0.05 AdmSize
++0.25 AdmEff
+
+<... > Nations > Greco Bactria
++0.1 AdmSize
++0.5 AdmEff
++0.5 CommanderFreedom
+
+<... > Nations > Greco Bactria
++0.1 AdmSize
++0.5 AdmEff
++0.5 CommanderFreedom
+
+<... > Nations > Greco Bactria
++2 TradeInfluences.IndusRiver
++2 TradeInfluences.Afghanistan
++2 TradeInfluences.Ganges
++0.25 LocalTrade
+
+<... > Nations > Greco Bactria
++200 LightInfantry
++200 LightCavalry 
++100 HeavyCavalry
+
+=15% AristocracyTax
+=20% ClergyTax
+=20% BurgousieTax
+=20% UrbanTax
+=20% BureaucratsTax
+=20% IntellectualsTax
+=20% WorkersTax
+=10% MilitaryTax 
+
+<... > Nations > Tondo Kingdom
++8 GovernmentRepresentation.AristocracyRepresentation
+-8 GovernmentRepresentation.UnitaryRepresentation
++8 EstateInfluences.AristocracyInfluence
++6 MilitaryControl.AristocracyControl
+-6 MilitaryControl.Independent
++0.75 AdmEff
+-0.25 AdmSize
+
+<... > Nations > Tondo Kingdom
++0.75 AdmEff
++0.05 CulturalProsperity
+
+<... > Nations > Tondo Kingdom
+=15% AristocracyTax
+=15% ClergyTax
+=15% BurgousieTax
+=15% UrbanTax
+=15% BureaucratsTax
+=15% IntellectualsTax
+=15% WorkersTax
+=4 BureaucratsWages
+
+<... > Nations > Qara Ulys
++0.5 AdmEff
+
+<... > Nations > Kingdom Of Aphrodisia
++0.25 AdmEff
++0.05 AdmSize
+
+<... > Nations > Kingdom Of Aphrodisia
++0.5 AdmEff
++0.1 AdmSize
+="true" Technologies.Promissory Notes
+-2 ResearchPoints
+
+<... > Nations > Kingdom Of Aphrodisia
++0.5 LocalTrade
++0.15 CulturalProsperity
+
+<... > Nations > Holy Roman Dominion Of The Danube
++0.5 AdmEff
++0.1 AdmSize
++0.25 EduEff
++0.025 EstateInfluences.BureaucratsInfluence
++0.025 EstateInfluences.IntellectualsInfluence
++0.05 ResearchSpending
+
+<... > Nations > Holy Roman Dominion Of The Danube
++0.025 EstateInfluences.ClergyInfluence
+
+<... > Nations > Holy Roman Dominion Of The Danube
++0.5 LocalTrade
++0.1 StockingCapabilities
++2.5 ProductionSectors.BasicGoodsSector
+=12% InternalTariffs
++5 TradeInfluences.Western Danube
++5 TradeInfluences.Eastern Danube
++5 TradeInfluences.Rhine
++5 TradeInfluences.Central Europe
+
+<... > Nations > Holy Roman Dominion Of The Danube
++0.05 AgrInf
++0.05 AgrSubsidies
++0.25 LocalTrade
+
+<... > Nations > Holy Roman Dominion Of The Danube
++0.75 LocalTrade
++5 EstateInfluences.BurgousieInfluence
+
+<... > Nations > Holy Roman Dominion Of The Danube
++0.75 admeff
++0.5 health
++1 local trade
+
+<... > Nations > Holy Roman Dominion Of The Danube
++5 TradeInfluences.Western Danube
+
+<... > Nations > Fritsan Empire
++1 admeff
+-2 research points
+="true" Technologies.Promissory Notes
+
+<... > Nations > Fritsan Empire
+-2 research points
+="true" Technologies.Cranes
+
+<... > Nations > The Ogalala River Lakota Sioux Chiefdom
++0.5 local trade
+
+<... > Nations > Holy Roman Dominion Of The Danube
++0.05 AgrInf
++0.05 AgrSubsidies
+
+<... > Nations > Kwangtung Confederacy
++0.25 AdmEff
++0.1 AdmSize
++0.5 LocalTrade
++0.05 TradeImprovements
++5 EstateInfluences.BureaucratsInfluence
++2.5 EstateInfluences.ClergyInfluence
++2.5 EstateInfluences.AristocracyInfluence
++2.5 EstateInfluences.BurgousieInfluence
+
+<... > Nations > Kwangtung Confederacy
++0.25 AdmEff
++0.05 AdmSize
++0.5 LocalTrade
++0.05 TradeImprovements
++5 GovernmentRepresentation.UnitaryRepresentation
+-2.5 GovernmentRepresentation.ClergyRepresentation
+-2.5 GovernmentRepresentation.BurgousieRepresentation
++5 EstateInfluences.AristocracyInfluence
+
+<... > Nations > Royal Tai Kingdom
++0.1 AgrInf
+
+<... > Nations > Royal Tai Kingdom
++0.05 AgrInf
++0.25 EduEff
+
+<... > Nations > Royal Tai Kingdom
+-2 ResearchPoints
+="true" Technologies.SappersAndEngineers
+
+<... > Nations > Royal Tai Kingdom
++0.25 AdmEff
++0.5 Health
+
+<... > Nations > Royal Tai Kingdom
++0.05 OverallImprovements
+
+<... > Nations > Royal Tai Kingdom
++0.05 IrregularImprovements
+
+<... > Nations > Royal Tai Kingdom
++0.5 Health
++2.5 ProductionSectors.TextilesSector
+
+<... > Nations > Royal Tai Kingdom
++0.05 AgrAdv
++0.05 AgrInf
+
+<... > Nations > Royal Tai Kingdom
++0.1 StockingCapabilities
+
+<... > Nations > Royal Tai Kingdom
++0.5 Health
+
+<... > Nations > Royal Tai Kingdom
++0.75 ExoticFruit
+
+<... > Nations > Royal Tai Kingdom
++0.5 Sugar
+
+<... > Nations > Royal Tai Kingdom
++0.5 LocalTrade
++5 TradeInfluences.SouthEastAsia
++5 TradeInfluences.Ganges
+
+<... > Nations > Fritsan Empire
++0.5 AdmEff
++0.1 AdmSize
+
+<... > Nations > Kingdom Of Aphrodisia
++0.05 SpyQuality
++5 TradeInfluences.Greece
++5 TradeInfluences.CentralMediterranean
++5 TradeInfluences.Adriatic
+
+<... > Nations > Kwangtung Confederacy
++5 ProductionSectors.ShipbuildingSector
++2.5 ProductionSectors.BasicArmamentsSector
++2.5 ProductionSectors.BasicToolsSector
++2.5 ProductionSectors.ConstructionSector
++1 ProductionSectors.HeavyArmamentsSector
++5 TradeInfluences.SouthChinaSea
++5 TradeInfluences.SouthEastAsia
++2.5 TradeInfluences.Sichuan
++2.5 TradeInfluences.YangtzeRiver
++2.5 EstateInfluences.BurgousieInfluence
+-2 ResearchPoints
+="true" Cranes
+
+<... > Nations > Kwangtung Confederacy
++0.75 AdmEff
++0.15 AdmSize
++0.05 OverallImprovements
++0.05 LightShipImprovements
++0.05 MediumShipImprovements
++0.05 HeavyShipImprovements
+=5.5 BureaucratsWages
++5 EstateInfluences.BureaucratsInfluence
++2.5 EstateInfluences.AristocracyInfluence
++2.5 EstateInfluences.IntellectualsInfluence
++0.75 EduEff
++5 MilitaryControl.BureaucratsControl
+-2.5 MilitaryControl.BurgousieControl
+-2.5 MilitaryControl.Independent
++0.05 ResearchEff
++0.1 CulturalProsperity
+
+<... > Nations > Kwangtung Confederacy
++0.05 CulturalProsperity
+
+<... > Nations > Kosala Kingdom
++0.25 admeff
++0.1 StockingCapabilities
++0.1 AgrInf
++0.05 AgrAdv
+
+<... > Nations > Kosala Kingdom
++0.1 AgrInf
++0.05 AgrSubsidies
++0.05 AgrAdv
+
+<... > Nations > Kosala Kingdom
++0.25 AdmEff
++0.75 LocalTrade
++0.05 TradeImprov
++7.5 TradeInfluences.Ganges
+
+<... > Nations > Kosala Kingdom
++0.5 LocalTrade
++0.75 ExoticFruit
++0.75 Sugar
++0.75 Spice
++0.75 Tea
++0.5 Silk
++2.5 ProductionSectors.TextilesSector
+
+<... > Nations > Kosala Kingdom
++0.5 AdmEff
++0.1 AdmSize
++0.25 EduEff
+
+<... > Nations > Kosala Kingdom
++0.5 AdmEff
++0.1 AdmSize
+
+<... > Nations > Kosala Kingdom
++0.75 AdmEff
++0.1 AdmSize
++7.5 GovernmentRepresentation.UnitaryRepresentation
+-2.5 GovernmentRepresentation.AristocracyRepresentation
+-2.5 GovernmentRepresentation.ClergyRepresentation
+-2.5 GovernmentRepresentation.BurgousieRepresentation
+
+<... > Nations > Kingdom Of Poland
++0.75 AdmEff
++0.1 AdmSize
++0.75 ReligiousFervor
++5 EstateInfluences.MilitaryInfluence
++2.5 GovernmentRepresentation.UnitaryRepresentation
++5 GovernmentRepresentation.MilitaryRepresentation
+-2.5 GovernmentRepresentation.AristocracyRepresentation
+-2.5 GovernmentRepresentation.ClergyRepresentation
+-2.5 GovernmentRepresentation.BurgousieRepresentation
++5 MilitaryControl.Independent
+-2.5 MilitaryControl.ClergyControl
+-2.5 MilitaryControl.BurgousieControl
+
+<... > Nations > Sangkhom
++0.25 ReligiousFervor
++0.25 EduEff
++0.25 AdmEff
+-7.5 GovernmentRepresentation.ClergyRepresentation
++2.5 GovernmentRepresentation.BurgousieRepresentation
++2.5 GovernmentRepresentation.UnitaryRepresentation
++2.5 GovernmentRepresentation.IntellectualsRepresentation
+-7.5 EstateInfluences.ClergyInfluence
++2.5 EstateInfluences.BurgousieInfluence
++2.5 EstateInfluences.AristocracyInfluence
+-0.0025 Workforces.Clergy
+
+<... > Nations > KosalaKingdom
++0.5 Tea
++0.5 Sugar
++0.5 Spice
++0.5 Silk
++0.5 ExoticFruit
+
+<... > Nations > Kingdom Of Germany
++0.25 Adm
+=25% AristocracyTax
+=0% ClergyTax
+=0% IntellectualsTax
+=12.5% BurgousieTax
+=12.5% UrbanTax
+=15% BureaucratsTax
+=10% WorkersTax
+=10% MilitaryTax
+=15% ExternalTariffs
+=12.5% InternalTariffs
+
+<... > Nations > Kwangtung Confederacy
++0.05 LightShipImprovements
++0.05 MediumShipImprovements
++0.05 HeavyShipImprovements
++0.05 TradeImprovements
++5 TradeInfluences.SouthEastAsia
++5 TradeInfluences.SouthChinaSea
++5 TradeInfluences.YangtzeRiver
++2.5 TradeInfluences.SeaOfJapan
++2.5 TradeInfluences.Indonesia
++10 MerchantShips
+
+<... > Nations > Kwangtung Confederacy
++0.5 Iron
++0.25 local trade
++2.55 tradeinfluences.SouthChinaSea
++0.25 MiningEff
+
+<... > Nations > KosalaKingdom
++0.5 AdmEff
++0.1 AdmSize
++0.25 PopulationControl
++5 EstateInfluences.ClergyInfluence
++5 EstateInfluences.AristocracyInfluence
+
+<... > Nations > KingdomOfGermany
++0.5 EduEff
++0.05 ResearchSpending
+
+<... > Nations > Kwangtung Confederacy
++0.5 Silk
++0.5 Tea
++0.5 Spice
++0.5 ExoticFruit
++0.5 Sugar
+
+<... > Nations > Kwangtung Confederacy
+=25% ExternalTariffs
++10% InternalTariffs
++0.25 LocalTrade
++1 EstateInfluences.WorkersInfluence
+
+<... > Nations > Kingdom Of Aphrodisia
++0.1 Propaganda
+<... > Cultures > Egyptian > Opinions
++> Greek
+=5 Greek.Score
+
+<... > Nations > QaraUlys
++0.1 AgrInf
+
+<... > Nations > Kwangtung Confederacy
+=27.93% AristocracyTax
+=23.67% ClergyTax
+=18.23% BurgousieTax
+=13.21% UrbanTax
+=13.16% BureaucratsTax
+=12.89% IntellectualsTax
+=15.6% WorkersTax
+=14.13% MilitaryTax
+
+<... > Nations > QaraUlys
+=22.7% AristocracyTax
+=19% ClergyTax
+=13.5% UrbanTax
+=20.11% BurgousieTax
+=14% BureaucratsTax
+=12.7% WorkersTax
+=12.1% MilitaryTax
+
+<... > Nations > KosalaKingdom
+-2 ResearchPoints
+="true" Technologies.PromissoryNotes
++1 AdmEff
++0.1 AdmSize
++0.05 TradeImprov
++0.5 LocalTrade
++2.5 EstateInfluences.BurgousieInfluence
+
+<... > Nations > KosalaKingdom
++0.5 Health
+
+<... > Nations > KwangtungConfederacy
++0.5 CommanderFreedom
++0.05 OverallImprov
+
+<... > Nations > KwangtungConfederacy
++0.15 ArmyWage
++0.05 OverallImprov
+
+<... > Nations > KosalaKingdom
++0.25 Spice
+
+<... > nations > Kwangtung Confederacy
++5 TradeInfluences.South East Asia
+<... > nations > Sangkhom
++5 TradeInfluences.South China Sea
+
+<... > nations > Xanmai Mandate
++2.5 EstateInfluences.BureaucratsInfluence
+-2.5 EstateInfluences.AristocracyInfluence
++0.5 AdmEff
++0.1 AdmSize
++0.25 EduEff
+
+<... > nations > Xanmai Mandate
++0.05 AgrAdv
++0.1 AgrInf
+
+<... > nations > Xanmai Mandate
++0.05 AgrAdv
++0.05 AgrInf
+
+<... > nations > Xanmai Mandate
++0.5 AdmEff
++0.1 AdmSize
+
+<... > nations > Xanmai Mandate
++0.5 Silk
++0.5 Tea
++0.25 Health
++0.05 CulturalProsperity
++2.5 ProductionSectors.TextilesSector
+
+<... > nations > Kosala Kingdom
+="https://cdn.discordapp.com/attachments/1388482719381585981/1388548842076508160/image0.jpg?ex=686a9ce1&is=68694b61&hm=1bcb7a5f9dfa9e5477cb1361478d5cd639ef6dcbe56b606614f099ee76a349b5&" Flag
+
+<... > nations > KwangtungConfederacy
+=128 LightCav
+=72 HeavyCav
+=1200 LightInf
+=800 Crossbowmen
+=200 HeavyInf
+=50 HandCannoneers
+=400 Archers
+
+ 
+<... > nations > Greco Bactria
++0.1 AgrSubsidies
++0.1 agrinf
++0.1 stockcap
+
+<... > nations > KwangtungConfederacy
++1 EstateInfluences.MilitaryInfluence
++1 EstateInfluences.AristocracyInfluence
++0.25 AdmEff
++0.05 AdmSize
++0.25 EduEff
+
+<... > nations > The Ogalala River Lakota Sioux Chiefdom
++0.1 AdmEff
++0.05 AdmSize
++0.25 LocalTrade
++0.05 AgrInf
+
+<... > nations > Greco Bactria
++0.1 admeff
++0.1 admsize
++0.25 localtrade
++1 tradeinfluences.Indus river
++1 tradeinfluences.Afghanistan
++1 tradeinfluences.Ganges
+
+<... > nations > Sangkhom
++0.5 AdmEff
++0.1 AdmSize
++0.25 EduEff
++0.5 LocalTrade
++2.5 TradeInfluences.South East Asia
++2.5 TradeInfluences.Indonesia
++5 EstateInfluences.AristocracyInfluence
++2.5 EstateInfluences.BurgousieInfluence
+-2.5 EstateInfluences.ClergyInfluence
+-5 GovernmentRepresentation.ClergyRepresentation
++2.5 GovernmentRepresentation.AristocracyRepresentation
++2.5 GovernmentRepresentation.BurgousieRepresentation
+
+<... > Cultures > Khmer > Opinions
++> Thai
+=20 Thai.Score
+<... > Cultures > Thai > Opinions
++> Khmer
+=20 Khmer.Score
+
+<... > nations > Xanmai Mandate
++0.4 Coal
++0.75 Iron
++0.5 LocalTrade
++2.5 ProductionSectors.BasicToolsSector
++1% ProductionGovernmentControl
+
+<... > nations > Xanmai Mandate
++0.5 edueff
++0.05 ResearchEffectiveness
++0.05 overallimprov 
++0.05 siegeimprov
+-5 EstateInfluences.AristocracyInfluence
++5 EstateInfluences.BureaucratsInfluence
+
+<... > nations > Xanmai Mandate
++0.1 culturalprosperity
+
+<... > nations > Fritsan Empire
++0.15 agradv
++0.2 stockcap
++0.5 health
+
+<... > Nations > Xanmai Mandate
++0.05 LightShipImprovements
++0.05 MediumShipImprovements
++0.05 HeavyShipImprovements
++0.05 TradeImprovements
++5 TradeInfluences.Manchuria
++5 TradeInfluences.YellowRiver
++5 TradeInfluences.YangtzeRiver
++5 TradeInfluences.SeaOfJapan
+
+<... > Nations > KwangtungConfederacy
++0.1 LightShipImprovements
++0.1 MediumShipImprovements
++0.1 HeavyShipImprovements
+
+<... > Nations
+<=> Holy Kingdom Of Jerusalem > Holy Kingdom Of Judah
+
+<... > Nations > Kingdom Of Poland
++0.25 AdmEff
++0.05 AdmSize
+
+<... > Nations > HolyKingdomOfJudah
++0.2 AgrInf
++0.05 AgrSubsidies
++0.1 StockingCapabilities
++0.5 Health
+
+<... > Nations > KosalaKingdom
++0.05 AgrSubsidies
++0.2 StockingCapabilities
+-2 ResearchPoints
+="true" Technologies.Cranes
+
+<... > Nations > KosalaKingdom
++0.05 TradeImprov
++2.5 EstateInfluences.BurgousieInfluence
++0.5 LocalTrade
++2.5 TradeInfluences.Ganges
++0.25 AdmEff
+
+<... > Nations > TondoKingdom
++2.5 TradeInfluences.South China Sea
++2.5 TradeInfluences.Indonesia
++0.5 LocalTrade
++2.5 ProductionSectors.ShipbuildingSector
++2.5 ProductionSectors.ConstructionSector
+
+<... > Nations > TondoKingdom
++0.25 LocalTrade
++1 ProductionSectors.ConstructionSector
++0.05 AgrInf
++0.05 AdmSize
+
+<... > Nations > TondoKingdom
++0.25 LocalTrade
++1 ProductionSectors.ConstructionSector
++1 ProductionSectors.BasicToolsSector
++0.05 AgrInf
++0.05 AdmSize
+
+<... > Nations > KingdomOfGermany
++0.05 AdmSize
++0.25 AdmEff
+
+<... > Nations > TondoKingdom
++0.25 LocalTrade
++1 ProductionSectors.ConstructionSector
++1 ProductionSectors.ShipBuildingSector
+
+<... > Nations > TondoKingdom
++0.25 LocalTrade
++0.05 AdmSize
++0.05 AgrSubsidies
++0.05 AgrInf
++1 ProductionSectors.ConstructionSector
+
+<... > Nations > TondoKingdom
++0.25 LocalTrade
+
+<... > Nations > TondoKingdom
++0.25 LocalTrade
++1 ProductionSectors.ConstructionSector
++1 ProductionSectors.ShipBuildingSector
+
+<... > Nations > TondoKingdom
++0.25 LocalTrade
++1 ProductionSectors.ConstructionSector
++1 ProductionSectors.ShipBuildingSector
++0.05 AgrInf
++0.05 AgrSubsidies
+
+<... > Nations > TondoKingdom
++12.5 TradeInfluences.South China Sea
++5 TradeInfluences.Indonesia
++2.5 TradeInfluences.South East Asia
+
+<... > Nations > TondoKingdom
++0.05 LightShipImprovements
++0.05 MediumShipImprovements
++0.05 HeavyShipImprovements
++1 LightShips
++1 MediumShips
++1 HeavyShips
++2.5 ProductionSectors.ShipbuildingSector
+
+<... > Nations > KingdomOfScotland
++0.05 AdmSize
+
+<... > Nations > Holy Roman Dominion Of The Danube
++0.1 CulturalProsperity
+
+<... > Nations > KosalaKingdom
+=20% Aristocracy Tax
+=19% Clergy Tax
+=20% Burgousie Tax
+=18% Urban Tax
+=20% Bureaucrats Tax
+=15% Intellectuals Tax
+=20% Workers Tax
+=10% Military Tax
+
+<... > Nations > TondoKingdom
+=20% Aristocracy Tax
+=19% Clergy Tax
+=20% Burgousie Tax
+=18.5% Urban Tax
+=20% Bureaucrats Tax
+=15% Intellectuals Tax
+=10% Workers Tax
+=10% Military Tax
+
+<... > Nations > KosalaKingdom
++0.5 LocalTrade
++0.1 AdmSize
++0.5 AdmEff
++2.5 EstateInfluences.BureaucratsInfluence
++2.5 EstateInfluences.ClergyInfluence
++2.5 EstateInfluences.AristocracyInfluence
++2.5 ProductionSectors.ConstructionSector
+
+<... > Nations > KosalaKingdom
++0.25 LocalTrade
++0.25 Health
+
+<... > Nations > KosalaKingdom
++0.5 EduEff
++0.1 CulturalProsperity
+
+<... > Nations > KosalaKingdom
++0.1 CulturalProsperity
+
+<... > Nations > Sangkhom
++0.5 Silk
++0.05 Reforestation
++0.05 AgrInf
++0.1 StockingCapabilities
+
+<... > Nations > Sangkhom
++1.5 Silk
++1 LocalTrade
++0.05 CulturalProsperity
++5 ProductionSectors.TextilesSector
+
+<... > Nations > Lutruwita 
++0.75 Health
+
+<... > Nations > Regnum Thessalonicae
++7.5 EstateInfluences.ClergyInfluence
+
+<... > Nations > Regnum Thessalonicae
++0.75 Coal
+
+<... > Nations > Regnum Thessalonicae
++0.75 Copper
++0.25 Propaganda
+
+<... > Nations > Regnum Thessalonicae
++2 MerchantShips
++2.5 TradeInfluences.Greece
+
+<... > Nations > Regnum Thessalonicae
++5% AristocracyTax
+
+<... > Nations > Regnum Thessalonicae
++2.5 EstateInfluences.ClergyInfluence
+-2.5% ClergyTax
+-0.25 SocialSpending
++0.25 ReligiousFervor
+
+<... > Nations > Regnum Thessalonicae
++2.5% aristocracy tax
+-0.05% workforces.aristocracy
++0.05% workforces.clergy
+
+<... > Nations > Showa Shogunate
++0.05 AgrSubsidies
+
+<... > Nations > KingdomOfGermany
++0.25 EduEff
++0.5 LocalTrade
++0.1 AdmSize
+
+<... > Nations > KosalaKingdom
++0.75 Cotton
++0.25 Silk
+
+<... > Nations > KosalaKingdom
++0.05 AgrAdv
++0.05 AgrSubsidies
++0.1 AgrInf
+
+<... > Nations > KosalaKingdom
++0.5 AdmEff
++0.1 AdmSize
++0.25 SocialSpending
+
+<... > Nations > Venetian Republic
+
++0.5 AdmEff
++0.1 AdmSize
++5 EstateInfluences.AristocracyInfluence
++4 EstateInfluences.BurgousieInfluence
+-9 EstateInfluences.ClergyInfluence
++2 GovernmentRepresentation.UnitaryRepresentation
++4 GovernmentRepresentation.AristocracyRepresentation
++3 GovernmentRepresentation.BurgousieRepresentation
+-9 GovernmentRepresentation.ClergyRepresentation
+
+<... > Nations > Venetian Republic
++0.5 Iron
++0.25 coal 
++0.5 Gold
+
+<... > Nations > Venetian Republic
++0.5 AdmEff
++0.05 TradeImprovements
++0.5 LocalTrade
++5 TradeInfluences.Adriatic
++3 TradeInfluences.Western Danube
++3 TradeInfluences.Eastern Danube
++5 TradeInfluences.Central Mediterranean
++3 TradeInfluences.Greece
++4 TradeInfluences.Southern France
++3 TradeInfluences.Western Mediterranean
++3 TradeInfluences.Egypt
++3 TradeInfluences.Eastern Mediterranean
+
+<... > Nations > Xanmai mandate
++0.5 admeff
++0.1 admsize
++0.05 culturalprosperity
+
+<... > Nations > Venetian Republic
++0.5 admeff
++0.2 admsize
++4 estateinfluences.clergyinfluence
++0.5 bureaucratswages
+
+<... > Nations > Venetian Republic
++4 EstateInfluences.BurgousieInfluence
++3 EstateInfluences.UrbanInfluence
++3.5 ProductionSectors.BasicGoodsSector
++0.5 LocalTrade
++0.1 AgrInf
++0.1 stockcap
++4 TradeInfluences.Adriatic
++3 TradeInfluences.Western Danube
++2 TradeInfluences.Eastern Danube
++4 TradeInfluences.Central Mediterranean
++3 TradeInfluences.Greece
++3 TradeInfluences.Southern France
++3 TradeInfluences.Western Mediterranean
++2 TradeInfluences.Egypt
++2 TradeInfluences.Eastern Mediterranean
+
+<... > Nations > Xanmai Mandate
++0.05 LightShipImprov
++0.05 MediumShipImprov
++0.05 HeavyShipImprov
+
+<... > Nations > Xanmai Mandate
++0.5 AdmSize
++0.1 AgrInf
+
+
+<... > Nations > Holy Roman Dominion Of The Danube
+-4 ResearchPoints
+="true" Technologies.PromissoryNotes
+="true" Technologies.Cranes
++1 AdmEff
+=14% Aristocracy Tax
+=14% Clergy Tax
+=14% Burgousie Tax
+=14% Urban Tax
+=14% Bureaucrats Tax
+=14% Intellectuals Tax
+=14% Workers Tax
+=14% Military Tax
+
+<... > Nations > Venetian Republic
++2.5 estateInfluences.BurgousieInfluence
++2.5 EstateInfluences.UrbanInfluence
++0.5 LocalTrade
++0.05 TradeImprovements
++2 ProductionSectors.LuxuryGoodsSector
++3 TradeInfluences.Adriatic
++3 TradeInfluences.Western Danube
++2 TradeInfluences.Eastern Danube
++2 TradeInfluences.Central Mediterranean
++1 tradeInfluences.Greece
++2 TradeInfluences.Southern France
++1 TradeInfluences.Western Mediterranean
++1 TradeInfluences.Morocco
++1 TradeInfluences.Iberia
++1 tradeInfluences.Egypt
++1 TradeInfluences.Eastern Mediterranean
++1 TradeInfluences.Northern Anatolia
++1 TradeInfluences.Romania
++1 TradeInfluences.France
++1 TradeInfluences.Rhine
+
+<... > Nations > Xanmai mandate
++0.1 agrinf
++0.2 sugar
++0.05 agradv
++0.1 stockcap
++0.5 spice
+
+<... > Nations > Xanmai mandate
++0.75 localtrade
++0.75 admeff
+
+<... > Nations > Xanmai mandate
+-4 ResearchPoints
+="true" Technologies.Cranes
+="true" Technologies.promissorynotes
++1 admeff
+
+<... > Nations > Venetian Republic
+-4 ResearchPoints
+="true" Technologies.Cranes
+="true" technologies.promissorynotes
++1 admeff
+
+<... > Nations > Venetian Republic
++0.5 LocalTrade
++0.1 TradeImprovements
++2 TradeInfluences.Adriatic
++1 TradeInfluences.Western Danube
++1 TradeInfluences.Eastern Danube
++2 TradeInfluences.Central Mediterranean
++1.5 TradeInfluences.Greece
++1 TradeInfluences.Southern France
++1 TradeInfluences.Western Mediterranean
++1 TradeInfluences.Morocco
++1 TradeInfluences.Iberia
++1 TradeInfluences.Egypt
++1 TradeInfluences.Eastern Mediterranean
+
+<... > Nations > Venetian Republic
++0.5 EduEff
++0.05 ResearchSpending
++0.5 AdmEff
++0.1 AdmSize
++0.5 Health
+
+<... > Nations > Kingdom of Lithuania 
++0.05 stockcap
++0.25 forestry
+
+<... > Nations > HolyKingdomOfJudah
++0.15 StockingCapabilities
++0.1 AdmSize
++0.25 AdmEff
++5 EstateInfluences.ClergyInfluence
++0.25 SocialSpending
+
+<... > Nations > The Ogalala River Lakota Sioux Chiefdom
++0.5 LocalTrade
++5 TradeInfluences.Mississippi
+
+<... > Nations > The Ogalala River Lakota Sioux Chiefdom
++0.1 AgrInf
++0.05 AgrAdv
++0.05 StockingCapabilities
++0.05 AgrSubsidies
+
+<... > Nations > Kingdom Of Aphrodisia
++0.5 Propaganda
+<... > Cultures > Italian > Opinions
++> Greek
+=10 Greek.Score
+<... > Cultures > Greek > Opinions
++> Italian
+=10 Italian.Score
+
+<... > Nations > Kingdom Of Sweden
++0.5 Silver
++0.5 Iron
+
+<... > Nations > KwangtungConfederacy
++0.05 LightShipImprovements
++2 LightShips
+
+<... > Nations > VenetianRepublic
+=17.5% Aristocracy Tax
+=22.5% Clergy Tax
+=22.5% Burgousie Tax
+=17.5% Urban Tax
+=17.5% Bureaucrats Tax
+=22.5% Intellectuals Tax
+=17.5% Workers Tax
+=10% Military Tax
+
+<... > Nations > Regnum Thessalonicae
++2.5 TradeInfluences.Romania
+<... > Cultures > Romanian > Opinions
++> Greek
+=5 Greek.Score
+
+<... > Nations > Regnum Thessalonicae
++5 TradeInfluences.Crimea
+
+<... > Nations > Regnum Thessalonicae
++5 TradeInfluences.Adriatic
+
+<... > Nations > Regnum Thessalonicae
++7.5 TradeInfluences.NorthernAnatolia
+
+<... > Nations > TondoKingdom
++0.75 Sulphur
++0.5 Gold
++0.75 ExoticFruit
++0.75 Sugar
+
+<... > Nations > TondoKingdom
++1 ProductionSectors.ConstructionSector
++0.1 StockingCapabilities
+
+<... > Nations > Sangkhom
++1000 LightInf
+
+<... > Nations > Sangkhom
+-0.25 AdmEff
++0.1 MiningEff
++0.35 Gold
+
+<... > Nations > Sangkhom
++1 AdmEff
++0.75 LocalTrade
++0.05 TradeImprov
+="true" Technologies.PromissoryNotes
++0.1 AgrSubsidies
+
+<... > Nations > Divine Qiziq Principality
++0.1 AgrInf
++0.05 AgrSubsidies
++0.1 AdmSize
++0.75 LocalTrade
++5 TradeInfluences.Greece
++5 TradeInfluences.Northern Anatolia
+
+<... > Nations > Divine Qiziq Principality
++0.25 AdmEff
++0.5 ReligiousFervor
++5 GovernmentRepresentation.UnitaryRepresentation
+-2.5 GovernmentRepresentation.AristocracyRepresentation
+-2.5 GovernmentRepresentation.BurgousieRepresentation
+
+<... > Nations > Divine Qiziq Principality
++0.1 AdmSize
++0.25 AdmEff
++0.05 TradeImprovements
++2.5 EstateInfluences.BurgousieInfluence
++2.5 EstateInfluences.ClergyInfluence
+
+<... > Nations > Venetian Republic
++0.5 Local trade
++2.5 EstateInfluences.BurgousieInfluence
++0.25 AdmEff
++2.5 TradeInfluences.Adriatic
++2.5 TradeInfluences.CentralMediterranean
+
+<... > Nations > Venetian Republic
++5 TradeInfluences.Greece
++5 TradeInfluences.Romania
++5 TradeInfluences.NorthernAnatolia
++5 TradeInfluences.Egypt
++5 TradeInfluences.Eastern Mediterranean
++5 TradeInfluences.Adriatic
++5 TradeInfluences.CentralMediterranean
+
+<... > Nations > Divine Qiziq Principality
++250 HeavyCavalry
++750 LightInf
++150 HeavyInf
++75 HeavyCav
++300 Light Cav
++150 HeavyInf
++7.5 EstateInfluences.MilitaryInfluence
++1 ArmyWage
+
+<... > Nations > Kingdom Of Aphrodisia
++5 TradeInfluences.WesternMediterranean
++5 TradeInfluences.CentralMediterranean
++5 TradeInfluences.Iberia
++5 TradeInfluences.Morocco
++5 TradeInfluences.SouthernFrance
+
+<... > Nations > GrecoBactria
+-4 ResearchPoints
+="true" Technologies.PromissoryNotes
+="true" Technologies.Cranes
++1 AdmEff
+
+<... > Nations > Kyivan Rus
++0.1 AgrInf
++0.1 StockCap
++0.25 Wool
+
+<... > Nations > Kyivan Rus
++0.5 Iron
++0.5 Coal
+="true" Technologies.Cranes
+-2 ResearchPoints
+
+<... > Nations > Kyivan Rus
++0.5 Local trade
++2.5 TradeInfluences.Dniepr
+
+<... > Nations > Holy Roman Dominion Of The Danube
++0.15 Cultural Prosperity
++0.75 Adm Eff
++0.75 Edu Eff
++5 EstateInfluences.bureaucrats Influence
++5 EstateInfluences.Intellectuals Influence
++0.05 Research Spending
+
+<... > Nations > Holy Roman Dominion Of The Danube
++0.25 Propaganda
++0.1 Cultural Prosperity
++0.25 Edu Eff
+
+<... > Nations > Holy Roman Dominion Of The Danube
++0.5 Religious Fervor
++0.25 Propaganda
++0.1 Cultural Prosperity
++0.25 Edu Eff
+
+<... > Nations > Holy Roman Dominion Of The Danube
++0.1 Cultural Prosperity
++5 ProductionSectors.Luxury Goods Sector
+
+<... > Nations > Kwangtung Confederacy
++0.75 Adm eff
++0.2 Adm Size
++7.5 EstateInfluences.BureaucratsInfluence
++2.5 GovernmentRepresentation.BureaucratsRepresentation
++2.5 GovernmentRepresentation.UnitaryRepresentation
+-2.5 GovernmentRepresentation.ClergyRepresentation
+-2.5 GovernmentRepresentation.AristocracyRepresentation
++2.5 MilitaryControl.Independent
++2.5 MilitaryControl.BureaucratsControl
+-2.5 MilitaryControl.AristocracyControl
+-2.5 MilitaryControl.ClergyControl
++2.5 EstateInfluences.BurgousieInfluence
+
+<... > Nations > Kingdom Of Hungary
++0.1 AgrSubsidies
++0.1 AgrInf
++0.5 Forestry
++0.25 adm
+
+<... > Nations > Kwangtung Confederacy
++0.1 adm size
++0.05 TradeImprov
++2.5 EstateInfluences.BureaucratsInfluence
++0.5 AdmEff
+-2 research points
+="true" Technologies.Promissory Notes
+
+<... > nations > KingdomOfPoland
++0.1 OverallImprovements
++0.5% Discipline
++0.25 Propaganda
+=800 HeavyCav
+=400 Archers
+=1000 LightInf
+
+<... > nations > Lutruwita 
++0.1 AgrInf
++2.5 ProductionSectors.ConstructionSector
+
+<... > nations > KingdomOfPoland
++0.75 AdmEff
++0.1 AdmSize
++2.5 EstateInfluences.WorkersInfluence
++0.1 AgrInf
++0.1 AgrSubsidies
++0.25 PopulationControl
++0.25 Propaganda
+
+<... > nations > Kyivan Rus
++0.25 AdmEff
++0.1 AdmSize
++160 HeavyCav
++320 LightCav
++0.5% Discipline
++5 GovernmentRepresentation.UnitaryRepresentation
+-2.5 GovernmentRepresentation.ClergyRepresentation
+-2.5 GovernmentRepresentation.BurgousieRepresentation
++2.5 EstateInfluences.MilitaryInfluence
+
+<... > Nations > Kingdom of Sweden
+-4 ResearchPoints 
+="true" Technologies.Cranes 
+="true" Technologies.promissorynotes
++1 AdmEff
+
+<... > nations > Crown Of Aragon
+=30% AristocracyTax
+=20% ClergyTax
+=15% BurgousieTax
+=15% UrbanTax
+=15% BureaucratsTax
+=15% IntellectualsTax
+=12.5% MilitaryTax
+=20% WorkersTax
+-4 ResearchPoints 
+="true" Technologies.Cranes 
+="true" Technologies.promissorynotes
++1 AdmEff
+
+<... > nations > Crown Of Aragon
++0.5 Iron
++0.75 Coal
++0.75 Silver
++1 TradeInfluences.Western Mediterranean
++1 TradeInfluences.Iberia
+
+<...
+
+sync
+
+
+<... > Nations
+!suppress 99999
+
+> KingdomOfSweden
++> CultureGroups
+> CultureGroups
++> Scandinavian
+= 95.9681476509077 Scandinavian.Points
++> Finnic
+= 2.02702802387082 Finnic.Points
++> Germanic
+= 2.0048243252214837 Germanic.Points
+< <
+> FritsanEmpire
++> CultureGroups
+> CultureGroups
++> Fritsan
+= 67.96219912333505 Fritsan.Points
++> Scandinavian
+= 32.037800876664946 Scandinavian.Points
+< <
+> KingdomOfScotland
++> CultureGroups
+> CultureGroups
++> Scandinavian
+= 1.0933413563051315 Scandinavian.Points
++> Celtic
+= 86.62670888393092 Celtic.Points
++> English
+= 12.27994975976395 English.Points
+< <
+> QaraUlys
++> CultureGroups
+> CultureGroups
++> Uralic
+= 56.137022709787104 Uralic.Points
++> Altaic
+= 43.862977290212896 Altaic.Points
+< <
+> KingdomOfLithuania
++> CultureGroups
+> CultureGroups
++> Baltic
+= 92.27676834477442 Baltic.Points
++> Ruthenian
+= 7.709984259590541 Ruthenian.Points
++> WestSlav
+= 0.013247395635035294 WestSlav.Points
+< <
+> DuchyOfMoscow
++> CultureGroups
+> CultureGroups
++> Russian
+= 87.2343512872084 Russian.Points
++> Ruthenian
+= 7.086359158780011 Ruthenian.Points
++> Tatar
+= 5.679289554011592 Tatar.Points
+< <
+> KingdomOfGermany
++> CultureGroups
+> CultureGroups
++> Germanic
+= 99.83833084473378 Germanic.Points
++> Scandinavian
+= 0.021058443814165037 Scandinavian.Points
++> WestSlav
+= 0.1406107114520626 WestSlav.Points
+< <
+> AngloCrownConfederacy
++> CultureGroups
+> CultureGroups
++> English
+= 74.93738755412794 English.Points
++> Celtic
+= 18.20902941777836 Celtic.Points
++> French
+= 6.853583028093701 French.Points
+< <
+> KingdomOfPoland
++> CultureGroups
+> CultureGroups
++> WestSlav
+= 87.44908979917668 WestSlav.Points
++> Germanic
+= 1.1609247577754473 Germanic.Points
++> Ruthenian
+= 11.389985443047882 Ruthenian.Points
+< <
+> KyivanRus
++> CultureGroups
+> CultureGroups
++> Ruthenian
+= 93.04393699600573 Ruthenian.Points
++> Tatar
+= 6.956063003994273 Tatar.Points
+< <
+> GrandDuchyOfHolland
++> CultureGroups
+> CultureGroups
++> Germanic
+= 75.86947401259702 Germanic.Points
++> French
+= 24.13052598740298 French.Points
+< <
+> TheKingdomOfFrance
++> CultureGroups
+> CultureGroups
++> French
+= 100 French.Points
+< <
+> CumanKipchakConfederation
++> CultureGroups
+> CultureGroups
++> Tatar
+= 100 Tatar.Points
+< <
+> HolyRomanDominionOfTheDanube
++> CultureGroups
+> CultureGroups
++> Germanic
+= 70.28974393508963 Germanic.Points
++> WestSlav
+= 27.437427937708595 WestSlav.Points
++> Magyar
+= 1.1339227811431716 Magyar.Points
++> French
+= 0.13538563106130969 French.Points
++> Italian
+= 1.0035197149972868 Italian.Points
+< <
+> KingdomOfRomania
++> CultureGroups
+> CultureGroups
++> Ruthenian
+= 4.849902951928458 Ruthenian.Points
++> Romanian
+= 81.33962061944058 Romanian.Points
++> SouthSlav
+= 13.810476428630967 SouthSlav.Points
+< <
+> Khamag
++> CultureGroups
+> CultureGroups
++> Mongol
+= 100 Mongol.Points
+< <
+> KingdomOfHungary
++> CultureGroups
+> CultureGroups
++> Magyar
+= 97.32038393477816 Magyar.Points
++> WestSlav
+= 0.379568682012388 WestSlav.Points
++> Ruthenian
+= 0.7515922669797379 Ruthenian.Points
++> Romanian
+= 1.3057041939673428 Romanian.Points
++> Germanic
+= 0.24275092226236214 Germanic.Points
+< <
+> GrandDucatAquitania
++> CultureGroups
+> CultureGroups
++> Occitan
+= 100 Occitan.Points
+< <
+> TheOgalalaRiverLakotaSiouxChiefdom
++> CultureGroups
+> CultureGroups
++> Sioux
+= 49.058791605085005 Sioux.Points
++> Mandan
+= 4.88700020561238 Mandan.Points
++> Illinoi
+= 41.04448510857171 Illinoi.Points
++> Wichita
+= 5.009723080730897 Wichita.Points
+< <
+> VenetianRepublic
++> CultureGroups
+> CultureGroups
++> Germanic
+= 0.5647482102790072 Germanic.Points
++> Italian
+= 76.8077226491557 Italian.Points
++> French
+= 4.04502748785349 French.Points
++> SouthSlav
+= 13.527906868154147 SouthSlav.Points
++> Tunisian
+= 5.041323938885298 Tunisian.Points
++> Maghrebi
+= 0.01327084567235265 Maghrebi.Points
+< <
+> SerbianEmpire
++> CultureGroups
+> CultureGroups
++> Magyar
+= 18.812044912110505 Magyar.Points
++> SouthSlav
+= 79.24507085728774 SouthSlav.Points
++> Romanian
+= 1.9428842306017495 Romanian.Points
+< <
+> RomanumImperium
++> CultureGroups
+> CultureGroups
++> Roman
+= 100 Roman.Points
+< <
+> RegnumThessalonicae
++> CultureGroups
+> CultureGroups
++> SouthSlav
+= 68.07163149155893 SouthSlav.Points
++> Greek
+= 31.928368508441068 Greek.Points
+< <
+> KingdomOfPortugal
++> CultureGroups
+> CultureGroups
++> Iberian
+= 100 Iberian.Points
+< <
+> CrownOfAragon
++> CultureGroups
+> CultureGroups
++> Iberian
+= 99.82398655826474 Iberian.Points
++> French
+= 0.17601344173526254 French.Points
+< <
+> ShowaShogunate
++> CultureGroups
+> CultureGroups
++> Japanese
+= 100 Japanese.Points
+< <
+> KingdomOfAphrodisia
++> CultureGroups
+> CultureGroups
++> SouthSlav
+= 16.060002601537384 SouthSlav.Points
++> Italian
+= 22.799687815513835 Italian.Points
++> Greek
+= 55.98369083825251 Greek.Points
++> Egyptian
+= 5.156618744696271 Egyptian.Points
+< <
+> DivineQiziqPrincipality
++> CultureGroups
+> CultureGroups
++> Turkish
+= 91.92303276063164 Turkish.Points
++> Greek
+= 8.076967239368356 Greek.Points
+< <
+> XanmaiMandate
++> CultureGroups
+> CultureGroups
++> HanChinese
+= 100 HanChinese.Points
+< <
+> KyumatsuDynasty
++> CultureGroups
+> CultureGroups
++> Korean
+= 91.49269727690414 Korean.Points
++> Japanese
+= 8.507302723095869 Japanese.Points
+< <
+> Holy Kingdom Of Judah
++> CultureGroups
+> CultureGroups
++> Kurdish
+= 15.386475773884614 Kurdish.Points
++> Turkish
+= 3.8324363462643785 Turkish.Points
++> Jewish
+= 73.43689117469228 Jewish.Points
++> Arab
+= 7.344196705158733 Arab.Points
+< <
+> TairaShogunate
++> CultureGroups
+> CultureGroups
++> Japanese
+= 100 Japanese.Points
+< <
+> Sumeria
++> CultureGroups
+> CultureGroups
++> Kurdish
+= 1.3861683501461253 Kurdish.Points
++> Arab
+= 85.96537549485384 Arab.Points
++> Persian
+= 12.648456155000025 Persian.Points
+< <
+> GrecoBactria
++> CultureGroups
+> CultureGroups
++> Hindustani
+= 37.37826564924987 Hindustani.Points
++> GrecoBactrian
+= 54.65888515261252 GrecoBactrian.Points
++> Afghan
+= 0.2254429643041904 Afghan.Points
++> Aryan
+= 7.737406233833419 Aryan.Points
+< <
+> Alexandria
++> CultureGroups
+> CultureGroups
++> Egyptian
+= 100 Egyptian.Points
+< <
+> KosalaKingdom
++> CultureGroups
+> CultureGroups
++> Hindustani
+= 51.374369898371576 Hindustani.Points
++> Bengali
+= 38.782315308772034 Bengali.Points
++> Aryan
+= 5.5301207335438765 Aryan.Points
++> Garjati
+= 4.31319405931251 Garjati.Points
+< <
+> RoyalTaiKingdom
++> CultureGroups
+> CultureGroups
++> Burmese
+= 19.99342650760807 Burmese.Points
++> Bengali
+= 7.18915971345549 Bengali.Points
++> Tai
+= 72.81741377893644 Tai.Points
+< <
+> KwangtungConfederacy
++> CultureGroups
+> CultureGroups
++> SouthChinese
+= 96.19278235834813 SouthChinese.Points
++> Vietnamese
+= 3.807217641651876 Vietnamese.Points
+< <
+> TondoKingdom
++> CultureGroups
+> CultureGroups
++> Polynesian
+= 0.21714674996974737 Polynesian.Points
++> Tagalog
+= 94.03283420206972 Tagalog.Points
++> Indonesian
+= 5.7500190479605235 Indonesian.Points
+< <
+> Sangkhom
++> CultureGroups
+> CultureGroups
++> Thai
+= 52.467280979107386 Thai.Points
++> Khmer
+= 41.615249572488146 Khmer.Points
++> Indonesian
+= 5.917469448404468 Indonesian.Points
+< <
+> Garmoni
++> CultureGroups
+> CultureGroups
++> Deccani
+= 66.54935882547962 Deccani.Points
++> Sinhalese
+= 33.450641174520385 Sinhalese.Points
+< <
+> Srivijaya
++> CultureGroups
+> CultureGroups
++> Indonesian
+= 100 Indonesian.Points
+< <
+> Lutruwita
++> CultureGroups
+> CultureGroups
++> Aboriginal
+= 100 Aboriginal.Points
+< <
+> KingdomOfSweden
+> ReligionGroups
++> Pagan
+= 11.175763298245096 Pagan.Points
++> Catholic
+= 88.8242367017549 Catholic.Points
+< <
+> FritsanEmpire
+> ReligionGroups
++> Pagan
+= 100 Pagan.Points
+< <
+> KingdomOfScotland
+> ReligionGroups
++> Catholic
+= 78.34033228877624 Catholic.Points
++> Pagan
+= 21.65966771122376 Pagan.Points
+< <
+> QaraUlys
+> ReligionGroups
++> Pagan
+= 100 Pagan.Points
+< <
+> KingdomOfLithuania
+> ReligionGroups
++> Pagan
+= 100 Pagan.Points
+< <
+> DuchyOfMoscow
+> ReligionGroups
++> Pagan
+= 28.87619178690809 Pagan.Points
++> Orthodox
+= 71.1238082130919 Orthodox.Points
+< <
+> KingdomOfGermany
+> ReligionGroups
++> Catholic
+= 75.17209474309942 Catholic.Points
++> Pagan
+= 24.82790525690058 Pagan.Points
+< <
+> AngloCrownConfederacy
+> ReligionGroups
++> Pagan
+= 27.19276576370462 Pagan.Points
++> Catholic
+= 72.80723423629539 Catholic.Points
+< <
+> KingdomOfPoland
+> ReligionGroups
++> Pagan
+= 100 Pagan.Points
+< <
+> KyivanRus
+> ReligionGroups
++> Pagan
+= 42.33426281809732 Pagan.Points
++> Orthodox
+= 57.66573718190268 Orthodox.Points
+< <
+> GrandDuchyOfHolland
+> ReligionGroups
++> Catholic
+= 100 Catholic.Points
+< <
+> TheKingdomOfFrance
+> ReligionGroups
++> Pagan
+= 20.760397802005908 Pagan.Points
++> Catholic
+= 79.23960219799409 Catholic.Points
+< <
+> CumanKipchakConfederation
+> ReligionGroups
++> Pagan
+= 100 Pagan.Points
+< <
+> HolyRomanDominionOfTheDanube
+> ReligionGroups
++> Catholic
+= 71.47769640453444 Catholic.Points
++> Pagan
+= 28.522303595465555 Pagan.Points
+< <
+> KingdomOfRomania
+> ReligionGroups
++> Pagan
+= 20.468093213779635 Pagan.Points
++> Orthodox
+= 79.53190678622036 Orthodox.Points
+< <
+> Khamag
+> ReligionGroups
++> Pagan
+= 100 Pagan.Points
+< <
+> KingdomOfHungary
+> ReligionGroups
++> Catholic
+= 94.54398942479199 Catholic.Points
++> Pagan
+= 5.456010575208018 Pagan.Points
+< <
+> GrandDucatAquitania
+> ReligionGroups
++> Catholic
+= 100 Catholic.Points
+< <
+> TheOgalalaRiverLakotaSiouxChiefdom
+> ReligionGroups
++> Pagan
+= 100 Pagan.Points
+< <
+> VenetianRepublic
+> ReligionGroups
++> Catholic
+= 87.52208735657042 Catholic.Points
++> Pagan
+= 12.47791264342958 Pagan.Points
+< <
+> SerbianEmpire
+> ReligionGroups
++> Orthodox
+= 87.16995276180818 Orthodox.Points
++> Pagan
+= 12.83004723819183 Pagan.Points
+< <
+> RomanumImperium
+> ReligionGroups
++> Catholic
+= 100 Catholic.Points
+< <
+> RegnumThessalonicae
+> ReligionGroups
++> Pagan
+= 24.165730903227665 Pagan.Points
++> Orthodox
+= 75.83426909677233 Orthodox.Points
+< <
+> KingdomOfPortugal
+> ReligionGroups
++> Catholic
+= 100 Catholic.Points
+< <
+> CrownOfAragon
+> ReligionGroups
++> Pagan
+= 36.85191285482887 Pagan.Points
++> Catholic
+= 63.14808714517113 Catholic.Points
+< <
+> ShowaShogunate
+> ReligionGroups
++> Shinto
+= 100 Shinto.Points
+< <
+> KingdomOfAphrodisia
+> ReligionGroups
++> Pagan
+= 100 Pagan.Points
+< <
+> DivineQiziqPrincipality
+> ReligionGroups
++> Pagan
+= 100 Pagan.Points
+< <
+> XanmaiMandate
+> ReligionGroups
++> Confucianism
+= 72.82521284124294 Confucianism.Points
++> Pagan
+= 27.17478715875705 Pagan.Points
+< <
+> KyumatsuDynasty
+> ReligionGroups
++> Shinto
+= 100 Shinto.Points
+< <
+> Holy Kingdom Of Judah
+> ReligionGroups
++> Pagan
+= 26.563108825307726 Pagan.Points
++> Judaism
+= 73.43689117469228 Judaism.Points
+< <
+> TairaShogunate
+> ReligionGroups
++> Shinto
+= 100 Shinto.Points
+< <
+> Sumeria
+> ReligionGroups
++> Pagan
+= 100 Pagan.Points
+< <
+> GrecoBactria
+> ReligionGroups
++> Pagan
+= 100 Pagan.Points
+< <
+> Alexandria
+> ReligionGroups
++> Pagan
+= 100 Pagan.Points
+< <
+> KosalaKingdom
+> ReligionGroups
++> Pagan
+= 23.257585777744776 Pagan.Points
++> Hindu
+= 76.74241422225522 Hindu.Points
+< <
+> RoyalTaiKingdom
+> ReligionGroups
++> Pagan
+= 27.182586221063563 Pagan.Points
++> Buddhism
+= 72.81741377893644 Buddhism.Points
+< <
+> KwangtungConfederacy
+> ReligionGroups
++> Pagan
+= 51.01261734740352 Pagan.Points
++> Confucianism
+= 48.98738265259648 Confucianism.Points
+< <
+> TondoKingdom
+> ReligionGroups
++> Pagan
+= 100 Pagan.Points
+< <
+> Sangkhom
+> ReligionGroups
++> Pagan
+= 38.12438632280644 Pagan.Points
++> Hindu
+= 61.87561367719356 Hindu.Points
+< <
+> Garmoni
+> ReligionGroups
++> Buddhism
+= 100 Buddhism.Points
+< <
+> Srivijaya
+> ReligionGroups
++> Buddhism
+= 100 Buddhism.Points
+< <
+> Lutruwita
+> ReligionGroups
++> Pagan
+= 100 Pagan.Points
+< <
+
+<... > Nations
+= 164 KingdomOfSweden.TaigaAndTundra
+= 10667 KingdomOfSweden.Moderate
+= 1984 FritsanEmpire.MontaneForest
+= 1409 FritsanEmpire.Mountainous
+= 2 FritsanEmpire.TaigaAndTundra
+= 6488 FritsanEmpire.Moderate
+= 8327 KingdomOfScotland.Moderate
+= 1073 KingdomOfScotland.Mountainous
+= 9299 QaraUlys.Moderate
+= 1855 QaraUlys.Steppe
+= 7552 KingdomOfLithuania.Moderate
+= 9997 DuchyOfMoscow.Moderate
+= 695 DuchyOfMoscow.Steppe
+= 9497 KingdomOfGermany.Moderate
+= 11 KingdomOfGermany.Mountainous
+= 10364 AngloCrownConfederacy.Moderate
+= 12446 KingdomOfPoland.Moderate
+= 426 KingdomOfPoland.Mountainous
+= 6352 KyivanRus.Moderate
+= 6459 KyivanRus.Steppe
+= 5859 GrandDuchyOfHolland.Moderate
+= 11162 TheKingdomOfFrance.Moderate
+= 75 TheKingdomOfFrance.Mountainous
+= 7526 CumanKipchakConfederation.Steppe
+= 8844 HolyRomanDominionOfTheDanube.Moderate
+= 4204 HolyRomanDominionOfTheDanube.Mountainous
+= 934 KingdomOfRomania.Moderate
+= 1898 KingdomOfRomania.Mountainous
+= 6608 KingdomOfRomania.Steppe
+= 5497 Khamag.Steppe
+= 1968 Khamag.Mountainous
+= 7582 KingdomOfHungary.Moderate
+= 821 KingdomOfHungary.Mountainous
+= 6854 GrandDucatAquitania.Moderate
+= 487 GrandDucatAquitania.Mountainous
+= 168 GrandDucatAquitania.Medditereanian
+= 12207 TheOgalalaRiverLakotaSiouxChiefdom.Moderate
+= 5493 VenetianRepublic.Mountainous
+= 3363 VenetianRepublic.Moderate
+= 1670 VenetianRepublic.Medditereanian
+= 5537 SerbianEmpire.Moderate
+= 3421 SerbianEmpire.Mountainous
+= 291 SerbianEmpire.Steppe
+= 702 SerbianEmpire.Medditereanian
+= 3182 RomanumImperium.Mountainous
+= 4218 RomanumImperium.Medditereanian
+= 135 RomanumImperium.Moderate
+= 3567 RegnumThessalonicae.Steppe
+= 2819 RegnumThessalonicae.Mountainous
+= 68 RegnumThessalonicae.Moderate
+= 3276 RegnumThessalonicae.Medditereanian
+= 6096 KingdomOfPortugal.Medditereanian
+= 1414 KingdomOfPortugal.Mountainous
+= 7842 CrownOfAragon.Medditereanian
+= 3644 CrownOfAragon.Mountainous
+= 65 CrownOfAragon.Moderate
+= 4399 ShowaShogunate.Moderate
+= 3123 ShowaShogunate.Mountainous
+= 3225 KingdomOfAphrodisia.Mountainous
+= 4637 KingdomOfAphrodisia.Medditereanian
+= 60 KingdomOfAphrodisia.CoastalDesert
+= 4236 DivineQiziqPrincipality.Medditereanian
+= 4911 DivineQiziqPrincipality.Mountainous
+= 1802 DivineQiziqPrincipality.Arid
+= 2092 XanmaiMandate.Mountainous
+= 8063 XanmaiMandate.Moderate
+= 97 XanmaiMandate.MontaneForest
+= 2172 KyumatsuDynasty.Mountainous
+= 5283 KyumatsuDynasty.Moderate
+= 3856 Holy Kingdom Of Judah.Arid
+= 1550 Holy Kingdom Of Judah.Mountainous
+= 2467 Holy Kingdom Of Judah.Medditereanian
+= 1645 Holy Kingdom Of Judah.Desert
+= 328 Holy Kingdom Of Judah.CoastalDesert
+= 4129 TairaShogunate.Moderate
+= 3412 TairaShogunate.Mountainous
+= 6952 Sumeria.Arid
+= 534 Sumeria.Mountainous
+= 2572 GrecoBactria.Mountainous
+= 2508 GrecoBactria.Arid
+= 9439 GrecoBactria.SubTropical
+= 419 GrecoBactria.Savanna
+= 4777 Alexandria.Medditereanian
+= 498 Alexandria.CoastalDesert
+= 2262 Alexandria.Desert
+= 63 Alexandria.Mountainous
+= 13013 KosalaKingdom.SubTropical
+= 109 KosalaKingdom.Savanna
+= 475 KosalaKingdom.Mountainous
+= 4048 RoyalTaiKingdom.Tropical
+= 1858 RoyalTaiKingdom.Mountainous
+= 3991 RoyalTaiKingdom.SubTropical
+= 8012 KwangtungConfederacy.Moderate
+= 3164 KwangtungConfederacy.Mountainous
+= 2914 KwangtungConfederacy.SubTropical
+= 265 KwangtungConfederacy.Tropical
+= 2568 TondoKingdom.Mountainous
+= 14 TondoKingdom.SubTropical
+= 6724 TondoKingdom.Tropical
+= 6093 Sangkhom.SubTropical
+= 1977 Sangkhom.Mountainous
+= 4061 Sangkhom.Tropical
+= 1278 Garmoni.Mountainous
+= 3871 Garmoni.SubTropical
+= 470 Garmoni.Savanna
+= 1887 Garmoni.Tropical
+= 7257 Srivijaya.Tropical
+= 243 Srivijaya.Mountainous
+= 5131 Lutruwita.Moderate
+= 2109 Lutruwita.Mountainous
+= 1317 Lutruwita.Medditereanian
+
+<... > Nations
+= 53663 KingdomOfSweden.DevelopmentPixelCount
+= 45182 FritsanEmpire.DevelopmentPixelCount
+= 43781 KingdomOfScotland.DevelopmentPixelCount
+= 55770 QaraUlys.DevelopmentPixelCount
+= 37760 KingdomOfLithuania.DevelopmentPixelCount
+= 53625 DuchyOfMoscow.DevelopmentPixelCount
+= 47507 KingdomOfGermany.DevelopmentPixelCount
+= 51820 AngloCrownConfederacy.DevelopmentPixelCount
+= 63082 KingdomOfPoland.DevelopmentPixelCount
+= 65466 KyivanRus.DevelopmentPixelCount
+= 29295 GrandDuchyOfHolland.DevelopmentPixelCount
+= 55960 TheKingdomOfFrance.DevelopmentPixelCount
+= 37630 CumanKipchakConfederation.DevelopmentPixelCount
+= 53930 HolyRomanDominionOfTheDanube.DevelopmentPixelCount
+= 41506 KingdomOfRomania.DevelopmentPixelCount
+= 31421 Khamag.DevelopmentPixelCount
+= 39552 KingdomOfHungary.DevelopmentPixelCount
+= 36084 GrandDucatAquitania.DevelopmentPixelCount
+= 62595 TheOgalalaRiverLakotaSiouxChiefdom.DevelopmentPixelCount
+= 37091 VenetianRepublic.DevelopmentPixelCount
+= 39492 SerbianEmpire.DevelopmentPixelCount
+= 28145 RomanumImperium.DevelopmentPixelCount
+= 40193 RegnumThessalonicae.DevelopmentPixelCount
+= 33308 KingdomOfPortugal.DevelopmentPixelCount
+= 46823 CrownOfAragon.DevelopmentPixelCount
+= 28241 ShowaShogunate.DevelopmentPixelCount
+= 29973 KingdomOfAphrodisia.DevelopmentPixelCount
+= 40012 DivineQiziqPrincipality.DevelopmentPixelCount
+= 45777 XanmaiMandate.DevelopmentPixelCount
+= 30759 KyumatsuDynasty.DevelopmentPixelCount
+= 35623 Holy Kingdom Of Judah.DevelopmentPixelCount
+= 27469 TairaShogunate.DevelopmentPixelCount
+= 35828 Sumeria.DevelopmentPixelCount
+= 66974 GrecoBactria.DevelopmentPixelCount
+= 25007 Alexandria.DevelopmentPixelCount
+= 68757 KosalaKingdom.DevelopmentPixelCount
+= 31767 RoyalTaiKingdom.DevelopmentPixelCount
+= 61892 KwangtungConfederacy.DevelopmentPixelCount
+= 19379 TondoKingdom.DevelopmentPixelCount
+= 42903 Sangkhom.DevelopmentPixelCount
+= 28035 Garmoni.DevelopmentPixelCount
+= 15000 Srivijaya.DevelopmentPixelCount
+= 36799 Lutruwita.DevelopmentPixelCount
+
+<... > Nations
+= 2135118 KingdomOfSweden.coastalPopulation
+= 1400490 FritsanEmpire.coastalPopulation
+= 1358336 KingdomOfScotland.coastalPopulation
+= 886944 QaraUlys.coastalPopulation
+= 769415 KingdomOfLithuania.coastalPopulation
+= 1058806 DuchyOfMoscow.coastalPopulation
+= 1038756 KingdomOfGermany.coastalPopulation
+= 1260331 AngloCrownConfederacy.coastalPopulation
+= 1109614 KingdomOfPoland.coastalPopulation
+= 1001295 KyivanRus.coastalPopulation
+= 713415 GrandDuchyOfHolland.coastalPopulation
+= 977786 TheKingdomOfFrance.coastalPopulation
+= 440717 CumanKipchakConfederation.coastalPopulation
+= 991592 HolyRomanDominionOfTheDanube.coastalPopulation
+= 717897 KingdomOfRomania.coastalPopulation
+= 51614 Khamag.coastalPopulation
+= 634781 KingdomOfHungary.coastalPopulation
+= 712021 GrandDucatAquitania.coastalPopulation
+= 1469250 TheOgalalaRiverLakotaSiouxChiefdom.coastalPopulation
+= 830155 VenetianRepublic.coastalPopulation
+= 910378 SerbianEmpire.coastalPopulation
+= 586808 RomanumImperium.coastalPopulation
+= 595803 RegnumThessalonicae.coastalPopulation
+= 672967 KingdomOfPortugal.coastalPopulation
+= 886073 CrownOfAragon.coastalPopulation
+= 713645 ShowaShogunate.coastalPopulation
+= 965148 KingdomOfAphrodisia.coastalPopulation
+= 751854 DivineQiziqPrincipality.coastalPopulation
+= 650813 XanmaiMandate.coastalPopulation
+= 904151 KyumatsuDynasty.coastalPopulation
+= 626906 Holy Kingdom Of Judah.coastalPopulation
+= 751429 TairaShogunate.coastalPopulation
+= 613665 Sumeria.coastalPopulation
+= 1184746 GrecoBactria.coastalPopulation
+= 545751 Alexandria.coastalPopulation
+= 1198470 KosalaKingdom.coastalPopulation
+= 737136 RoyalTaiKingdom.coastalPopulation
+= 1430172 KwangtungConfederacy.coastalPopulation
+= 635519 TondoKingdom.coastalPopulation
+= 1003503 Sangkhom.coastalPopulation
+= 516527 Garmoni.coastalPopulation
+= 446010 Srivijaya.coastalPopulation
+= 995606 Lutruwita.coastalPopulation
+
+<... > Nations
+= 0.95 QaraUlys.MaxFur
+= 0.90 TheOgalalaRiverLakotaSiouxChiefdom.MaxFur
+= 0.70 GrandDuchyOfHolland.MaxGold
+= 1.95 VenetianRepublic.MaxGold
+= 2.00 DivineQiziqPrincipality.MaxGold
+= 2.00 RomanumImperium.MaxGold
+= 2.00 TairaShogunate.MaxGold
+= 0.10 RoyalTaiKingdom.MaxGold
+= 2.25 TondoKingdom.MaxGold
+= 1.70 Sangkhom.MaxGold
+= 0.90 Srivijaya.MaxGold
+= 2.00 KingdomOfSweden.MaxIron
+= 2.00 AngloCrownConfederacy.MaxIron
+= 0.00 KingdomOfScotland.MaxIron
+= 0.80 DuchyOfMoscow.MaxIron
+= 0.65 KingdomOfGermany.MaxIron
+= 4.05 HolyRomanDominionOfTheDanube.MaxIron
+= 0.70 KingdomOfPoland.MaxIron
+= 1.40 TheKingdomOfFrance.MaxIron
+= 2.00 KyivanRus.MaxIron
+= 0.55 KingdomOfHungary.MaxIron
+= 0.75 TheOgalalaRiverLakotaSiouxChiefdom.MaxIron
+= 1.90 VenetianRepublic.MaxIron
+= 1.15 SerbianEmpire.MaxIron
+= 0.10 RomanumImperium.MaxIron
+= 1.30 CrownOfAragon.MaxIron
+= 3.00 ShowaShogunate.MaxIron
+= 1.95 XanmaiMandate.MaxIron
+= 1.00 KingdomOfPortugal.MaxIron
+= 0.10 Holy Kingdom Of Judah.MaxIron
+= 0.45 Alexandria.MaxIron
+= 3.85 KwangtungConfederacy.MaxIron
+= 1.65 Sangkhom.MaxIron
+= 0.20 TondoKingdom.MaxIron
+= 1.50 RoyalTaiKingdom.MaxIvory
+= 4.65 Sangkhom.MaxIvory
+= 1.25 Garmoni.MaxIvory
+= 0.45 Srivijaya.MaxIvory
+= 2.10 AngloCrownConfederacy.MaxSulphur
+= 2.10 KingdomOfPoland.MaxSulphur
+= 2.10 GrandDuchyOfHolland.MaxSulphur
+= 0.00 TheKingdomOfFrance.MaxSulphur
+= 1.95 KingdomOfHungary.MaxSulphur
+= 0.10 HolyRomanDominionOfTheDanube.MaxSulphur
+= 1.40 VenetianRepublic.MaxSulphur
+= 1.10 RomanumImperium.MaxSulphur
+= 4.00 ShowaShogunate.MaxSulphur
+= 1.45 KingdomOfAphrodisia.MaxSulphur
+= 1.55 TheOgalalaRiverLakotaSiouxChiefdom.MaxSulphur
+= 1.70 KingdomOfPortugal.MaxSulphur
+= 2.20 DivineQiziqPrincipality.MaxSulphur
+= 1.95 Holy Kingdom Of Judah.MaxSulphur
+= 1.90 Sumeria.MaxSulphur
+= 0.85 KyumatsuDynasty.MaxSulphur
+= 1.25 TairaShogunate.MaxSulphur
+= 1.75 GrecoBactria.MaxSulphur
+= 3.65 TondoKingdom.MaxSulphur
+= 1.40 Garmoni.MaxSulphur
+= 0.80 Srivijaya.MaxSulphur
+= 2.00 KingdomOfScotland.MaxCoal
+= 2.85 DuchyOfMoscow.MaxCoal
+= 2.00 AngloCrownConfederacy.MaxCoal
+= 2.00 KingdomOfGermany.MaxCoal
+= 1.65 GrandDuchyOfHolland.MaxCoal
+= 0.50 TheKingdomOfFrance.MaxCoal
+= 0.20 KingdomOfPoland.MaxCoal
+= 4.15 HolyRomanDominionOfTheDanube.MaxCoal
+= 1.40 KyivanRus.MaxCoal
+= 1.15 KingdomOfHungary.MaxCoal
+= 0.35 VenetianRepublic.MaxCoal
+= 1.80 SerbianEmpire.MaxCoal
+= 0.45 KingdomOfRomania.MaxCoal
+= 2.10 RegnumThessalonicae.MaxCoal
+= 2.40 KingdomOfPortugal.MaxCoal
+= 2.00 CrownOfAragon.MaxCoal
+= 2.00 DivineQiziqPrincipality.MaxCoal
+= 1.70 TheOgalalaRiverLakotaSiouxChiefdom.MaxCoal
+= 1.25 XanmaiMandate.MaxCoal
+= 2.00 KyumatsuDynasty.MaxCoal
+= 2.00 TairaShogunate.MaxCoal
+= 0.10 RoyalTaiKingdom.MaxCoal
+= 0.95 KosalaKingdom.MaxCoal
+= 0.20 TondoKingdom.MaxCoal
+= 0.55 Srivijaya.MaxCoal
+= 0.65 KingdomOfGermany.MaxCopper
+= 0.85 HolyRomanDominionOfTheDanube.MaxCopper
+= 1.15 ShowaShogunate.MaxCopper
+= 2.00 RegnumThessalonicae.MaxCopper
+= 0.30 TondoKingdom.MaxCopper
+= 1.00 FritsanEmpire.MaxSilver
+= 1.00 KingdomOfSweden.MaxSilver
+= 1.70 CrownOfAragon.MaxSilver
+= 2.00 KyumatsuDynasty.MaxSilver
+
+<... > TradeZones
+= 2.55 CentralSiberia.Score
+= 0.60 EasternSiberia.Score
+= 29.65 WesternSiberia.Score
+= 3.55 NorthSea.Score
+= 5.30 Alaska.Score
+= 0.10 NorthernNordics.Score
+= 0.65 HudsonBay.Score
+= 0.20 BarentsSea.Score
+= 5.00 CentralCanada.Score
+= 7.10 BalticSea.Score
+= 8.65 Novgorod.Score
+= 5.90 Denmark.Score
+= 14.15 LawrenceGulf.Score
+= 31.45 Volga.Score
+= 9.45 Livonia.Score
+= 7.75 BritishIsles.Score
+= 9.65 Muscovy.Score
+= 19.50 Dniepr.Score
+= 6.30 UralRiver.Score
+= 31.55 Manchuria.Score
+= 9.00 Vistula.Score
+= 12.50 CentralEurope.Score
+= 6.95 DonRiver.Score
+= 11.45 Cascadia.Score
+= 18.75 SeaOfJapan.Score
+= 6.00 Rhine.Score
+= 2.65 EnglishChannel.Score
+= 16.75 GreatLakes.Score
+= 8.80 Romania.Score
+= 6.25 CentralAsia.Score
+= 7.00 France.Score
+= 3.60 WesternDanube.Score
+= 8.80 EasternDanube.Score
+= 4.95 TheRockies.Score
+= 67.15 Mississippi.Score
+= 3.15 SouthernFrance.Score
+= 2.15 CaspianSea.Score
+= 2.75 GobiDesert.Score
+= 3.55 Crimea.Score
+= 1.60 BayOfBiscay.Score
+= 3.40 Adriatic.Score
+= 18.65 EastCoast.Score
+= 3.75 CentralMediterranean.Score
+= 5.15 WestCoast.Score
+= 2.40 Caucasus.Score
+= 5.80 Greece.Score
+= 4.70 WesternMediterranean.Score
+= 6.20 Iberia.Score
+= 3.10 NorthernAnatolia.Score
+= 20.70 YellowRiver.Score
+= 8.30 Mesopotamia.Score
+= 2.45 EasternMediterranean.Score
+= 12.60 GulfOfMexico.Score
+= 3.45 Afghanistan.Score
+= 11.85 IndusRiver.Score
+= 3.20 Morocco.Score
+= 0.80 Tibet.Score
+= 7.45 Iran.Score
+= 6.20 Sichuan.Score
+= 6.50 Sahara.Score
+= 0.00 ArabianDesert.Score
+= 21.65 YangtzeRiver.Score
+= 7.20 WesternMexico.Score
+= 3.45 Egypt.Score
+= 20.60 Ganges.Score
+= 0.70 RedSea.Score
+= 1.65 PersianGulf.Score
+= 5.85 Caribbean.Score
+= 0.05 WesternSahara.Score
+= 22.10 SouthEastAsia.Score
+= 1.65 Pacific.Score
+= 10.10 SouthChinaSea.Score
+= 11.90 CentralIndia.Score
+= 7.65 Deccan.Score
+= 17.10 SouthernNile.Score
+= 5.65 Somalia.Score
+= 16.45 WesternNiger.Score
+= 5.90 Guinea.Score
+= 5.05 CentralAmerica.Score
+= 18.40 EasternNiger.Score
+= 11.70 Venezuela.Score
+= 8.30 Indonesia.Score
+= 24.35 CongoRiver.Score
+= 6.70 Gabon.Score
+= 4.40 LakeVictoria.Score
+= 54.95 Amazon.Score
+= 3.35 Peru.Score
+= 10.00 EastAfrica.Score
+= 8.20 LakeTanganyika.Score
+= 14.30 SaoFranciscoRiver.Score
+= 17.95 NorthernAustralia.Score
+= 11.05 Angola.Score
+= 33.30 Mozambique.Score
+= 57.00 ParanaRiver.Score
+= 3.15 Chile.Score
+= 28.40 SouthernAustralia.Score
+= 9.20 SouthAfrica.Score
+= 0.00 AustralianDesert.Score
+= 13.55 Patagonia.Score
+
+<... > Nations
+= 3313900 KingdomOfSweden.Population
+= 2431305 FritsanEmpire.Population
+= 2611218 KingdomOfScotland.Population
+= 2406602 QaraUlys.Population
+= 2236159 KingdomOfLithuania.Population
+= 3155033 DuchyOfMoscow.Population
+= 2905929 KingdomOfGermany.Population
+= 3157678 AngloCrownConfederacy.Population
+= 3878891 KingdomOfPoland.Population
+= 3628612 KyivanRus.Population
+= 1776045 GrandDuchyOfHolland.Population
+= 3462130 TheKingdomOfFrance.Population
+= 1438851 CumanKipchakConfederation.Population
+= 3348653 HolyRomanDominionOfTheDanube.Population
+= 2062929 KingdomOfRomania.Population
+= 680885 Khamag.Population
+= 2480569 KingdomOfHungary.Population
+= 2222408 GrandDucatAquitania.Population
+= 3888811 TheOgalalaRiverLakotaSiouxChiefdom.Population
+= 2042452 VenetianRepublic.Population
+= 2283061 SerbianEmpire.Population
+= 1479880 RomanumImperium.Population
+= 2024992 RegnumThessalonicae.Population
+= 1762708 KingdomOfPortugal.Population
+= 2382050 CrownOfAragon.Population
+= 1694636 ShowaShogunate.Population
+= 1568115 KingdomOfAphrodisia.Population
+= 2010442 DivineQiziqPrincipality.Population
+= 3029761 XanmaiMandate.Population
+= 1857798 KyumatsuDynasty.Population
+= 1656324 Holy Kingdom Of Judah.Population
+= 1626552 TairaShogunate.Population
+= 1495044 Sumeria.Population
+= 2987719 GrecoBactria.Population
+= 1315001 Alexandria.Population
+= 3496191 KosalaKingdom.Population
+= 1847887 RoyalTaiKingdom.Population
+= 3367136 KwangtungConfederacy.Population
+= 1243586 TondoKingdom.Population
+= 2214688 Sangkhom.Population
+= 1453694 Garmoni.Population
+= 978475 Srivijaya.Population
+= 2204679 Lutruwita.Population
+
+<... > Nations
+= 3975165 KingdomOfSweden.Future Population
+= 3023103 FritsanEmpire.Future Population
+= 3058435 KingdomOfScotland.Future Population
+= 3056533 QaraUlys.Future Population
+= 2584677 KingdomOfLithuania.Future Population
+= 3690194 DuchyOfMoscow.Future Population
+= 3455078 KingdomOfGermany.Future Population
+= 3743383 AngloCrownConfederacy.Future Population
+= 4627034 KingdomOfPoland.Future Population
+= 4474992 KyivanRus.Future Population
+= 2096263 GrandDuchyOfHolland.Future Population
+= 4154186 TheKingdomOfFrance.Future Population
+= 1720195 CumanKipchakConfederation.Future Population
+= 4194664 HolyRomanDominionOfTheDanube.Future Population
+= 2492611 KingdomOfRomania.Future Population
+= 882454 Khamag.Future Population
+= 3027423 KingdomOfHungary.Future Population
+= 2668624 GrandDucatAquitania.Future Population
+= 4769794 TheOgalalaRiverLakotaSiouxChiefdom.Future Population
+= 2508338 VenetianRepublic.Future Population
+= 2795123 SerbianEmpire.Future Population
+= 1766953 RomanumImperium.Future Population
+= 2429957 RegnumThessalonicae.Future Population
+= 2103549 KingdomOfPortugal.Future Population
+= 2758761 CrownOfAragon.Future Population
+= 2033050 ShowaShogunate.Future Population
+= 1881165 KingdomOfAphrodisia.Future Population
+= 2404377 DivineQiziqPrincipality.Future Population
+= 3897257 XanmaiMandate.Future Population
+= 2219199 KyumatsuDynasty.Future Population
+= 2009003 Holy Kingdom Of Judah.Future Population
+= 1945558 TairaShogunate.Future Population
+= 1809069 Sumeria.Future Population
+= 3551904 GrecoBactria.Future Population
+= 1566407 Alexandria.Future Population
+= 4524748 KosalaKingdom.Future Population
+= 2431305 RoyalTaiKingdom.Future Population
+= 3890825 KwangtungConfederacy.Future Population
+= 1650193 TondoKingdom.Future Population
+= 2723044 Sangkhom.Future Population
+= 1816852 Garmoni.Future Population
+= 1238517 Srivijaya.Future Population
+= 2676785 Lutruwita.Future Population
+
+<... > Nations
+= 4111.275 KingdomOfSweden.Fertility
+= 1807.3749999999998 FritsanEmpire.Fertility
+= 3176.7000000000003 KingdomOfScotland.Fertility
+= 4204.525000000001 QaraUlys.Fertility
+= 1820.975 KingdomOfLithuania.Fertility
+= 4690.75 DuchyOfMoscow.Fertility
+= 5029.575000000001 KingdomOfGermany.Fertility
+= 5075.474999999999 AngloCrownConfederacy.Fertility
+= 5427.625 KingdomOfPoland.Fertility
+= 9264.100000000002 KyivanRus.Fertility
+= 2471.775 GrandDuchyOfHolland.Fertility
+= 6811.975 TheKingdomOfFrance.Fertility
+= 1218.7 CumanKipchakConfederation.Fertility
+= 5926.025 HolyRomanDominionOfTheDanube.Fertility
+= 6327.749999999999 KingdomOfRomania.Fertility
+= 439.625 Khamag.Fertility
+= 5230.650000000001 KingdomOfHungary.Fertility
+= 4139.724999999999 GrandDucatAquitania.Fertility
+= 7987.850000000001 TheOgalalaRiverLakotaSiouxChiefdom.Fertility
+= 5453.974999999999 VenetianRepublic.Fertility
+= 4140.775 SerbianEmpire.Fertility
+= 3532.375 RomanumImperium.Fertility
+= 6335.825 RegnumThessalonicae.Fertility
+= 3519.15 KingdomOfPortugal.Fertility
+= 5450.224999999999 CrownOfAragon.Fertility
+= 3219.8 ShowaShogunate.Fertility
+= 3710.0999999999995 KingdomOfAphrodisia.Fertility
+= 5036.775 DivineQiziqPrincipality.Fertility
+= 7239.174999999999 XanmaiMandate.Fertility
+= 3054.4500000000003 KyumatsuDynasty.Fertility
+= 4631.35 Holy Kingdom Of Judah.Fertility
+= 3090.9999999999995 TairaShogunate.Fertility
+= 4387.599999999999 Sumeria.Fertility
+= 6342.75 GrecoBactria.Fertility
+= 2588.1 Alexandria.Fertility
+= 10668.5 KosalaKingdom.Fertility
+= 5835 RoyalTaiKingdom.Fertility
+= 5103.875 KwangtungConfederacy.Fertility
+= 4229.225 TondoKingdom.Fertility
+= 6403.25 Sangkhom.Fertility
+= 4618.900000000001 Garmoni.Fertility
+= 1910.35 Srivijaya.Fertility
+= 3010.225 Lutruwita.Fertility
 !suppress 0
 <...
