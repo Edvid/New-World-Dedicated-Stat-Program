@@ -243,7 +243,7 @@ nationImage.onload = async function () {
 
 
         //find which coasts can be reached with small and big settlements considered
-        
+        /*
         then = Date.now();
         //small island stuff first
         //small islands half half range
@@ -295,7 +295,7 @@ nationImage.onload = async function () {
                 }
             }
         }
-
+        */
 
         //big island stuff next
         for(let distanceFromClaim = 0; distanceFromClaim < shipRangeHigh; distanceFromClaim++){
