@@ -2471,7 +2471,7 @@
 +0.1 HeavyShipImprovements
 
 <... > Nations
-<=> Holy Kingdom Of Jerusalem > Holy Kingdom Of Judah
+<=> Holy Kingdom Of Jerusalem > HolyKingdomOfJudah
 
 <... > Nations > Kingdom Of Poland
 +0.25 AdmEff
@@ -3374,7 +3374,7 @@ sync
 +> Japanese
 = 8.507302723095869 Japanese.Points
 < <
-> Holy Kingdom Of Judah
+> HolyKingdomOfJudah
 +> CultureGroups
 > CultureGroups
 +> Kurdish
@@ -3670,7 +3670,7 @@ sync
 +> Shinto
 = 100 Shinto.Points
 < <
-> Holy Kingdom Of Judah
+> HolyKingdomOfJudah
 > ReligionGroups
 +> Pagan
 = 26.563108825307726 Pagan.Points
@@ -3816,11 +3816,11 @@ sync
 = 97 XanmaiMandate.MontaneForest
 = 2172 KyumatsuDynasty.Mountainous
 = 5283 KyumatsuDynasty.Moderate
-= 3856 Holy Kingdom Of Judah.Arid
-= 1550 Holy Kingdom Of Judah.Mountainous
-= 2467 Holy Kingdom Of Judah.Medditereanian
-= 1645 Holy Kingdom Of Judah.Desert
-= 328 Holy Kingdom Of Judah.CoastalDesert
+= 3856 HolyKingdomOfJudah.Arid
+= 1550 HolyKingdomOfJudah.Mountainous
+= 2467 HolyKingdomOfJudah.Medditereanian
+= 1645 HolyKingdomOfJudah.Desert
+= 328 HolyKingdomOfJudah.CoastalDesert
 = 4129 TairaShogunate.Moderate
 = 3412 TairaShogunate.Mountainous
 = 6952 Sumeria.Arid
@@ -3890,7 +3890,7 @@ sync
 = 40012 DivineQiziqPrincipality.DevelopmentPixelCount
 = 45777 XanmaiMandate.DevelopmentPixelCount
 = 30759 KyumatsuDynasty.DevelopmentPixelCount
-= 35623 Holy Kingdom Of Judah.DevelopmentPixelCount
+= 35623 HolyKingdomOfJudah.DevelopmentPixelCount
 = 27469 TairaShogunate.DevelopmentPixelCount
 = 35828 Sumeria.DevelopmentPixelCount
 = 66974 GrecoBactria.DevelopmentPixelCount
@@ -3935,7 +3935,7 @@ sync
 = 751854 DivineQiziqPrincipality.coastalPopulation
 = 650813 XanmaiMandate.coastalPopulation
 = 904151 KyumatsuDynasty.coastalPopulation
-= 626906 Holy Kingdom Of Judah.coastalPopulation
+= 626906 HolyKingdomOfJudah.coastalPopulation
 = 751429 TairaShogunate.coastalPopulation
 = 613665 Sumeria.coastalPopulation
 = 1184746 GrecoBactria.coastalPopulation
@@ -3979,7 +3979,7 @@ sync
 = 3.00 ShowaShogunate.MaxIron
 = 1.95 XanmaiMandate.MaxIron
 = 1.00 KingdomOfPortugal.MaxIron
-= 0.10 Holy Kingdom Of Judah.MaxIron
+= 0.10 HolyKingdomOfJudah.MaxIron
 = 0.45 Alexandria.MaxIron
 = 3.85 KwangtungConfederacy.MaxIron
 = 1.65 Sangkhom.MaxIron
@@ -4001,7 +4001,7 @@ sync
 = 1.55 TheOgalalaRiverLakotaSiouxChiefdom.MaxSulphur
 = 1.70 KingdomOfPortugal.MaxSulphur
 = 2.20 DivineQiziqPrincipality.MaxSulphur
-= 1.95 Holy Kingdom Of Judah.MaxSulphur
+= 1.95 HolyKingdomOfJudah.MaxSulphur
 = 1.90 Sumeria.MaxSulphur
 = 0.85 KyumatsuDynasty.MaxSulphur
 = 1.25 TairaShogunate.MaxSulphur
@@ -4176,7 +4176,7 @@ sync
 = 2010442 DivineQiziqPrincipality.Population
 = 3029761 XanmaiMandate.Population
 = 1857798 KyumatsuDynasty.Population
-= 1656324 Holy Kingdom Of Judah.Population
+= 1656324 HolyKingdomOfJudah.Population
 = 1626552 TairaShogunate.Population
 = 1495044 Sumeria.Population
 = 2987719 GrecoBactria.Population
@@ -4221,7 +4221,7 @@ sync
 = 2404377 DivineQiziqPrincipality.Future Population
 = 3897257 XanmaiMandate.Future Population
 = 2219199 KyumatsuDynasty.Future Population
-= 2009003 Holy Kingdom Of Judah.Future Population
+= 2009003 HolyKingdomOfJudah.Future Population
 = 1945558 TairaShogunate.Future Population
 = 1809069 Sumeria.Future Population
 = 3551904 GrecoBactria.Future Population
@@ -4266,7 +4266,7 @@ sync
 = 5036.775 DivineQiziqPrincipality.Fertility
 = 7239.174999999999 XanmaiMandate.Fertility
 = 3054.4500000000003 KyumatsuDynasty.Fertility
-= 4631.35 Holy Kingdom Of Judah.Fertility
+= 4631.35 HolyKingdomOfJudah.Fertility
 = 3090.9999999999995 TairaShogunate.Fertility
 = 4387.599999999999 Sumeria.Fertility
 = 6342.75 GrecoBactria.Fertility
