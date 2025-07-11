@@ -243,73 +243,23 @@ nationImage.onload = async function () {
 
 
         //find which coasts can be reached with small and big settlements considered
-        /*
+
         then = Date.now();
-        //small island stuff first
-        //small islands half half range
-        for(let distanceFromClaim = 0; distanceFromClaim < shipRangeHigh / 2; distanceFromClaim++){
-            let paintColor;
 
-            if(distanceFromClaim <= shipRangeLow / 2) paintColor = shipRangeLowSmallColor;
-            else if(distanceFromClaim <= shipRangeMid / 2) paintColor = shipRangeMidSmallColor;
-            else if(distanceFromClaim <= shipRangeHigh / 2) paintColor = shipRangeHighSmallColor;
-            
-            let SetRead = distanceFromClaim % 2 == 0 ? SmallIslandGrowthSet : SmallIslandGrowthSet2;
-            let SetWrite = distanceFromClaim % 2 == 1 ? SmallIslandGrowthSet : SmallIslandGrowthSet2;
-
-            SetWrite.clear();
-            
-            let growFromColours, growIntoColours;
-            for(const j of SetRead) {
-                if(j < 0 || j >= imagePixelCount) continue;
-                let x = j % WIDTH;
-                let y = Math.floor(j / WIDTH);
-
-                let now = Date.now();
-                if(now - then > 500) {
-                    dat = new ImageData(nationData, WIDTH);
-                    canvas.getContext("2d").putImageData(dat, 0, 0);
-                    await new Promise(resolve => setTimeout(resolve));
-                    loadingText.innerText = `Marking pixels reachable from small settlement coasts:\nIteration: ${distanceFromClaim} of ${shipRangeHigh / 2}`;
-                    then = now;
-                }
-
-                growFromColours = [smallIslandFillColorArray];
-                growFromColours.push(shipRangeLowSmallColor);
-                if(distanceFromClaim > shipRangeLow / 2) growFromColours.push(shipRangeMidSmallColor);
-                if(distanceFromClaim > shipRangeMid / 2) growFromColours.push(shipRangeHighSmallColor);
-
-                growIntoColours = [waterColorArray];
-                if(isOneOfColorsAtCoord(growIntoColours, x, y) && OneNeighbourIsOneOfColors(growFromColours, x, y)){
-                    setColorAtCoord(x,y, paintColor);
-
-                    //add neighbours of this newly coloured pixel
-                    SetWrite.add(j + 1);
-                    SetWrite.add(j + 1 + WIDTH);
-                    SetWrite.add(j + WIDTH);
-                    SetWrite.add(j - 1 + WIDTH);
-                    SetWrite.add(j - 1);
-                    SetWrite.add(j - 1 - WIDTH);
-                    SetWrite.add(j - WIDTH);
-                    SetWrite.add(j + 1 - WIDTH);
-                }
-            }
-        }
-        */
-
-        //big island stuff next
+        //big island stuff first
         for(let distanceFromClaim = 0; distanceFromClaim < shipRangeHigh; distanceFromClaim++){
-            
+
             let paintColor;
-            
+
             if(distanceFromClaim <= shipRangeLow) paintColor = shipRangeLowColor;
             else if(distanceFromClaim <= shipRangeMid) paintColor = shipRangeMidColor;
             else if(distanceFromClaim <= shipRangeHigh) paintColor = shipRangeHighColor;
             
             let SetRead = distanceFromClaim % 2 == 0 ? BigIslandGrowthSet : BigIslandGrowthSet2;
             let SetWrite = distanceFromClaim % 2 == 1 ? BigIslandGrowthSet : BigIslandGrowthSet2;
-            
+
             SetWrite.clear();
+
 
             for(const j of SetRead){
                 if(j < 0 || j >= imagePixelCount) continue;
@@ -330,9 +280,69 @@ nationImage.onload = async function () {
                 if(distanceFromClaim > shipRangeLow) growFromColours.push(shipRangeMidColor);
                 if(distanceFromClaim > shipRangeMid) growFromColours.push(shipRangeHighColor);
 
-                growIntoColours = [waterColorArray, connectiveBigIslandFillColorArray];
-                if(distanceFromClaim < shipRangeMid) growIntoColours.push(shipRangeMidSmallColor);
-                if(distanceFromClaim < shipRangeHigh) growIntoColours.push(shipRangeHighSmallColor);
+                growIntoColours = [waterColorArray];
+                if(isOneOfColorsAtCoord(growIntoColours, x, y) && OneNeighbourIsOneOfColors(growFromColours, x, y)){
+                    setColorAtCoord(x,y, paintColor);
+
+                    //add neighbours of this newly coloured pixel
+                    SetWrite.add(j + 1);
+                    SetWrite.add(j + 1 + WIDTH);
+                    SetWrite.add(j + WIDTH);
+                    SetWrite.add(j - 1 + WIDTH);
+                    SetWrite.add(j - 1);
+                    SetWrite.add(j - 1 - WIDTH);
+                    SetWrite.add(j - WIDTH);
+                    SetWrite.add(j + 1 - WIDTH);
+                }
+            }
+        }
+
+        //small island stuff next
+        //small islands is half range
+        for(let distanceFromClaim = 0; distanceFromClaim < shipRangeHigh / 2; distanceFromClaim++){
+            let paintColor;
+            
+            if(distanceFromClaim <= shipRangeLow / 2) paintColor = shipRangeLowSmallColor;
+            else if(distanceFromClaim <= shipRangeMid / 2) paintColor = shipRangeMidSmallColor;
+            else if(distanceFromClaim <= shipRangeHigh / 2) paintColor = shipRangeHighSmallColor;
+            
+            let SetRead = distanceFromClaim % 2 == 0 ? SmallIslandGrowthSet : SmallIslandGrowthSet2;
+            let SetWrite = distanceFromClaim % 2 == 1 ? SmallIslandGrowthSet : SmallIslandGrowthSet2;
+
+            SetWrite.clear();
+
+            let growFromColours, growIntoColours;
+            for(const j of SetRead) {
+                if(j < 0 || j >= imagePixelCount) continue;
+                let x = j % WIDTH;
+                let y = Math.floor(j / WIDTH);
+
+                let now = Date.now();
+                if(now - then > 500) {
+                    dat = new ImageData(nationData, WIDTH);
+                    canvas.getContext("2d").putImageData(dat, 0, 0);
+                    await new Promise(resolve => setTimeout(resolve));
+                    loadingText.innerText = `Marking pixels reachable from small settlement coasts:\nIteration: ${distanceFromClaim} of ${shipRangeHigh / 2}`;
+                    then = now;
+                }
+
+                growFromColours = [smallIslandFillColorArray];
+                growFromColours.push(shipRangeLowSmallColor);
+                if(distanceFromClaim > shipRangeLow / 2) growFromColours.push(shipRangeMidSmallColor);
+                if(distanceFromClaim > shipRangeMid / 2) growFromColours.push(shipRangeHighSmallColor);
+
+
+                growIntoColours = [
+                  waterColorArray,
+                ];
+
+                if(distanceFromClaim <= shipRangeMid / 2) {
+                  growIntoColours.push(shipRangeHighColor);
+                }
+                if(distanceFromClaim <= shipRangeLow / 2) {
+                  growIntoColours.push(shipRangeMidColor);
+                }
+
                 if(isOneOfColorsAtCoord(growIntoColours, x, y) && OneNeighbourIsOneOfColors(growFromColours, x, y)){
                     setColorAtCoord(x,y, paintColor);
 
