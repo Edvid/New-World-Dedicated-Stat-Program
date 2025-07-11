@@ -1,2 +1,219 @@
 
 !suppress 1
+
+<... > Nations > Holy Roman Dominion Of The Danube
+
+-2 ResearchPoints
+="true" Technologies.Bombards
+-3 CulturalPower
+="true" CulturalAdvancements.Courthouses
+=16% Aristocracy Tax
+=16% Clergy Tax
+=10% Burgousie Tax
+=10% Urban Tax
+=10% Bureaucrats Tax
+=10% Intellectuals Tax
+=10% Workers Tax
+=10% Military Tax
+
+<... > Nations > Kingdom Of Aphrodisia
++0.65 Local Trade 
++5 TradeInfluences.Greece
++4 TradeInfluences.Eastern Mediterranean
++4 TradeInfluences.Egypt
++4 TradeInfluences.Adriatic
++3 TradeInfluences.Central Mediterranean
++2.5 TradeInfluences.Western Mediterranean
++5 TradeInfluences.Romania
++2.5 TradeInfluences.Southern France
++4 TradeInfluences.Northern Anatolia
++1.5 TradeInfluences.Iberia
++2 TradeInfluences.Morocco
+
+<... > Nations > Kosalakingdom
++0.1 agrsubsidies
++0.05 agradv
++0.1 stockcap
++0.05 agrinf
+
+<... > Nations > Kosalakingdom
++0.1 agrsubsidies
++0.05 agradv
++0.1 stockcap
++0.05 agrinf
+
+<... > Nations > Holy Roman Dominion Of The Danube
++1 wool 
++0.5 localtrade
++0.07 TradeImprov
++2.5 ProductionSectors.Textiles Sector
++0.65 AdmEff
++0.05 admsize
+
+<... > Nations > Xanmai Mandate
++0.06 AgrAdv
+
+<... > Nations > Xanmai Mandate
++0.5 localtrade
++5 TradeInfluences.Gobi Desert
++0.05 TradeImprov
+
+<... > Nations > Anglo Crown Confederacy
++0.5 AdmEff
+
+<... > Nations > Anglo Crown Confederacy
++0.5 AdmEff
+
+<... > Nations > Kingdom Of Aphrodisia
++0.6 admeff
++0.1 AdmSize
+
+<... > Nations > Sangkhom
++0.7 exotic fruits
++0.6 localtrade
++0.1 CulturalProsperity
++5 TradeInfluences.South East Asia
+
+<... > Nations > Sangkhom
++0.5 EduEff
++0.05 ResearchSpending
++0.5 localtrade
++0.1 CulturalProsperity
++0.7 exotic fruits
++5 TradeInfluences.South East Asia
+
+<... > Nations > Holy Roman Dominion Of The Danube
++0.8 wool
+-5 EstateInfluences.ClergyInfluence
+
+<... > Nations > KosalaKingdom
++0.05 AgrAdv
++0.05 AgrInf
++0.05 AgrSubsidies
+
+<... > Cultures > Hindustani > Opinions
++> Bengali
+=10 Bengali.Score
+<... > Cultures > Bengali > Opinions
++> Hindustani 
+=10 Hindustani.Score
+
+<... > Nations > GrecoBactria
++0.5 wool
+
+<... > Nations > GrecoBactria
++0.25 Wool
++0.25 Cotton
+
+<... > Nations > GrecoBactria
++0.05 AgrInf
+
+<... > Nations > Holy Roman Dominion Of The Danube
++7 estateinfluences.ClergyInfluence 
++0.7 admeff 
++0.7 edueff 
++0.7 religiousfervor 
+
+<... > Nations > GrecoBactria
++0.5 Propaganda 
+<... > Cultures > GrecoBactrian > Opinions
++> Aryan
+=5 Aryan.Score
+<... > Cultures > Aryan > Opinions
++> GrecoBactrian
+=5 GrecoBactrian.Score
+<... > Cultures > GrecoBactrian > Opinions
++> Hindustani
+=5 Hindustani.Score
+<... > Cultures > Hindustani > Opinions
++> GrecoBactrian
+=10 GrecoBactrian.Score
+
+<... > Nations > GrecoBactria
++0.1 CulturalProsperity
+
+<... > Nations > GrecoBactria
++3 TradeInfluences.IndusRiver
++3 TradeInfluences.Afghanistan
++1 TradeInfluences.Iran
+
+<... > Nations > KosalaKingdom
++0.75 Local Trade
++0.1 Administration Size
++0.25 AdmEff
++0.1 TradeImprov
+
+<... > Nations > GrecoBactria
++200 Light Infantry
++100 Light Cavalry
++200 Heavy Infantry
++250 Archers
++2 LightShips
++5 MerchantShips
+
+<... > Nations > GrecoBactria
++0.05 LightShipImprov
++0.1 TradeImprov
+
+<... > Nations > GrecoBactria
++0.3 BureaucratsWages
++0.3 ArmyWage
++0.2 StateFarmerWage
+
+<... > Nations > KosalaKingdom
++0.75 Coal
++0.1 MiningEff
+
+<... > Nations > Kingdom Of Poland
++0.25 SocialSpending
++0.05 ResearchSpending
++0.5 LocalTrade
++0.05 AdmSize
++0.25 AdmEff
+
+<... > Nations > Kingdom Of Poland
++0.25 LocalTrade
++0.05 TradeImprov
+
+<... > Nations > GrecoBactria
++1.5 TradeInfluences.IndusRiver
++1.5 TradeInfluences.Afghanistan
++1.5 TradeInfluences.Ganges
+
+<... > Nations > Showa Shogunate
++0.1 AgrSubsidies
++0.05 AgrAdv
++2.5 EstateInfluences.AristocracyInfluence
+
+<... > Nations > GrecoBactria
++0.05 CavalryImprov
+
+<... > Nations > KosalaKingdom
++0.05 AdmSize
++0.5 AdmEff
++0.1 AgrSubsidies
++0.05 AgrInf
+
+<... > Nations > GrecoBactria
++0.05 OverallImprov
+
+<... > Nations > Showa Shogunate
++0.1 OverallImprov
+
+<... > Nations > Duchy of Moscow
+!suppress 1
+-6 ResearchPoints
+="true" Technologies.PlateArmour
+="true" Technologies.PromissoryNotes
+="true" Technologies.Cranes
+!suppress 1
+-3 CulturalPower
+="true" CulturalAdvancements.Courthouses
+
+
+<... > Cultures > Fritsan > Opinions
++> Scandinavian 
+=5 Scandinavian.Score
+<... > Cultures > Scandinavian > Opinions
++> Fritsan 
+=5 Fritsan.Score
