@@ -1095,6 +1095,8 @@ trade Thessaloniki-Rus Commercial Pact2, Kyivan Rus > Regnum Thessalonicae, 0.35
 
 <... > Nations
 <=> Kingdom Of Germany > KingdomOfBrandenburg
+<... > Nations > KingdomOfBrandenburg
+="KingdomOfBrandenburg" GovernmentName
 
 <... > Nations > Kingdom of Sweden 
 +0.25 Religious fervor
@@ -1127,7 +1129,6 @@ trade Thessaloniki-Rus Commercial Pact2, Kyivan Rus > Regnum Thessalonicae, 0.35
 <- Grand Duchy Of Holland
 <- Kingdom Of Lithuania
 <- Kingdom Of Romania
-<- Serbian Empire
 <- Cuman Kipchak Confederation
 <- Romanum Imperium
 <- Kingdom Of Portugal
@@ -1137,6 +1138,10 @@ trade Thessaloniki-Rus Commercial Pact2, Kyivan Rus > Regnum Thessalonicae, 0.35
 <- Qara Ulys
 <- Srivijaya
 <- Alexandria
+
+<=> SerbianEmpire > KingdomOfSerbia
+<... > Nations > KingdomOfSerbia
+="KingdomOfSerbia" GovernmentName
 
 <...
 
