@@ -894,6 +894,17 @@
 -2 GovernmentRepresentation.UnitaryRepresentation
 -2 GovernmentRepresentation.ClergyRepresentation
 +0.1 CulturalProsperity
+
+<... > Nations > Kyivan Rus
+=15% Aristocracy Tax
+=17.5% Clergy Tax
+=17.5% Burgousie Tax
+=17.5% Urban Tax
+=15% Bureaucrats Tax
+=17.5% Intellectuals Tax
+=15% Workers Tax
+=10% Military Tax
+
 <... > Nations > Crown of Aragon
 +0.5 AdmEff
 +0.05 TradeImprov
