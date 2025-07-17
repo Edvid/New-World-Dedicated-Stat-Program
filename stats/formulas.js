@@ -103,7 +103,7 @@ static evaluateNation(nationName) {
     for (const OpinionatedSocialBehaviourGroupName in socialBehaviourGroup) {
     
         const OpinionatedSocialBehaviourGroup = socialBehaviourWorldwideGroups[OpinionatedSocialBehaviourGroupName];
-        
+
       const Points = socialBehaviourGroup[OpinionatedSocialBehaviourGroupName].Points;
       //if the social behaviour is listed, but no one is actually here. Skip
       if(Points == 0) continue;
@@ -1409,7 +1409,7 @@ static evaluateNation(nationName) {
     n.LoyaltiesStabilityImpact = n.LoyaltiesStabilityImpact * 0.6;
 
     n.Stability = n.PopulationHappiness + n.AdministrativeEfficiency / 10 - n.Overextension - n.CulturalDisunity - n.ReligiousDisunity + (n.PropagandaReal * 0.5 * (1 + n.CulturalAdvancements.Newspapers * n.LiteracyPercent / 50)) + n.PopulationControlReal * 1.5 + n.PopulationStabilityImpact + WarStabilityModifier * 7.5 + n.LoyaltiesStabilityImpact - (n.Workforces.Slaves * 10);
-    if (nationName == "VenetianRepublic") debugger;
+    
   let PopulationGrowthModifier = n.FoodPopulationBoost + n.Prosperity / 10 + n.Stability / 100 + n.UnderPopulation;
 
   n.PseudoPopulationGrowth = (n.FutureFood < 0 ? n.FutureFood * 1000 / n.Population : (0.1 + PopulationGrowthModifier) - n.BirthControl / 20) / gameStats.TimeDivide;
