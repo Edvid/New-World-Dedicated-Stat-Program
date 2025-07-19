@@ -1357,7 +1357,7 @@ static evaluateNation(nationName) {
       n[Estate + "Loyalty"] = n.BaseLoyalty + n.ExpectedSolLoyaltyMod + n.AverageSolLoyaltyMod + n.GovernmentRepLoyaltyMod - n.TaxesLoyaltyMod + n.InfluenceChangeLoyaltyEffect[Estate];
       n[Estate + "Loyalty"] = clamp(0, 1, n[Estate + "Loyalty"]);
   }
- 
+
     n.AristocracyLoyalty += n.CulturalAdvancements.NobleDuty * 0.05;
 
     if (n.AristocracyBasicArmaments > max(n.ArmyBasicArmamentsDemand, 10)) {

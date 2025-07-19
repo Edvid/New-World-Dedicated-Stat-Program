@@ -241,6 +241,7 @@ function ti(zone) {
 let TableLayouts = {
     "Flag and Government": [
         ["Flag"],
+        ["Color"],
         ["GovernmentName"],
         ["GovernmentDominatedBy"],
         ["GovernmentEffects"]
