@@ -32,6 +32,8 @@
 +0.1 AgrInf
 +0.1 AgrSubsidies
 +0.05 AgrAdv
+!suppress 1
++2.5 ResearchPoints
 
 <... > Nations
 +> LeagueOfMaya
@@ -94,6 +96,8 @@
 +0.1 AgrInf
 +0.1 AgrSubsidies
 +0.05 AgrAdv
+!suppress 1
++2.5 ResearchPoints
 
 <...
 ="006b71" nations.Novorossia.Color
