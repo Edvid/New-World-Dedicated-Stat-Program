@@ -384,17 +384,17 @@
 =20% BurgousieTax
 =20% UrbanTax
 =20% IntellectualsTax
-<... > Nations > Kosala
+<... > Nations > KosalaKingdom
 +0.1 CulturalPropserity
-<... > Nations > Kosala
+<... > Nations > KosalaKingdom
 +0.75 AdmEff
 +0.15 AdmSize
 +0.25 LocalTrade
-<... > Nations > Kosala
+<... > Nations > KosalaKingdom
 + 0.5 AdmEff
 +0.1 AdmSize
 +0.25 LocalTrade
-<... > Nations > Kosala
+<... > Nations > KosalaKingdom
 +0.1 AgrSubsidies
 +0.1 AgrInf
 <... > Nations > Greco Bactria
@@ -405,13 +405,13 @@
 +2 TradeInfluences.Central India
 +2 TradeInfluences.Ganges
 +2 TradeInfluences.Afghanistan
-<... > Nations > Kosala
+<... > Nations > KosalaKingdom
 +0.1 AgrSubsidies
 +0.1 AgrAdv
 +0.25 LocalTrade
 <... > Nations > Xanmai Mandate
 ="https://media.discordapp.net/attachments/676497834077323301/1395457887358287955/929951.png?ex=68826dee&is=68811c6e&hm=0401d4c8edb7babbf8552e5cf742501f9c5205cac1d83f3dcdca9211835ffd66&format=webp&quality=lossless&width=1376&height=917&" flag
-<... > Nations > Kosala
+<... > Nations > KosalaKingdom
 +0.1 AgrSubsidies
 <... > Nations > Kingdom Of Aphrodisia
 +0.25 AdmEff
