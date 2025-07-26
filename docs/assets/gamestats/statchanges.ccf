@@ -185,3 +185,759 @@
 = 4345.825000000001 LeagueOfMaya.Fertility
 !suppress 0
 <...
+
+<... > Nations > Showa Shogunate
++0.1 Adm size
++0.1 Agrisub
+<... > Nations > Kingdom of Brandenburg
++0.5 AdmEff
+<... > Nations > Kingdom of Brandenburg
+-5 Budget
+<... > Nations > Kingdom of Brandenburg
++5 ProductionSectors.Shipbuildingsector
++2.5% Production Government Control
+<... > Nations > Kingdom of Brandenburg
+-5 Budget
+<... > Nations > Kingdom of Sweden
++5 Budget
+<... > Nations > Holy Kingdom Of Judah
++0.1 AgrInf
++0.1 AgrSubsidies
++0.1 StockCap
++0.15 health
++0.5 adm
++0.1 admsize
+<... > Nations > Holy Kingdom Of Judah
++0.5 localtrade
++0.05 TradeImprov
++0.5 adm
++0.1 AdmSize
++5 TradeInfluences.Eastern Mediterranean
++5 TradeInfluences.Egypt
++5 TradeInfluences.Mesopotamia
+="true" Technologies.PromissoryNotes
+-2 Research Points
+<... > Nations > Kingdom Of Aphrodisia
++0.5 adm
++0.05 TradeImprov
+<... > Nations > Venetian Republic
++0.5 LocalTrade
++10 ProductionSectors.ShipbuildingSector
++0.05 LightShipImprovements
++0.05 MediumShipImprovements
++0.05 HeavyShipImprovements
++0.05 TradeImprovements
+-2 ResearchPoints
+="true" Technologies.Workshops
+<... > Nations > Venetian Republic
++0.5 ReligiousFervor
++0.1 CulturalProsperity
+<... > Nations > Regnum Thessalonicae
+="true" Technologies.bombards
+-2 ResearchPoints
+<... > Nations > VenetianRepublic
++7 MerchantShips
++4 LightShips
++4 MediumShips
+<... > Nations > Kingdom of Brandenburg
++0.05 OverallImprov
+<... > Nations > Novorossia
++0.5 adm
+<... > Nations > Fritsan Empire
+="true" Reforms.Enclosure
+="false" Reforms.Open Field System
+-25 reform power
+<... > Nations > Kingdom of Brandenburg
++0.5 localtrade
++5 ProductionSectors.Basic goods sector
+="true" Technologies.Workshops
+-2 ResearchPoints
+<... > Nations > Xanmai Mandate
++0.5 Forestry
++0.02 LightShipImprovements
+<... > Nations > Xanmai Mandate
++0.05 agriadv
++0.1 agrinf
++0.20 health
+<... > Nations > Kingdom Of Aphrodisia
++0.5 adm
++0.05 TradeImprov
++0.5 localtrade
++5 TradeInfluences.Greece
++4 TradeInfluences.Eastern Mediterranean
++5 TradeInfluences.Egypt
++4 TradeInfluences.Adriatic
++3 TradeInfluences.Central Mediterranean
++3 TradeInfluences.Western Mediterranean
++5 TradeInfluences.Romania
++3 TradeInfluences.Southern France
++4 TradeInfluences.Northern Anatolia
++2.5 TradeInfluences.Iberia
++2 TradeInfluences.Morocco
+<... > Nations > Novorossia
++0.5 adm
++0.1 admsize
+<... > Nations > Novorossia
++0.05 AgrInf
++0.05 AgrSubsidies
+<... > Nations > Kingdom Of Aphrodisia
++0.1 CulturalProsperity
+<... > Nations > Kingdom Of Brandenburg
++5 ProductionSectors.Alcohol sector
+<... > Nations > Venetian Republic
++0.1 TradeImprov
++0.75 localtrade
++0.05 LightShipImprov
++0.05 MediumShipImprov
++0.05 HeavyShipImprov
++13 TradeInfluences.Adriatic
++13 TradeInfluences.Central Mediterranean
++13 TradeInfluences.Greece
++13 TradeInfluences.Southern France
++13 TradeInfluences.Western Mediterranean
++12 TradeInfluences.Morocco
++11 TradeInfluences.WesternSahara
++11 TradeInfluences.Iberia
++12 TradeInfluences.BayOfBiscay
++13 TradeInfluences.Egypt
++13 TradeInfluences.Eastern Mediterranean
++11 TradeInfluences.Northern Anatolia
++11 TradeInfluences.Romania
++11 TradeInfluences.Crimea
++11 TradeInfluences.Dniepr
++11 TradeInfluences.France
++12 TradeInfluences.EnglishChannel
++11 TradeInfluences.BritishIsles
++11 TradeInfluences.Rhine
+<... > Nations > Fritsan Empire
+=13.5% Aristocracy Tax
+=13.5% Clergy Tax
+=13.5%Burgousie Tax
+=13.5% Urban Tax
+=13.5% Bureaucrats Tax
+=13.5% Intellectuals Tax
+=13.5% Workers Tax
+=13.5% Military Tax
+<... > Nations > Kingdom Of Brandenburg
++0.5 localtrade
++5 TradeInfluences.Central Europe
++4 TradeInfluences.Vistula
++3 TradeInfluences.Western Danube
++0.10 agrinf
++0.10 AgrSubsidies
++0.10 StockCap
++0.5coal
++0.5 iron
++0.1 MiningEff
+<... > Nations > Venetian Republic
++0.05 TradeImprov
++0.75 localtrade
++0.1 MediumShipImprovements
++0.1 HeavyShipImprovements
++13 TradeInfluences.Adriatic
++13 TradeInfluences.Central Mediterranean
++13 TradeInfluences.Greece
++13 TradeInfluences.Southern France
++13 TradeInfluences.Western Mediterranean
++12 TradeInfluences.Morocco
++11 TradeInfluences.WesternSahara
++11 TradeInfluences.Iberia
++12 TradeInfluences.BayOfBiscay
++13 TradeInfluences.Egypt
++13 TradeInfluences.Eastern Mediterranean
++11 TradeInfluences.Northern Anatolia
++11 TradeInfluences.Romania
++11 TradeInfluences.Crimea
++11 TradeInfluences.Dniepr
++11 TradeInfluences.France
++12 TradeInfluences.EnglishChannel
++11 TradeInfluences.BritishIsles
++11 TradeInfluences.Rhine
+<... > Nations > Greco Bactria
++0.75 Adm eff
++0.1 Adm size
++0.05 Spy Quality
+<... > Nations > Xanmai Mandate
++0.05 OverallImprov
++0.05 MeleeImprov
++0.05 CavalryImprov
+<... > nations > Holy Roman Dominion Of The Danube
+=20% AristocracyTax
+=20% ClergyTax
+=5% BurgousieTax
+=5% UrbanTax
+=5% BureaucratsTax
+=5% IntellectualsTax
+=5% WorkersTax
+=5% MilitaryTax
+<... > Nations
+<=> Greco Bactria > Republic of Greco-Bactria
+="true" Reforms.High class voting
+="false" Reforms.no voting
+-25 ReformPower
+<... > Nations > Greco Bactria
+="true" CulturalAdvancements.Courthouses
+-3 CulturalProsperity
+<... > Nations > Kingdom Of Aphrodisia
++2.5 EstateInfluences.burgousieinfluence
+=20% ClergyTax
+=20% BurgousieTax
+=20% UrbanTax
+=20% IntellectualsTax
+<... > Nations > Kosala
++0.1 CulturalPropserity
+<... > Nations > Kosala
++0.75 AdmEff
++0.15 AdmSize
++0.25 LocalTrade
+<... > Nations > Kosala
++ 0.5 AdmEff
++0.1 AdmSize
++0.25 LocalTrade
+<... > Nations > Kosala
++0.1 AgrSubsidies
++0.1 AgrInf
+<... > Nations > Greco Bactria
++0.5 AdmEff
++0.2 AdmSize
++0.5 LocalTrade
++2 TradeInfluences.Indus River
++2 TradeInfluences.Central India
++2 TradeInfluences.Ganges
++2 TradeInfluences.Afghanistan
+<... > Nations > Kosala
++0.1 AgrSubsidies
++0.1 AgrAdv
++0.25 LocalTrade
+<... > Nations > Xanmai Mandate
+="https://media.discordapp.net/attachments/676497834077323301/1395457887358287955/929951.png?ex=68826dee&is=68811c6e&hm=0401d4c8edb7babbf8552e5cf742501f9c5205cac1d83f3dcdca9211835ffd66&format=webp&quality=lossless&width=1376&height=917&" flag
+<... > Nations > Kosala
++0.1 AgrSubsidies
+<... > Nations > Kingdom Of Aphrodisia
++0.25 AdmEff
+<... > Nations > Regnum Thessalonicae
++5 EstateInfluences.BurgousieInfluence
+-5 EstateInfluences.AristocracyInfluence
+<... > Nations > Greco Bactria
++0.25 Spice
+<... > Cultures > GrecoBactrian > Opinions
++> Aryan
+=5 Aryan.Score
+<... > Cultures > Aryan > Opinions
++> GrecoBactrian
+=5 GrecoBactrian.Score
+<... > Cultures > GrecoBactrian > Opinions
++> Hindustani
+=5 Hindustani.Score
+<... > Cultures > Hindustani > Opinions
++> GrecoBactrian
+=10 GrecoBactrian.Score
+<... > Cultures > GrecoBactrian > Opinions
++> Afghan
+=5 Afghan.Score
+<... > Cultures > Afghan > Opinions
++> GrecoBactrian
+=10 GrecoBactrian.Score
+<... > Nations > Greco Bactria
++0.75 Sulphur
+<... > Nations > Greco Bactria
+-2 ResearchPoints
+="true" Technologies.PlateArmour
++5 MerchantShips
+pay debt 330
+<... > Nations > League Of Maya
++6 EstateInfluences.AristocracyInfluence
++6 GovernmentRepresentation.AristocracyRepresentation
+-3 GovernmentRepresentation.ClergyRepresentation
+-3 GovernmentRepresentation.BurgousieRepresentation
+<... > Nations > The Ogalala River Lakota Sioux Chiefdom
++0.05 AgrAdv
++0.05 AgrInf
+<... > Nations > The Ogalala River Lakota Sioux Chiefdom
++0.25 Propaganda
++0.5 EduEff
++0.25 AdmEff
+<... > Nations > The Ogalala River Lakota Sioux Chiefdom
++0.25 Tobacco
++0.25 LocalTrade
++3 TradeInfluences.Mississippi
++4 TradeInfluences.GreatLakes
+<... > Nations > The Ogalala River Lakota Sioux Chiefdom
++0.05 TradeImprov
++0.25 LocalTrade
++2 TradeInfluences.Mississippi
++3 TradeInfluences.GreatLakes
+<... > Nations > The Ogalala River Lakota Sioux Chiefdom
++0.75 Coal
++0.5 Sulphur
+<... > Nations > Greco Bactria
++0.1 agrisub
++0.5 tea
++0.5 exoticfruit
++0.05 agrinf
+<... > Nations > Kosala Kingdom
++0.5 LocalTrade
++5 TradeInfluences.Ganges
++5 TradeInfluences.CentralIndia
++3 TradeInfluences.IndusRiver
++3 TradeInfluences.Deccan
++2 TradeInfluences.SouthEastAsia
++2 TradeInfluences.Tibet
++3 ProductionSectors.LuxuryGoodsSector
+<... > Nations > Kingdom of Sweden
+=21% AristocracyTax
+=20% ClergyTax
+=6% BurgousieTax
+=6% UrbanTax
+=6% BureaucratsTax
+=6% IntellectualsTax
+=6% WorkersTax
+=6% MilitaryTax
+<... > Nations > Fritsan Empire
++0.05 AgrAdv
++0.25 Health
++0.5 LocalTrade
+<... > Nations > Fritsan Empire
++0.1 AgrAdv
++0.1 AgrInf
++0.1 AgrSubsidies
++0.25 LocalTrade
+<... > Nations > Fritsan Empire
++0.1 AgrInf
++0.05 AgrSubsidies
++0.25 LocalTrade
++0.05 AgrAdv
+<... > Nations > Fritsan Empire
++0.25 AdmEff
++0.05 AdmSize
+-3 EstateInfluences.AristocracyInfluence
++0.05 OverallImprov
+<... > Nations > Fritsan Empire
++0.5 AdmEff
+-4 EstateInfluences.AristocracyInfluence
+-6 GovernmentRepresentation.AristocracyRepresentation
++2 GovernmentRepresentation.ClergyRepresentation
++2 GovernmentRepresentation.BurgousieRepresentation
++2 GovernmentRepresentation.UnitaryRepresentation
++0.5 LocalTrade
+<... > Nations > Regnum Thessalonicae
+= 13% aristocracy tax
+= 13% burgousie tax
+= 10% urban tax
+= 0.1% bureaucrats tax
+= 0.3% intellectuals tax
+= 13% workers tax
+= 13% military tax
+="true" CulturalAdvancements.courthouses
+-3 cultural power
++0.25 propaganda
+<... > Cultures > Greek> Opinions
++> southslav
+=12.5 southslav.Score
+<... > Cultures > southslav> Opinions
++> greek
+=12.5 greek.Score
+<... > Nations > Greco Bactria
++0.25 Cotton
++0.25 Tea
++0.25 Spice
++0.5 Sugar
++0.15 AgrSubsidies
++3 EstateInfluences.AristocracyInfluence
++3 EstateInfluences.BurgousieInfluence
+<... > Nations > Kingdom Of Hungary
++0.05 TradeImprov
++0.5 LocalTrade
++0.25 AdmEff
++0.1 AdmSize
+-3 EstateInfluences.AristocracyInfluence
++6 EstateInfluences.BurgousieInfluence
++6 GovernmentRepresentation.burgousieRepresentation
+-4 GovernmentRepresentation.ClergyRepresentation
+-3 GovernmentRepresentation.AristocracyRepresentation
++1 GovernmentRepresentation.UnitaryRepresentation
+<... > Nations > Kingdom of Hungary
+-2 ResearchPoints
+="true" Technologies.Cranes
+<... > Nations > Greco Bactria
++0.15 CulturalProsperity
++0.5 EduEff
++0.05 ResearchSpending
+<... > Nations > Greco Bactria
++4 TradeInfluences.Ganges
++4 TradeInfluences.CentralIndia
++5 TradeInfluences.IndusRiver
++0.25 LocalTrade
+<... > Cultures > GrecoBactrian > Opinions
++> Aryan
+=5 Aryan.Score
+<... > Cultures > Aryan > Opinions
++> GrecoBactrian
+=5 GrecoBactrian.Score
+<... > Cultures > GrecoBactrian > Opinions
++> Hindustani
+=5 Hindustani.Score
+<... > Cultures > Hindustani > Opinions
++> GrecoBactrian
+=5 GrecoBactrian.Score
+<... > Cultures > GrecoBactrian > Opinions
++> Afghan
+=5 Afghan.Score
+<... > Cultures > Afghan > Opinions
++> GrecoBactrian
+=5 GrecoBactrian.Score
+<... > Nations > Greco Bactria
++0.1 CulturalProsperity
+<... > Nations > Greco Bactria
++200 LightCav
++300 HeavyCav
++200 Crossbowmen
+=100 Archers
++200 HeavyInfantry
+<... > Nations > Fritsan Empire
++0.05 AgrInf
++1 TradeInfluences.NorthSea
++2 TradeInfluences.EnglishChannel
++2 TradeInfluences.BritishIsles
+<... > Nations > Kingdom of Brandenburg
+=17% Aristocracy Tax
+=17% Clergy Tax
+=17% Burgousie Tax
+=17% Urban Tax
+=17% Bureaucrats Tax
+=17% Intellectuals Tax
+=17% Workers Tax
+=17% Military Tax
+<... > Nations > Kingdom of Scotland
+-2 ResearchPoints
+="true" Technologies.PromissoryNotes
+<... > Nations > Fritsan Empire
++0.1 CulturalProsperity
++0.5 EduEff
++0.05 ResearchSpending
++0.25 AdmEff
+<... > Nations > Kingdom of Brandenburg
++0.5 AdmEff
++0.25 LocalTrade
+<... > Nations > Novorossia
++0.5 ReligiousFervor
+<... > Nations > Kingdom of Sweden
++0.1 CulturalProsperity
+<... > Cultures > Scandinavian > Opinions
++> Finnic
+=5 Finnic.Score
+<... > Cultures > Finnic > Opinions
++> Scandinavian
+=5 Scandinavian.Score
+<... > Cultures > Scandinavian > Opinions
++> Germanic
+=5 Germanic.Score
+<... > Cultures > Germanic > Opinions
++> Scandinavian
+=5 Scandinavian.Score
+<... > Nations > Regnum Thessalonicae
+="https://cloud.edvid.dev/apps/files_sharing/publicpreview/PKZG8wi9iBZ7qBj?file=/&fileId=3268&x=1920&y=1080&a=true&etag=6dbd2e239677a4a7b973f8684f883543" flag
+<... > Nations > Regnum Thessalonicae
+= 13% Aristocracy tax
+= 13% Burgousie tax
+= 10% Urban tax
+= 0.1% Bureaucrats tax
+= 0.3% Intellectuals tax
+= 13% Workers tax
+= 13% Military tax
+<... > Nations > Royal Tai Kingdom
++0.25 Coal
++0.25 Gold
+<... > Nations > Royal Tai Kingdom
++0.5 Health
++0.25 LocalTrade
+<... > Nations > Crown of Aragon
+="https://upload.wikimedia.org/wikipedia/commons/c/c9/Royal_Banner_of_Arag%C3%B3n.svg" flag
+<... > Nations > Kyivan Rus
++4.5 localtrade
++0.3 tradeimprov
++0.65 admsize
++4.5 admeff
++0.5 edueff
++0.05 researchspending
++0.05 researcheffectiveness
++0.5 health
++7 TradeInfluences.Northern Anatolia
++22 TradeInfluences.Romania
++29 TradeInfluences.Crimea
++28 TradeInfluences.Dniepr
++27 TradeInfluences.Don River
++11 Tradeinfluences.Novgorod
++0.5 forestry
++0.05 reforestation
++0.25 agrinf
++0.1 agradv
++0.25 exoticfruits
++12 spies
++0.5 populationcontrol
++0.05 spyquality
++0.05 miningeff
++0.5 coal
++0.5 iron
++0.05 culturalprosperity
++0.5 wool
++0.25 discipline
++0.1 overallimprov
++0.1 cavalryimprov
++0.25 commanderfreedom
+=0.25 socialspending
++0.25 propaganda
++7 EstateInfluences.burgousieInfluence
++2.5 GovernmentRepresentation.BurgousieRepresentation
+-7.5 GovernmentRepresentation.AristocracyRepresentation
++5 GovernmentRepresentation.UnitaryRepresentation
++3.5 EstateInfluences.Bureaucratsinfluence
++4 ProductionSectors.Textiles sector
++3.5 ProductionSectors.Luxury goods sector
++7 ProductionSectors.Construction sector
++3 Productionsectors.basic goods sector
++3 ProductionSectors.shipbuilding sector
++10 ProductionSectors.basic armaments sector
++10 ProductionSectors.basic tools sector
+<... > Nations > Kingdom of aphrodisia
++0.05 Light ShipImprov
++0.05 Medium Shipimprov
++0.05 Heavy ShipImprov
++0.5 religiousfervor
++0.05 overallimprov
++0.5 commanderfreedom
++0.25 localtrade
++0.05 culturalprosperity
++0.05 researchspending
++3 Tradeinfluences.Western Mediterranean
++3 Tradeinfluences.Iberia
++3 Tradeinfluences.Morocco
++3 Tradeinfluences.Southern France
+-5 EstateInfluences.aristocracyInfluence
++5 GovernmentRepresentation.BureaucratsRepresentation
+-5 GovernmentRepresentation.AristocracyRepresentation
++5 EstateInfluences.Bureaucratsinfluence
+-4 Research Points
+="true" technologies.Bombards
+="true" technologies.Workshops
+<... > Nations > Kingdom of Brandenburg
++1 admeff
++0.05 tradeimprov
++0.5 localtrade
++4 tradeinfluences.Central Europe
+<... > Nations > Kwantung-Confederacy
++5 Spies
++0.05 Spy Quality
+<... > Nations > Crown of Aragon
++0.05 MiningEff
++0.5 Silver
++0.5 Sulphur
++0.5 Iron
++0.5 Coal
+<... > Nations > Crown of Aragon
+-0.1 AdmSize
++0.25 Health
++0.25 SocialSpending
++0.05 ResearchSpending
+=35.25% AristocracyTax
+=17.25% ClergyTax
+=20% WorkersTax
+=13.5% InternalTariffs
+<... > Nations > Xanmai Mandate
++0.1 MiningEff
++1.25 Iron
+<... > Nations > Holy Kingdom Of Judah
++0.5 ReligiousFervor
++0.5 AdmEff
++5 EstateInfluences.ClergyInfluence
++3 GovernmentRepresentation.ClergyRepresentation
+-1 GovernmentRepresentation.BurgousieRepresentation
+-1 GovernmentRepresentation.AristocracyRepresentation
+-1 GovernmentRepresentation.UnitaryRepresentation
+<... > Nations > Kwangtung Confederacy
+-2 ResearchPoints
+="true" Technologies.Bombards
++5 ProductionSectors.ConstructionSector
++5 ProductionSectors.ShipbuildingSector
++2.5 ProductionSectors.BasicToolsSector
++2.5 ProductionSectors.TextilesSector
+-1 Bureaucrats Wages
+<... > Nations > Holy Roman Dominion Of The Danube
++5 Budget
+<... > Nations > Kingdom of Brandenburg
+-5 Budget
+<... > Nations > Holy Roman Dominion Of The Danube
+-30 Budget
+<... > Nations > Crown of Aragon
++30 Budget
+<... > Nations > Greco Bactria
++0.1 AdmSize
++0.75 AdmEff
++0.75 LocalTrade
++0.05 TradeImprov
++5 TradeInfluences.Indus River
++4 TradeInfluences.Central India
++5 TradeInfluences.Ganges
++3 TradeInfluences.Afghanistan
++2.5 EstateInfluences.WorkerInfluence
++7.5 EstateInfluences.BurgousieInfluence
+<... > Nations > Republic of Greco-Bactria
++0.1 AdmSize
++0.25 LocalTrade
++3 TradeInfluences.Indus River
++2 TradeInfluences.Central India
++2 TradeInfluences.Ganges
+<... > Nations > Holy Roman Dominion Of The Danube
++1 AdmEff
++0.2 AdmSize
+-7.5 GovernmentRepresentation.UnitaryRepresentation
++2.5 GovernmentRepresentation.ClergyRepresentation
++2.5 GovernmentRepresentation.BurgousieRepresentation
++2.5 GovernmentRepresentation.AristocracyRepresentation
+-5 EstateInfluences.ClergyInfluence
++0.25 LocalTrade
++2.5 TradeInfluences.CentralEurope
++2.5 TradeInfluences.WesternDanube
++2.5 TradeInfluences.EasternDanube
++2.5 TradeInfluences.Rhine
++2.5 TradeInfluences.Adriatic
++2.5 TradeInfluences.Iberia
++2.5 TradeInfluences.WesternMediterranean
++2.5 TradeInfluences.BayOfBiscay
++2.5 TradeInfluences.SouthernFrance
++2.5 TradeInfluences.France
++2.5 TradeInfluences.CentralMediterranean
++0.1 CulturalProsperity
+<... > Nations > Crown Of Aragon
++1 AdmEff
++1 LocalTrade
++0.10 TradeImprov
+-10 GovernmentRepresentation.AristocracyRepresentation
+-10 GovernmentRepresentation.ClergyRepresentation
++10 GovernmentRepresentation.UrbanRepresentation
++10 GovernmentRepresentation.BurgousieRepresentation
++10 ProductionSectors.Textilessector
++10 ProductionSectors.BasicGoodssector
++0.5 CulturalProsperity
++9 TradeInfluences.Iberia
++9 TradeInfluences.Central Mediterranean
++9 TradeInfluences.Morocco
++9 TradeInfluences.Western Mediterranean
++9 TradeInfluences.Bay of Biscay
++9 TradeInfluences.Southern France
++7 TradeInfluences. France
++7 TradeInfluences.English Channel
++7 TradeInfluences.British Isles
++7 TradeInfluences.Rhine
++7 TradeInfluences.Adriatic
++7 TradeInfluences.Greece
++7 TradeInfluences.North Sea
++7 TradeInfluences.Central Europe
++7 TradeInfluences.Denmark
++7 TradeInfluences.Eastern Mediterranean
++7 TradeInfluences.Western Sahara
+<... > Nations > Crown Of Aragon
++0.75 LocalTrade
++0.75 AdmEff
++1 Wool
++75 Lightcav
++0.1 Agriculture Infrastructure
++0.05 Agriculture Advancements
++7.5 TradeInfluences.Iberia
++7.5 TradeInfluences.Western Mediterranean
++7.5 TradeInfluences.Bay of Biscay
++7 TradeInfluences.Southern France
++7 TradeInfluences.France
++7 TradeInfluences.Morocco
++7 TradeInfluences.English Channel
++6 TradeInfluences.Rhine
+<... > Nations > Crown Of 	
++0.1 AgrSub
++0.15 AgrInf
++0.15 StockCap
++1 Small Fort
++0.75 LocalTrade
++0.75 Sugar
++7.5 TradeInfluences.Iberia
++6 TradeInfluences.Western Mediterranean
++6 TradeInfluences.Bay of Biscay
++6 TradeInfluences.Morocco
++6 TradeInfluences.Southern France
++6 TradeInfluences.Central Mediterranean
++5 TradeInfluences.France
+<... > Nations > Crown Of Aragon
++0.05 TradeImprov
++0.5 AdmEff
++0.5 LocalTrade
++0.25 CulturalProsperity
++6 TradeInfluences.EasternMediterranean
++6 TradeInfluences.Adriatic
++5 TradeInfluences.CentralMediterranean
++5 TradeInfluences.NorthernAnatolia
++6 TradeInfluences.Greece
++4 TradeInfluences.Romania
++0.05 ResearchSpending
++0.05 ResearchEffectiveness
+<... > Nations > Crown Of Aragon
+="true" Technologies.Workshops
+-2 Research Points
+<... > Nations > Holy Roman Dominion Of The Danube
++0.05 miningeff
++2.5 Iron
++1 sulphur
++0.5 copper
++0.1 artilleryimprov
++6 siege guns
++2.5 EstateInfluences.BurgousieInfluence
++2.5 MilitaryControl.BurgousieControl
+-2.5 MilitaryControl.aristocracyControl
+<... > Nations > Showa Shogunate
++0.25 EduEff
++0.25 localtrade
++5 ProductionSectors.construction sector
++5 ProductionSectors.basic goods sector
++0.1 CulturalProsperity
+
+<... > Nations
++> ReichAmRhine
+> ReichAmRhine
+= "https://i.imgur.com/vwcDgeS.png" Flag
+> ReligionGroups
+=0 pagan
++> Catholic
+=100 Catholic
+<
+> CultureGroups
++> Germanic
+=100 Germanic
+<
+= "Germanic" cultrep
+= "Catholic" relrep
++2.5 AdmEff
++0.25 AdmSize
++0.25 Health
++0.5 EduEff
++0.25 Propaganda
++1 LocalTrade
++0.05 TradeImprovements
++0.05 OverallImprovements
++0.1 AgrInf
++0.1 AgrSubsidies
++0.05 AgrAdv
+!suppress 1
++2.5 ResearchPoints
+
+<... > Nations > The Kingdom Of France
++2.5 AdmEff
++0.25 AdmSize
++0.25 Health
++0.5 EduEff
++0.25 Propaganda
++1 LocalTrade
++0.05 TradeImprovements
++0.05 OverallImprovements
++0.1 AgrInf
++0.1 AgrSubsidies
++0.05 AgrAdv
+!suppress 1
++2.5 ResearchPoints
