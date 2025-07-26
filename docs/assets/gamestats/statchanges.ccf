@@ -969,6 +969,9 @@ sync
 !suppress 1
 +2.5 ResearchPoints
 <...
+<... > nations > Fritsan Empire
+="Catholic" Religion Represented At Government Level
+<...
 
 = "487c2e" nations.KingdomOfWallia.Color
 = "510000" nations.ReichAmRhine.Color
