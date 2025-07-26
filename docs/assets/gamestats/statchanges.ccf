@@ -968,6 +968,7 @@ sync
 +0.05 AgrAdv
 !suppress 1
 +2.5 ResearchPoints
+<...
 
 = "487c2e" nations.KingdomOfWallia.Color
 = "510000" nations.ReichAmRhine.Color
