@@ -312,7 +312,7 @@
 <... > Nations > Fritsan Empire
 =13.5% Aristocracy Tax
 =13.5% Clergy Tax
-=13.5%Burgousie Tax
+=13.5% Burgousie Tax
 =13.5% Urban Tax
 =13.5% Bureaucrats Tax
 =13.5% Intellectuals Tax
@@ -326,7 +326,7 @@
 +0.10 agrinf
 +0.10 AgrSubsidies
 +0.10 StockCap
-+0.5coal
++0.5 coal
 +0.5 iron
 +0.1 MiningEff
 <... > Nations > Venetian Republic
@@ -353,7 +353,7 @@
 +12 TradeInfluences.EnglishChannel
 +11 TradeInfluences.BritishIsles
 +11 TradeInfluences.Rhine
-<... > Nations > Greco Bactria
+<... > Nations > RepublicOfGrecoBactria
 +0.75 Adm eff
 +0.1 Adm size
 +0.05 Spy Quality
@@ -371,11 +371,11 @@
 =5% WorkersTax
 =5% MilitaryTax
 <... > Nations
-<=> Greco Bactria > Republic of Greco-Bactria
+<=> Greco Bactria > RepublicOfGrecoBactria
 ="true" Reforms.High class voting
 ="false" Reforms.no voting
 -25 ReformPower
-<... > Nations > Greco Bactria
+<... > Nations > RepublicOfGrecoBactria
 ="true" CulturalAdvancements.Courthouses
 -3 CulturalProsperity
 <... > Nations > Kingdom Of Aphrodisia
@@ -397,7 +397,7 @@
 <... > Nations > KosalaKingdom
 +0.1 AgrSubsidies
 +0.1 AgrInf
-<... > Nations > Greco Bactria
+<... > Nations > RepublicOfGrecoBactria
 +0.5 AdmEff
 +0.2 AdmSize
 +0.5 LocalTrade
@@ -418,7 +418,7 @@
 <... > Nations > Regnum Thessalonicae
 +5 EstateInfluences.BurgousieInfluence
 -5 EstateInfluences.AristocracyInfluence
-<... > Nations > Greco Bactria
+<... > Nations > RepublicOfGrecoBactria
 +0.25 Spice
 <... > Cultures > GrecoBactrian > Opinions
 +> Aryan
@@ -438,9 +438,9 @@
 <... > Cultures > Afghan > Opinions
 +> GrecoBactrian
 =10 GrecoBactrian.Score
-<... > Nations > Greco Bactria
+<... > Nations > RepublicOfGrecoBactria
 +0.75 Sulphur
-<... > Nations > Greco Bactria
+<... > Nations > RepublicOfGrecoBactria
 -2 ResearchPoints
 ="true" Technologies.PlateArmour
 +5 MerchantShips
@@ -470,7 +470,7 @@ pay debt 330
 <... > Nations > The Ogalala River Lakota Sioux Chiefdom
 +0.75 Coal
 +0.5 Sulphur
-<... > Nations > Greco Bactria
+<... > Nations > RepublicOfGrecoBactria
 +0.1 agrisub
 +0.5 tea
 +0.5 exoticfruit
@@ -531,13 +531,13 @@ pay debt 330
 ="true" CulturalAdvancements.courthouses
 -3 cultural power
 +0.25 propaganda
-<... > Cultures > Greek> Opinions
+<... > Cultures > Greek > Opinions
 +> southslav
 =12.5 southslav.Score
-<... > Cultures > southslav> Opinions
+<... > Cultures > southslav > Opinions
 +> greek
 =12.5 greek.Score
-<... > Nations > Greco Bactria
+<... > Nations > RepublicOfGrecoBactria
 +0.25 Cotton
 +0.25 Tea
 +0.25 Spice
@@ -559,11 +559,11 @@ pay debt 330
 <... > Nations > Kingdom of Hungary
 -2 ResearchPoints
 ="true" Technologies.Cranes
-<... > Nations > Greco Bactria
+<... > Nations > RepublicOfGrecoBactria
 +0.15 CulturalProsperity
 +0.5 EduEff
 +0.05 ResearchSpending
-<... > Nations > Greco Bactria
+<... > Nations > RepublicOfGrecoBactria
 +4 TradeInfluences.Ganges
 +4 TradeInfluences.CentralIndia
 +5 TradeInfluences.IndusRiver
@@ -586,9 +586,9 @@ pay debt 330
 <... > Cultures > Afghan > Opinions
 +> GrecoBactrian
 =5 GrecoBactrian.Score
-<... > Nations > Greco Bactria
+<... > Nations > RepublicOfGrecoBactria
 +0.1 CulturalProsperity
-<... > Nations > Greco Bactria
+<... > Nations > RepublicOfGrecoBactria
 +200 LightCav
 +300 HeavyCav
 +200 Crossbowmen
@@ -725,7 +725,7 @@ pay debt 330
 +0.05 tradeimprov
 +0.5 localtrade
 +4 tradeinfluences.Central Europe
-<... > Nations > Kwantung-Confederacy
+<... > Nations > KwangtungConfederacy
 +5 Spies
 +0.05 Spy Quality
 <... > Nations > Crown of Aragon
@@ -770,7 +770,7 @@ pay debt 330
 -30 Budget
 <... > Nations > Crown of Aragon
 +30 Budget
-<... > Nations > Greco Bactria
+<... > Nations > RepublicOfGrecoBactria
 +0.1 AdmSize
 +0.75 AdmEff
 +0.75 LocalTrade
@@ -781,7 +781,7 @@ pay debt 330
 +3 TradeInfluences.Afghanistan
 +2.5 EstateInfluences.WorkerInfluence
 +7.5 EstateInfluences.BurgousieInfluence
-<... > Nations > Republic of Greco-Bactria
+<... > Nations > RepublicOfGrecoBactria
 +0.1 AdmSize
 +0.25 LocalTrade
 +3 TradeInfluences.Indus River
@@ -851,7 +851,7 @@ pay debt 330
 +7 TradeInfluences.Morocco
 +7 TradeInfluences.English Channel
 +6 TradeInfluences.Rhine
-<... > Nations > Crown Of 	
+<... > Nations > Crown Of Aragon
 +0.1 AgrSub
 +0.15 AgrInf
 +0.15 StockCap
@@ -1244,7 +1244,7 @@ sync
 +> Maghrebi
 = 100 Maghrebi.Points
 < <
-> GrecoBactria
+> RepublicOfGrecoBactria
 +> CultureGroups
 > CultureGroups
 +> Hindustani
@@ -1480,7 +1480,7 @@ sync
 +> Sunni
 = 100 Sunni.Points
 < <
-> GrecoBactria
+> RepublicOfGrecoBactria
 > ReligionGroups
 +> Pagan
 = 100 Pagan.Points
@@ -1603,10 +1603,10 @@ sync
 = 7327 SanhajidCaliphate.Medditereanian
 = 2607 SanhajidCaliphate.Mountainous
 = 51 SanhajidCaliphate.Desert
-= 6949 GrecoBactria.Mountainous
-= 12461 GrecoBactria.SubTropical
-= 4222 GrecoBactria.Arid
-= 1163 GrecoBactria.Savanna
+= 6949 RepublicOfGrecoBactria.Mountainous
+= 12461 RepublicOfGrecoBactria.SubTropical
+= 4222 RepublicOfGrecoBactria.Arid
+= 1163 RepublicOfGrecoBactria.Savanna
 = 22907 KosalaKingdom.SubTropical
 = 619 KosalaKingdom.Mountainous
 = 109 KosalaKingdom.Savanna
@@ -1662,7 +1662,7 @@ sync
 = 78703 XanmaiMandate.DevelopmentPixelCount
 = 61697 HolyKingdomOfJudah.DevelopmentPixelCount
 = 41849 SanhajidCaliphate.DevelopmentPixelCount
-= 105496 GrecoBactria.DevelopmentPixelCount
+= 105496 RepublicOfGrecoBactria.DevelopmentPixelCount
 = 120861 KosalaKingdom.DevelopmentPixelCount
 = 38735 RoyalTaiKingdom.DevelopmentPixelCount
 = 76471 KwangtungConfederacy.DevelopmentPixelCount
@@ -1697,7 +1697,7 @@ sync
 = 2126989 XanmaiMandate.coastalPopulation
 = 1253371 HolyKingdomOfJudah.coastalPopulation
 = 685973 SanhajidCaliphate.coastalPopulation
-= 2314173 GrecoBactria.coastalPopulation
+= 2314173 RepublicOfGrecoBactria.coastalPopulation
 = 3244055 KosalaKingdom.coastalPopulation
 = 1597269 RoyalTaiKingdom.coastalPopulation
 = 2408330 KwangtungConfederacy.coastalPopulation
@@ -1735,7 +1735,7 @@ sync
 = 3.00 ShowaShogunate.MaxIron
 = 3.90 XanmaiMandate.MaxIron
 = 1.50 HolyKingdomOfJudah.MaxIron
-= 0.00 GrecoBactria.MaxIron
+= 0.00 RepublicOfGrecoBactria.MaxIron
 = 3.85 KwangtungConfederacy.MaxIron
 = 0.05 LeagueOfMaya.MaxIron
 = 1.65 Sangkhom.MaxIron
@@ -1758,7 +1758,7 @@ sync
 = 2.20 DivineQiziqPrincipality.MaxSulphur
 = 3.00 SanhajidCaliphate.MaxSulphur
 = 1.95 HolyKingdomOfJudah.MaxSulphur
-= 1.85 GrecoBactria.MaxSulphur
+= 1.85 RepublicOfGrecoBactria.MaxSulphur
 = 0.05 KwangtungConfederacy.MaxSulphur
 = 3.65 TondoKingdom.MaxSulphur
 = 1.40 Garmoni.MaxSulphur
@@ -1780,7 +1780,7 @@ sync
 = 2.00 TheOgalalaRiverLakotaSiouxChiefdom.MaxCoal
 = 1.25 XanmaiMandate.MaxCoal
 = 1.05 SanhajidCaliphate.MaxCoal
-= 0.40 GrecoBactria.MaxCoal
+= 0.40 RepublicOfGrecoBactria.MaxCoal
 = 0.30 RoyalTaiKingdom.MaxCoal
 = 2.15 KosalaKingdom.MaxCoal
 = 0.20 TondoKingdom.MaxCoal
@@ -1923,7 +1923,7 @@ sync
 = 7305272 XanmaiMandate.Population
 = 3297897 HolyKingdomOfJudah.Population
 = 2414548 SanhajidCaliphate.Population
-= 5091244 GrecoBactria.Population
+= 5091244 RepublicOfGrecoBactria.Population
 = 8333289 KosalaKingdom.Population
 = 3287998 RoyalTaiKingdom.Population
 = 5294607 KwangtungConfederacy.Population
@@ -1958,7 +1958,7 @@ sync
 = 8333376 XanmaiMandate.Future Population
 = 3778847 HolyKingdomOfJudah.Future Population
 = 2876891 SanhajidCaliphate.Future Population
-= 5289198 GrecoBactria.Future Population
+= 5289198 RepublicOfGrecoBactria.Future Population
 = 9591427 KosalaKingdom.Future Population
 = 3750214 RoyalTaiKingdom.Future Population
 = 5889849 KwangtungConfederacy.Future Population
@@ -1993,7 +1993,7 @@ sync
 = 10953.599999999999 XanmaiMandate.Fertility
 = 7591.775000000001 HolyKingdomOfJudah.Fertility
 = 5598.924999999999 SanhajidCaliphate.Fertility
-= 10135.675 GrecoBactria.Fertility
+= 10135.675 RepublicOfGrecoBactria.Fertility
 = 18831.6 KosalaKingdom.Fertility
 = 7026.75 RoyalTaiKingdom.Fertility
 = 6099.325 KwangtungConfederacy.Fertility
