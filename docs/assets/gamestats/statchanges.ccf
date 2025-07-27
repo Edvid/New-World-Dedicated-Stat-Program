@@ -376,12 +376,12 @@
 =5% MilitaryTax
 <... > Nations
 <=> Greco Bactria > RepublicOfGrecoBactria
+<... > Nations > RepublicOfGrecoBactria
 ="true" Reforms.High class voting
 ="false" Reforms.no voting
 -25 ReformPower
-<... > Nations > RepublicOfGrecoBactria
 ="true" CulturalAdvancements.Courthouses
--3 CulturalProsperity
+-3 CulturalPower
 <... > Nations > Kingdom Of Aphrodisia
 +2.5 EstateInfluences.burgousieinfluence
 =20% ClergyTax
@@ -536,11 +536,11 @@ pay debt 330
 -3 cultural power
 +0.25 propaganda
 <... > Cultures > Greek > Opinions
-+> southslav
-=12.5 southslav.Score
-<... > Cultures > southslav > Opinions
-+> greek
-=12.5 greek.Score
++> SouthSlav
+=12.5 SouthSlav.Score
+<... > Cultures > SouthSlav > Opinions
++> Greek
+=12.5 Greek.Score
 <... > Nations > RepublicOfGrecoBactria
 +0.25 Cotton
 +0.25 Tea
@@ -573,23 +573,17 @@ pay debt 330
 +5 TradeInfluences.IndusRiver
 +0.25 LocalTrade
 <... > Cultures > GrecoBactrian > Opinions
-+> Aryan
-=5 Aryan.Score
++5 Aryan.Score
 <... > Cultures > Aryan > Opinions
-+> GrecoBactrian
-=5 GrecoBactrian.Score
++5 GrecoBactrian.Score
 <... > Cultures > GrecoBactrian > Opinions
-+> Hindustani
-=5 Hindustani.Score
++5 Hindustani.Score
 <... > Cultures > Hindustani > Opinions
-+> GrecoBactrian
-=5 GrecoBactrian.Score
++5 GrecoBactrian.Score
 <... > Cultures > GrecoBactrian > Opinions
-+> Afghan
-=5 Afghan.Score
++5 Afghan.Score
 <... > Cultures > Afghan > Opinions
-+> GrecoBactrian
-=5 GrecoBactrian.Score
++5 GrecoBactrian.Score
 <... > Nations > RepublicOfGrecoBactria
 +0.1 CulturalProsperity
 <... > Nations > RepublicOfGrecoBactria
