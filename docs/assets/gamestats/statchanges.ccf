@@ -232,6 +232,10 @@
 <... > Nations > Venetian Republic
 +0.5 ReligiousFervor
 +0.1 CulturalProsperity
+
+="true" CulturalAdvancements.Courthouses
+-3 CulturalPower
++1 AdmEff
 <... > Nations > Regnum Thessalonicae
 ="true" Technologies.bombards
 -2 ResearchPoints
