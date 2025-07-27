@@ -339,8 +339,11 @@ nationImage.onload = async function () {
                 if(distanceFromClaim <= shipRangeMid / 2) {
                   growIntoColours.push(shipRangeHighColor);
                 }
-                if(distanceFromClaim <= shipRangeLow / 2) {
+                if(distanceFromClaim <= shipRangeMid / 2) {
                   growIntoColours.push(shipRangeMidColor);
+                }
+                if(distanceFromClaim <= shipRangeLow / 2) {
+                  growIntoColours.push(shipRangeLowColor);
                 }
 
                 if(isOneOfColorsAtCoord(growIntoColours, x, y) && OneNeighbourIsOneOfColors(growFromColours, x, y)){
