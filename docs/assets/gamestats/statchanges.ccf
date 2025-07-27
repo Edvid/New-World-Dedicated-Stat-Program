@@ -353,7 +353,7 @@
 +12 TradeInfluences.EnglishChannel
 +11 TradeInfluences.BritishIsles
 +11 TradeInfluences.Rhine
-<... > Nations > RepublicOfGrecoBactria
+<... > Nations > GrecoBactria
 +0.75 Adm eff
 +0.1 Adm size
 +0.05 Spy Quality
@@ -385,7 +385,7 @@
 =20% UrbanTax
 =20% IntellectualsTax
 <... > Nations > KosalaKingdom
-+0.1 CulturalPropserity
++0.1 CulturalProsperity
 <... > Nations > KosalaKingdom
 +0.75 AdmEff
 +0.15 AdmSize
@@ -779,7 +779,7 @@ pay debt 330
 +4 TradeInfluences.Central India
 +5 TradeInfluences.Ganges
 +3 TradeInfluences.Afghanistan
-+2.5 EstateInfluences.WorkerInfluence
++2.5 EstateInfluences.WorkersInfluence
 +7.5 EstateInfluences.BurgousieInfluence
 <... > Nations > RepublicOfGrecoBactria
 +0.1 AdmSize
