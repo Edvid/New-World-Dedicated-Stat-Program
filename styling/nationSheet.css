@@ -57,6 +57,14 @@ td{
     font-size: 15px;
 }
 
+@media (prefers-color-scheme: dark) {
+  .collapsible {
+    background-color: #282828;
+    color: #eee;
+    font-weight: bold;
+  }
+}
+
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
 .active,
 .collapsible:hover {
@@ -69,6 +77,16 @@ td{
     display: none;
     overflow: hidden;
     border: 2px dashed #ccc ;
+}
+
+@media (prefers-color-scheme: dark) {
+  .active,
+  .collapsible:hover {
+    background-color: #444;
+  }
+  .content {
+    border-color: #444;
+  }
 }
 
 .content textarea {
@@ -94,6 +112,12 @@ td{
     width: 1600px;
 }
 
+@media (prefers-color-scheme: dark) {
+  .nationsheet {
+    background-color: #222226;
+  }
+}
+
 .nationnamedisplay {
     margin: auto;
     width: 200px;
@@ -111,6 +135,31 @@ td{
     margin: auto;
     width: 3.5em;
     padding: 25px;
+}
+
+.arrowcontainer button {
+    border-radius: 5px;
+    border: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  .arrowcontainer button {
+    background-color: #222222;
+    border: 0.5px solid #444;
+  }
+  .arrowcontainer button:hover {
+    background-color: #444;
+  }
+  .arrowcontainer img {
+    filter: invert();
+  }
+
+  input[type=text], select, textarea {
+    background-color: #222222;
+    color: white;
+    font-weight: bold;
+    border: 0.5px solid #444;
+  }
 }
 
 .nationsheet table, .tabletitle{
