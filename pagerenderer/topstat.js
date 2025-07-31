@@ -52,7 +52,7 @@ function populateTopStatTable(){
         
         TopStatTitle.innerText = TopStat.displayName != null ? TopStat.displayName : TopStat.name;
         TopStatTitle.colSpan = TopStat.map ? 4 : 3;
-        TopStatTitle.style.backgroundColor = primaryColor;
+        TopStatTitle.classList.add("primary-color")
         
         TopStatTitle.style.borderBottom = "5px black solid";
         TopStatTitle.style.borderTop = "5px black solid";
@@ -93,9 +93,9 @@ function populateTopStatTable(){
 
             valueElement.innerText = statval;
 
-            flagElement.style.backgroundColor = secondaryColor;
-            nameElement.style.backgroundColor = secondaryColor;
-            valueElement.style.backgroundColor = secondaryColor;
+            flagElement.classList.add("secondary-color")
+            nameElement.classList.add("secondary-color")
+            valueElement.classList.add("secondary-color")
             
             flagElement.style.border = "1px black solid";
             nameElement.style.border = "1px black solid";
@@ -125,7 +125,7 @@ function populateTopStatTable(){
                 img.title = `see ${NationName} specific area`;
                 
                 let imgcell = document.createElement("td");
-                imgcell.style.backgroundColor = secondaryColor;
+                imgcell.classList.add("secondary-color")
                 imgcell.style.border = "1px black solid";
                 
                 imgButton.appendChild(img);

@@ -2,6 +2,33 @@
     font-family: Helvetica;
 }
 
+body{
+    margin: 0px;
+}
+
+.primary-color {
+  background-color: dodgerblue;
+}
+
+.secondary-color {
+  background-color: lightskyblue;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #222222;
+  }
+  h1, h2, h3, h4, h5, h6, label {
+    color: #eee;
+  }
+
+  .secondary-color {
+    background-color: #1776d3;
+    color: white;
+    font-weight: bold;
+  }
+}
+
 header, #headerstartspace{
     height: .75in;
 }
@@ -41,6 +68,3 @@ header button:disabled{
     color: grey;
 }
 
-body{
-    margin: 0px;
-}

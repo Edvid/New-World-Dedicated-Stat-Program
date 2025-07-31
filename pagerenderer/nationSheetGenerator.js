@@ -679,9 +679,9 @@ function createStatTable(title, tables) {
     for (let i = 0; i < tables.length; i++) {
         const stats = tables[i];
         let nationStatNameRow = document.createElement("tr");
-        nationStatNameRow.style.background = primaryColor;
+        nationStatNameRow.classList.add("primary-color")
         let nationStatRow = document.createElement("tr");
-        nationStatRow.style.background = secondaryColor;
+        nationStatRow.classList.add("secondary-color")
 
         for (let i = 0; i < stats.length; i++) {
             const statSelection = stats[i];
@@ -779,13 +779,13 @@ function createOpinionMatrixTable(title, SocialBehaviourGroups) {
     let RelevantSocialBehaviours = gameStats[SocialBehaviourGroups.replace("Group", "")];
     let opinioneeNameRow = document.createElement("tr");
     let blankCornerCell = document.createElement("th");
-    blankCornerCell.style.background = primaryColor;
+    blankCornerCell.classList.add("primary-color")
     opinioneeNameRow.appendChild(blankCornerCell);
 
     for (const opinioneeName in nationsSocialBehaviourGroups) {
         if (nationsSocialBehaviourGroups[opinioneeName].Points == 0) continue;
         let opinioneeNameCell = document.createElement("th");
-        opinioneeNameCell.style.background = primaryColor;
+        opinioneeNameCell.classList.add("primary-color")
         opinioneeNameCell.innerText = opinioneeName;
         opinioneeNameRow.appendChild(opinioneeNameCell);
     }
@@ -794,13 +794,13 @@ function createOpinionMatrixTable(title, SocialBehaviourGroups) {
         if (nationsSocialBehaviourGroups[opinionerName].Points == 0) continue;
         let opRow = document.createElement("tr");
         let opinionerNameCell = document.createElement("th");
-        opinionerNameCell.style.background = primaryColor;
+        opinionerNameCell.classList.add("primary-color")
         opinionerNameCell.innerHTML = opinionerName + " Opinion on ...";
         opRow.appendChild(opinionerNameCell);
         for (const opinioneeName in nationsSocialBehaviourGroups) {
             if (nationsSocialBehaviourGroups[opinioneeName].Points == 0) continue;
             let cell = document.createElement("td");
-            cell.style.background = secondaryColor;
+            cell.classList.add("secondary-color")
             if (opinionerName == opinioneeName) {
 
                 let cross = document.createElement("img");
