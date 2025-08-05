@@ -1157,8 +1157,15 @@ function ValueTypeFix(statName, statValue) {
     if (statVal == "false") statVal = false;
     else if (statVal == "true") statVal = true;
     
+    // Color
+    if (~[
+        "Color",
+    ].indexOf(statName)) {
+      console.log(statVal)
+      return { value: statVal, appendable: false };
+    }
     //numbers
-    if (!isNaN(statVal) && statVal !== '') {
+    else if (!isNaN(statVal) && statVal !== '') {
         if (typeof statVal === 'boolean') {
             let ret = document.createElement("span");
             if (statVal) ret.innerHTML = '&#10003;';
