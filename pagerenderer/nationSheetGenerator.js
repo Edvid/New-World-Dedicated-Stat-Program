@@ -588,9 +588,11 @@ function createNationSheet(nationName) {
                 let tdElements = DivElement.querySelectorAll("td");
                 tdElements.forEach(tdElement => {
                     if(tdElement.innerHTML != "0.00") {
-                        tdElement.style.fontWeight = "bolder";
+                        tdElement.classList.remove("value-muted")
+                        tdElement.classList.add("value-emphasis")
                     } else {
-                        tdElement.style = "";
+                        tdElement.classList.remove("value-emphasis")
+                        tdElement.classList.add("value-muted")
                     }
                 });
             }
