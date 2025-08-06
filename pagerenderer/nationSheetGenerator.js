@@ -569,14 +569,19 @@ function createNationSheet(nationName) {
 
     let stabilityValueElement = document.querySelector("td.Stability.value");
 
-    stabilityValueElement.style.fontWeight =
-        stabilityValueElement.innerText < 2 ? "Bold" :
-            "Normal";
-    stabilityValueElement.style.color =
-        stabilityValueElement.innerText < 2 ?
-            (stabilityValueElement.innerText < -2 ? "Red" :
-                "Orange") :
-            "Green";
+    if (stabilityValueElement.innerText >= 2) {
+        stabilityValueElement.classList.remove("value-dangerous")
+        stabilityValueElement.classList.remove("value-critical")
+        stabilityValueElement.classList.add("value-safe")
+    } else if (stabilityValueElement.innerText >= -2) {
+        stabilityValueElement.classList.remove("value-safe")
+        stabilityValueElement.classList.remove("value-critical")
+        stabilityValueElement.classList.add("value-dangerous")
+    } else {
+        stabilityValueElement.classList.remove("value-safe")
+        stabilityValueElement.classList.remove("value-dangerous")
+        stabilityValueElement.classList.add("value-critical")
+    }
 
     //make non 0.00 in tradeinfluence bold
 
@@ -588,9 +593,11 @@ function createNationSheet(nationName) {
                 let tdElements = DivElement.querySelectorAll("td");
                 tdElements.forEach(tdElement => {
                     if(tdElement.innerHTML != "0.00") {
-                        tdElement.style.fontWeight = "bolder";
+                        tdElement.classList.remove("value-muted")
+                        tdElement.classList.add("value-emphasis")
                     } else {
-                        tdElement.style = "";
+                        tdElement.classList.remove("value-emphasis")
+                        tdElement.classList.add("value-muted")
                     }
                 });
             }
