@@ -4,6 +4,111 @@
 <... > Nations > Holy Kingdom Of Judah
 ="HolyKingdomOfJudah" Government Name
 
+!suppress 120
+
+<... > Nations > KingdomOfScotland
++2.5 AdmEff
++0.25 AdmSize
++0.25 Health
++0.5 EduEff
++0.25 Propaganda
++1 LocalTrade
++0.05 TradeImprovements
++0.05 OverallImprovements
++0.1 AgrInf
++0.1 AgrSubsidies
++0.05 AgrAdv
+-3 CulturalPower
+="true" CulturalAdvancements.Courthouses
+-2 ResearchPoints
+="true" Technologies.Workshops
+
+<... > Nations > KingdomOfWallia
++2.5 AdmEff
++0.25 AdmSize
++0.25 Health
++0.5 EduEff
++0.25 Propaganda
++1 LocalTrade
++0.05 TradeImprovements
++0.05 OverallImprovements
++0.1 AgrInf
++0.1 AgrSubsidies
++0.05 AgrAdv
+-6 ResearchPoints
+="true" Technologies.Cranes
+="true" Technologies.Promissory Notes
+="true" Technologies.Bombards
+="true" Technologies.Hand Cannons
+="true" Technologies.Plate Armour
+="true" Technologies.Sappers And Engineers
+
+<... > Nations > SanhajidCaliphate
++2.5 AdmEff
++0.25 AdmSize
++0.25 Health
++0.5 EduEff
++0.25 Propaganda
++1 LocalTrade
++0.05 TradeImprovements
++0.05 OverallImprovements
++0.1 AgrInf
++0.1 AgrSubsidies
++0.05 AgrAdv
+-3 CulturalPower
+="true" CulturalAdvancements.Courthouses
+-6 ResearchPoints
+="true" Technologies.Cranes
+="true" Technologies.Promissory Notes
+="true" Technologies.Bombards
+="true" Technologies.Hand Cannons
+="true" Technologies.Plate Armour
+="true" Technologies.Sappers And Engineers
+
+<... > Nations > TondoKingdom
++2.5 AdmEff
++0.25 AdmSize
++0.25 Health
++0.5 EduEff
++0.25 Propaganda
++1 LocalTrade
++0.05 TradeImprovements
++0.05 OverallImprovements
++0.1 AgrInf
++0.1 AgrSubsidies
++0.05 AgrAdv
+-3 CulturalPower
+="true" CulturalAdvancements.Courthouses
+-6 ResearchPoints
+="true" Technologies.Cranes
+="true" Technologies.Promissory Notes
+="true" Technologies.Bombards
+="true" Technologies.Hand Cannons
+="true" Technologies.Plate Armour
+="true" Technologies.Sappers And Engineers
+
+<... > Nations > Garmoni
++2.5 AdmEff
++0.25 AdmSize
++0.25 Health
++0.5 EduEff
++0.25 Propaganda
++1 LocalTrade
++0.05 TradeImprovements
++0.05 OverallImprovements
++0.1 AgrInf
++0.1 AgrSubsidies
++0.05 AgrAdv
+-3 CulturalPower
+="true" CulturalAdvancements.Courthouses
+-6 ResearchPoints
+="true" Technologies.Cranes
+="true" Technologies.Promissory Notes
+="true" Technologies.Bombards
+="true" Technologies.Hand Cannons
+="true" Technologies.Plate Armour
+="true" Technologies.Sappers And Engineers
+
 <... > Nations
 +> PuelcheConfederacy
 > PuelcheConfederacy
