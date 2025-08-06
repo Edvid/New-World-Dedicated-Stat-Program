@@ -1133,7 +1133,7 @@ static evaluateNation(nationName) {
     n.LandOwners = (n.Reforms.NobleLandOwnership == 1 ? n.Workforces.Aristocracy : 0) + (n.Reforms.MixedLandOwnership == 1 ? n.Workforces.Aristocracy + n.Workforces.Burgousie : 0) + (n.Reforms.PrivateLandOwnership == 1 ? n.Workforces.Burgousie : 0)
     n.LandOwnersInfluence = (n.Reforms.NobleLandOwnership == 1 ? n.EstateInfluencesReal.AristocracyInfluence : 0) + (n.Reforms.MixedLandOwnership == 1 ? (n.EstateInfluencesReal.AristocracyInfluence + n.EstateInfluencesReal.BurgousieInfluence) / 2 : 0) + (n.Reforms.PrivateLandOwnership == 1 ? n.EstateInfluencesReal.BurgousieInfluence : 0)
 
-    n.BurgousieProductionShareMaxed = min(n.EstateInfluencesReal.BurgousieInfluence * 4, 0.5) + (n.EstateInfluencesReal.BurgousieInfluence > 0.15 ? min((n.EstateInfluencesReal.BurgousieInfluence - 0.15) * 2, 0.3) : 0) + (n.EstateInfluencesReal.BurgousieInfluence > 0.30 ? min((n.EstateInfluencesReal.BurgousieInfluence - 0.30), 0.15) : 0);
+    n.BurgousieProductionShareMaxed = min(n.EstateInfluencesReal.BurgousieInfluence * 4, 0.5) + (n.EstateInfluencesReal.BurgousieInfluence > 0.175 ? min((n.EstateInfluencesReal.BurgousieInfluence - 0.175), 0.3) : 0) + (n.EstateInfluencesReal.BurgousieInfluence > 0.275 ? min((n.EstateInfluencesReal.BurgousieInfluence - 0.275), 0.15) : 0) - n.EstateInfluencesReal.UrbanInfluence;
 
     n.UnemployedWage = 0;
     n.SlavesWage = (n.Reforms.GovernmentResourceOwnership ? n.StateLabourerWage * 0.05 : (n.Workforces.Slaves > 0 ? n.ResourceBudgetBoost / (n.Population / 1000 * n.Workforces.Slaves) * 0.05 : 0));
@@ -1259,7 +1259,7 @@ static evaluateNation(nationName) {
   n.SoldiersEffectiveWage = n.SoldiersWage * (1 - n.MilitaryTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.MilitaryInfluence)) + (n.ExpectedSoldiersSol < n.AverageExpectedSol ? n.SocialSpending / 20 : 0);
   n.AristocracyEffectiveWage = n.AristocracyWage * (1 - n.AristocracyTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.AristocracyInfluence)) + (n.ExpectedAristocracySol < n.AverageExpectedSol ? n.SocialSpending / 20 : 0) - (n.AristocracyBasicArmaments * n.BasicArmamentsValue) / (n.Population * n.Workforces.Aristocracy / 1000);
   n.BurgousieEffectiveWage = n.BurgousieWage * (1 - n.BurgousieTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.BurgousieInfluence)) + (n.ExpectedBurgousieSol < n.AverageExpectedSol ? n.SocialSpending / 20 : 0) - (n.BurgousieBasicArmaments * n.BasicArmamentsValue) / (n.Population * n.Workforces.Burgousie / 1000);
-  
+    if (nationName == "VenetianRepublic") debugger;
   // n.SocialSpendingUpkeep
   n.SocialSpendingUpkeep = 0;
   for (const EstateIndex in gameStats.Estates) {
