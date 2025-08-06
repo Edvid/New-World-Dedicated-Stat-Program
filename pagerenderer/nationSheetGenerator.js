@@ -570,10 +570,16 @@ function createNationSheet(nationName) {
     let stabilityValueElement = document.querySelector("td.Stability.value");
 
     if (stabilityValueElement.innerText >= 2) {
+        stabilityValueElement.classList.remove("value-dangerous")
+        stabilityValueElement.classList.remove("value-critical")
         stabilityValueElement.classList.add("value-safe")
     } else if (stabilityValueElement.innerText >= -2) {
+        stabilityValueElement.classList.remove("value-safe")
+        stabilityValueElement.classList.remove("value-critical")
         stabilityValueElement.classList.add("value-dangerous")
     } else {
+        stabilityValueElement.classList.remove("value-safe")
+        stabilityValueElement.classList.remove("value-dangerous")
         stabilityValueElement.classList.add("value-critical")
     }
 
