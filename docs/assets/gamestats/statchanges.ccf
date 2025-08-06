@@ -584,8 +584,8 @@
 + 1.57 EstateInfluences.Burgousie Influence
 
 <... > Nations > Xanmai Mandate
--7.5 EstateInfluences.aristocracyInfluence
-+7.5 EstateInfluences.bureaucratsInfluence
+-5 EstateInfluences.aristocracyInfluence
++5 EstateInfluences.bureaucratsInfluence
 
 <... > Nations > Kingdom Of Aphrodisia 
 +0.05 TradeImprov
@@ -812,9 +812,9 @@ trade VenetianHungarianTreaty2, KingdomOfHungary > VenetianRepublic, 1 coal
 -2.5 GovernmentRepresentation.clergyRepresentation
 -2.5 GovernmentRepresentation.aristocracyRepresentation
 +5 GovernmentRepresentation.bureaucratsRepresentation
--5 EstateInfluences.clergyInfluence
--5 EstateInfluences.aristocracyInfluence
-+5 EstateInfluences.bureaucratsInfluence
+-2.5 EstateInfluences.clergyInfluence
+-2.5 EstateInfluences.aristocracyInfluence
++2.5 EstateInfluences.bureaucratsInfluence
 
 <... > Nations > Venetian Republic
 +2.5 ProductionSectors.TextilesSector
@@ -1362,8 +1362,8 @@ trade VenetianHungarianTreaty2, KingdomOfHungary > VenetianRepublic, 1 coal
 +0.1 ArtilleryImprov
 -5 GovernmentRepresentation.AristocracyRepresentation
 +5 GovernmentRepresentation.BureaucratsRepresentation
--5 EstateInfluences.AristocracyInfluence
-+5 EstateInfluences.BureaucratsInfluence
+-2.5 EstateInfluences.AristocracyInfluence
++2.5 EstateInfluences.BureaucratsInfluence
 
 <... > Nations > VenetianRepublic
 +0.3 TradeImprovements
@@ -1571,8 +1571,8 @@ trade VenetianHungarianTreaty2, KingdomOfHungary > VenetianRepublic, 1 coal
 
 <... > Nations > Xanmai Mandate
 
-+2.5 EstateInfluences.BureaucratsInfluence
--7.5 EstateInfluences.AristocracyInfluence
++5 EstateInfluences.BureaucratsInfluence
+-5 EstateInfluences.AristocracyInfluence
 
 <... > Nations > Kyivan Rus
 
