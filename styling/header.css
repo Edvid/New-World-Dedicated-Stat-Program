@@ -18,6 +18,20 @@ body{
   font-weight: bold;
 }
 
+.value-safe {
+  color: green;
+}
+
+.value-dangerous {
+  font-weight: bold;
+  color: orange;
+}
+
+.value-critical {
+  font-weight: bold;
+  color: red;
+}
+
 @media (prefers-color-scheme: dark) {
   body {
     background-color: #222222;
@@ -40,6 +54,20 @@ body{
   .value-muted {
     background-color: #2a5989;
     color: #abe;
+  }
+
+  .value-safe {
+    font-weight: bold;
+    color: lime;
+  }
+
+  .value-dangerous {
+    color: tomato;
+  }
+
+  .value-critical {
+    font-weight: bold;
+    color: maroon;
   }
 }
 

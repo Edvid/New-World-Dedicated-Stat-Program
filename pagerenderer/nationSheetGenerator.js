@@ -569,14 +569,13 @@ function createNationSheet(nationName) {
 
     let stabilityValueElement = document.querySelector("td.Stability.value");
 
-    stabilityValueElement.style.fontWeight =
-        stabilityValueElement.innerText < 2 ? "Bold" :
-            "Normal";
-    stabilityValueElement.style.color =
-        stabilityValueElement.innerText < 2 ?
-            (stabilityValueElement.innerText < -2 ? "Red" :
-                "Orange") :
-            "Green";
+    if (stabilityValueElement.innerText >= 2) {
+        stabilityValueElement.classList.add("value-safe")
+    } else if (stabilityValueElement.innerText >= -2) {
+        stabilityValueElement.classList.add("value-dangerous")
+    } else {
+        stabilityValueElement.classList.add("value-critical")
+    }
 
     //make non 0.00 in tradeinfluence bold
 
