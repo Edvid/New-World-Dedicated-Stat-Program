@@ -22,6 +22,23 @@
 ="true" CulturalAdvancements.Courthouses
 -2 ResearchPoints
 ="true" Technologies.Workshops
++2.5 EstateInfluences.BurgousieInfluence
+-2.5 EstateInfluences.AristocracyInfluence
++1.5 Coal
++1 Wool
+-25 ReformPower
+="true" Reforms.Enclosure
+="false" Reforms.OpenFieldSystem
+=27.5% aristocracytax
+=17.5% Clergytax
+=27.5% BurgousieTax
+=15% urbanTax
+=5% WorkersTax
++200 HeavyInf
++200 Archers
++50 LightCav
++2.5 ProductionSectors.ShipBuildingSector
++2 LightShips
 
 <... > Nations > KingdomOfWallia
 +2.5 AdmEff
@@ -42,6 +59,20 @@
 ="true" Technologies.Hand Cannons
 ="true" Technologies.Plate Armour
 ="true" Technologies.Sappers And Engineers
++2.5 EstateInfluences.BurgousieInfluence
+-2.5 EstateInfluences.AristocracyInfluence
++1.5 Coal
++1 Wool
++1 Sulphur
++1 iron
+=20% AristocracyTax
+=20% ClergyTax
+=20% BurgousieTax
+=15% urbanTax
+=7.5% WorkersTax
++2.5 ProductionSectors.ShipBuildingSector
++2 LightShips
+="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Banniel_Keltia.svg/1920px-Banniel_Keltia.svg.png" flag
 
 <... > Nations > SanhajidCaliphate
 +2.5 AdmEff
@@ -64,6 +95,25 @@
 ="true" Technologies.Hand Cannons
 ="true" Technologies.Plate Armour
 ="true" Technologies.Sappers And Engineers
++2.5 EstateInfluences.BurgousieInfluence
+-2.5 EstateInfluences.AristocracyInfluence
+="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Flag_of_Marinid_and_Saadi_Dynasty_%281258-1420%29_%281554-1659%29.svg/800px-Flag_of_Marinid_and_Saadi_Dynasty_%281258-1420%29_%281554-1659%29.svg.png" flag
+-20 ProductionSectors.AlcoholSector
+=20% AristocracyTax
+=20% ClergyTax
+=20% BurgousieTax
+=15% urbanTax
+=7.5% WorkersTax
++1.5 Coal
++1 Wool
++1 Sulphur
++0.25 iron
++1 Silver
++300 HeavyInf
++300 Crossbowmen
++100 LightInf
++100 LightCav
+
 
 <... > Nations > TondoKingdom
 +2.5 AdmEff
@@ -86,6 +136,22 @@
 ="true" Technologies.Hand Cannons
 ="true" Technologies.Plate Armour
 ="true" Technologies.Sappers And Engineers
++2.5 EstateInfluences.BurgousieInfluence
+-2.5 EstateInfluences.AristocracyInfluence
++1 Coal
++0.25 Sulphur
++1 Iron
++1 Gold
+-25 ReformPower
+="true" Reforms.Enclosure
+="false" Reforms.OpenFieldSystem
+=20% AristocracyTax
+=20% BurgousieTax
+=20% ClergyTax
+=20% UrbanTax
+=10% BureaucratsTax
+=7.5% WorkersTax
+=7.5% MilitaryTax
 
 <... > Nations > Garmoni
 +2.5 AdmEff
@@ -106,8 +172,28 @@
 ="true" Technologies.Promissory Notes
 ="true" Technologies.Bombards
 ="true" Technologies.Hand Cannons
-="true" Technologies.Plate Armour
-="true" Technologies.Sappers And Engineers
+="true" Technologies.Workshops
++2.5 EstateInfluences.BurgousieInfluence
+-2.5 EstateInfluences.AristocracyInfluence
++1 Sulphur
++0.5 ivory
++0.5 Spice
++0.5 Tea
++0.5 ExoticFruit
++0.5 Cotton
+-25 ReformPower
+="true" Reforms.Enclosure
+="false" Reforms.OpenFieldSystem
+=20% AristocracyTax
+=20% BurgousieTax
+=20% ClergyTax
+=20% UrbanTax
+=10% BureaucratsTax
+=7.5% WorkersTax
+=7.5% MilitaryTax
++2.5 ProductionSectors.ShipBuildingSector
++2 LightShips
+="https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_Chola_Kingdom.png" flag
 
 <... > Nations
 +> PuelcheConfederacy
