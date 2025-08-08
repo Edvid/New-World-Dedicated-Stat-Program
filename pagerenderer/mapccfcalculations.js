@@ -645,8 +645,6 @@ async function prepareNewMaps() {
   );
   await addToImageOutput(newPopData, "Population map");
 
-  console.log("does actually reach this part first, tbf")
-
   newFuturePopData = await advanceMap(
     newPopData,
     advancePopulationMap,
