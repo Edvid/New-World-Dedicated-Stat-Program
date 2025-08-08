@@ -48,7 +48,7 @@ function evaluateNation(nationName) {
     n.GovernmentEffects = "+Corruption, -Adm, +TradeEff, +ProductionEff";
   }
 
-  n.AgricultureTechnology = 0 + n.Technologies.HorseCollar + n.CulturalAdvancements.PotatoPopulationBoom + n.Reforms.Enclosure + n.Technologies.CannedFood;
+    n.AgricultureTechnology = 0 + n.Technologies.HorseCollar + n.CulturalAdvancements.PotatoPopulationBoom + n.Reforms.Enclosure + n.Technologies.CannedFood + n.Reforms.MixedLandOwnership + n.Reforms.PrivateLandOwnership * 2;
   n.FarmingEfficiency = (1 - n.Alcoholism * (1 - n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100) / 2 + n.AgricultureSubsidies / 10 + (n.AgricultureInfrastructure + n.AgricultureAdvancements - 2) * 0.75 + n.AgricultureTechnology / 20) * (n.GovernmentDominatedBy == "Aristocracy" ? 0.9 : 1) * (n.GovernmentDominatedBy == "Workers" ? 1.1 : 1);
 
     n.MaxResources = [
@@ -162,8 +162,9 @@ function evaluateNation(nationName) {
 
   n.Size += (n.Size <= 0 ? 10000 : 0);
 
-  n.AverageDevelopment = n.DevelopmentPixelCount / n.Size / 255;
-  n.Workforces.Townsfolk = n.AverageDevelopment;
+    n.AverageDevelopment = n.DevelopmentPixelCount / n.Size / 255;
+    n.Workforces.Townsfolk = n.AverageDevelopment;
+    n.Workforces.Burgousie = 0.005 + n.AverageDevelopment / 100 + n.Reforms.WealthPrivellege * 0.0005 + n.Reforms.ClassEquality * 0.0005 + n.Reforms.WealthyBureaucrats * 0.0005 + n.Reforms.RestrictedSocialMobility * 0.0005 + n.Reforms.WealthyOfficers * 0.0005 + n.Reforms.MixedResourceOwnership * 0.001 + n.Reforms.BurgousieResourceOwnership * 0.002 + n.Reforms.MixedLandOwnership * 0.0025 + n.Reforms.PrivateLandOwnership * 0.005;
 
     n.Education = n.EducationEfficiency * (0.5 + n.Technologies.Paper * 0.5 + n.Reforms.ReligiousSchools + n.Reforms.PublicEducation * 3 - n.Alcoholism * (1 - n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100)) * (n.GovernmentDominatedBy == "Intellectuals" ? 1.2 : 1);
   n.PropagandaReal = n.Propaganda * (n.Reforms.StateMediaOnly * 2 + n.Reforms.ExtensiveCensorship * 1.5 + n.Reforms.LimitedCensorship + n.Reforms.FreeSpeech * 0.5);
@@ -438,9 +439,9 @@ function evaluateNation(nationName) {
 
     n.FoodPerTurn = (n.Workforces.Farmers + n.Workforces.Serfs) * n.Population / 1000 * n.FarmingEfficiency + n.FoodIncoming - n.FoodOutgoing;
 
-    n.EffectiveIron += n.BaseIronHarvest * n.MiningEfficiency;
-    n.EffectiveCoal += n.BaseCoalHarvest * n.MiningEfficiency;
-    n.EffectiveSulphur += n.BaseSulphurHarvest * n.MiningEfficiency;
+    n.EffectiveIron += n.BaseIronHarvest;
+    n.EffectiveCoal += n.BaseCoalHarvest;
+    n.EffectiveSulphur += n.BaseSulphurHarvest;
   n.EffectiveCotton *= (1 + n.Technologies.CottonGin);
 
     n.ProductionEfficiency = (-0.25 + n.TradeImprovements + n.Technologies.IronWorking / 4 - n.Alcoholism * (1 - n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100) + n.Technologies.Wheel / 4 + n.CulturalAdvancements.Currency / 4 + n.Reforms.GuildsBanned / 5 + n.Reforms.AntiMonopolyLaws / 2 + n.Technologies.Workshops + n.Technologies.Cranes / 5 + n.Technologies.SteamEngine / 4 + n.Technologies.FirstFactories / 2 + n.Technologies.LinearAssemblyProcess / 4 + n.Technologies.InterchangeableParts / 2) * (n.GovernmentDominatedBy == "Burgousie" || n.GovernmentDominatedBy == "Urban" ? 1.1 : 1);
@@ -1149,8 +1150,8 @@ function evaluateNation(nationName) {
     n.IntellectualsWage = (n.Education - n.Reforms.ReligiousSchools) * (1 + n.LiteracyPercent / 50 + n.EstateInfluencesReal.IntellectualsInfluence * 10);
   //   n.SailorsWage = 1 * n.ArmyWages;
     n.SoldiersWage = (isNaN(n.ArmyWages / n.OverallNumbers * 1000) ? n.ArmyWage : (n.ArmyWages / n.OverallNumbers * 1000));
-    n.AristocracyWage = (n.Reforms.NobleLandOwnership == 1 ? n.SerfsAndFarmersWageToOnwers / (n.Population * n.Workforces.Aristocracy / 1000) : 0) + (n.Reforms.MixedLandOwnership == 1 ? n.SerfsAndFarmersWageToOnwers / (n.Population * n.Workforces.Aristocracy / 1000) : 0) + (n.Reforms.NobleResourceOwnership == 1 ? n.SlavesAndLabourersWageToOwner / (n.Population * n.Workforces.Aristocracy / 1000) : 0) + (n.Reforms.MixedResourceOwnership == 1 ? n.SlavesAndLabourersWageToOwner / (n.Population * n.Workforces.Aristocracy / 1000) : 0);
-    n.BurgousieWage = (n.TownsfolkWageToBurgousie + n.MerchantsWageToBurggousie) / (n.Population * n.Workforces.Burgousie / 1000) + (n.Reforms.MixedResourceOwnership == 1 ? n.SlavesAndLabourersWageToOwner / (n.Population * n.Workforces.Burgousie / 1000) : 0) + (n.Reforms.BurgousieResourceOwnership == 1 ? n.SlavesAndLabourersWageToOwner / (n.Population * n.Workforces.Burgousie / 1000) : 0) + (n.Reforms.MixedLandOwnership == 1 ? n.SerfsAndFarmersWageToOnwers / (n.Population * n.Workforces.Burgousie / 1000) : 0) + (n.Reforms.PrivateLandOwnership == 1 ? n.SerfsAndFarmersWageToOnwers / (n.Population * n.Workforces.Burgousie / 1000) : 0);
+    n.AristocracyWage = (n.Reforms.NobleLandOwnership == 1 ? n.SerfsAndFarmersWageToOnwers / (n.Population * n.Workforces.Aristocracy / 1000) : 0) + (n.Reforms.MixedLandOwnership == 1 ? n.SerfsAndFarmersWageToOnwers / (n.Population * (n.Workforces.Burgousie + n.Workforces.Aristocracy) / 1000) : 0) + (n.Reforms.NobleResourceOwnership == 1 ? n.SlavesAndLabourersWageToOwner / (n.Population * n.Workforces.Aristocracy / 1000) : 0) + (n.Reforms.MixedResourceOwnership == 1 ? n.SlavesAndLabourersWageToOwner / (n.Population * (n.Workforces.Burgousie + n.Workforces.Aristocracy) / 1000) : 0);
+    n.BurgousieWage = (n.TownsfolkWageToBurgousie + n.MerchantsWageToBurggousie) / (n.Population * n.Workforces.Burgousie / 1000) + (n.Reforms.MixedResourceOwnership == 1 ? n.SlavesAndLabourersWageToOwner / (n.Population * (n.Workforces.Burgousie + n.Workforces.Aristocracy) / 1000) : 0) + (n.Reforms.BurgousieResourceOwnership == 1 ? n.SlavesAndLabourersWageToOwner / (n.Population * n.Workforces.Burgousie / 1000) : 0) + (n.Reforms.MixedLandOwnership == 1 ? n.SerfsAndFarmersWageToOnwers / (n.Population * (n.Workforces.Burgousie + n.Workforces.Aristocracy) / 1000) : 0) + (n.Reforms.PrivateLandOwnership == 1 ? n.SerfsAndFarmersWageToOnwers / (n.Population * n.Workforces.Burgousie / 1000) : 0);
 
   // GDP
   n.Gdp = n.ResourceBudgetBoost + n.FoodPerTurn * n.FoodValue + n.ProductionRevenue + n.TradePower;
