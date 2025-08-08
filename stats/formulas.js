@@ -1741,7 +1741,7 @@ static evaluateNations() {
       let now = Date.now();
       if (now - then > 2000) {
         await new Promise(resolve => setTimeout(resolve));
-        mapCCFCalculations.reportProgress(i/4);
+        /* mapCCFCalculations.*/reportProgress(i/4);
         then = now;
       }
 
@@ -1791,12 +1791,14 @@ static evaluateNations() {
 
 
 
-    let mapCCFCalculationsInstance = options.mapCCFCalculationsInstance;
+    let propertyData = options.propertyData;
+    let colorProperties = options.colorProperties;
+    let developmentData = options.development
     
     function fetchPropertyObject(dataName){
-      let color = rgbToHex(Formulas.fetchFour(mapCCFCalculationsInstance[`${dataName}Data`], pixelIndex));
+      let color = rgbToHex(Formulas.fetchFour(propertyData[dataName], pixelIndex));
       let pair;
-      mapCCFCalculationsInstance[`${dataName}ColorProperties`].forEach(colorNamePair => {
+      colorProperties[dataName].forEach(colorNamePair => {
         if(colorNamePair.color == color){
           pair = colorNamePair;
           return;
@@ -1827,9 +1829,9 @@ static evaluateNations() {
     let climateScore = gameStats.Climates[climateName].ClimateScore + (hasVaccine ? (climateName == "SubTropical" || climateName == "Tropical" || climateName == "Savanna" ? 0.1 : 0) : 0);
     
     
-    let isCoastalPixel = fetchBinary("coast", "coast")
+    let isCoastalPixel = fetchBinary("coastal", "coast")
 
-    let developmentScore = Formulas.fetchFour(mapCCFCalculationsInstance.developmentData, pixelIndex)[0]; //reading red channel as shorthand for greyscale
+    let developmentScore = Formulas.fetchFour(developmentData, pixelIndex)[0]; //reading red channel as shorthand for greyscale
     developmentScore = developmentScore / 255;
 
     let fertilityName = fetchName("fertility");
