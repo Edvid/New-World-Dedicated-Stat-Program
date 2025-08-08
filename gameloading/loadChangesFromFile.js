@@ -45,7 +45,7 @@ async function loadChangesFromContent(changes, skip) {
             
     }
 
-    Formulas.evaluateNations();
+    evaluateNations();
     document.querySelector("body").dispatchEvent(new Event("game load done"));
 
     errorsPresentAtCompletion();
@@ -99,7 +99,7 @@ async function evaluteChangeCommand(changeCommandRaw) {
     else if (changeCommand.toLowerCase().startsWith("sync")) {
 
         if (changeCommand.includes("<")) {
-            Formulas.evaluateNations();
+            evaluateNations();
 
             let lastselection = correctAndSynonymCheck(currentSelection).split(/\./gi);
             if (lastselection[lastselection.length - 2] !== 'Nations') error("The current selection is not a nation. Cannot sync single nation.");
@@ -107,7 +107,7 @@ async function evaluteChangeCommand(changeCommandRaw) {
 
             syncNation(lastselection);
         } else {
-            Formulas.evaluateNations();
+            evaluateNations();
             syncNations();
         }
     }

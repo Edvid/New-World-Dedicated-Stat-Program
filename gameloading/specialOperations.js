@@ -44,7 +44,7 @@ function PostStatChange(selection, change){
 
             //if the elite unit cap is too tiny
             if(compare > 0) {
-                Formulas.evaluateNations();
+                evaluateNations();
                 Einf = (new Function(`return gameStats${nationSelection}.EliteInfantry`))();
                 Ecav = (new Function(`return gameStats${nationSelection}.EliteCavalry`))();
                 cap = (new Function(`return gameStats${nationSelection}.EliteUnitsCap`))();

@@ -1,6 +1,4 @@
-class Formulas{
-
-static evaluateNation(nationName) {
+function evaluateNation(nationName) {
   let n = gameStats.Nations[nationName];
 
   n.EstateCount = 0;
@@ -1724,169 +1722,89 @@ static evaluateNation(nationName) {
 
 }
 
-static evaluateNations() {
+function evaluateNations() {
   var self = this;
   for (const nationName in gameStats.Nations) {
     self.evaluateNation(nationName);
   }
 }
 
-  static async advanceMap(imgArray, formula, options){
+async function advanceMap(imgArray, formula, options){
 
-    let newImgArray = new Uint8ClampedArray(imgArray.length);
+  let newImgArray = new Uint8ClampedArray(imgArray.length);
 
-    let then = Date.now();
-    for(let i = 0; i < newImgArray.length; i+=4){
+  let then = Date.now();
+  for(let i = 0; i < newImgArray.length; i+=4){
 
-      let now = Date.now();
-      if (now - then > 2000) {
-        await new Promise(resolve => setTimeout(resolve));
-        /* mapCCFCalculations.*/reportProgress(i/4);
-        then = now;
-      }
-
-      let newPixel = formula(imgArray, i, options);
-
-      newImgArray[i] = newPixel[0];
-      newImgArray[i + 1] = newPixel[1];
-      newImgArray[i + 2] = newPixel[2];
-      newImgArray[i + 3] = newPixel[3];
+    let now = Date.now();
+    if (now - then > 2000) {
+      await new Promise(resolve => setTimeout(resolve));
+      /* mapCCFCalculations.*/reportProgress(i/4);
+      then = now;
     }
 
-    return newImgArray;
+    let newPixel = formula(imgArray, i, options);
+
+    newImgArray[i] = newPixel[0];
+    newImgArray[i + 1] = newPixel[1];
+    newImgArray[i + 2] = newPixel[2];
+    newImgArray[i + 3] = newPixel[3];
   }
 
-  static fetchFour(arr, index){
+  return newImgArray;
+}
 
-    
-    if(typeof arr != 'function')
-    {
-      return [
-        arr[index],
-        arr[index + 1],
-        arr[index + 2],
-        arr[index + 3]
-      ];
-    }
+function fetchFour(arr, index){
 
+  
+  if(typeof arr != 'function')
+  {
     return [
-      arr(index),
-      arr(index + 1),
-      arr(index + 2),
-      arr(index + 3)
+      arr[index],
+      arr[index + 1],
+      arr[index + 2],
+      arr[index + 3]
     ];
   }
 
-  static advancePopulationMap(imgArray, pixelIndex, options){ 
-    let pixel = Formulas.fetchFour(imgArray, pixelIndex);
-    if(pixel[3] < 128) return pixel; //if transparent, don't modify the pixel at all
-
-
-    let pixelPop = pixel[0];
-    pixelPop *= 255;
-    pixelPop += pixel[1];
-    pixelPop *= 255;
-    pixelPop += pixel[2];
-
-
-
-
-    let propertyData = options.propertyData;
-    let colorProperties = options.colorProperties;
-    let developmentData = options.development
-    
-    function fetchPropertyObject(dataName){
-      let color = rgbToHex(Formulas.fetchFour(propertyData[dataName], pixelIndex));
-      let pair;
-      colorProperties[dataName].forEach(colorNamePair => {
-        if(colorNamePair.color == color){
-          pair = colorNamePair;
-          return;
-        }
-      });
-
-      return pair;
-    }
-
-    function fetchName(dataName) {
-      let pair = fetchPropertyObject(dataName);
-      return typeof pair !== 'undefined' ? pair.name : null;
-    }
-
-    function fetchBinary(dataName, isName){
-      let propertyPair = fetchPropertyObject(dataName);
-      let nullableName = propertyPair ? propertyPair.name : `not-${isName}`;
-      return nullableName == isName; 
-    }
-    
-    let nationName = fetchName("nation");
-    let n = gameStats.Nations[nationName];
-    let hasVaccine = typeof n !== 'undefined' ? n.Technologies.Vaccines : false;
-    let pseudoPopulationGrowth = typeof n !== 'undefined' ? n.PseudoPopulationGrowth : 0.1;
-    let effectiveHealth = typeof n !== 'undefined' ? n.EffectiveHealth : 0;
-
-    let climateName = fetchName("climate");
-    let climateScore = gameStats.Climates[climateName].ClimateScore + (hasVaccine ? (climateName == "SubTropical" || climateName == "Tropical" || climateName == "Savanna" ? 0.1 : 0) : 0);
-    
-    
-    let isCoastalPixel = fetchBinary("coastal", "coast")
-
-    let developmentScore = Formulas.fetchFour(developmentData, pixelIndex)[0]; //reading red channel as shorthand for greyscale
-    developmentScore = developmentScore / 255;
-
-    let fertilityName = fetchName("fertility");
-    let fertilityScore = gameStats.Fertility[fertilityName].Score;
-
-    let PixelsDisease;
-    let PixelsPopGrowth;
-    
-    PixelsDisease = (pixelPop / (20 * climateScore)) / 25 - effectiveHealth - (isCoastalPixel ? 0.1 : 0) + (0.5 - fertilityScore) / 2.5 - developmentScore * 5;
-    PixelsPopGrowth = (pseudoPopulationGrowth < 0 ? pseudoPopulationGrowth : pseudoPopulationGrowth * (1 - PixelsDisease));
-
-    let newPixelPop = pixelPop * (1 + PixelsPopGrowth);
-    return Formulas.NumAsRGB(newPixelPop);
-  }
-
-  static hexAsNumToHumanReadableMinMaxGradient = new MinMaxGradient([
-    {color: [255, 255, 255, 255], position: 0.0},
-    {color: [255, 0, 0, 255], position: 0.25},
-    {color: [255, 255, 0, 255], position: 0.5},
-    {color: [0, 255, 0, 255], position: 0.75},
-    {color: [0, 64, 0, 255], position: 1.0},
-  ]);
-
-  static maxPopInPixel = 50000;
-
-  static FetchedRGBAsNum(imgArr, pIndex){
-    let pixel = Formulas.fetchFour(imgArr, pIndex);
-    if(pixel[3] < 128) return; //if transparent, abort
-
-    let pixelVal = pixel[0];
-    pixelVal *= 255;
-    pixelVal += pixel[1];
-    pixelVal *= 255;
-    pixelVal += pixel[2];
-
-    return pixelVal;
-  }
-
-  static NumAsRGB(num){
-    let ret = new Uint8ClampedArray(4);
-    ret[3] = 255;
-    ret[2] = num % 256;
-    ret[1] = Math.floor(num / 256) % 256;
-    ret[0] = Math.floor(num / 65536) % 256;
-    return ret;
-  }
-
-  static PopulationMapHumanReadable(imgArray, pixelIndex, options){
-    let pixelPop = Formulas.FetchedRGBAsNum(imgArray, pixelIndex);
-    //if no return value of RBGAsNum was given, color is just the color it was previously
-    let color = pixelPop == null ? 
-      Formulas.fetchFour(imgArray, pixelIndex) : 
-      Formulas.hexAsNumToHumanReadableMinMaxGradient.colorAtPos(pixelPop / Formulas.maxPopInPixel);
-    
-    return color;
-  }
-
+  return [
+    arr(index),
+    arr(index + 1),
+    arr(index + 2),
+    arr(index + 3)
+  ];
 }
+
+
+const hexAsNumToHumanReadableMinMaxGradient = new MinMaxGradient([
+  {color: [255, 255, 255, 255], position: 0.0},
+  {color: [255, 0, 0, 255], position: 0.25},
+  {color: [255, 255, 0, 255], position: 0.5},
+  {color: [0, 255, 0, 255], position: 0.75},
+  {color: [0, 64, 0, 255], position: 1.0},
+]);
+
+const maxPopInPixel = 50000;
+
+function FetchedRGBAsNum(imgArr, pIndex){
+  let pixel = fetchFour(imgArr, pIndex);
+  if(pixel[3] < 128) return; //if transparent, abort
+
+  let pixelVal = pixel[0];
+  pixelVal *= 255;
+  pixelVal += pixel[1];
+  pixelVal *= 255;
+  pixelVal += pixel[2];
+
+  return pixelVal;
+}
+
+function NumAsRGB(num){
+  let ret = new Uint8ClampedArray(4);
+  ret[3] = 255;
+  ret[2] = num % 256;
+  ret[1] = Math.floor(num / 256) % 256;
+  ret[0] = Math.floor(num / 65536) % 256;
+  return ret;
+}
+

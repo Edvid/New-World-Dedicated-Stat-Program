@@ -541,6 +541,86 @@ async function mapCalculations() {
   progressText.innerText = `Done`;
 }
 
+function advancePopulationMap(imgArray, pixelIndex, options){ 
+  let pixel = fetchFour(imgArray, pixelIndex);
+  if(pixel[3] < 128) return pixel; //if transparent, don't modify the pixel at all
+
+
+  let pixelPop = pixel[0];
+  pixelPop *= 255;
+  pixelPop += pixel[1];
+  pixelPop *= 255;
+  pixelPop += pixel[2];
+
+
+
+
+  let propertyData = options.propertyData;
+  let colorProperties = options.colorProperties;
+  let developmentData = options.development
+  
+  function fetchPropertyObject(dataName){
+    let color = rgbToHex(fetchFour(propertyData[dataName], pixelIndex));
+    let pair;
+    colorProperties[dataName].forEach(colorNamePair => {
+      if(colorNamePair.color == color){
+        pair = colorNamePair;
+        return;
+      }
+    });
+
+    return pair;
+  }
+
+  function fetchName(dataName) {
+    let pair = fetchPropertyObject(dataName);
+    return typeof pair !== 'undefined' ? pair.name : null;
+  }
+
+  function fetchBinary(dataName, isName){
+    let propertyPair = fetchPropertyObject(dataName);
+    let nullableName = propertyPair ? propertyPair.name : `not-${isName}`;
+    return nullableName == isName; 
+  }
+  
+  let nationName = fetchName("nation");
+  let n = gameStats.Nations[nationName];
+  let hasVaccine = typeof n !== 'undefined' ? n.Technologies.Vaccines : false;
+  let pseudoPopulationGrowth = typeof n !== 'undefined' ? n.PseudoPopulationGrowth : 0.1;
+  let effectiveHealth = typeof n !== 'undefined' ? n.EffectiveHealth : 0;
+
+  let climateName = fetchName("climate");
+  let climateScore = gameStats.Climates[climateName].ClimateScore + (hasVaccine ? (climateName == "SubTropical" || climateName == "Tropical" || climateName == "Savanna" ? 0.1 : 0) : 0);
+  
+  
+  let isCoastalPixel = fetchBinary("coastal", "coast")
+
+  let developmentScore = fetchFour(developmentData, pixelIndex)[0]; //reading red channel as shorthand for greyscale
+  developmentScore = developmentScore / 255;
+
+  let fertilityName = fetchName("fertility");
+  let fertilityScore = gameStats.Fertility[fertilityName].Score;
+
+  let PixelsDisease;
+  let PixelsPopGrowth;
+
+  PixelsDisease = (pixelPop / (20 * climateScore)) / 25 - effectiveHealth - (isCoastalPixel ? 0.1 : 0) + (0.5 - fertilityScore) / 2.5 - developmentScore * 5;
+  PixelsPopGrowth = (pseudoPopulationGrowth < 0 ? pseudoPopulationGrowth : pseudoPopulationGrowth * (1 - PixelsDisease));
+
+  let newPixelPop = pixelPop * (1 + PixelsPopGrowth);
+  return NumAsRGB(newPixelPop);
+}
+
+function PopulationMapHumanReadable(imgArray, pixelIndex){
+  let pixelPop = FetchedRGBAsNum(imgArray, pixelIndex);
+  //if no return value of RBGAsNum was given, color is just the color it was previously
+  let color = pixelPop == null ? 
+    fetchFour(imgArray, pixelIndex) : 
+    hexAsNumToHumanReadableMinMaxGradient.colorAtPos(pixelPop / maxPopInPixel);
+
+  return color;
+}
+
 async function prepareNewMaps() {
   const datasets = {
     nation: nationData,
@@ -554,9 +634,9 @@ async function prepareNewMaps() {
     coastal: coastColorProperties,
     fertility: fertilityColorProperties,
   }
-  newPopData = await Formulas.advanceMap(
+  newPopData = await advanceMap(
     popData,
-    Formulas.advancePopulationMap,
+    advancePopulationMap,
     {
       propertyData: datasets,
       colorProperties: colorprops,
@@ -567,9 +647,9 @@ async function prepareNewMaps() {
 
   console.log("does actually reach this part first, tbf")
 
-  newFuturePopData = await Formulas.advanceMap(
+  newFuturePopData = await advanceMap(
     newPopData,
-    Formulas.advancePopulationMap,
+    advancePopulationMap,
     {
       propertyData: datasets,
       colorProperties: colorprops,
@@ -578,7 +658,7 @@ async function prepareNewMaps() {
   );
   await addToImageOutput(newFuturePopData, "Future Population map");
 
-  let playerReadablePopData = await Formulas.advanceMap(
+  let playerReadablePopData = await advanceMap(
     popData,
     Formulas.PopulationMapHumanReadable,
     {
@@ -691,7 +771,7 @@ async function findDistribution(
     function adjustments() {
       if (!options.adjustForAlpha && !options.Adjuster) return 1;
       else if (options.Adjuster) {
-        let rawMultiplier = Formulas.FetchedRGBAsNum(options.Adjuster, i * 4);
+        let rawMultiplier = FetchedRGBAsNum(options.Adjuster, i * 4);
         let multiplier = options.AdjusterMapping
           ? options.AdjusterMapping(rawMultiplier)
           : rawMultiplier;
@@ -718,7 +798,7 @@ async function findDistribution(
     } else if (options.valueMode == "RGBAsNum") {
       const InnerPixelValue = isInnerDataEmpty
         ? options.unassignedPixelAssumption
-        : Formulas.FetchedRGBAsNum(innerDataset, i * 4);
+        : FetchedRGBAsNum(innerDataset, i * 4);
 
       if (typeof ret[OuterNameOfPixel] === "undefined")
         ret[OuterNameOfPixel] = 0;
@@ -890,19 +970,19 @@ function reverseRBGsOfDevelopment(mapIndex) {
 }
 
 function populationXDevelopmentMerger(mapIndex) {
-  let pixelPop = Formulas.FetchedRGBAsNum(popData, mapIndex);
+  let pixelPop = FetchedRGBAsNum(popData, mapIndex);
   let pixelDev = developmentData[mapIndex] / 255;
   let ret = pixelPop * pixelDev;
 
-  return Formulas.NumAsRGB(ret);
+  return NumAsRGB(ret);
 }
 
 function populationXDevelopmentBonusMerger(mapIndex) {
-  let pixelPop = Formulas.FetchedRGBAsNum(popData, mapIndex);
+  let pixelPop = FetchedRGBAsNum(popData, mapIndex);
   let pixelDev = developmentData[mapIndex] / 255;
   let ret = pixelPop * (0.5 + pixelDev / 2);
 
-  return Formulas.NumAsRGB(ret);
+  return NumAsRGB(ret);
 }
 
 function reportProgress(i) {
