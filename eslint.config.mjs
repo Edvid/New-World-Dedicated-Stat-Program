@@ -10,6 +10,9 @@ export default tseslint.config(
   eslint.configs.recommended,
   tseslint.configs.recommended,
   {
+    rules: {
+      "no-debugger": "off",
+    },
     languageOptions: {
       globals: {
         ...globals.browser,
