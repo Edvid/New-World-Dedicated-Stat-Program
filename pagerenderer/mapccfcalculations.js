@@ -658,12 +658,8 @@ async function prepareNewMaps() {
 
   let playerReadablePopData = await advanceMap(
     popData,
-    Formulas.PopulationMapHumanReadable,
-    {
-      propertyData: datasets,
-      colorProperties: colorprops,
-      development: developmentData
-    },
+    PopulationMapHumanReadable,
+    { },
   );
   await addToImageOutput(
     playerReadablePopData,
