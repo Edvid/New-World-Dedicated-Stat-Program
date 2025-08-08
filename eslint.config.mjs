@@ -19,6 +19,25 @@ export default tseslint.config(
       },
     },
   },
+  {
+    files: ["pagerenderer/mapccfcalculations.js"],
+    languageOptions: {
+      globals: {
+        gameStats: "readonly",
+        prepareData: "readonly",
+        mappedResources: "readonly",
+        mappedResourcesMultipliers: "readonly",
+        fetchFour: "readonly",
+        rgbToHex: "readonly",
+        NumAsRGB: "readonly",
+        FetchedRGBAsNum: "readonly",
+        maxPopInPixel: "readonly",
+        hexAsNumToHumanReadableMinMaxGradient: "readonly",
+        advanceMap: "readonly",
+        ...globals.browser,
+      }
+    }
+  },
   tseslint.configs.stylistic,
   eslintConfigPrettier
 );
