@@ -165,6 +165,7 @@ function evaluateNation(nationName) {
     n.AverageDevelopment = n.DevelopmentPixelCount / n.Size / 255;
     n.Workforces.Townsfolk = n.AverageDevelopment;
     n.Workforces.Burgousie = 0.005 + n.AverageDevelopment / 100 + n.Reforms.WealthPrivellege * 0.0005 + n.Reforms.ClassEquality * 0.0005 + n.Reforms.WealthyBureaucrats * 0.0005 + n.Reforms.RestrictedSocialMobility * 0.0005 + n.Reforms.WealthyOfficers * 0.0005 + n.Reforms.MixedResourceOwnership * 0.001 + n.Reforms.BurgousieResourceOwnership * 0.002 + n.Reforms.MixedLandOwnership * 0.0025 + n.Reforms.PrivateLandOwnership * 0.005;
+    n.Workforces.Aristocracy = 0.02 - n.Reforms.WealthPrivellege * 0.0005 - n.Reforms.ClassEquality * 0.0005 - n.Reforms.RestrictedSocialMobility * 0.0005 - n.Reforms.WealthyOfficers * 0.0005 - n.Reforms.MixedResourceOwnership * 0.001 - n.Reforms.BurgousieResourceOwnership * 0.002 - n.Reforms.MixedLandOwnership * 0.0025 - n.Reforms.PrivateLandOwnership * 0.005;
 
     n.Education = n.EducationEfficiency * (0.5 + n.Technologies.Paper * 0.5 + n.Reforms.ReligiousSchools + n.Reforms.PublicEducation * 3 - n.Alcoholism * (1 - n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100)) * (n.GovernmentDominatedBy == "Intellectuals" ? 1.2 : 1);
   n.PropagandaReal = n.Propaganda * (n.Reforms.StateMediaOnly * 2 + n.Reforms.ExtensiveCensorship * 1.5 + n.Reforms.LimitedCensorship + n.Reforms.FreeSpeech * 0.5);
