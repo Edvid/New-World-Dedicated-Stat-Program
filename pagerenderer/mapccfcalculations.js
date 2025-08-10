@@ -71,7 +71,6 @@ let newPopData;
 let newFuturePopData;
 
 let populationXDevelopmentData;
-let populationXDevelopmentBonusData;
 
 let nationColorProperties;
 let climateColorProperties;
@@ -115,10 +114,6 @@ async function mapCalculations() {
 
   progressText.innerText = "loading population X (100% + development/2)";
   await new Promise((resolve) => setTimeout(resolve));
-
-  populationXDevelopmentBonusData = await mapDataIterator(
-    populationXDevelopmentBonusMerger,
-  );
 
   progressText.innerText =
     "adjusting culture map data for population and development";
@@ -177,7 +172,7 @@ async function mapCalculations() {
     cultureColorProperties,
     {
       unassignedPixelAssumption: "Foreign",
-      Adjuster: populationXDevelopmentBonusData,
+      Adjuster: popData,
     },
   );
 
@@ -190,7 +185,7 @@ async function mapCalculations() {
     religionColorProperties,
     {
       unassignedPixelAssumption: "Pagan",
-      Adjuster: populationXDevelopmentBonusData,
+      Adjuster: popData,
     },
   );
 
@@ -954,14 +949,6 @@ function populationXDevelopmentMerger(mapIndex) {
   let pixelPop = FetchedRGBAsNum(popData, mapIndex);
   let pixelDev = developmentData[mapIndex] / 255;
   let ret = pixelPop * pixelDev;
-
-  return NumAsRGB(ret);
-}
-
-function populationXDevelopmentBonusMerger(mapIndex) {
-  let pixelPop = FetchedRGBAsNum(popData, mapIndex);
-  let pixelDev = developmentData[mapIndex] / 255;
-  let ret = pixelPop * (0.5 + pixelDev / 2);
 
   return NumAsRGB(ret);
 }
