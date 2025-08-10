@@ -117,3 +117,44 @@
 <... > Cultures > Tagalog > opinions
 +> SouthChinese
 = -20 SouthChinese.Score
+
+<... > Nations > Kingdom Of Aphrodisia
++0.75 health
++0.25 admeff
++0.05 AdmSize
+
+<... > Nations > Kingdom Of Aphrodisia
++2.5 ProductionSectors.Basic Armaments Sector
++2.5 ProductionSectors.Basic Tools Sector
++0.05 CulturalProsperity
+
+<... > Nations > Varosia
++0.25 edueff
++2.5 EstateInfluences.intellectualsInfluence
+
+<... > Nations > Fritsan Empire
++0.5 edueff
++0.05 OverallImprov
+
+<... > Nations > Fritsan Empire
+="true" Technologies.Bombards
+-1 research Points
+
+<... > Nations > Xanmai Mandate
++0.05 firearmImprov
++0.05 artilleryImprov
+
+<... > Nations > Xanmai Mandate
++0.1 silver
++0.5 coal
+
+<... > Nations > Kingdom Of Brandenburg
++0.15 CulturalProsperity
+
+<... > Nations > Kingdom Of Brandenburg
++0.15 Cultural Prosperity
+
+<... > Nations > Kingdom of Sweden
+="true" Technologies.Workshops
+="true" Technologies.Bombards
+-2 researchpoints
