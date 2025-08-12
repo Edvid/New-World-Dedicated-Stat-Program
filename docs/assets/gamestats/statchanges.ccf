@@ -158,3 +158,167 @@
 ="true" Technologies.Workshops
 ="true" Technologies.Bombards
 -2 researchpoints
+
+<... > Nations > Fritsan Empire
+=0 SocialSpending
+
+<... > Nations > Fritsan Empire
+-2.5 ProductionSectors.alcohol sector
+
+<... > Nations > Fritsan Empire
++0.25 health
++0.05 CulturalProsperity
+
+<... > Nations > Kyivan Rus
++0.25 localtrade
++0.5 wool
++0.1 silk
++0.10 fur
+
+<... > Nations > Xanmai Mandate
++0.05 ResearchSpending
++0.25 edueff
++2.5 ProductionSectors.ship building sector
++0.02 lightshipimprov
++0.02 mediumshipimprov
++0.02 heavyshipimprov
+
+<... > Nations > Kingdom Of Brandenburg
++0.1 TradeImprov
++0.25 adm
++3 TradeInfluences.Central Europe
++3 TradeInfluences.Denmark
++3 TradeInfluences.Vistula
++3 TradeInfluences.Rhine
+
+<... > Nations > Regnum Thessalonicae
+= 16.4% aristocracytax
+= 0.1% burgousietax
+= 0.1% urbantax
+= 0.1% bureaucratstax
+= 0.3% intellectualstax
+= 6% workerstax
+= 3% militarytax
+
+<... > Nations > Fritsan Empire
++0.1 AgrInf
++5 ProductionSectors.Construction sector
++5 ProductionSectors.Basic tools sector
+
+<... > Nations > Xanmai Mandate
++0.05 artilleryimprov
++0.05 firearmimprov
++0.05 Siegeimprov
+
+<... > Nations > Kingdom Of Sweden
++0.5 localtrade
++0.15 agrinf
++0.1 StockCap
++5 ProductionSectors.ship building sector
++5 ProductionSectors.Basic goods sector
++2.5 EstateInfluences.UrbanInfluence
++5 EstateInfluences.BurgousieInfluence
++6 Tradeinfluences.Baltic Sea
++6 Tradeinfluences.Denmark
++5 Tradeinfluences.North Sea
++5 Tradeinfluences.Novgorod
++6 Tradeinfluences.Northern Nordics
++6 Tradeinfluences.Vistula
++6 Tradeinfluences.Central Europe
++6 Tradeinfluences.Livonia
+
+<... > Nations > Kingdom of Sweden
+-1 socialspending
+
+<... > Nations > Kwangtung Confederacy
++0.25 ReligiousFervor
+
+<... > Nations > Kingdom Of Brandenburg
++0.5 Propaganda
++0.1 CulturalProsperity
++0.25 ReligiousFervor
+
+<... > Nations > Regnum Thessalonicae
++0.5 silk
++5 ProductionSectors.luxury goods sector
++5 TradeInfluences.Adriatic
++5 TradeInfluences.Central Mediterranean
++6 TradeInfluences.Greece
++5 TradeInfluences.Egypt
++5 TradeInfluences.Eastern Mediterranean
++6 TradeInfluences.Northern Anatolia
++6 TradeInfluences.Romania
++6 TradeInfluences.Dniepr
++6 TradeInfluences.Crimea
++5 TradeInfluences.Eastern Danube
+
+<... > Nations > Xanmai Mandate
++1 Heavy Ships
++0.05 HeavyShipImprov
+
+<... > Nations > Showa Shogunate
++1 adm
+="true" Technologies.Promissory Notes
+
+<... > Nations > Kingdom of Sweden
++0.25 admeff
++0.5 localtrade
++0.05 tradeimprov
++6 Tradeinfluences.Baltic Sea
++6 Tradeinfluences.Denmark
++6 Tradeinfluences.North Sea
++6 Tradeinfluences.Novgorod
++5 Tradeinfluences.Northern Nordics
++6 Tradeinfluences.British Isles
++5 Tradeinfluences.English channel
++5 Tradeinfluences.France
++6 Tradeinfluences.Rhine
++5 Tradeinfluences.Vistula
++5 Tradeinfluences.Central Europe
++6 Tradeinfluences.Livonia
+
+<... > Nations > Kingdom of Sweden
++0.5 admeff
++0.1 admsize
+
+<... > Nations > Showa Shogunate
+="true" Technologies.cranes
+="true" Technologies.plate armour
+="true" Technologies.standardized pikes
++0.05 meleeImprov
+
+<... > Nations > Mazdayan Empire Of Eranshahr
++0.75 ReligiousFervor
+
+<... > Nations > Venetian Republic
++0.05 SpyQuality
+
+<... > Nations > Venetian Republic
++0.75 AdmEff
++0.15 AdmSize
++0.05 TradeImprov
++0.5 PopulationControl
++0.05 SpyQuality
++0.05 OverallImprovements
++7 TradeInfluences.Adriatic
++7 TradeInfluences.CentralMediterranean
++6 TradeInfluences.WesternMediterranean
++6 TradeInfluences.Morocco
+
+<... > Nations > Kingdom Of Brandenburg
++0.75 adm
++0.15 admsize
++0.05 TradeImprov
++1 localtrade
++8 TradeInfluences.Central Europe
++7 TradeInfluences.Vistula
++5 TradeInfluences.Baltic sea
++5 TradeInfluences.Denmark
++5 TradeInfluences.North sea
++7 TradeInfluences.Rhine
++8 TradeInfluences.France
++7 TradeInfluences.English channel
++5 TradeInfluences.British isles
++0.05 SpyQuality
++0.05 OverallImprov
+
