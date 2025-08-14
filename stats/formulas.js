@@ -227,6 +227,8 @@ function evaluateNation(nationName) {
 
     n.CoastalPopulationPercent = n.coastalPopulation / n.Population;
 
+    n.UrbanPopulationPercent = n.urbanPopulation / n.Population;
+
     n.ArableLand = n.Fertility * (1 - n.Pillaging);
     n.MaxPopInAgriculture = n.ArableLand * 1000 / n.Population * (1 + n.AgricultureSubsidies / 2 + (n.AgricultureInfrastructure - 1) / 4);
 
