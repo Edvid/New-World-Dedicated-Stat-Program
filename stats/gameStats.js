@@ -536,6 +536,8 @@ class Nation {
   MaxPopulation;
   UnderPopulation;
   DetachedLand;
+  urbanPopulation;
+  UrbanPopulationPercent;
   coastalPopulation;
   CoastalPopulationPercent;
   DevelopmentPixelCount;
