@@ -265,14 +265,14 @@ function evaluateNation(nationName) {
     n.TotalInfluences = n.EstateInfluences.AristocracyInfluence * n.AristocracyInfluenceMod + n.EstateInfluences.ClergyInfluence * n.ClergyInfluenceMod + n.EstateInfluences.BurgousieInfluence * n.BurgousieInfluenceMod + n.EstateInfluences.UrbanInfluence * n.UrbanInfluenceMod + n.EstateInfluences.BureaucratsInfluence * n.BureaucratsInfluenceMod + n.EstateInfluences.IntellectualsInfluence * n.IntellectualsInfluenceMod + n.EstateInfluences.MilitaryInfluence * n.MilitaryInfluenceMod + n.EstateInfluences.WorkersInfluence * n.WorkersInfluenceMod;
 
     n.EstateInfluencesReal = {
-        AristocracyInfluence: n.EstateInfluences.AristocracyInfluence * n.AristocracyInfluenceMod / n.TotalInfluences,
-        ClergyInfluence: n.EstateInfluences.ClergyInfluence * n.ClergyInfluenceMod / n.TotalInfluences,
-        BurgousieInfluence: n.EstateInfluences.BurgousieInfluence * n.BurgousieInfluenceMod / n.TotalInfluences,
-        UrbanInfluence: n.EstateInfluences.UrbanInfluence * n.UrbanInfluenceMod / n.TotalInfluences,
-        BureaucratsInfluence: n.EstateInfluences.BureaucratsInfluence * n.BureaucratsInfluenceMod / n.TotalInfluences,
-        IntellectualsInfluence: n.EstateInfluences.IntellectualsInfluence * n.IntellectualsInfluenceMod / n.TotalInfluences,
-        MilitaryInfluence: n.EstateInfluences.MilitaryInfluence * n.MilitaryInfluenceMod / n.TotalInfluences,
-        WorkersInfluence: n.EstateInfluences.WorkersInfluence * n.WorkersInfluenceMod / n.TotalInfluences
+        AristocracyInfluence: max(0, n.EstateInfluences.AristocracyInfluence * n.AristocracyInfluenceMod / n.TotalInfluences),
+        ClergyInfluence: max(0, n.EstateInfluences.ClergyInfluence * n.ClergyInfluenceMod / n.TotalInfluences),
+        BurgousieInfluence: max(0, n.EstateInfluences.BurgousieInfluence * n.BurgousieInfluenceMod / n.TotalInfluences),
+        UrbanInfluence: max(0, n.EstateInfluences.UrbanInfluence * n.UrbanInfluenceMod / n.TotalInfluences),
+        BureaucratsInfluence: max(0, n.EstateInfluences.BureaucratsInfluence * n.BureaucratsInfluenceMod / n.TotalInfluences),
+        IntellectualsInfluence: max(0, n.EstateInfluences.IntellectualsInfluence * n.IntellectualsInfluenceMod / n.TotalInfluences),
+        MilitaryInfluence: max(0, n.EstateInfluences.MilitaryInfluence * n.MilitaryInfluenceMod / n.TotalInfluences),
+        WorkersInfluence: max(0, n.EstateInfluences.WorkersInfluence * n.WorkersInfluenceMod / n.TotalInfluences)
     };
 
     n.EstateNumbers = {
