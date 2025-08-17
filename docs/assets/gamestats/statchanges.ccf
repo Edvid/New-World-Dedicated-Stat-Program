@@ -1673,7 +1673,6 @@
 +0.05 AgrSubsidies
 -0.5 SocialSpending
 -7.5 EstateInfluences.aristocracyInfluence
--2.5 EstateInfluences.workersInfluence
 
 <... > Nations > Kyivan Rus
 +0.5 wool
@@ -2021,7 +2020,6 @@
 -2.5 GovernmentRepresentation.BurgousieRepresentation
 
 <... > Nations > Showa Shogunate
-+1 smallforts
 +0.05 artilleryimprov
 +2 iron
 +1 copper
