@@ -2194,6 +2194,9 @@
 +0.05 AgrInf
 +0.05 AgrAdv
 +0.05 StockCap
+!suppress 1
+-1 ResearchPoints
+="true" Technologies..Promissory Notes
 
 <... > Nations > Kwangtung Confederacy
 +0.25 Propaganda
@@ -3891,5 +3894,20 @@ sync
 = 9941.7 PuelcheConfederacy.Fertility
 = 4761.55 Lutruwita.Fertility
 !suppress 0
-  <...
-  
+<...
+
+<... > Nations > KingdomOfWallia
+=25% AristocracyTax
+=10% ClergyTax
+=20% BurgousieTax
+=7.5% BureaucratsTax
++1 BureaucratsWages
+
+<... > Nations > KingdomOfScotland
+=25% AristocracyTax
+=10% ClergyTax
+=22.5% BurgousieTax
+=12.5% UrbanTax
+=10% BureaucratsTax
+=5% MilitaryTax
++1 BureaucratsWages
