@@ -1,2 +1,192 @@
 
+!suppress 80
+
+<... > Nations > TheKingdomOfFrance
++250 LightInf
++500 HeavyInf
++500 Archers
++250 HeavyCav
+-40 ReformPower
+="true" Reforms.WealthyOfficers
+="false" Reforms.NobleOfficers
+-2.5 EstateInfluences.AristocracyInfluence
++2.5 EstateInfluences.BurgousieInfluence
+-5 MilitaryControl.AristocracyControl
++5 MilitaryControl.BurgousieControl
+-2 ResearchPoints
+="true" Technologies.PrintingPress
++1 AdmEff
++0.5 EduEff
+-5 CulturalPower
+="true" CulturalAdvancements.RenaissanceThought
+
+<... > Nations > Grand Ducat Aquitania
+=600 LightCav
+=400 HeavyCav
+=800 HeavyInf
+=400 LightInf
+=500 Crossbowmen
+=4 SiegeGuns
+=10% ClergyTax
+-44 ReformPower
+="true" Reforms.WealthyOfficers
+="false" Reforms.NobleOfficers
+-2.5 EstateInfluences.AristocracyInfluence
++2.5 EstateInfluences.BurgousieInfluence
+-5 MilitaryControl.AristocracyControl
++5 MilitaryControl.BurgousieControl
+-2 ResearchPoints
+="true" Technologies.PrintingPress
++1 AdmEff
++0.5 EduEff
+-5 CulturalPower
+="true" CulturalAdvancements.RenaissanceThought
+
+<... > Nations > KingdomOfScotland
+=1500 HeavyInf
+=1500 Archers
+=750 LightCav
+=750 HeavyCav
+=4 SiegeGuns
+=20% AristocracyTax
+=20% BurgousieTax
+-40 ReformPower
+="true" Reforms.WealthyOfficers
+="false" Reforms.NobleOfficers
+-2.5 EstateInfluences.AristocracyInfluence
++2.5 EstateInfluences.BurgousieInfluence
+-5 MilitaryControl.AristocracyControl
++5 MilitaryControl.BurgousieControl
+-1 ResearchPoints
+="true" Technologies.Bombards
+-5 CulturalPower
+="true" CulturalAdvancements.RenaissanceThought
+
+<... > Nations > Kingdom Of Wallia
+=750 LightInf
+=2000 HeavyInf
+=2000 Archers
+=1000 LightCav
+=1000 HeavyCav
+=10 SiegeGuns
++2 LightShips
++2 heavyShips
++2 MediumShips
+-25 ReformPower
+="true" Reforms.Enclosure
+="false" Reforms.OpenFieldSystem
+-2 ResearchPoints
+="true" Technologies.Docks
+
+<... > Nations > VenetianRepublic
 !suppress 1
+-2 researchpoints
+="true" Technologies.Docks
++8 LightShips
++8 MediumShips
++8 HeavyShips
+
+<... > Nations > Fritsan Empire
+-5 smallforts
++170 budget
+
+<... > Nations > Kingdom of Sweden
+!suppress 1
+-4 researchpoints
+="true" Technologies.Docks
+="true" technologies.gunports
+
+<... > Nations > Xanmai Mandate
+="true" Technologies.Docks
+!suppress 1
+-2 researchpoints
++0.5 LocalTrade
++2.5 TradeInfluences.Yangtze River
+
+<... > Nations > Xanmai Mandate
++0.1 MiningEff
++0.5 Silver
++0.75 Coal
+
+<... > Nations > Xanmai Mandate
++1.25 Forestry
++0.1 Reforestation
++5 ProductionSectors.Basic ToolsSector
+
+<... > Nations > Xanmai Mandate
+="true" reforms. Serfdom Banned
+="false" reforms. Serfdom Allowed
+-65 Reform Power
++10 EstateInfluences. Aristocracy Influence
+=10% Aristocracy Tax
+-5 GovernmentRepresentation.Aristocracy Representation
++2.5 GovernmentRepresentation.Unitary Representation
++2.5 GovernmentRepresentation.Bureaucrats Representation
+="true" CulturalAdvancements.Renaissance Thought
+-5 Cultural Power
+
+=13% Clergy Tax
+=13% Burgousie Tax
+=15% Urban Tax
+=13% Bureaucrats Tax
+=15% Intellectuals Tax
+=15% Workers Tax
+=15% Military Tax
+
+<... > Nations > RepublicOfGrecoBactria
+=34 FieldCannons
+=10 SiegeGuns
+=1800 lightcav
+=2000 heavycav
+=2300 heavyinfantry
+=4300 lightinfantry
+=1800 Crossbowmen
+=0 archers
+=1600 HandCannoneers
+=200 spies
+=100 EliteInfantry
+=100 Elite Cavalry
+
+<... > Nations > RepublicOfGrecoBactria
++1 Naval Bases
+
+<... > nations > TondoKingdom
+-50 LightInf
+-50 HeavyInf
+-33 crossbowmen
++280 AristocracyLeviesCasualties
++100 AristocracyMilitiaCasualties
++30 AristocracyLightInfantryCasualties
++20 AristocracyHeavyInfantryCasualties
++20 AristocracyArchersCasualties
++10 AristocracyCrossbowmenCasualties
++133 Casualties
+
+<... > Nations > Kingdom of Aphrodisia
+=30% AristocracyTax
+=20% ClergyTax
+=10% BurgousieTax
+=5% UrbanTax
+=5% BureaucratsTax
+=5% IntellectualsTax
+=5% WorkersTax
+=0% MilitaryTax
++1 Bureaucrats Wages
+
+<... > Nations > RepublicOfGrecoBactria
+=6 lightships
+=8 mediumships
+=3 heavyships
+=39 MerchantShips
+
+<... > Kingdom of Brandenburg
+
+=3.5 ArmyWage
+=12% AristocracyTax
+=12% ClergyTax
+=8% WorkersTax
+=5% MilitaryTax
+=8% BureaucratsTax
+=12% Urbantax
+=0% MilitaryTax
+
