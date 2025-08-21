@@ -61,6 +61,10 @@
 ="true" Technologies.Bombards
 -5 CulturalPower
 ="true" CulturalAdvancements.RenaissanceThought
++5 ProductionSectors.ShipbuildingSector
++2.5 ProductionSectors.TextilesSector
++2 HeavyShips
++2 MediumShips
 
 <... > Nations > Kingdom Of Wallia
 =750 LightInf
@@ -190,3 +194,8 @@
 =12% Urbantax
 =0% MilitaryTax
 
+<... > Nations > TondoKingdom
++800 heavy infantry
++500 light infantry 
++900 militia
++500 heavy cav
