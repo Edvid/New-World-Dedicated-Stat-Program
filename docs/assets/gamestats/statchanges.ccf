@@ -1648,7 +1648,7 @@
 =0.3 Higher Education
 +629.39 budget
 +0.12 ResearchPoints
-=1 health
+=2 health
 =3 edueff
 =9.75 localtrade
 > EstateInfluences
@@ -1678,10 +1678,9 @@
 +32 BalticSea
 +17 Northern Nordics
 <
--3.5 ResearchPoints
+-2.5 ResearchPoints
 ="true" Technologies.PlateArmour
 ="true" Technologies.Docks
-="true" Technologies.Gunports
 +1.5 Iron
 +1 Silver
 +1 Forestry
