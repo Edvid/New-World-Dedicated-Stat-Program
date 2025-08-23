@@ -28468,7 +28468,7 @@
                 "MediumForts": 0,
                 "BigForts": 0,
                 "HugeForts": 0,
-                "CityFortifications": 0,
+                "CityFortifications": 1,
                 "SupplyDepots": 0,
                 "NavalBases": 0,
                 "BuildingsUpkeep": 68.75098492289781,
