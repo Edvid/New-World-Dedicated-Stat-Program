@@ -1692,3 +1692,82 @@
 <- Sumeria
 
 <=> FritsanEmpire > BalticEmpire
+
+<... > Nations > KingdomOfScotland
+="offensive" atwar
+-5 HeavyShips
+-5 MediumShips
+-6 LightShips
+-1 Major Battles
+
+<... > Nations > KingdomOfWallia
+="defensive" atwar
+-5 HeavyShips
++1 Major Battles
+
+<... > Nations > KingdomOfWallia
+-132 LightInfantry
++132 casualties
+-419 Archers
++419 casualties
+-203 HeavyInfantry
++203 casualties
+-708 HeavyCavalry
++708 casualties
+-582 LightCavalry
++582 casualties
+-688 HeavyInfantry
++688 casualties
+-300 HeavyInfantry
++300 casualties
+-314 LightCavalry
++314 casualties
+-314 Archers
++314 casualties
+-1 Major Battles
+
+<... > Nations > KingdomOfScotland
+-227 LightInfantry
++227 casualties
+-366 HeavyInfantry
++366 casualties
+-422 Archers
++422 casualties
+-333 LightCavalry
++333 casualties
+-350 HeavyCavalry
++350 casualties
++1 Major Battles
+
+<... > Nations > TheKingdomOfFrance
+-92 HeavyCavalry
+
+<... > Nations > ReichAmRhine
+-113 LightInf
+-60 HeavyInf
+-111 LightCavalry
+-115 HeavyCavalry
+
+<... > Nations > KingdomOfWallia
+-88 LightCavalry
++88 casualties
+-201 HeavyCavalry
++201 casualties
+
+<... > Nations > KingdomOfScotland
+-51 LightCavalry
++51 casualties
+-128 HeavyCavalry
++128 casualties
++33.5 EstateInfluences.AristocracyInfluence
++7.51 EstateInfluences.BurgousieInfluence
++10 GovernmentRepresentation.AristocracyRepresentation
+-10 GovernmentRepresentation.UnitaryRepresentation
+
+<... > Nations > KingdomOfScotland
++500 HeavyInf
++500 Archers
++18.78 EstateInfluences.AristocracyInfluence
++5.9 EstateInfluences.BurgousieInfluence
++5 GovernmentRepresentation.AristocracyRepresentation
+-5 GovernmentRepresentation.UnitaryRepresentation
