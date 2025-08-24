@@ -1754,7 +1754,7 @@
 -201 HeavyCavalry
 +201 casualties
 
-<... > Nations > KingdomOfScotland
+<... > Nations > KingdomOfWallia
 -51 LightCavalry
 +51 casualties
 -128 HeavyCavalry
@@ -1763,6 +1763,7 @@
 +7.51 EstateInfluences.BurgousieInfluence
 +10 GovernmentRepresentation.AristocracyRepresentation
 -10 GovernmentRepresentation.UnitaryRepresentation
+=16% Occupation
 
 <... > Nations > KingdomOfScotland
 +500 HeavyInf
