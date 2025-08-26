@@ -4120,3 +4120,30 @@ function syncNations() {
         syncNation(nationName);
     }
 }
+
+function GSGetProperty(propertySelection) {
+  return (new Function(`return gameStats${propertySelection}`))();
+}
+
+function GSSetProperty(propertySelection, value) {
+  (new Function(`gameStats${propertySelection} = ${value}`))();
+}
+
+function GSNewProperty(propertySelection, _class, parameters) {
+  (new Function(`gameStats${propertySelection} = new ${_class}(${parameters})`))();
+}
+
+function GSDeleteProperty(propertyName){
+  (new Function(`delete gameStats${propertyName}`))();
+}
+
+function GSUpdateTradesWithRenamedNationName(oldName, newName){
+  //copy over all Trades, as is, except if giver or receiver is oldName, then it's newName now
+
+  Object.keys(gameStats.Trades).forEach(property => {
+    if (gameStats.Trades[property].giver == oldName)
+      gameStats.Trades[property].giver = newName;
+    if (gameStats.Trades[property].receiver == oldName)
+      gameStats.Trades[property].receiver = newName;
+  });
+}

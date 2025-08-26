@@ -12,18 +12,18 @@ function normalCommand(selection) {
 
     //implement check for stat that are objects, and disallow their change
 
-    let selectionValue = (new Function(`return gameStats${propertySelection}`))();
+    let selectionValue = GSGetProperty(propertySelection)
+
 
     while (typeof selectionValue == 'object') {
         //if object have no properties. It is probably a newly created stat. Set it to ""
         if (Object.keys(selectionValue).length == 0) {
-            selectionValue = `""`;
-            (new Function(`gameStats${propertySelection} = ${selectionValue}`))();
+            GSSetProperty(propertySelection, '""')
         }
         //If object has exactly 1 property, treat the selectionvalue as if it is the value of that property instead of the object as a whole
         else if (Object.keys(selectionValue).length == 1) {
             propertySelection = `${propertySelection}.${Object.keys(selectionValue)[0]}`;
-            selectionValue = (new Function(`return gameStats${propertySelection}`))();
+            selectionValue = GSGetProperty(propertySelection)
         } else {
 
             let allProperties = "";
@@ -63,7 +63,7 @@ ${allProperties}`);
     /* #region  impelement check for technologies and cultural advances, where prerequisites not met makes this prompt and return */
     
     if(statName in gameStats.AdvancesPrerequisites){
-        let nationSelection = new Function(`return gameStats${selection.split(/\.((?=technologies)|(?=CulturalAdvancements))/i)[0]}`)();
+        let nationSelection = GSGetProperty(selection.split(/\.((?=technologies)|(?=CulturalAdvancements))/i)[0])
         gameStats.AdvancesPrerequisites[statName].forEach(prerequisite => {
             if(prerequisite in nationSelection.Technologies){
                 if(nationSelection.Technologies[prerequisite] == false) {
@@ -110,21 +110,19 @@ ${allProperties}`);
     //add
     if (commandParameters.Operand == '+' || commandParameters.Operand == 'add') {
         change = value;
-        (new Function(`gameStats${propertySelection} = parseFloat(gameStats${propertySelection}) + ${value}`))();
+        const current = parseFloat(GSGetProperty(propertySelection));
+        GSSetProperty(propertySelection, current + value)
     }
     //subtract
     else if (commandParameters.Operand == '-' || commandParameters.Operand == 'sub') {
         change = -value;
-        (new Function(`gameStats${propertySelection} = parseFloat(gameStats${propertySelection}) - ${value}`))();
+        const current = parseFloat(GSGetProperty(propertySelection));
+        GSSetProperty(propertySelection, current - value)
     }
     //set
     else if (commandParameters.Operand == '=' || commandParameters.Operand == 'set') {
-        const previous = (new Function(`\
-            if(typeof gameStats${propertySelection} === 'undefined') return 'undefined';\
-            return JSON.parse(JSON.stringify(\
-                gameStats${propertySelection}\
-            ));`
-        ))();
+        const rawPrevious = GSGetProperty(propertySelection)
+        const previous = typeof rawPrevious === 'undefined' ? 'undefined' : JSON.parse(JSON.stringify(GSGetProperty(propertySelection)))
         change = isNaN(previous) ? true : value - previous;
         let setval;
         //quotation
@@ -136,7 +134,7 @@ ${allProperties}`);
             if (value.toLowerCase().trim() === "false" || value.toLowerCase().trim() === "true")
                 setval = value.toLowerCase();
         }
-        (new Function(`gameStats${propertySelection} = ${setval}`))();
+        GSSetProperty(propertySelection, setval)
 
     } else {
         error(`Operand wasn't understood: ${commandParameters.Operand}
@@ -149,34 +147,35 @@ Aborting.`);
 
 function createStat(currentSelection, arg) {
     let objectClass;
-    if (/^\.Nations$/.test(currentSelection)) objectClass = "Nation";
-    else if (/^\.(Cultures|Religions)$/.test(currentSelection)) objectClass = "SocialBehaviour";
-    else if (/^\.Nations\..+\.(Culture|Religion)Groups$/.test(currentSelection)) objectClass = "SocialBehaviourGroup";
-    else if (/^\.Nations\..+\.Climates$/.test(currentSelection)) objectClass = "Climate";
-    else if (/^\.(Cultures|Religions)\..+\.Opinions$/.test(currentSelection)) objectClass = "Opinion";
-    else if (/^\.TradeZones$/.test(currentSelection)) objectClass = "TradeZone";
-    else if (/^\.Trades$/.test(currentSelection)) objectClass = "Trade";
+    if (/^\.Nations$/.test(currentSelection)) objectClass = Nation;
+    else if (/^\.(Cultures|Religions)$/.test(currentSelection)) objectClass = SocialBehaviour;
+    else if (/^\.Nations\..+\.(Culture|Religion)Groups$/.test(currentSelection)) objectClass = SocialBehaviourGroup;
+    else if (/^\.Nations\..+\.Climates$/.test(currentSelection)) objectClass = Climate;
+    else if (/^\.(Cultures|Religions)\..+\.Opinions$/.test(currentSelection)) objectClass = Opinion;
+    else if (/^\.TradeZones$/.test(currentSelection)) objectClass = TradeZone;
+    else if (/^\.Trades$/.test(currentSelection)) objectClass = Trade;
     
     if (arg.includes('=')) {
-        let newName = arg.slice(0, arg.indexOf('=')).trim();
-        let oldName = arg.slice(arg.indexOf('=') + 1).trim();
-        oldName = correctAndSynonymCheck(`${currentSelection}.${oldName}`).split(".").pop();
-        if (objectClass == "Nation") evaluateNation(oldName);
+        const newStat = arg.slice(0, arg.indexOf('=')).trim();
+        const modelStatNameRaw = arg.slice(arg.indexOf('=') + 1).trim();
+        const modelStatName = correctAndSynonymCheck(`${currentSelection}.${modelStatNameRaw}`).split(".").pop();
+        if (typeof objectClass == "Nation") evaluateNation(modelStatName);
 
+        GSNewProperty(currentSelection + '.' + newStat, objectClass, `"${newStat}"`)
         /* Copy all property values from old to new */
-        (new Function(`
-        gameStats${currentSelection}.${newName} = new ${objectClass}("${newName}");
-        for (const propertyName in gameStats${currentSelection}.${oldName}) {
-            const propertyToCopy = gameStats${currentSelection}.${oldName}[propertyName];
-            gameStats${currentSelection}.${newName}[propertyName] = JSON.parse(JSON.stringify(propertyToCopy));
-        }`))();
+        const modelStat = GSGetProperty(currentSelection + '.' + modelStatName)
+        for (const propertyName in modelStat) {
+            const propertyToCopy = modelStat[propertyName];
+            GSSetProperty(currentSelection + '.' + newStat + '.' + propertyName, JSON.parse(JSON.stringify(propertyToCopy)))
+            modelStat[propertyName] = JSON.parse(JSON.stringify(propertyToCopy));
+        }
         //for nation copying specifically, override the copied stuff for government name and Aristocrat loyalties towards state
     } else {
 
         if (objectClass != null)
-            (new Function(`gameStats${currentSelection}.${arg} = new ${objectClass}("${arg}");`))();
+          GSNewProperty(currentSelection + '.' + arg, objectClass, `"${arg}"`)
         else
-            (new Function(`gameStats${currentSelection}.${arg} = {};`))();
+          GSSetProperty(currentSelection + '.' + arg, "{}")
         if (objectClass == "Nation") evaluateNation(arg);
 
         PostStatCreate(currentSelection, arg);
@@ -186,7 +185,7 @@ function createStat(currentSelection, arg) {
 
 function deleteStat(currentSelection, arg) {
     let dottedStatName = correctAndSynonymCheck(`${currentSelection}.${arg}`);
-    (new Function(`delete gameStats${dottedStatName}`))();
+    GSDeleteProperty(dottedStatName)
 }
 
 let newOuterAfterRename;
@@ -200,30 +199,18 @@ function renameStat(currentSelection, arg) {
     }
 
     //copy over all properties of selected object, as is, except the property with oldName name, it will now be newName named
-    let outer = (new Function(`return gameStats${currentSelection}`))();
+    let outer = GSGetProperty(currentSelection)
     newOuterAfterRename = new Object();
 
     Object.keys(outer).forEach(property => {
         newOuterAfterRename[property == oldName ? newName : property] = outer[property];
     });
 
-    (new Function(`gameStats${currentSelection} = newOuterAfterRename`))();
+    GSSetProperty(currentSelection, JSON.stringify(newOuterAfterRename))
 
     if (/^\.Nations$/.test(currentSelection)) {
-        //copy over all Trades, as is, except if giver or receiver is oldName, then it's newName now
-
-        Object.keys(gameStats.Trades).forEach(property => {
-            if (gameStats.Trades[property].giver == oldName)
-                gameStats.Trades[property].giver = newName;
-            if (gameStats.Trades[property].receiver == oldName)
-                gameStats.Trades[property].receiver = newName;
-
-        });
+        GSUpdateTradesWithRenamedNationName(oldName, newName)
     }
-
-
-
-
 }
 
 let Shorthands = {}
