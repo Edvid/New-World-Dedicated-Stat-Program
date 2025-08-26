@@ -694,8 +694,8 @@ function createStatTable(title, tables) {
             const statSelection = stats[i];
             //if first char of string is alphabetic (not symbol), add courtesy dot first, else, we expect the user of createStatTableProxy to know what they're doing
             const statvalue = /^[a-zA-Z]$/.test(statSelection[0]) ?
-                (new Function(`return gameStats.Nations["${currentNationName}"].${statSelection}`))() :
-                (new Function(`return gameStats.Nations["${currentNationName}"]${statSelection}`))();
+              GSGetProperty(".Nations." + currentNationName + '.' + statSelection) :
+              GSGetProperty(".Nations." + currentNationName + statSelection);
             let nationStatNameCell = document.createElement("th");
             let upmigrations = 0;
             let splitStatSelection = statSelection.split(/\.|(?<=\[)/g); 
