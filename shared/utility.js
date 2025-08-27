@@ -300,7 +300,7 @@ let StatTypes = {
         "Technologies.Rifles",
         "Technologies.ModernChemistry",
         "Technologies.CottonGin",
-        "Technologies.Steamboats",
+        "Technologies.SteamBoats",
         "Technologies.HotAirBalloon",
         "Technologies.PowerLoomAndSewingMachine",
         "Technologies.Fulminate",

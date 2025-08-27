@@ -406,7 +406,7 @@ let TableLayouts = {
         ["Technologies.FlyingShuttle", "Technologies.LeadChamberProcess"],
         ["Technologies.Gunlock"],
         ["Technologies.SteamEngine", "Technologies.PuddlingProcess"],
-        ["Technologies.Rifles", "Technologies.ModernChemistry", "Technologies.CottonGin", "Technologies.Steamboats", "Technologies.HotAirBalloon", "Technologies.PowerLoomAndSewingMachine"],
+        ["Technologies.Rifles", "Technologies.ModernChemistry", "Technologies.CottonGin", "Technologies.SteamBoats", "Technologies.HotAirBalloon", "Technologies.PowerLoomAndSewingMachine"],
         ["Technologies.Fulminate", "Technologies.PaperMachine", "Technologies.FirstFactories", "Technologies.LinearAssemblyProcess", "Technologies.InterchangeableParts", "Technologies.CannedFood", "Technologies.Vaccines", "Technologies.Morphine"]
     ],
     "Culture Stats": [
