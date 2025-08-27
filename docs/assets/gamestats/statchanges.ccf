@@ -2852,8 +2852,8 @@ trade deal2, Crown of Spain > Baltic Empire, 3.5 coal
 +1 smallforts
 
 
-ScotlandBrandenburgTrade1, KingdomOfScotland > KingdomOfBrandenburg, 2.5 wood
-ScotlandBrandenburgTrade2, KingdomOfScotland > KingdomOfBrandenburg, 5 basicarmaments
+trade ScotlandBrandenburgTrade1, KingdomOfScotland > KingdomOfBrandenburg, 2.5 wood
+trade ScotlandBrandenburgTrade2, KingdomOfScotland > KingdomOfBrandenburg, 5 basicarmaments
 
 <... > Nations > KingdomOfBrandenburg 
 +0.5 Edueff
