@@ -257,25 +257,26 @@ Shorthands.PayDebt = function (parameter) {
 
     let natName = splitSelections[splitSelections.length - 1];
 
-    (new Function(`evaluateNation("${natName}")`))();
-
+    evaluateNation(natName)
 
     //EffectiveDebt formula isolated for Public Debt Taken 
     //EffectiveDebt = PublicDebtTaken * (1 + InterestRate);
     //EffectiveDebt / (1 + InterestRate)= PublicDebtTaken * (1 + InterestRate) / (1 + InterestRate);
     //PublicDebtTaken = EffectiveDebt / (1 + InterestRate);
-    let interestRate = (new Function(`return gameStats${correctedSelection}.InterestRate`))();
+    const interestRate = GSGetProperty(correctedSelection + '.InterestRate')
 
-    (new Function(`gameStats${correctedSelection}.PublicDebtTaken -= ${parameter} / (1 + ${interestRate})`))();
-    (new Function(`gameStats${correctedSelection}.Budget -= ${parameter}`))();
+    const publicDebtTakenSelector = correctedSelection + '.PublicDebtTaken'
+    const budgetSelector = correctedSelection + '.Budget'
+    GSAddProperty(publicDebtTakenSelector, -parameter / (1 + interestRate))
+    GSAddProperty(budgetSelector, parameter)
 
     //excess paid back
-    let publicDebtTakenValue = new Function(`return gameStats${correctedSelection}.PublicDebtTaken`);
+    const publicDebtTakenValue = GSGetProperty(publicDebtTakenSelector)
     if (publicDebtTakenValue < 0) {
         //reset public debt taken to 0
-        (new Function(`gameStats${correctedSelection}.PublicDebtTaken -= 0`))();
+        GSSetProperty(publicDebtTakenSelector, 0)
         //give back to budget
-        (new Function(`gameStats${correctedSelection}.Budget += ${-publicDebtTakenValue})`))();
+        GSAddProperty(budgetSelector, -publicDebtTakenValue)
     }
 }
 
@@ -293,8 +294,6 @@ Shorthands.Move = function (parameters) {
     from = correctAndSynonymCheck(`${currentSelection}.${from}`);
     to = correctAndSynonymCheck(`${currentSelection}.${to}`);
 
-    (new Function(
-        `gameStats${from} = +gameStats${from} - ${amount};\
-         gameStats${to} = +gameStats${to} + ${amount}`
-    ))();
+    GSAddProperty(from, -amount)
+    GSAddProperty(to, amount)
 }

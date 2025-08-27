@@ -4129,6 +4129,10 @@ function GSSetProperty(propertySelection, value) {
   (new Function(`gameStats${propertySelection} = ${value}`))();
 }
 
+function GSAddProperty(propertySelection, value) {
+  (new Function(`gameStats${propertySelection} += ${value}`))();
+}
+
 function GSNewProperty(propertySelection, _class, parameters) {
   (new Function(`gameStats${propertySelection} = new ${_class}(${parameters})`))();
 }
