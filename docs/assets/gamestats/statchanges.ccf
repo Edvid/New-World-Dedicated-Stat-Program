@@ -2850,12 +2850,11 @@ trade deal2, Crown of Spain > Baltic Empire, 3.5 coal
 +500 lightcavalry
 +800 archers
 +1 smallforts
-<... > Nations > Kingdom of scotland
--2.5 wood 
--5 Basicarmamentsstockpiled
-<... > Nations > Kingdom of Brandenburg
-+2.5 wood 
-+5 Basicarmamentsstockpiled
+
+
+ScotlandBrandenburgTrade1, KingdomOfScotland > KingdomOfBrandenburg, 2.5 wood
+ScotlandBrandenburgTrade2, KingdomOfScotland > KingdomOfBrandenburg, 5 basicarmaments
+
 <... > Nations > KingdomOfBrandenburg 
 +0.5 Edueff
 <... > Nations > Kyivan Rus 
