@@ -103,8 +103,6 @@ async function mapCalculations() {
   fertilityData = await prepareData("Fertility.png", progressText);
   popData = await prepareData("Code/Population.png", progressText);
 
-  await prepareNewMaps();
-
   progressText.innerText = "reversing development map";
   await new Promise((resolve) => setTimeout(resolve));
 
@@ -112,10 +110,6 @@ async function mapCalculations() {
 
   progressText.innerText = "loading population X development";
   await new Promise((resolve) => setTimeout(resolve));
-
-  populationXDevelopmentData = await mapDataIterator(
-    populationXDevelopmentMerger,
-  );
 
   progressText.innerText = "loading population X (100% + development/2)";
   await new Promise((resolve) => setTimeout(resolve));
@@ -192,6 +186,12 @@ async function mapCalculations() {
       unassignedPixelAssumption: "Pagan",
       Adjuster: popData,
     },
+  );
+
+  await prepareNewMaps();
+
+  populationXDevelopmentData = await mapDataIterator(
+    populationXDevelopmentMerger,
   );
 
   let tradeZoneScore = await findDistribution(
