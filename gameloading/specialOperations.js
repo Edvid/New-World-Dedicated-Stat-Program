@@ -36,20 +36,22 @@ function PostStatChange(selection, change){
         //elite exceed check
         if(/Elite/.test(selection)){
             let nationSelection = "." + selection.split(/\./gm).slice(1, -1).join(".");
-    
-            let Einf = (new Function(`return gameStats${nationSelection}.EliteInfantry`))();
-            let Ecav = (new Function(`return gameStats${nationSelection}.EliteCavalry`))();
-            let cap = (new Function(`return gameStats${nationSelection}.EliteUnitsCap`))();
-            let compare = Einf + Ecav - cap;
+            const eliteInfantrySelector = '.EliteInfantry'
+            const eliteCavalrySelector = '.EliteCavalry'
+            const eliteUnitsCapSelector = '.EliteUnitsCap'
+            let eliteInfantry = GSGetProperty(nationSelection + eliteInfantrySelector);
+            let eliteCavalry = GSGetProperty(nationSelection + eliteCavalrySelector);
+            let cap = GSGetProperty(nationSelection + eliteUnitsCapSelector);
+            let compare = eliteInfantry + eliteCavalry - cap;
 
             //if the elite unit cap is too tiny
             if(compare > 0) {
                 evaluateNations();
-                Einf = (new Function(`return gameStats${nationSelection}.EliteInfantry`))();
-                Ecav = (new Function(`return gameStats${nationSelection}.EliteCavalry`))();
-                cap = (new Function(`return gameStats${nationSelection}.EliteUnitsCap`))();
-                compare = Einf + Ecav - cap;
-    
+                eliteInfantry = GSGetProperty(nationSelection + eliteInfantrySelector);
+                eliteCavalry = GSGetProperty(nationSelection + eliteCavalrySelector);
+                cap = GSGetProperty(nationSelection + eliteUnitsCapSelector);
+                compare = eliteInfantry + eliteCavalry - cap;
+
                 //if the elite unit cap is still too tiny even after stats have been recalculated in case troops have just been hired and the elite unit cap should actually be higher
                 if(compare > 0) error(`The EliteUnitsCap (${cap}) has been exceeded by ${compare}`);
             }
@@ -57,16 +59,18 @@ function PostStatChange(selection, change){
         //only record positive changes
         if(change <= 0) return;
         let newTroopSelection = selection.replace(/\.(?=[^.]*$)/gm, ".New_");
-        (new Function(`gameStats${newTroopSelection} += ${change}`))();
+        GSAddProperty(newTroopSelection, change)
     }
     else if(~mappedResources.indexOf(selection)) {
         let nationSelection = "." + selection.split(/\./gm).slice(1, -1).join(".");
         let resourceName = selection.split(/\./gm).slice(-1).join(".");
-        let maxResource = (new Function(`return gameStats${nationSelection}.Max${resourceName}`))();
-        let curResource = (new Function(`return gameStats${nationSelection}.${resourceName}`))();
+        const resourceSelector = '.' + resourceName;
+        const maxResourceSelector = '.Max' + resourceName;
+        let maxResource = GSGetProperty(nationSelection + maxResourceSelector);
+        let curResource = GSGetProperty(nationSelection + resourceSelector);
 
         if(curResource > maxResource){
-            (new Function(`gameStats${nationSelection}.${resourceName} = ${maxResource}`))()
+            GSSetProperty(nationSelection + resourceSelector, maxResource)
         }
     }
     //public debt taken exceed check
@@ -74,37 +78,38 @@ function PostStatChange(selection, change){
         //we're only interested in all below if the change is positive
         if(change < 0) return;
         let nationSelection = "." + selection.split(/\./gm).slice(1, -1).join(".");
-        let DebtTaken = (new Function(`return gameStats${nationSelection}.PublicDebtTaken`))();
-        let PossibleDebt = (new Function(`return gameStats${nationSelection}.PossiblePublicDebt`))();
-        
+        const publicDebtTakenSelector = '.PublicDebtTaken'
+        const possiblePublicDebtSelector = '.PossiblePublicDebt'
+        let DebtTaken = GSGetProperty(nationSelection + publicDebtTakenSelector)
+        let PossibleDebt = GSGetProperty(nationSelection + possiblePublicDebtSelector)
+
         //if the possible debt is less than 0 after the debt taking change. Alert
         if(PossibleDebt - change < 0) error(`The PublicDebtTaken (${DebtTaken}) has been exceeded by ${change - PossibleDebt}`);
 
     }
     //Clearing War Penalty Stats If War Stat is false 
     else if(/\.Nations\..+\.AtWar/.test(selection)){
-        
+
         //if the value of atWar after it's been changed just now, isn't false, then skip
         //aka if actually false, the war is over and you should do the following code
         //which clears war penalty stats
-        let warStatus = new Function(`return gameStats${selection}`)();
+        let warStatus = GSGetProperty(selection);
         if(warStatus != "false" && warStatus != false) return;
 
         let selectedNation = selection.split(".");
         selectedNation.pop();
         selectedNation = selectedNation.join(".");
-        let warStatsToReset = [
-            "Casualties",
-            "Pillaging",
-            "Occupation",
-			"Blockade",
-            "MinorBattles",
-            "MajorBattles"
-        ];
-        for (let i = 0; i < warStatsToReset.length; i++) {
-            const warStatToReset = warStatsToReset[i];
-            (new Function(`gameStats${selectedNation}.${warStatToReset} = 0`))();
-        }
+
+        [
+            ".Casualties",
+            ".Pillaging",
+            ".Occupation",
+            ".Blockade",
+            ".MinorBattles",
+            ".MajorBattles"
+        ].forEach(warStatToReset => {
+            GSSetProperty(selectedNation + warStatToReset, 0)
+        });;
     }   
 }
 
