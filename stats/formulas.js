@@ -633,6 +633,7 @@ function evaluateNation(nationName) {
   n.PrivateBasicArmamentsOverDemand = (n.BasicArmamentsDemand > n.EffectiveBasicArmaments ? min(n.ExpectedPrivateBasicArmaments / n.EffectiveBasicArmaments, 0.35) : 0);
   n.BasicArmamentsShortage = min(1, max(0, 1 - (n.EffectiveBasicArmaments / (n.BasicArmamentsDemand * 0.9)) + n.PrivateBasicArmamentsOverDemand));
   n.BasicArmamentsArmyShortage = min(1, max(0, 1 - (n.EffectiveBasicArmaments / n.ArmyBasicArmamentsDemand) + n.PrivateBasicArmamentsOverDemand));
+  n.MinimumBasicArmamentsNeeded = n.ArmyBasicArmamentsDemand + min(n.ExpectedPrivateBasicArmaments / n.EffectiveBasicArmaments, 0.35) * n.EffectiveBasicArmaments;
 
   n.HeavyArmaments = n.Production * (n.ProductionSectors.HeavyArmamentsSector / n.TotalSupply) * (1.1 - n.BasicToolsShortage) * (1.1 - n.IronShortage) * (1.1 - n.CoalShortage) * (0.5 + n.MetalWorkingEfficiency);
   n.EffectiveHeavyArmaments = n.HeavyArmaments + n.HeavyArmamentsIncoming - n.HeavyArmamentsOutgoing + n.HeavyArmamentsStockpiled;
@@ -688,7 +689,8 @@ function evaluateNation(nationName) {
     
   }
 
-  n.UnitUpkeep = (n.ArmyBasicArmamentsDemand * n.BasicArmamentsValue + (n.RegimentalGuns * 0.05 + n.FieldCannons * 0.1 + n.SiegeGuns * 0.2) * n.ArtilleryQualityIC * n.HeavyArmamentsValue / 2) / gameStats.TimeDivide;
+  n.ArmyHeavyArmamentsDemand = (n.RegimentalGuns * 0.05 + n.FieldCannons * 0.1 + n.SiegeGuns * 0.2) * n.ArtilleryQualityIC / 2;
+  n.UnitUpkeep = (n.ArmyBasicArmamentsDemand * n.BasicArmamentsValue + n.ArmyHeavyArmamentsDemand * n.HeavyArmamentsValue) / gameStats.TimeDivide;
   n.UnitUpkeep += n.SiegeEquipment * 0.1;
   n.UnitUpkeep += n.LargeSiegeEquipment * 0.2;
 

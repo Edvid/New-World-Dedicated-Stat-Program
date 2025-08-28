@@ -296,7 +296,7 @@ let TableLayouts = {
     ],
     "Army": [
       ["OverallImprovements", "CommanderFreedom", "ArmyWage", "BasicArmamentsStockpiled", "HeavyArmamentsStockpiled", "BasicArmamentsArmyShortage", "HeavyArmamentsShortage", "SulphurShortage"],
-		["MilitaryLoyalty", "MilitaryMorale", "MilitaryDiscipline"],
+        ["MilitaryLoyalty", "MilitaryMorale", "MilitaryDiscipline", "ArmyBasicArmamentsDemand", "ArmyHeavyArmamentsDemand", "MinimumBasicArmamentsNeeded"],
         ["IrregularImprovements", "IrregularQuality", "Levies", "Militia"],
         ["MeleeImprovements", "MeleeQuality", "LightInfantry", "HeavyInfantry", "EliteInfantry"],
         ["RangedImprovements", "RangedQuality", "Archers", "Crossbowmen"],
