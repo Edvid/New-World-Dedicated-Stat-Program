@@ -890,7 +890,7 @@ class Nation {
     this.BasicToolsBaseValue = 1;
     this.HeavyIndustryBaseValue = 5;
     this.BasicArmamentsBaseValue = 2;
-    this.HeavyArmamentsBaseValue = 5;
+    this.HeavyArmamentsBaseValue = 10;
     this.ShipBuildingBaseValue = 10;
     this.ChemicalsBaseValue = 5;
     this.MotorsBaseValue = 7.5;
