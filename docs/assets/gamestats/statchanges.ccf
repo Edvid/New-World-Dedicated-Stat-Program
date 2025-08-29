@@ -1995,7 +1995,7 @@
 +5 EstateInfluences.BurgousieInfluence
 -2.5 EstateInfluences.AristocracyInfluence
 -5 GovernmentRepresentation.UnitaryRepresentation
-+5 GovernmentRepresentation.BurgosieRepresentation
++5 GovernmentRepresentation.BurgousieRepresentation
 -5 MilitaryControl.AristocracyControl
 +2.5 MilitaryControl.Independent
 +2.5 MilitaryControl.BurgousieControl
