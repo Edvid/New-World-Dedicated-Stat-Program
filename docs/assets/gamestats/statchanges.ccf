@@ -1788,6 +1788,26 @@
 <... > Cultures > Tagalog > Opinions
 = -50 SouthChinese.Score
 
+<... > Nations >  Kwangtung Confederacy
+
++2,250 Levies
++3,078 Militia
++750 Light Infantry
++375 Heavy Infantry
++26 Elite Infantry
++375 Crossbowmen
++187 Archers
++37 Hand Cannoneers
++75 Regimental Guns
++37 Field Cannons
++18 Siege Guns
++7 Siege Equipment
++3 Large Siege Equipment
++262 Light Cavalry
++93 Heavy Cavalry
++18 Elite Cavalry
++46 Spies
+
 # NPC UPDATES
 
 <... > Nations > DuchyOfMoscow
@@ -1974,6 +1994,8 @@
 +0.05 AgrSubsidies
 +5 EstateInfluences.BurgousieInfluence
 -2.5 EstateInfluences.AristocracyInfluence
+-5 GovernmentRepresentation.UnitaryRepresentation
++5 GovernmentRepresentation.BurgosieRepresentation
 -5 MilitaryControl.AristocracyControl
 +2.5 MilitaryControl.Independent
 +2.5 MilitaryControl.BurgousieControl
