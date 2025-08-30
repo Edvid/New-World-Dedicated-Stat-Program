@@ -1361,8 +1361,8 @@
   +2 Coal
   +1 Sulphur
   +1.5 Iron
-  +2 Wool
-  +2 Forestry
+  +1 Wool
+  +1 Forestry
   =15% AristocracyTax
   =15% ClergyTax
   =15% BurgousieTax
@@ -1406,3 +1406,103 @@
 =30% BurgousieTax
 =2.5% MilitaryTax
 =0% ClergyTax
+
+<... > Nations > KingdomOfScotland
+=750 LightInf
+=2500 HeavyInf
+=2500 Archers
+=1250 LightCav
+=1250 HeavyCav
+=12 SiegeGuns
+=10 MediumShips
+=10 HeavyShips
+-7.5 BasicArmamentsStockpiled
+
+<... > Nations > KingdomOfBrandenburg
++7.5 BasicArmamentsStockpiled
+
+<... > Nations > KingdomOfPoland
++500 LightInf
++500 HeavyInf
+
+<... > nations > Balticempire
+-2 smallforts
++2 mediumforts
++1 cityfortifications
+
+<... > Nations > Republic Of Greco Bactria
++2 smallforts
++1 navalbases
+
+<... > Nations > Republic Of Greco Bactria
++10 Merchant Ships
++2 light ships
++4 medium ships
++1 heavy ships
+
+<... > nations > VenetianRepublic
+="true" Technologies.Gunports
+="true" Technologies.Galleons
+-4 ResearchPoints
+
+<... > Nations > Kingdom Of Aphrodisia
+-1 spies
+-10 budget
+="offensive" AtWar
+
+<... > Nations > Regnum Thessalonicae
+-3100 population
+-45 budget
++0.7% pillaging
+="defensive" AtWar
+
+<... > Nations >  Kingdom Of Aphrodisia
++4000 Heavy Infantry
++150 Light Cavalry
++5 Siege Guns
++12 Field Cannons
++300 Crossbowmen
++3 Heavy Ships
++2 Medium Ships
++600 Hand Cannoneers
++500 Heavy Cavalry
+
+<... > Nations > VenetianRepublic
++500 budget
+-30 Basic Armaments Stockpiled
+
+<... > Nations > KingdomOfBrandenburg
+-500 budget
++30 Basic Armaments Stockpiled
+
+<... > Nations > Republic Of Greco Bactria
+=15% clergytax
+=0% MilitaryTax
+=22% aristocracytax
+=28% BurgousieTax
+=22% UrbanTax
+=14% IntellectualsTax
+=15% BureaucratsTax
++0.05 BureaucratsWages
+
+<... > nations > XanmaiMandate
+="true" Technologies.Gunports
+="true" Technologies.Galleons
+-4 ResearchPoints
+
+<... > Nations > Crown of spain
+="true" Technologies.PlateArmour 
+="true" technologies.bombards
+
+<... > nations > Balticempire
+-1 ResearchPoints
+
+<...
+trade BrrandenburgRhineTrade1, KingdomOfBrandenburg > ReichAmRhine, 175 Budget
+trade BrrandenburgRhineTrade2, ReichAmRhine > KingdomOfBrandenburg , 1.5 Sulphur
+
+<... > Nations > KingdomOfBrandenburg
++200 Budget
+
+<... > Nations > KingdomOfPoland
+-200 Budget
