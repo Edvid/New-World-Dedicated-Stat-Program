@@ -1358,6 +1358,10 @@
   <... > Nations > KingdomOfScotland
   +26.90 Budget
   ="true" Technologies.Docks
+  +2 Coal
+  +1 Sulphur
+  +1.5 Iron
+  +2 Wool
   =15% AristocracyTax
   =15% ClergyTax
   =15% BurgousieTax
