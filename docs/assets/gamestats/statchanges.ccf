@@ -1375,3 +1375,29 @@
 
   <... > Nations
   <- KingdomOfWallia
+
+  <... > Nations > The Kingdom Of France
+=3000 HeavyInf
+=750 LightInf
+=3000 Archers
+=750 LightCav
+=1000 HeavyCav
+=10% ClergyTax
+=17.5% AristocracyTax
+=5% MilitaryTax
+=25% BurgousieTax
+
+<... > nations > Grand Ducat Aquitania
+-5 CulturalPower
+="true" CulturalAdvancements.Early Modern Administration
+=1500 HeavyInf
+=500 LightInf
+=750 Archers
+=750 Crossbowmen
+=1000 LightCav
+=750 HeavyCav
+=15% AristocracyTax
+=50% ClergyTax
+=30% BrgousieTax
+=2.5% MilitaryTax
+=0% ClergyTax
