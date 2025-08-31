@@ -115,29 +115,32 @@ function PostStatChange(selection, change){
 
 function PostStatCreate(selection, name){
     if(/Nations$/.test(selection)){
-        let n = gameStats.Nations[name];
+        const nationSelector = '.Nations' + name;
         for (const rel in gameStats.Religions) {
-            if(typeof n.ReligionGroups[rel] !== 'undefined') continue;
-            n.ReligionGroups[rel] = {Points: 0};
+            const religionGroupsSelector = nationSelector + '.ReligionGroups.' + rel;
+            if(typeof GSGetProperty(religionGroupsSelector) !== 'undefined') continue;
+            GSSetProperty(religionGroupsSelector, {Points: 0});
         }
         for (const cul in gameStats.Cultures) {
-            if(typeof n.CultureGroups[cul] !== 'undefined') continue;
-            n.CultureGroups[cul] = {Points: 0};
+            const cultureGroupsSelector = nationSelector + cultureGroupsSelector + '.CultureGroups.' + cul;
+            if(typeof GSGetProperty(cultureGroupsSelector) !== 'undefined') continue;
+            GSSetProperty(cultureGroupsSelector, {Points: 0})
         }
     }
     else if(/Religions$/.test(selection)){
-
-        for (const nname in gameStats.Nations) {
-            const n = gameStats.Nations[nname];
-            if(typeof n.ReligionGroups[name] === 'undefined') continue;
-            n.ReligionGroups[name] = {Points: 0};
+        for (const natName in gameStats.Nations) {
+            const nationSelector = '.Nations' + natName;
+            const religionGroupSelector = nationSelector + '.ReligionGroups' + name; 
+            if(typeof GSGetProperty(religionGroupSelector) === 'undefined') continue;
+            GSSetProperty(religionGroupSelector) = {Points: 0};
         }
     }
     else if(/Cultures$/.test(selection)){
-        for (const nname in gameStats.Nations) {
-            const n = gameStats.Nations[nname];
-            if(typeof n.CultureGroups[name] === 'undefined') continue;
-            n.CultureGroups[name] = {Points: 0};
+        for (const natName in gameStats.Nations) {
+            const nationSelector = '.Nations' + natName;
+            const cultureGroupsSelector = nationSelector + '.CultureGroups' + name;
+            if(typeof GSGetProperty(cultureGroupsSelector) === 'undefined') continue;
+            GSSetProperty(cultureGroupsSelector, {Points: 0});
         }
     }
 }
