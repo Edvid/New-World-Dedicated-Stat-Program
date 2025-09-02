@@ -1506,3 +1506,220 @@ trade BrrandenburgRhineTrade2, ReichAmRhine > KingdomOfBrandenburg , 1.5 Sulphur
 
 <... > Nations > KingdomOfPoland
 -200 Budget
+
+<... > Nations > VenetianRepublic
++475 Budget
+
+<... > Nations > Kingdom Of Aphrodisia
+-475 Budget
+
+<... > Nations > Regnum Thessalonicae
+=3000 lightinfantry
+=1500 heavyinfantry
+=150 lightcav
+=1800 archers
+=1900 handcannoneers
++0.75 CommanderFreedom
+-3100 population
++6200 Casualties
+-35 budget
++0.65% pillaging
+-0.05 AdmSize
++3% Occupation
++3% Blockade
+
+<... > Nations > Kyivan Rus
+-55 light cavalry
+-10 heavy cavalry
+="defensive" AtWar
+
+<... > nations > Balticempire
+
+
+=20% Aristocracy Tax
+=0% Clergy Tax
+=17% Burgousie Tax
+=10% Urban Tax
+=10% Bureaucrats Tax
+=10% Intellectuals Tax
+=10% Workers Tax
+=0% Military Tax
++1 bureaucratswages
+=4000 heavyinf
+=1000 lightinf
+=1000 archers
+=1000 crossbowmen
+=4000 lightcav
+=2000 heavycav
+=60 siege guns
+=340 eliteinfantry
+
+=47 merchantships
+
+="offensive" atwar
+
+="true" Reforms.Proffesional Army
+="false" Reforms.Feudal Levies 
+-29.38 reformpower
+
+<... > Nations > BalticEmpire
++3.5 forestry
++0.25 reforestation
++0.25 admeff
++0.05 admsize
+=1.95 fur
+=4.25 iron
++0.5 wool
++0.05 agrsubsidies
++0.05 agrinf
++0.5 localtrade
++4 ProductionSectors.BasicArmaments Sector
++2.5 ProductionSectors.HeavyArmaments Sector
++2.5 ProductionSectors.Shipbuilding Sector
+
+<... > Nations > Crown Of Spain
++1 adm
++0.1 admsize
++0.5 socialspending
++0.1 AgrSubsidies
++0.05 agrinf
+=9.25% InternalTariffs
++1 localtrade
+=37.85% AristocracyTax
+=24.95% BurgousieTax
+=4.75% MilitaryTax
+=4.5 armywage
+=7.25 BureaucratsWages
++7.5 EstateInfluences.BureaucratsInfluence
+-2.5 EstateInfluences.ClergyInfluence
+-2.5 EstateInfluences.BurgousieInfluence
+-5 MilitaryControl.ClergyControl
+-5 MilitaryControl.BurgousieControl
++5 MilitaryControl.Independent
++5 MilitaryControl.BureaucratsControl
+
+<... > Nations > Crown Of Spain
++1.5 Forestry
++0.15 Reforestation
++0.1 admsize
++5 ProductionSectors.basic armaments sector
++12 Merchant Ships
+
+<... > Nations > Crown Of Spain
++0.5 socialspending
++0.75 localtrade
++0.25 coal
++1 Sulphur
++0.5 copper
++1 forestry
+-0.05 AgrInf
++0.1 AgrSubsidies
++0.1 MiningEff
++5 ProductionSectors.basic armaments sector
++0.1 tradeimprov
++7 TradeInfluences.Iberia
++6 TradeInfluences.Western Mediterranean
++2 TradeInfluences.Morocco
++4 TradeInfluences.Bay Of Biscay
+
+<... > Nations > Crown Of Spain
++0.05 cavalryImprov
++0.5% discipline 
+
+<... > Nations > Republic of GrecoBactria
+
++0.05 MeleeImprov
++0.05 RangedImprov
+
+<... > Nations > Republic of GrecoBactria
+
++0.05 MeleeImprov
++0.05 RangedImprov
++0.5% MilitaryDiscipline
+
+<... > Nations > Republic of GrecoBactria
+
++0.05 CavalryImprov
++0.05 RangedImprov
++0.25% MilitaryDiscipline
+
+<... > Nations
++> Kaziguria
+> Kaziguria
+= "https://i.postimg.cc/7hTxnTSv/Kaziguria.png" Flag
+> ReligionGroups
+=0 pagan
++> Shia
+=100 Shia
+<
+> CultureGroups
++> Turkmeni
+=100 Turkmeni
+<
+= "Turkmeni" cultrep
+= "Shia" relrep
+<...
+= "ff9280" nations.Kaziguria.Color
+<... > Nations
+ !suppress 99999
+    > Kaziguria
+   +> CultureGroups
+   > CultureGroups
+   +> Turkmeni
+= 64.33834529273055 Turkmeni.Points
++> Persian
+= 35.661654707269456 Persian.Points
+< <
+   > Kaziguria
+   > ReligionGroups
+   +> Shia
+= 100 Shia.Points
+< <
+= 2619 Kaziguria.CoastalDesert
+= 7857 Kaziguria.Desert
+= 898 Kaziguria.Mountainous
+= 1352 Kaziguria.Arid
+= 13794 Kaziguria.DevelopmentPixelCount
+= 359290 Kaziguria.coastalPopulation
+= 788780 Kaziguria.Population
+= 862889 Kaziguria.Future Population
+= 1422.425 Kaziguria.Fertility
+
+<... > Nations > Kaziguria
++0.5 localtrade
++0.25 adm
++0.1 agrinf
++3 TradeInfluences.Caspian Sea
++3 TradeInfluences.Central Asia
++2.5 EstateInfluences.BurgousieInfluence
+
+<... > Nations > Crown of Spain
+
+="true" Technologies.Gunports
+="true" Technologies.Galleons
+="true" CulturalAdvancements.RenaissanceThought
+-4 Research Points
+-5 Reform Power
+
+<... > Nations > Xanmai Mandate
+
+=10% Aristocracy Tax
+=10% Clergy Tax
+=17% Burgousie Tax
+=17% Urban Tax
+=5% Bureaucrats Tax
+=15% Intellectuals Tax
+=15% Workers Tax
+=0% Military Tax 
++1 SmallForts
+
+<... > Nations > Republic Of Greco Bactria
+="true" CulturalAdvancements.Renaissance Thought
+-5 Cultural Power
+="true" Technologies.muskets
+-2 Research Points
+
+<... > Nations > Republic Of Greco Bactria
+=0 Hand Cannoneers
+=1600 Musketeers
+
