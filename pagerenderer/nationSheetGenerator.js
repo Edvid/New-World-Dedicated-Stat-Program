@@ -18,7 +18,7 @@ downloadbutton.innerText = "Download gameStats as JSON";
 downloadbutton.style.color = "#000";
 downloadbutton.addEventListener('click', () => {
     let jsonobj = {
-        Lines: changeCommandFileLength,
+        Lines: changesLength,
         Hash: preloadStatChanges.replace(/\r?\n/gmi, "").hashCode(),
         State: gameStats
     };
@@ -41,7 +41,7 @@ uploadccffileinput.onchange = (e) => {
     var file = e.target.files[0];
     var reader = new FileReader();
     reader.onload = function (e) {
-        changes = e.target.result.split(/\r?\n|\r/);
+        const changes = e.target.result.split(/\r?\n|\r/);
         loadChangesFromContent(changes, 0);
     };
 
@@ -64,7 +64,7 @@ uploadccftextinput.addEventListener('input', (e) => {
 });
 
 uploadccftextinputsubmit.onclick = (e) => {
-    changes = uploadccftextinput.value.split(/\r?\n|\r/);
+    const changes = uploadccftextinput.value.split(/\r?\n|\r/);
     uploadccftextinputsubmit.disabled = true;
     loadChangesFromContent(changes, 0);
 }
@@ -77,7 +77,7 @@ async function populateAdvancedSettings() {
 
 async function displayProgress() {
 
-    let lines = changeCommandFileLength;
+    let lines = changesLength;
     let line = changeCommandIndex;
 
     loadingContainer.innerHTML = "";

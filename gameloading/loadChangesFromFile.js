@@ -1,7 +1,6 @@
 let commandParameters = {};
-let changes;
 let changeCommandIndex;
-let changeCommandFileLength;
+let changesLength;
 
 let HashMatchedTill = 0;
 
@@ -32,7 +31,7 @@ let currentSelection;
 async function loadChangesFromContent(changes, skip) {
     ignore = false;
     currentSelection = "";
-    changeCommandFileLength = changes.length;
+    changesLength = changes.length;
     let then = Date.now();
     for (changeCommandIndex = skip; changeCommandIndex < changes.length; changeCommandIndex++) {
         const changeCommand = changes[changeCommandIndex];
