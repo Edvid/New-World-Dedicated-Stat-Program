@@ -3,6 +3,8 @@ let canvasContainer;
 let zonewealth;
 let canvasZoomScale = 1;
 
+setInterval(populateAdvancedSettings, 30);
+
 const WIDTH = 8192;
 const HEIGHT = 3365;
 

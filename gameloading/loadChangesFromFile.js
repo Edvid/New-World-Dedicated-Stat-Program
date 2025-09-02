@@ -199,6 +199,3 @@ Aborting.`);
         normalCommand(correctAndSynonymCheck(currentSelection + "." + commandParameters.StatName));
     }
 }
-
-if(typeof onLoadStatTradeZoneWealth === 'function')
-    setInterval(populateAdvancedSettings, 30);
