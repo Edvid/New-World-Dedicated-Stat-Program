@@ -115,32 +115,32 @@ function PostStatChange(selection, change){
 
 function PostStatCreate(selection, name){
     if(/Nations$/.test(selection)){
-        const nationSelector = '.Nations' + name;
+        const nationSelector = '.Nations.' + name;
         for (const rel in gameStats.Religions) {
             const religionGroupsSelector = nationSelector + '.ReligionGroups.' + rel;
             if(typeof GSGetProperty(religionGroupsSelector) !== 'undefined') continue;
             GSSetProperty(religionGroupsSelector, {Points: 0});
         }
         for (const cul in gameStats.Cultures) {
-            const cultureGroupsSelector = nationSelector + cultureGroupsSelector + '.CultureGroups.' + cul;
+            const cultureGroupsSelector = nationSelector + '.CultureGroups.' + cul;
             if(typeof GSGetProperty(cultureGroupsSelector) !== 'undefined') continue;
-            GSSetProperty(cultureGroupsSelector, {Points: 0})
+            GSSetProperty(cultureGroupsSelector, JSON.stringify({Points: 0}))
         }
     }
     else if(/Religions$/.test(selection)){
         for (const natName in gameStats.Nations) {
-            const nationSelector = '.Nations' + natName;
+            const nationSelector = '.Nations.' + natName;
             const religionGroupSelector = nationSelector + '.ReligionGroups' + name; 
             if(typeof GSGetProperty(religionGroupSelector) === 'undefined') continue;
-            GSSetProperty(religionGroupSelector) = {Points: 0};
+            GSSetProperty(religionGroupSelector) = JSON.stringify({Points: 0});
         }
     }
     else if(/Cultures$/.test(selection)){
         for (const natName in gameStats.Nations) {
-            const nationSelector = '.Nations' + natName;
+            const nationSelector = '.Nations.' + natName;
             const cultureGroupsSelector = nationSelector + '.CultureGroups' + name;
             if(typeof GSGetProperty(cultureGroupsSelector) === 'undefined') continue;
-            GSSetProperty(cultureGroupsSelector, {Points: 0});
+            GSSetProperty(cultureGroupsSelector, JSON.stringify({Points: 0}));
         }
     }
 }
