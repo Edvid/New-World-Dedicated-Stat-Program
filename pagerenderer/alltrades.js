@@ -1,3 +1,5 @@
+loadGameFromSafeFile()
+
 function loadAllTrades(){
     let alltrades = gameStats.Trades;
     let table = document.createElement("table");

@@ -2238,6 +2238,10 @@ class Stats{
 
 let gameStats = new Stats();
 
+function setGameStats(new_stats) {
+  gameStats = new_stats;
+}
+
 function clearNewTroops(nationName){
   let n = gameStats.Nations[nationName];
   for (const unitName in gameStats.UnitUpkeepCosts) {

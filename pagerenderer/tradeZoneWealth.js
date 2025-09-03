@@ -3,6 +3,8 @@ let canvasContainer;
 let zonewealth;
 let canvasZoomScale = 1;
 
+loadGameFromSafeFile()
+
 setInterval(populateAdvancedSettings, 30);
 
 const WIDTH = 8192;

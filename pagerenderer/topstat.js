@@ -17,6 +17,8 @@ const TopStats = [
   { name: "Size", displayName: "Size" }
 ];
 
+loadGameFromSafeFile()
+
 document.querySelector("body").addEventListener("game load done", populateTopStatTable);
 
 function populateTopStatTable(){

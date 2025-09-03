@@ -6,6 +6,8 @@ const HEIGHT = 3365;
 
 const bumpMapOpacity = 0.3;
 
+loadGameFromSafeFile()
+
 document.querySelector("body").onload = async function () {
     canvasContainer = document.getElementById("canvascontainer");
     canvasContainer.width = WIDTH;
