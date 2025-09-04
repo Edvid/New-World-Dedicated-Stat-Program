@@ -124,7 +124,7 @@ function PostStatCreate(selection, name){
         for (const cul in gameStats.Cultures) {
             const cultureGroupsSelector = nationSelector + '.CultureGroups.' + cul;
             if(typeof GSGetProperty(cultureGroupsSelector) !== 'undefined') continue;
-            GSSetProperty(cultureGroupsSelector, JSON.stringify({Points: 0}))
+            GSSetProperty(cultureGroupsSelector, JSON.stringify({Points: 0}));
         }
     }
     else if(/Religions$/.test(selection)){
@@ -132,7 +132,7 @@ function PostStatCreate(selection, name){
             const nationSelector = '.Nations.' + natName;
             const religionGroupSelector = nationSelector + '.ReligionGroups' + name; 
             if(typeof GSGetProperty(religionGroupSelector) === 'undefined') continue;
-            GSSetProperty(religionGroupSelector) = JSON.stringify({Points: 0});
+            GSSetProperty(religionGroupSelector, JSON.stringify({Points: 0}));
         }
     }
     else if(/Cultures$/.test(selection)){
