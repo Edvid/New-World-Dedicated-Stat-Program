@@ -1723,3 +1723,161 @@ trade BrrandenburgRhineTrade2, ReichAmRhine > KingdomOfBrandenburg , 1.5 Sulphur
 =0 Hand Cannoneers
 =1600 Musketeers
 
+ <... > Nations > Baltic Empire
+
+-5 CulturalPower
+="true" CulturalAdvancements.RenaissanceThought
+
+ <... > Nations > Showa Shogunate
++0.05 AgrInf
++0.05 AgrSubsidies
+
+<... > Nations > Kwangtung Confederacy 
+="true" reforms.Wealthy Bureaucrats
+="false" reforms.Clergy Bureaucrats
+-26 Reform Power 
+
+<... > Nations > Kwangtung Confederacy 
+="true" technologies.Galleons
+="true" technologies.Hand Cannons
+="true" technologies.Plate Armour
+-4 Research Points
+
+<... > Nations > Kwangtung Confederacy 
+="true" Cultural Advancements.Early Modern Administration
+-5 Cultural Power
+
+<... > Nations > Kyivan Rus 
+="true" Technologies.Hand Cannons
+-1 Research Points
+="True" CulturalAdvancements.Early Modern Administration
+-5 Cultural Power
++78 Merchant ships
++20 Light Ships
++10 Medium Ships
++3 Heavy Ships
+
+<... > Nations > Kyivan Rus 
++0.05 TradeImprov
++0.5 AdmEff
+
+<... > Nations > Kyivan Rus
++2400 hand cannoneers
++1200 crossbowmen
++4000 heavy infantry
++2400 light infantry
++2000 archers
++2400 light cavalry
++1400 heavy cavalry
++40 siege guns
++200 militia
++48 spies
+
+<... > Nations > Republic Of Greco Bactria
++5 EstateInfluences.clergyInfluence
++0.5 adm
++0.1 admsize
++0.5 propaganda
++0.5 social spending
++7 TradeInfluences.Indus River
++6 TradeInfluences.Ganges
++6 TradeInfluences.Central India
++7 TradeInfluences.Deccan
++5 TradeInfluences.Afghanistan
++5 TradeInfluences.Persian Gulf
+
+<... > Nations > BanuYaseenCaliphate
++1 Gold
++0.5 Local Trade
++6 TradeInfluences.Red Sea
+
+<... > Nations > KwangtungConfederacy
++5 GovernmentRepresentation.ClergyRepresentation
+-5 GovernmentRepresentation.UnitaryRepresentation
+
+<...
+trade ArabCantoneseCommerce1, KwangtungConfederacy > BanuYaseenCaliphate, 1 Iron
+
+<... > Nations > BanuYaseenCaliphate
+
++200 Budget
+
+<... > Nations > KwangtungConfederacy
+
+-200 Budget
+
+<... > Nations > Crown of Spain
+
+-5 Cultural Power
++5 Reform Power
+
+<... > Nations > Kingdom Of Aphrodisia
++10 ProductionSectors.basic armaments sector
+-150 budget
++1 forestry
++0.1 Reforestation
+
+<... > Nations > Kingdom Of Aphrodisia
+="true" Technologies.limber
+-2 research points
++0.1 reforestation
++1 forestry
+
+<... > Nations > Regnum Thessalonicae
++1 CityFortifications
++2.5 adm
++0.5 edueff
+<... > Cultures > Greek > Opinions
++> SouthSlav 
+=30 SouthSlav .Score
+<... > Cultures > SouthSlav> Opinions
++> Greek
+=30 Greek.Score
+<... > Nations > Regnum Thessalonicae
++1.25 forestry
+-5 Cultural Power
+="true" CulturalAdvancements.Early Modern Administration
+="true" Technologies.printing press
+
+<... > Nations > VenetianRepublic
+="true" CulturalAdvancements.EarlyModernAdministration
+-5 CulturalPower
+
+<... > Nations > Kingdom Of Aphrodisia
+="true" CulturalAdvancements.EarlyModernAdministration
+-5 CulturalPower
+
+<... > Nations > VenetianRepublic
++1 gold
++2 sulphur
++1 forestry
+
+<... > Nations > Xanmai Mandate
++1 coal
++0.1 MiningEff
+
+<... > Nations > Xanmai Mandate
++1 forestry
++5 ProductionSectors.construction sector
+
+<... > Nations > BalticEmpire
++0.5 LocalTrade
++0.1 TradeImprovements
++0.1 AdmSize
++0.25 adm
++6 Tradeinfluences.Baltic Sea
++6 Tradeinfluences.Denmark
++6 Tradeinfluences.North Sea
++5 Tradeinfluences.Novgorod
++6 Tradeinfluences.Northern Nordics
++5 Tradeinfluences.British Isles
++5 Tradeinfluences.English channel
++4 Tradeinfluences.France
++5 Tradeinfluences.Rhine
++6 Tradeinfluences.Vistula
++5 Tradeinfluences.Central Europe
+
+<... > Nations > BalticEmpire
++1 forestry
++0.1 reforestation
+
