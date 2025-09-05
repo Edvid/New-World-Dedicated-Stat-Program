@@ -1,3 +1,6 @@
+import * as am5 from "@amcharts/amcharts5";
+import * as am5percent from "@amcharts/amcharts5/percent";
+
 loadGameFromSafeFile()
 
 let advancedSettingsToggle = document.createElement("button");
