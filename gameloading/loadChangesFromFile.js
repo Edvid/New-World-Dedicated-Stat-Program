@@ -51,6 +51,10 @@ async function loadChangesFromContent(changes, skip) {
     refreshPageItems();
 }
 
+export function getChangesLength() {
+  return changesLength;
+}
+
 function errorsPresentAtCompletion(){
     Object.keys(gameStats.Trades).forEach(tradeName => {
         let trade = gameStats.Trades[tradeName];

@@ -20,7 +20,7 @@ downloadbutton.innerText = "Download gameStats as JSON";
 downloadbutton.style.color = "#000";
 downloadbutton.addEventListener('click', () => {
     let jsonobj = {
-        Lines: changesLength,
+        Lines: getChangesLength(),
         Hash: preloadStatChanges.replace(/\r?\n/gmi, "").hashCode(),
         State: gameStats
     };
@@ -79,7 +79,7 @@ async function populateAdvancedSettings() {
 
 async function displayProgress() {
 
-    let lines = changesLength;
+    let lines = getChangesLength();
     let line = changeCommandIndex;
 
     loadingContainer.innerHTML = "";
