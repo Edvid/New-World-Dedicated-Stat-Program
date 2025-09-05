@@ -7,7 +7,7 @@ let HashMatchedTill = 0;
 let preloadGameState;
 let preloadStatChanges;
 
-function loadGameFromSafeFile() {
+export function loadGameFromSafeFile() {
   (async () => {
     await fetch("./docs/assets/gamestats/safefile.json").then(response => response.json()).then(data => preloadGameState = data);
     await fetch("./docs/assets/gamestats/statchanges.ccf").then(response => response.text()).then(data => preloadStatChanges = data);
@@ -28,7 +28,7 @@ function loadGameFromSafeFile() {
 const normalCommandRegex = /(?<Operand>add|\+|sub|-|set|=) *(?<Value>(\*?\d*\.?\d+%?)|(\".*\")|( .*? ))(?<StatName>.+)/i;
 let ignore;
 let currentSelection;
-async function loadChangesFromContent(changes, skip) {
+export async function loadChangesFromContent(changes, skip) {
     ignore = false;
     currentSelection = "";
     changesLength = changes.length;
@@ -51,8 +51,16 @@ async function loadChangesFromContent(changes, skip) {
     refreshPageItems();
 }
 
+export function getChangeCommandIndex(){
+  return changeCommandIndex;
+}
+
 export function getChangesLength() {
   return changesLength;
+}
+
+export function preloadedStatChangesHashCode() {
+  return preloadStatChanges.replace(/\r?\n/gmi, "").hashCode()
 }
 
 function errorsPresentAtCompletion(){
@@ -70,7 +78,6 @@ function errorsPresentAtCompletion(){
 }
 
 function refreshPageItems() {
-    if (typeof updateDropdownSelection === 'function') updateDropdownSelection();
     if (typeof createNationSheet === 'function') {
         currentNationName = Object.keys(gameStats.Nations)[currentNationID];
         createNationSheet(currentNationName);

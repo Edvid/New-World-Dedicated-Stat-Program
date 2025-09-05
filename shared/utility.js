@@ -1,3 +1,5 @@
+import { getChangeCommandIndex } from "../gameloading/loadChangesFromFile";
+
 let primaryColor = "DodgerBlue";
 let secondaryColor = "lightSkyBlue";
 
@@ -13,10 +15,11 @@ let warnSuppress = 0;
 
 function suppressWarning(linesToSuppressParam) {
     linesToSuppress = linesToSuppressParam != null ? linesToSuppressParam : 1;
-    warnSuppress = changeCommandIndex + linesToSuppress;
+    warnSuppress = getChangeCommandIndex() + linesToSuppress;
 }
 
-function warn(message) {
+export function warn(message) {
+    const changeCommandIndex = getChangeCommandIndex()
     if (warnSuppress >= changeCommandIndex) return;
     alert(`WARNING At line ${(changeCommandIndex + 1)}:
 
@@ -24,13 +27,13 @@ ${message}`)
 }
 
 function error(message) {
-    alert(`ERROR At line ${(changeCommandIndex + 1)}:
+    alert(`ERROR At line ${(getChangeCommandIndex() + 1)}:
 
 ${message}`)
 }
 
 function lazyerror(message) {
-    alert(`ERROR At line ${(changeCommandIndex + 1)}
+    alert(`ERROR At line ${(getChangeCommandIndex() + 1)}
 but the source of the ERROR could have occured earlier:
 
 ${message}`)
@@ -65,7 +68,7 @@ function correctAndSynonymCheck(selection) {
     for (let i = 0; i < correctSelection.length; i++) {
         let matched = matchToken(step, correctSelection[i]);
         if (matched == null) {
-            alert(`Line ${changeCommandIndex}: The Specified Stat '${correctSelection[i]}' in '${correctSelection.slice(0, i).join('.')}' was not found!`);
+            alert(`Line ${getChangeCommandIndex()}: The Specified Stat '${correctSelection[i]}' in '${correctSelection.slice(0, i).join('.')}' was not found!`);
             return;
         }
         correctSelection[i] = matched;
@@ -1137,7 +1140,7 @@ let StatTypes = {
 };
 
 
-function getStatType(selection){
+export function getStatType(selection){
     let foundStatType;
     Object.keys(StatTypes).forEach(statType => {
         if (foundStatType != null) return;
@@ -1154,7 +1157,7 @@ function getStatType(selection){
     return foundStatType != null ? foundStatType : "Unknown";
 }
 
-function ValueTypeFix(statName, statValue) {
+export function ValueTypeFix(statName, statValue) {
     
     let statVal = statValue;
     if (statVal == "false") statVal = false;
@@ -1452,7 +1455,7 @@ function rgbToHex(color) {
 /* #endregion */
 
 /* #region  taken from blog https://robkendal.co.uk/blog/2020-04-17-saving-text-to-client-side-file-using-vanilla-js */
-const downloadToFile = (content, filename, contentType) => {
+export const downloadToFile = (content, filename, contentType) => {
     const a = document.createElement('a');
     const file = new Blob([content], { type: contentType });
 
@@ -1516,7 +1519,7 @@ document.querySelector("body").onload = function () {
 }
 /* #endregion */
 
-function collapsibleNextSibling() {
+export function collapsibleNextSibling() {
     this.classList.toggle("active");
     var content = this.nextElementSibling;
     if (content.style.display === "block") {
@@ -1526,7 +1529,11 @@ function collapsibleNextSibling() {
     }
 }
 
-class MinMaxGradient{
+export function cleanStatName(str) {
+  return str.replace(/(\[|"| |\])/gmi, "");
+}
+
+export class MinMaxGradient{
     nodeList;
     constructor(nodeList){
         this.nodeList = nodeList.sort((a, b) => a.position - b.position);

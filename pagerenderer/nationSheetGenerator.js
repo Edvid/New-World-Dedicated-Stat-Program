@@ -1,6 +1,10 @@
 import * as am5 from "@amcharts/amcharts5";
 import * as am5percent from "@amcharts/amcharts5/percent";
 
+import { loadGameFromSafeFile, loadChangesFromContent, getChangesLength, preloadedStatChangesHashCode } from "../gameloading/loadChangesFromFile";
+import { cleanStatName, collapsibleNextSibling, downloadToFile, getStatType, ValueTypeFix, warn } from "../shared/utility";
+import { getGameStats, GSGetProperty, Opinion } from "../stats/gameStats";
+
 loadGameFromSafeFile()
 
 let advancedSettingsToggle = document.createElement("button");
@@ -24,8 +28,8 @@ downloadbutton.style.color = "#000";
 downloadbutton.addEventListener('click', () => {
     let jsonobj = {
         Lines: getChangesLength(),
-        Hash: preloadStatChanges.replace(/\r?\n/gmi, "").hashCode(),
-        State: gameStats
+        Hash: preloadedStatChangesHashCode(),
+        State: getGameStats()
     };
     let downloadString = JSON.stringify(jsonobj, null, 4);
 
@@ -34,7 +38,6 @@ downloadbutton.addEventListener('click', () => {
 DownloadButtonContainer.appendChild(downloadbutton);
 
 
-let uploadccf = document.createElement("div");
 let uploadccffileform = document.createElement("form");
 let uploadccffileinputtitle = document.createElement("h3");
 uploadccffileinputtitle.innerText = "Choose A Saved File";
@@ -48,6 +51,7 @@ uploadccffileinput.onchange = (e) => {
     reader.onload = function (e) {
         const changes = e.target.result.split(/\r?\n|\r/);
         loadChangesFromContent(changes, 0);
+        updateDropdownSelection()
     };
 
     reader.readAsText(file);
@@ -64,57 +68,16 @@ uploadccftextinputsubmit.innerText = "Submit";
 uploadccftextinputsubmit.classList.add("submitccf");
 uploadccftextinputsubmit.disabled = true;
 
-uploadccftextinput.addEventListener('input', (e) => {
+uploadccftextinput.addEventListener('input', () => {
     uploadccftextinputsubmit.disabled = false;
 });
 
-uploadccftextinputsubmit.onclick = (e) => {
+// TODO: Test if updateDropdownSelection works correctly still
+uploadccftextinputsubmit.onclick = () => {
     const changes = uploadccftextinput.value.split(/\r?\n|\r/);
-    uploadccftextinputsubmit.disabled = true;
+    uploadccftextinputsubmit.disablewd = true;
     loadChangesFromContent(changes, 0);
-}
-
-let downloadbuttonshowing = false;
-async function populateAdvancedSettings() {
-    if (typeof advancedSettings === 'undefined') return;
-    displayProgress();
-}
-
-async function displayProgress() {
-
-    let lines = getChangesLength();
-    let line = changeCommandIndex;
-
-    loadingContainer.innerHTML = "";
-    if (lines > line) {
-        let loadingFieldTitle = document.createElement("p");
-        loadingFieldTitle.innerText = "Generating All nation Stats...";
-
-        let bar = document.createElement("canvas");
-        bar.width = 100;
-        bar.height = 20;
-        let barctx = bar.getContext("2d");
-
-        barctx.lineWidth = 3;
-        barctx.fillStyle = 'green'
-        barctx.fillRect(0, 0, (HashMatchedTill / lines) * 100, 20);
-        barctx.fillStyle = 'black'
-        barctx.fillRect((HashMatchedTill / lines) * 100, 0, ((line - HashMatchedTill) / lines) * 100, 20);
-        barctx.strokeRect(0, 0, 100, 20);
-
-        let loadingText = document.createElement("p");
-        loadingText.style.fontStyle = "Italic";
-        loadingText.style.fontSize = "12px";
-        loadingText.style.color = "grey";
-        loadingText.innerText = `line ${line} / ${lines} lines loaded`;
-        loadingContainer.appendChild(loadingFieldTitle);
-        loadingContainer.appendChild(bar);
-        loadingContainer.appendChild(loadingText);
-
-        if (downloadbutton.style.color != "#f00") downloadbutton.style.color = "#f00"
-    } else {
-        if (downloadbutton.style.color != "#000") downloadbutton.style.color = "#000"
-    }
+    updateDropdownSelection()
 }
 
 uploadccftextform.appendChild(uploadccftextinput);
@@ -151,10 +114,11 @@ leftarrowimg.alt = "left arrow";
 leftarrowimg.height = 40;
 leftArrow.appendChild(leftarrowimg);
 leftArrow.onclick = function () {
-    let nationNames = Object.keys(gameStats.Nations);
+    const nations = getGameStats().Nations;
+    let nationNames = Object.keys(nations);
     if (currentNationID > 0) currentNationID--;
     else currentNationID = nationNames.length - 1;
-    currentNationName = Object.keys(gameStats.Nations)[currentNationID];
+    currentNationName = nationNames[currentNationID];
     dropdownselection.value = currentNationName;
     dropdownselection.onchange();
 }
@@ -166,10 +130,11 @@ rightarrowimg.alt = "right arrow";
 rightarrowimg.height = 40;
 rightArrow.appendChild(rightarrowimg);
 rightArrow.onclick = function () {
-    let nationNames = Object.keys(gameStats.Nations);
+    const nations = getGameStats().Nations;
+    let nationNames = Object.keys(nations);
     if (currentNationID < nationNames.length - 1) currentNationID++;
     else currentNationID = 0;
-    currentNationName = Object.keys(gameStats.Nations)[currentNationID];
+    currentNationName = nationNames[currentNationID];
     dropdownselection.value = currentNationName;
     dropdownselection.onchange();
 }
@@ -180,8 +145,9 @@ let dropdowntitle = document.createElement("label");
 dropdowntitle.innerText = "Choose Nation:";
 let dropdownselection = document.createElement("select");
 dropdownselection.onchange = function () {
+    const nations = getGameStats().Nations;
     currentNationID = this.selectedIndex;
-    currentNationName = Object.keys(gameStats.Nations)[currentNationID];
+    currentNationName = Object.keys(nations)[currentNationID];
     createNationSheet(currentNationName);
 }
 
@@ -198,7 +164,7 @@ searchStatLabel.innerText = "search stat: ";
 const URLParamStatQuerry = new URLSearchParams(window.location.search).get('q');
 searchStat.value = URLParamStatQuerry != null ? URLParamStatQuerry : "";
 let searchStatValue = URLParamStatQuerry != null ? URLParamStatQuerry : "";
-searchStat.addEventListener('input', (e) => {
+searchStat.addEventListener('input', () => {
     searchStatValue = searchStat.value;
     createNationSheet(currentNationName);
 });
@@ -209,12 +175,13 @@ SearchStatContainer.appendChild(searchStat);
 function updateDropdownSelection() {
     dropdownselection.innerHTML = "";
     dropdownselection.classList.add("dropdown");
+    const nations = getGameStats().Nations
     let maxlength = 0;
-    for (const key in gameStats.Nations) {
+    for (const key in nations) {
         if (maxlength < key.capitalSpacing().length) maxlength = key.capitalSpacing().length;
     }
     let index = 1;
-    for (const key in gameStats.Nations) {
+    for (const key in nations) {
         let option = document.createElement("option");
         option.value = key;
         let spacedkeywithmargin = key.capitalSpacing();
@@ -633,7 +600,9 @@ function createNationSheet(nationName) {
         }
         else if(TableTitle.innerHTML == "Land Stats"){
             let imgButton = document.createElement("a");
-            imgButton.href = `./IndividualNation?col=${gameStats.Nations[nationName].Color}`
+            const nations = getGameStats().Nations
+            const nationColor = nations[nationName].Color
+            imgButton.href = `./IndividualNation?col=${nationColor}`
             imgButton.target = "_blank";
             let img = document.createElement("img");
             img.src = "docs/assets/images/world/small_blank.png";
@@ -668,8 +637,7 @@ function createSearchStatTable(){
         const tableGroup = TableLayouts[tableGroupName];
         for (let table = 0; table < TableLayouts[tableGroupName].length; table++) {
             const stats = tableGroup[table];
-            for (let stat = 0; stat < stats.length; stat++) {
-                const statName = stats[stat];
+            for (let statName of stats) {
                 //filter out everything that isn't matching the search
                 if(new RegExp(searchStatValue, "i").test(statName)) {
                     console.log(`${searchStatValue} found in ${statName}`)
@@ -688,26 +656,23 @@ function createStatTable(title, tables) {
     let tableTitle = document.createElement("h2");
     tableTitle.classList.add("tabletitle")
     tableTitle.innerText = title;
-    for (let i = 0; i < tables.length; i++) {
-        const stats = tables[i];
+    for (const stats of tables) {
         let nationStatNameRow = document.createElement("tr");
         nationStatNameRow.classList.add("primary-color")
         let nationStatRow = document.createElement("tr");
         nationStatRow.classList.add("secondary-color")
 
-        for (let i = 0; i < stats.length; i++) {
-            const statSelection = stats[i];
+        for (const statSelection of stats) {
             //if first char of string is alphabetic (not symbol), add courtesy dot first, else, we expect the user of createStatTableProxy to know what they're doing
             const statvalue = /^[a-zA-Z]$/.test(statSelection[0]) ?
               GSGetProperty(".Nations." + currentNationName + '.' + statSelection) :
               GSGetProperty(".Nations." + currentNationName + statSelection);
             let nationStatNameCell = document.createElement("th");
-            let upmigrations = 0;
-            let splitStatSelection = statSelection.split(/\.|(?<=\[)/g); 
-            let statName = splitStatSelection[splitStatSelection.length - 1 - upmigrations++].replace(/(\[|\"| |\])/gmi, "");
-            while(/tradingpoints$/i.test(statName)){
-                statName = splitStatSelection[splitStatSelection.length - 1 - upmigrations++].replace(/(\[|\"| |\])/gmi, "");
-            }
+            let splitStatSelection = statSelection.split(/\.|(?<=\[)/g).map((str) => cleanStatName(str)); 
+            const statName = !/tradingpoints$/.test(splitStatSelection.at(-1)) ?
+              splitStatSelection.at(-1) :
+              splitStatSelection.at(-2)
+
             nationStatNameCell.innerText = statName.replace(/(?<=[a-zA-Z])(?=[A-Z])/g, " ");
             nationStatNameCell.classList.add(statName, "name")
             let nationStatCell = document.createElement("td");
@@ -787,8 +752,10 @@ function createOpinionMatrixTable(title, SocialBehaviourGroups) {
     let tableTitle = document.createElement("h2");
     tableTitle.classList.add("tabletitle")
     tableTitle.innerText = title;
-    let nationsSocialBehaviourGroups = gameStats.Nations[currentNationName][SocialBehaviourGroups];
-    let RelevantSocialBehaviours = gameStats[SocialBehaviourGroups.replace("Group", "")];
+    const nations = getGameStats().Nations
+    const nationsSocialBehaviourGroups = nations[currentNationName][SocialBehaviourGroups];
+    const SocialBehaviourGroupName = SocialBehaviourGroups.replace("Group", "")
+    const RelevantSocialBehaviours = getGameStats()[SocialBehaviourGroupName];
     let opinioneeNameRow = document.createElement("tr");
     let blankCornerCell = document.createElement("th");
     blankCornerCell.classList.add("primary-color")
@@ -883,7 +850,9 @@ function createPieDiagram(ObjectToChart, ValName) {
     title.innerText = ObjectToChart.capitalSpacing();
     title.classList.add("tabletitle");
 
-    let ObjectToChartNationRef = gameStats.Nations[currentNationName][ObjectToChart];
+    const nations = getGameStats().Nations
+
+    const ObjectToChartNationRef = nations[currentNationName][ObjectToChart];
 
     var chartdiv = document.createElement("div");
     //styling on chart

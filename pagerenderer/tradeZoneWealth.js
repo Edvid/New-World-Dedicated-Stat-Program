@@ -5,8 +5,6 @@ let canvasZoomScale = 1;
 
 loadGameFromSafeFile()
 
-setInterval(populateAdvancedSettings, 30);
-
 const WIDTH = 8192;
 const HEIGHT = 3365;
 

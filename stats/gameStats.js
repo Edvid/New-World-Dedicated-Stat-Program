@@ -44,7 +44,7 @@ class Climate{
   ClimateScore;
 }
 
-class Opinion {
+export class Opinion {
   Score;
   static Undesired = -100;
   static Skeptical = -50;
@@ -2238,8 +2238,12 @@ class Stats{
 
 let gameStats = new Stats();
 
-function setGameStats(new_stats) {
+export function setGameStats(new_stats) {
   gameStats = new_stats;
+}
+
+export function getGameStats() {
+  return gameStats
 }
 
 function clearNewTroops(nationName){
@@ -4091,23 +4095,23 @@ function syncNations() {
     }
 }
 
-function GSGetProperty(propertySelection) {
+export function GSGetProperty(propertySelection) {
   return (new Function(`return gameStats${propertySelection}`))();
 }
 
-function GSSetProperty(propertySelection, value) {
+export function GSSetProperty(propertySelection, value) {
   (new Function(`gameStats${propertySelection} = ${value}`))();
 }
 
-function GSAddProperty(propertySelection, value) {
+export function GSAddProperty(propertySelection, value) {
   (new Function(`gameStats${propertySelection} += ${value}`))();
 }
 
-function GSNewProperty(propertySelection, _class, parameters) {
+export function GSNewProperty(propertySelection, _class, parameters) {
   (new Function(`gameStats${propertySelection} = new ${_class}(${parameters})`))();
 }
 
-function GSDeleteProperty(propertyName){
+export function GSDeleteProperty(propertyName){
   (new Function(`delete gameStats${propertyName}`))();
 }
 
