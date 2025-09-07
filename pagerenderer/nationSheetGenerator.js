@@ -1,5 +1,5 @@
-import * as am5 from "@amcharts/amcharts5";
-import * as am5percent from "@amcharts/amcharts5/percent";
+import * as am5 from "https://cdn.amcharts.com/lib/5/index.js";
+import * as am5percent from "https://cdn.amcharts.com/lib/5/percent.js";
 
 import { loadGameFromSafeFile, loadChangesFromContent, getChangesLength, preloadedStatChangesHashCode } from "../gameloading/loadChangesFromFile";
 import { cleanStatName, collapsibleNextSibling, downloadToFile, getStatType, ValueTypeFix, warn } from "../shared/utility";
