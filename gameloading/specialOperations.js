@@ -1,4 +1,4 @@
-function PostStatChange(selection, change){
+export function PostStatChange(selection, change){
 
     //New Recruitment handling
     if(
@@ -113,7 +113,7 @@ function PostStatChange(selection, change){
     }   
 }
 
-function PostStatCreate(selection, name){
+export function PostStatCreate(selection, name){
     if(/Nations$/.test(selection)){
         const nationSelector = '.Nations.' + name;
         for (const rel in gameStats.Religions) {

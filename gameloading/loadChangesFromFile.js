@@ -1,6 +1,7 @@
-import { setGameStats } from "../stats/gameStats.js";
+import { correctAndSynonymCheck, suppressWarning } from "../shared/utility.js";
+import { evaluateNations, getGameStats, setGameStats } from "../stats/gameStats.js";
+import { createStat, deleteStat, normalCommand, renameStat, Shorthands } from "./commands.js";
 
-let commandParameters = {};
 let changeCommandIndex;
 let changesLength;
 
@@ -66,6 +67,7 @@ export function preloadedStatChangesHashCode() {
 }
 
 function errorsPresentAtCompletion(){
+    const gameStats = getGameStats();
     Object.keys(gameStats.Trades).forEach(tradeName => {
         let trade = gameStats.Trades[tradeName];
         let nationNames = Object.keys(gameStats.Nations);
@@ -191,24 +193,18 @@ async function evaluteChangeCommand(changeCommandRaw) {
     }
     //normal commands
     else {
-        commandParameters = {};
-        //If 2 or more instances of tabulator in the string
-        if (changeCommand.replace(/[^\t]/g, "").length >= 2) {
-            commandParameters = changeCommand.split("\t");
+        let match = normalCommandRegex.exec(changeCommand);
+        if (!normalCommandRegex.test(changeCommand)) {
+            error(`A command wasn't understood:
+              ${changeCommand}
+              Aborting.`);
+            return;
         }
-        else {
-            let match = normalCommandRegex.exec(changeCommand);
-            if (!normalCommandRegex.test(changeCommand)) {
-                error(`A command wasn't understood:
-${changeCommand}
-Aborting.`);
-                return;
-            }
-            commandParameters.Operand = match.groups.Operand.trim();
-            commandParameters.Value = match.groups.Value.replace(/^"|"$/g, "");
+        const operand = match.groups.Operand.trim();
+        const value = match.groups.Value.replace(/^"|"$/g, "");
 
-            commandParameters.StatName = match.groups.StatName;
-        }
-        normalCommand(correctAndSynonymCheck(currentSelection + "." + commandParameters.StatName));
+        const statName = match.groups.StatName;
+
+        normalCommand(operand, correctAndSynonymCheck(currentSelection + "." + statName), value);
     }
 }

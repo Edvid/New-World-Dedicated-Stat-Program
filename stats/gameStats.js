@@ -1,3 +1,5 @@
+import { min, max, clamp } from "../shared/utility.js";
+
 let mappedResources = [
   "Fur",
   "Gold",
@@ -23,7 +25,7 @@ let mappedResourcesMultipliers = [
   2 //silver
 ];
 
-class SocialBehaviour {
+export class SocialBehaviour {
   definingFeatures;
   Color = "000000";
   Opinions = {};
@@ -34,11 +36,11 @@ class SocialBehaviour {
 }
 
 
-class SocialBehaviourGroup {
+export class SocialBehaviourGroup {
   Points = 0;
 }
 
-class Climate{
+export class Climate{
   Pixels;
   Color;
   ClimateScore;
@@ -60,19 +62,19 @@ export class Opinion {
   static ObsessedImage = "https://static.wikia.nocookie.net/spore/images/a/ae/Ally.png";
 }
 
-class Trade {
+export class Trade {
   giver; //nation name
   receiver; //nation name
   amount;
   resource; //can include food or budget
 }
 
-class TradeZone {
+export class TradeZone {
   Color;
   Score;
 }
 
-class Nation {
+export class Nation {
 
   /* #region  Properties */
 
@@ -3969,7 +3971,7 @@ function evaluateNation(nationName) {
 
 }
 
-function evaluateNations() {
+export function evaluateNations() {
   for (const nationName in gameStats.Nations) {
     evaluateNation(nationName);
   }
@@ -4096,23 +4098,23 @@ function syncNations() {
 }
 
 export function GSGetProperty(propertySelection) {
-  return (new Function(`return gameStats${propertySelection}`))();
+  return (new Function('gameStats', `return gameStats${propertySelection}`))(gameStats);
 }
 
 export function GSSetProperty(propertySelection, value) {
-  (new Function(`gameStats${propertySelection} = ${value}`))();
+  (new Function('gameStats', `gameStats${propertySelection} = ${value}`))(gameStats);
 }
 
 export function GSAddProperty(propertySelection, value) {
-  (new Function(`gameStats${propertySelection} += ${value}`))();
+  (new Function('gameStats', `gameStats${propertySelection} += ${value}`))(gameStats);
 }
 
 export function GSNewProperty(propertySelection, _class, parameters) {
-  (new Function(`gameStats${propertySelection} = new ${_class}(${parameters})`))();
+  (new Function('gameStats', `gameStats${propertySelection} = new ${_class}(${parameters})`))(gameStats);
 }
 
 export function GSDeleteProperty(propertyName){
-  (new Function(`delete gameStats${propertyName}`))();
+  (new Function('gameStats', `delete gameStats${propertyName}`))(gameStats);
 }
 
 function GSUpdateTradesWithRenamedNationName(oldName, newName){

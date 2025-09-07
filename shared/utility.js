@@ -1,11 +1,12 @@
 import { getChangeCommandIndex } from "../gameloading/loadChangesFromFile.js";
+import { getGameStats, GSGetProperty } from "../stats/gameStats.js";
 
 let primaryColor = "DodgerBlue";
 let secondaryColor = "lightSkyBlue";
 
-const min = (_min, _num) => Math.min(_min, _num);
-const max = (_max, _num) => Math.max(_max, _num);
-const clamp = (_clamper1, _clamper2, _num) => _clamper1 < _clamper2 ? min(max(_num, _clamper1), _clamper2) : min(max(_num, _clamper2), _clamper1);
+export const min = (_min, _num) => Math.min(_min, _num);
+export const max = (_max, _num) => Math.max(_max, _num);
+export const clamp = (_clamper1, _clamper2, _num) => _clamper1 < _clamper2 ? min(max(_num, _clamper1), _clamper2) : min(max(_num, _clamper2), _clamper1);
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -13,8 +14,8 @@ function sleep(ms) {
 
 let warnSuppress = 0;
 
-function suppressWarning(linesToSuppressParam) {
-    linesToSuppress = linesToSuppressParam != null ? linesToSuppressParam : 1;
+export function suppressWarning(linesToSuppressParam) {
+    const linesToSuppress = linesToSuppressParam ?? 1;
     warnSuppress = getChangeCommandIndex() + linesToSuppress;
 }
 
@@ -26,10 +27,10 @@ export function warn(message) {
 ${message}`)
 }
 
-function error(message) {
-    alert(`ERROR At line ${(getChangeCommandIndex() + 1)}:
+export function error(message) {
+    alert(trimIndents(`ERROR At line ${(getChangeCommandIndex() + 1)}:
 
-${message}`)
+${message}`))
 }
 
 function lazyerror(message) {
@@ -52,8 +53,8 @@ String.prototype.hashCode = function () {
 };
 /* #endregion */
 
-String.prototype.trimIndents = function () {
-    return this.valueOf().replace(/(    |\t)+/g, "");
+export function trimIndents () {
+    return this.valueOf().replace(/(  |\t)+/g, "");
 }
 
 
@@ -62,9 +63,9 @@ String.prototype.capitalSpacing = function () {
 }
 
 //synonym searching and case correcting alg
-function correctAndSynonymCheck(selection) {
+export function correctAndSynonymCheck(selection) {
     let correctSelection = selection.slice(1).split(".");
-    let step = 'gameStats';
+    let step = '';
     for (let i = 0; i < correctSelection.length; i++) {
         let matched = matchToken(step, correctSelection[i]);
         if (matched == null) {
@@ -78,7 +79,7 @@ function correctAndSynonymCheck(selection) {
 }
 
 function matchToken(searchIn, approxName) {
-    let searchObject = (new Function(`return ${searchIn}`))();
+    let searchObject = GSGetProperty(searchIn)
     let nameToCheck = approxName.toLowerCase().replaceAll(" ", "")
 
     //check same stats but correct casing

@@ -1,4 +1,8 @@
-function normalCommand(selection) {
+import { correctAndSynonymCheck, getStatType, warn } from "../shared/utility.js";
+import { Climate, getGameStats, GSDeleteProperty, GSGetProperty, GSNewProperty, GSSetProperty, Nation, Opinion, SocialBehaviour, SocialBehaviourGroup, Trade } from "../stats/gameStats.js";
+import { PostStatChange, PostStatCreate } from "./specialOperations.js";
+
+export function normalCommand(operand, selection, givenValue) {
 
 
     let splitSelection = selection.split(/\.|(?<=\[)/g); 
@@ -7,7 +11,7 @@ function normalCommand(selection) {
 
     let propertySelection = selection;
 
-    let value = commandParameters.Value.trim();
+    let value = givenValue.trim();
     let change;
 
     //implement check for stat that are objects, and disallow their change
@@ -54,17 +58,19 @@ ${allProperties}`);
     ];
     let thisStatStatType = getStatType(selection);
     if (~statTypesNotRP.indexOf(thisStatStatType)) {
-        warn(`The specified stat ${selection.slice(1)} was of type ${thisStatStatType}, but has been modified with ccf (${commandParameters.Operand} ${value}).\nMake sure this is intended, f.x. via game event`);
+        warn(`The specified stat ${selection.slice(1)} was of type ${thisStatStatType}, but has been modified with ccf (${operand} ${value}).\nMake sure this is intended, f.x. via game event`);
     }
 
     /* #endregion */
 
 
     /* #region  impelement check for technologies and cultural advances, where prerequisites not met makes this prompt and return */
+
+    const advancesPrerequisites = getGameStats().AdvancesPrerequisites;
     
-    if(statName in gameStats.AdvancesPrerequisites){
+    if(statName in advancesPrerequisites) {
         let nationSelection = GSGetProperty(selection.split(/\.((?=technologies)|(?=CulturalAdvancements))/i)[0])
-        gameStats.AdvancesPrerequisites[statName].forEach(prerequisite => {
+        advancesPrerequisites[statName].forEach(prerequisite => {
             if(prerequisite in nationSelection.Technologies){
                 if(nationSelection.Technologies[prerequisite] == false) {
                     alert(`the technology '${statName}' could not be changed, as the prerequisite '${prerequisite}' was not met`);
@@ -108,19 +114,19 @@ ${allProperties}`);
     }
 
     //add
-    if (commandParameters.Operand == '+' || commandParameters.Operand == 'add') {
+    if (operand == '+' || operand == 'add') {
         change = value;
         const current = parseFloat(GSGetProperty(propertySelection));
         GSSetProperty(propertySelection, current + value)
     }
     //subtract
-    else if (commandParameters.Operand == '-' || commandParameters.Operand == 'sub') {
+    else if (operand == '-' || operand == 'sub') {
         change = -value;
         const current = parseFloat(GSGetProperty(propertySelection));
         GSSetProperty(propertySelection, current - value)
     }
     //set
-    else if (commandParameters.Operand == '=' || commandParameters.Operand == 'set') {
+    else if (operand == '=' || operand == 'set') {
         const rawPrevious = GSGetProperty(propertySelection)
         const previous = typeof rawPrevious === 'undefined' ? 'undefined' : JSON.parse(JSON.stringify(GSGetProperty(propertySelection)))
         change = isNaN(previous) ? true : value - previous;
@@ -137,7 +143,7 @@ ${allProperties}`);
         GSSetProperty(propertySelection, setval)
 
     } else {
-        error(`Operand wasn't understood: ${commandParameters.Operand}
+        error(`Operand wasn't understood: ${operand}
 Aborting.`);
         return;
     }
@@ -145,7 +151,7 @@ Aborting.`);
 }
 
 
-function createStat(currentSelection, arg) {
+export function createStat(currentSelection, arg) {
     let objectClass;
     if (/^\.Nations$/.test(currentSelection)) objectClass = Nation;
     else if (/^\.(Cultures|Religions)$/.test(currentSelection)) objectClass = SocialBehaviour;
@@ -183,13 +189,13 @@ function createStat(currentSelection, arg) {
 
 }
 
-function deleteStat(currentSelection, arg) {
+export function deleteStat(currentSelection, arg) {
     let dottedStatName = correctAndSynonymCheck(`${currentSelection}.${arg}`);
     GSDeleteProperty(dottedStatName)
 }
 
 let newOuterAfterRename;
-function renameStat(currentSelection, arg) {
+export function renameStat(currentSelection, arg) {
     let newName = arg.slice(arg.indexOf('>') + 1).trim();
     let oldName = arg.slice(0, arg.indexOf('>')).trim();
     oldName = correctAndSynonymCheck(`${currentSelection}.${oldName}`).split(".").pop();
@@ -213,7 +219,7 @@ function renameStat(currentSelection, arg) {
     }
 }
 
-let Shorthands = {}
+export let Shorthands = {}
 
 Shorthands.Trade = function (parameters) {
     parameters = parameters.split(/,|>/gm);
@@ -228,17 +234,20 @@ Shorthands.Trade = function (parameters) {
     receiver = correctAndSynonymCheck(`.Nations.${receiver}`).split(".").pop();
     resourceType = correctAndSynonymCheck(`.Nations.${giver}.${resourceType}`).split(".").pop();
 
+    const trades = getGameStats().Trades
 
-    if (typeof gameStats.Trades[tradename] !== 'undefined') {
+    if (typeof trades[tradename] !== 'undefined') {
         error(`The name ${tradename} is already used in Trades.`);
         return;
     }
 
-    gameStats.Trades[tradename] = new Trade();
-    gameStats.Trades[tradename].giver = giver;
-    gameStats.Trades[tradename].receiver = receiver;
-    gameStats.Trades[tradename].resource = resourceType;
-    gameStats.Trades[tradename].amount = amount;
+    const newTrade = new Trade();
+    newTrade.giver = giver;
+    newTrade.receiver = receiver;
+    newTrade.resource = resourceType;
+    newTrade.amount = amount;
+
+    GSSetProperty(`.Trades[${tradename}]`, JSON.stringify(newTrade))
 }
 
 Shorthands.PayDebt = function (parameter) {
