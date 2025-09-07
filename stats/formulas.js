@@ -1,3 +1,5 @@
+import { MinMaxGradient } from "../shared/utility.js"
+
 async function advanceMap(imgArray, formula, options){
 
   let newImgArray = new Uint8ClampedArray(imgArray.length);

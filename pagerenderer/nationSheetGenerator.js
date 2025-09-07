@@ -1,9 +1,9 @@
 import * as am5 from "https://cdn.amcharts.com/lib/5/index.js";
 import * as am5percent from "https://cdn.amcharts.com/lib/5/percent.js";
 
-import { loadGameFromSafeFile, loadChangesFromContent, getChangesLength, preloadedStatChangesHashCode } from "../gameloading/loadChangesFromFile";
-import { cleanStatName, collapsibleNextSibling, downloadToFile, getStatType, ValueTypeFix, warn } from "../shared/utility";
-import { getGameStats, GSGetProperty, Opinion } from "../stats/gameStats";
+import { loadGameFromSafeFile, loadChangesFromContent, getChangesLength, preloadedStatChangesHashCode } from "../gameloading/loadChangesFromFile.js";
+import { cleanStatName, collapsibleNextSibling, downloadToFile, getStatType, ValueTypeFix, warn } from "../shared/utility.js";
+import { getGameStats, GSGetProperty, Opinion } from "../stats/gameStats.js";
 
 loadGameFromSafeFile()
 

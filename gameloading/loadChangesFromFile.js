@@ -1,3 +1,5 @@
+import { setGameStats } from "../stats/gameStats.js";
+
 let commandParameters = {};
 let changeCommandIndex;
 let changesLength;

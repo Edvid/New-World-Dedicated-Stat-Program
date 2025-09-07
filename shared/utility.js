@@ -1,4 +1,4 @@
-import { getChangeCommandIndex } from "../gameloading/loadChangesFromFile";
+import { getChangeCommandIndex } from "../gameloading/loadChangesFromFile.js";
 
 let primaryColor = "DodgerBlue";
 let secondaryColor = "lightSkyBlue";
