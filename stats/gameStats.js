@@ -2594,7 +2594,7 @@ function evaluateNation(nationName) {
     Independent: n.MilitaryControl.Independent / n.MilitaryControlTotal
   }
 
-    n.RealOverallImprovements = n.OverallImprovements - n.Alcoholism * (1 - n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100) / 2 + n.MilitaryControlReal.Independent + n.Reforms.WealthyOfficers / 5 + n.Reforms.MeritocraticOfficers / 2 - n.Reforms.NationalMilitia * 0.2 + n.Reforms.ProffesionalArmy * 0.4 + n.Reforms.MassConscription * 0.2 + n.Technologies.Morphine / 10 + n.Technologies.IronWorking / 4 + n.Technologies.Metallurgy / 10;
+    n.RealOverallImprovements = n.OverallImprovements - n.Alcoholism * (1 - n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100) / 2 + n.MilitaryControlReal.Independent + n.CommanderFreedom * 0.15 + n.Reforms.WealthyOfficers / 5 + n.Reforms.MeritocraticOfficers / 2 - n.Reforms.NationalMilitia * 0.2 + n.Reforms.ProffesionalArmy * 0.4 + n.Reforms.MassConscription * 0.2 + n.Technologies.Morphine / 10 + n.Technologies.IronWorking / 4 + n.Technologies.Metallurgy / 10;
 
   n.IrregularQualityIC = n.RealOverallImprovements + n.IrregularImprovements;
   n.MeleeQualityIC = n.RealOverallImprovements + n.MeleeImprovements + n.Technologies.PlateArmour / 5 + n.Technologies.StandardizedPikes / 10;
@@ -3654,7 +3654,7 @@ function evaluateNation(nationName) {
     n.ClergyCallupCost = 20 * (n.ClergyBasicArmaments / max(n.ArmyBasicArmamentsDemand, 10));
     n.BurgousieCallupCost = 20 * (n.BurgousieBasicArmaments / max(n.ArmyBasicArmamentsDemand, 10));
 
-    n.MilitaryLoyalty = n.MilitaryControlReal.Aristocracy * n.AristocracyLoyalty + n.MilitaryControlReal.Clergy * n.ClergyLoyalty + n.MilitaryControlReal.Burgousie * n.BurgousieLoyalty + n.MilitaryControlReal.Urban * n.UrbanLoyalty + n.MilitaryControlReal.Bureaucrats * n.BureaucratsLoyalty + n.MilitaryControlReal.Workers * n.WorkersLoyalty + n.MilitaryControlReal.Independent * n.MilitaryLoyalty;
+    n.MilitaryLoyalty = n.MilitaryControlReal.Aristocracy * n.AristocracyLoyalty + n.MilitaryControlReal.Clergy * n.ClergyLoyalty + n.MilitaryControlReal.Burgousie * n.BurgousieLoyalty + n.MilitaryControlReal.Urban * n.UrbanLoyalty + n.MilitaryControlReal.Bureaucrats * n.BureaucratsLoyalty + n.MilitaryControlReal.Workers * n.WorkersLoyalty + n.MilitaryControlReal.Independent * n.MilitaryLoyalty - n.CommanderFreedom * 0.1;
     if (n.Workforces.PopulationInMilitary + n.Workforces.Sailors == 0) n.MilitaryLoyalty = 0.5;
 
     // LoyaltiesStabilityImpact
