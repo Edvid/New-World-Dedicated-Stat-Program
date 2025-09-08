@@ -29,6 +29,15 @@ export default tseslint.config(
     }
   },
   {
+    files: ["pagerenderer/tradeZoneWealth.js"],
+    languageOptions: {
+      globals: {
+        am5: "readonly",
+        am5percent: "readonly",
+      }
+    }
+  },
+  {
     files: ["pagerenderer/mapccfcalculations.js"],
     languageOptions: {
       globals: {

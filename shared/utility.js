@@ -1431,7 +1431,7 @@ export function ValueTypeFix(statName, statValue) {
 }
 
 /* #region  taken from https://stackoverflow.com/questions/6735470/get-pixel-color-from-canvas-on-mousemove, answer by Wayne and Woold */
-function findPos(obj) {
+export function findPos(obj) {
     var curleft = 0, curtop = 0;
     if (obj.offsetParent) {
         do {

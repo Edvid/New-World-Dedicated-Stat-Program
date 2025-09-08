@@ -1,21 +1,25 @@
+import "https://cdn.amcharts.com/lib/5/index.js";
+import "https://cdn.amcharts.com/lib/5/percent.js";
+
 import { loadGameFromSafeFile } from "../gameloading/loadChangesFromFile.js";
 import { addHeader } from "../shared/header.js";
-import { capitalSpacing } from "../shared/utility.js";
+import { capitalSpacing, findPos, prepareData, rgbToHex } from "../shared/utility.js";
+import { getGameStats } from "../stats/gameStats.js";
 
 let tradezoneinfotable;
-let canvasContainer;
-let zonewealth;
-let canvasZoomScale = 1;
-
-addHeader()
-await loadGameFromSafeFile()
 
 const WIDTH = 8192;
 const HEIGHT = 3365;
 
+addHeader()
+await loadGameFromSafeFile()
+onLoadStatTradeZoneWealth()
+
+
 document.querySelector("body").onload = async function () {
     document.getElementById("isloading").innerText = "Loading..."
 }
+
 async function onLoadStatTradeZoneWealth() {
     document.getElementById("isloading").innerText = ""
     tradezoneinfotable = document.getElementById("infotable");
@@ -69,7 +73,7 @@ async function onLoadStatTradeZoneWealth() {
 
     worldContext.putImageData(new ImageData(newData, WIDTH), 0, 0);
     
-    worldCanvas.onclick = function (e) {        
+    worldCanvas.onclick = function (e) {
         let canvasPos = findPos(this);
         let realPos = {
             x: Math.floor((e.pageX - canvasPos.x) * WIDTH / worldCanvas.clientWidth ),
@@ -80,13 +84,14 @@ async function onLoadStatTradeZoneWealth() {
         console.log(data);
         let col = `rgba(${data[0]}, ${data[1]}, ${data[2]}, ${data[3]})`
         let weakcol = `rgba(${(data[0] + 255) / 2}, ${(data[1] + 255) / 2}, ${(data[2] + 255) / 2}, ${data[3]})`
-        
-        for (TradeZoneName in gameStats.TradeZones) {
-            const TradeZone = gameStats.TradeZones[TradeZoneName];
-            if(rgbToHex(data).toLowerCase() == TradeZone.Color.toString().toLowerCase()){
-                title.innerText = capitalSpacing(TradeZoneName);
-                zonewealth.innerText = TradeZone.Score;
-                let chartdiv = zoneinfluencerschart(TradeZoneName);
+
+        const tradeZoneNames = getGameStats().TradeZones;
+        for (const tradeZoneName in tradeZoneNames) {
+            const tradeZone = tradeZoneNames[tradeZoneName];
+            if(rgbToHex(data).toLowerCase() == tradeZone.Color.toString().toLowerCase()){
+                title.innerText = capitalSpacing(tradeZoneName);
+                zonewealth.innerText = tradeZone.Score;
+                let chartdiv = zoneinfluencerschart(tradeZoneName);
                 zoneinfluencers.innerHTML = "";
                 zoneinfluencers.appendChild(chartdiv);
 
@@ -107,8 +112,9 @@ function zoneinfluencerschart(zoneName){
     
     let ObjectToChartNationRef = new Object();
 
-    for (const nationName in gameStats.Nations) {
-        const nation = gameStats.Nations[nationName];
+    const nations = getGameStats().Nations
+    for (const nationName in nations) {
+        const nation = nations[nationName];
         if(nation.TradeInfluences[zoneName].TradingPoints == 0) continue;
         ObjectToChartNationRef[nationName] = {influence: nation.TradeInfluences[zoneName].TradingPoints};
         
@@ -180,18 +186,5 @@ function zoneinfluencerschart(zoneName){
 
 
     return chartdiv;
-
-}
-
-function outZoomChange(zoom) {
-    canvasZoomScale *= zoom;
-
-    let canvaslist = document.querySelectorAll("#canvascontainer canvas");
-
-    canvaslist.forEach(element => {
-        element.style.width = (WIDTH / canvasZoomScale) + "px";
-        element.style.height = (HEIGHT / canvasZoomScale) + "px";
-    });
-
 
 }
