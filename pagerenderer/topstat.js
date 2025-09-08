@@ -1,3 +1,5 @@
+import { loadGameFromSafeFile } from "../gameloading/loadChangesFromFile.js";
+
 const TopStats = [
   { name: "Population", displayName: "Population" },
   { name: "BudgetPerTurn", displayName: "Income" },
@@ -17,7 +19,7 @@ const TopStats = [
   { name: "Size", displayName: "Size" }
 ];
 
-loadGameFromSafeFile()
+await loadGameFromSafeFile()
 
 document.querySelector("body").addEventListener("game load done", populateTopStatTable);
 

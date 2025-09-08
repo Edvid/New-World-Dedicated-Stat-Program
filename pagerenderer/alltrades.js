@@ -1,6 +1,7 @@
-const { capitalSpacing } = require("../shared/utility.js");
+import { loadGameFromSafeFile } from "../gameloading/loadChangesFromFile.js";
+import { capitalSpacing } from "../shared/utility.js";
 
-loadGameFromSafeFile()
+await loadGameFromSafeFile()
 
 function loadAllTrades(){
     let alltrades = gameStats.Trades;

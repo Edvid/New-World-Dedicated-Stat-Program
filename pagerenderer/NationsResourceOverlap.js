@@ -1,3 +1,5 @@
+import { loadGameFromSafeFile } from "../gameloading/loadChangesFromFile.js";
+
 let canvasContainer;
 let canvasZoomScale = 1;
 
@@ -6,7 +8,7 @@ const HEIGHT = 3365;
 
 const bumpMapOpacity = 0.3;
 
-loadGameFromSafeFile()
+await loadGameFromSafeFile()
 
 document.querySelector("body").onload = async function () {
     canvasContainer = document.getElementById("canvascontainer");

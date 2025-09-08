@@ -1,11 +1,12 @@
-const { capitalSpacing } = require("../shared/utility.js");
+import { loadGameFromSafeFile } from "../gameloading/loadChangesFromFile.js";
+import { capitalSpacing } from "../shared/utility.js";
 
 let tradezoneinfotable;
 let canvasContainer;
 let zonewealth;
 let canvasZoomScale = 1;
 
-loadGameFromSafeFile()
+await loadGameFromSafeFile()
 
 const WIDTH = 8192;
 const HEIGHT = 3365;
