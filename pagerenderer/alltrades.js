@@ -1,3 +1,5 @@
+const { capitalSpacing } = require("../shared/utility.js");
+
 loadGameFromSafeFile()
 
 function loadAllTrades(){
@@ -18,7 +20,7 @@ function loadAllTrades(){
         let tradeRow = document.createElement("tr");
         let tdTradeName = document.createElement("td");
         tdTradeName.classList.add("secondary-color")
-        tdTradeName.innerText = tradeName.capitalSpacing();
+        tdTradeName.innerText = capitalSpacing(tradeName);
         tradeRow.appendChild(tdTradeName);
         for (const key in trade) {
             const value = trade[key].toString();
@@ -30,7 +32,7 @@ function loadAllTrades(){
             }
             let td = document.createElement("td");
             td.classList.add("secondary-color")
-            td.innerHTML = value.capitalSpacing();
+            td.innerHTML = capitalSpacing(value);
             tradeRow.appendChild(td);
         }
         headerIsEmpty = false;

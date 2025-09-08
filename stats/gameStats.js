@@ -1,6 +1,6 @@
 import { min, max, clamp } from "../shared/utility.js";
 
-let mappedResources = [
+export let mappedResources = [
   "Fur",
   "Gold",
   "Iron",
@@ -12,7 +12,7 @@ let mappedResources = [
   "Silver"
 ];
 
-let mappedResourcesMultipliers = [
+export let mappedResourcesMultipliers = [
   1, //fur
   1, //gold
   1, //iron

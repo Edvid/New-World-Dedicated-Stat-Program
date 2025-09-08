@@ -1,3 +1,5 @@
+import { evaluateNations, getGameStats, GSAddProperty, GSGetProperty, GSSetProperty, mappedResources } from "../stats/gameStats.js";
+
 export function PostStatChange(selection, change){
 
     //New Recruitment handling
@@ -114,21 +116,27 @@ export function PostStatChange(selection, change){
 }
 
 export function PostStatCreate(selection, name){
+
     if(/Nations$/.test(selection)){
+        const religions = getGameStats().Religions;
+        const cultures = getGameStats().Cultures;
+
         const nationSelector = '.Nations.' + name;
-        for (const rel in gameStats.Religions) {
+        for (const rel in religions) {
             const religionGroupsSelector = nationSelector + '.ReligionGroups.' + rel;
             if(typeof GSGetProperty(religionGroupsSelector) !== 'undefined') continue;
             GSSetProperty(religionGroupsSelector, {Points: 0});
         }
-        for (const cul in gameStats.Cultures) {
+        for (const cul in cultures) {
             const cultureGroupsSelector = nationSelector + '.CultureGroups.' + cul;
             if(typeof GSGetProperty(cultureGroupsSelector) !== 'undefined') continue;
             GSSetProperty(cultureGroupsSelector, JSON.stringify({Points: 0}));
         }
     }
     else if(/Religions$/.test(selection)){
-        for (const natName in gameStats.Nations) {
+        const nations = getGameStats().Nations;
+
+        for (const natName in nations) {
             const nationSelector = '.Nations.' + natName;
             const religionGroupSelector = nationSelector + '.ReligionGroups' + name; 
             if(typeof GSGetProperty(religionGroupSelector) === 'undefined') continue;
@@ -136,7 +144,9 @@ export function PostStatCreate(selection, name){
         }
     }
     else if(/Cultures$/.test(selection)){
-        for (const natName in gameStats.Nations) {
+        const nations = getGameStats().Nations;
+
+        for (const natName in nations) {
             const nationSelector = '.Nations.' + natName;
             const cultureGroupsSelector = nationSelector + '.CultureGroups' + name;
             if(typeof GSGetProperty(cultureGroupsSelector) === 'undefined') continue;

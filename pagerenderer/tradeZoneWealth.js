@@ -1,3 +1,5 @@
+const { capitalSpacing } = require("../shared/utility.js");
+
 let tradezoneinfotable;
 let canvasContainer;
 let zonewealth;
@@ -79,7 +81,7 @@ async function onLoadStatTradeZoneWealth() {
         for (TradeZoneName in gameStats.TradeZones) {
             const TradeZone = gameStats.TradeZones[TradeZoneName];
             if(rgbToHex(data).toLowerCase() == TradeZone.Color.toString().toLowerCase()){
-                title.innerText = TradeZoneName.capitalSpacing();
+                title.innerText = capitalSpacing(TradeZoneName);
                 zonewealth.innerText = TradeZone.Score;
                 let chartdiv = zoneinfluencerschart(TradeZoneName);
                 zoneinfluencers.innerHTML = "";
@@ -137,7 +139,7 @@ function zoneinfluencerschart(zoneName){
 
         chartData.push(
             {
-                key: keyName.capitalSpacing(),
+                key: capitalSpacing(keyName),
                 Points: objectPoints
             }
         );

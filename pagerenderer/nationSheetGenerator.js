@@ -1,214 +1,13 @@
-import * as am5 from "https://cdn.amcharts.com/lib/5/index.js";
-import * as am5percent from "https://cdn.amcharts.com/lib/5/percent.js";
+import "https://cdn.amcharts.com/lib/5/index.js";
+import "https://cdn.amcharts.com/lib/5/percent.js";
 
 import { loadGameFromSafeFile, loadChangesFromContent, getChangesLength, preloadedStatChangesHashCode } from "../gameloading/loadChangesFromFile.js";
-import { cleanStatName, collapsibleNextSibling, downloadToFile, getStatType, ValueTypeFix, warn } from "../shared/utility.js";
+import { capitalSpacing, cleanStatName, collapsibleNextSibling, downloadToFile, getStatType, ValueTypeFix, warn } from "../shared/utility.js";
 import { getGameStats, GSGetProperty, Opinion } from "../stats/gameStats.js";
 
-loadGameFromSafeFile()
+await loadGameFromSafeFile()
 
-let advancedSettingsToggle = document.createElement("button");
-advancedSettingsToggle.classList.add("collapsible");
-advancedSettingsToggle.id = "advancedsettingstoggle";
-advancedSettingsToggle.innerText = "Show advanced settings";
-
-let advancedSettings = document.createElement("div");
-advancedSettings.classList.add("content");
-advancedSettings.id = "advancedsettings";
-
-let cffContainer = document.createElement("div");
-let loadingContainer = document.createElement("div");
-loadingContainer.style.minHeight = "20px"
-
-let DownloadButtonContainer = document.createElement("div");
-
-let downloadbutton = document.createElement("button");
-downloadbutton.innerText = "Download gameStats as JSON";
-downloadbutton.style.color = "#000";
-downloadbutton.addEventListener('click', () => {
-    let jsonobj = {
-        Lines: getChangesLength(),
-        Hash: preloadedStatChangesHashCode(),
-        State: getGameStats()
-    };
-    let downloadString = JSON.stringify(jsonobj, null, 4);
-
-    downloadToFile(downloadString, 'safefile.json', 'application/json');
-});
-DownloadButtonContainer.appendChild(downloadbutton);
-
-
-let uploadccffileform = document.createElement("form");
-let uploadccffileinputtitle = document.createElement("h3");
-uploadccffileinputtitle.innerText = "Choose A Saved File";
-let uploadccffileinput = document.createElement("input");
-uploadccffileinput.type = "file";
-uploadccffileinput.id = "myFile";
-uploadccffileinput.name = "filename";
-uploadccffileinput.onchange = (e) => {
-    var file = e.target.files[0];
-    var reader = new FileReader();
-    reader.onload = function (e) {
-        const changes = e.target.result.split(/\r?\n|\r/);
-        loadChangesFromContent(changes, 0);
-        updateDropdownSelection()
-    };
-
-    reader.readAsText(file);
-}
-uploadccffileform.appendChild(uploadccffileinput);
-let uploadccftextinputtitle = document.createElement("h3");
-uploadccftextinputtitle.innerText = "Paste Text"
-let uploadccftextform = document.createElement("div");
-let uploadccftextinput = document.createElement("textarea");
-uploadccftextinput.cols = "70";
-uploadccftextinput.rows = "18";
-let uploadccftextinputsubmit = document.createElement("button");
-uploadccftextinputsubmit.innerText = "Submit";
-uploadccftextinputsubmit.classList.add("submitccf");
-uploadccftextinputsubmit.disabled = true;
-
-uploadccftextinput.addEventListener('input', () => {
-    uploadccftextinputsubmit.disabled = false;
-});
-
-// TODO: Test if updateDropdownSelection works correctly still
-uploadccftextinputsubmit.onclick = () => {
-    const changes = uploadccftextinput.value.split(/\r?\n|\r/);
-    uploadccftextinputsubmit.disablewd = true;
-    loadChangesFromContent(changes, 0);
-    updateDropdownSelection()
-}
-
-uploadccftextform.appendChild(uploadccftextinput);
-uploadccftextform.appendChild(document.createElement("br"));
-uploadccftextform.appendChild(uploadccftextinputsubmit);
-
-
-cffContainer.appendChild(uploadccffileinputtitle);
-cffContainer.appendChild(uploadccffileform);
-cffContainer.appendChild(uploadccftextinputtitle);
-cffContainer.appendChild(uploadccftextform);
-
-advancedSettings.appendChild(cffContainer);
-advancedSettings.appendChild(loadingContainer);
-advancedSettings.appendChild(DownloadButtonContainer);
-
-let nationSheetContainer = document.createElement("div");
-nationSheetContainer.classList.add("nationsheet");
-
-let arrowContainer = document.createElement("div");
-arrowContainer.classList.add("arrowcontainer");
-
-const URLParamNationID = new URLSearchParams(window.location.search).get('nat');
-let currentNationID = URLParamNationID != null ? URLParamNationID - 1 : 0;
-let currentNationName = 'undefined';
-let currentNationNameDisplay = document.createElement("h1");
-currentNationNameDisplay.classList = "nationnamedisplay";
-currentNationNameDisplay.innerText = currentNationName;
-
-let leftArrow = document.createElement("button");
-let leftarrowimg = document.createElement("img");
-leftarrowimg.src = "docs/assets/images/leftarrow.png";
-leftarrowimg.alt = "left arrow";
-leftarrowimg.height = 40;
-leftArrow.appendChild(leftarrowimg);
-leftArrow.onclick = function () {
-    const nations = getGameStats().Nations;
-    let nationNames = Object.keys(nations);
-    if (currentNationID > 0) currentNationID--;
-    else currentNationID = nationNames.length - 1;
-    currentNationName = nationNames[currentNationID];
-    dropdownselection.value = currentNationName;
-    dropdownselection.onchange();
-}
-
-let rightArrow = document.createElement("button");
-let rightarrowimg = document.createElement("img");
-rightarrowimg.src = "docs/assets/images/rightarrow.png";
-rightarrowimg.alt = "right arrow";
-rightarrowimg.height = 40;
-rightArrow.appendChild(rightarrowimg);
-rightArrow.onclick = function () {
-    const nations = getGameStats().Nations;
-    let nationNames = Object.keys(nations);
-    if (currentNationID < nationNames.length - 1) currentNationID++;
-    else currentNationID = 0;
-    currentNationName = nationNames[currentNationID];
-    dropdownselection.value = currentNationName;
-    dropdownselection.onchange();
-}
-
-let dropdown = document.createElement("form");
-dropdown.id = "dropdownselection";
-let dropdowntitle = document.createElement("label");
-dropdowntitle.innerText = "Choose Nation:";
-let dropdownselection = document.createElement("select");
-dropdownselection.onchange = function () {
-    const nations = getGameStats().Nations;
-    currentNationID = this.selectedIndex;
-    currentNationName = Object.keys(nations)[currentNationID];
-    createNationSheet(currentNationName);
-}
-
-dropdown.appendChild(dropdowntitle);
-dropdown.appendChild(dropdownselection);
-
-let SearchStatContainer = document.createElement("form");
-SearchStatContainer.id = "searchstatcontainer";
-
-let searchStatLabel = document.createElement("label");
-let searchStat = document.createElement("input");
-searchStat.type = "text";
-searchStatLabel.innerText = "search stat: ";
-const URLParamStatQuerry = new URLSearchParams(window.location.search).get('q');
-searchStat.value = URLParamStatQuerry != null ? URLParamStatQuerry : "";
-let searchStatValue = URLParamStatQuerry != null ? URLParamStatQuerry : "";
-searchStat.addEventListener('input', () => {
-    searchStatValue = searchStat.value;
-    createNationSheet(currentNationName);
-});
-SearchStatContainer.appendChild(searchStatLabel);
-SearchStatContainer.appendChild(searchStat);
-
-
-function updateDropdownSelection() {
-    dropdownselection.innerHTML = "";
-    dropdownselection.classList.add("dropdown");
-    const nations = getGameStats().Nations
-    let maxlength = 0;
-    for (const key in nations) {
-        if (maxlength < key.capitalSpacing().length) maxlength = key.capitalSpacing().length;
-    }
-    let index = 1;
-    for (const key in nations) {
-        let option = document.createElement("option");
-        option.value = key;
-        let spacedkeywithmargin = key.capitalSpacing();
-        spacedkeywithmargin += ".".repeat(maxlength - spacedkeywithmargin.length);
-        option.innerText = `${spacedkeywithmargin} - ${index++}`;
-        dropdownselection.appendChild(option);
-    }
-    dropdownselection.selectedIndex = currentNationID;
-}
-
-document.body.appendChild(advancedSettingsToggle);
-document.body.appendChild(advancedSettings);
-
-
-document.body.appendChild(currentNationNameDisplay);
-
-arrowContainer.appendChild(leftArrow);
-arrowContainer.appendChild(rightArrow);
-
-document.body.appendChild(arrowContainer);
-document.body.appendChild(dropdown);
-document.body.appendChild(SearchStatContainer);
-document.body.appendChild(nationSheetContainer);
-
-function ti(zone) {
-    return `.TradeInfluences["${zone}"].TradingPoints`
-}
+let tableIndex = 0;
 
 let TableLayouts = {
     "Flag and Government": [
@@ -421,9 +220,219 @@ let TableLayouts = {
         ["TradePowerFromResourceTrade"]
     ]
 }
+let advancedSettingsToggle = document.createElement("button");
+advancedSettingsToggle.classList.add("collapsible");
+advancedSettingsToggle.id = "advancedsettingstoggle";
+advancedSettingsToggle.innerText = "Show advanced settings";
+
+let advancedSettings = document.createElement("div");
+advancedSettings.classList.add("content");
+advancedSettings.id = "advancedsettings";
+
+let cffContainer = document.createElement("div");
+let loadingContainer = document.createElement("div");
+loadingContainer.style.minHeight = "20px"
+
+let DownloadButtonContainer = document.createElement("div");
+
+let downloadbutton = document.createElement("button");
+downloadbutton.innerText = "Download gameStats as JSON";
+downloadbutton.style.color = "#000";
+downloadbutton.addEventListener('click', () => {
+    let jsonobj = {
+        Lines: getChangesLength(),
+        Hash: preloadedStatChangesHashCode(),
+        State: getGameStats()
+    };
+    let downloadString = JSON.stringify(jsonobj, null, 4);
+
+    downloadToFile(downloadString, 'safefile.json', 'application/json');
+});
+DownloadButtonContainer.appendChild(downloadbutton);
+
+
+let uploadccffileform = document.createElement("form");
+let uploadccffileinputtitle = document.createElement("h3");
+uploadccffileinputtitle.innerText = "Choose A Saved File";
+let uploadccffileinput = document.createElement("input");
+uploadccffileinput.type = "file";
+uploadccffileinput.id = "myFile";
+uploadccffileinput.name = "filename";
+uploadccffileinput.onchange = (e) => {
+    var file = e.target.files[0];
+    var reader = new FileReader();
+    reader.onload = function (e) {
+        const changes = e.target.result.split(/\r?\n|\r/);
+        loadChangesFromContent(changes, 0);
+        updateDropdownSelection()
+    };
+
+    reader.readAsText(file);
+}
+uploadccffileform.appendChild(uploadccffileinput);
+let uploadccftextinputtitle = document.createElement("h3");
+uploadccftextinputtitle.innerText = "Paste Text"
+let uploadccftextform = document.createElement("div");
+let uploadccftextinput = document.createElement("textarea");
+uploadccftextinput.cols = "70";
+uploadccftextinput.rows = "18";
+let uploadccftextinputsubmit = document.createElement("button");
+uploadccftextinputsubmit.innerText = "Submit";
+uploadccftextinputsubmit.classList.add("submitccf");
+uploadccftextinputsubmit.disabled = true;
+
+uploadccftextinput.addEventListener('input', () => {
+    uploadccftextinputsubmit.disabled = false;
+});
+
+// TODO: Test if updateDropdownSelection works correctly still
+uploadccftextinputsubmit.onclick = () => {
+    const changes = uploadccftextinput.value.split(/\r?\n|\r/);
+    uploadccftextinputsubmit.disablewd = true;
+    loadChangesFromContent(changes, 0);
+    updateDropdownSelection()
+}
+
+uploadccftextform.appendChild(uploadccftextinput);
+uploadccftextform.appendChild(document.createElement("br"));
+uploadccftextform.appendChild(uploadccftextinputsubmit);
+
+
+cffContainer.appendChild(uploadccffileinputtitle);
+cffContainer.appendChild(uploadccffileform);
+cffContainer.appendChild(uploadccftextinputtitle);
+cffContainer.appendChild(uploadccftextform);
+
+advancedSettings.appendChild(cffContainer);
+advancedSettings.appendChild(loadingContainer);
+advancedSettings.appendChild(DownloadButtonContainer);
+
+let nationSheetContainer = document.createElement("div");
+nationSheetContainer.classList.add("nationsheet");
+
+let arrowContainer = document.createElement("div");
+arrowContainer.classList.add("arrowcontainer");
+
+const URLParamNationID = new URLSearchParams(window.location.search).get('nat');
+let currentNationID = URLParamNationID != null ? URLParamNationID - 1 : 0;
+let currentNationName = 'undefined';
+let currentNationNameDisplay = document.createElement("h1");
+currentNationNameDisplay.classList = "nationnamedisplay";
+currentNationNameDisplay.innerText = currentNationName;
+
+let leftArrow = document.createElement("button");
+let leftarrowimg = document.createElement("img");
+leftarrowimg.src = "docs/assets/images/leftarrow.png";
+leftarrowimg.alt = "left arrow";
+leftarrowimg.height = 40;
+leftArrow.appendChild(leftarrowimg);
+leftArrow.onclick = function () {
+    const nations = getGameStats().Nations;
+    let nationNames = Object.keys(nations);
+    if (currentNationID > 0) currentNationID--;
+    else currentNationID = nationNames.length - 1;
+    currentNationName = nationNames[currentNationID];
+    dropdownselection.value = currentNationName;
+    dropdownselection.onchange();
+}
+
+let rightArrow = document.createElement("button");
+let rightarrowimg = document.createElement("img");
+rightarrowimg.src = "docs/assets/images/rightarrow.png";
+rightarrowimg.alt = "right arrow";
+rightarrowimg.height = 40;
+rightArrow.appendChild(rightarrowimg);
+rightArrow.onclick = function () {
+    const nations = getGameStats().Nations;
+    let nationNames = Object.keys(nations);
+    if (currentNationID < nationNames.length - 1) currentNationID++;
+    else currentNationID = 0;
+    currentNationName = nationNames[currentNationID];
+    dropdownselection.value = currentNationName;
+    dropdownselection.onchange();
+}
+
+let dropdown = document.createElement("form");
+dropdown.id = "dropdownselection";
+let dropdowntitle = document.createElement("label");
+dropdowntitle.innerText = "Choose Nation:";
+let dropdownselection = document.createElement("select");
+dropdownselection.onchange = function () {
+    const nations = getGameStats().Nations;
+    currentNationID = this.selectedIndex;
+    currentNationName = Object.keys(nations)[currentNationID];
+    createNationSheet(currentNationName);
+}
+
+dropdown.appendChild(dropdowntitle);
+dropdown.appendChild(dropdownselection);
+
+let SearchStatContainer = document.createElement("form");
+SearchStatContainer.id = "searchstatcontainer";
+
+let searchStatLabel = document.createElement("label");
+let searchStat = document.createElement("input");
+searchStat.type = "text";
+searchStatLabel.innerText = "search stat: ";
+const URLParamStatQuerry = new URLSearchParams(window.location.search).get('q');
+searchStat.value = URLParamStatQuerry != null ? URLParamStatQuerry : "";
+let searchStatValue = URLParamStatQuerry != null ? URLParamStatQuerry : "";
+searchStat.addEventListener('input', () => {
+    searchStatValue = searchStat.value;
+    createNationSheet(currentNationName);
+});
+SearchStatContainer.appendChild(searchStatLabel);
+SearchStatContainer.appendChild(searchStat);
+
+
+function updateDropdownSelection() {
+    dropdownselection.innerHTML = "";
+    dropdownselection.classList.add("dropdown");
+    const nations = getGameStats().Nations
+    let maxlength = 0;
+    for (const key in nations) {
+        const keyLength = capitalSpacing(key).length;
+        if (maxlength < keyLength) maxlength = keyLength;
+    }
+    let index = 1;
+    for (const key in nations) {
+        let option = document.createElement("option");
+        option.value = key;
+        let spacedkeywithmargin = capitalSpacing(key);
+        spacedkeywithmargin += ".".repeat(maxlength - spacedkeywithmargin.length);
+        option.innerText = `${spacedkeywithmargin} - ${index++}`;
+        dropdownselection.appendChild(option);
+    }
+    dropdownselection.selectedIndex = currentNationID;
+}
+
+document.body.appendChild(advancedSettingsToggle);
+document.body.appendChild(advancedSettings);
+
+
+document.body.appendChild(currentNationNameDisplay);
+
+arrowContainer.appendChild(leftArrow);
+arrowContainer.appendChild(rightArrow);
+
+document.body.appendChild(arrowContainer);
+document.body.appendChild(dropdown);
+document.body.appendChild(SearchStatContainer);
+document.body.appendChild(nationSheetContainer);
+
+updateDropdownSelection()
+
+currentNationName = Object.keys(getGameStats().Nations)[0];
+createNationSheet(currentNationName);
+
+function ti(zone) {
+    return `.TradeInfluences["${zone}"].TradingPoints`
+}
+
+
 
 function createNationSheet(nationName) {
-    currentNationNameDisplay.innerText = nationName.capitalSpacing();
+    currentNationNameDisplay.innerText = capitalSpacing(nationName);
 
     nationSheetContainer.innerHTML = "";
     /* #region  Search Only Display */
@@ -617,8 +626,6 @@ function createNationSheet(nationName) {
         }
     });
 }
-
-let tableIndex = 0;
 
 function AddNextStatTable() {
     if (searchStatValue != "") return document.createElement("div");
@@ -847,7 +854,7 @@ function createPieDiagram(ObjectToChart, ValName) {
 
     let tablecontainer = document.createElement("div");
     let title = document.createElement("h2");
-    title.innerText = ObjectToChart.capitalSpacing();
+    title.innerText = capitalSpacing(ObjectToChart);
     title.classList.add("tabletitle");
 
     const nations = getGameStats().Nations
@@ -898,7 +905,7 @@ function createPieDiagram(ObjectToChart, ValName) {
 
         chartData.push(
             {
-                key: keyName.capitalSpacing(),
+                key: capitalSpacing(keyName),
                 Points: objectPoints
             }
         );
@@ -914,7 +921,7 @@ function createPieDiagram(ObjectToChart, ValName) {
             categoryField: "key",
             valueField: "Points",
             legendLabelText: "[{fill}]{category}[/]",
-            legendValueText: ValueName == "Points" ? "[bold {fill}][/]" : `[bold {fill}]{value} ${ValueName.capitalSpacing()}[/]`
+            legendValueText: ValueName == "Points" ? "[bold {fill}][/]" : `[bold {fill}]{value} ${capitalSpacing(ValueName)}[/]`
         })
     );
 
@@ -945,3 +952,4 @@ function createBreaker() {
 
     return breaker;
 }
+

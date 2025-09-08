@@ -1,3 +1,4 @@
+import { Synonyms } from "../ccfassist/synonyms.js";
 import { getChangeCommandIndex } from "../gameloading/loadChangesFromFile.js";
 import { getGameStats, GSGetProperty } from "../stats/gameStats.js";
 
@@ -41,11 +42,11 @@ ${message}`)
 }
 
 /* #region  Taken from https://stackoverflow.com/questions/7616461/generate-a-hash-from-string-in-javascript user esmiralha */
-String.prototype.hashCode = function () {
+export function hashCode(str) {
     var hash = 0, i, chr;
-    if (this.length === 0) return hash;
-    for (i = 0; i < this.length; i++) {
-        chr = this.charCodeAt(i);
+    if (str.length === 0) return hash;
+    for (i = 0; i < str.length; i++) {
+        chr = str.charCodeAt(i);
         hash = ((hash << 5) - hash) + chr;
         hash |= 0; // Convert to 32bit integer
     }
@@ -53,13 +54,13 @@ String.prototype.hashCode = function () {
 };
 /* #endregion */
 
-export function trimIndents () {
-    return this.valueOf().replace(/(  |\t)+/g, "");
+export function trimIndents(str) {
+    return str.valueOf().replace(/(  |\t)+/g, "");
 }
 
 
-String.prototype.capitalSpacing = function () {
-    return this.replace(/(?<=[a-zA-Z])(?=[A-Z1-9])/gm, " ");
+export function capitalSpacing(str) {
+    return str.replace(/(?<=[a-zA-Z])(?=[A-Z1-9])/gm, " ");
 }
 
 //synonym searching and case correcting alg
@@ -108,7 +109,6 @@ function matchToken(searchIn, approxName) {
         for (let i = 0; i < subObjects.length; i++) {
             const element = subObjects[i];
 
-            within = true;
             let subMatch = matchToken(`${searchIn}.${element}`, approxName)
             if (subMatch != null)
                 return `${element}.${subMatch}`

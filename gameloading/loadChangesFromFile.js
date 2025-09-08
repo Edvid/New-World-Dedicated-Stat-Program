@@ -1,4 +1,4 @@
-import { correctAndSynonymCheck, suppressWarning } from "../shared/utility.js";
+import { correctAndSynonymCheck, hashCode, suppressWarning } from "../shared/utility.js";
 import { evaluateNations, getGameStats, setGameStats } from "../stats/gameStats.js";
 import { createStat, deleteStat, normalCommand, renameStat, Shorthands } from "./commands.js";
 
@@ -10,15 +10,15 @@ let HashMatchedTill = 0;
 let preloadGameState;
 let preloadStatChanges;
 
-export function loadGameFromSafeFile() {
-  (async () => {
+export async function loadGameFromSafeFile() {
+  await (async () => {
     await fetch("./docs/assets/gamestats/safefile.json").then(response => response.json()).then(data => preloadGameState = data);
     await fetch("./docs/assets/gamestats/statchanges.ccf").then(response => response.text()).then(data => preloadStatChanges = data);
     //If hash in JSON is the same as the hashcode of the entire
     //ccf file. Then the JSON _is_ the state the changes will 
     //genereate, and we can use the State for the gameStats
     let jsonhash = preloadGameState.Hash;
-    let ccfhash = preloadStatChanges.split(/\r?\n/gmi).slice(0, preloadGameState.Lines).join("").hashCode();
+    let ccfhash = hashCode(preloadStatChanges.split(/\r?\n/gmi).slice(0, preloadGameState.Lines).join(""));
 
     HashMatchedTill = jsonhash == ccfhash ? preloadGameState.Lines : 0;
 
@@ -63,7 +63,7 @@ export function getChangesLength() {
 }
 
 export function preloadedStatChangesHashCode() {
-  return preloadStatChanges.replace(/\r?\n/gmi, "").hashCode()
+  return hashCode(preloadStatChanges.replace(/\r?\n/gmi, ""))
 }
 
 function errorsPresentAtCompletion(){

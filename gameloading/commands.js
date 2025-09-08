@@ -247,7 +247,7 @@ Shorthands.Trade = function (parameters) {
     newTrade.resource = resourceType;
     newTrade.amount = amount;
 
-    GSSetProperty(`.Trades[${tradename}]`, JSON.stringify(newTrade))
+    GSSetProperty(`.Tradesw${tradename}`, JSON.stringify(newTrade))
 }
 
 Shorthands.PayDebt = function (parameter) {

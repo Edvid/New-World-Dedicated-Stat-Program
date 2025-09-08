@@ -1,4 +1,4 @@
-let Synonyms = {
+export let Synonyms = {
     AdministrativeEfficiency: [
         "adm",
         "admeff",
