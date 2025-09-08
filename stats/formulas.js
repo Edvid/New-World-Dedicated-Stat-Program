@@ -1,30 +1,5 @@
 import { MinMaxGradient } from "../shared/utility.js"
 
-export async function advanceMap(imgArray, formula, options){
-
-  let newImgArray = new Uint8ClampedArray(imgArray.length);
-
-  let then = Date.now();
-  for(let i = 0; i < newImgArray.length; i+=4){
-
-    let now = Date.now();
-    if (now - then > 2000) {
-      await new Promise(resolve => setTimeout(resolve));
-      /* mapCCFCalculations.*/reportProgress(i/4);
-      then = now;
-    }
-
-    let newPixel = formula(imgArray, i, options);
-
-    newImgArray[i] = newPixel[0];
-    newImgArray[i + 1] = newPixel[1];
-    newImgArray[i + 2] = newPixel[2];
-    newImgArray[i + 3] = newPixel[3];
-  }
-
-  return newImgArray;
-}
-
 export function fetchFour(arr, index){
 
   
