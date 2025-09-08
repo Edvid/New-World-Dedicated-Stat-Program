@@ -51,6 +51,14 @@ export default tseslint.config(
       }
     }
   },
+  {
+    files: ["stats/gameStats.js"],
+    rules: {
+      "no-dupe-class-members": [
+        "off"
+      ]
+    },
+  },
   tseslint.configs.stylistic,
   eslintConfigPrettier
 );

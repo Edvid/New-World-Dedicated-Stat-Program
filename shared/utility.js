@@ -34,7 +34,7 @@ export function error(message) {
 ${message}`))
 }
 
-function lazyerror(message) {
+export function lazyerror(message) {
     alert(`ERROR At line ${(getChangeCommandIndex() + 1)}
 but the source of the ERROR could have occured earlier:
 

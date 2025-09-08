@@ -1,4 +1,4 @@
-import { min, max, clamp } from "../shared/utility.js";
+import { min, max, clamp, lazyerror } from "../shared/utility.js";
 
 export let mappedResources = [
   "Fur",
@@ -553,7 +553,6 @@ export class Nation {
   /* #endregion */
 
   constructor(nationName) {
-    let n = this;
     /* #region  Stats to Set Immedietly */
     /* #region  Main */
     this.GovernmentName = nationName;
@@ -1158,11 +1157,9 @@ class Stats{
   Fertility;
   UnitUpkeepCosts;
   constructor(){
-    let s = this;
-
     this.TimeSpeed = 25;
-    this.TimeDivide = (function () {
-      return 20 / s.TimeSpeed;
+    this.TimeDivide = (() => {
+      return 20 / this.TimeSpeed;
     })();
     this.Nations = {};
     this.Religions = {
@@ -2262,7 +2259,7 @@ function clearNewTroops(nationName){
     n.New_SmallForts = 0;
     n.New_MediumForts = 0;
     n.New_BigForts = 0;
-    n.New_HugeForts;
+    n.New_HugeForts = 0;
     n.New_CityFortifications = 0;
     n.New_SupplyDepots = 0;
     n.New_NavalBases = 0;
@@ -3977,7 +3974,7 @@ export function evaluateNations() {
   }
 }
 
-function syncNation(nationName) {
+export function syncNation(nationName) {
 
     /* #region  copy dailies */
     for (const propertyName in gameStats.Nations[nationName]) {
@@ -4090,7 +4087,7 @@ function syncNation(nationName) {
     /* #endregion */
 }
 
-function syncNations() {
+export function syncNations() {
     for (const nationName in gameStats.Nations) {
         clearNewTroops(nationName);
         syncNation(nationName);
@@ -4117,7 +4114,7 @@ export function GSDeleteProperty(propertyName){
   (new Function('gameStats', `delete gameStats${propertyName}`))(gameStats);
 }
 
-function GSUpdateTradesWithRenamedNationName(oldName, newName){
+export function GSUpdateTradesWithRenamedNationName(oldName, newName){
   //copy over all Trades, as is, except if giver or receiver is oldName, then it's newName now
 
   Object.keys(gameStats.Trades).forEach(property => {

@@ -1,5 +1,5 @@
 import { correctAndSynonymCheck, getStatType, warn } from "../shared/utility.js";
-import { Climate, getGameStats, GSDeleteProperty, GSGetProperty, GSNewProperty, GSSetProperty, Nation, Opinion, SocialBehaviour, SocialBehaviourGroup, Trade } from "../stats/gameStats.js";
+import { Climate, getGameStats, GSDeleteProperty, GSGetProperty, GSNewProperty, GSSetProperty, GSUpdateTradesWithRenamedNationName, Nation, Opinion, SocialBehaviour, SocialBehaviourGroup, Trade } from "../stats/gameStats.js";
 import { PostStatChange, PostStatCreate } from "./specialOperations.js";
 
 export function normalCommand(operand, selection, givenValue) {

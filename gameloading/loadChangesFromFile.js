@@ -1,5 +1,5 @@
 import { correctAndSynonymCheck, hashCode, suppressWarning } from "../shared/utility.js";
-import { evaluateNations, getGameStats, setGameStats } from "../stats/gameStats.js";
+import { evaluateNations, getGameStats, setGameStats, syncNation, syncNations } from "../stats/gameStats.js";
 import { createStat, deleteStat, normalCommand, renameStat, Shorthands } from "./commands.js";
 
 let changeCommandIndex;
