@@ -20,6 +20,15 @@ export default tseslint.config(
     },
   },
   {
+    files: ["pagerenderer/nationSheetGenerator.js"],
+    languageOptions: {
+      globals: {
+        am5: "readonly",
+        am5percent: "readonly",
+      }
+    }
+  },
+  {
     files: ["pagerenderer/mapccfcalculations.js"],
     languageOptions: {
       globals: {
