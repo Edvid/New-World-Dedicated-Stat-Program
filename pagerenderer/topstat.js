@@ -1,5 +1,7 @@
 import { loadGameFromSafeFile } from "../gameloading/loadChangesFromFile.js";
 import { addHeader } from "../shared/header.js";
+import { ValueTypeFix } from "../shared/utility.js";
+import { getGameStats } from "../stats/gameStats.js";
 
 const TopStats = [
   { name: "Population", displayName: "Population" },
@@ -27,7 +29,8 @@ document.querySelector("body").addEventListener("game load done", populateTopSta
 
 function populateTopStatTable(){
     
-    let nationNames = Object.keys(gameStats.Nations);
+    const nations = getGameStats().Nations;
+    let nationNames = Object.keys(nations);
 
     let topStatTitle = document.createElement("h1");
     let topStatTable = document.createElement("table");
@@ -69,11 +72,11 @@ function populateTopStatTable(){
 
 
     for(let c = 0; c < TopStats.length; c++){
-        const TopStat = TopStats[c];
+        const topStat = TopStats[c];
         //sort for this stat
 
-        nationNames.sort((a, b) => 
-            gameStats.Nations[b][TopStat.name] - gameStats.Nations[a][TopStat.name]
+        nationNames.sort((a, b) =>
+            nations[b][topStat.name] - nations[a][topStat.name]
         );
 
         //populate column
@@ -86,15 +89,15 @@ function populateTopStatTable(){
             
             const flag = document.createElement("img");
             flag.style.width = "30px";
-            flag.src = gameStats.Nations[NationName].Flag;
+            flag.src = nations[NationName].Flag;
             
             flagElement.appendChild(flag);
             
             nameElement.innerText = NationName;
 
             let statval = ValueTypeFix(
-                TopStat.name, 
-                gameStats.Nations[NationName][TopStat.name]
+                topStat.name,
+                nations[NationName][topStat.name]
             ).value;
 
             valueElement.innerText = statval;
@@ -121,10 +124,10 @@ function populateTopStatTable(){
             rows[r].appendChild(flagElement);
             rows[r].appendChild(nameElement);
             rows[r].appendChild(valueElement);
-            if(TopStat.map != null){
+            if(topStat.map != null){
                 let imgButton = document.createElement("a");
 
-                imgButton.href = `./IndividualNation?col=${gameStats.Nations[NationName].Color}`
+                imgButton.href = `./IndividualNation?col=${nations[NationName].Color}`
                 imgButton.target = "_blank";
                 let img = document.createElement("img");
                 img.src = "docs/assets/images/world/small_blank.png";
