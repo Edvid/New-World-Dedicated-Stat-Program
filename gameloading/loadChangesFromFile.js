@@ -11,21 +11,19 @@ let preloadGameState;
 let preloadStatChanges;
 
 export async function loadGameFromSafeFile() {
-  await (async () => {
-    await fetch("./docs/assets/gamestats/safefile.json").then(response => response.json()).then(data => preloadGameState = data);
-    await fetch("./docs/assets/gamestats/statchanges.ccf").then(response => response.text()).then(data => preloadStatChanges = data);
-    //If hash in JSON is the same as the hashcode of the entire
-    //ccf file. Then the JSON _is_ the state the changes will 
-    //genereate, and we can use the State for the gameStats
-    let jsonhash = preloadGameState.Hash;
-    let ccfhash = hashCode(preloadStatChanges.split(/\r?\n/gmi).slice(0, preloadGameState.Lines).join(""));
+  await fetch("./docs/assets/gamestats/safefile.json").then(response => response.json()).then(data => preloadGameState = data);
+  await fetch("./docs/assets/gamestats/statchanges.ccf").then(response => response.text()).then(data => preloadStatChanges = data);
+  //If hash in JSON is the same as the hashcode of the entire
+  //ccf file. Then the JSON _is_ the state the changes will 
+  //genereate, and we can use the State for the gameStats
+  let jsonhash = preloadGameState.Hash;
+  let ccfhash = hashCode(preloadStatChanges.split(/\r?\n/gmi).slice(0, preloadGameState.Lines).join(""));
 
-    HashMatchedTill = jsonhash == ccfhash ? preloadGameState.Lines : 0;
+  HashMatchedTill = jsonhash == ccfhash ? preloadGameState.Lines : 0;
 
 
-    if (HashMatchedTill > 0) setGameStats(preloadGameState.State);
-    loadChangesFromContent(preloadStatChanges.split(/\r?\n|\r/), HashMatchedTill);
-  })();
+  if (HashMatchedTill > 0) setGameStats(preloadGameState.State);
+  loadChangesFromContent(preloadStatChanges.split(/\r?\n|\r/), HashMatchedTill);
 }
 
 const normalCommandRegex = /(?<Operand>add|\+|sub|-|set|=) *(?<Value>(\*?\d*\.?\d+%?)|(\".*\")|( .*? ))(?<StatName>.+)/i;
