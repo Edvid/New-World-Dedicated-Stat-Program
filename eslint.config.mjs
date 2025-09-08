@@ -32,7 +32,6 @@ export default tseslint.config(
     files: ["pagerenderer/mapccfcalculations.js"],
     languageOptions: {
       globals: {
-        gameStats: "readonly",
         ...globals.browser,
       }
     }

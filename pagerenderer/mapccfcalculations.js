@@ -2,7 +2,7 @@ import { loadGameFromSafeFile } from "../gameloading/loadChangesFromFile.js";
 import { addHeader } from "../shared/header.js";
 import { prepareData, rgbToHex, trimIndents } from "../shared/utility.js";
 import { advanceMap, FetchedRGBAsNum, fetchFour, hexAsNumToHumanReadableMinMaxGradient, maxPopInPixel, NumAsRGB } from "../stats/formulas.js";
-import { mappedResources, mappedResourcesMultipliers } from "../stats/gameStats.js";
+import { getGameStats, mappedResources, mappedResourcesMultipliers } from "../stats/gameStats.js";
 
 const WIDTH = 8192;
 const HEIGHT = 3365;
@@ -90,6 +90,7 @@ let fertilityColorProperties;
 let coastColorProperties = [{ color: "00ffff", name: "coast" }];
 
 async function mapCalculations() {
+  const gameStats = getGameStats();
   nationColorProperties = fillInColorProperties(gameStats.Nations);
   climateColorProperties = fillInColorProperties(gameStats.Climates);
   cultureColorProperties = fillInColorProperties(gameStats.Cultures);
@@ -527,6 +528,7 @@ async function mapCalculations() {
 }
 
 function advancePopulationMap(imgArray, pixelIndex, options) {
+  const gameStats = getGameStats();
   let pixel = fetchFour(imgArray, pixelIndex);
   if (pixel[3] < 128) return pixel; //if transparent, don't modify the pixel at all
 
