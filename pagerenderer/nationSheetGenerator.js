@@ -4,7 +4,9 @@ import "https://cdn.amcharts.com/lib/5/percent.js";
 import { loadGameFromSafeFile, loadChangesFromContent, getChangesLength, preloadedStatChangesHashCode } from "../gameloading/loadChangesFromFile.js";
 import { capitalSpacing, cleanStatName, collapsibleNextSibling, downloadToFile, getStatType, ValueTypeFix, warn } from "../shared/utility.js";
 import { getGameStats, GSGetProperty, Opinion } from "../stats/gameStats.js";
+import { addHeader } from "../shared/header.js";
 
+addHeader()
 await loadGameFromSafeFile()
 
 let tableIndex = 0;

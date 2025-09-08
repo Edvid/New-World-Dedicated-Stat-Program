@@ -1,4 +1,5 @@
 import { loadGameFromSafeFile } from "../gameloading/loadChangesFromFile.js";
+import { addHeader } from "../shared/header.js";
 import { capitalSpacing } from "../shared/utility.js";
 
 let tradezoneinfotable;
@@ -6,6 +7,7 @@ let canvasContainer;
 let zonewealth;
 let canvasZoomScale = 1;
 
+addHeader()
 await loadGameFromSafeFile()
 
 const WIDTH = 8192;

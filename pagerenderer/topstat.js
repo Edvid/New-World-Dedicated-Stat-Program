@@ -1,4 +1,5 @@
 import { loadGameFromSafeFile } from "../gameloading/loadChangesFromFile.js";
+import { addHeader } from "../shared/header.js";
 
 const TopStats = [
   { name: "Population", displayName: "Population" },
@@ -19,6 +20,7 @@ const TopStats = [
   { name: "Size", displayName: "Size" }
 ];
 
+addHeader()
 await loadGameFromSafeFile()
 
 document.querySelector("body").addEventListener("game load done", populateTopStatTable);
