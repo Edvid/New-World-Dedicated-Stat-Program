@@ -33,16 +33,6 @@ export default tseslint.config(
     languageOptions: {
       globals: {
         gameStats: "readonly",
-        prepareData: "readonly",
-        mappedResources: "readonly",
-        mappedResourcesMultipliers: "readonly",
-        fetchFour: "readonly",
-        rgbToHex: "readonly",
-        NumAsRGB: "readonly",
-        FetchedRGBAsNum: "readonly",
-        maxPopInPixel: "readonly",
-        hexAsNumToHumanReadableMinMaxGradient: "readonly",
-        advanceMap: "readonly",
         ...globals.browser,
       }
     }

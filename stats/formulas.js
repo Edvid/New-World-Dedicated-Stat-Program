@@ -1,6 +1,6 @@
 import { MinMaxGradient } from "../shared/utility.js"
 
-async function advanceMap(imgArray, formula, options){
+export async function advanceMap(imgArray, formula, options){
 
   let newImgArray = new Uint8ClampedArray(imgArray.length);
 
@@ -25,7 +25,7 @@ async function advanceMap(imgArray, formula, options){
   return newImgArray;
 }
 
-function fetchFour(arr, index){
+export function fetchFour(arr, index){
 
   
   if(typeof arr != 'function')
@@ -47,7 +47,7 @@ function fetchFour(arr, index){
 }
 
 
-const hexAsNumToHumanReadableMinMaxGradient = new MinMaxGradient([
+export const hexAsNumToHumanReadableMinMaxGradient = new MinMaxGradient([
   {color: [255, 255, 255, 255], position: 0.0},
   {color: [255, 0, 0, 255], position: 0.25},
   {color: [255, 255, 0, 255], position: 0.5},
@@ -55,9 +55,9 @@ const hexAsNumToHumanReadableMinMaxGradient = new MinMaxGradient([
   {color: [0, 64, 0, 255], position: 1.0},
 ]);
 
-const maxPopInPixel = 50000;
+export const maxPopInPixel = 50000;
 
-function FetchedRGBAsNum(imgArr, pIndex){
+export function FetchedRGBAsNum(imgArr, pIndex){
   let pixel = fetchFour(imgArr, pIndex);
   if(pixel[3] < 128) return; //if transparent, abort
 
@@ -70,7 +70,7 @@ function FetchedRGBAsNum(imgArr, pIndex){
   return pixelVal;
 }
 
-function NumAsRGB(num){
+export function NumAsRGB(num){
   let ret = new Uint8ClampedArray(4);
   ret[3] = 255;
   ret[2] = num % 256;

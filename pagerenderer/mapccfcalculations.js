@@ -1,7 +1,8 @@
 import { loadGameFromSafeFile } from "../gameloading/loadChangesFromFile.js";
 import { addHeader } from "../shared/header.js";
-import { trimIndents } from "../shared/utility.js";
-import { mappedResourcesMultipliers } from "../stats/gameStats.js";
+import { prepareData, rgbToHex, trimIndents } from "../shared/utility.js";
+import { advanceMap, FetchedRGBAsNum, fetchFour, hexAsNumToHumanReadableMinMaxGradient, maxPopInPixel, NumAsRGB } from "../stats/formulas.js";
+import { mappedResources, mappedResourcesMultipliers } from "../stats/gameStats.js";
 
 const WIDTH = 8192;
 const HEIGHT = 3365;

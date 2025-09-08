@@ -1443,7 +1443,7 @@ function findPos(obj) {
     return undefined;
 }
 
-function rgbToHex(color) {
+export function rgbToHex(color) {
     let r = color[0];
     let g = color[1];
     let b = color[2];
@@ -1472,7 +1472,7 @@ function lerp(a, b, t){
     return a*(1-t) + b*t;
 }
 
-async function prepareData(path, progressTextElement){
+export async function prepareData(path, progressTextElement){
     
     const WIDTH = 8192;
     const HEIGHT = 3365;
