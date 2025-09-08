@@ -285,7 +285,6 @@ uploadccftextinput.addEventListener('input', () => {
     uploadccftextinputsubmit.disabled = false;
 });
 
-// TODO: Test if updateDropdownSelection works correctly still
 uploadccftextinputsubmit.onclick = () => {
     const changes = uploadccftextinput.value.split(/\r?\n|\r/);
     uploadccftextinputsubmit.disablewd = true;
