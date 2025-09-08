@@ -1,3 +1,5 @@
+import { rgbToHex } from "../shared/utility.js";
+
 const WIDTH = 8192;
 const HEIGHT = 3365;
 
@@ -214,11 +216,11 @@ nationImage.onload = async function () {
         
         //mark claimed coasts
 
-        SmallIslandGrowthSet = new Set();
-        BigIslandGrowthSet = new Set();
+        const smallIslandGrowthSet = new Set();
+        const bigIslandGrowthSet = new Set();
 
-        SmallIslandGrowthSet2 = new Set();
-        BigIslandGrowthSet2 = new Set();
+        const smallIslandGrowthSet2 = new Set();
+        const bigIslandGrowthSet2 = new Set();
         
         then = Date.now();
         for (let j = 0; j < nationData.length / 4; j++) {
@@ -226,10 +228,10 @@ nationImage.onload = async function () {
             let y = Math.floor(j / WIDTH);
 
             if(isColorAtCoord(waterColorArray, x, y) && OneNeighbourIsColor(bigIslandFillColorArray, x, y))
-                BigIslandGrowthSet.add(j);
+                bigIslandGrowthSet.add(j);
 
             if(isColorAtCoord(waterColorArray, x, y) && OneNeighbourIsColor(smallIslandFillColorArray, x, y))
-                SmallIslandGrowthSet.add(j);
+                smallIslandGrowthSet.add(j);
 
             let now = Date.now();
             if(now - then > 500) {
@@ -255,12 +257,13 @@ nationImage.onload = async function () {
             else if(distanceFromClaim <= shipRangeMid) paintColor = shipRangeMidColor;
             else if(distanceFromClaim <= shipRangeHigh) paintColor = shipRangeHighColor;
             
-            let SetRead = distanceFromClaim % 2 == 0 ? BigIslandGrowthSet : BigIslandGrowthSet2;
-            let SetWrite = distanceFromClaim % 2 == 1 ? BigIslandGrowthSet : BigIslandGrowthSet2;
+            let SetRead = distanceFromClaim % 2 == 0 ? bigIslandGrowthSet : bigIslandGrowthSet2;
+            let SetWrite = distanceFromClaim % 2 == 1 ? bigIslandGrowthSet : bigIslandGrowthSet2;
 
             SetWrite.clear();
 
 
+            let growFromColours, growIntoColours;
             for(const j of SetRead){
                 if(j < 0 || j >= imagePixelCount) continue;
                 let x = j % WIDTH;
@@ -306,8 +309,8 @@ nationImage.onload = async function () {
             else if(distanceFromClaim <= shipRangeMid / 2) paintColor = shipRangeMidSmallColor;
             else if(distanceFromClaim <= shipRangeHigh / 2) paintColor = shipRangeHighSmallColor;
             
-            let SetRead = distanceFromClaim % 2 == 0 ? SmallIslandGrowthSet : SmallIslandGrowthSet2;
-            let SetWrite = distanceFromClaim % 2 == 1 ? SmallIslandGrowthSet : SmallIslandGrowthSet2;
+            let SetRead = distanceFromClaim % 2 == 0 ? smallIslandGrowthSet : smallIslandGrowthSet2;
+            let SetWrite = distanceFromClaim % 2 == 1 ? smallIslandGrowthSet : smallIslandGrowthSet2;
 
             SetWrite.clear();
 
@@ -386,14 +389,14 @@ function isColorAtCoord(col, x, y) {
             nationData[redRefOfPixel + 1] == col[1] &&
             nationData[redRefOfPixel + 2] == col[2] &&
             nationData[redRefOfPixel + 3] == col[3];
-    } catch (e) {
+    } catch (_) {
         return false;
     }
 };
 
 function isOneOfColorsAtCoord(cols, x, y) {
-    for(let c = 0; c < cols.length; c++){
-        if(isColorAtCoord(cols[c], x , y)) return true;
+    for(const col in cols.length){
+        if(isColorAtCoord(col, x , y)) return true;
     }
     return false;
 }

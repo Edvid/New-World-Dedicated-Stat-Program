@@ -12,6 +12,12 @@ export default tseslint.config(
   {
     rules: {
       "no-debugger": "off",
+      "@typescript-eslint/no-unused-vars": [
+        "error",
+        {
+          "caughtErrorsIgnorePattern": "^_",
+        }
+      ]
     },
     languageOptions: {
       globals: {
