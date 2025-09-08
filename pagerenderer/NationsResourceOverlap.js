@@ -1,18 +1,22 @@
 import { loadGameFromSafeFile } from "../gameloading/loadChangesFromFile.js";
 import { addHeader } from "../shared/header.js";
+import { lerp, prepareData } from "../shared/utility.js";
+import { mappedResources } from "../stats/gameStats.js";
 
 let canvasContainer;
-let canvasZoomScale = 1;
 
 const WIDTH = 8192;
 const HEIGHT = 3365;
 
 const bumpMapOpacity = 0.3;
 
+document.querySelector("body").onload = generateNationsResourcesOverlay();
+
 addHeader()
 await loadGameFromSafeFile()
 
-document.querySelector("body").onload = async function () {
+
+async function generateNationsResourcesOverlay() {
     canvasContainer = document.getElementById("canvascontainer");
     canvasContainer.width = WIDTH;
     canvasContainer.height = HEIGHT;
