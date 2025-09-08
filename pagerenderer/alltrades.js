@@ -1,12 +1,13 @@
 import { loadGameFromSafeFile } from "../gameloading/loadChangesFromFile.js";
 import { addHeader } from "../shared/header.js";
 import { capitalSpacing } from "../shared/utility.js";
+import { getGameStats } from "../stats/gameStats.js";
 
 addHeader()
 await loadGameFromSafeFile()
 
 function loadAllTrades(){
-    let alltrades = gameStats.Trades;
+    let allTrades = getGameStats().Trades;
     let table = document.createElement("table");
     document.body.appendChild(table);
 
@@ -18,8 +19,8 @@ function loadAllTrades(){
     thName.classList.add("primary-color")
     headerRow.appendChild(thName);
 
-    for (const tradeName in alltrades) {
-        const trade = alltrades[tradeName];
+    for (const tradeName in allTrades) {
+        const trade = allTrades[tradeName];
         let tradeRow = document.createElement("tr");
         let tdTradeName = document.createElement("td");
         tdTradeName.classList.add("secondary-color")
