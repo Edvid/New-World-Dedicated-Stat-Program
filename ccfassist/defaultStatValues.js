@@ -1,4 +1,4 @@
-let defaultStatValues = {
+export let defaultStatValues = {
     // Trade Inf
     Alaska: 0,
     CentralCanada: 0,
