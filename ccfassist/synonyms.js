@@ -8,7 +8,9 @@ export let Synonyms = {
         "AdmSize"
     ],
     PopulationControl: [
-        "PopControl"
+        "PopControl",
+        "popctrl",
+        "populationctrl"
     ],
     TradeImprovements: [
         "TradeImprov"
@@ -47,13 +49,6 @@ export let Synonyms = {
     HeavyShipImprovements: [
         "HeavyShipImprov"
     ],
-    OverallImprovements: [
-        "OverallImprov"
-    ],
-    OverallImprovements: [
-        "OverallImprov"
-    ],
-	
     Prosperity: [
         "pros",
         "prosp",
@@ -135,12 +130,6 @@ export let Synonyms = {
 		"edueff",
 		"eduefficiency",
 		"education"
-	],
-	
-	PopulationControl: [
-		"popcontrol",
-		"popctrl",
-		"populationctrl"
 	],
 	
 	BirthControl: [
