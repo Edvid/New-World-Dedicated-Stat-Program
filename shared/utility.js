@@ -1137,8 +1137,8 @@ export function getStatType(selection){
     Object.keys(StatTypes).forEach(statType => {
         if (foundStatType != null) return;
         for(const endCompare of StatTypes[statType]) {
-            const testString = '\\b' +endCompare + '\\b';
-            
+            const testString = '\\b' + endCompare + '\\b';
+
             if(new RegExp(testString).test(selection)) {
                 foundStatType = statType.split(/Stats/)[0].replace(/([a-z])([A-Z])/, "$1 $2");
                 break;
