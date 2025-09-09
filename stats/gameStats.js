@@ -3322,40 +3322,6 @@ function evaluateNation(nationName) {
 
     n.ConstructionCost = n.New_SmallForts * n.SmallFortConstructionCost + n.New_MediumForts * n.MediumFortConstructionCost + n.New_BigForts * n.BigFortConstructionCost + n.New_HugeForts * n.HugeFortConstructionCost + n.New_CityFortifications * n.CityFortificationConstructionCost + n.New_SupplyDepots * n.SupplyDepotConstructionCost + n.New_NavalBases * n.NavalBaseConstructionCost;
 
-  function unitType(unitName) {
-    if(~[
-      "Levies",
-      "Militia"
-    ].indexOf(unitName)) return "Irregular";
-    else if(~[
-      "Archers",
-      "Crossbowmen"
-    ].indexOf(unitName)) return "Ranged";
-    else if(~[
-      "HandCannoneers",
-      "Musketeers",
-      "MusketMilitia",
-      "Riflemen"
-    ].indexOf(unitName)) return "Firearm";
-    else if(~[
-      "LightCavalry",
-      "HeavyCavalry",
-      "EliteCavalry"
-    ].indexOf(unitName)) return "Cavalry";
-    else if(~[
-      "SiegeEquipment",
-      "LargeSiegeEquipment"
-    ].indexOf(unitName)) return "Siege";
-    else if(~[
-      "FieldCannons",
-    "RegimentalGuns",
-    "SiegeGuns"
-    ].indexOf(unitName)) return "Artillery";
-    
-    //default
-    return "Melee"
-  }
-
   n.Inflation = max(0, (n.Budget / 1000) / (n.AdministrativeEfficiency / 10));
   n.ResourceBudgetBoost = (function () {
     let rbb = 0;
