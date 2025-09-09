@@ -267,6 +267,9 @@ uploadccffileinput.onchange = (e) => {
         const changes = e.target.result.split(/\r?\n|\r/);
         loadChangesFromContent(changes, 0);
         updateDropdownSelection()
+
+        currentNationName = Object.keys(getGameStats().Nations)[currentNationID];
+        createNationSheet(currentNationName);
     };
 
     reader.readAsText(file);
@@ -292,6 +295,9 @@ uploadccftextinputsubmit.onclick = () => {
     uploadccftextinputsubmit.disablewd = true;
     loadChangesFromContent(changes, 0);
     updateDropdownSelection()
+
+    currentNationName = Object.keys(getGameStats().Nations)[currentNationID];
+    createNationSheet(currentNationName);
 }
 
 uploadccftextform.appendChild(uploadccftextinput);

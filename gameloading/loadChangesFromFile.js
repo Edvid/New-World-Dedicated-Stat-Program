@@ -80,10 +80,6 @@ function errorsPresentAtCompletion(){
 }
 
 function refreshPageItems() {
-    if (typeof createNationSheet === 'function') {
-        currentNationName = Object.keys(gameStats.Nations)[currentNationID];
-        createNationSheet(currentNationName);
-    }
     if (typeof loadIndividualNationMap === 'function') loadIndividualNationMap();
 }
 
