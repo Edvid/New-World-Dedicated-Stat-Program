@@ -1099,10 +1099,10 @@ let StatTypes = {
         "TradePowerFromResourceTrade",
         "DevelopmentPixelCount",
         "coastalPopulation",
-        "ReligionGroups\..+\.Points",
-        "CultureGroups\..+\.Points",
-        "Climates\..+\.Pixels",
-        "TradeZones\..+\.Score"
+        "ReligionGroups\\..+\\.Points",
+        "CultureGroups\\..+\\.Points",
+        "Climates\\..+\\.Pixels",
+        "TradeZones\\..+\\.Score"
     ],
     ConstantStats: [ ],
     TurnBasedStats: [
