@@ -683,7 +683,7 @@ function createStatTable(title, tables) {
               GSGetProperty(".Nations." + currentNationName + statSelection);
             let nationStatNameCell = document.createElement("th");
             let splitStatSelection = statSelection.split(/\.|(?<=\[)/g).map((str) => cleanStatName(str)); 
-            const statName = !/tradingpoints$/.test(splitStatSelection.at(-1)) ?
+            const statName = !/tradingpoints$/i.test(splitStatSelection.at(-1)) ?
               splitStatSelection.at(-1) :
               splitStatSelection.at(-2)
 
