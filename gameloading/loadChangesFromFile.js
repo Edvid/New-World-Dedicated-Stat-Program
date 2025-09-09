@@ -49,7 +49,6 @@ export async function loadChangesFromContent(changes, skip) {
     document.querySelector("body").dispatchEvent(new Event("game load done"));
 
     errorsPresentAtCompletion();
-    refreshPageItems();
 }
 
 export function getChangeCommandIndex(){
@@ -77,10 +76,6 @@ function errorsPresentAtCompletion(){
             alert(`The treaty '${tradeName}' has ${trade.receiver} as its receiver. This is not a nation. Investigate this`)
         }
     });
-}
-
-function refreshPageItems() {
-    if (typeof loadIndividualNationMap === 'function') loadIndividualNationMap();
 }
 
 let commentblockregex = /(?<!\\)"""/i;
