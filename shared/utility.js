@@ -84,7 +84,7 @@ function matchToken(searchIn, approxName) {
     //check synonyms of stats
     for (const realName in Synonyms) {
         const synonymArray = Synonyms[realName];
-        for (const synonym in synonymArray.length) {
+        for (const synonym of synonymArray) {
             //if what was written in change file exists in the synonym dictionary
             if (synonym.toLowerCase() == nameToCheck) {
                 //Then, if the real name for the stat exists in this object
@@ -98,7 +98,7 @@ function matchToken(searchIn, approxName) {
         if (typeof searchObject[objectName] == 'object') subObjects.push(objectName);
     }
     if (subObjects.length > 0) {
-        for (const element in subObjects.length) {
+        for (const element of subObjects) {
 
             let subMatch = matchToken(`${searchIn}.${element}`, approxName)
             if (subMatch != null)
@@ -1136,7 +1136,7 @@ export function getStatType(selection){
     let foundStatType;
     Object.keys(StatTypes).forEach(statType => {
         if (foundStatType != null) return;
-        for(const endCompare in StatTypes[statType].length){
+        for(const endCompare of StatTypes[statType]) {
             const testString = '\\b' +endCompare + '\\b';
             
             if(new RegExp(testString).test(selection)) {

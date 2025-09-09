@@ -35,7 +35,7 @@ async function generateNationsResourcesOverlay() {
 
     let resourceMaps = [];
     let table = document.querySelector("tbody");
-    for (const resource in overlapProperties) {
+    for (const resource of overlapProperties) {
         const resourceName = overlapProperties[resource];
         resourceMaps[resourceName] = document.createElement("canvas");
         resourceMaps[resourceName].hidden = "true";

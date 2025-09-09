@@ -395,7 +395,7 @@ function isColorAtCoord(col, x, y) {
 };
 
 function isOneOfColorsAtCoord(cols, x, y) {
-    for(const col in cols.length){
+    for(const col of cols) {
         if(isColorAtCoord(col, x , y)) return true;
     }
     return false;
