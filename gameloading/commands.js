@@ -1,6 +1,6 @@
 import { defaultStatValues } from "../ccfassist/defaultStatValues.js";
-import { correctAndSynonymCheck, getStatType, warn } from "../shared/utility.js";
-import { Climate, getGameStats, GSDeleteProperty, GSGetProperty, GSNewProperty, GSSetProperty, GSUpdateTradesWithRenamedNationName, Nation, Opinion, SocialBehaviour, SocialBehaviourGroup, Trade } from "../stats/gameStats.js";
+import { correctAndSynonymCheck, error, getStatType, warn } from "../shared/utility.js";
+import { Climate, evaluateNation, getGameStats, GSAddProperty, GSDeleteProperty, GSGetProperty, GSNewProperty, GSSetProperty, GSUpdateTradesWithRenamedNationName, Nation, Opinion, SocialBehaviour, SocialBehaviourGroup, Trade, TradeZone } from "../stats/gameStats.js";
 import { PostStatChange, PostStatCreate } from "./specialOperations.js";
 
 export function normalCommand(operand, selection, givenValue) {
@@ -38,9 +38,9 @@ export function normalCommand(operand, selection, givenValue) {
             }
             error(
                 `The currently selected thing, ${propertySelection}, is an object not a value, and cannot be set
-Did you mean to select any of the following within this?:
+                Did you mean to select any of the following within this?:
 
-${allProperties}`);
+                ${allProperties}`);
         }
 
     }
@@ -166,7 +166,7 @@ export function createStat(currentSelection, arg) {
         const newStat = arg.slice(0, arg.indexOf('=')).trim();
         const modelStatNameRaw = arg.slice(arg.indexOf('=') + 1).trim();
         const modelStatName = correctAndSynonymCheck(`${currentSelection}.${modelStatNameRaw}`).split(".").pop();
-        if (typeof objectClass == "Nation") evaluateNation(modelStatName);
+        if (typeof objectClass == Nation) evaluateNation(modelStatName);
 
         GSNewProperty(currentSelection + '.' + newStat, objectClass, `"${newStat}"`)
         /* Copy all property values from old to new */
@@ -183,7 +183,7 @@ export function createStat(currentSelection, arg) {
           GSNewProperty(currentSelection + '.' + arg, objectClass, `"${arg}"`)
         else
           GSSetProperty(currentSelection + '.' + arg, "{}")
-        if (objectClass == "Nation") evaluateNation(arg);
+        if (typeof objectClass == Nation) evaluateNation(arg);
 
         PostStatCreate(currentSelection, arg);
     }
@@ -251,21 +251,17 @@ Shorthands.Trade = function (parameters) {
     GSSetProperty(`.Tradesw${tradename}`, JSON.stringify(newTrade))
 }
 
-Shorthands.PayDebt = function (parameter) {
+Shorthands.PayDebt = function (currentSelection, parameter) {
     if (isNaN(parameter)) {
         error(`The debt paid wasn't a number. Operation Aborted.`);
         return;
     }
 
-    let splitSelections = correctAndSynonymCheck(currentSelection).split(/\./gi).slice(1);
-    let correctedSelection = "." + splitSelections.join(".");
-
-    if (splitSelections[splitSelections.length - 2] !== 'Nations') {
-        error(`The current selection, ${splitSelections[splitSelections.length - 1]}, is not a nation. Cannot sync single nation.`);
+    const natName = /^\.Nations\.(?<natName>.+?)(?:\.|$)/gi.exec(currentSelection).groups.natName
+    if (/^\.Nations/gi.match(currentSelection)) {
+        error(`The current selection, ${natName}, is not a nation. Cannot sync single nation.`);
         return;
     }
-
-    let natName = splitSelections[splitSelections.length - 1];
 
     evaluateNation(natName)
 
@@ -273,10 +269,10 @@ Shorthands.PayDebt = function (parameter) {
     //EffectiveDebt = PublicDebtTaken * (1 + InterestRate);
     //EffectiveDebt / (1 + InterestRate)= PublicDebtTaken * (1 + InterestRate) / (1 + InterestRate);
     //PublicDebtTaken = EffectiveDebt / (1 + InterestRate);
-    const interestRate = GSGetProperty(correctedSelection + '.InterestRate')
+    const interestRate = GSGetProperty(currentSelection + '.InterestRate')
 
-    const publicDebtTakenSelector = correctedSelection + '.PublicDebtTaken'
-    const budgetSelector = correctedSelection + '.Budget'
+    const publicDebtTakenSelector = currentSelection + '.PublicDebtTaken'
+    const budgetSelector = currentSelection + '.Budget'
     GSAddProperty(publicDebtTakenSelector, -parameter / (1 + interestRate))
     GSAddProperty(budgetSelector, parameter)
 
@@ -290,7 +286,7 @@ Shorthands.PayDebt = function (parameter) {
     }
 }
 
-Shorthands.Move = function (parameters) {
+Shorthands.Move = function (currentSelection, parameters) {
     parameters = parameters.split(/,|>/gm);
     let from = parameters[0].trim();
     let to = parameters[1].trim();

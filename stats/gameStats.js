@@ -2265,7 +2265,7 @@ function clearNewTroops(nationName){
     n.New_NavalBases = 0;
 }
 
-function evaluateNation(nationName) {
+export function evaluateNation(nationName) {
   let n = gameStats.Nations[nationName];
 
   n.EstateCount = 0;

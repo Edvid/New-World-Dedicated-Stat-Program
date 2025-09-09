@@ -121,12 +121,12 @@ async function evaluteChangeCommand(changeCommandRaw) {
     //pay debt
     else if (changeCommand.toLowerCase().startsWith("pay debt")) {
         let parameter = changeCommand.split(/(?<=pay debt)/gm).pop().trim();
-        Shorthands.PayDebt(parameter);
+        Shorthands.PayDebt(correctAndSynonymCheck(currentSelection), parameter);
     }
     //move
     else if (changeCommand.toLowerCase().startsWith("move")) {
         let parameter = changeCommand.split(/(?<=move)/gm).pop().trim();
-        Shorthands.Move(parameter);
+        Shorthands.Move(currentSelection, parameter);
     }
     //Creation
     else if (changeCommand.slice(0, 2) == "+>") {
