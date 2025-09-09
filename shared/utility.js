@@ -1427,6 +1427,7 @@ export function findPos(obj) {
         do {
             curleft += obj.offsetLeft;
             curtop += obj.offsetTop;
+        // eslint-disable-next-line no-cond-assign
         } while (obj = obj.offsetParent);
         return { x: curleft, y: curtop };
     }
