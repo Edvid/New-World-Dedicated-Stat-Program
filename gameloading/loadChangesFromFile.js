@@ -1,4 +1,4 @@
-import { correctAndSynonymCheck, hashCode, suppressWarning } from "../shared/utility.js";
+import { correctAndSynonymCheck, error, hashCode, suppressWarning } from "../shared/utility.js";
 import { evaluateNations, getGameStats, setGameStats, syncNation, syncNations } from "../stats/gameStats.js";
 import { createStat, deleteStat, normalCommand, renameStat, Shorthands } from "./commands.js";
 
@@ -26,7 +26,7 @@ export async function loadGameFromSafeFile() {
   loadChangesFromContent(preloadStatChanges.split(/\r?\n|\r/), HashMatchedTill);
 }
 
-const normalCommandRegex = /(?<Operand>add|\+|sub|-|set|=) *(?<Value>(\*?\d*\.?\d+%?)|(\".*\")|( .*? ))(?<StatName>.+)/i;
+const normalCommandRegex = /(?<Operand>add|\+|sub|-|set|=) *(?<Value>(\*?\d*\.?\d+%?)|(".*")|( .*? ))(?<StatName>.+)/i;
 let ignore;
 let currentSelection;
 export async function loadChangesFromContent(changes, skip) {
@@ -156,7 +156,7 @@ async function evaluteChangeCommand(changeCommandRaw) {
     else if (changeCommand[0] == '>' || changeCommand[0] == '<') {
         let cc = changeCommand;
         let cutback = function (str) {
-            let index = str.slice(1).search(/\<|\>/) + 1;
+            let index = str.slice(1).search(/<|>/) + 1;
             if (index == 0) return ""
             return str.slice(index)
         }
@@ -165,7 +165,7 @@ async function evaluteChangeCommand(changeCommandRaw) {
             //selection
             if (cc[0] == '>') {
                 let arg = cc.slice(1);
-                let index = arg.search(/\<|\>/);
+                let index = arg.search(/<|>/);
                 let selection;
                 if (index == -1)
                     selection = arg.trim();
