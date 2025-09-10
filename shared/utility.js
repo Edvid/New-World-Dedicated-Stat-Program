@@ -1493,7 +1493,7 @@ export async function prepareData(path, progressTextElement){
 }
 
 /* #region  Taken from https://www.w3schools.com/howto/howto_js_collapsible.asp */
-document.querySelector("body").onload = function () {
+export function collapsible_behaviour() {
     var coll = document.getElementsByClassName("collapsible");
     var collitem;
 

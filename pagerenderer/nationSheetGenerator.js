@@ -2,7 +2,7 @@ import "https://cdn.amcharts.com/lib/5/index.js";
 import "https://cdn.amcharts.com/lib/5/percent.js";
 
 import { loadGameFromSafeFile, loadChangesFromContent, getChangesLength, preloadedStatChangesHashCode } from "../gameloading/loadChangesFromFile.js";
-import { capitalSpacing, cleanStatName, collapsibleNextSibling, downloadToFile, getStatType, ValueTypeFix, warn } from "../shared/utility.js";
+import { capitalSpacing, cleanStatName, collapsible_behaviour, collapsibleNextSibling, downloadToFile, getStatType, ValueTypeFix, warn } from "../shared/utility.js";
 import { getGameStats, GSGetProperty, Opinion } from "../stats/gameStats.js";
 import { addHeader } from "../shared/header.js";
 
@@ -428,6 +428,7 @@ document.body.appendChild(SearchStatContainer);
 document.body.appendChild(nationSheetContainer);
 
 updateDropdownSelection()
+collapsible_behaviour();
 
 currentNationName = Object.keys(getGameStats().Nations)[0];
 createNationSheet(currentNationName);
