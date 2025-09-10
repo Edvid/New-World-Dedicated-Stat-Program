@@ -4797,6 +4797,11 @@ trade SwedenSpanishFurTrade2, CrownOfSpain > BalticEmpire, 30 Budget
 =446 HeavyCav
 -350 Budget
 
+<... > Nations > KwangtungConfederacy
+=102 merchantships
+-30 reformpower
+="false" Reforms.Feudal Noble Armies
+
 <...
 
 sync
