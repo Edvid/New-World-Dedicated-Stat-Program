@@ -4722,6 +4722,20 @@ trade SwedenSpanishFurTrade2, CrownOfSpain > BalticEmpire, 30 Budget
 +> Greek
 = 5 Greek.Score
 
+<... > Cultures > Magyar > Opinions
++> Romanian
+= 10 Romanian.Score
+<... > Cultures > Romanian > Opinions
++> Magyar
+= 10 Magyar.Score
+
+<... > Nations > KingdomOfHungary
++1.5 Coal
++1.5 Iron
++0.05 ResearchSpending
++0.1 CulturalProsperity
++0.75 AdmEff
+
 <... > Nations > KingdomOfBrandenburg
 -15 HeavyInf
 -10 Archers
