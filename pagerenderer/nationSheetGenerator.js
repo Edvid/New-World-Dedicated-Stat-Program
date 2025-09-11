@@ -263,9 +263,9 @@ uploadccffileinput.name = "filename";
 uploadccffileinput.onchange = (e) => {
     var file = e.target.files[0];
     var reader = new FileReader();
-    reader.onload = function (e) {
+    reader.onload = async function (e) {
         const changes = e.target.result.split(/\r?\n|\r/);
-        loadChangesFromContent(changes, 0);
+        await loadChangesFromContent(changes, 0);
         updateDropdownSelection()
 
         currentNationName = Object.keys(getGameStats().Nations)[currentNationID];
@@ -290,10 +290,10 @@ uploadccftextinput.addEventListener('input', () => {
     uploadccftextinputsubmit.disabled = false;
 });
 
-uploadccftextinputsubmit.onclick = () => {
+uploadccftextinputsubmit.onclick = async () => {
     const changes = uploadccftextinput.value.split(/\r?\n|\r/);
     uploadccftextinputsubmit.disablewd = true;
-    loadChangesFromContent(changes, 0);
+    await loadChangesFromContent(changes, 0);
     updateDropdownSelection()
 
     currentNationName = Object.keys(getGameStats().Nations)[currentNationID];
