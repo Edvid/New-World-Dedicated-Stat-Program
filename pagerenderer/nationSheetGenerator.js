@@ -292,7 +292,7 @@ uploadccftextinput.addEventListener('input', () => {
 
 uploadccftextinputsubmit.onclick = async () => {
     const changes = uploadccftextinput.value.split(/\r?\n|\r/);
-    uploadccftextinputsubmit.disablewd = true;
+    uploadccftextinputsubmit.disabled = true;
     await loadChangesFromContent(changes, 0);
     updateDropdownSelection()
 
