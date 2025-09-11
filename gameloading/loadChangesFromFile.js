@@ -23,7 +23,7 @@ export async function loadGameFromSafeFile() {
 
 
   if (HashMatchedTill > 0) setGameStats(preloadGameState.State);
-  loadChangesFromContent(preloadStatChanges.split(/\r?\n|\r/), HashMatchedTill);
+  await loadChangesFromContent(preloadStatChanges.split(/\r?\n|\r/), HashMatchedTill);
 }
 
 const normalCommandRegex = /(?<Operand>add|\+|sub|-|set|=) *(?<Value>(\*?\d*\.?\d+%?)|(".*")|( .*? ))(?<StatName>.+)/i;
