@@ -46,7 +46,6 @@ export async function loadChangesFromContent(changes, skip) {
     }
 
     evaluateNations();
-    document.querySelector("body").dispatchEvent(new Event("game load done"));
 
     errorsPresentAtCompletion();
 }

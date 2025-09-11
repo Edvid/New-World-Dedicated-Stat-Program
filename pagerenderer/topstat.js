@@ -24,8 +24,7 @@ const TopStats = [
 
 addHeader()
 await loadGameFromSafeFile()
-
-document.querySelector("body").addEventListener("game load done", populateTopStatTable);
+populateTopStatTable()
 
 function populateTopStatTable(){
     
