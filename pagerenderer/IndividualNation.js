@@ -1,3 +1,4 @@
+import { addHeader } from "../shared/header.js";
 import { rgbToHex } from "../shared/utility.js";
 
 const WIDTH = 8192;
@@ -40,6 +41,8 @@ canvas.width = WIDTH;
 canvas.height = HEIGHT;
 
 let loadingText = document.querySelector("h3");
+
+addHeader()
 
 const nationImagePath = "./docs/assets/images/world/Nations.png";
 const climateImagePath = "./docs/assets/images/world/Climates.png";
