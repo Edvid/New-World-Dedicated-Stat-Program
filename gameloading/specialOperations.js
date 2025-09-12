@@ -126,7 +126,7 @@ export function PostStatCreate(selection, name){
         for (const rel in religions) {
             const religionGroupsSelector = nationSelector + '.ReligionGroups.' + rel;
             if(typeof GSGetProperty(religionGroupsSelector) !== 'undefined') continue;
-            GSSetProperty(religionGroupsSelector, {Points: 0});
+            GSSetProperty(religionGroupsSelector, JSON.stringify({Points: 0}));
         }
         for (const cul in cultures) {
             const cultureGroupsSelector = nationSelector + '.CultureGroups.' + cul;
