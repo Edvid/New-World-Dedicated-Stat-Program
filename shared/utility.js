@@ -63,7 +63,7 @@ export function correctAndSynonymCheck(selection) {
     for (let i = 0; i < correctSelection.length; i++) {
         let matched = matchToken(step, correctSelection[i]);
         if (matched == null) {
-            alert(`Line ${getChangeCommandIndex()}: The Specified Stat '${correctSelection[i]}' in '${correctSelection.slice(0, i).join('.')}' was not found!`);
+            alert(`Line ${getChangeCommandIndex()}: The Specified Stat '${correctSelection[i]}' in 'gameStats${correctSelection.slice(0, i).join('.')}' was not found!`);
             return;
         }
         correctSelection[i] = matched;
