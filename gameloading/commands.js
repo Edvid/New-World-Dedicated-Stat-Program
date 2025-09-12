@@ -258,7 +258,7 @@ Shorthands.PayDebt = function (currentSelection, parameter) {
     }
 
     const natName = /^\.Nations\.(?<natName>.+?)(?:\.|$)/gi.exec(currentSelection).groups.natName
-    if (/^\.Nations/gi.match(currentSelection)) {
+    if (!currentSelection.match(/^\.Nations/gi)) {
         error(`The current selection, ${natName}, is not a nation. Cannot sync single nation.`);
         return;
     }
