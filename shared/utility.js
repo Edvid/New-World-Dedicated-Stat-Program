@@ -100,7 +100,7 @@ function matchToken(searchIn, approxName) {
     if (subObjects.length > 0) {
         for (const element of subObjects) {
 
-            let subMatch = matchToken(`${searchIn}.${element}`, approxName)
+            let subMatch = matchToken(`${searchIn}["${element}"]`, approxName)
             if (subMatch != null)
                 return `${element}.${subMatch}`
         }
