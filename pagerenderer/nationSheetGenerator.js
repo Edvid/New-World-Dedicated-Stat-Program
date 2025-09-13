@@ -427,10 +427,11 @@ document.body.appendChild(SearchStatContainer);
 document.body.appendChild(nationSheetContainer);
 
 
+collapsible_behaviour();
+
 await loadGameFromSafeFile()
 
 updateDropdownSelection()
-collapsible_behaviour();
 
 currentNationName = Object.keys(getGameStats().Nations)[0];
 createNationSheet(currentNationName);
