@@ -7,7 +7,6 @@ import { getGameStats, GSGetProperty, Opinion } from "../stats/gameStats.js";
 import { addHeader } from "../shared/header.js";
 
 addHeader()
-await loadGameFromSafeFile()
 
 let tableIndex = 0;
 
@@ -322,7 +321,7 @@ arrowContainer.classList.add("arrowcontainer");
 
 const URLParamNationID = new URLSearchParams(window.location.search).get('nat');
 let currentNationID = URLParamNationID != null ? URLParamNationID - 1 : 0;
-let currentNationName = 'undefined';
+let currentNationName = 'Loading nations...';
 let currentNationNameDisplay = document.createElement("h1");
 currentNationNameDisplay.classList = "nationnamedisplay";
 currentNationNameDisplay.innerText = currentNationName;
@@ -426,6 +425,9 @@ document.body.appendChild(arrowContainer);
 document.body.appendChild(dropdown);
 document.body.appendChild(SearchStatContainer);
 document.body.appendChild(nationSheetContainer);
+
+
+await loadGameFromSafeFile()
 
 updateDropdownSelection()
 collapsible_behaviour();
