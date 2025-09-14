@@ -89,8 +89,8 @@ async function generateNationsResourcesOverlay() {
         if(i % 4 == 3) worldData[i] = 255;
         //color channels
         else {
-            const thisPixelsAlpha = Math.floor(i / 4) * 4;
-            const isInFog = FoWData[thisPixelsAlpha + 3] != 0
+            const thisPixelsAlpha = Math.floor(i / 4) * 4 + 3;
+            const isInFog = FoWData[thisPixelsAlpha] != 0
 
             if(isInFog)
                 worldData[i] = FoWData[i];
