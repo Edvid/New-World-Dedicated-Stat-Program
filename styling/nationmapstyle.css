@@ -1,3 +1,27 @@
+table{
+    border-collapse: collapse;
+}
+
+td, th{
+    font-weight: bold;
+    height: 1em;
+    padding: .5em;
+    border: 1px solid black;
+}
+
+th{
+    background:dodgerblue;
+    font-size: 16px;
+}
+td{
+    background:lightskyblue;
+    font-size: 14px;
+}
+
+#infotable{
+    margin: 15px;
+}
+
 #canvascontainer {
     position: relative;
 }
@@ -6,16 +30,3 @@
     position: absolute;
 }
 
-thead th {
-    font-size: 14px;
-}
-
-
-tbody td{
-    padding: 0.1em;
-}
-
-tbody td *{
-    font-size: 12px;
-    font-weight: bold;
-}
