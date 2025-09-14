@@ -2,6 +2,9 @@ import { Synonyms } from "../ccfassist/synonyms.js";
 import { getChangeCommandIndex } from "../gameloading/loadChangesFromFile.js";
 import { GSGetProperty } from "../stats/gameStats.js";
 
+export const WIDTH = 8192;
+export const HEIGHT = 3365;
+
 export const min = (_min, _num) => Math.min(_min, _num);
 export const max = (_max, _num) => Math.max(_max, _num);
 export const clamp = (_clamper1, _clamper2, _num) => _clamper1 < _clamper2 ? min(max(_num, _clamper1), _clamper2) : min(max(_num, _clamper2), _clamper1);
@@ -1556,4 +1559,15 @@ export class MinMaxGradient{
         return ret;
 
     }
+}
+
+export function reportProgress(i, progressElement) {
+  let progressPercent = (i / (WIDTH * HEIGHT)) * 100;
+  progressPercent = progressPercent.toFixed(2);
+  let percentDisplay = progressPercent + "%";
+
+  if (Math.floor(i / WIDTH) > 0)
+    progressElement.innerText = progressElement.innerText.replace(/\n\n.+$/, "");
+
+  progressElement.innerText += "\n\n" + percentDisplay;
 }

@@ -1,6 +1,6 @@
 import { loadGameFromSafeFile } from "../gameloading/loadChangesFromFile.js";
 import { addHeader } from "../shared/header.js";
-import { lerp, prepareData } from "../shared/utility.js";
+import { lerp, prepareData, reportProgress } from "../shared/utility.js";
 import { mappedResources } from "../stats/gameStats.js";
 
 let canvasContainer;
@@ -75,13 +75,15 @@ async function generateNationsResourcesOverlay() {
         table.appendChild(resourceRow);
     }
 
-    let BlankData = await prepareData("Blank.png");
-    let NationsData = await prepareData("Nations.png");
-    let BumpData = await prepareData("Bump.png");
-    let FoWData = await prepareData("FoW.png");
+    const isLoadingElement = document.getElementById("isloading")
 
+    let BlankData = await prepareData("Blank.png", isLoadingElement);
+    let NationsData = await prepareData("Nations.png", isLoadingElement);
+    let BumpData = await prepareData("Bump.png", isLoadingElement);
+    let FoWData = await prepareData("FoW.png", isLoadingElement);
 
     let worldData = new Uint8ClampedArray(WIDTH * HEIGHT * 4);
+    let then = Date.now();
     for(let i = 0; i < worldData.length; i++){
         //transparent
         if(i % 4 == 3) worldData[i] = 255;
@@ -105,7 +107,16 @@ async function generateNationsResourcesOverlay() {
                 worldData[i] = lerp(worldData[i], bumpData255Cap, bumpMapOpacity);
             }    
         }
+        if (i % WIDTH == 0) {
+          let now = Date.now();
+          if (now - then > 100) {
+            reportProgress(i/4, isLoadingElement);
+            await new Promise((resolve) => setTimeout(resolve));
+            then = now;
+          }
+        }
     }
+    isLoadingElement.innerText = "";
     const newWorldImage = new ImageData(worldData, WIDTH);
     worldCanvas.getContext("2d").putImageData(newWorldImage, 0, 0);
 }

@@ -1,6 +1,6 @@
 import { loadGameFromSafeFile } from "../gameloading/loadChangesFromFile.js";
 import { addHeader } from "../shared/header.js";
-import { prepareData, rgbToHex, trimIndents } from "../shared/utility.js";
+import { prepareData, reportProgress, rgbToHex, trimIndents } from "../shared/utility.js";
 import { FetchedRGBAsNum, fetchFour, hexAsNumToHumanReadableMinMaxGradient, maxPopInPixel, NumAsRGB } from "../stats/formulas.js";
 import { getGameStats, mappedResources, mappedResourcesMultipliers } from "../stats/gameStats.js";
 
@@ -704,7 +704,7 @@ async function findDistribution(
     //let the site know you're still alive
     let now = Date.now();
     if (now - then > 100) {
-      await reportProgress(i);
+      await reportProgress(i, progressText);
       await new Promise((resolve) => setTimeout(resolve));
       then = now;
     }
@@ -908,7 +908,7 @@ async function mapDataIterator(delegate) {
     if (i % WIDTH == 0) {
       let now = Date.now();
       if (now - then > 100) {
-        await reportProgress(i);
+        await reportProgress(i, progressText);
         await new Promise((resolve) => setTimeout(resolve));
         then = now;
       }
@@ -928,7 +928,7 @@ async function advanceMap(imgArray, formula, options){
     let now = Date.now();
     if (now - then > 2000) {
       await new Promise(resolve => setTimeout(resolve));
-      /* mapCCFCalculations.*/reportProgress(i/4);
+      reportProgress(i/4, progressText);
       then = now;
     }
 
@@ -985,15 +985,3 @@ function populationXDevelopmentMerger(mapIndex) {
 
   return NumAsRGB(ret);
 }
-
-function reportProgress(i) {
-  let progressPercent = (i / (WIDTH * HEIGHT)) * 100;
-  progressPercent = progressPercent.toFixed(2);
-  let percentDisplay = progressPercent + "%";
-
-  if (Math.floor(i / WIDTH) > 0)
-    progressText.innerText = progressText.innerText.replace(/\n\n.+$/, "");
-
-  progressText.innerText += "\n\n" + percentDisplay;
-}
-
