@@ -2,6 +2,7 @@ import { Synonyms } from "../ccfassist/synonyms.js";
 import { getChangeCommandIndex } from "../gameloading/loadChangesFromFile.js";
 import { GSGetProperty } from "../stats/gameStats.js";
 import { WIDTH, HEIGHT } from "../_utility/images/consts.js";
+import { trimIndents } from "../_utility/string_manipulation.js";
 
 let warnSuppress = 0;
 
@@ -29,28 +30,6 @@ export function lazyerror(message) {
 but the source of the ERROR could have occured earlier:
 
 ${message}`)
-}
-
-/* #region  Taken from https://stackoverflow.com/questions/7616461/generate-a-hash-from-string-in-javascript user esmiralha */
-export function hashCode(str) {
-    var hash = 0, i, chr;
-    if (str.length === 0) return hash;
-    for (i = 0; i < str.length; i++) {
-        chr = str.charCodeAt(i);
-        hash = ((hash << 5) - hash) + chr;
-        hash |= 0; // Convert to 32bit integer
-    }
-    return hash;
-};
-/* #endregion */
-
-export function trimIndents(str) {
-    return str.valueOf().replace(/( {2}|\t)+/g, "");
-}
-
-
-export function capitalSpacing(str) {
-    return str.replace(/(?<=[a-zA-Z])(?=[A-Z1-9])/gm, " ");
 }
 
 //synonym searching and case correcting alg

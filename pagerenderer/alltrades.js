@@ -1,6 +1,6 @@
 import { loadGameFromSafeFile } from "../gameloading/loadChangesFromFile.js";
 import { addHeader } from "../shared/header.js";
-import { capitalSpacing } from "../shared/utility.js";
+import { capitalSpacing } from "../_utility/string_manipulation.js";
 import { getGameStats } from "../stats/gameStats.js";
 
 addHeader()

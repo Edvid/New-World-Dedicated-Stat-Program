@@ -1,4 +1,5 @@
-import { correctAndSynonymCheck, error, hashCode, suppressWarning } from "../shared/utility.js";
+import { correctAndSynonymCheck, error, suppressWarning } from "../shared/utility.js";
+import { hashCode } from "../_utility/string_manipulation.js";
 import { evaluateNations, getGameStats, setGameStats, syncNation, syncNations } from "../stats/gameStats.js";
 import { createStat, deleteStat, normalCommand, renameStat, Shorthands } from "./commands.js";
 
