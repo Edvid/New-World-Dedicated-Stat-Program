@@ -1,5 +1,6 @@
 import { defaultStatValues } from "../ccfassist/defaultStatValues.js";
-import { correctAndSynonymCheck, error, getStatType, warn } from "../shared/utility.js";
+import { error, getStatType, warn } from "../shared/utility.js";
+import { correctAndSynonymCheck } from "../_utility/selectors.js";
 import { Climate, evaluateNation, getGameStats, GSAddProperty, GSDeleteProperty, GSGetProperty, GSNewProperty, GSSetProperty, GSUpdateTradesWithRenamedNationName, Nation, Opinion, SocialBehaviour, SocialBehaviourGroup, Trade, TradeZone } from "../stats/gameStats.js";
 import { PostStatChange, PostStatCreate } from "./specialOperations.js";
 
