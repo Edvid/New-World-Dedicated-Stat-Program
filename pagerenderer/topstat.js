@@ -1,6 +1,6 @@
 import { loadGameFromSafeFile } from "../gameloading/loadChangesFromFile.js";
 import { addHeader } from "../shared/header.js";
-import { ValueTypeFix } from "../shared/utility.js";
+import { ValueTypeFix } from "../_utility/stat_types.js";
 import { getGameStats } from "../stats/gameStats.js";
 
 const TopStats = [
