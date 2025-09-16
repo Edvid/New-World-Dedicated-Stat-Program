@@ -20,3 +20,7 @@ export function capitalSpacing(str) {
     return str.replace(/(?<=[a-zA-Z])(?=[A-Z1-9])/gm, " ");
 }
 
+export function cleanStatName(str) {
+  return str.replace(/(\[|"| |\])/gmi, "");
+}
+

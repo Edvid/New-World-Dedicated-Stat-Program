@@ -98,10 +98,6 @@ export function collapsibleNextSibling() {
     }
 }
 
-export function cleanStatName(str) {
-  return str.replace(/(\[|"| |\])/gmi, "");
-}
-
 export class MinMaxGradient{
     nodeList;
     constructor(nodeList){
