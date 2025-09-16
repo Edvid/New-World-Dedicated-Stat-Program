@@ -5,11 +5,9 @@ import { loadGameFromSafeFile } from "../gameloading/loadChangesFromFile.js";
 import { addHeader } from "../shared/header.js";
 import { capitalSpacing, findPos, prepareData, rgbToHex } from "../shared/utility.js";
 import { getGameStats } from "../stats/gameStats.js";
+import { WIDTH, HEIGHT } from "../_utility/images/consts.js";
 
 let tradezoneinfotable;
-
-const WIDTH = 8192;
-const HEIGHT = 3365;
 
 addHeader()
 await loadGameFromSafeFile()

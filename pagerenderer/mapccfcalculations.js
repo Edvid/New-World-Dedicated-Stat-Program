@@ -3,9 +3,7 @@ import { addHeader } from "../shared/header.js";
 import { prepareData, reportProgress, rgbToHex, trimIndents } from "../shared/utility.js";
 import { FetchedRGBAsNum, fetchFour, hexAsNumToHumanReadableMinMaxGradient, maxPopInPixel, NumAsRGB } from "../stats/formulas.js";
 import { getGameStats, mappedResources, mappedResourcesMultipliers } from "../stats/gameStats.js";
-
-const WIDTH = 8192;
-const HEIGHT = 3365;
+import { WIDTH, HEIGHT } from "../_utility/images/consts.js";
 
 // tmpcond;
 let progressText;

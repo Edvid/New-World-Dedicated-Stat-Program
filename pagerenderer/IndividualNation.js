@@ -1,8 +1,6 @@
 import { addHeader } from "../shared/header.js";
 import { rgbToHex } from "../shared/utility.js";
-
-const WIDTH = 8192;
-const HEIGHT = 3365;
+import { WIDTH, HEIGHT } from "../_utility/images/consts.js";
 
 const imagePixelCount = WIDTH * HEIGHT;
 

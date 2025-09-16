@@ -1,9 +1,7 @@
 import { Synonyms } from "../ccfassist/synonyms.js";
 import { getChangeCommandIndex } from "../gameloading/loadChangesFromFile.js";
 import { GSGetProperty } from "../stats/gameStats.js";
-
-export const WIDTH = 8192;
-export const HEIGHT = 3365;
+import { WIDTH, HEIGHT } from "../_utility/images/consts.js";
 
 let warnSuppress = 0;
 
@@ -1466,9 +1464,6 @@ export function lerp(a, b, t){
 }
 
 export async function prepareData(path, progressTextElement){
-    
-    const WIDTH = 8192;
-    const HEIGHT = 3365;
     
     let tempCanvas = document.createElement("canvas");
     tempCanvas.width = WIDTH;

@@ -2,11 +2,9 @@ import { loadGameFromSafeFile } from "../gameloading/loadChangesFromFile.js";
 import { addHeader } from "../shared/header.js";
 import { lerp, prepareData, reportProgress } from "../shared/utility.js";
 import { mappedResources } from "../stats/gameStats.js";
+import { WIDTH, HEIGHT } from "../_utility/images/consts.js";
 
 let canvasContainer;
-
-const WIDTH = 8192;
-const HEIGHT = 3365;
 
 const bumpMapOpacity = 0.3;
 
