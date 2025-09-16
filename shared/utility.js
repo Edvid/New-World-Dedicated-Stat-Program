@@ -52,13 +52,4 @@ export async function prepareData(path, progressTextElement){
     return tempCanvas.getContext("2d").getImageData(0, 0, WIDTH, HEIGHT).data; 
 }
 
-export function reportProgress(i, progressElement) {
-  let progressPercent = (i / (WIDTH * HEIGHT)) * 100;
-  progressPercent = progressPercent.toFixed(2);
-  let percentDisplay = progressPercent + "%";
 
-  if (Math.floor(i / WIDTH) > 0)
-    progressElement.innerText = progressElement.innerText.replace(/\n\n.+$/, "");
-
-  progressElement.innerText += "\n\n" + percentDisplay;
-}

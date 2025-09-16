@@ -1,6 +1,7 @@
 import { loadGameFromSafeFile } from "../gameloading/loadChangesFromFile.js";
 import { addHeader } from "../shared/header.js";
-import { prepareData, reportProgress, rgbToHex } from "../shared/utility.js";
+import { prepareData, rgbToHex } from "../shared/utility.js";
+import { reportProgress } from "../_utility/report_progress.js";
 import { trimIndents } from "../_utility/string_manipulation.js";
 import { FetchedRGBAsNum, fetchFour, hexAsNumToHumanReadableMinMaxGradient, maxPopInPixel, NumAsRGB } from "../stats/formulas.js";
 import { getGameStats, mappedResources, mappedResourcesMultipliers } from "../stats/gameStats.js";
