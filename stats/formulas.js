@@ -1,4 +1,4 @@
-import { MinMaxGradient } from "../shared/utility.js"
+import { MinMaxGradient } from "../_utility/math.js"
 
 export function fetchFour(arr, index){
 
