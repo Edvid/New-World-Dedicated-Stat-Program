@@ -967,6 +967,7 @@ let StatTypes = {
         "MaxPopulation",
         "DetachedLand",
         "CoastalPopulationPercent",
+        "UrbanPopulationPercent",
         "AverageDevelopment",
         "LandAdministration",
         "HabitableLand",
@@ -1102,6 +1103,7 @@ let StatTypes = {
         "TradePowerFromResourceTrade",
         "DevelopmentPixelCount",
         "coastalPopulation",
+        "urbanPopulation",
         "ReligionGroups\\..+\\.Points",
         "CultureGroups\\..+\\.Points",
         "Climates\\..+\\.Pixels",
@@ -1376,6 +1378,7 @@ export function ValueTypeFix(statName, statValue) {
             "Fervor",
             "Disease",
             "CoastalPopulationPercent",
+            "UrbanPopulationPercent",
             "AverageDevelopment",
             "HabitableLand",
             "InterestRate"

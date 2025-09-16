@@ -6256,3 +6256,280 @@ sync
 !suppress 0
   <...
   
+= 448541 BalticEmpire.urbanPopulation
+= 258735 UnitedKingdom.urbanPopulation
+= 389800 DuchyOfMoscow.urbanPopulation
+= 582697 KyivanRus.urbanPopulation
+= 149688 GrandDuchyOfLithuania.urbanPopulation
+= 178890 UralCossackHost.urbanPopulation
+= 243135 KingdomOfPoland.urbanPopulation
+= 170400 KingdomOfBrandenburg.urbanPopulation
+= 120802 ReichAmRhine.urbanPopulation
+= 208262 HolyRomanDominionOfTheDanube.urbanPopulation
+= 86582 ShowaShogunate.urbanPopulation
+= 171270 TheKingdomOfFrance.urbanPopulation
+= 160652 Novorossia.urbanPopulation
+= 130091 KingdomOfHungary.urbanPopulation
+= 123942 GrandDucatAquitania.urbanPopulation
+= 158277 Constantinopolis.urbanPopulation
+= 191679 TheOgalalaRiverLakotaSiouxChiefdom.urbanPopulation
+= 314747 CrownOfSpain.urbanPopulation
+= 82679 GrandDuchyOfDuklja.urbanPopulation
+= 275657 VenetianRepublic.urbanPopulation
+= 121774 HeiseiShogunate.urbanPopulation
+= 106471 KingdomOfAphrodisia.urbanPopulation
+= 535193 XanmaiMandate.urbanPopulation
+= 91381 OchutsEmpire.urbanPopulation
+= 10965 Kaziguria.urbanPopulation
+= 162363 HolyKingdomOfJudah.urbanPopulation
+= 103687 MazdayanEmpireOfEranshahr.urbanPopulation
+= 43721 KhanateOfKhorasan.urbanPopulation
+= 325507 RepublicOfGrecoBactria.urbanPopulation
+= 107934 SanhajidCaliphate.urbanPopulation
+= 105250 Varosia.urbanPopulation
+= 87550 ChazaiGao.urbanPopulation
+= 289201 KwangtungConfederacy.urbanPopulation
+= 441218 KosalaKingdom.urbanPopulation
+= 12334 BanuYaseenCaliphate.urbanPopulation
+= 64920 RoyalTaiKingdom.urbanPopulation
+= 79601 LeagueOfMaya.urbanPopulation
+= 172143 Garmoni.urbanPopulation
+= 57272 TondoKingdom.urbanPopulation
+= 104606 Sangkhom.urbanPopulation
+= 121941 KingdomOfAksum.urbanPopulation
+= 72710 KingdomOfOorun.urbanPopulation
+= 52378 Swaranegara.urbanPopulation
+= 92881 KingdomOfRexia.urbanPopulation
+= 222297 PuelcheConfederacy.urbanPopulation
+= 94571 Lutruwita.urbanPopulation
+
+<... > Nations > Kingdom Of Brandenburg
+-3 ResearchPoints
+="true" Technologies.Matchlock
+="true" Technologies.Limber
+
+<... > Nations > VenetianRepublic
+
++5 TradeInfluences.Guinea
++5 TradeInfluences.Western Niger
++5 TradeInfluences.Eastern Niger
++5 TradeInfluences.Gabon
++5 TradeInfluences.Congo River
++5 TradeInfluences.Angola
++5 TradeInfluences.South Africa
++5 TradeInfluences.Amazon
++5 TradeInfluences.Sao Francisco River
++5 TradeInfluences.Parana River
+
+<... > Nations > BanuYaseenCaliphate
+
++0.05 TradeImprovements
++0.5 LocalTrade
++0.5 AdmEff
++7 TradeInfluences.Red Sea
++5 TradeInfluences.Somalia
++5 TradeInfluences.Persian Gulf
+
+<... > Nations > XanmaiMandate
+
+="true" Technologies.Muskets
+="true" Technologies.Limber
+="true" Technologies.Plate Armour
+-3 Research Points
+-1400 Hand Cannoneers
++1400 Musketeers
+
+<... > Nations > KyivanRus
+-90 Basic Armaments Stockpiled
+
+<... > Nations > KingdomOfBrandenburg
++90 Basic Armaments Stockpiled
+
+<... > Nations > KingdomOfAphrodisia
+
+="false" AtWar
+
+<... > Nations > Constantinopolis
+
+="false" AtWar
+
+<... > Nations > Republic Of Greco Bactria
+="true" Reforms.Proffesional Army
+="false" Reforms.Feudal Levies
++0.25 ArmyWage
++0.1 BureaucratsWages
+-50 Reform Power
++2800 lightinfantry
++2400 lightcav
++6400 heavyinfantry
++6200 heavycav
++6000 Musketeers
++30 Merchant Ships
++13 mediumships
++8 HeavyShips
++7 lightships
++20 Regimental Guns
++10 Siege Guns
++5 Field Cannons
+
+<... > Nations > Republic Of Greco Bactria
+="true" Technologies.docks
+="true" Technologies.gunports
+="true" Technologies.Galleons
+-3 research points
+
+<... > Nations > Balticempire
+="true" Technologies.Standardizedpikes
+="true" Technologies.Muskets
+="true" Technologies.Limber
+="true" Reforms.Wealthyofficers
+="false" Reforms.nobleofficers
+-25 reformpower
+-3 ResearchPoints 
+
+<... > Nations > Kingdom of Aphrodisia 
+="true" Technologies.docks
+="true" Technologies.gunports
+="true" Technologies.Galleons
+
+<... > Nations > Kingdom of Aphrodisia
+-1100 Crossbowmen 
+-600 Hand Cannoneers 
+-2 Medium Ships 
+-15 Regimental Guns
+-2 Heavy Ships
+-5 Siege Guns
+-500 Heavy Cavalry 
+-150 Light Cavalry 
+-12 Field Cannons
+
+<... > Nations > Republic Of Greco Bactria
++1 SupplyDepots 
+
+<... > Nations > Kyivan Rus
+="true" Technologies.Muskets
+="true" Technologies.Limber
+="true" Technologies.Gunports
+="true" Technologies.Matchlock
+-5 Research points 
+="true" Reforms.Proffesional Army
+="false" Reforms.Feudal Levies
+-40.63 Reform Power
+=30% Aristocracy Tax
+=12.5% Clergy Tax
+=30% Burgousie Tax
+=20% Urban Tax
+=15% Bureaucrats Tax
+=20% Intellectuals Tax
+=20% Workers Tax
+=10% Military Tax
+
+<... > Nations > Xanmai Mandate
++0.05 overallimprov
++0.05 irregularimprov
+
+<... > Nations > Xanmai Mandate
++0.05 artilleryimprov
+
+<... > Nations > Xanmai Mandate
++0.05 overallimprov
+
+<... > Nations > Xanmai Mandate
++0.05 artilleryimprov
+
+<... > Nations > Xanmai Mandate
++0.07 Heavyshipimprov
++0.05 Mediumshipimprov
++0.05 lightshipimprov
+
+<... > Nations > Xanmai Mandate
++0.05 artilleryimprov
+
+<... > Nations > Xanmai Mandate
++0.05 agradv
+
+<... > Nations > Xanmai Mandate
++0.05 agradv
+
+<... > Nations > Xanmai Mandate
+=17% Workers Tax
+
+<...
+trade Aksumian-AphrodisiaDeal, Kingdom of Aksum> KingdomOfAphrodisia, 2 Textiles
+trade Aksumian-AphrodisiaDeal2, KingdomOfAphrodisia > Kingdom of Aksum, 60 Budget
+
+<... > Nations > Republic Of Greco Bactria
++0.33 SailorsWage
+
+<... > Nations > KingdomOfAphrodisia
+=80% ClergyTax
+=33% AristocracyTax
+=2% WorkersTax
+=0% IntellectualsTax
+=0% BurgousieTax
+
+<... > Nations > Republic Of Greco Bactria
++0.15 ArmyWage
+
+<... > Nations > VenetianRepublic
+-4 ResearchPoints
+="true" Technologies.Hand Cannons
+="true" Technologies.Standardized Pikes
+="true" Technologies.Printing Press
+="true" Technologies.Muskets
++1 AdmEff
++0.5 EduEff
+
+<... > nations > Kingdom of brandenburg 
++2% pillaging 
+=5% blockade 
+
+<... > Nations > Balticempire 
++1% pillaging
+
+<... > nations > Holy Roman Dominion Of the danube
+=3% occupation 
+
+<... > Nations > Banu Yaseen Caliphate
+="https://imgur.com/a/flag-C95uIQm" flag
+
+<... > Nations > BanuYaseenCaliphate
+
++1 Forestry
++0.05 Reforestation
+
+<... > Nations > KingdomOfAphrodisia
+="https://upload.wikimedia.org/wikipedia/commons/a/af/Flag_of_Ancient_Troy.jpg" flag
+<... > Nations
+<=> Kingdom Of Aphrodisia > Despocracy of Heros
+
+<... > Nations > Kyivan Rus
++4800 musketeers
++1600 heavy infantry
++1200 light infantry
++800 light cavalry
++24 regimental guns
+
+<...
+trade ivorygoldtradegrecyassin1, Republic Of Greco Bactria > Banu Yaseen Caliphate, 0.2 ivory
+trade ivorygoldtradegrecyassin2, Banu Yaseen Caliphate > Republic Of Greco Bactria, 0.2 gold
+
+<... > Nations > XanmaiMandate
+-50 BasicArmamentsStockpiled
++500 budget
+<... > Nations > KosalaKingdom
++50 BasicArmamentsStockpiled
+-500 budget
+
+<... > Nations > KosalaKingdom
++2 Forestry
+-4 ResearchPoints
+="true" Technologies.Muskets
+="true" Technologies.Limber
+="true" Technologies.MiningCarts
++0.25 MiningEff
+=5% UrbanTax
+=5% ClergyTax
+-5 GovernmentRepresentation.UnitaryRepresentation
++5 GovernmentRepresentation.BurgousieRepresentation
+

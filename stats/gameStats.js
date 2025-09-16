@@ -538,6 +538,8 @@ export class Nation {
   MaxPopulation;
   UnderPopulation;
   DetachedLand;
+  urbanPopulation;
+  UrbanPopulationPercent;
   coastalPopulation;
   CoastalPopulationPercent;
   DevelopmentPixelCount;
@@ -1138,7 +1140,9 @@ export class Nation {
       return c;
     })();
     
-    this.DetachedLand = 0.00;
+      this.DetachedLand = 0.00;
+      this.urbanPopulation = 0;
+      this.UrbanPopulationPercent = 0.00;
     /* #endregion */
     /* #endregion */
   }
@@ -2429,7 +2433,9 @@ export function evaluateNation(nationName) {
 
   n.Size += (n.Size <= 0 ? 10000 : 0);
 
-    n.AverageDevelopment = n.DevelopmentPixelCount / n.Size / 255;
+    n.UrbanPopulationPercent = n.urbanPopulation / n.Population;
+    n.AverageDevelopment = n.UrbanPopulationPercent;
+    if (n.urbanPopulation == 0) n.AverageDevelopment = n.DevelopmentPixelCount / n.Size / 255;
     n.Workforces.Townsfolk = n.AverageDevelopment;
     n.Workforces.Burgousie = 0.005 + n.AverageDevelopment / 100 + n.Reforms.WealthPrivellege * 0.0005 + n.Reforms.ClassEquality * 0.0005 + n.Reforms.WealthyBureaucrats * 0.0005 + n.Reforms.RestrictedSocialMobility * 0.0005 + n.Reforms.WealthyOfficers * 0.0005 + n.Reforms.MixedResourceOwnership * 0.001 + n.Reforms.BurgousieResourceOwnership * 0.002 + n.Reforms.MixedLandOwnership * 0.0025 + n.Reforms.PrivateLandOwnership * 0.005;
     n.Workforces.Aristocracy = 0.02 - n.Reforms.WealthPrivellege * 0.0005 - n.Reforms.ClassEquality * 0.0005 - n.Reforms.RestrictedSocialMobility * 0.0005 - n.Reforms.WealthyOfficers * 0.0005 - n.Reforms.MixedResourceOwnership * 0.001 - n.Reforms.BurgousieResourceOwnership * 0.002 - n.Reforms.MixedLandOwnership * 0.0025 - n.Reforms.PrivateLandOwnership * 0.005;
