@@ -1,10 +1,10 @@
 import { loadGameFromSafeFile } from "../gameloading/loadChangesFromFile.js";
 import { addHeader } from "../shared/header.js";
-import { rgbToHex } from "../shared/utility.js";
+import { RGBAToHex, ImageIndexToIntColor, ImageIndexToRGBA, IntColorToRGBA} from "../_utility/color_manipulation.js";
 import { prepareData } from "../_utility/images/prepare_data.js";
 import { reportProgress } from "../_utility/report_progress.js";
 import { trimIndents } from "../_utility/string_manipulation.js";
-import { FetchedRGBAsNum, fetchFour, hexAsNumToHumanReadableMinMaxGradient, maxPopInPixel, NumAsRGB } from "../stats/formulas.js";
+import { hexAsNumToHumanReadableMinMaxGradient, maxPopInPixel } from "../stats/formulas.js";
 import { getGameStats, mappedResources, mappedResourcesMultipliers } from "../stats/gameStats.js";
 import { WIDTH, HEIGHT } from "../_utility/images/consts.js";
 
@@ -547,7 +547,7 @@ async function mapCalculations() {
 
 function advancePopulationMap(imgArray, pixelIndex, options) {
   const gameStats = getGameStats();
-  let pixel = fetchFour(imgArray, pixelIndex);
+  let pixel = ImageIndexToRGBA(imgArray, pixelIndex);
   if (pixel[3] < 128) return pixel; //if transparent, don't modify the pixel at all
 
   let pixelPop = pixel[0];
@@ -561,7 +561,7 @@ function advancePopulationMap(imgArray, pixelIndex, options) {
   let developmentData = options.development;
 
   function fetchPropertyObject(dataName) {
-    let color = rgbToHex(fetchFour(propertyData[dataName], pixelIndex));
+    let color = RGBAToHex(ImageIndexToRGBA(propertyData[dataName], pixelIndex));
     let pair;
     colorProperties[dataName].forEach((colorNamePair) => {
       if (colorNamePair.color == color) {
@@ -604,7 +604,7 @@ function advancePopulationMap(imgArray, pixelIndex, options) {
 
   let isCoastalPixel = fetchBinary("coastal", "coast");
 
-  let developmentScore = fetchFour(developmentData, pixelIndex)[0]; //reading red channel as shorthand for greyscale
+  let developmentScore = ImageIndexToRGBA(developmentData, pixelIndex)[0]; //reading red channel as shorthand for greyscale
   developmentScore = developmentScore / 255;
 
   let fertilityName = fetchName("fertility");
@@ -625,15 +625,15 @@ function advancePopulationMap(imgArray, pixelIndex, options) {
       : pseudoPopulationGrowth * (1 - PixelsDisease);
 
   let newPixelPop = pixelPop * (1 + PixelsPopGrowth);
-  return NumAsRGB(newPixelPop);
+  return IntColorToRGBA(newPixelPop);
 }
 
 function PopulationMapHumanReadable(imgArray, pixelIndex) {
-  let pixelPop = FetchedRGBAsNum(imgArray, pixelIndex);
+  let pixelPop = ImageIndexToIntColor(imgArray, pixelIndex);
   //if no return value of RBGAsNum was given, color is just the color it was previously
   let color =
     pixelPop == null
-      ? fetchFour(imgArray, pixelIndex)
+      ? ImageIndexToRGBA(imgArray, pixelIndex)
       : hexAsNumToHumanReadableMinMaxGradient.colorAtPos(
           pixelPop / maxPopInPixel,
         );
@@ -747,12 +747,12 @@ async function findDistribution(
         );
     }
 
-    outerCol = rgbToHex([
+    outerCol = RGBAToHex([
       getOuterDataPoint(i * 4),
       getOuterDataPoint(i * 4 + 1),
       getOuterDataPoint(i * 4 + 2),
     ]);
-    innerCol = rgbToHex([
+    innerCol = RGBAToHex([
       getInnerDataPoint(i * 4),
       getInnerDataPoint(i * 4 + 1),
       getInnerDataPoint(i * 4 + 2),
@@ -778,7 +778,7 @@ async function findDistribution(
     function adjustments() {
       if (!options.adjustForAlpha && !options.Adjuster) return 1;
       else if (options.Adjuster) {
-        let rawMultiplier = FetchedRGBAsNum(options.Adjuster, i * 4);
+        let rawMultiplier = ImageIndexToIntColor(options.Adjuster, i * 4);
         let multiplier = options.AdjusterMapping
           ? options.AdjusterMapping(rawMultiplier)
           : rawMultiplier;
@@ -805,7 +805,7 @@ async function findDistribution(
     } else if (options.valueMode == "RGBAsNum") {
       const InnerPixelValue = isInnerDataEmpty
         ? options.unassignedPixelAssumption
-        : FetchedRGBAsNum(innerDataset, i * 4);
+        : ImageIndexToIntColor(innerDataset, i * 4);
 
       if (typeof ret[OuterNameOfPixel] === "undefined")
         ret[OuterNameOfPixel] = 0;
@@ -858,7 +858,7 @@ async function PromptName(color, getDatasetPointFunction, name) {
   }
   for (let j = 0; j < dat.length / 4; j++) {
     if (
-      rgbToHex([
+      RGBAToHex([
         getDatasetPointFunction(j * 4),
         getDatasetPointFunction(j * 4 + 1),
         getDatasetPointFunction(j * 4 + 2),
@@ -1000,9 +1000,9 @@ function reverseRBGsOfDevelopment(mapIndex) {
 }
 
 function populationXDevelopmentMerger(mapIndex) {
-  let pixelPop = FetchedRGBAsNum(popData, mapIndex);
+  let pixelPop = ImageIndexToIntColor(popData, mapIndex);
   let pixelDev = developmentData[mapIndex] / 255;
   let ret = pixelPop * pixelDev;
 
-  return NumAsRGB(ret);
+  return IntColorToRGBA(ret);
 }
