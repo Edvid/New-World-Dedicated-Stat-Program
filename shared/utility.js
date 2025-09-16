@@ -39,10 +39,6 @@ export const downloadToFile = (content, filename, contentType) => {
 };
 /* #endregion */
 
-export function lerp(a, b, t){
-    return a*(1-t) + b*t;
-}
-
 export async function prepareData(path, progressTextElement){
     
     let tempCanvas = document.createElement("canvas");

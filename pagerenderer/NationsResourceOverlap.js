@@ -1,6 +1,7 @@
 import { loadGameFromSafeFile } from "../gameloading/loadChangesFromFile.js";
 import { addHeader } from "../shared/header.js";
-import { lerp, prepareData, reportProgress } from "../shared/utility.js";
+import { prepareData, reportProgress } from "../shared/utility.js";
+import { lerp } from "../_utility/math.js";
 import { mappedResources } from "../stats/gameStats.js";
 import { WIDTH, HEIGHT } from "../_utility/images/consts.js";
 
