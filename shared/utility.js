@@ -5,10 +5,6 @@ import { GSGetProperty } from "../stats/gameStats.js";
 export const WIDTH = 8192;
 export const HEIGHT = 3365;
 
-export const min = (_min, _num) => Math.min(_min, _num);
-export const max = (_max, _num) => Math.max(_max, _num);
-export const clamp = (_clamper1, _clamper2, _num) => _clamper1 < _clamper2 ? min(max(_num, _clamper1), _clamper2) : min(max(_num, _clamper2), _clamper1);
-
 let warnSuppress = 0;
 
 export function suppressWarning(linesToSuppressParam) {

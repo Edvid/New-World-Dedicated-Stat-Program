@@ -1,4 +1,5 @@
-import { min, max, clamp, lazyerror } from "../shared/utility.js";
+import { lazyerror } from "../shared/utility.js";
+import { min, max, clamp } from "../_utility/math.js";
 
 export let mappedResources = [
   "Fur",
