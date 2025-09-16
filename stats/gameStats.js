@@ -1,4 +1,4 @@
-import { lazyerror } from "../shared/utility.js";
+import { lazyerror } from "../_utility/custom_errors.js";
 import { min, max, clamp } from "../_utility/math.js";
 
 export let mappedResources = [

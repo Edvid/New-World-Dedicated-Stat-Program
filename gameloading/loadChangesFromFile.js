@@ -1,4 +1,4 @@
-import { error, suppressWarning } from "../shared/utility.js";
+import { error, suppressWarning } from "../_utility/custom_errors.js";
 import { correctAndSynonymCheck } from "../_utility/selectors.js";
 import { hashCode } from "../_utility/string_manipulation.js";
 import { evaluateNations, getGameStats, setGameStats, syncNation, syncNations } from "../stats/gameStats.js";

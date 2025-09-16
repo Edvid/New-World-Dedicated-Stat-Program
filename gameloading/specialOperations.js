@@ -1,4 +1,4 @@
-import { error } from "../shared/utility.js";
+import { error } from "../_utility/custom_errors.js";
 import { evaluateNations, getGameStats, GSAddProperty, GSGetProperty, GSSetProperty, mappedResources } from "../stats/gameStats.js";
 
 export function PostStatChange(selection, change){
