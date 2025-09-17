@@ -4,9 +4,9 @@ import { RGBAToHex, ImageIndexToIntColor, ImageIndexToRGBA, IntColorToRGBA} from
 import { prepareData } from "../_utility/images/prepare_data.js";
 import { reportProgress } from "../_utility/report_progress.js";
 import { trimIndents } from "../_utility/string_manipulation.js";
-import { hexAsNumToHumanReadableMinMaxGradient, maxPopInPixel } from "../stats/formulas.js";
 import { getGameStats, mappedResources, mappedResourcesMultipliers } from "../stats/gameStats.js";
 import { WIDTH, HEIGHT } from "../_utility/images/consts.js";
+import { populationMapToHumanReadable } from "../_utility/images/population_map_to_human_readable.js";
 
 // tmpcond;
 let progressText;
@@ -628,19 +628,6 @@ function advancePopulationMap(imgArray, pixelIndex, options) {
   return IntColorToRGBA(newPixelPop);
 }
 
-function PopulationMapHumanReadable(imgArray, pixelIndex) {
-  let pixelPop = ImageIndexToIntColor(imgArray, pixelIndex);
-  //if no return value of RBGAsNum was given, color is just the color it was previously
-  let color =
-    pixelPop == null
-      ? ImageIndexToRGBA(imgArray, pixelIndex)
-      : hexAsNumToHumanReadableMinMaxGradient.colorAtPos(
-          pixelPop / maxPopInPixel,
-        );
-
-  return color;
-}
-
 async function prepareNewMaps() {
   const datasets = {
     nation: nationData,
@@ -671,7 +658,7 @@ async function prepareNewMaps() {
 
   let playerReadablePopData = await advanceMap(
     popData,
-    PopulationMapHumanReadable,
+    populationMapToHumanReadable,
     {},
   );
   await addToImageOutput(
