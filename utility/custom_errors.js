@@ -1,4 +1,4 @@
-import { trimIndents } from "../_utility/string_manipulation.js";
+import { trimIndents } from "../utility/string_manipulation.js";
 import { getChangeCommandIndex } from "../gameloading/loadChangesFromFile.js";
 
 let warnSuppress = 0;

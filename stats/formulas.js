@@ -1,5 +1,5 @@
-import { lazyerror } from "../_utility/custom_errors.js";
-import { min, max, clamp } from "../_utility/math.js";
+import { lazyerror } from "../utility/custom_errors.js";
+import { min, max, clamp } from "../utility/math.js";
 import { clearNewTroops, getGameStats, Opinion } from "./gameStats.js";
 
 export function evaluateNation(nationName) {

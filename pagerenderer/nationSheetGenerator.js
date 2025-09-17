@@ -2,12 +2,12 @@ import "https://cdn.amcharts.com/lib/5/index.js";
 import "https://cdn.amcharts.com/lib/5/percent.js";
 
 import { loadGameFromSafeFile, loadChangesFromContent, getChangesLength, preloadedStatChangesHashCode } from "../gameloading/loadChangesFromFile.js";
-import { downloadToFile } from "../_utility/download_to_file.js";
-import { collapsible_behaviour, collapsibleNextSibling } from "../_utility/collapsible.js";
-import { cleanStatName } from "../_utility/string_manipulation.js";
-import { warn } from "../_utility/custom_errors.js";
-import { getStatType, ValueTypeFix } from "../_utility/stat_types.js";
-import { capitalSpacing } from "../_utility/string_manipulation.js";
+import { downloadToFile } from "../utility/download_to_file.js";
+import { collapsible_behaviour, collapsibleNextSibling } from "../utility/collapsible.js";
+import { cleanStatName } from "../utility/string_manipulation.js";
+import { warn } from "../utility/custom_errors.js";
+import { getStatType, ValueTypeFix } from "../utility/stat_types.js";
+import { capitalSpacing } from "../utility/string_manipulation.js";
 import { getGameStats, GSGetProperty, Opinion } from "../stats/gameStats.js";
 import { addHeader } from "../shared/header.js";
 

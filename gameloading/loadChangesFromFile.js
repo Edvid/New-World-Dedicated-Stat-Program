@@ -1,6 +1,6 @@
-import { error, suppressWarning } from "../_utility/custom_errors.js";
-import { correctAndSynonymCheck } from "../_utility/selectors.js";
-import { hashCode } from "../_utility/string_manipulation.js";
+import { error, suppressWarning } from "../utility/custom_errors.js";
+import { correctAndSynonymCheck } from "../utility/selectors.js";
+import { hashCode } from "../utility/string_manipulation.js";
 import { evaluateNations, syncNation, syncNations } from "../stats/formulas.js";
 import { getGameStats, setGameStats, } from "../stats/gameStats.js";
 import { createStat, deleteStat, normalCommand, renameStat, Shorthands } from "./commands.js";

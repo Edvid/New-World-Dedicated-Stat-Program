@@ -1,10 +1,10 @@
 import { loadGameFromSafeFile } from "../gameloading/loadChangesFromFile.js";
 import { addHeader } from "../shared/header.js";
-import { prepareData } from "../_utility/images/prepare_data.js";
-import { reportProgress } from "../_utility/report_progress.js";
-import { lerp } from "../_utility/math.js";
+import { prepareData } from "../utility/images/prepare_data.js";
+import { reportProgress } from "../utility/report_progress.js";
+import { lerp } from "../utility/math.js";
 import { mappedResources } from "../stats/gameStats.js";
-import { WIDTH, HEIGHT } from "../_utility/images/consts.js";
+import { WIDTH, HEIGHT } from "../utility/images/consts.js";
 
 let canvasContainer;
 

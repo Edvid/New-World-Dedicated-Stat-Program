@@ -3,12 +3,12 @@ import "https://cdn.amcharts.com/lib/5/percent.js";
 
 import { loadGameFromSafeFile } from "../gameloading/loadChangesFromFile.js";
 import { addHeader } from "../shared/header.js";
-import { RGBAToHex } from "../_utility/color_manipulation.js";
-import { prepareData } from "../_utility/images/prepare_data.js";
-import { findPos } from "../_utility/find_pos.js";
-import { capitalSpacing } from "../_utility/string_manipulation.js";
+import { RGBAToHex } from "../utility/color_manipulation.js";
+import { prepareData } from "../utility/images/prepare_data.js";
+import { findPos } from "../utility/find_pos.js";
+import { capitalSpacing } from "../utility/string_manipulation.js";
 import { getGameStats } from "../stats/gameStats.js";
-import { WIDTH, HEIGHT } from "../_utility/images/consts.js";
+import { WIDTH, HEIGHT } from "../utility/images/consts.js";
 
 let tradezoneinfotable;
 

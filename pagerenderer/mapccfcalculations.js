@@ -1,12 +1,12 @@
 import { loadGameFromSafeFile } from "../gameloading/loadChangesFromFile.js";
 import { addHeader } from "../shared/header.js";
-import { RGBAToHex, ImageIndexToIntColor, ImageIndexToRGBA, IntColorToRGBA} from "../_utility/color_manipulation.js";
-import { prepareData } from "../_utility/images/prepare_data.js";
-import { reportProgress } from "../_utility/report_progress.js";
-import { trimIndents } from "../_utility/string_manipulation.js";
+import { RGBAToHex, ImageIndexToIntColor, ImageIndexToRGBA, IntColorToRGBA} from "../utility/color_manipulation.js";
+import { prepareData } from "../utility/images/prepare_data.js";
+import { reportProgress } from "../utility/report_progress.js";
+import { trimIndents } from "../utility/string_manipulation.js";
 import { getGameStats, mappedResources, mappedResourcesMultipliers } from "../stats/gameStats.js";
-import { WIDTH, HEIGHT } from "../_utility/images/consts.js";
-import { populationMapToHumanReadable } from "../_utility/images/population_map_to_human_readable.js";
+import { WIDTH, HEIGHT } from "../utility/images/consts.js";
+import { populationMapToHumanReadable } from "../utility/images/population_map_to_human_readable.js";
 
 // tmpcond;
 let progressText;
