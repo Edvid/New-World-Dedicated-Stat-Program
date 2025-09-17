@@ -2,8 +2,9 @@ import { defaultStatValues } from "../ccfassist/defaultStatValues.js";
 import { error, warn } from "../_utility/custom_errors.js";
 import { getStatType } from "../_utility/stat_types.js";
 import { correctAndSynonymCheck } from "../_utility/selectors.js";
-import { Climate, evaluateNation, getGameStats, GSAddProperty, GSDeleteProperty, GSGetProperty, GSNewProperty, GSSetProperty, GSUpdateTradesWithRenamedNationName, Nation, Opinion, SocialBehaviour, SocialBehaviourGroup, Trade, TradeZone } from "../stats/gameStats.js";
+import { Climate, getGameStats, GSAddProperty, GSDeleteProperty, GSGetProperty, GSNewProperty, GSSetProperty, GSUpdateTradesWithRenamedNationName, Nation, Opinion, SocialBehaviour, SocialBehaviourGroup, Trade, TradeZone } from "../stats/gameStats.js";
 import { PostStatChange, PostStatCreate } from "./specialOperations.js";
+import { evaluateNation } from "../stats/formulas.js";
 
 export function normalCommand(operand, selection, givenValue) {
 
