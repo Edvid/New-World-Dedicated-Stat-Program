@@ -13,8 +13,6 @@ import { addHeader } from "../shared/header.js";
 
 addHeader()
 
-let tableIndex = 0;
-
 let TableLayouts = {
     "Flag and Government": [
         ["Flag"],
@@ -451,18 +449,52 @@ function createNationSheet(nationName) {
     currentNationNameDisplay.innerText = capitalSpacing(nationName);
 
     nationSheetContainer.innerHTML = "";
-    /* #region  Search Only Display */
 
-    createSearchStatTable();
+    if (searchStatValue != "") {
+      createSearchNarrowedNationSheet()
+    } else {
+      createNormalNationSheet()
+    }
 
-    /* #endregion */
-    /* #region  Display */
+    postNationSheetCreateCleanup(nationName);
+}
 
-    tableIndex = 0;
+function createSearchNarrowedNationSheet() {
+  createSearchStatTable();
 
-    AddNextStatTable();
+  createBreaker();
 
-    AddNextStatTable();
+  conditionalCreatePieDiagram("CultureGroups");
+  conditionalCreateOpinionMatrixTable("Culture Groups Opinions", "CultureGroups")
+
+  createBreaker();
+
+  conditionalCreatePieDiagram("ReligionGroups");
+  conditionalCreateOpinionMatrixTable("Religion Groups Opinions", "ReligionGroups")
+
+  createBreaker();
+
+  conditionalCreatePieDiagram("Climates", "Pixels");
+
+  createBreaker();
+
+  conditionalCreatePieDiagram("EstateInfluencesReal");
+  conditionalCreatePieDiagram("GovernmentRepresentation");
+  conditionalCreatePieDiagram("MilitaryControl");
+
+  createBreaker();
+
+  conditionalCreatePieDiagram("Workforces");
+  conditionalCreatePieDiagram("SocietalClasses");
+
+  createBreaker();
+}
+
+function createNormalNationSheet() {
+
+    createStatTable("Flag and Government")
+
+    createStatTable("Turn Based Stats")
 
     createBreaker();
 
@@ -474,39 +506,39 @@ function createNationSheet(nationName) {
     createPieDiagram("ReligionGroups");
     createOpinionMatrixTable("Religion Groups Opinions", "ReligionGroups");
 
-    AddNextStatTable();
+    createStatTable("Population Stuff");
 
-    AddNextStatTable();
+    createStatTable("Basic Stats");
 
-    AddNextStatTable();
+    createStatTable("Budget Stats");
 
-    AddNextStatTable();
+    createStatTable("Debt Stats");
 
     createBreaker();
 
     createPieDiagram("ProductionSectors");
 
-    AddNextStatTable();
+    createStatTable("Upkeeps and Income");
 
-    AddNextStatTable();
+    createStatTable("Production");
 
-    AddNextStatTable();
+    createStatTable("Army");
 
-    AddNextStatTable();
+    createStatTable("Private Armies");
 
-    AddNextStatTable();
+    createStatTable("Buildings");
 
-    AddNextStatTable();
+    createStatTable("Navy");
 
-    AddNextStatTable();
+    createStatTable("Agriculture");
 
     createBreaker();
 
     createPieDiagram("Climates", "Pixels");
 
-    AddNextStatTable();
+    createStatTable("War Stats");
 
-    AddNextStatTable();
+    createStatTable("Land Stats");
 
     createBreaker();
 	
@@ -525,36 +557,35 @@ function createNationSheet(nationName) {
 
     createBreaker();
 
-  //  AddNextStatTable();
+    createStatTable("Estates");
 
-    AddNextStatTable();
+    createStatTable("Reforms");
 
-    AddNextStatTable();
+    createStatTable("Trade Influence - Americas", "tradeinfluences")
 
-    AddNextStatTable().classList.add("tradeinfluences");
+    createStatTable("Trade Influence - Europe", "tradeinfluences")
 
-    AddNextStatTable().classList.add("tradeinfluences");
+    createStatTable("Trade Influence - Africa", "tradeinfluences")
 
-    AddNextStatTable().classList.add("tradeinfluences");
+    createStatTable("Trade Influence - Asia", "tradeinfluences")
 
-    AddNextStatTable().classList.add("tradeinfluences");
+    createStatTable("Tech Stats");
 
-    AddNextStatTable();
+    createStatTable("Technologies");
 
-    AddNextStatTable();
+    createStatTable("Culture Stats");
 
-    AddNextStatTable();
+    createStatTable("Cultural Advancements");
 
-    AddNextStatTable();
+    createStatTable("Resources");
 
-    AddNextStatTable();
+  createStatTable("Resource Prices");
 
-  AddNextStatTable();
+  createStatTable("Resource Trade");
 
-  AddNextStatTable();
+}
 
-    /* #endregion */
-
+function postNationSheetCreateCleanup(nationName) {
     //fix size of notapplicables
     let NAs = document.querySelectorAll(".notapplicable");
     NAs.forEach(element => {
@@ -643,16 +674,8 @@ function createNationSheet(nationName) {
     });
 }
 
-function AddNextStatTable() {
-    if (searchStatValue != "") return document.createElement("div");
-    let title = Object.keys(TableLayouts)[tableIndex++];
-    let tables = TableLayouts[title];
-    return createStatTable(title, tables);
-}
 
 function createSearchStatTable(){
-    
-    if(searchStatValue == "") return document.createElement("div");
     
     let columns = [];
 
@@ -670,16 +693,17 @@ function createSearchStatTable(){
         }
     });
     
-    return createStatTable("search results", columns);
+    return createStatTable("search results", null, columns);
 }
 
-function createStatTable(title, tables) {
+function createStatTable(title, classList, givenTable) {
+    const table = givenTable ?? TableLayouts[title];
     let tablecontainer = document.createElement("div");
-    let table = document.createElement("table");
+    let tableElement = document.createElement("table");
     let tableTitle = document.createElement("h2");
     tableTitle.classList.add("tabletitle")
     tableTitle.innerText = title;
-    for (const stats of tables) {
+    for (const stats of table) {
         let nationStatNameRow = document.createElement("tr");
         nationStatNameRow.classList.add("primary-color")
         let nationStatRow = document.createElement("tr");
@@ -755,20 +779,28 @@ function createStatTable(title, tables) {
             nationStatNameRow.appendChild(nationStatNameCell);
         }
 
-        table.appendChild(nationStatNameRow);
-        table.appendChild(nationStatRow);
+        tableElement.appendChild(nationStatNameRow);
+        tableElement.appendChild(nationStatRow);
     }
 
     tablecontainer.appendChild(tableTitle);
-    tablecontainer.appendChild(table);
+    tablecontainer.appendChild(tableElement);
+    if (classList !== null && typeof classList !== 'undefined') {
+      for (const className of classList) {
+        tablecontainer.classList.add(className);
+      }
+    }
 
     nationSheetContainer.appendChild(tablecontainer);
+}
 
-    return tablecontainer;
+function conditionalCreateOpinionMatrixTable(title, socialBehaviourGroup) {
+  if (new RegExp(searchStatValue, "i").test(title)) { 
+    createOpinionMatrixTable(title, socialBehaviourGroup)
+  }
 }
 
 function createOpinionMatrixTable(title, SocialBehaviourGroups) {
-    if (searchStatValue != "" && !new RegExp(searchStatValue, "i").test(title)) return;
     let tablecontainer = document.createElement("div");
     let table = document.createElement("table");
     table.classList.add("opiniontable");
@@ -863,10 +895,15 @@ function createOpinionMatrixTable(title, SocialBehaviourGroups) {
     return tablecontainer;
 }
 
+function conditionalCreatePieDiagram(ObjectToChart, ValName) {
+  console.log(ObjectToChart)
+  if (new RegExp(searchStatValue, "i").test(ObjectToChart)) {
+    createPieDiagram(ObjectToChart, ValName)
+  }
+}
+
 function createPieDiagram(ObjectToChart, ValName) {
-    if (searchStatValue != "" && !new RegExp(searchStatValue, "i").test(ObjectToChart)) return;
-    let ValueName = ValName;
-    if (typeof ValueName == 'undefined') ValueName = "Points"
+    let ValueName = ValName ?? "Points";
 
     let tablecontainer = document.createElement("div");
     let title = document.createElement("h2");
@@ -955,8 +992,6 @@ function createPieDiagram(ObjectToChart, ValName) {
     );
 
     legend.data.setAll(series.dataItems);
-
-    return tablecontainer;
 }
 
 function createBreaker() {
