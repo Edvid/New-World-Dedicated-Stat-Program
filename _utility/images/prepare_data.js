@@ -1,4 +1,4 @@
-import { WIDTH, HEIGHT } from "../_utility/images/consts";
+import { WIDTH, HEIGHT } from "./consts.js";
 
 export async function prepareData(path, progressTextElement) {
   let tempCanvas = document.createElement("canvas");

@@ -1,4 +1,4 @@
-import { WIDTH, HEIGHT } from "../_utility/images/consts.js";
+import { WIDTH, HEIGHT } from "./images/consts.js";
 
 export function reportProgress(i, displayingElement) {
     let progressPercent = (i / (WIDTH * HEIGHT)) * 100;
