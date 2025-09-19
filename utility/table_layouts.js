@@ -131,25 +131,25 @@ export const TableLayouts = {
     ["WeaponReformRegressionCost", "WeaponReformAdvanceCost", "Reforms.NoWeaponLaws", "Reforms.LimitedWeaponOwnership", "Reforms.WeaponOwnershipForbidden"],
     ["FeudalArmiesChangeCost", "Reforms.FeudalNobleArmies", "MercenariesChangeCost", "Reforms.Mercenaries", "ReligiousOrdersChangeCost", "Reforms.ReligiousOrders"]
   ],
-  "Trade Influence - Americas": [
-    [ti("Alaska"), ti("CentralCanada"), ti("HudsonBay"), ti("LawrenceGulf"), ti("Cascadia"), ti("WestCoast"), ti("TheRockies"), ti("Mississippi"), ti("EastCoast"), ti("Caribbean")],
-    [ti("GulfOfMexico"), ti("WesternMexico"), ti("CentralAmerica"), ti("Venezuela"), ti("Amazon"), ti("Peru"), ti("SaoFranciscoRiver"), ti("ParanaRiver"), ti("Chile"), ti("Patagonia")]
-  ],
-  "Trade Influence - Europe": [
-    [ti("Iberia"), ti("WesternMediterranean"), ti("BayOfBiscay"), ti("SouthernFrance"), ti("France"), ti("EnglishChannel"), ti("BritishIsles"), ti("NorthSea"), ti("Rhine"), ti("Denmark")],
-    [ti("CentralEurope"), ti("WesternDanube"), ti("EasternDanube"), ti("Adriatic"), ti("CentralMediterranean"), ti("Greece"), ti("Romania"), ti("Vistula"), ti("BalticSea"), ti("NorthernNordics")],
-    [ti("BarentsSea"), ti("Novgorod"), ti("Livonia"), ti("Dniepr"), ti("Muscovy"), ti("DonRiver"), ti("Crimea"), ti("Caucasus"), ti("Volga"), ti("UralRiver")]
-  ],
-   "Trade Influence - Africa": [
-    [ti("Morocco"), ti("WesternSahara"), ti("Sahara"), ti("Egypt"), ti("RedSea"), ti("SouthernNile"), ti("Somalia"), ti("Guinea"), ti("WesternNiger")],
-    [ti("EasternNiger"), ti("Gabon"), ti("CongoRiver"), ti("LakeVictoria"), ti("LakeTanganyika"), ti("EastAfrica"), ti("Angola"), ti("Mozambique"), ti("SouthAfrica")]
-  ],
-  "Trade Influence - Asia": [
-    [ti("ArabianDesert"), ti("EasternMediterranean"), ti("NorthernAnatolia"), ti("Mesopotamia"), ti("PersianGulf"), ti("Iran"), ti("CaspianSea"), ti("Afghanistan")],
-    [ti("WesternSiberia"), ti("CentralSiberia"), ti("EasternSiberia"), ti("CentralAsia"), ti("GobiDesert"), ti("Manchuria"), ti("SeaOfJapan"), ti("YellowRiver")],
-    [ti("YangtzeRiver"), ti("SouthChinaSea"), ti("Sichuan"), ti("Tibet"), ti("IndusRiver"), ti("Ganges"), ti("CentralIndia"), ti("Deccan")],
-    [ti("SouthEastAsia"), ti("Indonesia"), ti("Pacific"), ti("NorthernAustralia"), ti("AustralianDesert"), ti("SouthernAustralia")]
-  ],
+  "Trade Influence - Americas": tradeInfluenceTableWrapper([
+    ["Alaska", "CentralCanada", "HudsonBay", "LawrenceGulf", "Cascadia", "WestCoast", "TheRockies", "Mississippi", "EastCoast", "Caribbean"],
+    ["GulfOfMexico", "WesternMexico", "CentralAmerica", "Venezuela", "Amazon", "Peru", "SaoFranciscoRiver", "ParanaRiver", "Chile", "Patagonia"]
+  ]),
+  "Trade Influence - Europe": tradeInfluenceTableWrapper([
+    ["Iberia", "WesternMediterranean", "BayOfBiscay", "SouthernFrance", "France", "EnglishChannel", "BritishIsles", "NorthSea", "Rhine", "Denmark"],
+    ["CentralEurope", "WesternDanube", "EasternDanube", "Adriatic", "CentralMediterranean", "Greece", "Romania", "Vistula", "BalticSea", "NorthernNordics"],
+    ["BarentsSea", "Novgorod", "Livonia", "Dniepr", "Muscovy", "DonRiver", "Crimea", "Caucasus", "Volga", "UralRiver"]
+  ]),
+  "Trade Influence - Africa": tradeInfluenceTableWrapper([
+    ["Morocco", "WesternSahara", "Sahara", "Egypt", "RedSea", "SouthernNile", "Somalia", "Guinea", "WesternNiger"],
+    ["EasternNiger", "Gabon", "CongoRiver", "LakeVictoria", "LakeTanganyika", "EastAfrica", "Angola", "Mozambique", "SouthAfrica"]
+  ]),
+  "Trade Influence - Asia": tradeInfluenceTableWrapper([
+    ["ArabianDesert", "EasternMediterranean", "NorthernAnatolia", "Mesopotamia", "PersianGulf", "Iran", "CaspianSea", "Afghanistan"],
+    ["WesternSiberia", "CentralSiberia", "EasternSiberia", "CentralAsia", "GobiDesert", "Manchuria", "SeaOfJapan", "YellowRiver"],
+    ["YangtzeRiver", "SouthChinaSea", "Sichuan", "Tibet", "IndusRiver", "Ganges", "CentralIndia", "Deccan"],
+    ["SouthEastAsia", "Indonesia", "Pacific", "NorthernAustralia", "AustralianDesert", "SouthernAustralia"]
+  ]),
   "Tech Stats": [
     ["Isolation", "ResearchSpending", "ResearchEffectiveness", "ResearchBoostFromTech", "ResearchEfficiency", "ResearchPointGain", "ResearchPoints", "FutureResearchPoints"]
   ],
@@ -209,6 +209,22 @@ export const TableLayouts = {
     ["HousingOutgoing", "TextilesOutgoing", "BasicGoodsOutgoing", "LuxuryGoodsOutgoing", "AlcoholOutgoing", "BasicToolsOutgoing", "HeavyIndustryOutgoing", "BasicArmamentsOutgoing", "HeavyArmamentsOutgoing", "ShipBuildingOutgoing", "ChemicalsOutgoing", "MotorsOutgoing", "PlanesOutgoing", "ElectronicsOutgoing"],
     ["TradePowerFromResourceTrade"]
   ]
+}
+
+function tradeInfluenceTableWrapper(arr2D) {
+  let newArr2D = [];
+  arr2D.forEach(arr => {
+    newArr2D.push(tradeInfluenceRowWrapper(arr))
+  });
+  return newArr2D;
+}
+
+function tradeInfluenceRowWrapper(arr) {
+  let newArr = [];
+  arr.forEach(el => {
+    newArr.push(ti(el))
+  });
+  return newArr;
 }
 
 function ti(zone) {
