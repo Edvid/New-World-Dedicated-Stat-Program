@@ -1,5 +1,4 @@
 /* #region  Taken from https://www.w3schools.com/howto/howto_js_collapsible.asp */
-
 export function collapsible_behaviour() {
   var coll = document.getElementsByClassName("collapsible");
   var collitem;
@@ -17,6 +16,7 @@ export function collapsible_behaviour() {
   }
 }
 /* #endregion */
+
 export function collapsibleNextSibling() {
   this.classList.toggle("active");
   var content = this.nextElementSibling;
