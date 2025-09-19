@@ -5,10 +5,10 @@ import { GSGetProperty } from "../stats/gameStats.js";
 //synonym searching and case correcting alg
 
 export function correctAndSynonymCheck(selection) {
-  let correctSelection = selection.slice(1).split(".");
+  const correctSelection = selection.slice(1).split(".");
   let step = "";
   for (let i = 0; i < correctSelection.length; i++) {
-    let matched = matchToken(step, correctSelection[i]);
+    const matched = matchToken(step, correctSelection[i]);
     if (matched == null) {
       alert(
         `Line ${getChangeCommandIndex()}: The Specified Stat '${correctSelection[i]}' in 'gameStats${correctSelection.slice(0, i).join(".")}' was not found!`,
@@ -22,8 +22,8 @@ export function correctAndSynonymCheck(selection) {
 }
 
 function matchToken(searchIn, approxName) {
-  let searchObject = GSGetProperty(searchIn);
-  let nameToCheck = approxName.toLowerCase().replaceAll(" ", "");
+  const searchObject = GSGetProperty(searchIn);
+  const nameToCheck = approxName.toLowerCase().replaceAll(" ", "");
 
   //check same stats but correct casing
   for (const propertyName in searchObject) {
@@ -41,14 +41,14 @@ function matchToken(searchIn, approxName) {
     }
   }
 
-  let subObjects = [];
+  const subObjects = [];
   for (const objectName in searchObject) {
     if (typeof searchObject[objectName] == "object")
       subObjects.push(objectName);
   }
   if (subObjects.length > 0) {
     for (const element of subObjects) {
-      let subMatch = matchToken(`${searchIn}["${element}"]`, approxName);
+      const subMatch = matchToken(`${searchIn}["${element}"]`, approxName);
       if (subMatch != null) return `${element}.${subMatch}`;
     }
   } else {

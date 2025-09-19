@@ -1,4 +1,4 @@
-let StatTypes = {
+const StatTypes = {
   BaseStats: [
     "Alaska",
     "CentralCanada",
@@ -1054,7 +1054,7 @@ export function ValueTypeFix(statName, statValue) {
   //numbers
   else if (!isNaN(statVal) && statVal !== "") {
     if (typeof statVal === "boolean") {
-      let ret = document.createElement("span");
+      const ret = document.createElement("span");
       if (statVal) ret.innerHTML = "&#10003;";
       ret.style.display = "inline-block";
       ret.style.height = "2.3ex";
@@ -1306,7 +1306,7 @@ export function ValueTypeFix(statName, statValue) {
     if (/^$/.test(statVal)) {
       return { value: "none", appendable: false };
     } else {
-      let image = document.createElement("img");
+      const image = document.createElement("img");
       image.src = statVal;
       image.alt = statVal.split("/").pop();
       return { value: image, appendable: true };

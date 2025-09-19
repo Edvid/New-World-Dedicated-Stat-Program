@@ -1,7 +1,7 @@
 export function RGBAToHex(color) {
-  let r = color[0];
-  let g = color[1];
-  let b = color[2];
+  const r = color[0];
+  const g = color[1];
+  const b = color[2];
   if (r > 255 || g > 255 || b > 255) throw "Invalid color component";
   let str = ((r << 16) | (g << 8) | b).toString(16);
   while (str.length < 6) str = "0" + str;
@@ -17,7 +17,7 @@ export function ImageIndexToRGBA(arr, index) {
 }
 
 export function ImageIndexToIntColor(imgArr, pIndex) {
-  let pixel = ImageIndexToRGBA(imgArr, pIndex);
+  const pixel = ImageIndexToRGBA(imgArr, pIndex);
   if (pixel[3] < 128) return; //if transparent, abort
 
   let pixelVal = pixel[0];
@@ -30,7 +30,7 @@ export function ImageIndexToIntColor(imgArr, pIndex) {
 }
 
 export function IntColorToRGBA(num) {
-  let ret = new Uint8ClampedArray(4);
+  const ret = new Uint8ClampedArray(4);
   ret[3] = 255;
   ret[2] = num % 256;
   ret[1] = Math.floor(num / 256) % 256;

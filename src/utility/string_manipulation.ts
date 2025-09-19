@@ -1,6 +1,6 @@
 /* #region  Taken from https://stackoverflow.com/questions/7616461/generate-a-hash-from-string-in-javascript user esmiralha */
 export function hashCode(str) {
-  var hash = 0,
+  let hash = 0,
     i,
     chr;
   if (str.length === 0) return hash;

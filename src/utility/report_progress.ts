@@ -1,9 +1,9 @@
 import { WIDTH, HEIGHT } from "./images/consts.js";
 
 export function reportProgress(i, displayingElement) {
-  let progressPercent = (i / (WIDTH * HEIGHT)) * 100;
-  progressPercent = progressPercent.toFixed(2);
-  let percentDisplay = progressPercent + "%";
+  const progressPercentNum = (i / (WIDTH * HEIGHT)) * 100;
+  const progressPercentString = progressPercentNum.toFixed(2);
+  const percentDisplay = progressPercentString + "%";
 
   if (Math.floor(i / WIDTH) > 0)
     displayingElement.innerText = displayingElement.innerText.replace(

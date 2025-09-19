@@ -212,7 +212,7 @@ export const TableLayouts = {
 }
 
 function tradeInfluenceTableWrapper(arr2D) {
-  let newArr2D = [];
+  const newArr2D = [];
   arr2D.forEach(arr => {
     newArr2D.push(tradeInfluenceRowWrapper(arr))
   });
@@ -220,7 +220,7 @@ function tradeInfluenceTableWrapper(arr2D) {
 }
 
 function tradeInfluenceRowWrapper(arr) {
-  let newArr = [];
+  const newArr = [];
   arr.forEach(el => {
     newArr.push(ti(el))
   });
