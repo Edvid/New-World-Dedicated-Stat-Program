@@ -121,7 +121,7 @@ currentNationNameDisplay.innerText = currentNationName;
 
 let leftArrow = document.createElement("button");
 let leftarrowimg = document.createElement("img");
-leftarrowimg.src = "docs/assets/images/leftarrow.png";
+leftarrowimg.src = "../../docs/assets/images/leftarrow.png";
 leftarrowimg.alt = "left arrow";
 leftarrowimg.height = 40;
 leftArrow.appendChild(leftarrowimg);
@@ -137,7 +137,7 @@ leftArrow.onclick = function () {
 
 let rightArrow = document.createElement("button");
 let rightarrowimg = document.createElement("img");
-rightarrowimg.src = "docs/assets/images/rightarrow.png";
+rightarrowimg.src = "../../docs/assets/images/rightarrow.png";
 rightarrowimg.alt = "right arrow";
 rightarrowimg.height = 40;
 rightArrow.appendChild(rightarrowimg);
@@ -426,11 +426,11 @@ function postNationSheetCreateCleanup(nationName) {
             techtreeButton.style.margin = "0em 1em 0.5em 1em";
             techtreeButton.addEventListener("click", collapsibleNextSibling);
             let techtreeIcon = document.createElement("img");
-            techtreeIcon.src = "docs/assets/images/small_techTree.png";
+            techtreeIcon.src = "../../docs/assets/images/small_techTree.png";
             techtreeIcon.style.border = "1px solid black";
             techtreeButton.appendChild(techtreeIcon);
             let techTreeImage = document.createElement("img");
-            techTreeImage.src = "docs/assets/images/techTree.png";
+            techTreeImage.src = "../../docs/assets/images/techTree.png";
             techTreeImage.style.margin = "2em";
             techTreeImage.style.width = document.body.clientWidth - 100 + "px";
             techTreeImage.style.display = "none";
@@ -445,7 +445,7 @@ function postNationSheetCreateCleanup(nationName) {
             imgButton.href = `./IndividualNation?col=${nationColor}`
             imgButton.target = "_blank";
             let img = document.createElement("img");
-            img.src = "docs/assets/images/world/small_blank.png";
+            img.src = "../../docs/assets/images/world/small_blank.png";
             img.title = `see ${nationName} specific area`;
             img.style.width = "58px";
             img.classList.add("pixelated");
@@ -527,32 +527,32 @@ function createStatTable(title, classList, givenTable) {
             let statTypeIcon = document.createElement("img");
             switch (getStatType(statSelection)) {
                 case "Base":
-                    statTypeIcon.src = "./docs/assets/images/Base.png"; //red
+                    statTypeIcon.src = "../../docs/assets/images/Base.png"; //red
                     statTypeIcon.alt = "Base";
                     statTypeIcon.title = "Base Stat: This is RPable";
                     break;
                 case "Derived":
-                    statTypeIcon.src = "./docs/assets/images/Derived.png";
+                    statTypeIcon.src = "../../docs/assets/images/Derived.png";
                     statTypeIcon.alt = "Derived";
                     statTypeIcon.title = "Derived Stat: This is calculated through a formula of other stats. You can not change this stat";
                     break;
                 case "Constant":
-                    statTypeIcon.src = "./docs/assets/images/Constant.png"; //orange
+                    statTypeIcon.src = "../../docs/assets/images/Constant.png"; //orange
                     statTypeIcon.alt = "Constant";
                     statTypeIcon.title = "Constant: This stat will not change throughout the game, and it is the same for all players";
                     break;
                 case "Turn Based":
-                    statTypeIcon.src = "./docs/assets/images/Turn Based.png"; //pink
+                    statTypeIcon.src = "../../docs/assets/images/Turn Based.png"; //pink
                     statTypeIcon.alt = "Turn Based";
                     statTypeIcon.title = "Turn Based Stat: This takes its future form the next turn. You can not change this stat";
                     break;
                 case "War":
-                    statTypeIcon.src = "./docs/assets/images/War.png"; //red
+                    statTypeIcon.src = "../../docs/assets/images/War.png"; //red
                     statTypeIcon.alt = "War";
                     statTypeIcon.title = "War: This stat can change through Role play in war, and may be changed by War GMs as well as Stat Updaters";
                     break;
                 case "Unknown":
-                    statTypeIcon.src = "./docs/assets/images/Unknown.png"; //black
+                    statTypeIcon.src = "../../docs/assets/images/Unknown.png"; //black
                     statTypeIcon.alt = "Unknown!";
                     statTypeIcon.title = "Unknown! This is a mistake on our part. Please inform us if you see it.";
                     break;
@@ -622,7 +622,7 @@ function createOpinionMatrixTable(title, SocialBehaviourGroups) {
             if (opinionerName == opinioneeName) {
 
                 let cross = document.createElement("img");
-                cross.src = "./docs/assets/images/NotApplicable.gif";
+                cross.src = "../../docs/assets/images/NotApplicable.gif";
                 cross.classList.add("notapplicable");
                 cross.style.display = "block";
                 cell.style.padding = "0px";

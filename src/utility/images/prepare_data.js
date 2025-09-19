@@ -9,7 +9,7 @@ export async function prepareData(path, progressTextElement) {
     progressTextElement.innerText = `Loading ${path}`;
 
   let img = new Image(WIDTH, HEIGHT);
-  img.src = `./docs/assets/images/world/${path}`;
+  img.src = `./../docs/assets/images/world/${path}`;
   let done = false;
   img.onload = function () {
     tempCanvas.getContext("2d").imageSmoothingEnabled = false;

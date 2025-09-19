@@ -129,7 +129,7 @@ function populateTopStatTable(){
                 imgButton.href = `./IndividualNation?col=${nations[NationName].Color}`
                 imgButton.target = "_blank";
                 let img = document.createElement("img");
-                img.src = "docs/assets/images/world/small_blank.png";
+                img.src = "../../docs/assets/images/world/small_blank.png";
                 img.title = `see ${NationName} specific area`;
                 
                 let imgcell = document.createElement("td");

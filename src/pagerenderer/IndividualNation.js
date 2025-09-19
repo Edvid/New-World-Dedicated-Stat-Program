@@ -42,8 +42,8 @@ let loadingText = document.querySelector("h3");
 
 document.body.prepend(Header())
 
-const nationImagePath = "./docs/assets/images/world/Nations.png";
-const climateImagePath = "./docs/assets/images/world/Climates.png";
+const nationImagePath = "../../docs/assets/images/world/Nations.png";
+const climateImagePath = "../../docs/assets/images/world/Climates.png";
 const nationImage = new Image(WIDTH, HEIGHT);
 let nationData;
 let climateData;

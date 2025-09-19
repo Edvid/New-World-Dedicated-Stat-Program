@@ -14,8 +14,8 @@ let preloadGameState;
 let preloadStatChanges;
 
 export async function loadGameFromSafeFile() {
-  await fetch("./docs/assets/gamestats/safefile.json").then(response => response.json()).then(data => preloadGameState = data);
-  await fetch("./docs/assets/gamestats/statchanges.ccf").then(response => response.text()).then(data => preloadStatChanges = data);
+  await fetch("../../docs/assets/gamestats/safefile.json").then(response => response.json()).then(data => preloadGameState = data);
+  await fetch("../../docs/assets/gamestats/statchanges.ccf").then(response => response.text()).then(data => preloadStatChanges = data);
   //If hash in JSON is the same as the hashcode of the entire
   //ccf file. Then the JSON _is_ the state the changes will 
   //genereate, and we can use the State for the gameStats

@@ -44,7 +44,7 @@ async function generateNationsResourcesOverlay() {
         canvasContainer.appendChild(resourceMaps[resourceName]);
         let resourceCtx = resourceMaps[resourceName].getContext("2d");
         
-        let imagePath = "./docs/assets/images/world/Resources/" + resourceName + ".png";
+        let imagePath = "../../docs/assets/images/world/Resources/" + resourceName + ".png";
         let image = new Image(WIDTH, HEIGHT);
         image.src = imagePath;
 
