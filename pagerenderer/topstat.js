@@ -1,5 +1,5 @@
 import { loadGameFromSafeFile } from "../gameloading/loadChangesFromFile.js";
-import { addHeader } from "../shared/header.js";
+import { addHeader } from "../components/header.js";
 import { ValueTypeFix } from "../utility/stat_types.js";
 import { getGameStats } from "../stats/gameStats.js";
 

@@ -9,7 +9,7 @@ import { warn } from "../utility/custom_errors.js";
 import { getStatType, ValueTypeFix } from "../utility/stat_types.js";
 import { capitalSpacing } from "../utility/string_manipulation.js";
 import { getGameStats, GSGetProperty, Opinion } from "../stats/gameStats.js";
-import { addHeader } from "../shared/header.js";
+import { addHeader } from "../components/header.js";
 import { TableLayouts } from "../utility/table_layouts.js";
 
 addHeader()

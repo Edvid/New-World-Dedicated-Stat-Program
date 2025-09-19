@@ -1,4 +1,4 @@
-import { addHeader } from "../shared/header.js";
+import { addHeader } from "../components/header.js";
 import { RGBAToHex } from "../utility/color_manipulation.js";
 import { WIDTH, HEIGHT } from "../utility/images/consts.js";
 
