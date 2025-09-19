@@ -27,7 +27,7 @@ let cffContainer = document.createElement("div");
 let loadingContainer = document.createElement("div");
 loadingContainer.style.minHeight = "20px"
 
-let DownloadButtonContainer = document.createElement("div");
+let downloadButtonContainer = document.createElement("div");
 
 let downloadbutton = document.createElement("button");
 downloadbutton.innerText = "Download gameStats as JSON";
@@ -42,7 +42,7 @@ downloadbutton.addEventListener('click', () => {
 
     downloadToFile(downloadString, 'safefile.json', 'application/json');
 });
-DownloadButtonContainer.appendChild(downloadbutton);
+downloadButtonContainer.appendChild(downloadbutton);
 
 
 let uploadccffileform = document.createElement("form");
@@ -104,7 +104,7 @@ cffContainer.appendChild(uploadccftextform);
 
 advancedSettings.appendChild(cffContainer);
 advancedSettings.appendChild(loadingContainer);
-advancedSettings.appendChild(DownloadButtonContainer);
+advancedSettings.appendChild(downloadButtonContainer);
 
 let nationSheetContainer = document.createElement("div");
 nationSheetContainer.classList.add("nationsheet");
@@ -112,8 +112,8 @@ nationSheetContainer.classList.add("nationsheet");
 let arrowContainer = document.createElement("div");
 arrowContainer.classList.add("arrowcontainer");
 
-const URLParamNationID = new URLSearchParams(window.location.search).get('nat');
-let currentNationID = URLParamNationID != null ? URLParamNationID - 1 : 0;
+const urlParamNationID = new URLSearchParams(window.location.search).get('nat');
+let currentNationID = urlParamNationID != null ? urlParamNationID - 1 : 0;
 let currentNationName = 'Loading nations...';
 let currentNationNameDisplay = document.createElement("h1");
 currentNationNameDisplay.classList = "nationnamedisplay";
@@ -166,22 +166,22 @@ dropdownselection.onchange = function () {
 dropdown.appendChild(dropdowntitle);
 dropdown.appendChild(dropdownselection);
 
-let SearchStatContainer = document.createElement("form");
-SearchStatContainer.id = "searchstatcontainer";
+let searchStatContainer = document.createElement("form");
+searchStatContainer.id = "searchstatcontainer";
 
 let searchStatLabel = document.createElement("label");
 let searchStat = document.createElement("input");
 searchStat.type = "text";
 searchStatLabel.innerText = "search stat: ";
-const URLParamStatQuerry = new URLSearchParams(window.location.search).get('q');
-searchStat.value = URLParamStatQuerry != null ? URLParamStatQuerry : "";
-let searchStatValue = URLParamStatQuerry != null ? URLParamStatQuerry : "";
+const urlParamStatQuerry = new URLSearchParams(window.location.search).get('q');
+searchStat.value = urlParamStatQuerry != null ? urlParamStatQuerry : "";
+let searchStatValue = urlParamStatQuerry != null ? urlParamStatQuerry : "";
 searchStat.addEventListener('input', () => {
     searchStatValue = searchStat.value;
     createNationSheet(currentNationName);
 });
-SearchStatContainer.appendChild(searchStatLabel);
-SearchStatContainer.appendChild(searchStat);
+searchStatContainer.appendChild(searchStatLabel);
+searchStatContainer.appendChild(searchStat);
 
 
 function updateDropdownSelection() {
@@ -216,7 +216,7 @@ arrowContainer.appendChild(rightArrow);
 
 document.body.appendChild(arrowContainer);
 document.body.appendChild(dropdown);
-document.body.appendChild(SearchStatContainer);
+document.body.appendChild(searchStatContainer);
 document.body.appendChild(nationSheetContainer);
 
 
@@ -422,21 +422,21 @@ function postNationSheetCreateCleanup(nationName) {
 
     allTabletitles.forEach(TableTitle => {
         if(TableTitle.innerHTML == "Cultural Advancements" || TableTitle.innerHTML == "Technologies"){
-            let TechtreeButton = document.createElement("a");
-            TechtreeButton.style.margin = "0em 1em 0.5em 1em";
-            TechtreeButton.addEventListener("click", collapsibleNextSibling);
-            let TechtreeIcon = document.createElement("img");
-            TechtreeIcon.src = "docs/assets/images/small_techTree.png";
-            TechtreeIcon.style.border = "1px solid black";
-            TechtreeButton.appendChild(TechtreeIcon);
-            let TechTreeImage = document.createElement("img");
-            TechTreeImage.src = "docs/assets/images/techTree.png";
-            TechTreeImage.style.margin = "2em";
-            TechTreeImage.style.width = document.body.clientWidth - 100 + "px";
-            TechTreeImage.style.display = "none";
+            let techtreeButton = document.createElement("a");
+            techtreeButton.style.margin = "0em 1em 0.5em 1em";
+            techtreeButton.addEventListener("click", collapsibleNextSibling);
+            let techtreeIcon = document.createElement("img");
+            techtreeIcon.src = "docs/assets/images/small_techTree.png";
+            techtreeIcon.style.border = "1px solid black";
+            techtreeButton.appendChild(techtreeIcon);
+            let techTreeImage = document.createElement("img");
+            techTreeImage.src = "docs/assets/images/techTree.png";
+            techTreeImage.style.margin = "2em";
+            techTreeImage.style.width = document.body.clientWidth - 100 + "px";
+            techTreeImage.style.display = "none";
 
-            TableTitle.parentElement.insertBefore(TechTreeImage, TableTitle.nextSibling);
-            TableTitle.parentElement.insertBefore(TechtreeButton, TechTreeImage);
+            TableTitle.parentElement.insertBefore(techTreeImage, TableTitle.nextSibling);
+            TableTitle.parentElement.insertBefore(techtreeButton, techTreeImage);
         }
         else if(TableTitle.innerHTML == "Land Stats"){
             let imgButton = document.createElement("a");
@@ -593,8 +593,8 @@ function createOpinionMatrixTable(title, SocialBehaviourGroups) {
     tableTitle.innerText = title;
     const nations = getGameStats().Nations
     const nationsSocialBehaviourGroups = nations[currentNationName][SocialBehaviourGroups];
-    const SocialBehaviourGroupName = SocialBehaviourGroups.replace("Group", "")
-    const RelevantSocialBehaviours = getGameStats()[SocialBehaviourGroupName];
+    const socialBehaviourGroupName = SocialBehaviourGroups.replace("Group", "")
+    const relevantSocialBehaviours = getGameStats()[socialBehaviourGroupName];
     let opinioneeNameRow = document.createElement("tr");
     let blankCornerCell = document.createElement("th");
     blankCornerCell.classList.add("primary-color")
@@ -630,7 +630,7 @@ function createOpinionMatrixTable(title, SocialBehaviourGroups) {
                 cell.appendChild(cross);
             }
             else {
-                let op = RelevantSocialBehaviours[opinionerName].Opinions[opinioneeName];
+                let op = relevantSocialBehaviours[opinionerName].Opinions[opinioneeName];
                 let img = document.createElement("img");
                 img.style.width = "40px";
                 img.style.height = "40px";
@@ -685,17 +685,17 @@ function conditionalCreatePieDiagram(ObjectToChart, ValName) {
   }
 }
 
-function createPieDiagram(ObjectToChart, ValName) {
-    let ValueName = ValName ?? "Points";
+function createPieDiagram(oObjectToChart, valName) {
+    let valueName = valName ?? "Points";
 
     let tablecontainer = document.createElement("div");
     let title = document.createElement("h2");
-    title.innerText = capitalSpacing(ObjectToChart);
+    title.innerText = capitalSpacing(oObjectToChart);
     title.classList.add("tabletitle");
 
     const nations = getGameStats().Nations
 
-    const ObjectToChartNationRef = nations[currentNationName][ObjectToChart];
+    const objectToChartNationRef = nations[currentNationName][oObjectToChart];
 
     var chartdiv = document.createElement("div");
     //styling on chart
@@ -722,17 +722,17 @@ function createPieDiagram(ObjectToChart, ValName) {
 
 
     let chartData = [];
-    for (const keyName in ObjectToChartNationRef) {
-        const keyValue = ObjectToChartNationRef[keyName];
+    for (const keyName in objectToChartNationRef) {
+        const keyValue = objectToChartNationRef[keyName];
 
         let objectPoints = keyValue;
         while (isNaN(objectPoints)) {
             if (objectPoints === null) {
                 objectPoints = 0;
             } else if (typeof objectPoints === 'object') {
-                objectPoints = objectPoints[ValueName];
+                objectPoints = objectPoints[valueName];
             } else if (typeof objectPoints === 'number'){
-                warn(`a nan object was found. ${keyName} in ${ObjectToChart}`);
+                warn(`a nan object was found. ${keyName} in ${oObjectToChart}`);
                 objectPoints = 0;
             }
         }
@@ -757,7 +757,7 @@ function createPieDiagram(ObjectToChart, ValName) {
             categoryField: "key",
             valueField: "Points",
             legendLabelText: "[{fill}]{category}[/]",
-            legendValueText: ValueName == "Points" ? "[bold {fill}][/]" : `[bold {fill}]{value} ${capitalSpacing(ValueName)}[/]`
+            legendValueText: valueName == "Points" ? "[bold {fill}][/]" : `[bold {fill}]{value} ${capitalSpacing(valueName)}[/]`
         })
     );
 
