@@ -2,7 +2,7 @@ import "https://cdn.amcharts.com/lib/5/index.js";
 import "https://cdn.amcharts.com/lib/5/percent.js";
 
 import { loadGameFromSafeFile } from "../gameloading/loadChangesFromFile.js";
-import { addHeader } from "../components/header.js";
+import { Header } from "../components/header.js";
 import { RGBAToHex } from "../utility/color_manipulation.js";
 import { prepareData } from "../utility/images/prepare_data.js";
 import { findPos } from "../utility/find_pos.js";
@@ -12,7 +12,7 @@ import { WIDTH, HEIGHT } from "../utility/images/consts.js";
 
 let tradezoneinfotable;
 
-addHeader()
+document.body.prepend(Header())
 await loadGameFromSafeFile()
 onLoadStatTradeZoneWealth()
 

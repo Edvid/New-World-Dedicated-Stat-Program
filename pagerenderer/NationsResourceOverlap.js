@@ -1,5 +1,5 @@
 import { loadGameFromSafeFile } from "../gameloading/loadChangesFromFile.js";
-import { addHeader } from "../components/header.js";
+import { Header } from "../components/header.js";
 import { prepareData } from "../utility/images/prepare_data.js";
 import { reportProgress } from "../utility/report_progress.js";
 import { lerp } from "../utility/math.js";
@@ -12,7 +12,7 @@ const bumpMapOpacity = 0.3;
 
 document.querySelector("body").onload = generateNationsResourcesOverlay();
 
-addHeader()
+document.body.prepend(Header())
 await loadGameFromSafeFile()
 
 

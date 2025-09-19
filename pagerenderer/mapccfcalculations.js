@@ -1,5 +1,5 @@
 import { loadGameFromSafeFile } from "../gameloading/loadChangesFromFile.js";
-import { addHeader } from "../components/header.js";
+import { Header } from "../components/header.js";
 import { RGBAToHex, ImageIndexToIntColor, ImageIndexToRGBA, IntColorToRGBA} from "../utility/color_manipulation.js";
 import { prepareData } from "../utility/images/prepare_data.js";
 import { reportProgress } from "../utility/report_progress.js";
@@ -45,7 +45,7 @@ let tradeZoneColorProperties;
 let fertilityColorProperties;
 let coastColorProperties = [{ color: "00ffff", name: "coast" }];
 
-addHeader()
+document.body.prepend(Header())
 
 progressText = document.querySelector(".progressText");
 progressText.innerText = "Loading...";

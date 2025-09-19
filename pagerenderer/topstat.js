@@ -1,5 +1,5 @@
 import { loadGameFromSafeFile } from "../gameloading/loadChangesFromFile.js";
-import { addHeader } from "../components/header.js";
+import { Header } from "../components/header.js";
 import { ValueTypeFix } from "../utility/stat_types.js";
 import { getGameStats } from "../stats/gameStats.js";
 
@@ -22,7 +22,7 @@ const TopStats = [
   { name: "Size", displayName: "Size" }
 ];
 
-addHeader()
+document.body.prepend(Header())
 await loadGameFromSafeFile()
 populateTopStatTable()
 

@@ -1,9 +1,9 @@
 import { loadGameFromSafeFile } from "../gameloading/loadChangesFromFile.js";
-import { addHeader } from "../components/header.js";
+import { Header } from "../components/header.js";
 import { capitalSpacing } from "../utility/string_manipulation.js";
 import { getGameStats } from "../stats/gameStats.js";
 
-addHeader()
+document.body.prepend(Header())
 await loadGameFromSafeFile()
 
 function loadAllTrades(){

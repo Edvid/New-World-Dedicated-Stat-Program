@@ -1,4 +1,4 @@
-import { addHeader } from "../components/header.js";
+import { Header } from "../components/header.js";
 import { RGBAToHex } from "../utility/color_manipulation.js";
 import { WIDTH, HEIGHT } from "../utility/images/consts.js";
 
@@ -40,7 +40,7 @@ canvas.height = HEIGHT;
 
 let loadingText = document.querySelector("h3");
 
-addHeader()
+document.body.prepend(Header())
 
 const nationImagePath = "./docs/assets/images/world/Nations.png";
 const climateImagePath = "./docs/assets/images/world/Climates.png";
