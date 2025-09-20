@@ -26,7 +26,10 @@ export default tseslint.config(
     },
   },
   {
-    files: ["pagerenderer/nationSheetGenerator.js"],
+    files: [
+      "./src/pagerenderer/nationSheetGenerator.ts",
+      "./out/pagerenderer/nationSheetGenerator.js"
+    ],
     languageOptions: {
       globals: {
         am5: "readonly",
