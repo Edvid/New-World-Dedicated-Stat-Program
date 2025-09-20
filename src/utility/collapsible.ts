@@ -1,8 +1,8 @@
 /* #region  Taken from https://www.w3schools.com/howto/howto_js_collapsible.asp */
 export function collapsible_behaviour() {
   const collapsibleItems = document.getElementsByClassName("collapsible");
-  for (let collID = 0; collapsibleItems.length; collID++) {
-    collapsibleItems[collID].addEventListener("click", function () {
+  Array.from(collapsibleItems).forEach(collapsible => {
+    collapsible.addEventListener("click", function () {
       this.classList.toggle("active");
       const content = this.nextElementSibling;
       if (content.style.display === "block") {
@@ -11,7 +11,7 @@ export function collapsible_behaviour() {
         content.style.display = "block";
       }
     });
-  }
+  });
 }
 /* #endregion */
 
