@@ -31,7 +31,7 @@ async function generateNationsResourcesOverlay() {
         resourceMaps[resourceName].height = HEIGHT;
         canvasContainer.appendChild(resourceMaps[resourceName]);
         let resourceCtx = resourceMaps[resourceName].getContext("2d");
-        let imagePath = "../../docs/assets/images/world/Resources/" + resourceName + ".png";
+        let imagePath = "./docs/assets/images/world/Resources/" + resourceName + ".png";
         let image = new Image(WIDTH, HEIGHT);
         image.src = imagePath;
         resourceCtx.globalAlpha = 180 / 255;
