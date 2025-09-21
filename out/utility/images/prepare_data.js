@@ -1,11 +1,11 @@
 import { WIDTH, HEIGHT } from "./consts.js";
 export async function prepareData(path, progressTextElement) {
-    let tempCanvas = document.createElement("canvas");
+    const tempCanvas = document.createElement("canvas");
     tempCanvas.width = WIDTH;
     tempCanvas.height = HEIGHT;
     if (progressTextElement != null)
         progressTextElement.innerText = `Loading ${path}`;
-    let img = new Image(WIDTH, HEIGHT);
+    const img = new Image(WIDTH, HEIGHT);
     img.src = `./docs/assets/images/world/${path}`;
     let done = false;
     img.onload = function () {
