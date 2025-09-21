@@ -16,8 +16,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      - run: "npm i typescript"
       - name: compiling typescript
-        run: npx tsc
+        run: "npx tsc"
         continue-on-error: true
       - name: find differences
-        run: [[ $(git status -s | wc -l) -ne 0 ]]
+        run: "[[ $(git status -s | wc -l) -eq 0 ]]"
