@@ -12,15 +12,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: read
 
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: 22
-      - run: npm ci
-      - run: mkdir -p out/
       - name: compiling typescript
         run: npx tsc
         continue-on-error: true
+      - name: find differences
+        run: [[ $(git status -s | wc -l) -ne 0 ]]
