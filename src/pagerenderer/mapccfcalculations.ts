@@ -7,32 +7,32 @@ import { trimIndents } from "../utility/string_manipulation.js";
 import { getGameStats, mappedResources, mappedResourcesMultipliers } from "../stats/gameStats.js";
 import { WIDTH, HEIGHT } from "../utility/images/consts.js";
 import { populationMapToHumanReadable } from "../utility/images/population_map_to_human_readable.js";
-import { fillInColorProperties } from "../utility/mapcalc/color_properties.js";
+import { fillInColorProperties, colorProperty } from "../utility/mapcalc/color_properties.js";
 
 let promptFieldReturnedText = "";
 
-let baseData;
-let nationData;
-let climateData;
-let coastData;
-let developmentData;
-let cultureData;
-let religionData;
-let tradeZoneData;
-let fertilityData;
-let popData;
-let newPopData;
-let newFuturePopData;
+let baseData: ImageDataArray;
+let nationData: ImageDataArray;
+let climateData: ImageDataArray;
+let coastData: ImageDataArray;
+let developmentData: ImageDataArray;
+let cultureData: ImageDataArray;
+let religionData: ImageDataArray;
+let tradeZoneData: ImageDataArray;
+let fertilityData: ImageDataArray;
+let popData: ImageDataArray;
+let newPopData: ImageDataArray;
+let newFuturePopData: ImageDataArray;
 
-let populationXDevelopmentData;
+let populationXDevelopmentData: ImageDataArray;
 
-let nationColorProperties;
-let climateColorProperties;
-let cultureColorProperties;
-let religionColorProperties;
-let tradeZoneColorProperties;
-let fertilityColorProperties;
-const coastColorProperties = [{ color: "00ffff", name: "coast" }];
+let nationColorProperties: colorProperty[];
+let climateColorProperties: colorProperty[];
+let cultureColorProperties: colorProperty[];
+let religionColorProperties: colorProperty[];
+let tradeZoneColorProperties: colorProperty[];
+let fertilityColorProperties: colorProperty[];
+const coastColorProperties: colorProperty[] = [{ color: "00ffff", name: "coast" }];
 
 document.body.prepend(Header())
 

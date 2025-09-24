@@ -99,8 +99,10 @@ export class Nation {
   ReligiousDisunity;
   Population;
   PopulationGrowth;
+  PseudoPopulationGrowth;
   AverageDevelopment;
   Health;
+  EffectiveHealth;
   Alcoholism;
   LiteracyPercent;
   HigherEducation;
@@ -1146,16 +1148,16 @@ export class Nation {
 }
 
 class Stats{
-  TimeSpeed;
-  TimeDivide;
-  Nations;
-  Religions;
-  Cultures;
+  TimeSpeed: number;
+  TimeDivide: number;
+  Nations: Record<string, Nation>;
+  Religions: Record<string, SocialBehaviour>;
+  Cultures: Record<string, SocialBehaviour>;
   ResourceTypes;
-  Trades;
-  TradeZones;
-  Climates;
-  Fertility;
+  Trades: Record<string, Trade>;
+  TradeZones: Record<string, TradeZone>;
+  Climates: Record<string, Climate>;
+  Fertility: Record<string, {Color: string, Score: number}>;
   UnitUpkeepCosts;
   constructor(){
     this.TimeSpeed = 25;
@@ -1166,7 +1168,7 @@ class Stats{
     this.Religions = {
       "Pagan": {
         "definingFeatures": "",
-        "Color": 776544,
+        "Color": "776544",
         "Opinions": {
           "Sunni": {
             "Score": -75
