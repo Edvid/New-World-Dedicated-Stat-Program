@@ -3,7 +3,11 @@ export interface colorProperty {
   name: string;
 };
 
-export function fillInColorProperties(searchObj) {
+export interface ColorHaver {
+  Color: string
+}
+
+export function fillInColorProperties(searchObj: Record<string, ColorHaver>) {
   const ret: colorProperty[] = [];
 
   Object.keys(searchObj).forEach((key) => {

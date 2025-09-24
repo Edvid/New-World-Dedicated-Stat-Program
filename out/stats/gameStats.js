@@ -85,8 +85,10 @@ export class Nation {
     ReligiousDisunity;
     Population;
     PopulationGrowth;
+    PseudoPopulationGrowth;
     AverageDevelopment;
     Health;
+    EffectiveHealth;
     Alcoholism;
     LiteracyPercent;
     HigherEducation;
@@ -1011,7 +1013,7 @@ class Stats {
         this.Religions = {
             "Pagan": {
                 "definingFeatures": "",
-                "Color": 776544,
+                "Color": "776544",
                 "Opinions": {
                     "Sunni": {
                         "Score": -75
