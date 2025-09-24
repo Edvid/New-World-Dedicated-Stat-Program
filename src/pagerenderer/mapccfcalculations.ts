@@ -250,6 +250,7 @@ async function mapCalculations() {
 
     addToTextOutput(
       `> ${nationKey}
+       +> ReligionGroups
        > ReligionGroups
        `
     );
