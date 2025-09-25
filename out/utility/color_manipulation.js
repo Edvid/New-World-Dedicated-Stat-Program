@@ -11,7 +11,12 @@ export function RGBAToHex(color) {
 }
 export function ImageIndexToRGBA(arr, index) {
     if (typeof arr != "function") {
-        return [arr[index], arr[index + 1], arr[index + 2], arr[index + 3]];
+        return [
+            arr[index],
+            arr[index + 1],
+            arr[index + 2],
+            arr[index + 3],
+        ];
     }
     return [arr(index), arr(index + 1), arr(index + 2), arr(index + 3)];
 }
@@ -33,4 +38,7 @@ export function IntColorToRGBA(num) {
     ret[1] = Math.floor(num / 256) % 256;
     ret[0] = Math.floor(num / 65536) % 256;
     return ret;
+}
+export function RGBAtoRGB(arr) {
+    return [arr[0], arr[1], arr[2]];
 }
