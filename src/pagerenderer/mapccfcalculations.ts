@@ -2,7 +2,6 @@ import { loadGameFromSafeFile } from "../gameloading/loadChangesFromFile.js";
 import { Header } from "../components/header.js";
 import {
   RGBAToHex,
-  ImageIndexToIntColor,
   ImageIndexToRGBA,
   IntColorToRGBA,
   RGBAtoRGB,
@@ -28,6 +27,7 @@ import {
 } from "../utility/mapcalc/find_distribution.js";
 import { generateCCFForSocialBehaviourGroups } from "../utility/mapcalc/generate_ccf_for_social_behaviour_groups.js";
 import { error } from "../utility/custom_errors.js";
+import { mapDataIterator, reverseRBGsOfMap, twoMapMerger} from "../utility/mapcalc/mapdata_iterator.js";
 
 let baseData: ImageDataArray;
 let nationData: ImageDataArray;
@@ -131,13 +131,15 @@ async function mapCalculations() {
   progressText.innerText = "reversing development map";
   await new Promise((resolve) => setTimeout(resolve));
 
-  developmentData = await mapDataIterator(reverseRBGsOfDevelopment);
+  developmentData = await mapDataIterator(reverseRBGsOfMap, [developmentData], progressText);
 
   progressText.innerText = "loading population X development";
   await new Promise((resolve) => setTimeout(resolve));
 
   populationXDevelopmentData = await mapDataIterator(
-    populationXDevelopmentMerger,
+    twoMapMerger,
+    [popData, developmentData],
+    progressText
   );
 
   progressText.innerText =
@@ -661,29 +663,6 @@ async function prepareNewMaps() {
   );
 }
 
-async function mapDataIterator(delegate) {
-  const ret = new Uint8ClampedArray(WIDTH * HEIGHT * 4);
-
-  let then = Date.now();
-  for (let i = 0; i < ret.length / 4; i++) {
-    const res = delegate(i * 4);
-    ret[i * 4] = res[0];
-    ret[i * 4 + 1] = res[1];
-    ret[i * 4 + 2] = res[2];
-    ret[i * 4 + 3] = res[3];
-    if (i % WIDTH == 0) {
-      const now = Date.now();
-      if (now - then > 100) {
-        await reportProgress(i, progressText);
-        await new Promise((resolve) => setTimeout(resolve));
-        then = now;
-      }
-    }
-  }
-
-  return ret;
-}
-
 async function advanceMap(imgArray, formula, options) {
   const newImgArray = new Uint8ClampedArray(imgArray.length);
 
@@ -733,19 +712,3 @@ async function addToImageOutput(imgArray, imgName) {
   imageOutputContainer.appendChild(canvasContainer);
 }
 
-function reverseRBGsOfDevelopment(mapIndex) {
-  return [
-    255 - developmentData[mapIndex],
-    255 - developmentData[mapIndex + 1],
-    255 - developmentData[mapIndex + 2],
-    developmentData[mapIndex + 3],
-  ];
-}
-
-function populationXDevelopmentMerger(mapIndex) {
-  const pixelPop = ImageIndexToIntColor(popData, mapIndex);
-  const pixelDev = developmentData[mapIndex] / 255;
-  const ret = pixelPop * pixelDev;
-
-  return IntColorToRGBA(ret);
-}
