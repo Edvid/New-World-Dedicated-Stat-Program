@@ -140,9 +140,6 @@ async function mapCalculations() {
     populationXDevelopmentMerger,
   );
 
-  progressText.innerText = "loading population X (100% + development/2)";
-  await new Promise((resolve) => setTimeout(resolve));
-
   progressText.innerText =
     "adjusting culture map data for population and development";
   await new Promise((resolve) => setTimeout(resolve));
