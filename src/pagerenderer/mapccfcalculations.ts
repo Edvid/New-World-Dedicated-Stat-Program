@@ -169,6 +169,8 @@ async function mapCalculations() {
     },
   );
 
+  const coastPopCountValueMode = "RGBAsNum";
+
   const coastPopCount = await findDistribution(
     nationData,
     popData,
@@ -179,7 +181,7 @@ async function mapCalculations() {
     reportingElements,
     {
       canIgnoreTransparentInner: true,
-      valueMode: "RGBAsNum",
+      valueMode: coastPopCountValueMode,
       unassignedPixelAssumption: 0,
       Adjuster: coastData,
       AdjusterMapping: (e) => {
@@ -346,9 +348,21 @@ async function mapCalculations() {
      `,
   );
 
-  Object.keys(coastPopCount).forEach((nationKey) => {
+  if (
+    isValueModeNormal(
+      coastPopCountValueMode,
+      coastPopCount,
+    )
+  ) {
+    error(
+      `Wrong value mode was provided to the distribution finder for coastPopCount. Report this to admins`,
+    );
+    return;
+  }
+
+  Object.entries<number>(coastPopCount).forEach(([nationName, score]) => {
     addToTextOutput(
-      `= ${coastPopCount[nationKey]} ${nationKey}.coastalPopulation\n`,
+      `= ${score} ${nationName}.coastalPopulation\n`,
     );
   });
 
