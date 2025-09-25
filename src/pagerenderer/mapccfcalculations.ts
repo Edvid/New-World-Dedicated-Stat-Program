@@ -373,6 +373,8 @@ async function mapCalculations() {
 
   /* #region  Everthing resources */
 
+  const resourceDistributionValueMode = "normal";
+
   for (let r = 0; r < mappedResources.length; r++) {
     const resourceName = mappedResources[r];
 
@@ -382,27 +384,39 @@ async function mapCalculations() {
 
     progressText.innerText = "";
 
-    const resourceBlobSizes = (
-      await findDistribution(
-        () => {
-          return 255;
-        },
-        resourceData,
-        "world",
-        resourceName,
-        [{ color: "ffffff", name: "world" }],
-        (name) => {
-          return { color: name, name: "Col" + name };
-        },
-        reportingElements,
-        {
-          skipsTransparentInner: true,
-          unnamedGroup: true,
-          valueMode: "normal",
-          unassignedPixelAssumption: "!!!", // should no be possible to use, as colorToInnerNameMapping never returns undefined no matter the provided name
-        },
-      )
-    )["world"];
+    const resourceInWorld = await findDistribution(
+      () => {
+        return 255;
+      },
+      resourceData,
+      "world",
+      resourceName,
+      [{ color: "ffffff", name: "world" }],
+      (name) => {
+        return { color: name, name: "Col" + name };
+      },
+      reportingElements,
+      {
+        skipsTransparentInner: true,
+        unnamedGroup: true,
+        valueMode: resourceDistributionValueMode,
+        unassignedPixelAssumption: "!!!", // should no be possible to use, as colorToInnerNameMapping never returns undefined no matter the provided name
+      },
+    );
+
+  if (
+    !isValueModeNormal(
+      resourceDistributionValueMode,
+      resourceInWorld,
+    )
+  ) {
+    error(
+      `Wrong value mode was provided to the distribution finder for resourceBlobSize. Report this to admins`,
+    );
+    return;
+  }
+
+    const resourceBlobSizes = resourceInWorld["world"];
 
     //find nations' max resources
 
@@ -419,27 +433,39 @@ async function mapCalculations() {
       {
         skipsTransparentInner: true,
         unnamedGroup: true,
-        valueMode: "normal",
+        valueMode: resourceDistributionValueMode,
         unassignedPixelAssumption: "!!!", // should no be possible to use, as colorToInnerNameMapping never returns undefined no matter the provided name
       },
     );
 
+  if (
+    !isValueModeNormal(
+      resourceDistributionValueMode,
+      resourceOverlap,
+    )
+  ) {
+    error(
+      `Wrong value mode was provided to the distribution finder for resourceOverlap. Report this to admins`,
+    );
+    return;
+  }
     //use resourceBlobSizes to divide all.
 
-    Object.keys(resourceOverlap).forEach((nationKey) => {
+    Object.entries<Record<string, number>>(resourceOverlap).forEach(([nationName, nation]) => {
       let count = 0.0;
 
       //counting up all pixels overlapping per blob, divided by the blob's size
-      Object.keys(resourceOverlap[nationKey]).forEach((ColorKey) => {
+      Object.entries<number>(nation).forEach(([ColorKey, blobOverlapWithNationSize]) => {
+        const totalBlobSize = resourceBlobSizes[ColorKey];
         count +=
-          resourceOverlap[nationKey][ColorKey] / resourceBlobSizes[ColorKey];
+          blobOverlapWithNationSize / totalBlobSize;
       });
 
       //resource blob number multiplication
       count *= mappedResourcesMultipliers[r];
 
       addToTextOutput(
-        `= ${(Math.round(count * 20) / 20).toFixed(2)} ${nationKey}.Max${resourceName}
+        `= ${(Math.round(count * 20) / 20).toFixed(2)} ${nationName}.Max${resourceName}
          `,
       );
     });
