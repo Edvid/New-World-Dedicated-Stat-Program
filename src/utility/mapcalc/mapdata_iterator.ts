@@ -4,9 +4,9 @@ import { Byte } from "../int_range.js";
 import { reportProgress } from "../report_progress.js";
 
 export async function mapDataIterator(
-  delegate: ((number, maps: ImageDataArray[]) => [Byte, Byte, Byte, Byte]),
+  delegate: (number, maps: ImageDataArray[]) => [Byte, Byte, Byte, Byte],
   maps: ImageDataArray[],
-  progressElement: HTMLElement
+  progressElement: HTMLElement,
 ) {
   const ret = new Uint8ClampedArray(WIDTH * HEIGHT * 4);
 
@@ -41,8 +41,10 @@ export function reverseRBGsOfMap(mapIndex: number, maps: ImageDataArray[]) {
 
 export function twoMapMerger(mapIndex: number, maps: ImageDataArray[]) {
   const pixelValueInFirstMapAsInt = ImageIndexToIntColor(maps[0], mapIndex);
-  const pixelGreyScaleValueInSecondMapAsUnitScalar = (maps[1][mapIndex] as Byte) / 255;
-  const ret = pixelValueInFirstMapAsInt * pixelGreyScaleValueInSecondMapAsUnitScalar;
+  const pixelGreyScaleValueInSecondMapAsUnitScalar =
+    (maps[1][mapIndex] as Byte) / 255;
+  const ret =
+    pixelValueInFirstMapAsInt * pixelGreyScaleValueInSecondMapAsUnitScalar;
 
   return IntColorToRGBA(ret);
 }
