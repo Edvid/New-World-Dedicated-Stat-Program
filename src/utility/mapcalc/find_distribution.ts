@@ -49,7 +49,7 @@ export async function findDistribution(
       AdjusterMapping?: (val: number) => adjustMappingType;
     },
 ) {
-  const ret = {};
+  const ret: Record<string, Record<string, number>> | Record<string, number> = {};
   let pixelCount = WIDTH * HEIGHT;
   if (options.pixelCount) {
     pixelCount = options.pixelCount;
@@ -57,19 +57,6 @@ export async function findDistribution(
 
   let getOuterDataPoint: (index: number) => Byte;
   let getInnerDataPoint: (index: number) => Byte;
-
-  function isDatasetImageDataArray(
-    dataset: ImageDataArray | ((index: number) => Byte),
-  ): dataset is ImageDataArray {
-    return typeof dataset != "function";
-  }
-
-  function isColorPropertyArray(
-    colProps: colorProperty[] | ((index: string) => colorProperty)
-  ): colProps is colorProperty[] {
-    return typeof colProps != "function";
-  }
-
 
   if (isDatasetImageDataArray(outerDataset))
     getOuterDataPoint = (i) => outerDataset[i] as Byte;
@@ -154,7 +141,7 @@ export async function findDistribution(
     }
 
 
-      if (options.valueMode == "greyScale") {
+      if (!isValueModeNormal(options.valueMode, ret) && options.valueMode == "greyScale") {
         const innerGreyScale = getInnerDataPoint(i * 4);
         const innerPixelValue = isInnerDataEmpty
           ? options.unassignedPixelAssumption
@@ -167,7 +154,7 @@ export async function findDistribution(
         ret[outerNameOfPixel] += innerPixelValue * mult;
 
         if (isNaN(ret[outerNameOfPixel])) debugger;
-      } else if (options.valueMode == "RGBAsNum") {
+      } else if (!isValueModeNormal(options.valueMode, ret) && options.valueMode == "RGBAsNum") {
         const InnerPixelValue = isInnerDataEmpty
           ? options.unassignedPixelAssumption
           : ImageIndexToIntColor(innerDataset, i * 4);
@@ -177,7 +164,7 @@ export async function findDistribution(
 
         const mult = adjustments();
         ret[outerNameOfPixel] += InnerPixelValue * mult;
-      } else if (options.valueMode == "normal") {
+      } else if (isValueModeNormal(options.valueMode, ret) && options.valueMode == "normal") {
         let foundInnerObject: colorProperty;
         let InnerNameOfPixel: string;
         if (isColorPropertyArray(colorToInnerNameMapping)) {
@@ -219,6 +206,25 @@ export async function findDistribution(
   }
 
   return ret;
+}
+
+function isDatasetImageDataArray(
+  dataset: ImageDataArray | ((index: number) => Byte),
+): dataset is ImageDataArray {
+  return typeof dataset != "function";
+}
+
+function isColorPropertyArray(
+  colProps: colorProperty[] | ((index: string) => colorProperty)
+): colProps is colorProperty[] {
+  return typeof colProps != "function";
+}
+
+export function isValueModeNormal(
+  valueMode: "RGBAsNum" | "greyScale" | "normal",
+  returnObject: Record<string, Record<string, number>> | Record<string, number>
+): returnObject is Record<string, Record<string, number>> {
+  return valueMode == "normal"
 }
 
 async function PromptName(color: string, getDatasetPointFunction: (index: number) => Byte, name: string, queryElements: QueryElements) {
