@@ -154,6 +154,7 @@ async function mapCalculations() {
     "adjusting culture map data for population and development";
   await new Promise((resolve) => setTimeout(resolve));
 
+  const climateDistributionValueMode = "normal";
   const climateDistribution = await findDistribution(
     nationData,
     climateData,
@@ -163,7 +164,7 @@ async function mapCalculations() {
     climateColorProperties,
     reportingElements,
     {
-      valueMode: "normal",
+      valueMode: climateDistributionValueMode,
       unassignedPixelAssumption: "Moderate",
     },
   );
@@ -292,10 +293,22 @@ async function mapCalculations() {
      `,
   );
 
-  Object.keys(climateDistribution).forEach((nationKey) => {
-    Object.keys(climateDistribution[nationKey]).forEach((climateKey) => {
+  if (
+    !isValueModeNormal(
+      climateDistributionValueMode,
+      climateDistribution,
+    )
+  ) {
+    error(
+      `Wrong value mode was provided to the distribution finder for climateDistribution. Report this to admins`,
+    );
+    return;
+  }
+
+  Object.entries<Record<string, number>>(climateDistribution).forEach(([nationName, nation]) => {
+    Object.entries<number>(nation).forEach(([climateName, climateValue]) => {
       addToTextOutput(
-        `= ${climateDistribution[nationKey][climateKey]} ${nationKey}.${climateKey}\n`,
+        `= ${climateValue} ${nationName}.${climateName}\n`,
       );
     });
   });
