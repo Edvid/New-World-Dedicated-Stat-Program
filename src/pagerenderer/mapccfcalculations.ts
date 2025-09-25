@@ -188,6 +188,7 @@ async function mapCalculations() {
     },
   );
 
+  const developmentScoreValueMode = "greyScale";
   const developmentScore = await findDistribution(
     nationData,
     developmentData,
@@ -199,7 +200,7 @@ async function mapCalculations() {
     {
       canIgnoreTransparentInner: true,
       unassignedPixelAssumption: 0,
-      valueMode: "greyScale",
+      valueMode: developmentScoreValueMode,
     },
   );
 
@@ -320,9 +321,21 @@ async function mapCalculations() {
      `,
   );
 
-  Object.keys(developmentScore).forEach((nationKey) => {
+  if (
+    isValueModeNormal(
+      developmentScoreValueMode,
+      developmentScore,
+    )
+  ) {
+    error(
+      `Wrong value mode was provided to the distribution finder for developmentScore. Report this to admins`,
+    );
+    return;
+  }
+
+  Object.entries<number>(developmentScore).forEach(([nationName, score]) => {
     addToTextOutput(
-      `= ${developmentScore[nationKey]} ${nationKey}.DevelopmentPixelCount\n`,
+      `= ${score} ${nationName}.DevelopmentPixelCount\n`,
     );
   });
 
