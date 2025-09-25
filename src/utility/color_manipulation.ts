@@ -1,4 +1,6 @@
-export function RGBAToHex(color) {
+import { Byte } from "./int_range";
+
+export function RGBAToHex(color: [Byte, Byte, Byte]) {
   const r = color[0];
   const g = color[1];
   const b = color[2];
@@ -8,15 +10,26 @@ export function RGBAToHex(color) {
   return str;
 }
 
-export function ImageIndexToRGBA(arr, index) {
+export function ImageIndexToRGBA(
+  arr: ImageDataArray | ((index: number) => Byte),
+  index: number,
+): [Byte, Byte, Byte, Byte] {
   if (typeof arr != "function") {
-    return [arr[index], arr[index + 1], arr[index + 2], arr[index + 3]];
+    return [
+      arr[index] as Byte,
+      arr[index + 1] as Byte,
+      arr[index + 2] as Byte,
+      arr[index + 3] as Byte,
+    ];
   }
 
   return [arr(index), arr(index + 1), arr(index + 2), arr(index + 3)];
 }
 
-export function ImageIndexToIntColor(imgArr, pIndex) {
+export function ImageIndexToIntColor(
+  imgArr: ImageDataArray | ((index: number) => Byte),
+  pIndex: number,
+) {
   const pixel = ImageIndexToRGBA(imgArr, pIndex);
   if (pixel[3] < 128) return; //if transparent, abort
 
@@ -29,11 +42,15 @@ export function ImageIndexToIntColor(imgArr, pIndex) {
   return pixelVal;
 }
 
-export function IntColorToRGBA(num) {
+export function IntColorToRGBA(num: number) {
   const ret = new Uint8ClampedArray(4);
   ret[3] = 255;
   ret[2] = num % 256;
   ret[1] = Math.floor(num / 256) % 256;
   ret[0] = Math.floor(num / 65536) % 256;
   return ret;
+}
+
+export function RGBAtoRGB(arr: [Byte, Byte, Byte, Byte]): [Byte, Byte, Byte]{
+  return [arr[0], arr[1], arr[2]]
 }
