@@ -224,6 +224,8 @@ async function mapCalculations() {
     },
   );
 
+  const tradeZoneScoreValueMode = "RGBAsNum";
+
   const tradeZoneScore = await findDistribution(
     tradeZoneData,
     populationXDevelopmentData,
@@ -234,7 +236,7 @@ async function mapCalculations() {
     reportingElements,
     {
       canIgnoreTransparentInner: true,
-      valueMode: "RGBAsNum",
+      valueMode: tradeZoneScoreValueMode,
       unassignedPixelAssumption: 0,
     },
   );
@@ -386,12 +388,16 @@ async function mapCalculations() {
      `,
   );
 
+  if (isValueModeNormal(tradeZoneScoreValueMode, tradeZoneScore)) {
+    error(`Wrong value mode was provided to the distribution finder for tradeZoneScore. Report this to admins`);
+    return;
+  }
+
   //climate * totaldevscore (255 per pixel)
-  Object.keys(tradeZoneScore).forEach((zoneKey) => {
-    const rawTradeZoneScore = tradeZoneScore[zoneKey];
-    const idealTradeZoneScore = rawTradeZoneScore / 10000;
+  Object.entries<number>(tradeZoneScore).forEach(([zoneName, score]) => {
+    const idealTradeZoneScore = score / 10000;
     addToTextOutput(
-      `= ${(Math.round(idealTradeZoneScore * 20) / 20).toFixed(2)} ${zoneKey}.Score\n`,
+      `= ${(Math.round(idealTradeZoneScore * 20) / 20).toFixed(2)} ${zoneName}.Score\n`,
     );
   });
 
