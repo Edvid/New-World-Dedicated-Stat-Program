@@ -19,7 +19,7 @@ interface QueryElements {
 export type ReportingElements = {
   progressElement: HTMLElement;
   addToTextOutput: (string) => void;
-} & QueryElements
+} & QueryElements;
 
 export async function findDistribution(
   outerDataset: ImageDataArray | ((index: number) => Byte),
@@ -49,7 +49,8 @@ export async function findDistribution(
       AdjusterMapping?: (val: number) => adjustMappingType;
     },
 ) {
-  const ret: Record<string, Record<string, number>> | Record<string, number> = {};
+  const ret: Record<string, Record<string, number>> | Record<string, number> =
+    {};
   let pixelCount = WIDTH * HEIGHT;
   if (options.pixelCount) {
     pixelCount = options.pixelCount;
@@ -140,69 +141,78 @@ export async function findDistribution(
       }
     }
 
+    if (
+      !isValueModeNormal(options.valueMode, ret) &&
+      options.valueMode == "greyScale"
+    ) {
+      const innerGreyScale = getInnerDataPoint(i * 4);
+      const innerPixelValue = isInnerDataEmpty
+        ? options.unassignedPixelAssumption
+        : innerGreyScale;
 
-      if (!isValueModeNormal(options.valueMode, ret) && options.valueMode == "greyScale") {
-        const innerGreyScale = getInnerDataPoint(i * 4);
-        const innerPixelValue = isInnerDataEmpty
-          ? options.unassignedPixelAssumption
-          : innerGreyScale;
+      if (typeof ret[outerNameOfPixel] === "undefined")
+        ret[outerNameOfPixel] = 0;
 
-        if (typeof ret[outerNameOfPixel] === "undefined")
-          ret[outerNameOfPixel] = 0;
+      const mult = adjustments();
+      ret[outerNameOfPixel] += innerPixelValue * mult;
 
-        const mult = adjustments();
-        ret[outerNameOfPixel] += innerPixelValue * mult;
+      if (isNaN(ret[outerNameOfPixel])) debugger;
+    } else if (
+      !isValueModeNormal(options.valueMode, ret) &&
+      options.valueMode == "RGBAsNum"
+    ) {
+      const InnerPixelValue = isInnerDataEmpty
+        ? options.unassignedPixelAssumption
+        : ImageIndexToIntColor(innerDataset, i * 4);
 
-        if (isNaN(ret[outerNameOfPixel])) debugger;
-      } else if (!isValueModeNormal(options.valueMode, ret) && options.valueMode == "RGBAsNum") {
-        const InnerPixelValue = isInnerDataEmpty
-          ? options.unassignedPixelAssumption
-          : ImageIndexToIntColor(innerDataset, i * 4);
+      if (typeof ret[outerNameOfPixel] === "undefined")
+        ret[outerNameOfPixel] = 0;
 
-        if (typeof ret[outerNameOfPixel] === "undefined")
-          ret[outerNameOfPixel] = 0;
-
-        const mult = adjustments();
-        ret[outerNameOfPixel] += InnerPixelValue * mult;
-      } else if (isValueModeNormal(options.valueMode, ret) && options.valueMode == "normal") {
-        let foundInnerObject: colorProperty;
-        let InnerNameOfPixel: string;
-        if (isColorPropertyArray(colorToInnerNameMapping)) {
-          foundInnerObject = isInnerDataEmpty
-            ? { color: innerCol, name: options.unassignedPixelAssumption }
-            : !options.unnamedGroup
-              ? colorToInnerNameMapping.find(
+      const mult = adjustments();
+      ret[outerNameOfPixel] += InnerPixelValue * mult;
+    } else if (
+      isValueModeNormal(options.valueMode, ret) &&
+      options.valueMode == "normal"
+    ) {
+      let foundInnerObject: colorProperty;
+      let InnerNameOfPixel: string;
+      if (isColorPropertyArray(colorToInnerNameMapping)) {
+        foundInnerObject = isInnerDataEmpty
+          ? { color: innerCol, name: options.unassignedPixelAssumption }
+          : !options.unnamedGroup
+            ? colorToInnerNameMapping.find(
                 (element) =>
                   element.color.toString().toLowerCase() ==
-                    innerCol.toString().toLowerCase(),
+                  innerCol.toString().toLowerCase(),
               )
-              : { color: innerCol, name: "Col" + innerCol };
-          if (typeof foundInnerObject === "undefined") {
-            foundInnerObject = await PromptName(
-              innerCol,
-              getInnerDataPoint,
-              innerName,
-              reportingElements,
-            );
-            reportingElements.addToTextOutput(foundInnerObject.name);
-            if (!options.unnamedGroup)
-              colorToInnerNameMapping.push(foundInnerObject);
-          }
-          InnerNameOfPixel = foundInnerObject.name;
-        } else {
-          InnerNameOfPixel = colorToInnerNameMapping(innerCol).name
+            : { color: innerCol, name: "Col" + innerCol };
+        if (typeof foundInnerObject === "undefined") {
+          foundInnerObject = await PromptName(
+            innerCol,
+            getInnerDataPoint,
+            innerName,
+            reportingElements,
+          );
+          reportingElements.addToTextOutput(foundInnerObject.name);
+          if (!options.unnamedGroup)
+            colorToInnerNameMapping.push(foundInnerObject);
         }
-        if (typeof ret[outerNameOfPixel] === "undefined")
-          ret[outerNameOfPixel] = {};
-        if (typeof ret[outerNameOfPixel][InnerNameOfPixel] === "undefined")
-          ret[outerNameOfPixel][InnerNameOfPixel] = 0;
-
-        const mult = adjustments();
-        ret[outerNameOfPixel][InnerNameOfPixel] += 1 * mult;
-
+        InnerNameOfPixel = foundInnerObject.name;
       } else {
-        error("valueMode was found to be undefined. This should not have been able to happen. Report this to admins")
+        InnerNameOfPixel = colorToInnerNameMapping(innerCol).name;
       }
+      if (typeof ret[outerNameOfPixel] === "undefined")
+        ret[outerNameOfPixel] = {};
+      if (typeof ret[outerNameOfPixel][InnerNameOfPixel] === "undefined")
+        ret[outerNameOfPixel][InnerNameOfPixel] = 0;
+
+      const mult = adjustments();
+      ret[outerNameOfPixel][InnerNameOfPixel] += 1 * mult;
+    } else {
+      error(
+        "valueMode was found to be undefined. This should not have been able to happen. Report this to admins",
+      );
+    }
   }
 
   return ret;
@@ -215,19 +225,24 @@ function isDatasetImageDataArray(
 }
 
 function isColorPropertyArray(
-  colProps: colorProperty[] | ((index: string) => colorProperty)
+  colProps: colorProperty[] | ((index: string) => colorProperty),
 ): colProps is colorProperty[] {
   return typeof colProps != "function";
 }
 
 export function isValueModeNormal(
   valueMode: "RGBAsNum" | "greyScale" | "normal",
-  returnObject: Record<string, Record<string, number>> | Record<string, number>
+  returnObject: Record<string, Record<string, number>> | Record<string, number>,
 ): returnObject is Record<string, Record<string, number>> {
-  return valueMode == "normal"
+  return valueMode == "normal";
 }
 
-async function PromptName(color: string, getDatasetPointFunction: (index: number) => Byte, name: string, queryElements: QueryElements) {
+async function PromptName(
+  color: string,
+  getDatasetPointFunction: (index: number) => Byte,
+  name: string,
+  queryElements: QueryElements,
+) {
   const DatasetLength = WIDTH * HEIGHT * 4;
 
   const dat = new Uint8ClampedArray(DatasetLength);
@@ -271,23 +286,22 @@ async function PromptName(color: string, getDatasetPointFunction: (index: number
 async function promptMap(
   imgArray: ImageDataArray,
   queryElements: QueryElements,
-  msg: string) {
+  msg: string,
+) {
   let submitted = false;
   queryElements.promptMissingInfoContainer.hidden = false;
   queryElements.promptLabel.innerText = msg;
 
-  queryElements.promptedMissingInfoCanvas.getContext("2d").putImageData(
-    new ImageData(imgArray, WIDTH),
-    0,
-    0,
-  );
+  queryElements.promptedMissingInfoCanvas
+    .getContext("2d")
+    .putImageData(new ImageData(imgArray, WIDTH), 0, 0);
 
   console.log("ok, just waiting now :)");
 
   queryElements.promptSubmitButton.addEventListener("click", function () {
     submitted = true;
     queryElements.promptMissingInfoContainer.hidden = true;
-  })
+  });
 
   //idle until cultureNamePrompt answered;
   let then = Date.now();
