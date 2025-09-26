@@ -49,7 +49,7 @@ const hexAsNumToHumanReadableMinMaxGradient = new MinMaxGradient([
 
 const maxPopInPixel = 50000;
 
-export function populationMapToHumanReadable(imgArray: ImageDataArray, pixelIndex: number, options: false) {
+export function populationMapToHumanReadable(imgArray: ImageDataArray, pixelIndex: number, _options: object) {
     const pixelPop = ImageIndexToIntColor(imgArray, pixelIndex);
     //if no return value of RBGAsNum was given, color is just the color it was previously
     const color = pixelPop == null
