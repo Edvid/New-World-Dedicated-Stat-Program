@@ -1,14 +1,17 @@
 import { loadGameFromSafeFile } from "../gameloading/loadChangesFromFile.js";
 import { Header } from "../components/header.js";
-import { RGBAToHex, ImageIndexToIntColor, ImageIndexToRGBA, IntColorToRGBA, RGBAtoRGB, } from "../utility/color_manipulation.js";
 import { prepareData } from "../utility/images/prepare_data.js";
-import { reportProgress } from "../utility/report_progress.js";
 import { trimIndents } from "../utility/string_manipulation.js";
 import { getGameStats, mappedResources, mappedResourcesMultipliers, } from "../stats/gameStats.js";
 import { WIDTH, HEIGHT } from "../utility/images/consts.js";
-import { populationMapToHumanReadable } from "../utility/images/population_map_to_human_readable.js";
+import { populationMapToHumanReadable } from "../utility/mapcalc/maps/population_map_to_human_readable.js";
 import { fillInColorProperties, } from "../utility/mapcalc/color_properties.js";
-import { findDistribution, } from "../utility/mapcalc/find_distribution.js";
+import { findDistribution, isValueModeNormal, } from "../utility/mapcalc/find_distribution.js";
+import { generateCCFForSocialBehaviourGroups } from "../utility/mapcalc/generate_ccf_for_social_behaviour_groups.js";
+import { error } from "../utility/custom_errors.js";
+import { mapDataIterator, reverseRBGsOfMap, twoMapMerger, } from "../utility/mapcalc/mapdata_iterator.js";
+import { advancePopulationMap } from "../utility/mapcalc/maps/advance_population_map.js";
+import { advanceMap } from "../utility/mapcalc/maps/advance_map.js";
 let baseData;
 let nationData;
 let climateData;
@@ -32,7 +35,7 @@ const coastColorProperties = [
     { color: "00ffff", name: "coast" },
 ];
 document.body.prepend(Header());
-export const progressText = document.querySelector(".progressText");
+const progressText = document.querySelector(".progressText");
 progressText.innerText = "Loading...";
 const promptMissingInfoContainer = document.querySelector(".promptMissingInfoContainer");
 const promptedMissingInfoCanvas = document.querySelector(".promptMissingInfoContainer canvas");
@@ -82,149 +85,146 @@ async function mapCalculations() {
     };
     progressText.innerText = "reversing development map";
     await new Promise((resolve) => setTimeout(resolve));
-    developmentData = await mapDataIterator(reverseRBGsOfDevelopment);
+    developmentData = await mapDataIterator(reverseRBGsOfMap, [developmentData], progressText);
     progressText.innerText = "loading population X development";
     await new Promise((resolve) => setTimeout(resolve));
-    populationXDevelopmentData = await mapDataIterator(populationXDevelopmentMerger);
-    progressText.innerText = "loading population X (100% + development/2)";
-    await new Promise((resolve) => setTimeout(resolve));
+    populationXDevelopmentData = await mapDataIterator(twoMapMerger, [popData, developmentData], progressText);
     progressText.innerText =
         "adjusting culture map data for population and development";
     await new Promise((resolve) => setTimeout(resolve));
+    const climateDistributionValueMode = "normal";
     const climateDistribution = await findDistribution(nationData, climateData, "nation", "climate", nationColorProperties, climateColorProperties, reportingElements, {
-        valueMode: "normal",
+        valueMode: climateDistributionValueMode,
         unassignedPixelAssumption: "Moderate",
     });
+    const coastPopCountValueMode = "RGBAsNum";
     const coastPopCount = await findDistribution(nationData, popData, "nation", "coastal population", nationColorProperties, coastColorProperties, reportingElements, {
         canIgnoreTransparentInner: true,
-        valueMode: "RGBAsNum",
+        valueMode: coastPopCountValueMode,
         unassignedPixelAssumption: 0,
         Adjuster: coastData,
         AdjusterMapping: (e) => {
             return e == 0x00ff00;
         },
     });
+    const developmentScoreValueMode = "greyScale";
     const developmentScore = await findDistribution(nationData, developmentData, "nation", "development", nationColorProperties, [], reportingElements, {
         canIgnoreTransparentInner: true,
         unassignedPixelAssumption: 0,
-        valueMode: "greyScale",
+        valueMode: developmentScoreValueMode,
     });
+    const socialBehaviourGroupDistributionValueMode = "normal";
     const cultureDistribution = await findDistribution(nationData, cultureData, "nation", "popdev-adjusted-culture", nationColorProperties, cultureColorProperties, reportingElements, {
-        valueMode: "normal",
+        valueMode: socialBehaviourGroupDistributionValueMode,
         unassignedPixelAssumption: "Foreign",
         Adjuster: popData,
     });
     const religionDistribution = await findDistribution(nationData, religionData, "nation", "popdev-adjusted-religion", nationColorProperties, religionColorProperties, reportingElements, {
-        valueMode: "normal",
+        valueMode: socialBehaviourGroupDistributionValueMode,
         unassignedPixelAssumption: "Pagan",
         Adjuster: popData,
     });
+    const tradeZoneScoreValueMode = "RGBAsNum";
     const tradeZoneScore = await findDistribution(tradeZoneData, populationXDevelopmentData, "trade zone", "wealth", tradeZoneColorProperties, [], reportingElements, {
         canIgnoreTransparentInner: true,
-        valueMode: "RGBAsNum",
+        valueMode: tradeZoneScoreValueMode,
         unassignedPixelAssumption: 0,
     });
     addToTextOutput(`<... > Nations
      !suppress 99999
 
      `);
-    //divide to make all constituencies make up 100(%).
-    Object.keys(cultureDistribution).forEach((nationKey) => {
-        let total = 0.0;
-        //finding the total of all culturekey values in this nation, so we got something to divide by to find the constituencies' ratios
-        Object.keys(cultureDistribution[nationKey]).forEach((CultureKey) => {
-            total += cultureDistribution[nationKey][CultureKey];
-        });
-        //replace CultureGroups by empty, before re-initialising every culture in it from scratch
-        addToTextOutput(`> ${nationKey}
-       +> CultureGroups
-       > CultureGroups
-       `);
-        //dividing and adding to autoGeneratedCffTextField
-        Object.keys(cultureDistribution[nationKey]).forEach((CultureKey) => {
-            addToTextOutput(`+> ${CultureKey}\n`);
-            addToTextOutput(`= ${(cultureDistribution[nationKey][CultureKey] * 100) / total} ${CultureKey}.Points\n`);
-        });
-        addToTextOutput(`< <
-       `);
-    });
-    //divide to make all constituencies make up 100(%).
-    Object.keys(religionDistribution).forEach((nationKey) => {
-        let total = 0.0;
-        //finding the total of all religionkey values in this nation, so we got something to divide by to find the constituencies' ratios
-        Object.keys(religionDistribution[nationKey]).forEach((ReligionKey) => {
-            total += religionDistribution[nationKey][ReligionKey];
-        });
-        addToTextOutput(`> ${nationKey}
-       +> ReligionGroups
-       > ReligionGroups
-       `);
-        //dividing and adding to autoGeneratedCffTextField
-        Object.keys(religionDistribution[nationKey]).forEach((ReligionKey) => {
-            addToTextOutput(`+> ${ReligionKey}\n`);
-            addToTextOutput(`= ${(religionDistribution[nationKey][ReligionKey] * 100) / total} ${ReligionKey}.Points\n`);
-        });
-        addToTextOutput(`< <
-       `);
-    });
+    if (!isValueModeNormal(socialBehaviourGroupDistributionValueMode, cultureDistribution)) {
+        error(`Wrong value mode was provided to the distribution finder for cultureDistribution. Report this to admins`);
+        return;
+    }
+    if (!isValueModeNormal(socialBehaviourGroupDistributionValueMode, religionDistribution)) {
+        error(`Wrong value mode was provided to the distribution finder for religionDistribution. Report this to admins`);
+        return;
+    }
+    generateCCFForSocialBehaviourGroups("CultureGroups", cultureDistribution);
+    generateCCFForSocialBehaviourGroups("ReligionGroups", religionDistribution);
     //add climate distributions to autogeneratedccf
     addToTextOutput(`<... > Nations
      `);
-    Object.keys(climateDistribution).forEach((nationKey) => {
-        Object.keys(climateDistribution[nationKey]).forEach((climateKey) => {
-            addToTextOutput(`= ${climateDistribution[nationKey][climateKey]} ${nationKey}.${climateKey}\n`);
+    if (!isValueModeNormal(climateDistributionValueMode, climateDistribution)) {
+        error(`Wrong value mode was provided to the distribution finder for climateDistribution. Report this to admins`);
+        return;
+    }
+    Object.entries(climateDistribution).forEach(([nationName, nation]) => {
+        Object.entries(nation).forEach(([climateName, climateValue]) => {
+            addToTextOutput(`= ${climateValue} ${nationName}.${climateName}\n`);
         });
     });
     //add development distributions to autogeneratedccf
     addToTextOutput(`<... > Nations
      `);
-    Object.keys(developmentScore).forEach((nationKey) => {
-        addToTextOutput(`= ${developmentScore[nationKey]} ${nationKey}.DevelopmentPixelCount\n`);
+    if (isValueModeNormal(developmentScoreValueMode, developmentScore)) {
+        error(`Wrong value mode was provided to the distribution finder for developmentScore. Report this to admins`);
+        return;
+    }
+    Object.entries(developmentScore).forEach(([nationName, score]) => {
+        addToTextOutput(`= ${score} ${nationName}.DevelopmentPixelCount\n`);
     });
     //add coast distributions to autogeneratedccf
     addToTextOutput(`<... > Nations
      `);
-    Object.keys(coastPopCount).forEach((nationKey) => {
-        addToTextOutput(`= ${coastPopCount[nationKey]} ${nationKey}.coastalPopulation\n`);
+    if (isValueModeNormal(coastPopCountValueMode, coastPopCount)) {
+        error(`Wrong value mode was provided to the distribution finder for coastPopCount. Report this to admins`);
+        return;
+    }
+    Object.entries(coastPopCount).forEach(([nationName, score]) => {
+        addToTextOutput(`= ${score} ${nationName}.coastalPopulation\n`);
     });
     addToTextOutput(`<... > Nations
      `);
     /* #region  Everthing resources */
+    const resourceDistributionValueMode = "normal";
     for (let r = 0; r < mappedResources.length; r++) {
         const resourceName = mappedResources[r];
         let resourceData = null;
         resourceData = await prepareData(`Code/Resources/${resourceName}.png`);
         progressText.innerText = "";
-        const resourceBlobSizes = (await findDistribution(() => {
+        const resourceInWorld = await findDistribution(() => {
             return 255;
         }, resourceData, "world", resourceName, [{ color: "ffffff", name: "world" }], (name) => {
             return { color: name, name: "Col" + name };
         }, reportingElements, {
             skipsTransparentInner: true,
             unnamedGroup: true,
-            valueMode: "normal",
+            valueMode: resourceDistributionValueMode,
             unassignedPixelAssumption: "!!!", // should no be possible to use, as colorToInnerNameMapping never returns undefined no matter the provided name
-        }))["world"];
+        });
+        if (!isValueModeNormal(resourceDistributionValueMode, resourceInWorld)) {
+            error(`Wrong value mode was provided to the distribution finder for resourceBlobSize. Report this to admins`);
+            return;
+        }
+        const resourceBlobSizes = resourceInWorld["world"];
         //find nations' max resources
         const resourceOverlap = await findDistribution(nationData, resourceData, "nation", resourceName, nationColorProperties, (e) => {
             return { color: e, name: "Col" + e };
         }, reportingElements, {
             skipsTransparentInner: true,
             unnamedGroup: true,
-            valueMode: "normal",
+            valueMode: resourceDistributionValueMode,
             unassignedPixelAssumption: "!!!", // should no be possible to use, as colorToInnerNameMapping never returns undefined no matter the provided name
         });
+        if (!isValueModeNormal(resourceDistributionValueMode, resourceOverlap)) {
+            error(`Wrong value mode was provided to the distribution finder for resourceOverlap. Report this to admins`);
+            return;
+        }
         //use resourceBlobSizes to divide all.
-        Object.keys(resourceOverlap).forEach((nationKey) => {
+        Object.entries(resourceOverlap).forEach(([nationName, nation]) => {
             let count = 0.0;
             //counting up all pixels overlapping per blob, divided by the blob's size
-            Object.keys(resourceOverlap[nationKey]).forEach((ColorKey) => {
+            Object.entries(nation).forEach(([ColorKey, blobOverlapWithNationSize]) => {
+                const totalBlobSize = resourceBlobSizes[ColorKey];
                 count +=
-                    resourceOverlap[nationKey][ColorKey] / resourceBlobSizes[ColorKey];
+                    blobOverlapWithNationSize / totalBlobSize;
             });
             //resource blob number multiplication
             count *= mappedResourcesMultipliers[r];
-            addToTextOutput(`= ${(Math.round(count * 20) / 20).toFixed(2)} ${nationKey}.Max${resourceName}
+            addToTextOutput(`= ${(Math.round(count * 20) / 20).toFixed(2)} ${nationName}.Max${resourceName}
          `);
         });
     }
@@ -232,54 +232,75 @@ async function mapCalculations() {
     //add trade zone wealths to autogeneratedccf
     addToTextOutput(`<... > TradeZones
      `);
+    if (isValueModeNormal(tradeZoneScoreValueMode, tradeZoneScore)) {
+        error(`Wrong value mode was provided to the distribution finder for tradeZoneScore. Report this to admins`);
+        return;
+    }
     //climate * totaldevscore (255 per pixel)
-    Object.keys(tradeZoneScore).forEach((zoneKey) => {
-        const rawTradeZoneScore = tradeZoneScore[zoneKey];
-        const idealTradeZoneScore = rawTradeZoneScore / 10000;
-        addToTextOutput(`= ${(Math.round(idealTradeZoneScore * 20) / 20).toFixed(2)} ${zoneKey}.Score\n`);
+    Object.entries(tradeZoneScore).forEach(([zoneName, score]) => {
+        const idealTradeZoneScore = score / 10000;
+        addToTextOutput(`= ${(Math.round(idealTradeZoneScore * 20) / 20).toFixed(2)} ${zoneName}.Score\n`);
     });
     await prepareNewMaps();
     const URLParamSetup = new URLSearchParams(window.location.search).get("setup");
     const isSetup = URLParamSetup != null;
     console.log(isSetup);
+    const populationRelatedDistributionValueMode = "RGBAsNum";
     const nationPopDistribution = await findDistribution(nationData, isSetup ? popData : newPopData, "nation", "population", nationColorProperties, [], reportingElements, {
-        valueMode: "RGBAsNum",
+        valueMode: populationRelatedDistributionValueMode,
         unassignedPixelAssumption: 0,
     });
     const nationPopXDevDistribution = await findDistribution(nationData, populationXDevelopmentData, "nation", "population", nationColorProperties, [], reportingElements, {
-        valueMode: "RGBAsNum",
+        valueMode: populationRelatedDistributionValueMode,
         unassignedPixelAssumption: 0,
     });
     const nationFuturePopDistribution = await findDistribution(nationData, isSetup ? newPopData : newFuturePopData, "nation", "future population", nationColorProperties, [], reportingElements, {
-        valueMode: "RGBAsNum",
+        valueMode: populationRelatedDistributionValueMode,
         unassignedPixelAssumption: 0,
     });
+    const nationFertilityDistributionValueMode = "normal";
     const nationFertilityDistribution = await findDistribution(nationData, fertilityData, "nation", "fertility", nationColorProperties, fertilityColorProperties, reportingElements, {
-        valueMode: "normal",
+        valueMode: nationFertilityDistributionValueMode,
         unassignedPixelAssumption: "Infertile",
     });
     //add population distributions to autogeneratedccf
     addToTextOutput(`<... > Nations
      `);
-    Object.keys(nationPopDistribution).forEach((nationKey) => {
-        addToTextOutput(`= ${nationPopDistribution[nationKey]} ${nationKey}.Population\n`);
+    if (isValueModeNormal(populationRelatedDistributionValueMode, nationPopDistribution)) {
+        error(`Wrong value mode was provided to the distribution finder for nationPopDistribution. Report this to admins`);
+        return;
+    }
+    if (isValueModeNormal(populationRelatedDistributionValueMode, nationPopXDevDistribution)) {
+        error(`Wrong value mode was provided to the distribution finder for nationPopXDevDistribution. Report this to admins`);
+        return;
+    }
+    if (isValueModeNormal(populationRelatedDistributionValueMode, nationFuturePopDistribution)) {
+        error(`Wrong value mode was provided to the distribution finder for nationFuturePopDistribution. Report this to admins`);
+        return;
+    }
+    Object.entries(nationPopDistribution).forEach(([nationName, popNum]) => {
+        addToTextOutput(`= ${popNum} ${nationName}.Population\n`);
     });
     //add urban pop to autogeneratedccf
-    Object.keys(nationPopXDevDistribution).forEach((nationKey) => {
-        addToTextOutput(`= ${nationPopXDevDistribution[nationKey]} ${nationKey}.urbanPopulation\n`);
+    Object.entries(nationPopXDevDistribution).forEach(([nationName, popXDevNum]) => {
+        addToTextOutput(`= ${popXDevNum} ${nationName}.urbanPopulation\n`);
     });
     //add future population distributions to autogeneratedccf
     addToTextOutput(`<... > Nations
      `);
-    Object.keys(nationFuturePopDistribution).forEach((nationKey) => {
-        addToTextOutput(`= ${nationFuturePopDistribution[nationKey]} ${nationKey}.Future Population\n`);
+    Object.entries(nationFuturePopDistribution).forEach(([nationName, futPopNum]) => {
+        addToTextOutput(`= ${futPopNum} ${nationName}.Future Population\n`);
     });
     //add fertility distributions to autogeneratedccf
     addToTextOutput(`<... > Nations
      `);
-    Object.keys(nationFertilityDistribution).forEach((nationKey) => {
+    if (!isValueModeNormal(nationFertilityDistributionValueMode, nationFertilityDistribution)) {
+        error(`Wrong value mode was provided to the distribution finder for nationFertilityDistribution. Report this to admins`);
+        return;
+    }
+    Object.entries(nationFertilityDistribution).forEach(([nationName, nation]) => {
         let total = 0;
-        Object.keys(nationFertilityDistribution[nationKey]).forEach((FertilityKey) => {
+        Object.entries(nation).forEach(([FertilityKey, pixelCount]) => {
             const fertilityColor = gameStats.Fertility[FertilityKey].Color;
             let fertilityMultiplier = 0;
             fertilityColorProperties.forEach((colorNamePair) => {
@@ -289,10 +310,10 @@ async function mapCalculations() {
                 }
             });
             total +=
-                nationFertilityDistribution[nationKey][FertilityKey] *
+                pixelCount *
                     fertilityMultiplier;
         });
-        addToTextOutput(`= ${total} ${nationKey}.Fertility\n`);
+        addToTextOutput(`= ${total} ${nationName}.Fertility\n`);
     });
     addToTextOutput(`!suppress 0
       <...
@@ -300,70 +321,6 @@ async function mapCalculations() {
     //add to autogeneratedccf
     copyToClipboardButton.disabled = false;
     progressText.innerText = `Done`;
-}
-function advancePopulationMap(imgArray, pixelIndex, options) {
-    const gameStats = getGameStats();
-    const pixel = ImageIndexToRGBA(imgArray, pixelIndex);
-    if (pixel[3] < 128)
-        return pixel; //if transparent, don't modify the pixel at all
-    let pixelPop = pixel[0];
-    pixelPop *= 255;
-    pixelPop += pixel[1];
-    pixelPop *= 255;
-    pixelPop += pixel[2];
-    const propertyData = options.propertyData;
-    const colorProperties = options.colorProperties;
-    const developmentData = options.development;
-    function fetchPropertyObject(dataName) {
-        const foundRGBA = ImageIndexToRGBA(propertyData[dataName], pixelIndex);
-        const color = RGBAToHex(RGBAtoRGB(foundRGBA));
-        let pair;
-        colorProperties[dataName].forEach((colorNamePair) => {
-            if (colorNamePair.color == color) {
-                pair = colorNamePair;
-                return;
-            }
-        });
-        return pair;
-    }
-    function fetchName(dataName) {
-        const pair = fetchPropertyObject(dataName);
-        return typeof pair !== "undefined" ? pair.name : null;
-    }
-    function fetchBinary(dataName, isName) {
-        const propertyPair = fetchPropertyObject(dataName);
-        const nullableName = propertyPair ? propertyPair.name : `not-${isName}`;
-        return nullableName == isName;
-    }
-    const nationName = fetchName("nation");
-    const n = gameStats.Nations[nationName];
-    const hasVaccine = typeof n !== "undefined" ? n.Technologies.Vaccines : false;
-    const pseudoPopulationGrowth = typeof n !== "undefined" ? n.PseudoPopulationGrowth : 0.1;
-    const effectiveHealth = typeof n !== "undefined" ? n.EffectiveHealth : 0;
-    const climateName = fetchName("climate");
-    const climateScore = gameStats.Climates[climateName].ClimateScore +
-        (hasVaccine
-            ? climateName == "SubTropical" ||
-                climateName == "Tropical" ||
-                climateName == "Savanna"
-                ? 0.1
-                : 0
-            : 0);
-    const isCoastalPixel = fetchBinary("coastal", "coast");
-    let developmentScore = ImageIndexToRGBA(developmentData, pixelIndex)[0]; //reading red channel as shorthand for greyscale
-    developmentScore = developmentScore / 255;
-    const fertilityName = fetchName("fertility");
-    const fertilityScore = gameStats.Fertility[fertilityName].Score;
-    const pixelsDisease = pixelPop / (20 * climateScore) / 25 -
-        effectiveHealth -
-        (isCoastalPixel ? 0.1 : 0) +
-        (0.5 - fertilityScore) / 2.5 -
-        developmentScore * 5;
-    const pixelsPopGrowth = pseudoPopulationGrowth < 0
-        ? pseudoPopulationGrowth
-        : pseudoPopulationGrowth * (1 - pixelsDisease);
-    const newPixelPop = pixelPop * (1 + pixelsPopGrowth);
-    return IntColorToRGBA(newPixelPop);
 }
 async function prepareNewMaps() {
     const datasets = {
@@ -378,58 +335,20 @@ async function prepareNewMaps() {
         coastal: coastColorProperties,
         fertility: fertilityColorProperties,
     };
-    newPopData = await advanceMap(popData, advancePopulationMap, {
+    newPopData = await advanceMap(popData, advancePopulationMap, progressText, {
         propertyData: datasets,
         colorProperties: colorprops,
         development: developmentData,
     });
     await addToImageOutput(newPopData, "Population map");
-    newFuturePopData = await advanceMap(newPopData, advancePopulationMap, {
+    newFuturePopData = await advanceMap(newPopData, advancePopulationMap, progressText, {
         propertyData: datasets,
         colorProperties: colorprops,
         development: developmentData,
     });
     await addToImageOutput(newFuturePopData, "Future Population map");
-    const playerReadablePopData = await advanceMap(popData, populationMapToHumanReadable, {});
+    const playerReadablePopData = await advanceMap(popData, populationMapToHumanReadable, progressText, {});
     await addToImageOutput(playerReadablePopData, "Player-readable population map");
-}
-async function mapDataIterator(delegate) {
-    const ret = new Uint8ClampedArray(WIDTH * HEIGHT * 4);
-    let then = Date.now();
-    for (let i = 0; i < ret.length / 4; i++) {
-        const res = delegate(i * 4);
-        ret[i * 4] = res[0];
-        ret[i * 4 + 1] = res[1];
-        ret[i * 4 + 2] = res[2];
-        ret[i * 4 + 3] = res[3];
-        if (i % WIDTH == 0) {
-            const now = Date.now();
-            if (now - then > 100) {
-                await reportProgress(i, progressText);
-                await new Promise((resolve) => setTimeout(resolve));
-                then = now;
-            }
-        }
-    }
-    return ret;
-}
-async function advanceMap(imgArray, formula, options) {
-    const newImgArray = new Uint8ClampedArray(imgArray.length);
-    let then = Date.now();
-    for (let i = 0; i < newImgArray.length; i += 4) {
-        const now = Date.now();
-        if (now - then > 2000) {
-            await new Promise((resolve) => setTimeout(resolve));
-            reportProgress(i / 4, progressText);
-            then = now;
-        }
-        const newPixel = formula(imgArray, i, options);
-        newImgArray[i] = newPixel[0];
-        newImgArray[i + 1] = newPixel[1];
-        newImgArray[i + 2] = newPixel[2];
-        newImgArray[i + 3] = newPixel[3];
-    }
-    return newImgArray;
 }
 function addToTextOutput(text) {
     autoGeneratedCffTextField.value += trimIndents(text);
@@ -451,18 +370,4 @@ async function addToImageOutput(imgArray, imgName) {
     canvasContainer.appendChild(document.createElement("br"));
     canvasContainer.appendChild(canvasLink);
     imageOutputContainer.appendChild(canvasContainer);
-}
-function reverseRBGsOfDevelopment(mapIndex) {
-    return [
-        255 - developmentData[mapIndex],
-        255 - developmentData[mapIndex + 1],
-        255 - developmentData[mapIndex + 2],
-        developmentData[mapIndex + 3],
-    ];
-}
-function populationXDevelopmentMerger(mapIndex) {
-    const pixelPop = ImageIndexToIntColor(popData, mapIndex);
-    const pixelDev = developmentData[mapIndex] / 255;
-    const ret = pixelPop * pixelDev;
-    return IntColorToRGBA(ret);
 }

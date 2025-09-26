@@ -32,12 +32,16 @@ export function ImageIndexToIntColor(imgArr, pIndex) {
     return pixelVal;
 }
 export function IntColorToRGBA(num) {
-    const ret = new Uint8ClampedArray(4);
-    ret[3] = 255;
-    ret[2] = num % 256;
-    ret[1] = Math.floor(num / 256) % 256;
-    ret[0] = Math.floor(num / 65536) % 256;
+    const ret = [
+        NumModToByte(Math.floor(num / 65536)),
+        NumModToByte(Math.floor(num / 256)),
+        NumModToByte(num),
+        255,
+    ];
     return ret;
+}
+function NumModToByte(num) {
+    return num % 256;
 }
 export function RGBAtoRGB(arr) {
     return [arr[0], arr[1], arr[2]];

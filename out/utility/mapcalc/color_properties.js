@@ -1,4 +1,3 @@
-;
 export function fillInColorProperties(searchObj) {
     const ret = [];
     Object.keys(searchObj).forEach((key) => {
