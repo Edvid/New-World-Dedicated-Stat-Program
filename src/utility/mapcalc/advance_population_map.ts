@@ -16,7 +16,7 @@ type PopRelevantColorProperties = {
   [K in keyof PopRelavantProps]: colorProperty[]
 }
 
-export interface advancePopulationMapOptions {
+interface advancePopulationMapOptions {
   propertyData: PopRelevantDatasets;
   colorProperties: PopRelevantColorProperties;
   development: ImageDataArray;

@@ -25,7 +25,7 @@ import {
   reverseRBGsOfMap,
   twoMapMerger,
 } from "../utility/mapcalc/mapdata_iterator.js";
-import { advancePopulationMap, advancePopulationMapOptions } from "../utility/mapcalc/advance_population_map.js";
+import { advancePopulationMap } from "../utility/mapcalc/advance_population_map.js";
 import { advanceMap } from "../utility/mapcalc/advance_map.js";
 
 let baseData: ImageDataArray;
