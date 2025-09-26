@@ -1,14 +1,20 @@
 import { ImageIndexToIntColor, ImageIndexToRGBA } from "../color_manipulation.js";
+import { Byte } from "../int_range.js";
 import { lerp } from "../math.js";
 
+interface Node {
+  color: [Byte, Byte, Byte, Byte],
+  position: number,
+}
+
 class MinMaxGradient {
-  nodeList;
-  constructor(nodeList) {
+  nodeList: Node[];
+  constructor(nodeList: Node[]) {
     this.nodeList = nodeList.sort((a, b) => a.position - b.position);
   }
 
   colorAtPos(index) {
-    let nodeBefore, nodeAfter;
+    let nodeBefore: Node, nodeAfter: Node;
 
     for (let i = 0; i < this.nodeList.length; i++) {
       if (this.nodeList[i].position > index) {
@@ -18,13 +24,13 @@ class MinMaxGradient {
       }
     }
 
-    let t =
+    const t =
       nodeAfter.position == nodeBefore.position
         ? nodeBefore.position
         : (index - nodeBefore.position) /
           (nodeAfter.position - nodeBefore.position);
 
-    let ret = [
+    const ret: [Byte, Byte, Byte, Byte] = [
       lerp(nodeBefore.color[0], nodeAfter.color[0], t),
       lerp(nodeBefore.color[1], nodeAfter.color[1], t),
       lerp(nodeBefore.color[2], nodeAfter.color[2], t),
@@ -43,10 +49,10 @@ const hexAsNumToHumanReadableMinMaxGradient = new MinMaxGradient([
 
 const maxPopInPixel = 50000;
 
-export function populationMapToHumanReadable(imgArray, pixelIndex) {
-    let pixelPop = ImageIndexToIntColor(imgArray, pixelIndex);
+export function populationMapToHumanReadable(imgArray: ImageDataArray, pixelIndex: number, options: false) {
+    const pixelPop = ImageIndexToIntColor(imgArray, pixelIndex);
     //if no return value of RBGAsNum was given, color is just the color it was previously
-    let color = pixelPop == null
+    const color = pixelPop == null
         ? ImageIndexToRGBA(imgArray, pixelIndex)
         : hexAsNumToHumanReadableMinMaxGradient.colorAtPos(
             pixelPop / maxPopInPixel
