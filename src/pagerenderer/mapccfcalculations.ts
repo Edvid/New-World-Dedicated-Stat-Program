@@ -1,13 +1,6 @@
 import { loadGameFromSafeFile } from "../gameloading/loadChangesFromFile.js";
 import { Header } from "../components/header.js";
-import {
-  RGBAToHex,
-  ImageIndexToRGBA,
-  IntColorToRGBA,
-  RGBAtoRGB,
-} from "../utility/color_manipulation.js";
 import { prepareData } from "../utility/images/prepare_data.js";
-import { reportProgress } from "../utility/report_progress.js";
 import { trimIndents } from "../utility/string_manipulation.js";
 import {
   getGameStats,
@@ -32,6 +25,8 @@ import {
   reverseRBGsOfMap,
   twoMapMerger,
 } from "../utility/mapcalc/mapdata_iterator.js";
+import { advancePopulationMap, advancePopulationMapOptions } from "../utility/mapcalc/advance_population_map.js";
+import { advanceMap } from "../utility/mapcalc/advance_map.js";
 
 let baseData: ImageDataArray;
 let nationData: ImageDataArray;
@@ -60,7 +55,7 @@ const coastColorProperties: colorProperty[] = [
 
 document.body.prepend(Header());
 
-export const progressText: HTMLElement =
+const progressText: HTMLElement =
   document.querySelector(".progressText");
 progressText.innerText = "Loading...";
 const promptMissingInfoContainer: HTMLElement = document.querySelector(
@@ -686,87 +681,6 @@ async function mapCalculations() {
   progressText.innerText = `Done`;
 }
 
-function advancePopulationMap(imgArray, pixelIndex, options) {
-  const gameStats = getGameStats();
-  const pixel = ImageIndexToRGBA(imgArray, pixelIndex);
-  if (pixel[3] < 128) return pixel; //if transparent, don't modify the pixel at all
-
-  let pixelPop = pixel[0];
-  pixelPop *= 255;
-  pixelPop += pixel[1];
-  pixelPop *= 255;
-  pixelPop += pixel[2];
-
-  const propertyData = options.propertyData;
-  const colorProperties = options.colorProperties;
-  const developmentData = options.development;
-
-  function fetchPropertyObject(dataName) {
-    const foundRGBA = ImageIndexToRGBA(propertyData[dataName], pixelIndex);
-    const color = RGBAToHex(RGBAtoRGB(foundRGBA));
-    let pair;
-    colorProperties[dataName].forEach((colorNamePair) => {
-      if (colorNamePair.color == color) {
-        pair = colorNamePair;
-        return;
-      }
-    });
-
-    return pair;
-  }
-
-  function fetchName(dataName) {
-    const pair = fetchPropertyObject(dataName);
-    return typeof pair !== "undefined" ? pair.name : null;
-  }
-
-  function fetchBinary(dataName, isName) {
-    const propertyPair = fetchPropertyObject(dataName);
-    const nullableName = propertyPair ? propertyPair.name : `not-${isName}`;
-    return nullableName == isName;
-  }
-
-  const nationName = fetchName("nation");
-  const n = gameStats.Nations[nationName];
-  const hasVaccine = typeof n !== "undefined" ? n.Technologies.Vaccines : false;
-  const pseudoPopulationGrowth =
-    typeof n !== "undefined" ? n.PseudoPopulationGrowth : 0.1;
-  const effectiveHealth = typeof n !== "undefined" ? n.EffectiveHealth : 0;
-
-  const climateName = fetchName("climate");
-  const climateScore =
-    gameStats.Climates[climateName].ClimateScore +
-    (hasVaccine
-      ? climateName == "SubTropical" ||
-        climateName == "Tropical" ||
-        climateName == "Savanna"
-        ? 0.1
-        : 0
-      : 0);
-
-  const isCoastalPixel = fetchBinary("coastal", "coast");
-
-  let developmentScore = ImageIndexToRGBA(developmentData, pixelIndex)[0]; //reading red channel as shorthand for greyscale
-  developmentScore = developmentScore / 255;
-
-  const fertilityName = fetchName("fertility");
-  const fertilityScore = gameStats.Fertility[fertilityName].Score;
-
-  const pixelsDisease =
-    pixelPop / (20 * climateScore) / 25 -
-    effectiveHealth -
-    (isCoastalPixel ? 0.1 : 0) +
-    (0.5 - fertilityScore) / 2.5 -
-    developmentScore * 5;
-  const pixelsPopGrowth =
-    pseudoPopulationGrowth < 0
-      ? pseudoPopulationGrowth
-      : pseudoPopulationGrowth * (1 - pixelsDisease);
-
-  const newPixelPop = pixelPop * (1 + pixelsPopGrowth);
-  return IntColorToRGBA(newPixelPop);
-}
-
 async function prepareNewMaps() {
   const datasets = {
     nation: nationData,
@@ -781,52 +695,40 @@ async function prepareNewMaps() {
     fertility: fertilityColorProperties,
   };
 
-  newPopData = await advanceMap(popData, advancePopulationMap, {
-    propertyData: datasets,
-    colorProperties: colorprops,
-    development: developmentData,
-  });
+  newPopData = await advanceMap(
+    popData,
+    advancePopulationMap,
+    progressText,
+    {
+      propertyData: datasets,
+      colorProperties: colorprops,
+      development: developmentData,
+    },
+  );
   await addToImageOutput(newPopData, "Population map");
 
-  newFuturePopData = await advanceMap(newPopData, advancePopulationMap, {
-    propertyData: datasets,
-    colorProperties: colorprops,
-    development: developmentData,
-  });
+  newFuturePopData = await advanceMap(
+    newPopData,
+    advancePopulationMap,
+    progressText,
+    {
+      propertyData: datasets,
+      colorProperties: colorprops,
+      development: developmentData,
+    },
+  );
   await addToImageOutput(newFuturePopData, "Future Population map");
 
   const playerReadablePopData = await advanceMap(
     popData,
     populationMapToHumanReadable,
-    {},
+    progressText,
+    false,
   );
   await addToImageOutput(
     playerReadablePopData,
     "Player-readable population map",
   );
-}
-
-async function advanceMap(imgArray, formula, options) {
-  const newImgArray = new Uint8ClampedArray(imgArray.length);
-
-  let then = Date.now();
-  for (let i = 0; i < newImgArray.length; i += 4) {
-    const now = Date.now();
-    if (now - then > 2000) {
-      await new Promise((resolve) => setTimeout(resolve));
-      reportProgress(i / 4, progressText);
-      then = now;
-    }
-
-    const newPixel = formula(imgArray, i, options);
-
-    newImgArray[i] = newPixel[0];
-    newImgArray[i + 1] = newPixel[1];
-    newImgArray[i + 2] = newPixel[2];
-    newImgArray[i + 3] = newPixel[3];
-  }
-
-  return newImgArray;
 }
 
 function addToTextOutput(text: string) {
