@@ -548,6 +548,8 @@ async function mapCalculations() {
     },
   );
 
+  const nationFertilityDistributionValueMode = "normal";
+
   const nationFertilityDistribution = await findDistribution(
     nationData,
     fertilityData,
@@ -557,7 +559,7 @@ async function mapCalculations() {
     fertilityColorProperties,
     reportingElements,
     {
-      valueMode: "normal",
+      valueMode: nationFertilityDistributionValueMode,
       unassignedPixelAssumption: "Infertile",
     },
   );
@@ -637,11 +639,22 @@ async function mapCalculations() {
     `<... > Nations
      `,
   );
+  if (
+    !isValueModeNormal(
+      nationFertilityDistributionValueMode,
+      nationFertilityDistribution,
+    )
+  ) {
+    error(
+      `Wrong value mode was provided to the distribution finder for nationFertilityDistribution. Report this to admins`,
+    );
+    return;
+  }
 
-  Object.keys(nationFertilityDistribution).forEach((nationKey) => {
+  Object.entries<Record<string, number>>(nationFertilityDistribution).forEach(([nationName, nation]) => {
     let total = 0;
-    Object.keys(nationFertilityDistribution[nationKey]).forEach(
-      (FertilityKey) => {
+    Object.entries<number>(nation).forEach(
+      ([FertilityKey, pixelCount]) => {
         const fertilityColor = gameStats.Fertility[FertilityKey].Color;
         let fertilityMultiplier = 0;
 
@@ -653,11 +666,11 @@ async function mapCalculations() {
         });
 
         total +=
-          nationFertilityDistribution[nationKey][FertilityKey] *
+          pixelCount *
           fertilityMultiplier;
       },
     );
-    addToTextOutput(`= ${total} ${nationKey}.Fertility\n`);
+    addToTextOutput(`= ${total} ${nationName}.Fertility\n`);
   });
 
   addToTextOutput(
