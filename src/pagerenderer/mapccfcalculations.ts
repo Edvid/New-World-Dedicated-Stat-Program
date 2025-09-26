@@ -8,7 +8,7 @@ import {
   mappedResourcesMultipliers,
 } from "../stats/gameStats.js";
 import { WIDTH, HEIGHT } from "../utility/images/consts.js";
-import { populationMapToHumanReadable } from "../utility/images/population_map_to_human_readable.js";
+import { populationMapToHumanReadable } from "../utility/mapcalc/maps/population_map_to_human_readable.js";
 import {
   fillInColorProperties,
   colorProperty,
@@ -25,8 +25,8 @@ import {
   reverseRBGsOfMap,
   twoMapMerger,
 } from "../utility/mapcalc/mapdata_iterator.js";
-import { advancePopulationMap } from "../utility/mapcalc/advance_population_map.js";
-import { advanceMap } from "../utility/mapcalc/advance_map.js";
+import { advancePopulationMap } from "../utility/mapcalc/maps/advance_population_map.js";
+import { advanceMap } from "../utility/mapcalc/maps/advance_map.js";
 
 let baseData: ImageDataArray;
 let nationData: ImageDataArray;

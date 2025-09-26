@@ -1,6 +1,6 @@
-import { ImageIndexToIntColor, ImageIndexToRGBA } from "../color_manipulation.js";
-import { Byte } from "../int_range.js";
-import { lerp } from "../math.js";
+import { ImageIndexToIntColor, ImageIndexToRGBA } from "../../color_manipulation.js";
+import { Byte } from "../../int_range.js";
+import { lerp } from "../../math.js";
 
 interface Node {
   color: [Byte, Byte, Byte, Byte],
