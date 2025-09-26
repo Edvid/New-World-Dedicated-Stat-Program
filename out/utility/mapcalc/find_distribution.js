@@ -10,12 +10,6 @@ export async function findDistribution(outerDataset, innerDataset, outerName, in
     }
     let getOuterDataPoint;
     let getInnerDataPoint;
-    function isDatasetImageDataArray(dataset) {
-        return typeof dataset != "function";
-    }
-    function isColorPropertyArray(colProps) {
-        return typeof colProps != "function";
-    }
     if (isDatasetImageDataArray(outerDataset))
         getOuterDataPoint = (i) => outerDataset[i];
     else
@@ -83,7 +77,8 @@ export async function findDistribution(outerDataset, innerDataset, outerName, in
                 return alpha;
             }
         }
-        if (options.valueMode == "greyScale") {
+        if (!isValueModeNormal(options.valueMode, ret) &&
+            options.valueMode == "greyScale") {
             const innerGreyScale = getInnerDataPoint(i * 4);
             const innerPixelValue = isInnerDataEmpty
                 ? options.unassignedPixelAssumption
@@ -95,7 +90,8 @@ export async function findDistribution(outerDataset, innerDataset, outerName, in
             if (isNaN(ret[outerNameOfPixel]))
                 debugger;
         }
-        else if (options.valueMode == "RGBAsNum") {
+        else if (!isValueModeNormal(options.valueMode, ret) &&
+            options.valueMode == "RGBAsNum") {
             const InnerPixelValue = isInnerDataEmpty
                 ? options.unassignedPixelAssumption
                 : ImageIndexToIntColor(innerDataset, i * 4);
@@ -104,7 +100,8 @@ export async function findDistribution(outerDataset, innerDataset, outerName, in
             const mult = adjustments();
             ret[outerNameOfPixel] += InnerPixelValue * mult;
         }
-        else if (options.valueMode == "normal") {
+        else if (isValueModeNormal(options.valueMode, ret) &&
+            options.valueMode == "normal") {
             let foundInnerObject;
             let InnerNameOfPixel;
             if (isColorPropertyArray(colorToInnerNameMapping)) {
@@ -137,6 +134,15 @@ export async function findDistribution(outerDataset, innerDataset, outerName, in
         }
     }
     return ret;
+}
+function isDatasetImageDataArray(dataset) {
+    return typeof dataset != "function";
+}
+function isColorPropertyArray(colProps) {
+    return typeof colProps != "function";
+}
+export function isValueModeNormal(valueMode, returnObject) {
+    return valueMode == "normal";
 }
 async function PromptName(color, getDatasetPointFunction, name, queryElements) {
     const DatasetLength = WIDTH * HEIGHT * 4;
@@ -173,7 +179,9 @@ async function promptMap(imgArray, queryElements, msg) {
     let submitted = false;
     queryElements.promptMissingInfoContainer.hidden = false;
     queryElements.promptLabel.innerText = msg;
-    queryElements.promptedMissingInfoCanvas.getContext("2d").putImageData(new ImageData(imgArray, WIDTH), 0, 0);
+    queryElements.promptedMissingInfoCanvas
+        .getContext("2d")
+        .putImageData(new ImageData(imgArray, WIDTH), 0, 0);
     console.log("ok, just waiting now :)");
     queryElements.promptSubmitButton.addEventListener("click", function () {
         submitted = true;
