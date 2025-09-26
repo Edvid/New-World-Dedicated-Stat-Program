@@ -723,7 +723,7 @@ async function prepareNewMaps() {
     popData,
     populationMapToHumanReadable,
     progressText,
-    false,
+    {},
   );
   await addToImageOutput(
     playerReadablePopData,
