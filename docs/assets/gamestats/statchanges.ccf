@@ -1054,3 +1054,388 @@ pay debt 290
 <
 = "Afghan" cultrep
 = "Hindu" relrep
+
+# GMs
+
+<... > Nations > Despocracy Of Heros
++40 Merchant Ships
+
+<... > Nations > VenetianRepublic
++4 HeavyShips
++4 MediumShips
++2 LightShips
++35 MerchantShips
++400 spies
+
+<... > Nations > OchutsEmpire
++3 coal
++1 Sulphur
++0.5 Copper
++10 TradeInfluences.NorthernAnatolia
++10 TradeInfluences.Greece
++0.1 AgrInf
++0.05 AgrAdv
++0.05 TradeImprov
++0.5 LocalTrade
++0.25 EduEff
++0.5 AdmEff
+
+<... > Nations > PuelcheConfederacy
++1 Local Trade
++1 Admin Eff
++0.1 AgrAdv
++0.1 AgrInf
++0.1 Mining Eff
++0.05 Reforestation
++1 Health
+
+<... > nations > Banu Yaseen Caliphate
++1 coffee
++0.5 localtrade
+
+<... > Nations > Kyivanrus
++0.1 Stockcap
++0.03 AgrSubsidies
++0.02 Agriinf
++0.5 Forestry
++0.5 Wool
+
+<... > Nations > VenetianRepublic
++0.05 firearmimprovements
+
+<... > Nations > Kwangtung Confederacy
+
++0.05 firearmimprovements
+
+ <... > Nations > KwangtungConfederacy
+
++0.05 TradeImprov
++0.5 LocalTrade
++7 TradeInfluences.South China Sea
++6 TradeInfluences.South East Asia
++5 TradeInfluences.Indonesia
++6 TradeInfluences.Yangtze River
++5 TradeInfluences.Sichuan
++6 TradeInfluences.Yellow River
++4 TradeInfluences.Manchuria
++3 TradeInfluences.Sea of Japan
++4 TradeInfluences.Deccan
++2 TradeInfluences.Ganges
++2 TradeInfluences.Central India
++2 TradeInfluences.Indus River
++3 TradeInfluences.Persian Gulf
++4 TradeInfluences.Mesopotamia
++3 TradeInfluences.Somalia
++3 TradeInfluences.Red Sea
++2 TradeInfluences.Southern Nile
++5 TradeInfluences.tibet
++4 TradeInfluences.NorthernAustralia 
+
+<... > Nations > Balticempire
+=70 merchant ships
+
+<... > Nations > Xanmai Mandate
++0.5 adm
++0.05 admsize
++0.05 overallimprov
+
+<... > Nations > DuchyOfMoscow
++0.25 admeff
+-2.5 EstateInfluences.AristocracyInfluence
+
+<...> Nations > KwangtungConfederacy
++0.5 cotton
++0.5 wool
++0.5 tea
++0.5 spice
++0.5 exoticfruit
++0.2 silk
++0.5 sugar
+
+<...> Nations > XanmaiMandate
++1 smallfort
++1 navalbases
+
+<...> Nations > RepublicofGrecoBactria
++0.05 meleeimprov
++0.05 firearmimprov
++0.25 discipline
+
+<...> Nations > Chazaigao
++0.05 agri inf
+
+<... > Cultures > Caucasian > Opinions
++> Jewish
+= -100 Jewish.Score
+<... > Cultures > Turkish > Opinions
++> Jewish
+= -100 Jewish.Score
+<... > Cultures > Kurdish > Opinions
++> Jewish
+= -100 Jewish.Score
+<... > Cultures > Persian > Opinions
++> Jewish
+= -100 Jewish.Score
+<... > Cultures > Egyptian > Opinions
++> Jewish
+= -100 Jewish.Score
+<... > Cultures > Jewish > Opinions
++> Egyptian 
+= -25 Egyptian.Score
++> Persian 
+= -25 Persian.Score
++> Kurdish 
+= -25 Kurdish.Score
++> Turkish 
+= -25 Turkish.Score
++> Caucasian 
+= -25 Caucasian.Score
+
+<... > Nations > Holy Kingdom Of Judah
++1 ReligiousFervor
++0.5 Propaganda
+-1 LocalTrade
+
+<... > Nations > Holy Kingdom Of Judah
+-5 TradeInfluences.NorthernAnatolia
+
+<... > Nations > Holy Kingdom Of Judah
+-5 TradeInfluences.Caucasus
+
+<... > Nations > Holy Kingdom Of Judah
+-5 TradeInfluences.Greece
+-5 TradeInfluences.Egypt
+
+<... > Cultures > Greek > Opinions
++> Jewish
+= -25 Jewish.Score
+
+<...> Nations > Banuyaseencaliphate
++ 0.5 ReligiousFervor
++ 2.5 EstateInfluences.IntellectualsInfluence
++ 0.25 EducationEfficiency
++ 0.05 Researchspending
+
+<...> Nations > Banuyaseencaliphate
+-5 GovernmentRepresentation.AristocracyRepresentation
++2.5 GovernmentRepresentation.IntellectualsRepresentation
++2.5 GovernmentRepresentation.BureaucratsRepresentation
+-2.5 EstateInfluences.AristocracyInfluence
++0.25 local trade
++0.25 administrativeefficiency
+
+<...> Nations > Duchy Of Moscow
++1 city fortifications
++0.5 adm
++0.1 admsize
+-5 EstateInfluences.aristocracyInfluence
++5 EstateInfluences.bureaucratsInfluence
+
+<...> Nations > Baltic Empire
++1 forestry
+
+<...> Nations > Banu Yaseen Caliphate
++0.75 ReligiousFervor
++1 adm 
++0.5 edueff
+-1 research points
+="true" Technologies.Printing Press
+
+<...> Nations > Banu Yaseen Caliphate
++0.5 religiousfervor
++0.25 edueff
++0.5 localtrade
++5 EstateInfluences.clergyInfluence
++2.5 EstateInfluences.IntellectualsInfluence
++2.5 EstateInfluences.BureaucratsInfluence
++2.5 GovernmentRepresentation.clergyRepresentation
++1 GovernmentRepresentation.BureaucratsRepresentation
+-3.5 GovernmentRepresentation.AristocracyRepresentation
+
+<...> Nations > Kyivan Rus
++1 wool
++0.05 cavalryimprov
++0.1 admsize
++0.05 agriadv
+
+<...> Nations > Kyivan Rus
+-0.1 cavalryimprov
+
+<... > Nations > Baltic Empire
+-1200 population
++2% pillaging 
++1% occupation
+
+<... > Nations > Kyivan Rus
+-2 light cavalry
+-1 heavy cavalry
++3 casualties
+
+<... > Nations > Kingdom Of Brandenburg
+-2% Occupation
+
+<... > Nations > Despocracy Of Heros
+
++5 ProductionSectors.TextilesSector 
++5 TradeInfluences.Greece 
++0.5 Local Trade
+
+<... > Nations > Xanmai Mandate
+
++0.1 ArtilleryImprov
++0.05 LightShipImprov
++0.1 MediumShipImprov
++0.1 HeavyShipImprov
+
+<... > Nations > Constantinopolis
++1 cityfortifications
+
+<... > Nations > VenetianRepublic
++0.25 educationefficiency
++0.1 researchspending
++0.25 local trade
++0.05 trade improvements
+
+<... > Nations > KwangtungConfederacy
++0.02 overall improvements
++0.1 propaganda
++0.1 cultural prosperity
+
+<... > Nations > KwangtungConfederacy
++0.4 health
+
+<... > Nations > KwangtungConfederacy
++0.5 administrativeefficiency
++0.5 educationefficiency
++0.1 culturalprosperity
+
+<... > Nations > KwangtungConfederacy
++0.05 agricultureadvancements
++0.05 agricultureinfrastructure
+
+<... > Nations > KwangtungConfederacy
+-3 researchpoints
+="true" Technologies.Printing Press
++1 administrative efficiency
++0.5 educationefficiency
+="true" Technologies.muskets
+="true" Technologies.Sappers And Engineers
+
+<... > Nations > KwangtungConfederacy
++0.25 administrativeefficiency
++0.1 local trade
++0.05 agriculturesubsidies
++0.02 trade improvements
+
+<... > Nations > KwangtungConfederacy
++0.03 agricultureadvancements
++0.02 agricultureinfrastructure
++0.1 local trade
+
+<... > Nations > KwangtungConfederacy
++0.02 agricultureadvancements
++0.05 agricultureinfrastructure
+
+<... > Nations > KwangtungConfederacy
++0.02 agricultureadvancements
++0.03 agricultureinfrastructure
+
+<...> Nations > KwangtungConfederacy
++7 Medium Ships
++20 Merchant Ships
++8 Light Ships
+
+<...> Nations > VenetianRepublic
++0.05 FirearmImprovements
++0.05 ArtilleryImprovements
++0.05 LightShipImprovements
++0.05 MediumShipImprovements
++0.05 HeavyShipImprovements
+
+<...> Nations > TheKingdomOfFrance
+="True" Technologies.HandCannons
+="True" Technologies.Muskets
+="True" Technologies.Limber 
+="True" Technologies.Docks
+-4 ResearchPoints
+=17% AristocracyTax
+=1.1% ClergyTax
+=25% BurgousieTax
+=10% UrbanTax
+=10% BureaucratsTax
+=12% IntellectualsTax
+=19% WorkersTax
+=5% MilitaryTax
+
+<...> Nations > Chazaigao
+="True" Technologies.Docks
+-1 ResearchPoints
+
+<...> Nations > KingdomOfPoland
+="True" Technologies.PrintingPress
+="True" Technologies.Muskets
+-2 ResearchPoints
+
+<... > Nations > Xanmai Mandate
+-100 LightInfantry
+-50 HeavyInfantry
+-30 Crossbowmen
+-35 musketeers
+-50 LightCav
+-25 HeavyCav
++290 casualties
+
+<... > Nations > Kwangtung Confederacy
+-110 heavyinfantry
+-230 lightinfantry
+-900 militia
+-200 lightcav
+-50 heavycav
+-5 elitecav
+-200 crossbowmen
+-100 archers
+-1 Major Battles
++1795 casualties
+
+<... > Nations > KosalaKingdom
+-450 budget
+<... > Nations > RoyalTaiKingdom
++450 budget
+
+<...> Nations > Banuyaseen Caliphate
+="True" Technologies.Docks
+="True" Technologies.Limber
+="True" Technologies.Miningcarts
+="True" Technologies.Muskets
+-5 Research Points
++0.25 miningefficiency
+
+<... > Nations > XanmaiMandate
++0.1 Melee Improvements
++0.1 Cavalry Improvements
++0.05 Overall Improvements
++0.01 FirearmImprovements
++0.05 TradeImprovements
++1 LocalTrade
+
+<... > Nations > XanmaiMandate
++4000 HeavyInf
++2000 Musketeers
++30 FieldCannons
++40 Spies
+
+<... > Nations > XanmaiMandate
+="https://preview.redd.it/dcq2mh144st51.png?width=1080&crop=smart&auto=webp&s=a72302ccbdb7d34ac28519771f83253465fe39d3" flag
+
+<... > Nations > XanmaiMandate
++10 medium ships
++20 merchant ships
+
+<... > Nations > XanmaiMandate
++0.07 AgrAdv
++0.05 AgrInf
+
+<... > Nations > XanmaiMandate
++0.25 AdmEff
++0.05 AdmSize
+
