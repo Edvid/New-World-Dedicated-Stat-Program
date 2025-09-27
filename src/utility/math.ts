@@ -5,7 +5,7 @@ export const clamp = (_clamper1, _clamper2, _num) =>
     ? min(max(_num, _clamper1), _clamper2)
     : min(max(_num, _clamper2), _clamper1);
 
-export function lerp(a, b, t) {
-  return a * (1 - t) + b * t;
+export function lerp<T extends number>(a: T, b: T, t: number) {
+  return (a * (1 - t) + b * t) as T;
 }
 
