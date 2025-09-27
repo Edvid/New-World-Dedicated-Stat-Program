@@ -1,3 +1,1056 @@
 
 <... > Nations
 !suppress 99999
+
+
+<... > Nations > KingdomOfBrandenburg
++200 spies
++10000 HeavyInf
++5000 Musketeers
++3000 LightCav
++2000 HeavyCav
++48 FieldCannons
+
+# NPC UPDATES
+
+<... > Nations > KingdomOfBrandenburg
++0.25 Health
++0.5 EduEff
++0.25 Propaganda
+=0 SocialSpending
++0.5 AdmEff
++0.1 AdmSize
++0.5 LocalTrade
++0.1 TradeImprovements
++5 ProductionSectors.BasicArmamentsSector
+-2.5 ProductionSectors.AlcoholSector
++0.05 OverallImprovements
++0.25 CommanderFreedom
++0.25 ArmyWage
++0.5% Discipline
++0.05 MeleeImprovements
++0.05 FirearmImprovements
++0.05 CavalryImprovements
++0.05 ArtilleryImprovements
++0.05 LightShipImprovements
++0.05 MediumShipImprovements
++0.05 HeavyShipImprovements
++0.05 AgrAdv
++0.05 AgrInf
++0.05 AgrSubsidies
++2.5 EstateInfluences.BurgousieInfluence
+-2.5 EstateInfluences.AristocracyInfluence
+-2.5 EstateInfluences.ClergyInfluence
++5 GovernmentRepresentation.BurgousieRepresentation
+-2.5 GovernmentRepresentation.AristocracyRepresentation
+-2.5 GovernmentRepresentation.ClergyRepresentation
++2.5 MilitaryControl.BurgousieControl
++2.5 MilitaryControl.Independent
+-2.5 MilitaryControl.AristocracyControl
+-2.5 MilitaryControl.ClergyControl
+=20% AristocracyTax
+=5% ClergyTax
+=20% BurgousieTax
+=5% UrbanTax
++0.25 BureaucratsWages
++5 TradeInfluences.Rhine
++5 TradeInfluences.France
++5 TradeInfluences.Denmark
++5 TradeInfluences.CentralEurope
++5 TradeInfluences.Vistula
++5 TradeInfluences.Baltic Sea
++0.05 ResearchSpending
+-5 CulturalPower
+="true" CulturalAdvancements.Renaissance Thought
++0.1 MiningEff
++0.15 Copper
++2 Forestry
+
+<... > Nations > Novorossia
++0.25 Health
++1 EduEff
++0.25 Propaganda
+=0 SocialSpending
++1.5 AdmEff
++0.1 AdmSize
++0.5 LocalTrade
++0.1 TradeImprovements
++2.5 ProductionSectors.BasicArmamentsSector
++2.5 ProductionSectors.HeavyArmamentsSector
++2.5 ProductionSectors.ShipBuildingSector
++2.5 ProductionSectors.TextilesSector
+-2.5 ProductionSectors.AlcoholSector
++0.10 OverallImprovements
++0.25 CommanderFreedom
++0.25 ArmyWage
++0.5% Discipline
++0.05 MeleeImprovements
++0.05 FirearmImprovements
++0.05 CavalryImprovements
++0.05 ArtilleryImprovements
+=0 Crossbowmen
+=4000 HeavyInf
+=2000 Musketeers
+=1000 HeavyCav
+=1000 LightCav
+=24 FieldCannons
++2 SmallForts
++4 HeavyShips
++4 Mediumships
++0.05 LightShipImprovements
++0.05 MediumShipImprovements
++0.05 HeavyShipImprovements
++0.05 AgrAdv
++0.05 AgrInf
++0.05 AgrSubsidies
++2.5 EstateInfluences.BurgousieInfluence
+-2.5 EstateInfluences.AristocracyInfluence
+-2.5 EstateInfluences.ClergyInfluence
++5 GovernmentRepresentation.BurgousieRepresentation
+-2.5 GovernmentRepresentation.AristocracyRepresentation
+-2.5 GovernmentRepresentation.ClergyRepresentation
++2.5 MilitaryControl.BurgousieControl
++2.5 MilitaryControl.Independent
+-2.5 MilitaryControl.AristocracyControl
+-2.5 MilitaryControl.ClergyControl
+-35 ReformPower
+="true" Reforms.Wealthy Officers
+="false" Reforms.Noble Officers
++10 TradeInfluences.Volga
++5 TradeInfluences.Caucasus
++5 TradeInfluences.Crimea
++5 TradeInfluences.Don River
++5 TradeInfluences.Dniepr
++0.05 ResearchSpending
+-4 ResearchPoints
+="true" Technologies.Printing Press
+="true" Technologies.Muskets
+="true" Technologies.Limber
+="true" Technologies.Docks
+-5 CulturalPower
+="true" CulturalAdvancements.Early Modern Administration
++0.1 MiningEff
++1 Silver
++1 Forestry
+
+<... > Nations > Grand Duchy Of Duklja
++0.25 Health
++0.5 EduEff
++0.25 Propaganda
+=0 SocialSpending
++0.5 AdmEff
++0.1 AdmSize
++0.5 LocalTrade
++0.1 TradeImprovements
++2.5 ProductionSectors.BasicArmamentsSector
++2.5 ProductionSectors.HeavyArmamentsSector
++2.5 ProductionSectors.ShipBuildingSector
++2.5 ProductionSectors.TextilesSector
+-2.5 ProductionSectors.AlcoholSector
++0.10 OverallImprovements
++0.25 CommanderFreedom
++0.25 ArmyWage
++0.5% Discipline
++0.05 MeleeImprovements
++0.05 FirearmImprovements
++0.05 CavalryImprovements
++0.05 ArtilleryImprovements
+=0 Crossbowmen
+=2000 HeavyInf
+=1000 Musketeers
++2 HeavyShips
++0.05 LightShipImprovements
++0.05 MediumShipImprovements
++0.05 HeavyShipImprovements
++0.05 AgrAdv
++0.05 AgrInf
++0.05 AgrSubsidies
++2.5 EstateInfluences.BurgousieInfluence
+-2.5 EstateInfluences.AristocracyInfluence
+-2.5 EstateInfluences.ClergyInfluence
++5 GovernmentRepresentation.BurgousieRepresentation
+-2.5 GovernmentRepresentation.AristocracyRepresentation
+-2.5 GovernmentRepresentation.ClergyRepresentation
++2.5 MilitaryControl.BurgousieControl
++2.5 MilitaryControl.Independent
+-2.5 MilitaryControl.AristocracyControl
+-2.5 MilitaryControl.ClergyControl
+-35 ReformPower
+="true" Reforms.Wealthy Officers
+="false" Reforms.Noble Officers
++7.5 TradeInfluences.Greece
++7.5 TradeInfluences.Adriatic
++7.5 TradeInfluences.Eastern Danube
++7.5 TradeInfluences.Western Danube
++0.05 ResearchSpending
+-2 ResearchPoints
+="true" Technologies.Muskets
+="true" Technologies.Limber
++0.1 MiningEff
++0.5 Wool
+
+<... > Nations > Grand Duchy Of Lithuania
++0.25 Health
++1 EduEff
++0.25 Propaganda
+=0 SocialSpending
++1.5 AdmEff
++0.1 AdmSize
++0.5 LocalTrade
++0.1 TradeImprovements
++2.5 ProductionSectors.BasicArmamentsSector
++2.5 ProductionSectors.HeavyArmamentsSector
++2.5 ProductionSectors.ShipBuildingSector
++2.5 ProductionSectors.TextilesSector
+-2.5 ProductionSectors.AlcoholSector
++0.10 OverallImprovements
++0.25 CommanderFreedom
++0.25 ArmyWage
++0.5% Discipline
++0.05 MeleeImprovements
++0.05 FirearmImprovements
++0.05 CavalryImprovements
++0.05 ArtilleryImprovements
+=0 Crossbowmen
+=3000 HeavyInf
+=1500 Musketeers
+=1000 HeavyCav
+-2 SmallForts
++2 MediumForts
++2 MediumShips
++0.05 LightShipImprovements
++0.05 MediumShipImprovements
++0.05 HeavyShipImprovements
++0.05 AgrAdv
++0.05 AgrInf
++0.05 AgrSubsidies
++2.5 EstateInfluences.BurgousieInfluence
+-2.5 EstateInfluences.AristocracyInfluence
+-2.5 EstateInfluences.ClergyInfluence
++5 GovernmentRepresentation.BurgousieRepresentation
+-2.5 GovernmentRepresentation.AristocracyRepresentation
+-2.5 GovernmentRepresentation.ClergyRepresentation
++2.5 MilitaryControl.BurgousieControl
++2.5 MilitaryControl.Independent
+-2.5 MilitaryControl.AristocracyControl
+-2.5 MilitaryControl.ClergyControl
++7.5 TradeInfluences.Baltic Sea
++5 TradeInfluences.Vistula
++5 TradeInfluences.Dniepr
++7.5 TradeInfluences.Livonia
++5 TradeInfluences.Novgorod
++0.05 ResearchSpending
+-3 ResearchPoints
+="true" Technologies.Muskets
+="true" Technologies.Limber
+="true" Technologies.PrintingPress
++0.1 MiningEff
++1 Forestry
++1 Wool
+
+<... > Nations > Ural Cossack Host
++0.25 Health
++0.5 EduEff
++0.25 Propaganda
+=0 SocialSpending
++0.5 AdmEff
++0.1 AdmSize
++0.5 LocalTrade
++0.1 TradeImprovements
++2.5 ProductionSectors.BasicArmamentsSector
++2.5 ProductionSectors.HeavyArmamentsSector
+-2.5 ProductionSectors.AlcoholSector
++0.10 OverallImprovements
++0.25 CommanderFreedom
++0.25 ArmyWage
++0.5% Discipline
++0.05 MeleeImprovements
++0.05 FirearmImprovements
++0.05 CavalryImprovements
++0.05 ArtilleryImprovements
++2000 HeavyInf
++500 Musketeers
++2 SmallForts
++10 MerchantShips
++0.05 LightShipImprovements
++0.05 MediumShipImprovements
++0.05 HeavyShipImprovements
++0.05 AgrAdv
++0.05 AgrInf
++0.05 AgrSubsidies
++2.5 EstateInfluences.BurgousieInfluence
+-2.5 EstateInfluences.AristocracyInfluence
+-2.5 EstateInfluences.ClergyInfluence
++5 GovernmentRepresentation.BurgousieRepresentation
+-2.5 GovernmentRepresentation.AristocracyRepresentation
+-2.5 GovernmentRepresentation.ClergyRepresentation
++2.5 MilitaryControl.BurgousieControl
++2.5 MilitaryControl.Independent
+-2.5 MilitaryControl.AristocracyControl
+-2.5 MilitaryControl.ClergyControl
++10 TradeInfluences.Ural River
++10 TradeInfluences.Volga
++10 TradeInfluences.Caspian Sea
++0.05 ResearchSpending
+-5 ResearchPoints
+="true" Technologies.Matchlock
+="true" Technologies.Mining Carts
+="true" Technologies.Limber
+-5 CulturalPower
+="true" CulturalAdvancements.Early Modern Administration
++0.35 MiningEff
++0.5 Copper
++1 Wool
++1 Forestry
+
+<... > Nations > Sanhajid Caliphate
++0.25 Health
++0.5 EduEff
++0.25 Propaganda
+=0 SocialSpending
++0.5 AdmEff
++0.1 AdmSize
++0.5 LocalTrade
++0.1 TradeImprovements
++2.5 ProductionSectors.BasicArmamentsSector
++7.5 ProductionSectors.HeavyArmamentsSector
+=0 ProductionSectors.AlcoholSector
++0.10 OverallImprovements
++0.25 CommanderFreedom
++0.25 ArmyWage
++0.5% Discipline
++0.05 MeleeImprovements
++0.05 FirearmImprovements
++0.05 CavalryImprovements
++0.05 ArtilleryImprovements
+=0 Crossbowmen
+=4000 HeavyInf
+=2000 Musketeers
+=1000 LightCav
+=1000 HeavyCav
++1 CityFortifications
++10 MerchantShips
++0.05 LightShipImprovements
++0.05 MediumShipImprovements
++0.05 HeavyShipImprovements
++0.05 AgrAdv
++0.05 AgrInf
++0.05 AgrSubsidies
++2.5 EstateInfluences.BurgousieInfluence
+-2.5 EstateInfluences.AristocracyInfluence
+-2.5 EstateInfluences.ClergyInfluence
++5 GovernmentRepresentation.BurgousieRepresentation
+-2.5 GovernmentRepresentation.AristocracyRepresentation
+-2.5 GovernmentRepresentation.ClergyRepresentation
++2.5 MilitaryControl.BurgousieControl
++2.5 MilitaryControl.Independent
+-2.5 MilitaryControl.AristocracyControl
+-2.5 MilitaryControl.ClergyControl
+-35 ReformPower
+="true" Reforms.Wealthy Officers
+="false" Reforms.Noble Officers
++5 TradeInfluences.Western Mediterranean
++5 TradeInfluences.Iberia
++5 TradeInfluences.Central Mediterranean
++5 TradeInfluences.Morocco
++5 TradeInfluences.Guinea
++5 TradeInfluences.Western Niger
++0.05 ResearchSpending
+-4 ResearchPoints
+="true" Technologies.Gunports
+="true" Technologies.Galleons
+="true" Technologies.PrintingPress
+="true" Technologies.Muskets
++0.1 MiningEff
++1 Sulphur
++0.15 Iron
++1 Wool
++1 Forestry
+
+<... > Nations > Kingdom Of Oorun
++0.25 Health
++1 EduEff
++0.25 Propaganda
+=0 SocialSpending
++1.5 AdmEff
++0.1 AdmSize
++0.5 LocalTrade
++0.1 TradeImprovements
++2.5 ProductionSectors.BasicArmamentsSector
++2.5 ProductionSectors.HeavyArmamentsSector
++2.5 ProductionSectors.ShipBuildingSector
++2.5 ProductionSectors.TextilesSector
+-2.5 ProductionSectors.AlcoholSector
++0.10 OverallImprovements
++0.25 CommanderFreedom
++0.25 ArmyWage
++0.5% Discipline
++0.05 MeleeImprovements
++0.05 FirearmImprovements
++0.05 CavalryImprovements
++0.05 ArtilleryImprovements
+=500 LightInf
+=2000 HeavyInf
+=1000 Musketeers
+=1000 LightCav
+=1000 HeavyCav
++2 SmallForts
++15 MerchantShips
++0.05 LightShipImprovements
++0.05 MediumShipImprovements
++0.05 HeavyShipImprovements
++0.05 AgrAdv
++0.05 AgrInf
++0.05 AgrSubsidies
++2.5 EstateInfluences.BurgousieInfluence
+-2.5 EstateInfluences.AristocracyInfluence
+-2.5 EstateInfluences.ClergyInfluence
++5 GovernmentRepresentation.BurgousieRepresentation
+-2.5 GovernmentRepresentation.AristocracyRepresentation
+-2.5 GovernmentRepresentation.ClergyRepresentation
++2.5 MilitaryControl.BurgousieControl
++2.5 MilitaryControl.Independent
+-2.5 MilitaryControl.AristocracyControl
+-2.5 MilitaryControl.ClergyControl
+=30% AristocracyTax
+=15% ClergyTax
+=35% BurgousieTax
+=20% UrbanTax
++0.25 BureaucratsWages
++10 TradeInfluences.Guinea
++10 TradeInfluences.Western Niger
++10 TradeInfluences.Eastern Niger
++0.05 ResearchSpending
+-5 ResearchPoints
+="true" Technologies.Muskets
+="true" Technologies.Printing Press
+="true" Technologies.Limber
+="true" Technologies.Docks
+="true" Technologies.Gunports
+-5 CulturalPower
+="true" CulturalAdvancements.Early Modern Administration
++0.1 MiningEff
++2 Coal
++2 Gold
++2 Diamond
++2 Ivory
++1 Forestry
++0.5 Cotton
++0.25 Wool
+
+<... > Nations > Sangkhom
+="https://historyunwrittenpodcast.com/wp-content/uploads/elementor/thumbs/1280px-Flag_of_Siam_1855.svg_-p7zi6w5wp9fej6b5meia20dktpj4hpmza976t33us6.png" flag
+pay debt 290
++0.25 Health
++1 EduEff
++0.25 Propaganda
+=0 SocialSpending
++1.5 AdmEff
++0.1 AdmSize
++0.5 LocalTrade
++0.1 TradeImprovements
++2.5 ProductionSectors.BasicArmamentsSector
++2.5 ProductionSectors.HeavyArmamentsSector
++2.5 ProductionSectors.ShipBuildingSector
++2.5 ProductionSectors.TextilesSector
+-2.5 ProductionSectors.AlcoholSector
++0.10 OverallImprovements
++0.25 CommanderFreedom
++0.25 ArmyWage
++0.5% Discipline
++0.05 MeleeImprovements
++0.05 FirearmImprovements
++0.05 CavalryImprovements
++0.05 ArtilleryImprovements
+=0 Archers
+=3000 HeavyInf
+=2000 Musketeers
+=1000 LightCav
++2 SmallForts
++5 MerchantShips
++0.05 LightShipImprovements
++0.05 MediumShipImprovements
++0.05 HeavyShipImprovements
++0.05 AgrAdv
++0.05 AgrInf
++0.05 AgrSubsidies
++2.5 EstateInfluences.BurgousieInfluence
+-2.5 EstateInfluences.AristocracyInfluence
+-2.5 EstateInfluences.ClergyInfluence
++5 GovernmentRepresentation.BurgousieRepresentation
+-2.5 GovernmentRepresentation.AristocracyRepresentation
+-2.5 GovernmentRepresentation.ClergyRepresentation
++2.5 MilitaryControl.BurgousieControl
++2.5 MilitaryControl.Independent
+-2.5 MilitaryControl.AristocracyControl
+-2.5 MilitaryControl.ClergyControl
+=20% AristocracyTax
+=0% ClergyTax
+=30% urbanTax
+-37.5 ReformPower
+="true" Reforms.Wealthy Officers
+="false" Reforms.Noble Officers
++10 TradeInfluences.South China Sea
++10 TradeInfluences.Indonesia
++10 TradeInfluences.South East Asia
++0.05 ResearchSpending
+-2 ResearchPoints
+="true" Technologies.Printing Press
+="true" Technologies.Muskets
+-5 CulturalPower
+="true" CulturalAdvancements.Renaissance Thought
++0.1 MiningEff
++1 Cotton
++0.5 Tea
++0.5 Spice
++0.5 Ivory
++1 Forestry
++1 Iron
+
+<... > Nations > Tondo Kingdom
++0.25 Health
++0.5 EduEff
++0.25 Propaganda
+=0 SocialSpending
++0.5 AdmEff
++0.1 AdmSize
++0.5 LocalTrade
++0.1 TradeImprovements
++2.5 ProductionSectors.BasicArmamentsSector
++2.5 ProductionSectors.HeavyArmamentsSector
++2.5 ProductionSectors.ShipBuildingSector
++2.5 ProductionSectors.TextilesSector
+-2.5 ProductionSectors.AlcoholSector
++0.10 OverallImprovements
++0.25 CommanderFreedom
++0.25 ArmyWage
++0.5% Discipline
++0.05 MeleeImprovements
++0.05 FirearmImprovements
++0.05 CavalryImprovements
++0.05 ArtilleryImprovements
+=1000 HeavyInf
+=0 Archers
+=500 Musketeers
+=500 LightCav
++2 SmallForts
++0.05 LightShipImprovements
++0.05 MediumShipImprovements
++0.05 HeavyShipImprovements
++0.05 AgrAdv
++0.05 AgrInf
++0.05 AgrSubsidies
++2.5 EstateInfluences.BurgousieInfluence
+-2.5 EstateInfluences.AristocracyInfluence
+-2.5 EstateInfluences.ClergyInfluence
++5 GovernmentRepresentation.BurgousieRepresentation
+-2.5 GovernmentRepresentation.AristocracyRepresentation
+-2.5 GovernmentRepresentation.ClergyRepresentation
++2.5 MilitaryControl.BurgousieControl
++2.5 MilitaryControl.Independent
+-2.5 MilitaryControl.AristocracyControl
+-2.5 MilitaryControl.ClergyControl
+=20% AristocracyTax
+=15% ClergyTax
+=25% BurgousieTax
+=20% UrbanTax
++0.5 BureaucratsWage
+-43 ReformPower
+="true" Reforms.Wealthy Officers
+="false" Reforms.Noble Officers
++10 TradeInfluences.South China Sea
++10 TradeInfluences.Indonesia
++10 TradeInfluences.South East Asia
++0.05 ResearchSpending
+-4 ResearchPoints
+="true" Technologies.Printing Press
+="true" Technologies.Muskets
+="true" Technologies.Gunports
+="true" Technologies.Galleons
+-5 CulturalPower
+="true" CulturalAdvancements.Early Modern Administration
++0.1 MiningEff
++1 Coal
++1 Sulphur
++1 Iron
++1 Copper
++1 Gold
++0.5 Cotton
++0.25 Tea
++0.5 Spice
++0.25 Silk
++1 Forestry
+
+<... > Nations > Garmoni
++0.25 Health
++0.5 EduEff
++0.25 Propaganda
+=0 SocialSpending
++0.5 AdmEff
++0.1 AdmSize
++0.5 LocalTrade
++0.1 TradeImprovements
++2.5 ProductionSectors.BasicArmamentsSector
++2.5 ProductionSectors.HeavyArmamentsSector
++2.5 ProductionSectors.ShipBuildingSector
++2.5 ProductionSectors.TextilesSector
+-2.5 ProductionSectors.AlcoholSector
++0.10 OverallImprovements
++0.25 CommanderFreedom
++0.25 ArmyWage
++0.5% Discipline
++0.05 MeleeImprovements
++0.05 FirearmImprovements
++0.05 CavalryImprovements
++0.05 ArtilleryImprovements
+
++0.05 LightShipImprovements
++0.05 MediumShipImprovements
++0.05 HeavyShipImprovements
++0.05 AgrAdv
++0.05 AgrInf
++0.05 AgrSubsidies
++2.5 EstateInfluences.BurgousieInfluence
+-2.5 EstateInfluences.AristocracyInfluence
+-2.5 EstateInfluences.ClergyInfluence
++5 GovernmentRepresentation.BurgousieRepresentation
+-2.5 GovernmentRepresentation.AristocracyRepresentation
+-2.5 GovernmentRepresentation.ClergyRepresentation
++2.5 MilitaryControl.BurgousieControl
++2.5 MilitaryControl.Independent
+-2.5 MilitaryControl.AristocracyControl
+-2.5 MilitaryControl.ClergyControl
++7.5 TradeInfluences.Indus River
++7.5 TradeInfluences.Ganges
++7.5 TradeInfluences.Central India
++7.5 TradeInfluences.Deccan
++0.05 ResearchSpending
+-4 ResearchPoints
+="true" Technologies.Gunports
+="true" Technologies.Muskets
+="true" Technologies.Printing Press
+="true" Technologies.Galleons
+-5 CulturalPower
+="true" CulturalAdvancements.Early Modern Administration
++0.1 MiningEff
++1 Sulphur
++0.5 iron
++0.5 Ivory
++2 Forestry
++0.5 Cotton
++0.5 Spice
++0.25 Silk
++0.25 Tea
++0.5 Sugar
++0.25 ExoticFruit
+
+<... > Nations > Royal Tai Kingdom
++0.25 Health
++1 EduEff
++0.25 Propaganda
+=0 SocialSpending
++1.5 AdmEff
++0.1 AdmSize
++0.5 LocalTrade
++0.1 TradeImprovements
++2.5 ProductionSectors.BasicArmamentsSector
++2.5 ProductionSectors.HeavyArmamentsSector
++2.5 ProductionSectors.ShipBuildingSector
++2.5 ProductionSectors.TextilesSector
+-2.5 ProductionSectors.AlcoholSector
++0.10 OverallImprovements
++0.25 CommanderFreedom
++0.25 ArmyWage
++0.5% Discipline
++0.05 MeleeImprovements
++0.05 FirearmImprovements
++0.05 CavalryImprovements
++0.05 ArtilleryImprovements
++2000 HeavyInf
++1000 Musketeers
++500 LightCav
++500 HeavyCav
++2 SmallForts
++10 MerchantShips
++0.05 LightShipImprovements
++0.05 MediumShipImprovements
++0.05 HeavyShipImprovements
++0.05 AgrAdv
++0.05 AgrInf
++0.05 AgrSubsidies
++2.5 EstateInfluences.BurgousieInfluence
+-2.5 EstateInfluences.AristocracyInfluence
+-2.5 EstateInfluences.ClergyInfluence
++5 GovernmentRepresentation.BurgousieRepresentation
+-2.5 GovernmentRepresentation.AristocracyRepresentation
+-2.5 GovernmentRepresentation.ClergyRepresentation
++2.5 MilitaryControl.BurgousieControl
++2.5 MilitaryControl.Independent
+-2.5 MilitaryControl.AristocracyControl
+-2.5 MilitaryControl.ClergyControl
+=30% AristocracyTax
+=10% ClergyTax
+=30% BurgousieTax
+=30% UrbanTax
++0.25 BureaucratsWages
+-50 ReformPower
+="true" Reforms.Wealthy Bureaucrats
+="false" Reforms.Clergy Bureaucrats
++10 TradeInfluences.Ganges
++10 TradeInfluences.Central India
++10 TradeInfluences.Deccan
++0.05 ResearchSpending
+-7 ResearchPoints
+="true" Technologies.Plate Armour
+="true" Technologies.Hand Cannons
+="true" Technologies.Bombards
+="true" Technologies.Standardized Pikes
+="true" Technologies.Printing Press
+="true" Technologies.Muskets
+-5 CulturalPower
+="true" CulturalAdvancements.Early Modern Administration
++0.1 MiningEff
++1.5 Forestry
++0.5 Cotton
++0.5 Tea
++0.25 Silk
++0.5 Spice
++0.25 Sugar
++0.25 ExoticFruit
+
+<... > Nations > Kosala Kingdom
++0.25 Health
++0.5 EduEff
++0.25 Propaganda
+=0 SocialSpending
++0.5 AdmEff
++0.1 AdmSize
++0.5 LocalTrade
++0.1 TradeImprovements
++2.5 ProductionSectors.BasicArmamentsSector
++2.5 ProductionSectors.HeavyArmamentsSector
++2.5 ProductionSectors.ShipBuildingSector
++2.5 ProductionSectors.TextilesSector
+-2.5 ProductionSectors.AlcoholSector
++0.05 OverallImprovements
++0.25 CommanderFreedom
++0.25 ArmyWage
++0.5% Discipline
++0.05 MeleeImprovements
++0.05 FirearmImprovements
++0.05 CavalryImprovements
++0.05 ArtilleryImprovements
++0.05 LightShipImprovements
++0.05 MediumShipImprovements
++0.05 HeavyShipImprovements
++0.05 AgrAdv
++0.05 AgrInf
++0.05 AgrSubsidies
++2.5 EstateInfluences.BurgousieInfluence
+-2.5 EstateInfluences.AristocracyInfluence
+-2.5 EstateInfluences.ClergyInfluence
++2.5 MilitaryControl.BurgousieControl
++2.5 MilitaryControl.Independent
+-2.5 MilitaryControl.AristocracyControl
+-2.5 MilitaryControl.ClergyControl
+=0% ClergyTax
++10 TradeInfluences.Ganges
++10 TradeInfluences.Central India
++10 TradeInfluences.Deccan
++0.05 ResearchSpending
++0.1 MiningEff
++1 Forestry
++500 spies
++3000 HeavyCav
++6000 Musketeers
+
+<... > Nations > Mazdayan Empire Of Eranshahr
++0.25 Health
++0.5 EduEff
++0.25 Propaganda
+=0 SocialSpending
++0.5 AdmEff
++0.1 AdmSize
++0.5 LocalTrade
++0.1 TradeImprovements
++2.5 ProductionSectors.BasicArmamentsSector
++2.5 ProductionSectors.HeavyArmamentsSector
++2.5 ProductionSectors.ShipBuildingSector
++2.5 ProductionSectors.TextilesSector
+=2.5 ProductionSectors.AlcoholSector
++0.10 OverallImprovements
++0.25 CommanderFreedom
++0.25 ArmyWage
++0.5% Discipline
++0.05 MeleeImprovements
++0.05 FirearmImprovements
++0.05 CavalryImprovements
++0.05 ArtilleryImprovements
+=0 Crossbowmen
+=6000 HeavyInf
++3000 Musketeers
+=1500 LightCav
+=1500 HeavyCav
++2 SmallForts
++2 LightShips
++4 MediumShips
++4 HeavyShips
++0.05 LightShipImprovements
++0.05 MediumShipImprovements
++0.05 HeavyShipImprovements
++0.05 AgrAdv
++0.05 AgrInf
++0.05 AgrSubsidies
++2.5 EstateInfluences.BurgousieInfluence
+-2.5 EstateInfluences.AristocracyInfluence
+-2.5 EstateInfluences.ClergyInfluence
++5 GovernmentRepresentation.BurgousieRepresentation
+-2.5 GovernmentRepresentation.AristocracyRepresentation
+-2.5 GovernmentRepresentation.ClergyRepresentation
++2.5 MilitaryControl.BurgousieControl
++2.5 MilitaryControl.Independent
+-2.5 MilitaryControl.AristocracyControl
+-2.5 MilitaryControl.ClergyControl
+=20% ClergyTax
+-35 ReformPower
+="true" Reforms.Wealthy Officers
+="false" Reforms.Noble Officers
++7.5 TradeInfluences.Mesopotamia
++7.5 TradeInfluences.Persian Gulf
++5 TradeInfluences.Iran
++5 TradeInfluences.Caspian Sea
++5 TradeInfluences.Caucasus
++0.05 ResearchSpending
+-2 ResearchPoints
+="true" Technologies.Muskets
+="true" Technologies.Limber
++0.1 MiningEff
++0.75 Coal
++0.5 Wool
++0.5 Forestry
++0.25 Spice
+
+<... > Nations > Swaranegara
++0.25 Health
++0.5 EduEff
++0.25 Propaganda
+=0 SocialSpending
++0.5 AdmEff
++0.1 AdmSize
++0.5 LocalTrade
++0.1 TradeImprovements
++2.5 ProductionSectors.BasicArmamentsSector
++2.5 ProductionSectors.HeavyArmamentsSector
++2.5 ProductionSectors.ShipBuildingSector
++2.5 ProductionSectors.TextilesSector
+=0 ProductionSectors.AlcoholSector
++0.10 OverallImprovements
++0.25 CommanderFreedom
++0.25 ArmyWage
++0.5% Discipline
++0.05 MeleeImprovements
++0.05 FirearmImprovements
++0.05 CavalryImprovements
++0.05 ArtilleryImprovements
+=2000 heavyInf
+=1000 Musketeers
+=0 Archers
++3 SmallForts
++0.05 LightShipImprovements
++0.05 MediumShipImprovements
++0.05 HeavyShipImprovements
++0.05 AgrAdv
++0.05 AgrInf
++0.05 AgrSubsidies
++2.5 EstateInfluences.BurgousieInfluence
+-2.5 EstateInfluences.AristocracyInfluence
+-2.5 EstateInfluences.ClergyInfluence
++5 GovernmentRepresentation.BurgousieRepresentation
+-2.5 GovernmentRepresentation.AristocracyRepresentation
+-2.5 GovernmentRepresentation.ClergyRepresentation
++2.5 MilitaryControl.BurgousieControl
++2.5 MilitaryControl.Independent
+-2.5 MilitaryControl.AristocracyControl
+-2.5 MilitaryControl.ClergyControl
+=30% BurgousieTax
+-35 ReformPower
+="true" Reforms.Wealthy Officers
+="false" Reforms.Noble Officers
++10 TradeInfluences.South China Sea
++10 TradeInfluences.Indonesia
++10 TradeInfluences.South East Asia
++0.05 ResearchSpending
+-4 ResearchPoints
+="true" Technologies.Gunports
+="true" Technologies.Limber
+="true" Technologies.Muskets
+="true" Technologies.Galleons
+-5 CulturalPower
+="true" CulturalAdvancements.Early Modern Administration
++0.1 MiningEff
++1 Coal
++0.5 Sulphur
++1 Gold
++0.5 ivory
++0.5 Forestry
++0.5 Cotton
++0.25 Tea
++0.25 Silk
++0.25 Spice
++0.25 Coffee
++0.25 Sugar
++0.25 ExoticFruit
+
+<... > Nations > Kaziguria
++0.25 Health
++1 EduEff
++0.25 Propaganda
+=0 SocialSpending
++1.5 AdmEff
++0.1 AdmSize
++0.5 LocalTrade
++0.1 TradeImprovements
++2.5 ProductionSectors.BasicArmamentsSector
++2.5 ProductionSectors.HeavyArmamentsSector
+=0 ProductionSectors.AlcoholSector
++0.10 OverallImprovements
++0.25 CommanderFreedom
++0.25 ArmyWage
++0.5% Discipline
++0.05 MeleeImprovements
++0.05 FirearmImprovements
++0.05 CavalryImprovements
++0.05 ArtilleryImprovements
++500 HeavyInf
++500 LightCav
++500 Musketeers
++1 SmallForts
++0.05 LightShipImprovements
++0.05 MediumShipImprovements
++0.05 HeavyShipImprovements
++0.05 AgrAdv
++0.05 AgrInf
++0.05 AgrSubsidies
++2.5 EstateInfluences.BurgousieInfluence
+-2.5 EstateInfluences.AristocracyInfluence
+-2.5 EstateInfluences.ClergyInfluence
++5 GovernmentRepresentation.BurgousieRepresentation
+-2.5 GovernmentRepresentation.AristocracyRepresentation
+-2.5 GovernmentRepresentation.ClergyRepresentation
++2.5 MilitaryControl.BurgousieControl
++2.5 MilitaryControl.Independent
+-2.5 MilitaryControl.AristocracyControl
+-2.5 MilitaryControl.ClergyControl
+=20% AristocracyTax
+=20% ClergyTax
+=25% BurgousieTax
+=10% UrbanTax
++10 TradeInfluences.Caspian Sea
++10 TradeInfluences.Central Asia
++10 TradeInfluences.Iran
++0.05 ResearchSpending
+-5 ResearchPoints
+="true" Technologies.Muskets
+="true" Technologies.Limber
+="true" Technologies.Printing Press
+="true" Technologies.Human Anatomy
+-5 CulturalPower
+="true" CulturalAdvancements.Renaissance Thought
++0.1 MiningEff
+
+<... > Nations > Khanate Of Khorasan
++0.25 Health
++0.5 EduEff
++0.25 Propaganda
+=0 SocialSpending
++0.5 AdmEff
++0.1 AdmSize
++0.5 LocalTrade
++0.1 TradeImprovements
++2.5 ProductionSectors.BasicArmamentsSector
++2.5 ProductionSectors.HeavyArmamentsSector
+-2.5 ProductionSectors.AlcoholSector
++0.10 OverallImprovements
++0.25 CommanderFreedom
++0.25 ArmyWage
++0.5% Discipline
++0.05 MeleeImprovements
++0.05 FirearmImprovements
++0.05 CavalryImprovements
++0.05 ArtilleryImprovements
++500 LightInf
++1000 HeavyInf
++750 LightCav
++500 heavyCav
++500 Musketeers
++5 MerchantShips
++2 SmallForts
++0.05 LightShipImprovements
++0.05 MediumShipImprovements
++0.05 HeavyShipImprovements
++0.05 AgrAdv
++0.05 AgrInf
++0.05 AgrSubsidies
++2.5 EstateInfluences.BurgousieInfluence
+-2.5 EstateInfluences.AristocracyInfluence
+-2.5 EstateInfluences.ClergyInfluence
++5 GovernmentRepresentation.BurgousieRepresentation
+-2.5 GovernmentRepresentation.AristocracyRepresentation
+-2.5 GovernmentRepresentation.ClergyRepresentation
++2.5 MilitaryControl.BurgousieControl
++2.5 MilitaryControl.Independent
+-2.5 MilitaryControl.AristocracyControl
+-2.5 MilitaryControl.ClergyControl
+=15% AristocracyTax
+=20% ClergyTax
+=30% BurgousieTax
+=10% UrbanTax
++10 TradeInfluences.Caspian Sea
++10 TradeInfluences.Central Asia
++10 TradeInfluences.Iran
++0.05 ResearchSpending
+-5 ResearchPoints
+="true" Technologies.Muskets
+="true" Technologies.Limber
+="true" Technologies.Printing Press
+="true" Technologies.Human Anatomy
+-5 CulturalPower
+="true" CulturalAdvancements.Renaissance Thought
++0.1 MiningEff
++0.5 Wool
+
+# NPC UPDATES END
+
+# NEW NATIONS
+
+<... > Nations
++> EmirateOfHasa
+> EmirateOfHasa
+= "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Flag_of_the_Kingdom_of_Hejaz_and_Nejd.svg/1280px-Flag_of_the_Kingdom_of_Hejaz_and_Nejd.svg.png" Flag
+> ReligionGroups
+=0 pagan
++> Sunni
+=100 Sunni
+<
+> CultureGroups
++> Arab
+=100 Arab
+<
+= "Arab" cultrep
+= "Sunni" relrep
+
+<... > Nations
++> KingdomOfGodwar
+> KingdomOfGodwar
+= "https://media.discordapp.net/attachments/1383566206392602687/1420865052562690119/Screenshot_20250925_131405_Discord.jpg?ex=68d8ed72&is=68d79bf2&hm=c3125491a70cb73ee89916ee6e04c8e54743ce2f0815c5f9919ebed80813b13f&=&format=webp" Flag
+> ReligionGroups
+=0 pagan
++> Hindu
+=100 Hindu
+<
+> CultureGroups
++> Afghan
+=100 Afghan
+<
+= "Afghan" cultrep
+= "Hindu" relrep
