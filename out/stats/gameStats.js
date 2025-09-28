@@ -21,6 +21,45 @@ export const mappedResourcesMultipliers = [
     2, //diamond
     2 //silver
 ];
+const resourceTypes = [
+    "Budget",
+    "Food",
+    "Wood",
+    "Sulphur",
+    "Cotton",
+    "Gold",
+    "Iron",
+    "Tea",
+    "Silk",
+    "Spice",
+    "Wool",
+    "Coffee",
+    "Fur",
+    "Diamond",
+    "Silver",
+    "Copper",
+    "Coal",
+    "Wood",
+    "Ivory",
+    "Cocoa",
+    "Tobacco",
+    "Sugar",
+    "ExoticFruit",
+    "Housing",
+    "BasicArmaments",
+    "HeavyArmaments",
+    "ShipBuilding",
+    "BasicTools",
+    "Textiles",
+    "BasicGoods",
+    "LuxuryGoods",
+    "Alcohol",
+    "Chemicals",
+    "Electronics",
+    "Motors",
+    "Planes",
+    "HeavyIndustry"
+];
 export class SocialBehaviour {
     Color = "000000";
     Opinions = {};
@@ -28,10 +67,12 @@ export class SocialBehaviour {
 export class SocialBehaviourGroup {
     Points = 0;
 }
-export class Climate {
-    Pixels;
+export class WorldClimate {
     Color;
     ClimateScore;
+}
+export class NationClimate {
+    Pixels;
 }
 export class Opinion {
     Score;
@@ -57,6 +98,1024 @@ export class TradeZone {
     Color;
     Score;
 }
+const estates = [
+    "Unemployed",
+    "Slaves",
+    "Labourers",
+    "Serfs",
+    "Farmers",
+    "Townsfolk",
+    "Clergy",
+    "Bureaucrats",
+    "Merchants",
+    "Intellectuals",
+    "Sailors",
+    "Soldiers",
+    "Aristocracy",
+    "Burgousie"
+];
+const estateGeneral = [
+    "Unemployed",
+    "Slaves",
+    "Labourers",
+    "Serfs",
+    "Farmers",
+    "Townsfolk",
+    "Clergy",
+    "Bureaucrats",
+    "Merchants",
+    "Intellectuals",
+    "Sailors",
+    "Soldiers",
+    "Aristocracy",
+    "Burgousie"
+];
+const religions = {
+    "Pagan": {
+        "Color": "776544",
+        "Opinions": {
+            "Sunni": {
+                "Score": -75
+            },
+            "Shia": {
+                "Score": -75
+            },
+            "Judaism": {
+                "Score": -75
+            },
+            "Catholic": {
+                "Score": -75
+            },
+            "Orthodox": {
+                "Score": -75
+            },
+            "Protestant": {
+                "Score": -75
+            },
+            "Hindu": {
+                "Score": -75
+            },
+            "Buddhism": {
+                "Score": -75
+            },
+            "Shinto": {
+                "Score": -75
+            },
+            "Confucianism": {
+                "Score": -75
+            }
+        }
+    },
+    "Sunni": {
+        "Color": '008C00',
+        "Opinions": {
+            "Pagan": {
+                "Score": -75
+            },
+            "Shia": {
+                "Score": -100
+            },
+            "Judaism": {
+                "Score": -100
+            },
+            "Catholic": {
+                "Score": -100
+            },
+            "Orthodox": {
+                "Score": -100
+            },
+            "Protestant": {
+                "Score": 0
+            },
+            "Hindu": {
+                "Score": -25
+            },
+            "Buddhism": {
+                "Score": 0
+            },
+            "Shinto": {
+                "Score": -25
+            },
+            "Confucianism": {
+                "Score": 0
+            }
+        }
+    },
+    "Shia": {
+        "Color": '00C900',
+        "Opinions": {
+            "Pagan": {
+                "Score": -75
+            },
+            "Sunni": {
+                "Score": -75
+            },
+            "Judaism": {
+                "Score": -100
+            },
+            "Catholic": {
+                "Score": -100
+            },
+            "Orthodox": {
+                "Score": -100
+            },
+            "Protestant": {
+                "Score": 0
+            },
+            "Hindu": {
+                "Score": -25
+            },
+            "Buddhism": {
+                "Score": 0
+            },
+            "Shinto": {
+                "Score": -25
+            },
+            "Confucianism": {
+                "Score": 0
+            }
+        }
+    },
+    "Judaism": {
+        "Color": '00C9BE',
+        "Opinions": {
+            "Pagan": {
+                "Score": -75
+            },
+            "Sunni": {
+                "Score": -100
+            },
+            "Shia": {
+                "Score": -100
+            },
+            "Catholic": {
+                "Score": -100
+            },
+            "Orthodox": {
+                "Score": -50
+            },
+            "Protestant": {
+                "Score": -75
+            },
+            "Hindu": {
+                "Score": 0
+            },
+            "Buddhism": {
+                "Score": 0
+            },
+            "Shinto": {
+                "Score": -25
+            },
+            "Confucianism": {
+                "Score": 0
+            }
+        }
+    },
+    "Catholic": {
+        "Color": 'FFD800',
+        "Opinions": {
+            "Pagan": {
+                "Score": -75
+            },
+            "Sunni": {
+                "Score": -100
+            },
+            "Shia": {
+                "Score": -100
+            },
+            "Judaism": {
+                "Score": -100
+            },
+            "Orthodox": {
+                "Score": -100
+            },
+            "Protestant": {
+                "Score": -100
+            },
+            "Hindu": {
+                "Score": 0
+            },
+            "Buddhism": {
+                "Score": -25
+            },
+            "Shinto": {
+                "Score": -25
+            },
+            "Confucianism": {
+                "Score": 0
+            }
+        }
+    },
+    "Orthodox": {
+        "Color": 'FF15DD',
+        "Opinions": {
+            "Pagan": {
+                "Score": -75
+            },
+            "Sunni": {
+                "Score": -100
+            },
+            "Shia": {
+                "Score": -100
+            },
+            "Judaism": {
+                "Score": -50
+            },
+            "Catholic": {
+                "Score": -100
+            },
+            "Protestant": {
+                "Score": -75
+            },
+            "Hindu": {
+                "Score": 0
+            },
+            "Buddhism": {
+                "Score": -25
+            },
+            "Shinto": {
+                "Score": -25
+            },
+            "Confucianism": {
+                "Score": 0
+            }
+        }
+    },
+    "Protestant": {
+        "Color": '0015DD',
+        "Opinions": {
+            "Pagan": {
+                "Score": -75
+            },
+            "Sunni": {
+                "Score": 0
+            },
+            "Shia": {
+                "Score": 0
+            },
+            "Judaism": {
+                "Score": -75
+            },
+            "Catholic": {
+                "Score": -100
+            },
+            "Orthodox": {
+                "Score": -75
+            },
+            "Hindu": {
+                "Score": 0
+            },
+            "Buddhism": {
+                "Score": -25
+            },
+            "Shinto": {
+                "Score": -25
+            },
+            "Confucianism": {
+                "Score": 0
+            }
+        }
+    },
+    "Hindu": {
+        "Color": 'B6FF00',
+        "Opinions": {
+            "Pagan": {
+                "Score": -75
+            },
+            "Sunni": {
+                "Score": -25
+            },
+            "Shia": {
+                "Score": -25
+            },
+            "Judaism": {
+                "Score": 0
+            },
+            "Catholic": {
+                "Score": 0
+            },
+            "Orthodox": {
+                "Score": 0
+            },
+            "Protestant": {
+                "Score": 0
+            },
+            "Buddhism": {
+                "Score": 25
+            },
+            "Shinto": {
+                "Score": -25
+            },
+            "Confucianism": {
+                "Score": 0
+            }
+        }
+    },
+    "Buddhism": {
+        "Color": '57007F',
+        "Opinions": {
+            "Pagan": {
+                "Score": -50
+            },
+            "Sunni": {
+                "Score": -25
+            },
+            "Shia": {
+                "Score": -25
+            },
+            "Judaism": {
+                "Score": -25
+            },
+            "Catholic": {
+                "Score": -25
+            },
+            "Orthodox": {
+                "Score": -25
+            },
+            "Protestant": {
+                "Score": -25
+            },
+            "Hindu": {
+                "Score": -25
+            },
+            "Shinto": {
+                "Score": 50
+            },
+            "Confucianism": {
+                "Score": -25
+            }
+        }
+    },
+    "Shinto": {
+        "Color": 'FF0000',
+        "Opinions": {
+            "Pagan": {
+                "Score": -75
+            },
+            "Sunni": {
+                "Score": -25
+            },
+            "Shia": {
+                "Score": -25
+            },
+            "Judaism": {
+                "Score": -25
+            },
+            "Catholic": {
+                "Score": -25
+            },
+            "Orthodox": {
+                "Score": -25
+            },
+            "Protestant": {
+                "Score": -25
+            },
+            "Hindu": {
+                "Score": -25
+            },
+            "Buddhism": {
+                "Score": 50
+            },
+            "Confucianism": {
+                "Score": 0
+            }
+        }
+    },
+    "Confucianism": {
+        "Color": '808080',
+        "Opinions": {
+            "Pagan": {
+                "Score": -50
+            },
+            "Sunni": {
+                "Score": 0
+            },
+            "Shia": {
+                "Score": 0
+            },
+            "Judaism": {
+                "Score": 0
+            },
+            "Catholic": {
+                "Score": 0
+            },
+            "Orthodox": {
+                "Score": 0
+            },
+            "Protestant": {
+                "Score": 0
+            },
+            "Hindu": {
+                "Score": 0
+            },
+            "Buddhism": {
+                "Score": 0
+            },
+            "Shinto": {
+                "Score": 0
+            }
+        }
+    },
+};
+const tradeZones = {
+    Alaska: {
+        Color: "ff6c7a",
+        Score: 1
+    },
+    Cascadia: {
+        Color: "ff006e",
+        Score: 3
+    },
+    CaliforniaAndWestMexico: {
+        Color: "none",
+        Score: 4
+    },
+    HudsonBay: {
+        Color: "ffeb63",
+        Score: 3
+    },
+    GreatLakes: {
+        Color: "3dffff",
+        Score: 7
+    },
+    Louisiana: {
+        Color: "none",
+        Score: 7
+    },
+    GulfOfMexico: {
+        Color: "ffac54",
+        Score: 8
+    },
+    LawrenceGulf: {
+        Color: "ff6a38",
+        Score: 4.5
+    },
+    EastCoast: {
+        Color: "cc0000",
+        Score: 7
+    },
+    Carribean: {
+        Color: "none",
+        Score: 8
+    },
+    CentralAmerica: {
+        Color: "a0a0a0",
+        Score: 6
+    },
+    GuyanaAndSuriname: {
+        Color: "none",
+        Score: 3
+    },
+    Amazon: {
+        Color: "2d9600",
+        Score: 3
+    },
+    Peru: {
+        Color: "9e0000",
+        Score: 2
+    },
+    RioGrande: {
+        Color: "none",
+        Score: 3
+    },
+    LaPlata: {
+        Color: "none",
+        Score: 3
+    },
+    Chile: {
+        Color: "ffe846",
+        Score: 2
+    },
+    Patagonia: {
+        Color: "68d7ff",
+        Score: 2
+    },
+    NorthernAnatolia: {
+        Color: "5b8f00",
+        Score: 10
+    },
+    NorthSea: {
+        Color: "7382ff",
+        Score: 4.5
+    },
+    BritishIsles: {
+        Color: 808080,
+        Score: 8
+    },
+    EnglishChannel: {
+        Color: "ff4a00",
+        Score: 10
+    },
+    France: {
+        Color: "00d5ff",
+        Score: 7
+    },
+    BayOfBiscay: {
+        Color: "efff66",
+        Score: 7
+    },
+    WestIberia: {
+        Color: "none",
+        Score: 7
+    },
+    Gibraltar: {
+        Color: "none",
+        Score: 9
+    },
+    WesternMediterranean: {
+        Color: "ffd846",
+        Score: 7
+    },
+    Rhine: {
+        Color: "0094ff",
+        Score: 7
+    },
+    CentralMediterranean: {
+        Color: "ff7d49",
+        Score: 8
+    },
+    Adriatic: {
+        Color: "007f0e",
+        Score: 10
+    },
+    Germany: {
+        Color: "none",
+        Score: 7
+    },
+    WesternDanube: {
+        Color: "404040",
+        Score: 7
+    },
+    Denmark: {
+        Color: "ff0000",
+        Score: 8
+    },
+    Baltic: {
+        Color: "none",
+        Score: 7.5
+    },
+    NorthNordics: {
+        Color: "none",
+        Score: 3
+    },
+    BarentsSea: {
+        Color: "ff553e",
+        Score: 3
+    },
+    Novgorod: {
+        Color: "00ff21",
+        Score: 8
+    },
+    Poland: {
+        Color: "none",
+        Score: 6
+    },
+    Dniepr: {
+        Color: "80ff65",
+        Score: 8.5
+    },
+    Crimea: {
+        Color: "31aadb",
+        Score: 7
+    },
+    EasternDanube: {
+        Color: "5d7c3d",
+        Score: 8.5
+    },
+    Greece: {
+        Color: "0065ff",
+        Score: 9.5
+    },
+    EasternMediterranean: {
+        Color: "80ff00",
+        Score: 8
+    },
+    Egypt: {
+        Color: "ff1410",
+        Score: 7
+    },
+    RedSea: {
+        Color: "2b6d0e",
+        Score: 7
+    },
+    WesternSahara: {
+        Color: "fed800",
+        Score: 2
+    },
+    CoteDIvoire: {
+        Color: "none",
+        Score: 7
+    },
+    Nigeria: {
+        Color: "none",
+        Score: 8
+    },
+    SouthNile: {
+        Color: "none",
+        Score: 3
+    },
+    Somalia: {
+        Color: "529bae",
+        Score: 7
+    },
+    Kongo: {
+        Color: "none",
+        Score: 3
+    },
+    EastAfrica: {
+        Color: "0094d7",
+        Score: 3
+    },
+    Mozambique: {
+        Color: "00ff69",
+        Score: 4
+    },
+    SouthAfrica: {
+        Color: "8f00ff",
+        Score: 5
+    },
+    Mesopotamia: {
+        Color: "7f3300",
+        Score: 6.5
+    },
+    PersianGulf: {
+        Color: "ffc430",
+        Score: 7
+    },
+    Caucasus: {
+        Color: "ff2f3e",
+        Score: 6
+    },
+    DonRiver: {
+        Color: "ffd86d",
+        Score: 6
+    },
+    Volga: {
+        Color: "db7a25",
+        Score: 6
+    },
+    CentralAsia: {
+        Color: "9fffff",
+        Score: 3
+    },
+    WestSiberia: {
+        Color: "none",
+        Score: 2
+    },
+    EastSiberia: {
+        Color: "none",
+        Score: 2
+    },
+    Iran: {
+        Color: "8ffd42",
+        Score: 5
+    },
+    Pakistan: {
+        Color: "none",
+        Score: 7
+    },
+    Tibet: {
+        Color: "b200ff",
+        Score: 2
+    },
+    Mongolia: {
+        Color: "none",
+        Score: 3
+    },
+    Manchuria: {
+        Color: "e8ff65",
+        Score: 6.5
+    },
+    SeaOfJapan: {
+        Color: "00ffff",
+        Score: 7.5
+    },
+    NorthChina: {
+        Color: "none",
+        Score: 7
+    },
+    YangtzeRiver: {
+        Color: "3dfd00",
+        Score: 7
+    },
+    SouthChina: {
+        Color: "none",
+        Score: 8
+    },
+    NorthIndia: {
+        Color: "none",
+        Score: 7
+    },
+    WestIndia: {
+        Color: "none",
+        Score: 7
+    },
+    EastIndia: {
+        Color: "none",
+        Score: 7
+    },
+    Burma: {
+        Color: "none",
+        Score: 6
+    },
+    SouthEastAsia: {
+        Color: "ff3d3d",
+        Score: 8
+    },
+    NorthAustralia: {
+        Color: "none",
+        Score: 5
+    },
+    SouthAustralia: {
+        Color: "none",
+        Score: 6
+    },
+    CentralSiberia: {
+        Color: "69a826",
+        Score: 0
+    },
+    EasternSiberia: {
+        Color: "331b1b",
+        Score: 0
+    },
+    WesternSiberia: {
+        Color: "264a00",
+        Score: 0
+    },
+    NorthernNordics: {
+        Color: "ffd6e4",
+        Score: 0
+    },
+    CentralCanada: {
+        Color: "a5a5a5",
+        Score: 0
+    },
+    BalticSea: {
+        Color: "8f00c2",
+        Score: 0
+    },
+    Livonia: {
+        Color: 801065,
+        Score: 0
+    },
+    Muscovy: {
+        Color: "e1d869",
+        Score: 0
+    },
+    UralRiver: {
+        Color: "dcff44",
+        Score: 0
+    },
+    Vistula: {
+        Color: "ff7e70",
+        Score: 0
+    },
+    CentralEurope: {
+        Color: "8080a3",
+        Score: 0
+    },
+    Romania: {
+        Color: "d100dc",
+        Score: 0
+    },
+    TheRockies: {
+        Color: "7f4618",
+        Score: 0
+    },
+    Mississippi: {
+        Color: "00ba21",
+        Score: 0
+    },
+    SouthernFrance: {
+        Color: "46a7ff",
+        Score: 0
+    },
+    CaspianSea: {
+        Color: "3881ff",
+        Score: 0
+    },
+    GobiDesert: {
+        Color: "e1e9cd",
+        Score: 0
+    },
+    WestCoast: {
+        Color: "ffdb7b",
+        Score: 0
+    },
+    Iberia: {
+        Color: "3a9112",
+        Score: 0
+    },
+    YellowRiver: {
+        Color: "3aaa0e",
+        Score: 0
+    },
+    Afghanistan: {
+        Color: "592b37",
+        Score: 0
+    },
+    IndusRiver: {
+        Color: "267f00",
+        Score: 0
+    },
+    Morocco: {
+        Color: "7f0001",
+        Score: 0
+    },
+    Sichuan: {
+        Color: "c6d521",
+        Score: 0
+    },
+    Sahara: {
+        Color: "b7a791",
+        Score: 0
+    },
+    ArabianDesert: {
+        Color: "e2ceb1",
+        Score: 0
+    },
+    WesternMexico: {
+        Color: "469b52",
+        Score: 0
+    },
+    Ganges: {
+        Color: "db6525",
+        Score: 0
+    },
+    Caribbean: {
+        Color: "3c02ff",
+        Score: 0
+    },
+    Pacific: {
+        Color: "93ffff",
+        Score: 0
+    },
+    SouthChinaSea: {
+        Color: "4d007f",
+        Score: 0
+    },
+    CentralIndia: {
+        Color: "ec7f7f",
+        Score: 0
+    },
+    Deccan: {
+        Color: "84ff55",
+        Score: 0
+    },
+    SouthernNile: {
+        Color: "d9ff00",
+        Score: 0
+    },
+    WesternNiger: {
+        Color: "b6ff4a",
+        Score: 0
+    },
+    Guinea: {
+        Color: "ff8ca3",
+        Score: 0
+    },
+    EasternNiger: {
+        Color: "3bd323",
+        Score: 0
+    },
+    Venezuela: {
+        Color: "c3ff2b",
+        Score: 0
+    },
+    Indonesia: {
+        Color: "fec605",
+        Score: 0
+    },
+    CongoRiver: {
+        Color: "dd6a00",
+        Score: 0
+    },
+    Gabon: {
+        Color: "107f00",
+        Score: 0
+    },
+    LakeVictoria: {
+        Color: "9fa300",
+        Score: 0
+    },
+    LakeTanganyika: {
+        Color: "b67871",
+        Score: 0
+    },
+    SaoFranciscoRiver: {
+        Color: "6aff2b",
+        Score: 0
+    },
+    NorthernAustralia: {
+        Color: "ff7400",
+        Score: 0
+    },
+    Angola: {
+        Color: "a3ff27",
+        Score: 0
+    },
+    ParanaRiver: {
+        Color: "2ba6ff",
+        Score: 0
+    },
+    SouthernAustralia: {
+        Color: "b6c2ff",
+        Score: 0
+    },
+    AustralianDesert: {
+        Color: "d8c5a9",
+        Score: 0
+    }
+};
+const climates = {
+    Ocean: {
+        ClimateScore: 0,
+        Color: "103c6d"
+    },
+    PolarDesert: {
+        ClimateScore: 0.001,
+        Color: "808080"
+    },
+    TaigaAndTundra: {
+        ClimateScore: 0.25,
+        Color: "004a7f"
+    },
+    MontaneForest: {
+        ClimateScore: 0.6,
+        Color: "ffac7f"
+    },
+    Medditereanian: {
+        ClimateScore: 0.85,
+        Color: "ff6a00"
+    },
+    Arid: {
+        ClimateScore: 0.65,
+        Color: "7f3300"
+    },
+    Steppe: {
+        ClimateScore: 0.75,
+        Color: "c8ff7c"
+    },
+    Moderate: {
+        ClimateScore: 1,
+        Color: "4cff00"
+    },
+    SubTropical: {
+        ClimateScore: 0.75,
+        Color: "5b7f00"
+    },
+    Tropical: {
+        ClimateScore: 0.6,
+        Color: "008010"
+    },
+    Savanna: {
+        ClimateScore: 0.65,
+        Color: "c1bd3e"
+    },
+    Mountainous: {
+        ClimateScore: 0.35,
+        Color: "ff0000"
+    },
+    Desert: {
+        ClimateScore: 0.05,
+        Color: "fffb99"
+    },
+    CoastalDesert: {
+        ClimateScore: 0.35,
+        Color: "ffd802"
+    }
+};
+const fertilities = {
+    Infertile: { Color: "ffffff", Score: 0.025 },
+    BarelyFertile: { Color: "ff0000", Score: 0.15 },
+    LowFertility: { Color: "ff6a00", Score: 0.35 },
+    AverageFertility: { Color: "ffd800", Score: 0.55 },
+    GoodFertility: { Color: "00ff00", Score: 0.7 },
+    HighFertility: { Color: "00c900", Score: 0.8 },
+    AmazingFertility: { Color: "008000", Score: 0.9 },
+    TopFertility: { Color: "003e00", Score: 1.0 }
+};
+const unitUpkeepCosts = {
+    Levies: 0.75 / 1000,
+    LightInfantry: 2 / 1000,
+    HeavyInfantry: 4 / 1000,
+    Archers: 3 / 1000,
+    Crossbowmen: 2 / 1000,
+    LightCavalry: 4 / 1000,
+    HeavyCavalry: 6.5 / 1000,
+    EliteInfantry: 7 / 1000,
+    EliteCavalry: 8.5 / 1000,
+    HandCannoneers: 5 / 1000,
+    Musketeers: 3.5 / 1000,
+    MusketMilitia: 2 / 1000,
+    Riflemen: 10 / 1000,
+    Militia: 1.25 / 1000,
+    SiegeEquipment: 1 / 10,
+    LargeSiegeEquipment: 1 / 5,
+    FieldCannons: 1 / 5,
+    RegimentalGuns: 1 / 10,
+    SiegeGuns: 1 / 2.5
+};
 export class Nation {
     /* #region  Properties */
     /* #region  Daily */
@@ -975,7 +2034,7 @@ export class Nation {
         /* #endregion */
         /* #region  Land */
         this.Climates = (function () {
-            let c = {};
+            const c = {};
             for (const element in gameStats.Climates) {
                 c[element] = { Pixels: 0 };
             }
@@ -991,1076 +2050,25 @@ export class Nation {
 class Stats {
     TimeSpeed;
     TimeDivide;
-    Nations;
-    Religions;
-    Cultures;
-    ResourceTypes;
-    Trades;
-    TradeZones;
-    Climates;
-    Fertility;
-    UnitUpkeepCosts;
+    Nations = {};
+    Religions = religions;
+    Cultures = {
+    //For Opinions not mentioned, they are neutral towards them.
+    };
+    ResourceTypes = resourceTypes;
+    Estates = estates;
+    EstateGenereal = estateGeneral;
+    Trades = {};
+    TradeZones = tradeZones;
+    Climates = climates;
+    Fertility = fertilities;
+    UnitUpkeepCosts = unitUpkeepCosts;
+    AdvancesPrerequisites = {};
     constructor() {
         this.TimeSpeed = 25;
         this.TimeDivide = (() => {
             return 20 / this.TimeSpeed;
         })();
-        this.Nations = {};
-        this.Religions = {
-            "Pagan": {
-                "Color": "776544",
-                "Opinions": {
-                    "Sunni": {
-                        "Score": -75
-                    },
-                    "Shia": {
-                        "Score": -75
-                    },
-                    "Judaism": {
-                        "Score": -75
-                    },
-                    "Catholic": {
-                        "Score": -75
-                    },
-                    "Orthodox": {
-                        "Score": -75
-                    },
-                    "Protestant": {
-                        "Score": -75
-                    },
-                    "Hindu": {
-                        "Score": -75
-                    },
-                    "Buddhism": {
-                        "Score": -75
-                    },
-                    "Shinto": {
-                        "Score": -75
-                    },
-                    "Confucianism": {
-                        "Score": -75
-                    }
-                }
-            },
-            "Sunni": {
-                "Color": '008C00',
-                "Opinions": {
-                    "Pagan": {
-                        "Score": -75
-                    },
-                    "Shia": {
-                        "Score": -100
-                    },
-                    "Judaism": {
-                        "Score": -100
-                    },
-                    "Catholic": {
-                        "Score": -100
-                    },
-                    "Orthodox": {
-                        "Score": -100
-                    },
-                    "Protestant": {
-                        "Score": 0
-                    },
-                    "Hindu": {
-                        "Score": -25
-                    },
-                    "Buddhism": {
-                        "Score": 0
-                    },
-                    "Shinto": {
-                        "Score": -25
-                    },
-                    "Confucianism": {
-                        "Score": 0
-                    }
-                }
-            },
-            "Shia": {
-                "Color": '00C900',
-                "Opinions": {
-                    "Pagan": {
-                        "Score": -75
-                    },
-                    "Sunni": {
-                        "Score": -75
-                    },
-                    "Judaism": {
-                        "Score": -100
-                    },
-                    "Catholic": {
-                        "Score": -100
-                    },
-                    "Orthodox": {
-                        "Score": -100
-                    },
-                    "Protestant": {
-                        "Score": 0
-                    },
-                    "Hindu": {
-                        "Score": -25
-                    },
-                    "Buddhism": {
-                        "Score": 0
-                    },
-                    "Shinto": {
-                        "Score": -25
-                    },
-                    "Confucianism": {
-                        "Score": 0
-                    }
-                }
-            },
-            "Judaism": {
-                "Color": '00C9BE',
-                "Opinions": {
-                    "Pagan": {
-                        "Score": -75
-                    },
-                    "Sunni": {
-                        "Score": -100
-                    },
-                    "Shia": {
-                        "Score": -100
-                    },
-                    "Catholic": {
-                        "Score": -100
-                    },
-                    "Orthodox": {
-                        "Score": -50
-                    },
-                    "Protestant": {
-                        "Score": -75
-                    },
-                    "Hindu": {
-                        "Score": 0
-                    },
-                    "Buddhism": {
-                        "Score": 0
-                    },
-                    "Shinto": {
-                        "Score": -25
-                    },
-                    "Confucianism": {
-                        "Score": 0
-                    }
-                }
-            },
-            "Catholic": {
-                "Color": 'FFD800',
-                "Opinions": {
-                    "Pagan": {
-                        "Score": -75
-                    },
-                    "Sunni": {
-                        "Score": -100
-                    },
-                    "Shia": {
-                        "Score": -100
-                    },
-                    "Judaism": {
-                        "Score": -100
-                    },
-                    "Orthodox": {
-                        "Score": -100
-                    },
-                    "Protestant": {
-                        "Score": -100
-                    },
-                    "Hindu": {
-                        "Score": 0
-                    },
-                    "Buddhism": {
-                        "Score": -25
-                    },
-                    "Shinto": {
-                        "Score": -25
-                    },
-                    "Confucianism": {
-                        "Score": 0
-                    }
-                }
-            },
-            "Orthodox": {
-                "Color": 'FF15DD',
-                "Opinions": {
-                    "Pagan": {
-                        "Score": -75
-                    },
-                    "Sunni": {
-                        "Score": -100
-                    },
-                    "Shia": {
-                        "Score": -100
-                    },
-                    "Judaism": {
-                        "Score": -50
-                    },
-                    "Catholic": {
-                        "Score": -100
-                    },
-                    "Protestant": {
-                        "Score": -75
-                    },
-                    "Hindu": {
-                        "Score": 0
-                    },
-                    "Buddhism": {
-                        "Score": -25
-                    },
-                    "Shinto": {
-                        "Score": -25
-                    },
-                    "Confucianism": {
-                        "Score": 0
-                    }
-                }
-            },
-            "Protestant": {
-                "Color": '0015DD',
-                "Opinions": {
-                    "Pagan": {
-                        "Score": -75
-                    },
-                    "Sunni": {
-                        "Score": 0
-                    },
-                    "Shia": {
-                        "Score": 0
-                    },
-                    "Judaism": {
-                        "Score": -75
-                    },
-                    "Catholic": {
-                        "Score": -100
-                    },
-                    "Orthodox": {
-                        "Score": -75
-                    },
-                    "Hindu": {
-                        "Score": 0
-                    },
-                    "Buddhism": {
-                        "Score": -25
-                    },
-                    "Shinto": {
-                        "Score": -25
-                    },
-                    "Confucianism": {
-                        "Score": 0
-                    }
-                }
-            },
-            "Hindu": {
-                "Color": 'B6FF00',
-                "Opinions": {
-                    "Pagan": {
-                        "Score": -75
-                    },
-                    "Sunni": {
-                        "Score": -25
-                    },
-                    "Shia": {
-                        "Score": -25
-                    },
-                    "Judaism": {
-                        "Score": 0
-                    },
-                    "Catholic": {
-                        "Score": 0
-                    },
-                    "Orthodox": {
-                        "Score": 0
-                    },
-                    "Protestant": {
-                        "Score": 0
-                    },
-                    "Buddhism": {
-                        "Score": 25
-                    },
-                    "Shinto": {
-                        "Score": -25
-                    },
-                    "Confucianism": {
-                        "Score": 0
-                    }
-                }
-            },
-            "Buddhism": {
-                "Color": '57007F',
-                "Opinions": {
-                    "Pagan": {
-                        "Score": -50
-                    },
-                    "Sunni": {
-                        "Score": -25
-                    },
-                    "Shia": {
-                        "Score": -25
-                    },
-                    "Judaism": {
-                        "Score": -25
-                    },
-                    "Catholic": {
-                        "Score": -25
-                    },
-                    "Orthodox": {
-                        "Score": -25
-                    },
-                    "Protestant": {
-                        "Score": -25
-                    },
-                    "Hindu": {
-                        "Score": -25
-                    },
-                    "Shinto": {
-                        "Score": 50
-                    },
-                    "Confucianism": {
-                        "Score": -25
-                    }
-                }
-            },
-            "Shinto": {
-                "Color": 'FF0000',
-                "Opinions": {
-                    "Pagan": {
-                        "Score": -75
-                    },
-                    "Sunni": {
-                        "Score": -25
-                    },
-                    "Shia": {
-                        "Score": -25
-                    },
-                    "Judaism": {
-                        "Score": -25
-                    },
-                    "Catholic": {
-                        "Score": -25
-                    },
-                    "Orthodox": {
-                        "Score": -25
-                    },
-                    "Protestant": {
-                        "Score": -25
-                    },
-                    "Hindu": {
-                        "Score": -25
-                    },
-                    "Buddhism": {
-                        "Score": 50
-                    },
-                    "Confucianism": {
-                        "Score": 0
-                    }
-                }
-            },
-            "Confucianism": {
-                "Color": '808080',
-                "Opinions": {
-                    "Pagan": {
-                        "Score": -50
-                    },
-                    "Sunni": {
-                        "Score": 0
-                    },
-                    "Shia": {
-                        "Score": 0
-                    },
-                    "Judaism": {
-                        "Score": 0
-                    },
-                    "Catholic": {
-                        "Score": 0
-                    },
-                    "Orthodox": {
-                        "Score": 0
-                    },
-                    "Protestant": {
-                        "Score": 0
-                    },
-                    "Hindu": {
-                        "Score": 0
-                    },
-                    "Buddhism": {
-                        "Score": 0
-                    },
-                    "Shinto": {
-                        "Score": 0
-                    }
-                }
-            },
-        };
-        this.Cultures = { //For Opinions not mentioned, they are neutral towards them.
-        };
-        this.ResourceTypes = [
-            "Budget",
-            "Food",
-            "Wood",
-            "Sulphur",
-            "Cotton",
-            "Gold",
-            "Iron",
-            "Tea",
-            "Silk",
-            "Spice",
-            "Wool",
-            "Coffee",
-            "Fur",
-            "Diamond",
-            "Silver",
-            "Copper",
-            "Coal",
-            "Wood",
-            "Ivory",
-            "Cocoa",
-            "Tobacco",
-            "Sugar",
-            "ExoticFruit",
-            "Housing",
-            "BasicArmaments",
-            "HeavyArmaments",
-            "ShipBuilding",
-            "BasicTools",
-            "Textiles",
-            "BasicGoods",
-            "LuxuryGoods",
-            "Alcohol",
-            "Chemicals",
-            "Electronics",
-            "Motors",
-            "Planes",
-            "HeavyIndustry"
-        ];
-        this.Estates = [
-            "Unemployed",
-            "Slaves",
-            "Labourers",
-            "Serfs",
-            "Farmers",
-            "Townsfolk",
-            "Clergy",
-            "Bureaucrats",
-            "Merchants",
-            "Intellectuals",
-            "Sailors",
-            "Soldiers",
-            "Aristocracy",
-            "Burgousie"
-        ];
-        this.EstatesGeneral = [
-            "Workers",
-            "Urban",
-            "Clergy",
-            "Bureaucrats",
-            "Intellectuals",
-            "Military",
-            "Aristocracy",
-            "Burgousie"
-        ];
-        this.Trades = {};
-        this.TradeZones = {
-            Alaska: {
-                Color: "ff6c7a",
-                Score: 1
-            },
-            Cascadia: {
-                Color: "ff006e",
-                Score: 3
-            },
-            CaliforniaAndWestMexico: {
-                Color: "none",
-                Score: 4
-            },
-            HudsonBay: {
-                Color: "ffeb63",
-                Score: 3
-            },
-            GreatLakes: {
-                Color: "3dffff",
-                Score: 7
-            },
-            Louisiana: {
-                Color: "none",
-                Score: 7
-            },
-            GulfOfMexico: {
-                Color: "ffac54",
-                Score: 8
-            },
-            LawrenceGulf: {
-                Color: "ff6a38",
-                Score: 4.5
-            },
-            EastCoast: {
-                Color: "cc0000",
-                Score: 7
-            },
-            Carribean: {
-                Color: "none",
-                Score: 8
-            },
-            CentralAmerica: {
-                Color: "a0a0a0",
-                Score: 6
-            },
-            GuyanaAndSuriname: {
-                Color: "none",
-                Score: 3
-            },
-            Amazon: {
-                Color: "2d9600",
-                Score: 3
-            },
-            Peru: {
-                Color: "9e0000",
-                Score: 2
-            },
-            RioGrande: {
-                Color: "none",
-                Score: 3
-            },
-            LaPlata: {
-                Color: "none",
-                Score: 3
-            },
-            Chile: {
-                Color: "ffe846",
-                Score: 2
-            },
-            Patagonia: {
-                Color: "68d7ff",
-                Score: 2
-            },
-            NorthernAnatolia: {
-                Color: "5b8f00",
-                Score: 10
-            },
-            NorthSea: {
-                Color: "7382ff",
-                Score: 4.5
-            },
-            BritishIsles: {
-                Color: 808080,
-                Score: 8
-            },
-            EnglishChannel: {
-                Color: "ff4a00",
-                Score: 10
-            },
-            France: {
-                Color: "00d5ff",
-                Score: 7
-            },
-            BayOfBiscay: {
-                Color: "efff66",
-                Score: 7
-            },
-            WestIberia: {
-                Color: "none",
-                Score: 7
-            },
-            Gibraltar: {
-                Color: "none",
-                Score: 9
-            },
-            WesternMediterranean: {
-                Color: "ffd846",
-                Score: 7
-            },
-            Rhine: {
-                Color: "0094ff",
-                Score: 7
-            },
-            CentralMediterranean: {
-                Color: "ff7d49",
-                Score: 8
-            },
-            Adriatic: {
-                Color: "007f0e",
-                Score: 10
-            },
-            Germany: {
-                Color: "none",
-                Score: 7
-            },
-            WesternDanube: {
-                Color: "404040",
-                Score: 7
-            },
-            Denmark: {
-                Color: "ff0000",
-                Score: 8
-            },
-            Baltic: {
-                Color: "none",
-                Score: 7.5
-            },
-            NorthNordics: {
-                Color: "none",
-                Score: 3
-            },
-            BarentsSea: {
-                Color: "ff553e",
-                Score: 3
-            },
-            Novgorod: {
-                Color: "00ff21",
-                Score: 8
-            },
-            Poland: {
-                Color: "none",
-                Score: 6
-            },
-            Dniepr: {
-                Color: "80ff65",
-                Score: 8.5
-            },
-            Crimea: {
-                Color: "31aadb",
-                Score: 7
-            },
-            EasternDanube: {
-                Color: "5d7c3d",
-                Score: 8.5
-            },
-            Greece: {
-                Color: "0065ff",
-                Score: 9.5
-            },
-            EasternMediterranean: {
-                Color: "80ff00",
-                Score: 8
-            },
-            Egypt: {
-                Color: "ff1410",
-                Score: 7
-            },
-            RedSea: {
-                Color: "2b6d0e",
-                Score: 7
-            },
-            WesternSahara: {
-                Color: "fed800",
-                Score: 2
-            },
-            CoteDIvoire: {
-                Color: "none",
-                Score: 7
-            },
-            Nigeria: {
-                Color: "none",
-                Score: 8
-            },
-            SouthNile: {
-                Color: "none",
-                Score: 3
-            },
-            Somalia: {
-                Color: "529bae",
-                Score: 7
-            },
-            Kongo: {
-                Color: "none",
-                Score: 3
-            },
-            EastAfrica: {
-                Color: "0094d7",
-                Score: 3
-            },
-            Mozambique: {
-                Color: "00ff69",
-                Score: 4
-            },
-            SouthAfrica: {
-                Color: "8f00ff",
-                Score: 5
-            },
-            Mesopotamia: {
-                Color: "7f3300",
-                Score: 6.5
-            },
-            PersianGulf: {
-                Color: "ffc430",
-                Score: 7
-            },
-            Caucasus: {
-                Color: "ff2f3e",
-                Score: 6
-            },
-            DonRiver: {
-                Color: "ffd86d",
-                Score: 6
-            },
-            Volga: {
-                Color: "db7a25",
-                Score: 6
-            },
-            CentralAsia: {
-                Color: "9fffff",
-                Score: 3
-            },
-            WestSiberia: {
-                Color: "none",
-                Score: 2
-            },
-            EastSiberia: {
-                Color: "none",
-                Score: 2
-            },
-            Iran: {
-                Color: "8ffd42",
-                Score: 5
-            },
-            Pakistan: {
-                Color: "none",
-                Score: 7
-            },
-            Tibet: {
-                Color: "b200ff",
-                Score: 2
-            },
-            Mongolia: {
-                Color: "none",
-                Score: 3
-            },
-            Manchuria: {
-                Color: "e8ff65",
-                Score: 6.5
-            },
-            SeaOfJapan: {
-                Color: "00ffff",
-                Score: 7.5
-            },
-            NorthChina: {
-                Color: "none",
-                Score: 7
-            },
-            YangtzeRiver: {
-                Color: "3dfd00",
-                Score: 7
-            },
-            SouthChina: {
-                Color: "none",
-                Score: 8
-            },
-            NorthIndia: {
-                Color: "none",
-                Score: 7
-            },
-            WestIndia: {
-                Color: "none",
-                Score: 7
-            },
-            EastIndia: {
-                Color: "none",
-                Score: 7
-            },
-            Burma: {
-                Color: "none",
-                Score: 6
-            },
-            SouthEastAsia: {
-                Color: "ff3d3d",
-                Score: 8
-            },
-            NorthAustralia: {
-                Color: "none",
-                Score: 5
-            },
-            SouthAustralia: {
-                Color: "none",
-                Score: 6
-            },
-            CentralSiberia: {
-                Color: "69a826",
-                Score: 0
-            },
-            EasternSiberia: {
-                Color: "331b1b",
-                Score: 0
-            },
-            WesternSiberia: {
-                Color: "264a00",
-                Score: 0
-            },
-            NorthernNordics: {
-                Color: "ffd6e4",
-                Score: 0
-            },
-            CentralCanada: {
-                Color: "a5a5a5",
-                Score: 0
-            },
-            BalticSea: {
-                Color: "8f00c2",
-                Score: 0
-            },
-            Livonia: {
-                Color: 801065,
-                Score: 0
-            },
-            Muscovy: {
-                Color: "e1d869",
-                Score: 0
-            },
-            UralRiver: {
-                Color: "dcff44",
-                Score: 0
-            },
-            Vistula: {
-                Color: "ff7e70",
-                Score: 0
-            },
-            CentralEurope: {
-                Color: "8080a3",
-                Score: 0
-            },
-            Romania: {
-                Color: "d100dc",
-                Score: 0
-            },
-            TheRockies: {
-                Color: "7f4618",
-                Score: 0
-            },
-            Mississippi: {
-                Color: "00ba21",
-                Score: 0
-            },
-            SouthernFrance: {
-                Color: "46a7ff",
-                Score: 0
-            },
-            CaspianSea: {
-                Color: "3881ff",
-                Score: 0
-            },
-            GobiDesert: {
-                Color: "e1e9cd",
-                Score: 0
-            },
-            WestCoast: {
-                Color: "ffdb7b",
-                Score: 0
-            },
-            Iberia: {
-                Color: "3a9112",
-                Score: 0
-            },
-            YellowRiver: {
-                Color: "3aaa0e",
-                Score: 0
-            },
-            Afghanistan: {
-                Color: "592b37",
-                Score: 0
-            },
-            IndusRiver: {
-                Color: "267f00",
-                Score: 0
-            },
-            Morocco: {
-                Color: "7f0001",
-                Score: 0
-            },
-            Sichuan: {
-                Color: "c6d521",
-                Score: 0
-            },
-            Sahara: {
-                Color: "b7a791",
-                Score: 0
-            },
-            ArabianDesert: {
-                Color: "e2ceb1",
-                Score: 0
-            },
-            WesternMexico: {
-                Color: "469b52",
-                Score: 0
-            },
-            Ganges: {
-                Color: "db6525",
-                Score: 0
-            },
-            Caribbean: {
-                Color: "3c02ff",
-                Score: 0
-            },
-            Pacific: {
-                Color: "93ffff",
-                Score: 0
-            },
-            SouthChinaSea: {
-                Color: "4d007f",
-                Score: 0
-            },
-            CentralIndia: {
-                Color: "ec7f7f",
-                Score: 0
-            },
-            Deccan: {
-                Color: "84ff55",
-                Score: 0
-            },
-            SouthernNile: {
-                Color: "d9ff00",
-                Score: 0
-            },
-            WesternNiger: {
-                Color: "b6ff4a",
-                Score: 0
-            },
-            Guinea: {
-                Color: "ff8ca3",
-                Score: 0
-            },
-            EasternNiger: {
-                Color: "3bd323",
-                Score: 0
-            },
-            Venezuela: {
-                Color: "c3ff2b",
-                Score: 0
-            },
-            Indonesia: {
-                Color: "fec605",
-                Score: 0
-            },
-            CongoRiver: {
-                Color: "dd6a00",
-                Score: 0
-            },
-            Gabon: {
-                Color: "107f00",
-                Score: 0
-            },
-            LakeVictoria: {
-                Color: "9fa300",
-                Score: 0
-            },
-            LakeTanganyika: {
-                Color: "b67871",
-                Score: 0
-            },
-            SaoFranciscoRiver: {
-                Color: "6aff2b",
-                Score: 0
-            },
-            NorthernAustralia: {
-                Color: "ff7400",
-                Score: 0
-            },
-            Angola: {
-                Color: "a3ff27",
-                Score: 0
-            },
-            ParanaRiver: {
-                Color: "2ba6ff",
-                Score: 0
-            },
-            SouthernAustralia: {
-                Color: "b6c2ff",
-                Score: 0
-            },
-            AustralianDesert: {
-                Color: "d8c5a9",
-                Score: 0
-            }
-        };
-        this.Climates = {
-            Ocean: {
-                ClimateScore: 0,
-                Color: "103c6d"
-            },
-            PolarDesert: {
-                ClimateScore: 0.001,
-                Color: "808080"
-            },
-            TaigaAndTundra: {
-                ClimateScore: 0.25,
-                Color: "004a7f"
-            },
-            MontaneForest: {
-                ClimateScore: 0.6,
-                Color: "ffac7f"
-            },
-            Medditereanian: {
-                ClimateScore: 0.85,
-                Color: "ff6a00"
-            },
-            Arid: {
-                ClimateScore: 0.65,
-                Color: "7f3300"
-            },
-            Steppe: {
-                ClimateScore: 0.75,
-                Color: "c8ff7c"
-            },
-            Moderate: {
-                ClimateScore: 1,
-                Color: "4cff00"
-            },
-            SubTropical: {
-                ClimateScore: 0.75,
-                Color: "5b7f00"
-            },
-            Tropical: {
-                ClimateScore: 0.6,
-                Color: "008010"
-            },
-            Savanna: {
-                ClimateScore: 0.65,
-                Color: "c1bd3e"
-            },
-            Mountainous: {
-                ClimateScore: 0.35,
-                Color: "ff0000"
-            },
-            Desert: {
-                ClimateScore: 0.05,
-                Color: "fffb99"
-            },
-            CoastalDesert: {
-                ClimateScore: 0.35,
-                Color: "ffd802"
-            }
-        };
-        this.Fertility = {
-            Infertile: { Color: "ffffff", Score: 0.025 },
-            BarelyFertile: { Color: "ff0000", Score: 0.15 },
-            LowFertility: { Color: "ff6a00", Score: 0.35 },
-            AverageFertility: { Color: "ffd800", Score: 0.55 },
-            GoodFertility: { Color: "00ff00", Score: 0.7 },
-            HighFertility: { Color: "00c900", Score: 0.8 },
-            AmazingFertility: { Color: "008000", Score: 0.9 },
-            TopFertility: { Color: "003e00", Score: 1.0 }
-        };
-        this.UnitUpkeepCosts = {
-            Levies: 0.75 / 1000,
-            LightInfantry: 2 / 1000,
-            HeavyInfantry: 4 / 1000,
-            Archers: 3 / 1000,
-            Crossbowmen: 2 / 1000,
-            LightCavalry: 4 / 1000,
-            HeavyCavalry: 6.5 / 1000,
-            EliteInfantry: 7 / 1000,
-            EliteCavalry: 8.5 / 1000,
-            HandCannoneers: 5 / 1000,
-            Musketeers: 3.5 / 1000,
-            MusketMilitia: 2 / 1000,
-            Riflemen: 10 / 1000,
-            Militia: 1.25 / 1000,
-            SiegeEquipment: 1 / 10,
-            LargeSiegeEquipment: 1 / 5,
-            FieldCannons: 1 / 5,
-            RegimentalGuns: 1 / 10,
-            SiegeGuns: 1 / 2.5
-        };
-        this.AdvancesPrerequisites = {};
     }
 }
 let gameStats = new Stats();
