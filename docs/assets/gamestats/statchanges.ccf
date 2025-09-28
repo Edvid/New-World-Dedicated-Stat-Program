@@ -2055,8 +2055,9 @@ trade MisthiosContract, Baltic Empire > Despocracy Of Heros, 20 Textiles
 <...
 
 <... > Nations > BalticEmpire
-+0.05 agradv
-+0.2 tradeimprov
++0.1 agradv
++0.2 agrinf
++0.1 agrsub
 
 # 1525 UPDATE
 
