@@ -1,4 +1,4 @@
-export let mappedResources = [
+export const mappedResources = [
   "Fur",
   "Gold",
   "Iron",
@@ -10,7 +10,7 @@ export let mappedResources = [
   "Silver"
 ];
 
-export let mappedResourcesMultipliers = [
+export const mappedResourcesMultipliers = [
   1, //fur
   1, //gold
   1, //iron
@@ -24,13 +24,8 @@ export let mappedResourcesMultipliers = [
 ];
 
 export class SocialBehaviour {
-  definingFeatures;
   Color = "000000";
   Opinions = {};
-
-  constructor(){
-    this.definingFeatures = "";
-  }
 }
 
 
@@ -1160,7 +1155,7 @@ class Stats{
   Climates: Record<string, Climate>;
   Fertility: Record<string, {Color: string, Score: number}>;
   UnitUpkeepCosts;
-  constructor(){
+  constructor() {
     this.TimeSpeed = 25;
     this.TimeDivide = (() => {
       return 20 / this.TimeSpeed;
@@ -1168,7 +1163,6 @@ class Stats{
     this.Nations = {};
     this.Religions = {
       "Pagan": {
-        "definingFeatures": "",
         "Color": "776544",
         "Opinions": {
           "Sunni": {
@@ -1204,7 +1198,6 @@ class Stats{
         }
       },
       "Sunni": {
-        "definingFeatures": "",
         "Color": '008C00',
         "Opinions": {
           "Pagan": {
@@ -1240,7 +1233,6 @@ class Stats{
         }
       },
       "Shia": {
-        "definingFeatures": "",
         "Color": '00C900',
         "Opinions": {
           "Pagan": {
@@ -1276,7 +1268,6 @@ class Stats{
         }
       },
       "Judaism": {
-        "definingFeatures": "",
         "Color": '00C9BE',
         "Opinions": {
           "Pagan": {
@@ -1312,7 +1303,6 @@ class Stats{
         }
       },
       "Catholic": {
-        "definingFeatures": "",
         "Color": 'FFD800',
         "Opinions": {
           "Pagan": {
@@ -1348,7 +1338,6 @@ class Stats{
         }
       },
       "Orthodox": {
-        "definingFeatures": "",
         "Color": 'FF15DD',
         "Opinions": {
           "Pagan": {
@@ -1384,7 +1373,6 @@ class Stats{
         }
       },
       "Protestant": {
-        "definingFeatures": "",
         "Color": '0015DD',
         "Opinions": {
           "Pagan": {
@@ -1420,7 +1408,6 @@ class Stats{
         }
       },
       "Hindu": {
-        "definingFeatures": "",
         "Color": 'B6FF00',
         "Opinions": {
           "Pagan": {
@@ -1456,7 +1443,6 @@ class Stats{
         }
       },
       "Buddhism": {
-        "definingFeatures": "",
         "Color": '57007F',
         "Opinions": {
           "Pagan": {
@@ -1492,7 +1478,6 @@ class Stats{
         }
       },
       "Shinto": {
-        "definingFeatures": "",
         "Color": 'FF0000',
         "Opinions": {
           "Pagan": {
@@ -1528,7 +1513,6 @@ class Stats{
         }
       },
       "Confucianism": {
-        "definingFeatures": "",
         "Color": '808080',
         "Opinions": {
           "Pagan": {
