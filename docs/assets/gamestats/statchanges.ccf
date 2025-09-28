@@ -1452,6 +1452,13 @@ pay debt 290
 +0.2 Gold
 +0.1 MiningEff
 +0.2 AdministrationSize
+-4 Researchpoints
+="true" Technologies.Galleons 
+="true" Technologies.Printing Press
+="true" Technologies.Docks
+="true" Technologies.Gunports 
++1 AdmEff
++0.5 EduEff
 
 <... > Nations > Holy Roman Dominion Of The Danube
 +2 EstateInfluences.UrbanInfluence
