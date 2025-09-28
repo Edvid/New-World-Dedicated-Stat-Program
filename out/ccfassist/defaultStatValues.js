@@ -1,4 +1,4 @@
-export let defaultStatValues = {
+export const defaultStatValues = {
     // Trade Inf
     Alaska: 0,
     CentralCanada: 0,
