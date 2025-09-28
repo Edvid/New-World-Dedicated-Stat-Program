@@ -2,7 +2,7 @@ import { defaultStatValues } from "../ccfassist/defaultStatValues.js";
 import { error, warn } from "../utility/custom_errors.js";
 import { getStatType } from "../utility/stat_types.js";
 import { correctAndSynonymCheck } from "../utility/selectors.js";
-import { Climate, getGameStats, GSAddProperty, GSDeleteProperty, GSGetProperty, GSNewProperty, GSSetProperty, GSUpdateTradesWithRenamedNationName, Nation, Opinion, SocialBehaviour, SocialBehaviourGroup, Trade, TradeZone } from "../stats/gameStats.js";
+import { NationClimate, getGameStats, GSAddProperty, GSDeleteProperty, GSGetProperty, GSNewProperty, GSSetProperty, GSUpdateTradesWithRenamedNationName, Nation, Opinion, SocialBehaviour, SocialBehaviourGroup, Trade, TradeZone } from "../stats/gameStats.js";
 import { PostStatChange, PostStatCreate } from "./specialOperations.js";
 import { evaluateNation } from "../stats/formulas.js";
 export function normalCommand(operand, selection, givenValue) {
@@ -138,7 +138,7 @@ export function createStat(currentSelection, arg) {
     else if (/^\.Nations\..+\.(Culture|Religion)Groups$/.test(currentSelection))
         objectClass = SocialBehaviourGroup;
     else if (/^\.Nations\..+\.Climates$/.test(currentSelection))
-        objectClass = Climate;
+        objectClass = NationClimate;
     else if (/^\.(Cultures|Religions)\..+\.Opinions$/.test(currentSelection))
         objectClass = Opinion;
     else if (/^\.TradeZones$/.test(currentSelection))
