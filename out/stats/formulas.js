@@ -3,15 +3,15 @@ import { min, max, clamp } from "../utility/math.js";
 import { clearNewTroops, getGameStats, Opinion } from "./gameStats.js";
 export function evaluateNation(nationName) {
     const n = getGameStats().Nations[nationName];
-    const nations = getGameStats().Nations; // TODO: Make readonly when we have TS
-    const estates = getGameStats().Estates; // TODO: Make readonly when we have TS
-    const estatesGeneral = getGameStats().EstatesGeneral; // TODO: Make readonly when we have TS
-    const climates = getGameStats().Climates; // TODO: Make readonly when we have TS
-    const cultures = getGameStats().Cultures; // TODO: Make readonly when we have TS
-    const religions = getGameStats().Religions; // TODO: Make readonly when we have TS
-    const resourceTypes = getGameStats().ResourceTypes; // TODO: Make readonly when we have TS
-    const trades = getGameStats().Trades; // TODO: Make readonly when we have TS
-    const tradeZones = getGameStats().TradeZones; // TODO: Make readonly when we have TS
+    const nations = getGameStats().Nations;
+    const estates = getGameStats().Estates;
+    const estatesGeneral = getGameStats().EstatesGeneral;
+    const climates = getGameStats().Climates;
+    const cultures = getGameStats().Cultures;
+    const religions = getGameStats().Religions;
+    const resourceTypes = getGameStats().ResourceTypes;
+    const trades = getGameStats().Trades;
+    const tradeZones = getGameStats().TradeZones;
     const timeDivide = getGameStats().TimeDivide;
     n.EstateCount = 0;
     for (const EstateIndex in estatesGeneral) {
