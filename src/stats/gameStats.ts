@@ -25,7 +25,6 @@ export const mappedResourcesMultipliers = [
 ];
 
 const resourceTypes = [
-  "Budget",
   "Food",
   "Wood",
   "Sulphur",
@@ -63,6 +62,10 @@ const resourceTypes = [
   "Planes",
   "HeavyIndustry"
 ];
+
+const realResourceTypes = [
+  "Budget",
+].concat(resourceTypes);
 
 export class SocialBehaviour {
   Color = "000000";
@@ -532,7 +535,215 @@ const religions = {
     }
   },
 };
-const tradeZones = {
+
+const startingReligionGroups = {
+  Pagan: {
+    Points: 100
+  },
+  Sunni: {
+    Points: 0
+  },
+  Shia: {
+    Points: 0
+  },
+  Judaism: {
+    Points: 0
+  },
+  Catholic: {
+    Points: 0
+  },
+  Orthodox: {
+    Points: 0
+  },
+  Protestant: {
+    Points: 0
+  },
+  Hindu: {
+    Points: 0
+  },
+  Buddhism: {
+    Points: 0
+  },
+  Shinto: {
+    Points: 0
+  },
+  Confucianism: {
+    Points: 0
+  }
+};
+
+interface workforces {
+  PopulationInMilitary: number;
+  Slaves: number;
+  Labourers: number;
+  Serfs: number;
+  Unemployed: number;
+  Farmers: number;
+  Townsfolk: number;
+  Clergy: number;
+  Bureaucrats: number;
+  Merchants: number;
+  Intellectuals: number;
+  Sailors: number;
+  Soldiers: number;
+  Aristocracy: number;
+  Burgousie: number;
+}
+
+interface productionSectors {
+  ConstructionSector: number;
+  BasicArmamentsSector: number;
+  HeavyArmamentsSector: number;
+  ShipBuildingSector: number;
+  BasicToolsSector: number;
+  TextilesSector: number;
+  BasicGoodsSector: number;
+  LuxuryGoodsSector: number;
+  AlcoholSector: number;
+  ChemicalSector: number;
+  ElectronicsSector: number;
+  AutomotiveSector: number;
+  AerospaceSector: number;
+  HeavyIndustrySector: number;
+}
+
+interface tradeZonesType {
+  Alaska: TradeZone;
+  Cascadia: TradeZone;
+  CaliforniaAndWestMexico: TradeZone;
+  HudsonBay: TradeZone;
+  GreatLakes: TradeZone;
+  Louisiana: TradeZone;
+  GulfOfMexico: TradeZone;
+  LawrenceGulf: TradeZone;
+  EastCoast: TradeZone;
+  Carribean: TradeZone;
+  CentralAmerica: TradeZone;
+  GuyanaAndSuriname: TradeZone;
+  Amazon: TradeZone;
+  Peru: TradeZone;
+  RioGrande: TradeZone;
+  LaPlata: TradeZone;
+  Chile: TradeZone;
+  Patagonia: TradeZone;
+  NorthernAnatolia: TradeZone;
+  NorthSea: TradeZone;
+  BritishIsles: TradeZone;
+  EnglishChannel: TradeZone;
+  France: TradeZone;
+  BayOfBiscay: TradeZone;
+  WestIberia: TradeZone;
+  Gibraltar: TradeZone;
+  WesternMediterranean: TradeZone;
+  Rhine: TradeZone;
+  CentralMediterranean: TradeZone;
+  Adriatic: TradeZone;
+  Germany: TradeZone;
+  WesternDanube: TradeZone;
+  Denmark: TradeZone;
+  Baltic: TradeZone;
+  NorthNordics: TradeZone;
+  BarentsSea: TradeZone;
+  Novgorod: TradeZone;
+  Poland: TradeZone;
+  Dniepr: TradeZone;
+  Crimea: TradeZone;
+  EasternDanube: TradeZone;
+  Greece: TradeZone;
+  EasternMediterranean: TradeZone;
+  Egypt: TradeZone;
+  RedSea: TradeZone;
+  WesternSahara: TradeZone;
+  CoteDIvoire: TradeZone;
+  Nigeria: TradeZone;
+  SouthNile: TradeZone;
+  Somalia: TradeZone;
+  Kongo: TradeZone;
+  EastAfrica: TradeZone;
+  Mozambique: TradeZone;
+  SouthAfrica: TradeZone;
+  Mesopotamia: TradeZone;
+  PersianGulf: TradeZone;
+  Caucasus: TradeZone;
+  DonRiver: TradeZone;
+  Volga: TradeZone;
+  CentralAsia: TradeZone;
+  WestSiberia: TradeZone;
+  EastSiberia: TradeZone;
+  Iran: TradeZone;
+  Pakistan: TradeZone;
+  Tibet: TradeZone;
+  Mongolia: TradeZone;
+  Manchuria: TradeZone;
+  SeaOfJapan: TradeZone;
+  NorthChina: TradeZone;
+  YangtzeRiver: TradeZone;
+  SouthChina: TradeZone;
+  NorthIndia: TradeZone;
+  WestIndia: TradeZone;
+  EastIndia: TradeZone;
+  Burma: TradeZone;
+  SouthEastAsia: TradeZone;
+  NorthAustralia: TradeZone;
+  SouthAustralia: TradeZone;
+  CentralSiberia: TradeZone;
+  EasternSiberia: TradeZone;
+  WesternSiberia: TradeZone;
+  NorthernNordics: TradeZone;
+  CentralCanada: TradeZone;
+  BalticSea: TradeZone;
+  Livonia: TradeZone;
+  Muscovy: TradeZone;
+  UralRiver: TradeZone;
+  Vistula: TradeZone;
+  CentralEurope: TradeZone;
+  Romania: TradeZone;
+  TheRockies: TradeZone;
+  Mississippi: TradeZone;
+  SouthernFrance: TradeZone;
+  CaspianSea: TradeZone;
+  GobiDesert: TradeZone;
+  WestCoast: TradeZone;
+  Iberia: TradeZone;
+  YellowRiver: TradeZone;
+  Afghanistan: TradeZone;
+  IndusRiver: TradeZone;
+  Morocco: TradeZone;
+  Sichuan: TradeZone;
+  Sahara: TradeZone;
+  ArabianDesert: TradeZone;
+  WesternMexico: TradeZone;
+  Ganges: TradeZone;
+  Caribbean: TradeZone;
+  Pacific: TradeZone;
+  SouthChinaSea: TradeZone;
+  CentralIndia: TradeZone;
+  Deccan: TradeZone;
+  SouthernNile: TradeZone;
+  WesternNiger: TradeZone;
+  Guinea: TradeZone;
+  EasternNiger: TradeZone;
+  Venezuela: TradeZone;
+  Indonesia: TradeZone;
+  CongoRiver: TradeZone;
+  Gabon: TradeZone;
+  LakeVictoria: TradeZone;
+  LakeTanganyika: TradeZone;
+  SaoFranciscoRiver: TradeZone;
+  NorthernAustralia: TradeZone;
+  Angola: TradeZone;
+  ParanaRiver: TradeZone;
+  SouthernAustralia: TradeZone;
+  AustralianDesert: TradeZone;
+}
+
+type tradeInfluencesType = {
+  [K in keyof tradeZonesType]: {
+    TradingPoints: number
+  }
+}
+
+const tradeZones: tradeZonesType = {
   Alaska: {
     Color: "ff6c7a",
     Score: 1
@@ -1042,6 +1253,7 @@ const tradeZones = {
     Score: 0
   }
 };
+
 const climates = {
     Ocean: {
       ClimateScore: 0,
@@ -1112,552 +1324,698 @@ const fertilities = {
 }
 
 const unitUpkeepCosts = {
-      Levies: 0.75 / 1000,
-      LightInfantry: 2 / 1000,
-      HeavyInfantry: 4 / 1000,
-      Archers: 3 / 1000,
-      Crossbowmen: 2 / 1000,
-      LightCavalry: 4 / 1000,
-      HeavyCavalry: 6.5 / 1000,
-      EliteInfantry: 7 / 1000,
-      EliteCavalry: 8.5 / 1000,
-      HandCannoneers: 5 / 1000,
-      Musketeers: 3.5 / 1000,
-      MusketMilitia: 2 / 1000,
-      Riflemen: 10 / 1000,
-      Militia: 1.25 / 1000,
+  Levies: 0.75 / 1000,
+  LightInfantry: 2 / 1000,
+  HeavyInfantry: 4 / 1000,
+  Archers: 3 / 1000,
+  Crossbowmen: 2 / 1000,
+  LightCavalry: 4 / 1000,
+  HeavyCavalry: 6.5 / 1000,
+  EliteInfantry: 7 / 1000,
+  EliteCavalry: 8.5 / 1000,
+  HandCannoneers: 5 / 1000,
+  Musketeers: 3.5 / 1000,
+  MusketMilitia: 2 / 1000,
+  Riflemen: 10 / 1000,
+  Militia: 1.25 / 1000,
 
-      SiegeEquipment: 1 / 10,
-      LargeSiegeEquipment: 1 / 5,
-      FieldCannons: 1 / 5,
-      RegimentalGuns: 1 / 10,
-      SiegeGuns: 1 / 2.5
-    }
+  SiegeEquipment: 1 / 10,
+  LargeSiegeEquipment: 1 / 5,
+  FieldCannons: 1 / 5,
+  RegimentalGuns: 1 / 10,
+  SiegeGuns: 1 / 2.5
+}
 
+interface estateInfluences {
+  AristocracyInfluence: number;
+  ClergyInfluence: number;
+  BurgousieInfluence: number;
+  UrbanInfluence: number;
+  BureaucratsInfluence: number;
+  IntellectualsInfluence: number;
+  MilitaryInfluence: number;
+  WorkersInfluence: number;
+}
+
+interface influenceChangeLoyaltyEffect {
+  Aristocracy: number;
+  Clergy: number;
+  Burgousie: number;
+  Urban: number;
+  Bureaucrats: number;
+  Intellectuals: number;
+  Military: number;
+  Workers: number;
+}
+
+interface militaryControl {
+  AristocracyControl: number;
+  ClergyControl: number;
+  BurgousieControl: number;
+  UrbanControl: number;
+  BureaucratsControl: number;
+  IntellectualsControl: number;
+  WorkersControl: number;
+  Independent: number;
+};
+
+
+interface govermentRepresentation {
+  UnitaryRepresentation: number,
+  AristocracyRepresentation: number,
+  ClergyRepresentation: number,
+  BurgousieRepresentation: number,
+  UrbanRepresentation: number,
+  BureaucratsRepresentation: number,
+  IntellectualsRepresentation: number,
+  MilitaryRepresentation: number,
+  WorkersRepresentation: number
+}
+
+interface reforms {
+  SlaveryAllowed: boolean,
+  SlaveryBanned: boolean,
+
+  SerfdomAllowed: boolean,
+  SerfdomBanned: boolean,
+
+  OpenFieldSystem: boolean,
+  Enclosure: boolean,
+
+  Isolationism: boolean,
+  Mercantilism: boolean,
+  Protectionism: boolean,
+  FreeTrade: boolean,
+
+  Guilds: boolean,
+  GuildsBanned: boolean,
+  AntiMonopolyLaws: boolean,
+
+  NoVoting: boolean,
+  HighClassVoting: boolean,
+  WealthVoting: boolean,
+  UniversalSuffrage: boolean,
+
+  NoblePrivellege: boolean,
+  WealthPrivellege: boolean,
+  ClassEquality: boolean,
+
+  NobleOfficers: boolean,
+  WealthyOfficers: boolean,
+  MeritocraticOfficers: boolean,
+
+  NobleBureaucrats: boolean,
+  ClergyBureaucrats: boolean,
+  WealthyBureaucrats: boolean,
+  MeritocraticBureaucrats: boolean,
+
+  NobleResourceOwnership: boolean,
+  MixedResourceOwnership: boolean,
+  BurgousieResourceOwnership: boolean,
+  GovernmentResourceOwnership: boolean,
+
+  NobleLandOwnership: boolean,
+  MixedLandOwnership: boolean,
+  PrivateLandOwnership: boolean,
+  GovernmentLandOwnership: boolean,
+
+  NationalMilitia: boolean,
+  FeudalLevies: boolean,
+  ProffesionalArmy: boolean,
+  MassConscription: boolean,
+
+  FeudalNobleArmies: boolean,
+  Mercenaries: boolean,
+  ReligiousOrders: boolean,
+
+  StateMediaOnly: boolean,
+  ExtensiveCensorship: boolean,
+  LimitedCensorship: boolean,
+  FreeSpeech: boolean,
+
+  NoSocialMobility: boolean,
+  RestrictedSocialMobility: boolean,
+  UnrestrictedSocialMobility: boolean,
+
+  StateReligion: boolean,
+  RestrictiveReligionLaws: boolean,
+  FreedomOfReligion: boolean,
+
+  PrivateEducationOnly: boolean,
+  ReligiousSchools: boolean,
+  PublicEducation: boolean,
+
+  CommunityPolicing: boolean,
+  RegionalPolice: boolean,
+  StatePolice: boolean,
+  SecretPolice: boolean,
+
+  NoWeaponLaws: boolean,
+  LimitedWeaponOwnership: boolean,
+  WeaponOwnershipForbidden: boolean
+}
 
 export class Nation {
 
-  /* #region  Properties */
-
-  /* #region  Daily */
-  FuturePopulation;
-  FutureLiteracyPercent;
-  FutureHigherEducation;
-  FutureBudget;
-  FutureFood;
-  FutureResearchPoints;
-  FuturePublicDebtLength;
-  FutureCulturalPower;
-  /* #endregion */
-
-  /* #region Most Stats */
-  GovernmentName;
-  CapitalName;
-  Flag;
-  Color;
-  ReligionGroups;  //object of {name: {Points: num}, name: {Points: num}}
-  ReligionRepresentedAtGovernmentLevel;
-  ReligionRepresentedAtGovernmentLevelPercent;
-  CulturalDisunity;
-  ReligiousDisunity;
-  Population;
-  PopulationGrowth;
-  PseudoPopulationGrowth;
-  AverageDevelopment;
-  Health;
-  EffectiveHealth;
-  Alcoholism;
-  LiteracyPercent;
-  HigherEducation;
-  EducationEfficiency;
-  AdministrativeEfficiency;
-  AdministrativeStrain;
-  Corruption;
-  Overextension;
-  Propaganda;
-  SocialSpending;
-  Prosperity; //Quality of Life
-  PopulationHappiness;
-  Stability;
-  AtWar;
-  WarSupport;
-  Absolutism;
-  PopulationControl;
-  BirthControl;
-  ConscriptionPercent;
-  StateFarmerWage;
-  StateLabourerWage;
-  StateFactoryWorkerWage;
-  Production;
-  ProductionGovernmentControl;
-  ProductionEfficiency;
-  TradeEfficiency;
-  LocalTrade;
-  TradePower;
-  TradeImprovements;
-  PossiblePublicDebt;
-  EffectiveDebt;
-  BudgetPerTurn;
-  Budget;
-  Inflation;
-  Spies;
-  SpyQuality;
-  ArmyUpkeep;
-  SpyUpkeep;
-  SocialSpendingUpkeep;
-  HealthUpkeep;
-  EducationUpkeep;
-  AgricultureSpending;
-  PropagandaUpkeep;
-  PopulationControlUpkeep;
-  TradeRevenue;
-  AdministrativeUpkeep;
-  ProductionRevenue;
-  ResearchUpkeep;
-  OverallIncome;
-  PassiveInvestmentIncome;
-  /* #endregion */
-
-  /* #region  Armies */
-  Levies;
-  LightInfantry;
-  HeavyInfantry;
-  Archers;
-  Crossbowmen;
-  LightCavalry;
-  HeavyCavalry;
-  EliteInfantry;
-  EliteCavalry;
-  HandCannoneers;
-  Musketeers;
-  Militia;
-  SiegeEquipment;
-  LargeSiegeEquipment;
-  FieldCannons;
-  EliteUnitsCap;
-  UnitUpkeep;
-  OverallNumbers;
-  SmallForts;
-  MediumForts;
-  BigForts;
-  HugeForts;
-  CityFortifications;
-  SupplyDepots;
-  NavalBases;
-  BuildingsUpkeep;
-  IronShortage;
-  SulphurShortage;
-  CommanderFreedom;
-  BasicArmamentsStockpiled;
-  HeavyArmamentsStockpiled;
-  ArmyWages;
-  ArmyTech;
-  MilitaryLoyalty;
-  MilitaryMorale;
-  MilitaryDiscipline;
-  /* #endregion */
-
-  /* #region  Navy */
-  LightShipImprovements;
-  MediumShipImprovements;
-  HeavyShipImprovements;
-  NavyTech;
-  NavyQuality;
-  MerchantShips;
-  UpkeepForOneMerchantShip;
-  LightShips;
-  UpkeepForOneLightShip;
-  MediumShips;
-  UpkeepForOneMediumShip;
-  HeavyShips;
-  UpkeepForOneHeavyShip;
-  OverallShipCount;
-  TradeProtection;
-  NavalPower;
-  NavyUpkeep;
-  /* #endregion */
-
-  /* #region  Recruitments / New Troops */
-  New_Levies;
-  New_Militia;
-  New_LightInfantry;
-  New_HeavyInfantry;
-  New_EliteInfantry;
-  New_Archers;
-  New_Crossbowmen;
-  New_HandCannoneers;
-  New_Musketeers;
-  New_MusketMilitia;
-  New_Riflemen;
-  New_LightCavalry;
-  New_HeavyCavalry;
-  New_EliteCavalry;
-  New_SiegeEquipment;
-  New_LargeSiegeEquipment;
-  New_RegimentalGuns;
-  New_FieldCannons;
-  New_SiegeGuns;
-
-  New_MerchantShips
-  New_LightShips;
-  New_MediumShips;
-    New_HeavyShips;
-
-    New_SmallForts;
-    New_MediumForts;
-    New_BigForts;
-    New_HugeForts;
-    New_CityFortifications;
-    New_SupplyDepots;
-    New_NavalBases;
-
-  TroopRecruitmentCost;
-  /* #endregion */
-
-  /* #region  Population */
-  Workforces = { };
-  SocietalClasses;
-  CultureGroups; //object of {name: {Points: num}, name: {Points: num}}
-  CultureRepresentedAtGovernmentLevel;
-  CultureRepresentedAtGovernmentLevelPercent;
-  PopulationStabilityImpact;
-  PopulationTechImpact;
-  /* #endregion */
-
-  /* #region  Resources */
-  MiningEfficiency;
-  FarmingEfficiency;
-
-  Coal;
-  EffectiveCoal;
-  MaxCoal;
-  
-  Sulphur;
-  EffectiveSulphur;
-  MaxSulphur;
-  
-  Cotton;
-  EffectiveCotton;
-  
-  Gold;
-  EffectiveGold;
-  MaxGold;
-  
-  Iron;
-  EffectiveIron;
-  MaxIron;
-  
-  Tea;
-  EffectiveTea;
-  
-  Silk;
-  EffectiveSilk;
-  
-  Spice;
-  EffectiveSpice;
-  
-  Wool;
-  EffectiveWool;
-  
-  Coffee;
-  EffectiveCoffee;
-  
-  Fur;
-  EffectiveFur;
-  MaxFur;
-  
-  Diamond;
-  EffectiveDiamond;
-  MaxDiamond;
-  
-  Silver;
-  EffectiveSilver;
-  MaxSilver;
-  
-  Copper;
-  EffectiveCopper;
-  MaxCopper;
-  
-  Ivory;
-  EffectiveIvory;
-  MaxIvory;
-
-  Cocoa;
-  EffectiveCocoa;
-
-  Tobacco;
-  EffectiveTobacco;
-
-  Sugar;
-  EffectiveSugar;
-
-  ExoticFruit;
-  EffectiveExoticFruit;
-
-  ResourceBudgetBoost;
-  /* #endregion */
-
-  /* #region  Resource Prices */
-  CoalDemand;
-  CoalValue;
-
-  GoldDemand;
-  GoldValue;
-
-  IronDemand;
-  IronValue;
-
-  SulphurDemand;
-  SulphurValue;
-
-  CottonDemand;
-  CottonValue;
-
-  TeaDemand;
-  TeaValue;
-
-  SpiceDemand;
-  SpiceValue;
-
-  CopperDemand;
-  CopperValue;
-
-  SilkDemand;
-  SilkValue;
-
-  WoolDemand;
-  WoolValue;
-
-  CoffeeDemand;
-  CoffeeValue;
-
-  SilverDemand;
-  SilverValue;
-
-  DiamondDemand;
-  DiamondValue;
-
-  FurDemand;
-  FurValue;
-
-  IvoryDemand;
-  IvoryValue;
-
-  CocoaDemand;
-  CocoaValue;
-
-  TobaccoDemand;
-  TobaccoValue;
-
-  SugarDemand;
-  SugarValue;
-
-  ExoticFruitDemand;
-  ExoticFruitValue;
-  /* #endregion */
-
-  /* #region  Technology Stats */
-  Isolation;
-  ResearchSpending;
-  ResearchEffectiveness;
-  ResearchBoostFromTech;
-  ResearchPointGain;
-  ResearchPoints;
-  FutureResearchPoints;
-  Technologies;
-  ArmyTechBoost
-  /* #endregion */
-
-  /* #region  Economy */
-  EffectiveTax;
-  PossiblePublicDebt;
-  PublicDebtTaken;
-  EffectiveDebt;
-  PublicDebtLength;
-  InterestRate;
-  DebtHappinessEffect;
-
-  BudgetIncoming;
-  BudgetOutgoing;
-  Balance;
-  /* #endregion */
-
-  /* #region  Cultural Advancements */
-  CulturalAdvance;
-  CulturalProsperity;
-  CulturalPowerGain;
-  CulturalPower;
-  FutureCulturalPower;
-  CulturalAdvancements;
-  /* #endregion */
-
-  /* #region  Trade */
-  FoodIncoming;
-  FoodOutgoing;
-
-  CoalIncoming;
-  CoalOutgoing;
-
-  SulphurIncoming;
-  SulphurOutgoing;
-
-  CottonIncoming;
-  CottonOutgoing;
-
-  GoldIncoming;
-  GoldOutgoing;
-
-  IronIncoming;
-  IronOutgoing;
-
-  TeaIncoming;
-  TeaOutgoing;
-
-  SilkIncoming;
-  SilkOutgoing;
-
-  SpiceIncoming;
-  SpiceOutgoing;
-
-  WoolIncoming;
-  WoolOutgoing;
-
-  CoffeeIncoming;
-  CoffeeOutgoing;
-
-  FurIncoming;
-  FurOutgoing;
-
-  DiamondIncoming;
-  DiamondOutgoing;
-
-  SilverIncoming;
-  SilverOutgoing;
-
-  CopperIncoming;
-  CopperOutgoing;
-
-  IvoryIncoming;
-  IvoryOutgoing;
-
-  CocoaIncoming;
-  CocoaOutgoing;
-
-  TobaccoIncoming;
-  TobaccoOutgoing;
-
-  SugarIncoming;
-  SugarOutgoing;
-
-  ExoticFruitIncoming;
-  ExoticFruitOutgoing;
-
-  TradePowerFromResourceTrade;
-  /* #endregion */
-
-  /* #region  Agriculture */
-  AgricultureSubsidies;
-  Fertility;
-  AgricultureInfrastructure;
-  StockingCapabilities;
-  AgricultureAdvancements;
-  AgricultureTechnology;
-  FarmingEfficiency;
-  AgricultureSpending;
-  FoodPerTurn;
-  FoodConsumption;
-  FoodGain;
-  MaxFoodStock;
-  Food;
-  FutureFood;
-  FoodPopulationBoost;
-  SurplusFood;
-  SellingCapability;
-  FoodSold;
-  FoodLost;
-  TradeProfit;
-  /* #endregion */
-
-  /* #region  War */
-  Casualties;
-  Pillaging;
-  Occupation;
-  Blockade;
-  WarExhaustion;
-  MinorBattles;
-  MajorBattles;
-  Fervor;
-  /* #endregion */
-
-  /* #region  Trade Influence */
-  TradeInfluences;
-  /* #endregion */
-
-  /* #region  Land */
-  Size;
-  KmSquared;
-  PopulationDensityPerKmSquared;
-  Disease;
-  MaxPopulation;
-  UnderPopulation;
-  DetachedLand;
-  urbanPopulation;
-  UrbanPopulationPercent;
-  coastalPopulation;
-  CoastalPopulationPercent;
-  DevelopmentPixelCount;
-  AverageDevelopment;
-  LandAdministration;
-  Overextension;
-
+  FuturePopulation: number;
+  FutureLiteracyPercent: number;
+  FutureHigherEducation: number;
+  FutureBudget: number;
+  FuturePublicDebtLength: number;
+  GovernmentName: string;
+  CapitalName: string;
+  Flag: string;
+  Color: string;
+  ReligionGroups: Record<string, SocialBehaviourGroup> = {};
+  ReligionRepresentedAtGovernmentLevel: string;
+  ReligionRepresentedAtGovernmentLevelPercent: number;
+  GovernmentRepresentation: govermentRepresentation;
+  ReformPower: number;
+  Reforms: reforms;
+  MilitaryControl: militaryControl;
+  CulturalDisunity: number;
+  ReligiousDisunity: number;
+  Population: number;
+  PopulationGrowth: number;
+  PseudoPopulationGrowth: number;
+  Health: number;
+  EffectiveHealth: number;
+  Alcoholism: number;
+  LiteracyPercent: number;
+  HigherEducation: number;
+  EducationEfficiency: number;
+  AdministrativeEfficiency: number;
+  AdministrationSize: number
+  AdministrativeStrain: number;
+  Corruption: number;
+  Propaganda: number;
+  SocialSpending: number;
+  Prosperity: number; //Quality of Life
+  PopulationHappiness: number;
+  Stability: number;
+  AtWar: "defensive" | "offensive" | false;
+  WarSupport: number;
+  Nationalism: number;
+  ReligiousFervor: number;
+  Absolutism: number;
+  PopulationControl: number;
+  BirthControl: number;
+  ConscriptionPercent: number;
+  BureaucratsWages: number;
+  StateFarmerWage: number;
+  StateLabourerWage: number;
+  StateFactoryWorkerWage: number;
+  Production: number;
+  ProductionGovernmentControl: number;
+  ProductionEfficiency: number;
+  TradeEfficiency: number;
+  LocalTrade: number;
+  TradePower: number;
+  TradeImprovements: number;
+  BudgetPerTurn: number;
+  Budget: number;
+  Inflation: number;
+  Spies: number;
+  SpyQuality: number;
+  ArmyUpkeep: number;
+  SpyUpkeep: number;
+  SocialSpendingUpkeep: number;
+  HealthUpkeep: number;
+  EducationUpkeep: number;
+  PropagandaUpkeep: number;
+  PopulationControlUpkeep: number;
+  TradeRevenue: number;
+  AdministrativeUpkeep: number;
+  ProductionRevenue: number;
+  ResearchUpkeep: number;
+  OverallIncome: number;
+  PassiveInvestmentIncome: number;
+  Levies: number;
+  LightInfantry: number;
+  HeavyInfantry: number;
+  Archers: number;
+  Crossbowmen: number;
+  LightCavalry: number;
+  HeavyCavalry: number;
+  EliteInfantry: number;
+  EliteCavalry: number;
+  HandCannoneers: number;
+  Musketeers: number;
+  MusketMilitia: number;
+  Riflemen: number;
+  Militia: number;
+  SiegeEquipment: number;
+  LargeSiegeEquipment: number;
+  FieldCannons: number;
+  SiegeGuns: number;
+  RegimentalGuns: number;
+  EliteUnitsCap: number;
+  UnitUpkeep: number;
+  OverallNumbers: number;
+  SmallForts: number;
+  MediumForts: number;
+  BigForts: number;
+  HugeForts: number;
+  CityFortifications: number;
+  SupplyDepots: number;
+  NavalBases: number;
+  BuildingsUpkeep: number;
+  IronShortage: number;
+  SulphurShortage: number;
+  CommanderFreedom: number;
+  BasicArmamentsStockpiled: number;
+  HeavyArmamentsStockpiled: number;
+  SailorsWage: number;
+  ArmyWage: number;
+  ArmyWages: number;
+  MilitaryLoyalty: number;
+  AristocracyLoyalty: number; //Show in percent
+  ClergyLoyalty: number; //Show in percent
+  BurgousieLoyalty: number; //Show in percent
+  UrbanLoyalty: number; //Show in percent
+  BureaucratsLoyalty: number; //Show in percent
+  IntellectualsLoyalty: number; //Show in percent
+  WorkersLoyalty: number; //Show in percent
+  InfluenceChangeLoyaltyEffect: influenceChangeLoyaltyEffect;
+  MilitaryMorale: number;
+  MilitaryDiscipline: number;
+  OverallImprovements: number;
+  IrregularImprovements: number;
+  MeleeImprovements: number;
+  RangedImprovements: number;
+  CavalryImprovements: number;
+  FirearmImprovements: number;
+  SiegeImprovements: number;
+  ArtilleryImprovements: number;
+  LightShipImprovements: number;
+  MediumShipImprovements: number;
+  HeavyShipImprovements: number;
+  NavyTech: number;
+  NavyQuality: number;
+  MerchantShips: number;
+  UpkeepForOneMerchantShip: number;
+  LightShips: number;
+  UpkeepForOneLightShip: number;
+  MediumShips: number;
+  UpkeepForOneMediumShip: number;
+  HeavyShips: number;
+  UpkeepForOneHeavyShip: number;
+  OverallShipCount: number;
+  TradeProtection: number;
+  NavalPower: number;
+  NavyUpkeep: number;
+  New_Levies: number;
+  New_Militia: number;
+  New_LightInfantry: number;
+  New_HeavyInfantry: number;
+  New_EliteInfantry: number;
+  New_Archers: number;
+  New_Crossbowmen: number;
+  New_HandCannoneers: number;
+  New_Musketeers: number;
+  New_MusketMilitia: number;
+  New_Riflemen: number;
+  New_LightCavalry: number;
+  New_HeavyCavalry: number;
+  New_EliteCavalry: number;
+  New_SiegeEquipment: number;
+  New_LargeSiegeEquipment: number;
+  New_RegimentalGuns: number;
+  New_FieldCannons: number;
+  New_SiegeGuns: number;
+  New_MerchantShips: number;
+  New_LightShips: number;
+  New_MediumShips: number;
+  New_HeavyShips: number;
+  New_SmallForts: number;
+  New_MediumForts: number;
+  New_BigForts: number;
+  New_HugeForts: number;
+  New_CityFortifications: number;
+  New_SupplyDepots: number;
+  New_NavalBases: number;
+  TroopRecruitmentCost: number;
+  Workforces: workforces;
+  ProductionSectors: productionSectors;
+  SocietalClasses: {
+    High: number
+    Medium: number
+    Lower: number
+    Slaves: number
+  };
+  CultureGroups: Record<string, SocialBehaviourGroup> = {};
+  CultureRepresentedAtGovernmentLevel: string;
+  CultureRepresentedAtGovernmentLevelPercent: string;
+  PopulationStabilityImpact: number;
+  PopulationTechImpact: number;
+  MiningEfficiency: number;
+  Forestry: number;
+  EffectiveWood: number;
+  Reforestation: number;
+  MaxForesty: number;
+  ForestsCutDown: number;
+  Coal: number;
+  EffectiveCoal: number;
+  MaxCoal: number;
+  Sulphur: number;
+  EffectiveSulphur: number;
+  MaxSulphur: number;
+  Cotton: number;
+  EffectiveCotton: number;
+  Gold: number;
+  EffectiveGold: number;
+  MaxGold: number;
+  Iron: number;
+  EffectiveIron: number;
+  MaxIron: number;
+  Tea: number;
+  EffectiveTea: number;
+  Silk: number;
+  EffectiveSilk: number;
+  Spice: number;
+  EffectiveSpice: number;
+  Wool: number;
+  EffectiveWool: number;
+  Coffee: number;
+  EffectiveCoffee: number;
+  Fur: number;
+  EffectiveFur: number;
+  MaxFur: number;
+  Diamond: number;
+  EffectiveDiamond: number;
+  MaxDiamond: number;
+  Silver: number;
+  EffectiveSilver: number;
+  MaxSilver: number;
+  Copper: number;
+  EffectiveCopper: number;
+  MaxCopper: number;
+  Ivory: number;
+  EffectiveIvory: number;
+  MaxIvory: number;
+  Cocoa: number;
+  EffectiveCocoa: number;
+  Tobacco: number;
+  EffectiveTobacco: number;
+  Sugar: number;
+  EffectiveSugar: number;
+  ExoticFruit: number;
+  EffectiveExoticFruit: number;
+  ResourceBudgetBoost: number;
+  CoalDemand: number;
+  CoalValue: number;
+  GoldDemand: number;
+  GoldValue: number;
+  IronDemand: number;
+  IronValue: number;
+  SulphurDemand: number;
+  SulphurValue: number;
+  CottonDemand: number;
+  CottonValue: number;
+  TeaDemand: number;
+  TeaValue: number;
+  SpiceDemand: number;
+  SpiceValue: number;
+  CopperDemand: number;
+  CopperValue: number;
+  SilkDemand: number;
+  SilkValue: number;
+  WoolDemand: number;
+  WoolValue: number;
+  CoffeeDemand: number;
+  CoffeeValue: number;
+  SilverDemand: number;
+  SilverValue: number;
+  DiamondDemand: number;
+  DiamondValue: number;
+  FurDemand: number;
+  FurValue: number;
+  IvoryDemand: number;
+  IvoryValue: number;
+  CocoaDemand: number;
+  CocoaValue: number;
+  TobaccoDemand: number;
+  TobaccoValue: number;
+  SugarDemand: number;
+  SugarValue: number;
+  ExoticFruitDemand: number;
+  ExoticFruitValue: number;
+  Isolation: number;
+  ResearchSpending: number;
+  ResearchEffectiveness: number;
+  ResearchBoostFromTech: number;
+  ResearchPointGain: number;
+  ResearchPoints: number;
+  FutureResearchPoints: number;
+  Technologies: {
+    IronWorking: boolean,
+    Wheel: boolean,
+    Paper: boolean,
+    Gunpowder: boolean,
+    VerticalLoom: boolean,
+    SaddleAndStirrup: boolean,
+    HorseCollar: boolean,
+    Explosives: boolean,
+    Firelance: boolean,
+    Cranes: boolean,
+    PromissoryNotes: boolean,
+    Bombards: boolean,
+    HandCannons: boolean,
+    PlateArmour: boolean,
+    SappersAndEngineers: boolean,
+    Workshops: boolean,
+    StandardizedPikes: boolean,
+    Galleons: boolean,
+    PrintingPress: boolean,
+    Muskets: boolean,
+    Limber: boolean,
+    Docks: boolean,
+    Gunports: boolean,
+    Matchlock: boolean,
+    StarForts: boolean,
+    TextileManufactories: boolean,
+    Reiters: boolean,
+    MiningCarts: boolean,
+    HumanAnatomy: boolean,
+    Mortars: boolean,
+    Metallurgy: boolean,
+    Experimentation: boolean,
+    Fluyt: boolean,
+    Bayonet: boolean,
+    SocketBayonet: boolean,
+    Flintlock: boolean,
+    FlyingShuttle: boolean,
+    LeadChamberProcess: boolean,
+    Gunlock: boolean,
+    SteamEngine: boolean,
+    PuddlingProcess: boolean,
+    Rifles: boolean,
+    ModernChemistry: boolean,
+    CottonGin: boolean,
+    SteamBoats: boolean,
+    HotAirBalloon: boolean,
+    PowerLoomAndSewingMachine: boolean,
+    Fulminate: boolean,
+    PaperMachine: boolean,
+    FirstFactories: boolean,
+    LinearAssemblyProcess: boolean,
+    InterchangeableParts: boolean,
+    CannedFood: boolean,
+    Vaccines: boolean,
+    Morphine: boolean
+  };
+  AristocracyTax: number; //Show in percent
+  ClergyTax: number; //Show in percent
+  BurgousieTax: number; //Show in percent
+  UrbanTax: number; //Show in percent
+  BureaucratsTax: number; //Show in percent
+  IntellectualsTax: number; //Show in percent
+  MilitaryTax: number; //Show in percent
+  WorkersTax: number; //Show in percent
+  ExternalTariffs: number;
+  InternalTariffs: number;
+  ExpectedSlavesSol: number;
+  ExpectedLabourersSol: number;
+  ExpectedSerfsSol: number;
+  ExpectedUnemployedSol: number;
+  ExpectedFarmersSol: number;
+  ExpectedTownsfolkSol: number;
+  ExpectedClergySol: number;
+  ExpectedBureaucratsSol: number;
+  ExpectedMerchantsSol: number;
+  ExpectedIntellectualsSol: number;
+  ExpectedSailorsSol: number;
+  ExpectedSoldiersSol: number;
+  ExpectedAristocracySol: number;
+  ExpectedBurgousieSol: number;
+  ExpectedPrivateBasicArmaments: number;
+  EffectiveTax: number;
+  PossiblePublicDebt: number;
+  PublicDebtTaken: number;
+  EffectiveDebt: number;
+  PublicDebtLength: number;
+  InterestRate: number;
+  DebtHappinessEffect: number;
+  BudgetIncoming: number;
+  BudgetOutgoing: number;
+  Balance: number;
+  CulturalAdvance: number;
+  CulturalProsperity: number;
+  CulturalPowerGain: number;
+  CulturalPower: number;
+  FutureCulturalPower: number;
+  CulturalAdvancements: {
+    Currency: boolean,
+    DivineRightToRule: boolean,
+    Serfdom: boolean,
+    Feudalism: boolean,
+    Universities: boolean,
+    NobleDuty: boolean,
+    Courthouses: boolean,
+    RenaissanceThought: boolean,
+    EarlyModernAdministration: boolean,
+    NationalSovereignity: boolean,
+    Newspapers: boolean,
+    ScientificRevolution: boolean,
+    PotatoPopulationBoom: boolean,
+    Constitution: boolean,
+    PublicEducation: boolean,
+    Nationalism: boolean,
+    Conscription: boolean,
+    Industrialisation: boolean
+  };
+  FoodIncoming: number;
+  FoodOutgoing: number;
+  CoalIncoming: number;
+  CoalOutgoing: number;
+  SulphurIncoming: number;
+  SulphurOutgoing: number;
+  CottonIncoming: number;
+  CottonOutgoing: number;
+  GoldIncoming: number;
+  GoldOutgoing: number;
+  IronIncoming: number;
+  IronOutgoing: number;
+  TeaIncoming: number;
+  TeaOutgoing: number;
+  SilkIncoming: number;
+  SilkOutgoing: number;
+  SpiceIncoming: number;
+  SpiceOutgoing: number;
+  WoolIncoming: number;
+  WoolOutgoing: number;
+  CoffeeIncoming: number;
+  CoffeeOutgoing: number;
+  FurIncoming: number;
+  FurOutgoing: number;
+  DiamondIncoming: number;
+  DiamondOutgoing: number;
+  SilverIncoming: number;
+  SilverOutgoing: number;
+  CopperIncoming: number;
+  CopperOutgoing: number;
+  IvoryIncoming: number;
+  IvoryOutgoing: number;
+  CocoaIncoming: number;
+  CocoaOutgoing: number;
+  TobaccoIncoming: number;
+  TobaccoOutgoing: number;
+  SugarIncoming: number;
+  SugarOutgoing: number;
+  ExoticFruitIncoming: number;
+  ExoticFruitOutgoing: number;
+  WoodBaseValue: number;
+  SulphurBaseValue: number;
+  CoalBaseValue: number;
+  CottonBaseValue: number;
+  GoldBaseValue: number;
+  IronBaseValue: number;
+  TeaBaseValue: number;
+  SilkBaseValue: number;
+  SpiceBaseValue: number;
+  WoolBaseValue: number;
+  CoffeeBaseValue: number;
+  FurBaseValue: number;
+  DiamondBaseValue: number;
+  SilverBaseValue: number;
+  CopperBaseValue: number;
+  IvoryBaseValue: number;
+  CocoaBaseValue: number;
+  TobaccoBaseValue: number;
+  SugarBaseValue: number;
+  ExoticFruitBaseValue: number;
+  HousingBaseValue: number;
+  TextilesBaseValue: number;
+  BasicGoodsBaseValue: number;
+  LuxuryGoodsBaseValue: number;
+  AlcoholBaseValue: number;
+  BasicToolsBaseValue: number;
+  HeavyIndustryBaseValue: number;
+  BasicArmamentsBaseValue: number;
+  HeavyArmamentsBaseValue: number;
+  ShipBuildingBaseValue: number;
+  ChemicalsBaseValue: number;
+  MotorsBaseValue: number;
+  PlanesBaseValue: number;
+  ElectronicsBaseValue: number; 
+  TradePowerFromResourceTrade: number;
+  AgricultureSubsidies: number;
+  Fertility: number;
+  AgricultureInfrastructure: number;
+  StockingCapabilities: number;
+  AgricultureAdvancements: number;
+  AgricultureTechnology: number;
+  FarmingEfficiency: number;
+  AgricultureSpending: number;
+  FoodPerTurn: number;
+  FoodConsumption: number;
+  FoodGain: number;
+  MaxFoodStock: number;
+  FoodRationing: boolean;
+  Food: number;
+  FutureFood: number;
+  FoodPopulationBoost: number;
+  SurplusFood: number;
+  SellingCapability: number;
+  FoodSold: number;
+  FoodLost: number;
+  TradeProfit: number;
+  Casualties: number;
+  Pillaging: number;
+  Occupation: number;
+  Blockade: number;
+  WarExhaustion: number;
+  MinorBattles: number;
+  MajorBattles: number;
+  Fervor: number;
+  TradeInfluences: tradeInfluencesType;
+  EstateInfluences: estateInfluences;
+  ExpectedInfluences: estateInfluences;
+  Size: number;
+  KmSquared: number;
+  PopulationDensityPerKmSquared: number;
+  Disease: number;
+  MaxPopulation: number;
+  UnderPopulation: number;
+  DetachedLand: number;
+  urbanPopulation: number;
+  UrbanPopulationPercent: number;
+  coastalPopulation: number;
+  CoastalPopulationPercent: number;
+  DevelopmentPixelCount: number;
+  AverageDevelopment: number;
+  LandAdministration: number;
+  Overextension: number;
   Climates: Record<string, NationClimate>;
+  HabitableLand: number;
 
-  HabitableLand;
-  /* #endregion */
-  
-  /* #endregion */
-
-  constructor(nationName) {
+  constructor(nationName: string) {
     /* #region  Stats to Set Immedietly */
     /* #region  Main */
     this.GovernmentName = nationName;
     this.Flag = "";
-    this.Color = false;
-    this.ReligionGroups = {
-      Pagan: {
-        Points: 100
-      },
-      Sunni: {
-        Points: 0
-      },
-      Shia: {
-        Points: 0
-      },
-      Judaism: {
-        Points: 0
-      },
-      Catholic: {
-        Points: 0
-      },
-      Orthodox: {
-        Points: 0
-      },
-      Protestant: {
-        Points: 0
-      },
-      Hindu: {
-        Points: 0
-      },
-      Buddhism: {
-        Points: 0
-      },
-      Shinto: {
-        Points: 0
-      },
-      Confucianism: {
-        Points: 0
-      }
-    };
+    this.Color = "";
+    this.ReligionGroups = startingReligionGroups;
     this.Population = 2500000;
     this.FuturePopulation = 2500000;
     this.LiteracyPercent = 7;
@@ -1693,16 +2051,16 @@ export class Nation {
     this.IntellectualsLoyalty = 0.50; //Show in percent
     this.WorkersLoyalty = 0.50; //Show in percent
 
-      this.AristocracyTax = 0.175; //Show in percent
-      this.ClergyTax = 0.175; //Show in percent
-      this.BurgousieTax = 0.175; //Show in percent
-      this.UrbanTax = 0.15; //Show in percent
-      this.BureaucratsTax = 0.125; //Show in percent
-      this.IntellectualsTax = 0.125; //Show in percent
-      this.MilitaryTax = 0.1; //Show in percent
-      this.WorkersTax = 0.1; //Show in percent
+    this.AristocracyTax = 0.175; //Show in percent
+    this.ClergyTax = 0.175; //Show in percent
+    this.BurgousieTax = 0.175; //Show in percent
+    this.UrbanTax = 0.15; //Show in percent
+    this.BureaucratsTax = 0.125; //Show in percent
+    this.IntellectualsTax = 0.125; //Show in percent
+    this.MilitaryTax = 0.1; //Show in percent
+    this.WorkersTax = 0.1; //Show in percent
 
-      this.ExternalTariffs = 0.125; //Show in percent
+    this.ExternalTariffs = 0.125; //Show in percent
     this.InternalTariffs = 0.125; //Show in percent
 
     this.ExpectedSlavesSol = 0.01;
@@ -1721,17 +2079,18 @@ export class Nation {
     this.ExpectedBurgousieSol = 10;
 
     this.ExpectedPrivateBasicArmaments = 2.5;
-    
+
     this.EstateInfluences = {
       AristocracyInfluence: 30,
       ClergyInfluence: 15,
-        BurgousieInfluence: 25,
-        UrbanInfluence: 5,
+      BurgousieInfluence: 25,
+      UrbanInfluence: 5,
       BureaucratsInfluence: 5,
       IntellectualsInfluence: 2.5,
       MilitaryInfluence: 2.5,
       WorkersInfluence: 0.5
     };
+
     this.ExpectedInfluences = {
       AristocracyInfluence: 0.5,
       ClergyInfluence: 0.175,
@@ -1742,6 +2101,7 @@ export class Nation {
       MilitaryInfluence: 0.015,
       WorkersInfluence: 0.005
     };
+
     this.InfluenceChangeLoyaltyEffect = {
       Aristocracy: 0,
       Clergy: 0,
@@ -1752,7 +2112,7 @@ export class Nation {
       Military: 0,
       Workers: 0
     };
-    
+
     this.GovernmentRepresentation = {
       UnitaryRepresentation: 35,
       AristocracyRepresentation: 35,
@@ -1874,48 +2234,66 @@ export class Nation {
     this.New_MerchantShips = 0;
     this.New_LightShips = 0;
     this.New_MediumShips = 0;
-      this.New_HeavyShips = 0;
+    this.New_HeavyShips = 0;
 
-      this.New_SmallForts = 0;
-      this.New_MediumForts = 0;
-      this.New_BigForts = 0;
-      this.New_HugeForts = 0;
-      this.New_CityFortifications = 0;
-      this.New_SupplyDepots = 0;
-      this.New_NavalBases = 0;
+    this.New_SmallForts = 0;
+    this.New_MediumForts = 0;
+    this.New_BigForts = 0;
+    this.New_HugeForts = 0;
+    this.New_CityFortifications = 0;
+    this.New_SupplyDepots = 0;
+    this.New_NavalBases = 0;
 
 
     /* #endregion */
 
     /* #region  Population */
     this.Workforces = {
+      PopulationInMilitary: 0,
+      Slaves: 0,
+      Labourers: 0,
+      Serfs: 0,
+      Unemployed: 0,
+      Farmers: 0,
+      Townsfolk: 0,
+      Bureaucrats: 0,
+      Merchants: 0,
+      Intellectuals: 0,
+      Sailors: 0,
+      Soldiers: 0,
       Clergy: 0.0125,
       Aristocracy: 0.02,
       Burgousie: 0.005
-     };
+    };
 
     this.ProductionSectors = {
-        ConstructionSector: 25,
-        BasicArmamentsSector: 27.5,
-        HeavyArmamentsSector: 10,
-        ShipBuildingSector: 10,
-        BasicToolsSector: 40,
-        TextilesSector: 25,
-        BasicGoodsSector: 30,
-        LuxuryGoodsSector: 7.5,
-        AlcoholSector: 25,
-        ChemicalSector: 0,
-        ElectronicsSector: 0,
-        AutomotiveSector: 0,
-        AerospaceSector: 0,
-        HeavyIndustrySector: 0
+      ConstructionSector: 25,
+      BasicArmamentsSector: 27.5,
+      HeavyArmamentsSector: 10,
+      ShipBuildingSector: 10,
+      BasicToolsSector: 40,
+      TextilesSector: 25,
+      BasicGoodsSector: 30,
+      LuxuryGoodsSector: 7.5,
+      AlcoholSector: 25,
+      ChemicalSector: 0,
+      ElectronicsSector: 0,
+      AutomotiveSector: 0,
+      AerospaceSector: 0,
+      HeavyIndustrySector: 0
     }
     this.ProductionGovernmentControl = 0;
     this.StateFarmerWage = 0.75;
     this.StateLabourerWage = 0.5;
     this.StateFactoryWorkerWage = 2;
-    
-    this.SocietalClasses = {};
+
+    this.SocietalClasses = {
+      High: 0,
+      Medium: 0,
+      Lower: 0,
+      Slaves: 0,
+    };
+
     this.CultureGroups = {}
     /* #endregion */
 
@@ -2064,10 +2442,10 @@ export class Nation {
     this.Reforms = {
       SlaveryAllowed: true,
       SlaveryBanned: false,
-      
+
       SerfdomAllowed: true,
       SerfdomBanned: false,
-      
+
       OpenFieldSystem: false,
       Enclosure: true,
 
@@ -2075,29 +2453,28 @@ export class Nation {
       Mercantilism: true,
       Protectionism: false,
       FreeTrade: false,
-      
+
       Guilds: true,
       GuildsBanned: false,
       AntiMonopolyLaws: false,
-      
+
       NoVoting: true,
       HighClassVoting: false,
       WealthVoting: false,
       UniversalSuffrage: false,
-      
+
       NoblePrivellege: true,
       WealthPrivellege: false,
       ClassEquality: false,
-      
       NobleOfficers: false,
       WealthyOfficers: true,
       MeritocraticOfficers: false,
-      
+
       NobleBureaucrats: false,
       ClergyBureaucrats: true,
       WealthyBureaucrats: false,
       MeritocraticBureaucrats: false,
-      
+
       NobleResourceOwnership: true,
       MixedResourceOwnership: false,
       BurgousieResourceOwnership: false,
@@ -2143,7 +2520,7 @@ export class Nation {
       LimitedWeaponOwnership: true,
       WeaponOwnershipForbidden: false
     }
-    
+
     /* #endregion */
 
     /* #region  Economy */
@@ -2185,11 +2562,11 @@ export class Nation {
 
     /* #region  Trade Influence */
     this.TradeInfluences = (function () {
-      let ti = {}; 
-      for (const element in gameStats.TradeZones) {
+      const ti = {};
+      for (const element in tradeZones) {
         ti[element] = {TradingPoints: 0};
       }
-      return ti;
+      return ti as tradeInfluencesType;
     })();
     /* #endregion */
 
@@ -2218,11 +2595,11 @@ class Stats {
   Cultures: Record<string, SocialBehaviour> = {
     //For Opinions not mentioned, they are neutral towards them.
   };
-  ResourceTypes = resourceTypes;
+  ResourceTypes = realResourceTypes;
   Estates = estates;
   EstateGenereal = estateGeneral;
   Trades: Record<string, Trade> = {};
-  TradeZones: Record<string, TradeZone> = tradeZones;
+  TradeZones: tradeZonesType = tradeZones;
   Climates: Record<string, WorldClimate> = climates;
   Fertility: Record<string, {Color: string, Score: number}> = fertilities;
   UnitUpkeepCosts = unitUpkeepCosts;
@@ -2246,7 +2623,7 @@ export function getGameStats() {
 }
 
 export function clearNewTroops(nationName){
-  let n = gameStats.Nations[nationName];
+  const n = gameStats.Nations[nationName];
   for (const unitName in gameStats.UnitUpkeepCosts) {
     n["New_" + unitName] = 0;
   }
@@ -2256,13 +2633,13 @@ export function clearNewTroops(nationName){
   n.New_MediumShips = 0;
   n.New_HeavyShips = 0;
 
-    n.New_SmallForts = 0;
-    n.New_MediumForts = 0;
-    n.New_BigForts = 0;
-    n.New_HugeForts = 0;
-    n.New_CityFortifications = 0;
-    n.New_SupplyDepots = 0;
-    n.New_NavalBases = 0;
+  n.New_SmallForts = 0;
+  n.New_MediumForts = 0;
+  n.New_BigForts = 0;
+  n.New_HugeForts = 0;
+  n.New_CityFortifications = 0;
+  n.New_SupplyDepots = 0;
+  n.New_NavalBases = 0;
 }
 
 export function GSGetProperty(propertySelection) {
