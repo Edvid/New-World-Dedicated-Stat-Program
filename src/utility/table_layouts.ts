@@ -1,4 +1,8 @@
-export const TableLayouts = {
+import { Nation } from "../stats/gameStats"
+
+type tradeInfluenceType = `.TradeInfluences["${string}"].TradingPoints`;
+
+export const TableLayouts: Record<string, (keyof Nation)[][] | tradeInfluenceType[][]> = {
   "Flag and Government": [
     ["Flag"],
     ["Color"],
@@ -211,22 +215,22 @@ export const TableLayouts = {
   ]
 }
 
-function tradeInfluenceTableWrapper(arr2D) {
-  const newArr2D = [];
+function tradeInfluenceTableWrapper(arr2D: string[][]) {
+  const newArr2D: tradeInfluenceType[][] = [];
   arr2D.forEach(arr => {
     newArr2D.push(tradeInfluenceRowWrapper(arr))
   });
   return newArr2D;
 }
 
-function tradeInfluenceRowWrapper(arr) {
-  const newArr = [];
+function tradeInfluenceRowWrapper(arr: string[]) {
+  const newArr: tradeInfluenceType[] = [];
   arr.forEach(el => {
     newArr.push(ti(el))
   });
   return newArr;
 }
 
-function ti(zone) {
+function ti(zone: string): tradeInfluenceType {
   return `.TradeInfluences["${zone}"].TradingPoints`
 }
