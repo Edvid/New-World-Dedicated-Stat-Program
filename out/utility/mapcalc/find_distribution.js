@@ -56,7 +56,7 @@ export async function findDistribution(outerDataset, innerDataset, outerName, in
             outerCol.toString().toLowerCase());
         if (typeof foundOuterObject === "undefined") {
             foundOuterObject = await PromptName(outerCol, getOuterDataPoint, outerName, reportingElements);
-            reportingElements.addToTextOutput(foundOuterObject.name);
+            reportingElements.addToTextOutput(`= "${foundOuterObject.color}" ${outerName}s.${foundOuterObject.name}.Color\n`);
             colorToOuterNameMapping.push(foundOuterObject);
         }
         const outerNameOfPixel = foundOuterObject.name;
@@ -113,7 +113,7 @@ export async function findDistribution(outerDataset, innerDataset, outerName, in
                         : { color: innerCol, name: "Col" + innerCol };
                 if (typeof foundInnerObject === "undefined") {
                     foundInnerObject = await PromptName(innerCol, getInnerDataPoint, innerName, reportingElements);
-                    reportingElements.addToTextOutput(foundInnerObject.name);
+                    reportingElements.addToTextOutput(`= "${foundInnerObject.color}" ${innerName}s.${foundInnerObject.name}.Color\n`);
                     if (!options.unnamedGroup)
                         colorToInnerNameMapping.push(foundInnerObject);
                 }
