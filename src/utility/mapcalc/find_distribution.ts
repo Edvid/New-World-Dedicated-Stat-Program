@@ -119,7 +119,7 @@ export async function findDistribution(
         outerName,
         reportingElements,
       );
-      reportingElements.addToTextOutput(foundOuterObject.name);
+      reportingElements.addToTextOutput(`= "${foundOuterObject.color}" ${outerName}s.${foundOuterObject.name}.Color\n`);
       colorToOuterNameMapping.push(foundOuterObject);
     }
 
@@ -193,7 +193,7 @@ export async function findDistribution(
             innerName,
             reportingElements,
           );
-          reportingElements.addToTextOutput(foundInnerObject.name);
+          reportingElements.addToTextOutput(`= "${foundInnerObject.color}" ${innerName}s.${foundInnerObject.name}.Color\n`);
           if (!options.unnamedGroup)
             colorToInnerNameMapping.push(foundInnerObject);
         }
