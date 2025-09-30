@@ -1,8 +1,13 @@
-import { Nation } from "../stats/gameStats"
+import { CulturalAdvancementsType, Nation, ReformsType, TechnologiesType, TradeZonesType } from "../stats/gameStats"
 
-type tradeInfluenceType = `.TradeInfluences["${string}"].TradingPoints`;
+type tradeInfluenceType = `.TradeInfluences["${keyof TradeZonesType}"].TradingPoints`;
+type technologiesType = `${"." | ""}Technologies.${keyof TechnologiesType}`;
+type reformsType = `${"." | ""}Reforms.${keyof ReformsType}`;
+type culturalAdvancementsType = `${"." | ""}CulturalAdvancements.${keyof CulturalAdvancementsType}`;
 
-export const TableLayouts: Record<string, (keyof Nation)[][] | tradeInfluenceType[][]> = {
+type StatType = keyof Nation | technologiesType | culturalAdvancementsType | reformsType | tradeInfluenceType
+
+export const TableLayouts: Record<string, StatType[][]> = {
   "Flag and Government": [
     ["Flag"],
     ["Color"],
@@ -215,7 +220,7 @@ export const TableLayouts: Record<string, (keyof Nation)[][] | tradeInfluenceTyp
   ]
 }
 
-function tradeInfluenceTableWrapper(arr2D: string[][]) {
+function tradeInfluenceTableWrapper(arr2D: (keyof TradeZonesType)[][]) {
   const newArr2D: tradeInfluenceType[][] = [];
   arr2D.forEach(arr => {
     newArr2D.push(tradeInfluenceRowWrapper(arr))
@@ -223,7 +228,7 @@ function tradeInfluenceTableWrapper(arr2D: string[][]) {
   return newArr2D;
 }
 
-function tradeInfluenceRowWrapper(arr: string[]) {
+function tradeInfluenceRowWrapper(arr: (keyof TradeZonesType)[]) {
   const newArr: tradeInfluenceType[] = [];
   arr.forEach(el => {
     newArr.push(ti(el))
@@ -231,6 +236,6 @@ function tradeInfluenceRowWrapper(arr: string[]) {
   return newArr;
 }
 
-function ti(zone: string): tradeInfluenceType {
+function ti(zone: keyof TradeZonesType): tradeInfluenceType {
   return `.TradeInfluences["${zone}"].TradingPoints`
 }
