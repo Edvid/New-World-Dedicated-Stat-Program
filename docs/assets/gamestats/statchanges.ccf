@@ -1133,7 +1133,15 @@ pay debt 290
 +4 TradeInfluences.NorthernAustralia 
 
 <... > Nations > Balticempire
-=70 merchant ships
+=80 merchantships
+=29 heavyships
++7000 musketeers 
++5000 heavyinf
++1000 lightinf
++2000 heavycav
++1000 lightcav
++100 field cannons
++1 smallfort
 
 <... > Nations > Xanmai Mandate
 +0.5 adm
