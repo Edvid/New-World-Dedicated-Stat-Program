@@ -1,6 +1,6 @@
 import { getGameStats } from "../../../stats/gameStats.js";
 import { ImageIndexToRGBA, RGBAToHex, RGBAtoRGB, IntColorToRGBA } from "../../color_manipulation.js";
-import { colorProperty } from "../color_properties.js";
+import { type colorProperty } from "../color_properties.js";
 
 interface PopRelavantProps {
   nation: never;

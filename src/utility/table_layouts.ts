@@ -1,5 +1,5 @@
-import { CulturalAdvancementsType, Nation, TechnologiesType, TradeZonesType } from "../stats/gameStats"
-import { ReformsType } from "./mapcalc/types/reform_types";
+import { type CulturalAdvancementsType, type TechnologiesType, type TradeZonesType, type Nation } from "../stats/gameStats"
+import { type ReformsType } from "./mapcalc/types/reform_types";
 
 type tradeInfluenceType = `.TradeInfluences["${keyof TradeZonesType}"].TradingPoints`;
 type technologiesType = `${"." | ""}Technologies.${keyof TechnologiesType}`;

@@ -1,6 +1,6 @@
 import { ImageIndexToIntColor, IntColorToRGBA } from "../color_manipulation.js";
 import { WIDTH, HEIGHT } from "../images/consts.js";
-import { Byte } from "../int_range.js";
+import { type Byte } from "../int_range.js";
 import { reportProgress } from "../report_progress.js";
 
 export async function mapDataIterator(

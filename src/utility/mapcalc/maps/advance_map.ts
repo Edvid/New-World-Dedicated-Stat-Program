@@ -1,4 +1,4 @@
-import { Byte } from "../../int_range.js";
+import { type Byte } from "../../int_range.js";
 import { reportProgress } from "../../report_progress.js";
 
 export async function advanceMap<OptionKind>(imgArray: ImageDataArray, formula: (arg0: ImageDataArray, arg1: number, arg2: OptionKind) => [Byte, Byte, Byte, Byte], progressElement: HTMLElement, options: OptionKind) {

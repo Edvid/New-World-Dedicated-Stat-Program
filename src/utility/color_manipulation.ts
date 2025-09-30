@@ -1,4 +1,4 @@
-import { Byte } from "./int_range";
+import { type Byte } from "./int_range.js";
 
 export function RGBAToHex(color: [Byte, Byte, Byte]) {
   const r = color[0];

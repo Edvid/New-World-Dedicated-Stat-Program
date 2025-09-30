@@ -1,7 +1,7 @@
 import { RGBAToHex, ImageIndexToIntColor } from "../color_manipulation.js";
 import { WIDTH, HEIGHT } from "../images/consts.js";
-import { Byte } from "../int_range.js";
-import { colorProperty } from "./color_properties.js";
+import { type Byte } from "../int_range.js";
+import { type colorProperty } from "./color_properties.js";
 import { reportProgress } from "../report_progress.js";
 import { error } from "../custom_errors.js";
 
