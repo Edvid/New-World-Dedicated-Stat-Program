@@ -607,7 +607,7 @@ interface productionSectors {
   HeavyIndustrySector: number;
 }
 
-interface tradeZonesType {
+export interface TradeZonesType {
   Alaska: TradeZone;
   Cascadia: TradeZone;
   CaliforniaAndWestMexico: TradeZone;
@@ -738,12 +738,12 @@ interface tradeZonesType {
 }
 
 type tradeInfluencesType = {
-  [K in keyof tradeZonesType]: {
+  [K in keyof TradeZonesType]: {
     TradingPoints: number
   }
 }
 
-const tradeZones: tradeZonesType = {
+const tradeZones: TradeZonesType = {
   Alaska: {
     Color: "ff6c7a",
     Score: 1
@@ -1255,63 +1255,63 @@ const tradeZones: tradeZonesType = {
 };
 
 const climates = {
-    Ocean: {
-      ClimateScore: 0,
-      Color: "103c6d"
-    },
-    PolarDesert: {
-      ClimateScore: 0.001,
-      Color: "808080"
-    },
-    TaigaAndTundra: {
-      ClimateScore: 0.25,
-      Color: "004a7f"
-    },
-    MontaneForest: {
-      ClimateScore: 0.6,
-      Color: "ffac7f"
-    },
-    Medditereanian: {
-      ClimateScore: 0.85,
-      Color: "ff6a00"
-    },
-    Arid: {
-      ClimateScore: 0.65,
-      Color: "7f3300"
-    },
-    Steppe: {
-      ClimateScore: 0.75,
-      Color: "c8ff7c"
-    },
-    Moderate: {
-      ClimateScore: 1,
-      Color: "4cff00"
-    },
-    SubTropical: {
-      ClimateScore: 0.75,
-      Color: "5b7f00"
-    },
-    Tropical: {
-      ClimateScore: 0.6,
-      Color: "008010"
-    },
-    Savanna: {
-      ClimateScore: 0.65,
-      Color: "c1bd3e"
-    },
-    Mountainous: {
-      ClimateScore: 0.35,
-      Color: "ff0000"
-    },
-    Desert: {
-      ClimateScore: 0.05,
-      Color: "fffb99"
-    },
-    CoastalDesert: {
-      ClimateScore: 0.35,
-      Color: "ffd802"
-    }
+  Ocean: {
+    ClimateScore: 0,
+    Color: "103c6d"
+  },
+  PolarDesert: {
+    ClimateScore: 0.001,
+    Color: "808080"
+  },
+  TaigaAndTundra: {
+    ClimateScore: 0.25,
+    Color: "004a7f"
+  },
+  MontaneForest: {
+    ClimateScore: 0.6,
+    Color: "ffac7f"
+  },
+  Medditereanian: {
+    ClimateScore: 0.85,
+    Color: "ff6a00"
+  },
+  Arid: {
+    ClimateScore: 0.65,
+    Color: "7f3300"
+  },
+  Steppe: {
+    ClimateScore: 0.75,
+    Color: "c8ff7c"
+  },
+  Moderate: {
+    ClimateScore: 1,
+    Color: "4cff00"
+  },
+  SubTropical: {
+    ClimateScore: 0.75,
+    Color: "5b7f00"
+  },
+  Tropical: {
+    ClimateScore: 0.6,
+    Color: "008010"
+  },
+  Savanna: {
+    ClimateScore: 0.65,
+    Color: "c1bd3e"
+  },
+  Mountainous: {
+    ClimateScore: 0.35,
+    Color: "ff0000"
+  },
+  Desert: {
+    ClimateScore: 0.05,
+    Color: "fffb99"
+  },
+  CoastalDesert: {
+    ClimateScore: 0.35,
+    Color: "ffd802"
   }
+}
 const fertilities = {
   Infertile: { Color: "ffffff", Score: 0.025 },
   BarelyFertile: { Color: "ff0000", Score: 0.15 },
@@ -1344,6 +1344,85 @@ const unitUpkeepCosts = {
   FieldCannons: 1 / 5,
   RegimentalGuns: 1 / 10,
   SiegeGuns: 1 / 2.5
+};
+
+export interface TechnologiesType {
+  IronWorking: boolean,
+  Wheel: boolean,
+  Paper: boolean,
+  Gunpowder: boolean,
+  VerticalLoom: boolean,
+  SaddleAndStirrup: boolean,
+  HorseCollar: boolean,
+  Explosives: boolean,
+  Firelance: boolean,
+  Cranes: boolean,
+  PromissoryNotes: boolean,
+  Bombards: boolean,
+  HandCannons: boolean,
+  PlateArmour: boolean,
+  SappersAndEngineers: boolean,
+  Workshops: boolean,
+  StandardizedPikes: boolean,
+  Galleons: boolean,
+  PrintingPress: boolean,
+  Muskets: boolean,
+  Limber: boolean,
+  Docks: boolean,
+  Gunports: boolean,
+  Matchlock: boolean,
+  StarForts: boolean,
+  TextileManufactories: boolean,
+  Reiters: boolean,
+  MiningCarts: boolean,
+  HumanAnatomy: boolean,
+  Mortars: boolean,
+  Metallurgy: boolean,
+  Experimentation: boolean,
+  Fluyt: boolean,
+  Bayonet: boolean,
+  SocketBayonet: boolean,
+  Flintlock: boolean,
+  FlyingShuttle: boolean,
+  LeadChamberProcess: boolean,
+  Gunlock: boolean,
+  SteamEngine: boolean,
+  PuddlingProcess: boolean,
+  Rifles: boolean,
+  ModernChemistry: boolean,
+  CottonGin: boolean,
+  SteamBoats: boolean,
+  HotAirBalloon: boolean,
+  PowerLoomAndSewingMachine: boolean,
+  Fulminate: boolean,
+  PaperMachine: boolean,
+  FirstFactories: boolean,
+  LinearAssemblyProcess: boolean,
+  InterchangeableParts: boolean,
+  CannedFood: boolean,
+  Vaccines: boolean,
+  Morphine: boolean
+};
+
+export interface CulturalAdvancementsType {
+  Currency: boolean,
+  DivineRightToRule: boolean,
+  Serfdom: boolean,
+  Feudalism: boolean,
+  Universities: boolean,
+  NobleDuty: boolean,
+  Courthouses: boolean,
+  RenaissanceThought: boolean,
+  EarlyModernAdministration: boolean,
+  NationalSovereignity: boolean,
+  Newspapers: boolean,
+  ScientificRevolution: boolean,
+  PotatoPopulationBoom: boolean,
+  Constitution: boolean,
+  PublicEducation: boolean,
+  Nationalism: boolean,
+  Conscription: boolean,
+  Industrialisation: boolean
 }
 
 interface estateInfluences {
@@ -1392,7 +1471,7 @@ interface govermentRepresentation {
   WorkersRepresentation: number
 }
 
-interface reforms {
+export interface ReformsType {
   SlaveryAllowed: boolean,
   SlaveryBanned: boolean,
 
@@ -1475,7 +1554,45 @@ interface reforms {
   WeaponOwnershipForbidden: boolean
 }
 
-export class Nation {
+interface BaseReformDuodirectionalCostTypes {
+  Slavery: never;
+  Serfdom: never;
+  Enclosure: never;
+  Trade: never;
+  Antitrust: never;
+  Suffrage: never;
+  Privilege: never;
+  Officers: never;
+  Bureaucrats: never;
+  Resource: never;
+  Land: never;
+  Army: never;
+  Censorship: never;
+  Social: never;
+  Religious: never;
+  Education: never;
+  Police: never;
+  Weapon: never;
+}
+
+interface BaseReformMonodirectionalCostTypes {
+  FeudalArmies: never;
+  Mercenaries: never;
+  ReligiousOrders: never;
+}
+
+type RealReformDuoCostTypes = Record<
+  ((`${keyof BaseReformDuodirectionalCostTypes}ReformRegressionCost` |
+  `${keyof BaseReformDuodirectionalCostTypes}ReformAdvanceCost`))
+, number>
+
+type RealReformMonoCostTypes = Record<
+  `${keyof BaseReformMonodirectionalCostTypes}ChangeCost`
+, number>
+
+type RealReformCostTypes = RealReformDuoCostTypes & RealReformMonoCostTypes
+
+export class Nation implements RealReformCostTypes {
 
   FuturePopulation: number;
   FutureLiteracyPercent: number;
@@ -1483,6 +1600,8 @@ export class Nation {
   FutureBudget: number;
   FuturePublicDebtLength: number;
   GovernmentName: string;
+  GovernmentDominatedBy: string;
+  GovernmentEffects: string;
   CapitalName: string;
   Flag: string;
   Color: string;
@@ -1491,7 +1610,47 @@ export class Nation {
   ReligionRepresentedAtGovernmentLevelPercent: number;
   GovernmentRepresentation: govermentRepresentation;
   ReformPower: number;
-  Reforms: reforms;
+  ReformPowerGain: number;
+  Reforms: ReformsType;
+  SlaveryReformRegressionCost: number;
+  SerfdomReformRegressionCost: number;
+  EnclosureReformRegressionCost: number;
+  TradeReformRegressionCost: number;
+  AntitrustReformRegressionCost: number;
+  SuffrageReformRegressionCost: number;
+  PrivilegeReformRegressionCost: number;
+  OfficersReformRegressionCost: number;
+  BureaucratsReformRegressionCost: number;
+  ResourceReformRegressionCost: number;
+  LandReformRegressionCost: number;
+  ArmyReformRegressionCost: number;
+  CensorshipReformRegressionCost: number;
+  SocialReformRegressionCost: number;
+  ReligiousReformRegressionCost: number;
+  EducationReformRegressionCost: number;
+  PoliceReformRegressionCost: number;
+  WeaponReformRegressionCost: number;
+  FeudalArmiesChangeCost: number;
+  MercenariesChangeCost: number;
+  ReligiousOrdersChangeCost: number;
+  SlaveryReformAdvanceCost: number;
+  SerfdomReformAdvanceCost: number;
+  EnclosureReformAdvanceCost: number;
+  TradeReformAdvanceCost: number;
+  AntitrustReformAdvanceCost: number;
+  SuffrageReformAdvanceCost: number;
+  PrivilegeReformAdvanceCost: number;
+  OfficersReformAdvanceCost: number;
+  BureaucratsReformAdvanceCost: number;
+  ResourceReformAdvanceCost: number;
+  LandReformAdvanceCost: number;
+  ArmyReformAdvanceCost: number;
+  CensorshipReformAdvanceCost: number;
+  SocialReformAdvanceCost: number;
+  ReligiousReformAdvanceCost: number;
+  EducationReformAdvanceCost: number;
+  PoliceReformAdvanceCost: number;
+  WeaponReformAdvanceCost: number;
   MilitaryControl: militaryControl;
   CulturalDisunity: number;
   ReligiousDisunity: number;
@@ -1501,12 +1660,37 @@ export class Nation {
   Health: number;
   EffectiveHealth: number;
   Alcoholism: number;
+  UnemployedLiteracy: number;
+  SlavesLiteracy: number;
+  LabourersLiteracy: number;
+  SerfsLiteracy: number;
+  FarmersLiteracy: number;
+  TownsfolkLiteracy: number;
+  ClergyLiteracy: number;
+  BureaucratsLiteracy: number;
+  MerchantsLiteracy: number;
+  IntellectualsLiteracy: number;
+  SailorsLiteracy: number;
+  SoldiersLiteracy: number;
+  AristocracyLiteracy: number;
+  BurgousieLiteracy: number;
   LiteracyPercent: number;
   HigherEducation: number;
+  AristocracyPoliticalAwareness: number;
+  ClergyPoliticalAwareness: number;
+  BurgousiePoliticalAwareness: number;
+  UrbanPoliticalAwareness: number;
+  BureaucratsPoliticalAwareness: number;
+  IntellectualsPoliticalAwareness: number;
+  WorkersPoliticalAwareness: number;
+  MilitaryPoliticalAwareness: number;
   EducationEfficiency: number;
   AdministrativeEfficiency: number;
   AdministrationSize: number
   AdministrativeStrain: number;
+  AdministrativeTech: number;
+  AdministrativePower: number;
+  AdministrativeDemand: number;
   Corruption: number;
   Propaganda: number;
   SocialSpending: number;
@@ -1522,9 +1706,44 @@ export class Nation {
   BirthControl: number;
   ConscriptionPercent: number;
   BureaucratsWages: number;
+  UnemployedWage: number;
+  SlavesWage: number;
+  LabourersWage: number;
+  SerfsWage: number;
+  FarmersWage: number;
+  TownsfolkWage: number;
+  ClergyWage: number;
+  BureaucratsWage: number;
+  MerchantsWage: number;
+  IntellectualsWage: number;
+  SailorsWage: number;
+  SoldiersWage: number;
+  AristocracyWage: number;
+  BurgousieWage: number;
   StateFarmerWage: number;
   StateLabourerWage: number;
   StateFactoryWorkerWage: number;
+  UnemployedTaxes: number;
+  SlavesTaxes: number;
+  LabourersTaxes: number;
+  SerfsTaxes: number;
+  FarmersTaxes: number;
+  TownsfolkTaxes: number;
+  ClergyTaxes: number;
+  BureaucratsTaxes: number;
+  MerchantsTaxes: number;
+  IntellectualsTaxes: number;
+  SailorsTaxes: number;
+  SoldiersTaxes: number;
+  AristocracyTaxes: number;
+  BurgousieTaxes: number;
+  TaxEfficiency: number;
+  TaxRevenue: number;
+  EffectiveTax: number;
+  PopProductionRevenue: number;
+  StateProductionRevenue: number;
+  StateResourceRevenue: number;
+  StateAgricultureRevenue: number;
   Production: number;
   ProductionGovernmentControl: number;
   ProductionEfficiency: number;
@@ -1548,7 +1767,10 @@ export class Nation {
   AdministrativeUpkeep: number;
   ProductionRevenue: number;
   ResearchUpkeep: number;
+  StateWorkersUpkeep: number;
   OverallIncome: number;
+  OverallSpending: number;
+  TariffsRevenue: number;
   PassiveInvestmentIncome: number;
   Levies: number;
   LightInfantry: number;
@@ -1579,13 +1801,47 @@ export class Nation {
   CityFortifications: number;
   SupplyDepots: number;
   NavalBases: number;
+  SmallFortUpkeep: number;
+  MediumFortUpkeep: number;
+  BigFortUpkeep: number;
+  HugeFortUpkeep: number;
+  CityFortificationUpkeep: number;
+  SupplyDepotUpkeep: number;
+  NavalBaseUpkeep: number;
+  SmallFortConstructionCost: number;
+  MediumFortConstructionCost: number;
+  BigFortConstructionCost: number;
+  HugeFortConstructionCost: number;
+  CityFortificationConstructionCost: number;
+  SupplyDepotConstructionCost: number;
+  NavalBaseConstructionCost: number;
   BuildingsUpkeep: number;
+  ConstructionCost: number;
+  WoodShortage: number;
+  CoalShortage: number;
   IronShortage: number;
   SulphurShortage: number;
+  NaturalFabricsShortage: number;
+  LuxuryNaturalFabricsShortage: number; 
+  ValuableMaterialsShortage: number;
+  HousingShortage: number;
+  TextilesShortage: number;
+  BasicGoodsShortage: number;
+  LuxuryGoodsShortage: number;
+  AlcoholShortage: number;
+  BasicToolsShortage: number;
+  HeavyIndustryShortage: number;
+  BasicArmamentsShortage: number;
+  BasicArmamentsArmyShortage: number;
+  HeavyArmamentsShortage: number;
+  ShipBuildingShortage: number;
+  ChemicalsShortage: number;
+  MotorsShortage: number;
+  PlanesShortage: number;
+  ElectronicsShortage: number;
   CommanderFreedom: number;
   BasicArmamentsStockpiled: number;
   HeavyArmamentsStockpiled: number;
-  SailorsWage: number;
   ArmyWage: number;
   ArmyWages: number;
   MilitaryLoyalty: number;
@@ -1610,7 +1866,22 @@ export class Nation {
   LightShipImprovements: number;
   MediumShipImprovements: number;
   HeavyShipImprovements: number;
+  LightShipQuality: number;
+  MediumShipQuality: number;
+  HeavyShipQuality: number;
+  LightShipConstructionCost: number;
+  MediumShipConstructionCost: number;
+  HeavyShipConstructionCost: number;
+  MerchantShipConstructionCost: number;
+  MerchantShipsFullfilment: number;
   NavyTech: number;
+  IrregularQuality: number;
+  MeleeQuality: number;
+  RangedQuality: number;
+  FirearmQuality: number;
+  CavalryQuality: number;
+  SiegeQuality: number;
+  ArtilleryQuality: number;
   NavyQuality: number;
   MerchantShips: number;
   UpkeepForOneMerchantShip: number;
@@ -1622,6 +1893,7 @@ export class Nation {
   UpkeepForOneHeavyShip: number;
   OverallShipCount: number;
   TradeProtection: number;
+  Manpower: number;
   NavalPower: number;
   NavyUpkeep: number;
   New_Levies: number;
@@ -1655,7 +1927,52 @@ export class Nation {
   New_SupplyDepots: number;
   New_NavalBases: number;
   TroopRecruitmentCost: number;
+  AristocracyCallupCost: number;
+  AristocracyLevies: number;
+  AristocracyMilitia: number;
+  AristocracyLightInfantry: number;
+  AristocracyHeavyInfantry: number;
+  AristocracyEliteInfantry: number;
+  AristocracyArchers: number;
+  AristocracyCrossbowmen: number;
+  AristocracyMusketeers: number;
+  AristocracyMusketMilitia: number;
+  AristocracyRiflemen: number;
+  AristocracyLightCavalry: number;
+  AristocracyHeavyCavalry: number;
+  AristocracyEliteCavalry: number;
+  BurgousieCallupCost: number;
+  BurgousieLevies: number;
+  BurgousieMilitia: number;
+  BurgousieLightInfantry: number;
+  BurgousieHeavyInfantry: number;
+  BurgousieEliteInfantry: number;
+  BurgousieArchers: number;
+  BurgousieCrossbowmen: number;
+  BurgousieMusketeers: number;
+  BurgousieMusketMilitia: number;
+  BurgousieRiflemen: number;
+  BurgousieLightCavalry: number;
+  BurgousieHeavyCavalry: number;
+  BurgousieEliteCavalry: number;
+  ClergyCallupCost: number;
+  ClergyLevies: number;
+  ClergyMilitia: number;
+  ClergyLightInfantry: number;
+  ClergyHeavyInfantry: number;
+  ClergyEliteInfantry: number;
+  ClergyArchers: number;
+  ClergyCrossbowmen: number;
+  ClergyMusketeers: number;
+  ClergyMusketMilitia: number;
+  ClergyRiflemen: number;
+  ClergyLightCavalry: number;
+  ClergyHeavyCavalry: number;
+  ClergyEliteCavalry: number;
+  PopulaceMilitia: number;
+  PopulaceMusketMilitia: number;
   Workforces: workforces;
+  PopInAgriculture: number;
   ProductionSectors: productionSectors;
   SocietalClasses: {
     High: number
@@ -1669,15 +1986,18 @@ export class Nation {
   PopulationStabilityImpact: number;
   PopulationTechImpact: number;
   MiningEfficiency: number;
+  Wood: number;
+  ForestsCutDown: number;
   Forestry: number;
   EffectiveWood: number;
   Reforestation: number;
-  MaxForesty: number;
-  ForestsCutDown: number;
+  MaxForestry: number;
   Coal: number;
+  BaseCoalHarvest: number;
   EffectiveCoal: number;
   MaxCoal: number;
   Sulphur: number;
+  BaseSulphurHarvest: number;
   EffectiveSulphur: number;
   MaxSulphur: number;
   Cotton: number;
@@ -1686,6 +2006,7 @@ export class Nation {
   EffectiveGold: number;
   MaxGold: number;
   Iron: number;
+  BaseIronHarvest: number;
   EffectiveIron: number;
   MaxIron: number;
   Tea: number;
@@ -1721,7 +2042,41 @@ export class Nation {
   EffectiveSugar: number;
   ExoticFruit: number;
   EffectiveExoticFruit: number;
+  Housing: number;
+  Textiles: number;
+  BasicGoods: number;
+  LuxuryGoods: number;
+  Alcohol: number;
+  BasicTools: number;
+  HeavyIndustry: number;
+  BasicArmaments: number;
+  HeavyArmaments: number;
+  ShipBuilding: number;
+  Chemicals: number;
+  Motors: number;
+  Planes: number;
+  Electronics: number;
+
+  EffectiveHousing: number;
+  EffectiveTextiles: number;
+  EffectiveBasicGoods: number;
+  EffectiveLuxuryGoods: number;
+  EffectiveAlcohol: number;
+  EffectiveBasicTools: number;
+  EffectiveHeavyIndustry: number;
+  EffectiveBasicArmaments: number;
+  EffectiveHeavyArmaments: number;
+  EffectiveShipBuilding: number;
+  EffectiveChemicals: number;
+  EffectiveMotors: number;
+  EffectivePlanes: number;
+  EffectiveElectronics: number;
+
   ResourceBudgetBoost: number;
+  FoodDemand: number;
+  FoodValue: number;
+  WoodDemand: number;
+  WoodValue: number;
   CoalDemand: number;
   CoalValue: number;
   GoldDemand: number;
@@ -1760,70 +2115,46 @@ export class Nation {
   SugarValue: number;
   ExoticFruitDemand: number;
   ExoticFruitValue: number;
+  HousingDemand: number;
+  HousingValue: number;
+  TextilesDemand: number;
+  TextilesValue: number;
+  BasicGoodsDemand: number;
+  BasicGoodsValue: number;
+  LuxuryGoodsDemand: number;
+  LuxuryGoodsValue: number;
+  AlcoholDemand: number;
+  AlcoholValue: number;
+  BasicToolsDemand: number;
+  BasicToolsValue: number;
+  HeavyIndustryDemand: number;
+  HeavyIndustryValue: number;
+  BasicArmamentsDemand: number;
+  ArmyBasicArmamentsDemand: number;
+  ArmyHeavyArmamentsDemand: number;
+  MinimumBasicArmamentsNeeded: number;
+  BasicArmamentsValue: number;
+  HeavyArmamentsDemand: number;
+  HeavyArmamentsValue: number;
+  ShipBuildingDemand: number;
+  ShipBuildingValue: number;
+  ChemicalsDemand: number;
+  ChemicalsValue: number;
+  MotorsDemand: number;
+  MotorsValue: number;
+  PlanesDemand: number;
+  PlanesValue: number;
+  ElectronicsDemand: number;
+  ElectronicsValue: number;
   Isolation: number;
   ResearchSpending: number;
+  ResearchEfficiency: number;
   ResearchEffectiveness: number;
   ResearchBoostFromTech: number;
   ResearchPointGain: number;
   ResearchPoints: number;
   FutureResearchPoints: number;
-  Technologies: {
-    IronWorking: boolean,
-    Wheel: boolean,
-    Paper: boolean,
-    Gunpowder: boolean,
-    VerticalLoom: boolean,
-    SaddleAndStirrup: boolean,
-    HorseCollar: boolean,
-    Explosives: boolean,
-    Firelance: boolean,
-    Cranes: boolean,
-    PromissoryNotes: boolean,
-    Bombards: boolean,
-    HandCannons: boolean,
-    PlateArmour: boolean,
-    SappersAndEngineers: boolean,
-    Workshops: boolean,
-    StandardizedPikes: boolean,
-    Galleons: boolean,
-    PrintingPress: boolean,
-    Muskets: boolean,
-    Limber: boolean,
-    Docks: boolean,
-    Gunports: boolean,
-    Matchlock: boolean,
-    StarForts: boolean,
-    TextileManufactories: boolean,
-    Reiters: boolean,
-    MiningCarts: boolean,
-    HumanAnatomy: boolean,
-    Mortars: boolean,
-    Metallurgy: boolean,
-    Experimentation: boolean,
-    Fluyt: boolean,
-    Bayonet: boolean,
-    SocketBayonet: boolean,
-    Flintlock: boolean,
-    FlyingShuttle: boolean,
-    LeadChamberProcess: boolean,
-    Gunlock: boolean,
-    SteamEngine: boolean,
-    PuddlingProcess: boolean,
-    Rifles: boolean,
-    ModernChemistry: boolean,
-    CottonGin: boolean,
-    SteamBoats: boolean,
-    HotAirBalloon: boolean,
-    PowerLoomAndSewingMachine: boolean,
-    Fulminate: boolean,
-    PaperMachine: boolean,
-    FirstFactories: boolean,
-    LinearAssemblyProcess: boolean,
-    InterchangeableParts: boolean,
-    CannedFood: boolean,
-    Vaccines: boolean,
-    Morphine: boolean
-  };
+  Technologies: TechnologiesType;
   AristocracyTax: number; //Show in percent
   ClergyTax: number; //Show in percent
   BurgousieTax: number; //Show in percent
@@ -1834,6 +2165,25 @@ export class Nation {
   WorkersTax: number; //Show in percent
   ExternalTariffs: number;
   InternalTariffs: number;
+  TariffEfficiency: number;
+  Gdp: number;
+  GdpPerKCapita: number;
+  DebtToGdpRatio: number;
+  UnemployedSol: number;
+  SlavesSol: number;
+  LabourersSol: number;
+  SerfsSol: number;
+  FarmersSol: number;
+  TownsfolkSol: number;
+  ClergySol: number;
+  BureaucratsSol: number;
+  MerchantsSol: number;
+  IntellectualsSol: number;
+  SailorsSol: number;
+  SoldiersSol: number;
+  AristocracySol: number;
+  BurgousieSol: number;
+  AverageSol: number;
   ExpectedSlavesSol: number;
   ExpectedLabourersSol: number;
   ExpectedSerfsSol: number;
@@ -1849,7 +2199,7 @@ export class Nation {
   ExpectedAristocracySol: number;
   ExpectedBurgousieSol: number;
   ExpectedPrivateBasicArmaments: number;
-  EffectiveTax: number;
+  AverageExpectedSol: number;
   PossiblePublicDebt: number;
   PublicDebtTaken: number;
   EffectiveDebt: number;
@@ -1864,26 +2214,7 @@ export class Nation {
   CulturalPowerGain: number;
   CulturalPower: number;
   FutureCulturalPower: number;
-  CulturalAdvancements: {
-    Currency: boolean,
-    DivineRightToRule: boolean,
-    Serfdom: boolean,
-    Feudalism: boolean,
-    Universities: boolean,
-    NobleDuty: boolean,
-    Courthouses: boolean,
-    RenaissanceThought: boolean,
-    EarlyModernAdministration: boolean,
-    NationalSovereignity: boolean,
-    Newspapers: boolean,
-    ScientificRevolution: boolean,
-    PotatoPopulationBoom: boolean,
-    Constitution: boolean,
-    PublicEducation: boolean,
-    Nationalism: boolean,
-    Conscription: boolean,
-    Industrialisation: boolean
-  };
+  CulturalAdvancements: CulturalAdvancementsType;
   FoodIncoming: number;
   FoodOutgoing: number;
   CoalIncoming: number;
@@ -1924,6 +2255,34 @@ export class Nation {
   SugarOutgoing: number;
   ExoticFruitIncoming: number;
   ExoticFruitOutgoing: number;
+  HousingIncoming: number;
+  HousingOutgoing: number;
+  TextilesIncoming: number;
+  TextilesOutgoing: number;
+  BasicGoodsIncoming: number;
+  BasicGoodsOutgoing: number;
+  LuxuryGoodsIncoming: number;
+  LuxuryGoodsOutgoing: number;
+  AlcoholIncoming: number;
+  AlcoholOutgoing: number;
+  BasicToolsIncoming: number;
+  BasicToolsOutgoing: number;
+  HeavyIndustryIncoming: number;
+  HeavyIndustryOutgoing: number;
+  BasicArmamentsIncoming: number;
+  BasicArmamentsOutgoing: number;
+  HeavyArmamentsIncoming: number;
+  HeavyArmamentsOutgoing: number;
+  ShipBuildingIncoming: number;
+  ShipBuildingOutgoing: number;
+  ChemicalsIncoming: number;
+  ChemicalsOutgoing: number;
+  MotorsIncoming: number;
+  MotorsOutgoing: number;
+  PlanesIncoming: number;
+  PlanesOutgoing: number;
+  ElectronicsIncoming: number;
+  ElectronicsOutgoing: number;
   WoodBaseValue: number;
   SulphurBaseValue: number;
   CoalBaseValue: number;
@@ -1959,6 +2318,7 @@ export class Nation {
   PlanesBaseValue: number;
   ElectronicsBaseValue: number; 
   TradePowerFromResourceTrade: number;
+  ArableLand: number;
   AgricultureSubsidies: number;
   Fertility: number;
   AgricultureInfrastructure: number;
@@ -1979,6 +2339,7 @@ export class Nation {
   SellingCapability: number;
   FoodSold: number;
   FoodLost: number;
+  FoodTradeProfit: number;
   TradeProfit: number;
   Casualties: number;
   Pillaging: number;
@@ -2599,7 +2960,7 @@ class Stats {
   Estates = estates;
   EstateGenereal = estateGeneral;
   Trades: Record<string, Trade> = {};
-  TradeZones: tradeZonesType = tradeZones;
+  TradeZones: TradeZonesType = tradeZones;
   Climates: Record<string, WorldClimate> = climates;
   Fertility: Record<string, {Color: string, Score: number}> = fertilities;
   UnitUpkeepCosts = unitUpkeepCosts;
