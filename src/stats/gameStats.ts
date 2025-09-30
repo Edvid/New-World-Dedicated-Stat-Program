@@ -1416,8 +1416,8 @@ interface reforms {
   WealthVoting: boolean,
   UniversalSuffrage: boolean,
 
-  NoblePrivellege: boolean,
-  WealthPrivellege: boolean,
+  NoblePrivilege: boolean,
+  WealthPrivilege: boolean,
   ClassEquality: boolean,
 
   NobleOfficers: boolean,
@@ -2464,8 +2464,8 @@ export class Nation {
       WealthVoting: false,
       UniversalSuffrage: false,
 
-      NoblePrivellege: true,
-      WealthPrivellege: false,
+      NoblePrivilege: true,
+      WealthPrivilege: false,
       ClassEquality: false,
 
       NobleOfficers: true,
