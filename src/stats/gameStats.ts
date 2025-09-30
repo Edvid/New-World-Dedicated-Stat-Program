@@ -1,3 +1,4 @@
+import { type ColorHaver } from "../utility/mapcalc/color_properties.js";
 import { type RealReformCostTypes, type ReformsType } from "../utility/mapcalc/types/reform_types.js";
 
 
@@ -106,15 +107,15 @@ export class Opinion {
 }
 
 export class Trade {
-  giver; //nation name
-  receiver; //nation name
-  amount;
-  resource; //can include food or budget
+  giver: string; //nation name
+  receiver: string; //nation name
+  amount: number;
+  resource: string; //can include food or budget
 }
 
-export class TradeZone {
-  Color;
-  Score;
+export class TradeZone implements ColorHaver {
+  Color: string;
+  Score: number;
 }
 
 const estates = [
@@ -610,7 +611,9 @@ interface productionSectors {
   HeavyIndustrySector: number;
 }
 
-export interface TradeZonesType {
+// fillInColorProperties(gameStats.TradeZones) complains about index signatures if an interface
+// eslint-disable-next-line @typescript-eslint/consistent-type-definitions
+export type TradeZonesType = {
   Alaska: TradeZone;
   Cascadia: TradeZone;
   CaliforniaAndWestMexico: TradeZone;
@@ -828,7 +831,7 @@ const tradeZones: TradeZonesType = {
     Score: 4.5
   },
   BritishIsles: {
-    Color: 808080,
+    Color: "808080",
     Score: 8
   },
   EnglishChannel: {
@@ -1084,7 +1087,7 @@ const tradeZones: TradeZonesType = {
     Score: 0
   },
   Livonia: {
-    Color: 801065,
+    Color: "801065",
     Score: 0
   },
   Muscovy: {
