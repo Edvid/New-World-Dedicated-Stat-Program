@@ -1,5 +1,5 @@
 import { ImageIndexToIntColor, ImageIndexToRGBA } from "../../color_manipulation.js";
-import { Byte } from "../../int_range.js";
+import { type Byte } from "../../int_range.js";
 import { lerp } from "../../math.js";
 
 interface Node {

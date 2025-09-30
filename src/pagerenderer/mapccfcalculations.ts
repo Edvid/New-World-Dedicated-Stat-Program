@@ -11,10 +11,10 @@ import { WIDTH, HEIGHT } from "../utility/images/consts.js";
 import { populationMapToHumanReadable } from "../utility/mapcalc/maps/population_map_to_human_readable.js";
 import {
   fillInColorProperties,
-  colorProperty,
+  type colorProperty,
 } from "../utility/mapcalc/color_properties.js";
 import {
-  ReportingElements,
+  type ReportingElements,
   findDistribution,
   isValueModeNormal,
 } from "../utility/mapcalc/find_distribution.js";

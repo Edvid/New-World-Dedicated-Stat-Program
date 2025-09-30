@@ -1,4 +1,4 @@
-import { AbstractType } from "../../types/abstract";
+import { type AbstractType } from "../../types/abstract.js";
 
 export interface ReformsType {
   SlaveryAllowed: boolean;

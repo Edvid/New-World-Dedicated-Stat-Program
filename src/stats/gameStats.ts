@@ -1,4 +1,4 @@
-import { RealReformCostTypes, ReformsType } from "../utility/mapcalc/types/reform_types.js";
+import { type RealReformCostTypes, type ReformsType } from "../utility/mapcalc/types/reform_types.js";
 
 
 export const mappedResources = [

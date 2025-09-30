@@ -18,7 +18,8 @@ export default tseslint.config(
           "argsIgnorePattern": "^_",
           "caughtErrorsIgnorePattern": "^_",
         }
-      ]
+      ],
+      "@typescript-eslint/consistent-type-imports": "error",
     },
     languageOptions: {
       globals: {
