@@ -1276,7 +1276,7 @@ export function ValueTypeFix(statName, statValue) {
         "InterestRate",
       ].indexOf(statName)
     ) {
-      numString = parseFloat(statVal * 100).toFixed(2) + "%";
+      numString = (parseFloat(statVal) * 100).toFixed(2) + "%";
     }
 
     //normal (2 digits)
