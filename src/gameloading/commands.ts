@@ -223,9 +223,8 @@ export function renameStat(currentSelection, arg) {
     }
 }
 
-export let Shorthands = {}
-
-Shorthands.Trade = function (parameters) {
+export const Shorthands = {
+  Trade: function (parameters) {
     parameters = parameters.split(/,|>/gm);
     let tradename = parameters[0].trim();
     let giver = parameters[1].trim();
@@ -241,8 +240,8 @@ Shorthands.Trade = function (parameters) {
     const trades = getGameStats().Trades
 
     if (typeof trades[tradename] !== 'undefined') {
-        error(`The name ${tradename} is already used in Trades.`);
-        return;
+      error(`The name ${tradename} is already used in Trades.`);
+      return;
     }
 
     const newTrade = new Trade();
@@ -252,18 +251,18 @@ Shorthands.Trade = function (parameters) {
     newTrade.amount = amount;
 
     GSSetProperty(`.Trades["${tradename}"]`, JSON.stringify(newTrade))
-}
+  },
 
-Shorthands.PayDebt = function (currentSelection, parameter) {
+  PayDebt: function (currentSelection, parameter) {
     if (isNaN(parameter)) {
-        error(`The debt paid wasn't a number. Operation Aborted.`);
-        return;
+      error(`The debt paid wasn't a number. Operation Aborted.`);
+      return;
     }
 
     const natName = /^\.Nations\.(?<natName>.+?)(?:\.|$)/gi.exec(currentSelection).groups.natName
     if (!currentSelection.match(/^\.Nations/gi)) {
-        error(`The current selection, ${natName}, is not a nation. Cannot sync single nation.`);
-        return;
+      error(`The current selection, ${natName}, is not a nation. Cannot sync single nation.`);
+      return;
     }
 
     evaluateNation(natName)
@@ -282,22 +281,22 @@ Shorthands.PayDebt = function (currentSelection, parameter) {
     //excess paid back
     const publicDebtTakenValue = GSGetProperty(publicDebtTakenSelector)
     if (publicDebtTakenValue < 0) {
-        //reset public debt taken to 0
-        GSSetProperty(publicDebtTakenSelector, 0)
-        //give back to budget
-        GSAddProperty(budgetSelector, -publicDebtTakenValue)
+      //reset public debt taken to 0
+      GSSetProperty(publicDebtTakenSelector, 0)
+      //give back to budget
+      GSAddProperty(budgetSelector, -publicDebtTakenValue)
     }
-}
+  },
 
-Shorthands.Move = function (currentSelection, parameters) {
+  Move: function (currentSelection, parameters) {
     parameters = parameters.split(/,|>/gm);
     let from = parameters[0].trim();
     let to = parameters[1].trim();
     let amount = parameters[2].trim();
 
     if (isNaN(amount)) {
-        error(`The points to be moved wasn't a number. Operation Aborted.`);
-        return;
+      error(`The points to be moved wasn't a number. Operation Aborted.`);
+      return;
     }
 
     from = correctAndSynonymCheck(`${currentSelection}.${from}`);
@@ -305,4 +304,6 @@ Shorthands.Move = function (currentSelection, parameters) {
 
     GSAddProperty(from, -amount)
     GSAddProperty(to, amount)
+  },
 }
+

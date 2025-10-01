@@ -2835,7 +2835,7 @@ export class Nation implements RealReformCostTypes {
   }
 }
 
-class Stats {
+export class Stats {
   TimeSpeed: number;
   TimeDivide: number;
   Nations: Record<string, Nation> = {};
