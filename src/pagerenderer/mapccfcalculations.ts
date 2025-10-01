@@ -4,9 +4,11 @@ import { prepareData } from "../utility/images/prepare_data.js";
 import { trimIndents } from "../utility/string_manipulation.js";
 import {
   getGameStats,
-  mappedResources,
-  mappedResourcesMultipliers,
 } from "../stats/gameStats.js";
+import {
+    mappedResources,
+    mappedResourcesMultipliers
+} from "../utility/game_stats/resources.js";
 import { WIDTH, HEIGHT } from "../utility/images/consts.js";
 import { populationMapToHumanReadable } from "../utility/mapcalc/maps/population_map_to_human_readable.js";
 import {
