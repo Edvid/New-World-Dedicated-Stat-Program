@@ -66,23 +66,6 @@ const estates = [
   "Burgousie"
 ];
 
-const estateGeneral = [
-    "Unemployed",
-    "Slaves",
-    "Labourers",
-    "Serfs",
-    "Farmers",
-    "Townsfolk",
-    "Clergy",
-    "Bureaucrats",
-    "Merchants",
-    "Intellectuals",
-    "Sailors",
-    "Soldiers",
-    "Aristocracy",
-    "Burgousie"
-  ];
-
 const religions = {
   "Pagan": {
     "Color": "776544",
@@ -2755,7 +2738,7 @@ export class Nation implements RealReformCostTypes {
       }
       return c;
     })();
-    
+
       this.DetachedLand = 0.00;
       this.urbanPopulation = 0;
       this.UrbanPopulationPercent = 0.00;
@@ -2774,7 +2757,7 @@ export class Stats {
   };
   ResourceTypes = realResourceTypes;
   Estates = estates;
-  EstateGenereal = estateGeneral;
+  EstateGenereal = estates;
   Trades: Record<string, Trade> = {};
   TradeZones: TradeZonesType = tradeZones;
   Climates: Record<string, WorldClimate> = climates;
