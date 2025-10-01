@@ -3789,9 +3789,9 @@ sync
 <...
 
 <...> Nations > Xanmai Mandate
-="True" Technology.SappersAndEngineers
-="True" Technology.StandarizedPikes
-="True" Technology.PrintingPress
+="True" Technologies.SappersAndEngineers
+="True" Technologies.StandarizedPikes
+="True" Technologies.PrintingPress
 +1 AdmEff
 +0.5 EduEff
 -3 ResearchPoints
@@ -3806,7 +3806,7 @@ sync
 ="true" Technologies.Gunports
 ="true" Technologies.Muskets
 ="true" Technologies.Limber
-="true" Technologes.Galleons
+="true" Technologies.Galleons
 +1 AdmEff
 +0.5 EduEff
 
