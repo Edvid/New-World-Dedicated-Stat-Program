@@ -6,11 +6,11 @@ import { lerp } from "../utility/math.js";
 import { mappedResources } from "../stats/gameStats.js";
 import { WIDTH, HEIGHT } from "../utility/images/consts.js";
 
-let canvasContainer;
+let canvasContainer: HTMLElement;
 
 const bumpMapOpacity = 0.3;
 
-document.querySelector("body").onload = generateNationsResourcesOverlay();
+document.querySelector("body").onload = () => generateNationsResourcesOverlay();
 
 document.body.prepend(Header())
 await loadGameFromSafeFile()
@@ -18,23 +18,23 @@ await loadGameFromSafeFile()
 
 async function generateNationsResourcesOverlay() {
     canvasContainer = document.getElementById("canvascontainer");
-    canvasContainer.width = WIDTH;
-    canvasContainer.height = HEIGHT;
+    // canvasContainer.width = WIDTH;
+    // canvasContainer.height = HEIGHT;
 
 
-    
-    let worldCanvas = document.createElement("canvas");
+
+    const worldCanvas = document.createElement("canvas");
     worldCanvas.id = "worldcanvas";
     worldCanvas.width = WIDTH;
     worldCanvas.height = HEIGHT;
     canvasContainer.appendChild(worldCanvas);
 
-    let overlapProperties = [...mappedResources];
+    const overlapProperties = [...mappedResources];
 
     overlapProperties.push("Fertility");
 
-    let resourceMaps = [];
-    let table = document.querySelector("tbody");
+    const resourceMaps = [];
+    const table = document.querySelector("tbody");
     for (const resourceName of overlapProperties) {
         resourceMaps[resourceName] = document.createElement("canvas");
         resourceMaps[resourceName].hidden = "true";
@@ -42,10 +42,10 @@ async function generateNationsResourcesOverlay() {
         resourceMaps[resourceName].width = WIDTH;
         resourceMaps[resourceName].height = HEIGHT;
         canvasContainer.appendChild(resourceMaps[resourceName]);
-        let resourceCtx = resourceMaps[resourceName].getContext("2d");
+        const resourceCtx = resourceMaps[resourceName].getContext("2d");
         
-        let imagePath = "./docs/assets/images/world/Resources/" + resourceName + ".png";
-        let image = new Image(WIDTH, HEIGHT);
+        const imagePath = "./docs/assets/images/world/Resources/" + resourceName + ".png";
+        const image = new Image(WIDTH, HEIGHT);
         image.src = imagePath;
 
         resourceCtx.globalAlpha = 180/255;
@@ -53,20 +53,20 @@ async function generateNationsResourcesOverlay() {
             resourceCtx.drawImage(image, 0, 0, WIDTH, HEIGHT);
         }
 
-        let resourceRow = document.createElement("tr");
-        let col1 = document.createElement("td");
-        let col2 = document.createElement("td");
+        const resourceRow = document.createElement("tr");
+        const col1 = document.createElement("td");
+        const col2 = document.createElement("td");
         resourceRow.appendChild(col1);
         resourceRow.appendChild(col2);
 
 
-        let checkbox = document.createElement("input");
+        const checkbox = document.createElement("input");
         checkbox.type = "checkbox";
         checkbox.onchange = () => {
-            let c = document.querySelector("#resourcecanvas" + resourceName.toLowerCase());
+            const c = document.querySelector("#resourcecanvas" + resourceName.toLowerCase()) as HTMLElement;
             c.hidden = !c.hidden;
         };
-        let resourceTitle = document.createElement("lable");
+        const resourceTitle = document.createElement("lable");
         resourceTitle.innerText = resourceName;
 
         col1.appendChild(checkbox);
@@ -77,12 +77,12 @@ async function generateNationsResourcesOverlay() {
 
     const isLoadingElement = document.getElementById("isloading")
 
-    let BlankData = await prepareData("Blank.png", isLoadingElement);
-    let NationsData = await prepareData("Nations.png", isLoadingElement);
-    let BumpData = await prepareData("Bump.png", isLoadingElement);
-    let FoWData = await prepareData("FoW.png", isLoadingElement);
+    const BlankData = await prepareData("Blank.png", isLoadingElement);
+    const NationsData = await prepareData("Nations.png", isLoadingElement);
+    const BumpData = await prepareData("Bump.png", isLoadingElement);
+    const FoWData = await prepareData("FoW.png", isLoadingElement);
 
-    let worldData = new Uint8ClampedArray(WIDTH * HEIGHT * 4);
+    const worldData = new Uint8ClampedArray(WIDTH * HEIGHT * 4);
     let then = Date.now();
     for(let i = 0; i < worldData.length; i++){
         //transparent
@@ -108,7 +108,7 @@ async function generateNationsResourcesOverlay() {
             }    
         }
         if (i % WIDTH == 0) {
-          let now = Date.now();
+          const now = Date.now();
           if (now - then > 100) {
             reportProgress(i/4, isLoadingElement);
             await new Promise((resolve) => setTimeout(resolve));
