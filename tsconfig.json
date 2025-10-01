@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "outDir": "out",
-    "lib": [ "DOM", "es2017" ],
+    "lib": [ "DOM", "es2022" ],
     "module": "es2022",
     "target": "es2022"
   }

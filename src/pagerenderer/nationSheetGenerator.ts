@@ -4,7 +4,7 @@ import "https://cdn.amcharts.com/lib/5/index.js";
 import "https://cdn.amcharts.com/lib/5/percent.js";
 
 import { loadGameFromSafeFile, loadChangesFromContent, getChangesLength, preloadedStatChangesHashCode } from "../gameloading/loadChangesFromFile.js";
-import { downloadToFile } from "../utility/download_to_file.js";
+import { downloadToFile, type SerializedStatsType } from "../utility/download_to_file.js";
 import { collapsible_behaviour, collapsibleNextSibling } from "../utility/collapsible.js";
 import { cleanStatName } from "../utility/string_manipulation.js";
 import { warn } from "../utility/custom_errors.js";
@@ -35,7 +35,7 @@ const downloadbutton = document.createElement("button");
 downloadbutton.innerText = "Download gameStats as JSON";
 downloadbutton.style.color = "#000";
 downloadbutton.addEventListener('click', () => {
-    const jsonobj = {
+    const jsonobj: SerializedStatsType = {
         Lines: getChangesLength(),
         Hash: preloadedStatChangesHashCode(),
         State: getGameStats()

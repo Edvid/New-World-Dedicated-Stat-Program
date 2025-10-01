@@ -4,23 +4,29 @@ import { hashCode } from "../utility/string_manipulation.js";
 import { evaluateNations, syncNation, syncNations } from "../stats/formulas.js";
 import { getGameStats, setGameStats, } from "../stats/gameStats.js";
 import { createStat, deleteStat, normalCommand, renameStat, Shorthands } from "./commands.js";
+import { type SerializedStatsType } from "../utility/download_to_file.js";
 
-let changeCommandIndex;
-let changesLength;
+let changeCommandIndex: number;
+let changesLength: number;
 
 let HashMatchedTill = 0;
 
-let preloadGameState;
-let preloadStatChanges;
+let preloadGameState: SerializedStatsType;
+let preloadStatChanges: string;
 
 export async function loadGameFromSafeFile() {
-  await fetch("./docs/assets/gamestats/safefile.json").then(response => response.json()).then(data => preloadGameState = data);
-  await fetch("./docs/assets/gamestats/statchanges.ccf").then(response => response.text()).then(data => preloadStatChanges = data);
+  await fetch("./docs/assets/gamestats/safefile.json")
+  .then(response => response.json())
+  .then(data => preloadGameState = data);
+  await fetch("./docs/assets/gamestats/statchanges.ccf")
+  .then(response => response.text())
+  .then(data => preloadStatChanges = data);
+
   //If hash in JSON is the same as the hashcode of the entire
   //ccf file. Then the JSON _is_ the state the changes will 
   //genereate, and we can use the State for the gameStats
-  let jsonhash = preloadGameState.Hash;
-  let ccfhash = hashCode(preloadStatChanges.split(/\r?\n/gmi).slice(0, preloadGameState.Lines).join(""));
+  const jsonhash = preloadGameState.Hash;
+  const ccfhash = hashCode(preloadStatChanges.split(/\r?\n/gmi).slice(0, preloadGameState.Lines).join(""));
 
   HashMatchedTill = jsonhash == ccfhash ? preloadGameState.Lines : 0;
 
@@ -32,7 +38,7 @@ export async function loadGameFromSafeFile() {
 const normalCommandRegex = /(?<Operand>add|\+|sub|-|set|=) *(?<Value>(\*?\d*\.?\d+%?)|(".*")|( .*? ))(?<StatName>.+)/i;
 let ignore;
 let currentSelection;
-export async function loadChangesFromContent(changes, skip) {
+export async function loadChangesFromContent(changes: string[], skip: number) {
     ignore = false;
     currentSelection = "";
     changesLength = changes.length;
@@ -40,7 +46,7 @@ export async function loadChangesFromContent(changes, skip) {
     for (changeCommandIndex = skip; changeCommandIndex < changes.length; changeCommandIndex++) {
         const changeCommand = changes[changeCommandIndex];
         evaluteChangeCommand(changeCommand);
-        let now = Date.now();
+        const now = Date.now();
         if (now - then > 17) {
             await new Promise(resolve => setTimeout(resolve));
             then = now;
@@ -68,8 +74,8 @@ export function preloadedStatChangesHashCode() {
 function errorsPresentAtCompletion(){
     const gameStats = getGameStats();
     Object.keys(gameStats.Trades).forEach(tradeName => {
-        let trade = gameStats.Trades[tradeName];
-        let nationNames = Object.keys(gameStats.Nations);
+        const trade = gameStats.Trades[tradeName];
+        const nationNames = Object.keys(gameStats.Nations);
 
         //if either the giver or the receiver in the given trade, is not a name found among nations
         if(nationNames.indexOf(trade.giver) == -1){
@@ -80,9 +86,9 @@ function errorsPresentAtCompletion(){
     });
 }
 
-let commentblockregex = /(?<!\\)"""/i;
-async function evaluteChangeCommand(changeCommandRaw) {
-    let changeCommand = changeCommandRaw.split(/(?<!\\)#/i)[0].trim();
+const commentblockregex = /(?<!\\)"""/i;
+async function evaluteChangeCommand(changeCommandRaw: string) {
+    const changeCommand = changeCommandRaw.split(/(?<!\\)#/i)[0].trim();
     if(commentblockregex.test(changeCommandRaw)){
         ignore = !ignore;
     }
@@ -93,9 +99,9 @@ async function evaluteChangeCommand(changeCommandRaw) {
     }
     //suppress
     else if(/!suppress/.test(changeCommand)){
-        let match = changeCommand.match(/!suppress ?(\d+)$/)
+        const match = changeCommand.match(/!suppress ?(\d+)$/)
         if(match)
-            suppressWarning(match[1]);
+            suppressWarning(Number(match[1]));
         else 
             suppressWarning();
     }
@@ -105,11 +111,11 @@ async function evaluteChangeCommand(changeCommandRaw) {
         if (changeCommand.includes("<")) {
             evaluateNations();
 
-            let lastselection = correctAndSynonymCheck(currentSelection).split(/\./gi);
-            if (lastselection[lastselection.length - 2] !== 'Nations') error("The current selection is not a nation. Cannot sync single nation.");
-            lastselection = lastselection[lastselection.length - 1];
+            const selectionsArray = correctAndSynonymCheck(currentSelection).split(/\./gi);
+            if (selectionsArray[selectionsArray.length - 2] !== 'Nations') error("The current selection is not a nation. Cannot sync single nation.");
+            const lastSelection = selectionsArray[selectionsArray.length - 1];
 
-            syncNation(lastselection);
+            syncNation(lastSelection);
         } else {
             evaluateNations();
             syncNations();
@@ -117,39 +123,39 @@ async function evaluteChangeCommand(changeCommandRaw) {
     }
     //trade
     else if (changeCommand.toLowerCase().startsWith("trade")) {
-        let parameters = changeCommand.split(/(?<=trade)/gm).pop();
+        const parameters = changeCommand.split(/(?<=trade)/gm).pop();
         Shorthands.Trade(parameters);
     }
     //pay debt
     else if (changeCommand.toLowerCase().startsWith("pay debt")) {
-        let parameter = changeCommand.split(/(?<=pay debt)/gm).pop().trim();
+        const parameter = changeCommand.split(/(?<=pay debt)/gm).pop().trim();
         Shorthands.PayDebt(correctAndSynonymCheck(currentSelection), parameter);
     }
     //move
     else if (changeCommand.toLowerCase().startsWith("move")) {
-        let parameter = changeCommand.split(/(?<=move)/gm).pop().trim();
+        const parameter = changeCommand.split(/(?<=move)/gm).pop().trim();
         Shorthands.Move(currentSelection, parameter);
     }
     //Creation
     else if (changeCommand.slice(0, 2) == "+>") {
-        let arg = changeCommand.slice(2).trim();
+        const arg = changeCommand.slice(2).trim();
         createStat(correctAndSynonymCheck(currentSelection), arg);
     }
     //deletion
     else if (changeCommand.slice(0, 2) == "<-") {
-        let arg = changeCommand.slice(2).trim();
+        const arg = changeCommand.slice(2).trim();
         deleteStat(correctAndSynonymCheck(currentSelection), arg);
     }
     //renaming
     else if (changeCommand.slice(0, 3) == "<=>") {
-        let arg = changeCommand.slice(3).trim();
+        const arg = changeCommand.slice(3).trim();
         renameStat(correctAndSynonymCheck(currentSelection), arg);
     }
     //Selection and deselections
     else if (changeCommand[0] == '>' || changeCommand[0] == '<') {
         let cc = changeCommand;
-        let cutback = function (str) {
-            let index = str.slice(1).search(/<|>/) + 1;
+        const cutback = function (str: string) {
+            const index = str.slice(1).search(/<|>/) + 1;
             if (index == 0) return ""
             return str.slice(index)
         }
@@ -157,8 +163,8 @@ async function evaluteChangeCommand(changeCommandRaw) {
             cc.trim();
             //selection
             if (cc[0] == '>') {
-                let arg = cc.slice(1);
-                let index = arg.search(/<|>/);
+                const arg = cc.slice(1);
+                const index = arg.search(/<|>/);
                 let selection;
                 if (index == -1)
                     selection = arg.trim();
@@ -183,7 +189,7 @@ async function evaluteChangeCommand(changeCommandRaw) {
     }
     //normal commands
     else {
-        let match = normalCommandRegex.exec(changeCommand);
+        const match = normalCommandRegex.exec(changeCommand);
         if (!normalCommandRegex.test(changeCommand)) {
             error(`A command wasn't understood:
               ${changeCommand}

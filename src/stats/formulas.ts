@@ -1731,7 +1731,7 @@ export function evaluateNations() {
   }
 }
 
-export function syncNation(nationName) {
+export function syncNation(nationName: string) {
     const n = getGameStats().Nations[nationName];
     const estates = getGameStats().Estates;
     const estatesGeneral = getGameStats().EstatesGeneral;
