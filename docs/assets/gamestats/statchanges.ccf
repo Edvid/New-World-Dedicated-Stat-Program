@@ -3787,3 +3787,68 @@ sync
 = 4761.55 Lutruwita.Fertility
 !suppress 0
 <...
+
+<...> Nations > Xanmai Mandate
+="True" Technology.SappersAndEngineers
+="True" Technology.StandarizedPikes
+="True" Technology.PrintingPress
++1 AdmEff
++0.5 EduEff
+-3 ResearchPoints
+
+<... > Nations > UnitedKingdom
+
+="true" CulturalAdvancements.Early Modern Administration
+-5 Cultural Power
+
+ <... > Nations > UnitedKingdom
+="true" Technologies.Printing Press
+="true" Technologies.Gunports
+="true" Technologies.Muskets
+="true" Technologies.Limber
+="true" Technologes.Galleons
++1 AdmEff
++0.5 EduEff
+
+-5 Research Points
+
+<... > Nations > Kingdom Of Brandenburg
++0.05% occupation
+
+<... > Nations > Kingdom Of Brandenburg
++0.85% pillaging
++0.5% occupation
+
+<... > Nations > Baltic Empire
++1% pillaging
+-15 budget
+
+<... > Nations > Kingdom Of Brandenburg
+-13 spies
+
+<... > Nations > VenetianRepublic
++8 HeavyShips
++50 MerchantShips
+-1 ResearchPoints
+="true" Technologies.Limber
+
+<... > Nations > Republic Of Greco Bactria
+="true" Reforms.Regional Police
+="false" Reforms.Community Policing
+-25 Reform Power
+
+<... > Nations > Banu Yaseen Caliphate
++0.15 CulturalProsperity
++0.1 ReligiousFervor
++0.5 propaganda
+
+<... > Nations > VenetianRepublic
++1 Forestry
++0.95 Gold
++1 Iron
++1 Sulphur
++1 Wool
+
+<... > Nations > Banu Yaseen Caliphate
+="https://i.imgur.com/Gm8kUhV.png" flag
+
