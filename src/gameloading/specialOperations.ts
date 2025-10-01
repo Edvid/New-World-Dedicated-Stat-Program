@@ -1,6 +1,7 @@
 import { error } from "../utility/custom_errors.js";
 import { evaluateNations } from "../stats/formulas.js";
-import { getGameStats, GSAddProperty, GSGetProperty, GSSetProperty, mappedResources } from "../stats/gameStats.js";
+import { getGameStats, GSAddProperty, GSGetProperty, GSSetProperty } from "../stats/gameStats.js";
+import { mappedResources } from "../utility/game_stats/resources.js";
 
 export function PostStatChange(selection, change){
 
