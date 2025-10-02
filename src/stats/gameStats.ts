@@ -4,6 +4,7 @@ import { startingReligionGroups, religions } from "../utility/game_stats/religio
 import { type Trade, type TradeZonesType, type tradeInfluencesType, tradeZones } from "../utility/game_stats/trades.js";
 import { type Climates, climates } from "../utility/game_stats/climates.js";
 import { type TechnologiesType, technologies } from "../utility/game_stats/technologies.js";
+import { type CulturalAdvancementsType } from "../utility/game_stats/cultural_advancements.js";
 
 export class SocialBehaviour {
   Color = "000000";
@@ -119,27 +120,6 @@ const unitUpkeepCosts = {
   RegimentalGuns: 1 / 10,
   SiegeGuns: 1 / 2.5
 };
-
-export interface CulturalAdvancementsType {
-  Currency: boolean,
-  DivineRightToRule: boolean,
-  Serfdom: boolean,
-  Feudalism: boolean,
-  Universities: boolean,
-  NobleDuty: boolean,
-  Courthouses: boolean,
-  RenaissanceThought: boolean,
-  EarlyModernAdministration: boolean,
-  NationalSovereignity: boolean,
-  Newspapers: boolean,
-  ScientificRevolution: boolean,
-  PotatoPopulationBoom: boolean,
-  Constitution: boolean,
-  PublicEducation: boolean,
-  Nationalism: boolean,
-  Conscription: boolean,
-  Industrialisation: boolean
-}
 
 interface estateInfluences {
   AristocracyInfluence: number;

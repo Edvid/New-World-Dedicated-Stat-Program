@@ -2,7 +2,8 @@ import { defaultStatValues } from "../ccfassist/defaultStatValues.js";
 import { error, warn } from "../utility/custom_errors.js";
 import { getStatType } from "../utility/stat_types.js";
 import { correctAndSynonymCheck } from "../utility/selectors.js";
-import { NationClimate, getGameStats, GSAddProperty, GSDeleteProperty, GSGetProperty, GSNewProperty, GSSetProperty, GSUpdateTradesWithRenamedNationName, Nation, Opinion, SocialBehaviour, SocialBehaviourGroup, Trade, TradeZone } from "../stats/gameStats.js";
+import { NationClimate, getGameStats, GSAddProperty, GSDeleteProperty, GSGetProperty, GSNewProperty, GSSetProperty, GSUpdateTradesWithRenamedNationName, Nation, Opinion, SocialBehaviour, SocialBehaviourGroup } from "../stats/gameStats.js";
+import { Trade, TradeZone } from "../utility/game_stats/trades.js";
 import { PostStatChange, PostStatCreate } from "./specialOperations.js";
 import { evaluateNation } from "../stats/formulas.js";
 
