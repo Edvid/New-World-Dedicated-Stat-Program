@@ -1,4 +1,5 @@
-import { type CulturalAdvancementsType, type TechnologiesType, type TradeZonesType, type Nation } from "../stats/gameStats"
+import { type CulturalAdvancementsType, type TechnologiesType, type Nation } from "../stats/gameStats"
+import { type TradeZonesType } from "../utility/game_stats/trades.js";
 import { type ReformsType } from "./mapcalc/types/reform_types";
 
 type tradeInfluenceType = `.TradeInfluences["${keyof TradeZonesType}"].TradingPoints`;
