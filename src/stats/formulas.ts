@@ -255,7 +255,7 @@ export function evaluateNation(nationName) {
     n.MaxPopInAgriculture = n.ArableLand * 1000 / n.Population * (1 + n.AgricultureSubsidies / 2 + (n.AgricultureInfrastructure - 1) / 4);
 
     n.ConscriptionPercent = (n.OverallNumbers + n.SmallForts * 100 + n.MediumForts * 250 + n.BigForts * 400 + n.HugeForts * 800 + n.CityFortifications * 250) / n.Population;
-    n.Workforces.PopulationInMilitary = n.ConscriptionPercent;
+    n.Workforces.Soliders = n.ConscriptionPercent;
     n.Workforces.Bureaucrats = n.AdministrationSize / 100;
     n.Workforces.Intellectuals = n.HigherEducation / 100;
     n.Workforces.Labourers = (n.Reforms.SlaveryBanned ? (n.BaseIronHarvest + n.BaseCoalHarvest + n.BaseSulphurHarvest + n.Coal + n.Sulphur + n.Cotton + n.Gold + n.Iron + n.Tea + n.Silk + n.Spice + n.Wool + n.Coffee + n.Fur + n.Diamond + n.Silver + n.Copper + n.Ivory + n.Cocoa + n.Tobacco + n.Sugar + n.ExoticFruit + n.Forestry + n.Reforestation) * 20000 / n.Population : (n.BaseIronHarvest + n.BaseCoalHarvest + n.BaseSulphurHarvest + n.Coal + n.Sulphur + n.Cotton + n.Gold + n.Iron + n.Tea + n.Silk + n.Spice + n.Wool + n.Coffee + n.Fur + n.Diamond + n.Silver + n.Copper + n.Ivory + n.Cocoa + n.Tobacco + n.Sugar + n.ExoticFruit + n.Forestry + n.Reforestation) * 20000 / n.Population * 0.2);
@@ -263,15 +263,15 @@ export function evaluateNation(nationName) {
     n.Workforces.Merchants = ((n.MerchantShips + n.LocalTrade) * 500) / n.Population;
     n.Workforces.Sailors = (n.MerchantShips * 200 + n.LightShips * 400 + n.MediumShips * 900 + n.HeavyShips * 1600) / n.Population;
 
-    if (1 - n.Workforces.PopulationInMilitary - n.Workforces.Townsfolk - n.Workforces.Sailors - n.Workforces.Merchants - n.Workforces.Intellectuals - n.Workforces.Bureaucrats - n.Workforces.Clergy - n.Workforces.Burgousie - n.Workforces.Aristocracy - n.Workforces.Labourers - n.Workforces.Slaves < n.MaxPopInAgriculture) {
-        n.Workforces.Farmers = max(n.Reforms.SerfdomBanned ? 1 - n.Workforces.PopulationInMilitary - n.Workforces.Townsfolk - n.Workforces.Sailors - n.Workforces.Merchants - n.Workforces.Intellectuals - n.Workforces.Bureaucrats - n.Workforces.Clergy - n.Workforces.Burgousie - n.Workforces.Aristocracy - n.Workforces.Labourers - n.Workforces.Slaves : min(0.075, 1 - n.Workforces.PopulationInMilitary - n.Workforces.Townsfolk - n.Workforces.Sailors - n.Workforces.Merchants - n.Workforces.Intellectuals - n.Workforces.Bureaucrats - n.Workforces.Clergy - n.Workforces.Burgousie - n.Workforces.Aristocracy - n.Workforces.Labourers - n.Workforces.Slaves), 0);
-        n.Workforces.Serfs = max(n.Reforms.SerfdomAllowed ? 1 - n.Workforces.PopulationInMilitary - n.Workforces.Townsfolk - n.Workforces.Sailors - n.Workforces.Merchants - n.Workforces.Intellectuals - n.Workforces.Bureaucrats - n.Workforces.Clergy - n.Workforces.Burgousie - n.Workforces.Aristocracy - n.Workforces.Labourers - n.Workforces.Slaves - n.Workforces.Farmers : 0, 0);
+    if (1 - n.Workforces.Soliders - n.Workforces.Townsfolk - n.Workforces.Sailors - n.Workforces.Merchants - n.Workforces.Intellectuals - n.Workforces.Bureaucrats - n.Workforces.Clergy - n.Workforces.Burgousie - n.Workforces.Aristocracy - n.Workforces.Labourers - n.Workforces.Slaves < n.MaxPopInAgriculture) {
+        n.Workforces.Farmers = max(n.Reforms.SerfdomBanned ? 1 - n.Workforces.Soliders - n.Workforces.Townsfolk - n.Workforces.Sailors - n.Workforces.Merchants - n.Workforces.Intellectuals - n.Workforces.Bureaucrats - n.Workforces.Clergy - n.Workforces.Burgousie - n.Workforces.Aristocracy - n.Workforces.Labourers - n.Workforces.Slaves : min(0.075, 1 - n.Workforces.Soliders - n.Workforces.Townsfolk - n.Workforces.Sailors - n.Workforces.Merchants - n.Workforces.Intellectuals - n.Workforces.Bureaucrats - n.Workforces.Clergy - n.Workforces.Burgousie - n.Workforces.Aristocracy - n.Workforces.Labourers - n.Workforces.Slaves), 0);
+        n.Workforces.Serfs = max(n.Reforms.SerfdomAllowed ? 1 - n.Workforces.Soliders - n.Workforces.Townsfolk - n.Workforces.Sailors - n.Workforces.Merchants - n.Workforces.Intellectuals - n.Workforces.Bureaucrats - n.Workforces.Clergy - n.Workforces.Burgousie - n.Workforces.Aristocracy - n.Workforces.Labourers - n.Workforces.Slaves - n.Workforces.Farmers : 0, 0);
         n.Workforces.Unemployed = 0;
     }
     else {
-        n.Workforces.Farmers = max(n.Reforms.SerfdomBanned ? n.MaxPopInAgriculture : min(0.075, 1 - n.Workforces.PopulationInMilitary - n.Workforces.Townsfolk - n.Workforces.Sailors - n.Workforces.Merchants - n.Workforces.Intellectuals - n.Workforces.Bureaucrats - n.Workforces.Clergy - n.Workforces.Burgousie - n.Workforces.Aristocracy - n.Workforces.Labourers - n.Workforces.Slaves), 0);
+        n.Workforces.Farmers = max(n.Reforms.SerfdomBanned ? n.MaxPopInAgriculture : min(0.075, 1 - n.Workforces.Soliders - n.Workforces.Townsfolk - n.Workforces.Sailors - n.Workforces.Merchants - n.Workforces.Intellectuals - n.Workforces.Bureaucrats - n.Workforces.Clergy - n.Workforces.Burgousie - n.Workforces.Aristocracy - n.Workforces.Labourers - n.Workforces.Slaves), 0);
         n.Workforces.Serfs = max(n.Reforms.SerfdomAllowed ? n.MaxPopInAgriculture - n.Workforces.Farmers : 0, 0);
-        n.Workforces.Unemployed = 1 - n.Workforces.PopulationInMilitary - n.Workforces.Townsfolk - n.Workforces.Sailors - n.Workforces.Merchants - n.Workforces.Intellectuals - n.Workforces.Bureaucrats - n.Workforces.Clergy - n.Workforces.Burgousie - n.Workforces.Aristocracy - n.Workforces.Labourers - n.Workforces.Slaves - n.MaxPopInAgriculture;
+        n.Workforces.Unemployed = 1 - n.Workforces.Soliders - n.Workforces.Townsfolk - n.Workforces.Sailors - n.Workforces.Merchants - n.Workforces.Intellectuals - n.Workforces.Bureaucrats - n.Workforces.Clergy - n.Workforces.Burgousie - n.Workforces.Aristocracy - n.Workforces.Labourers - n.Workforces.Slaves - n.MaxPopInAgriculture;
     }
 
     n.PopInAgriculture = n.Workforces.Farmers + n.Workforces.Serfs;
@@ -1006,7 +1006,7 @@ export function evaluateNation(nationName) {
 
   n.SocietalClasses.High = n.Workforces.Aristocracy + n.Workforces.Burgousie;
     n.SocietalClasses.Medium = n.Workforces.Townsfolk + n.Workforces.Clergy + n.Workforces.Merchants + n.Workforces.Intellectuals + n.Workforces.Bureaucrats;
-    n.SocietalClasses.Lower = n.Workforces.Farmers + n.Workforces.PopulationInMilitary + n.Workforces.Sailors + n.Workforces.Serfs + n.Workforces.Labourers + n.Workforces.Unemployed;
+    n.SocietalClasses.Lower = n.Workforces.Farmers + n.Workforces.Soliders + n.Workforces.Sailors + n.Workforces.Serfs + n.Workforces.Labourers + n.Workforces.Unemployed;
   n.SocietalClasses.Slaves = n.Workforces.Slaves;
   
   n.WarExhaustion = (n.Casualties / n.Population * 500) + (n.Pillaging * 20) + (n.Occupation * 5);
@@ -1277,8 +1277,8 @@ export function evaluateNation(nationName) {
   n.ExpectedUrbanSol = n.ExpectedTownsfolkSol * n.Workforces.Townsfolk / (n.Workforces.Townsfolk + n.Workforces.Merchants) + n.ExpectedMerchantsSol * n.Workforces.Merchants / (n.Workforces.Townsfolk + n.Workforces.Merchants);
   n.UrbanSol = n.TownsfolkSol * n.Workforces.Townsfolk / (n.Workforces.Townsfolk + n.Workforces.Merchants) + n.MerchantsSol * n.Workforces.Merchants / (n.Workforces.Townsfolk + n.Workforces.Merchants);
 
-    n.ExpectedMilitarySol = max(n.ExpectedSoldiersSol * n.Workforces.PopulationInMilitary / (n.Workforces.PopulationInMilitary + n.Workforces.Sailors == 0 ? 0.01 : n.Workforces.PopulationInMilitary + n.Workforces.Sailors) + n.ExpectedSailorsSol * n.Workforces.Sailors / (n.Workforces.PopulationInMilitary + n.Workforces.Sailors == 0 ? 0.01 : n.Workforces.PopulationInMilitary + n.Workforces.Sailors), 0.1);
-    n.MilitarySol = max(n.SoldiersSol * n.Workforces.PopulationInMilitary / (n.Workforces.PopulationInMilitary + n.Workforces.Sailors == 0 ? 0.01 : n.Workforces.PopulationInMilitary + n.Workforces.Sailors) + n.SailorsSol * n.Workforces.Sailors / (n.Workforces.PopulationInMilitary + n.Workforces.Sailors == 0 ? 0.01 : n.Workforces.PopulationInMilitary + n.Workforces.Sailors), 0.01);
+    n.ExpectedMilitarySol = max(n.ExpectedSoldiersSol * n.Workforces.Soliders / (n.Workforces.Soliders + n.Workforces.Sailors == 0 ? 0.01 : n.Workforces.Soliders + n.Workforces.Sailors) + n.ExpectedSailorsSol * n.Workforces.Sailors / (n.Workforces.Soliders + n.Workforces.Sailors == 0 ? 0.01 : n.Workforces.Soliders + n.Workforces.Sailors), 0.1);
+    n.MilitarySol = max(n.SoldiersSol * n.Workforces.Soliders / (n.Workforces.Soliders + n.Workforces.Sailors == 0 ? 0.01 : n.Workforces.Soliders + n.Workforces.Sailors) + n.SailorsSol * n.Workforces.Sailors / (n.Workforces.Soliders + n.Workforces.Sailors == 0 ? 0.01 : n.Workforces.Soliders + n.Workforces.Sailors), 0.01);
 
     n.ExpectedWorkersSol = n.ExpectedFarmersSol * n.Workforces.Farmers / (n.Workforces.Farmers + n.Workforces.Labourers + n.Workforces.Serfs + n.Workforces.Unemployed) + n.ExpectedLabourersSol * n.Workforces.Labourers / (n.Workforces.Farmers + n.Workforces.Labourers + n.Workforces.Serfs + n.Workforces.Unemployed) + n.ExpectedSerfsSol * n.Workforces.Serfs / (n.Workforces.Farmers + n.Workforces.Labourers + n.Workforces.Serfs + n.Workforces.Unemployed) + n.ExpectedUnemployedSol * n.Workforces.Unemployed / (n.Workforces.Farmers + n.Workforces.Labourers + n.Workforces.Serfs + n.Workforces.Unemployed);
     n.WorkersSol = n.FarmersSol * n.Workforces.Farmers / (n.Workforces.Farmers + n.Workforces.Labourers + n.Workforces.Serfs + n.Workforces.Unemployed) + n.LabourersSol * n.Workforces.Labourers / (n.Workforces.Farmers + n.Workforces.Labourers + n.Workforces.Serfs + n.Workforces.Unemployed) + n.SerfsSol * n.Workforces.Serfs / (n.Workforces.Farmers + n.Workforces.Labourers + n.Workforces.Serfs + n.Workforces.Unemployed) + n.UnemployedSol * n.Workforces.Unemployed / (n.Workforces.Farmers + n.Workforces.Labourers + n.Workforces.Serfs + n.Workforces.Unemployed);
@@ -1330,7 +1330,7 @@ export function evaluateNation(nationName) {
 
   n.UrbanPoliticalAwareness = n.TownsfolkPoliticalAwareness * n.Workforces.Townsfolk / (n.Workforces.Townsfolk + n.Workforces.Merchants) + n.MerchantsPoliticalAwareness * n.Workforces.Merchants / (n.Workforces.Townsfolk + n.Workforces.Merchants);
 
-    n.MilitaryPoliticalAwareness = n.SoldiersPoliticalAwareness * n.Workforces.PopulationInMilitary / (n.Workforces.PopulationInMilitary + n.Workforces.Sailors == 0 ? 0.01 : n.Workforces.PopulationInMilitary + n.Workforces.Sailors) + n.SailorsPoliticalAwareness * n.Workforces.Sailors / (n.Workforces.PopulationInMilitary + n.Workforces.Sailors == 0 ? 0.01 : n.Workforces.PopulationInMilitary + n.Workforces.Sailors);
+    n.MilitaryPoliticalAwareness = n.SoldiersPoliticalAwareness * n.Workforces.Soliders / (n.Workforces.Soliders + n.Workforces.Sailors == 0 ? 0.01 : n.Workforces.Soliders + n.Workforces.Sailors) + n.SailorsPoliticalAwareness * n.Workforces.Sailors / (n.Workforces.Soliders + n.Workforces.Sailors == 0 ? 0.01 : n.Workforces.Soliders + n.Workforces.Sailors);
 
     n.WorkersPoliticalAwareness = n.FarmersPoliticalAwareness * n.Workforces.Farmers / (n.Workforces.Farmers + n.Workforces.Labourers + n.Workforces.Serfs + n.Workforces.Unemployed) + n.LabourersPoliticalAwareness * n.Workforces.Labourers / (n.Workforces.Farmers + n.Workforces.Labourers + n.Workforces.Serfs + n.Workforces.Unemployed) + n.SerfsPoliticalAwareness * n.Workforces.Serfs / (n.Workforces.Farmers + n.Workforces.Labourers + n.Workforces.Serfs + n.Workforces.Unemployed) + n.UnemployedPoliticalAwareness * n.Workforces.Unemployed / (n.Workforces.Farmers + n.Workforces.Labourers + n.Workforces.Serfs + n.Workforces.Unemployed);
 
@@ -1386,7 +1386,7 @@ export function evaluateNation(nationName) {
     n.BurgousieCallupCost = 20 * (n.BurgousieBasicArmaments / max(n.ArmyBasicArmamentsDemand, 10));
 
     n.MilitaryLoyalty = n.MilitaryControlReal.Aristocracy * n.AristocracyLoyalty + n.MilitaryControlReal.Clergy * n.ClergyLoyalty + n.MilitaryControlReal.Burgousie * n.BurgousieLoyalty + n.MilitaryControlReal.Urban * n.UrbanLoyalty + n.MilitaryControlReal.Bureaucrats * n.BureaucratsLoyalty + n.MilitaryControlReal.Workers * n.WorkersLoyalty + n.MilitaryControlReal.Independent * n.MilitaryLoyalty - n.CommanderFreedom * 0.1;
-    if (n.Workforces.PopulationInMilitary + n.Workforces.Sailors == 0) n.MilitaryLoyalty = 0.5;
+    if (n.Workforces.Soliders + n.Workforces.Sailors == 0) n.MilitaryLoyalty = 0.5;
 
     // LoyaltiesStabilityImpact
     n.LoyaltiesStabilityImpact = 0;
@@ -1446,7 +1446,7 @@ export function evaluateNation(nationName) {
     n.MerchantsTaxes = n.MerchantsWage * n.Workforces.Merchants * n.Population / 1000 * n.UrbanTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.UrbanInfluence) / timeDivide;
     n.IntellectualsTaxes = n.IntellectualsWage * n.Workforces.Intellectuals * n.Population / 1000 * n.IntellectualsTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.IntellectualsInfluence) / timeDivide;
     n.SailorsTaxes = n.SailorsWage * n.Workforces.Sailors * n.Population / 1000 * n.MilitaryTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.MilitaryInfluence) / timeDivide;
-    n.SoldiersTaxes = n.SoldiersWage * n.Workforces.PopulationInMilitary * n.Population / 1000 * n.MilitaryTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.MilitaryInfluence) / timeDivide;
+    n.SoldiersTaxes = n.SoldiersWage * n.Workforces.Soliders * n.Population / 1000 * n.MilitaryTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.MilitaryInfluence) / timeDivide;
     n.AristocracyTaxes = n.AristocracyWage * n.Workforces.Aristocracy * n.Population / 1000 * n.AristocracyTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.AristocracyInfluence) / timeDivide;
     n.BurgousieTaxes = n.BurgousieWage * n.Workforces.Burgousie * n.Population / 1000 * n.BurgousieTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.BurgousieInfluence) / timeDivide;
 

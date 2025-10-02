@@ -5,6 +5,7 @@ import { type Trade, type TradeZonesType, type tradeInfluencesType, tradeZones }
 import { type Climates, climates } from "../utility/game_stats/climates.js";
 import { type TechnologiesType, technologies } from "../utility/game_stats/technologies.js";
 import { type CulturalAdvancementsType } from "../utility/game_stats/cultural_advancements.js";
+import { type govermentRepresentation, type militaryControl, type influenceChangeLoyaltyEffect, type estateInfluences, estates, type Literacies, type workforces, type PoliticalAwareness, type WageStats } from "../utility/game_stats/estates.js";
 
 export class SocialBehaviour {
   Color = "000000";
@@ -33,41 +34,6 @@ export class Opinion {
   static NeutralImage = "https://s3.getstickerpack.com/storage/uploads/sticker-pack/emoticons-cooee/sticker_22.webp?7f8d87115eaaf992bd4a839badf97c3d&d=200x200";
   static FondImage = "https://static.wikia.nocookie.net/spore/images/b/b8/Friend.png";
   static ObsessedImage = "https://static.wikia.nocookie.net/spore/images/a/ae/Ally.png";
-}
-
-const estates = [
-  "Unemployed",
-  "Slaves",
-  "Labourers",
-  "Serfs",
-  "Farmers",
-  "Townsfolk",
-  "Clergy",
-  "Bureaucrats",
-  "Merchants",
-  "Intellectuals",
-  "Sailors",
-  "Soldiers",
-  "Aristocracy",
-  "Burgousie"
-];
-
-interface workforces {
-  PopulationInMilitary: number;
-  Slaves: number;
-  Labourers: number;
-  Serfs: number;
-  Unemployed: number;
-  Farmers: number;
-  Townsfolk: number;
-  Clergy: number;
-  Bureaucrats: number;
-  Merchants: number;
-  Intellectuals: number;
-  Sailors: number;
-  Soldiers: number;
-  Aristocracy: number;
-  Burgousie: number;
 }
 
 interface productionSectors {
@@ -121,53 +87,7 @@ const unitUpkeepCosts = {
   SiegeGuns: 1 / 2.5
 };
 
-interface estateInfluences {
-  AristocracyInfluence: number;
-  ClergyInfluence: number;
-  BurgousieInfluence: number;
-  UrbanInfluence: number;
-  BureaucratsInfluence: number;
-  IntellectualsInfluence: number;
-  MilitaryInfluence: number;
-  WorkersInfluence: number;
-}
-
-interface influenceChangeLoyaltyEffect {
-  Aristocracy: number;
-  Clergy: number;
-  Burgousie: number;
-  Urban: number;
-  Bureaucrats: number;
-  Intellectuals: number;
-  Military: number;
-  Workers: number;
-}
-
-interface militaryControl {
-  AristocracyControl: number;
-  ClergyControl: number;
-  BurgousieControl: number;
-  UrbanControl: number;
-  BureaucratsControl: number;
-  IntellectualsControl: number;
-  WorkersControl: number;
-  Independent: number;
-};
-
-
-interface govermentRepresentation {
-  UnitaryRepresentation: number,
-  AristocracyRepresentation: number,
-  ClergyRepresentation: number,
-  BurgousieRepresentation: number,
-  UrbanRepresentation: number,
-  BureaucratsRepresentation: number,
-  IntellectualsRepresentation: number,
-  MilitaryRepresentation: number,
-  WorkersRepresentation: number
-}
-
-export class Nation implements RealReformCostTypes {
+export class Nation implements RealReformCostTypes, Literacies, PoliticalAwareness, WageStats {
 
   FuturePopulation: number;
   FutureLiteracyPercent: number;
@@ -1186,7 +1106,6 @@ export class Nation implements RealReformCostTypes {
 
     /* #region  Population */
     this.Workforces = {
-      PopulationInMilitary: 0,
       Slaves: 0,
       Labourers: 0,
       Serfs: 0,
