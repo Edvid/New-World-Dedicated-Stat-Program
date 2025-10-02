@@ -3,6 +3,7 @@ import { realResourceTypes } from "../utility/game_stats/resources.js";
 import { startingReligionGroups, religions } from "../utility/game_stats/religions.js";
 import { type Trade, type TradeZonesType, type tradeInfluencesType, tradeZones } from "../utility/game_stats/trades.js";
 import { type Climates, climates } from "../utility/game_stats/climates.js";
+import { type TechnologiesType, technologies } from "../utility/game_stats/technologies.js";
 
 export class SocialBehaviour {
   Color = "000000";
@@ -117,64 +118,6 @@ const unitUpkeepCosts = {
   FieldCannons: 1 / 5,
   RegimentalGuns: 1 / 10,
   SiegeGuns: 1 / 2.5
-};
-
-export interface TechnologiesType {
-  IronWorking: boolean,
-  Wheel: boolean,
-  Paper: boolean,
-  Gunpowder: boolean,
-  VerticalLoom: boolean,
-  SaddleAndStirrup: boolean,
-  HorseCollar: boolean,
-  Explosives: boolean,
-  Firelance: boolean,
-  Cranes: boolean,
-  PromissoryNotes: boolean,
-  Bombards: boolean,
-  HandCannons: boolean,
-  PlateArmour: boolean,
-  SappersAndEngineers: boolean,
-  Workshops: boolean,
-  StandardizedPikes: boolean,
-  Galleons: boolean,
-  PrintingPress: boolean,
-  Muskets: boolean,
-  Limber: boolean,
-  Docks: boolean,
-  Gunports: boolean,
-  Matchlock: boolean,
-  StarForts: boolean,
-  TextileManufactories: boolean,
-  Reiters: boolean,
-  MiningCarts: boolean,
-  HumanAnatomy: boolean,
-  Mortars: boolean,
-  Metallurgy: boolean,
-  Experimentation: boolean,
-  Fluyt: boolean,
-  Bayonet: boolean,
-  SocketBayonet: boolean,
-  Flintlock: boolean,
-  FlyingShuttle: boolean,
-  LeadChamberProcess: boolean,
-  Gunlock: boolean,
-  SteamEngine: boolean,
-  PuddlingProcess: boolean,
-  Rifles: boolean,
-  ModernChemistry: boolean,
-  CottonGin: boolean,
-  SteamBoats: boolean,
-  HotAirBalloon: boolean,
-  PowerLoomAndSewingMachine: boolean,
-  Fulminate: boolean,
-  PaperMachine: boolean,
-  FirstFactories: boolean,
-  LinearAssemblyProcess: boolean,
-  InterchangeableParts: boolean,
-  CannedFood: boolean,
-  Vaccines: boolean,
-  Morphine: boolean
 };
 
 export interface CulturalAdvancementsType {
@@ -1166,6 +1109,7 @@ export class Nation implements RealReformCostTypes {
     this.FirearmImprovements = 0.1;
     this.SiegeImprovements = 0;
     this.ArtilleryImprovements = 0.1;
+
     this.Levies = 0;
     this.LightInfantry = 0;
     this.HeavyInfantry = 0;
@@ -1389,63 +1333,7 @@ export class Nation implements RealReformCostTypes {
     this.ResearchSpending = 1.1;
     this.ResearchEffectiveness = 1.0;
 
-    this.Technologies = {
-      IronWorking: true,
-      Wheel: true,
-      Paper: true,
-      Gunpowder: true,
-      VerticalLoom: true,
-      SaddleAndStirrup: true,
-      HorseCollar: true,
-      Explosives: true,
-      Firelance: true,
-        Cranes: true,
-        PromissoryNotes: true,
-        Bombards: true,
-        HandCannons: true,
-        PlateArmour: true,
-        SappersAndEngineers: true,
-        Workshops: true,
-        StandardizedPikes: true,
-      Galleons: true,
-      PrintingPress: true,
-      Muskets: true,
-      Limber: true,
-      Docks: true,
-      Gunports: true,
-      Matchlock: false,
-      StarForts: false,
-      TextileManufactories: false,
-      Reiters: false,
-      MiningCarts: false,
-      HumanAnatomy: false,
-      Mortars: false,
-      Metallurgy: false,
-      Experimentation: false,
-      Fluyt: false,
-      Bayonet: false,
-      SocketBayonet: false,
-      Flintlock: false,
-      FlyingShuttle: false,
-      LeadChamberProcess: false,
-      Gunlock: false,
-      SteamEngine: false,
-      PuddlingProcess: false,
-      Rifles: false,
-      ModernChemistry: false,
-      CottonGin: false,
-      SteamBoats: false,
-      HotAirBalloon: false,
-      PowerLoomAndSewingMachine: false,
-      Fulminate: false,
-      PaperMachine: false,
-      FirstFactories: false,
-      LinearAssemblyProcess: false,
-      InterchangeableParts: false,
-      CannedFood: false,
-      Vaccines: false,
-      Morphine: false
-    }
+    this.Technologies = technologies
     /* #endregion */
 
     /* #region Reforms */
@@ -1479,6 +1367,7 @@ export class Nation implements RealReformCostTypes {
       NoblePrivilege: true,
       WealthPrivilege: false,
       ClassEquality: false,
+
       NobleOfficers: false,
       WealthyOfficers: true,
       MeritocraticOfficers: false,

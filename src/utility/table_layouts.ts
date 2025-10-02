@@ -1,4 +1,5 @@
-import { type CulturalAdvancementsType, type TechnologiesType, type Nation } from "../stats/gameStats"
+import { type CulturalAdvancementsType, type Nation } from "../stats/gameStats"
+import { type TechnologiesType } from "../utility/game_stats/technologies.js";
 import { type TradeZonesType } from "../utility/game_stats/trades.js";
 import { type ReformsType } from "./mapcalc/types/reform_types";
 
