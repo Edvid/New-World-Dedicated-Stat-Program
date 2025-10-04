@@ -18,13 +18,13 @@ const shipRangeHighColor = [48, 158, 92, 255];
 const shipRangeLowSmallColor = [1, 255, 20, 255];
 const shipRangeMidSmallColor = [65, 202, 72, 255];
 const shipRangeHighSmallColor = [49, 158, 92, 255];
-let color = new URLSearchParams(window.location.search).get('col');
-let canvas = document.querySelector("canvas");
+const color = new URLSearchParams(window.location.search).get('col');
+const canvas = document.querySelector("canvas");
 canvas.style.width = "0px";
 canvas.style.height = "0px";
 canvas.width = WIDTH;
 canvas.height = HEIGHT;
-let loadingText = document.querySelector("h3");
+const loadingText = document.querySelector("h3");
 document.body.prepend(Header());
 const nationImagePath = "./docs/assets/images/world/Nations.png";
 const climateImagePath = "./docs/assets/images/world/Climates.png";
@@ -33,7 +33,7 @@ let nationData;
 let climateData;
 nationImage.src = nationImagePath;
 nationImage.onload = async function () {
-    let longThen = Date.now();
+    const longThen = Date.now();
     canvas.getContext("2d").drawImage(nationImage, 0, 0, WIDTH, HEIGHT);
     nationData = canvas.getContext("2d").getImageData(0, 0, WIDTH, HEIGHT).data;
     const climateImage = new Image(WIDTH, HEIGHT);
@@ -66,8 +66,8 @@ nationImage.onload = async function () {
         await new Promise(resolve => setTimeout(resolve));
         //mark pixels for high interconnectivity
         for (let j = 0; j < nationData.length / 4; j++) {
-            let x = j % WIDTH;
-            let y = Math.floor(j / WIDTH);
+            const x = j % WIDTH;
+            const y = Math.floor(j / WIDTH);
             if (y % 500 == 0 && x == 0) {
                 await new Promise(resolve => setTimeout(resolve));
                 loadingText.innerText = `Making blobs 'close enough' count as the same blob:\nRow: ${y} of ${HEIGHT}`;
@@ -82,9 +82,9 @@ nationImage.onload = async function () {
         //find those blobs that don't quite make it to 50+
         let then = Date.now();
         for (let j = 0; j < nationData.length / 4; j++) {
-            let x = j % WIDTH;
-            let y = Math.floor(j / WIDTH);
-            let now = Date.now();
+            const x = j % WIDTH;
+            const y = Math.floor(j / WIDTH);
+            const now = Date.now();
             if (now - then > 2000) {
                 await new Promise(resolve => setTimeout(resolve));
                 loadingText.innerText = `Marking settlements as big or small:\nRow: ${y} of ${HEIGHT}`;
@@ -97,10 +97,10 @@ nationImage.onload = async function () {
                 let oldConnectiveColor = connectiveIslandColorArray;
                 let fillColor = smallIslandFillColorArray;
                 let fillConnectiveColor = connectiveSmallIslandFillColorArray;
-                let yetToFillStack = [];
+                const yetToFillStack = [];
                 function bucketPixels() {
                     function matches(c, x, y) {
-                        let redRefOfPixel = (x + y * WIDTH) * 4;
+                        const redRefOfPixel = (x + y * WIDTH) * 4;
                         for (let ci = 0; ci < c.length; ci++) {
                             if (c[ci] != nationData[redRefOfPixel + ci])
                                 return false;
@@ -109,8 +109,9 @@ nationImage.onload = async function () {
                     }
                     if (!yetToFillStack.length)
                         return;
-                    let p = yetToFillStack.pop();
-                    let beginX = p.x, beginY = p.y;
+                    const p = yetToFillStack.pop();
+                    let beginX = p.x;
+                    const beginY = p.y;
                     while (beginX > 0 && (matches(oldColor, beginX - 1, beginY) || matches(oldConnectiveColor, beginX - 1, beginY)))
                         beginX--;
                     let spanAbove = false, spanBelow = false;
@@ -156,8 +157,8 @@ nationImage.onload = async function () {
         await new Promise(resolve => setTimeout(resolve));
         //remove connective stuff
         for (let j = 0; j < nationData.length / 4; j++) {
-            let x = j % WIDTH;
-            let y = Math.floor(j / WIDTH);
+            const x = j % WIDTH;
+            const y = Math.floor(j / WIDTH);
             if (isOneOfColorsAtCoord([connectiveBigIslandFillColorArray, connectiveSmallIslandFillColorArray], x, y))
                 setColorAtCoord(x, y, waterColorArray);
         }
@@ -171,13 +172,13 @@ nationImage.onload = async function () {
         const bigIslandGrowthSet2 = new Set();
         then = Date.now();
         for (let j = 0; j < nationData.length / 4; j++) {
-            let x = j % WIDTH;
-            let y = Math.floor(j / WIDTH);
+            const x = j % WIDTH;
+            const y = Math.floor(j / WIDTH);
             if (isColorAtCoord(waterColorArray, x, y) && OneNeighbourIsColor(bigIslandFillColorArray, x, y))
                 bigIslandGrowthSet.add(j);
             if (isColorAtCoord(waterColorArray, x, y) && OneNeighbourIsColor(smallIslandFillColorArray, x, y))
                 smallIslandGrowthSet.add(j);
-            let now = Date.now();
+            const now = Date.now();
             if (now - then > 500) {
                 dat = new ImageData(nationData, WIDTH);
                 canvas.getContext("2d").putImageData(dat, 0, 0);
@@ -197,16 +198,16 @@ nationImage.onload = async function () {
                 paintColor = shipRangeMidColor;
             else if (distanceFromClaim <= shipRangeHigh)
                 paintColor = shipRangeHighColor;
-            let SetRead = distanceFromClaim % 2 == 0 ? bigIslandGrowthSet : bigIslandGrowthSet2;
-            let SetWrite = distanceFromClaim % 2 == 1 ? bigIslandGrowthSet : bigIslandGrowthSet2;
-            SetWrite.clear();
+            const readSet = distanceFromClaim % 2 == 0 ? bigIslandGrowthSet : bigIslandGrowthSet2;
+            const writeSet = distanceFromClaim % 2 == 1 ? bigIslandGrowthSet : bigIslandGrowthSet2;
+            writeSet.clear();
             let growFromColours, growIntoColours;
-            for (const j of SetRead) {
+            for (const j of readSet) {
                 if (j < 0 || j >= imagePixelCount)
                     continue;
-                let x = j % WIDTH;
-                let y = Math.floor(j / WIDTH);
-                let now = Date.now();
+                const x = j % WIDTH;
+                const y = Math.floor(j / WIDTH);
+                const now = Date.now();
                 if (now - then > 500) {
                     dat = new ImageData(nationData, WIDTH);
                     canvas.getContext("2d").putImageData(dat, 0, 0);
@@ -224,14 +225,14 @@ nationImage.onload = async function () {
                 if (isOneOfColorsAtCoord(growIntoColours, x, y) && OneNeighbourIsOneOfColors(growFromColours, x, y)) {
                     setColorAtCoord(x, y, paintColor);
                     //add neighbours of this newly coloured pixel
-                    SetWrite.add(j + 1);
-                    SetWrite.add(j + 1 + WIDTH);
-                    SetWrite.add(j + WIDTH);
-                    SetWrite.add(j - 1 + WIDTH);
-                    SetWrite.add(j - 1);
-                    SetWrite.add(j - 1 - WIDTH);
-                    SetWrite.add(j - WIDTH);
-                    SetWrite.add(j + 1 - WIDTH);
+                    writeSet.add(j + 1);
+                    writeSet.add(j + 1 + WIDTH);
+                    writeSet.add(j + WIDTH);
+                    writeSet.add(j - 1 + WIDTH);
+                    writeSet.add(j - 1);
+                    writeSet.add(j - 1 - WIDTH);
+                    writeSet.add(j - WIDTH);
+                    writeSet.add(j + 1 - WIDTH);
                 }
             }
         }
@@ -245,16 +246,16 @@ nationImage.onload = async function () {
                 paintColor = shipRangeMidSmallColor;
             else if (distanceFromClaim <= shipRangeHigh / 2)
                 paintColor = shipRangeHighSmallColor;
-            let SetRead = distanceFromClaim % 2 == 0 ? smallIslandGrowthSet : smallIslandGrowthSet2;
-            let SetWrite = distanceFromClaim % 2 == 1 ? smallIslandGrowthSet : smallIslandGrowthSet2;
+            const SetRead = distanceFromClaim % 2 == 0 ? smallIslandGrowthSet : smallIslandGrowthSet2;
+            const SetWrite = distanceFromClaim % 2 == 1 ? smallIslandGrowthSet : smallIslandGrowthSet2;
             SetWrite.clear();
             let growFromColours, growIntoColours;
             for (const j of SetRead) {
                 if (j < 0 || j >= imagePixelCount)
                     continue;
-                let x = j % WIDTH;
-                let y = Math.floor(j / WIDTH);
-                let now = Date.now();
+                const x = j % WIDTH;
+                const y = Math.floor(j / WIDTH);
+                const now = Date.now();
                 if (now - then > 500) {
                     dat = new ImageData(nationData, WIDTH);
                     canvas.getContext("2d").putImageData(dat, 0, 0);
@@ -299,13 +300,13 @@ nationImage.onload = async function () {
         //done
         canvas.style.width = WIDTH + "px";
         canvas.style.height = HEIGHT + "px";
-        let longNow = Date.now();
+        const longNow = Date.now();
         loadingText.innerText = `completed in ${(longNow - longThen) / 1000} seconds`;
         console.log(`done in ${(longNow - longThen) / 1000} seconds`);
     };
 };
 function isColorAtCoord(col, x, y) {
-    let redRefOfPixel = (x + y * WIDTH) * 4;
+    const redRefOfPixel = (x + y * WIDTH) * 4;
     try {
         return nationData[redRefOfPixel] == col[0] &&
             nationData[redRefOfPixel + 1] == col[1] &&
@@ -343,7 +344,7 @@ function OneNeighbourIsColor(col, x, y) {
     return false;
 }
 function setColorAtCoord(x, y, col) {
-    let redRefOfPixel = (x + y * WIDTH) * 4;
+    const redRefOfPixel = (x + y * WIDTH) * 4;
     for (let ci = 0; ci < 4; ci++)
         nationData[redRefOfPixel + ci] = col[ci];
 }

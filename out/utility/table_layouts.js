@@ -117,7 +117,7 @@ export const TableLayouts = {
         ["TradeReformRegressionCost", "TradeReformAdvanceCost", "Reforms.Isolationism", "Reforms.Mercantilism", "Reforms.Protectionism", "Reforms.FreeTrade"],
         ["AntitrustReformRegressionCost", "AntitrustReformAdvanceCost", "Reforms.Guilds", "Reforms.GuildsBanned", "Reforms.AntiMonopolyLaws"],
         ["SuffrageReformRegressionCost", "SuffrageReformAdvanceCost", "Reforms.NoVoting", "Reforms.HighClassVoting", "Reforms.WealthVoting", "Reforms.UniversalSuffrage"],
-        ["PrivellegeReformRegressionCost", "PrivellegeReformAdvanceCost", "Reforms.NoblePrivellege", "Reforms.WealthPrivellege", "Reforms.ClassEquality"],
+        ["PrivilegeReformRegressionCost", "PrivilegeReformAdvanceCost", "Reforms.NoblePrivilege", "Reforms.WealthPrivilege", "Reforms.ClassEquality"],
         ["OfficersReformRegressionCost", "OfficersReformAdvanceCost", "Reforms.NobleOfficers", "Reforms.WealthyOfficers", "Reforms.MeritocraticOfficers"],
         ["BureaucratsReformRegressionCost", "BureaucratsReformAdvanceCost", "Reforms.NobleBureaucrats", "Reforms.ClergyBureaucrats", "Reforms.WealthyBureaucrats", "Reforms.MeritocraticBureaucrats"],
         ["ResourceReformRegressionCost", "ResourceReformAdvanceCost", "Reforms.NobleResourceOwnership", "Reforms.MixedResourceOwnership", "Reforms.BurgousieResourceOwnership", "Reforms.GovernmentResourceOwnership"],

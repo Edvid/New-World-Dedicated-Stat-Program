@@ -212,8 +212,8 @@ const StatTypes = {
         "Reforms.HighClassVoting",
         "Reforms.WealthVoting",
         "Reforms.UniversalSuffrage",
-        "Reforms.NoblePrivellege",
-        "Reforms.WealthPrivellege",
+        "Reforms.NoblePrivilege",
+        "Reforms.WealthPrivilege",
         "Reforms.ClassEquality",
         "Reforms.NobleOfficers",
         "Reforms.WealthyOfficers",
@@ -475,8 +475,8 @@ const StatTypes = {
         "AntitrustReformAdvanceCost",
         "SuffrageReformRegressionCost",
         "SuffrageReformAdvanceCost",
-        "PrivellegeReformRegressionCost",
-        "PrivellegeReformAdvanceCost",
+        "PrivilegeReformRegressionCost",
+        "PrivilegeReformAdvanceCost",
         "OfficersReformRegressionCost",
         "OfficersReformAdvanceCost",
         "BureaucratsReformRegressionCost",
@@ -1266,7 +1266,7 @@ export function ValueTypeFix(statName, statValue) {
             "HabitableLand",
             "InterestRate",
         ].indexOf(statName)) {
-            numString = parseFloat(statVal * 100).toFixed(2) + "%";
+            numString = (parseFloat(statVal) * 100).toFixed(2) + "%";
         }
         //normal (2 digits)
         else {
