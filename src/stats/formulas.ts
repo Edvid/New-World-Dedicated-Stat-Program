@@ -841,7 +841,7 @@ export function evaluateNation(nationName) {
         Object.keys(n).forEach(property => {
           if (typeof n[property] != 'undefined' && typeof n[property] != 'string' && typeof n[property] != 'object' && isNaN(n[property])) allNaNStats += `${property}\n`
         });
-        lazyerror(`something went wrong. Tried to multiply ${n[resource + "Outgoing"]} (${n.nationName ?? nationName}.${resource}Incoming) with ${n[resource + "Value"]} (${n.nationName ?? nationName}.${resource}Value).\nThe following stats are NaN currently: \n\n${allNaNStats}`);
+        lazyerror(`something went wrong. Tried to multiply ${n[resource + "Outgoing"]} (${n.nationName ?? nationName}.${resource}Outgoing) with ${n[resource + "Value"]} (${n.nationName ?? nationName}.${resource}Value).\nThe following stats are NaN currently: \n\n${allNaNStats}`);
         return 0;
       }
     }
@@ -954,7 +954,7 @@ export function evaluateNation(nationName) {
         Object.keys(n).forEach(property => {
           if (typeof n[property] != 'undefined' && typeof n[property] != 'string' && typeof n[property] != 'object' && isNaN(n[property])) allNaNStats += `${property}\n`
         });
-        lazyerror(`something went wrong. Tried to multiply ${n[resource + "Incoming"]} (${n.nationName ?? nationName}.${resource}Incoming) with ${n[resource + "Value"]} (${n.nationName ?? nationName}.${resource}Value).\nThe following stats are NaN currently: \n\n${allNaNStats}`);
+        lazyerror(`something went wrong. Tried to sum ${n[resource + "Incoming"]} (${n.nationName ?? nationName}.Effective${resource}), ${n[resource + "Outgoing"]} (${n.nationName ?? nationName}.${resource}Outgoing), ${n[resource + "Incoming"]} (${n.nationName ?? nationName}.${resource}Incoming), ${n[resource + "Demand"]} (${n.nationName ?? nationName}.${resource}Demand), and multiply with ${n[resource + "Value"]} (${n.nationName ?? nationName}.${resource}Value).\nThe following stats are NaN currently: \n\n${allNaNStats}`);
         return 0;
       }
     }
