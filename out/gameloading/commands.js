@@ -140,7 +140,7 @@ export function createStat(currentSelection, arg) {
         const modelStatName = correctAndSynonymCheck(`${currentSelection}.${modelStatNameRaw}`).split(".").pop();
         if (typeof objectClass == typeof Nation)
             evaluateNation(modelStatName);
-        GSNewProperty(currentSelection + '.' + newStat, objectClass, `"${newStat}"`);
+        GSNewProperty(currentSelection + '.' + newStat, objectClass, newStat);
         /* Copy all property values from old to new */
         const modelStat = GSGetProperty(currentSelection + '.' + modelStatName);
         for (const propertyName in modelStat) {
@@ -152,7 +152,7 @@ export function createStat(currentSelection, arg) {
     }
     else {
         if (objectClass != null)
-            GSNewProperty(currentSelection + '.' + arg, objectClass, `"${arg}"`);
+            GSNewProperty(currentSelection + '.' + arg, objectClass, arg);
         else
             GSSetProperty(currentSelection + '.' + arg, "{}");
         if (typeof objectClass == typeof Nation)
