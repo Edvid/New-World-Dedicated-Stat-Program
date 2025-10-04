@@ -5,7 +5,7 @@ import { type Trade, type TradeZonesType, type tradeInfluencesType, tradeZones }
 import { type Climates, climates } from "../utility/game_stats/climates.js";
 import { type TechnologiesType, technologies } from "../utility/game_stats/technologies.js";
 import { type CulturalAdvancementsType } from "../utility/game_stats/cultural_advancements.js";
-import { type govermentRepresentation, type militaryControl, type estateInfluences, estates, type estateStats, type workforces, type influenceChangeLoyaltyEffect, } from "../utility/game_stats/estates.js";
+import { type govermentRepresentation, type militaryControl, type estateInfluences, estates, type estateStats, type workforces, type influenceChangeLoyaltyEffect, estateGeneral, } from "../utility/game_stats/estates.js";
 import { type units } from "../utility/game_stats/military.js";
 
 export class SocialBehaviour {
@@ -1399,7 +1399,7 @@ export class Stats {
   };
   ResourceTypes = realResourceTypes;
   Estates = estates;
-  EstateGenereal = estates;
+  EstatesGeneral = estateGeneral;
   Trades: Record<string, Trade> = {};
   TradeZones: TradeZonesType = tradeZones;
   Climates: Climates = climates;

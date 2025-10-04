@@ -41,6 +41,17 @@ export type workforces = Record<
   number
 >
 
+export const estateGeneral: (keyof estatesWithInfluence)[] = [
+  "Workers",
+  "Urban",
+  "Clergy",
+  "Bureaucrats",
+  "Intellectuals",
+  "Military",
+  "Aristocracy",
+  "Burgousie"
+];
+
 export const estates: estates[] = [
   "Unemployed",
   "Slaves",
