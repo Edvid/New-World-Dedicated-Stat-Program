@@ -1157,7 +1157,6 @@
                     "LimitedWeaponOwnership": true,
                     "WeaponOwnershipForbidden": false
                 },
-                "EstateCount": 8,
                 "GovernmentDominatedBy": "none",
                 "GovernmentEffects": "none",
                 "MaxResources": [
@@ -2926,7 +2925,6 @@
                     "LimitedWeaponOwnership": true,
                     "WeaponOwnershipForbidden": false
                 },
-                "EstateCount": 8,
                 "GovernmentDominatedBy": "none",
                 "GovernmentEffects": "none",
                 "MaxResources": [
@@ -4701,7 +4699,6 @@
                     "LimitedWeaponOwnership": true,
                     "WeaponOwnershipForbidden": false
                 },
-                "EstateCount": 8,
                 "GovernmentDominatedBy": "none",
                 "GovernmentEffects": "none",
                 "MaxResources": [
@@ -6492,7 +6489,6 @@
                     "WeaponOwnershipForbidden": false,
                     "New_FeudalLevies": null
                 },
-                "EstateCount": 8,
                 "GovernmentDominatedBy": "Unitary",
                 "GovernmentEffects": "none",
                 "MaxResources": [
@@ -8264,7 +8260,6 @@
                     "LimitedWeaponOwnership": true,
                     "WeaponOwnershipForbidden": false
                 },
-                "EstateCount": 8,
                 "GovernmentDominatedBy": "none",
                 "GovernmentEffects": "none",
                 "MaxResources": [
@@ -10042,7 +10037,6 @@
                     "LimitedWeaponOwnership": true,
                     "WeaponOwnershipForbidden": false
                 },
-                "EstateCount": 8,
                 "GovernmentDominatedBy": "none",
                 "GovernmentEffects": "none",
                 "MaxResources": [
@@ -11817,7 +11811,6 @@
                     "LimitedWeaponOwnership": true,
                     "WeaponOwnershipForbidden": false
                 },
-                "EstateCount": 8,
                 "GovernmentDominatedBy": "none",
                 "GovernmentEffects": "none",
                 "MaxResources": [
@@ -13592,7 +13585,6 @@
                     "LimitedWeaponOwnership": true,
                     "WeaponOwnershipForbidden": false
                 },
-                "EstateCount": 8,
                 "GovernmentDominatedBy": "none",
                 "GovernmentEffects": "none",
                 "MaxResources": [
@@ -15376,7 +15368,6 @@
                     "LimitedWeaponOwnership": true,
                     "WeaponOwnershipForbidden": false
                 },
-                "EstateCount": 8,
                 "GovernmentDominatedBy": "none",
                 "GovernmentEffects": "none",
                 "MaxResources": [
@@ -17145,7 +17136,6 @@
                     "LimitedWeaponOwnership": true,
                     "WeaponOwnershipForbidden": false
                 },
-                "EstateCount": 8,
                 "GovernmentDominatedBy": "none",
                 "GovernmentEffects": "none",
                 "MaxResources": [
@@ -18914,7 +18904,6 @@
                     "LimitedWeaponOwnership": true,
                     "WeaponOwnershipForbidden": false
                 },
-                "EstateCount": 8,
                 "GovernmentDominatedBy": "none",
                 "GovernmentEffects": "none",
                 "MaxResources": [
@@ -20692,7 +20681,6 @@
                     "LimitedWeaponOwnership": true,
                     "WeaponOwnershipForbidden": false
                 },
-                "EstateCount": 8,
                 "GovernmentDominatedBy": "none",
                 "GovernmentEffects": "none",
                 "MaxResources": [
@@ -22467,7 +22455,6 @@
                     "LimitedWeaponOwnership": true,
                     "WeaponOwnershipForbidden": false
                 },
-                "EstateCount": 8,
                 "GovernmentDominatedBy": "none",
                 "GovernmentEffects": "none",
                 "MaxResources": [
@@ -24246,7 +24233,6 @@
                     "WeaponOwnershipForbidden": false,
                     "New_FeudalLevies": null
                 },
-                "EstateCount": 8,
                 "GovernmentDominatedBy": "none",
                 "GovernmentEffects": "none",
                 "MaxResources": [
@@ -26012,7 +25998,6 @@
                     "LimitedWeaponOwnership": true,
                     "WeaponOwnershipForbidden": false
                 },
-                "EstateCount": 8,
                 "GovernmentDominatedBy": "none",
                 "GovernmentEffects": "none",
                 "MaxResources": [
@@ -27791,7 +27776,6 @@
                     "WeaponOwnershipForbidden": false,
                     "New_FeudalLevies": null
                 },
-                "EstateCount": 8,
                 "GovernmentDominatedBy": "none",
                 "GovernmentEffects": "none",
                 "MaxResources": [
@@ -29554,7 +29538,6 @@
                     "LimitedWeaponOwnership": true,
                     "WeaponOwnershipForbidden": false
                 },
-                "EstateCount": 8,
                 "GovernmentDominatedBy": "none",
                 "GovernmentEffects": "none",
                 "MaxResources": [
@@ -31335,7 +31318,6 @@
                     "LimitedWeaponOwnership": true,
                     "WeaponOwnershipForbidden": false
                 },
-                "EstateCount": 8,
                 "GovernmentDominatedBy": "none",
                 "GovernmentEffects": "none",
                 "MaxResources": [
@@ -33104,7 +33086,6 @@
                     "LimitedWeaponOwnership": true,
                     "WeaponOwnershipForbidden": false
                 },
-                "EstateCount": 8,
                 "GovernmentDominatedBy": "none",
                 "GovernmentEffects": "none",
                 "MaxResources": [
@@ -34886,7 +34867,6 @@
                     "WeaponOwnershipForbidden": false,
                     "New_FeudalLevies": null
                 },
-                "EstateCount": 8,
                 "GovernmentDominatedBy": "none",
                 "GovernmentEffects": "none",
                 "MaxResources": [
@@ -36665,7 +36645,6 @@
                     "WeaponOwnershipForbidden": false,
                     "New_FeudalLevies": null
                 },
-                "EstateCount": 8,
                 "GovernmentDominatedBy": "none",
                 "GovernmentEffects": "none",
                 "MaxResources": [
@@ -38437,7 +38416,6 @@
                     "LimitedWeaponOwnership": true,
                     "WeaponOwnershipForbidden": false
                 },
-                "EstateCount": 8,
                 "GovernmentDominatedBy": "none",
                 "GovernmentEffects": "none",
                 "MaxResources": [
@@ -40206,7 +40184,6 @@
                     "LimitedWeaponOwnership": true,
                     "WeaponOwnershipForbidden": false
                 },
-                "EstateCount": 8,
                 "GovernmentDominatedBy": "none",
                 "GovernmentEffects": "none",
                 "MaxResources": [
@@ -41972,7 +41949,6 @@
                     "LimitedWeaponOwnership": true,
                     "WeaponOwnershipForbidden": false
                 },
-                "EstateCount": 8,
                 "GovernmentDominatedBy": "none",
                 "GovernmentEffects": "none",
                 "MaxResources": [
@@ -43747,7 +43723,6 @@
                     "LimitedWeaponOwnership": true,
                     "WeaponOwnershipForbidden": false
                 },
-                "EstateCount": 8,
                 "GovernmentDominatedBy": "none",
                 "GovernmentEffects": "none",
                 "MaxResources": [
@@ -45516,7 +45491,6 @@
                     "LimitedWeaponOwnership": true,
                     "WeaponOwnershipForbidden": false
                 },
-                "EstateCount": 8,
                 "GovernmentDominatedBy": "none",
                 "GovernmentEffects": "none",
                 "MaxResources": [
@@ -47285,7 +47259,6 @@
                     "LimitedWeaponOwnership": true,
                     "WeaponOwnershipForbidden": false
                 },
-                "EstateCount": 8,
                 "GovernmentDominatedBy": "none",
                 "GovernmentEffects": "none",
                 "MaxResources": [
@@ -49054,7 +49027,6 @@
                     "LimitedWeaponOwnership": true,
                     "WeaponOwnershipForbidden": false
                 },
-                "EstateCount": 8,
                 "GovernmentDominatedBy": "none",
                 "GovernmentEffects": "none",
                 "MaxResources": [
@@ -50817,7 +50789,6 @@
                     "LimitedWeaponOwnership": true,
                     "WeaponOwnershipForbidden": false
                 },
-                "EstateCount": 8,
                 "GovernmentDominatedBy": "none",
                 "GovernmentEffects": "none",
                 "MaxResources": [
@@ -52583,7 +52554,6 @@
                     "LimitedWeaponOwnership": true,
                     "WeaponOwnershipForbidden": false
                 },
-                "EstateCount": 8,
                 "GovernmentDominatedBy": "none",
                 "GovernmentEffects": "none",
                 "MaxResources": [
@@ -54349,7 +54319,6 @@
                     "LimitedWeaponOwnership": true,
                     "WeaponOwnershipForbidden": false
                 },
-                "EstateCount": 8,
                 "GovernmentDominatedBy": "none",
                 "GovernmentEffects": "none",
                 "MaxResources": [
@@ -56112,7 +56081,6 @@
                     "LimitedWeaponOwnership": true,
                     "WeaponOwnershipForbidden": false
                 },
-                "EstateCount": 8,
                 "GovernmentDominatedBy": "none",
                 "GovernmentEffects": "none",
                 "MaxResources": [
@@ -57881,7 +57849,6 @@
                     "LimitedWeaponOwnership": true,
                     "WeaponOwnershipForbidden": false
                 },
-                "EstateCount": 8,
                 "GovernmentDominatedBy": "none",
                 "GovernmentEffects": "none",
                 "MaxResources": [
@@ -59653,7 +59620,6 @@
                     "LimitedWeaponOwnership": true,
                     "WeaponOwnershipForbidden": false
                 },
-                "EstateCount": 8,
                 "GovernmentDominatedBy": "none",
                 "GovernmentEffects": "none",
                 "MaxResources": [
@@ -61431,7 +61397,6 @@
                     "LimitedWeaponOwnership": true,
                     "WeaponOwnershipForbidden": false
                 },
-                "EstateCount": 8,
                 "GovernmentDominatedBy": "none",
                 "GovernmentEffects": "none",
                 "MaxResources": [
@@ -63197,7 +63162,6 @@
                     "LimitedWeaponOwnership": true,
                     "WeaponOwnershipForbidden": false
                 },
-                "EstateCount": 8,
                 "GovernmentDominatedBy": "none",
                 "GovernmentEffects": "none",
                 "MaxResources": [
@@ -64969,7 +64933,6 @@
                     "LimitedWeaponOwnership": true,
                     "WeaponOwnershipForbidden": false
                 },
-                "EstateCount": 8,
                 "GovernmentDominatedBy": "none",
                 "GovernmentEffects": "none",
                 "MaxResources": [
@@ -66741,7 +66704,6 @@
                     "LimitedWeaponOwnership": true,
                     "WeaponOwnershipForbidden": false
                 },
-                "EstateCount": 8,
                 "GovernmentDominatedBy": "none",
                 "GovernmentEffects": "none",
                 "MaxResources": [
@@ -68504,7 +68466,6 @@
                     "LimitedWeaponOwnership": true,
                     "WeaponOwnershipForbidden": false
                 },
-                "EstateCount": 8,
                 "GovernmentDominatedBy": "none",
                 "GovernmentEffects": "none",
                 "MaxResources": [
@@ -70229,7 +70190,6 @@
                     "LimitedWeaponOwnership": true,
                     "WeaponOwnershipForbidden": false
                 },
-                "EstateCount": 8,
                 "GovernmentDominatedBy": "none",
                 "GovernmentEffects": "none",
                 "MaxResources": [
@@ -71954,7 +71914,6 @@
                     "LimitedWeaponOwnership": true,
                     "WeaponOwnershipForbidden": false
                 },
-                "EstateCount": 8,
                 "GovernmentDominatedBy": "none",
                 "GovernmentEffects": "none",
                 "MaxResources": [
@@ -73489,7 +73448,6 @@
                     "LimitedWeaponOwnership": true,
                     "WeaponOwnershipForbidden": false
                 },
-                "EstateCount": 8,
                 "GovernmentDominatedBy": "none",
                 "GovernmentEffects": "none",
                 "AgricultureTechnology": 2,
@@ -75211,7 +75169,6 @@
                     "LimitedWeaponOwnership": true,
                     "WeaponOwnershipForbidden": false
                 },
-                "EstateCount": 8,
                 "GovernmentDominatedBy": "none",
                 "GovernmentEffects": "none",
                 "AgricultureTechnology": 2,
@@ -76939,7 +76896,6 @@
                     "LimitedWeaponOwnership": true,
                     "WeaponOwnershipForbidden": false
                 },
-                "EstateCount": 8,
                 "GovernmentDominatedBy": "none",
                 "GovernmentEffects": "none",
                 "AgricultureTechnology": 2,
@@ -78670,7 +78626,6 @@
                     "LimitedWeaponOwnership": true,
                     "WeaponOwnershipForbidden": false
                 },
-                "EstateCount": 8,
                 "GovernmentDominatedBy": "none",
                 "GovernmentEffects": "none",
                 "AgricultureTechnology": 2,
@@ -80591,7 +80546,6 @@
                     "LimitedWeaponOwnership": true,
                     "WeaponOwnershipForbidden": false
                 },
-                "EstateCount": 8,
                 "GovernmentDominatedBy": "none",
                 "GovernmentEffects": "none",
                 "MaxResources": [

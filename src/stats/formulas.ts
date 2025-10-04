@@ -23,23 +23,15 @@ export function evaluateNation(nationName) {
   const timeDivide = getGameStats().TimeDivide;
 
 
-  n.EstateCount = 0;
-  for (const EstateIndex in estatesGeneral) {
-    const Estate = estatesGeneral[EstateIndex];
-    if (n.GovernmentRepresentation[Estate + "Representation"] > 50) {
-      n.GovernmentDominatedBy = Estate;
-    }
-    else {
-      n.EstateCount++;
-    }
-  }
-  if (n.EstateCount == 8) {
-    if (n.GovernmentRepresentation.UnitaryRepresentation > 50) {
-      n.GovernmentDominatedBy = "Unitary";
-    }
-    else {
-      n.GovernmentDominatedBy = "none";
-    }
+  const estateWithHighestRepresentation = Object.entries(n.GovernmentRepresentation)
+  .sort(([_a_name, a_repValue], [_b_name, b_repValue]) =>
+    b_repValue - a_repValue
+  ).at(0)
+  const [highrep_name, highrep_value] = estateWithHighestRepresentation
+  if (highrep_value > 50) {
+    n.GovernmentDominatedBy = highrep_name;
+  } else {
+    n.GovernmentDominatedBy = "none"
   }
 
   if (n.GovernmentDominatedBy == "none" || n.GovernmentDominatedBy == "Unitary") {
