@@ -25,17 +25,17 @@ await loadGameFromSafeFile();
 populateTopStatTable();
 function populateTopStatTable() {
     const nations = getGameStats().Nations;
-    let nationNames = Object.keys(nations);
-    let topStatTitle = document.createElement("h1");
-    let topStatTable = document.createElement("table");
-    let body = document.querySelector("body");
+    const nationNames = Object.keys(nations);
+    const topStatTitle = document.createElement("h1");
+    const topStatTable = document.createElement("table");
+    const body = document.querySelector("body");
     body.appendChild(topStatTitle);
     body.appendChild(topStatTable);
     topStatTitle.innerHTML = "Top Stats:";
     topStatTitle.style.marginTop = ".5em";
     topStatTitle.style.marginBottom = ".5em";
     topStatTable.style.borderCollapse = "collapse";
-    let rows = [];
+    const rows = [];
     //initialise rows
     for (let i = 0; i < nationNames.length + 1; i++) {
         rows.push(document.createElement("tr"));
@@ -70,7 +70,7 @@ function populateTopStatTable() {
             flag.src = nations[NationName].Flag;
             flagElement.appendChild(flag);
             nameElement.innerText = NationName;
-            let statval = ValueTypeFix(topStat.name, nations[NationName][topStat.name]).value;
+            const statval = ValueTypeFix(topStat.name, nations[NationName][topStat.name]).value;
             valueElement.innerText = statval;
             flagElement.classList.add("secondary-color");
             nameElement.classList.add("secondary-color");
@@ -90,13 +90,13 @@ function populateTopStatTable() {
             rows[r].appendChild(nameElement);
             rows[r].appendChild(valueElement);
             if (topStat.map != null) {
-                let imgButton = document.createElement("a");
+                const imgButton = document.createElement("a");
                 imgButton.href = `./IndividualNation?col=${nations[NationName].Color}`;
                 imgButton.target = "_blank";
-                let img = document.createElement("img");
+                const img = document.createElement("img");
                 img.src = "./docs/assets/images/world/small_blank.png";
                 img.title = `see ${NationName} specific area`;
-                let imgcell = document.createElement("td");
+                const imgcell = document.createElement("td");
                 imgcell.classList.add("secondary-color");
                 imgcell.style.border = "1px black solid";
                 imgButton.appendChild(img);

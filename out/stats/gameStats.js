@@ -1,75 +1,15 @@
-export const mappedResources = [
-    "Fur",
-    "Gold",
-    "Iron",
-    "Ivory",
-    "Sulphur",
-    "Coal",
-    "Copper",
-    "Diamond",
-    "Silver"
-];
-export const mappedResourcesMultipliers = [
-    1, //fur
-    1, //gold
-    1, //iron
-    1, //ivory
-    1, //sulphur
-    //x2
-    2, //coal
-    2, //copper
-    2, //diamond
-    2 //silver
-];
-const resourceTypes = [
-    "Budget",
-    "Food",
-    "Wood",
-    "Sulphur",
-    "Cotton",
-    "Gold",
-    "Iron",
-    "Tea",
-    "Silk",
-    "Spice",
-    "Wool",
-    "Coffee",
-    "Fur",
-    "Diamond",
-    "Silver",
-    "Copper",
-    "Coal",
-    "Wood",
-    "Ivory",
-    "Cocoa",
-    "Tobacco",
-    "Sugar",
-    "ExoticFruit",
-    "Housing",
-    "BasicArmaments",
-    "HeavyArmaments",
-    "ShipBuilding",
-    "BasicTools",
-    "Textiles",
-    "BasicGoods",
-    "LuxuryGoods",
-    "Alcohol",
-    "Chemicals",
-    "Electronics",
-    "Motors",
-    "Planes",
-    "HeavyIndustry"
-];
+import { realResourceTypes } from "../utility/game_stats/resources.js";
+import { startingReligionGroups, religions } from "../utility/game_stats/religions.js";
+import { tradeZones } from "../utility/game_stats/trades.js";
+import { climates } from "../utility/game_stats/climates.js";
+import { technologies } from "../utility/game_stats/technologies.js";
+import { estates, estateGeneral, } from "../utility/game_stats/estates.js";
 export class SocialBehaviour {
     Color = "000000";
     Opinions = {};
 }
 export class SocialBehaviourGroup {
     Points = 0;
-}
-export class WorldClimate {
-    Color;
-    ClimateScore;
 }
 export class NationClimate {
     Pixels;
@@ -88,1003 +28,6 @@ export class Opinion {
     static FondImage = "https://static.wikia.nocookie.net/spore/images/b/b8/Friend.png";
     static ObsessedImage = "https://static.wikia.nocookie.net/spore/images/a/ae/Ally.png";
 }
-export class Trade {
-    giver; //nation name
-    receiver; //nation name
-    amount;
-    resource; //can include food or budget
-}
-export class TradeZone {
-    Color;
-    Score;
-}
-const estates = [
-    "Unemployed",
-    "Slaves",
-    "Labourers",
-    "Serfs",
-    "Farmers",
-    "Townsfolk",
-    "Clergy",
-    "Bureaucrats",
-    "Merchants",
-    "Intellectuals",
-    "Sailors",
-    "Soldiers",
-    "Aristocracy",
-    "Burgousie"
-];
-const estateGeneral = [
-    "Unemployed",
-    "Slaves",
-    "Labourers",
-    "Serfs",
-    "Farmers",
-    "Townsfolk",
-    "Clergy",
-    "Bureaucrats",
-    "Merchants",
-    "Intellectuals",
-    "Sailors",
-    "Soldiers",
-    "Aristocracy",
-    "Burgousie"
-];
-const religions = {
-    "Pagan": {
-        "Color": "776544",
-        "Opinions": {
-            "Sunni": {
-                "Score": -75
-            },
-            "Shia": {
-                "Score": -75
-            },
-            "Judaism": {
-                "Score": -75
-            },
-            "Catholic": {
-                "Score": -75
-            },
-            "Orthodox": {
-                "Score": -75
-            },
-            "Protestant": {
-                "Score": -75
-            },
-            "Hindu": {
-                "Score": -75
-            },
-            "Buddhism": {
-                "Score": -75
-            },
-            "Shinto": {
-                "Score": -75
-            },
-            "Confucianism": {
-                "Score": -75
-            }
-        }
-    },
-    "Sunni": {
-        "Color": '008C00',
-        "Opinions": {
-            "Pagan": {
-                "Score": -75
-            },
-            "Shia": {
-                "Score": -100
-            },
-            "Judaism": {
-                "Score": -100
-            },
-            "Catholic": {
-                "Score": -100
-            },
-            "Orthodox": {
-                "Score": -100
-            },
-            "Protestant": {
-                "Score": 0
-            },
-            "Hindu": {
-                "Score": -25
-            },
-            "Buddhism": {
-                "Score": 0
-            },
-            "Shinto": {
-                "Score": -25
-            },
-            "Confucianism": {
-                "Score": 0
-            }
-        }
-    },
-    "Shia": {
-        "Color": '00C900',
-        "Opinions": {
-            "Pagan": {
-                "Score": -75
-            },
-            "Sunni": {
-                "Score": -75
-            },
-            "Judaism": {
-                "Score": -100
-            },
-            "Catholic": {
-                "Score": -100
-            },
-            "Orthodox": {
-                "Score": -100
-            },
-            "Protestant": {
-                "Score": 0
-            },
-            "Hindu": {
-                "Score": -25
-            },
-            "Buddhism": {
-                "Score": 0
-            },
-            "Shinto": {
-                "Score": -25
-            },
-            "Confucianism": {
-                "Score": 0
-            }
-        }
-    },
-    "Judaism": {
-        "Color": '00C9BE',
-        "Opinions": {
-            "Pagan": {
-                "Score": -75
-            },
-            "Sunni": {
-                "Score": -100
-            },
-            "Shia": {
-                "Score": -100
-            },
-            "Catholic": {
-                "Score": -100
-            },
-            "Orthodox": {
-                "Score": -50
-            },
-            "Protestant": {
-                "Score": -75
-            },
-            "Hindu": {
-                "Score": 0
-            },
-            "Buddhism": {
-                "Score": 0
-            },
-            "Shinto": {
-                "Score": -25
-            },
-            "Confucianism": {
-                "Score": 0
-            }
-        }
-    },
-    "Catholic": {
-        "Color": 'FFD800',
-        "Opinions": {
-            "Pagan": {
-                "Score": -75
-            },
-            "Sunni": {
-                "Score": -100
-            },
-            "Shia": {
-                "Score": -100
-            },
-            "Judaism": {
-                "Score": -100
-            },
-            "Orthodox": {
-                "Score": -100
-            },
-            "Protestant": {
-                "Score": -100
-            },
-            "Hindu": {
-                "Score": 0
-            },
-            "Buddhism": {
-                "Score": -25
-            },
-            "Shinto": {
-                "Score": -25
-            },
-            "Confucianism": {
-                "Score": 0
-            }
-        }
-    },
-    "Orthodox": {
-        "Color": 'FF15DD',
-        "Opinions": {
-            "Pagan": {
-                "Score": -75
-            },
-            "Sunni": {
-                "Score": -100
-            },
-            "Shia": {
-                "Score": -100
-            },
-            "Judaism": {
-                "Score": -50
-            },
-            "Catholic": {
-                "Score": -100
-            },
-            "Protestant": {
-                "Score": -75
-            },
-            "Hindu": {
-                "Score": 0
-            },
-            "Buddhism": {
-                "Score": -25
-            },
-            "Shinto": {
-                "Score": -25
-            },
-            "Confucianism": {
-                "Score": 0
-            }
-        }
-    },
-    "Protestant": {
-        "Color": '0015DD',
-        "Opinions": {
-            "Pagan": {
-                "Score": -75
-            },
-            "Sunni": {
-                "Score": 0
-            },
-            "Shia": {
-                "Score": 0
-            },
-            "Judaism": {
-                "Score": -75
-            },
-            "Catholic": {
-                "Score": -100
-            },
-            "Orthodox": {
-                "Score": -75
-            },
-            "Hindu": {
-                "Score": 0
-            },
-            "Buddhism": {
-                "Score": -25
-            },
-            "Shinto": {
-                "Score": -25
-            },
-            "Confucianism": {
-                "Score": 0
-            }
-        }
-    },
-    "Hindu": {
-        "Color": 'B6FF00',
-        "Opinions": {
-            "Pagan": {
-                "Score": -75
-            },
-            "Sunni": {
-                "Score": -25
-            },
-            "Shia": {
-                "Score": -25
-            },
-            "Judaism": {
-                "Score": 0
-            },
-            "Catholic": {
-                "Score": 0
-            },
-            "Orthodox": {
-                "Score": 0
-            },
-            "Protestant": {
-                "Score": 0
-            },
-            "Buddhism": {
-                "Score": 25
-            },
-            "Shinto": {
-                "Score": -25
-            },
-            "Confucianism": {
-                "Score": 0
-            }
-        }
-    },
-    "Buddhism": {
-        "Color": '57007F',
-        "Opinions": {
-            "Pagan": {
-                "Score": -50
-            },
-            "Sunni": {
-                "Score": -25
-            },
-            "Shia": {
-                "Score": -25
-            },
-            "Judaism": {
-                "Score": -25
-            },
-            "Catholic": {
-                "Score": -25
-            },
-            "Orthodox": {
-                "Score": -25
-            },
-            "Protestant": {
-                "Score": -25
-            },
-            "Hindu": {
-                "Score": -25
-            },
-            "Shinto": {
-                "Score": 50
-            },
-            "Confucianism": {
-                "Score": -25
-            }
-        }
-    },
-    "Shinto": {
-        "Color": 'FF0000',
-        "Opinions": {
-            "Pagan": {
-                "Score": -75
-            },
-            "Sunni": {
-                "Score": -25
-            },
-            "Shia": {
-                "Score": -25
-            },
-            "Judaism": {
-                "Score": -25
-            },
-            "Catholic": {
-                "Score": -25
-            },
-            "Orthodox": {
-                "Score": -25
-            },
-            "Protestant": {
-                "Score": -25
-            },
-            "Hindu": {
-                "Score": -25
-            },
-            "Buddhism": {
-                "Score": 50
-            },
-            "Confucianism": {
-                "Score": 0
-            }
-        }
-    },
-    "Confucianism": {
-        "Color": '808080',
-        "Opinions": {
-            "Pagan": {
-                "Score": -50
-            },
-            "Sunni": {
-                "Score": 0
-            },
-            "Shia": {
-                "Score": 0
-            },
-            "Judaism": {
-                "Score": 0
-            },
-            "Catholic": {
-                "Score": 0
-            },
-            "Orthodox": {
-                "Score": 0
-            },
-            "Protestant": {
-                "Score": 0
-            },
-            "Hindu": {
-                "Score": 0
-            },
-            "Buddhism": {
-                "Score": 0
-            },
-            "Shinto": {
-                "Score": 0
-            }
-        }
-    },
-};
-const tradeZones = {
-    Alaska: {
-        Color: "ff6c7a",
-        Score: 1
-    },
-    Cascadia: {
-        Color: "ff006e",
-        Score: 3
-    },
-    CaliforniaAndWestMexico: {
-        Color: "none",
-        Score: 4
-    },
-    HudsonBay: {
-        Color: "ffeb63",
-        Score: 3
-    },
-    GreatLakes: {
-        Color: "3dffff",
-        Score: 7
-    },
-    Louisiana: {
-        Color: "none",
-        Score: 7
-    },
-    GulfOfMexico: {
-        Color: "ffac54",
-        Score: 8
-    },
-    LawrenceGulf: {
-        Color: "ff6a38",
-        Score: 4.5
-    },
-    EastCoast: {
-        Color: "cc0000",
-        Score: 7
-    },
-    Carribean: {
-        Color: "none",
-        Score: 8
-    },
-    CentralAmerica: {
-        Color: "a0a0a0",
-        Score: 6
-    },
-    GuyanaAndSuriname: {
-        Color: "none",
-        Score: 3
-    },
-    Amazon: {
-        Color: "2d9600",
-        Score: 3
-    },
-    Peru: {
-        Color: "9e0000",
-        Score: 2
-    },
-    RioGrande: {
-        Color: "none",
-        Score: 3
-    },
-    LaPlata: {
-        Color: "none",
-        Score: 3
-    },
-    Chile: {
-        Color: "ffe846",
-        Score: 2
-    },
-    Patagonia: {
-        Color: "68d7ff",
-        Score: 2
-    },
-    NorthernAnatolia: {
-        Color: "5b8f00",
-        Score: 10
-    },
-    NorthSea: {
-        Color: "7382ff",
-        Score: 4.5
-    },
-    BritishIsles: {
-        Color: 808080,
-        Score: 8
-    },
-    EnglishChannel: {
-        Color: "ff4a00",
-        Score: 10
-    },
-    France: {
-        Color: "00d5ff",
-        Score: 7
-    },
-    BayOfBiscay: {
-        Color: "efff66",
-        Score: 7
-    },
-    WestIberia: {
-        Color: "none",
-        Score: 7
-    },
-    Gibraltar: {
-        Color: "none",
-        Score: 9
-    },
-    WesternMediterranean: {
-        Color: "ffd846",
-        Score: 7
-    },
-    Rhine: {
-        Color: "0094ff",
-        Score: 7
-    },
-    CentralMediterranean: {
-        Color: "ff7d49",
-        Score: 8
-    },
-    Adriatic: {
-        Color: "007f0e",
-        Score: 10
-    },
-    Germany: {
-        Color: "none",
-        Score: 7
-    },
-    WesternDanube: {
-        Color: "404040",
-        Score: 7
-    },
-    Denmark: {
-        Color: "ff0000",
-        Score: 8
-    },
-    Baltic: {
-        Color: "none",
-        Score: 7.5
-    },
-    NorthNordics: {
-        Color: "none",
-        Score: 3
-    },
-    BarentsSea: {
-        Color: "ff553e",
-        Score: 3
-    },
-    Novgorod: {
-        Color: "00ff21",
-        Score: 8
-    },
-    Poland: {
-        Color: "none",
-        Score: 6
-    },
-    Dniepr: {
-        Color: "80ff65",
-        Score: 8.5
-    },
-    Crimea: {
-        Color: "31aadb",
-        Score: 7
-    },
-    EasternDanube: {
-        Color: "5d7c3d",
-        Score: 8.5
-    },
-    Greece: {
-        Color: "0065ff",
-        Score: 9.5
-    },
-    EasternMediterranean: {
-        Color: "80ff00",
-        Score: 8
-    },
-    Egypt: {
-        Color: "ff1410",
-        Score: 7
-    },
-    RedSea: {
-        Color: "2b6d0e",
-        Score: 7
-    },
-    WesternSahara: {
-        Color: "fed800",
-        Score: 2
-    },
-    CoteDIvoire: {
-        Color: "none",
-        Score: 7
-    },
-    Nigeria: {
-        Color: "none",
-        Score: 8
-    },
-    SouthNile: {
-        Color: "none",
-        Score: 3
-    },
-    Somalia: {
-        Color: "529bae",
-        Score: 7
-    },
-    Kongo: {
-        Color: "none",
-        Score: 3
-    },
-    EastAfrica: {
-        Color: "0094d7",
-        Score: 3
-    },
-    Mozambique: {
-        Color: "00ff69",
-        Score: 4
-    },
-    SouthAfrica: {
-        Color: "8f00ff",
-        Score: 5
-    },
-    Mesopotamia: {
-        Color: "7f3300",
-        Score: 6.5
-    },
-    PersianGulf: {
-        Color: "ffc430",
-        Score: 7
-    },
-    Caucasus: {
-        Color: "ff2f3e",
-        Score: 6
-    },
-    DonRiver: {
-        Color: "ffd86d",
-        Score: 6
-    },
-    Volga: {
-        Color: "db7a25",
-        Score: 6
-    },
-    CentralAsia: {
-        Color: "9fffff",
-        Score: 3
-    },
-    WestSiberia: {
-        Color: "none",
-        Score: 2
-    },
-    EastSiberia: {
-        Color: "none",
-        Score: 2
-    },
-    Iran: {
-        Color: "8ffd42",
-        Score: 5
-    },
-    Pakistan: {
-        Color: "none",
-        Score: 7
-    },
-    Tibet: {
-        Color: "b200ff",
-        Score: 2
-    },
-    Mongolia: {
-        Color: "none",
-        Score: 3
-    },
-    Manchuria: {
-        Color: "e8ff65",
-        Score: 6.5
-    },
-    SeaOfJapan: {
-        Color: "00ffff",
-        Score: 7.5
-    },
-    NorthChina: {
-        Color: "none",
-        Score: 7
-    },
-    YangtzeRiver: {
-        Color: "3dfd00",
-        Score: 7
-    },
-    SouthChina: {
-        Color: "none",
-        Score: 8
-    },
-    NorthIndia: {
-        Color: "none",
-        Score: 7
-    },
-    WestIndia: {
-        Color: "none",
-        Score: 7
-    },
-    EastIndia: {
-        Color: "none",
-        Score: 7
-    },
-    Burma: {
-        Color: "none",
-        Score: 6
-    },
-    SouthEastAsia: {
-        Color: "ff3d3d",
-        Score: 8
-    },
-    NorthAustralia: {
-        Color: "none",
-        Score: 5
-    },
-    SouthAustralia: {
-        Color: "none",
-        Score: 6
-    },
-    CentralSiberia: {
-        Color: "69a826",
-        Score: 0
-    },
-    EasternSiberia: {
-        Color: "331b1b",
-        Score: 0
-    },
-    WesternSiberia: {
-        Color: "264a00",
-        Score: 0
-    },
-    NorthernNordics: {
-        Color: "ffd6e4",
-        Score: 0
-    },
-    CentralCanada: {
-        Color: "a5a5a5",
-        Score: 0
-    },
-    BalticSea: {
-        Color: "8f00c2",
-        Score: 0
-    },
-    Livonia: {
-        Color: 801065,
-        Score: 0
-    },
-    Muscovy: {
-        Color: "e1d869",
-        Score: 0
-    },
-    UralRiver: {
-        Color: "dcff44",
-        Score: 0
-    },
-    Vistula: {
-        Color: "ff7e70",
-        Score: 0
-    },
-    CentralEurope: {
-        Color: "8080a3",
-        Score: 0
-    },
-    Romania: {
-        Color: "d100dc",
-        Score: 0
-    },
-    TheRockies: {
-        Color: "7f4618",
-        Score: 0
-    },
-    Mississippi: {
-        Color: "00ba21",
-        Score: 0
-    },
-    SouthernFrance: {
-        Color: "46a7ff",
-        Score: 0
-    },
-    CaspianSea: {
-        Color: "3881ff",
-        Score: 0
-    },
-    GobiDesert: {
-        Color: "e1e9cd",
-        Score: 0
-    },
-    WestCoast: {
-        Color: "ffdb7b",
-        Score: 0
-    },
-    Iberia: {
-        Color: "3a9112",
-        Score: 0
-    },
-    YellowRiver: {
-        Color: "3aaa0e",
-        Score: 0
-    },
-    Afghanistan: {
-        Color: "592b37",
-        Score: 0
-    },
-    IndusRiver: {
-        Color: "267f00",
-        Score: 0
-    },
-    Morocco: {
-        Color: "7f0001",
-        Score: 0
-    },
-    Sichuan: {
-        Color: "c6d521",
-        Score: 0
-    },
-    Sahara: {
-        Color: "b7a791",
-        Score: 0
-    },
-    ArabianDesert: {
-        Color: "e2ceb1",
-        Score: 0
-    },
-    WesternMexico: {
-        Color: "469b52",
-        Score: 0
-    },
-    Ganges: {
-        Color: "db6525",
-        Score: 0
-    },
-    Caribbean: {
-        Color: "3c02ff",
-        Score: 0
-    },
-    Pacific: {
-        Color: "93ffff",
-        Score: 0
-    },
-    SouthChinaSea: {
-        Color: "4d007f",
-        Score: 0
-    },
-    CentralIndia: {
-        Color: "ec7f7f",
-        Score: 0
-    },
-    Deccan: {
-        Color: "84ff55",
-        Score: 0
-    },
-    SouthernNile: {
-        Color: "d9ff00",
-        Score: 0
-    },
-    WesternNiger: {
-        Color: "b6ff4a",
-        Score: 0
-    },
-    Guinea: {
-        Color: "ff8ca3",
-        Score: 0
-    },
-    EasternNiger: {
-        Color: "3bd323",
-        Score: 0
-    },
-    Venezuela: {
-        Color: "c3ff2b",
-        Score: 0
-    },
-    Indonesia: {
-        Color: "fec605",
-        Score: 0
-    },
-    CongoRiver: {
-        Color: "dd6a00",
-        Score: 0
-    },
-    Gabon: {
-        Color: "107f00",
-        Score: 0
-    },
-    LakeVictoria: {
-        Color: "9fa300",
-        Score: 0
-    },
-    LakeTanganyika: {
-        Color: "b67871",
-        Score: 0
-    },
-    SaoFranciscoRiver: {
-        Color: "6aff2b",
-        Score: 0
-    },
-    NorthernAustralia: {
-        Color: "ff7400",
-        Score: 0
-    },
-    Angola: {
-        Color: "a3ff27",
-        Score: 0
-    },
-    ParanaRiver: {
-        Color: "2ba6ff",
-        Score: 0
-    },
-    SouthernAustralia: {
-        Color: "b6c2ff",
-        Score: 0
-    },
-    AustralianDesert: {
-        Color: "d8c5a9",
-        Score: 0
-    }
-};
-const climates = {
-    Ocean: {
-        ClimateScore: 0,
-        Color: "103c6d"
-    },
-    PolarDesert: {
-        ClimateScore: 0.001,
-        Color: "808080"
-    },
-    TaigaAndTundra: {
-        ClimateScore: 0.25,
-        Color: "004a7f"
-    },
-    MontaneForest: {
-        ClimateScore: 0.6,
-        Color: "ffac7f"
-    },
-    Medditereanian: {
-        ClimateScore: 0.85,
-        Color: "ff6a00"
-    },
-    Arid: {
-        ClimateScore: 0.65,
-        Color: "7f3300"
-    },
-    Steppe: {
-        ClimateScore: 0.75,
-        Color: "c8ff7c"
-    },
-    Moderate: {
-        ClimateScore: 1,
-        Color: "4cff00"
-    },
-    SubTropical: {
-        ClimateScore: 0.75,
-        Color: "5b7f00"
-    },
-    Tropical: {
-        ClimateScore: 0.6,
-        Color: "008010"
-    },
-    Savanna: {
-        ClimateScore: 0.65,
-        Color: "c1bd3e"
-    },
-    Mountainous: {
-        ClimateScore: 0.35,
-        Color: "ff0000"
-    },
-    Desert: {
-        ClimateScore: 0.05,
-        Color: "fffb99"
-    },
-    CoastalDesert: {
-        ClimateScore: 0.35,
-        Color: "ffd802"
-    }
-};
 const fertilities = {
     Infertile: { Color: "ffffff", Score: 0.025 },
     BarelyFertile: { Color: "ff0000", Score: 0.15 },
@@ -1117,41 +60,104 @@ const unitUpkeepCosts = {
     SiegeGuns: 1 / 2.5
 };
 export class Nation {
-    /* #region  Properties */
-    /* #region  Daily */
     FuturePopulation;
     FutureLiteracyPercent;
     FutureHigherEducation;
     FutureBudget;
-    FutureFood;
-    FutureResearchPoints;
     FuturePublicDebtLength;
-    FutureCulturalPower;
-    /* #endregion */
-    /* #region Most Stats */
     GovernmentName;
+    GovernmentDominatedBy;
+    GovernmentEffects;
     CapitalName;
     Flag;
     Color;
-    ReligionGroups; //object of {name: {Points: num}, name: {Points: num}}
+    ReligionGroups = {};
     ReligionRepresentedAtGovernmentLevel;
     ReligionRepresentedAtGovernmentLevelPercent;
+    GovernmentRepresentation;
+    ReformPower;
+    ReformPowerGain;
+    Reforms;
+    SlaveryReformRegressionCost;
+    SerfdomReformRegressionCost;
+    EnclosureReformRegressionCost;
+    TradeReformRegressionCost;
+    AntitrustReformRegressionCost;
+    SuffrageReformRegressionCost;
+    PrivilegeReformRegressionCost;
+    OfficersReformRegressionCost;
+    BureaucratsReformRegressionCost;
+    ResourceReformRegressionCost;
+    LandReformRegressionCost;
+    ArmyReformRegressionCost;
+    CensorshipReformRegressionCost;
+    SocialReformRegressionCost;
+    ReligiousReformRegressionCost;
+    EducationReformRegressionCost;
+    PoliceReformRegressionCost;
+    WeaponReformRegressionCost;
+    FeudalArmiesChangeCost;
+    MercenariesChangeCost;
+    ReligiousOrdersChangeCost;
+    SlaveryReformAdvanceCost;
+    SerfdomReformAdvanceCost;
+    EnclosureReformAdvanceCost;
+    TradeReformAdvanceCost;
+    AntitrustReformAdvanceCost;
+    SuffrageReformAdvanceCost;
+    PrivilegeReformAdvanceCost;
+    OfficersReformAdvanceCost;
+    BureaucratsReformAdvanceCost;
+    ResourceReformAdvanceCost;
+    LandReformAdvanceCost;
+    ArmyReformAdvanceCost;
+    CensorshipReformAdvanceCost;
+    SocialReformAdvanceCost;
+    ReligiousReformAdvanceCost;
+    EducationReformAdvanceCost;
+    PoliceReformAdvanceCost;
+    WeaponReformAdvanceCost;
+    MilitaryControl;
     CulturalDisunity;
     ReligiousDisunity;
     Population;
     PopulationGrowth;
     PseudoPopulationGrowth;
-    AverageDevelopment;
     Health;
     EffectiveHealth;
     Alcoholism;
+    UnemployedLiteracy;
+    SlavesLiteracy;
+    LabourersLiteracy;
+    SerfsLiteracy;
+    FarmersLiteracy;
+    TownsfolkLiteracy;
+    ClergyLiteracy;
+    BureaucratsLiteracy;
+    MerchantsLiteracy;
+    IntellectualsLiteracy;
+    SailorsLiteracy;
+    SoldiersLiteracy;
+    AristocracyLiteracy;
+    BurgousieLiteracy;
     LiteracyPercent;
     HigherEducation;
+    AristocracyPoliticalAwareness;
+    ClergyPoliticalAwareness;
+    BurgousiePoliticalAwareness;
+    UrbanPoliticalAwareness;
+    BureaucratsPoliticalAwareness;
+    IntellectualsPoliticalAwareness;
+    WorkersPoliticalAwareness;
+    MilitaryPoliticalAwareness;
     EducationEfficiency;
     AdministrativeEfficiency;
+    AdministrationSize;
     AdministrativeStrain;
+    AdministrativeTech;
+    AdministrativePower;
+    AdministrativeDemand;
     Corruption;
-    Overextension;
     Propaganda;
     SocialSpending;
     Prosperity; //Quality of Life
@@ -1159,13 +165,51 @@ export class Nation {
     Stability;
     AtWar;
     WarSupport;
+    Nationalism;
+    ReligiousFervor;
     Absolutism;
     PopulationControl;
     BirthControl;
     ConscriptionPercent;
+    BureaucratsWages;
+    UnemployedWage;
+    SlavesWage;
+    LabourersWage;
+    SerfsWage;
+    FarmersWage;
+    TownsfolkWage;
+    ClergyWage;
+    BureaucratsWage;
+    MerchantsWage;
+    IntellectualsWage;
+    SailorsWage;
+    SoldiersWage;
+    AristocracyWage;
+    BurgousieWage;
     StateFarmerWage;
     StateLabourerWage;
     StateFactoryWorkerWage;
+    UnemployedTaxes;
+    SlavesTaxes;
+    LabourersTaxes;
+    SerfsTaxes;
+    FarmersTaxes;
+    TownsfolkTaxes;
+    ClergyTaxes;
+    BureaucratsTaxes;
+    MerchantsTaxes;
+    IntellectualsTaxes;
+    SailorsTaxes;
+    SoldiersTaxes;
+    AristocracyTaxes;
+    BurgousieTaxes;
+    TaxEfficiency;
+    TaxRevenue;
+    EffectiveTax;
+    PopProductionRevenue;
+    StateProductionRevenue;
+    StateResourceRevenue;
+    StateAgricultureRevenue;
     Production;
     ProductionGovernmentControl;
     ProductionEfficiency;
@@ -1173,8 +217,6 @@ export class Nation {
     LocalTrade;
     TradePower;
     TradeImprovements;
-    PossiblePublicDebt;
-    EffectiveDebt;
     BudgetPerTurn;
     Budget;
     Inflation;
@@ -1185,17 +227,17 @@ export class Nation {
     SocialSpendingUpkeep;
     HealthUpkeep;
     EducationUpkeep;
-    AgricultureSpending;
     PropagandaUpkeep;
     PopulationControlUpkeep;
     TradeRevenue;
     AdministrativeUpkeep;
     ProductionRevenue;
     ResearchUpkeep;
+    StateWorkersUpkeep;
     OverallIncome;
+    OverallSpending;
+    TariffsRevenue;
     PassiveInvestmentIncome;
-    /* #endregion */
-    /* #region  Armies */
     Levies;
     LightInfantry;
     HeavyInfantry;
@@ -1207,10 +249,14 @@ export class Nation {
     EliteCavalry;
     HandCannoneers;
     Musketeers;
+    MusketMilitia;
+    Riflemen;
     Militia;
     SiegeEquipment;
     LargeSiegeEquipment;
     FieldCannons;
+    SiegeGuns;
+    RegimentalGuns;
     EliteUnitsCap;
     UnitUpkeep;
     OverallNumbers;
@@ -1221,23 +267,87 @@ export class Nation {
     CityFortifications;
     SupplyDepots;
     NavalBases;
+    SmallFortUpkeep;
+    MediumFortUpkeep;
+    BigFortUpkeep;
+    HugeFortUpkeep;
+    CityFortificationUpkeep;
+    SupplyDepotUpkeep;
+    NavalBaseUpkeep;
+    SmallFortConstructionCost;
+    MediumFortConstructionCost;
+    BigFortConstructionCost;
+    HugeFortConstructionCost;
+    CityFortificationConstructionCost;
+    SupplyDepotConstructionCost;
+    NavalBaseConstructionCost;
     BuildingsUpkeep;
+    ConstructionCost;
+    WoodShortage;
+    CoalShortage;
     IronShortage;
     SulphurShortage;
+    NaturalFabricsShortage;
+    LuxuryNaturalFabricsShortage;
+    ValuableMaterialsShortage;
+    HousingShortage;
+    TextilesShortage;
+    BasicGoodsShortage;
+    LuxuryGoodsShortage;
+    AlcoholShortage;
+    BasicToolsShortage;
+    HeavyIndustryShortage;
+    BasicArmamentsShortage;
+    BasicArmamentsArmyShortage;
+    HeavyArmamentsShortage;
+    ShipBuildingShortage;
+    ChemicalsShortage;
+    MotorsShortage;
+    PlanesShortage;
+    ElectronicsShortage;
     CommanderFreedom;
     BasicArmamentsStockpiled;
     HeavyArmamentsStockpiled;
+    ArmyWage;
     ArmyWages;
-    ArmyTech;
     MilitaryLoyalty;
+    AristocracyLoyalty; //Show in percent
+    ClergyLoyalty; //Show in percent
+    BurgousieLoyalty; //Show in percent
+    UrbanLoyalty; //Show in percent
+    BureaucratsLoyalty; //Show in percent
+    IntellectualsLoyalty; //Show in percent
+    WorkersLoyalty; //Show in percent
+    InfluenceChangeLoyaltyEffect;
     MilitaryMorale;
     MilitaryDiscipline;
-    /* #endregion */
-    /* #region  Navy */
+    OverallImprovements;
+    IrregularImprovements;
+    MeleeImprovements;
+    RangedImprovements;
+    CavalryImprovements;
+    FirearmImprovements;
+    SiegeImprovements;
+    ArtilleryImprovements;
     LightShipImprovements;
     MediumShipImprovements;
     HeavyShipImprovements;
+    LightShipQuality;
+    MediumShipQuality;
+    HeavyShipQuality;
+    LightShipConstructionCost;
+    MediumShipConstructionCost;
+    HeavyShipConstructionCost;
+    MerchantShipConstructionCost;
+    MerchantShipsFullfilment;
     NavyTech;
+    IrregularQuality;
+    MeleeQuality;
+    RangedQuality;
+    FirearmQuality;
+    CavalryQuality;
+    SiegeQuality;
+    ArtilleryQuality;
     NavyQuality;
     MerchantShips;
     UpkeepForOneMerchantShip;
@@ -1249,10 +359,9 @@ export class Nation {
     UpkeepForOneHeavyShip;
     OverallShipCount;
     TradeProtection;
+    Manpower;
     NavalPower;
     NavyUpkeep;
-    /* #endregion */
-    /* #region  Recruitments / New Troops */
     New_Levies;
     New_Militia;
     New_LightInfantry;
@@ -1284,23 +393,72 @@ export class Nation {
     New_SupplyDepots;
     New_NavalBases;
     TroopRecruitmentCost;
-    /* #endregion */
-    /* #region  Population */
-    Workforces = {};
+    AristocracyCallupCost;
+    AristocracyLevies;
+    AristocracyMilitia;
+    AristocracyLightInfantry;
+    AristocracyHeavyInfantry;
+    AristocracyEliteInfantry;
+    AristocracyArchers;
+    AristocracyCrossbowmen;
+    AristocracyMusketeers;
+    AristocracyMusketMilitia;
+    AristocracyRiflemen;
+    AristocracyLightCavalry;
+    AristocracyHeavyCavalry;
+    AristocracyEliteCavalry;
+    BurgousieCallupCost;
+    BurgousieLevies;
+    BurgousieMilitia;
+    BurgousieLightInfantry;
+    BurgousieHeavyInfantry;
+    BurgousieEliteInfantry;
+    BurgousieArchers;
+    BurgousieCrossbowmen;
+    BurgousieMusketeers;
+    BurgousieMusketMilitia;
+    BurgousieRiflemen;
+    BurgousieLightCavalry;
+    BurgousieHeavyCavalry;
+    BurgousieEliteCavalry;
+    ClergyCallupCost;
+    ClergyLevies;
+    ClergyMilitia;
+    ClergyLightInfantry;
+    ClergyHeavyInfantry;
+    ClergyEliteInfantry;
+    ClergyArchers;
+    ClergyCrossbowmen;
+    ClergyMusketeers;
+    ClergyMusketMilitia;
+    ClergyRiflemen;
+    ClergyLightCavalry;
+    ClergyHeavyCavalry;
+    ClergyEliteCavalry;
+    PopulaceMilitia;
+    PopulaceMusketMilitia;
+    Workforces;
+    PopInAgriculture;
+    ProductionSectors;
     SocietalClasses;
-    CultureGroups; //object of {name: {Points: num}, name: {Points: num}}
+    CultureGroups = {};
     CultureRepresentedAtGovernmentLevel;
     CultureRepresentedAtGovernmentLevelPercent;
     PopulationStabilityImpact;
     PopulationTechImpact;
-    /* #endregion */
-    /* #region  Resources */
     MiningEfficiency;
-    FarmingEfficiency;
+    Wood;
+    ForestsCutDown;
+    Forestry;
+    EffectiveWood;
+    Reforestation;
+    MaxForestry;
     Coal;
+    BaseCoalHarvest;
     EffectiveCoal;
     MaxCoal;
     Sulphur;
+    BaseSulphurHarvest;
     EffectiveSulphur;
     MaxSulphur;
     Cotton;
@@ -1309,6 +467,7 @@ export class Nation {
     EffectiveGold;
     MaxGold;
     Iron;
+    BaseIronHarvest;
     EffectiveIron;
     MaxIron;
     Tea;
@@ -1344,9 +503,39 @@ export class Nation {
     EffectiveSugar;
     ExoticFruit;
     EffectiveExoticFruit;
+    Housing;
+    Textiles;
+    BasicGoods;
+    LuxuryGoods;
+    Alcohol;
+    BasicTools;
+    HeavyIndustry;
+    BasicArmaments;
+    HeavyArmaments;
+    ShipBuilding;
+    Chemicals;
+    Motors;
+    Planes;
+    Electronics;
+    EffectiveHousing;
+    EffectiveTextiles;
+    EffectiveBasicGoods;
+    EffectiveLuxuryGoods;
+    EffectiveAlcohol;
+    EffectiveBasicTools;
+    EffectiveHeavyIndustry;
+    EffectiveBasicArmaments;
+    EffectiveHeavyArmaments;
+    EffectiveShipBuilding;
+    EffectiveChemicals;
+    EffectiveMotors;
+    EffectivePlanes;
+    EffectiveElectronics;
     ResourceBudgetBoost;
-    /* #endregion */
-    /* #region  Resource Prices */
+    FoodDemand;
+    FoodValue;
+    WoodDemand;
+    WoodValue;
     CoalDemand;
     CoalValue;
     GoldDemand;
@@ -1385,20 +574,91 @@ export class Nation {
     SugarValue;
     ExoticFruitDemand;
     ExoticFruitValue;
-    /* #endregion */
-    /* #region  Technology Stats */
+    HousingDemand;
+    HousingValue;
+    TextilesDemand;
+    TextilesValue;
+    BasicGoodsDemand;
+    BasicGoodsValue;
+    LuxuryGoodsDemand;
+    LuxuryGoodsValue;
+    AlcoholDemand;
+    AlcoholValue;
+    BasicToolsDemand;
+    BasicToolsValue;
+    HeavyIndustryDemand;
+    HeavyIndustryValue;
+    BasicArmamentsDemand;
+    ArmyBasicArmamentsDemand;
+    ArmyHeavyArmamentsDemand;
+    MinimumBasicArmamentsNeeded;
+    BasicArmamentsValue;
+    HeavyArmamentsDemand;
+    HeavyArmamentsValue;
+    ShipBuildingDemand;
+    ShipBuildingValue;
+    ChemicalsDemand;
+    ChemicalsValue;
+    MotorsDemand;
+    MotorsValue;
+    PlanesDemand;
+    PlanesValue;
+    ElectronicsDemand;
+    ElectronicsValue;
     Isolation;
     ResearchSpending;
+    ResearchEfficiency;
     ResearchEffectiveness;
     ResearchBoostFromTech;
     ResearchPointGain;
     ResearchPoints;
     FutureResearchPoints;
     Technologies;
-    ArmyTechBoost;
-    /* #endregion */
-    /* #region  Economy */
-    EffectiveTax;
+    AristocracyTax; //Show in percent
+    ClergyTax; //Show in percent
+    BurgousieTax; //Show in percent
+    UrbanTax; //Show in percent
+    BureaucratsTax; //Show in percent
+    IntellectualsTax; //Show in percent
+    MilitaryTax; //Show in percent
+    WorkersTax; //Show in percent
+    ExternalTariffs;
+    InternalTariffs;
+    TariffEfficiency;
+    Gdp;
+    GdpPerKCapita;
+    DebtToGdpRatio;
+    UnemployedSol;
+    SlavesSol;
+    LabourersSol;
+    SerfsSol;
+    FarmersSol;
+    TownsfolkSol;
+    ClergySol;
+    BureaucratsSol;
+    MerchantsSol;
+    IntellectualsSol;
+    SailorsSol;
+    SoldiersSol;
+    AristocracySol;
+    BurgousieSol;
+    AverageSol;
+    ExpectedSlavesSol;
+    ExpectedLabourersSol;
+    ExpectedSerfsSol;
+    ExpectedUnemployedSol;
+    ExpectedFarmersSol;
+    ExpectedTownsfolkSol;
+    ExpectedClergySol;
+    ExpectedBureaucratsSol;
+    ExpectedMerchantsSol;
+    ExpectedIntellectualsSol;
+    ExpectedSailorsSol;
+    ExpectedSoldiersSol;
+    ExpectedAristocracySol;
+    ExpectedBurgousieSol;
+    ExpectedPrivateBasicArmaments;
+    AverageExpectedSol;
     PossiblePublicDebt;
     PublicDebtTaken;
     EffectiveDebt;
@@ -1408,16 +668,12 @@ export class Nation {
     BudgetIncoming;
     BudgetOutgoing;
     Balance;
-    /* #endregion */
-    /* #region  Cultural Advancements */
     CulturalAdvance;
     CulturalProsperity;
     CulturalPowerGain;
     CulturalPower;
     FutureCulturalPower;
     CulturalAdvancements;
-    /* #endregion */
-    /* #region  Trade */
     FoodIncoming;
     FoodOutgoing;
     CoalIncoming;
@@ -1458,9 +714,70 @@ export class Nation {
     SugarOutgoing;
     ExoticFruitIncoming;
     ExoticFruitOutgoing;
+    HousingIncoming;
+    HousingOutgoing;
+    TextilesIncoming;
+    TextilesOutgoing;
+    BasicGoodsIncoming;
+    BasicGoodsOutgoing;
+    LuxuryGoodsIncoming;
+    LuxuryGoodsOutgoing;
+    AlcoholIncoming;
+    AlcoholOutgoing;
+    BasicToolsIncoming;
+    BasicToolsOutgoing;
+    HeavyIndustryIncoming;
+    HeavyIndustryOutgoing;
+    BasicArmamentsIncoming;
+    BasicArmamentsOutgoing;
+    HeavyArmamentsIncoming;
+    HeavyArmamentsOutgoing;
+    ShipBuildingIncoming;
+    ShipBuildingOutgoing;
+    ChemicalsIncoming;
+    ChemicalsOutgoing;
+    MotorsIncoming;
+    MotorsOutgoing;
+    PlanesIncoming;
+    PlanesOutgoing;
+    ElectronicsIncoming;
+    ElectronicsOutgoing;
+    WoodBaseValue;
+    SulphurBaseValue;
+    CoalBaseValue;
+    CottonBaseValue;
+    GoldBaseValue;
+    IronBaseValue;
+    TeaBaseValue;
+    SilkBaseValue;
+    SpiceBaseValue;
+    WoolBaseValue;
+    CoffeeBaseValue;
+    FurBaseValue;
+    DiamondBaseValue;
+    SilverBaseValue;
+    CopperBaseValue;
+    IvoryBaseValue;
+    CocoaBaseValue;
+    TobaccoBaseValue;
+    SugarBaseValue;
+    ExoticFruitBaseValue;
+    HousingBaseValue;
+    TextilesBaseValue;
+    BasicGoodsBaseValue;
+    LuxuryGoodsBaseValue;
+    AlcoholBaseValue;
+    BasicToolsBaseValue;
+    HeavyIndustryBaseValue;
+    BasicArmamentsBaseValue;
+    HeavyArmamentsBaseValue;
+    ShipBuildingBaseValue;
+    ChemicalsBaseValue;
+    MotorsBaseValue;
+    PlanesBaseValue;
+    ElectronicsBaseValue;
     TradePowerFromResourceTrade;
-    /* #endregion */
-    /* #region  Agriculture */
+    ArableLand;
     AgricultureSubsidies;
     Fertility;
     AgricultureInfrastructure;
@@ -1473,6 +790,7 @@ export class Nation {
     FoodConsumption;
     FoodGain;
     MaxFoodStock;
+    FoodRationing;
     Food;
     FutureFood;
     FoodPopulationBoost;
@@ -1480,9 +798,8 @@ export class Nation {
     SellingCapability;
     FoodSold;
     FoodLost;
+    FoodTradeProfit;
     TradeProfit;
-    /* #endregion */
-    /* #region  War */
     Casualties;
     Pillaging;
     Occupation;
@@ -1491,11 +808,9 @@ export class Nation {
     MinorBattles;
     MajorBattles;
     Fervor;
-    /* #endregion */
-    /* #region  Trade Influence */
     TradeInfluences;
-    /* #endregion */
-    /* #region  Land */
+    EstateInfluences;
+    ExpectedInfluences;
     Size;
     KmSquared;
     PopulationDensityPerKmSquared;
@@ -1513,54 +828,18 @@ export class Nation {
     Overextension;
     Climates;
     HabitableLand;
-    /* #endregion */
-    /* #endregion */
     constructor(nationName) {
         /* #region  Stats to Set Immedietly */
         /* #region  Main */
         this.GovernmentName = nationName;
         this.Flag = "";
-        this.Color = false;
-        this.ReligionGroups = {
-            Pagan: {
-                Points: 100
-            },
-            Sunni: {
-                Points: 0
-            },
-            Shia: {
-                Points: 0
-            },
-            Judaism: {
-                Points: 0
-            },
-            Catholic: {
-                Points: 0
-            },
-            Orthodox: {
-                Points: 0
-            },
-            Protestant: {
-                Points: 0
-            },
-            Hindu: {
-                Points: 0
-            },
-            Buddhism: {
-                Points: 0
-            },
-            Shinto: {
-                Points: 0
-            },
-            Confucianism: {
-                Points: 0
-            }
-        };
+        this.Color = "";
+        this.ReligionGroups = startingReligionGroups;
         this.Population = 2500000;
         this.FuturePopulation = 2500000;
-        this.LiteracyPercent = 7;
-        this.HigherEducation = 0.35;
-        this.Budget = 400.00;
+        this.LiteracyPercent = 6;
+        this.HigherEducation = 0.3;
+        this.Budget = 250.00;
         this.Food = 200.00;
         this.ResearchPoints = 4;
         this.PublicDebtLength = 0;
@@ -1570,14 +849,14 @@ export class Nation {
         this.ReligiousDisunity = 0.00;
         this.DevelopmentPixelCount = 60000;
         this.coastalPopulation = 1000;
-        this.Health = 2;
+        this.Health = 1.50;
         this.Alcoholism = 0.00;
-        this.EducationEfficiency = 3.5;
+        this.EducationEfficiency = 2.5;
         this.BureaucratsWages = 3;
-        this.AdministrativeEfficiency = 28.50;
-        this.AdministrationSize = 0.7;
+        this.AdministrativeEfficiency = 27.50;
+        this.AdministrationSize = 0.65;
         this.Propaganda = 0.25;
-        this.SocialSpending = 0.00;
+        this.SocialSpending = 0.25;
         this.AtWar = false;
         this.Nationalism = 0;
         this.ReligiousFervor = 1.5;
@@ -1615,8 +894,8 @@ export class Nation {
         this.ExpectedPrivateBasicArmaments = 2.5;
         this.EstateInfluences = {
             AristocracyInfluence: 30,
-            ClergyInfluence: 15,
-            BurgousieInfluence: 25,
+            ClergyInfluence: 20,
+            BurgousieInfluence: 20,
             UrbanInfluence: 5,
             BureaucratsInfluence: 5,
             IntellectualsInfluence: 2.5,
@@ -1625,8 +904,8 @@ export class Nation {
         };
         this.ExpectedInfluences = {
             AristocracyInfluence: 0.5,
-            ClergyInfluence: 0.175,
-            BurgousieInfluence: 0.275,
+            ClergyInfluence: 0.225,
+            BurgousieInfluence: 0.20,
             UrbanInfluence: 0.05,
             BureaucratsInfluence: 0.05,
             IntellectualsInfluence: 0.015,
@@ -1644,10 +923,10 @@ export class Nation {
             Workers: 0
         };
         this.GovernmentRepresentation = {
-            UnitaryRepresentation: 35,
-            AristocracyRepresentation: 35,
-            ClergyRepresentation: 10,
-            BurgousieRepresentation: 20,
+            UnitaryRepresentation: 30,
+            AristocracyRepresentation: 40,
+            ClergyRepresentation: 15,
+            BurgousieRepresentation: 15,
             UrbanRepresentation: 0,
             BureaucratsRepresentation: 0,
             IntellectualsRepresentation: 0,
@@ -1655,31 +934,31 @@ export class Nation {
             WorkersRepresentation: 0
         };
         this.MilitaryControl = {
-            AristocracyControl: 40,
-            ClergyControl: 10,
-            BurgousieControl: 15,
+            AristocracyControl: 45,
+            ClergyControl: 15,
+            BurgousieControl: 10,
             UrbanControl: 5,
             BureaucratsControl: 5,
             IntellectualsControl: 0,
             WorkersControl: 5,
-            Independent: 20
+            Independent: 15
         };
         this.PopulationControl = 0;
         this.BirthControl = 0;
-        this.LocalTrade = 6.5;
-        this.TradeImprovements = 0.75;
-        this.Spies = 50;
-        this.SpyQuality = 1.1;
+        this.LocalTrade = 6;
+        this.TradeImprovements = 0.6;
+        this.Spies = 25;
+        this.SpyQuality = 1.05;
         /* #endregion */
         /* #region  Army */
-        this.OverallImprovements = 1.15;
-        this.IrregularImprovements = 0.1;
-        this.MeleeImprovements = 0.15;
-        this.RangedImprovements = 0.1;
-        this.CavalryImprovements = 0.15;
-        this.FirearmImprovements = 0.1;
+        this.OverallImprovements = 1.05;
+        this.IrregularImprovements = 0.05;
+        this.MeleeImprovements = 0.05;
+        this.RangedImprovements = 0.05;
+        this.CavalryImprovements = 0.05;
+        this.FirearmImprovements = 0;
         this.SiegeImprovements = 0;
-        this.ArtilleryImprovements = 0.1;
+        this.ArtilleryImprovements = 0;
         this.Levies = 0;
         this.LightInfantry = 0;
         this.HeavyInfantry = 0;
@@ -1711,23 +990,23 @@ export class Nation {
         this.HeavyArmamentsStockpiled = 0;
         this.SailorsWage = 1.50;
         this.ArmyWage = 2.90;
-        this.MilitaryDiscipline = 1.01; //Show In Percent
+        this.MilitaryDiscipline = 1.005; //Show In Percent
         /* #endregion */
         /* #region  Navy */
-        this.LightShipImprovements = 0.15;
-        this.MediumShipImprovements = 0.15;
-        this.HeavyShipImprovements = 0.15;
-        this.MerchantShips = 25;
+        this.LightShipImprovements = 0.05;
+        this.MediumShipImprovements = 0.05;
+        this.HeavyShipImprovements = 0.05;
+        this.MerchantShips = 15;
         this.LightShips = 0;
         this.MediumShips = 0;
         this.HeavyShips = 0;
         /* #endregion */
         /* #region  Agriculture */
-        this.AgricultureSubsidies = 0.20;
+        this.AgricultureSubsidies = 0.10;
         this.Fertility = 2500;
-        this.AgricultureInfrastructure = 1.30;
-        this.StockingCapabilities = 1.20;
-        this.AgricultureAdvancements = 1.30;
+        this.AgricultureInfrastructure = 1.20;
+        this.StockingCapabilities = 1.10;
+        this.AgricultureAdvancements = 1.20;
         this.FoodRationing = false;
         /* #endregion */
         /* #region  Recruitments / New Troops */
@@ -1764,17 +1043,28 @@ export class Nation {
         /* #endregion */
         /* #region  Population */
         this.Workforces = {
+            Slaves: 0,
+            Labourers: 0,
+            Serfs: 0,
+            Unemployed: 0,
+            Farmers: 0,
+            Townsfolk: 0,
+            Bureaucrats: 0,
+            Merchants: 0,
+            Intellectuals: 0,
+            Sailors: 0,
+            Soldiers: 0,
             Clergy: 0.0125,
             Aristocracy: 0.02,
             Burgousie: 0.005
         };
         this.ProductionSectors = {
             ConstructionSector: 25,
-            BasicArmamentsSector: 27.5,
-            HeavyArmamentsSector: 10,
-            ShipBuildingSector: 10,
+            BasicArmamentsSector: 25,
+            HeavyArmamentsSector: 7.5,
+            ShipBuildingSector: 7.5,
             BasicToolsSector: 40,
-            TextilesSector: 25,
+            TextilesSector: 20,
             BasicGoodsSector: 30,
             LuxuryGoodsSector: 7.5,
             AlcoholSector: 25,
@@ -1788,13 +1078,18 @@ export class Nation {
         this.StateFarmerWage = 0.75;
         this.StateLabourerWage = 0.5;
         this.StateFactoryWorkerWage = 2;
-        this.SocietalClasses = {};
+        this.SocietalClasses = {
+            High: 0,
+            Medium: 0,
+            Lower: 0,
+            Slaves: 0,
+        };
         this.CultureGroups = {};
         /* #endregion */
         /* #region  Resources */
-        this.MiningEfficiency = 1.2;
-        this.Forestry = 2;
-        this.Reforestation = 0.2;
+        this.MiningEfficiency = 1.1;
+        this.Forestry = 1.5;
+        this.Reforestation = 0.15;
         this.ForestsCutDown = 0;
         // resource base values
         this.WoodBaseValue = 0.75;
@@ -1862,65 +1157,9 @@ export class Nation {
         /* #endregion */
         /* #region  Technology */
         this.Isolation = 1;
-        this.ResearchSpending = 1.1;
+        this.ResearchSpending = 1.05;
         this.ResearchEffectiveness = 1.0;
-        this.Technologies = {
-            IronWorking: true,
-            Wheel: true,
-            Paper: true,
-            Gunpowder: true,
-            VerticalLoom: true,
-            SaddleAndStirrup: true,
-            HorseCollar: true,
-            Explosives: true,
-            Firelance: true,
-            Cranes: true,
-            PromissoryNotes: true,
-            Bombards: true,
-            HandCannons: true,
-            PlateArmour: true,
-            SappersAndEngineers: true,
-            Workshops: true,
-            StandardizedPikes: true,
-            Galleons: true,
-            PrintingPress: true,
-            Muskets: true,
-            Limber: true,
-            Docks: true,
-            Gunports: true,
-            Matchlock: false,
-            StarForts: false,
-            TextileManufactories: false,
-            Reiters: false,
-            MiningCarts: false,
-            HumanAnatomy: false,
-            Mortars: false,
-            Metallurgy: false,
-            Experimentation: false,
-            Fluyt: false,
-            Bayonet: false,
-            SocketBayonet: false,
-            Flintlock: false,
-            FlyingShuttle: false,
-            LeadChamberProcess: false,
-            Gunlock: false,
-            SteamEngine: false,
-            PuddlingProcess: false,
-            Rifles: false,
-            ModernChemistry: false,
-            CottonGin: false,
-            SteamBoats: false,
-            HotAirBalloon: false,
-            PowerLoomAndSewingMachine: false,
-            Fulminate: false,
-            PaperMachine: false,
-            FirstFactories: false,
-            LinearAssemblyProcess: false,
-            InterchangeableParts: false,
-            CannedFood: false,
-            Vaccines: false,
-            Morphine: false
-        };
+        this.Technologies = technologies;
         /* #endregion */
         /* #region Reforms */
         this.ReformPower = 0;
@@ -1942,11 +1181,11 @@ export class Nation {
             HighClassVoting: false,
             WealthVoting: false,
             UniversalSuffrage: false,
-            NoblePrivellege: true,
-            WealthPrivellege: false,
+            NoblePrivilege: true,
+            WealthPrivilege: false,
             ClassEquality: false,
-            NobleOfficers: false,
-            WealthyOfficers: true,
+            NobleOfficers: true,
+            WealthyOfficers: false,
             MeritocraticOfficers: false,
             NobleBureaucrats: false,
             ClergyBureaucrats: true,
@@ -1994,7 +1233,7 @@ export class Nation {
         this.BudgetIncoming = 0;
         this.BudgetOutgoing = 0;
         /* #endregion */
-        this.CulturalProsperity = 1.1;
+        this.CulturalProsperity = 1.0;
         this.CulturalAdvancements = {
             Currency: true,
             DivineRightToRule: true,
@@ -2003,8 +1242,8 @@ export class Nation {
             Universities: true,
             NobleDuty: true,
             Courthouses: true,
-            RenaissanceThought: true,
-            EarlyModernAdministration: true,
+            RenaissanceThought: false,
+            EarlyModernAdministration: false,
             NationalSovereignity: false,
             Newspapers: false,
             ScientificRevolution: false,
@@ -2025,8 +1264,8 @@ export class Nation {
         /* #endregion */
         /* #region  Trade Influence */
         this.TradeInfluences = (function () {
-            let ti = {};
-            for (const element in gameStats.TradeZones) {
+            const ti = {};
+            for (const element in tradeZones) {
                 ti[element] = { TradingPoints: 0 };
             }
             return ti;
@@ -2047,7 +1286,7 @@ export class Nation {
         /* #endregion */
     }
 }
-class Stats {
+export class Stats {
     TimeSpeed;
     TimeDivide;
     Nations = {};
@@ -2055,9 +1294,9 @@ class Stats {
     Cultures = {
     //For Opinions not mentioned, they are neutral towards them.
     };
-    ResourceTypes = resourceTypes;
+    ResourceTypes = realResourceTypes;
     Estates = estates;
-    EstateGenereal = estateGeneral;
+    EstatesGeneral = estateGeneral;
     Trades = {};
     TradeZones = tradeZones;
     Climates = climates;
@@ -2079,7 +1318,7 @@ export function getGameStats() {
     return gameStats;
 }
 export function clearNewTroops(nationName) {
-    let n = gameStats.Nations[nationName];
+    const n = gameStats.Nations[nationName];
     for (const unitName in gameStats.UnitUpkeepCosts) {
         n["New_" + unitName] = 0;
     }
@@ -2105,8 +1344,8 @@ export function GSSetProperty(propertySelection, value) {
 export function GSAddProperty(propertySelection, value) {
     (new Function('gameStats', `gameStats${propertySelection} += ${value}`))(gameStats);
 }
-export function GSNewProperty(propertySelection, _class, parameters) {
-    (new Function('gameStats', `gameStats${propertySelection} = new ${_class}(${parameters})`))(gameStats);
+export function GSNewProperty(propertySelection, ProvidedClass, parameters) {
+    (new Function('gameStats', '_class', `gameStats${propertySelection} = new _class(${parameters})`))(gameStats, ProvidedClass.name);
 }
 export function GSDeleteProperty(propertyName) {
     (new Function('gameStats', `delete gameStats${propertyName}`))(gameStats);
