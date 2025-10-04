@@ -3,13 +3,13 @@ import { type Replace } from "../types/replace";
 import { type personnel } from "./military";
 import { type WithFutureForm } from "./with_future_form";
 
-export type highClassEstates = AbstractType<{
+type highClassEstates = AbstractType<{
   Aristocracy: never;
   Clergy: never;
   Burgousie: never;
 }>
 
-export type estatesWithInfluence = AbstractType<highClassEstates &
+type estatesWithInfluence = AbstractType<highClassEstates &
 {
   Urban: never;
   Bureaucrats: never;
@@ -18,7 +18,7 @@ export type estatesWithInfluence = AbstractType<highClassEstates &
   Workers: never;
 }>
 
-export type estatesWithNoInfluence = AbstractType<{
+type estatesWithNoInfluence = AbstractType<{
   Unemployed: never;
   Slaves: never;
   Labourers: never;
@@ -60,7 +60,7 @@ export const estates: estates[] = [
 
 export type estateInfluences = Record<`${keyof estatesWithInfluence}Influence`, number>;
 
-export type estateLoyalties = Record<`${keyof estatesWithInfluence}Loyalty`, number>
+type estateLoyalties = Record<`${keyof estatesWithInfluence}Loyalty`, number>
 
 export type influenceChangeLoyaltyEffect = Record<keyof estatesWithInfluence, number>;
 export type militaryControl = Record<
@@ -70,28 +70,29 @@ export type govermentRepresentation = Record<`${keyof estatesWithInfluence | "Un
 
 type LiteracyTypes = Record<`${keyof workforces}Literacy`, number>
 
-export type Literacies = LiteracyTypes & Record<WithFutureForm<"LiteracyPercent">, number>
+type Literacies = LiteracyTypes & Record<WithFutureForm<"LiteracyPercent">, number>
 
-export type PoliticalAwareness = Record<`${keyof estatesWithInfluence}PoliticalAwareness`, number>
+type PoliticalAwareness = Record<`${keyof estatesWithInfluence}PoliticalAwareness`, number>
 
-export type WageStats = Record<
+type WageStats = Record<
   `${keyof workforces | "StateFarmer" | "StateLabourer" | "StateFactoryWorker" | "Army" }Wage`,
   number
 >
 
-export type estateTaxes = Record<`${keyof workforces}Taxes`, number>
+type estateTaxes = Record<`${keyof workforces}Taxes`, number>
 
-export type setTax = Record<`${keyof estatesWithInfluence}Tax`, number>
+type setTax = Record<`${keyof estatesWithInfluence}Tax`, number>
 
 type privateArmyCallupCost = Record<`${keyof highClassEstates}CallupCost`, number>
 
 type privateArmyPersonnelTypes = Replace<keyof personnel, "HandCannoneers", never>
 
 type privateArmyPersonnel = Record<`${keyof highClassEstates}${privateArmyPersonnelTypes}`, number>
-export type PrivateArmies = privateArmyPersonnel & privateArmyCallupCost
+type PrivateArmies = privateArmyPersonnel & privateArmyCallupCost
 
 type estateSol = Record<`${keyof workforces}Sol`, number>
 type expectedEstateSol = Record<`Expected${keyof estateSol}`, number>
 
-export type estateSols = estateSol & expectedEstateSol
+type estateSols = estateSol & expectedEstateSol
+export type estateStats = PrivateArmies & Literacies & PoliticalAwareness & estateLoyalties & WageStats & estateTaxes & setTax & estateSols
 

@@ -5,7 +5,7 @@ import { type Trade, type TradeZonesType, type tradeInfluencesType, tradeZones }
 import { type Climates, climates } from "../utility/game_stats/climates.js";
 import { type TechnologiesType, technologies } from "../utility/game_stats/technologies.js";
 import { type CulturalAdvancementsType } from "../utility/game_stats/cultural_advancements.js";
-import { type govermentRepresentation, type militaryControl, type estateLoyalties, type influenceChangeLoyaltyEffect, type estateInfluences, estates, type Literacies, type workforces, type PoliticalAwareness, type WageStats, type estateTaxes, type setTax, type PrivateArmies, type estateSols } from "../utility/game_stats/estates.js";
+import { type govermentRepresentation, type militaryControl, type estateInfluences, estates, type estateStats, type workforces, type influenceChangeLoyaltyEffect, } from "../utility/game_stats/estates.js";
 import { type units } from "../utility/game_stats/military.js";
 
 export class SocialBehaviour {
@@ -17,7 +17,7 @@ export class SocialBehaviourGroup {
   Points = 0;
 }
 
-export class NationClimate { 
+export class NationClimate {
   Pixels;
 }
 
@@ -88,7 +88,7 @@ const unitUpkeepCosts = {
   SiegeGuns: 1 / 2.5
 };
 
-export class Nation implements units, PrivateArmies, RealReformCostTypes, Literacies, PoliticalAwareness, estateLoyalties, WageStats, estateTaxes, setTax, estateSols {
+export class Nation implements units, RealReformCostTypes, estateStats {
 
   FuturePopulation: number;
   FutureLiteracyPercent: number;
