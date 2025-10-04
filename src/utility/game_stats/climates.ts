@@ -3,7 +3,9 @@ class WorldClimate{
   ClimateScore: number;
 }
 
-export interface Climates {
+// fillInColorProperties(gameStats.TradeZones) complains about index signatures if an interface
+// eslint-disable-next-line @typescript-eslint/consistent-type-definitions
+export type Climates = {
   Ocean: WorldClimate;
   PolarDesert: WorldClimate;
   TaigaAndTundra: WorldClimate;
