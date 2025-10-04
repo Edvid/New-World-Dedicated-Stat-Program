@@ -1345,7 +1345,7 @@ export function GSAddProperty(propertySelection, value) {
     (new Function('gameStats', `gameStats${propertySelection} += ${value}`))(gameStats);
 }
 export function GSNewProperty(propertySelection, ProvidedClass, parameters) {
-    (new Function('gameStats', '_class', `gameStats${propertySelection} = new _class(${parameters})`))(gameStats, ProvidedClass.name);
+    (new Function('gameStats', `gameStats${propertySelection} = new ${ProvidedClass}(${parameters}); console.log(gameStats${propertySelection})`))(gameStats);
 }
 export function GSDeleteProperty(propertyName) {
     (new Function('gameStats', `delete gameStats${propertyName}`))(gameStats);
