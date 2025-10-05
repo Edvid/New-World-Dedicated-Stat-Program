@@ -309,7 +309,7 @@ function getRawValueAsNumberValue (providedValue: string, propertySelection: str
     const valueWithoutPercentSigns = providedValue.replace("%", "");
     value = Number(valueWithoutPercentSigns) / 100;
   } else {
-    value = providedValue.toString().length != 0 ? +value : 1;
+    value = providedValue.length != 0 ? +providedValue : 1;
   }
 
   if (useDefault) {

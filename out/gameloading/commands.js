@@ -265,7 +265,7 @@ function getRawValueAsNumberValue(providedValue, propertySelection) {
         value = Number(valueWithoutPercentSigns) / 100;
     }
     else {
-        value = providedValue.toString().length != 0 ? +value : 1;
+        value = providedValue.length != 0 ? +providedValue : 1;
     }
     if (useDefault) {
         const [_, foundDefaultValue] = Object.entries(defaultStatValues)
