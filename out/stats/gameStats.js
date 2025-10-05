@@ -834,7 +834,7 @@ export class Nation {
         this.GovernmentName = nationName;
         this.Flag = "";
         this.Color = "";
-        this.ReligionGroups = startingReligionGroups;
+        this.ReligionGroups = structuredClone(startingReligionGroups);
         this.Population = 2500000;
         this.FuturePopulation = 2500000;
         this.LiteracyPercent = 6;
