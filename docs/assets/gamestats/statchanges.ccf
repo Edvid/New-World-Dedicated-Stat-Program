@@ -1648,8 +1648,8 @@ pay debt 290
 +7.5 GovernmentRepresentation.BurgousieRepresentation
 +0.1 AgrInf
 -35 ReformPower
-="true" Reforms.Wealth Privellege
-="false" Reforms.Noble Privellege
+="true" Reforms.Wealth Privilege
+="false" Reforms.Noble Privilege
 
 <... > Nations > KwangtungConfederacy
 +0.03 LightShipImprovements
