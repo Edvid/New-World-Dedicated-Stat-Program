@@ -141,7 +141,7 @@ function isDatasetImageDataArray(dataset) {
 function isColorPropertyArray(colProps) {
     return typeof colProps != "function";
 }
-export function isValueModeNormal(valueMode, returnObject) {
+function isValueModeNormal(valueMode, returnObject) {
     return valueMode == "normal";
 }
 async function PromptName(color, getDatasetPointFunction, name, queryElements) {

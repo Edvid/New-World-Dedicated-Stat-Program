@@ -18,10 +18,8 @@ import {
 import {
   type ReportingElements,
   findDistribution,
-  isValueModeNormal,
 } from "../utility/mapcalc/find_distribution.js";
 import { generateCCFForSocialBehaviourGroups } from "../utility/mapcalc/generate_ccf_for_social_behaviour_groups.js";
-import { error } from "../utility/custom_errors.js";
 import {
   mapDataIterator,
   reverseRBGsOfMap,
@@ -259,30 +257,6 @@ async function mapCalculations() {
      `,
   );
 
-  if (
-    !isValueModeNormal(
-      socialBehaviourGroupDistributionValueMode,
-      cultureDistribution,
-    )
-  ) {
-    error(
-      `Wrong value mode was provided to the distribution finder for cultureDistribution. Report this to admins`,
-    );
-    return;
-  }
-
-  if (
-    !isValueModeNormal(
-      socialBehaviourGroupDistributionValueMode,
-      religionDistribution,
-    )
-  ) {
-    error(
-      `Wrong value mode was provided to the distribution finder for religionDistribution. Report this to admins`,
-    );
-    return;
-  }
-
   addToTextOutput(generateCCFForSocialBehaviourGroups("CultureGroups", cultureDistribution));
   addToTextOutput(generateCCFForSocialBehaviourGroups("ReligionGroups", religionDistribution));
 
@@ -292,18 +266,6 @@ async function mapCalculations() {
     `<... > Nations
      `,
   );
-
-  if (
-    !isValueModeNormal(
-      climateDistributionValueMode,
-      climateDistribution,
-    )
-  ) {
-    error(
-      `Wrong value mode was provided to the distribution finder for climateDistribution. Report this to admins`,
-    );
-    return;
-  }
 
   Object.entries<Record<string, number>>(climateDistribution).forEach(([nationName, nation]) => {
     Object.entries<number>(nation).forEach(([climateName, climateValue]) => {
@@ -320,18 +282,6 @@ async function mapCalculations() {
      `,
   );
 
-  if (
-    isValueModeNormal(
-      developmentScoreValueMode,
-      developmentScore,
-    )
-  ) {
-    error(
-      `Wrong value mode was provided to the distribution finder for developmentScore. Report this to admins`,
-    );
-    return;
-  }
-
   Object.entries<number>(developmentScore).forEach(([nationName, score]) => {
     addToTextOutput(
       `= ${score} ${nationName}.DevelopmentPixelCount\n`,
@@ -344,18 +294,6 @@ async function mapCalculations() {
     `<... > Nations
      `,
   );
-
-  if (
-    isValueModeNormal(
-      coastPopCountValueMode,
-      coastPopCount,
-    )
-  ) {
-    error(
-      `Wrong value mode was provided to the distribution finder for coastPopCount. Report this to admins`,
-    );
-    return;
-  }
 
   Object.entries<number>(coastPopCount).forEach(([nationName, score]) => {
     addToTextOutput(
@@ -401,18 +339,6 @@ async function mapCalculations() {
       },
     );
 
-  if (
-    !isValueModeNormal(
-      resourceDistributionValueMode,
-      resourceInWorld,
-    )
-  ) {
-    error(
-      `Wrong value mode was provided to the distribution finder for resourceBlobSize. Report this to admins`,
-    );
-    return;
-  }
-
     const resourceBlobSizes = resourceInWorld["world"];
 
     //find nations' max resources
@@ -435,19 +361,7 @@ async function mapCalculations() {
       },
     );
 
-  if (
-    !isValueModeNormal(
-      resourceDistributionValueMode,
-      resourceOverlap,
-    )
-  ) {
-    error(
-      `Wrong value mode was provided to the distribution finder for resourceOverlap. Report this to admins`,
-    );
-    return;
-  }
     //use resourceBlobSizes to divide all.
-
     Object.entries<Record<string, number>>(resourceOverlap).forEach(([nationName, nation]) => {
       let count = 0.0;
 
@@ -476,13 +390,6 @@ async function mapCalculations() {
     `<... > TradeZones
      `,
   );
-
-  if (isValueModeNormal(tradeZoneScoreValueMode, tradeZoneScore)) {
-    error(
-      `Wrong value mode was provided to the distribution finder for tradeZoneScore. Report this to admins`,
-    );
-    return;
-  }
 
   //climate * totaldevscore (255 per pixel)
   Object.entries<number>(tradeZoneScore).forEach(([zoneName, score]) => {
@@ -568,42 +475,6 @@ async function mapCalculations() {
      `,
   );
 
-  if (
-    isValueModeNormal(
-      populationRelatedDistributionValueMode,
-      nationPopDistribution,
-    )
-  ) {
-    error(
-      `Wrong value mode was provided to the distribution finder for nationPopDistribution. Report this to admins`,
-    );
-    return;
-  }
-
-  if (
-    isValueModeNormal(
-      populationRelatedDistributionValueMode,
-      nationPopXDevDistribution,
-    )
-  ) {
-    error(
-      `Wrong value mode was provided to the distribution finder for nationPopXDevDistribution. Report this to admins`,
-    );
-    return;
-  }
-
-  if (
-    isValueModeNormal(
-      populationRelatedDistributionValueMode,
-      nationFuturePopDistribution,
-    )
-  ) {
-    error(
-      `Wrong value mode was provided to the distribution finder for nationFuturePopDistribution. Report this to admins`,
-    );
-    return;
-  }
-
   Object.entries<number>(nationPopDistribution).forEach(([nationName, popNum]) => {
     addToTextOutput(
       `= ${popNum} ${nationName}.Population\n`,
@@ -636,17 +507,6 @@ async function mapCalculations() {
     `<... > Nations
      `,
   );
-  if (
-    !isValueModeNormal(
-      nationFertilityDistributionValueMode,
-      nationFertilityDistribution,
-    )
-  ) {
-    error(
-      `Wrong value mode was provided to the distribution finder for nationFertilityDistribution. Report this to admins`,
-    );
-    return;
-  }
 
   Object.entries<Record<string, number>>(nationFertilityDistribution).forEach(([nationName, nation]) => {
     let total = 0;

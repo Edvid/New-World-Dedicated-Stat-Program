@@ -20,7 +20,46 @@ export type ReportingElements = {
   progressElement: HTMLElement;
   addToTextOutput: (string) => void;
 } & QueryElements;
-
+export async function findDistribution(
+  outerDataset: ImageDataArray | ((index: number) => Byte),
+  innerDataset: ImageDataArray | ((index: number) => Byte),
+  outerName: string,
+  innerName: string,
+  colorToOuterNameMapping: colorProperty[],
+  colorToInnerNameMapping: colorProperty[] | ((index: string) => colorProperty),
+  reportingElements: ReportingElements,
+  options: {
+    pixelCount?: number;
+    skipsTransparentInner?: boolean;
+    unnamedGroup?: boolean;
+    canIgnoreTransparentInner?: boolean;
+    valueMode: "RGBAsNum" | "greyScale";
+    unassignedPixelAssumption: number;
+    adjustForAlpha?: boolean;
+    Adjuster?: ImageDataArray | ((index: number) => Byte);
+    AdjusterMapping?: (val: number) => adjustMappingType;
+    },
+): Promise<Record<string, number>>;
+export async function findDistribution(
+  outerDataset: ImageDataArray | ((index: number) => Byte),
+  innerDataset: ImageDataArray | ((index: number) => Byte),
+  outerName: string,
+  innerName: string,
+  colorToOuterNameMapping: colorProperty[],
+  colorToInnerNameMapping: colorProperty[] | ((index: string) => colorProperty),
+  reportingElements: ReportingElements,
+  options: {
+    pixelCount?: number;
+    skipsTransparentInner?: boolean;
+    unnamedGroup?: boolean;
+    canIgnoreTransparentInner?: boolean;
+    valueMode: "normal";
+    unassignedPixelAssumption: string;
+    adjustForAlpha?: boolean;
+    Adjuster?: ImageDataArray | ((index: number) => Byte);
+    AdjusterMapping?: (val: number) => adjustMappingType;
+    },
+): Promise<Record<string, Record<string, number>>>
 export async function findDistribution(
   outerDataset: ImageDataArray | ((index: number) => Byte),
   innerDataset: ImageDataArray | ((index: number) => Byte),
@@ -230,7 +269,7 @@ function isColorPropertyArray(
   return typeof colProps != "function";
 }
 
-export function isValueModeNormal(
+function isValueModeNormal(
   valueMode: "RGBAsNum" | "greyScale" | "normal",
   returnObject: Record<string, Record<string, number>> | Record<string, number>,
 ): returnObject is Record<string, Record<string, number>> {
