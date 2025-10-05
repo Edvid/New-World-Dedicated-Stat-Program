@@ -226,7 +226,7 @@ export const Shorthands = {
         const publicDebtTakenSelector = currentSelection + '.PublicDebtTaken';
         const budgetSelector = currentSelection + '.Budget';
         GSAddProperty(publicDebtTakenSelector, -parameter / (1 + interestRate));
-        GSAddProperty(budgetSelector, parameter);
+        GSAddProperty(budgetSelector, -parameter);
         //excess paid back
         const publicDebtTakenValue = GSGetProperty(publicDebtTakenSelector);
         if (publicDebtTakenValue < 0) {
