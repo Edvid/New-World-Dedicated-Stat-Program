@@ -590,6 +590,12 @@ export function evaluateNation(nationName) {
     // resource and goods values
     for (const resourceIndex in resourceTypes) {
         const resource = resourceTypes[resourceIndex];
+        // skip budget; it does not make sense
+        if (resource === "Budget")
+            continue;
+        // skip food; it is handles by another formula
+        if (resource === "Food")
+            continue;
         const resourceDemand = n[resource + "Demand"];
         const effectiveResource = n["Effective" + resource];
         const resourceBaseValue = n[resource + "BaseValue"];

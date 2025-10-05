@@ -699,11 +699,15 @@ export function evaluateNation(nationName) {
   // resource and goods values
   for (const resourceIndex in resourceTypes) {
     const resource = resourceTypes[resourceIndex];
+    // skip budget; it does not make sense
+    if (resource === "Budget") continue;
+    // skip food; it is handles by another formula
+    if (resource === "Food") continue;
+
     const resourceDemand = n[resource + "Demand"];
     const effectiveResource = n["Effective" + resource];
     const resourceBaseValue = n[resource + "BaseValue"];
       n[resource + "Value"] = resourceDemand / (isNaN(effectiveResource) ? 1 : (effectiveResource == 0 ? 1 : (effectiveResource + Math.sqrt(effectiveResource)))) * resourceBaseValue;
-    
   }
 
   n.ArmyHeavyArmamentsDemand = (n.RegimentalGuns * 0.05 + n.FieldCannons * 0.1 + n.SiegeGuns * 0.2) * n.ArtilleryQualityIC / 2;
