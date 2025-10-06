@@ -611,18 +611,18 @@ export function evaluateNation(nationName) {
   n.MotorsDemand = 0; // define once we reach Industrial Revolution
   n.PlanesDemand = 0; // define once we reach Industrial Revolution
  
-  n.NaturalFabrics = n.EffectiveWool + n.EffectiveCotton;
-  n.LuxuryNaturalFabrics = n.EffectiveFur + n.EffectiveSilk;
-  n.ValuableMaterials = n.EffectiveDiamond + n.EffectiveGold + n.EffectiveSilver + n.EffectiveCopper + n.EffectiveIvory;
+  const naturalFabrics = n.EffectiveWool + n.EffectiveCotton;
+  const luxuryNaturalFabrics = n.EffectiveFur + n.EffectiveSilk;
+  const valuableMaterials = n.EffectiveDiamond + n.EffectiveGold + n.EffectiveSilver + n.EffectiveCopper + n.EffectiveIvory;
 
   n.IronShortage = (n.Technologies.IronWorking ? min(1, max(0, 1 - (n.EffectiveIron / (n.IronDemand * 0.9)))) : 0);
   n.SulphurShortage = min(1, max(0, 1 - (n.EffectiveSulphur / (n.SulphurDemand * 0.9))));
   n.CoalShortage = min(1, max(0, 1 - (n.EffectiveCoal / (n.CoalDemand * 0.9))));
   n.WoodShortage = min(1, max(0, 1 - (n.EffectiveWood / (n.WoodDemand * 0.9))));
   n.FoodShortage = min(1, max(0, 1 - ((n.Food + n.FoodPerTurn) / n.FoodDemand)));
-  n.NaturalFabricsShortage = min(1, max(0, 1 - (n.NaturalFabrics / (naturalFabricsDemand * 0.9))));
-  n.LuxuryNaturalFabricsShortage = min(1, max(0, 1 - (n.LuxuryNaturalFabrics / (luxuryNaturalFabricsDemand * 0.9))));
-  n.ValuableMaterialsShortage = min(1, max(0, 1 - (n.ValuableMaterials / (valuableMaterialsDemand * 0.9))));
+  n.NaturalFabricsShortage = min(1, max(0, 1 - (naturalFabrics / (naturalFabricsDemand * 0.9))));
+  n.LuxuryNaturalFabricsShortage = min(1, max(0, 1 - (luxuryNaturalFabrics / (luxuryNaturalFabricsDemand * 0.9))));
+  n.ValuableMaterialsShortage = min(1, max(0, 1 - (valuableMaterials / (valuableMaterialsDemand * 0.9))));
 
   n.BasicTools = n.Production * (n.ProductionSectors.BasicToolsSector / totalSupply) * (1.1 - n.WoodShortage) * (1.1 - n.IronShortage) * (1.1 - n.CoalShortage) * toolWorkingEfficiency;
   n.EffectiveBasicTools = n.BasicTools + n.BasicToolsIncoming - n.BasicToolsOutgoing;
