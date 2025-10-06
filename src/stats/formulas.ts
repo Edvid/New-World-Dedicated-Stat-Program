@@ -296,8 +296,7 @@ export function evaluateNation(nationName) {
   const resourcesAdmDemand = (n.Reforms.GovernmentResourceOwnership ? n.Coal + n.Sulphur + n.Iron + n.Copper + n.Gold + n.Fur + n.Diamond + n.Silver + n.Ivory + n.Forestry + n.Reforestation * 5 + n.Cotton + n.Tea + n.Silk + n.Spice + n.Wool + n.Coffee + n.Cocoa + n.Tobacco + n.Sugar + n.ExoticFruit : 0) / 2;
   const agricultureAdmDemand = (n.Reforms.GovernmentLandOwnership ? (n.Population / 1000 * n.PopInAgriculture / 25) : 0);
 
-  n.CultureRepresentedAtGovernmentLevelPercent = cultureCalc.GovernmentRepresentationPercent;
-  n.CulturalDisunity = cultureCalc.disunity * (1 + n.Nationalism * 0.2) * (n.GovernmentDominatedBy == "Workers" || n.GovernmentDominatedBy == "Urban" ? 1.2 : 1) * (n.GovernmentDominatedBy == "Clergy" ? 0.8 : 1);
+  n.CultureRepresentedAtGovernmentLevelPercent = cultureCalc.GovernmentRepresentationPercent; n.CulturalDisunity = cultureCalc.disunity * (1 + n.Nationalism * 0.2) * (n.GovernmentDominatedBy == "Workers" || n.GovernmentDominatedBy == "Urban" ? 1.2 : 1) * (n.GovernmentDominatedBy == "Clergy" ? 0.8 : 1);
   n.ReligionRepresentedAtGovernmentLevelPercent = religionCalc.GovernmentRepresentationPercent;
   n.ReligiousDisunity = religionCalc.disunity * (1 + n.ReligiousFervor * 0.2 + Number(n.Reforms.StateReligion) / 2 - Number(n.Reforms.FreedomOfReligion) / 2) * (n.GovernmentDominatedBy == "Workers" || n.GovernmentDominatedBy == "Clergy" ? 1.2 : 1);
     if (n.ReligionRepresentedAtGovernmentLevelPercent < 0.5) {
@@ -339,15 +338,15 @@ export function evaluateNation(nationName) {
     Independent: n.MilitaryControl.Independent / militaryControlTotal
   }
 
-    n.RealOverallImprovements = n.OverallImprovements - n.Alcoholism * (1 - n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100) / 2 + militaryControlReal.Independent + n.CommanderFreedom * 0.15 + n.Reforms.WealthyOfficers / 5 + n.Reforms.MeritocraticOfficers / 2 - n.Reforms.NationalMilitia * 0.2 + n.Reforms.ProffesionalArmy * 0.4 + n.Reforms.MassConscription * 0.2 + n.Technologies.Morphine / 10 + n.Technologies.IronWorking / 4 + n.Technologies.Metallurgy / 10;
+    const realOverallImprovements = n.OverallImprovements - n.Alcoholism * (1 - n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100) / 2 + militaryControlReal.Independent + n.CommanderFreedom * 0.15 + Number(n.Reforms.WealthyOfficers) / 5 + Number(n.Reforms.MeritocraticOfficers) / 2 - Number(n.Reforms.NationalMilitia) * 0.2 + Number(n.Reforms.ProffesionalArmy) * 0.4 + Number(n.Reforms.MassConscription) * 0.2 + Number(n.Technologies.Morphine) / 10 + Number(n.Technologies.IronWorking) / 4 + Number(n.Technologies.Metallurgy) / 10;
 
-  n.IrregularQualityIC = n.RealOverallImprovements + n.IrregularImprovements;
-  n.MeleeQualityIC = n.RealOverallImprovements + n.MeleeImprovements + n.Technologies.PlateArmour / 5 + n.Technologies.StandardizedPikes / 10;
-  n.RangedQualityIC = n.RealOverallImprovements + n.RangedImprovements;
-  n.CavalryQualityIC = n.RealOverallImprovements + n.CavalryImprovements + n.Technologies.SaddleAndStirrup / 5 + n.Technologies.PlateArmour / 5 + n.Technologies.Reiters / 10;
-  n.FirearmQualityIC = n.RealOverallImprovements + n.FirearmImprovements + n.Technologies.Matchlock / 5 + n.Technologies.SocketBayonet / 5 + n.Technologies.Flintlock / 5 + n.Technologies.Bayonet / 20 + n.Technologies.Fulminate / 20;
-  n.SiegeQualityIC = n.RealOverallImprovements + n.SiegeImprovements;
-  n.ArtilleryQualityIC = n.RealOverallImprovements + n.ArtilleryImprovements + n.Technologies.Limber / 5 + n.Technologies.Mortars / 5 + n.Technologies.Fulminate / 20;
+  n.IrregularQualityIC = realOverallImprovements + n.IrregularImprovements;
+  n.MeleeQualityIC = realOverallImprovements + n.MeleeImprovements + n.Technologies.PlateArmour / 5 + n.Technologies.StandardizedPikes / 10;
+  n.RangedQualityIC = realOverallImprovements + n.RangedImprovements;
+  n.CavalryQualityIC = realOverallImprovements + n.CavalryImprovements + n.Technologies.SaddleAndStirrup / 5 + n.Technologies.PlateArmour / 5 + n.Technologies.Reiters / 10;
+  n.FirearmQualityIC = realOverallImprovements + n.FirearmImprovements + n.Technologies.Matchlock / 5 + n.Technologies.SocketBayonet / 5 + n.Technologies.Flintlock / 5 + n.Technologies.Bayonet / 20 + n.Technologies.Fulminate / 20;
+  n.SiegeQualityIC = realOverallImprovements + n.SiegeImprovements;
+  n.ArtilleryQualityIC = realOverallImprovements + n.ArtilleryImprovements + n.Technologies.Limber / 5 + n.Technologies.Mortars / 5 + n.Technologies.Fulminate / 20;
 
     n.NavyTech = 0 - n.Alcoholism * (1 - n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100) / 2 + n.Reforms.WealthyOfficers / 5 + n.Reforms.MeritocraticOfficers / 2 + n.Technologies.Docks / 2 + n.Technologies.Gunports / 2 + n.Technologies.Gunlock / 4 + n.Technologies.SteamBoats / 10 + n.Technologies.Fulminate / 20;
   n.LightShipQualityIC = 1 + n.LightShipImprovements + n.NavyTech;
@@ -598,9 +597,9 @@ export function evaluateNation(nationName) {
   //n.ArmyBasicArmamentsDemand = ((n.Levies * 0.15 + n.Militia * 0.25) * n.IrregularQualityIC + (n.LightInfantry * 0.5 + n.HeavyInfantry * 0.85 + n.EliteInfantry * 1) * n.MeleeQualityIC + (n.Archers * 0.5 + n.Crossbowmen * 0.7) * n.RangedQualityIC + (n.HandCannoneers * 0.75 + n.Musketeers * 0.8 + n.MusketMilitia * 0.7 + n.Riflemen * 1.25) * n.FirearmQualityIC + (n.LightCavalry * 1 + n.HeavyCavalry * 1.25 + n.EliteCavalry * 1.5) * n.CavalryQualityIC) / 1000;
 
     n.BasicToolsDemand = (n.Production * (n.ProductionSectors.AerospaceSector / n.TotalSupply) + n.Production * (n.ProductionSectors.AutomotiveSector / n.TotalSupply) + n.Production * (n.ProductionSectors.ElectronicsSector / n.TotalSupply) + n.Production * (n.ProductionSectors.ChemicalSector / n.TotalSupply) / 4 + n.Production * (n.ProductionSectors.HeavyIndustrySector / n.TotalSupply) / 10 + n.Production * (n.ProductionSectors.LuxuryGoodsSector / n.TotalSupply) / 4 + n.Production * (n.ProductionSectors.BasicGoodsSector / n.TotalSupply) / 4 + n.Production * (n.ProductionSectors.ShipBuildingSector / n.TotalSupply) + n.Production * (n.ProductionSectors.TextilesSector / n.TotalSupply) / 4 + n.Production * (n.ProductionSectors.HeavyArmamentsSector / n.TotalSupply) / 4 + n.Production * (n.ProductionSectors.BasicArmamentsSector / n.TotalSupply) / 4 + n.Production * (n.ProductionSectors.ConstructionSector / n.TotalSupply)) / n.ProductionEfficiency + (min(n.AverageExpectedSol, 1) * n.Population / 1000) / 200;
-    n.HousingDemand = ((min(n.AverageExpectedSol, 1) * 0.5 + n.LuxuriesDemand * 1) * n.Population / 1000) / 200 + n.RealOverallImprovements * (n.SmallForts * 0.5 + n.New_SmallForts * 0.75 + n.MediumForts * 1 + n.New_MediumForts * 1.5 + n.BigForts * 2 + n.New_BigForts * 3 + n.HugeForts * 4 + n.New_HugeForts * 6 + n.CityFortifications * 1.5 + n.New_CityFortifications * 2.25) + 0.375 * n.SupplyDepots + n.New_SupplyDepots * 0.5625 + n.NavalBases * 0.625 + n.New_NavalBases * 0.9375;
-    n.BasicArmamentsDemand = n.ExpectedPrivateBasicArmaments + n.ArmyBasicArmamentsDemand + n.RealOverallImprovements * (n.SmallForts * 0.5 + n.MediumForts * 1 + n.BigForts * 2 + n.HugeForts * 4 + n.CityFortifications * 2);
-    n.HeavyArmamentsDemand = ((n.RegimentalGuns * 0.05 + n.FieldCannons * 0.1 + n.SiegeGuns * 0.2) * n.ArtilleryQualityIC + (n.Technologies.Gunports ? (n.MerchantShips * 0.1 + n.LightShips * 0.8) * n.LightShipQualityIC + (n.MediumShips * 1.6 * n.MediumShipQualityIC) + (n.HeavyShips * 3.2 * n.HeavyShipQualityIC) : 0) / 4 + (n.Technologies.Gunports ? (n.New_MerchantShips * 0.1 + n.New_LightShips * 0.8) * n.LightShipQualityIC + (n.New_MediumShips * 1.6 * n.MediumShipQualityIC) + (n.New_HeavyShips * 3.2 * n.HeavyShipQualityIC) : 0) / 2 + n.RealOverallImprovements * (n.Technologies.StarForts ? 2 : 1) * (n.SmallForts * 0.6 + n.New_SmallForts * 0.9 + n.MediumForts * 1.2 + n.New_MediumForts * 1.8 + n.BigForts * 2.4 + n.New_BigForts * 3.6 + n.HugeForts * 4.8 + n.New_HugeForts * 7.2 + n.CityFortifications * 2.4 + n.New_CityFortifications * 3.6)) / 2;
+    n.HousingDemand = ((min(n.AverageExpectedSol, 1) * 0.5 + n.LuxuriesDemand * 1) * n.Population / 1000) / 200 + realOverallImprovements * (n.SmallForts * 0.5 + n.New_SmallForts * 0.75 + n.MediumForts * 1 + n.New_MediumForts * 1.5 + n.BigForts * 2 + n.New_BigForts * 3 + n.HugeForts * 4 + n.New_HugeForts * 6 + n.CityFortifications * 1.5 + n.New_CityFortifications * 2.25) + 0.375 * n.SupplyDepots + n.New_SupplyDepots * 0.5625 + n.NavalBases * 0.625 + n.New_NavalBases * 0.9375;
+    n.BasicArmamentsDemand = n.ExpectedPrivateBasicArmaments + n.ArmyBasicArmamentsDemand + realOverallImprovements * (n.SmallForts * 0.5 + n.MediumForts * 1 + n.BigForts * 2 + n.HugeForts * 4 + n.CityFortifications * 2);
+    n.HeavyArmamentsDemand = ((n.RegimentalGuns * 0.05 + n.FieldCannons * 0.1 + n.SiegeGuns * 0.2) * n.ArtilleryQualityIC + (n.Technologies.Gunports ? (n.MerchantShips * 0.1 + n.LightShips * 0.8) * n.LightShipQualityIC + (n.MediumShips * 1.6 * n.MediumShipQualityIC) + (n.HeavyShips * 3.2 * n.HeavyShipQualityIC) : 0) / 4 + (n.Technologies.Gunports ? (n.New_MerchantShips * 0.1 + n.New_LightShips * 0.8) * n.LightShipQualityIC + (n.New_MediumShips * 1.6 * n.MediumShipQualityIC) + (n.New_HeavyShips * 3.2 * n.HeavyShipQualityIC) : 0) / 2 + realOverallImprovements * (n.Technologies.StarForts ? 2 : 1) * (n.SmallForts * 0.6 + n.New_SmallForts * 0.9 + n.MediumForts * 1.2 + n.New_MediumForts * 1.8 + n.BigForts * 2.4 + n.New_BigForts * 3.6 + n.HugeForts * 4.8 + n.New_HugeForts * 7.2 + n.CityFortifications * 2.4 + n.New_CityFortifications * 3.6)) / 2;
   n.TextilesDemand = (n.Production * (n.ProductionSectors.BasicGoodsSector / n.TotalSupply) / 2 + n.Production * (n.ProductionSectors.ShipBuildingSector / n.TotalSupply) / 2) / n.ProductionEfficiency + ((min(n.AverageExpectedSol, 1) * 0.5 + n.LuxuriesDemand * 1) * n.Population / 1000) / 200;
     n.ShipBuildingDemand = n.CoastalPopulationPercent * n.Population / 500000 + ((n.LightShips * 0.05 + n.MerchantShips * 0.025) * n.LightShipQualityIC + n.MediumShips * n.MediumShipQualityIC * 0.1 + n.HeavyShips * n.HeavyShipQualityIC * 0.2) + ((n.New_LightShips * 0.05 + n.New_MerchantShips * 0.025) * n.LightShipQualityIC + n.New_MediumShips * n.MediumShipQualityIC * 0.1 + n.New_HeavyShips * n.HeavyShipQualityIC * 0.2) * 5;
   n.BasicGoodsDemand = ((min(n.AverageExpectedSol, 1) * 1 + n.LuxuriesDemand * 1.5) * n.Population / 1000) / 200;
@@ -704,11 +703,11 @@ export function evaluateNation(nationName) {
   n.UnitUpkeep += n.SiegeEquipment * 0.1;
   n.UnitUpkeep += n.LargeSiegeEquipment * 0.2;
 
-    n.SmallFortUpkeep = 1 * n.RealOverallImprovements * n.HousingValue + 0.6 * (n.HeavyArmamentsValue + n.BasicArmamentsValue) / 2 * (n.Technologies.StarForts ? 2 : 1);
-    n.MediumFortUpkeep = 2 * n.RealOverallImprovements * n.HousingValue + 1.2 * (n.HeavyArmamentsValue + n.BasicArmamentsValue) / 2 * (n.Technologies.StarForts ? 2 : 1);
-    n.BigFortUpkeep = 4 * n.RealOverallImprovements * n.HousingValue + 2.4 * (n.HeavyArmamentsValue + n.BasicArmamentsValue) / 2 * (n.Technologies.StarForts ? 2 : 1);
-    n.HugeFortUpkeep = 8 * n.RealOverallImprovements * n.HousingValue + 4.8 * (n.HeavyArmamentsValue + n.BasicArmamentsValue) / 2 * (n.Technologies.StarForts ? 2 : 1);
-    n.CityFortificationUpkeep = 3 * n.RealOverallImprovements * n.HousingValue + 2.4 * (n.HeavyArmamentsValue + n.BasicArmamentsValue) / 2 * (n.Technologies.StarForts ? 2 : 1);
+    n.SmallFortUpkeep = 1 * realOverallImprovements * n.HousingValue + 0.6 * (n.HeavyArmamentsValue + n.BasicArmamentsValue) / 2 * (n.Technologies.StarForts ? 2 : 1);
+    n.MediumFortUpkeep = 2 * realOverallImprovements * n.HousingValue + 1.2 * (n.HeavyArmamentsValue + n.BasicArmamentsValue) / 2 * (n.Technologies.StarForts ? 2 : 1);
+    n.BigFortUpkeep = 4 * realOverallImprovements * n.HousingValue + 2.4 * (n.HeavyArmamentsValue + n.BasicArmamentsValue) / 2 * (n.Technologies.StarForts ? 2 : 1);
+    n.HugeFortUpkeep = 8 * realOverallImprovements * n.HousingValue + 4.8 * (n.HeavyArmamentsValue + n.BasicArmamentsValue) / 2 * (n.Technologies.StarForts ? 2 : 1);
+    n.CityFortificationUpkeep = 3 * realOverallImprovements * n.HousingValue + 2.4 * (n.HeavyArmamentsValue + n.BasicArmamentsValue) / 2 * (n.Technologies.StarForts ? 2 : 1);
     n.SupplyDepotUpkeep = 0.75 * n.HousingValue;
     n.NavalBaseUpkeep = 1.25 * n.HousingValue;
 
