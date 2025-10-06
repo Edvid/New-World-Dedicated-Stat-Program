@@ -711,6 +711,8 @@ export class Nation implements units, RealReformCostTypes, estateStats {
   CulturalPower: number;
   FutureCulturalPower: number;
   CulturalAdvancements: CulturalAdvancementsType;
+  WoodIncoming: number;
+  WoodOutgoing: number;
   FoodIncoming: number;
   FoodOutgoing: number;
   CoalIncoming: number;

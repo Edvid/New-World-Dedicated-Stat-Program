@@ -499,7 +499,7 @@ export function evaluateNation(nationName) {
     (isNaN(n.Workforces.Burgousie) ? 0 : n.Workforces.Burgousie) * n.ExpectedBurgousieSol
     );
 
-  n.LuxuriesDemand = (
+  const luxuriesDemand = (
   (isNaN(n.Workforces.Slaves) ? 0 : n.Workforces.Slaves) * (n.ExpectedSlavesSol > 1 ? (n.ExpectedSlavesSol - 1) : 0) +
   (isNaN(n.Workforces.Labourers) ? 0 : n.Workforces.Labourers) * (n.ExpectedLabourersSol > 1 ? (n.ExpectedLabourersSol - 1) : 0) +
   (isNaN(n.Workforces.Serfs) ? 0 : n.Workforces.Serfs) * (n.ExpectedSerfsSol > 1 ? (n.ExpectedSerfsSol - 1) : 0) + 
@@ -520,10 +520,10 @@ export function evaluateNation(nationName) {
 
   n.SulphurDemand = (n.HandCannoneers * 0.5 + n.MusketMilitia * 0.75 + (n.Musketeers + n.Riflemen) + n.RegimentalGuns * 10 + (n.FieldCannons + n.MerchantShips * 2 + n.LightShips * 8 + n.MediumShips * 16 + n.HeavyShips * 32) * 20 + n.SiegeGuns * 50) / 5000 * (n.Technologies.Fulminate ? 0.9 : 1) + n.Health;
   n.IronDemand = (n.Technologies.IronWorking ? (n.Production * (n.ProductionSectors.HeavyIndustrySector / n.TotalSupply) / 10 + n.Production * (n.ProductionSectors.LuxuryGoodsSector / n.TotalSupply) / 10 + n.Production * (n.ProductionSectors.ShipBuildingSector / n.TotalSupply) / 10 + n.Production * (n.ProductionSectors.HeavyArmamentsSector / n.TotalSupply) / 5 + n.Production * (n.ProductionSectors.BasicArmamentsSector / n.TotalSupply) / 10 + n.Production * (n.ProductionSectors.BasicToolsSector / n.TotalSupply) / 10) / n.ProductionEfficiency / 2 : 0);
-  n.WoodDemand = (n.Production * (n.ProductionSectors.LuxuryGoodsSector / n.TotalSupply) / 10 + n.Production * (n.ProductionSectors.BasicGoodsSector / n.TotalSupply) / 8 + n.Production * (n.ProductionSectors.ShipBuildingSector / n.TotalSupply) / 2 + n.Production * (n.ProductionSectors.BasicArmamentsSector / n.TotalSupply) / 10 + n.Production * (n.ProductionSectors.ConstructionSector / n.TotalSupply) / 2 + n.Production * (n.ProductionSectors.BasicToolsSector / n.TotalSupply) / 6) / n.ProductionEfficiency / 2 + ((min(n.AverageExpectedSol, 1) * 0.01 + n.LuxuriesDemand * 0.02) * n.Population / 1000) / 12.5;
-  n.CoalDemand = (n.Production * (n.ProductionSectors.HeavyIndustrySector / n.TotalSupply) / 10 + n.Production * (n.ProductionSectors.HeavyArmamentsSector / n.TotalSupply) / 6 + n.Production * (n.ProductionSectors.BasicArmamentsSector / n.TotalSupply) / 8 + n.Production * (n.ProductionSectors.BasicToolsSector / n.TotalSupply) / 10) / n.ProductionEfficiency / 2 + max(0, ((min(n.AverageExpectedSol, 1) * 0.005 + n.LuxuriesDemand * 0.01) * n.Population / 1000) / 20 - (n.Wood > n.WoodDemand ? n.Wood - n.WoodDemand : 0) / 2.5) + (n.Technologies.SteamBoats ? n.LightShips * 0.01 + n.MediumShips * 0.025 + n.HeavyShips * 0.05 : 0);
+  n.WoodDemand = (n.Production * (n.ProductionSectors.LuxuryGoodsSector / n.TotalSupply) / 10 + n.Production * (n.ProductionSectors.BasicGoodsSector / n.TotalSupply) / 8 + n.Production * (n.ProductionSectors.ShipBuildingSector / n.TotalSupply) / 2 + n.Production * (n.ProductionSectors.BasicArmamentsSector / n.TotalSupply) / 10 + n.Production * (n.ProductionSectors.ConstructionSector / n.TotalSupply) / 2 + n.Production * (n.ProductionSectors.BasicToolsSector / n.TotalSupply) / 6) / n.ProductionEfficiency / 2 + ((min(n.AverageExpectedSol, 1) * 0.01 + luxuriesDemand * 0.02) * n.Population / 1000) / 12.5;
+  n.CoalDemand = (n.Production * (n.ProductionSectors.HeavyIndustrySector / n.TotalSupply) / 10 + n.Production * (n.ProductionSectors.HeavyArmamentsSector / n.TotalSupply) / 6 + n.Production * (n.ProductionSectors.BasicArmamentsSector / n.TotalSupply) / 8 + n.Production * (n.ProductionSectors.BasicToolsSector / n.TotalSupply) / 10) / n.ProductionEfficiency / 2 + max(0, ((min(n.AverageExpectedSol, 1) * 0.005 + luxuriesDemand * 0.01) * n.Population / 1000) / 20 - (n.Wood > n.WoodDemand ? n.Wood - n.WoodDemand : 0) / 2.5) + (n.Technologies.SteamBoats ? n.LightShips * 0.01 + n.MediumShips * 0.025 + n.HeavyShips * 0.05 : 0);
 
-  n.FoodDemand = n.Production * (n.ProductionSectors.AlcoholSector / n.TotalSupply) + ((min(n.AverageExpectedSol, 1) + n.LuxuriesDemand * 1.75) * n.Population / 1000);
+  n.FoodDemand = n.Production * (n.ProductionSectors.AlcoholSector / n.TotalSupply) + ((min(n.AverageExpectedSol, 1) + luxuriesDemand * 1.75) * n.Population / 1000);
 
   n.NaturalFabricsDemand = (n.Production * (n.ProductionSectors.TextilesSector / n.TotalSupply)) / n.ProductionEfficiency / 4;
   n.WoolDemand = n.NaturalFabricsDemand;
@@ -542,7 +542,7 @@ export function evaluateNation(nationName) {
   
 
   n.LuxuryConsumables = n.EffectiveTea + n.EffectiveCoffee + n.EffectiveTobacco + n.EffectiveExoticFruit + n.EffectiveCocoa;
-  n.LuxuryConsumablesDemand = max(0, n.LuxuriesDemand * n.Population / 1000 * 0.05);
+  n.LuxuryConsumablesDemand = max(0, luxuriesDemand * n.Population / 1000 * 0.05);
   n.TeaDemand = n.LuxuryConsumablesDemand * 0.2;
   n.CoffeeDemand = n.LuxuryConsumablesDemand * 0.2;
   n.TobaccoDemand = n.LuxuryConsumablesDemand * 0.2;
@@ -550,7 +550,7 @@ export function evaluateNation(nationName) {
   n.CocoaDemand = n.LuxuryConsumablesDemand * 0.2;
 
   n.FoodAdditions = n.EffectiveSugar + n.EffectiveSpice;
-  n.FoodAdditionsDemand = ((min(n.AverageExpectedSol, 1) * 0.1 + n.LuxuriesDemand / 2 * 0.75) * n.Population / 1000) / 200;
+  n.FoodAdditionsDemand = ((min(n.AverageExpectedSol, 1) * 0.1 + luxuriesDemand / 2 * 0.75) * n.Population / 1000) / 200;
   n.SugarDemand = n.FoodAdditionsDemand * 0.45;
   n.SpiceDemand = n.FoodAdditionsDemand * 0.55;
   n.FoodAdditionsFoodBoost = 1 + (n.FoodAdditions / (n.Population / 2000000)) / 100;
@@ -597,14 +597,14 @@ export function evaluateNation(nationName) {
   //n.ArmyBasicArmamentsDemand = ((n.Levies * 0.15 + n.Militia * 0.25) * IrregularQualityIC + (n.LightInfantry * 0.5 + n.HeavyInfantry * 0.85 + n.EliteInfantry * 1) * MeleeQualityIC + (n.Archers * 0.5 + n.Crossbowmen * 0.7) * RangedQualityIC + (n.HandCannoneers * 0.75 + n.Musketeers * 0.8 + n.MusketMilitia * 0.7 + n.Riflemen * 1.25) * FirearmQualityIC + (n.LightCavalry * 1 + n.HeavyCavalry * 1.25 + n.EliteCavalry * 1.5) * CavalryQualityIC) / 1000;
 
     n.BasicToolsDemand = (n.Production * (n.ProductionSectors.AerospaceSector / n.TotalSupply) + n.Production * (n.ProductionSectors.AutomotiveSector / n.TotalSupply) + n.Production * (n.ProductionSectors.ElectronicsSector / n.TotalSupply) + n.Production * (n.ProductionSectors.ChemicalSector / n.TotalSupply) / 4 + n.Production * (n.ProductionSectors.HeavyIndustrySector / n.TotalSupply) / 10 + n.Production * (n.ProductionSectors.LuxuryGoodsSector / n.TotalSupply) / 4 + n.Production * (n.ProductionSectors.BasicGoodsSector / n.TotalSupply) / 4 + n.Production * (n.ProductionSectors.ShipBuildingSector / n.TotalSupply) + n.Production * (n.ProductionSectors.TextilesSector / n.TotalSupply) / 4 + n.Production * (n.ProductionSectors.HeavyArmamentsSector / n.TotalSupply) / 4 + n.Production * (n.ProductionSectors.BasicArmamentsSector / n.TotalSupply) / 4 + n.Production * (n.ProductionSectors.ConstructionSector / n.TotalSupply)) / n.ProductionEfficiency + (min(n.AverageExpectedSol, 1) * n.Population / 1000) / 200;
-    n.HousingDemand = ((min(n.AverageExpectedSol, 1) * 0.5 + n.LuxuriesDemand * 1) * n.Population / 1000) / 200 + realOverallImprovements * (n.SmallForts * 0.5 + n.New_SmallForts * 0.75 + n.MediumForts * 1 + n.New_MediumForts * 1.5 + n.BigForts * 2 + n.New_BigForts * 3 + n.HugeForts * 4 + n.New_HugeForts * 6 + n.CityFortifications * 1.5 + n.New_CityFortifications * 2.25) + 0.375 * n.SupplyDepots + n.New_SupplyDepots * 0.5625 + n.NavalBases * 0.625 + n.New_NavalBases * 0.9375;
+    n.HousingDemand = ((min(n.AverageExpectedSol, 1) * 0.5 + luxuriesDemand * 1) * n.Population / 1000) / 200 + realOverallImprovements * (n.SmallForts * 0.5 + n.New_SmallForts * 0.75 + n.MediumForts * 1 + n.New_MediumForts * 1.5 + n.BigForts * 2 + n.New_BigForts * 3 + n.HugeForts * 4 + n.New_HugeForts * 6 + n.CityFortifications * 1.5 + n.New_CityFortifications * 2.25) + 0.375 * n.SupplyDepots + n.New_SupplyDepots * 0.5625 + n.NavalBases * 0.625 + n.New_NavalBases * 0.9375;
     n.BasicArmamentsDemand = n.ExpectedPrivateBasicArmaments + n.ArmyBasicArmamentsDemand + realOverallImprovements * (n.SmallForts * 0.5 + n.MediumForts * 1 + n.BigForts * 2 + n.HugeForts * 4 + n.CityFortifications * 2);
     n.HeavyArmamentsDemand = ((n.RegimentalGuns * 0.05 + n.FieldCannons * 0.1 + n.SiegeGuns * 0.2) * artilleryQualityIC + (n.Technologies.Gunports ? (n.MerchantShips * 0.1 + n.LightShips * 0.8) * lightShipQualityIC + (n.MediumShips * 1.6 * mediumShipQualityIC) + (n.HeavyShips * 3.2 * heavyShipQualityIC) : 0) / 4 + (n.Technologies.Gunports ? (n.New_MerchantShips * 0.1 + n.New_LightShips * 0.8) * lightShipQualityIC + (n.New_MediumShips * 1.6 * mediumShipQualityIC) + (n.New_HeavyShips * 3.2 * heavyShipQualityIC) : 0) / 2 + realOverallImprovements * (n.Technologies.StarForts ? 2 : 1) * (n.SmallForts * 0.6 + n.New_SmallForts * 0.9 + n.MediumForts * 1.2 + n.New_MediumForts * 1.8 + n.BigForts * 2.4 + n.New_BigForts * 3.6 + n.HugeForts * 4.8 + n.New_HugeForts * 7.2 + n.CityFortifications * 2.4 + n.New_CityFortifications * 3.6)) / 2;
-  n.TextilesDemand = (n.Production * (n.ProductionSectors.BasicGoodsSector / n.TotalSupply) / 2 + n.Production * (n.ProductionSectors.ShipBuildingSector / n.TotalSupply) / 2) / n.ProductionEfficiency + ((min(n.AverageExpectedSol, 1) * 0.5 + n.LuxuriesDemand * 1) * n.Population / 1000) / 200;
+  n.TextilesDemand = (n.Production * (n.ProductionSectors.BasicGoodsSector / n.TotalSupply) / 2 + n.Production * (n.ProductionSectors.ShipBuildingSector / n.TotalSupply) / 2) / n.ProductionEfficiency + ((min(n.AverageExpectedSol, 1) * 0.5 + luxuriesDemand * 1) * n.Population / 1000) / 200;
     n.ShipBuildingDemand = n.CoastalPopulationPercent * n.Population / 500000 + ((n.LightShips * 0.05 + n.MerchantShips * 0.025) * lightShipQualityIC + n.MediumShips * mediumShipQualityIC * 0.1 + n.HeavyShips * heavyShipQualityIC * 0.2) + ((n.New_LightShips * 0.05 + n.New_MerchantShips * 0.025) * lightShipQualityIC + n.New_MediumShips * mediumShipQualityIC * 0.1 + n.New_HeavyShips * heavyShipQualityIC * 0.2) * 5;
-  n.BasicGoodsDemand = ((min(n.AverageExpectedSol, 1) * 1 + n.LuxuriesDemand * 1.5) * n.Population / 1000) / 200;
-  n.LuxuryGoodsDemand = n.LuxuriesDemand * n.Population / 1000 / 200;
-    n.AlcoholDemand = ((min(n.AverageExpectedSol, 1) * 1 + n.LuxuriesDemand * 2) * n.Population * (1 - n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100) / 1000) / 200 * (0.5 + n.Alcoholism);
+  n.BasicGoodsDemand = ((min(n.AverageExpectedSol, 1) * 1 + luxuriesDemand * 1.5) * n.Population / 1000) / 200;
+  n.LuxuryGoodsDemand = luxuriesDemand * n.Population / 1000 / 200;
+    n.AlcoholDemand = ((min(n.AverageExpectedSol, 1) * 1 + luxuriesDemand * 2) * n.Population * (1 - n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100) / 1000) / 200 * (0.5 + n.Alcoholism);
   n.HeavyIndustryDemand = 0; // define once we reach Industrial Revolution
   n.ChemicalsDemand = (n.Technologies.Morphine ? n.OverallNumbers / 50000 : 0);
   n.ElectronicsDemand = 0; // define once we reach Industrial Revolution
