@@ -619,7 +619,7 @@ export function evaluateNation(nationName) {
   n.SulphurShortage = min(1, max(0, 1 - (n.EffectiveSulphur / (n.SulphurDemand * 0.9))));
   n.CoalShortage = min(1, max(0, 1 - (n.EffectiveCoal / (n.CoalDemand * 0.9))));
   n.WoodShortage = min(1, max(0, 1 - (n.EffectiveWood / (n.WoodDemand * 0.9))));
-  n.FoodShortage = min(1, max(0, 1 - ((n.Food + n.FoodPerTurn) / n.FoodDemand)));
+  const foodShortage = min(1, max(0, 1 - ((n.Food + n.FoodPerTurn) / n.FoodDemand)));
   n.NaturalFabricsShortage = min(1, max(0, 1 - (naturalFabrics / (naturalFabricsDemand * 0.9))));
   n.LuxuryNaturalFabricsShortage = min(1, max(0, 1 - (luxuryNaturalFabrics / (luxuryNaturalFabricsDemand * 0.9))));
   n.ValuableMaterialsShortage = min(1, max(0, 1 - (valuableMaterials / (valuableMaterialsDemand * 0.9))));
@@ -659,7 +659,7 @@ export function evaluateNation(nationName) {
   n.EffectiveLuxuryGoods = n.LuxuryGoods + n.LuxuryGoodsIncoming - n.LuxuryGoodsOutgoing;
   n.LuxuryGoodsShortage = min(1, max(0, 1 - (n.EffectiveLuxuryGoods / (n.LuxuryGoodsDemand * 0.9))));
 
-  n.Alcohol = n.Production * (n.ProductionSectors.AlcoholSector / totalSupply) * (1.1 - n.FoodShortage);
+  n.Alcohol = n.Production * (n.ProductionSectors.AlcoholSector / totalSupply) * (1.1 - foodShortage);
   n.EffectiveAlcohol = n.Alcohol + n.AlcoholIncoming - n.AlcoholOutgoing;
   n.AlcoholShortage = min(1, max(0, 1 - (n.EffectiveAlcohol / (n.AlcoholDemand * 0.9))));
   if (n.AlcoholDemand == 0) n.AlcoholShortage = 0;
