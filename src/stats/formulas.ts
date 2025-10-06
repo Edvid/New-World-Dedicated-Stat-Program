@@ -290,42 +290,39 @@ export function evaluateNation(nationName) {
     }
 
 
-  n.ResourcesAdmDemand = (n.Reforms.GovernmentResourceOwnership ? n.Coal + n.Sulphur + n.Iron + n.Copper + n.Gold + n.Fur + n.Diamond + n.Silver + n.Ivory + n.Forestry + n.Reforestation * 5 + n.Cotton + n.Tea + n.Silk + n.Spice + n.Wool + n.Coffee + n.Cocoa + n.Tobacco + n.Sugar + n.ExoticFruit : 0) / 2;
+  const resourcesAdmDemand = (n.Reforms.GovernmentResourceOwnership ? n.Coal + n.Sulphur + n.Iron + n.Copper + n.Gold + n.Fur + n.Diamond + n.Silver + n.Ivory + n.Forestry + n.Reforestation * 5 + n.Cotton + n.Tea + n.Silk + n.Spice + n.Wool + n.Coffee + n.Cocoa + n.Tobacco + n.Sugar + n.ExoticFruit : 0) / 2;
   n.AgricultureAdmDemand = (n.Reforms.GovernmentLandOwnership ? (n.Population / 1000 * n.Workforces.PopInAgriculture / 25) : 0);
 
   n.CultureRepresentedAtGovernmentLevelPercent = cultureCalc.GovernmentRepresentationPercent;
   n.CulturalDisunity = cultureCalc.disunity * (1 + n.Nationalism * 0.2) * (n.GovernmentDominatedBy == "Workers" || n.GovernmentDominatedBy == "Urban" ? 1.2 : 1) * (n.GovernmentDominatedBy == "Clergy" ? 0.8 : 1);
   n.ReligionRepresentedAtGovernmentLevelPercent = religionCalc.GovernmentRepresentationPercent;
-  n.ReligiousDisunity = religionCalc.disunity * (1 + n.ReligiousFervor * 0.2 + n.Reforms.StateReligion / 2 - n.Reforms.FreedomOfReligion / 2) * (n.GovernmentDominatedBy == "Workers" || n.GovernmentDominatedBy == "Clergy" ? 1.2 : 1);
+  n.ReligiousDisunity = religionCalc.disunity * (1 + n.ReligiousFervor * 0.2 + Number(n.Reforms.StateReligion) / 2 - Number(n.Reforms.FreedomOfReligion) / 2) * (n.GovernmentDominatedBy == "Workers" || n.GovernmentDominatedBy == "Clergy" ? 1.2 : 1);
     if (n.ReligionRepresentedAtGovernmentLevelPercent < 0.5) {
-        n.ReligiousDisunity += n.Reforms.StateReligion + n.Reforms.RestrictiveReligionLaws / 2
+        n.ReligiousDisunity += Number(n.Reforms.StateReligion) + Number(n.Reforms.RestrictiveReligionLaws) / 2
     }
     if (n.ReligionRepresentedAtGovernmentLevelPercent < 0.25) {
-        n.ReligiousDisunity += n.Reforms.StateReligion + n.Reforms.RestrictiveReligionLaws / 2
+        n.ReligiousDisunity += Number(n.Reforms.StateReligion) + Number(n.Reforms.RestrictiveReligionLaws) / 2
     }
-  n.AdministrativeTech = -0.75 - n.Alcoholism * (1 - n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100) - n.Reforms.NobleBureaucrats * 0.5 - n.Reforms.ClergyBureaucrats * 0.25 + n.Reforms.MeritocraticBureaucrats + n.Technologies.Paper * 0.5 + n.CulturalAdvancements.Currency * 0.5 + n.CulturalAdvancements.EarlyModernAdministration + n.CulturalAdvancements.NationalSovereignity + n.CulturalAdvancements.Constitution + n.Reforms.WealthyBureaucrats / 2 + n.Technologies.PaperMachine / 5;
+  n.AdministrativeTech = -0.75 - n.Alcoholism * (1 - n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100) - Number(n.Reforms.NobleBureaucrats) * 0.5 - Number(n.Reforms.ClergyBureaucrats) * 0.25 + Number(n.Reforms.MeritocraticBureaucrats) + Number(n.Technologies.Paper) * 0.5 + Number(n.CulturalAdvancements.Currency) * 0.5 + Number(n.CulturalAdvancements.EarlyModernAdministration) + Number(n.CulturalAdvancements.NationalSovereignity) + Number(n.CulturalAdvancements.Constitution) + Number(n.Reforms.WealthyBureaucrats) / 2 + Number(n.Technologies.PaperMachine) / 5;
   n.AdministrativePower = (n.AdministrativeEfficiency * (1 + n.AdministrationSize / 2 + n.AdministrativeTech * 0.4) * 0.75) * (n.GovernmentDominatedBy == "Bureaucrats" || n.GovernmentDominatedBy == "Aristocracy" ? 1.1 : 1) * (n.GovernmentDominatedBy == "Urban" || n.GovernmentDominatedBy == "Military" || n.GovernmentDominatedBy == "Burgousie" ? 0.9 : 1);
 
-    n.TaxesAdmDemandNew = 0;
+    let taxesAdmDemandNew = 0;
     for (const EstateIndex in estatesGeneral) {
         const Estate = estatesGeneral[EstateIndex];
-        n.Test1 = n[Estate + "Tax"] * estateNumbers[Estate] * n.EstateInfluencesReal[Estate + "Influence"] * 1000 * 3;
-        n.Test2 = n[Estate + "Tax"] * min(estateNumbers[Estate] * n.EstateInfluencesReal[Estate + "Influence"], 0.01) * 1000 * 3;
-        n.TaxesAdmDemandNew += n.Test2;
+        // taxesAdmDemandNew = n[Estate + "Tax"] * estateNumbers[Estate] * n.EstateInfluencesReal[Estate + "Influence"] * 1000 * 3;
+        taxesAdmDemandNew = n[Estate + "Tax"] * min(estateNumbers[Estate] * n.EstateInfluencesReal[Estate + "Influence"], 0.01) * 1000 * 3;
     }
-
-    n.TaxesAdmDemandOld = (n.AristocracyTax + n.ClergyTax + n.BurgousieTax + n.UrbanTax + n.BureaucratsTax + n.IntellectualsTax + n.WorkersTax + n.MilitaryTax) / 8 * 75
 
     n.AdministrativeDemand = (
     0 + n.Population / 1500000 + n.Health * 2 + education * 2 + n.SocialSpending * 1.5 + propagandaReal * 2 + populationControlReal * 2 + n.BirthControl * 4 +
-    n.TaxesAdmDemandNew + n.OverallNumbers / 5000 + n.OverallShipCount / 25 + n.AgricultureSubsidies * 4 + (n.AgricultureInfrastructure - 1) * 4 + n.Size / 7500 +
-    (n.ResearchSpending - 1) * 10 + (1 - n.CultureRepresentedAtGovernmentLevelPercent) * 10 + (n.Population / 1000 * n.Workforces.Townsfolk / 20) * n.ProductionGovernmentControl + n.ResourcesAdmDemand + n.AgricultureAdmDemand
+    taxesAdmDemandNew + n.OverallNumbers / 5000 + n.OverallShipCount / 25 + n.AgricultureSubsidies * 4 + (n.AgricultureInfrastructure - 1) * 4 + n.Size / 7500 +
+    (n.ResearchSpending - 1) * 10 + (1 - n.CultureRepresentedAtGovernmentLevelPercent) * 10 + (n.Population / 1000 * n.Workforces.Townsfolk / 20) * n.ProductionGovernmentControl + resourcesAdmDemand + n.AgricultureAdmDemand
     );
 
   n.AdministrativeStrain = max(0, n.AdministrativeDemand - n.AdministrativePower);
   n.Absolutism = n.GovernmentRepresentation.UnitaryRepresentation / 10;
     n.Corruption = (n.AdministrativeStrain / n.AdministrativePower * 10 + n.Absolutism / 2.5) * (n.GovernmentDominatedBy == "Burgousie" || n.GovernmentDominatedBy == "Aristocracy" ? 1.2 : 1);
-    
+
   n.MilitaryControlTotal = n.MilitaryControl.AristocracyControl + n.MilitaryControl.ClergyControl + n.MilitaryControl.BurgousieControl + n.MilitaryControl.UrbanControl + n.MilitaryControl.BureaucratsControl + n.MilitaryControl.WorkersControl + n.MilitaryControl.Independent
   n.MilitaryControlReal = {
     Aristocracy: n.MilitaryControl.AristocracyControl / n.MilitaryControlTotal,
