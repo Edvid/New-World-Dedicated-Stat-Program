@@ -1,7 +1,7 @@
 import { lazyerror } from "../utility/custom_errors.js";
 import { mappedResources } from "../utility/game_stats/resources.js";
 import { min, max, clamp } from "../utility/math.js";
-import { clearNewTroops, getGameStats, Opinion } from "./gameStats.js";
+import { clearNewTroops, getGameStats, Opinion, type SocialBehaviour, type SocialBehaviourGroup } from "./gameStats.js";
 
 export function evaluateNation(nationName) {
   const n = getGameStats().Nations[nationName];
@@ -89,7 +89,10 @@ export function evaluateNation(nationName) {
     if(culs.length < 2) n.CultureRepresentedAtGovernmentLevel = culs[0]; 
   }
 
-  const SocialBehaviourCalc = function(socialBehaviourGroup, socialBehaviourWorldwideGroups, socialGroupRepresentedAtGovernmentLevel){
+  const SocialBehaviourCalc = function(
+    socialBehaviourGroup: Record<string, SocialBehaviourGroup>,
+    socialBehaviourWorldwideGroups: Record<string, SocialBehaviour>,
+    socialGroupRepresentedAtGovernmentLevel?: string){
     let pointSum = 0;
     let SocialBehaviourDisunity = 0;
 
@@ -98,7 +101,7 @@ export function evaluateNation(nationName) {
       pointSum += Points;
     }
 
-    let socialGroupRepresentedAtGovernmentLevelPercent;
+    let socialGroupRepresentedAtGovernmentLevelPercent: number;
     for (const OpinionatedSocialBehaviourGroupName in socialBehaviourGroup) {
     
         const OpinionatedSocialBehaviourGroup = socialBehaviourWorldwideGroups[OpinionatedSocialBehaviourGroupName];
@@ -115,10 +118,10 @@ export function evaluateNation(nationName) {
         //If the social behaviour group to be had an opinion about is also not present in the nation either, n.also doesn't add to the disunity
         const PointsOfOther = socialBehaviourGroup[nameOfSocialBehaviourGroupToBeHadAnOpinionAbout].Points;
         if (PointsOfOther == 0) continue; 
-        
-        let opinionScore;
+
+        let opinionScore: number;
         //If the social behaviour group to be had an opinion about, isn't recorded by the social behaviour group we are currently checking Opinions for. Treat the opinion as the default distrust
-          let opinionobj;
+        let opinionobj: Opinion;
         if (OpinionatedSocialBehaviourGroup.Opinions === undefined || OpinionatedSocialBehaviourGroup.Opinions[nameOfSocialBehaviourGroupToBeHadAnOpinionAbout] === undefined) 
           opinionScore = Opinion.DefaultDistrust;
         else {
@@ -291,7 +294,7 @@ export function evaluateNation(nationName) {
 
 
   const resourcesAdmDemand = (n.Reforms.GovernmentResourceOwnership ? n.Coal + n.Sulphur + n.Iron + n.Copper + n.Gold + n.Fur + n.Diamond + n.Silver + n.Ivory + n.Forestry + n.Reforestation * 5 + n.Cotton + n.Tea + n.Silk + n.Spice + n.Wool + n.Coffee + n.Cocoa + n.Tobacco + n.Sugar + n.ExoticFruit : 0) / 2;
-  n.AgricultureAdmDemand = (n.Reforms.GovernmentLandOwnership ? (n.Population / 1000 * n.Workforces.PopInAgriculture / 25) : 0);
+  const agricultureAdmDemand = (n.Reforms.GovernmentLandOwnership ? (n.Population / 1000 * n.PopInAgriculture / 25) : 0);
 
   n.CultureRepresentedAtGovernmentLevelPercent = cultureCalc.GovernmentRepresentationPercent;
   n.CulturalDisunity = cultureCalc.disunity * (1 + n.Nationalism * 0.2) * (n.GovernmentDominatedBy == "Workers" || n.GovernmentDominatedBy == "Urban" ? 1.2 : 1) * (n.GovernmentDominatedBy == "Clergy" ? 0.8 : 1);
@@ -318,7 +321,7 @@ export function evaluateNation(nationName) {
     n.AdministrativeDemand = (
     0 + n.Population / 1500000 + n.Health * 2 + education * 2 + n.SocialSpending * 1.5 + propagandaReal * 2 + populationControlReal * 2 + n.BirthControl * 4 +
     taxesAdmDemand + n.OverallNumbers / 5000 + n.OverallShipCount / 25 + n.AgricultureSubsidies * 4 + (n.AgricultureInfrastructure - 1) * 4 + n.Size / 7500 +
-    (n.ResearchSpending - 1) * 10 + (1 - n.CultureRepresentedAtGovernmentLevelPercent) * 10 + (n.Population / 1000 * n.Workforces.Townsfolk / 20) * n.ProductionGovernmentControl + resourcesAdmDemand + n.AgricultureAdmDemand
+    (n.ResearchSpending - 1) * 10 + (1 - n.CultureRepresentedAtGovernmentLevelPercent) * 10 + (n.Population / 1000 * n.Workforces.Townsfolk / 20) * n.ProductionGovernmentControl + resourcesAdmDemand + agricultureAdmDemand
     );
 
   n.AdministrativeStrain = max(0, n.AdministrativeDemand - n.AdministrativePower);

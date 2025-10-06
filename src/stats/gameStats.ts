@@ -10,7 +10,7 @@ import { type units } from "../utility/game_stats/military.js";
 
 export class SocialBehaviour {
   Color = "000000";
-  Opinions = {};
+  Opinions: Record<string, Opinion> = {};
 }
 
 export class SocialBehaviourGroup {
@@ -478,7 +478,7 @@ export class Nation implements units, RealReformCostTypes, estateStats {
   };
   CultureGroups: Record<string, SocialBehaviourGroup> = {};
   CultureRepresentedAtGovernmentLevel: string;
-  CultureRepresentedAtGovernmentLevelPercent: string;
+  CultureRepresentedAtGovernmentLevelPercent: number;
   PopulationStabilityImpact: number;
   PopulationTechImpact: number;
   MiningEfficiency: number;
