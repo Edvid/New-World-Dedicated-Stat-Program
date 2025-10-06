@@ -36,7 +36,6 @@ export const mappedResourcesMultipliers: Record<mappedResource, number> = {
 
 const resourceTypes = [
     "Food",
-    "Wood",
     "Sulphur",
     "Cotton",
     "Gold",
