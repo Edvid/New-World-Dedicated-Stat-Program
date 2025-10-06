@@ -555,7 +555,7 @@ export function evaluateNation(nationName) {
   n.SpiceDemand = foodAdditionsDemand * 0.55;
   const foodAdditionsFoodBoost = 1 + (foodAdditions / (n.Population / 2000000)) / 100;
 
-  n.UnitsArmamentsDemands = {
+  const unitsArmamentsDemands = {
     Levies: 0.2 * irregularQualityIC,
     Militia: 0.3 * irregularQualityIC,
     LightInfantry: 0.6 * meleeQualityIC,
@@ -570,7 +570,7 @@ export function evaluateNation(nationName) {
     HeavyCavalry: 1.8 * cavalryQualityIC,
     EliteCavalry: 2.2 * cavalryQualityIC
   }
-  n.UnitsArmamentsDemandsAll = {
+  const unitsArmamentsDemandsAll = {
     Levies: 0.2 * irregularQualityIC,
     Militia: 0.3 * irregularQualityIC,
     LightInfantry: 0.6 * meleeQualityIC,
@@ -588,9 +588,9 @@ export function evaluateNation(nationName) {
   }
 
   n.ArmyBasicArmamentsDemand = 0;
-  for (const UnitIndex in n.UnitsArmamentsDemandsAll) {
+  for (const UnitIndex in unitsArmamentsDemandsAll) {
     const Unit = UnitIndex;
-    const Cost = n.UnitsArmamentsDemandsAll[Unit];
+    const Cost = unitsArmamentsDemandsAll[Unit];
     n.ArmyBasicArmamentsDemand += n[Unit] / 1000 * Cost * 1.5;
   }
 
@@ -1039,8 +1039,8 @@ export function evaluateNation(nationName) {
     let ntrp = 0;
     let nm = 0;
     let ns = 0;
-    for (const unitName in n.UnitsArmamentsDemandsAll) {
-      const cost = n.UnitsArmamentsDemandsAll[unitName];
+    for (const unitName in unitsArmamentsDemandsAll) {
+      const cost = unitsArmamentsDemandsAll[unitName];
       ntrp += n["New_" + unitName] * cost / 1000 * n.BasicArmamentsValue;
       nm += n["New_" + unitName];
     }
@@ -1201,25 +1201,25 @@ export function evaluateNation(nationName) {
 
   for (const UnitIndex in n.PrivateArmySetup) {
     const Amount = n.PrivateArmySetup[UnitIndex];
-    const Cost = n.UnitsArmamentsDemands[UnitIndex];
+    const Cost = unitsArmamentsDemands[UnitIndex];
       n["Aristocracy" + UnitIndex] = n.AristocracyBasicArmaments * Amount / Cost * 1000 - (n["Aristocracy" + UnitIndex + "Casualties"] != null ? n["Aristocracy" + UnitIndex + "Casualties"] : 0);
   }
 
   for (const UnitIndex in n.PrivateArmySetup) {
     const Amount = n.PrivateArmySetup[UnitIndex];
-    const Cost = n.UnitsArmamentsDemands[UnitIndex];
+    const Cost = unitsArmamentsDemands[UnitIndex];
       n["Burgousie" + UnitIndex] = n.BurgousieBasicArmaments * Amount / Cost * 1000 - (n["Burgousie" + UnitIndex + "Casualties"] != null ? n["Burgousie" + UnitIndex + "Casualties"] : 0);
   }
 
   for (const UnitIndex in n.PrivateArmySetup) {
     const Amount = n.PrivateArmySetup[UnitIndex];
-    const Cost = n.UnitsArmamentsDemands[UnitIndex];
+    const Cost = unitsArmamentsDemands[UnitIndex];
       n["Clergy" + UnitIndex] = n.ClergyBasicArmaments * Amount / Cost * 1000 - (n["Clergy" + UnitIndex + "Casualties"] != null ? n["Clergy" + UnitIndex + "Casualties"] : 0);
   }
 
     n.MilitiaBalance = (1 - n.Technologies.Muskets * 0.05 - n.Technologies.Matchlock * 0.15 - n.Technologies.Bayonet * 0.05 - n.Technologies.SocketBayonet * 0.15 - n.Technologies.Flintlock * 0.40);
-    n.PopulaceMilitia = n.MilitiaBalance * n.PopulaceBasicArmaments / n.UnitsArmamentsDemands.Militia * 1000 - (n.PopulaceMilitiaCasualties != null ? n.PopulaceMilitiaCasualties : 0);
-    n.PopulaceMusketMilitia = (1 - n.MilitiaBalance) * n.PopulaceBasicArmaments / n.UnitsArmamentsDemands.MusketMilitia * 1000 - (n.PopulaceMusketMilitiaCasualties != null ? n.PopulaceMusketMilitiaCasualties : 0);
+    n.PopulaceMilitia = n.MilitiaBalance * n.PopulaceBasicArmaments / unitsArmamentsDemands.Militia * 1000 - (n.PopulaceMilitiaCasualties != null ? n.PopulaceMilitiaCasualties : 0);
+    n.PopulaceMusketMilitia = (1 - n.MilitiaBalance) * n.PopulaceBasicArmaments / unitsArmamentsDemands.MusketMilitia * 1000 - (n.PopulaceMusketMilitiaCasualties != null ? n.PopulaceMusketMilitiaCasualties : 0);
 
   n.SlavesEffectiveWage = n.SlavesWage * (1 - n.WorkersTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.WorkersInfluence));
   n.LabourersEffectiveWage = n.LabourersWage * (1 - n.WorkersTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.WorkersInfluence)) + (n.ExpectedLabourersSol < n.AverageExpectedSol ? n.SocialSpending / 20 : 0) - (n.PopulaceBasicArmaments * n.BasicArmamentsValue * n.LabourersWeaponContribution) / max(1, n.Population * n.Workforces.Labourers / 1000);
