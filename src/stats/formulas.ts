@@ -525,35 +525,35 @@ export function evaluateNation(nationName) {
 
   n.FoodDemand = n.Production * (n.ProductionSectors.AlcoholSector / totalSupply) + ((min(n.AverageExpectedSol, 1) + luxuriesDemand * 1.75) * n.Population / 1000);
 
-  n.NaturalFabricsDemand = (n.Production * (n.ProductionSectors.TextilesSector / totalSupply)) / n.ProductionEfficiency / 4;
-  n.WoolDemand = n.NaturalFabricsDemand;
-  n.CottonDemand = n.NaturalFabricsDemand;
+  const naturalFabricsDemand = (n.Production * (n.ProductionSectors.TextilesSector / totalSupply)) / n.ProductionEfficiency / 4;
+  n.WoolDemand = naturalFabricsDemand;
+  n.CottonDemand = naturalFabricsDemand;
 
-  n.LuxuryNaturalFabricsDemand = (n.Production * (n.ProductionSectors.LuxuryGoodsSector / totalSupply) / 10) / n.ProductionEfficiency;
-  n.FurDemand = n.LuxuryNaturalFabricsDemand;
-  n.SilkDemand = n.LuxuryNaturalFabricsDemand;
+  const luxuryNaturalFabricsDemand = (n.Production * (n.ProductionSectors.LuxuryGoodsSector / totalSupply) / 10) / n.ProductionEfficiency;
+  n.FurDemand = luxuryNaturalFabricsDemand;
+  n.SilkDemand = luxuryNaturalFabricsDemand;
 
-  n.ValuableMaterialsDemand = (n.Production * (n.ProductionSectors.LuxuryGoodsSector / totalSupply)) / n.ProductionEfficiency;
-  n.DiamondDemand = n.ValuableMaterialsDemand + n.Population / 1000000;
-  n.GoldDemand = n.ValuableMaterialsDemand + n.Population / 500000;
-  n.SilverDemand = n.ValuableMaterialsDemand + n.Population / 500000;
-  n.CopperDemand = n.ValuableMaterialsDemand + n.Population / 1000000;
-  n.IvoryDemand = n.ValuableMaterialsDemand + n.Population / 1000000;
-  
+  const valuableMaterialsDemand = (n.Production * (n.ProductionSectors.LuxuryGoodsSector / totalSupply)) / n.ProductionEfficiency;
+  n.DiamondDemand = valuableMaterialsDemand + n.Population / 1000000;
+  n.GoldDemand = valuableMaterialsDemand + n.Population / 500000;
+  n.SilverDemand = valuableMaterialsDemand + n.Population / 500000;
+  n.CopperDemand = valuableMaterialsDemand + n.Population / 1000000;
+  n.IvoryDemand = valuableMaterialsDemand + n.Population / 1000000;
 
-  n.LuxuryConsumables = n.EffectiveTea + n.EffectiveCoffee + n.EffectiveTobacco + n.EffectiveExoticFruit + n.EffectiveCocoa;
-  n.LuxuryConsumablesDemand = max(0, luxuriesDemand * n.Population / 1000 * 0.05);
-  n.TeaDemand = n.LuxuryConsumablesDemand * 0.2;
-  n.CoffeeDemand = n.LuxuryConsumablesDemand * 0.2;
-  n.TobaccoDemand = n.LuxuryConsumablesDemand * 0.2;
-  n.ExoticFruitDemand = n.LuxuryConsumablesDemand * 0.2;
-  n.CocoaDemand = n.LuxuryConsumablesDemand * 0.2;
 
-  n.FoodAdditions = n.EffectiveSugar + n.EffectiveSpice;
-  n.FoodAdditionsDemand = ((min(n.AverageExpectedSol, 1) * 0.1 + luxuriesDemand / 2 * 0.75) * n.Population / 1000) / 200;
-  n.SugarDemand = n.FoodAdditionsDemand * 0.45;
-  n.SpiceDemand = n.FoodAdditionsDemand * 0.55;
-  n.FoodAdditionsFoodBoost = 1 + (n.FoodAdditions / (n.Population / 2000000)) / 100;
+  const luxuryConsumables = n.EffectiveTea + n.EffectiveCoffee + n.EffectiveTobacco + n.EffectiveExoticFruit + n.EffectiveCocoa;
+  const luxuryConsumablesDemand = max(0, luxuriesDemand * n.Population / 1000 * 0.05);
+  n.TeaDemand = luxuryConsumablesDemand * 0.2;
+  n.CoffeeDemand = luxuryConsumablesDemand * 0.2;
+  n.TobaccoDemand = luxuryConsumablesDemand * 0.2;
+  n.ExoticFruitDemand = luxuryConsumablesDemand * 0.2;
+  n.CocoaDemand = luxuryConsumablesDemand * 0.2;
+
+  const foodAdditions = n.EffectiveSugar + n.EffectiveSpice;
+  const foodAdditionsDemand = ((min(n.AverageExpectedSol, 1) * 0.1 + luxuriesDemand / 2 * 0.75) * n.Population / 1000) / 200;
+  n.SugarDemand = foodAdditionsDemand * 0.45;
+  n.SpiceDemand = foodAdditionsDemand * 0.55;
+  const foodAdditionsFoodBoost = 1 + (foodAdditions / (n.Population / 2000000)) / 100;
 
   n.UnitsArmamentsDemands = {
     Levies: 0.2 * irregularQualityIC,
@@ -620,9 +620,9 @@ export function evaluateNation(nationName) {
   n.CoalShortage = min(1, max(0, 1 - (n.EffectiveCoal / (n.CoalDemand * 0.9))));
   n.WoodShortage = min(1, max(0, 1 - (n.EffectiveWood / (n.WoodDemand * 0.9))));
   n.FoodShortage = min(1, max(0, 1 - ((n.Food + n.FoodPerTurn) / n.FoodDemand)));
-  n.NaturalFabricsShortage = min(1, max(0, 1 - (n.NaturalFabrics / (n.NaturalFabricsDemand * 0.9))));
-  n.LuxuryNaturalFabricsShortage = min(1, max(0, 1 - (n.LuxuryNaturalFabrics / (n.LuxuryNaturalFabricsDemand * 0.9))));
-  n.ValuableMaterialsShortage = min(1, max(0, 1 - (n.ValuableMaterials / (n.ValuableMaterialsDemand * 0.9))));
+  n.NaturalFabricsShortage = min(1, max(0, 1 - (n.NaturalFabrics / (naturalFabricsDemand * 0.9))));
+  n.LuxuryNaturalFabricsShortage = min(1, max(0, 1 - (n.LuxuryNaturalFabrics / (luxuryNaturalFabricsDemand * 0.9))));
+  n.ValuableMaterialsShortage = min(1, max(0, 1 - (n.ValuableMaterials / (valuableMaterialsDemand * 0.9))));
 
   n.BasicTools = n.Production * (n.ProductionSectors.BasicToolsSector / totalSupply) * (1.1 - n.WoodShortage) * (1.1 - n.IronShortage) * (1.1 - n.CoalShortage) * toolWorkingEfficiency;
   n.EffectiveBasicTools = n.BasicTools + n.BasicToolsIncoming - n.BasicToolsOutgoing;
@@ -729,10 +729,10 @@ export function evaluateNation(nationName) {
 
     n.BuildingsUpkeep = n.SmallForts * n.SmallFortUpkeep + n.MediumForts * n.MediumFortUpkeep + n.BigForts * n.BigFortUpkeep + n.HugeForts * n.HugeFortUpkeep + n.CityFortifications * n.CityFortificationUpkeep + n.NavalBases * n.NavalBaseUpkeep + n.SupplyDepots * n.SupplyDepotUpkeep;
 
-    n.LuxuryConsumablesValue = (n.EffectiveTea / n.LuxuryConsumables) * n.TeaValue + (n.EffectiveCoffee / n.LuxuryConsumables) * n.CoffeeValue + (n.EffectiveTobacco / n.LuxuryConsumables) * n.TobaccoValue + (n.EffectiveExoticFruit / n.LuxuryConsumables) * n.ExoticFruitValue + (n.EffectiveCocoa / n.LuxuryConsumables) * n.CocoaValue;
-    n.FoodAdditionsValue = (n.EffectiveSugar / n.FoodAdditions) * n.SugarValue + (n.EffectiveSpice / n.FoodAdditions) * n.SpiceValue;
+    const luxuryConsumablesValue = (n.EffectiveTea / luxuryConsumables) * n.TeaValue + (n.EffectiveCoffee / luxuryConsumables) * n.CoffeeValue + (n.EffectiveTobacco / luxuryConsumables) * n.TobaccoValue + (n.EffectiveExoticFruit / luxuryConsumables) * n.ExoticFruitValue + (n.EffectiveCocoa / luxuryConsumables) * n.CocoaValue;
+    n.FoodAdditionsValue = (n.EffectiveSugar / foodAdditions) * n.SugarValue + (n.EffectiveSpice / foodAdditions) * n.SpiceValue;
 
-    n.FoodSupply = ((n.FoodRationing ? min(n.Food + n.FoodPerTurn, n.Population / 1000) : n.Food + n.FoodPerTurn) * n.FoodAdditionsFoodBoost)
+    n.FoodSupply = ((n.FoodRationing ? min(n.Food + n.FoodPerTurn, n.Population / 1000) : n.Food + n.FoodPerTurn) * foodAdditionsFoodBoost)
     n.FoodValue = n.FoodDemand / n.FoodSupply;
     n.FoodValue = n.FoodDemand / (isNaN(n.FoodSupply) ? 1 : (n.FoodSupply == 0 ? 1 : (n.FoodSupply + Math.sqrt(n.FoodSupply)))) * 0.5;
 
@@ -1248,7 +1248,7 @@ export function evaluateNation(nationName) {
 
 
     n.NecessitiesCost = (0.5 * n.HousingValue + 0.5 * n.TextilesValue + n.BasicGoodsValue + n.AlcoholValue * (0.5 + n.Alcoholism) * (1 - n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100) + n.CoffeeValue * 0.5 * (n.ReligionGroups.Sunni.Points / 100 + n.ReligionGroups.Shia.Points / 100) + 0.5 * n.BasicToolsValue) / 200 + (n.CoalValue * 0.005 > n.WoodValue * 0.01 ? 0.01 * n.WoodValue : 0.005 * n.CoalValue) + (n.FoodAdditionsValue / 2 < n.FoodValue ? 0.1 * n.FoodAdditionsValue + 0.8 * n.FoodValue : n.FoodValue);
-    n.LuxuriesCost = (n.HousingValue + n.TextilesValue + 1.5 * n.BasicGoodsValue + n.LuxuryGoodsValue + 2 * n.AlcoholValue * (0.5 + n.Alcoholism) * (1 - n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100) + n.CoffeeValue * (n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100)) / 200 + (n.CoalValue * 0.01 > n.WoodValue * 0.02 ? n.WoodValue * 0.02 : 0.01 * n.CoalValue) + (n.FoodAdditionsValue / 2 < n.FoodValue ? n.FoodAdditionsValue / 2 * 0.75 + 0.5 * n.FoodValue : 1.25 * n.FoodValue) + (n.LuxuryConsumablesValue / 10 < n.FoodValue ? 0.05 * n.LuxuryConsumablesValue : 0.5 * n.FoodValue);
+    n.LuxuriesCost = (n.HousingValue + n.TextilesValue + 1.5 * n.BasicGoodsValue + n.LuxuryGoodsValue + 2 * n.AlcoholValue * (0.5 + n.Alcoholism) * (1 - n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100) + n.CoffeeValue * (n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100)) / 200 + (n.CoalValue * 0.01 > n.WoodValue * 0.02 ? n.WoodValue * 0.02 : 0.01 * n.CoalValue) + (n.FoodAdditionsValue / 2 < n.FoodValue ? n.FoodAdditionsValue / 2 * 0.75 + 0.5 * n.FoodValue : 1.25 * n.FoodValue) + (luxuryConsumablesValue / 10 < n.FoodValue ? 0.05 * luxuryConsumablesValue : 0.5 * n.FoodValue);
 
     // SoL
   for (const EstateIndex in estates) {
