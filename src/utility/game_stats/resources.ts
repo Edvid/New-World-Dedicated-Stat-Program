@@ -1,4 +1,14 @@
-export const mappedResources = [
+type mappedResource = "Fur" |
+"Gold" |
+"Iron" |
+"Ivory" |
+"Sulphur" |
+"Coal" |
+"Copper" |
+"Diamond" |
+"Silver"
+
+export const mappedResources: mappedResource[] = [
     "Fur",
     "Gold",
     "Iron",
@@ -10,20 +20,20 @@ export const mappedResources = [
     "Silver"
 ];
 
-
-export const mappedResourcesMultipliers = [
-    1, //fur
-    1, //gold
-    1, //iron
-    1, //ivory
-    1, //sulphur
+export const mappedResourcesMultipliers: Record<mappedResource, number> = {
+    Fur: 1,
+    Gold: 1,
+    Iron: 1,
+    Ivory: 1,
+    Sulphur: 1,
 
     //x2
-    2, //coal
-    2, //copper
-    2, //diamond
-    2 //silver
-];
+    Coal: 2,
+    Copper: 2,
+    Diamond: 2,
+    Silver: 2
+};
+
 const resourceTypes = [
     "Food",
     "Wood",

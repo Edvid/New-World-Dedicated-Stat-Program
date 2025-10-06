@@ -310,8 +310,7 @@ async function mapCalculations() {
 
   const resourceDistributionValueMode = "normal";
 
-  for (let r = 0; r < mappedResources.length; r++) {
-    const resourceName = mappedResources[r];
+  for (const resourceName of mappedResources) {
 
     let resourceData = null;
 
@@ -373,7 +372,7 @@ async function mapCalculations() {
       });
 
       //resource blob number multiplication
-      count *= mappedResourcesMultipliers[r];
+      count *= mappedResourcesMultipliers[resourceName];
 
       addToTextOutput(
         `= ${(Math.round(count * 20) / 20).toFixed(2)} ${nationName}.Max${resourceName}
