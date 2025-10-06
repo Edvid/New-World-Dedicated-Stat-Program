@@ -83,8 +83,8 @@ export function evaluateNation(nationName) {
     }
 
   {
-    let rels = []
-    let culs = []
+    const rels = []
+    const culs = []
     for (const relname in n.ReligionGroups) {
       const rel = n.ReligionGroups[relname];
       if (rel.Points > 0) {
@@ -100,9 +100,8 @@ export function evaluateNation(nationName) {
     if(rels.length < 2) n.ReligionRepresentedAtGovernmentLevel = rels[0]; 
     if(culs.length < 2) n.CultureRepresentedAtGovernmentLevel = culs[0]; 
   }
-  
-  
-  let SocialBehaviourCalc = function(socialBehaviourGroup, socialBehaviourWorldwideGroups, socialGroupRepresentedAtGovernmentLevel){
+
+  const SocialBehaviourCalc = function(socialBehaviourGroup, socialBehaviourWorldwideGroups, socialGroupRepresentedAtGovernmentLevel){
     let pointSum = 0;
     let SocialBehaviourDisunity = 0;
 
@@ -155,12 +154,12 @@ export function evaluateNation(nationName) {
       disunity: SocialBehaviourDisunity
     }
   }
-  let cultureCalc = SocialBehaviourCalc(
+  const cultureCalc = SocialBehaviourCalc(
     n.CultureGroups, 
     cultures, 
     typeof n.CultureRepresentedAtGovernmentLevel !== 'undefined' ? n.CultureRepresentedAtGovernmentLevel : null
   );
-  let religionCalc = SocialBehaviourCalc(
+  const religionCalc = SocialBehaviourCalc(
     n.ReligionGroups, 
     religions, 
     typeof n.ReligionRepresentedAtGovernmentLevel !== 'undefined' ? n.ReligionRepresentedAtGovernmentLevel : null
@@ -180,10 +179,10 @@ export function evaluateNation(nationName) {
     n.AverageDevelopment = n.UrbanPopulationPercent;
     if (n.urbanPopulation == 0) n.AverageDevelopment = n.DevelopmentPixelCount / n.Size / 255;
     n.Workforces.Townsfolk = n.AverageDevelopment;
-    n.Workforces.Burgousie = 0.005 + n.AverageDevelopment / 100 + n.Reforms.WealthPrivilege * 0.0005 + n.Reforms.ClassEquality * 0.0005 + n.Reforms.WealthyBureaucrats * 0.0005 + n.Reforms.RestrictedSocialMobility * 0.0005 + n.Reforms.WealthyOfficers * 0.0005 + n.Reforms.MixedResourceOwnership * 0.001 + n.Reforms.BurgousieResourceOwnership * 0.002 + n.Reforms.MixedLandOwnership * 0.0025 + n.Reforms.PrivateLandOwnership * 0.005;
-    n.Workforces.Aristocracy = 0.02 - n.Reforms.WealthPrivilege * 0.0005 - n.Reforms.ClassEquality * 0.0005 - n.Reforms.RestrictedSocialMobility * 0.0005 - n.Reforms.WealthyOfficers * 0.0005 - n.Reforms.MixedResourceOwnership * 0.001 - n.Reforms.BurgousieResourceOwnership * 0.002 - n.Reforms.MixedLandOwnership * 0.0025 - n.Reforms.PrivateLandOwnership * 0.005;
+    n.Workforces.Burgousie = 0.005 + n.AverageDevelopment / 100 + Number(n.Reforms.WealthPrivilege) * 0.0005 + Number(n.Reforms.ClassEquality) * 0.0005 + Number(n.Reforms.WealthyBureaucrats) * 0.0005 + Number(n.Reforms.RestrictedSocialMobility) * 0.0005 + Number(n.Reforms.WealthyOfficers) * 0.0005 + Number(n.Reforms.MixedResourceOwnership) * 0.001 + Number(n.Reforms.BurgousieResourceOwnership) * 0.002 + Number(n.Reforms.MixedLandOwnership) * 0.0025 + Number(n.Reforms.PrivateLandOwnership) * 0.005;
+    n.Workforces.Aristocracy = 0.02 - Number(n.Reforms.WealthPrivilege) * 0.0005 - Number(n.Reforms.ClassEquality) * 0.0005 - Number(n.Reforms.RestrictedSocialMobility) * 0.0005 - Number(n.Reforms.WealthyOfficers) * 0.0005 - Number(n.Reforms.MixedResourceOwnership) * 0.001 - Number(n.Reforms.BurgousieResourceOwnership) * 0.002 - Number(n.Reforms.MixedLandOwnership) * 0.0025 - Number(n.Reforms.PrivateLandOwnership) * 0.005;
 
-    n.Education = n.EducationEfficiency * (0.5 + n.Technologies.Paper * 0.5 + n.Reforms.ReligiousSchools + n.Reforms.PublicEducation * 3 - n.Alcoholism * (1 - n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100)) * (n.GovernmentDominatedBy == "Intellectuals" ? 1.2 : 1);
+    const education = n.EducationEfficiency * (0.5 + Number(n.Technologies.Paper) * 0.5 + Number(n.Reforms.ReligiousSchools) + Number(n.Reforms.PublicEducation) * 3 - n.Alcoholism * (1 - n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100)) * (n.GovernmentDominatedBy == "Intellectuals" ? 1.2 : 1);
   n.PropagandaReal = n.Propaganda * (n.Reforms.StateMediaOnly * 2 + n.Reforms.ExtensiveCensorship * 1.5 + n.Reforms.LimitedCensorship + n.Reforms.FreeSpeech * 0.5);
   n.PopulationControlReal = n.PopulationControl * (n.Reforms.CommunityPolicing * 0.5 + n.Reforms.RegionalPolice * 0.75 + n.Reforms.StatePolice * 1.25 + n.Reforms.SecretPolice * 2) * (n.GovernmentDominatedBy == "Military" || n.GovernmentDominatedBy == "Bureaucrats" ? 1.2 : 1) * (n.GovernmentDominatedBy == "Intellectuals" ? 0.8 : 1);
 
@@ -330,7 +329,7 @@ export function evaluateNation(nationName) {
     n.TaxesAdmDemandOld = (n.AristocracyTax + n.ClergyTax + n.BurgousieTax + n.UrbanTax + n.BureaucratsTax + n.IntellectualsTax + n.WorkersTax + n.MilitaryTax) / 8 * 75
 
     n.AdministrativeDemand = (
-    0 + n.Population / 1500000 + n.Health * 2 + n.Education * 2 + n.SocialSpending * 1.5 + n.PropagandaReal * 2 + n.PopulationControlReal * 2 + n.BirthControl * 4 +
+    0 + n.Population / 1500000 + n.Health * 2 + education * 2 + n.SocialSpending * 1.5 + n.PropagandaReal * 2 + n.PopulationControlReal * 2 + n.BirthControl * 4 +
     n.TaxesAdmDemandNew + n.OverallNumbers / 5000 + n.OverallShipCount / 25 + n.AgricultureSubsidies * 4 + (n.AgricultureInfrastructure - 1) * 4 + n.Size / 7500 +
     (n.ResearchSpending - 1) * 10 + (1 - n.CultureRepresentedAtGovernmentLevelPercent) * 10 + (n.Population / 1000 * n.Workforces.Townsfolk / 20) * n.ProductionGovernmentControl + n.ResourcesAdmDemand + n.AgricultureAdmDemand
     );
@@ -367,7 +366,7 @@ export function evaluateNation(nationName) {
 
   n.AgricultureSpending = (n.PopInAgriculture * n.Population / 1000 * (-2 + n.AgricultureInfrastructure + n.AgricultureSubsidies + n.StockingCapabilities)) / 100 / timeDivide;
   
-  let GatheringEffectiveness = function (name) {
+  const GatheringEffectiveness = function (name) {
     switch (name) {
       case "Food":
         return "Farming"
@@ -449,7 +448,7 @@ export function evaluateNation(nationName) {
     //the things below do not apply to Budget or Food
 
     n["Effective" + resource] = (function () {
-      let er = n[resource] * (GatheringEffectiveness(resource) == "Farming" ? n.FarmingEfficiency : (GatheringEffectiveness(resource) == "Mining" ? n.MiningEfficiency : 1)) + n[resource + "Incoming"] - n[resource + "Outgoing"];
+      const er = n[resource] * (GatheringEffectiveness(resource) == "Farming" ? n.FarmingEfficiency : (GatheringEffectiveness(resource) == "Mining" ? n.MiningEfficiency : 1)) + n[resource + "Incoming"] - n[resource + "Outgoing"];
       return er;
       })();
   }
@@ -750,7 +749,7 @@ export function evaluateNation(nationName) {
 
   n.TradePowerFromResourceTrade = (function () {
     let num = 0;
-    let TradePowerResources = [
+    const TradePowerResources = [
       "Sulphur",
       "Coal",
       "Cotton",
@@ -802,7 +801,7 @@ export function evaluateNation(nationName) {
 
   n.OutgoingTradePowerFromResourceTrade = (function () {
     let num = 0;
-    let TradePowerResources = [
+    const TradePowerResources = [
       "Sulphur",
       "Coal",
       "Cotton",
@@ -854,7 +853,7 @@ export function evaluateNation(nationName) {
 
   n.ResourceTrade = (function () {
     let num = 0;
-    let TradePowerResources = [
+    const TradePowerResources = [
       "Sulphur",
       "Coal",
       "Cotton",
@@ -896,7 +895,7 @@ export function evaluateNation(nationName) {
     return num;
   })();
 
-  let pseudoTradePower = (function () {
+  const pseudoTradePower = (function () {
     let stp = 0;
     for (const region in tradeZones) {
       let allNationPoints = 0;
@@ -934,7 +933,7 @@ export function evaluateNation(nationName) {
 
   n.ProductionRevenue = (function () {
     let num = 0;
-    let ProductionResources = [
+    const ProductionResources = [
       "Housing",
       "Textiles",
       "BasicGoods",
@@ -1026,8 +1025,8 @@ export function evaluateNation(nationName) {
   n.ArmyWages = (n.Levies * n.LevyWage + n.Militias * n.MilitiaWage + n.Proffesionals * n.ArmyWage + n.Elites * n.EliteWage) / 1000 / timeDivide;
   n.ArmyUpkeep = n.UnitUpkeep + n.ArmyWages;
 
-  n.FutureLiteracyPercent = ((n.LiteracyPercent > n.Education * 3) ? n.Education * 3 : n.LiteracyPercent) + n.Education / 10 / timeDivide;
-  n.FutureHigherEducation = n.HigherEducation + (n.Education >= 3 ? n.Education / 30 : 0) + (n.HigherEducation > n.Education / 3 ? -0.25 : 0);
+  n.FutureLiteracyPercent = ((n.LiteracyPercent > education * 3) ? education * 3 : n.LiteracyPercent) + education / 10 / timeDivide;
+  n.FutureHigherEducation = n.HigherEducation + (education >= 3 ? education / 30 : 0) + (n.HigherEducation > education / 3 ? -0.25 : 0);
 
   n.UpkeepForOneMerchantShip = ((0.025 * n.ShipBuildingValue + n.Technologies.Gunports * 0.1 / 8 * n.HeavyArmamentsValue) * (n.LightShipQualityIC)) / timeDivide;
   n.UpkeepForOneLightShip = ((0.05 * n.ShipBuildingValue + n.Technologies.Gunports * 0.8 / 8 * n.HeavyArmamentsValue) * (n.LightShipQualityIC)) / timeDivide;
@@ -1086,7 +1085,7 @@ export function evaluateNation(nationName) {
   n.Inflation = max(0, (n.Budget / 1000) / (n.AdministrativeEfficiency / 10));
   n.ResourceBudgetBoost = (function () {
     let rbb = 0;
-    let budgetBoostingResources = [
+    const budgetBoostingResources = [
       "Sulphur",
       "Coal",
       "Cotton",
@@ -1136,7 +1135,7 @@ export function evaluateNation(nationName) {
     n.BureaucratsWage = n.BureaucratsWages * (1 + n.EstateInfluencesReal.BureaucratsInfluence * 2);
     n.MerchantsWage = n.MerchantShips > 0 ? ((n.InternalTrade * (1 - n.InternalTariffs) + n.ExternalTrade * (1 - n.ExternalTariffs)) / (n.Population / 1000 * n.Workforces.Merchants) * (1 - n.BurgousieProductionShareMaxed / 2)) : 0.5;
         n.MerchantsWageToBurggousie = n.Population * n.Workforces.Merchants / 1000 * n.MerchantsWage / (1 - n.BurgousieProductionShareMaxed / 2) * n.EstateInfluencesReal.BurgousieInfluence * 2;
-    n.IntellectualsWage = (n.Education - n.Reforms.ReligiousSchools) * (1 + n.LiteracyPercent / 50 + n.EstateInfluencesReal.IntellectualsInfluence * 10);
+    n.IntellectualsWage = (education - n.Reforms.ReligiousSchools) * (1 + n.LiteracyPercent / 50 + n.EstateInfluencesReal.IntellectualsInfluence * 10);
   //   n.SailorsWage = 1 * n.ArmyWages;
     n.SoldiersWage = (isNaN(n.ArmyWages / n.OverallNumbers * 1000) ? n.ArmyWage : (n.ArmyWages / n.OverallNumbers * 1000));
     n.AristocracyWage = (n.Reforms.NobleLandOwnership == 1 ? n.SerfsAndFarmersWageToOnwers / (n.Population * n.Workforces.Aristocracy / 1000) : 0) + (n.Reforms.MixedLandOwnership == 1 ? n.SerfsAndFarmersWageToOnwers / (n.Population * (n.Workforces.Burgousie + n.Workforces.Aristocracy) / 1000) : 0) + (n.Reforms.NobleResourceOwnership == 1 ? n.SlavesAndLabourersWageToOwner / (n.Population * n.Workforces.Aristocracy / 1000) : 0) + (n.Reforms.MixedResourceOwnership == 1 ? n.SlavesAndLabourersWageToOwner / (n.Population * (n.Workforces.Burgousie + n.Workforces.Aristocracy) / 1000) : 0);
@@ -1413,7 +1412,7 @@ export function evaluateNation(nationName) {
   if (WarStatus == false) WarStatus = "false";
   WarStatus = WarStatus.toLowerCase();
 
-  let WarStabilityModifier = ((WarStatus == 'offensive' && n.WarSupport < 0.75) ? (n.WarSupport - 0.75) : 0) + max(-0.075, ((WarStatus == 'defensive' && n.WarSupport < 0.4 && n.Fervor < 0) ? (n.Fervor) : 0));
+  const WarStabilityModifier = ((WarStatus == 'offensive' && n.WarSupport < 0.75) ? (n.WarSupport - 0.75) : 0) + max(-0.075, ((WarStatus == 'defensive' && n.WarSupport < 0.4 && n.Fervor < 0) ? (n.Fervor) : 0));
 
   n.MilitaryMorale = clamp(0, 1,
     ( n.MilitaryLoyalty + n.Fervor - (n.MilitaryDiscipline > 1 ? n.MilitaryDiscipline - 1 : 0) * 2 + (n.WarSupport < 0.5 ? n.WarSupport - 0.5 : 0) + (n.WarSupport > 0.75 ? n.WarSupport - 0.75 : 0)
@@ -1425,7 +1424,7 @@ export function evaluateNation(nationName) {
 
     n.Stability = n.PopulationHappiness + n.AdministrativeEfficiency / 10 - n.Overextension - n.CulturalDisunity - n.ReligiousDisunity + (n.PropagandaReal * 0.5 * (1 + n.CulturalAdvancements.Newspapers * n.LiteracyPercent / 50)) + n.PopulationControlReal * 1.5 + n.PopulationStabilityImpact + WarStabilityModifier * 7.5 + n.LoyaltiesStabilityImpact - (n.Workforces.Slaves * 10);
 
-  let PopulationGrowthModifier = n.FoodPopulationBoost + n.Prosperity / 10 + n.Stability / 100 + n.UnderPopulation;
+  const PopulationGrowthModifier = n.FoodPopulationBoost + n.Prosperity / 10 + n.Stability / 100 + n.UnderPopulation;
 
   n.PseudoPopulationGrowth = (n.FutureFood < 0 ? n.FutureFood * 1000 / n.Population : (0.1 + PopulationGrowthModifier) - n.BirthControl / 20) / timeDivide;
 
@@ -1451,7 +1450,7 @@ export function evaluateNation(nationName) {
 
   n.SpyUpkeep = n.Spies / 10 * n.SpyQuality / timeDivide;
   n.HealthUpkeep = n.Health * n.Population / 500000 / timeDivide;
-  n.EducationUpkeep = (n.Education - n.Reforms.ReligiousSchools / 2) * n.Population / 500000 * (1.1 - n.AdministrativeEfficiency / 100) * 6 / timeDivide;
+  n.EducationUpkeep = (education - n.Reforms.ReligiousSchools / 2) * n.Population / 500000 * (1.1 - n.AdministrativeEfficiency / 100) * 6 / timeDivide;
   n.PropagandaUpkeep = n.PropagandaReal * (100 + n.AdministrativeStrain) / 50 * n.Population / 1000000 / timeDivide;
   n.PopulationControlUpkeep = n.PopulationControlReal * n.Population / 800000 / timeDivide;
   n.AdministrativeUpkeep = (n.LandAdministration * n.Size / 2500 + n.BureaucratsWage / 1000 * n.Population * n.Workforces.Bureaucrats) / timeDivide;
@@ -1574,7 +1573,7 @@ export function evaluateNation(nationName) {
   // effective resources error
     for (const resourceIndex in resourceTypes) { //in, out, effective resources
         const resource = resourceTypes[resourceIndex];
-            let er = n["Effective"+resource];
+            const er = n["Effective"+resource];
             if (er < 0) {
                 lazyerror(`It seems the effective resource ${resource} in ${nationName} is negative: ${er}. Is an impossible trade taking place?`);
             }
@@ -1735,7 +1734,7 @@ export function syncNation(nationName: string) {
     /* #region  copy dailies */
     for (const propertyName in n) {
         const property = n[propertyName];
-        let regex = new RegExp(`Future.+`)
+        const regex = new RegExp(`Future.+`)
         if (regex.test(propertyName)) {
             if (propertyName != "FuturePopulation") {
                 n[propertyName.replace("Future", "")] = property;
@@ -1834,7 +1833,7 @@ export function syncNation(nationName: string) {
     //If budget is negative
     if (n.Budget < 0) {
         //take -budget in debt, but no more than possible public debt
-        let newDebt = min(n.PossiblePublicDebt, -n.Budget);
+        const newDebt = min(n.PossiblePublicDebt, -n.Budget);
         //add it to effective debt
         n.PublicDebtTaken += newDebt;
         //the debt taken added into budget
