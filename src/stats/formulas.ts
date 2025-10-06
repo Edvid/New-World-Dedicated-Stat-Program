@@ -306,16 +306,18 @@ export function evaluateNation(nationName) {
   n.AdministrativeTech = -0.75 - n.Alcoholism * (1 - n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100) - Number(n.Reforms.NobleBureaucrats) * 0.5 - Number(n.Reforms.ClergyBureaucrats) * 0.25 + Number(n.Reforms.MeritocraticBureaucrats) + Number(n.Technologies.Paper) * 0.5 + Number(n.CulturalAdvancements.Currency) * 0.5 + Number(n.CulturalAdvancements.EarlyModernAdministration) + Number(n.CulturalAdvancements.NationalSovereignity) + Number(n.CulturalAdvancements.Constitution) + Number(n.Reforms.WealthyBureaucrats) / 2 + Number(n.Technologies.PaperMachine) / 5;
   n.AdministrativePower = (n.AdministrativeEfficiency * (1 + n.AdministrationSize / 2 + n.AdministrativeTech * 0.4) * 0.75) * (n.GovernmentDominatedBy == "Bureaucrats" || n.GovernmentDominatedBy == "Aristocracy" ? 1.1 : 1) * (n.GovernmentDominatedBy == "Urban" || n.GovernmentDominatedBy == "Military" || n.GovernmentDominatedBy == "Burgousie" ? 0.9 : 1);
 
-    let taxesAdmDemandNew = 0;
+    let taxesAdmDemand = 0;
     for (const EstateIndex in estatesGeneral) {
         const Estate = estatesGeneral[EstateIndex];
         // taxesAdmDemandNew = n[Estate + "Tax"] * estateNumbers[Estate] * n.EstateInfluencesReal[Estate + "Influence"] * 1000 * 3;
-        taxesAdmDemandNew = n[Estate + "Tax"] * min(estateNumbers[Estate] * n.EstateInfluencesReal[Estate + "Influence"], 0.01) * 1000 * 3;
+        taxesAdmDemand = n[Estate + "Tax"] * min(estateNumbers[Estate] * n.EstateInfluencesReal[Estate + "Influence"], 0.01) * 1000 * 3;
     }
+
+    // const taxesAdmDemand = (n.AristocracyTax + n.ClergyTax + n.BurgousieTax + n.UrbanTax + n.BureaucratsTax + n.IntellectualsTax + n.WorkersTax + n.MilitaryTax) / 8 * 75
 
     n.AdministrativeDemand = (
     0 + n.Population / 1500000 + n.Health * 2 + education * 2 + n.SocialSpending * 1.5 + propagandaReal * 2 + populationControlReal * 2 + n.BirthControl * 4 +
-    taxesAdmDemandNew + n.OverallNumbers / 5000 + n.OverallShipCount / 25 + n.AgricultureSubsidies * 4 + (n.AgricultureInfrastructure - 1) * 4 + n.Size / 7500 +
+    taxesAdmDemand + n.OverallNumbers / 5000 + n.OverallShipCount / 25 + n.AgricultureSubsidies * 4 + (n.AgricultureInfrastructure - 1) * 4 + n.Size / 7500 +
     (n.ResearchSpending - 1) * 10 + (1 - n.CultureRepresentedAtGovernmentLevelPercent) * 10 + (n.Population / 1000 * n.Workforces.Townsfolk / 20) * n.ProductionGovernmentControl + resourcesAdmDemand + n.AgricultureAdmDemand
     );
 
@@ -323,18 +325,18 @@ export function evaluateNation(nationName) {
   n.Absolutism = n.GovernmentRepresentation.UnitaryRepresentation / 10;
     n.Corruption = (n.AdministrativeStrain / n.AdministrativePower * 10 + n.Absolutism / 2.5) * (n.GovernmentDominatedBy == "Burgousie" || n.GovernmentDominatedBy == "Aristocracy" ? 1.2 : 1);
 
-  n.MilitaryControlTotal = n.MilitaryControl.AristocracyControl + n.MilitaryControl.ClergyControl + n.MilitaryControl.BurgousieControl + n.MilitaryControl.UrbanControl + n.MilitaryControl.BureaucratsControl + n.MilitaryControl.WorkersControl + n.MilitaryControl.Independent
-  n.MilitaryControlReal = {
-    Aristocracy: n.MilitaryControl.AristocracyControl / n.MilitaryControlTotal,
-    Clergy: n.MilitaryControl.ClergyControl / n.MilitaryControlTotal,
-    Burgousie: n.MilitaryControl.BurgousieControl / n.MilitaryControlTotal,
-    Urban: n.MilitaryControl.UrbanControl / n.MilitaryControlTotal,
-    Bureaucrats: n.MilitaryControl.BureaucratsControl / n.MilitaryControlTotal,
-    Workers: n.MilitaryControl.WorkersControl / n.MilitaryControlTotal,
-    Independent: n.MilitaryControl.Independent / n.MilitaryControlTotal
+  const militaryControlTotal = Number(n.MilitaryControl.AristocracyControl) + n.MilitaryControl.ClergyControl + n.MilitaryControl.BurgousieControl + n.MilitaryControl.UrbanControl + n.MilitaryControl.BureaucratsControl + n.MilitaryControl.WorkersControl + n.MilitaryControl.Independent
+  const militaryControlReal = {
+    Aristocracy: n.MilitaryControl.AristocracyControl / militaryControlTotal,
+    Clergy: n.MilitaryControl.ClergyControl / militaryControlTotal,
+    Burgousie: n.MilitaryControl.BurgousieControl / militaryControlTotal,
+    Urban: n.MilitaryControl.UrbanControl / militaryControlTotal,
+    Bureaucrats: n.MilitaryControl.BureaucratsControl / militaryControlTotal,
+    Workers: n.MilitaryControl.WorkersControl / militaryControlTotal,
+    Independent: n.MilitaryControl.Independent / militaryControlTotal
   }
 
-    n.RealOverallImprovements = n.OverallImprovements - n.Alcoholism * (1 - n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100) / 2 + n.MilitaryControlReal.Independent + n.CommanderFreedom * 0.15 + n.Reforms.WealthyOfficers / 5 + n.Reforms.MeritocraticOfficers / 2 - n.Reforms.NationalMilitia * 0.2 + n.Reforms.ProffesionalArmy * 0.4 + n.Reforms.MassConscription * 0.2 + n.Technologies.Morphine / 10 + n.Technologies.IronWorking / 4 + n.Technologies.Metallurgy / 10;
+    n.RealOverallImprovements = n.OverallImprovements - n.Alcoholism * (1 - n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100) / 2 + militaryControlReal.Independent + n.CommanderFreedom * 0.15 + n.Reforms.WealthyOfficers / 5 + n.Reforms.MeritocraticOfficers / 2 - n.Reforms.NationalMilitia * 0.2 + n.Reforms.ProffesionalArmy * 0.4 + n.Reforms.MassConscription * 0.2 + n.Technologies.Morphine / 10 + n.Technologies.IronWorking / 4 + n.Technologies.Metallurgy / 10;
 
   n.IrregularQualityIC = n.RealOverallImprovements + n.IrregularImprovements;
   n.MeleeQualityIC = n.RealOverallImprovements + n.MeleeImprovements + n.Technologies.PlateArmour / 5 + n.Technologies.StandardizedPikes / 10;
@@ -1365,7 +1367,7 @@ export function evaluateNation(nationName) {
     n.ClergyCallupCost = 20 * (n.ClergyBasicArmaments / max(n.ArmyBasicArmamentsDemand, 10));
     n.BurgousieCallupCost = 20 * (n.BurgousieBasicArmaments / max(n.ArmyBasicArmamentsDemand, 10));
 
-    n.MilitaryLoyalty = n.MilitaryControlReal.Aristocracy * n.AristocracyLoyalty + n.MilitaryControlReal.Clergy * n.ClergyLoyalty + n.MilitaryControlReal.Burgousie * n.BurgousieLoyalty + n.MilitaryControlReal.Urban * n.UrbanLoyalty + n.MilitaryControlReal.Bureaucrats * n.BureaucratsLoyalty + n.MilitaryControlReal.Workers * n.WorkersLoyalty + n.MilitaryControlReal.Independent * n.MilitaryLoyalty - n.CommanderFreedom * 0.1;
+    n.MilitaryLoyalty = militaryControlReal.Aristocracy * n.AristocracyLoyalty + militaryControlReal.Clergy * n.ClergyLoyalty + militaryControlReal.Burgousie * n.BurgousieLoyalty + militaryControlReal.Urban * n.UrbanLoyalty + militaryControlReal.Bureaucrats * n.BureaucratsLoyalty + militaryControlReal.Workers * n.WorkersLoyalty + militaryControlReal.Independent * n.MilitaryLoyalty - n.CommanderFreedom * 0.1;
     if (n.Workforces.Soldiers + n.Workforces.Sailors == 0) n.MilitaryLoyalty = 0.5;
 
     // LoyaltiesStabilityImpact
