@@ -730,11 +730,11 @@ export function evaluateNation(nationName) {
     n.BuildingsUpkeep = n.SmallForts * n.SmallFortUpkeep + n.MediumForts * n.MediumFortUpkeep + n.BigForts * n.BigFortUpkeep + n.HugeForts * n.HugeFortUpkeep + n.CityFortifications * n.CityFortificationUpkeep + n.NavalBases * n.NavalBaseUpkeep + n.SupplyDepots * n.SupplyDepotUpkeep;
 
     const luxuryConsumablesValue = (n.EffectiveTea / luxuryConsumables) * n.TeaValue + (n.EffectiveCoffee / luxuryConsumables) * n.CoffeeValue + (n.EffectiveTobacco / luxuryConsumables) * n.TobaccoValue + (n.EffectiveExoticFruit / luxuryConsumables) * n.ExoticFruitValue + (n.EffectiveCocoa / luxuryConsumables) * n.CocoaValue;
-    n.FoodAdditionsValue = (n.EffectiveSugar / foodAdditions) * n.SugarValue + (n.EffectiveSpice / foodAdditions) * n.SpiceValue;
+    const foodAdditionsValue = (n.EffectiveSugar / foodAdditions) * n.SugarValue + (n.EffectiveSpice / foodAdditions) * n.SpiceValue;
 
-    n.FoodSupply = ((n.FoodRationing ? min(n.Food + n.FoodPerTurn, n.Population / 1000) : n.Food + n.FoodPerTurn) * foodAdditionsFoodBoost)
-    n.FoodValue = n.FoodDemand / n.FoodSupply;
-    n.FoodValue = n.FoodDemand / (isNaN(n.FoodSupply) ? 1 : (n.FoodSupply == 0 ? 1 : (n.FoodSupply + Math.sqrt(n.FoodSupply)))) * 0.5;
+    const foodSupply = ((n.FoodRationing ? min(n.Food + n.FoodPerTurn, n.Population / 1000) : n.Food + n.FoodPerTurn) * foodAdditionsFoodBoost)
+    n.FoodValue = n.FoodDemand / foodSupply;
+    n.FoodValue = n.FoodDemand / (isNaN(foodSupply) ? 1 : (foodSupply == 0 ? 1 : (foodSupply + Math.sqrt(foodSupply)))) * 0.5;
 
   n.TradePowerFromResourceTrade = (function () {
     let num = 0;
@@ -1247,8 +1247,8 @@ export function evaluateNation(nationName) {
   n.SocialSpendingUpkeep = n.SocialSpendingUpkeep / timeDivide;
 
 
-    n.NecessitiesCost = (0.5 * n.HousingValue + 0.5 * n.TextilesValue + n.BasicGoodsValue + n.AlcoholValue * (0.5 + n.Alcoholism) * (1 - n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100) + n.CoffeeValue * 0.5 * (n.ReligionGroups.Sunni.Points / 100 + n.ReligionGroups.Shia.Points / 100) + 0.5 * n.BasicToolsValue) / 200 + (n.CoalValue * 0.005 > n.WoodValue * 0.01 ? 0.01 * n.WoodValue : 0.005 * n.CoalValue) + (n.FoodAdditionsValue / 2 < n.FoodValue ? 0.1 * n.FoodAdditionsValue + 0.8 * n.FoodValue : n.FoodValue);
-    n.LuxuriesCost = (n.HousingValue + n.TextilesValue + 1.5 * n.BasicGoodsValue + n.LuxuryGoodsValue + 2 * n.AlcoholValue * (0.5 + n.Alcoholism) * (1 - n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100) + n.CoffeeValue * (n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100)) / 200 + (n.CoalValue * 0.01 > n.WoodValue * 0.02 ? n.WoodValue * 0.02 : 0.01 * n.CoalValue) + (n.FoodAdditionsValue / 2 < n.FoodValue ? n.FoodAdditionsValue / 2 * 0.75 + 0.5 * n.FoodValue : 1.25 * n.FoodValue) + (luxuryConsumablesValue / 10 < n.FoodValue ? 0.05 * luxuryConsumablesValue : 0.5 * n.FoodValue);
+    n.NecessitiesCost = (0.5 * n.HousingValue + 0.5 * n.TextilesValue + n.BasicGoodsValue + n.AlcoholValue * (0.5 + n.Alcoholism) * (1 - n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100) + n.CoffeeValue * 0.5 * (n.ReligionGroups.Sunni.Points / 100 + n.ReligionGroups.Shia.Points / 100) + 0.5 * n.BasicToolsValue) / 200 + (n.CoalValue * 0.005 > n.WoodValue * 0.01 ? 0.01 * n.WoodValue : 0.005 * n.CoalValue) + (foodAdditionsValue / 2 < n.FoodValue ? 0.1 * foodAdditionsValue + 0.8 * n.FoodValue : n.FoodValue);
+    n.LuxuriesCost = (n.HousingValue + n.TextilesValue + 1.5 * n.BasicGoodsValue + n.LuxuryGoodsValue + 2 * n.AlcoholValue * (0.5 + n.Alcoholism) * (1 - n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100) + n.CoffeeValue * (n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100)) / 200 + (n.CoalValue * 0.01 > n.WoodValue * 0.02 ? n.WoodValue * 0.02 : 0.01 * n.CoalValue) + (foodAdditionsValue / 2 < n.FoodValue ? foodAdditionsValue / 2 * 0.75 + 0.5 * n.FoodValue : 1.25 * n.FoodValue) + (luxuryConsumablesValue / 10 < n.FoodValue ? 0.05 * luxuryConsumablesValue : 0.5 * n.FoodValue);
 
     // SoL
   for (const EstateIndex in estates) {
