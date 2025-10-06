@@ -810,6 +810,7 @@ export class Nation {
     Fervor;
     TradeInfluences;
     EstateInfluences;
+    EstateInfluencesReal;
     ExpectedInfluences;
     Size;
     KmSquared;
