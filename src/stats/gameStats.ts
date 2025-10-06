@@ -484,6 +484,7 @@ export class Nation implements units, RealReformCostTypes, estateStats {
   MiningEfficiency: number;
   Wood: number;
   ForestsCutDown: number;
+  ForestsLeft: number;
   Forestry: number;
   EffectiveWood: number;
   Reforestation: number;
