@@ -1,5 +1,5 @@
 import { lazyerror } from "../utility/custom_errors.js";
-import { mappedResources } from "../utility/game_stats/resources.js";
+import { mappedResources, TradePowerResources } from "../utility/game_stats/resources.js";
 import { min, max, clamp } from "../utility/math.js";
 import { clearNewTroops, getGameStats, Opinion, type SocialBehaviour, type SocialBehaviourGroup } from "./gameStats.js";
 
@@ -738,41 +738,6 @@ export function evaluateNation(nationName) {
 
   n.TradePowerFromResourceTrade = (function () {
     let num = 0;
-    const TradePowerResources = [
-      "Sulphur",
-      "Coal",
-      "Cotton",
-      "Gold",
-      "Iron",
-      "Tea",
-      "Silk",
-      "Spice",
-      "Wool",
-      "Coffee",
-      "Fur",
-      "Diamond",
-      "Silver",
-      "Copper",
-      "Ivory",
-      "Cocoa",
-      "Tobacco",
-      "Sugar",
-      "ExoticFruit",
-      "Housing",
-      "Textiles",
-      "BasicGoods",
-      "LuxuryGoods",
-      "Alcohol",
-      "BasicTools",
-      "HeavyIndustry",
-      "BasicArmaments",
-      "HeavyArmaments",
-      "ShipBuilding",
-      "Chemicals",
-      "Motors",
-      "Planes",
-      "Electronics"
-    ];
     for (const resourceName in TradePowerResources) {
       const resource = TradePowerResources[resourceName];
       num += +n[resource + "Incoming"] * +n[resource + "Value"];
@@ -788,45 +753,9 @@ export function evaluateNation(nationName) {
     return num;
   })();
 
-  n.OutgoingTradePowerFromResourceTrade = (function () {
+  const outgoingTradePowerFromResourceTrade = (function () {
     let num = 0;
-    const TradePowerResources = [
-      "Sulphur",
-      "Coal",
-      "Cotton",
-      "Gold",
-      "Iron",
-      "Tea",
-      "Silk",
-      "Spice",
-      "Wool",
-      "Coffee",
-      "Fur",
-      "Diamond",
-      "Silver",
-      "Copper",
-      "Ivory",
-      "Cocoa",
-      "Tobacco",
-      "Sugar",
-      "ExoticFruit",
-      "Housing",
-      "Textiles",
-      "BasicGoods",
-      "LuxuryGoods",
-      "Alcohol",
-      "BasicTools",
-      "HeavyIndustry",
-      "BasicArmaments",
-      "HeavyArmaments",
-      "ShipBuilding",
-      "Chemicals",
-      "Motors",
-      "Planes",
-      "Electronics"
-    ];
-    for (const resourceName in TradePowerResources) {
-      const resource = TradePowerResources[resourceName];
+    for (const resource of TradePowerResources) {
       num += +n[resource + "Outgoing"] * +n[resource + "Value"];
       if (isNaN(num)) {
         let allNaNStats = "";
@@ -840,43 +769,8 @@ export function evaluateNation(nationName) {
     return num;
   })();
 
-  n.ResourceTrade = (function () {
+  const resourceTrade = (function () {
     let num = 0;
-    const TradePowerResources = [
-      "Sulphur",
-      "Coal",
-      "Cotton",
-      "Gold",
-      "Iron",
-      "Tea",
-      "Silk",
-      "Spice",
-      "Wool",
-      "Coffee",
-      "Fur",
-      "Diamond",
-      "Silver",
-      "Copper",
-      "Ivory",
-      "Cocoa",
-      "Tobacco",
-      "Sugar",
-      "ExoticFruit",
-      "Housing",
-      "Textiles",
-      "BasicGoods",
-      "LuxuryGoods",
-      "Alcohol",
-      "BasicTools",
-      "HeavyIndustry",
-      "BasicArmaments",
-      "HeavyArmaments",
-      "ShipBuilding",
-      "Chemicals",
-      "Motors",
-      "Planes",
-      "Electronics"
-    ];
     for (const resourceName in TradePowerResources) {
       const resource = TradePowerResources[resourceName];
       num += +n[resource + "Outgoing"];
@@ -889,11 +783,11 @@ export function evaluateNation(nationName) {
     for (const region in tradeZones) {
       let allNationPoints = 0;
       for (const nation in nations) {
-        let point = +nations[nation].TradeInfluences[region].TradingPoints;
+        const point = +nations[nation].TradeInfluences[region].TradingPoints;
         allNationPoints += (typeof point !== 'undefined') ? point : 0;
       }
-      let Point = n.TradeInfluences[region].TradingPoints;
-      let percent = allNationPoints != 0 ? 
+      const Point = n.TradeInfluences[region].TradingPoints;
+      const percent = allNationPoints != 0 ?
         (
           ((typeof Point !== 'undefined') ? Point : 0
         ) / allNationPoints) 
@@ -962,7 +856,7 @@ export function evaluateNation(nationName) {
   n.AgricultureRevenue = (n.FoodPerTurn - n.FoodLost) * n.FoodValue;
 
   n.TradeProtection = min((n.LightShips * 2 + n.MediumShips * 3.5 + n.HeavyShips * 2) / max(n.MerchantShips, 1), 2);
-  n.MerchantShipsFullfilment = min(n.MerchantShips / (n.ResourceTrade + pseudoTradePower / 2 + (n.LocalTrade * n.Population / 2000000 * (1 + n.AverageDevelopment) + n.FoodTradeProfit) / 4), 1);
+  n.MerchantShipsFullfilment = min(n.MerchantShips / (resourceTrade + pseudoTradePower / 2 + (n.LocalTrade * n.Population / 2000000 * (1 + n.AverageDevelopment) + n.FoodTradeProfit) / 4), 1);
   n.TradeEfficiency = max(0, (n.TradeImprovements + n.Technologies.Wheel / 4 + n.CulturalAdvancements.Currency / 4 + n.Reforms.GuildsBanned / 10 + n.Reforms.AntiMonopolyLaws / 5 - n.Corruption / 4 + n.CoastalPopulationPercent / 2 + n.Technologies.Cranes / 10 + n.Technologies.PromissoryNotes / 20 + n.TradeProtection + n.Technologies.Fluyt / 5) * (1 - n.Blockade) * max(n.MerchantShipsFullfilment, 0.1)) * (n.GovernmentDominatedBy == "Burgousie" || n.GovernmentDominatedBy == "Urban" ? 1.1 : 1);
 
   n.ExternalTradeEff = n.Reforms.Isolationism * 0.25 + n.Reforms.Mercantilism * 0.75 + n.Reforms.Protectionism + n.Reforms.FreeTrade * 1.25;
@@ -1449,7 +1343,7 @@ export function evaluateNation(nationName) {
   n.PassiveInvestmentIncome = (n.Budget / (10 - n.AdministrativeEfficiency / 10 + 1) / timeDivide) / (1 + n.Inflation);
 
   n.StateAgricultureRevenue = (n.Reforms.GovernmentLandOwnership ? n.AgricultureRevenue : 0);
-    n.StateResourceRevenue = (n.Reforms.GovernmentResourceOwnership ? n.ResourceBudgetBoost : 0) - n.OutgoingTradePowerFromResourceTrade + n.TradePowerFromResourceTrade;
+    n.StateResourceRevenue = (n.Reforms.GovernmentResourceOwnership ? n.ResourceBudgetBoost : 0) - outgoingTradePowerFromResourceTrade + n.TradePowerFromResourceTrade;
 
   n.OverallIncome = n.PassiveInvestmentIncome + n.TariffsRevenue + n.TaxRevenue + n.BudgetIncoming + n.StateProductionRevenue + n.StateAgricultureRevenue + n.StateResourceRevenue;
     n.OverallSpending = n.ArmyUpkeep + n.NavyUpkeep + n.BuildingsUpkeep + n.EducationUpkeep + n.HealthUpkeep + n.AgricultureSpending + n.SocialSpendingUpkeep + n.SpyUpkeep + n.PopulationControlUpkeep + n.PropagandaUpkeep + n.AdministrativeUpkeep + n.StateWorkersUpkeep + n.ResearchUpkeep + n.TroopRecruitmentCost + n.ConstructionCost + n.BudgetOutgoing;

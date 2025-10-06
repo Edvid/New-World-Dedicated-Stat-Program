@@ -75,3 +75,4 @@ export const realResourceTypes = [
     "Budget",
 ].concat(resourceTypes);
 
+export const TradePowerResources = resourceTypes.filter((item) => item !== "Food")
