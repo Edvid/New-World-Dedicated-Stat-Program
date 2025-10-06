@@ -1446,16 +1446,6 @@
                 "Gdp": 9677.496990252303,
                 "GdpPerKCapita": 1.1126673948688286,
                 "DebtToGdpRatio": 0,
-                "EstateNumbers": {
-                    "Workers": 0.8989758122989906,
-                    "Urban": 0.019333227173352542,
-                    "Clergy": 0.013000000000000001,
-                    "Bureaucrats": 0.007000000000000001,
-                    "Intellectuals": 0.0025,
-                    "Military": 0.000275939300252427,
-                    "Aristocracy": 0.02,
-                    "Burgousie": 0.005181978519275223
-                },
                 "GeneralPopulace": [
                     "Labourers",
                     "Serfs",
@@ -3203,16 +3193,6 @@
                 "Gdp": 23005.51056373856,
                 "GdpPerKCapita": 1.1496735591113774,
                 "DebtToGdpRatio": 0,
-                "EstateNumbers": {
-                    "Workers": 0.9043272087315171,
-                    "Urban": 0.0206541854684887,
-                    "Clergy": 0.0125,
-                    "Bureaucrats": 0.0105,
-                    "Intellectuals": 0.004833333333333334,
-                    "Military": 0.0003997906696053946,
-                    "Aristocracy": 0.0195,
-                    "Burgousie": 0.005694798003765229
-                },
                 "GeneralPopulace": [
                     "Labourers",
                     "Serfs",
@@ -4966,16 +4946,6 @@
                 "Gdp": 10600.4375590028,
                 "GdpPerKCapita": 1.1367677342658589,
                 "DebtToGdpRatio": 0,
-                "EstateNumbers": {
-                    "Workers": 0.8632245233228755,
-                    "Urban": 0.023526581948079956,
-                    "Clergy": 0.0125,
-                    "Bureaucrats": 0.0115,
-                    "Intellectuals": 0.012733333333333336,
-                    "Military": 0.00021447562479162352,
-                    "Aristocracy": 0.0195,
-                    "Burgousie": 0.005723335612851765
-                },
                 "GeneralPopulace": [
                     "Labourers",
                     "Serfs",
@@ -6745,16 +6715,6 @@
                 "Gdp": 21690.778858780333,
                 "GdpPerKCapita": 1.4653287139044253,
                 "DebtToGdpRatio": 0,
-                "EstateNumbers": {
-                    "Workers": 0.8339163851886886,
-                    "Urban": 0.023522849356038517,
-                    "Clergy": 0.0125,
-                    "Bureaucrats": 0.020000000000000007,
-                    "Intellectuals": 0.012,
-                    "Military": 0.0021887941709979233,
-                    "Aristocracy": 0.02,
-                    "Burgousie": 0.005695370821928015
-                },
                 "GeneralPopulace": [
                     "Labourers",
                     "Serfs",
@@ -8505,16 +8465,6 @@
                 "Gdp": 17552.832596985427,
                 "GdpPerKCapita": 1.2058156271558496,
                 "DebtToGdpRatio": 0,
-                "EstateNumbers": {
-                    "Workers": 0.900720657928789,
-                    "Urban": 0.020898255682751436,
-                    "Clergy": 0.0125,
-                    "Bureaucrats": 0.01,
-                    "Intellectuals": 0.006333333333333333,
-                    "Military": 0.0009342704340572349,
-                    "Aristocracy": 0.0195,
-                    "Burgousie": 0.0057027998848374305
-                },
                 "GeneralPopulace": [
                     "Labourers",
                     "Serfs",
@@ -10271,16 +10221,6 @@
                 "Gdp": 16005.791667779875,
                 "GdpPerKCapita": 1.6545379511641225,
                 "DebtToGdpRatio": 0,
-                "EstateNumbers": {
-                    "Workers": 0.838581381754518,
-                    "Urban": 0.03163489621634518,
-                    "Clergy": 0.0125,
-                    "Bureaucrats": 0.017,
-                    "Intellectuals": 0.008916666666666666,
-                    "Military": 0.006140249500872143,
-                    "Aristocracy": 0.02,
-                    "Burgousie": 0.005284949959033992
-                },
                 "GeneralPopulace": [
                     "Labourers",
                     "Serfs",
@@ -12034,16 +11974,6 @@
                 "Gdp": 32680.101143527336,
                 "GdpPerKCapita": 1.274650989061646,
                 "DebtToGdpRatio": 0,
-                "EstateNumbers": {
-                    "Workers": 0.8715690481305445,
-                    "Urban": 0.02257127667914661,
-                    "Clergy": 0.0125,
-                    "Bureaucrats": 0.0165,
-                    "Intellectuals": 0.007583333333333333,
-                    "Military": 0.0011155111829996096,
-                    "Aristocracy": 0.0195,
-                    "Burgousie": 0.005708746075721367
-                },
                 "GeneralPopulace": [
                     "Labourers",
                     "Serfs",
@@ -13797,16 +13727,6 @@
                 "Gdp": 24247.636979758812,
                 "GdpPerKCapita": 1.6773582084150722,
                 "DebtToGdpRatio": 0,
-                "EstateNumbers": {
-                    "Workers": 0.8396071936634325,
-                    "Urban": 0.024159563371200128,
-                    "Clergy": 0.0125,
-                    "Bureaucrats": 0.020500000000000004,
-                    "Intellectuals": 0.006083333333333334,
-                    "Military": 0.004102145781959952,
-                    "Aristocracy": 0.0195,
-                    "Burgousie": 0.00571772986145608
-                },
                 "GeneralPopulace": [
                     "Labourers",
                     "Serfs",
@@ -15569,16 +15489,6 @@
                 "Gdp": 35175.26929328708,
                 "GdpPerKCapita": 1.477299872370965,
                 "DebtToGdpRatio": 0,
-                "EstateNumbers": {
-                    "Workers": 0.8733322416357654,
-                    "Urban": 0.019097361778918336,
-                    "Clergy": 0.0125,
-                    "Bureaucrats": 0.018500000000000003,
-                    "Intellectuals": 0.009666666666666665,
-                    "Military": 0.0011003542384679305,
-                    "Aristocracy": 0.0195,
-                    "Burgousie": 0.006185303853583337
-                },
                 "GeneralPopulace": [
                     "Labourers",
                     "Serfs",
@@ -17326,16 +17236,6 @@
                 "Gdp": 6261.269599472801,
                 "GdpPerKCapita": 1.1177696839268392,
                 "DebtToGdpRatio": 0,
-                "EstateNumbers": {
-                    "Workers": 0.8851622093426534,
-                    "Urban": 0.017719305323825055,
-                    "Clergy": 0.0125,
-                    "Bureaucrats": 0.008,
-                    "Intellectuals": 0.0025,
-                    "Military": 0.0003570425026965635,
-                    "Aristocracy": 0.02,
-                    "Burgousie": 0.005163134504694573
-                },
                 "GeneralPopulace": [
                     "Labourers",
                     "Serfs",
@@ -19083,16 +18983,6 @@
                 "Gdp": 7227.228823961791,
                 "GdpPerKCapita": 1.0646114621102372,
                 "DebtToGdpRatio": 0.06609583280629773,
-                "EstateNumbers": {
-                    "Workers": 0.8801385997886859,
-                    "Urban": 0.01679740777452576,
-                    "Clergy": 0.01,
-                    "Bureaucrats": 0.006999999999999999,
-                    "Intellectuals": 0.008666666666666666,
-                    "Military": 0.00029461125087959874,
-                    "Aristocracy": 0.02,
-                    "Burgousie": 0.005654090522547556
-                },
                 "GeneralPopulace": [
                     "Labourers",
                     "Serfs",
@@ -20849,16 +20739,6 @@
                 "Gdp": 6543.242111460871,
                 "GdpPerKCapita": 0.6741633555402545,
                 "DebtToGdpRatio": 0.15679703545272095,
-                "EstateNumbers": {
-                    "Workers": 0.9179336603019678,
-                    "Urban": 0.020650601779033027,
-                    "Clergy": 0.0125,
-                    "Bureaucrats": 0.011000000000000001,
-                    "Intellectuals": 0.0025,
-                    "Military": 0.00020606401048783388,
-                    "Aristocracy": 0.02,
-                    "Burgousie": 0.0051974907173314875
-                },
                 "GeneralPopulace": [
                     "Labourers",
                     "Serfs",
@@ -22612,16 +22492,6 @@
                 "Gdp": 7079.924942581369,
                 "GdpPerKCapita": 0.9719953825036461,
                 "DebtToGdpRatio": 0,
-                "EstateNumbers": {
-                    "Workers": 0.9046235734774891,
-                    "Urban": 0.01892404462000344,
-                    "Clergy": 0.0125,
-                    "Bureaucrats": 0.006999999999999999,
-                    "Intellectuals": 0.0025,
-                    "Military": 0.0002745778776997183,
-                    "Aristocracy": 0.02,
-                    "Burgousie": 0.005178600553439171
-                },
                 "GeneralPopulace": [
                     "Labourers",
                     "Serfs",
@@ -24379,16 +24249,6 @@
                 "Gdp": 6199.312985901995,
                 "GdpPerKCapita": 1.241694842089386,
                 "DebtToGdpRatio": 0,
-                "EstateNumbers": {
-                    "Workers": 0.8775496811611811,
-                    "Urban": 0.023393719772896886,
-                    "Clergy": 0.0125,
-                    "Bureaucrats": 0.0105,
-                    "Intellectuals": 0.008499999999999999,
-                    "Military": 0.0007210640020414123,
-                    "Aristocracy": 0.0195,
-                    "Burgousie": 0.005713256681559309
-                },
                 "GeneralPopulace": [
                     "Labourers",
                     "Serfs",
@@ -26133,16 +25993,6 @@
                 "Gdp": 7995.143215399883,
                 "GdpPerKCapita": 1.147841854115414,
                 "DebtToGdpRatio": 0,
-                "EstateNumbers": {
-                    "Workers": 0.8765691082603186,
-                    "Urban": 0.009640119620350392,
-                    "Clergy": 0.0125,
-                    "Bureaucrats": 0.009,
-                    "Intellectuals": 0.006,
-                    "Military": 0.0007034802171313225,
-                    "Aristocracy": 0.02,
-                    "Burgousie": 0.005082223916317439
-                },
                 "GeneralPopulace": [
                     "Labourers",
                     "Serfs",
@@ -27900,16 +27750,6 @@
                 "Gdp": 36611.69410127209,
                 "GdpPerKCapita": 1.496317174370801,
                 "DebtToGdpRatio": 0,
-                "EstateNumbers": {
-                    "Workers": 0.8696246338453585,
-                    "Urban": 0.01957836951070935,
-                    "Clergy": 0.0125,
-                    "Bureaucrats": 0.0225,
-                    "Intellectuals": 0.0051666666666666675,
-                    "Military": 0.0024521954710401846,
-                    "Aristocracy": 0.0195,
-                    "Burgousie": 0.006183318368129307
-                },
                 "GeneralPopulace": [
                     "Labourers",
                     "Serfs",
@@ -29651,16 +29491,6 @@
                 "Gdp": 3565.707085661103,
                 "GdpPerKCapita": 0.6819058991352515,
                 "DebtToGdpRatio": 0,
-                "EstateNumbers": {
-                    "Workers": 0.9224302950339038,
-                    "Urban": 0.019543965220324762,
-                    "Clergy": 0.0125,
-                    "Bureaucrats": 0.0055000000000000005,
-                    "Intellectuals": 0.0025,
-                    "Military": 0.00038248004266947357,
-                    "Aristocracy": 0.02,
-                    "Burgousie": 0.005180857600576474
-                },
                 "GeneralPopulace": [
                     "Labourers",
                     "Serfs",
@@ -31420,16 +31250,6 @@
                 "Gdp": 9061.809201524915,
                 "GdpPerKCapita": 1.159350489257604,
                 "DebtToGdpRatio": 0,
-                "EstateNumbers": {
-                    "Workers": 0.877876333869636,
-                    "Urban": 0.02203579937824651,
-                    "Clergy": 0.0125,
-                    "Bureaucrats": 0.016,
-                    "Intellectuals": 0.005666666666666666,
-                    "Military": 0.00025587616412460094,
-                    "Aristocracy": 0.02,
-                    "Burgousie": 0.005707724108178812
-                },
                 "GeneralPopulace": [
                     "Labourers",
                     "Serfs",
@@ -33177,16 +32997,6 @@
                 "Gdp": 14498.776223935898,
                 "GdpPerKCapita": 1.2152400464223916,
                 "DebtToGdpRatio": 0,
-                "EstateNumbers": {
-                    "Workers": 0.8890905235370851,
-                    "Urban": 0.022430195748949444,
-                    "Clergy": 0.0125,
-                    "Bureaucrats": 0.0105,
-                    "Intellectuals": 0.006,
-                    "Military": 0.0025983187034020875,
-                    "Aristocracy": 0.0195,
-                    "Burgousie": 0.005716863222491852
-                },
                 "GeneralPopulace": [
                     "Labourers",
                     "Serfs",
@@ -34947,16 +34757,6 @@
                 "Gdp": 25874.79364681657,
                 "GdpPerKCapita": 1.4705058862939844,
                 "DebtToGdpRatio": 0,
-                "EstateNumbers": {
-                    "Workers": 0.8529833168000741,
-                    "Urban": 0.021248311746324203,
-                    "Clergy": 0.0125,
-                    "Bureaucrats": 0.020500000000000004,
-                    "Intellectuals": 0.004666666666666667,
-                    "Military": 0.0036088065108552617,
-                    "Aristocracy": 0.02,
-                    "Burgousie": 0.005184990831642357
-                },
                 "GeneralPopulace": [
                     "Labourers",
                     "Serfs",
@@ -36714,16 +36514,6 @@
                 "Gdp": 42415.8497531772,
                 "GdpPerKCapita": 1.5697806441829236,
                 "DebtToGdpRatio": 0,
-                "EstateNumbers": {
-                    "Workers": 0.8685493705511652,
-                    "Urban": 0.024234499767581633,
-                    "Clergy": 0.0125,
-                    "Bureaucrats": 0.029500000000000012,
-                    "Intellectuals": 0.008333333333333333,
-                    "Military": 0.0021576418270156,
-                    "Aristocracy": 0.0195,
-                    "Burgousie": 0.006215652044541426
-                },
                 "GeneralPopulace": [
                     "Labourers",
                     "Serfs",
@@ -38474,16 +38264,6 @@
                 "Gdp": 12142.321097656966,
                 "GdpPerKCapita": 1.276780165621302,
                 "DebtToGdpRatio": 0,
-                "EstateNumbers": {
-                    "Workers": 0.8858449040960823,
-                    "Urban": 0.019034267843982055,
-                    "Clergy": 0.0125,
-                    "Bureaucrats": 0.01,
-                    "Intellectuals": 0.006,
-                    "Military": 0.001903237512159427,
-                    "Aristocracy": 0.0195,
-                    "Burgousie": 0.005681010505555613
-                },
                 "GeneralPopulace": [
                     "Labourers",
                     "Serfs",
@@ -40231,16 +40011,6 @@
                 "Gdp": 5329.121658305101,
                 "GdpPerKCapita": 1.1284903008600178,
                 "DebtToGdpRatio": 0.13380950316320633,
-                "EstateNumbers": {
-                    "Workers": 0.9036175835303041,
-                    "Urban": 0.015547357182214094,
-                    "Clergy": 0.0125,
-                    "Bureaucrats": 0.006,
-                    "Intellectuals": 0.0025,
-                    "Military": 0.00042351831060239976,
-                    "Aristocracy": 0.02,
-                    "Burgousie": 0.005137474043621539
-                },
                 "GeneralPopulace": [
                     "Labourers",
                     "Serfs",
@@ -41985,16 +41755,6 @@
                 "Gdp": 5696.527545554011,
                 "GdpPerKCapita": 1.125641571206244,
                 "DebtToGdpRatio": 0,
-                "EstateNumbers": {
-                    "Workers": 0.8695984124575276,
-                    "Urban": 0.018664831345266086,
-                    "Clergy": 0.0125,
-                    "Bureaucrats": 0.0075000000000000015,
-                    "Intellectuals": 0.0025,
-                    "Military": 0.00039520271330374847,
-                    "Aristocracy": 0.02,
-                    "Burgousie": 0.005171087206616326
-                },
                 "GeneralPopulace": [
                     "Labourers",
                     "Serfs",
@@ -43748,16 +43508,6 @@
                 "Gdp": 13104.40263607841,
                 "GdpPerKCapita": 1.1433588358687807,
                 "DebtToGdpRatio": 0,
-                "EstateNumbers": {
-                    "Workers": 0.8937475269101196,
-                    "Urban": 0.02206421057398183,
-                    "Clergy": 0.0125,
-                    "Bureaucrats": 0.018000000000000006,
-                    "Intellectuals": 0.004833333333333334,
-                    "Military": 0.00024429993715384114,
-                    "Aristocracy": 0.0195,
-                    "Burgousie": 0.005712135232928212
-                },
                 "GeneralPopulace": [
                     "Labourers",
                     "Serfs",
@@ -45505,16 +45255,6 @@
                 "Gdp": 11023.78977295311,
                 "GdpPerKCapita": 1.3750218933695477,
                 "DebtToGdpRatio": 0,
-                "EstateNumbers": {
-                    "Workers": 0.8883280416303461,
-                    "Urban": 0.023094172585003146,
-                    "Clergy": 0.0125,
-                    "Bureaucrats": 0.012500000000000002,
-                    "Intellectuals": 0.007166666666666667,
-                    "Military": 0.00493939635088374,
-                    "Aristocracy": 0.0195,
-                    "Burgousie": 0.005712543721765301
-                },
                 "GeneralPopulace": [
                     "Labourers",
                     "Serfs",
@@ -47262,16 +47002,6 @@
                 "Gdp": 9794.803073213225,
                 "GdpPerKCapita": 1.160717802938414,
                 "DebtToGdpRatio": 0,
-                "EstateNumbers": {
-                    "Workers": 0.8964475826166536,
-                    "Urban": 0.020370977371295198,
-                    "Clergy": 0.0125,
-                    "Bureaucrats": 0.011000000000000001,
-                    "Intellectuals": 0.006,
-                    "Military": 0.0005451157980009419,
-                    "Aristocracy": 0.02,
-                    "Burgousie": 0.005190378137348799
-                },
                 "GeneralPopulace": [
                     "Labourers",
                     "Serfs",
@@ -49019,16 +48749,6 @@
                 "Gdp": 3835.673971200256,
                 "GdpPerKCapita": 0.7431195484177445,
                 "DebtToGdpRatio": 0,
-                "EstateNumbers": {
-                    "Workers": 0.9198008769068899,
-                    "Urban": 0.0169232933146104,
-                    "Clergy": 0.0125,
-                    "Bureaucrats": 0.0055000000000000005,
-                    "Intellectuals": 0.0025,
-                    "Military": 0.00038747795250450247,
-                    "Aristocracy": 0.02,
-                    "Burgousie": 0.005154218162486555
-                },
                 "GeneralPopulace": [
                     "Labourers",
                     "Serfs",
@@ -50770,16 +50490,6 @@
                 "Gdp": 6842.04719314146,
                 "GdpPerKCapita": 1.1963781559049844,
                 "DebtToGdpRatio": 0,
-                "EstateNumbers": {
-                    "Workers": 0.8509446438946902,
-                    "Urban": 0.020490413740803192,
-                    "Clergy": 0.0125,
-                    "Bureaucrats": 0.012500000000000002,
-                    "Intellectuals": 0.007464065702412524,
-                    "Military": 0.0035321064101261645,
-                    "Aristocracy": 0.02,
-                    "Burgousie": 0.005188729887757702
-                },
                 "GeneralPopulace": [
                     "Labourers",
                     "Serfs",
@@ -52524,16 +52234,6 @@
                 "Gdp": 6970.150024236797,
                 "GdpPerKCapita": 1.1950539930295385,
                 "DebtToGdpRatio": 0,
-                "EstateNumbers": {
-                    "Workers": 0.8816493585092271,
-                    "Urban": 0.022662159506955683,
-                    "Clergy": 0.0125,
-                    "Bureaucrats": 0.01,
-                    "Intellectuals": 0.006333333333333333,
-                    "Military": 0.0009601374916888098,
-                    "Aristocracy": 0.02,
-                    "Burgousie": 0.005207118802269628
-                },
                 "GeneralPopulace": [
                     "Labourers",
                     "Serfs",
@@ -54018,16 +53718,6 @@
                     "IntellectualsInfluence": 0.04140832595217007,
                     "MilitaryInfluence": 0.011071744906997341,
                     "WorkersInfluence": 0.009964570416297608
-                },
-                "EstateNumbers": {
-                    "Workers": 0.9229193275211092,
-                    "Urban": 0.020552692831576184,
-                    "Clergy": 0.0125,
-                    "Bureaucrats": 0.0105,
-                    "Intellectuals": 0.0025,
-                    "Military": 0.00017800549823382945,
-                    "Aristocracy": 0.02,
-                    "Burgousie": 0.005197850441204428
                 },
                 "ResourcesAdmDemand": 0,
                 "AgricultureAdmDemand": 0,
@@ -55769,16 +55459,6 @@
                     "IntellectualsInfluence": 0.015942028985507242,
                     "MilitaryInfluence": 0.014492753623188404,
                     "WorkersInfluence": 0.004347826086956521
-                },
-                "EstateNumbers": {
-                    "Workers": 0.9236387609701078,
-                    "Urban": 0.019655674599175107,
-                    "Clergy": 0.0125,
-                    "Bureaucrats": 0.0055000000000000005,
-                    "Intellectuals": 0.0025,
-                    "Military": 0.0003906484999488251,
-                    "Aristocracy": 0.02,
-                    "Burgousie": 0.005181419116618734
                 },
                 "ResourcesAdmDemand": 0,
                 "AgricultureAdmDemand": 0,
@@ -57526,16 +57206,6 @@
                     "IntellectualsInfluence": 0.013603759584466977,
                     "MilitaryInfluence": 0.01236705416769725,
                     "WorkersInfluence": 0.0032154340836012853
-                },
-                "EstateNumbers": {
-                    "Workers": 0.8600940471369026,
-                    "Urban": 0.018415932195522483,
-                    "Clergy": 0.0125,
-                    "Bureaucrats": 0.01,
-                    "Intellectuals": 0.006416666666666666,
-                    "Military": 0.000752714004432231,
-                    "Aristocracy": 0.02,
-                    "Burgousie": 0.005162597202036594
                 },
                 "ResourcesAdmDemand": 0,
                 "AgricultureAdmDemand": 0,
@@ -59286,16 +58956,6 @@
                     "IntellectualsInfluence": 0.013774104683195587,
                     "MilitaryInfluence": 0.012521913348359625,
                     "WorkersInfluence": 0.0032556974705735026
-                },
-                "EstateNumbers": {
-                    "Workers": 0.8719820268611125,
-                    "Urban": 0.02153459009284965,
-                    "Clergy": 0.0125,
-                    "Bureaucrats": 0.01,
-                    "Intellectuals": 0.006333333333333333,
-                    "Military": 0.0010834539853559417,
-                    "Aristocracy": 0.02,
-                    "Burgousie": 0.005194736721859226
                 },
                 "ResourcesAdmDemand": 0,
                 "AgricultureAdmDemand": 0,
@@ -61053,16 +60713,6 @@
                     "MilitaryInfluence": 0.012521913348359625,
                     "WorkersInfluence": 0.0032556974705735026
                 },
-                "EstateNumbers": {
-                    "Workers": 0.8690938556142453,
-                    "Urban": 0.019333498340889235,
-                    "Clergy": 0.0125,
-                    "Bureaucrats": 0.01,
-                    "Intellectuals": 0.006,
-                    "Military": 0.0012789781197364782,
-                    "Aristocracy": 0.02,
-                    "Burgousie": 0.005176984410855443
-                },
                 "ResourcesAdmDemand": 0,
                 "AgricultureAdmDemand": 0,
                 "AdministrativeTech": 0,
@@ -62806,16 +62456,6 @@
                     "IntellectualsInfluence": 0.014577259475218655,
                     "MilitaryInfluence": 0.013252054068380594,
                     "WorkersInfluence": 0.003445534057778955
-                },
-                "EstateNumbers": {
-                    "Workers": 0.8819270280395678,
-                    "Urban": 0.018401867801832172,
-                    "Clergy": 0.0125,
-                    "Bureaucrats": 0.009000000000000001,
-                    "Intellectuals": 0.006083333333333334,
-                    "Military": 0.0004152639396837433,
-                    "Aristocracy": 0.02,
-                    "Burgousie": 0.005168792333563251
                 },
                 "ResourcesAdmDemand": 0,
                 "AgricultureAdmDemand": 0,
@@ -64567,16 +64207,6 @@
                     "MilitaryInfluence": 0.012382367508667653,
                     "WorkersInfluence": 0.00321941555225359
                 },
-                "EstateNumbers": {
-                    "Workers": 0.9027222812739559,
-                    "Urban": 0.0216507947355655,
-                    "Clergy": 0.0125,
-                    "Bureaucrats": 0.01,
-                    "Intellectuals": 0.006,
-                    "Military": 0.0007533612355016639,
-                    "Aristocracy": 0.0195,
-                    "Burgousie": 0.005701373458249595
-                },
                 "ResourcesAdmDemand": 0,
                 "AgricultureAdmDemand": 0,
                 "AdministrativeTech": 0,
@@ -66327,16 +65957,6 @@
                     "MilitaryInfluence": 0.014265335235378028,
                     "WorkersInfluence": 0.004279600570613409
                 },
-                "EstateNumbers": {
-                    "Workers": 0.9259681231184169,
-                    "Urban": 0.020031446261536957,
-                    "Clergy": 0.0125,
-                    "Bureaucrats": 0.006,
-                    "Intellectuals": 0.0025,
-                    "Military": 0.0003553249891181722,
-                    "Aristocracy": 0.02,
-                    "Burgousie": 0.005186989775523438
-                },
                 "ResourcesAdmDemand": 0,
                 "AgricultureAdmDemand": 0,
                 "AdministrativeTech": -0.5,
@@ -68078,16 +67698,6 @@
                     "MilitaryInfluence": 0.012141816415735791,
                     "WorkersInfluence": 0.0031568722680913055
                 },
-                "EstateNumbers": {
-                    "Workers": 0.8912382743636482,
-                    "Urban": 0.010300276009952156,
-                    "Clergy": 0.0125,
-                    "Bureaucrats": 0.0085,
-                    "Intellectuals": 0.005499989300353094,
-                    "Military": 0.00048756395010660585,
-                    "Aristocracy": 0.02,
-                    "Burgousie": 0.00508512541526228
-                },
                 "ResourcesAdmDemand": 0,
                 "AgricultureAdmDemand": 0,
                 "AdministrativeTech": 0,
@@ -69790,16 +69400,6 @@
                     "IntellectualsInfluence": 0.01335599805730937,
                     "MilitaryInfluence": 0.012141816415735791,
                     "WorkersInfluence": 0.0031568722680913055
-                },
-                "EstateNumbers": {
-                    "Workers": 0.9077007392459411,
-                    "Urban": 0.020395784992831022,
-                    "Clergy": 0.0125,
-                    "Bureaucrats": 0.0085,
-                    "Intellectuals": 0.0055,
-                    "Military": 0.000322225261880526,
-                    "Aristocracy": 0.02,
-                    "Burgousie": 0.005192142923659358
                 },
                 "ResourcesAdmDemand": 0,
                 "AgricultureAdmDemand": 0,
@@ -71504,16 +71104,6 @@
                     "MilitaryInfluence": 0.012253400318588405,
                     "WorkersInfluence": 0.003185884082832985
                 },
-                "EstateNumbers": {
-                    "Workers": 0.809920801644962,
-                    "Urban": 0.01491961070395978,
-                    "Clergy": 0.0125,
-                    "Bureaucrats": 0.008,
-                    "Intellectuals": 0.003,
-                    "Military": 0.0018681427485237002,
-                    "Aristocracy": 0.02,
-                    "Burgousie": 0.0050768055755343044
-                },
                 "ResourcesAdmDemand": 0,
                 "AgricultureAdmDemand": 0,
                 "AdministrativeTech": 0,
@@ -73034,16 +72624,6 @@
                     "IntellectualsInfluence": 0.013948769972102456,
                     "MilitaryInfluence": 0.012680699974638596,
                     "WorkersInfluence": 0.003296981993406035
-                },
-                "EstateNumbers": {
-                    "Workers": 0.8453213478399353,
-                    "Urban": 0.022399090626834144,
-                    "Clergy": 0.0125,
-                    "Bureaucrats": 0.006500000000000001,
-                    "Intellectuals": 0.003,
-                    "Military": 0.0030945094119503767,
-                    "Aristocracy": 0.02,
-                    "Burgousie": 0.0051131043190067865
                 },
                 "ResourcesAdmDemand": 0,
                 "AgricultureAdmDemand": 0,
@@ -74744,16 +74324,6 @@
                     "IntellectualsInfluence": 0.014330380406461694,
                     "MilitaryInfluence": 0.013027618551328814,
                     "WorkersInfluence": 0.0033871808233454917
-                },
-                "EstateNumbers": {
-                    "Workers": 0.8988028627052246,
-                    "Urban": 0.01847805643637537,
-                    "Clergy": 0.0125,
-                    "Bureaucrats": 0.006500000000000001,
-                    "Intellectuals": 0.003,
-                    "Military": 0.0005653663366560541,
-                    "Aristocracy": 0.02,
-                    "Burgousie": 0.005164992742580792
                 },
                 "ResourcesAdmDemand": 0,
                 "AgricultureAdmDemand": 0,
@@ -76460,16 +76030,6 @@
                     "IntellectualsInfluence": 0.014330380406461694,
                     "MilitaryInfluence": 0.013027618551328814,
                     "WorkersInfluence": 0.0033871808233454917
-                },
-                "EstateNumbers": {
-                    "Workers": 0.8705819971763957,
-                    "Urban": 0.020976889094191924,
-                    "Clergy": 0.0125,
-                    "Bureaucrats": 0.006500000000000001,
-                    "Intellectuals": 0.003,
-                    "Military": 0.001160632730539381,
-                    "Aristocracy": 0.02,
-                    "Burgousie": 0.005169146745373041
                 },
                 "ResourcesAdmDemand": 0,
                 "AgricultureAdmDemand": 0,
@@ -78179,16 +77739,6 @@
                     "IntellectualsInfluence": 0.014330380406461694,
                     "MilitaryInfluence": 0.013027618551328814,
                     "WorkersInfluence": 0.0033871808233454917
-                },
-                "EstateNumbers": {
-                    "Workers": 0.913216634038995,
-                    "Urban": 0.01876445501221347,
-                    "Clergy": 0.0125,
-                    "Bureaucrats": 0.006500000000000001,
-                    "Intellectuals": 0.003,
-                    "Military": 0.0006765216324557194,
-                    "Aristocracy": 0.02,
-                    "Burgousie": 0.005163966292986185
                 },
                 "ResourcesAdmDemand": 0,
                 "AgricultureAdmDemand": 0,
@@ -80080,16 +79630,6 @@
                     "IntellectualsInfluence": 0.014330380406461694,
                     "MilitaryInfluence": 0.013027618551328814,
                     "WorkersInfluence": 0.0033871808233454917
-                },
-                "EstateNumbers": {
-                    "Workers": 0.863366953955517,
-                    "Urban": 0.017245795136392975,
-                    "Clergy": 0.0125,
-                    "Bureaucrats": 0.006500000000000001,
-                    "Intellectuals": 0.003,
-                    "Military": 0.0009404574447708529,
-                    "Aristocracy": 0.02,
-                    "Burgousie": 0.00513954194079695
                 },
                 "ResourcesAdmDemand": 0,
                 "AgricultureAdmDemand": 0,

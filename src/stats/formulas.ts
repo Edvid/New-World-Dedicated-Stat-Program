@@ -278,7 +278,7 @@ export function evaluateNation(nationName) {
         WorkersInfluence: max(0, n.EstateInfluences.WorkersInfluence * workersInfluenceMod / totalInfluences)
     };
 
-    n.EstateNumbers = {
+    const estateNumbers = {
         Workers: n.Workforces.Farmers + n.Workforces.Labourers + (isNaN(n.Workforces.Serfs) ? 0 : n.Workforces.Serfs) + (isNaN(n.Workforces.Unemployed) ? 0 : n.Workforces.Unemployed),
         Urban: (isNaN(n.Workforces.Merchants) ? 0 : n.Workforces.Merchants) + n.Workforces.Townsfolk,
         Clergy: n.Workforces.Clergy,
@@ -309,8 +309,8 @@ export function evaluateNation(nationName) {
     n.TaxesAdmDemandNew = 0;
     for (const EstateIndex in estatesGeneral) {
         const Estate = estatesGeneral[EstateIndex];
-        n.Test1 = n[Estate + "Tax"] * n.EstateNumbers[Estate] * n.EstateInfluencesReal[Estate + "Influence"] * 1000 * 3;
-        n.Test2 = n[Estate + "Tax"] * min(n.EstateNumbers[Estate] * n.EstateInfluencesReal[Estate + "Influence"], 0.01) * 1000 * 3;
+        n.Test1 = n[Estate + "Tax"] * estateNumbers[Estate] * n.EstateInfluencesReal[Estate + "Influence"] * 1000 * 3;
+        n.Test2 = n[Estate + "Tax"] * min(estateNumbers[Estate] * n.EstateInfluencesReal[Estate + "Influence"], 0.01) * 1000 * 3;
         n.TaxesAdmDemandNew += n.Test2;
     }
 
@@ -1334,7 +1334,7 @@ export function evaluateNation(nationName) {
     n.AverageTax = 0;
     for (const EstateIndex in estatesGeneral) {
         const Estate = estatesGeneral[EstateIndex];
-        n.AverageTax += n[Estate + "Tax"] * n.EstateNumbers[Estate];
+        n.AverageTax += n[Estate + "Tax"] * estateNumbers[Estate];
     }
     n.AverageTax = n.AverageTax / (1 - n.Workforces.Slaves);
 
@@ -1344,7 +1344,7 @@ export function evaluateNation(nationName) {
       n.BaseLoyalty = 0.5;
       n.ExpectedSolLoyaltyMod = clamp(-0.2, 0.2, (n[Estate + "Sol"] - n["Expected" + Estate + "Sol"]) / n[Estate + "Sol"]);
       n.AverageSolLoyaltyMod = clamp(-0.2, 0.2, (n[Estate + "Sol"] - (n.AverageSol * n.AverageSolMods[Estate])) / n[Estate + "Sol"] / 4);
-      n.GovernmentRepLoyaltyMod = (n.GovernmentRepresentation[Estate + "Representation"] / 100 - max(n.ExpectedInfluences[Estate + "Influence"] * 0.9, n.EstateNumbers[Estate] * n[Estate + "PoliticalAwareness"] * 0.9));
+      n.GovernmentRepLoyaltyMod = (n.GovernmentRepresentation[Estate + "Representation"] / 100 - max(n.ExpectedInfluences[Estate + "Influence"] * 0.9, estateNumbers[Estate] * n[Estate + "PoliticalAwareness"] * 0.9));
       n.TaxesLoyaltyMod = n[Estate + "Tax"] / 2 + (n[Estate + "Tax"] > n.AverageTax ? n[Estate + "Tax"] / n.AverageTax / 25 : 0);
       n[Estate + "Loyalty"] = n.BaseLoyalty + n.ExpectedSolLoyaltyMod + n.AverageSolLoyaltyMod + n.GovernmentRepLoyaltyMod - n.TaxesLoyaltyMod + n.InfluenceChangeLoyaltyEffect[Estate];
       n[Estate + "Loyalty"] = clamp(0, 1, n[Estate + "Loyalty"]);
@@ -1375,7 +1375,7 @@ export function evaluateNation(nationName) {
     n.LoyaltiesStabilityImpact = 0;
     for (const EstateIndex in estatesGeneral) {
         const Estate = estatesGeneral[EstateIndex];
-        n.LoyaltiesStabilityImpact += (n[Estate + "Loyalty"] - 0.5) * (1 + n.EstateNumbers[Estate] * (n[Estate + "PoliticalAwareness"] + 0.5) + n.EstateInfluencesReal[Estate + "Influence"] * 4) * 5;
+        n.LoyaltiesStabilityImpact += (n[Estate + "Loyalty"] - 0.5) * (1 + estateNumbers[Estate] * (n[Estate + "PoliticalAwareness"] + 0.5) + n.EstateInfluencesReal[Estate + "Influence"] * 4) * 5;
     }
     n.LoyaltiesStabilityImpact = n.LoyaltiesStabilityImpact * 0.6;
 
@@ -1389,8 +1389,8 @@ export function evaluateNation(nationName) {
     n.LoyaltiesWarSupportImpact = 0;
     for (const EstateIndex in estatesGeneral) {
         const Estate = estatesGeneral[EstateIndex];
-        n.Modifier = (1 + n.EstateNumbers[Estate] + (Estate == "Military" ? n.MilitaryControl.Independent : (n.MilitaryControl[Estate + "Control"])) / 100 * 4 + n.EstateInfluencesReal[Estate + "Influence"] * 4);
-        n.LoyaltiesWarSupportImpact += (n[Estate + "Loyalty"] - 0.5) * (1 + n.EstateNumbers[Estate] + (Estate == "Military" ? n.MilitaryControl.Independent : (n.MilitaryControl[Estate + "Control"])) / 100 * 4 + n.EstateInfluencesReal[Estate + "Influence"] * 4);
+        n.Modifier = (1 + estateNumbers[Estate] + (Estate == "Military" ? n.MilitaryControl.Independent : (n.MilitaryControl[Estate + "Control"])) / 100 * 4 + n.EstateInfluencesReal[Estate + "Influence"] * 4);
+        n.LoyaltiesWarSupportImpact += (n[Estate + "Loyalty"] - 0.5) * (1 + estateNumbers[Estate] + (Estate == "Military" ? n.MilitaryControl.Independent : (n.MilitaryControl[Estate + "Control"])) / 100 * 4 + n.EstateInfluencesReal[Estate + "Influence"] * 4);
     }
 
     n.Fervor = clamp(1, -1, 0 + n.MinorBattles / 20 + n.MajorBattles / 10 + n.Pillaging - n.Casualties / (n.Manpower + n.Casualties));
