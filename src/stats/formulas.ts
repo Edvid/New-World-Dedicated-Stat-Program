@@ -447,14 +447,14 @@ export function evaluateNation(nationName) {
     n.EffectiveIron += n.BaseIronHarvest;
     n.EffectiveCoal += n.BaseCoalHarvest;
     n.EffectiveSulphur += n.BaseSulphurHarvest;
-  n.EffectiveCotton *= (1 + n.Technologies.CottonGin);
+  n.EffectiveCotton *= (1 + Number(n.Technologies.CottonGin));
 
   n.ProductionEfficiency = (-0.25 + n.TradeImprovements + Number(n.Technologies.IronWorking) / 4 - n.Alcoholism * (1 - n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100) + Number(n.Technologies.Wheel) / 4 + Number(n.CulturalAdvancements.Currency) / 4 + Number(n.Reforms.GuildsBanned) / 5 + Number(n.Reforms.AntiMonopolyLaws) / 2 + Number(n.Technologies.Workshops) + Number(n.Technologies.Cranes) / 5 + Number(n.Technologies.SteamEngine) / 4 + Number(n.Technologies.FirstFactories) / 2 + Number(n.Technologies.LinearAssemblyProcess) / 4 + Number(n.Technologies.InterchangeableParts) / 2) * (n.GovernmentDominatedBy == "Burgousie" || n.GovernmentDominatedBy == "Urban" ? 1.1 : 1);
-  n.WeavingEfficiency = 1 + n.Technologies.VerticalLoom / 4 + n.Technologies.TextileManufactories / 2 + n.Technologies.FlyingShuttle / 2 + n.Technologies.PowerLoomAndSewingMachine;
-  n.MetalWorkingEfficiency = n.Technologies.IronWorking / 2 + n.Technologies.Metallurgy / 4 + n.Technologies.LeadChamberProcess / 5 + n.Technologies.PuddlingProcess / 4;
-  n.WeaponWorkingEfficiency = 1 + n.MetalWorkingEfficiency + n.Technologies.StandardizedPikes / 5 + n.Technologies.Flintlock / 5;
-  n.ShipBuildingEfficiency = 1 + n.Technologies.Docks / 4;
-  n.ToolWorkingEfficiency = 1 + n.MetalWorkingEfficiency + n.Technologies.PaperMachine / 10;
+  const weavingEfficiency = 1 + Number(n.Technologies.VerticalLoom) / 4 + Number(n.Technologies.TextileManufactories) / 2 + Number(n.Technologies.FlyingShuttle) / 2 + Number(n.Technologies.PowerLoomAndSewingMachine);
+  const metalWorkingEfficiency = Number(n.Technologies.IronWorking) / 2 + Number(n.Technologies.Metallurgy) / 4 + Number(n.Technologies.LeadChamberProcess) / 5 + Number(n.Technologies.PuddlingProcess) / 4;
+  const weaponWorkingEfficiency = 1 + metalWorkingEfficiency + Number(n.Technologies.StandardizedPikes) / 5 + Number(n.Technologies.Flintlock) / 5;
+  const shipBuildingEfficiency = 1 + Number(n.Technologies.Docks) / 4;
+  const toolWorkingEfficiency = 1 + metalWorkingEfficiency + Number(n.Technologies.PaperMachine) / 10;
   n.Production = n.Population / 1000 * n.Workforces.Townsfolk * n.ProductionEfficiency / 2;
 
 
@@ -624,7 +624,7 @@ export function evaluateNation(nationName) {
   n.LuxuryNaturalFabricsShortage = min(1, max(0, 1 - (n.LuxuryNaturalFabrics / (n.LuxuryNaturalFabricsDemand * 0.9))));
   n.ValuableMaterialsShortage = min(1, max(0, 1 - (n.ValuableMaterials / (n.ValuableMaterialsDemand * 0.9))));
 
-  n.BasicTools = n.Production * (n.ProductionSectors.BasicToolsSector / n.TotalSupply) * (1.1 - n.WoodShortage) * (1.1 - n.IronShortage) * (1.1 - n.CoalShortage) * n.ToolWorkingEfficiency;
+  n.BasicTools = n.Production * (n.ProductionSectors.BasicToolsSector / n.TotalSupply) * (1.1 - n.WoodShortage) * (1.1 - n.IronShortage) * (1.1 - n.CoalShortage) * toolWorkingEfficiency;
   n.EffectiveBasicTools = n.BasicTools + n.BasicToolsIncoming - n.BasicToolsOutgoing;
   n.BasicToolsShortage = min(1, max(0, 1 - (n.EffectiveBasicTools / (n.BasicToolsDemand * 0.9))));
 
@@ -632,22 +632,22 @@ export function evaluateNation(nationName) {
   n.EffectiveHousing = n.Housing + n.HousingIncoming - n.HousingOutgoing;
   n.HousingShortage = min(1, max(0, 1 - (n.EffectiveHousing / (n.HousingDemand * 0.9))));
 
-  n.BasicArmaments = n.Production * (n.ProductionSectors.BasicArmamentsSector / n.TotalSupply) * (1.1 - n.BasicToolsShortage) * (1.1 - n.WoodShortage) * (1.1 - n.IronShortage) * (1.1 - n.CoalShortage) * n.WeaponWorkingEfficiency;
+  n.BasicArmaments = n.Production * (n.ProductionSectors.BasicArmamentsSector / n.TotalSupply) * (1.1 - n.BasicToolsShortage) * (1.1 - n.WoodShortage) * (1.1 - n.IronShortage) * (1.1 - n.CoalShortage) * weaponWorkingEfficiency;
   n.EffectiveBasicArmaments = n.BasicArmaments + n.BasicArmamentsIncoming - n.BasicArmamentsOutgoing + n.BasicArmamentsStockpiled;
   n.PrivateBasicArmamentsOverDemand = (n.BasicArmamentsDemand > n.EffectiveBasicArmaments ? min(n.ExpectedPrivateBasicArmaments / n.EffectiveBasicArmaments, 0.35) : 0);
   n.BasicArmamentsShortage = min(1, max(0, 1 - (n.EffectiveBasicArmaments / (n.BasicArmamentsDemand * 0.9)) + n.PrivateBasicArmamentsOverDemand));
   n.BasicArmamentsArmyShortage = min(1, max(0, 1 - (n.EffectiveBasicArmaments / n.ArmyBasicArmamentsDemand) + n.PrivateBasicArmamentsOverDemand));
   n.MinimumBasicArmamentsNeeded = n.ArmyBasicArmamentsDemand + min(n.ExpectedPrivateBasicArmaments / n.EffectiveBasicArmaments, 0.35) * n.EffectiveBasicArmaments;
 
-  n.HeavyArmaments = n.Production * (n.ProductionSectors.HeavyArmamentsSector / n.TotalSupply) * (1.1 - n.BasicToolsShortage) * (1.1 - n.IronShortage) * (1.1 - n.CoalShortage) * (0.5 + n.MetalWorkingEfficiency);
+  n.HeavyArmaments = n.Production * (n.ProductionSectors.HeavyArmamentsSector / n.TotalSupply) * (1.1 - n.BasicToolsShortage) * (1.1 - n.IronShortage) * (1.1 - n.CoalShortage) * (0.5 + metalWorkingEfficiency);
   n.EffectiveHeavyArmaments = n.HeavyArmaments + n.HeavyArmamentsIncoming - n.HeavyArmamentsOutgoing + n.HeavyArmamentsStockpiled;
   n.HeavyArmamentsShortage = min(1, max(0, 1 - (n.EffectiveHeavyArmaments / (n.HeavyArmamentsDemand * 0.9))));
 
-  n.Textiles = n.Production * (n.ProductionSectors.TextilesSector / n.TotalSupply) * (1.1 - n.BasicToolsShortage) * (1.1 - n.NaturalFabricsShortage) * n.WeavingEfficiency;
+  n.Textiles = n.Production * (n.ProductionSectors.TextilesSector / n.TotalSupply) * (1.1 - n.BasicToolsShortage) * (1.1 - n.NaturalFabricsShortage) * weavingEfficiency;
   n.EffectiveTextiles = n.Textiles + n.TextilesIncoming - n.TextilesOutgoing;
   n.TextilesShortage = min(1, max(0, 1 - (n.EffectiveTextiles / (n.TextilesDemand * 0.9))));
 
-  n.ShipBuilding = n.Production * (n.ProductionSectors.ShipBuildingSector / n.TotalSupply) * (1.1 - n.BasicToolsShortage) * (1.1 - n.WoodShortage) * (1.1 - n.IronShortage) * (1.1 - n.TextilesShortage) * n.ShipBuildingEfficiency;
+  n.ShipBuilding = n.Production * (n.ProductionSectors.ShipBuildingSector / n.TotalSupply) * (1.1 - n.BasicToolsShortage) * (1.1 - n.WoodShortage) * (1.1 - n.IronShortage) * (1.1 - n.TextilesShortage) * shipBuildingEfficiency;
   n.EffectiveShipBuilding = n.ShipBuilding + n.ShipBuildingIncoming - n.ShipBuildingOutgoing;
   n.ShipBuildingShortage = min(1, max(0, 1 - (n.EffectiveShipBuilding / (n.ShipBuildingDemand * 0.9))));
 
@@ -664,7 +664,7 @@ export function evaluateNation(nationName) {
   n.AlcoholShortage = min(1, max(0, 1 - (n.EffectiveAlcohol / (n.AlcoholDemand * 0.9))));
   if (n.AlcoholDemand == 0) n.AlcoholShortage = 0;
 
-  n.HeavyIndustry = n.Production * (n.ProductionSectors.HeavyIndustrySector / n.TotalSupply) * (1.1 - n.BasicToolsShortage) * (1.1 - n.IronShortage) * (1.1 - n.CoalShortage) * (0.5 + n.MetalWorkingEfficiency);
+  n.HeavyIndustry = n.Production * (n.ProductionSectors.HeavyIndustrySector / n.TotalSupply) * (1.1 - n.BasicToolsShortage) * (1.1 - n.IronShortage) * (1.1 - n.CoalShortage) * (0.5 + metalWorkingEfficiency);
   n.EffectiveHeavyIndustry = n.HeavyIndustry + n.HeavyIndustryIncoming - n.HeavyIndustryOutgoing;
   n.HeavyIndustryShortage = (n.HeavyIndustryDemand == 0 ? 0 : min(1, max(0, 1 - (n.EffectiveHeavyIndustry / (n.HeavyIndustryDemand * 0.9)))));
 
