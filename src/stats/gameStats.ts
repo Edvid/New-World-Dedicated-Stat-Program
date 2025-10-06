@@ -847,6 +847,7 @@ export class Nation implements units, RealReformCostTypes, estateStats {
   Fervor: number;
   TradeInfluences: tradeInfluencesType;
   EstateInfluences: estateInfluences;
+  EstateInfluencesReal: estateInfluences;
   ExpectedInfluences: estateInfluences;
   Size: number;
   KmSquared: number;
