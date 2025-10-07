@@ -660,6 +660,8 @@ export class Nation implements units, RealReformCostTypes, estateStats {
   IntellectualsTax: number; //Show in percent
   MilitaryTax: number; //Show in percent
   WorkersTax: number; //Show in percent
+  ExternalTrade: number
+  InternalTrade: number;
   ExternalTariffs: number;
   InternalTariffs: number;
   TariffEfficiency: number;
