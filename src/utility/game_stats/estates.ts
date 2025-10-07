@@ -13,19 +13,19 @@ type estatesWithInfluence = AbstractType<highClassEstates &
 {
   Urban: never;
   Bureaucrats: never;
-  Intellectuals: never;
+  Intellectuals: never; //
   Military: never;
   Workers: never;
 }>
 
 type estatesWithNoInfluence = AbstractType<{
-  Unemployed: never;
+  Unemployed: never; //
   Slaves: never;
-  Labourers: never;
-  Serfs: never;
-  Farmers: never;
-  Townsfolk: never;
-  Merchants: never;
+  Labourers: never; //
+  Serfs: never; //
+  Farmers: never; //
+  Townsfolk: never; //
+  Merchants: never; //
   Sailors: never;
   Soldiers: never;
 }>
@@ -68,6 +68,16 @@ export const estates: estates[] = [
   "Aristocracy",
   "Burgousie"
 ];
+
+export const generalPopulace: estates[] = [
+  "Labourers",
+  "Serfs",
+  "Unemployed",
+  "Farmers",
+  "Townsfolk",
+  "Merchants",
+  "Intellectuals"
+]
 
 export type estateInfluences = Record<`${keyof estatesWithInfluence}Influence`, number>;
 
