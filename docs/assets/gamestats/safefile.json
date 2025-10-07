@@ -1335,7 +1335,6 @@
                     "MilitaryInfluence": 0.012422360248447204,
                     "WorkersInfluence": 0.0037267080745341614
                 },
-                "ResourceOwners": 0.02,
                 "LandOwnersInfluence": 0.382608695652174,
                 "BurgousieProductionShareMaxed": 0.516304347826087,
                 "UnemployedWage": 0,
@@ -2992,7 +2991,6 @@
                     "MilitaryInfluence": 0.012054001928640305,
                     "WorkersInfluence": 0.0031340405014464792
                 },
-                "ResourceOwners": 0.0195,
                 "LandOwnersInfluence": 0.38452266152362585,
                 "BurgousieProductionShareMaxed": 0.6514946962391512,
                 "UnemployedWage": 0,
@@ -4655,7 +4653,6 @@
                     "MilitaryInfluence": 0.010468748691406411,
                     "WorkersInfluence": 0.0031406246074219234
                 },
-                "ResourceOwners": 0.0195,
                 "LandOwnersInfluence": 0.19785935026758125,
                 "BurgousieProductionShareMaxed": 0.8793359463330068,
                 "UnemployedWage": 0,
@@ -6334,7 +6331,6 @@
                     "MilitaryInfluence": 0.06572979403673136,
                     "WorkersInfluence": 0.013383894713361587
                 },
-                "ResourceOwners": 0.02,
                 "LandOwnersInfluence": 0.12640345007063725,
                 "BurgousieProductionShareMaxed": 0.5672484943118448,
                 "UnemployedWage": 0,
@@ -7994,7 +7990,6 @@
                     "MilitaryInfluence": 0.012490632025980513,
                     "WorkersInfluence": 0.0032475643267549335
                 },
-                "ResourceOwners": 0.0195,
                 "LandOwnersInfluence": 0.3622283287534349,
                 "BurgousieProductionShareMaxed": 0.6732825380964277,
                 "UnemployedWage": 0,
@@ -9660,7 +9655,6 @@
                     "MilitaryInfluence": 0.023155294844087678,
                     "WorkersInfluence": 0.022074714418030255
                 },
-                "ResourceOwners": 0.02,
                 "LandOwnersInfluence": 0.3457857363383761,
                 "BurgousieProductionShareMaxed": 0.670253164556962,
                 "UnemployedWage": 0,
@@ -11323,7 +11317,6 @@
                     "MilitaryInfluence": 0.054768041237113395,
                     "WorkersInfluence": 0.00547680412371134
                 },
-                "ResourceOwners": 0.0195,
                 "LandOwnersInfluence": 0.2013530927835052,
                 "BurgousieProductionShareMaxed": 0.48350515463917526,
                 "UnemployedWage": 0,
@@ -12986,7 +12979,6 @@
                     "MilitaryInfluence": 0.012406947890818856,
                     "WorkersInfluence": 0.019354838709677417
                 },
-                "ResourceOwners": 0.0195,
                 "LandOwnersInfluence": 0.18709677419354842,
                 "BurgousieProductionShareMaxed": 0.8163151364764268,
                 "UnemployedWage": 0,
@@ -14658,7 +14650,6 @@
                     "MilitaryInfluence": 0.009282034621989139,
                     "WorkersInfluence": 0.0024133290017171764
                 },
-                "ResourceOwners": 0.0195,
                 "LandOwnersInfluence": 0.38984545412354393,
                 "BurgousieProductionShareMaxed": 0.6626142850512833,
                 "UnemployedWage": 0,
@@ -16315,7 +16306,6 @@
                     "MilitaryInfluence": 0.05186385737439221,
                     "WorkersInfluence": 0.003889789303079416
                 },
-                "ResourceOwners": 0.02,
                 "LandOwnersInfluence": 0.43565640194489474,
                 "BurgousieProductionShareMaxed": 0.47281199351701786,
                 "UnemployedWage": 0,
@@ -17972,7 +17962,6 @@
                     "MilitaryInfluence": 0.011910433539780845,
                     "WorkersInfluence": 0.0030967127203430198
                 },
-                "ResourceOwners": 0.02,
                 "LandOwnersInfluence": 0.5538351595998094,
                 "BurgousieProductionShareMaxed": 0.5524892806098142,
                 "UnemployedWage": 0,
@@ -19638,7 +19627,6 @@
                     "MilitaryInfluence": 0.014492753623188404,
                     "WorkersInfluence": 0.004347826086956521
                 },
-                "ResourceOwners": 0.02,
                 "LandOwnersInfluence": 0.4869565217391305,
                 "BurgousieProductionShareMaxed": 0.4623188405797102,
                 "UnemployedWage": 0,
@@ -21301,7 +21289,6 @@
                     "MilitaryInfluence": 0.014156285390713475,
                     "WorkersInfluence": 0.004246885617214043
                 },
-                "ResourceOwners": 0.02,
                 "LandOwnersInfluence": 0.4280860702151756,
                 "BurgousieProductionShareMaxed": 0.5260192525481313,
                 "UnemployedWage": 0,
@@ -22968,7 +22955,6 @@
                     "MilitaryInfluence": 0.024246538806585356,
                     "WorkersInfluence": 0.005253416741426827
                 },
-                "ResourceOwners": 0.0195,
                 "LandOwnersInfluence": 0.05657525721536584,
                 "BurgousieProductionShareMaxed": 0.8150900354807685,
                 "UnemployedWage": 0,
@@ -24622,7 +24608,6 @@
                     "MilitaryInfluence": 0.011291779584462508,
                     "WorkersInfluence": 0.002935862691960252
                 },
-                "ResourceOwners": 0.02,
                 "LandOwnersInfluence": 0.44715447154471544,
                 "BurgousieProductionShareMaxed": 0.5874887082204155,
                 "UnemployedWage": 0,
@@ -26289,7 +26274,6 @@
                     "MilitaryInfluence": 0.07483046223400107,
                     "WorkersInfluence": 0.014186608465196036
                 },
-                "ResourceOwners": 0.0195,
                 "LandOwnersInfluence": 0.16275625535895238,
                 "BurgousieProductionShareMaxed": 0.412302205939668,
                 "UnemployedWage": 0,
@@ -27940,7 +27924,6 @@
                     "MilitaryInfluence": 0.014005602240896356,
                     "WorkersInfluence": 0.0042016806722689065
                 },
-                "ResourceOwners": 0.02,
                 "LandOwnersInfluence": 0.47058823529411775,
                 "BurgousieProductionShareMaxed": 0.4635854341736695,
                 "UnemployedWage": 0,
@@ -29609,7 +29592,6 @@
                     "MilitaryInfluence": 0.011572734637194765,
                     "WorkersInfluence": 0.0030089110056706393
                 },
-                "ResourceOwners": 0.02,
                 "LandOwnersInfluence": 0.43050572850364544,
                 "BurgousieProductionShareMaxed": 0.46643906955213515,
                 "UnemployedWage": 0,
@@ -31266,7 +31248,6 @@
                     "MilitaryInfluence": 0.009404082123968371,
                     "WorkersInfluence": 0.0024450613522317764
                 },
-                "ResourceOwners": 0.0195,
                 "LandOwnersInfluence": 0.45031259168980076,
                 "BurgousieProductionShareMaxed": 0.6582936481067702,
                 "UnemployedWage": 0,
@@ -32936,7 +32917,6 @@
                     "MilitaryInfluence": 0.028142589118198873,
                     "WorkersInfluence": 0.08090994371482176
                 },
-                "ResourceOwners": 0.02,
                 "LandOwnersInfluence": 0.17682926829268297,
                 "BurgousieProductionShareMaxed": 0.6867260787992495,
                 "UnemployedWage": 0,
@@ -34603,7 +34583,6 @@
                     "MilitaryInfluence": 0.024187452758881324,
                     "WorkersInfluence": 0.018140589569160995
                 },
-                "ResourceOwners": 0.0195,
                 "LandOwnersInfluence": 0.21768707482993202,
                 "BurgousieProductionShareMaxed": 0.577286470143613,
                 "UnemployedWage": 0,
@@ -36263,7 +36242,6 @@
                     "MilitaryInfluence": 0.012490632025980513,
                     "WorkersInfluence": 0.0032475643267549335
                 },
-                "ResourceOwners": 0.0195,
                 "LandOwnersInfluence": 0.3622283287534349,
                 "BurgousieProductionShareMaxed": 0.6732825380964277,
                 "UnemployedWage": 0,
@@ -37920,7 +37898,6 @@
                     "MilitaryInfluence": 0.013858093126385806,
                     "WorkersInfluence": 0.00360310421286031
                 },
-                "ResourceOwners": 0.02,
                 "LandOwnersInfluence": 0.4988913525498892,
                 "BurgousieProductionShareMaxed": 0.4611973392461197,
                 "UnemployedWage": 0,
@@ -39574,7 +39551,6 @@
                     "MilitaryInfluence": 0.013670095039708369,
                     "WorkersInfluence": 0.0033849759145944533
                 },
-                "ResourceOwners": 0.02,
                 "LandOwnersInfluence": 0.5077463871891681,
                 "BurgousieProductionShareMaxed": 0.4713578961072777,
                 "UnemployedWage": 0,
@@ -41237,7 +41213,6 @@
                     "MilitaryInfluence": 0.03327347628604626,
                     "WorkersInfluence": 0.013943171015105098
                 },
-                "ResourceOwners": 0.0195,
                 "LandOwnersInfluence": 0.3601985845568818,
                 "BurgousieProductionShareMaxed": 0.5415416710679202,
                 "UnemployedWage": 0,
@@ -42894,7 +42869,6 @@
                     "MilitaryInfluence": 0.012432398831354507,
                     "WorkersInfluence": 0.003232423696152172
                 },
-                "ResourceOwners": 0.0195,
                 "LandOwnersInfluence": 0.10816186983278424,
                 "BurgousieProductionShareMaxed": 0.8445530552620129,
                 "UnemployedWage": 0,
@@ -44551,7 +44525,6 @@
                     "MilitaryInfluence": 0.012097749818533749,
                     "WorkersInfluence": 0.003145414952818775
                 },
-                "ResourceOwners": 0.02,
                 "LandOwnersInfluence": 0.39922574401161387,
                 "BurgousieProductionShareMaxed": 0.5750423421243647,
                 "UnemployedWage": 0,
@@ -46208,7 +46181,6 @@
                     "MilitaryInfluence": 0.0126008064516129,
                     "WorkersInfluence": 0.0032762096774193545
                 },
-                "ResourceOwners": 0.02,
                 "LandOwnersInfluence": 0.5443548387096775,
                 "BurgousieProductionShareMaxed": 0.4647177419354839,
                 "UnemployedWage": 0,
@@ -47859,7 +47831,6 @@
                     "MilitaryInfluence": 0.012664640324214788,
                     "WorkersInfluence": 0.003292806484295845
                 },
-                "ResourceOwners": 0.02,
                 "LandOwnersInfluence": 0.3799392097264438,
                 "BurgousieProductionShareMaxed": 0.652836879432624,
                 "UnemployedWage": 0,
@@ -49513,7 +49484,6 @@
                     "MilitaryInfluence": 0.012521913348359625,
                     "WorkersInfluence": 0.0032556974705735026
                 },
-                "ResourceOwners": 0.02,
                 "LandOwnersInfluence": 0.4132231404958678,
                 "BurgousieProductionShareMaxed": 0.5934510393188078,
                 "UnemployedWage": 0,
@@ -51169,7 +51139,6 @@
                 "MediumShipConstructionCost": 248.82285303076398,
                 "HeavyShipConstructionCost": 497.64570606152796,
                 "ConstructionCost": 0,
-                "ResourceOwners": 0.02,
                 "LandOwnersInfluence": 0.29760850310008863,
                 "BurgousieProductionShareMaxed": 0.5397918511957485,
                 "UnemployedWage": 0,
@@ -52820,7 +52789,6 @@
                 "MediumShipConstructionCost": 69.07172860661336,
                 "HeavyShipConstructionCost": 138.14345721322672,
                 "ConstructionCost": 0,
-                "ResourceOwners": 0.02,
                 "LandOwnersInfluence": 0.4869565217391305,
                 "BurgousieProductionShareMaxed": 0.4623188405797102,
                 "UnemployedWage": 0,
@@ -54477,7 +54445,6 @@
                 "MediumShipConstructionCost": 2.045245923238074,
                 "HeavyShipConstructionCost": 4.295016438799956,
                 "ConstructionCost": 0,
-                "ResourceOwners": 0.02,
                 "LandOwnersInfluence": 0.4081127875340094,
                 "BurgousieProductionShareMaxed": 0.5867301508780607,
                 "UnemployedWage": 0,
@@ -56137,7 +56104,6 @@
                 "MediumShipConstructionCost": 3.120855197924059,
                 "HeavyShipConstructionCost": 6.553795915640524,
                 "ConstructionCost": 0,
-                "ResourceOwners": 0.02,
                 "LandOwnersInfluence": 0.4132231404958678,
                 "BurgousieProductionShareMaxed": 0.5934510393188078,
                 "UnemployedWage": 0,
@@ -57803,7 +57769,6 @@
                 "MediumShipConstructionCost": 3.9417258121482655,
                 "HeavyShipConstructionCost": 7.883451624296531,
                 "ConstructionCost": 0,
-                "ResourceOwners": 0.02,
                 "LandOwnersInfluence": 0.4132231404958678,
                 "BurgousieProductionShareMaxed": 0.5934510393188078,
                 "UnemployedWage": 0,
@@ -59457,7 +59422,6 @@
                 "MediumShipConstructionCost": 3.85942915534409,
                 "HeavyShipConstructionCost": 8.10480122622259,
                 "ConstructionCost": 0,
-                "ResourceOwners": 0.02,
                 "LandOwnersInfluence": 0.43731778425655976,
                 "BurgousieProductionShareMaxed": 0.5383580705009277,
                 "UnemployedWage": 0,
@@ -61117,7 +61081,6 @@
                 "MediumShipConstructionCost": 6.1592841929675135,
                 "HeavyShipConstructionCost": 12.318568385935027,
                 "ConstructionCost": 0,
-                "ResourceOwners": 0.0195,
                 "LandOwnersInfluence": 0.3949975235264983,
                 "BurgousieProductionShareMaxed": 0.6133977216443783,
                 "UnemployedWage": 0,
@@ -62777,7 +62740,6 @@
                 "MediumShipConstructionCost": 163.60230518870057,
                 "HeavyShipConstructionCost": 327.20461037740114,
                 "ConstructionCost": 0,
-                "ResourceOwners": 0.02,
                 "LandOwnersInfluence": 0.47931526390870194,
                 "BurgousieProductionShareMaxed": 0.46291012838801715,
                 "UnemployedWage": 0,
@@ -64428,7 +64390,6 @@
                 "MediumShipConstructionCost": 15.416449506771778,
                 "HeavyShipConstructionCost": 31.827508659141735,
                 "ConstructionCost": 0,
-                "ResourceOwners": 0.02,
                 "LandOwnersInfluence": 0.40067994171928123,
                 "BurgousieProductionShareMaxed": 0.6279504613890237,
                 "UnemployedWage": 0,
@@ -66041,7 +66002,6 @@
                 "MediumShipConstructionCost": 14.962060058090628,
                 "HeavyShipConstructionCost": 29.924120116181257,
                 "ConstructionCost": 0,
-                "ResourceOwners": 0.02,
                 "LandOwnersInfluence": 0.40067994171928123,
                 "BurgousieProductionShareMaxed": 0.6279504613890237,
                 "UnemployedWage": 0,
@@ -67656,7 +67616,6 @@
                 "MediumShipConstructionCost": 9.122305088123744,
                 "HeavyShipConstructionCost": 18.244610176247487,
                 "ConstructionCost": 0,
-                "ResourceOwners": 0.02,
                 "LandOwnersInfluence": 0.4411224114691827,
                 "BurgousieProductionShareMaxed": 0.4965476044602377,
                 "UnemployedWage": 0,
@@ -69233,7 +69192,6 @@
                 "ConstructionCost": 0,
                 "Inflation": 0.09023332620260063,
                 "ResourceBudgetBoost": 0.849983159187575,
-                "ResourceOwners": 0.02,
                 "LandOwnersInfluence": 0.4565051990869896,
                 "BurgousieProductionShareMaxed": 0.5291592695916815,
                 "UnemployedWage": 0,
@@ -70843,7 +70801,6 @@
                 "ConstructionCost": 0,
                 "Inflation": 0.17822534167859033,
                 "ResourceBudgetBoost": 3.179610718992528,
-                "ResourceOwners": 0.02,
                 "LandOwnersInfluence": 0.46899426784783743,
                 "BurgousieProductionShareMaxed": 0.5073866597186034,
                 "UnemployedWage": 0,
@@ -72459,7 +72416,6 @@
                 "ConstructionCost": 0,
                 "Inflation": 0.12684128191115354,
                 "ResourceBudgetBoost": 1.078956594195372,
-                "ResourceOwners": 0.02,
                 "LandOwnersInfluence": 0.46899426784783743,
                 "BurgousieProductionShareMaxed": 0.5073866597186034,
                 "UnemployedWage": 0,
@@ -74078,7 +74034,6 @@
                 "ConstructionCost": 0,
                 "Inflation": 0.16065671172759097,
                 "ResourceBudgetBoost": 2.7847824077381147,
-                "ResourceOwners": 0.02,
                 "LandOwnersInfluence": 0.46899426784783743,
                 "BurgousieProductionShareMaxed": 0.5073866597186034,
                 "UnemployedWage": 0,
@@ -75733,7 +75688,6 @@
                 "MediumShipConstructionCost": 4.775762110434529,
                 "HeavyShipConstructionCost": 9.551524220869059,
                 "ConstructionCost": 0,
-                "ResourceOwners": 0.02,
                 "LandOwnersInfluence": 0.46899426784783743,
                 "BurgousieProductionShareMaxed": 0.5073866597186034,
                 "UnemployedWage": 0,

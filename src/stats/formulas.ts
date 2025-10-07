@@ -997,7 +997,6 @@ export function evaluateNation(nationName) {
     return (rbb);
   })();
 
-    n.ResourceOwners = (n.Reforms.NobleResourceOwnership == true ? n.Workforces.Aristocracy : 0) + (n.Reforms.MixedResourceOwnership == true ? n.Workforces.Aristocracy + n.Workforces.Burgousie : 0) + (n.Reforms.BurgousieResourceOwnership == true ? n.Workforces.Burgousie : 0)
     const resourceOwnersInfluence = (n.Reforms.NobleResourceOwnership == true ? n.EstateInfluencesReal.AristocracyInfluence : 0) + (n.Reforms.MixedResourceOwnership == true ? (n.EstateInfluencesReal.AristocracyInfluence + n.EstateInfluencesReal.BurgousieInfluence) / 2 : 0) + (n.Reforms.BurgousieResourceOwnership == true ? n.EstateInfluencesReal.BurgousieInfluence : 0)
 
     n.LandOwnersInfluence = (n.Reforms.NobleLandOwnership == true ? n.EstateInfluencesReal.AristocracyInfluence : 0) + (n.Reforms.MixedLandOwnership == true ? (n.EstateInfluencesReal.AristocracyInfluence + n.EstateInfluencesReal.BurgousieInfluence) / 2 : 0) + (n.Reforms.PrivateLandOwnership == true ? n.EstateInfluencesReal.BurgousieInfluence : 0)
