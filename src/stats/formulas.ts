@@ -1000,8 +1000,7 @@ export function evaluateNation(nationName) {
     n.ResourceOwners = (n.Reforms.NobleResourceOwnership == true ? n.Workforces.Aristocracy : 0) + (n.Reforms.MixedResourceOwnership == true ? n.Workforces.Aristocracy + n.Workforces.Burgousie : 0) + (n.Reforms.BurgousieResourceOwnership == true ? n.Workforces.Burgousie : 0)
     const resourceOwnersInfluence = (n.Reforms.NobleResourceOwnership == true ? n.EstateInfluencesReal.AristocracyInfluence : 0) + (n.Reforms.MixedResourceOwnership == true ? (n.EstateInfluencesReal.AristocracyInfluence + n.EstateInfluencesReal.BurgousieInfluence) / 2 : 0) + (n.Reforms.BurgousieResourceOwnership == true ? n.EstateInfluencesReal.BurgousieInfluence : 0)
 
-    n.LandOwners = (n.Reforms.NobleLandOwnership == 1 ? n.Workforces.Aristocracy : 0) + (n.Reforms.MixedLandOwnership == 1 ? n.Workforces.Aristocracy + n.Workforces.Burgousie : 0) + (n.Reforms.PrivateLandOwnership == 1 ? n.Workforces.Burgousie : 0)
-    n.LandOwnersInfluence = (n.Reforms.NobleLandOwnership == 1 ? n.EstateInfluencesReal.AristocracyInfluence : 0) + (n.Reforms.MixedLandOwnership == 1 ? (n.EstateInfluencesReal.AristocracyInfluence + n.EstateInfluencesReal.BurgousieInfluence) / 2 : 0) + (n.Reforms.PrivateLandOwnership == 1 ? n.EstateInfluencesReal.BurgousieInfluence : 0)
+    n.LandOwnersInfluence = (n.Reforms.NobleLandOwnership == true ? n.EstateInfluencesReal.AristocracyInfluence : 0) + (n.Reforms.MixedLandOwnership == true ? (n.EstateInfluencesReal.AristocracyInfluence + n.EstateInfluencesReal.BurgousieInfluence) / 2 : 0) + (n.Reforms.PrivateLandOwnership == true ? n.EstateInfluencesReal.BurgousieInfluence : 0)
 
     n.BurgousieProductionShareMaxed = min(n.EstateInfluencesReal.BurgousieInfluence * 4, 0.5) + (n.EstateInfluencesReal.BurgousieInfluence > 0.175 ? min((n.EstateInfluencesReal.BurgousieInfluence - 0.175), 0.3) : 0) + (n.EstateInfluencesReal.BurgousieInfluence > 0.275 ? min((n.EstateInfluencesReal.BurgousieInfluence - 0.275), 0.15) : 0) - n.EstateInfluencesReal.UrbanInfluence;
 
@@ -1641,7 +1640,7 @@ export function syncNation(nationName: string) {
     n.HeavyArmamentsStockpiled += (n.EffectiveHeavyArmaments - n.HeavyArmamentsStockpiled) - n.HeavyArmamentsDemand;
     n.HeavyArmamentsStockpiled = max(0, n.HeavyArmamentsStockpiled);
 
-    if (n.atWar == false) {
+    if (n.AtWar == false) {
         // Private Armies Casualties Clear
         n.AristocracyLeviesCasualties = 0;
         n.AristocracyMilitiaCasualties = 0;
