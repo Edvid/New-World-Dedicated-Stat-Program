@@ -853,17 +853,17 @@ export function evaluateNation(nationName) {
   n.FoodSold = min(n.SellingCapability, n.SurplusFood);
   n.FoodLost = n.SurplusFood - n.FoodSold;
   n.FoodTradeProfit = n.FoodSold * n.FoodValue;
-  n.AgricultureRevenue = (n.FoodPerTurn - n.FoodLost) * n.FoodValue;
+  const agricultureRevenue = (n.FoodPerTurn - n.FoodLost) * n.FoodValue;
 
   n.TradeProtection = min((n.LightShips * 2 + n.MediumShips * 3.5 + n.HeavyShips * 2) / max(n.MerchantShips, 1), 2);
   n.MerchantShipsFullfilment = min(n.MerchantShips / (resourceTrade + pseudoTradePower / 2 + (n.LocalTrade * n.Population / 2000000 * (1 + n.AverageDevelopment) + n.FoodTradeProfit) / 4), 1);
-  n.TradeEfficiency = max(0, (n.TradeImprovements + n.Technologies.Wheel / 4 + n.CulturalAdvancements.Currency / 4 + n.Reforms.GuildsBanned / 10 + n.Reforms.AntiMonopolyLaws / 5 - n.Corruption / 4 + n.CoastalPopulationPercent / 2 + n.Technologies.Cranes / 10 + n.Technologies.PromissoryNotes / 20 + n.TradeProtection + n.Technologies.Fluyt / 5) * (1 - n.Blockade) * max(n.MerchantShipsFullfilment, 0.1)) * (n.GovernmentDominatedBy == "Burgousie" || n.GovernmentDominatedBy == "Urban" ? 1.1 : 1);
+  n.TradeEfficiency = max(0, (n.TradeImprovements + Number(n.Technologies.Wheel) / 4 + Number(n.CulturalAdvancements.Currency) / 4 + Number(n.Reforms.GuildsBanned) / 10 + Number(n.Reforms.AntiMonopolyLaws) / 5 - n.Corruption / 4 + n.CoastalPopulationPercent / 2 + Number(n.Technologies.Cranes) / 10 + Number(n.Technologies.PromissoryNotes) / 20 + n.TradeProtection + Number(n.Technologies.Fluyt) / 5) * (1 - n.Blockade) * max(n.MerchantShipsFullfilment, 0.1)) * (n.GovernmentDominatedBy == "Burgousie" || n.GovernmentDominatedBy == "Urban" ? 1.1 : 1);
 
-  n.ExternalTradeEff = n.Reforms.Isolationism * 0.25 + n.Reforms.Mercantilism * 0.75 + n.Reforms.Protectionism + n.Reforms.FreeTrade * 1.25;
-  n.InternalTradeEff = n.Reforms.Isolationism * 1.5 + n.Reforms.Mercantilism + n.Reforms.Protectionism * 0.75 + n.Reforms.FreeTrade * 0.5;
+  const externalTradeEff = Number(n.Reforms.Isolationism) * 0.25 + Number(n.Reforms.Mercantilism) * 0.75 + Number(n.Reforms.Protectionism) + Number(n.Reforms.FreeTrade) * 1.25;
+  const internalTradeEff = Number(n.Reforms.Isolationism) * 1.5 + Number(n.Reforms.Mercantilism) + Number(n.Reforms.Protectionism) * 0.75 + Number(n.Reforms.FreeTrade) * 0.5;
 
-    n.ExternalTrade = pseudoTradePower * n.TradeEfficiency * n.ExternalTradeEff;
-    n.InternalTrade = (n.LocalTrade * n.Population / 2000000 * (1 + n.AverageDevelopment)) * n.TradeEfficiency * n.InternalTradeEff + n.FoodTradeProfit / 2;
+    n.ExternalTrade = pseudoTradePower * n.TradeEfficiency * externalTradeEff;
+    n.InternalTrade = (n.LocalTrade * n.Population / 2000000 * (1 + n.AverageDevelopment)) * n.TradeEfficiency * internalTradeEff + n.FoodTradeProfit / 2;
     n.TradePower = n.ExternalTrade + n.InternalTrade;
   
   n.KmSquared = n.Size != 0 ? n.Size * 20 : 78870; //But Please specify Size as soon as possible in game
@@ -1009,8 +1009,8 @@ export function evaluateNation(nationName) {
     n.SlavesWage = (n.Reforms.GovernmentResourceOwnership ? n.StateLabourerWage * 0.05 : (n.Workforces.Slaves > 0 ? n.ResourceBudgetBoost / (n.Population / 1000 * n.Workforces.Slaves) * 0.05 : 0));
     n.LabourersWage = (n.Reforms.GovernmentResourceOwnership ? n.StateLabourerWage : (n.Workforces.Labourers > 0 ? n.ResourceBudgetBoost / (n.Population / 1000 * n.Workforces.Labourers) * (1 - n.ResourceOwnersInfluence) : 0));
       n.SlavesAndLabourersWageToOwner = (n.Reforms.GovernmentResourceOwnership ? 0 : n.Population * n.Workforces.Slaves / 1000 * n.SlavesWage / 0.1 * 0.9 + n.Workforces.Labourers / 1000 * n.LabourersWage / (1 - n.ResourceOwnersInfluence) * n.ResourceOwnersInfluence);
-    n.SerfsWage = (n.Reforms.GovernmentLandOwnership ? n.StateFarmerWage * 0.5 : n.AgricultureRevenue / ((n.Workforces.Farmers + n.Workforces.Serfs) * n.Population / 1000) * 0.25);
-    n.FarmersWage = (n.Reforms.GovernmentLandOwnership ? n.StateFarmerWage : n.AgricultureRevenue / ((n.Workforces.Farmers + n.Workforces.Serfs) * n.Population / 1000) * (1 - n.LandOwnersInfluence));
+    n.SerfsWage = (n.Reforms.GovernmentLandOwnership ? n.StateFarmerWage * 0.5 : agricultureRevenue / ((n.Workforces.Farmers + n.Workforces.Serfs) * n.Population / 1000) * 0.25);
+    n.FarmersWage = (n.Reforms.GovernmentLandOwnership ? n.StateFarmerWage : agricultureRevenue / ((n.Workforces.Farmers + n.Workforces.Serfs) * n.Population / 1000) * (1 - n.LandOwnersInfluence));
       n.SerfsAndFarmersWageToOnwers = (n.Reforms.GovernmentLandOwnership ? 0 : n.Population * n.Workforces.Serfs / 1000 * n.SerfsWage / 0.25 * 0.75 + n.Population * n.Workforces.Farmers / 1000 * n.FarmersWage / (1 - n.LandOwnersInfluence) * n.LandOwnersInfluence);
     n.TownsfolkWage = ((n.PopProductionRevenue * 5 / (n.Population / 1000 * n.Workforces.Townsfolk)) * (1 - n.BurgousieProductionShareMaxed)) * (1 - n.ProductionGovernmentControl) + n.ProductionGovernmentControl * n.StateFactoryWorkerWage;
         n.TownsfolkWageToBurgousie = (n.Population * n.Workforces.Townsfolk / 1000 * n.TownsfolkWage / (1 - n.BurgousieProductionShareMaxed) * n.EstateInfluencesReal.BurgousieInfluence * 4) * (1 - n.ProductionGovernmentControl);
@@ -1342,7 +1342,7 @@ export function evaluateNation(nationName) {
   n.Balance = n.BudgetIncoming - n.BudgetOutgoing;
   n.PassiveInvestmentIncome = (n.Budget / (10 - n.AdministrativeEfficiency / 10 + 1) / timeDivide) / (1 + n.Inflation);
 
-  n.StateAgricultureRevenue = (n.Reforms.GovernmentLandOwnership ? n.AgricultureRevenue : 0);
+  n.StateAgricultureRevenue = (n.Reforms.GovernmentLandOwnership ? agricultureRevenue : 0);
     n.StateResourceRevenue = (n.Reforms.GovernmentResourceOwnership ? n.ResourceBudgetBoost : 0) - outgoingTradePowerFromResourceTrade + n.TradePowerFromResourceTrade;
 
   n.OverallIncome = n.PassiveInvestmentIncome + n.TariffsRevenue + n.TaxRevenue + n.BudgetIncoming + n.StateProductionRevenue + n.StateAgricultureRevenue + n.StateResourceRevenue;
