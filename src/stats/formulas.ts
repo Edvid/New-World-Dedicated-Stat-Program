@@ -911,15 +911,15 @@ export function evaluateNation(nationName) {
   n.FutureLiteracyPercent = ((n.LiteracyPercent > education * 3) ? education * 3 : n.LiteracyPercent) + education / 10 / timeDivide;
   n.FutureHigherEducation = n.HigherEducation + (education >= 3 ? education / 30 : 0) + (n.HigherEducation > education / 3 ? -0.25 : 0);
 
-  n.UpkeepForOneMerchantShip = ((0.025 * n.ShipBuildingValue + n.Technologies.Gunports * 0.1 / 8 * n.HeavyArmamentsValue) * (lightShipQualityIC)) / timeDivide;
-  n.UpkeepForOneLightShip = ((0.05 * n.ShipBuildingValue + n.Technologies.Gunports * 0.8 / 8 * n.HeavyArmamentsValue) * (lightShipQualityIC)) / timeDivide;
-  n.UpkeepForOneMediumShip = ((0.10 * n.ShipBuildingValue + n.Technologies.Gunports * 1.6 / 8 * n.HeavyArmamentsValue) * (mediumShipQualityIC)) / timeDivide;
-  n.UpkeepForOneHeavyShip = ((0.20 * n.ShipBuildingValue + n.Technologies.Gunports * 3.2 / 8 * n.HeavyArmamentsValue) * (heavyShipQualityIC)) / timeDivide;
+  n.UpkeepForOneMerchantShip = ((0.025 * n.ShipBuildingValue + Number(n.Technologies.Gunports) * 0.1 / 8 * n.HeavyArmamentsValue) * (lightShipQualityIC)) / timeDivide;
+  n.UpkeepForOneLightShip = ((0.05 * n.ShipBuildingValue + Number(n.Technologies.Gunports) * 0.8 / 8 * n.HeavyArmamentsValue) * (lightShipQualityIC)) / timeDivide;
+  n.UpkeepForOneMediumShip = ((0.10 * n.ShipBuildingValue + Number(n.Technologies.Gunports) * 1.6 / 8 * n.HeavyArmamentsValue) * (mediumShipQualityIC)) / timeDivide;
+  n.UpkeepForOneHeavyShip = ((0.20 * n.ShipBuildingValue + Number(n.Technologies.Gunports) * 3.2 / 8 * n.HeavyArmamentsValue) * (heavyShipQualityIC)) / timeDivide;
 
-  n.MerchantShipConstructionCost = ((0.025 * 5 * n.ShipBuildingValue + n.Technologies.Gunports * 0.1 / 4 * n.HeavyArmamentsValue) * (lightShipQualityIC));
-  n.LightShipConstructionCost = ((0.05 * 5 * n.ShipBuildingValue + n.Technologies.Gunports * 0.8 / 4 * n.HeavyArmamentsValue) * (lightShipQualityIC));
-  n.MediumShipConstructionCost = ((0.10 * 5 * n.ShipBuildingValue + n.Technologies.Gunports * 1.6 / 4 * n.HeavyArmamentsValue) * (mediumShipQualityIC));
-  n.HeavyShipConstructionCost = ((0.20 * 5 * n.ShipBuildingValue + n.Technologies.Gunports * 3.2 / 4 * n.HeavyArmamentsValue) * (heavyShipQualityIC));
+  n.MerchantShipConstructionCost = ((0.025 * 5 * n.ShipBuildingValue + Number(n.Technologies.Gunports) * 0.1 / 4 * n.HeavyArmamentsValue) * (lightShipQualityIC));
+  n.LightShipConstructionCost = ((0.05 * 5 * n.ShipBuildingValue + Number(n.Technologies.Gunports) * 0.8 / 4 * n.HeavyArmamentsValue) * (lightShipQualityIC));
+  n.MediumShipConstructionCost = ((0.10 * 5 * n.ShipBuildingValue + Number(n.Technologies.Gunports) * 1.6 / 4 * n.HeavyArmamentsValue) * (mediumShipQualityIC));
+  n.HeavyShipConstructionCost = ((0.20 * 5 * n.ShipBuildingValue + Number(n.Technologies.Gunports) * 3.2 / 4 * n.HeavyArmamentsValue) * (heavyShipQualityIC));
 
   n.NavyUpkeep = (
     n.MerchantShips * n.UpkeepForOneMerchantShip +
@@ -997,8 +997,8 @@ export function evaluateNation(nationName) {
     return (rbb);
   })();
 
-    n.ResourceOwners = (n.Reforms.NobleResourceOwnership == 1 ? n.Workforces.Aristocracy : 0) + (n.Reforms.MixedResourceOwnership == 1 ? n.Workforces.Aristocracy + n.Workforces.Burgousie : 0) + (n.Reforms.BurgousieResourceOwnership == 1 ? n.Workforces.Burgousie : 0)
-    n.ResourceOwnersInfluence = (n.Reforms.NobleResourceOwnership == 1 ? n.EstateInfluencesReal.AristocracyInfluence : 0) + (n.Reforms.MixedResourceOwnership == 1 ? (n.EstateInfluencesReal.AristocracyInfluence + n.EstateInfluencesReal.BurgousieInfluence) / 2 : 0) + (n.Reforms.BurgousieResourceOwnership == 1 ? n.EstateInfluencesReal.BurgousieInfluence : 0)
+    n.ResourceOwners = (n.Reforms.NobleResourceOwnership == true ? n.Workforces.Aristocracy : 0) + (n.Reforms.MixedResourceOwnership == true ? n.Workforces.Aristocracy + n.Workforces.Burgousie : 0) + (n.Reforms.BurgousieResourceOwnership == true ? n.Workforces.Burgousie : 0)
+    const resourceOwnersInfluence = (n.Reforms.NobleResourceOwnership == true ? n.EstateInfluencesReal.AristocracyInfluence : 0) + (n.Reforms.MixedResourceOwnership == true ? (n.EstateInfluencesReal.AristocracyInfluence + n.EstateInfluencesReal.BurgousieInfluence) / 2 : 0) + (n.Reforms.BurgousieResourceOwnership == true ? n.EstateInfluencesReal.BurgousieInfluence : 0)
 
     n.LandOwners = (n.Reforms.NobleLandOwnership == 1 ? n.Workforces.Aristocracy : 0) + (n.Reforms.MixedLandOwnership == 1 ? n.Workforces.Aristocracy + n.Workforces.Burgousie : 0) + (n.Reforms.PrivateLandOwnership == 1 ? n.Workforces.Burgousie : 0)
     n.LandOwnersInfluence = (n.Reforms.NobleLandOwnership == 1 ? n.EstateInfluencesReal.AristocracyInfluence : 0) + (n.Reforms.MixedLandOwnership == 1 ? (n.EstateInfluencesReal.AristocracyInfluence + n.EstateInfluencesReal.BurgousieInfluence) / 2 : 0) + (n.Reforms.PrivateLandOwnership == 1 ? n.EstateInfluencesReal.BurgousieInfluence : 0)
@@ -1007,8 +1007,8 @@ export function evaluateNation(nationName) {
 
     n.UnemployedWage = 0;
     n.SlavesWage = (n.Reforms.GovernmentResourceOwnership ? n.StateLabourerWage * 0.05 : (n.Workforces.Slaves > 0 ? n.ResourceBudgetBoost / (n.Population / 1000 * n.Workforces.Slaves) * 0.05 : 0));
-    n.LabourersWage = (n.Reforms.GovernmentResourceOwnership ? n.StateLabourerWage : (n.Workforces.Labourers > 0 ? n.ResourceBudgetBoost / (n.Population / 1000 * n.Workforces.Labourers) * (1 - n.ResourceOwnersInfluence) : 0));
-      n.SlavesAndLabourersWageToOwner = (n.Reforms.GovernmentResourceOwnership ? 0 : n.Population * n.Workforces.Slaves / 1000 * n.SlavesWage / 0.1 * 0.9 + n.Workforces.Labourers / 1000 * n.LabourersWage / (1 - n.ResourceOwnersInfluence) * n.ResourceOwnersInfluence);
+    n.LabourersWage = (n.Reforms.GovernmentResourceOwnership ? n.StateLabourerWage : (n.Workforces.Labourers > 0 ? n.ResourceBudgetBoost / (n.Population / 1000 * n.Workforces.Labourers) * (1 - resourceOwnersInfluence) : 0));
+      n.SlavesAndLabourersWageToOwner = (n.Reforms.GovernmentResourceOwnership ? 0 : n.Population * n.Workforces.Slaves / 1000 * n.SlavesWage / 0.1 * 0.9 + n.Workforces.Labourers / 1000 * n.LabourersWage / (1 - resourceOwnersInfluence) * resourceOwnersInfluence);
     n.SerfsWage = (n.Reforms.GovernmentLandOwnership ? n.StateFarmerWage * 0.5 : agricultureRevenue / ((n.Workforces.Farmers + n.Workforces.Serfs) * n.Population / 1000) * 0.25);
     n.FarmersWage = (n.Reforms.GovernmentLandOwnership ? n.StateFarmerWage : agricultureRevenue / ((n.Workforces.Farmers + n.Workforces.Serfs) * n.Population / 1000) * (1 - n.LandOwnersInfluence));
       n.SerfsAndFarmersWageToOnwers = (n.Reforms.GovernmentLandOwnership ? 0 : n.Population * n.Workforces.Serfs / 1000 * n.SerfsWage / 0.25 * 0.75 + n.Population * n.Workforces.Farmers / 1000 * n.FarmersWage / (1 - n.LandOwnersInfluence) * n.LandOwnersInfluence);
