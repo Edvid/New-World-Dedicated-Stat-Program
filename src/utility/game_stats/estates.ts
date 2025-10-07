@@ -108,8 +108,15 @@ type privateArmyCallupCost = Record<`${keyof highClassEstates}CallupCost`, numbe
 
 type privateArmyPersonnelTypes = Replace<keyof personnel, "HandCannoneers", never>
 
-type privateArmyPersonnel = Record<`${keyof highClassEstates}${privateArmyPersonnelTypes}`, number>
-type PrivateArmies = privateArmyPersonnel & privateArmyCallupCost
+type privateArmyPersonnel = AbstractType<Record<`${keyof highClassEstates}${privateArmyPersonnelTypes}`, never>>
+type populaceMilitias = AbstractType<Record<"PopulaceMilitia" | "PopulaceMusketMilitia", never>>
+
+type WithCasualtiesForm<T extends string> = T | `${T}Casualties`
+
+type PrivateArmies =
+  Record<WithCasualtiesForm<keyof privateArmyPersonnel>, number> &
+  Record<WithCasualtiesForm<keyof populaceMilitias>, number> &
+  privateArmyCallupCost
 
 type estateSol = Record<`${keyof workforces}Sol`, number>
 type expectedEstateSol = Record<`Expected${keyof estateSol}`, number>
