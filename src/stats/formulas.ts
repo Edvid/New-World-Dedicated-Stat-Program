@@ -1064,7 +1064,7 @@ export function evaluateNation(nationName) {
   n.BurgousieManpower = (burgousieArmiesBudget * (1 + n.EstateInfluencesReal.BurgousieInfluence) / totalPrivateArmyBudgets) * n.Population * 0.005;
   n.ClergyManpower = (clergyArmiesBudget * (1 + n.EstateInfluencesReal.ClergyInfluence) / totalPrivateArmyBudgets) * n.Population * 0.005;
 
-  n.PrivateArmySetup = {
+  const privateArmySetup = {
     Levies: 0.50 - (n.Technologies.StandardizedPikes ? 0.15 : 0) - (n.Technologies.Matchlock ? 0.10 : 0) - (n.Technologies.Metallurgy ? 0.15 : 0) - (n.Technologies.Bayonet ? 0.05 : 0) - (n.Technologies.SocketBayonet ? 0.05 : 0),
     Militia: 0.15 + (n.Technologies.StandardizedPikes ? 0.05 : 0) - (n.Technologies.Bayonet ? 0.05 : 0) - (n.Technologies.SocketBayonet ? 0.15 : 0),
     LightInfantry: 0.075 + (n.Technologies.StandardizedPikes ? 0.025 : 0) - (n.Technologies.Bayonet ? 0.05 : 0) - (n.Technologies.SocketBayonet ? 0.05 : 0),
@@ -1080,20 +1080,20 @@ export function evaluateNation(nationName) {
     EliteCavalry: 0.01
   }
 
-  for (const UnitIndex in n.PrivateArmySetup) {
-    const Amount = n.PrivateArmySetup[UnitIndex];
+  for (const UnitIndex in privateArmySetup) {
+    const Amount = privateArmySetup[UnitIndex];
     const Cost = unitsArmamentsDemands[UnitIndex];
       n["Aristocracy" + UnitIndex] = aristocracyBasicArmaments * Amount / Cost * 1000 - (n["Aristocracy" + UnitIndex + "Casualties"] != null ? n["Aristocracy" + UnitIndex + "Casualties"] : 0);
   }
 
-  for (const UnitIndex in n.PrivateArmySetup) {
-    const Amount = n.PrivateArmySetup[UnitIndex];
+  for (const UnitIndex in privateArmySetup) {
+    const Amount = privateArmySetup[UnitIndex];
     const Cost = unitsArmamentsDemands[UnitIndex];
       n["Burgousie" + UnitIndex] = burgousieBasicArmaments * Amount / Cost * 1000 - (n["Burgousie" + UnitIndex + "Casualties"] != null ? n["Burgousie" + UnitIndex + "Casualties"] : 0);
   }
 
-  for (const UnitIndex in n.PrivateArmySetup) {
-    const Amount = n.PrivateArmySetup[UnitIndex];
+  for (const UnitIndex in privateArmySetup) {
+    const Amount = privateArmySetup[UnitIndex];
     const Cost = unitsArmamentsDemands[UnitIndex];
       n["Clergy" + UnitIndex] = clergyBasicArmaments * Amount / Cost * 1000 - (n["Clergy" + UnitIndex + "Casualties"] != null ? n["Clergy" + UnitIndex + "Casualties"] : 0);
   }
