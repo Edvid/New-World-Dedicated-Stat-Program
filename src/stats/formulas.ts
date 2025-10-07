@@ -897,15 +897,15 @@ export function evaluateNation(nationName) {
   n.LandAdministration = (n.Size / 5000) * (n.AdministrativeDemand / n.AdministrativePower);
   n.Overextension = n.UnderPopulation / 4 + n.LandAdministration / 2;
 
-  n.LevyWage = n.ArmyWage / 4;
-  n.MilitiaWage = n.ArmyWage / 2;
-  n.EliteWage = n.ArmyWage * 2;
+  const levyWage = n.ArmyWage / 4;
+  const militiaWage = n.ArmyWage / 2;
+  const eliteWage = n.ArmyWage * 2;
 
-  n.Militias = n.Militia + n.MusketMilitia;
-  n.Elites = n.EliteCavalry + n.EliteInfantry;
-  n.Proffesionals = n.OverallNumbers - n.Levies - n.Militias - n.Elites;
+  const militias = n.Militia + n.MusketMilitia;
+  const elites = n.EliteCavalry + n.EliteInfantry;
+  const proffesionals = n.OverallNumbers - n.Levies - militias - elites;
 
-  n.ArmyWages = (n.Levies * n.LevyWage + n.Militias * n.MilitiaWage + n.Proffesionals * n.ArmyWage + n.Elites * n.EliteWage) / 1000 / timeDivide;
+  n.ArmyWages = (n.Levies * levyWage + militias * militiaWage + proffesionals * n.ArmyWage + elites * eliteWage) / 1000 / timeDivide;
   n.ArmyUpkeep = n.UnitUpkeep + n.ArmyWages;
 
   n.FutureLiteracyPercent = ((n.LiteracyPercent > education * 3) ? education * 3 : n.LiteracyPercent) + education / 10 / timeDivide;
