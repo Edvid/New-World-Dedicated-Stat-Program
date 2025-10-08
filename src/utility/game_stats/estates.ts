@@ -128,7 +128,7 @@ type PrivateArmies =
   Record<WithCasualtiesForm<keyof populaceMilitias>, number> &
   privateArmyCallupCost
 
-type estateSol = Record<`${keyof workforces}Sol`, number>
+type estateSol = Record<`${estates}Sol`, number>
 type expectedEstateSol = Record<`Expected${keyof estateSol}`, number>
 
 type estateSols = estateSol & expectedEstateSol

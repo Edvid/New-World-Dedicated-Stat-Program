@@ -726,9 +726,12 @@ export class Nation implements units, RealReformCostTypes, estateStats {
   FarmersSol: number;
   TownsfolkSol: number;
   ClergySol: number;
+  UrbanSol: number;
   BureaucratsSol: number;
   MerchantsSol: number;
   IntellectualsSol: number;
+  MilitarySol: number;
+  WorkersSol: number;
   SailorsSol: number;
   SoldiersSol: number;
   AristocracySol: number;
@@ -741,9 +744,12 @@ export class Nation implements units, RealReformCostTypes, estateStats {
   ExpectedFarmersSol: number;
   ExpectedTownsfolkSol: number;
   ExpectedClergySol: number;
+  ExpectedUrbanSol: number;
   ExpectedBureaucratsSol: number;
   ExpectedMerchantsSol: number;
   ExpectedIntellectualsSol: number;
+  ExpectedMilitarySol: number;
+  ExpectedWorkersSol: number;
   ExpectedSailorsSol: number;
   ExpectedSoldiersSol: number;
   ExpectedAristocracySol: number;
