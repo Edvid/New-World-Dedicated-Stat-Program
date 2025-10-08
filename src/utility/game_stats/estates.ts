@@ -13,19 +13,19 @@ type estatesWithInfluence = AbstractType<highClassEstates &
 {
   Urban: never;
   Bureaucrats: never;
-  Intellectuals: never; //
+  Intellectuals: never;
   Military: never;
   Workers: never;
 }>
 
 type estatesWithNoInfluence = AbstractType<{
-  Unemployed: never; //
+  Unemployed: never;
   Slaves: never;
-  Labourers: never; //
-  Serfs: never; //
-  Farmers: never; //
-  Townsfolk: never; //
-  Merchants: never; //
+  Labourers: never;
+  Serfs: never;
+  Farmers: never;
+  Townsfolk: never;
+  Merchants: never;
   Sailors: never;
   Soldiers: never;
 }>
