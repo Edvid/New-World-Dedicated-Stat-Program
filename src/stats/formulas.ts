@@ -1,5 +1,5 @@
 import { lazyerror } from "../utility/custom_errors.js";
-import { generalPopulace, workforces } from "../utility/game_stats/estates.js";
+import { generalPopulace, type workforces } from "../utility/game_stats/estates.js";
 import { mappedResources, TradePowerResources } from "../utility/game_stats/resources.js";
 import { min, max, clamp } from "../utility/math.js";
 import { clearNewTroops, getGameStats, Opinion, type SocialBehaviour, type SocialBehaviourGroup } from "./gameStats.js";
@@ -1196,7 +1196,7 @@ export function evaluateNation(nationName) {
   // PoliticalAwareness
   for (const EstateIndex in estates) {
     const Estate = estates[EstateIndex];
-      n[Estate + "PoliticalAwareness"] = max(0, n[Estate + "Literacy"] * (1 - n.Reforms.StateMediaOnly * 0.4 - n.Reforms.ExtensiveCensorship * 0.2 - n.Reforms.LimitedCensorship * 0.1 - propagandaReal / 10) - n.Alcoholism * (1 - n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100) / 2);
+      n[Estate + "PoliticalAwareness"] = max(0, n[Estate + "Literacy"] * (1 - Number(n.Reforms.StateMediaOnly) * 0.4 - Number(n.Reforms.ExtensiveCensorship) * 0.2 - Number(n.Reforms.LimitedCensorship) * 0.1 - propagandaReal / 10) - n.Alcoholism * (1 - n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100) / 2);
   }
 
   n.UrbanPoliticalAwareness = n.TownsfolkPoliticalAwareness * n.Workforces.Townsfolk / (n.Workforces.Townsfolk + n.Workforces.Merchants) + n.MerchantsPoliticalAwareness * n.Workforces.Merchants / (n.Workforces.Townsfolk + n.Workforces.Merchants);

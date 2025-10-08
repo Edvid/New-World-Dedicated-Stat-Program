@@ -180,6 +180,15 @@ export class Nation implements units, RealReformCostTypes, estateStats {
   IntellectualsPoliticalAwareness: number;
   WorkersPoliticalAwareness: number;
   MilitaryPoliticalAwareness: number;
+  UnemployedPoliticalAwareness: never;
+  SlavesPoliticalAwareness: never;
+  LabourersPoliticalAwareness: never;
+  SerfsPoliticalAwareness: never;
+  FarmersPoliticalAwareness: never;
+  TownsfolkPoliticalAwareness: never;
+  MerchantsPoliticalAwareness: never;
+  SailorsPoliticalAwareness: never;
+  SoldiersPoliticalAwareness: never;
   EducationEfficiency: number;
   AdministrativeEfficiency: number;
   AdministrationSize: number
