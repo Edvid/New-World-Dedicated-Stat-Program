@@ -13,19 +13,19 @@ type estatesWithInfluence = AbstractType<highClassEstates &
 {
   Urban: never;
   Bureaucrats: never;
-  Intellectuals: never; //
+  Intellectuals: never;
   Military: never;
   Workers: never;
 }>
 
 type estatesWithNoInfluence = AbstractType<{
-  Unemployed: never; //
+  Unemployed: never;
   Slaves: never;
-  Labourers: never; //
-  Serfs: never; //
-  Farmers: never; //
-  Townsfolk: never; //
-  Merchants: never; //
+  Labourers: never;
+  Serfs: never;
+  Farmers: never;
+  Townsfolk: never;
+  Merchants: never;
   Sailors: never;
   Soldiers: never;
 }>
@@ -103,7 +103,7 @@ type LiteracyTypes = Record<`${keyof workforces}Literacy`, number>
 
 type Literacies = LiteracyTypes & Record<WithFutureForm<"LiteracyPercent">, number>
 
-type PoliticalAwareness = Record<`${keyof estatesWithInfluence}PoliticalAwareness`, number>
+type PoliticalAwareness = Record<`${estates}PoliticalAwareness`, number>
 
 type WageStats = Record<
   `${keyof workforces | "StateFarmer" | "StateLabourer" | "StateFactoryWorker" | "Army" }Wage`,
