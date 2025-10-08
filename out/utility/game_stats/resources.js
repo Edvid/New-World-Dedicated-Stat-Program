@@ -9,21 +9,20 @@ export const mappedResources = [
     "Diamond",
     "Silver"
 ];
-export const mappedResourcesMultipliers = [
-    1, //fur
-    1, //gold
-    1, //iron
-    1, //ivory
-    1, //sulphur
+export const mappedResourcesMultipliers = {
+    Fur: 1,
+    Gold: 1,
+    Iron: 1,
+    Ivory: 1,
+    Sulphur: 1,
     //x2
-    2, //coal
-    2, //copper
-    2, //diamond
-    2 //silver
-];
+    Coal: 2,
+    Copper: 2,
+    Diamond: 2,
+    Silver: 2
+};
 const resourceTypes = [
     "Food",
-    "Wood",
     "Sulphur",
     "Cotton",
     "Gold",
@@ -62,3 +61,4 @@ const resourceTypes = [
 export const realResourceTypes = [
     "Budget",
 ].concat(resourceTypes);
+export const TradePowerResources = resourceTypes.filter((item) => item !== "Food");

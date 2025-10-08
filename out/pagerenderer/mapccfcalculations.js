@@ -160,8 +160,7 @@ async function mapCalculations() {
      `);
     /* #region  Everthing resources */
     const resourceDistributionValueMode = "normal";
-    for (let r = 0; r < mappedResources.length; r++) {
-        const resourceName = mappedResources[r];
+    for (const resourceName of mappedResources) {
         let resourceData = null;
         resourceData = await prepareData(`Code/Resources/${resourceName}.png`);
         progressText.innerText = "";
@@ -195,7 +194,7 @@ async function mapCalculations() {
                     blobOverlapWithNationSize / totalBlobSize;
             });
             //resource blob number multiplication
-            count *= mappedResourcesMultipliers[r];
+            count *= mappedResourcesMultipliers[resourceName];
             addToTextOutput(`= ${(Math.round(count * 20) / 20).toFixed(2)} ${nationName}.Max${resourceName}
          `);
         });

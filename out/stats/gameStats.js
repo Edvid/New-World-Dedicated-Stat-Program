@@ -437,6 +437,47 @@ export class Nation {
     ClergyEliteCavalry;
     PopulaceMilitia;
     PopulaceMusketMilitia;
+    AristocracyLeviesCasualties;
+    AristocracyMilitiaCasualties;
+    AristocracyLightInfantryCasualties;
+    AristocracyHeavyInfantryCasualties;
+    AristocracyEliteInfantryCasualties;
+    AristocracyArchersCasualties;
+    AristocracyCrossbowmenCasualties;
+    AristocracyMusketeersCasualties;
+    AristocracyMusketMilitiaCasualties;
+    AristocracyRiflemenCasualties;
+    AristocracyLightCavalryCasualties;
+    AristocracyHeavyCavalryCasualties;
+    AristocracyEliteCavalryCasualties;
+    ClergyLeviesCasualties;
+    ClergyMilitiaCasualties;
+    ClergyLightInfantryCasualties;
+    ClergyHeavyInfantryCasualties;
+    ClergyEliteInfantryCasualties;
+    ClergyArchersCasualties;
+    ClergyCrossbowmenCasualties;
+    ClergyMusketeersCasualties;
+    ClergyMusketMilitiaCasualties;
+    ClergyRiflemenCasualties;
+    ClergyLightCavalryCasualties;
+    ClergyHeavyCavalryCasualties;
+    ClergyEliteCavalryCasualties;
+    BurgousieLeviesCasualties;
+    BurgousieMilitiaCasualties;
+    BurgousieLightInfantryCasualties;
+    BurgousieHeavyInfantryCasualties;
+    BurgousieEliteInfantryCasualties;
+    BurgousieArchersCasualties;
+    BurgousieCrossbowmenCasualties;
+    BurgousieMusketeersCasualties;
+    BurgousieMusketMilitiaCasualties;
+    BurgousieRiflemenCasualties;
+    BurgousieLightCavalryCasualties;
+    BurgousieHeavyCavalryCasualties;
+    BurgousieEliteCavalryCasualties;
+    PopulaceMilitiaCasualties;
+    PopulaceMusketMilitiaCasualties;
     Workforces;
     PopInAgriculture;
     ProductionSectors;
@@ -449,6 +490,7 @@ export class Nation {
     MiningEfficiency;
     Wood;
     ForestsCutDown;
+    ForestsLeft;
     Forestry;
     EffectiveWood;
     Reforestation;
@@ -622,6 +664,8 @@ export class Nation {
     IntellectualsTax; //Show in percent
     MilitaryTax; //Show in percent
     WorkersTax; //Show in percent
+    ExternalTrade;
+    InternalTrade;
     ExternalTariffs;
     InternalTariffs;
     TariffEfficiency;
@@ -674,6 +718,8 @@ export class Nation {
     CulturalPower;
     FutureCulturalPower;
     CulturalAdvancements;
+    WoodIncoming;
+    WoodOutgoing;
     FoodIncoming;
     FoodOutgoing;
     CoalIncoming;

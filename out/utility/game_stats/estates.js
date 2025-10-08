@@ -24,3 +24,12 @@ export const estates = [
     "Aristocracy",
     "Burgousie"
 ];
+export const generalPopulace = [
+    "Labourers",
+    "Serfs",
+    "Unemployed",
+    "Farmers",
+    "Townsfolk",
+    "Merchants",
+    "Intellectuals"
+];
