@@ -1,5 +1,5 @@
 import { lazyerror } from "../utility/custom_errors.js";
-import { generalPopulace } from "../utility/game_stats/estates.js";
+import { generalPopulace, workforces } from "../utility/game_stats/estates.js";
 import { mappedResources, TradePowerResources } from "../utility/game_stats/resources.js";
 import { min, max, clamp } from "../utility/math.js";
 import { clearNewTroops, getGameStats, Opinion, type SocialBehaviour, type SocialBehaviourGroup } from "./gameStats.js";
@@ -1149,35 +1149,40 @@ export function evaluateNation(nationName) {
     n.ExpectedWorkersSol = n.ExpectedFarmersSol * n.Workforces.Farmers / (n.Workforces.Farmers + n.Workforces.Labourers + n.Workforces.Serfs + n.Workforces.Unemployed) + n.ExpectedLabourersSol * n.Workforces.Labourers / (n.Workforces.Farmers + n.Workforces.Labourers + n.Workforces.Serfs + n.Workforces.Unemployed) + n.ExpectedSerfsSol * n.Workforces.Serfs / (n.Workforces.Farmers + n.Workforces.Labourers + n.Workforces.Serfs + n.Workforces.Unemployed) + n.ExpectedUnemployedSol * n.Workforces.Unemployed / (n.Workforces.Farmers + n.Workforces.Labourers + n.Workforces.Serfs + n.Workforces.Unemployed);
     n.WorkersSol = n.FarmersSol * n.Workforces.Farmers / (n.Workforces.Farmers + n.Workforces.Labourers + n.Workforces.Serfs + n.Workforces.Unemployed) + n.LabourersSol * n.Workforces.Labourers / (n.Workforces.Farmers + n.Workforces.Labourers + n.Workforces.Serfs + n.Workforces.Unemployed) + n.SerfsSol * n.Workforces.Serfs / (n.Workforces.Farmers + n.Workforces.Labourers + n.Workforces.Serfs + n.Workforces.Unemployed) + n.UnemployedSol * n.Workforces.Unemployed / (n.Workforces.Farmers + n.Workforces.Labourers + n.Workforces.Serfs + n.Workforces.Unemployed);
 
-  n.Sols = {
-    SlavesSol: n.SlavesSol,
-    LabourersSol: n.LabourersSol,
-      SerfsSol: n.SerfsSol,
-      UnemployedSol: n.UnemployedSol,
-    FarmersSol: n.FarmersSol,
-    TownsfolkSol: n.TownsfolkSol,
-    ClergySol: n.ClergySol,
-    MerchantsSol: n.MerchantsSol,
-    SailorsSol: n.SailorsSol,
-    SoldiersSol: n.SoldiersSol,
-    AristocracySol: n.AristocracySol,
-    BurgousieSol: n.BurgousieSol
+  const sols: Record<keyof Omit<workforces, "Intellectuals" | "Bureaucrats">, number> = {
+    Slaves: n.SlavesSol,
+    Labourers: n.LabourersSol,
+    Serfs: n.SerfsSol,
+    Unemployed: n.UnemployedSol,
+    Farmers: n.FarmersSol,
+    Townsfolk: n.TownsfolkSol,
+    Clergy: n.ClergySol,
+    Merchants: n.MerchantsSol,
+    Sailors: n.SailorsSol,
+    Soldiers: n.SoldiersSol,
+    Aristocracy: n.AristocracySol,
+    Burgousie: n.BurgousieSol
   }
-  n.SolsSorted = Object.keys(n.Sols).sort(function (a, b) { return n.Sols[a] - n.Sols[b] });
-  n.SolsSorted.reverse();
-  n.LiteracyLeft = n.LiteracyPercent / 100 - n.Workforces.Intellectuals - n.Workforces.Bureaucrats;
-  for (const SolIndex in n.SolsSorted) {
-    let Estate = n.SolsSorted[SolIndex];
-    Estate = Estate.substring(0, Estate.length - 3);
 
-    if (n.LiteracyLeft > (isNaN(n.Workforces[Estate]) ? 0 : n.Workforces[Estate])) {
+  const solsSorted = Object.entries(sols)
+  .sort(([_a, a_val], [_b, b_val]) => {
+    return b_val - a_val
+  })
+  .map(([key, _value]) =>
+    key
+  );
+
+  let literacyLeft = n.LiteracyPercent / 100 - n.Workforces.Intellectuals - n.Workforces.Bureaucrats;
+
+  for (const Estate of solsSorted) {
+    if (literacyLeft > (isNaN(n.Workforces[Estate]) ? 0 : n.Workforces[Estate])) {
       n[Estate + "Literacy"] = 1;
-      n.LiteracyLeft -= (isNaN(n.Workforces[Estate]) ? 0 : n.Workforces[Estate]);
+      literacyLeft -= (isNaN(n.Workforces[Estate]) ? 0 : n.Workforces[Estate]);
     }
     else {
-      if (n.LiteracyLeft > 0) {
-        n[Estate + "Literacy"] = (isNaN(n.Workforces[Estate]) ? 0 : n.LiteracyLeft / n.Workforces[Estate]);
-        n.LiteracyLeft = 0;
+      if (literacyLeft > 0) {
+        n[Estate + "Literacy"] = (isNaN(n.Workforces[Estate]) ? 0 : literacyLeft / n.Workforces[Estate]);
+        literacyLeft = 0;
       }
       else {
         n[Estate + "Literacy"] = 0;
