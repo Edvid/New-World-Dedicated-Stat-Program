@@ -1207,7 +1207,7 @@ export function evaluateNation(nationName) {
 
     n.BureaucratsPoliticalAwareness = 1 - n.Alcoholism * (1 - n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100) / 2;
 
-  n.AverageSolMods = {
+  const averageSolMods = {
     Workers: 0.3,
     Urban: 1.75,
     Clergy: 5,
@@ -1219,26 +1219,25 @@ export function evaluateNation(nationName) {
     }
 
     // AverageTax
-    n.AverageTax = 0;
+    let averageTax = 0;
     for (const EstateIndex in estatesGeneral) {
         const Estate = estatesGeneral[EstateIndex];
-        n.AverageTax += n[Estate + "Tax"] * estateNumbers[Estate];
+        averageTax += n[Estate + "Tax"] * estateNumbers[Estate];
     }
-    n.AverageTax = n.AverageTax / (1 - n.Workforces.Slaves);
+    averageTax = averageTax / (1 - n.Workforces.Slaves);
 
   // Loyalties
-  for (const EstateIndex in estatesGeneral) {
-      const Estate = estatesGeneral[EstateIndex];
-      n.BaseLoyalty = 0.5;
-      n.ExpectedSolLoyaltyMod = clamp(-0.2, 0.2, (n[Estate + "Sol"] - n["Expected" + Estate + "Sol"]) / n[Estate + "Sol"]);
-      n.AverageSolLoyaltyMod = clamp(-0.2, 0.2, (n[Estate + "Sol"] - (n.AverageSol * n.AverageSolMods[Estate])) / n[Estate + "Sol"] / 4);
-      n.GovernmentRepLoyaltyMod = (n.GovernmentRepresentation[Estate + "Representation"] / 100 - max(n.ExpectedInfluences[Estate + "Influence"] * 0.9, estateNumbers[Estate] * n[Estate + "PoliticalAwareness"] * 0.9));
-      n.TaxesLoyaltyMod = n[Estate + "Tax"] / 2 + (n[Estate + "Tax"] > n.AverageTax ? n[Estate + "Tax"] / n.AverageTax / 25 : 0);
-      n[Estate + "Loyalty"] = n.BaseLoyalty + n.ExpectedSolLoyaltyMod + n.AverageSolLoyaltyMod + n.GovernmentRepLoyaltyMod - n.TaxesLoyaltyMod + n.InfluenceChangeLoyaltyEffect[Estate];
+  for (const Estate of estatesGeneral) {
+      const baseLoyalty = 0.5;
+      const expectedSolLoyaltyMod = clamp(-0.2, 0.2, (n[Estate + "Sol"] - n["Expected" + Estate + "Sol"]) / n[Estate + "Sol"]);
+      const averageSolLoyaltyMod = clamp(-0.2, 0.2, (n[Estate + "Sol"] - (n.AverageSol * averageSolMods[Estate])) / n[Estate + "Sol"] / 4);
+      const governmentRepLoyaltyMod = (n.GovernmentRepresentation[Estate + "Representation"] / 100 - max(n.ExpectedInfluences[Estate + "Influence"] * 0.9, estateNumbers[Estate] * n[Estate + "PoliticalAwareness"] * 0.9));
+      const taxesLoyaltyMod = n[Estate + "Tax"] / 2 + (n[Estate + "Tax"] > averageTax ? n[Estate + "Tax"] / averageTax / 25 : 0);
+      n[Estate + "Loyalty"] = baseLoyalty + expectedSolLoyaltyMod + averageSolLoyaltyMod + governmentRepLoyaltyMod - taxesLoyaltyMod + n.InfluenceChangeLoyaltyEffect[Estate];
       n[Estate + "Loyalty"] = clamp(0, 1, n[Estate + "Loyalty"]);
     }
 
-    n.AristocracyLoyalty += n.CulturalAdvancements.NobleDuty * 0.05;
+    n.AristocracyLoyalty += Number(n.CulturalAdvancements.NobleDuty) * 0.05;
 
     if (aristocracyBasicArmaments > max(n.ArmyBasicArmamentsDemand, 10)) {
         n.AristocracyLoyalty -= (aristocracyBasicArmaments / max(n.ArmyBasicArmamentsDemand, 10) - 1) / 5;
@@ -1269,7 +1268,7 @@ export function evaluateNation(nationName) {
 
     n.Prosperity = n.AverageSol * (1 + (n.FutureFood < 0 ? n.FutureFood / (n.Population / 1000) : 0) - n.Pillaging);
 
-    n.PopulationHappiness = (5 * (0.25 + n.Prosperity) - n.AverageTax * 25 - n.Absolutism / 2 - populationControlReal / 2 - n.DebtToGdpRatio * 10 * n.PublicDebtLength - n.WarExhaustion / 2 - n.Disease + n.Alcoholism * (1 - n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100) / 2);
+    n.PopulationHappiness = (5 * (0.25 + n.Prosperity) - averageTax * 25 - n.Absolutism / 2 - populationControlReal / 2 - n.DebtToGdpRatio * 10 * n.PublicDebtLength - n.WarExhaustion / 2 - n.Disease + n.Alcoholism * (1 - n.ReligionGroups.Sunni.Points / 100 - n.ReligionGroups.Shia.Points / 100) / 2);
 
     n.Manpower = n.Population * (n.Reforms.NationalMilitia * 0.01 + n.Reforms.FeudalLevies * 0.0035 + n.Reforms.ProffesionalArmy * 0.02 + n.Reforms.MassConscription * 0.05 + n.Nationalism * 0.0025 + n.ReligiousFervor * 0.0025) - n.OverallNumbers - n.Casualties - (n.LightShips * 100 + n.MediumShips * 200 + n.HeavyShips * 500);
 
