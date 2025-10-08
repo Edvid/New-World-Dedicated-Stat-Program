@@ -1259,12 +1259,11 @@ export function evaluateNation(nationName) {
     if (n.Workforces.Soldiers + n.Workforces.Sailors == 0) n.MilitaryLoyalty = 0.5;
 
     // LoyaltiesStabilityImpact
-    n.LoyaltiesStabilityImpact = 0;
-    for (const EstateIndex in estatesGeneral) {
-        const Estate = estatesGeneral[EstateIndex];
-        n.LoyaltiesStabilityImpact += (n[Estate + "Loyalty"] - 0.5) * (1 + estateNumbers[Estate] * (n[Estate + "PoliticalAwareness"] + 0.5) + n.EstateInfluencesReal[Estate + "Influence"] * 4) * 5;
+    let loyaltiesStabilityImpact = 0;
+    for (const Estate of estatesGeneral) {
+        loyaltiesStabilityImpact += (n[Estate + "Loyalty"] - 0.5) * (1 + estateNumbers[Estate] * (n[Estate + "PoliticalAwareness"] + 0.5) + n.EstateInfluencesReal[Estate + "Influence"] * 4) * 5;
     }
-    n.LoyaltiesStabilityImpact = n.LoyaltiesStabilityImpact * 0.6;
+    loyaltiesStabilityImpact = loyaltiesStabilityImpact * 0.6;
 
     n.Prosperity = n.AverageSol * (1 + (n.FutureFood < 0 ? n.FutureFood / (n.Population / 1000) : 0) - n.Pillaging);
 
@@ -1273,21 +1272,19 @@ export function evaluateNation(nationName) {
     n.Manpower = n.Population * (n.Reforms.NationalMilitia * 0.01 + n.Reforms.FeudalLevies * 0.0035 + n.Reforms.ProffesionalArmy * 0.02 + n.Reforms.MassConscription * 0.05 + n.Nationalism * 0.0025 + n.ReligiousFervor * 0.0025) - n.OverallNumbers - n.Casualties - (n.LightShips * 100 + n.MediumShips * 200 + n.HeavyShips * 500);
 
     // LoyaltiesWarSupportImpact
-    n.LoyaltiesWarSupportImpact = 0;
+    let loyaltiesWarSupportImpact = 0;
     for (const EstateIndex in estatesGeneral) {
         const Estate = estatesGeneral[EstateIndex];
         n.Modifier = (1 + estateNumbers[Estate] + (Estate == "Military" ? n.MilitaryControl.Independent : (n.MilitaryControl[Estate + "Control"])) / 100 * 4 + n.EstateInfluencesReal[Estate + "Influence"] * 4);
-        n.LoyaltiesWarSupportImpact += (n[Estate + "Loyalty"] - 0.5) * (1 + estateNumbers[Estate] + (Estate == "Military" ? n.MilitaryControl.Independent : (n.MilitaryControl[Estate + "Control"])) / 100 * 4 + n.EstateInfluencesReal[Estate + "Influence"] * 4);
+        loyaltiesWarSupportImpact += (n[Estate + "Loyalty"] - 0.5) * (1 + estateNumbers[Estate] + (Estate == "Military" ? n.MilitaryControl.Independent : (n.MilitaryControl[Estate + "Control"])) / 100 * 4 + n.EstateInfluencesReal[Estate + "Influence"] * 4);
     }
 
     n.Fervor = clamp(1, -1, 0 + n.MinorBattles / 20 + n.MajorBattles / 10 + n.Pillaging - n.Casualties / (n.Manpower + n.Casualties));
-    n.WarSupport = clamp(1, 0, ((n.LoyaltiesWarSupportImpact - 1) / 2 + n.PopulationHappiness / 4 + propagandaReal / 10 * (1 + n.CulturalAdvancements.Newspapers * n.LiteracyPercent / 50) + n.Fervor + n.Nationalism / 10 + n.ReligiousFervor / 10) * (n.GovernmentDominatedBy == "Military" ? 1.25 : 1));
+    n.WarSupport = clamp(1, 0, ((loyaltiesWarSupportImpact - 1) / 2 + n.PopulationHappiness / 4 + propagandaReal / 10 * (1 + Number(n.CulturalAdvancements.Newspapers) * n.LiteracyPercent / 50) + n.Fervor + n.Nationalism / 10 + n.ReligiousFervor / 10) * (n.GovernmentDominatedBy == "Military" ? 1.25 : 1));
 
-  let WarStatus = n.AtWar;
-  if (WarStatus == false) WarStatus = "false";
-  WarStatus = WarStatus.toLowerCase();
+  const warStatus: string = typeof n.AtWar == "string" ? n.AtWar.toLowerCase() : "false";
 
-  const WarStabilityModifier = ((WarStatus == 'offensive' && n.WarSupport < 0.75) ? (n.WarSupport - 0.75) : 0) + max(-0.075, ((WarStatus == 'defensive' && n.WarSupport < 0.4 && n.Fervor < 0) ? (n.Fervor) : 0));
+  const WarStabilityModifier = ((warStatus == 'offensive' && n.WarSupport < 0.75) ? (n.WarSupport - 0.75) : 0) + max(-0.075, ((warStatus == 'defensive' && n.WarSupport < 0.4 && n.Fervor < 0) ? (n.Fervor) : 0));
 
   n.MilitaryMorale = clamp(0, 1,
     ( n.MilitaryLoyalty + n.Fervor - (n.MilitaryDiscipline > 1 ? n.MilitaryDiscipline - 1 : 0) * 2 + (n.WarSupport < 0.5 ? n.WarSupport - 0.5 : 0) + (n.WarSupport > 0.75 ? n.WarSupport - 0.75 : 0)
@@ -1297,7 +1294,7 @@ export function evaluateNation(nationName) {
   n.PopulationStabilityImpact = min(0, n.AdministrativePower * 750000 - n.Population) / n.Population * 10;
 
 
-    n.Stability = n.PopulationHappiness + n.AdministrativeEfficiency / 10 - n.Overextension - n.CulturalDisunity - n.ReligiousDisunity + (propagandaReal * 0.5 * (1 + n.CulturalAdvancements.Newspapers * n.LiteracyPercent / 50)) + populationControlReal * 1.5 + n.PopulationStabilityImpact + WarStabilityModifier * 7.5 + n.LoyaltiesStabilityImpact - (n.Workforces.Slaves * 10);
+    n.Stability = n.PopulationHappiness + n.AdministrativeEfficiency / 10 - n.Overextension - n.CulturalDisunity - n.ReligiousDisunity + (propagandaReal * 0.5 * (1 + n.CulturalAdvancements.Newspapers * n.LiteracyPercent / 50)) + populationControlReal * 1.5 + n.PopulationStabilityImpact + WarStabilityModifier * 7.5 + loyaltiesStabilityImpact - (n.Workforces.Slaves * 10);
 
   const PopulationGrowthModifier = n.FoodPopulationBoost + n.Prosperity / 10 + n.Stability / 100 + n.UnderPopulation;
 
