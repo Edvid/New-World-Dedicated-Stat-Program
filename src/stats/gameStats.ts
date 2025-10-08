@@ -390,6 +390,9 @@ export class Nation implements units, RealReformCostTypes, estateStats {
   OverallShipCount: number;
   TradeProtection: number;
   Manpower: number;
+  AristocracyManpower: number;
+  BurgousieManpower: number;
+  ClergyManpower: number;
   NavalPower: number;
   NavyUpkeep: number;
   New_Levies: number;
