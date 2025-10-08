@@ -34,11 +34,23 @@ type estates = keyof estatesWithNoInfluence | keyof estatesWithInfluence
 
 export type workforces = Record<
   Replace<
-  Replace<estates, "Military", "Soldiers">,
-  "Urban" | "Workers",
-  never
+    Replace<estates, "Military", "Soldiers">,
+    "Urban" | "Workers",
+    never
   >,
   number
+>
+
+type generalPopulaceType =
+keyof Pick<
+  AbstractType<Record<estates, never>>,
+  "Labourers" |
+  "Serfs" |
+  "Unemployed" |
+  "Farmers" |
+  "Townsfolk" |
+  "Merchants" |
+  "Intellectuals"
 >
 
 export const estateGeneral: (keyof estatesWithInfluence)[] = [
@@ -69,7 +81,7 @@ export const estates: estates[] = [
   "Burgousie"
 ];
 
-export const generalPopulace: estates[] = [
+export const generalPopulace: generalPopulaceType[] = [
   "Labourers",
   "Serfs",
   "Unemployed",
@@ -87,6 +99,9 @@ export type influenceChangeLoyaltyEffect = Record<keyof estatesWithInfluence, nu
 export type militaryControl = Record<
   Replace<`${keyof estatesWithInfluence}Control`, "MilitaryControl", "Independent">, number
 >;
+
+type WeaponContributions = Record<`${generalPopulaceType}WeaponContribution`, number>
+
 export type govermentRepresentation = Record<`${keyof estatesWithInfluence | "Unitary"}Representation`, number>;
 
 type LiteracyTypes = Record<`${keyof workforces}Literacy`, number>
@@ -122,5 +137,5 @@ type estateSol = Record<`${keyof workforces}Sol`, number>
 type expectedEstateSol = Record<`Expected${keyof estateSol}`, number>
 
 type estateSols = estateSol & expectedEstateSol
-export type estateStats = PrivateArmies & Literacies & PoliticalAwareness & estateLoyalties & WageStats & estateTaxes & setTax & estateSols
+export type estateStats = PrivateArmies & WeaponContributions & Literacies & PoliticalAwareness & estateLoyalties & WageStats & estateTaxes & setTax & estateSols
 

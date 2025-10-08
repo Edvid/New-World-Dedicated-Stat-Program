@@ -511,6 +511,13 @@ export class Nation implements units, RealReformCostTypes, estateStats {
   BurgousieEliteCavalryCasualties: number;
   PopulaceMilitiaCasualties: number;
   PopulaceMusketMilitiaCasualties: number;
+  LabourersWeaponContribution: number;
+  SerfsWeaponContribution: number;
+  UnemployedWeaponContribution: number;
+  FarmersWeaponContribution: number;
+  TownsfolkWeaponContribution: number;
+  MerchantsWeaponContribution: number;
+  IntellectualsWeaponContribution: number;
   Workforces: workforces;
   PopInAgriculture: number;
   ProductionSectors: productionSectors;
