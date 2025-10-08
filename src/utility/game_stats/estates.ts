@@ -32,18 +32,13 @@ type estatesWithNoInfluence = AbstractType<{
 
 type estates = keyof estatesWithNoInfluence | keyof estatesWithInfluence
 
-export type workforces = Record<
-  Replace<
-    Replace<estates, "Military", "Soldiers">,
-    "Urban" | "Workers",
-    never
-  >,
-  number
+export type workforces = Omit<Record<estates, number>,
+  "Urban" | "Workers" | "Military"
 >
 
 type generalPopulaceType =
 keyof Pick<
-  AbstractType<Record<estates, never>>,
+  Record<estates, never>,
   "Labourers" |
   "Serfs" |
   "Unemployed" |
