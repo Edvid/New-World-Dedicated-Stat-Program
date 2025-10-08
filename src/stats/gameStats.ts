@@ -336,6 +336,10 @@ export class Nation implements units, RealReformCostTypes, estateStats {
   AlcoholShortage: number;
   BasicToolsShortage: number;
   HeavyIndustryShortage: number;
+  AristocracyBasicArmaments: number;
+  ClergyBasicArmaments: number;
+  BurgousieBasicArmaments: number;
+  PopulaceBasicArmaments: number;
   BasicArmamentsShortage: number;
   BasicArmamentsArmyShortage: number;
   HeavyArmamentsShortage: number;

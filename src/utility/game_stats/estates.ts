@@ -96,6 +96,7 @@ export type militaryControl = Record<
 >;
 
 type WeaponContributions = Record<`${generalPopulaceType}WeaponContribution`, number>
+type BasicArmaments = Record<`${keyof highClassEstates | "Populace"}BasicArmaments`, number>
 
 export type govermentRepresentation = Record<`${keyof estatesWithInfluence | "Unitary"}Representation`, number>;
 
@@ -132,5 +133,5 @@ type estateSol = Record<`${estates}Sol`, number>
 type expectedEstateSol = Record<`Expected${keyof estateSol}`, number>
 
 type estateSols = estateSol & expectedEstateSol
-export type estateStats = PrivateArmies & WeaponContributions & Literacies & PoliticalAwareness & estateLoyalties & WageStats & estateTaxes & setTax & estateSols
+export type estateStats = PrivateArmies & WeaponContributions & BasicArmaments & Literacies & PoliticalAwareness & estateLoyalties & WageStats & estateTaxes & setTax & estateSols
 

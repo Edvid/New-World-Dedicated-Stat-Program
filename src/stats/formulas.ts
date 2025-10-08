@@ -1055,10 +1055,10 @@ export function evaluateNation(nationName) {
 
     const availableWeapons = clamp(n.EffectiveBasicArmaments * 0.35 * clamp(0, 1, totalPrivateArmyBudgets / (n.EffectiveBasicArmaments * n.BasicArmamentsValue)), n.EffectiveBasicArmaments * clamp(0, 1, totalPrivateArmyBudgets / (n.EffectiveBasicArmaments * n.BasicArmamentsValue)), (n.EffectiveBasicArmaments - n.BasicArmamentsStockpiled - n.ArmyBasicArmamentsDemand) * clamp(0, 1, totalPrivateArmyBudgets / (n.EffectiveBasicArmaments * n.BasicArmamentsValue)));
 
-  const aristocracyBasicArmaments = (aristocracyArmiesBudget * (1 + n.EstateInfluencesReal.AristocracyInfluence) / totalPrivateArmyBudgets) * availableWeapons;
-  const burgousieBasicArmaments = (burgousieArmiesBudget * (1 + n.EstateInfluencesReal.BurgousieInfluence) / totalPrivateArmyBudgets) * availableWeapons;
-  const clergyBasicArmaments = (clergyArmiesBudget * (1 + n.EstateInfluencesReal.ClergyInfluence) / totalPrivateArmyBudgets) * availableWeapons;
-  const populaceBasicArmaments = (populaceArmiesBudget * (1 + n.EstateInfluencesReal.WorkersInfluence + n.EstateInfluencesReal.UrbanInfluence + n.EstateInfluencesReal.IntellectualsInfluence) / totalPrivateArmyBudgets) * availableWeapons;
+  n.AristocracyBasicArmaments = (aristocracyArmiesBudget * (1 + n.EstateInfluencesReal.AristocracyInfluence) / totalPrivateArmyBudgets) * availableWeapons;
+  n.BurgousieBasicArmaments = (burgousieArmiesBudget * (1 + n.EstateInfluencesReal.BurgousieInfluence) / totalPrivateArmyBudgets) * availableWeapons;
+  n.ClergyBasicArmaments = (clergyArmiesBudget * (1 + n.EstateInfluencesReal.ClergyInfluence) / totalPrivateArmyBudgets) * availableWeapons;
+  n.PopulaceBasicArmaments = (populaceArmiesBudget * (1 + n.EstateInfluencesReal.WorkersInfluence + n.EstateInfluencesReal.UrbanInfluence + n.EstateInfluencesReal.IntellectualsInfluence) / totalPrivateArmyBudgets) * availableWeapons;
 
   n.AristocracyManpower = (aristocracyArmiesBudget * (1 + n.EstateInfluencesReal.AristocracyInfluence) / totalPrivateArmyBudgets) * n.Population * 0.005;
   n.BurgousieManpower = (burgousieArmiesBudget * (1 + n.EstateInfluencesReal.BurgousieInfluence) / totalPrivateArmyBudgets) * n.Population * 0.005;
@@ -1083,40 +1083,40 @@ export function evaluateNation(nationName) {
   for (const UnitIndex in privateArmySetup) {
     const Amount = privateArmySetup[UnitIndex];
     const Cost = unitsArmamentsDemands[UnitIndex];
-      n["Aristocracy" + UnitIndex] = aristocracyBasicArmaments * Amount / Cost * 1000 - (n["Aristocracy" + UnitIndex + "Casualties"] != null ? n["Aristocracy" + UnitIndex + "Casualties"] : 0);
+      n["Aristocracy" + UnitIndex] = n.AristocracyBasicArmaments * Amount / Cost * 1000 - (n["Aristocracy" + UnitIndex + "Casualties"] != null ? n["Aristocracy" + UnitIndex + "Casualties"] : 0);
   }
 
   for (const UnitIndex in privateArmySetup) {
     const Amount = privateArmySetup[UnitIndex];
     const Cost = unitsArmamentsDemands[UnitIndex];
-      n["Burgousie" + UnitIndex] = burgousieBasicArmaments * Amount / Cost * 1000 - (n["Burgousie" + UnitIndex + "Casualties"] != null ? n["Burgousie" + UnitIndex + "Casualties"] : 0);
+      n["Burgousie" + UnitIndex] = n.BurgousieBasicArmaments * Amount / Cost * 1000 - (n["Burgousie" + UnitIndex + "Casualties"] != null ? n["Burgousie" + UnitIndex + "Casualties"] : 0);
   }
 
   for (const UnitIndex in privateArmySetup) {
     const Amount = privateArmySetup[UnitIndex];
     const Cost = unitsArmamentsDemands[UnitIndex];
-      n["Clergy" + UnitIndex] = clergyBasicArmaments * Amount / Cost * 1000 - (n["Clergy" + UnitIndex + "Casualties"] != null ? n["Clergy" + UnitIndex + "Casualties"] : 0);
+      n["Clergy" + UnitIndex] = n.ClergyBasicArmaments * Amount / Cost * 1000 - (n["Clergy" + UnitIndex + "Casualties"] != null ? n["Clergy" + UnitIndex + "Casualties"] : 0);
   }
 
     const militiaBalance = (1 - Number(n.Technologies.Muskets) * 0.05 - Number(n.Technologies.Matchlock) * 0.15 - Number(n.Technologies.Bayonet) * 0.05 - Number(n.Technologies.SocketBayonet) * 0.15 - Number(n.Technologies.Flintlock) * 0.40);
-    n.PopulaceMilitia = militiaBalance * populaceBasicArmaments / unitsArmamentsDemands.Militia * 1000 - (n.PopulaceMilitiaCasualties != null ? n.PopulaceMilitiaCasualties : 0);
-    n.PopulaceMusketMilitia = (1 - militiaBalance) * populaceBasicArmaments / unitsArmamentsDemands.MusketMilitia * 1000 - (n.PopulaceMusketMilitiaCasualties != null ? n.PopulaceMusketMilitiaCasualties : 0);
+    n.PopulaceMilitia = militiaBalance * n.PopulaceBasicArmaments / unitsArmamentsDemands.Militia * 1000 - (n.PopulaceMilitiaCasualties != null ? n.PopulaceMilitiaCasualties : 0);
+    n.PopulaceMusketMilitia = (1 - militiaBalance) * n.PopulaceBasicArmaments / unitsArmamentsDemands.MusketMilitia * 1000 - (n.PopulaceMusketMilitiaCasualties != null ? n.PopulaceMusketMilitiaCasualties : 0);
 
   const effectiveWages = {
     Slaves: n.SlavesWage * (1 - n.WorkersTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.WorkersInfluence)),
-  Labourers: n.LabourersWage * (1 - n.WorkersTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.WorkersInfluence)) + (n.ExpectedLabourersSol < n.AverageExpectedSol ? n.SocialSpending / 20 : 0) - (populaceBasicArmaments * n.BasicArmamentsValue * n.LabourersWeaponContribution) / max(1, n.Population * n.Workforces.Labourers / 1000),
-  Serfs: n.SerfsWage * (1 - n.WorkersTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.WorkersInfluence)) + (n.ExpectedSerfsSol < n.AverageExpectedSol ? n.SocialSpending / 20 : 0) - (populaceBasicArmaments * n.BasicArmamentsValue * n.SerfsWeaponContribution) / max(1, n.Population * n.Workforces.Serfs / 1000),
-  Unemployed: n.UnemployedWage * (1 - n.WorkersTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.WorkersInfluence)) + (n.ExpectedUnemployedSol < n.AverageExpectedSol ? n.SocialSpending / 20 : 0) - (populaceBasicArmaments * n.BasicArmamentsValue * n.UnemployedWeaponContribution) / max(1, n.Population * n.Workforces.Unemployed / 1000),
-  Farmers: n.FarmersWage * (1 - n.WorkersTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.WorkersInfluence)) + (n.ExpectedFarmersSol < n.AverageExpectedSol ? n.SocialSpending / 20 : 0) - (populaceBasicArmaments * n.BasicArmamentsValue * n.FarmersWeaponContribution) / (n.Population * n.Workforces.Farmers / 1000),
-  Townsfolk: n.TownsfolkWage * (1 - n.UrbanTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.UrbanInfluence)) + (n.ExpectedTownsfolkSol < n.AverageExpectedSol ? n.SocialSpending / 20 : 0) - (populaceBasicArmaments * n.BasicArmamentsValue * n.TownsfolkWeaponContribution) / (n.Population * n.Workforces.Townsfolk / 1000),
+  Labourers: n.LabourersWage * (1 - n.WorkersTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.WorkersInfluence)) + (n.ExpectedLabourersSol < n.AverageExpectedSol ? n.SocialSpending / 20 : 0) - (n.PopulaceBasicArmaments * n.BasicArmamentsValue * n.LabourersWeaponContribution) / max(1, n.Population * n.Workforces.Labourers / 1000),
+  Serfs: n.SerfsWage * (1 - n.WorkersTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.WorkersInfluence)) + (n.ExpectedSerfsSol < n.AverageExpectedSol ? n.SocialSpending / 20 : 0) - (n.PopulaceBasicArmaments * n.BasicArmamentsValue * n.SerfsWeaponContribution) / max(1, n.Population * n.Workforces.Serfs / 1000),
+  Unemployed: n.UnemployedWage * (1 - n.WorkersTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.WorkersInfluence)) + (n.ExpectedUnemployedSol < n.AverageExpectedSol ? n.SocialSpending / 20 : 0) - (n.PopulaceBasicArmaments * n.BasicArmamentsValue * n.UnemployedWeaponContribution) / max(1, n.Population * n.Workforces.Unemployed / 1000),
+  Farmers: n.FarmersWage * (1 - n.WorkersTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.WorkersInfluence)) + (n.ExpectedFarmersSol < n.AverageExpectedSol ? n.SocialSpending / 20 : 0) - (n.PopulaceBasicArmaments * n.BasicArmamentsValue * n.FarmersWeaponContribution) / (n.Population * n.Workforces.Farmers / 1000),
+  Townsfolk: n.TownsfolkWage * (1 - n.UrbanTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.UrbanInfluence)) + (n.ExpectedTownsfolkSol < n.AverageExpectedSol ? n.SocialSpending / 20 : 0) - (n.PopulaceBasicArmaments * n.BasicArmamentsValue * n.TownsfolkWeaponContribution) / (n.Population * n.Workforces.Townsfolk / 1000),
   Clergy: n.ClergyWage * (1 - n.ClergyTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.ClergyInfluence)) + (n.ExpectedClergySol < n.AverageExpectedSol ? n.SocialSpending / 20 : 0),
   Bureaucrats: n.BureaucratsWage * (1 - n.BureaucratsTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.BureaucratsInfluence)) + (n.ExpectedBureaucratsSol < n.AverageExpectedSol ? n.SocialSpending / 20 : 0),
-  Merchants: n.MerchantsWage * (1 - n.UrbanTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.UrbanInfluence)) + (n.ExpectedMerchantsSol < n.AverageExpectedSol ? n.SocialSpending / 20 : 0) - (populaceBasicArmaments * n.BasicArmamentsValue * n.MerchantsWeaponContribution) / max(n.Population * n.Workforces.Merchants / 1000, 1),
-  Intellectuals: n.IntellectualsWage * (1 - n.IntellectualsTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.IntellectualsInfluence)) + (n.ExpectedIntellectualsSol < n.AverageExpectedSol ? n.SocialSpending / 20 : 0) - (populaceBasicArmaments * n.BasicArmamentsValue * n.IntellectualsWeaponContribution) / (n.Population * n.Workforces.Intellectuals / 1000),
+  Merchants: n.MerchantsWage * (1 - n.UrbanTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.UrbanInfluence)) + (n.ExpectedMerchantsSol < n.AverageExpectedSol ? n.SocialSpending / 20 : 0) - (n.PopulaceBasicArmaments * n.BasicArmamentsValue * n.MerchantsWeaponContribution) / max(n.Population * n.Workforces.Merchants / 1000, 1),
+  Intellectuals: n.IntellectualsWage * (1 - n.IntellectualsTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.IntellectualsInfluence)) + (n.ExpectedIntellectualsSol < n.AverageExpectedSol ? n.SocialSpending / 20 : 0) - (n.PopulaceBasicArmaments * n.BasicArmamentsValue * n.IntellectualsWeaponContribution) / (n.Population * n.Workforces.Intellectuals / 1000),
   Sailors: n.SailorsWage * (1 - n.MilitaryTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.MilitaryInfluence)) + (n.ExpectedSailorsSol < n.AverageExpectedSol ? n.SocialSpending / 20 : 0),
   Soldiers: n.SoldiersWage * (1 - n.MilitaryTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.MilitaryInfluence)) + (n.ExpectedSoldiersSol < n.AverageExpectedSol ? n.SocialSpending / 20 : 0),
-  Aristocracy: n.AristocracyWage * (1 - n.AristocracyTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.AristocracyInfluence)) + (n.ExpectedAristocracySol < n.AverageExpectedSol ? n.SocialSpending / 20 : 0) - (aristocracyBasicArmaments * n.BasicArmamentsValue) / (n.Population * n.Workforces.Aristocracy / 1000),
-  Burgousie: n.BurgousieWage * (1 - n.BurgousieTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.BurgousieInfluence)) + (n.ExpectedBurgousieSol < n.AverageExpectedSol ? n.SocialSpending / 20 : 0) - (burgousieBasicArmaments * n.BasicArmamentsValue) / (n.Population * n.Workforces.Burgousie / 1000),
+  Aristocracy: n.AristocracyWage * (1 - n.AristocracyTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.AristocracyInfluence)) + (n.ExpectedAristocracySol < n.AverageExpectedSol ? n.SocialSpending / 20 : 0) - (n.AristocracyBasicArmaments * n.BasicArmamentsValue) / (n.Population * n.Workforces.Aristocracy / 1000),
+  Burgousie: n.BurgousieWage * (1 - n.BurgousieTax * n.TaxEfficiency * (1 - n.EstateInfluencesReal.BurgousieInfluence)) + (n.ExpectedBurgousieSol < n.AverageExpectedSol ? n.SocialSpending / 20 : 0) - (n.BurgousieBasicArmaments * n.BasicArmamentsValue) / (n.Population * n.Workforces.Burgousie / 1000),
   }
   // n.SocialSpendingUpkeep
   n.SocialSpendingUpkeep = 0;
@@ -1239,21 +1239,21 @@ export function evaluateNation(nationName) {
 
     n.AristocracyLoyalty += Number(n.CulturalAdvancements.NobleDuty) * 0.05;
 
-    if (aristocracyBasicArmaments > max(n.ArmyBasicArmamentsDemand, 10)) {
-        n.AristocracyLoyalty -= (aristocracyBasicArmaments / max(n.ArmyBasicArmamentsDemand, 10) - 1) / 5;
+    if (n.AristocracyBasicArmaments > max(n.ArmyBasicArmamentsDemand, 10)) {
+        n.AristocracyLoyalty -= (n.AristocracyBasicArmaments / max(n.ArmyBasicArmamentsDemand, 10) - 1) / 5;
     }
 
-    if (clergyBasicArmaments > max(n.ArmyBasicArmamentsDemand, 10)) {
-        n.ClergyLoyalty -= (clergyBasicArmaments / max(n.ArmyBasicArmamentsDemand, 10) - 1) / 5;
+    if (n.ClergyBasicArmaments > max(n.ArmyBasicArmamentsDemand, 10)) {
+        n.ClergyLoyalty -= (n.ClergyBasicArmaments / max(n.ArmyBasicArmamentsDemand, 10) - 1) / 5;
     }
 
-    if (burgousieBasicArmaments > max(n.ArmyBasicArmamentsDemand, 10)) {
-        n.BurgousieLoyalty -= (burgousieBasicArmaments / max(n.ArmyBasicArmamentsDemand, 10) - 1) / 5;
+    if (n.BurgousieBasicArmaments > max(n.ArmyBasicArmamentsDemand, 10)) {
+        n.BurgousieLoyalty -= (n.BurgousieBasicArmaments / max(n.ArmyBasicArmamentsDemand, 10) - 1) / 5;
     }
 
-    n.AristocracyCallupCost = 20 * (aristocracyBasicArmaments / max(n.ArmyBasicArmamentsDemand, 10));
-    n.ClergyCallupCost = 20 * (clergyBasicArmaments / max(n.ArmyBasicArmamentsDemand, 10));
-    n.BurgousieCallupCost = 20 * (burgousieBasicArmaments / max(n.ArmyBasicArmamentsDemand, 10));
+    n.AristocracyCallupCost = 20 * (n.AristocracyBasicArmaments / max(n.ArmyBasicArmamentsDemand, 10));
+    n.ClergyCallupCost = 20 * (n.ClergyBasicArmaments / max(n.ArmyBasicArmamentsDemand, 10));
+    n.BurgousieCallupCost = 20 * (n.BurgousieBasicArmaments / max(n.ArmyBasicArmamentsDemand, 10));
 
     n.MilitaryLoyalty = militaryControlReal.Aristocracy * n.AristocracyLoyalty + militaryControlReal.Clergy * n.ClergyLoyalty + militaryControlReal.Burgousie * n.BurgousieLoyalty + militaryControlReal.Urban * n.UrbanLoyalty + militaryControlReal.Bureaucrats * n.BureaucratsLoyalty + militaryControlReal.Workers * n.WorkersLoyalty + militaryControlReal.Independent * n.MilitaryLoyalty - n.CommanderFreedom * 0.1;
     if (n.Workforces.Soldiers + n.Workforces.Sailors == 0) n.MilitaryLoyalty = 0.5;
@@ -1679,7 +1679,7 @@ export function syncNation(nationName: string) {
     }
 
     // Expected Weapons for private militaries
-    n.ExpectedPrivateBasicArmaments = AristocracyBasicArmaments + BurgousieBasicArmaments + ClergyBasicArmaments + PopulaceBasicArmaments;
+    n.ExpectedPrivateBasicArmaments = n.AristocracyBasicArmaments + n.BurgousieBasicArmaments + n.ClergyBasicArmaments + n.PopulaceBasicArmaments;
 
     // Alcoholism
     if (n.EffectiveAlcohol > n.AlcoholDemand * 0.75) {
