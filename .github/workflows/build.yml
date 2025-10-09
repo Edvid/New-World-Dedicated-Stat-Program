@@ -19,6 +19,5 @@ jobs:
       - run: "npm i typescript"
       - name: compiling typescript
         run: "npx tsc"
-        continue-on-error: true
       - name: find differences
         run: "[[ $(git status -s | wc -l) -eq 0 ]]"
